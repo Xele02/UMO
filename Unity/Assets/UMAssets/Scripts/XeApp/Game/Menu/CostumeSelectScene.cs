@@ -466,7 +466,7 @@ namespace XeApp.Game.Menu
 			t_episode_data = null;
 			for(int i = 0; i < m_episode_list.Count; i++)
 			{
-				if(m_episode_list[i].KELFCMEOPPM_EpId == t_item.m_view_diva.KELFCMEOPPM_EpisodeId)
+				if(m_episode_list[i].KELFCMEOPPM_EpisodeId == t_item.m_view_diva.KELFCMEOPPM_EpisodeId)
 				{
 					t_episode_data = m_episode_list[i];
 				}
@@ -485,7 +485,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode }
 				};
-				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), t_episode_data.OPFGFINHFCE_Name);
+				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), t_episode_data.OPFGFINHFCE_name);
 				s.m_text = m_builder.ToString();
 			}
 			else 
@@ -745,7 +745,7 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo divaInfo;
 				if (!m_is_godiva)
 				{
-					divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_index];
+					divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[m_diva_index];
 				}
 				else
 				{
@@ -779,7 +779,7 @@ namespace XeApp.Game.Menu
 			item.m_view_diva.LEHDLBJJBNC();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			FFHPBEPOMAK_DivaInfo currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_index];
+			FFHPBEPOMAK_DivaInfo currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[m_diva_index];
 			int divaId = currentDiva.AHHJLDLAPAN_DivaId;
 			int oldCostumeId = 0;
 			int oldColorId = 0;
@@ -827,7 +827,7 @@ namespace XeApp.Game.Menu
 				if (GNGMCIAIKMA.HHCJCDFCLOB != null)
 				{
 					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK/*7*/, divaId, 1, null);
-					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
+					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
 				}
 			}
 

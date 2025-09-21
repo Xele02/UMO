@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 			}
 			ResultSelectDivaId = a;
 			PopupFilterSortParts_FilterDiva p = (m_setting.m_list_parts[0].m_base as PopupFilterSortParts_FilterDiva);
-			p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, false, PopupFilterSortParts_FilterDiva.ButtonType.Single, PopupFilterSortParts_FilterDiva.WindowType.Middle, a_setting.m_param.DivaChangeMode);
+			p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, false, PopupFilterSortParts_FilterDiva.ButtonType.Single, PopupFilterSortParts_FilterDiva.WindowType.Middle, a_setting.m_param.DivaChangeMode);
 			p.SetBit((uint)a_setting.m_param.FilterDiva);
 			if(a_setting.m_param.DivaChangeMode)
 			{
@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 			{
 				PopupFilterSortParts_Sort2 p = m_setting.m_list_parts[1].m_base as PopupFilterSortParts_Sort2;
 				p.Initialize(EpisodeSortTable2);
-				p.SetSortItem(m_setting.m_param.EnableSave ? (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_sortItem : SortItem.EpisodeNo);
+				p.SetSortItem(m_setting.m_param.EnableSave ? (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_SortItem : SortItem.EpisodeNo);
 			}
 			{
 				PopupFilterSortParts_Title_H1 p = m_setting.m_list_parts[3].m_base as PopupFilterSortParts_Title_H1;
@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 			}
 			{
 				PopupFilterSortParts_FilterDiva2 p = m_setting.m_list_parts[11].m_base as PopupFilterSortParts_FilterDiva2;
-				p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, 0, 0, false);
+				p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, 0, 0, false);
 				p.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.IKEMMEAEPLM_filterDivaAndVal : 0));
 			}
 		}
@@ -403,7 +403,7 @@ namespace XeApp.Game.Menu
 				return;
 			{
 				PopupFilterSortParts_Sort2 p = m_setting.m_list_parts[1].m_base as PopupFilterSortParts_Sort2;
-				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_sortItem = (int)p.GetSortItem();
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_SortItem = (int)p.GetSortItem();
 			}
 			{
 				PopupFilterSortParts_FilterMainEp p = m_setting.m_list_parts[5].m_base as PopupFilterSortParts_FilterMainEp;

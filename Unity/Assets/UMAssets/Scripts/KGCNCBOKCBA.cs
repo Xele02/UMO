@@ -2,7 +2,7 @@ public class KGCNCBOKCBA
 {
 	public enum GNENJEHKMHD_EventStatus
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		FFLKPBPBPEP_1 = 1,
 		NCJFJLPJMLI_2 = 2,
 		MINDIGBAJFG_3 = 3,

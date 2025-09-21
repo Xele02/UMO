@@ -50,11 +50,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1666A54 Offset: 0x1666A54 VA: 0x1666A54
 		public void UpdateContent(PNGOLKLFFLH valkyrieData, NHDJHOPLMDE valkyrieAbilityData)
 		{
-			m_robotName.text = valkyrieData.IJBLEJOKEFH_ValkyrieName;
-			m_pilotName.text = valkyrieData.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name;
+			m_robotName.text = valkyrieData.IJBLEJOKEFH_Name;
+			m_pilotName.text = valkyrieData.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name;
 			m_attackText.text = valkyrieData.KINFGHHNFCF_Atk.ToString();
 			EnableImageValAtk(false);
-			m_hitText.text = valkyrieData.NONBCCLGBAO_Hit.ToString();
+			m_hitText.text = valkyrieData.NONBCCLGBAO_hit.ToString();
 			EnableImageValHit(false);
 			if(valkyrieAbilityData != null)
 			{
@@ -63,9 +63,9 @@ namespace XeApp.Game.Menu
 					m_attackText.text = RichTextUtility.MakeColorTagString((valkyrieData.KINFGHHNFCF_Atk + valkyrieAbilityData.KINFGHHNFCF_Atk).ToString(), StatusTextColor.UpColor);
 					EnableImageValAtk(true);
 				}
-				if(valkyrieAbilityData.NONBCCLGBAO_Hit > 0)
+				if(valkyrieAbilityData.NONBCCLGBAO_hit > 0)
 				{
-					m_hitText.text = RichTextUtility.MakeColorTagString((valkyrieData.NONBCCLGBAO_Hit + valkyrieAbilityData.NONBCCLGBAO_Hit).ToString(), StatusTextColor.UpColor);
+					m_hitText.text = RichTextUtility.MakeColorTagString((valkyrieData.NONBCCLGBAO_hit + valkyrieAbilityData.NONBCCLGBAO_hit).ToString(), StatusTextColor.UpColor);
 					EnableImageValHit(true);
 				}
 			}

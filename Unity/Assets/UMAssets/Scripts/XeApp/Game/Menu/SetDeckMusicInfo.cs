@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 			m_musicAttrEffectAnime.Stop(true);
 			m_musicAttrEffectAnime.Play(0, null);
 			m_difficultyImage.sprite = GetDifficultySprite(musicInfo.difficultyType, musicInfo.IsLine6Mode);
-			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Nam).musicName;
+			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Name).musicName;
 			RichTextUtility.ChangeColor(m_musicNameText, isMvMode ? StatusTextColor.NormalColor : GameAttributeTextColor.Colors[viewMusicData.FKDCCLPGKDK_JacketAttr - 1]);
 			m_descriptionText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_mv_mode_description");
 			ApplyBottomType(bottomType);

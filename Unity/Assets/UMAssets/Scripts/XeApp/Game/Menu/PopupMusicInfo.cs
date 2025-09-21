@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 			Parent = setting.m_parent;
 			m_flameDisplay = s.flameDisplay;
 			m_isValidMusicUrl = s.isValidMusicUrl;
-			m_data.KHEKNNFCAOI(m_musicId);
+			m_data.KHEKNNFCAOI_Init(m_musicId);
 			gameObject.SetActive(true);
 			transform.localPosition = Vector3.zero;
 			m_musicWindow = transform.GetComponent<MusicInfoWindow>();

@@ -29,13 +29,13 @@ public class DKKPBBBDKMJ
 	}
 
 	//// RVA: 0x1224EF4 Offset: 0x1224EF4 VA: 0x1224EF4
-	public AGAAGMGKNCO NPIOEBNLBCI(int OIPCCBHIKIA)
+	public AGAAGMGKNCO NPIOEBNLBCI(int _OIPCCBHIKIA_index)
 	{
-		return NNDGIAEFMOG[AIAPGDMLIIE[OIPCCBHIKIA]];
+		return NNDGIAEFMOG[AIAPGDMLIIE[_OIPCCBHIKIA_index]];
 	}
 
 	//// RVA: 0x1224FB8 Offset: 0x1224FB8 VA: 0x1224FB8
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
 	{
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
@@ -59,12 +59,12 @@ public class DKKPBBBDKMJ
 							{
 								if(storyEvent.MGBDCFIKBPM_Serie == 5)
 								{
-									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
+									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
-									HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+									HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 									if(HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 									{
-										if(scene2.PPEGAKEIEGM_En > 1)
+										if(scene2.PPEGAKEIEGM_Enabled > 1)
 										{
 											if(HOMGKHBHDME.EKLIPGELKCL_Rarity > 5)
 											{
@@ -112,7 +112,7 @@ public class DKKPBBBDKMJ
 					data.PGIIDPEGGPI_EventId = storyEvent.OAFJONPIFGM_EventId;
 					data.CADENLBDAEB_IsNew = hasNewAdv;
 					data.CPKMLLNADLJ_Serie = storyEvent.MGBDCFIKBPM_Serie;
-					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD_PeriodStart);
+					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD_open_at);
 					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_CloseAt);
 					FAEDHJHCEFJ.Clear();
 					FAEDHJHCEFJ.AppendFormat(bk.GetMessageByLabel("event_story_list_period"), new object[6]
@@ -155,13 +155,13 @@ public class DKKPBBBDKMJ
 				{
 					if(k2.OAFJONPIFGM_EventId == k.PGIIDPEGGPI_EventId && k2.CHOFDPDFPDC_ConfigValue == 4)
 					{
-						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
+						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
 						MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
-						HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+						HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 						a1++;
 						if (HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 						{
-							if(scene2.PPEGAKEIEGM_En > 1)
+							if(scene2.PPEGAKEIEGM_Enabled > 1)
 							{
 								if(HOMGKHBHDME.EKLIPGELKCL_Rarity > 5)
 								{

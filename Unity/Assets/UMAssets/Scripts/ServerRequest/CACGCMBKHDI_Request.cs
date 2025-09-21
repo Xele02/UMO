@@ -3,12 +3,12 @@ using UnityEngine;
 using System.Collections;
 using XeApp.Game;
 
-public delegate bool MMACCEADALH(SakashoErrorId PPFNGGCBJKC_Id);
+public delegate bool MMACCEADALH(SakashoErrorId _PPFNGGCBJKC_id);
 
 
 public class IDNNDIHDLGA
 {
-	public string KLMPFGOCBHC; // 0x8
+	public string KLMPFGOCBHC_description; // 0x8
 }
 
 [System.Obsolete("Use CACGCMBKHDI_Request", true)]
@@ -94,7 +94,7 @@ public abstract class CACGCMBKHDI_Request
 
     // [ConditionalAttribute] // RVA: 0x6C3D70 Offset: 0x6C3D70 VA: 0x6C3D70
     // // RVA: 0x18F25D0 Offset: 0x18F25D0 VA: 0x18F25D0
-    // public void FGNOINLMJLN(string INDDJNMPONH, string HEKJBOPBDIA) { }
+    // public void FGNOINLMJLN(string _INDDJNMPONH_Type, string HEKJBOPBDIA) { }
 
     // // RVA: 0x18F272C Offset: 0x18F272C VA: 0x18F272C Slot: 10
     // public virtual bool CPIIKMBBKAI() { }
@@ -138,18 +138,18 @@ public abstract class CACGCMBKHDI_Request
 			{
 				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_DOGDHKIEBJA_Error.ErrorDetailJSON);
                 HIBMKLEJEDP = new IDNNDIHDLGA();
-                HIBMKLEJEDP.KLMPFGOCBHC = CEDHHAGBIBA.KJFAGPBALNO((string)data["description"]);
+                HIBMKLEJEDP.KLMPFGOCBHC_description = CEDHHAGBIBA.KJFAGPBALNO((string)data["description"]);
 			}
 		}
 	}
 
     // // RVA: 0x18F2B34 Offset: 0x18F2B34 VA: 0x18F2B34
-    public void DCKLDDCAJAP(string IDLHJIOMJBK_result)
+    public void DCKLDDCAJAP(string _IDLHJIOMJBK_Data)
     {
         HOHOBEOJPBK_ServerInfo = new OBOKMHHMOIL_ServerInfo();
-        HOHOBEOJPBK_ServerInfo.KHEKNNFCAOI_Init(IDLHJIOMJBK_result);
+        HOHOBEOJPBK_ServerInfo.KHEKNNFCAOI_Init(_IDLHJIOMJBK_Data);
         EFGFPCBGDDK = true;
-        NGCAIEGPLKD_result = IDLHJIOMJBK_result;
+        NGCAIEGPLKD_result = _IDLHJIOMJBK_Data;
     }
 
     // // RVA: 0x18F2BD4 Offset: 0x18F2BD4 VA: 0x18F2BD4 Slot: 13

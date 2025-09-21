@@ -501,7 +501,7 @@ namespace XeApp.Game.Menu
 				bool b = false;
 				for(int i = 0; i < l.Count; i++)
 				{
-					b |= m_RaidLobbyController.GBADILEHLGC_GetStatus(l[i].PPFNGGCBJKC_Id) == 2;
+					b |= m_RaidLobbyController.GBADILEHLGC_GetStatus(l[i].PPFNGGCBJKC_id) == 2;
 				}
 				if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 				{
@@ -1088,7 +1088,7 @@ namespace XeApp.Game.Menu
 			d.damage = m.HALIDDHLNEG_Damage;
 			d.bossRank = m.EJGDHAENIDC_BossRank;
 			d.bossImageNum = m.JNBDLNBKDCO_BossImage;
-			d.series = (SeriesAttr.Type) m.PCPODOMOFDH_BossSeriesAttr;
+			d.series = (SeriesAttr.Type) m.PCPODOMOFDH_BossSerieAttr;
 			d.logId = m.CNOHJPEHHCH_StampId;
 			d.wavId = m.KKPAHLMJKIH_WavId;
 			this.StartCoroutineWatched(Co_PlayMovie(d));
@@ -1143,8 +1143,8 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < fm.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(fm.BFDEHIANFOG[i]);
-					if(f.MLPEHNBNOGD_Id == _playerId)
+					f.KHEKNNFCAOI_Init(fm.BFDEHIANFOG[i]);
+					if(f.MLPEHNBNOGD_PlayerId == _playerId)
 						friends = f;
 				}
 				isDone = true;
@@ -1163,7 +1163,7 @@ namespace XeApp.Game.Menu
 			if(!IsError)
 			{
 				ProfilDateArgs arg = new ProfilDateArgs();
-				arg.isFavorite = friends.PCEGKKLKFNO.NEILEPPJKIN_IsFavorite != 0;
+				arg.isFavorite = friends.PCEGKKLKFNO_FriendData.NEILEPPJKIN_favorite != 0;
 				arg.data = friends;
 				arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
 				arg.btnType = IsMyData ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Fan_NoLobby;
@@ -1279,7 +1279,7 @@ namespace XeApp.Game.Menu
 		private bool IsInMyBlockList(int index)
 		{
 			ANPBHCNJIDI.PHICILDLHJP d = m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP;
-			return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.DIGEHCDEAON_IsBlacklisted(d.MLPEHNBNOGD_WritterId);
+			return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.DIGEHCDEAON_IsBlacklisted(d.MLPEHNBNOGD_PlayerId);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E88BC Offset: 0x6E88BC VA: 0x6E88BC

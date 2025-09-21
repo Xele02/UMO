@@ -5,7 +5,7 @@ public class IIMBAOGHCIG
 {
 	public enum BEFNGAHBLEN
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		JJGHKIBKFFJ = 1,
 	}
 
@@ -33,7 +33,7 @@ public class IIMBAOGHCIG
 			{
 				return BEFNGAHBLEN.JJGHKIBKFFJ/*1*/;
 			}
-			return BEFNGAHBLEN.HJNNKCMLGFL/*0*/;
+			return BEFNGAHBLEN.HJNNKCMLGFL_0_None/*0*/;
 		}
 		return BEFNGAHBLEN.JJGHKIBKFFJ/*1*/;
 	}

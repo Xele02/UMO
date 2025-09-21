@@ -17,18 +17,18 @@ public class HBCPJANGOLB
         MNJNCKPELGE.Clear();
         long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
         long t2 = JPAICCMDGHD_GetMaxLastShowDate(time);
-        List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts;
+        List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_products;
         long date = -1;
         for(int i = 0; i < l.Count; i++)
         {
             long t = GachaUtility.GetGachaProductOpenTime(l[i]);
             if(t2 < t)
             {
-                if(l[i].KACECFNECON != null)
+                if(l[i].KACECFNECON_extra != null)
                 {
-                    for(int j = 0; j < l[i].KACECFNECON.NNDMIOEKKMM_NewEpisode.Count; j++)
+                    for(int j = 0; j < l[i].KACECFNECON_extra.NNDMIOEKKMM_NewEpisode.Count; j++)
                     {
-                        MNJNCKPELGE.Add(l[i].KACECFNECON.NNDMIOEKKMM_NewEpisode[j]);
+                        MNJNCKPELGE.Add(l[i].KACECFNECON_extra.NNDMIOEKKMM_NewEpisode[j]);
                     }
                     if(date < t && MNJNCKPELGE.Count > 0)
                         date = t;
@@ -56,12 +56,12 @@ public class HBCPJANGOLB
     }
 
 	// // RVA: 0x173DD7C Offset: 0x173DD7C VA: 0x173DD7C
-	public long JPAICCMDGHD_GetMaxLastShowDate(long JHNMKKNEENE)
+	public long JPAICCMDGHD_GetMaxLastShowDate(long _JHNMKKNEENE_Time)
     {
         long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate;
         long t2 = KKEFACGGKOD.HFPEDBCGFOJ_GetLastShowDate();
         long m = System.Math.Max(lastEpTime, t2);
-        if(JHNMKKNEENE < m)
+        if(_JHNMKKNEENE_Time < m)
             return 0;
         return m;
     }
@@ -77,12 +77,12 @@ public class HBCPJANGOLB
 	}
 
 	// // RVA: 0x173E200 Offset: 0x173E200 VA: 0x173E200
-	public static List<string> LMFHAGHJIEM_GetAssetsList(HBCPJANGOLB IDLHJIOMJBK)
+	public static List<string> LMFHAGHJIEM_GetAssetsList(HBCPJANGOLB _IDLHJIOMJBK_Data)
     {
         StringBuilder str = new StringBuilder(64);
         MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
         List<string> res = new List<string>();
-        List<HGBOODNMNFM> l = IDLHJIOMJBK.DJOMLJELOLM();
+        List<HGBOODNMNFM> l = _IDLHJIOMJBK_Data.DJOMLJELOLM();
         for(int i = 0; i < l.Count; i++)
         {
             KBNDEEFOGMO_FillEpisodeAssetsFile(res, l[i].KELFCMEOPPM_EpisodeId);
@@ -101,9 +101,9 @@ public class HBCPJANGOLB
     }
 
 	// // RVA: 0x173E7A8 Offset: 0x173E7A8 VA: 0x173E7A8
-	private static void KBNDEEFOGMO_FillEpisodeAssetsFile(List<string> PHCEFKKOECA, int KELFCMEOPPM)
+	private static void KBNDEEFOGMO_FillEpisodeAssetsFile(List<string> PHCEFKKOECA, int _KELFCMEOPPM_EpisodeId)
     {
-        List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(KELFCMEOPPM);
+        List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(_KELFCMEOPPM_EpisodeId);
         LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
         for(int i = 0; i < l.Count; i++)
         {

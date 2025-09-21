@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 			base.OnStartEnterAnimation();
 			GameManager.Instance.SetFPS(60);
 			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId - 1];
-			m_resultInfo.Setup(System.Convert.ToInt32(Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).bannerId), GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId));
+			m_resultInfo.Setup(System.Convert.ToInt32(Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).bannerId), GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId));
 			m_resultInfo.Enter();
 			m_resultCmn.ChangeViewForSimulationResult();
 			MenuScene.Instance.divaManager.SetActive(true, true);
@@ -76,8 +76,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC5014C Offset: 0xC5014C VA: 0xC5014C
 		private void EnterSerifWindow()
 		{
-			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[MenuScene.Instance.divaManager.DivaId - 1];
-			m_serifWindow.SetTitle(divaInfo.OPFGFINHFCE_Name);
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[MenuScene.Instance.divaManager.DivaId - 1];
+			m_serifWindow.SetTitle(divaInfo.OPFGFINHFCE_name);
 			StringBuilder str = new StringBuilder();
 			str.Clear();
 			str.AppendFormat("diva{0:D3}", divaInfo.AHHJLDLAPAN_DivaId);
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC4FB88 Offset: 0xC4FB88 VA: 0xC4FB88
 		private MusicTextDatabase.TextInfo GetMusicTextInfo(int musicId)
 		{
-			return Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Nam);
+			return Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Name);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727004 Offset: 0x727004 VA: 0x727004

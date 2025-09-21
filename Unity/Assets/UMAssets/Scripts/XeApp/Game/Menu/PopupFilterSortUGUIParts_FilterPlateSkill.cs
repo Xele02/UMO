@@ -128,13 +128,13 @@ namespace XeApp.Game.Menu
 				int i;
 				for(i = 0; i < m_masterData.FOFADHAENKC_Skill.NHGMDOIBNDE.Count; i++)
 				{
-					if(m_masterData.FOFADHAENKC_Skill.NHGMDOIBNDE[i].PLALNIIBLOF < 2)
+					if(m_masterData.FOFADHAENKC_Skill.NHGMDOIBNDE[i].PLALNIIBLOF_en < 2)
 					{
 						m_SkillBtn[i].Hidden = true;
 					}
 					else
 					{
-						m_strBuilder.SetFormat("fc_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.NHGMDOIBNDE[i].PPFNGGCBJKC);
+						m_strBuilder.SetFormat("fc_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.NHGMDOIBNDE[i].PPFNGGCBJKC_id);
 						m_Text[i].text = bkMaster.GetMessageByLabel(m_strBuilder.ToString());
 						m_SkillBtn[i].Hidden = false;
 					}
@@ -158,13 +158,13 @@ namespace XeApp.Game.Menu
 				int i;
 				for(i = 0; i < m_masterData.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
 				{
-					if(m_masterData.FOFADHAENKC_Skill.OEELDELPIIP[i].PLALNIIBLOF < 2)
+					if(m_masterData.FOFADHAENKC_Skill.OEELDELPIIP[i].PLALNIIBLOF_en < 2)
 					{
 						m_SkillBtn[i].Hidden = true;
 					}
 					else
 					{
-						m_strBuilder.SetFormat("fa_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.OEELDELPIIP[i].PPFNGGCBJKC);
+						m_strBuilder.SetFormat("fa_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.OEELDELPIIP[i].PPFNGGCBJKC_id);
 						m_Text[i].text = bkMaster.GetMessageByLabel(m_strBuilder.ToString());
 						m_SkillBtn[i].Hidden = false;
 					}
@@ -188,13 +188,13 @@ namespace XeApp.Game.Menu
 				int i;
 				for(i = 0; i < m_masterData.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
 				{
-					if(m_masterData.FOFADHAENKC_Skill.GAGNFDHGJGC[i].PLALNIIBLOF < 2)
+					if(m_masterData.FOFADHAENKC_Skill.GAGNFDHGJGC[i].PLALNIIBLOF_en < 2)
 					{
 						m_SkillBtn[i].Hidden = true;
 					}
 					else
 					{
-						m_strBuilder.SetFormat("fl_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.GAGNFDHGJGC[i].PPFNGGCBJKC);
+						m_strBuilder.SetFormat("fl_nm_{0:D4}", m_masterData.FOFADHAENKC_Skill.GAGNFDHGJGC[i].PPFNGGCBJKC_id);
 						m_Text[i].text = bkMaster.GetMessageByLabel(m_strBuilder.ToString());
 						m_SkillBtn[i].Hidden = false;
 					}

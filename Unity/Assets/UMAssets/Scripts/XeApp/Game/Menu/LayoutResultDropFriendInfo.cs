@@ -68,9 +68,9 @@ namespace XeApp.Game.Menu
 			{
 				StringBuilder str = new StringBuilder();
 				str.SetFormat("RANK {0}", friendData.ILOJAJNCPEC_Rank);
-				textPlayerName.text = friendData.LBODHBDOMGK_Name;
+				textPlayerName.text = friendData.LBODHBDOMGK_PlayerName;
 				textPlayerRank.text = str.ToString();
-				if(friendData.PDIPANKOKOL_FriendType == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
+				if(friendData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
 				{
 					HiddenFriendRequestButton();
 				}

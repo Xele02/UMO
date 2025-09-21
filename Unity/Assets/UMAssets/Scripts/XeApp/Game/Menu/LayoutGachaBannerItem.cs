@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_imageEvTicket.enabled = false;
-					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tckt.PPFNGGCBJKC_Id), (IiconTexture texture) =>
+					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tckt.PPFNGGCBJKC_id), (IiconTexture texture) =>
 					{
 						//0x1997B58
 						m_imageEvTicket.enabled = true;
@@ -63,11 +63,11 @@ namespace XeApp.Game.Menu
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}
-			if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			if(product.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_layoutBadge.StartChildrenAnimGoStop("02");
 			}
-			else if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			else if(product.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				TexUVData data = m_uvMan.GetUVData(m_imageUvLabels[(int)timeZone]);
 				for(int i = 0; i < m_imageBadge.Length; i++)

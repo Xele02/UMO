@@ -4,7 +4,7 @@ using UnityEngine;
 public class PKNOGNLPHAE { }
 public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_Request
 {
-	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	public int AccountType;
 
@@ -17,7 +17,7 @@ public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_Request
 	// RVA: 0x93FF14 Offset: 0x93FF14 VA: 0x93FF14 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new HEHLBMMFMPL_PlayerStatusInfo();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new HEHLBMMFMPL_PlayerStatusInfo();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -129,7 +129,7 @@ namespace XeApp.Game.Common
 			int idx = m_setting.List.FindIndex((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
 			{
 				//0x1BB04EC
-				return _.IPJMPBANBPP;
+				return _.IPJMPBANBPP_Enabled;
 			});
 			m_scrollList.SetPosition(Mathf.Clamp(idx, 0, a), 0, 0, false);
 			m_scrollList.VisibleRegionUpdate();

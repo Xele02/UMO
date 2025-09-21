@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 		{
 			GrowthConfArgs arg = Args as GrowthConfArgs;
 			m_seriesType = series.First;
-			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[arg.DivaId - 1];
+			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[arg.DivaId - 1];
 			m_growsList.Clear();
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics.Count; i++)
 			{
@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_MusicId, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_MusicId - 1]);
 					if(data != null)
 					{
-						int a = data.PBGFIOONCMB_NextLevelMusicExp - data.PMBFNFOCNAJ_CurLevelMusicExp;
+						int a = data.PBGFIOONCMB_LevelMaxExp - data.PMBFNFOCNAJ_CurLevelMusicExp;
 						list.Add(new ListData()
 						{
 							meta = a > 0 ? (m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_MusicId - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / a : 0,
@@ -137,11 +137,11 @@ namespace XeApp.Game.Menu
 							unlockMusicId = data.CEFHDLLAPDH_MusicId,
 							exp = m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_MusicId - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp,
 							maxexp = a,
-							musicNameId = e.KNMGEEFGDNI_Nam,
+							musicNameId = e.KNMGEEFGDNI_Name,
 							unlockLevel = (short)data.KDGIHMCBLND_MusicLevel,
-							leve = (byte)(data.EHBAJPHFDOK_NextLevel + (data.NBHEBLNHOJO_IsMax ? 1 : 0) - 1),
+							leve = (byte)(data.EHBAJPHFDOK_NextLevel + (data.NBHEBLNHOJO_IsMaxLevel ? 1 : 0) - 1),
 							isLock = data.HHBJAEOIGIH_IsLocked,
-							isComplete = data.NBHEBLNHOJO_IsMax,
+							isComplete = data.NBHEBLNHOJO_IsMaxLevel,
 							lockMessage = data.ONIAMNAJLKI_LockMessage,
 						});
 					}
@@ -230,12 +230,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE234FC Offset: 0xE234FC VA: 0xE234FC
 		private bool IsAnyDivaMusicExp(DFKGGBMFFGB_PlayerInfo viewPlayerData, int musicId)
 		{
-			for(int i = 0; i < viewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < viewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				if(viewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
+				if(viewPlayerData.NBIGLBMHEDC_DivaList[i].IPJMPBANBPP_Enabled)
 				{
-					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, viewPlayerData.NBIGLBMHEDC_Divas[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
-					if (viewPlayerData.NBIGLBMHEDC_Divas[i].HMBECPGHPOE_DivaExps[musicId - 1] > 0)
+					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, viewPlayerData.NBIGLBMHEDC_DivaList[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
+					if (viewPlayerData.NBIGLBMHEDC_DivaList[i].HMBECPGHPOE_DivaExps[musicId - 1] > 0)
 						return true;
 				}
 			}

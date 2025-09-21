@@ -91,8 +91,8 @@ namespace XeApp.Game.Menu
 			m_item_num_table.StartChildrenAnimGoStop(EPISODE_ITEM_TYPE_NUM - 1, EPISODE_ITEM_TYPE_NUM - 1);
 			for(int i = 0; i < EPISODE_ITEM_TYPE_NUM; i++)
 			{
-				m_list[i].name.text = m_item_list[i].OPFGFINHFCE_Name;
-				m_list[i].info.text = m_item_list[i].KLMPFGOCBHC_Desc;
+				m_list[i].name.text = m_item_list[i].OPFGFINHFCE_name;
+				m_list[i].info.text = m_item_list[i].KLMPFGOCBHC_description;
 				m_list[i].item_num.text = JpStringLiterals.StringLiteral_15265 + m_item_list[i].HMFFHLPNMPH_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, 0);
 				if(m_item_list[i].HMFFHLPNMPH_Count < 1)
 				{

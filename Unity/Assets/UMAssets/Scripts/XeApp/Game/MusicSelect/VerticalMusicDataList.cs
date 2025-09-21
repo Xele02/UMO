@@ -96,21 +96,21 @@ namespace XeApp.Game.MusicSelect
 				List<MusicRewardStat> rewardList = new List<MusicRewardStat>();
 				IBJAKJJICBC musicData = viewMusicDataList[i];
 				int musicTime = 0;
-				for(int j = 0; j < musicData.MGJKEJHEBPO_DiffInfos.Count; j++)
+				for(int j = 0; j < musicData.MGJKEJHEBPO_Blocks.Count; j++)
 				{
 					MusicRewardStat reward = new MusicRewardStat();
 					b.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, j, line6Mode, musicData.MNNHHJBBICA_GameEventType);
 					reward.Init(b);
 					rewardList.Add(reward);
-					if(musicTime < musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
+					if(musicTime < musicData.MGJKEJHEBPO_Blocks[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
 					{
-						musicTime = musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
+						musicTime = musicData.MGJKEJHEBPO_Blocks[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
 					}
 				}
 				if(musicData.AJGCPCMLGKO_IsEvent)
 				{
 					MusicSelectConsts.EventType eventType = MusicSelectConsts.EventType.Max;
-					if(((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory - 1) < 14)
+					if(((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType - 1) < 14)
 					{
 						MusicSelectConsts.EventType[] d = 
 						{
@@ -129,7 +129,7 @@ namespace XeApp.Game.MusicSelect
 							MusicSelectConsts.EventType.Max,
 							MusicSelectConsts.EventType.Special
 						};
-						eventType = d[((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory - 1)];
+						eventType = d[((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType - 1)];
 					}
 					bool isUnlockable = true;
 					if(lastStoryFreeMusicId == 0)
@@ -153,7 +153,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
 					initparam.eventType = eventType; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
 					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
-					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_OpenTime, musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_StartTime, musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_EndTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
 					initparam.musicName_2 = null;
@@ -187,7 +187,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
 					initparam.eventType = MusicSelectConsts.EventType.Special; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
 					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
-					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_OpenTime, musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_StartTime, musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_EndTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
 					initparam.musicName_2 = null;
@@ -201,10 +201,10 @@ namespace XeApp.Game.MusicSelect
 				{
 					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[musicData.GHBPLHBNMBK_FreeMusicId - 1];
 					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
-					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
-					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
-					string musicName_2 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName_2;
-					string musicName_3 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName_3;
+					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName;
+					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).vocalName;
+					string musicName_2 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName_2;
+					string musicName_3 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName_3;
 					int seconds = 0;
 					int days, hours, minutes;
 					MusicSelectSceneBase.ExtractRemainTime(musicTime / 1000, out days, out hours, out minutes, out seconds);
@@ -304,7 +304,7 @@ namespace XeApp.Game.MusicSelect
 								{
 									aprilFoolEndTime = dd.FDBNFFNFOND_CloseAt;
 								}
-								if (eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI() != 0 && dd.PPFNGGCBJKC_Id == eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI())
+								if (eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI() != 0 && dd.PPFNGGCBJKC_id == eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI())
 								{
 									isHighLevel = true;
 								}

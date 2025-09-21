@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		private const float RendererTextureBlendMin3dPos = -5;
 		private const float RendererTextureBlendMax3dPos = 5;
 
-		private FFHPBEPOMAK_DivaInfo currentViewDivaData { get { return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_id - 1]; } set { return; } } //0x1256964 0x1256A4C
+		private FFHPBEPOMAK_DivaInfo currentViewDivaData { get { return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[m_diva_id - 1]; } set { return; } } //0x1256964 0x1256A4C
 		private LayoutLogoCutin layoutUnlockCutin { get { return UnlockFadeManager.Instance.GetEffect(); } set { return; } } //0x1256A50 0x1256AEC
 
 		// // RVA: 0x1256AF0 Offset: 0x1256AF0 VA: 0x1256AF0

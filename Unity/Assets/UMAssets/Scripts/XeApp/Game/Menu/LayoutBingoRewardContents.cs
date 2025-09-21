@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 			{
 				str = _itemInfo.HAAJGNCFNJM_ItemName;
 			}
-			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_ItemCat, 0));
+			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_item_type, 0));
 			SetSpItem(_itemInfo.MPKBLMCNHOM);
 			SetActtionButton(() =>
 			{

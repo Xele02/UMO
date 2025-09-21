@@ -5,16 +5,16 @@ public class GNMBAOKGJDO
 {
 	private const int NNBHLPECAHJ = 1;
 	public bool BIOFMLDLNKD; // 0x8
-	public bool NPNNPNAIONN; // 0x9
-	public bool PLOOEECNHFB; // 0xA
-	public byte[] IAKPCFDLMKP; // 0xC
+	public bool NPNNPNAIONN_IsError; // 0x9
+	public bool PLOOEECNHFB_IsDone; // 0xA
+	public byte[] IAKPCFDLMKP_db; // 0xC
 
 	// // RVA: 0x1E59358 Offset: 0x1E59358 VA: 0x1E59358
 	public void MCDJJPAKBLH(string _CJEKGLGBIHF_path)
     {
-		PLOOEECNHFB = false;
+		PLOOEECNHFB_IsDone = false;
 		BIOFMLDLNKD = false;
-		NPNNPNAIONN = false;
+		NPNNPNAIONN_IsError = false;
 		UnityEngine.Debug.Log("start Coroutine_Load="+_CJEKGLGBIHF_path);
         
 		N.a.StartCoroutineWatched(ODDEPBIJHOE_Coroutine_Load(_CJEKGLGBIHF_path));
@@ -33,8 +33,8 @@ public class GNMBAOKGJDO
 		if(OCJDGDAJMFC == null)
 		{
 			UnityEngine.Debug.Log("err DsfdLoader.LoadFile");
-			PLOOEECNHFB = true;
-			NPNNPNAIONN = true;
+			PLOOEECNHFB_IsDone = true;
+			NPNNPNAIONN_IsError = true;
 			yield break;
 		}
 
@@ -56,16 +56,16 @@ public class GNMBAOKGJDO
 			UnityEngine.Debug.Log("Start Unzip");
 			data2 = BOBCNJIPPJN.JCBCBNFPJDH(data2);
 			BIOFMLDLNKD = true;
-			IAKPCFDLMKP = data2;
+			IAKPCFDLMKP_db = data2;
 			UnityEngine.Debug.Log("OK Unzip");
-			PLOOEECNHFB = true;
+			PLOOEECNHFB_IsDone = true;
 		}
 		else
 		{
 			UnityEngine.Debug.Log("err2 DsfdLoader.LoadFile");
 			TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error ODDEPBIJHOE_Coroutine_Load");
-			PLOOEECNHFB = true;
-			NPNNPNAIONN = true;
+			PLOOEECNHFB_IsDone = true;
+			NPNNPNAIONN_IsError = true;
 			yield break;
 		}
 	}

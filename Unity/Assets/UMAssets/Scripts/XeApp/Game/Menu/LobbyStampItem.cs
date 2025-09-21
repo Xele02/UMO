@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
 			{
 				//0xD21314
-				return item.PPFNGGCBJKC == m_stampId;
+				return item.PPFNGGCBJKC_id == m_stampId;
 			});
 			MenuScene.Instance.DecorationItemTextureCache.LoadForDecoCustom(n.IDELKEKDIFD_CharaId, n.BEHMEDMNJMC_EmotionId, (IiconTexture image) =>
 			{
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP stamp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0xD21374
-				return item.PPFNGGCBJKC == m_serifId;
+				return item.PPFNGGCBJKC_id == m_serifId;
 			});
 			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(stamp.GBJFNGCDKPM_Type, (IiconTexture image) =>
 			{
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				m_stampMesList[i].text = str;
 			}
 			KDKFHGHGFEK data = new KDKFHGHGFEK();
-			data.KHEKNNFCAOI(m_serifId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
+			data.KHEKNNFCAOI_Init(m_serifId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
 			m_stampTypeChange.StartChildrenAnimGoStop(data.DBGAJBIBODC_FontType.ToString("D2"));
 		}
 

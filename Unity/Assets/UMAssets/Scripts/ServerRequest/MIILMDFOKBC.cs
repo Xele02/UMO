@@ -9,10 +9,10 @@ public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
 	public bool FNDBKPJDEDC_AllPrizes; // 0x80
 	public int IGNIIEBMFIN_Page = 1; // 0x84
 	public int MLPLGFLKKLI_Ipp = 10; // 0x88
-	public string OCGFKMHNEOF = ""; // 0x8C
-	public EPLAAEHPCDM NFEAMMJIMPG; // 0x90
+	public string OCGFKMHNEOF_name_for_api = ""; // 0x8C
+	public EPLAAEHPCDM NFEAMMJIMPG_Result; // 0x90
 
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } //0x1956C00 HGPAELCGELL
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x1956C00 HGPAELCGELL
 
 	// RVA: 0x1956A40 Offset: 0x1956A40 VA: 0x1956A40 Slot: 12
 	public override void DHLDNIEELHO()
@@ -23,7 +23,7 @@ public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
 	// RVA: 0x1956B44 Offset: 0x1956B44 VA: 0x1956B44 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        NFEAMMJIMPG = null;
+        NFEAMMJIMPG_Result = null;
         BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);
     }
 
@@ -31,7 +31,7 @@ public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
 	private void DIAMDBHBKBH()
     {
         EPLAAEHPCDM data = new EPLAAEHPCDM();
-        data.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
-        NFEAMMJIMPG = data;
+        data.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+        NFEAMMJIMPG_Result = data;
     }
 }

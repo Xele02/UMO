@@ -112,18 +112,18 @@ namespace XeApp.Game.Menu
 					//0xCFE9BC
 					texture.Set(m_StatusLayout[index].valkyrie_image);
 				});
-				m_StatusLayout[i].valkyrie_name.text = data.IJBLEJOKEFH_ValkyrieName;
-				m_StatusLayout[i].pilot_name.text = data.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name;
+				m_StatusLayout[i].valkyrie_name.text = data.IJBLEJOKEFH_Name;
+				m_StatusLayout[i].pilot_name.text = data.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name;
 				m_StatusLayout[i].attack_value.text = data.KINFGHHNFCF_Atk.ToString();
-				m_StatusLayout[i].hit_value.text = data.NONBCCLGBAO_Hit.ToString();
+				m_StatusLayout[i].hit_value.text = data.NONBCCLGBAO_hit.ToString();
 				if (data_ab != null)
 				{
 					m_StatusLayout[i].attack_value.text = (data.KINFGHHNFCF_Atk + data_ab.KINFGHHNFCF_Atk).ToString();
-					m_StatusLayout[i].hit_value.text = (data.NONBCCLGBAO_Hit + data_ab.NONBCCLGBAO_Hit).ToString();
+					m_StatusLayout[i].hit_value.text = (data.NONBCCLGBAO_hit + data_ab.NONBCCLGBAO_hit).ToString();
 				}
 			}
 			ApplyComparisonValue(before.KINFGHHNFCF_Atk + (before_ab != null ? before_ab.KINFGHHNFCF_Atk : 0), after.KINFGHHNFCF_Atk + (after_ab != null ? after_ab.KINFGHHNFCF_Atk : 0), m_StatusLayout[1].attack_value, m_CompIconAtk);
-			ApplyComparisonValue(before.NONBCCLGBAO_Hit + (before_ab != null ? before_ab.NONBCCLGBAO_Hit : 0), after.NONBCCLGBAO_Hit + (after_ab != null ? after_ab.NONBCCLGBAO_Hit : 0), m_StatusLayout[1].hit_value, m_CompIconHit);
+			ApplyComparisonValue(before.NONBCCLGBAO_hit + (before_ab != null ? before_ab.NONBCCLGBAO_hit : 0), after.NONBCCLGBAO_hit + (after_ab != null ? after_ab.NONBCCLGBAO_hit : 0), m_StatusLayout[1].hit_value, m_CompIconHit);
 		}
 
 		//// RVA: 0xCFE05C Offset: 0xCFE05C VA: 0xCFE05C

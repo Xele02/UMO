@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 			bool t_loop = true;
 			TextPopupSetting s = new TextPopupSetting();
 			s.TitleText = t_bank.GetMessageByLabel("pop_block_remove_ask_title");
-			s.Text = string.Format(t_bank.GetMessageByLabel("pop_block_remove_ask_text"), friendInfo.friend.LBODHBDOMGK_Name);
+			s.Text = string.Format(t_bank.GetMessageByLabel("pop_block_remove_ask_text"), friendInfo.friend.LBODHBDOMGK_PlayerName);
 			s.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 					t_loop = true;
 					s = new TextPopupSetting();
 					s.TitleText = t_bank.GetMessageByLabel("pop_block_remove_done_title");
-					s.Text = string.Format(t_bank.GetMessageByLabel("pop_block_remove_deon_text"), friendInfo.friend.LBODHBDOMGK_Name);
+					s.Text = string.Format(t_bank.GetMessageByLabel("pop_block_remove_deon_text"), friendInfo.friend.LBODHBDOMGK_PlayerName);
 					s.Buttons = new ButtonInfo[1]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
+					f.KHEKNNFCAOI_Init(friendManager.BFDEHIANFOG[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());

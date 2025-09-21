@@ -20,10 +20,10 @@ namespace XeApp.Game.Common
 			this.id = id;
 			haveCount = saveItem.BFINGCJHOHI_Count;
 			maxCount = dbItem.DOOGFEGEKLG_Max;
-			healValue = dbItem.JBGEEPFKIGG_HealValue;
+			healValue = dbItem.JBGEEPFKIGG_Value;
 			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
 			desc = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
-			isLimit = dbItem.HJAFPEBIBOP_IsLimit != 0;
+			isLimit = dbItem.HJAFPEBIBOP_Limit != 0;
 		}
 
 		// RVA: 0xD33174 Offset: 0xD33174 VA: 0xD33174
@@ -36,7 +36,7 @@ namespace XeApp.Game.Common
 				if(dbItem.PPEGAKEIEGM_Enabled == 2)
 				{
 					ViewEnergyItemData data = new ViewEnergyItemData();
-					data.Init(dbItem.PPFNGGCBJKC);
+					data.Init(dbItem.PPFNGGCBJKC_id);
 					res.Add(data);
 				}
 			}

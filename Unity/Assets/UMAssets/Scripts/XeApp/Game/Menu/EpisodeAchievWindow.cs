@@ -56,15 +56,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1275630 Offset: 0x1275630 VA: 0x1275630
 		public void Init(MFDJIFIIPJD data)
 		{
-			if(data.KACECFNECON == null)
+			if(data.KACECFNECON_extra == null)
 			{
 				Debug.LogError("null");
 			}
 			else
 			{
-				if(!data.KACECFNECON.LKGELAPAACK)
+				if(!data.KACECFNECON_extra.LKGELAPAACK)
 				{
-					m_point_episode.SetNumber(data.KACECFNECON.DNBFMLBNAEE_Point, 0);
+					m_point_episode.SetNumber(data.KACECFNECON_extra.DNBFMLBNAEE_Point, 0);
 					m_roop_text_image.enabled = false;
 				}
 				else
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 					m_point_episode.SetDigitLength(4, false);
 					m_roop_text_image.enabled = true;
 				}
-				m_item_name.text = string.Format("{0}　{1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId), data.MBJIFDBEDAC_Cnt, EKLNMHFCAOI.NDBLEADIDLA(data.NPPNDDMPFJJ_ItemCategory, data.NNFNGLJOKKF_ItemId, data.MBJIFDBEDAC_Cnt));
+				m_item_name.text = string.Format("{0}　{1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId), data.MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(data.NPPNDDMPFJJ_ItemCategory, data.NNFNGLJOKKF_ItemId, data.MBJIFDBEDAC_item_count));
 				SetItemImage(data.JJBGOIMEIPF_ItemId);
 			}
 		}

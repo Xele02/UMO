@@ -12,7 +12,7 @@ namespace ExternLib
 
 			List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _) =>
 			{
-				return _.PPEGAKEIEGM_En == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
+				return _.PPEGAKEIEGM_Enabled == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
 			});
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 			m_name.verticalOverflow = UnityEngine.VerticalWrapMode.Overflow;
 			m_name.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
 			m_info.text = data.FEMMDNIELFC_Desc;
-			m_number.SetNumber(data.HMFFHLPNMPH + 1, 0);
+			m_number.SetNumber(data.HMFFHLPNMPH_Count + 1, 0);
 			SetDegreeImage(data.MDPKLNFFDBO_EmblemId);
 		}
 

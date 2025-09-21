@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF53E6C Offset: 0xF53E6C VA: 0xF53E6C
 		private void CrateQuestList(IKDICBBFBMI_EventBase eventCtrl)
 		{
-			m_questList = eventCtrl != null ? FKMOKDCJFEN.KJHKBBBDBAL(eventCtrl.JOPOPMLFINI_QuestId, false, -1) : new List<FKMOKDCJFEN>();
+			m_questList = eventCtrl != null ? FKMOKDCJFEN.KJHKBBBDBAL(eventCtrl.JOPOPMLFINI_QuestName, false, -1) : new List<FKMOKDCJFEN>();
 		}
 
 		// // RVA: 0xF53F14 Offset: 0xF53F14 VA: 0xF53F14
@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_eventCtrl != null)
 			{
-				m_snsData.KHEKNNFCAOI(false, false, -1);
+				m_snsData.KHEKNNFCAOI_Init(false, false, -1);
 			}
 		}
 
@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 						EventMusicSelectSceneBase.OpenWeekRecoveryWindow(musicData, OnWeekRecovery, cancelCallback);
 						return false;
 					}
-					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina)
+					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_Stamina)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -383,15 +383,15 @@ namespace XeApp.Game.Menu
 					{
 						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
 						{
-							for(int k = 0; k < m_snsData.NPKPBDIDBBG_RoomData.Count; k++)
+							for(int k = 0; k < m_snsData.NPKPBDIDBBG_Room.Count; k++)
 							{
-								for(int kk = 0; kk < m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA.Count; kk++)
+								for(int kk = 0; kk < m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA.Count; kk++)
 								{
-									if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].AIPLIEMLHGC_SnsId == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
+									if(m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].AIPLIEMLHGC_SnsId == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
 									{
-										if(!m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].EDCBHGECEBE_Read)
+										if(!m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].EDCBHGECEBE_Read)
 										{
-											if(!m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].GAIEHFCHAOK_New)
+											if(!m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].GAIEHFCHAOK_New)
 												return true;
 										}
 									}
@@ -444,7 +444,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				int i = 0;
-				for(; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
+				for(; i < musicData.MGJKEJHEBPO_Blocks.Count; i++)
 				{
 					m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 					m_rewardStats[i].Init(m_rewardData);
@@ -513,8 +513,8 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_musicInfo.SetInfoStyle(MusicSelectMusicInfo.InfoStyle.Event, isLine6Mode);
 			m_playButtonUI.SetType(PlayButtonWrapper.Type.Event);
-			m_musicInfo.SetEventTitle(musicData.AFCMIOIGAJN_EventInfo.OPFGFINHFCE_EventName);
-			m_musicInfo.SetEventDesc(musicData.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_EventDesc);
+			m_musicInfo.SetEventTitle(musicData.AFCMIOIGAJN_EventInfo.OPFGFINHFCE_name);
+			m_musicInfo.SetEventDesc(musicData.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_description);
 			m_cdSelect.ApplyCursorNew(musicData.LDGOHPAPBMM_IsNew);
 			m_cdSelect.ApplyCursorAttr(GameAttribute.Type.None);
 			m_cdSelect.ApplyCursorEventType(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid ? MusicSelectCDSelect.EventType.Raid : MusicSelectCDSelect.EventType.Special, false);
@@ -534,14 +534,14 @@ namespace XeApp.Game.Menu
 			m_cdSelect.ApplyEventBonus(0);
 			m_cdSelect.ApplyMusicRatio(0, false);
 			int y, m, d, h, mn;
-			MusicSelectSceneBase.ExtractDateTime(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_OpenTime, out y, out m, out d, out h, out mn);
+			MusicSelectSceneBase.ExtractDateTime(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_StartTime, out y, out m, out d, out h, out mn);
 			string d1 = MusicSelectSceneBase.MakeDateTime(y, m, d, h, mn);
-			MusicSelectSceneBase.ExtractDateTime(musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime, out y, out m, out d, out h, out mn);
+			MusicSelectSceneBase.ExtractDateTime(musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_EndTime, out y, out m, out d, out h, out mn);
 			string d2 = MusicSelectSceneBase.MakeDateTime(y, m, d, h, mn);
 			m_musicInfo.SetEventPeriod(string.Format(RichTextUtility.MakeColorTagString(bk.GetMessageByLabel("music_event_period"), SystemTextColor.ImportantColor), d1, d2));
 			if(!isEventTimeLimit)
 			{
-				ApplyRemainTime(musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime, true, null);
+				ApplyRemainTime(musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_EndTime, true, null);
 				m_cdSelect.ApplyEventCounting(false);
 			}
 			else
@@ -561,8 +561,8 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_musicInfo.SetInfoStyle(MusicSelectMusicInfo.InfoStyle.Event, isLine6Mode);
 			m_playButtonUI.SetType(PlayButtonWrapper.Type.Play);
-			m_musicInfo.SetEventTitle(musicData.NOKBLCDMLPP_MinigameEventInfo.OPFGFINHFCE_EventName);
-			m_musicInfo.SetEventDesc(musicData.NOKBLCDMLPP_MinigameEventInfo.KLMPFGOCBHC_EventDesc);
+			m_musicInfo.SetEventTitle(musicData.NOKBLCDMLPP_MinigameEventInfo.OPFGFINHFCE_name);
+			m_musicInfo.SetEventDesc(musicData.NOKBLCDMLPP_MinigameEventInfo.KLMPFGOCBHC_description);
 			m_cdSelect.ApplyCursorNew(musicData.LDGOHPAPBMM_IsNew);
 			m_cdSelect.ApplyCursorAttr(GameAttribute.Type.None);
 			m_cdSelect.ApplyCursorEventType(musicData.KCKBOIDCPCK_CdSelectEvenType < 1 ? MusicSelectCDSelect.EventType.Special : (MusicSelectCDSelect.EventType)musicData.KCKBOIDCPCK_CdSelectEvenType - 1, false);
@@ -582,12 +582,12 @@ namespace XeApp.Game.Menu
 			m_cdSelect.ApplyEventBonus(0);
 			m_cdSelect.ApplyMusicRatio(0, false);
 			int y, m, d, h, mn;
-			MusicSelectSceneBase.ExtractDateTime(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_OpenTime, out y, out m, out d, out h, out mn);
+			MusicSelectSceneBase.ExtractDateTime(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_StartTime, out y, out m, out d, out h, out mn);
 			string d1 = MusicSelectSceneBase.MakeDateTime(y, m, d, h, mn);
-			MusicSelectSceneBase.ExtractDateTime(musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime, out y, out m, out d, out h, out mn);
+			MusicSelectSceneBase.ExtractDateTime(musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_EndTime, out y, out m, out d, out h, out mn);
 			string d2 = MusicSelectSceneBase.MakeDateTime(y, m, d, h, mn);
 			m_musicInfo.SetEventPeriod(string.Format(RichTextUtility.MakeColorTagString(bk.GetMessageByLabel("music_event_period"), SystemTextColor.ImportantColor), d1, d2));
-			ApplyRemainTime(musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime, true, null);
+			ApplyRemainTime(musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_EndTime, true, null);
 			m_cdSelect.ApplyEventCounting(false);
 		}
 
@@ -734,16 +734,16 @@ namespace XeApp.Game.Menu
 				if(m_difficulty < Difficulty.Type.Hard)
 					m_difficulty = Difficulty.Type.Hard;
 			}
-			for(int i = musicData.MGJKEJHEBPO_DiffInfos.Count - 1; i >= 0; i--)
+			for(int i = musicData.MGJKEJHEBPO_Blocks.Count - 1; i >= 0; i--)
 			{
-				if(musicData.MGJKEJHEBPO_DiffInfos[i].POOMOBGPCNE_IsLocked && i <= (int)m_difficulty)
+				if(musicData.MGJKEJHEBPO_Blocks[i].POOMOBGPCNE_IsLocked && i <= (int)m_difficulty)
 					m_difficulty = (Difficulty.Type)i - 1;
 			}
 			if(!musicData.HDPMAJKGIOI)
 			{
-				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BPLOEAHOPFI_Stamina);
+				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_Stamina);
 			}
-			data.enemyHasSkill = musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HPBPDHPIBGN_EnemyData.CDEFLIHHNAB_HasSkills;
+			data.enemyHasSkill = musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HPBPDHPIBGN_Enemy.CDEFLIHHNAB_HasSkills;
 			data.isReceiveMission = IsReceiveMission();
 			data.isNewStory = IsNewStory();
 			if(musicData.LEBDMNIGOJB_IsScoreEvent)
@@ -754,10 +754,10 @@ namespace XeApp.Game.Menu
 			m_musicInfo.ChangeSelectedDiff(m_difficulty);
 			m_musicInfo.SetMusicTitle(musicData.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[musicData.FKDCCLPGKDK_JacketAttr - 1], false);
 			m_musicInfo.SetSingerName(musicData.LJCEDBBNPBB_VocalName, false);
-			if(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HHMLMKAEJBJ_Score != null)
+			if(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
+				str.Set(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
 				if(isLine6Mode)
 				{
 					str.Append("+");
@@ -765,11 +765,11 @@ namespace XeApp.Game.Menu
 				m_musicInfo.SetMusicLevel(str.ToString());
 			}
 			SetupRewardStat(musicData);
-			for(int i = 0; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
+			for(int i = 0; i < musicData.MGJKEJHEBPO_Blocks.Count; i++)
 			{
-				m_musicInfo.SetDiffLock((Difficulty.Type)i, musicData.MGJKEJHEBPO_DiffInfos[i].POOMOBGPCNE_IsLocked, true);
-				m_musicInfo.SetDiffStatus((Difficulty.Type)i, musicData.MGJKEJHEBPO_DiffInfos[i].CADENLBDAEB_IsNew, musicData.MGJKEJHEBPO_DiffInfos[i].BCGLDMKODLC_IsClear, 
-					(RhythmGameConsts.ResultComboType)musicData.MGJKEJHEBPO_DiffInfos[i].LCOHGOIDMDF_ComboRank);
+				m_musicInfo.SetDiffLock((Difficulty.Type)i, musicData.MGJKEJHEBPO_Blocks[i].POOMOBGPCNE_IsLocked, true);
+				m_musicInfo.SetDiffStatus((Difficulty.Type)i, musicData.MGJKEJHEBPO_Blocks[i].CADENLBDAEB_IsNew, musicData.MGJKEJHEBPO_Blocks[i].BCGLDMKODLC_IsClear, 
+					(RhythmGameConsts.ResultComboType)musicData.MGJKEJHEBPO_Blocks[i].LCOHGOIDMDF_ComboRank);
 			}
 			if(!musicData.HDPMAJKGIOI)
 			{
@@ -783,10 +783,10 @@ namespace XeApp.Game.Menu
 					m_musicInfo.SetReward(m_rewardStats[(int)m_difficulty].allAchievedNum, m_rewardStats[(int)m_difficulty].allRewardNum);
 					m_cdSelect.ShowCursorRewardMark(m_rewardStats[(int)m_difficulty].isScoreComplete, m_rewardStats[(int)m_difficulty].isComboComplete, m_rewardStats[(int)m_difficulty].isClearCountComplete);
 				}
-				if(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BCGLDMKODLC_IsClear)
+				if(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BCGLDMKODLC_IsClear)
 				{
-					m_musicInfo.SetHighscore(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score);
-					m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score));
+					m_musicInfo.SetHighscore(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].KNIFCANOHOC_score);
+					m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].KNIFCANOHOC_score));
 				}
 				else
 				{
@@ -802,7 +802,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					MenuScene.Instance.BgControl.ChangeAttribute((GameAttribute.Type)musicData.FKDCCLPGKDK_JacketAttr);
-					m_musicInfo.SetMusicComboRank((RhythmGameConsts.ResultComboType)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].LCOHGOIDMDF_ComboRank, Mathf.Max(0, musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].NLKEBAOBJCM_Combo));
+					m_musicInfo.SetMusicComboRank((RhythmGameConsts.ResultComboType)musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].LCOHGOIDMDF_ComboRank, Mathf.Max(0, musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].NLKEBAOBJCM_combo));
 					m_playButtonUI.SetDisable(false);
 					m_cdSelect.ApplyEventBonus(musicData.DBJOBFIGGEE_EventBonusPercent);
 					m_cdSelect.ApplyMusicRatio(selectMusicData.AKAPOCOIECA_GetMusicRatio(), selectMusicData.DEPGBBJMFED_CategoryId != 5);

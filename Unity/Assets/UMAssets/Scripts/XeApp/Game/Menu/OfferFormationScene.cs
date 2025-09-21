@@ -451,7 +451,7 @@ namespace XeApp.Game.Menu
 		{
 			m_offerFormationController.selectFormation = _SelectFormation;
 			m_InfoLayout.StartChengeEnemyPower(m_offerFormationController.selectFormation + 1, false, 0, false);
-			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)), m_offerViewInfoData.DFMOGBOPLEF_Series, m_InfoLayout.IsLackPower);
+			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF_Atk, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO_hit, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)), m_offerViewInfoData.DFMOGBOPLEF_Series, m_InfoLayout.IsLackPower);
 		}
 
 		//// RVA: 0x1527EEC Offset: 0x1527EEC VA: 0x1527EEC

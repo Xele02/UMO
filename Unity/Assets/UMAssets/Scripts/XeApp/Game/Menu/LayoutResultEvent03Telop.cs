@@ -50,13 +50,13 @@ namespace XeApp.Game.Menu
 			if(!viewData.GGOPOOLMLBA_IsPlayerWin)
 			{
 				layoutRoot.StartAnimGoStop("02");
-				scorePoint.SetNumber(viewData.EKOCEKHBHLE_Rival.KNIFCANOHOC_ScorePoint, 0);
+				scorePoint.SetNumber(viewData.EKOCEKHBHLE_Rival.KNIFCANOHOC_score, 0);
 				scoreBonus.SetNumber(viewData.EKOCEKHBHLE_Rival.EACPIDGGPPO_ExcellentScore, 0);
 			}
 			else
 			{
 				layoutRoot.StartAnimGoStop("01");
-				scorePoint.SetNumber(viewData.HIHPPOFHMNF_Player.KNIFCANOHOC_ScorePoint, 0);
+				scorePoint.SetNumber(viewData.HIHPPOFHMNF_Player.KNIFCANOHOC_score, 0);
 				scoreBonus.SetNumber(viewData.HIHPPOFHMNF_Player.EACPIDGGPPO_ExcellentScore, 0);
 			}
 		}

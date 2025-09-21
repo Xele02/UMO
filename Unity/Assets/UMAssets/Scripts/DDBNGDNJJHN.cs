@@ -10,8 +10,8 @@ public class DDBNGDNJJHN_SecureFloat
 	private byte[] DLHDPLPLCAC = new byte[4]; // 0x10
 	private byte[] CKHLHOFMIPC_WorkBuffer = new byte[4]; // 0x14
 	private int ENOBDCFHELD; // 0x18
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x1C
-	public FENCAJJBLBH NMNHBJIAPGG; // 0x20
+	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x1C
+	public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0x20
 
 	public float DNJEJEANJGL_Value
 	{
@@ -55,7 +55,7 @@ public class DDBNGDNJJHN_SecureFloat
 	}
 
 	//// RVA: 0x1771AD4 Offset: 0x1771AD4 VA: 0x1771AD4
-	//public void LHPDDGIJKNB(int HBDLKOBJHFP, int LMJDJEACHBC) { }
+	//public void LHPDDGIJKNB_Reset(int HBDLKOBJHFP, int LMJDJEACHBC) { }
 
 	//// RVA: 0x1771AFC Offset: 0x1771AFC VA: 0x1771AFC
 	//public void DNBGDMBCLMI() { }
@@ -63,15 +63,15 @@ public class DDBNGDNJJHN_SecureFloat
 	//// RVA: 0x17713F0 Offset: 0x17713F0 VA: 0x17713F0
 	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure()
 	{
-		if(NMNHBJIAPGG == null)
+		if(NMNHBJIAPGG_CheckFalsification == null)
 		{
 			if ((byte)(DLHDPLPLCAC[0] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[0] ^ FCEJCHGLFGN) &&
 				(byte)(DLHDPLPLCAC[1] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[1] ^ FCEJCHGLFGN) &&
 				(byte)(DLHDPLPLCAC[2] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[2] ^ FCEJCHGLFGN) &&
 				(byte)(DLHDPLPLCAC[3] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[3] ^ FCEJCHGLFGN))
 				return null;
-			NMNHBJIAPGG = new FENCAJJBLBH(KGICDMIJGDF, 0, 0, "NetSecureFloat");
+			NMNHBJIAPGG_CheckFalsification = new FENCAJJBLBH(KGICDMIJGDF_Group, 0, 0, "NetSecureFloat");
 		}
-		return NMNHBJIAPGG;
+		return NMNHBJIAPGG_CheckFalsification;
 	}
 }

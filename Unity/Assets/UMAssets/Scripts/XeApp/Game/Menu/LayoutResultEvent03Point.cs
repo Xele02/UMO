@@ -455,12 +455,12 @@ namespace XeApp.Game.Menu
 
 			//0x1DA6F20
 			layout = m_layoutMain;
-			if(m_view.PHPANNCGOKC_PointDiff > 0)
+			if(m_view.PHPANNCGOKC_GetPoint > 0)
 			{
 				List<float> lf = new List<float>();
 				NumberAnimationUtility.MakeAccelerationTimeList(8, 0.24f, 0.02f, ref lf);
 				PlayCountUpLoopSE();
-				yield return Co.R(NumberAnimationUtility.Co_FakeCountup(m_view.PHPANNCGOKC_PointDiff, lf, (int num) =>
+				yield return Co.R(NumberAnimationUtility.Co_FakeCountup(m_view.PHPANNCGOKC_GetPoint, lf, (int num) =>
 				{
 					//0x1DA5504
 					SetPoint(num);
@@ -474,7 +474,7 @@ namespace XeApp.Game.Menu
 					return m_isSkiped;
 				}));
 				m_countUpSEPlayback.Stop(false);
-				SetPoint(m_view.PHPANNCGOKC_PointDiff);
+				SetPoint(m_view.PHPANNCGOKC_GetPoint);
 				layout.StartChildrenAnimGoStop("act_pt", "acten_pt");
 				yield return Co.R(Co_WaitAnim(layout, true));
 			}

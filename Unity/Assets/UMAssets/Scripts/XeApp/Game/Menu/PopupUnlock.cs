@@ -145,25 +145,25 @@ namespace XeApp.Game.Menu
 					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN_Stage/*1*/:
 						param.unlockType = eUnlockType.Stage;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
 					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA_Music/*2*/:
 						param.unlockType = eUnlockType.Music;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
 					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO_Diva/*3*/:
 						param.unlockType = eUnlockType.DivaNotify;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
 					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG_Difficulty/*4*/:
 						param.unlockType = eUnlockType.DifficultyUnlock;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						param.difficultyBit = 0;
 						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{
@@ -181,13 +181,13 @@ namespace XeApp.Game.Menu
 					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM_MultDivaMusic/*5*/:
 						param.unlockType = eUnlockType.MultiDivaMusic;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
 					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH_Live6Music/*6*/:
 						param.unlockType = eUnlockType.Line6Music;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						param.isLine6 = true;
 						param.difficultyBit = 0;
 						param.difficulty6LineBit = 0;
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI_LiveSkip/*7*/:
 						param.unlockType = eUnlockType.LiveSkip;
 						param.sceneType = sceneType;
-						param.id = viewData[i].PPFNGGCBJKC;
+						param.id = viewData[i].PPFNGGCBJKC_id;
 						param.difficultyBit = 0;
 						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{

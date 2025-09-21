@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 			PNGOLKLFFLH valk = m_SeriesValkyrieList[SelectSeries][Select];
 			ALEKLHIANJN data = new ALEKLHIANJN(valk.GPPEFLKGGGJ_ValkyrieId, valk.CNLIAMIIJID_AbilityLevel);
 			m_layoutValSelect.HasAbility = valk.CNLIAMIIJID_AbilityLevel > 0;
-			m_layoutValSelect.SetAbility(data.OPFGFINHFCE_SkillName, data.CHHADJECKNL_GetLevel(), data.DMBDNIEEMCB_GetDesc(false));
+			m_layoutValSelect.SetAbility(data.OPFGFINHFCE_name, data.CHHADJECKNL_GetLevel(), data.DMBDNIEEMCB_GetDesc(false));
 		}
 
 		// // RVA: 0x165B274 Offset: 0x165B274 VA: 0x165B274
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 					return (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)serie;
 				}
 			}
-			return EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.HJNNKCMLGFL/*0*/;
+			return EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.HJNNKCMLGFL_0_None/*0*/;
 		}
 
 		// // RVA: 0x165B3F8 Offset: 0x165B3F8 VA: 0x165B3F8
@@ -413,7 +413,7 @@ namespace XeApp.Game.Menu
 			m_layoutValSelect.SetAtkArrowEnable(false);
 			m_layoutValSelect.SetHitArrowEnable(false);
 			string atkText = valk.KINFGHHNFCF_Atk.ToString();
-			string hitText = valk.NONBCCLGBAO_Hit.ToString();
+			string hitText = valk.NONBCCLGBAO_hit.ToString();
 			if (data.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML/*1*/, GetAbilityCondition()))
 			{
 				if(data.KINFGHHNFCF_Atk > 0)
@@ -421,13 +421,13 @@ namespace XeApp.Game.Menu
 					atkText = "<color=#008200>" + (data.KINFGHHNFCF_Atk + valk.KINFGHHNFCF_Atk) + "</color>";
 					m_layoutValSelect.SetAtkArrowEnable(true);
 				}
-				if(data.NONBCCLGBAO_Hit > 0)
+				if(data.NONBCCLGBAO_hit > 0)
 				{
-					hitText = "<color=#008200>" + (data.NONBCCLGBAO_Hit + valk.NONBCCLGBAO_Hit) + "</color>";
+					hitText = "<color=#008200>" + (data.NONBCCLGBAO_hit + valk.NONBCCLGBAO_hit) + "</color>";
 					m_layoutValSelect.SetHitArrowEnable(true);
 				}
 			}
-			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_ValkyrieName, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name, atkText, hitText);
+			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_Name, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name, atkText, hitText);
 			ApplyAbility();
 			m_layoutValSelect.SetPilotTexture(valk.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
 			m_layoutValSelect.SetIconState(valk.GPPEFLKGGGJ_ValkyrieId == m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId ? "01" : "02");
@@ -734,7 +734,7 @@ namespace XeApp.Game.Menu
 					return;
 				m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
                 PIGBBNDPPJC epData = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
-                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE_Name : ""));
+                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE_name : ""));
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
 				m_episodePop.SetEpisodeValkyrieImage(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, 0);
@@ -915,7 +915,7 @@ namespace XeApp.Game.Menu
 						PIGBBNDPPJC p = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
 						string n = "";
 						if(p != null)
-							n = p.OPFGFINHFCE_Name;
+							n = p.OPFGFINHFCE_name;
 						if(p == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK_EpisodeUnlocked)
 						{
 							MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -944,7 +944,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_EpisodeList.Count; i++)
 			{
-				if(m_EpisodeList[i].KELFCMEOPPM_EpId == id)
+				if(m_EpisodeList[i].KELFCMEOPPM_EpisodeId == id)
 				{
 					return m_EpisodeList[i];
 				}

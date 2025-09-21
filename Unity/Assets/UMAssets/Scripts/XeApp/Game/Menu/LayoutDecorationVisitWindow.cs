@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 			LayoutDecoraionVisitList l = content as LayoutDecoraionVisitList;
 			if(l != null)
 			{
-				IFICNCAHIGI f = m_friendPlayerData[index].PCEGKKLKFNO as IFICNCAHIGI;
+				IFICNCAHIGI f = m_friendPlayerData[index].PCEGKKLKFNO_FriendData as IFICNCAHIGI;
 				l.SetSetting(m_friendPlayerData[index], f != null, f != null ? f.AGDBNNEAIIC_FanNum : 0);
 			}
 		}
@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 				bool b = true;
 				for(int i = 0; i < m_friendPlayerData.Count; i++)
 				{
-					if(!m_netDecoVisitControl.MHGJGAPLMFO(m_friendPlayerData[i].MLPEHNBNOGD_Id))
+					if(!m_netDecoVisitControl.MHGJGAPLMFO(m_friendPlayerData[i].MLPEHNBNOGD_PlayerId))
 					{
 						b = false;
 						break;

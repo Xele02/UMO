@@ -570,7 +570,7 @@ namespace XeApp.Game.Menu
 			cdSelect.ApplyEventRemainTimePrefix(bk.GetMessageByLabel("music_event_remain_prefix"));
 			cdArrow.SetStyle(MusicSelectCDArrow.Style.Default);
 			GHLGEECLCMH g = new GHLGEECLCMH();
-			g.KHEKNNFCAOI(null, null);
+			g.KHEKNNFCAOI_Init(null, null);
 			if(musicRate != null)
 			{
 				musicRate.ApplyHighScoreRating(g.LLNHMMBFPMA_ScoreRatingRanking, g.ECMFBEHEGEH_UtaRateTotal);
@@ -652,7 +652,7 @@ namespace XeApp.Game.Menu
 			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
 			pre = 0;
-			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicId).KEFGPJBKAOD_WavId, 
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicId).KEFGPJBKAOD_BgId, 
 				vQual, GetDanceDivaCount());
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
@@ -697,7 +697,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B9EB8 Offset: 0x13B9EB8 VA: 0x13B9EB8
 		protected static void CheckOfferNotice()
 		{
-			if(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == BOPFPIHGJMD.LEIPFJHOFPC.HJNNKCMLGFL_0)
+			if(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_cond == BOPFPIHGJMD.LEIPFJHOFPC.HJNNKCMLGFL_0_None)
 				return;
 			MenuScene.Instance.ShowOfferNotice(null);
 		}
@@ -753,7 +753,7 @@ namespace XeApp.Game.Menu
 			if(viewBoostData.DPICLLJJPAC(selectMusicData, (int)diff, isLine6ModeFlag))
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				//selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina;
+				//selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].BPLOEAHOPFI_Stamina;
 				string str1 = "popup_dash_energy_title";
 				if(viewBoostData.NMKDLINPAFM_UseTicket)
 				{
@@ -972,12 +972,12 @@ namespace XeApp.Game.Menu
 			m_musicDecideInfo = MusicDecideInfo.Empty;
 			if(selectMusicData.OEILJHENAHN_PlayEventType == 10)
 			{
-				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK_OverrideCenterSkill;
-				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE_OverrideLiveSkill;
+				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
+				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
 				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(selectMusicData.EKANGPODCEP_EventId);
 			}
 			OnDecideCurrentMusic(ref m_musicDecideInfo);
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN_NoEnergy, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MNNHHJBBICA_GameEventType, 
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN_IsUsingTicket, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MNNHHJBBICA_GameEventType, 
 				(OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MFJKNCACBDG_OpenEventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.OEILJHENAHN_PlayEventType, false, isLine6ModeFlag, m_musicDecideInfo.missionText, m_musicDecideInfo.overrideEnemyCenterSkill, 
 				m_musicDecideInfo.overrideEnemyLiveSkill, selectMusicData.ALMOMLMCHNA_OtherEndTime, selectMusicData.IHPCKOMBGKJ_End, m_eventCtrl != null ? m_eventCtrl.PGIIDPEGGPI_EventId : 0, 
 				GetDanceDivaCount(), m_musicDecideInfo.overrideCurrentTime);
@@ -1249,7 +1249,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
-			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData, null);
+			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy, null);
 		}
 
 		// // RVA: 0x13BDA1C Offset: 0x13BDA1C VA: 0x13BDA1C
@@ -1259,7 +1259,7 @@ namespace XeApp.Game.Menu
 			if(!CheckEventLimit(musicData, eventType, eventStatus, eventId))
 			{
 				CCAAJNJGNDO c = new CCAAJNJGNDO();
-				c.KHEKNNFCAOI_InitFromCurrentEvent(eventCtrl);
+				c.KHEKNNFCAOI_Init(eventCtrl);
 				MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, new EventStoryArgs(c), true);
 			}
 		}
@@ -1286,19 +1286,19 @@ namespace XeApp.Game.Menu
 			{
 				if(selectMusicData.AJGCPCMLGKO_IsEvent)
 				{
-					if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+					if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 					{
 						GotoEventBattle(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}
-					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 					{
 						GotoEventGoDiva(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}
-					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
 						GotoEventRaid(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}
-					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
+					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 					{
 						GotoEventQuest(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}
@@ -1353,7 +1353,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13BD010 Offset: 0x13BD010 VA: 0x13BD010
 		private static void OpenMusicDetailWindow(MonoBehaviour owner, IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			MenuScene.Instance.MusicPopupWindowControl.Show(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.DLAEJOBELBH_MusicId, musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData, null, false);
+			MenuScene.Instance.MusicPopupWindowControl.Show(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.DLAEJOBELBH_MusicId, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy, null, false);
 		}
 
 		// // RVA: 0x13BD2AC Offset: 0x13BD2AC VA: 0x13BD2AC
@@ -1508,7 +1508,7 @@ namespace XeApp.Game.Menu
 			{
 				m_showTicketGainedPopup = true;
 				itemId = a_controller.BHABCGJCGNO.JJBGOIMEIPF_ItemId;
-				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_Cnt;
+				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_item_count;
 				bool done = false;
 				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 				{
@@ -1591,7 +1591,7 @@ namespace XeApp.Game.Menu
 				{
 					itemReceivePopupSetting.TitleText = MessageManager.Instance.GetMessage("menu", eventCtrl.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6 ? "popup_event_login_prologue_title" : "popup_event_login_epilogue_title");
 					itemReceivePopupSetting.ItemId = eventCtrl.KGBCKPKLKHM_RewardItems[i].JJBGOIMEIPF_ItemId;
-					itemReceivePopupSetting.Count = eventCtrl.KGBCKPKLKHM_RewardItems[i].MBJIFDBEDAC_Cnt;
+					itemReceivePopupSetting.Count = eventCtrl.KGBCKPKLKHM_RewardItems[i].MBJIFDBEDAC_item_count;
 					itemReceivePopupSetting.IsPresentBox = true;
 					itemReceivePopupSetting.Buttons = new ButtonInfo[1]
 					{

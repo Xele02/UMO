@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		private void OnClickItem(int index)
 		{
 			ItemInfo item = GetItem(index);
-			Debug.Log(string.Format(JpStringLiterals.StringLiteral_16170, index, item.m_presentData.OPFGFINHFCE_Name));
+			Debug.Log(string.Format(JpStringLiterals.StringLiteral_16170, index, item.m_presentData.OPFGFINHFCE_name));
 			if (OnClickItemCallback != null)
 				OnClickItemCallback(index);
 		}

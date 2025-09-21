@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 				NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 				if(ev != null)
 				{
-					if(ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()) != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0)
+					if(ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()) != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0_None)
 					{
 						m_lobbyTabBtn.SetNewIcon(m_IsNewMark, m_IsNewMarkEffect);
 						m_lobbyTabBtn.SetType(a_type);
@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 			if(evLobby != null)
 			{
                 NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = evLobby.KINIOEOOCAA_GetPhase(t);
-                if (phase > NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0 && phase < NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+                if (phase > NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0_None && phase < NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 				{
 					int adv = 0;
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 				if(ev != null)
 				{
                     NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-					if(phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0 && phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+					if(phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0_None && phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 					{
 						if(!ev.ANOPCGFIMEJ())
 						{
@@ -591,7 +591,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End || phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0)
+			if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End || phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0_None)
 			{
 				s.TitleText = "";
 				s.Text = MessageManager.Instance.GetMessage("menu", "home_lobby_button_popup_raid_end");

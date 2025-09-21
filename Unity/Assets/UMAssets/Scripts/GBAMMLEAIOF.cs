@@ -7,33 +7,33 @@ public class GBAMMLEAIOF
 	public int PGEDKFOIPIP_EventIdx; // 0xC
 
 	// // RVA: 0x1401894 Offset: 0x1401894 VA: 0x1401894
-	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK)
+	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] _IDLHJIOMJBK_Data)
 	{
-		EJJEHEHFMGO = IDLHJIOMJBK;
+		EJJEHEHFMGO = _IDLHJIOMJBK_Data;
 		this.PGEDKFOIPIP_EventIdx = PGEDKFOIPIP;
-		for(int i = 0; i < IDLHJIOMJBK.Length; i++)
+		for(int i = 0; i < _IDLHJIOMJBK_Data.Length; i++)
 		{
 			EJJEHEHFMGO[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);
-			IDLHJIOMJBK = EJJEHEHFMGO;
+			_IDLHJIOMJBK_Data = EJJEHEHFMGO;
 		}
 	}
 
 	// // RVA: 0x1401938 Offset: 0x1401938 VA: 0x1401938
-	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, EDOHBJAPLPF_JsonData AAEDAEHIONI, KIJECNFNNDB_JsonWriter LAFGAPBDKML)
+	public void KHEKNNFCAOI_Init(int _PGEDKFOIPIP_EventIdx, EDOHBJAPLPF_JsonData AAEDAEHIONI, KIJECNFNNDB_JsonWriter LAFGAPBDKML)
 	{
 		LAFGAPBDKML.LCABGAFGNFL_Reset();
 		IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(AAEDAEHIONI, LAFGAPBDKML);
-		KHEKNNFCAOI_Init(PGEDKFOIPIP, Encoding.UTF8.GetBytes(LAFGAPBDKML.ToString()));
+		KHEKNNFCAOI_Init(_PGEDKFOIPIP_EventIdx, Encoding.UTF8.GetBytes(LAFGAPBDKML.ToString()));
 	}
 
 	// // RVA: 0x1401A54 Offset: 0x1401A54 VA: 0x1401A54
-	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK, int POMLAOPLMNA, int MOIECBABHNP)
+	public void KHEKNNFCAOI_Init(int _PGEDKFOIPIP_EventIdx, byte[] _IDLHJIOMJBK_Data, int _POMLAOPLMNA_offset, int MOIECBABHNP)
     {
-        this.PGEDKFOIPIP_EventIdx = PGEDKFOIPIP;
+        this.PGEDKFOIPIP_EventIdx = _PGEDKFOIPIP_EventIdx;
         EJJEHEHFMGO = new byte[MOIECBABHNP];
         for(int i = 0; i < MOIECBABHNP; i++)
         {
-            EJJEHEHFMGO[i] = IDLHJIOMJBK[i + POMLAOPLMNA];
+            EJJEHEHFMGO[i] = _IDLHJIOMJBK_Data[i + _POMLAOPLMNA_offset];
         }
     }
 

@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16623E4 Offset: 0x16623E4 VA: 0x16623E4
 		public void SetSkillData(ALEKLHIANJN data)
 		{
-			m_category.text = data.OPFGFINHFCE_SkillName;
+			m_category.text = data.OPFGFINHFCE_name;
 			m_level.text = "Lv" + data.CHHADJECKNL_GetLevel();
 			m_description.text = data.DMBDNIEEMCB_GetDesc(true);
 		}

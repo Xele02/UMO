@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{
 			EEDKAACNBBG_MusicData m = new EEDKAACNBBG_MusicData();
-			m.KHEKNNFCAOI(info.param.id);
+			m.KHEKNNFCAOI_Init(info.param.id);
 			SetMusicJacket(m.JNCPEGJGHOG_JacketId);
 			SetMusicName(m.NEDBBJDAFBH_MusicName, m.FKDCCLPGKDK_JacketAttr);
 			SetSeriesLogo(m.EMIKBGHIOMN_SerieLogoId);

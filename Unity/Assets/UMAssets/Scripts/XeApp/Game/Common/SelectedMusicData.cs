@@ -41,9 +41,9 @@ namespace XeApp.Game.Common
 			if(selectedMusic != null)
 			{
 				if (selectedMusic is LIEJFHMGNIA)
-					return (selectedMusic as LIEJFHMGNIA).HPBPDHPIBGN_EnnemyData;
+					return (selectedMusic as LIEJFHMGNIA).HPBPDHPIBGN_Enemy;
 				if (selectedMusic is IBJAKJJICBC)
-					return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData;
+					return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy;
 			}
 			return null;
 		}
@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 					MKIKFJKPEHK data = new MKIKFJKPEHK();
 					if(!data.DPICLLJJPAC(selectedMusic as IBJAKJJICBC, (int)difficulty, isLine6))
 					{
-						return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina;
+						return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_Stamina;
 					}
 					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
 					{

@@ -1072,10 +1072,10 @@ namespace XeApp
 					{
 						foreach(var s in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif)
 						{
-							if(s.PPFNGGCBJKC == chara.Setting.InitWord)
+							if(s.PPFNGGCBJKC_id == chara.Setting.InitWord)
 							{
 								DecorationItemBaseSetting setting = new DecorationItemBaseSetting();
-								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_Type, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC), s.LDLGLHBGOKE_FontSize, chara));
+								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_Type, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC_id), s.LDLGLHBGOKE_FontSize, chara));
 								break;
 							}
 						}
@@ -1123,7 +1123,7 @@ namespace XeApp
 				DecorationChara chara = c as DecorationChara;
 				if(chara != null)
 				{
-					if(chara.ViewData.PPFNGGCBJKC_Id > 0)
+					if(chara.ViewData.PPFNGGCBJKC_id > 0)
 					{
 						res.Add(chara);
 					}

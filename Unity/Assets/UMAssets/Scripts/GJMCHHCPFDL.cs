@@ -22,14 +22,14 @@ public class GJMCHHCPFDL
 	public int BDNGBCKEADA_MaxHp { get { return ABOINDIGKAM_MaxHpCrypted ^ FBGGEFFJJHB_xor; } set { ABOINDIGKAM_MaxHpCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD628 KBGAOONODLJ 0xAAD63C CFCHCNAICOO
 	public int FCIBJNKGMOB_Damage { get { return LLJGFFDPGAI_Crypted ^ FBGGEFFJJHB_xor; } set { LLJGFFDPGAI_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD650 IGPNLOPKDLO 0xAAD664 NBMNDKHMNHD
 	public int AHOKAPCGJMA_TotalPoint { get { return HJOJJCKDPPJ_Crypted ^ FBGGEFFJJHB_xor; } set { HJOJJCKDPPJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD678 GKLPFHEELGM 0xAAD68C EJPEPBGDDJM
-	public int LGFFMGDBIAH { get { return KBLGJMJLJBD_Crypted ^ FBGGEFFJJHB_xor; } set { KBLGJMJLJBD_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6A0 AFEPCFJGPKA 0xAAD6B4 LJLAKALHFNN
+	public int LGFFMGDBIAH_ranking { get { return KBLGJMJLJBD_Crypted ^ FBGGEFFJJHB_xor; } set { KBLGJMJLJBD_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6A0 AFEPCFJGPKA 0xAAD6B4 LJLAKALHFNN
 	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6C8 EAKAGHDPEMI 0xAAD6DC GHECCGBGCBI
-	public string OPFGFINHFCE_Name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xAAD6F0 DKJOHDGOIJE 0xAAD6F8 MJAMIGECMMF
+	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xAAD6F0 DKJOHDGOIJE 0xAAD6F8 MJAMIGECMMF
 	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN; } set { AJGFHCKFCHN = value; } } //0xAAD700 BOFCPLOLHCJ 0xAAD708 FDPPEPOHFNA
 	public int HPPDFBKEJCG_BgId { get { return BKDNEBPBPKC_Crypted ^ FBGGEFFJJHB_xor; } set { BKDNEBPBPKC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD710 BNBDOAMEEJN 0xAAD724 GIAODJJHAEF
 
 	// // RVA: 0xAAD738 Offset: 0xAAD738 VA: 0xAAD738
-	public void KHEKNNFCAOI(bool DLKLEFMHJBN/* = False*/)
+	public void KHEKNNFCAOI_Init(bool DLKLEFMHJBN/* = False*/)
 	{
 		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
@@ -44,7 +44,7 @@ public class GJMCHHCPFDL
 				ENMEKLHFMDE_Point = p.HALIDDHLNEG_Damage;
 			}
 			AHOKAPCGJMA_TotalPoint = p.AEIMNLACMFA_Damage;
-			LGFFMGDBIAH = p.HMNOKOEJDND_Rank;
+			LGFFMGDBIAH_ranking = p.HMNOKOEJDND_Rank;
 			GKHMIECGPJO_HpAfter = p.GKHMIECGPJO_HpAfter;
 			BDNGBCKEADA_MaxHp = p.OGHIOGDPFJE_MaxHp;
 			FCIBJNKGMOB_Damage = p.FCIBJNKGMOB_Damage;
@@ -53,7 +53,7 @@ public class GJMCHHCPFDL
 			FJOLNJLLJEJ_Rank = ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank;
 			MPKBLMCNHOM_MissionIsSpecial = ev.JIBMOEHKMGB_SelectedBoss.IKICLMGFFPB_IsSpecial;
 			HPPDFBKEJCG_BgId = ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId;
-			OPFGFINHFCE_Name = ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type);
+			OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type);
 		}
 	}
 }

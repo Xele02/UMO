@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 				m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
 				m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
 				m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
-				UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_Luck);
+				UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_luck);
 				m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
 				m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
 			}
@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 						ComparisonValue(m_paramTexts[2], 0, sceneData.CMCKNKKCNDK_Status.vocal, 2);
 						ComparisonValue(m_paramTexts[3], 0, sceneData.CMCKNKKCNDK_Status.charm, 3);
 						ComparisonValue(m_paramTexts[4], 0, sceneData.CMCKNKKCNDK_Status.life, 4);
-						ComparisonValue(m_paramTexts[5], 0, sceneData.MJBODMOLOBC_Luck, 5);
+						ComparisonValue(m_paramTexts[5], 0, sceneData.MJBODMOLOBC_luck, 5);
 						ComparisonValue(m_paramTexts[6], 0, sceneData.CMCKNKKCNDK_Status.support, 6);
 						ComparisonValue(m_paramTexts[7], 0, sceneData.CMCKNKKCNDK_Status.fold, 7);
 					}
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, 0, 2);
 						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, 0, 3);
 						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, 0, 4);
-						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_Luck, 0, 5);
+						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_luck, 0, 5);
 						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, 0, 6);
 						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, 0, 7);
 					}
@@ -211,7 +211,7 @@ namespace XeApp.Game.Menu
 						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, sceneData.CMCKNKKCNDK_Status.vocal, 2);
 						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, sceneData.CMCKNKKCNDK_Status.charm, 3);
 						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, sceneData.CMCKNKKCNDK_Status.life, 4);
-						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_Luck, sceneData.MJBODMOLOBC_Luck, 5);
+						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_luck, sceneData.MJBODMOLOBC_luck, 5);
 						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, sceneData.CMCKNKKCNDK_Status.support, 6);
 						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, sceneData.CMCKNKKCNDK_Status.fold, 7);
 					}
@@ -539,7 +539,7 @@ namespace XeApp.Game.Menu
 			{
 				if(index < 1 && !m_isDisp2ndCenterSkill)
 				{
-					name = m_sceneData.PFHJFIHGCKP_CenterSkillName1;
+					name = m_sceneData.PFHJFIHGCKP_CenterSkillName;
 					desc = m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(false);
 				}
 				else

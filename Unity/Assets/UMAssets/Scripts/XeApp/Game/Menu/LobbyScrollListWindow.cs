@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xD1B514 Offset: 0xD1B514 VA: 0xD1B514
 		public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC m_bbsType, int _playerId, int _index, bool _isMember)
 		{
-			if(m_bbsType <= ANPBHCNJIDI.NOJONDLAMOC.HJNNKCMLGFL_0 || m_bbsType > ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo)
+			if(m_bbsType <= ANPBHCNJIDI.NOJONDLAMOC.HJNNKCMLGFL_0_None || m_bbsType > ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo)
 			{
 				Debug.LogError("StringLiteral_18442");
 				return;
@@ -373,8 +373,8 @@ namespace XeApp.Game.Menu
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
 					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
-					it.UserName = data.OPFGFINHFCE_PlayerName;
-					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.UserName = data.OPFGFINHFCE_name;
+					it.PlayerId = data.MLPEHNBNOGD_PlayerId;
 					it.Index = _index;
 					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
 					it.Messge = data.EBBJPBGHJOL_text;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
-					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_PlayerId ? 1 : 2;
 					m_list.Add(it);
 				}
 				break;
@@ -399,15 +399,15 @@ namespace XeApp.Game.Menu
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
 					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
-					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.UserName = data.OPFGFINHFCE_name;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
-					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.PlayerId = data.MLPEHNBNOGD_PlayerId;
 					it.Index = _index;
 					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
 					it.IsMember = _isMember;
-					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_PlayerId ? 1 : 2;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
 					m_list.Add(it);
 				}
@@ -424,15 +424,15 @@ namespace XeApp.Game.Menu
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
 					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
-					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.UserName = data.OPFGFINHFCE_name;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
-					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.PlayerId = data.MLPEHNBNOGD_PlayerId;
 					it.Index = _index;
 					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
 					it.IsMember = _isMember;
-					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_PlayerId ? 1 : 2;
 					it.IsPickUp = m_raidSelect == 0;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
 					m_list.Add(it);
@@ -451,15 +451,15 @@ namespace XeApp.Game.Menu
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
 					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
-					it.UserName = data.OPFGFINHFCE_PlayerName;
-					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.UserName = data.OPFGFINHFCE_name;
+					it.PlayerId = data.MLPEHNBNOGD_PlayerId;
 					it.Index = _index;
 					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
 					it.IsMember = _isMember;
 					it.BossName = data.GJAOLNLFEBD_BossName;
-					it.BossSeries = (SeriesAttr.Type)data.PCPODOMOFDH_BossSeriesAttr;
-					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.BossSeries = (SeriesAttr.Type)data.PCPODOMOFDH_BossSerieAttr;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_PlayerId ? 1 : 2;
 					it.IsPickUp = m_raidSelect == 0;
 					it.BossImageNum = data.JNBDLNBKDCO_BossImage;
 					it.BossRank = data.EJGDHAENIDC_BossRank;
@@ -481,15 +481,15 @@ namespace XeApp.Game.Menu
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
 					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
-					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.UserName = data.OPFGFINHFCE_name;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
-					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.PlayerId = data.MLPEHNBNOGD_PlayerId;
 					it.Index = _index;
 					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
 					it.IsMember = _isMember;
-					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_PlayerId ? 1 : 2;
 					it.IsPickUp = m_raidSelect == 0;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
 					m_list.Add(it);
@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				NKOBMDPHNGP_EventRaidLobby.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_EventRaidLobby.NGHEKBHLBAN.CFBJGAGBJEN_0);
-				SetGuideCharaData(d.FDBOPFEOENF_Diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_Message);
+				SetGuideCharaData(d.FDBOPFEOENF_Diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_message);
 			}
 		}
 

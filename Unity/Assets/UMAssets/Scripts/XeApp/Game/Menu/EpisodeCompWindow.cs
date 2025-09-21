@@ -168,15 +168,15 @@ namespace XeApp.Game.Menu
 			m_addPoint = add_point;
 			m_old_value = data.ABLHIAEDJAI_CurrentValue;
 			m_add_episode_point = add_point;
-			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpId);
+			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpisodeId);
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, (int)(m_point));
 			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM_ItemName;
 			m_point_den.SetNumber(data.ABLHIAEDJAI_CurrentValue, 0);
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
-			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
-			m_episode_info.text = data.OPFGFINHFCE_Name;
+			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
+			m_episode_info.text = data.OPFGFINHFCE_name;
 			m_point_episode.SetNumber(add_point, 0);
-			GameManager.Instance.EpisodeIconCache.Load(m_episodeData.KELFCMEOPPM_EpId, (IiconTexture icon) =>
+			GameManager.Instance.EpisodeIconCache.Load(m_episodeData.KELFCMEOPPM_EpisodeId, (IiconTexture icon) =>
 			{
 				//0x1282EF4
 				icon.Set(m_episode_image);
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 				m_available_episodepoint.StartChildrenAnimGoStop("st_out");
 			}
 			ItemId = 0;
-			ItemType = EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_None;
+			ItemType = EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None;
 			m_is_line_update = false;
 			m_showReciveItemIndex = 0;
 			UpdateEpisodeGauge(m_currentPoint, m_episodeData.CCBKMCLDGAD_HasReward);
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 			ItemId = 0;
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint);
 			SetItemImage(m_reward_list[m_reward_index].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-			m_point_item_num.SetNumber(m_reward_list[m_reward_index].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+			m_point_item_num.SetNumber(m_reward_list[m_reward_index].GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 			UpdateText(m_currentPoint, m_reward_index);
 		}
 
@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 							}
 							UpdateNext(m_reward_list[aa], m_episodeData.DMHDNKILKGI_MaxPoint, isComp);
 							SetItemImage(m_reward_list[aa].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-							m_point_item_num.SetNumber(m_reward_list[aa].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+							m_point_item_num.SetNumber(m_reward_list[aa].GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 							UpdateText(currentPoint, aa);
 						}
 						//LAB_01284694

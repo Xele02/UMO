@@ -31,10 +31,10 @@ namespace XeApp.Game.Menu
 			LayoutPopAddMusicListItem lcontent = content as LayoutPopAddMusicListItem;
 			PopupUnlock.UnlockParam param = unlockList[index];
 			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(param.id);
-			lcontent.SetJacket(mData.JNCPEGJGHOG_Cov);
+			lcontent.SetJacket(mData.JNCPEGJGHOG_JacketId);
 			lcontent.SetLogo(mData.EMIKBGHIOMN_SerieLogoId);
 			lcontent.SetMusicAttribute(mData.FKDCCLPGKDK_Ma);
-			lcontent.SetMusicName(Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Nam).musicName, mData.FKDCCLPGKDK_Ma);
+			lcontent.SetMusicName(Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).musicName, mData.FKDCCLPGKDK_Ma);
 			if (param.unlockType == PopupUnlock.eUnlockType.Line6Music)
 			{
 				lcontent.SetDifficulty(param.difficulty6LineBit, param.isLine6);

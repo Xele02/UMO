@@ -100,7 +100,7 @@ public class JKNNIKNKMNJ
     }
 
 	// // RVA: 0x1472588 Offset: 0x1472588 VA: 0x1472588
-	// public void ODDIHGPONFL(JKNNIKNKMNJ GPBJHKLFCEP) { }
+	// public void ODDIHGPONFL_Copy(JKNNIKNKMNJ GPBJHKLFCEP) { }
 
 	// // RVA: 0x1472838 Offset: 0x1472838 VA: 0x1472838
 	public int GPBGFJONHPB_GetMaxIntimacy()

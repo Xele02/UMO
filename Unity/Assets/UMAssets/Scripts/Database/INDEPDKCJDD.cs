@@ -9,11 +9,11 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 	{
 		public int EHOIENNDEDH_IdCrypted; // 0x8
 		public int EAJCFBCHIFB_RarityCrypted; // 0xC
-		public int MKENMKMJFKP; // 0x10
+		public int MKENMKMJFKP_TypeCrypted; // 0x10
 
-		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xA0161C DEMEPMAEJOO 0xA012C4 HIGKAIDMOKN
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xA0161C DEMEPMAEJOO 0xA012C4 HIGKAIDMOKN
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xA016B4 OEEHBGECGKL 0xA01360 GHLMHLJJBIG
-		public int INDDJNMPONH { get { return MKENMKMJFKP ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP = value ^ FBGGEFFJJHB_xor; } } //0xA0174C GHAILOLPHPF 0xA013FC BACGOKIGMBC
+		public int INDDJNMPONH_Type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xA0174C GHAILOLPHPF 0xA013FC BACGOKIGMBC
 
 		//// RVA: 0xA01584 Offset: 0xA01584 VA: 0xA01584
 		//public uint CAOGDCBPBAN() { }
@@ -32,14 +32,14 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xA00FF8 Offset: 0xA00FF8 VA: 0xA00FF8 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		if(CDENCMNHNGA_table != null)
 			CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0xA01064 Offset: 0xA01064 VA: 0xA01064 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		MADCJBCGGEE parser = MADCJBCGGEE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		FLNGBOANAGE[] array = parser.GKNGIIHMBOD;
@@ -47,16 +47,16 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			NHJLDENJKBE data = new NHJLDENJKBE();
-			data.PPFNGGCBJKC_Id = (int)array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.INDDJNMPONH = array[i].GBJFNGCDKPM;
+			data.INDDJNMPONH_Type = array[i].GBJFNGCDKPM;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;
 	}
 
 	// RVA: 0xA01498 Offset: 0xA01498 VA: 0xA01498 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return false;
 	}

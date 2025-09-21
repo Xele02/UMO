@@ -137,9 +137,9 @@ namespace XeApp.Game.Menu
 			ChengeValkyrieForm(from);
 			KDHGBOOECKC.JNHGHDKLDEM data = new KDHGBOOECKC.JNHGHDKLDEM();
 			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI)offerType, offerId);
-			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH.Length; i++)
+			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH_state.Length; i++)
 			{
-				if(data.NNDGIAEFMOG[from].LHMDABPNDDH[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
+				if(data.NNDGIAEFMOG[from].LHMDABPNDDH_state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
 				{
 					DisplayItemIdList.Add(data.NNDGIAEFMOG[from].LNADJDFHHAI[i]);
 				}
@@ -403,8 +403,8 @@ namespace XeApp.Game.Menu
 			});
 			RecordPlateUtility.ClearShowedList();
 			GameManager.Instance.InputEnabled = prevInput;
-			while (CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.Count > 0)
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.RemoveAt(0);
+			while (CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.Count > 0)
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.RemoveAt(0);
 		}
 
 		// RVA: 0x152FAD0 Offset: 0x152FAD0 VA: 0x152FAD0

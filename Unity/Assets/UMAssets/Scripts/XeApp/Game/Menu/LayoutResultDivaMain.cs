@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 				int costumeId = 0;
 				if(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId >= 1)
 				{
-					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1];
+					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1];
 					costumeId = diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					colorId = diva.EKFONBFDAAP_ColorId;
 					divaId = diva.AHHJLDLAPAN_DivaId;
@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 					ChangeCurrentDivaLevelExp(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].AJCEIPJDMEC_PrevDivaLevel, CalcDivaLevelExpSectionPercentage(viewResultDivaData.NAIHIJAJPNK_Divas[i].AJCEIPJDMEC_PrevDivaLevel, ToSectionDivaLevelExp(viewResultDivaData.NAIHIJAJPNK_Divas[i].AJCEIPJDMEC_PrevDivaLevel, (float)viewResultDivaData.NAIHIJAJPNK_Divas[i].NFJFBOBJONF_PrevExpFrag)));
 					divaLayouts[i].numberMusicLevelBonus.SetNumber(viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp, 0);
 					JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
-					intimacy.KHEKNNFCAOI(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId);
+					intimacy.KHEKNNFCAOI_Init(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId);
 					for(int j = 0; j < divaLayouts[i].numberIntimacy.Length; j++)
 					{
 						divaLayouts[i].numberIntimacy[j].SetNumber(intimacy.HBODCMLFDOB_Result.IGNABALECPK, 0);
@@ -644,7 +644,7 @@ namespace XeApp.Game.Menu
 			DivaLayout dl = divaLayouts[divaIndex];
 			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
 			JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
-			intimacy.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId);
+			intimacy.KHEKNNFCAOI_Init(info.AHHJLDLAPAN_DivaId);
 			if(intimacy.HBODCMLFDOB_Result.IGNABALECPK >= 1)
 			{
 				if (divaIndex == 0)
@@ -663,7 +663,7 @@ namespace XeApp.Game.Menu
 		private void LeaveIntimacyAnim(int divaIndex)
 		{
 			JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
-			intimacy.KHEKNNFCAOI(viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AHHJLDLAPAN_DivaId);
+			intimacy.KHEKNNFCAOI_Init(viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AHHJLDLAPAN_DivaId);
 			if (intimacy.HBODCMLFDOB_Result.IGNABALECPK < 1)
 				return;
 			divaLayouts[divaIndex].layoutIntimacy.StartChildrenAnimGoStop("go_out", "st_out");
@@ -713,7 +713,7 @@ namespace XeApp.Game.Menu
 				KDOMGMCGHDC.HJNMIKNAMFH h = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, currentFrameLevel);
 				bool end = true;
 				if (!h.HHBJAEOIGIH_IsLocked)
-					end = h.NBHEBLNHOJO_IsMax;
+					end = h.NBHEBLNHOJO_IsMaxLevel;
 				if (timeLength <= currentTime)
 					end = true;
 				if(!end)
@@ -957,8 +957,8 @@ namespace XeApp.Game.Menu
 			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
 			FFHPBEPOMAK_DivaInfo prev = new FFHPBEPOMAK_DivaInfo();
 			FFHPBEPOMAK_DivaInfo next = new FFHPBEPOMAK_DivaInfo();
-			prev.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId, info.AJCEIPJDMEC_PrevDivaLevel, 0, 0, null, null, true);
-			next.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId, info.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, true);
+			prev.KHEKNNFCAOI_Init(info.AHHJLDLAPAN_DivaId, info.AJCEIPJDMEC_PrevDivaLevel, 0, 0, null, null, true);
+			next.KHEKNNFCAOI_Init(info.AHHJLDLAPAN_DivaId, info.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, true);
 			PopupDivaLevelupSetting setting = new PopupDivaLevelupSetting();
 			setting.TitleText = "";
 			setting.IsCaption = false;
@@ -1058,7 +1058,7 @@ namespace XeApp.Game.Menu
 			KDOMGMCGHDC.HJNMIKNAMFH prevInfo = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, musicLevel);
 			if(!prevInfo.HHBJAEOIGIH_IsLocked)
 			{
-				divaLayouts[divaIndex].layoutGaugeRoot.StartChildrenAnimGoStop(!prevInfo.NBHEBLNHOJO_IsMax ? "st_wait" : "st_max");
+				divaLayouts[divaIndex].layoutGaugeRoot.StartChildrenAnimGoStop(!prevInfo.NBHEBLNHOJO_IsMaxLevel ? "st_wait" : "st_max");
 			}
 			else
 			{
@@ -1070,7 +1070,7 @@ namespace XeApp.Game.Menu
 		private void ChangeOldMusicLevelExp(int divaIndex, int musicLevel, float gaugePercentage)
 		{
 			KDOMGMCGHDC.HJNMIKNAMFH prevInfo = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, musicLevel);
-			if (prevInfo.HHBJAEOIGIH_IsLocked || prevInfo.NBHEBLNHOJO_IsMax)
+			if (prevInfo.HHBJAEOIGIH_IsLocked || prevInfo.NBHEBLNHOJO_IsMaxLevel)
 				gaugePercentage = 100;
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frameNum = divaLayouts[divaIndex].layoutMusicLevelExpGauge.GetView(0).FrameAnimation.FrameNum;
@@ -1083,7 +1083,7 @@ namespace XeApp.Game.Menu
 		private void ChangeCurrentMusicLevelExp(int divaIndex, int musicLevel, float gaugePercentage)
 		{
 			KDOMGMCGHDC.HJNMIKNAMFH prevInfo = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, musicLevel);
-			if (prevInfo.HHBJAEOIGIH_IsLocked || prevInfo.NBHEBLNHOJO_IsMax)
+			if (prevInfo.HHBJAEOIGIH_IsLocked || prevInfo.NBHEBLNHOJO_IsMaxLevel)
 				gaugePercentage = 100;
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frameNum = divaLayouts[divaIndex].layoutMusicLevelExpGauge.GetView(0).FrameAnimation.FrameNum;
@@ -1091,7 +1091,7 @@ namespace XeApp.Game.Menu
 			divaLayouts[divaIndex].layoutMusicLevelExpGauge.StartChildrenAnimGoStop(frame, frame);
 			if(!prevInfo.HHBJAEOIGIH_IsLocked)
 			{
-				if(!prevInfo.NBHEBLNHOJO_IsMax)
+				if(!prevInfo.NBHEBLNHOJO_IsMaxLevel)
 				{
 					if (!divaLayouts[divaIndex].isMusicLevelup)
 					{
@@ -1106,7 +1106,7 @@ namespace XeApp.Game.Menu
 						divaLayouts[divaIndex].layoutMusicLevelEffectOut.StartAnimGoStop(0, 0);
 					}
 				}
-				if(!prevInfo.HHBJAEOIGIH_IsLocked && !prevInfo.NBHEBLNHOJO_IsMax)
+				if(!prevInfo.HHBJAEOIGIH_IsLocked && !prevInfo.NBHEBLNHOJO_IsMaxLevel)
 				{
 					SetMusicLevelNextExp(divaIndex, musicLevel, (int)(f * expMaster.CMENIBIIKPJ_GetMusicLevelExp(musicLevel + 1) / 100 + expMaster.IECLHMBPEIJ_GetMusicExp(musicLevel)));
 				}
@@ -1215,8 +1215,8 @@ namespace XeApp.Game.Menu
 				GNIFOHMFDMO_DivaResultData.IKODHMDOMMP d = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
 				DFKGGBMFFGB_PlayerInfo p = new DFKGGBMFFGB_PlayerInfo();
 				p.KHEKNNFCAOI_Init(null, false);
-				FFHPBEPOMAK_DivaInfo f = p.NBIGLBMHEDC_Divas[d.AHHJLDLAPAN_DivaId - 1];
-				f.KHEKNNFCAOI(d.AHHJLDLAPAN_DivaId, d.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, false);
+				FFHPBEPOMAK_DivaInfo f = p.NBIGLBMHEDC_DivaList[d.AHHJLDLAPAN_DivaId - 1];
+				f.KHEKNNFCAOI_Init(d.AHHJLDLAPAN_DivaId, d.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, false);
 				List<int> l = f.PKLPGBKKFOL_DivaLevels;
 				KDOMGMCGHDC.HJNMIKNAMFH k = KDOMGMCGHDC.ODIAFJCPIFO(viewResultDivaData.DLAEJOBELBH_MusicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, l[viewResultDivaData.DLAEJOBELBH_MusicId - 1]);
 				MessageBank bk = MessageManager.Instance.GetBank("menu");

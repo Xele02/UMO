@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			if (episodeId < 1)
 				return;
 			PIGBBNDPPJC p = new PIGBBNDPPJC();
-			p.KHEKNNFCAOI(episodeId);
+			p.KHEKNNFCAOI_Init(episodeId);
 			LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(episodeId, true);
 			if(l != null && l.GOOIIPFHOIG != null)
 			{
@@ -109,9 +109,9 @@ namespace XeApp.Game.Menu
 				SetDesc(cat);
 			}
 			//LAB_015e45c8
-			SetImageEpisode(p.KELFCMEOPPM_EpId);
-			SetEpisodeName(p.OPFGFINHFCE_Name);
-			SetEpisodeDesc(p.KLMPFGOCBHC_Description);
+			SetImageEpisode(p.KELFCMEOPPM_EpisodeId);
+			SetEpisodeName(p.OPFGFINHFCE_name);
+			SetEpisodeDesc(p.KLMPFGOCBHC_description);
 		}
 
 		//// RVA: 0x15E5144 Offset: 0x15E5144 VA: 0x15E5144
@@ -141,13 +141,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15E4CF0 Offset: 0x15E4CF0 VA: 0x15E4CF0
 		private int GetHomeBgId(int bgid)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OENPCNBFPDA_BgId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OENPCNBFPDA_bg_id;
 		}
 
 		//// RVA: 0x15E4B0C Offset: 0x15E4B0C VA: 0x15E4B0C
 		private string GetHomeBgName(int bgid)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OPFGFINHFCE_Name;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OPFGFINHFCE_name;
 		}
 
 		//// RVA: 0x15E5FEC Offset: 0x15E5FEC VA: 0x15E5FEC

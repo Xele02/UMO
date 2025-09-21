@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 			}
 			InitializeDecos();
 			m_viewData = new GHLGEECLCMH();
-			m_viewData.KHEKNNFCAOI(null, null);
+			m_viewData.KHEKNNFCAOI_Init(null, null);
 			List<HighScoreRating.UtaGradeData> gradeList = m_viewData.IEPGAGBLHBN_GetMusicGradeList();
 			for (int i = 0; i < m_viewData.IEPGAGBLHBN_GetMusicGradeList().Count; i++)
 			{
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 			{
 				m_thresholds[0] = Mathf.Clamp(m_thresholds[0] + a * 10, 1, 1000);
 			}
-			OEGIPPCADNA.HHCJCDFCLOB.JPNACOLKHLB(prev, a, m_rankRangeList[m_currentRankRange], () =>
+			OEGIPPCADNA.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(prev, a, m_rankRangeList[m_currentRankRange], () =>
 			{
 				//0x10518D0
 				OnReceivedRankingListAdditive(isUpper, callback);

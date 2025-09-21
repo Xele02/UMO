@@ -7,7 +7,7 @@ public class NMFABEKNBKJ
 {
     public class CIDEHGHGPIO
     {
-        public string JCOGNKFNDEB_Token; // 0x8
+        public string JCOGNKFNDEB_token; // 0x8
         public long BIOGKIEECGN_CreatedAt; // 0x10
         public long IFNLEKOILPM_UpdatedAt; // 0x18
     }
@@ -40,7 +40,7 @@ public class NMFABEKNBKJ
 	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM ODAMFOMFIPC ELGNDAPOEPK
 
 	// // RVA: 0x1CAB7E0 Offset: 0x1CAB7E0 VA: 0x1CAB7E0
-	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL PPFNGGCBJKC, string IPBHCLIHAPG = "") { }
+	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string IPBHCLIHAPG = "") { }
 
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
 	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
@@ -66,7 +66,7 @@ public class NMFABEKNBKJ
 		MABFNKCMEDL_CreateNotification("info", JpStringLiterals.StringLiteral_12693, 3);
 		MABFNKCMEDL_CreateNotification("sns", JpStringLiterals.StringLiteral_10294, 3);
 		MABFNKCMEDL_CreateNotification("vop", "VOP", 3);
-		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.JIMJHIDEHNM, JpStringLiterals.StringLiteral_10282, 3);
+		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.JIMJHIDEHNM_ApCounter, JpStringLiterals.StringLiteral_10282, 3);
 		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BGCAPDNMPOK, JpStringLiterals.StringLiteral_12695, 3);
 		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BCFFEECIMJG, JpStringLiterals.StringLiteral_12696, 3);
 		while(!FCMTokenReceiver.isDpendencyChecked)
@@ -79,13 +79,13 @@ public class NMFABEKNBKJ
 			FBFKMOECEIM += Time.deltaTime;
 			yield return null;
 		}
-		bool KOMKKBDABJP = false;
+		bool KOMKKBDABJP_end = false;
 		yield return N.a.StartCoroutineWatched(KGGHPICPOAA_Corotuine_GetFCMTokens(() =>
 		{
 			//0x1CACDE8
-			KOMKKBDABJP = true;
+			KOMKKBDABJP_end = true;
 		}));
-		while(!KOMKKBDABJP)
+		while(!KOMKKBDABJP_end)
 		{
 			yield return null;
 		}
@@ -135,17 +135,17 @@ public class NMFABEKNBKJ
 			int idx = NDPMMJINHNA_TokenList.FindIndex((CIDEHGHGPIO _GHPLINIACBB_x) =>
 			{
 				//0x1CACD30
-				return _GHPLINIACBB_x.JCOGNKFNDEB_Token == FCMTokenReceiver.fcmToken;
+				return _GHPLINIACBB_x.JCOGNKFNDEB_token == FCMTokenReceiver.fcmToken;
 			});
 			if(idx > 0)
 			{
 				bool BEKAMBBOLBO_Done = false;
-				int ONBPFIMAAEJ = 0;
-				for(; ONBPFIMAAEJ < 2; ONBPFIMAAEJ++)
+				int ONBPFIMAAEJ_i = 0;
+				for(; ONBPFIMAAEJ_i < 2; ONBPFIMAAEJ_i++)
 				{
 					BEKAMBBOLBO_Done = false;
-					SakashoError MIIDBEIOBNK = null;
-					SakashoSystemCallback.OnSuccess BAHANNNJCGC = (string IDLHJIOMJBK) =>
+					SakashoError MIIDBEIOBNK_Error = null;
+					SakashoSystemCallback.OnSuccess BAHANNNJCGC = (string _IDLHJIOMJBK_Data) =>
 					{
 						//0x1CACE60
 						BEKAMBBOLBO_Done = true;
@@ -154,7 +154,7 @@ public class NMFABEKNBKJ
 					{
 						//0x1CACED0
 						//DOGDHKIEBJA.ResponseBodyJSON;
-						MIIDBEIOBNK = _DOGDHKIEBJA_Error;
+						MIIDBEIOBNK_Error = _DOGDHKIEBJA_Error;
 						BEKAMBBOLBO_Done = true;
 					});
 					float CPOFOJKLNGH = 0;
@@ -168,7 +168,7 @@ public class NMFABEKNBKJ
 							break;
 						}
 					}
-					if (MIIDBEIOBNK == null)
+					if (MIIDBEIOBNK_Error == null)
 						break;
 					OIDFKCIECJN = null;
 				}
@@ -197,7 +197,7 @@ public class NMFABEKNBKJ
 		for (int i = 0; i < NDPMMJINHNA_TokenList.Count; i++)
 		{
 			bool BEKAMBBOLBO_Done = false;
-			SakashoFCMPushNotification.BlockPushNotification(NDPMMJINHNA_TokenList[i].JCOGNKFNDEB_Token, (string IDLHJIOMJBK) =>
+			SakashoFCMPushNotification.BlockPushNotification(NDPMMJINHNA_TokenList[i].JCOGNKFNDEB_token, (string _IDLHJIOMJBK_Data) =>
 			{
 				//0x1CACFB4
 				BEKAMBBOLBO_Done = true;
@@ -219,22 +219,22 @@ public class NMFABEKNBKJ
 	private IEnumerator KGGHPICPOAA_Corotuine_GetFCMTokens(IMCBBOAFION _CNJANCCFBIL_Cb)
 	{
 		//0x1CAE4BC
-		for (int ONBPFIMAAEJ = 0; ONBPFIMAAEJ < 2; ONBPFIMAAEJ++)
+		for (int ONBPFIMAAEJ_i = 0; ONBPFIMAAEJ_i < 2; ONBPFIMAAEJ_i++)
 		{
 			NDPMMJINHNA_TokenList.Clear();
 			SakashoError MIIDBEIOBNK_Error = null;
 			float KPCGLMELHFG_time = 0;
 			bool BEKAMBBOLBO_Done = false;
-			SakashoAPICallContext IBLABDHABAJ = SakashoFCMPushNotification.GetFCMTokens((string IDLHJIOMJBK) =>
+			SakashoAPICallContext IBLABDHABAJ = SakashoFCMPushNotification.GetFCMTokens((string _IDLHJIOMJBK_Data) =>
 			{
 				//0x1CACFD4
 				BEKAMBBOLBO_Done = true;
-				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(IDLHJIOMJBK);
+				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_IDLHJIOMJBK_Data);
 				EDOHBJAPLPF_JsonData block = data["fcm_tokens"];
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)
 				{
 					CIDEHGHGPIO res = new CIDEHGHGPIO();
-					res.JCOGNKFNDEB_Token = CEDHHAGBIBA.BNCLNFJHEND_ReadString(block[i], "fcm_token");
+					res.JCOGNKFNDEB_token = CEDHHAGBIBA.BNCLNFJHEND_ReadString(block[i], "fcm_token");
 					res.BIOGKIEECGN_CreatedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "created_at");
 					res.IFNLEKOILPM_UpdatedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "updated_at");
 					NDPMMJINHNA_TokenList.Add(res);
@@ -278,7 +278,7 @@ public class NMFABEKNBKJ
 	// private void IJLKOHNHIFO() { }
 
 	// // RVA: 0x1CABE28 Offset: 0x1CABE28 VA: 0x1CABE28
-	private void MABFNKCMEDL_CreateNotification(string PPFNGGCBJKC, string OPFGFINHFCE, int PDJFAPLAPAG/* = 3*/)
+	private void MABFNKCMEDL_CreateNotification(string _PPFNGGCBJKC_id, string _OPFGFINHFCE_name, int PDJFAPLAPAG/* = 3*/)
 	{
 		#if UNITY_ANDROID
 		AndroidJavaClass c = new AndroidJavaClass("android.os.Build$VERSION");
@@ -286,8 +286,8 @@ public class NMFABEKNBKJ
 		c.Dispose();
 		if(sdk > 25)
 		{
-			UnityEngine.Debug.LogError("Create notif channel " + PPFNGGCBJKC + " " + OPFGFINHFCE);
-			AndroidJavaObject notif = new AndroidJavaObject("android.app.NotificationChannel", new object[3] { PPFNGGCBJKC, OPFGFINHFCE, PDJFAPLAPAG });
+			UnityEngine.Debug.LogError("Create notif channel " + _PPFNGGCBJKC_id + " " + _OPFGFINHFCE_name);
+			AndroidJavaObject notif = new AndroidJavaObject("android.app.NotificationChannel", new object[3] { _PPFNGGCBJKC_id, _OPFGFINHFCE_name, PDJFAPLAPAG });
 			AndroidJavaClass cl = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 			AndroidJavaObject activity = cl.GetStatic<AndroidJavaObject>("currentActivity");
 			AndroidJavaObject systemService = activity.Call<AndroidJavaObject>("getSystemService", new object[1] { "notification" });

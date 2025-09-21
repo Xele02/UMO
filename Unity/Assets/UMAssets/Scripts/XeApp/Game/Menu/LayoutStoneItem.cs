@@ -117,13 +117,13 @@ namespace XeApp.Game.Menu
 			{
 				//0x194B98C
 				return _.name == "name (TextView)";
-			}).First().text = data.OPFGFINHFCE_Name;
+			}).First().text = data.OPFGFINHFCE_name;
 			Text t = txts.Where((Text _) =>
 			{
 				//0x194BA0C
 				return _.name == "txt (TextView)";
 			}).First();
-			t.text = data.KLMPFGOCBHC_Desc;
+			t.text = data.KLMPFGOCBHC_description;
 			t.horizontalOverflow = HorizontalWrapMode.Wrap;
 			txts.Where((Text _) =>
 			{

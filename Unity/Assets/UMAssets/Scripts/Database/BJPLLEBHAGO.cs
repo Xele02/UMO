@@ -31,40 +31,40 @@ public class EPPOHFLMDBC_DivaStats
 	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_xor ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
-	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_Level, int _FBGGEFFJJHB_xor, short JKPPKAHPPKH_Life, short MKMIEGPOKGG_Soul, short MELGGCAIONF_Vocal, short LDLHPACIIAB_Charm, short JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
+	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_Level, int _FBGGEFFJJHB_xor, short _JKPPKAHPPKH_life, short _MKMIEGPOKGG_Soul, short MELGGCAIONF_Vocal, short _LDLHPACIIAB_Charm, short _JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
 	{
 		this.FBGGEFFJJHB_xor = _FBGGEFFJJHB_xor;
 		this.ANAJIAENLNB_Level = ANAJIAENLNB_Level;
-		HFIDCMNFBJG_Life = JKPPKAHPPKH_Life;
-		PFJCOCPKABN_Soul = MKMIEGPOKGG_Soul;
+		HFIDCMNFBJG_Life = _JKPPKAHPPKH_life;
+		PFJCOCPKABN_Soul = _MKMIEGPOKGG_Soul;
 		JFJDLEMNKFE_Vocal = MELGGCAIONF_Vocal;
-		GDOLPGBLMEA_Charm = LDLHPACIIAB_Charm;
-		ONDFNOOICLE_Fold = JNNDFGPMEDA_Fold;
+		GDOLPGBLMEA_Charm = _LDLHPACIIAB_Charm;
+		ONDFNOOICLE_Fold = _JNNDFGPMEDA_Fold;
 		HCFOMFDPGEC_Support = IDOIMLGLPAB_Support;
 	}
 
 	// // RVA: 0xFC160C Offset: 0xFC160C VA: 0xFC160C
-	public void ANIJHEBLMGB_AddStat(int INDDJNMPONH_Type, short JBGEEPFKIGG_Value)
+	public void ANIJHEBLMGB_AddStat(int _INDDJNMPONH_Type, short _JBGEEPFKIGG_Value)
 	{
-		switch(INDDJNMPONH_Type)
+		switch(_INDDJNMPONH_Type)
 		{
 			case 1:
-				HFIDCMNFBJG_Life += JBGEEPFKIGG_Value;
+				HFIDCMNFBJG_Life += _JBGEEPFKIGG_Value;
 			break;
 			case 2:
-				PFJCOCPKABN_Soul += JBGEEPFKIGG_Value;
+				PFJCOCPKABN_Soul += _JBGEEPFKIGG_Value;
 			break;
 			case 3:
-				JFJDLEMNKFE_Vocal += JBGEEPFKIGG_Value;
+				JFJDLEMNKFE_Vocal += _JBGEEPFKIGG_Value;
 			break;
 			case 4:
-				GDOLPGBLMEA_Charm += JBGEEPFKIGG_Value;
+				GDOLPGBLMEA_Charm += _JBGEEPFKIGG_Value;
 			break;
 			case 5:
-				ONDFNOOICLE_Fold += JBGEEPFKIGG_Value;
+				ONDFNOOICLE_Fold += _JBGEEPFKIGG_Value;
 			break;
 			case 6:
-				HCFOMFDPGEC_Support += JBGEEPFKIGG_Value;
+				HCFOMFDPGEC_Support += _JBGEEPFKIGG_Value;
 			break;
 			default:
 			break;
@@ -72,7 +72,7 @@ public class EPPOHFLMDBC_DivaStats
 	}
 
 	// // RVA: 0xFC1698 Offset: 0xFC1698 VA: 0xFC1698
-	public void ODDIHGPONFL_CopyValues(EPPOHFLMDBC_DivaStats GPBJHKLFCEP)
+	public void ODDIHGPONFL_Copy(EPPOHFLMDBC_DivaStats GPBJHKLFCEP)
 	{
 		ANAJIAENLNB_Level = GPBJHKLFCEP.ANAJIAENLNB_Level;
 		HFIDCMNFBJG_Life = GPBJHKLFCEP.HFIDCMNFBJG_Life;

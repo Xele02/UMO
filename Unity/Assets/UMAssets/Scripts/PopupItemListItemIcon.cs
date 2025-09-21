@@ -180,9 +180,9 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		});
 		if(d != null)
 		{
-			for(int i = 0; i < d.MHKCPJDNJKI.Count; i++)
+			for(int i = 0; i < d.MHKCPJDNJKI_products.Count; i++)
 			{
-				if(d.MHKCPJDNJKI[i].JPJMHLNOIAJ_ItemCostFullId == costItemId)
+				if(d.MHKCPJDNJKI_products[i].JPJMHLNOIAJ_ItemCostFullId == costItemId)
 					return d;
 			}
 		}

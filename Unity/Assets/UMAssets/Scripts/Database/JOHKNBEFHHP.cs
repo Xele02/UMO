@@ -6,9 +6,9 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 {
     public class NGKJHBDEELB
     {
-        public int PPFNGGCBJKC_Id; // 0x8
-        public sbyte PPEGAKEIEGM; // 0xC
-        public long PDBPFJJCADD_StartDate; // 0x10
+        public int PPFNGGCBJKC_id; // 0x8
+        public sbyte PPEGAKEIEGM_Enabled; // 0xC
+        public long PDBPFJJCADD_open_at; // 0x10
         public long FDBNFFNFOND_CloseAt; // 0x18
         public int KNHOMNONOEB_AssetId; // 0x20
 
@@ -26,23 +26,23 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x1BA3E78 Offset: 0x1BA3E78 VA: 0x1BA3E78 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
     {
 		CDENCMNHNGA_table.Clear();
     }
 
 	// // RVA: 0x1BA3EF0 Offset: 0x1BA3EF0 VA: 0x1BA3EF0 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
     {
 		BENBFNLECGA reader = BENBFNLECGA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		MMBIHLNLPHB[] array = reader.KFKOALPLEGG;
 		for(int i = 0; i < array.Length; i++)
 		{
 			NGKJHBDEELB data = new NGKJHBDEELB();
-			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.KNHOMNONOEB_AssetId = array[i].KNHOMNONOEB;
-			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.PDBPFJJCADD_StartDate = array[i].PDBPFJJCADD;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
 			CDENCMNHNGA_table.Add(data);
 		}
@@ -50,7 +50,7 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x1BA4180 Offset: 0x1BA4180 VA: 0x1BA4180 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return false;
 	}

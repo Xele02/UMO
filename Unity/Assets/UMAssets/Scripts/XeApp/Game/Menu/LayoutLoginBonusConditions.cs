@@ -148,28 +148,28 @@ namespace XeApp.Game.Menu
 			}
 			ResetRewardData();
 			int idx2 = 0;
-			for(int i = 0; i < 14 && i < data.JPILDOGJLDG_LoginBonusPrizes.Count; i++)
+			for(int i = 0; i < 14 && i < data.JPILDOGJLDG_login_bonus_prizes.Count; i++)
 			{
-				if(data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items != null)
+				if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items != null)
 				{
-					if(data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items.Count > 0)
+					if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items.Count > 0)
 					{
 						m_prizeObject[i].iconLayout.enabled = true;
 						if (i < a1)
 							SwitchStampAnim(i, eStampStatus.Press);
 						a2++;
-						if(data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0] == null)
+						if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0] == null)
 						{
 							m_prizeObject[i].iconLayout.enabled = false;
 						}
 						else
 						{
-							if(data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items.Count < 2)
+							if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items.Count < 2)
 							{
-								SetItemIconS(idx2, data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
-								SetItemIconL(idx2, data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
-								SwitchUnitPrice(idx2, data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
-								SetNumItem(idx2, data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
+								SetItemIconS(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
+								SetItemIconL(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
+								SwitchUnitPrice(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+								SetNumItem(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count);
 							}
 							else
 							{
@@ -493,9 +493,9 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
 				m_isPlayStampSe = true;
 			}
-			if(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1 && !m_isCheckItemPack)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1 && !m_isCheckItemPack)
 			{
-				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay], () =>
+				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{
 					//0x1D59708
 					m_isCheckItemPack = true;
@@ -602,9 +602,9 @@ namespace XeApp.Game.Menu
 			}
 			while (layout.IsPlayingChildren())
 				yield return null;
-			if(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1)
 			{
-				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay], () =>
+				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{
 					//0x1D59728
 					m_isCheckItemPack = true;

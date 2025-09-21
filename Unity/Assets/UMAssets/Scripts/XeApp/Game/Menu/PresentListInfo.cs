@@ -28,16 +28,16 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			List_index = titleIndex;
 			s64bit_List_ID = data.MDPJFPHOPCH_Id;
-			item_ID = data.JJBGOIMEIPF_ItemFullId;
+			item_ID = data.JJBGOIMEIPF_ItemId;
 			item_TYPE = data.NPPNDDMPFJJ_ItemCategory;
-			item_Value = data.MBJIFDBEDAC_ItemCount;
-			PopName = JKNGJFOBADP.JKOAGEAPJHI(data.JJBGOIMEIPF_ItemFullId, data.MBJIFDBEDAC_ItemCount);
-			name = JKNGJFOBADP.JKOAGEAPJHI(data.JJBGOIMEIPF_ItemFullId, data.MBJIFDBEDAC_ItemCount, 20);
+			item_Value = data.MBJIFDBEDAC_item_count;
+			PopName = JKNGJFOBADP.JKOAGEAPJHI(data.JJBGOIMEIPF_ItemId, data.MBJIFDBEDAC_item_count);
+			name = JKNGJFOBADP.JKOAGEAPJHI(data.JJBGOIMEIPF_ItemId, data.MBJIFDBEDAC_item_count, 20);
 			IsAvailable = isAvailable;
-			msg = data.LJGOOOMOMMA_Message;
+			msg = data.LJGOOOMOMMA_message;
 			if(ReceLis)
 			{
-				DateTime date = Utility.GetLocalDateTime(data.LNDEFMALKAN_ReceivedAt);
+				DateTime date = Utility.GetLocalDateTime(data.LNDEFMALKAN_received_at);
 				time = string.Format(bk.GetMessageByLabel("pbox_text_11"), new object[5]
 				{
 					date.Year, string.Format("{0:D2}", date.Month), string.Format("{0:D2}", date.Day), 

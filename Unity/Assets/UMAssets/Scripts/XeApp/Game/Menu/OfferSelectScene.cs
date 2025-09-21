@@ -384,7 +384,7 @@ namespace XeApp.Game.Menu
 			//LAB_0170dfa8
 			SoundManager.Instance.bgmPlayer.ContinuousPlay(1025, 1);
 			m_controller.layoutAllEnter();
-			KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.LHPDDGIJKNB();
+			KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.LHPDDGIJKNB_Reset();
 			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
 			yield return null;
 			IsFirstOrder = !pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1);

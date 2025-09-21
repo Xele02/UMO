@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x164D3E4
 				return _.name == "logo_00 (TextView)";
-			}).First().text = data.IJBLEJOKEFH_ValkyrieName;
+			}).First().text = data.IJBLEJOKEFH_Name;
 			txts.Where((Text _) =>
 			{
 				//0x164D464
@@ -59,12 +59,12 @@ namespace XeApp.Game.Menu
 			{
 				//0x164D4E4
 				return _.name == "pilot_00 (TextView)";
-			}).First().text = data.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name;
+			}).First().text = data.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name;
 			txts.Where((Text _) =>
 			{
 				//0x164D564
 				return _.name == "text_00 (TextView)";
-			}).First().text = data.KLMPFGOCBHC_ValkyrieDesc;
+			}).First().text = data.KLMPFGOCBHC_description;
 		}
 
 		// RVA: 0x164D0FC Offset: 0x164D0FC VA: 0x164D0FC

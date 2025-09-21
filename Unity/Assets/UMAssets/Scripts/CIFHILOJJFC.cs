@@ -5,7 +5,7 @@ public class CIFHILOJJFC
     public delegate bool OJPDCIGOLMA(int _AHHJLDLAPAN_DivaId, int _BCCHOBPJJKE_SceneId);
     
 	public int GIDKKHFHALL_unit_id; // 0x8
-	public string OPFGFINHFCE_Name = ""; // 0xC
+	public string OPFGFINHFCE_name = ""; // 0xC
 	public List<AMCGONHBGGF> FDBOPFEOENF_Diva; // 0x10
 	public List<DKDMLOBCPFC> KAKGHFFOAEJ_AddDivas; // 0x14
 	public int FODKKJIDDKN_VfId; // 0x18
@@ -46,7 +46,7 @@ public class CIFHILOJJFC
 	}
 
 	// // RVA: 0xFF56B4 Offset: 0xFF56B4 VA: 0xFF56B4
-	public int CJJIHFDLNMJ_CountForEachDivaScene(OJPDCIGOLMA MKANHLNEEGL)
+	public int CJJIHFDLNMJ_CountForEachDivaScene(OJPDCIGOLMA _MKANHLNEEGL_filter)
 	{
 		int res = 0;
 		for(int i = 0; i < FDBOPFEOENF_Diva.Count; i++)
@@ -55,7 +55,7 @@ public class CIFHILOJJFC
 			{
 				if(FDBOPFEOENF_Diva[i].EBDNICPAFLB_SSlot[j] != 0)
 				{
-					if (MKANHLNEEGL(FDBOPFEOENF_Diva[i].DIPKCALNIII_DivaId, FDBOPFEOENF_Diva[i].EBDNICPAFLB_SSlot[j]))
+					if (_MKANHLNEEGL_filter(FDBOPFEOENF_Diva[i].DIPKCALNIII_DivaId, FDBOPFEOENF_Diva[i].EBDNICPAFLB_SSlot[j]))
 						res++;
 				}
 			}
@@ -66,7 +66,7 @@ public class CIFHILOJJFC
 	// // RVA: 0xFF5D50 Offset: 0xFF5D50 VA: 0xFF5D50
 	public void LHPDDGIJKNB_Reset()
 	{
-		OPFGFINHFCE_Name = CBELJGBFLGA;
+		OPFGFINHFCE_name = CBELJGBFLGA;
 		for(int i = 0; i < 3; i++)
 		{
 			FDBOPFEOENF_Diva[i].LHPDDGIJKNB_Reset();
@@ -82,7 +82,7 @@ public class CIFHILOJJFC
 	// // RVA: 0xFF5EB0 Offset: 0xFF5EB0 VA: 0xFF5EB0
 	public void ODDIHGPONFL_Copy(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH/* = false*/)
 	{
-		OPFGFINHFCE_Name = GPBJHKLFCEP.OPFGFINHFCE_Name;
+		OPFGFINHFCE_name = GPBJHKLFCEP.OPFGFINHFCE_name;
 		for(int i = 0; i < 3; i++)
 		{
 			FDBOPFEOENF_Diva[i].ODDIHGPONFL_Copy(GPBJHKLFCEP.FDBOPFEOENF_Diva[i]);
@@ -112,9 +112,9 @@ public class CIFHILOJJFC
 			if(!KAKGHFFOAEJ_AddDivas[i].AGBOGBEOFME(OIKJFMGEICL.KAKGHFFOAEJ_AddDivas[i]))
 				return false;
 		}
-		return OPFGFINHFCE_Name == OIKJFMGEICL.OPFGFINHFCE_Name;
+		return OPFGFINHFCE_name == OIKJFMGEICL.OPFGFINHFCE_name;
 	}
 
 	// // RVA: 0xFF6258 Offset: 0xFF6258 VA: 0xFF6258
-	// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, CIFHILOJJFC OHMCIEMIKCE, bool EFOEPDLNLJG) { }
+	// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, CIFHILOJJFC _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 }

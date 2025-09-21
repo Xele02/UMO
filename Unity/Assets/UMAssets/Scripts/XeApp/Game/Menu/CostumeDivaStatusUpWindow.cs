@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 			isPlayedCountupSE = false;
 			isSkiped = false;
 			StartLoadDivaIcon(data.AHHJLDLAPAN_DivaId);
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[data.AHHJLDLAPAN_DivaId - 1];
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[data.AHHJLDLAPAN_DivaId - 1];
 			m_afterStatus.Copy(diva.JLJGCBOHJID_Status);
 			afterParamText.soul.text = diva.JLJGCBOHJID_Status.soul.ToString();
 			afterParamText.voice.text = diva.JLJGCBOHJID_Status.vocal.ToString();
@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x162BE0C Offset: 0x162BE0C VA: 0x162BE0C
 		private void StartLoadDivaIcon(int divaId)
 		{
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1];
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1];
 			imageDiva.enabled = false;
 			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId, (IiconTexture iconTexture) =>
 			{

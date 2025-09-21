@@ -8,7 +8,7 @@ public class CNGFKOJANNP
 	private LINJMMGGDKL_SecureInt2 OCCEOHOFGNE; // 0xC
 	private const int DFLLFGDDFFG_StartCheckFrame = 750;
 	private int DGIPJOMHJEJ_WaitCheck; // 0x10
-	private int LGADCGFMLLD_State; // 0x14
+	private int LGADCGFMLLD_step; // 0x14
 	private int FBGGEFFJJHB_xor; // 0x18
 	public PJADOKMABLA IBJEFPCNMAL; // 0x1C
 
@@ -34,7 +34,7 @@ public class CNGFKOJANNP
 		MGALHAHPADF_CanAutoCheck = true;
 		AKPCMLEPPGC_IsInvalid = false;
 		DGIPJOMHJEJ_WaitCheck = 0;
-		LGADCGFMLLD_State = 0;
+		LGADCGFMLLD_step = 0;
 	}
 
 	// // RVA: 0x175B6FC Offset: 0x175B6FC VA: 0x175B6FC
@@ -57,7 +57,7 @@ public class CNGFKOJANNP
 	}
 
 	// // RVA: 0x175B730 Offset: 0x175B730 VA: 0x175B730
-	public void FGDBKOCCKOE(bool JKDJCFEBDHC)
+	public void FGDBKOCCKOE(bool _JKDJCFEBDHC_Enabled)
 	{
 		if(SecureLibAPI.isDebuggerAttachedJava())
 			AKPCMLEPPGC_IsInvalid = true;
@@ -79,13 +79,13 @@ public class CNGFKOJANNP
 		DGIPJOMHJEJ_WaitCheck++;
 		if (DGIPJOMHJEJ_WaitCheck <= DFLLFGDDFFG_StartCheckFrame)
 			return;
-		if(LGADCGFMLLD_State == 2)
+		if(LGADCGFMLLD_step == 2)
 		{
 			if(IBJEFPCNMAL != null)
 			{
 				if(IBJEFPCNMAL.MLMGFOGCDMD.Length == 0)
 				{
-					LGADCGFMLLD_State = 0;
+					LGADCGFMLLD_step = 0;
 					DGIPJOMHJEJ_WaitCheck = 0;
 					return;
 				}
@@ -95,10 +95,10 @@ public class CNGFKOJANNP
 				{
 					if(IBJEFPCNMAL.MLMGFOGCDMD[i].NHJBJIGNLHI == IKBKLPNADJM.DNJEJEANJGL_Value)
 					{
-						if(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO.Contains(","))
+						if(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO_Hash.Contains(","))
 						{
 							hasChecked = true;
-							if(!SecureLib.SecureLibAPI.checkCodeDigest(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO))
+							if(!SecureLib.SecureLibAPI.checkCodeDigest(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO_Hash))
 							{
 								isInvalid = false;
 								break;
@@ -111,16 +111,16 @@ public class CNGFKOJANNP
 					AKPCMLEPPGC_IsInvalid = true;
 				}
 			}
-			LGADCGFMLLD_State = 0;
+			LGADCGFMLLD_step = 0;
 		}
 		else
 		{
 			bool d = false;
-			if(LGADCGFMLLD_State == 1)
+			if(LGADCGFMLLD_step == 1)
 			{
 				d = SecureLib.SecureLibAPI.isDebuggerAttachedNative();
 			}
-			else if(LGADCGFMLLD_State != 0)
+			else if(LGADCGFMLLD_step != 0)
 			{
 				DGIPJOMHJEJ_WaitCheck = 0;
 			}
@@ -132,7 +132,7 @@ public class CNGFKOJANNP
 			{
 				AKPCMLEPPGC_IsInvalid = true;
 			}
-			LGADCGFMLLD_State++;
+			LGADCGFMLLD_step++;
 		}
 		DGIPJOMHJEJ_WaitCheck = 0;
 	}
@@ -162,10 +162,10 @@ public class CNGFKOJANNP
 					{
 						if (IBJEFPCNMAL.MLMGFOGCDMD[i].NHJBJIGNLHI == IKBKLPNADJM.DNJEJEANJGL_Value)
 						{
-							if (IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO.Contains(","))
+							if (IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO_Hash.Contains(","))
 							{
 								hasChecked = true;
-								if (!SecureLib.SecureLibAPI.checkCodeDigest(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO))
+								if (!SecureLib.SecureLibAPI.checkCodeDigest(IBJEFPCNMAL.MLMGFOGCDMD[i].IOIMHJAOKOO_Hash))
 								{
 									isValid = false;
 									break;

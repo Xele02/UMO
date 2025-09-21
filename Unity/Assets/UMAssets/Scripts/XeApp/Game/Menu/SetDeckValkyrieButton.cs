@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 				if(m_viewValkyrieAbilityData.KINFGHHNFCF_Atk < 1)
 				{
 					en = false;
-					if(m_viewValkyrieAbilityData.NONBCCLGBAO_Hit > 0)
+					if(m_viewValkyrieAbilityData.NONBCCLGBAO_hit > 0)
 					{
 						en = true;
 					}

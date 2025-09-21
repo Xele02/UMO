@@ -139,23 +139,23 @@ namespace XeApp.Game.Menu
 			this.itemInfo = itemInfo;
 			if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				if(!itemInfo.PHJHJGDLPED_IsRareDrop)
 				{
-					normalItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_Rarity - 1];
+					normalItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_rarity - 1];
 					MenuScene.Instance.ItemTextureCache.Load(itemInfo.KIJAPOFAGPN_ItemId, OnLoadedNormalItemTexture);
 				}
 				else
 				{
-					rareItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_Rarity - 1];
+					rareItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_rarity - 1];
 					MenuScene.Instance.ItemTextureCache.Load(itemInfo.KIJAPOFAGPN_ItemId, OnLoadedRareItemTexture);
 				}
 			}
 			else
 			{
-				eventRareItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_Rarity - 1];
+				eventRareItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_rarity - 1];
 				MenuScene.Instance.ItemTextureCache.Load(itemInfo.KIJAPOFAGPN_ItemId, OnLoadedEventRareItemTexture);
 			}
-			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && itemInfo.LHEDLDEMPPG_IsNew)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && itemInfo.LHEDLDEMPPG_IsNew)
 			{
 				newMarkIcon = new NewMarkIcon();
 				newMarkIcon.Initialize(newMarkIconRoot.gameObject);
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 				return false;
 			if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				if(!itemInfo.PHJHJGDLPED_IsRareDrop)
 				{
 					if (normalItem.layoutRoot.IsPlayingChildren())
 						return true;
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				if(!itemInfo.PHJHJGDLPED_IsRareDrop)
 				{
 					layoutStateTable.StartChildrenAnimGoStop("01", "01");
 					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? "01" : "02", m_is_bonus ? "01" : "02");
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 			}
 			if (itemInfo == null)
 				return;
-			if (itemInfo.HHACNFODNEF_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if (itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				return;
 			layoutSceneStatusAnim.StartChildrenAnimGoStop("go_in", "st_in");
 			SetupItemStatusType();
@@ -264,7 +264,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D9182C Offset: 0x1D9182C VA: 0x1D9182C
 		public void StartMoveNum()
 		{
-			if (itemInfo.PHJHJGDLPED_IsRareItem)
+			if (itemInfo.PHJHJGDLPED_IsRareDrop)
 				return;
 			normalItem.layoutNumAnim.StartChildrenAnimGoStop("go_in", "st_in");
 		}
@@ -272,7 +272,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D918D8 Offset: 0x1D918D8 VA: 0x1D918D8
 		public void StartShowBonus()
 		{
-			if (itemInfo.PHJHJGDLPED_IsRareItem)
+			if (itemInfo.PHJHJGDLPED_IsRareDrop)
 				return;
 			normalItem.layoutNumAnim.StartChildrenAnimGoStop("go_out", "st_out");
 		}
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D91984 Offset: 0x1D91984 VA: 0x1D91984
 		public void StartAnimBonus()
 		{
-			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
+			if(!itemInfo.PHJHJGDLPED_IsRareDrop && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
 				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
@@ -291,7 +291,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D91A60 Offset: 0x1D91A60 VA: 0x1D91A60
 		public void StartAnimBonusAdd()
 		{
-			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
+			if(!itemInfo.PHJHJGDLPED_IsRareDrop && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
 				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D91B3C Offset: 0x1D91B3C VA: 0x1D91B3C
 		public void StartLoopAnimBonus()
 		{
-			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
+			if(!itemInfo.PHJHJGDLPED_IsRareDrop && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
 				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 			this.StopAllCoroutinesWatched();
 			if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				if(!itemInfo.PHJHJGDLPED_IsRareDrop)
 				{
 					layoutStateTable.StartChildrenAnimGoStop(0, 0);
 					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? 0 : 1, m_is_bonus ? 0 : 1);
@@ -346,7 +346,7 @@ namespace XeApp.Game.Menu
 				eventRareItem.layoutRoot.StartChildrenAnimGoStop("st_hiraki");
 				shadowAnime.StartChildrenAnimGoStop("st_hiraki");
 			}
-			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				layoutSceneStatusAnim.StartChildrenAnimGoStop("st_in");
 				SetupItemStatusType();
@@ -367,7 +367,7 @@ namespace XeApp.Game.Menu
 			yield return new WaitWhile(() =>
 			{
 				//0x1D92BAC
-				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				if(!itemInfo.PHJHJGDLPED_IsRareDrop)
 				{
 					if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
 					{
@@ -376,9 +376,9 @@ namespace XeApp.Game.Menu
 				}
 				return frameAnim.FrameCount * 1.0f / frameAnim.FrameNum <= animEndRate;
 			});
-			ChangeBaseCountNumber(itemInfo.HMFFHLPNMPH);
+			ChangeBaseCountNumber(itemInfo.HMFFHLPNMPH_Count);
 			FinalizeBonusCountNumber();
-			if (itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if (itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				prevInput = GameManager.Instance.InputEnabled;
 				GameManager.Instance.InputEnabled = true;
@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D92108 Offset: 0x1D92108 VA: 0x1D92108
 		private bool IsEnableBonusCount()
 		{
-			return itemInfo.HHACNFODNEF_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && !itemInfo.PHJHJGDLPED_IsRareItem;
+			return itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && !itemInfo.PHJHJGDLPED_IsRareDrop;
 		}
 
 		//// RVA: 0x1D9216C Offset: 0x1D9216C VA: 0x1D9216C
@@ -435,7 +435,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D9205C Offset: 0x1D9205C VA: 0x1D9205C
 		public void FinalizeBaseCountNumber()
 		{
-			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusValue + itemInfo.HMFFHLPNMPH);
+			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusValue + itemInfo.HMFFHLPNMPH_Count);
 		}
 
 		//// RVA: 0x1D9232C Offset: 0x1D9232C VA: 0x1D9232C
@@ -466,12 +466,12 @@ namespace XeApp.Game.Menu
 		private void OnStay()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				ShowSceneCardItem();
 				return;
 			}
-			MenuScene.Instance.ShowItemDetail(itemInfo.KIJAPOFAGPN_ItemId, itemInfo.MHFBCINOJEE_Count, null);
+			MenuScene.Instance.ShowItemDetail(itemInfo.KIJAPOFAGPN_ItemId, itemInfo.MHFBCINOJEE_Num, null);
 		}
 
 		//// RVA: 0x1D92660 Offset: 0x1D92660 VA: 0x1D92660

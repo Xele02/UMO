@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xBA246C Offset: 0xBA246C VA: 0xBA246C
 		protected void InitializeSortSetting()
 		{
-			m_sortType = (SortItem)sortSaveData.LHPDCGNKPHD_sortItem;
+			m_sortType = (SortItem)sortSaveData.LHPDCGNKPHD_SortItem;
 			m_sortOrder = (GeneralList.SortOrder)sortSaveData.EILKGEADKGH_Order;
 			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_AttributeFilter;
@@ -439,7 +439,7 @@ namespace XeApp.Game.Menu
 			elem.SetSkillRank(info.skillRank);
 			elem.SetMusicRatio(info.musicRatio.ToString());
 			elem.SetMusicRank(info.scoreRatingRank);
-			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO);
+			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO_FriendData);
 			elem.SetKira(info.isKira);
 			elem.SetDivaIconDelegate(info.GetFriendDivaIconTex);
 			elem.SetSceneIconDelegate(info.GetFriendSceneIconTex);

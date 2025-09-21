@@ -3,22 +3,22 @@ public class EPIFHEDDJAE
 {
 	public enum NGEDJNHECKN
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		MGJDKBFHDML = 1,
 		FJFMLFPJKNB_2 = 2,
 	}
 
 	public enum JAOBCBKBKJJ
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		FMHLGHDKJBC_1 = 1,
-		JIOPJDJBLFK = 2,
+		JIOPJDJBLFK_2 = 2,
 		FIFJJFPHOEM = 3,
 	}
 
 	public enum JFEIHHBGFPF_AbilityCondition
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		KLHDILNPGBB = 1,
 		JEEDNIBFAEL = 2,
 		KNMIMAAFAEB = 3,

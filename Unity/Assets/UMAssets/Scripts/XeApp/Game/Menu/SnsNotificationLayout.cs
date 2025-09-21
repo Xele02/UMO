@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
             m_divaNameChange.StartChildrenAnimGoStop(offerinfo.AHHJLDLAPAN_DivaId == 9 ? "02" : "01");
 			m_releaseLevel.StartChildrenAnimGoStop(offerinfo.CIEOBFIIPLD_Level.ToString("D2"));
 			m_maxIconLayout.StartChildrenAnimGoStop(offerinfo.NBHEBLNHOJO_IsMaxLevel ? "01" : "02");
-			offerinfo.LHPDDGIJKNB();
+			offerinfo.LHPDDGIJKNB_Reset();
 			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
 		}
 

@@ -40,25 +40,25 @@ namespace XeApp.Game.Common
 		// RVA: 0xD32CC8 Offset: 0xD32CC8 VA: 0xD32CC8
 		public bool CanShowPopup()
 		{
-			return OpenAt >= localSaveData.KOGBMDOONFA.NPDKEIIMCDI_LastShowtime;
+			return OpenAt >= localSaveData.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime;
 		}
 
 		//// RVA: 0xD32D24 Offset: 0xD32D24 VA: 0xD32D24
 		public void SetLastShowTime(long currentTime)
 		{
-			localSaveData.KOGBMDOONFA.NPDKEIIMCDI_LastShowtime = currentTime;
+			localSaveData.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime = currentTime;
 		}
 
 		//// RVA: 0xD32D80 Offset: 0xD32D80 VA: 0xD32D80
 		public void SetShowStatus(bool isEnable)
 		{
-			localSaveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect = isEnable;
+			localSaveData.KOGBMDOONFA_Info.CINLIMIKCAL_EnableBgEffect = isEnable;
 		}
 
 		// RVA: 0xD32DC8 Offset: 0xD32DC8 VA: 0xD32DC8
 		public bool IsEnableBgEffect()
 		{
-			return localSaveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect;
+			return localSaveData.KOGBMDOONFA_Info.CINLIMIKCAL_EnableBgEffect;
 		}
 
 		// RVA: 0xD32E08 Offset: 0xD32E08 VA: 0xD32E08

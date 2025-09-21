@@ -112,8 +112,8 @@ namespace XeApp.Game.Adv
 			AEGLGBOGDHH a_ = new AEGLGBOGDHH();
 			a_.OBKGEDCKHHE();
 			IBJAKJJICBC ib_ = new IBJAKJJICBC();
-			ib_.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
-			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
+			ib_.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_Enemy);
 			a_.GEEDEOHGMOM(ref st);
 			st2.Clear();
 			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);

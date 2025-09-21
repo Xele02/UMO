@@ -44,7 +44,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x16086E8 Offset: 0x16086E8 VA: 0x16086E8 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
     {
 		CDENCMNHNGA_table.Clear();
 		for(int i = 0; i < 10; i++)
@@ -67,7 +67,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	};
 
 	// // RVA: 0x16088BC Offset: 0x16088BC VA: 0x16088BC Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
     {
 		long time = Utility.GetCurrentUnixTime();
 		MHKHMCAPDKK reader = MHKHMCAPDKK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
@@ -92,7 +92,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				// UMO, Restore old diva life stat (not end game 9999)
 				data2.DOMFHDPMCCO_Init(0, (int)val2, (short)/*array[i].DFEDIAPLFHN.BCCOMAODPJI*/oldDivaLevels[i], (short)array[i].DFEDIAPLFHN.LJELGFAFGAB, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN,
 						(short)array[i].DFEDIAPLFHN.MBAMIOJNGBD, (short)array[i].DFEDIAPLFHN.ADLGKMBIPCA, (short)array[i].DFEDIAPLFHN.PIPCIMIALOO);
-				data.CMCKNKKCNDK_Status[0].ODDIHGPONFL_CopyValues(data2);
+				data.CMCKNKKCNDK_Status[0].ODDIHGPONFL_Copy(data2);
 				val2 = val2 * 0xb + 3;
 				AGNCAAFGLBE_MaxLevels = array[i].DFEDIAPLFHN.OEOIHIIIMCK.Length / 2;
 				for(int k = 0, j = 1; j <= AGNCAAFGLBE_MaxLevels; j++, k+=2)
@@ -100,7 +100,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 					data2.ANAJIAENLNB_Level = j;
 					data2.ANIJHEBLMGB_AddStat((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k+1]);
 					data.CMCKNKKCNDK_Status[j].FBGGEFFJJHB_xor = (int)val2;
-					data.CMCKNKKCNDK_Status[j].ODDIHGPONFL_CopyValues(data2);
+					data.CMCKNKKCNDK_Status[j].ODDIHGPONFL_Copy(data2);
 					val2 = val2 * 0xb;
 				}
 			}
@@ -111,7 +111,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x16093A0 Offset: 0x16093A0 VA: 0x16093A0 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}

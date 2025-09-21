@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 		private void InitParam()
 		{
 			NGJOPPIGCPM_ResultData resultData = new NGJOPPIGCPM_ResultData();
-			resultData.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId,
+			resultData.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId,
 							Database.Instance.gameSetup.musicInfo.difficultyType,
 							Database.Instance.gameSetup.EnableLiveSkip,
 							Database.Instance.gameSetup.musicInfo.IsLine6Mode, 
@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 				rewardSetting.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 			}
 			BPOJMOOIIFI_PlayerLevelData playerLevelData = new BPOJMOOIIFI_PlayerLevelData();
-			playerLevelData.KHEKNNFCAOI();
+			playerLevelData.KHEKNNFCAOI_Init();
 			scoreLayoutInitParam = new ResultScoreLayoutController.InitParam()
 			{
 				divaId = Database.Instance.gameSetup.teamInfo.divaList[0].divaId,
@@ -107,25 +107,25 @@ namespace XeApp.Game.Menu
 				achieveRewardSetting = rewardSetting
 			};
 			GNIFOHMFDMO_DivaResultData divaResultData = new GNIFOHMFDMO_DivaResultData();
-			divaResultData.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+			divaResultData.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 			divaLayoutInitParam = new ResultDivaLayoutController.InitParam()
 			{
 				viewDivaResultData = divaResultData,
 				layoutOkayButton = null
 			};
 			MOLKENLNCPE_DropData dropData = new MOLKENLNCPE_DropData();
-			dropData.KHEKNNFCAOI();
+			dropData.KHEKNNFCAOI_Init();
 			dropLayoutInitParam = new ResultDropLayoutController.InitParam()
 			{
 				viewDropResultData = dropData,
-				viewFriendPlayerData = JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendPlayerData,
+				viewFriendPlayerData = JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendData,
 				layoutOkayButton = null
 			};
 			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				GCODMEIACDE data = new GCODMEIACDE();
-				data.KHEKNNFCAOI();
+				data.KHEKNNFCAOI_Init();
 				event01LayoutInitParam = new ResultEvent01LayoutController.InitParam();
 				event01LayoutInitParam.viewEventResultData = data;
 				event01LayoutInitParam.layoutOkayButton = null;
@@ -140,11 +140,11 @@ namespace XeApp.Game.Menu
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
 				GJOOGLGLFID data = new GJOOGLGLFID();
-				data.KHEKNNFCAOI();
+				data.KHEKNNFCAOI_Init();
 				FJIPMALKCBG data2 = new FJIPMALKCBG();
-				data2.KHEKNNFCAOI();
+				data2.KHEKNNFCAOI_Init();
 				DCAKKIJODME data3 = new DCAKKIJODME();
-				data3.KHEKNNFCAOI(true);
+				data3.KHEKNNFCAOI_Init(true);
 				ResultEvent03ScoreLayoutController.InitParam param = new ResultEvent03ScoreLayoutController.InitParam();
 				param.viewEventGameResultData = data;
 				param.viewEventMatchResultData = data2;
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 				{
 					if(eventType == ev.HIDHLFCBIDE_EventType)
 					{
-						if(ev.CKEDJHEFJCJ != OLLEELKFCMM.NDBAPDFEPAF.HJNNKCMLGFL_0)
+						if(ev.CKEDJHEFJCJ != OLLEELKFCMM.NDBAPDFEPAF.HJNNKCMLGFL_0_None)
 						{
 							TipsControl.SetSituationValue((TipsControl.SituationId)(ev.CKEDJHEFJCJ + 2), 1);
 						}
@@ -171,13 +171,13 @@ namespace XeApp.Game.Menu
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
 				FLCAECNBMML f = new FLCAECNBMML();
-				f.KHEKNNFCAOI();
+				f.KHEKNNFCAOI_Init();
 				GJMCHHCPFDL g = new GJMCHHCPFDL();
-				g.KHEKNNFCAOI(false);
+				g.KHEKNNFCAOI_Init(false);
 				PLFJMDBBAJD p = new PLFJMDBBAJD();
-				p.KHEKNNFCAOI();
+				p.KHEKNNFCAOI_Init();
 				DAFGPCEKAJB d = new DAFGPCEKAJB();
-				d.KHEKNNFCAOI();
+				d.KHEKNNFCAOI_Init();
 				raidResultPointLayoutInitParam = new RaidResultPointLayoutController.InitParam();
 				raidResultPointLayoutInitParam.viewEventRaidPointData = f;
 				raidResultPointLayoutInitParam.viewEventRaidRankingData = d;
@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
 				JLCHNKIHGHK data = new JLCHNKIHGHK();
-				data.KHEKNNFCAOI();
+				data.KHEKNNFCAOI_Init();
 				goDivaLayoutInitParam = new LayoutResultGoDivaMain.InitParam();
 				goDivaLayoutInitParam.viewEventResultData = data;
 			}
@@ -1028,7 +1028,7 @@ namespace XeApp.Game.Menu
 		{
 			dropLayoutController.DisableFriendRequestButton();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_requested_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_requested_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name), new ButtonInfo[1]
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_requested_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_requested_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -1044,7 +1044,7 @@ namespace XeApp.Game.Menu
 		{
 			//CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_request_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_request_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name), new ButtonInfo[2]
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_request_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_request_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName), new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Request, Type = PopupButton.ButtonType.Positive }
@@ -1060,7 +1060,7 @@ namespace XeApp.Game.Menu
 		private void DoFriendRequest()
 		{
 			MenuScene.Instance.InputDisable();
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.AOHLMBKILED(dropLayoutInitParam.viewFriendPlayerData.MLPEHNBNOGD_Id, dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name, dropLayoutInitParam.viewFriendPlayerData.ILOJAJNCPEC_Rank, OnSuccessFriendRequest, OnErrorFriendRequest, OnErrorToTitleFriendRequest);
+			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.AOHLMBKILED(dropLayoutInitParam.viewFriendPlayerData.MLPEHNBNOGD_PlayerId, dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName, dropLayoutInitParam.viewFriendPlayerData.ILOJAJNCPEC_Rank, OnSuccessFriendRequest, OnErrorFriendRequest, OnErrorToTitleFriendRequest);
 		}
 
 		// // RVA: 0xB522E8 Offset: 0xB522E8 VA: 0xB522E8
@@ -1396,11 +1396,11 @@ namespace XeApp.Game.Menu
 			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
 			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			raidResultDamageLayoutController.gameObject.SetActive(false);
-			if(raidController.KONJMFICNJJ == null)
+			if(raidController.KONJMFICNJJ_RewardsInfo == null)
 			{
 				if(raidController.LMIFOCDCNAI())
 				{
-					if(raidController.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+					if(raidController.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id)
 					{
 						PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 						s.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_title");
@@ -1718,7 +1718,7 @@ namespace XeApp.Game.Menu
 			int homeId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
 			if(homeId > 0)
 			{
-				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeId - 1].AHHJLDLAPAN_DivaId;
+				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[homeId - 1].AHHJLDLAPAN_DivaId;
 			}
 			return res;
 		}

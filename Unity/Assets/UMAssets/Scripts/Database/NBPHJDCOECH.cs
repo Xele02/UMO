@@ -21,12 +21,12 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	public List<CEBFFLDKAEC_SecureInt> DGCBAFGBOCL_GameDropEvBns { get; set; } // 0x40 MNPELONMGFI DIIKFNBIKJF PPAMAOAGPHO
 
 	//// RVA: 0x17C7B94 Offset: 0x17C7B94 VA: 0x17C7B94
-	public HNJKJCDDIMG_SetInfo NMGAAKPJPLB(int LIHEBNPAIFI)
+	public HNJKJCDDIMG_SetInfo NMGAAKPJPLB(int _LIHEBNPAIFI_SId)
 	{
 		return KPEOJPKLJBH_Set.Find((HNJKJCDDIMG_SetInfo PKLPKMLGFGK) =>
 		{
 			//0x17CBA5C
-			return LIHEBNPAIFI == PKLPKMLGFGK.LIHEBNPAIFI_SId;
+			return _LIHEBNPAIFI_SId == PKLPKMLGFGK.LIHEBNPAIFI_SId;
 		});
 	}
 
@@ -41,12 +41,12 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C7D94 Offset: 0x17C7D94 VA: 0x17C7D94
-	public HNJKJCDDIMG_SetInfo OHGDKJFDIKK_GetSet(int LIHEBNPAIFI)
+	public HNJKJCDDIMG_SetInfo OHGDKJFDIKK_GetSet(int _LIHEBNPAIFI_SId)
 	{
 		return LMILCGIFPGC_RareSet.Find((HNJKJCDDIMG_SetInfo PKLPKMLGFGK) =>
 		{
 			//0x17CBAD8
-			return LIHEBNPAIFI == PKLPKMLGFGK.LIHEBNPAIFI_SId;
+			return _LIHEBNPAIFI_SId == PKLPKMLGFGK.LIHEBNPAIFI_SId;
 		});
 	}
 
@@ -61,19 +61,19 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C7F94 Offset: 0x17C7F94 VA: 0x17C7F94
-	private List<DNAEGJGAKEI_DropItemInfo> DGMNLKDEDDC_GetAvaiableItems(KEODKEGFDLD_FreeMusicInfo _GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int MNNHHJBBICA_GameEventType, int MFJKNCACBDG_OpenEventType, bool _GIKLNODJKFK_IsLine6)
+	private List<DNAEGJGAKEI_DropItemInfo> DGMNLKDEDDC_GetAvaiableItems(KEODKEGFDLD_FreeMusicInfo _GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, bool _GIKLNODJKFK_IsLine6)
 	{
 		int a = _GEAANLPDJBP_FreeMusicData.NCCFJCDMBFO(_GIKLNODJKFK_IsLine6);
 		int b = _GEAANLPDJBP_FreeMusicData.CCLIOBOGFHC;
-		if (MFJKNCACBDG_OpenEventType != 0)
+		if (_MFJKNCACBDG_OpenEventType != 0)
 		{
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 			if(ev != null)
 			{
-            	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)MNNHHJBBICA_GameEventType);
+            	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
 				if(b != 0)
 				{
-					a = ev.DJHOMGLGAHA(a, (OHCAABOMEOF.KGOGMKMBCPP_EventType)MNNHHJBBICA_GameEventType);
+					a = ev.DJHOMGLGAHA(a, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
 				}
 			}
 		}
@@ -98,9 +98,9 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				if(c > 0)
 				{
 					DNAEGJGAKEI_DropItemInfo data = new DNAEGJGAKEI_DropItemInfo();
-					data.OIPCCBHIKIA_Idx = 0x10000000 | i;
+					data.OIPCCBHIKIA_index = 0x10000000 | i;
 					data.KIJAPOFAGPN_ItemId = a;
-					data.MKNDAOHGOAK_Rate = b;
+					data.MKNDAOHGOAK_weight = b;
 					int d = r.DOOGFEGEKLG_Max[i];
 					if(d == 0)
 						d = 9999;
@@ -119,9 +119,9 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				if (c > 0)
 				{
 					DNAEGJGAKEI_DropItemInfo data = new DNAEGJGAKEI_DropItemInfo();
-					data.OIPCCBHIKIA_Idx = 0x20000000 | i;
+					data.OIPCCBHIKIA_index = 0x20000000 | i;
 					data.KIJAPOFAGPN_ItemId = a;
-					data.MKNDAOHGOAK_Rate = b;
+					data.MKNDAOHGOAK_weight = b;
 					int d = rr.DOOGFEGEKLG_Max[i];
 					if (d == 0)
 						d = 9999;
@@ -141,7 +141,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		int sum = 0;
 		for(int i = 0; i < _CDENCMNHNGA_table.Count; i++)
 		{
-			sum += _CDENCMNHNGA_table[i].MKNDAOHGOAK_Rate;
+			sum += _CDENCMNHNGA_table[i].MKNDAOHGOAK_weight;
 			rateSteps.Add(sum);
 		}
 		int a = JLDAJBCHMOC_RareItemRandCB();
@@ -156,14 +156,14 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C883C Offset: 0x17C883C VA: 0x17C883C
-	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI.FKGCBLHOOCL OKOOPFAGBKO, out int OIPCCBHIKIA) { }
+	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI.FKGCBLHOOCL OKOOPFAGBKO, out int _OIPCCBHIKIA_index) { }
 
 	//// RVA: 0x17C8978 Offset: 0x17C8978 VA: 0x17C8978
-	public List<DNAEGJGAKEI_DropItemInfo> JMHHEPMILHA_GetItemsToSpawn(KEODKEGFDLD_FreeMusicInfo __GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int MNNHHJBBICA_GameEventType, int MFJKNCACBDG_OpenEventType, int HMFFHLPNMPH_NumItems, MMBLPLOGFLG JLDAJBCHMOC_RareItemRandCb, bool _GIKLNODJKFK_IsLine6/* = false*/)
+	public List<DNAEGJGAKEI_DropItemInfo> JMHHEPMILHA_GetItemsToSpawn(KEODKEGFDLD_FreeMusicInfo __GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, int _HMFFHLPNMPH_Count, MMBLPLOGFLG JLDAJBCHMOC_RareItemRandCb, bool _GIKLNODJKFK_IsLine6/* = false*/)
 	{
-		List<DNAEGJGAKEI_DropItemInfo> itemsAvaiable = DGMNLKDEDDC_GetAvaiableItems(__GEAANLPDJBP_FreeMusicData, EBBCGFOGKNE_Diff, MNNHHJBBICA_GameEventType, MFJKNCACBDG_OpenEventType, _GIKLNODJKFK_IsLine6);
-		List<DNAEGJGAKEI_DropItemInfo> res = new List<DNAEGJGAKEI_DropItemInfo>(HMFFHLPNMPH_NumItems);
-		for(int i = HMFFHLPNMPH_NumItems + 1; i > 1; i--)
+		List<DNAEGJGAKEI_DropItemInfo> itemsAvaiable = DGMNLKDEDDC_GetAvaiableItems(__GEAANLPDJBP_FreeMusicData, EBBCGFOGKNE_Diff, _MNNHHJBBICA_GameEventType, _MFJKNCACBDG_OpenEventType, _GIKLNODJKFK_IsLine6);
+		List<DNAEGJGAKEI_DropItemInfo> res = new List<DNAEGJGAKEI_DropItemInfo>(_HMFFHLPNMPH_Count);
+		for(int i = _HMFFHLPNMPH_Count + 1; i > 1; i--)
 		{
 			if (itemsAvaiable.Count == 0)
 				return res;
@@ -197,7 +197,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C8E30 Offset: 0x17C8E30 VA: 0x17C8E30 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		KPEOJPKLJBH_Set.Clear();
 		FDCBLEDPHBM_Rate.Clear();
@@ -211,7 +211,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C9008 Offset: 0x17C9008 VA: 0x17C9008 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		MGOOKLACCAB parser = MGOOKLACCAB.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		CBJFAAOIHHJ(parser);
@@ -223,7 +223,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x17CA22C Offset: 0x17CA22C VA: 0x17CA22C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		TodoLogger.LogError(TodoLogger.DbJson, "Deserialize NBPHJDCOECH_Drop");
 		return false;
@@ -248,7 +248,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				uint[] array2 = array[i].BFINGCJHOHI;
 				for (int j = 0; j < array2.Length; j++)
 				{
-					data.HMFFHLPNMPH_Cnt[j] = (int)array2[j];
+					data.HMFFHLPNMPH_Count[j] = (int)array2[j];
 				}
 			}
 			{
@@ -264,7 +264,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17CA400 Offset: 0x17CA400 VA: 0x17CA400
-	//private bool CBJFAAOIHHJ(EDOHBJAPLPF OBHAFLMHAKG, int KAPMOPMDHJE) { }
+	//private bool CBJFAAOIHHJ(EDOHBJAPLPF OBHAFLMHAKG, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x17C948C Offset: 0x17C948C VA: 0x17C948C
 	private bool KFHCBHNEHKO(MGOOKLACCAB DPMMILMCLLB)
@@ -285,7 +285,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17CA7C8 Offset: 0x17CA7C8 VA: 0x17CA7C8
-	//private bool KFHCBHNEHKO(EDOHBJAPLPF OBHAFLMHAKG, int KAPMOPMDHJE) { }
+	//private bool KFHCBHNEHKO(EDOHBJAPLPF OBHAFLMHAKG, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x17C96EC Offset: 0x17C96EC VA: 0x17C96EC
 	private bool KGFJBMIDNKD(MGOOKLACCAB DPMMILMCLLB) // rare_rate
@@ -301,7 +301,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				{
 					data.ADKDHKMPMHP_Rate[j] = (int)array2[j];
 					if (data.ADKDHKMPMHP_Rate[j] > 0)
-						data.HMFFHLPNMPH_Cnt[j] = 1;
+						data.HMFFHLPNMPH_Count[j] = 1;
 				}
 			}
 			{
@@ -317,7 +317,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17CAABC Offset: 0x17CAABC VA: 0x17CAABC
-	//private bool KGFJBMIDNKD(EDOHBJAPLPF OBHAFLMHAKG, int KAPMOPMDHJE) { }
+	//private bool KGFJBMIDNKD(EDOHBJAPLPF OBHAFLMHAKG, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x17C9AB4 Offset: 0x17C9AB4 VA: 0x17C9AB4
 	private bool DLEALKELBFF(MGOOKLACCAB DPMMILMCLLB)
@@ -338,10 +338,10 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17CAF3C Offset: 0x17CAF3C VA: 0x17CAF3C
-	//private bool DLEALKELBFF(EDOHBJAPLPF OBHAFLMHAKG, int KAPMOPMDHJE) { }
+	//private bool DLEALKELBFF(EDOHBJAPLPF OBHAFLMHAKG, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x17CB230 Offset: 0x17CB230 VA: 0x17CB230
-	//private bool LAFIHNNCCOA(EDOHBJAPLPF OBHAFLMHAKG, int KAPMOPMDHJE) { }
+	//private bool LAFIHNNCCOA(EDOHBJAPLPF OBHAFLMHAKG, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x17C9D14 Offset: 0x17C9D14 VA: 0x17C9D14
 	private bool LAFIHNNCCOA_Deserialize_GameDrop(MGOOKLACCAB DPMMILMCLLB)
@@ -399,21 +399,21 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0010 Offset: 0x6C0010 VA: 0x6C0010
 	//// RVA: 0x17CB71C Offset: 0x17CB71C VA: 0x17CB71C
-	//private void <Deserialize_GameDrop>b__60_0(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+	//private void <Deserialize_GameDrop>b__60_0(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0020 Offset: 0x6C0020 VA: 0x6C0020
 	//// RVA: 0x17CB7DC Offset: 0x17CB7DC VA: 0x17CB7DC
-	//private void <Deserialize_GameDrop>b__60_1(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+	//private void <Deserialize_GameDrop>b__60_1(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0030 Offset: 0x6C0030 VA: 0x6C0030
 	//// RVA: 0x17CB85C Offset: 0x17CB85C VA: 0x17CB85C
-	//private void <Deserialize_GameDrop>b__60_2(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+	//private void <Deserialize_GameDrop>b__60_2(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0040 Offset: 0x6C0040 VA: 0x6C0040
 	//// RVA: 0x17CB8DC Offset: 0x17CB8DC VA: 0x17CB8DC
-	//private void <Deserialize_GameDrop>b__60_3(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+	//private void <Deserialize_GameDrop>b__60_3(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0050 Offset: 0x6C0050 VA: 0x6C0050
 	//// RVA: 0x17CB99C Offset: 0x17CB99C VA: 0x17CB99C
-	//private void <Deserialize_GameDrop>b__60_4(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+	//private void <Deserialize_GameDrop>b__60_4(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
 }

@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1BCA324 Offset: 0x1BCA324 VA: 0x1BCA324
 		public void UpdateSortText()
 		{
-			switch(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_sortItem)
+			switch(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_SortItem)
 			{
 				case 0:
 					m_sortTextAnim.StartChildrenAnimGoStop("01", "01");

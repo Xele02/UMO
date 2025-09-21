@@ -6,11 +6,11 @@ public class BHBONAHFKHD
 	// RVA: 0xC7D068 Offset: 0xC7D068 VA: 0xC7D068
 	public BHBONAHFKHD()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	//// RVA: 0xC7D088 Offset: 0xC7D088 VA: 0xC7D088
-	public void LHPDDGIJKNB()
+	public void LHPDDGIJKNB_Reset()
 	{
 		MGPEIGDOMPH = new EDOHBJAPLPF_JsonData();
 		MGPEIGDOMPH.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
@@ -20,49 +20,49 @@ public class BHBONAHFKHD
 	//private void BNFBKGHBHHN(string JIKKNHIAEKG, EDOHBJAPLPF OBHAFLMHAKG) { }
 
 	//// RVA: 0xC7D270 Offset: 0xC7D270 VA: 0xC7D270
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF JBGEEPFKIGG) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7D430 Offset: 0xC7D430 VA: 0xC7D430
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, bool JBGEEPFKIGG) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7D600 Offset: 0xC7D600 VA: 0xC7D600
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, int JBGEEPFKIGG) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7D7D0 Offset: 0xC7D7D0 VA: 0xC7D7D0
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, string JBGEEPFKIGG) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7D9A0 Offset: 0xC7D9A0 VA: 0xC7D9A0
 	//public void OJCJPCHFPGO(string JIKKNHIAEKG, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7DB18 Offset: 0xC7DB18 VA: 0xC7DB18
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF_JsonData JBGEEPFKIGG)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF_JsonData _JBGEEPFKIGG_Value)
 
 	//// RVA: 0xC7DCD8 Offset: 0xC7DCD8 VA: 0xC7DCD8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool JBGEEPFKIGG)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value)
 
 	//// RVA: 0xC7DEA8 Offset: 0xC7DEA8 VA: 0xC7DEA8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int JBGEEPFKIGG)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value)
 
 	//// RVA: 0xC7E078 Offset: 0xC7E078 VA: 0xC7E078
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string JBGEEPFKIGG)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value)
 
 	//// RVA: 0xC7E248 Offset: 0xC7E248 VA: 0xC7E248
-	//public void AKBLDNCONGK(string JIKKNHIAEKG, string NHPCKCOPKAM, string ALGBKNAAEKO) { }
+	//public void AKBLDNCONGK(string JIKKNHIAEKG, string _NHPCKCOPKAM_from, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7E418 Offset: 0xC7E418 VA: 0xC7E418
-	//public void ODDIHGPONFL(string JIKKNHIAEKG, string NHPCKCOPKAM, string ALGBKNAAEKO) { }
+	//public void ODDIHGPONFL_Copy(string JIKKNHIAEKG, string _NHPCKCOPKAM_from, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7E5E8 Offset: 0xC7E5E8 VA: 0xC7E5E8
-	//public void KCCCOEMPPEA(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF JBGEEPFKIGG) { }
+	//public void KCCCOEMPPEA(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7E7A8 Offset: 0xC7E7A8 VA: 0xC7E7A8
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, bool JBGEEPFKIGG) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7E978 Offset: 0xC7E978 VA: 0xC7E978
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, int JBGEEPFKIGG) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7EB48 Offset: 0xC7EB48 VA: 0xC7EB48
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, string JBGEEPFKIGG) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value) { }
 
 	//// RVA: 0xC7ED18 Offset: 0xC7ED18 VA: 0xC7ED18
 	//public void OPBAJJIJENO() { }

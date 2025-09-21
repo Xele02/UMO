@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 				List<KPJHLACKGJF_EventMission.HLMINENBCKO> l = scheduleList.FindAll((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
 				{
 					//0x1669FC4
-					return _.IPJMPBANBPP;
+					return _.IPJMPBANBPP_Enabled;
 				});
 				l.Sort((KPJHLACKGJF_EventMission.HLMINENBCKO a, KPJHLACKGJF_EventMission.HLMINENBCKO b) =>
 				{

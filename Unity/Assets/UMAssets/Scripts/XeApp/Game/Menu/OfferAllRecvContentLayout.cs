@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 			SetEventIcon(offerInfo.HBJEDMOMAEE_SpOfferType);
 			SetSeriesLogo(offerInfo.DFMOGBOPLEF_Series);
 			SetSeriesIcon(offerInfo.DFMOGBOPLEF_Series);
-			SetLevelIcon(offerInfo.CIEOBFIIPLD_Level, offerInfo.NBLBJCLIDNN_MaxLevel, offerInfo.NBHEBLNHOJO);
+			SetLevelIcon(offerInfo.CIEOBFIIPLD_Level, offerInfo.NBLBJCLIDNN_MaxLevel, offerInfo.NBHEBLNHOJO_IsMaxLevel);
 			if (offerInfo.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
 				SetDivaOffer(offerInfo);
 			int loadCount = 0;

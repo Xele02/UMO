@@ -102,11 +102,11 @@ namespace XeApp.Game.Menu
 					if(a != 0)
 					{
 						JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
-						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 						{
-							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_Item) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
+							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
 							{
-								return episode.KELFCMEOPPM;
+								return episode.KELFCMEOPPM_EpisodeId;
 							}
 						}
 					}
@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < episodeList.Count; i++)
 			{
-				TryInstallIcon(episodeList[i].KELFCMEOPPM_EpId);
+				TryInstallIcon(episodeList[i].KELFCMEOPPM_EpisodeId);
 			}
 		}
 

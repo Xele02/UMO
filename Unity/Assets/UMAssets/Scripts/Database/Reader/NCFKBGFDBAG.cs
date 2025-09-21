@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class FABKJOODBNN
 {
-	public int KAPMOPMDHJE { get; set; } // 0x8 EJDCHACDMPH MONBNPKLFGC KGFFKEDNIID
-	public string[] PIBLLGLCJEO { get; set; } // 0xC KGLJBJIIAEG CMKMAGNMPGC CICCOMMMNHK
+	public int KAPMOPMDHJE_label { get; set; } // 0x8 EJDCHACDMPH MONBNPKLFGC KGFFKEDNIID
+	public string[] PIBLLGLCJEO_Param { get; set; } // 0xC KGLJBJIIAEG CMKMAGNMPGC CICCOMMMNHK
 }
 public class GPCOJNLJJLE
 {
@@ -35,13 +35,13 @@ public class NCFKBGFDBAG
 				LJONABMKIOM PBOHDAFOEIA_readData = HEHPAMADHGC_readData.GetIIBAJDOLFBM(PBOHDAFOEIA_idx);
 				FABKJOODBNN PBOHDAFOEIA_data = new FABKJOODBNN();
 
-				PBOHDAFOEIA_data.KAPMOPMDHJE = PBOHDAFOEIA_readData.BNFLNMGOJCM;
+				PBOHDAFOEIA_data.KAPMOPMDHJE_label = PBOHDAFOEIA_readData.BNFLNMGOJCM;
 				List<string> PIBLLGLCJEO_list = new List<string>();
 				for(int PIBLLGLCJEO_idx = 0; PIBLLGLCJEO_idx < PBOHDAFOEIA_readData.BPODDGNIDBGLength; PIBLLGLCJEO_idx++)
 				{
 					PIBLLGLCJEO_list.Add(PBOHDAFOEIA_readData.GetBPODDGNIDBG(PIBLLGLCJEO_idx));
 				}
-				PBOHDAFOEIA_data.PIBLLGLCJEO = PIBLLGLCJEO_list.ToArray();
+				PBOHDAFOEIA_data.PIBLLGLCJEO_Param = PIBLLGLCJEO_list.ToArray();
 
 				PBOHDAFOEIA_list.Add(PBOHDAFOEIA_data);
 			}

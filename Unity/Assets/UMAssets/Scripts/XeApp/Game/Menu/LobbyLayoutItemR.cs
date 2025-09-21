@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			SetUserNameAndMusicRate(name, m_musicRank);
 			SetUpdateAtTime(_time);
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-			k.KHEKNNFCAOI(_commentId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
+			k.KHEKNNFCAOI_Init(_commentId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
 			SetMessgeText(_type, k.DOIGLOBENMG_StampName);
 			m_textTypeChange.StartChildrenAnimGoStop(k.DBGAJBIBODC_FontType.ToString("D2"));
 			LoadIconTexture(_miniId);
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
 			{
 				//0x12965E4
-				return item.PPFNGGCBJKC == m_subId;
+				return item.PPFNGGCBJKC_id == m_subId;
 			});
 			commentImageId = charaStamp.IDELKEKDIFD_CharaId;
 			StampMotionId = charaStamp.BEHMEDMNJMC_EmotionId;
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x1296868
-				return item.PPFNGGCBJKC == m_subId;
+				return item.PPFNGGCBJKC_id == m_subId;
 			});
 			int attrId = dbInfo.GBJFNGCDKPM_Type;
 			stampBallonImageId = attrId;

@@ -3,7 +3,7 @@ public class OHCAABOMEOF
 {
     public enum KGOGMKMBCPP_EventType
     {
-        HJNNKCMLGFL_0 = 0,
+        HJNNKCMLGFL_0_None = 0,
         AOPKACCDKPA_EventCollection = 1,
         MKKOHBGHADL_EventQuest_2 = 2,
         PFKOKHODEGL_EventBattle = 3,
@@ -23,16 +23,16 @@ public class OHCAABOMEOF
 	public const int NKMJHIAPPFL = 1000;
 
 	// // RVA: 0x1DDFF1C Offset: 0x1DDFF1C VA: 0x1DDFF1C
-	public static int LDGFHMMAFOC(KGOGMKMBCPP_EventType INDDJNMPONH, int PPFNGGCBJKC)
+	public static int LDGFHMMAFOC(KGOGMKMBCPP_EventType _INDDJNMPONH_Type, int _PPFNGGCBJKC_id)
 	{
-		return (int)INDDJNMPONH * 1000 + PPFNGGCBJKC;
+		return (int)_INDDJNMPONH_Type * 1000 + _PPFNGGCBJKC_id;
 	}
 
 	// // RVA: 0x1DDFF28 Offset: 0x1DDFF28 VA: 0x1DDFF28
-	public static KGOGMKMBCPP_EventType BPJMGICFPBJ(int PGIIDPEGGPI)
+	public static KGOGMKMBCPP_EventType BPJMGICFPBJ(int _PGIIDPEGGPI_EventId)
     {
-        int res = PGIIDPEGGPI / 1000;
-        if(PGIIDPEGGPI - 2000 < 1000)
+        int res = _PGIIDPEGGPI_EventId / 1000;
+        if(_PGIIDPEGGPI_EventId - 2000 < 1000)
             res =  (int)KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission;
 
         return (KGOGMKMBCPP_EventType)res;

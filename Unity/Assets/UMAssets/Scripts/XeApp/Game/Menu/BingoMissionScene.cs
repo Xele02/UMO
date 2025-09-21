@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 			{
 				bingoId = GNGMCIAIKMA.HHCJCDFCLOB.MGAHOPFMKHB_GetBingoId();
 				GNGMCIAIKMA.HHCJCDFCLOB.FBHHEBDDIMO(bingoId, true);
-				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(bingoId, null, -1);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(bingoId, null, -1);
 			}
 			if(m_layout == null)
 			{
@@ -223,7 +223,7 @@ namespace XeApp.Game.Menu
 		private void ShowSceneCardItem(int _itemId)
 		{
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
 			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, 0, false);
 		}
 
@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_bingoInfo.CIDBGGOGGPL.Count; i++)
 				{
 					GNGMCIAIKMA.JCIFAFBDALP data = new GNGMCIAIKMA.JCIFAFBDALP();
-					data.PPFNGGCBJKC_Id = m_bingoInfo.CIDBGGOGGPL[i].GLCLFMGPMAN_ItemId;
+					data.PPFNGGCBJKC_id = m_bingoInfo.CIDBGGOGGPL[i].GLCLFMGPMAN_ItemId;
 					data.BFINGCJHOHI_Count = m_bingoInfo.CIDBGGOGGPL[i].LJKMKCOAICL_ItemCount;
 					s.ItemInfoList.Add(data);
 					s.MissionTextList.Add(m_bingoInfo.CIDBGGOGGPL[i].FLGEGLADKHC_MissionText);
@@ -439,7 +439,7 @@ namespace XeApp.Game.Menu
 						{
 							List<int> l = IBJAKJJICBC.CJHOOLJFGFB();
 							l.Sort();
-							if(JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 &&
+							if(JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None &&
 								JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId > 0)
 							{
 								l.Insert(0, JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId);
@@ -728,12 +728,12 @@ namespace XeApp.Game.Menu
 			m_bingoInfo.FBANBDCOEJL();
 			lineList = GNGMCIAIKMA.HHCJCDFCLOB.PFDGKPCCGMG(bingoId, true, true);
 			bingonum = m_bingoInfo.OLPBIMOPHLM_ReceiveCount;
-			inventoryUtil = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL;
+			inventoryUtil = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil;
 			inventoryUtil.JCHLONCMPAJ();
 			for(i = 0; i < lineList.Count; i++)
 			{
 				reward = m_bingoInfo.KONJMFICNJJ_RewardsInfo[i + bingonum];
-				_currntBingoNum = reward.PPFNGGCBJKC;
+				_currntBingoNum = reward.PPFNGGCBJKC_id;
 				_getItemID = reward.GLCLFMGPMAN_ItemId;
 				_getItemNum = reward.LJKMKCOAICL_ItemCount;
 				GNGMCIAIKMA.HHCJCDFCLOB.CPIICACGNBH(inventoryUtil, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, reward.GLCLFMGPMAN_ItemId, reward.LJKMKCOAICL_ItemCount, bingoId);
@@ -830,7 +830,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(bingoId, null, -1);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(bingoId, null, -1);
 				SetBingoText();
 				l = GNGMCIAIKMA.HHCJCDFCLOB.ICNOKENCCJK(bingoId, true, false);
 				if(l.Count > 0)
@@ -936,9 +936,9 @@ namespace XeApp.Game.Menu
 			});
 			RecordPlateUtility.ClearShowedList();
 			GameManager.Instance.InputEnabled = prevInput;
-			while(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.Count > 0)
+			while(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.Count > 0)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.RemoveAt(0);
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.RemoveAt(0);
 			}
 		}
 

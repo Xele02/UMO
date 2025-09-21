@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				rankMax = data.LLLCMHENKKN_LevelMax,
 				rankNum = data.GKIKAABHAAD_Level + 1
 			}, null);
-			m_costumeName.text = m_data.OPFGFINHFCE_Name;
+			m_costumeName.text = m_data.OPFGFINHFCE_name;
 			string s = "";
 			string t = "";
 			m_data.OHGOPFEOJOG_GetSkillInfo(data.GKIKAABHAAD_Level + 1, ref s, ref t);

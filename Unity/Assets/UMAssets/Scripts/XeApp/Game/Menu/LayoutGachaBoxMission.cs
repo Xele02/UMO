@@ -27,11 +27,11 @@ namespace XeApp.Game.Menu
 			m_view = view;
             HGFPAFPGIKG.CMEDMHFOFAH it = GetPickupItem(view);
 			m_numItem.SetNumber(view.MFHLHIDLKGN_NumTicket, 0);
-			m_textBoxName.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_gacha_box_list_count"), view.NNCCGILOOIE_ListIdx + 1);
-			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Remain, 0);
+			m_textBoxName.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_gacha_box_list_count"), view.NNCCGILOOIE_Num + 1);
+			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Num, 0);
 			m_numMaxPlate.SetNumber(it.BFGKGMOLAFL_Max, 0);
-			m_layoutGetPickup.StartChildrenAnimGoStop(it.NNCCGILOOIE_Remain < it.BFGKGMOLAFL_Max ? "02" : "01");
-			m_buttonNext.Disable = it.NNCCGILOOIE_Remain == it.BFGKGMOLAFL_Max;
+			m_layoutGetPickup.StartChildrenAnimGoStop(it.NNCCGILOOIE_Num < it.BFGKGMOLAFL_Max ? "02" : "01");
+			m_buttonNext.Disable = it.NNCCGILOOIE_Num == it.BFGKGMOLAFL_Max;
 			m_textBoxNum.text = view.JALHJAPAFLK_BoxCurrent + "/" + view.DMPELKEMCCJ_BoxTotal;
 			m_buttonSingle.Setup(1, view.AAIKGPGDHIB_Cost);
 			int a = (view.MFHLHIDLKGN_NumTicket / view.AAIKGPGDHIB_Cost);
@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			int b = Mathf.Clamp(Mathf.Min(new int[2] { view.JALHJAPAFLK_BoxCurrent, a }), 1, 10);
 			m_buttonMulti.Setup(b, b * view.AAIKGPGDHIB_Cost);
 			m_buttonMulti.Disable = a < b;
-			DateTime d1 = Utility.GetLocalDateTime(view.JOFAGCFNKIO_Start);
+			DateTime d1 = Utility.GetLocalDateTime(view.JOFAGCFNKIO_OpenTime);
 			DateTime d2 = Utility.GetLocalDateTime(view.EBCHFBIINDP_End);
 			m_textPeriod.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_gacha_box_period"), new object[10]
 			{
@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 				m_imagePickupPlate.enabled = false;
 			}
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 			if(!scene.JOKJBMJBLBB_Single)
 			{
 				GameManager.Instance.SceneIconCache.Load(sceneId, 1, (IiconTexture texture) =>
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
             List<HGFPAFPGIKG.CMEDMHFOFAH> l = view.GMENOMFADOH();
             for (int i = 0; i < l.Count; i++)
 			{
-				if(l[i].JOPPFEHKNFO_IsPickup)
+				if(l[i].JOPPFEHKNFO_Pickup)
 					return l[i];
 			}
 			return null;

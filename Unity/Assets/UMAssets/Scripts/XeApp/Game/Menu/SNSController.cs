@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 			if (m_viewDataSNS == null)
 			{
 				m_viewDataSNS = new FDDIIKBJNNA();
-				m_viewDataSNS.KHEKNNFCAOI(false, IsTutorial, -1);
+				m_viewDataSNS.KHEKNNFCAOI_Init(false, IsTutorial, -1);
 			}
 		}
 
@@ -196,10 +196,10 @@ namespace XeApp.Game.Menu
 					layoutBg.SetStatus(divaId);
 				if(layoutTitleBar != null)
 				{
-					layoutTitleBar.SetStatusRoom(m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
+					layoutTitleBar.SetStatusRoom(m_viewDataSNS.NPKPBDIDBBG_Room.Find((GAKAAIHLFKI _) =>
 					{
 						//0x1590124
-						return _.MALFHCHNEFN_Id == roomId;
+						return _.MALFHCHNEFN_RoomId == roomId;
 					}), buttonType);
 					layoutTitleBar.CallbackClose = exitCallback;
 					layoutTitleBar.CallbackReturn = returnCallback;
@@ -244,11 +244,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB67384 Offset: 0xB67384 VA: 0xB67384
 		public void LoadEntranceImage()
 		{
-			if(m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_RoomData != null)
+			if(m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_Room != null)
 			{
-				for(int i = 0; i < m_viewDataSNS.NPKPBDIDBBG_RoomData.Count; i++)
+				for(int i = 0; i < m_viewDataSNS.NPKPBDIDBBG_Room.Count; i++)
 				{
-					GameManager.Instance.SnsIconCache.RoomIconLoad(m_viewDataSNS.NPKPBDIDBBG_RoomData[i].MALFHCHNEFN_Id, (IiconTexture textture) =>
+					GameManager.Instance.SnsIconCache.RoomIconLoad(m_viewDataSNS.NPKPBDIDBBG_Room[i].MALFHCHNEFN_RoomId, (IiconTexture textture) =>
 					{
 						//0x158FE14
 						return;
@@ -260,13 +260,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB6763C Offset: 0xB6763C VA: 0xB6763C
 		public void LoadCharaImage(int roomId)
 		{
-			if(m_viewDataSNS != null && m_viewDataSNS.KHCACDIKJLG != null)
+			if(m_viewDataSNS != null && m_viewDataSNS.KHCACDIKJLG_Characters != null)
 			{
 				List<int> l = new List<int>(35);
-				GAKAAIHLFKI g = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
+				GAKAAIHLFKI g = m_viewDataSNS.NPKPBDIDBBG_Room.Find((GAKAAIHLFKI _) =>
 				{
 					//0x1590394
-					return _.MALFHCHNEFN_Id == roomId;
+					return _.MALFHCHNEFN_RoomId == roomId;
 				});
 				if(g != null)
 				{

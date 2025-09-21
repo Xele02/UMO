@@ -60,17 +60,17 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < data.Count; i++)
 			{
 				SwitchCell(m_cellLayout[i], CellType.Costume);
-				m_nameTextList[i].text = data[i].IFGEJDMMAHE_CostumeInfo.OPFGFINHFCE_Name;
+				m_nameTextList[i].text = data[i].IFGEJDMMAHE_Info.OPFGFINHFCE_name;
 				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_BonusValue);
 				SwitchCell(m_bonusValue[i], CellType.Costume);
-				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_CostumeInfo.FJODMPGPDDD_Unlocked);
+				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_Info.FJODMPGPDDD_Unlocked);
 				int idx = i;
-				GameManager.Instance.CostumeIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
+				GameManager.Instance.CostumeIconCache.Load(data[i].IFGEJDMMAHE_Info.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_Info.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 				{
 					//0xA4C044
 					texture.Set(m_mainImageList[idx]);
 				});
-				GameManager.Instance.DivaIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
+				GameManager.Instance.DivaIconCache.Load(data[i].IFGEJDMMAHE_Info.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_Info.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 				{
 					//0xA4C16C
 					texture.Set(m_iconImageList[idx]);
@@ -90,12 +90,12 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < data.Count; i++)
 			{
 				SwitchCell(m_cellLayout[i], CellType.Valkyrie);
-				m_nameTextList[i].text = data[i].IFGEJDMMAHE_ValkInfo.IJBLEJOKEFH_ValkyrieName;
+				m_nameTextList[i].text = data[i].IFGEJDMMAHE_Info.IJBLEJOKEFH_Name;
 				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_BonusValue);
 				SwitchCell(m_bonusValue[i], CellType.Costume);
-				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_ValkInfo.FJODMPGPDDD_Unlocked);
+				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_Info.FJODMPGPDDD_Unlocked);
 				int idx = i;
-				GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(data[i].IFGEJDMMAHE_ValkInfo.GPPEFLKGGGJ_ValkyrieId, data[i].IFGEJDMMAHE_ValkInfo.GCCNMFHELCB_Form, (IiconTexture texture) =>
+				GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(data[i].IFGEJDMMAHE_Info.GPPEFLKGGGJ_ValkyrieId, data[i].IFGEJDMMAHE_Info.GCCNMFHELCB_Form, (IiconTexture texture) =>
 				{
 					//0xA4C294
 					texture.Set(m_mainImageList[idx]);

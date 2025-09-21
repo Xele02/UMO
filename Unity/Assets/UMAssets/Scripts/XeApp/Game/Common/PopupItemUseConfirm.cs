@@ -189,13 +189,13 @@ namespace XeApp.Game.Common
 						List<HPBDNNACBAK.MBMMGKJBJGD> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.GGKFCDDFHFP.FindAll((HPBDNNACBAK.MBMMGKJBJGD x) =>
 						{
 							//0x1BADA00
-							return x.PPFNGGCBJKC_Id == t.GJDNBENICPF_VcId;
+							return x.PPFNGGCBJKC_id == t.GJDNBENICPF_VcId;
 						});
 						for(int i = 0; i < l.Count; i++)
 						{
 							NKFJNAANPNP.MOJLCADLMKH data = new NKFJNAANPNP.MOJLCADLMKH();
 							data.HNKFMAJIFJD_ExpireAt = (int)l[i].DJJENNPDPCM_ExpireAt;
-							data.HMFFHLPNMPH_Remaining = l[i].HNBFOAJIIAL_Remaining;
+							data.HMFFHLPNMPH_Count = l[i].HNBFOAJIIAL_Count;
 							res.Add(data);
 						}
 					}

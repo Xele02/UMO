@@ -65,7 +65,7 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1C42914 Offset: 0x1C42914 VA: 0x1C42914 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		FFHDKFPLLEN parser = FFHDKFPLLEN.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		MPEFMPPMBGM[] array = parser.HMPJFEFCGHI;
@@ -85,7 +85,7 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1C42DB0 Offset: 0x1C42DB0 VA: 0x1C42DB0 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		TodoLogger.LogError(TodoLogger.DbJson, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
 		return true;
@@ -94,12 +94,12 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	// RVA: 0x1C43140 Offset: 0x1C43140 VA: 0x1C43140 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JEPMHCPBIGD_DecoItemInit");
 		return 0;
 	}
 
 	// RVA: 0x1C432A0 Offset: 0x1C432A0 VA: 0x1C432A0 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		CDENCMNHNGA_table.Clear();
 	}

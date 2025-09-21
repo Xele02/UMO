@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_texUvList == null)
 				return;
-			FFHPBEPOMAK_DivaInfo dinfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo dinfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0x1A969C4
 				return _.AHHJLDLAPAN_DivaId == divaId;

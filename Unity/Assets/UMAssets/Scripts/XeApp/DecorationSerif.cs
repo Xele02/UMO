@@ -30,7 +30,7 @@ namespace XeApp
 		protected override Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			DecorationSerifArgs arg = args as DecorationSerifArgs;
-			m_viewDecoItemData.KHEKNNFCAOI(id, itemCategory);
+			m_viewDecoItemData.KHEKNNFCAOI_Init(id, itemCategory);
 			m_serifText = arg.m_text;
 			m_chara = arg.m_chara;
 			m_fontSize = FontSizeTbl[arg.m_fontSize];

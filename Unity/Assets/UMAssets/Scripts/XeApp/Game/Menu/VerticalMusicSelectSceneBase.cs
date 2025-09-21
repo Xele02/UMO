@@ -461,7 +461,7 @@ namespace XeApp.Game.Menu
 			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
 			pre = 0;
-			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_BgId, val, GetDanceDivaCount());
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50)
@@ -551,7 +551,7 @@ namespace XeApp.Game.Menu
 						return false;
 					}
 				}
-				if (selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue())
+				if (selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].BPLOEAHOPFI_Stamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue())
 					return true;
 				OpenStaminaWindow(() =>
 				{
@@ -594,7 +594,7 @@ namespace XeApp.Game.Menu
 			if(viewBoostData.DPICLLJJPAC(selectMusicData, (int)diff, isLine6Mode))
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				//selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina
+				//selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].BPLOEAHOPFI_Stamina
 				PopupDashContentSetting.InitParam[] p = new PopupDashContentSetting.InitParam[viewBoostData.KLOOIJIDKGO_Cost.Count];
 				for(int i = 0; i < viewBoostData.KLOOIJIDKGO_Cost.Count; i++)
 				{
@@ -682,13 +682,13 @@ namespace XeApp.Game.Menu
 			m_musicDecideInfo = MusicDecideInfo.Empty;
 			if(selectMusicData.OEILJHENAHN_PlayEventType == 10 || selectMusicData.OEILJHENAHN_PlayEventType == 4)
 			{
-				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK_OverrideCenterSkill;
-				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE_OverrideLiveSkill;
+				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
+				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
 				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(selectMusicData.EKANGPODCEP_EventId);
 			}
 			OnDecideCurrentMusic(ref m_musicDecideInfo);
 			int onStageDivaNum = GetDanceDivaCount();
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN_NoEnergy, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_GameEventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MFJKNCACBDG_OpenEventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.OEILJHENAHN_PlayEventType, isSimulation, isLine6Mode, m_musicDecideInfo.missionText, m_musicDecideInfo.overrideEnemyCenterSkill, m_musicDecideInfo.overrideEnemyLiveSkill, selectMusicData.ALMOMLMCHNA_OtherEndTime, selectMusicData.IHPCKOMBGKJ_End, m_eventCtrl != null ? m_eventCtrl.PGIIDPEGGPI_EventId : 0, onStageDivaNum, m_musicDecideInfo.overrideCurrentTime);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN_IsUsingTicket, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_GameEventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MFJKNCACBDG_OpenEventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.OEILJHENAHN_PlayEventType, isSimulation, isLine6Mode, m_musicDecideInfo.missionText, m_musicDecideInfo.overrideEnemyCenterSkill, m_musicDecideInfo.overrideEnemyLiveSkill, selectMusicData.ALMOMLMCHNA_OtherEndTime, selectMusicData.IHPCKOMBGKJ_End, m_eventCtrl != null ? m_eventCtrl.PGIIDPEGGPI_EventId : 0, onStageDivaNum, m_musicDecideInfo.overrideCurrentTime);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			TransitionList.Type transition = TransitionList.Type.UNDEFINED;
 			TransitionArgs args = null;
@@ -737,9 +737,9 @@ namespace XeApp.Game.Menu
 			{
 				if(selectMusicData.AJGCPCMLGKO_IsEvent)
 				{
-					if((int)selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory < 4)
+					if((int)selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType < 4)
 					{
-						if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+						if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 						{
 							GotoEventBattle(selectMusicData.EKANGPODCEP_EventId);
 							return;
@@ -747,17 +747,17 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+						if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 						{
 							GotoEventGoDiva(selectMusicData.EKANGPODCEP_EventId);
 							return;
 						}
-						if (selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+						if (selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 						{
 							GotoEventRaid(selectMusicData.EKANGPODCEP_EventId);
 							return;
 						}
-						if (selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
+						if (selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 						{
 							GotoEventQuest(selectMusicData.EKANGPODCEP_EventId);
 							return;
@@ -839,7 +839,7 @@ namespace XeApp.Game.Menu
 					if(data.AJGCPCMLGKO_IsEvent && !m_isEventTimeLimit)
 					{
 						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-						b1 = data.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime < time;
+						b1 = data.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_EndTime < time;
 					}
 				}
 				if(data.LEBDMNIGOJB_IsScoreEvent)
@@ -1050,7 +1050,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACF730 Offset: 0xACF730 VA: 0xACF730
 		protected void CheckOfferNotice()
 		{
-			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
+			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_cond == 0)
 				return;
 			MenuScene.Instance.ShowOfferNotice(null);
 		}
@@ -1426,13 +1426,13 @@ namespace XeApp.Game.Menu
 		protected void OpenMusicDetailWindow(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty)
 		{
 			MenuScene.Instance.MusicPopupWindowControl.Show(this, MusicPopupWindowControl.CallType.MusicSelect, musicData.ViewMusic.DLAEJOBELBH_MusicId,
-				musicData.ViewMusic.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData, null, musicData.IsSimulation);
+				musicData.ViewMusic.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy, null, musicData.IsSimulation);
 		}
 
 		// // RVA: 0xAD0BEC Offset: 0xAD0BEC VA: 0xAD0BEC
 		protected void OpenEnemyDetailWindow(IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(this, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData,
+			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(this, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy,
 				null);
 		}
 

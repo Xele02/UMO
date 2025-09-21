@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 				image.Set(m_imageTitle);
 			});
 			m_numItem.SetNumber(view.MFHLHIDLKGN_NumTicket, 0);
-			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Remain, 0);
+			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Num, 0);
 			m_numMaxPlate.SetNumber(it.BFGKGMOLAFL_Max, 0);
 			m_textBoxNum.text = view.JALHJAPAFLK_BoxCurrent.ToString() + "/" + view.DMPELKEMCCJ_BoxTotal.ToString();
 			if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO.FAFCPLEAFCP_0_Summer)
@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 			int b = Mathf.Clamp(Mathf.Min(new int[2]{view.JALHJAPAFLK_BoxCurrent, a}), 1, 10);
 			m_buttonMulti.Setup(b, b * view.AAIKGPGDHIB_Cost);
 			m_buttonMulti.Disable = a < b;
-			DateTime d1 = Utility.GetLocalDateTime(view.JOFAGCFNKIO_Start);
+			DateTime d1 = Utility.GetLocalDateTime(view.JOFAGCFNKIO_OpenTime);
 			DateTime d2 = Utility.GetLocalDateTime(view.EBCHFBIINDP_End);
 			m_textPeriod.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_gacha_box_period"), new object[10]
 			{
@@ -149,13 +149,13 @@ namespace XeApp.Game.Menu
 				SetOpenLayout(true);
 			};
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			if(t >= view.JOFAGCFNKIO_Start)
+			if(t >= view.JOFAGCFNKIO_OpenTime)
 			{
 				SetOpenLayout(true);
 			}
 			else
 			{
-				m_timeWatcher.WatchStart(m_view.JOFAGCFNKIO_Start, false);
+				m_timeWatcher.WatchStart(m_view.JOFAGCFNKIO_OpenTime, false);
 				SetOpenLayout(false);
 			}
 		}
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 				m_imagePickupPlate.enabled = false;
 			}
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 			if(!scene.JOKJBMJBLBB_Single)
 			{
 				m_scenePlate.Load(sceneId, 1, (IiconTexture texture) =>

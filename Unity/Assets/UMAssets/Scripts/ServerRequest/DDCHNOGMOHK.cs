@@ -6,9 +6,9 @@ public class DDCHNOGMOHK_GetCommonTemplateURL : LKFOCCGOINN_GetURL
 	public string COHBIBEAMAF; // 0x80
 
 	// RVA: 0x1771B58 Offset: 0x1771B58 VA: 0x1771B58
-	public DDCHNOGMOHK_GetCommonTemplateURL(string OPFGFINHFCE)
+	public DDCHNOGMOHK_GetCommonTemplateURL(string _OPFGFINHFCE_name)
 	{
-		COHBIBEAMAF = OPFGFINHFCE;
+		COHBIBEAMAF = _OPFGFINHFCE_name;
 	}
 
 	// RVA: 0x1771B78 Offset: 0x1771B78 VA: 0x1771B78 Slot: 12

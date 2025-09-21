@@ -158,7 +158,7 @@ namespace XeApp.Game.Tutorial
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress != 0)
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress != 0)
 				return;
 			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_Start_0);
 		}
@@ -218,12 +218,12 @@ namespace XeApp.Game.Tutorial
 			int i; // 0x24
 
 			//0xE440BC
-			position = messData.NDFOAINJPIN_WindowPositionTop != 1 ? TutorialMessageWindow.Position.Bottom : TutorialMessageWindow.Position.Top;
+			position = messData.NDFOAINJPIN_pos != 1 ? TutorialMessageWindow.Position.Bottom : TutorialMessageWindow.Position.Top;
 			m_messageWindow.gameObject.SetActive(true);
 			m_messageWindow.ResetWindow();
-			for(i = 0; i < messData.JONNCMDGMKA_Messages.Length; i++)
+			for(i = 0; i < messData.JONNCMDGMKA_Message.Length; i++)
 			{
-				yield return Co.R(m_messageWindow.ProcMessageCoroutine(messData.KGJHFFNFPOK_CharacterId[i], position, messData.JONNCMDGMKA_Messages[i], func));
+				yield return Co.R(m_messageWindow.ProcMessageCoroutine(messData.KGJHFFNFPOK_CharacterId[i], position, messData.JONNCMDGMKA_Message[i], func));
 			}
 			m_messageWindow.gameObject.SetActive(false);
 			if (MenuScene.Instance != null)
@@ -750,8 +750,8 @@ namespace XeApp.Game.Tutorial
 			AEGLGBOGDHH a = new AEGLGBOGDHH();
 			a.OBKGEDCKHHE();
 			IBJAKJJICBC ib = new IBJAKJJICBC();
-			ib.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
-			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
+			ib.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_Enemy);
 			a.GEEDEOHGMOM(ref status1);
 			status2.Clear();
 			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);

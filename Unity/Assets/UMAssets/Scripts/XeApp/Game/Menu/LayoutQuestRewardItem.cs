@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 					texture.Set(m_imageIcon);
 				}
 			});
-			m_numReward.SetNumber(m_itemInfo.MBJIFDBEDAC_Cnt, 0);
+			m_numReward.SetNumber(m_itemInfo.MBJIFDBEDAC_item_count, 0);
 		}
 
 		//// RVA: 0x187CA28 Offset: 0x187CA28 VA: 0x187CA28
@@ -41,19 +41,19 @@ namespace XeApp.Game.Menu
 				{
 					CKFGMNAIBNG data = new CKFGMNAIBNG();
 					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
-					data.KHEKNNFCAOI(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1].AHHJLDLAPAN_DivaId, itemId, 0, false);
+					data.KHEKNNFCAOI_Init(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1].AHHJLDLAPAN_DivaId, itemId, 0, false);
 					MenuScene.Instance.ShowCostumeDetailWindow(data, 0);
 				}
 				else if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
 					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
-					scene.KHEKNNFCAOI(itemId, null, null, 0, 0, 0, false, 0, 0);
+					scene.KHEKNNFCAOI_Init(itemId, null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 				}
 				else
 				{
-					MenuScene.Instance.ShowItemDetail(itemInfo.JJBGOIMEIPF_ItemId, itemInfo.MBJIFDBEDAC_Cnt, null);
+					MenuScene.Instance.ShowItemDetail(itemInfo.JJBGOIMEIPF_ItemId, itemInfo.MBJIFDBEDAC_item_count, null);
 				}
 			}
 		}

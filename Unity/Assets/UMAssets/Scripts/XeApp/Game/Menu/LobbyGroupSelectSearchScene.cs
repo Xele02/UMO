@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < cont.ACCNCHJBDHM_UsersList.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_UsersList[i]);
+					f.KHEKNNFCAOI_Init(cont.ACCNCHJBDHM_UsersList[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
@@ -368,7 +368,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x128E7C4 Offset: 0x128E7C4 VA: 0x128E7C4
 		private void InitializeSortSetting()
 		{
-			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_sortItem;
+			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_SortItem;
 			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_Order;
 			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_AttributeFilter;

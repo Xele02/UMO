@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-				scene.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				scene.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 				return;
 			}

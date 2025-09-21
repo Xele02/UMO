@@ -137,12 +137,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x159780C Offset: 0x159780C VA: 0x159780C
 		public int GetTotalTalkCount()
 		{
-			if (m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_RoomData != null && m_viewDataSNS.NPKPBDIDBBG_RoomData.Count > 0)
+			if (m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_Room != null && m_viewDataSNS.NPKPBDIDBBG_Room.Count > 0)
 			{
-				GAKAAIHLFKI d = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
+				GAKAAIHLFKI d = m_viewDataSNS.NPKPBDIDBBG_Room.Find((GAKAAIHLFKI _) =>
 				{
 					//0x159A158
-					return _.MALFHCHNEFN_Id == m_roomId;
+					return _.MALFHCHNEFN_RoomId == m_roomId;
 				});
 				if(d != null)
 				{
@@ -246,24 +246,24 @@ namespace XeApp.Game.Menu
 			GetLayoutScrollList().ResetListObject();
 			if(isEventStory)
 			{
-				m_viewDataSNS.KHEKNNFCAOI(allText, IsTutorial, room_id);
+				m_viewDataSNS.KHEKNNFCAOI_Init(allText, IsTutorial, room_id);
 			}
 			else
 			{
 				if(snsId < 1)
 				{
-					m_viewDataSNS.KHEKNNFCAOI(allText, IsTutorial, -1);
+					m_viewDataSNS.KHEKNNFCAOI_Init(allText, IsTutorial, -1);
 				}
 				else
 				{
-					m_viewDataSNS.KHEKNNFCAOI(snsId);
+					m_viewDataSNS.KHEKNNFCAOI_Init(snsId);
 				}
 			}
 			int rid = room_id;
-			m_viewDataRoom = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI x) =>
+			m_viewDataRoom = m_viewDataSNS.NPKPBDIDBBG_Room.Find((GAKAAIHLFKI x) =>
 			{
 				//0x159A3DC
-				return x.MALFHCHNEFN_Id == rid;
+				return x.MALFHCHNEFN_RoomId == rid;
 			});
 			m_roomId = room_id;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
@@ -502,7 +502,7 @@ namespace XeApp.Game.Menu
 		{
 			ViewTalk res = new ViewTalk();
 			res.talk = m_viewDataRoom.CNEOPOINCBA[index];
-			res.chara = m_viewDataSNS.KHCACDIKJLG[m_viewDataRoom.CNEOPOINCBA[index].IDELKEKDIFD_CharaId - 1];
+			res.chara = m_viewDataSNS.KHCACDIKJLG_Characters[m_viewDataRoom.CNEOPOINCBA[index].IDELKEKDIFD_CharaId - 1];
 			m_talkList.Add(res);
 			return res;
 		}

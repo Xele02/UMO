@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			ApplyLimitDate(viewData);
 			ApplyButtonImage(eventId, viewData, texCache);
 			m_newMarkIcon.Initialize(m_rectNewRoot.gameObject);
-			m_newMarkIcon.SetActive(viewData.LHMOAJAIJCO_IsNew);
+			m_newMarkIcon.SetActive(viewData.LHMOAJAIJCO_is_new);
 			switch(viewData.PNDEAHGLJIC_BtnType)
 			{
 				case OHKECKAPJJL.GPNHNIGPGCL.PDCBCIGDPHL_1_Gacha1:
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutLimit.StartChildrenAnimGoStop("01");
-				DateTime dt = Utility.GetLocalDateTime(viewData.PDBPFJJCADD_Start);
+				DateTime dt = Utility.GetLocalDateTime(viewData.PDBPFJJCADD_open_at);
 				m_textLimit.text = string.Format(bk.GetMessageByLabel("event_sp_open_at"), new object[5]
 				{
 					dt.Year, dt.Month, dt.Day, dt.Minute, dt.Second

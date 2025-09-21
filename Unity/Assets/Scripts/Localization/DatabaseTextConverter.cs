@@ -150,18 +150,18 @@ public static class DatabaseTextConverter
             //Export SNSDb texts
             PoFile poFile = new PoFile();
             BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
-            for(int i = 0; i < snsDb.NPKPBDIDBBG_Rooms.Count; i++)
+            for(int i = 0; i < snsDb.NPKPBDIDBBG_Room.Count; i++)
             {
-                if(snsDb.NPKPBDIDBBG_Rooms[i].PPEGAKEIEGM_Enabled == 2 && snsDb.NPKPBDIDBBG_Rooms[i].MALFHCHNEFN_Room > 0)
+                if(snsDb.NPKPBDIDBBG_Room[i].PPEGAKEIEGM_Enabled == 2 && snsDb.NPKPBDIDBBG_Room[i].MALFHCHNEFN_RoomId > 0)
                 {
                     string prfx = string.Format("room_name_{0:D4}_txt", i);
-                    poFile.translationData.Add(prfx, snsDb.NPKPBDIDBBG_Rooms[i].OPFGFINHFCE_Name);
+                    poFile.translationData.Add(prfx, snsDb.NPKPBDIDBBG_Room[i].OPFGFINHFCE_name);
                 }
             }
             for(int i = 0; i < snsDb.KHCACDIKJLG_Characters.Count; i++)
             {
                 string prfx = string.Format("chara_name_{0:D4}_txt", i);
-                poFile.translationData.Add(prfx, snsDb.KHCACDIKJLG_Characters[i].OPFGFINHFCE_Name);
+                poFile.translationData.Add(prfx, snsDb.KHCACDIKJLG_Characters[i].OPFGFINHFCE_name);
             }
             string p = PoPath.Replace("{name}", "snsDb_text");
             Directory.CreateDirectory(p);
@@ -193,9 +193,9 @@ public static class DatabaseTextConverter
             for(int i = 0; i < vcDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("vcitem_{0:D4}_title", i);
-                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].OPFGFINHFCE_Name);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].OPFGFINHFCE_name);
                 prfx = string.Format("vcitem_{0:D4}_desc", i);
-                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].KLMPFGOCBHC_Desc);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].KLMPFGOCBHC_description);
             }
             string p = PoPath.Replace("{name}", "vcItemDb_text");
             Directory.CreateDirectory(p);
@@ -214,10 +214,10 @@ public static class DatabaseTextConverter
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", i, j);
                     poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title[j]);
                 }
-                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages.Length; j++)
+                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message.Length; j++)
                 {
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_msg", i, j);
-                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages[j]);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message[j]);
                 }
             }
             string p = PoPath.Replace("{name}", "tutoPictDb_text");
@@ -267,10 +267,10 @@ public static class DatabaseTextConverter
             ILLPGHGGKLL_TutorialMiniAdv blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv;
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
-                for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages.Length; j++)
+                for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message.Length; j++)
                 {
                     string prfx = string.Format("tuto_miniadv_{0:D4}_{1:D4}_msg", i, j);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages[j]);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message[j]);
                 }
             }
             string p = PoPath.Replace("{name}", "tutoMiniAdvDb_text");
@@ -305,12 +305,12 @@ public static class DatabaseTextConverter
             // Export helpBrowser strings
             PoFile poFile = new PoFile();
             KCDJCKCKKFM_HelpBrowser blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser;
-            for(int i = 0; i < blockDb.LOMHJBIJMOD.Length; i++)
+            for(int i = 0; i < blockDb.LOMHJBIJMOD_categories.Length; i++)
             {
-                if(blockDb.LOMHJBIJMOD[i].PLALNIIBLOF == 2)
+                if(blockDb.LOMHJBIJMOD_categories[i].PLALNIIBLOF_en == 2)
                 {
                     string prfx = string.Format("category_{0:D4}_name", i);
-                    poFile.translationData.Add(prfx, blockDb.LOMHJBIJMOD[i].OPFGFINHFCE);
+                    poFile.translationData.Add(prfx, blockDb.LOMHJBIJMOD_categories[i].OPFGFINHFCE_name);
                 }
             }
             for(int i = 0; i < blockDb.FBJCBCOEBBB.Length; i++)
@@ -318,12 +318,12 @@ public static class DatabaseTextConverter
                 for(int j = 0; j < blockDb.FBJCBCOEBBB[i].EBEMOEPADJB.Length; j++)
                 {
                     string prfx = string.Format("help_{0:D4}_{1:D4}_name", i, j);
-                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].EBEMOEPADJB[j].OPFGFINHFCE);
+                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].EBEMOEPADJB[j].OPFGFINHFCE_name);
                 }
                 for(int j = 0; j < blockDb.FBJCBCOEBBB[i].OJMEIBNMLNP.Length; j++)
                 {
                     string prfx = string.Format("wiki_{0:D4}_{1:D4}_name", i, j);
-                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].OJMEIBNMLNP[j].OPFGFINHFCE);
+                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].OJMEIBNMLNP[j].OPFGFINHFCE_name);
                 }
             }
             string p = PoPath.Replace("{name}", "helpBrowserDb_text");
@@ -339,7 +339,7 @@ public static class DatabaseTextConverter
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("homebg_{0:D4}_name", i);
-                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].OPFGFINHFCE_Name);
+                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].OPFGFINHFCE_name);
             }
             string p = PoPath.Replace("{name}", "homeBgDb_text");
             Directory.CreateDirectory(p);
@@ -372,9 +372,9 @@ public static class DatabaseTextConverter
                 {
                     for(int k = 0; k < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON.Count; k++)
                     {
-                        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_desc", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_desc", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC_id, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC_id, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].FEMMDNIELFC_Desc);
-                        prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_cond", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_cond", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC_id, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC_id, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].JEPGJJJBFLN);
                     }
                 }
@@ -394,72 +394,72 @@ public static class DatabaseTextConverter
                 ICFLJACCIKF_EventBattle blockDbBattle = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as ICFLJACCIKF_EventBattle;
                 if(blockDbBattle != null)
                 {
-                    for (int i = 0; i < blockDbBattle.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbBattle.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbBattle.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbBattle.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbBattle.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbBattle.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbBattle.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbBattle.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbBattle.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbBattle.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbBattle.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbBattle.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbBattle.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbBattle.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 0; i < blockDbBattle.LLCLJBEJOPM_BannerInfo.Count; i++)
                     {
-                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbBattle.JIKKNHIAEKG_BlockName, blockDbBattle.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbBattle.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbBattle.JIKKNHIAEKG_BlockName, blockDbBattle.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbBattle.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
                 LNELCMNJPIC_EventGoDiva blockDbGoDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as LNELCMNJPIC_EventGoDiva;
                 if(blockDbGoDiva != null)
                 {
-                    for (int i = 0; i < blockDbGoDiva.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbGoDiva.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbGoDiva.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbGoDiva.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbGoDiva.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbGoDiva.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbGoDiva.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbGoDiva.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbGoDiva.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbGoDiva.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbGoDiva.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbGoDiva.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbGoDiva.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbGoDiva.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 0; i < blockDbGoDiva.LLCLJBEJOPM_BannerInfo.Count; i++)
                     {
-                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbGoDiva.JIKKNHIAEKG_BlockName, blockDbGoDiva.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbGoDiva.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbGoDiva.JIKKNHIAEKG_BlockName, blockDbGoDiva.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbGoDiva.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
                 KCGOMAFPGDD_EventAprilFool blockDbAprilFool = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as KCGOMAFPGDD_EventAprilFool;
                 if(blockDbAprilFool != null)
                 {
-                    for (int i = 0; i < blockDbAprilFool.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbAprilFool.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbAprilFool.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbAprilFool.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbAprilFool.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbAprilFool.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbAprilFool.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbAprilFool.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbAprilFool.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbAprilFool.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbAprilFool.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbAprilFool.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbAprilFool.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbAprilFool.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
                 BKOGPDBKFFJ_EventRaid blockDbRaid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as BKOGPDBKFFJ_EventRaid;
                 if(blockDbRaid != null)
                 {
-                    for (int i = 0; i < blockDbRaid.HDMADAHNLDN_BossMissions.Count; i++)
+                    for (int i = 0; i < blockDbRaid.HDMADAHNLDN_Missions.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.HDMADAHNLDN_BossMissions[i].JOPOPMLFINI, 10000 + blockDbRaid.HDMADAHNLDN_BossMissions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbRaid.HDMADAHNLDN_BossMissions[i].FEMMDNIELFC_Desc);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.HDMADAHNLDN_Missions[i].JOPOPMLFINI_QuestName, 10000 + blockDbRaid.HDMADAHNLDN_Missions[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbRaid.HDMADAHNLDN_Missions[i].FEMMDNIELFC_Desc);
                         //prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
                         //poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
                     }
-                    for (int i = 0; i < blockDbRaid.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbRaid.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbRaid.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbRaid.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 0; i < blockDbRaid.LLCLJBEJOPM_BannerInfo.Count; i++)
                     {
-                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                     for(int i = 0; i < blockDbRaid.GJFJLEOGFLD_RaidBoss.Count; i++)
                     {
-                        string prfx = string.Format("event_bossname_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].OPFGFINHFCE_Name);
+                        string prfx = string.Format("event_bossname_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].OPFGFINHFCE_name);
                     }
                 }
                 LDEBIBGHCGD_EventRaidLobby blockDbLobby = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as LDEBIBGHCGD_EventRaidLobby;
@@ -467,72 +467,72 @@ public static class DatabaseTextConverter
                 {
                     for (int i = 0; i < blockDbLobby.OJGPPOKENLG_Groups.Count; i++)
                     {
-                        string prfx = string.Format("event_group_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OJGPPOKENLG_Groups[i].PPFNGGCBJKC_GroupId);
-                        poFile.translationData.Add(prfx, blockDbLobby.OJGPPOKENLG_Groups[i].OPFGFINHFCE_Name);
+                        string prfx = string.Format("event_group_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OJGPPOKENLG_Groups[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbLobby.OJGPPOKENLG_Groups[i].OPFGFINHFCE_name);
                     }
                     for (int i = 0; i < blockDbLobby.OIIMJFCBFFG_LobbyGuide.Count; i++)
                     {
-                        string prfx = string.Format("event_guide_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OIIMJFCBFFG_LobbyGuide[i].PPFNGGCBJKC);
+                        string prfx = string.Format("event_guide_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OIIMJFCBFFG_LobbyGuide[i].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDbLobby.OIIMJFCBFFG_LobbyGuide[i].LICPCDCLOIO_Message);
                     }
-                    for (int i = 0; i < blockDbLobby.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbLobby.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbLobby.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbLobby.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbLobby.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbLobby.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 1; i <= 4; i++)
                     {
-                        string prfx = string.Format("event_msg_lobby_{0}_battlelog_text_{1:D2}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, i);
+                        string prfx = string.Format("event_msg_lobby_{0}_battlelog_text_{1:D2}", blockDbLobby.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, i);
                         poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL(string.Format("battlelog_text_{0:D2}", i), ""));
                     }
                 }
                 PHBACNMCMHG_EventCollection blockDbCollection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as PHBACNMCMHG_EventCollection;
                 if(blockDbCollection != null)
                 {
-                    for (int i = 0; i < blockDbCollection.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbCollection.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbCollection.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbCollection.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbCollection.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbCollection.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 0; i < blockDbCollection.LLCLJBEJOPM_BannerInfo.Count; i++)
                     {
-                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbCollection.JIKKNHIAEKG_BlockName, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbCollection.JIKKNHIAEKG_BlockName, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
                 OEIJEFBBJBD_EventSp blockDbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as OEIJEFBBJBD_EventSp;
                 if(blockDbSp != null)
                 {
-                    for (int i = 0; i < blockDbSp.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbSp.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbSp.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbSp.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbSp.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbSp.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
                 ACBAHDMEFFL_EventMission blockDbMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as ACBAHDMEFFL_EventMission;
                 if(blockDbMission != null)
                 {
-                    for (int i = 0; i < blockDbMission.NNMPGOAGEOL_Missions.Count; i++)
+                    for (int i = 0; i < blockDbMission.NNMPGOAGEOL_quests.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbMission.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
-                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbMission.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbMission.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_quests[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, blockDbMission.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for(int i = 0; i < blockDbMission.LLCLJBEJOPM_BannerInfo.Count; i++)
                     {
-                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbMission.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbMission.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                     for(int i = 0; i < blockDbMission.LGODPKPFGHF.Count; i++)
                     {
-                        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LGODPKPFGHF[i].PPFNGGCBJKC_Id);
+                        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LGODPKPFGHF[i].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDbMission.LGODPKPFGHF[i].FEMMDNIELFC_Desc);
                     }
                 }
@@ -678,7 +678,7 @@ public static class DatabaseTextConverter
             //   156 : 0
             //   512 : Data
             // Jump next 512
-            if(archive.KGHAJGGMPKL_Files.Count > 0)
+            if(archive.KGHAJGGMPKL_files.Count > 0)
             {
                 string p = outDir.Replace("{name}", "Database") + lang + ".bytes";
                 Directory.CreateDirectory(new FileInfo(p).DirectoryName);
@@ -687,17 +687,17 @@ public static class DatabaseTextConverter
                     using(BinaryWriter writer = new BinaryWriter(stream))
                     {
                         int offset = 0;
-                        for(int i = 0; i < archive.KGHAJGGMPKL_Files.Count; i++)
+                        for(int i = 0; i < archive.KGHAJGGMPKL_files.Count; i++)
                         {
                             byte[] buffer = new byte[512];
                             DateTime TheEpoch = new DateTime(1970, 1, 1, 0, 0, 0);
                             Array.Clear(buffer,0, buffer.Length);
-                            string strName = "./"+archive.KGHAJGGMPKL_Files[i].OPFGFINHFCE_Name.Replace("\0",string.Empty);
+                            string strName = "./"+archive.KGHAJGGMPKL_files[i].OPFGFINHFCE_name.Replace("\0",string.Empty);
                             Encoding.UTF8.GetBytes(strName.PadRight(100, '\0')).CopyTo(buffer, 0);
                             Encoding.ASCII.GetBytes(Convert.ToString(511, 8).PadLeft(7, '0')).CopyTo(buffer, 100);
                             Encoding.ASCII.GetBytes(Convert.ToString(61, 8).PadLeft(7, '0')).CopyTo(buffer, 108);
                             Encoding.ASCII.GetBytes(Convert.ToString(61, 8).PadLeft(7, '0')).CopyTo(buffer, 116);
-                            Encoding.ASCII.GetBytes(Convert.ToString(archive.KGHAJGGMPKL_Files[i].DBBGALAPFGC_Data.Length, 8).PadLeft(11, '0')).CopyTo(buffer, 124);
+                            Encoding.ASCII.GetBytes(Convert.ToString(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data.Length, 8).PadLeft(11, '0')).CopyTo(buffer, 124);
                             Encoding.ASCII.GetBytes(Convert.ToString((long)(DateTime.Now - TheEpoch).TotalSeconds, 8).PadLeft(11, '0')).CopyTo(buffer, 136);
                             buffer[156] = (byte)'0';
 
@@ -714,8 +714,8 @@ public static class DatabaseTextConverter
                             writer.Write(buffer);
                             offset += 512;
 
-                            writer.Write(archive.KGHAJGGMPKL_Files[i].DBBGALAPFGC_Data);
-                            offset += archive.KGHAJGGMPKL_Files[i].DBBGALAPFGC_Data.Length;
+                            writer.Write(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data);
+                            offset += archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data.Length;
                             while((offset % 512) != 0)
                             {
                                 writer.Write((byte)0);
@@ -763,15 +763,15 @@ public static class DatabaseTextConverter
             Action<byte[]> OnDone = (byte[] bytes) =>
             {
                 CBBJHPBGBAJ_Archive tar = new CBBJHPBGBAJ_Archive();
-                tar.KHEKNNFCAOI_Load(bytes);
+                tar.KHEKNNFCAOI_Init(bytes);
                 for(int i = 0; i < (int)eBank.End; i++)
                 {
                     StringBuilder fileName = new StringBuilder(64);
                     fileName.AppendFormat("{0}.bytes", ((eBank)i).ToString());
                     string name = fileName.ToString();
-                    CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+                    CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
                         //0x111780C
-                        return x.OPFGFINHFCE_Name.Contains(name);
+                        return x.OPFGFINHFCE_name.Contains(name);
                     });
                     if(file != null)
                     {

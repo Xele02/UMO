@@ -1,16 +1,16 @@
 
 using System.Collections.Generic;
 
-public delegate bool CCHAFMBDGOB(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long IFNLEKOILPM, bool DMBJLEIGCCG, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool CCHAFMBDGOB(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long _IFNLEKOILPM_UpdatedAt, bool DMBJLEIGCCG, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 {
-	public List<string> HHIHCJKLJFF_ServerInfoBlockList; // 0x10
-	public CCHAFMBDGOB PINPBOCDKLI_OnFriendCb; // 0x14
+	public List<string> HHIHCJKLJFF_Names; // 0x10
+	public CCHAFMBDGOB PINPBOCDKLI_OnPlayerCb; // 0x14
 	public SakashoPlayerData.SearchOrder EILKGEADKGH_Order; // 0x18
 	private int MDEGLGEMHGG_Page; // 0x1C
 
-	public SakashoPlayerCriteria IPKCADIAAPG_SakashoCrit { get; set; } // 0xC GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
+	public SakashoPlayerCriteria IPKCADIAAPG_Criteria { get; set; } // 0xC GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
 	public bool NELEMPLILIO { get; set; } // 0x20 GDKGAPELKDD KIIKEFBAHMI PLNDPEHALHA
 
 	//// RVA: 0xD995E0 Offset: 0xD995E0 VA: 0xD995E0 Slot: 4
@@ -24,16 +24,16 @@ public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 	protected override LNGMNNNJBJP_SearchForPlayer JIJACMIFOMB_OnStartAction(PJKLMCGEJMK _CPHFEPHDJIB_ServerRequester)
 	{
 		LNGMNNNJBJP_SearchForPlayer res = _CPHFEPHDJIB_ServerRequester.IFFNCAFNEAG_AddRequest(new LNGMNNNJBJP_SearchForPlayer());
-		res.IPKCADIAAPG_SakashoCrit = IPKCADIAAPG_SakashoCrit;
+		res.IPKCADIAAPG_Criteria = IPKCADIAAPG_Criteria;
 		res.EILKGEADKGH_Order = EILKGEADKGH_Order;
 		res.MLPLGFLKKLI_Ipp = 100;
-		res.HHIHCJKLJFF_ServerInfoBlockList = HHIHCJKLJFF_ServerInfoBlockList;
+		res.HHIHCJKLJFF_Names = HHIHCJKLJFF_Names;
 		res.IGNIIEBMFIN_Page = MDEGLGEMHGG_Page;
-		res.PINPBOCDKLI_OnFriendCb = PINPBOCDKLI_OnFriendCb;
+		res.PINPBOCDKLI_OnPlayerCb = PINPBOCDKLI_OnPlayerCb;
 		res.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request HKICMNAACDA) =>
 		{
 			//0xD99834
-			MDEGLGEMHGG_Page = (HKICMNAACDA as LNGMNNNJBJP_SearchForPlayer).NFEAMMJIMPG_FriendsResult.MDIBIIHAAPN_NextPage;
+			MDEGLGEMHGG_Page = (HKICMNAACDA as LNGMNNNJBJP_SearchForPlayer).NFEAMMJIMPG_Result.MDIBIIHAAPN_next_page;
 		};
 		return res;
 	}

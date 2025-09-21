@@ -18,7 +18,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
 	public PKLLAKCBPAH_DecoPublicInfo()
 	{
-		KMBPACJNEOF();
+		KMBPACJNEOF_Reset();
 	}
 
 	// // RVA: 0x93EFBC Offset: 0x93EFBC VA: 0x93EFBC Slot: 11
@@ -60,7 +60,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x93F2D4 Offset: 0x93F2D4 VA: 0x93F2D4 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long _MCKEOKFMLAH_SaveId);
 
 	// // RVA: 0x93F6E0 Offset: 0x93F6E0 VA: 0x93F6E0 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
@@ -71,7 +71,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x93F820 Offset: 0x93F820 VA: 0x93F820 Slot: 4
-	public override void KMBPACJNEOF()
+	public override void KMBPACJNEOF_Reset()
 	{
 		ENOBDCFHELD = (int)(Utility.GetCurrentUnixTime() ^ 0xf214);
 		FCEJCHGLFGN = (int)(Utility.GetCurrentUnixTime() ^ 0xb7772e);
@@ -80,7 +80,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x93F8E8 Offset: 0x93F8E8 VA: 0x93F8E8 Slot: 5
-	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long _MCKEOKFMLAH_SaveId)
 	{
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		data["has_enabled"] = DGNMOIBJBBJ_HasEnabled ? 1 : 0;
@@ -88,7 +88,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 		if(!EMBGIDLFKGM)
 		{
 			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
-			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;
 			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE;
 			data2[JIKKNHIAEKG_BlockName] = data;
 			data = data2;

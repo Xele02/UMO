@@ -296,10 +296,10 @@ namespace XeApp.Game.Menu
 			}
 			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission && data.contExt != null)
 			{
-				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.contExt.JOPOPMLFINI_QuestId) as IMDBGDNPLJA_EventBoxGacha;
+				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.contExt.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
 				if(dbEv != null)
 				{
-					str = dbEv.NGHKJOEDLIP.OPFGFINHFCE_EventName;
+					str = dbEv.NGHKJOEDLIP_Settings.OPFGFINHFCE_name;
 				}
 			}
 			for(int i = 0; i < data.total_data_list.Count; i++)
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 				{
 					if(data.total_data_list[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
-						AddViewPlateList(data.total_data_list[i].HBHMAKNGKFK_Items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(data.total_data_list[i].FIOIKMOIJGK_Point, "pt:", data.total_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_Cnt, JpStringLiterals.StringLiteral_10090), ListType.Point, str);
+						AddViewPlateList(data.total_data_list[i].HBHMAKNGKFK_Items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(data.total_data_list[i].FIOIKMOIJGK_Point, "pt:", data.total_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_item_count, JpStringLiterals.StringLiteral_10090), ListType.Point, str);
 					}
 				}
 			}
@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 						string[] strs = new string[5]
 						{
 							ev.HNDKCBHOJEH[i].MPEKFDKEKCG,
-							ev.HNDKCBHOJEH[i].IMMDGJAOPCD.ToString(),
+							ev.HNDKCBHOJEH[i].IMMDGJAOPCD_BoxId.ToString(),
 							":",
 							ev.HNDKCBHOJEH[i].CLLKANEGGBJ.ToString(),
 							JpStringLiterals.StringLiteral_10090
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 								JpStringLiterals.StringLiteral_19427,
 								data.rank_data_list[i].GHANKNIBALB_LowRank.ToString(),
 								JpStringLiterals.StringLiteral_19428,
-								data.rank_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_Cnt.ToString(),
+								data.rank_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_item_count.ToString(),
 								JpStringLiterals.StringLiteral_10090
 							}), ListType.Ranking, str);
 						}
@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 			d.point = new List<string>();
 			d.ranking = new List<string>();
 			d.data = new GCIJNCFDNON_SceneInfo();
-			d.data.KHEKNNFCAOI(plateId, null, null, 0, 0, 0, false, 0, 0);
+			d.data.KHEKNNFCAOI_Init(plateId, null, null, 0, 0, 0, false, 0, 0);
 			if(type == ListType.Drop)
 			{
 				d.type = PlateType.SMALL;
@@ -452,8 +452,8 @@ namespace XeApp.Game.Menu
 			scenes[1] = new GCIJNCFDNON_SceneInfo();
 			scenes[0].IJIKIPDKCPP = 1;
 			scenes[1].IJIKIPDKCPP = 2;
-			scenes[0].KHEKNNFCAOI(plateId, null, null, 0, 0, 0, false, 0, 0);
-			scenes[1].KHEKNNFCAOI(plateId, null, null, 1, 0, 0, false, 0, 0);
+			scenes[0].KHEKNNFCAOI_Init(plateId, null, null, 0, 0, 0, false, 0, 0);
+			scenes[1].KHEKNNFCAOI_Init(plateId, null, null, 1, 0, 0, false, 0, 0);
 			m_plateDetailWindow.TitleText = GameMessageManager.GetSceneCardName(scenes[0]);
 			m_plateDetailWindow.SetParent(transform);
 			m_plateDetailWindow.Scene = scenes;

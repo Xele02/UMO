@@ -11,19 +11,19 @@ public class MMOLNAHHDOM
 	// RVA: 0x196824C Offset: 0x196824C VA: 0x196824C
 	public MMOLNAHHDOM()
     {
-        KHEKNNFCAOI();
+        KHEKNNFCAOI_Init();
     }
 
 	// // RVA: 0x1968308 Offset: 0x1968308 VA: 0x1968308
-	public void KHEKNNFCAOI(string _CJEKGLGBIHF_path)
+	public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path)
     {
         ELLBAAFKDCH_Filename = _CJEKGLGBIHF_path;
     }
 
 	// // RVA: 0x196826C Offset: 0x196826C VA: 0x196826C
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
-        KHEKNNFCAOI(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ul0");
+        KHEKNNFCAOI_Init(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ul0");
     }
 
 	// // RVA: 0x1968398 Offset: 0x1968398 VA: 0x1968398
@@ -115,7 +115,7 @@ public class MMOLNAHHDOM
 	}
 
 	// // RVA: 0x19695D0 Offset: 0x19695D0 VA: 0x19695D0
-	public bool IAGAAOKODPM_SetMultiDiva(int _EHDDADDKMFI_f_id, bool JKDJCFEBDHC)
+	public bool IAGAAOKODPM_SetMultiDiva(int _EHDDADDKMFI_f_id, bool _JKDJCFEBDHC_Enabled)
 	{
 		int idx = _EHDDADDKMFI_f_id - 1;
 		if ((idx >> 4) > 124)
@@ -123,7 +123,7 @@ public class MMOLNAHHDOM
 		int offset = (idx >> 3);
 		if (LAIIKHJABMP_MultiDiva.Length <= offset)
 			return true;
-		if(JKDJCFEBDHC)
+		if(_JKDJCFEBDHC_Enabled)
 		{
 			LAIIKHJABMP_MultiDiva[offset] |= (byte)(1 << (idx & 7));
 		}

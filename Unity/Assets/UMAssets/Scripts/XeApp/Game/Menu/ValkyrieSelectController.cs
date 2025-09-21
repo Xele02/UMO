@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 		{
 			ALEKLHIANJN d = new ALEKLHIANJN(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id, m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_AbilityLevel);
 			m_layoutValSelect.HasAbility = m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_AbilityLevel > 0;
-			m_layoutValSelect.SetAbility(d.OPFGFINHFCE_SkillName, d.CHHADJECKNL_GetLevel(), d.DMBDNIEEMCB_GetDesc(false));
+			m_layoutValSelect.SetAbility(d.OPFGFINHFCE_name, d.CHHADJECKNL_GetLevel(), d.DMBDNIEEMCB_GetDesc(false));
 			m_layoutValSelect.IsValInfoChange(m_layoutValSelect.HasAbility);
 		}
 
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 			m_layoutValSelect.SetAtkArrowEnable(false);
 			m_layoutValSelect.SetHitArrowEnable(false);
 			string strAtk = m_SeriesValkyrieList[m_SelectSeries][m_Select].KINFGHHNFCF_Atk.ToString();
-			string strHit = m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_Hit.ToString();
+			string strHit = m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_hit.ToString();
 			if (n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.FJFMLFPJKNB_2, IsLeader ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12 : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11))
 			{
 				if(n.KINFGHHNFCF_Atk > 0)
@@ -142,9 +142,9 @@ namespace XeApp.Game.Menu
 					strAtk = "<color=#008200>" + (n.KINFGHHNFCF_Atk + m_SeriesValkyrieList[m_SelectSeries][m_Select].KINFGHHNFCF_Atk).ToString() + "</color>";
 					m_layoutValSelect.SetAtkArrowEnable(true);
 				}
-				if(n.NONBCCLGBAO_Hit > 0)
+				if(n.NONBCCLGBAO_hit > 0)
 				{
-					strHit = "<color=#008200>" + (n.NONBCCLGBAO_Hit + m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_Hit).ToString() + "</color>";
+					strHit = "<color=#008200>" + (n.NONBCCLGBAO_hit + m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_hit).ToString() + "</color>";
 					m_layoutValSelect.SetHitArrowEnable(true);
 				}
 			}

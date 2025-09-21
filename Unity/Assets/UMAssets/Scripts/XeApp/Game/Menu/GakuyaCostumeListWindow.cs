@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		{
 			m_divaId = divaId;
 			m_indexTry = 0;
-			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_divaId - 1];
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[m_divaId - 1];
 			List<ItemInfo> l = new List<ItemInfo>();
 			List<ItemInfo> l3 = new List<ItemInfo>();
 			List<FFHPBEPOMAK_DivaInfo> l2 = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(divaId, debugAllOpen);

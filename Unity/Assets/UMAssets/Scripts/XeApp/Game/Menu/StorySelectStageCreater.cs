@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 						yield break;
 				}
 				m_scrollViewList[m_stageEffectIndex].layoutIcon.SetStatus();
-				m_viewDataList[i].KHEKNNFCAOI(m_viewDataList[i].LFLLLOPAKCO_StoryId);
+				m_viewDataList[i].KHEKNNFCAOI_Init(m_viewDataList[i].LFLLLOPAKCO_StoryId);
 				ReplaceIcon(i);
 			}
 		}
@@ -1120,7 +1120,7 @@ namespace XeApp.Game.Menu
 			PopupPlusHomeBG.Setting s = new PopupPlusHomeBG.Setting();
 			MenuScene.Instance.InputDisable();
 			s.m_bundle_id = 1;
-			s.m_titleName = CGFNKMNBNBN.ELKDCEEPLKB(diva.CMBCBNEODPD_HomeBgId).OPFGFINHFCE_Name;
+			s.m_titleName = CGFNKMNBNBN.ELKDCEEPLKB(diva.CMBCBNEODPD_HomeBgId).OPFGFINHFCE_name;
 			s.WindowSize = SizeType.Small;
 			s.Buttons = new ButtonInfo[1]
 			{
@@ -1235,7 +1235,7 @@ namespace XeApp.Game.Menu
 
 			//0x1A90A6C
 			LIEJFHMGNIA viewStageData = m_viewDataList[index];
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0x1A8A4F8
 				return _.AHHJLDLAPAN_DivaId == viewStageData.AHHJLDLAPAN_DivaId;
@@ -1852,7 +1852,7 @@ namespace XeApp.Game.Menu
 			while(tipsCtrl.isPlayingAnime())
 				yield return null;
 			musicId = stageData.KKPAHLMJKIH_WavId;
-			int a1 = stageData.KEFGPJBKAOD_WavId;
+			int a1 = stageData.KEFGPJBKAOD_BgId;
 			int videoQuality = 0;
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
 			{

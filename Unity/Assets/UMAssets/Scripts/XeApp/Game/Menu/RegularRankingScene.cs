@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		protected override void GetRankingListAdditive(bool isUpper)
 		{
 			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
-			CNNIKANJMNG.HHCJCDFCLOB.JPNACOLKHLB(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
+			CNNIKANJMNG.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
 		}
 
 		// RVA: 0xCFA050 Offset: 0xCFA050 VA: 0xCFA050 Slot: 36

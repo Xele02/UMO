@@ -177,9 +177,9 @@ namespace XeApp.Game.Menu
 			{
 				if(!eps[i].CCBKMCLDGAD_HasReward)
 				{
-					if (EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(eps[i].KIJAPOFAGPN_UnlockItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+					if (EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(eps[i].KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{
-						int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(eps[i].KIJAPOFAGPN_UnlockItemId);
+						int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(eps[i].KIJAPOFAGPN_ItemId);
 						homeBgList.Add(CGFNKMNBNBN.ELKDCEEPLKB(itemId));
 						unlockBgIdList.Add(itemId);
 						m_homeBgEpisodeList.Add(itemId, eps[i]);
@@ -202,14 +202,14 @@ namespace XeApp.Game.Menu
 				content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * row + m_scrollList.LeftTopPosition.x, content.RectTransform.localPosition.y, 0);
 				bool isSelect = false;
 				bool isLock = false;
-				if (m_isSelect && SelectSceneId == homeBgList[index].PPFNGGCBJKC_Id && SelectEvolveId == 0)
+				if (m_isSelect && SelectSceneId == homeBgList[index].PPFNGGCBJKC_id && SelectEvolveId == 0)
 				{
 					isSelect = true;
 					isLock = false;
 				}
 				else
 				{
-					isLock = unlockBgIdList.Contains((int)homeBgList[index].PPFNGGCBJKC_Id);
+					isLock = unlockBgIdList.Contains((int)homeBgList[index].PPFNGGCBJKC_id);
 					isSelect = false;
 				}
 				c.UpdateContent(homeBgList[index], isSelect, isLock, 0);
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode }
 				};
-				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), m_homeBgEpisodeList[c.SceneID].OPFGFINHFCE_Name);
+				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), m_homeBgEpisodeList[c.SceneID].OPFGFINHFCE_name);
 				s.m_text = m_builder.ToString();
 				this.StartCoroutineWatched(ShowLockPopup(s));
 			}

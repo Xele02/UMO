@@ -855,7 +855,7 @@ namespace XeApp.Game.Adv
 							NameEntry.NameEntry.ShowPlayerNameEntry("", (string name) =>
 							{
 								//0xBC9534
-								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = name;
+								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = name;
 								isWait = false;
 							}, NetErrorHandler);
 							while (isWait)
@@ -1050,7 +1050,7 @@ namespace XeApp.Game.Adv
 		{
 			if (speakerId < 1)
 				return;
-			m_currentMessageWindow.SetName(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[speakerId - 1].OPFGFINHFCE_Name);
+			m_currentMessageWindow.SetName(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[speakerId - 1].OPFGFINHFCE_name);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742AA4 Offset: 0x742AA4 VA: 0x742AA4
@@ -1595,8 +1595,8 @@ namespace XeApp.Game.Adv
 			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
 			CIOECGOMILE.HHCJCDFCLOB.OIEBCNPOMIB_UpdateDayChange(true);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns = 1;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_sta_lot_time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_recv_sns = 1;
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
 			BIFNGFAIEIL.HHCJCDFCLOB.DLKJAPDLDFG(true, 0);

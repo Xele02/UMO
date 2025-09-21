@@ -245,11 +245,11 @@ namespace XeApp.Game.Menu
 				m_miniWindow.SetFont(m_layout.fontInfo);
 			}
 			IFBCGCCJBHI d = new IFBCGCCJBHI();
-			d.KHEKNNFCAOI();
+			d.KHEKNNFCAOI_Init();
 			string s = string.Format("{0:#,0}", "----");
 			if(!d.NMCICIHMOCM_PlayerLevelLimit)
 			{
-				s = string.Format("{0:#,0}", d.PBGFIOONCMB_MaxExp - d.OPBHNBECFII_CurExp);
+				s = string.Format("{0:#,0}", d.PBGFIOONCMB_LevelMaxExp - d.OPBHNBECFII_CurExp);
 			}
 			m_miniWindow.Setup(0, s, 0);
 			m_miniWindow.Enter();
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 				m_miniWindow.SetFont(m_layout.fontInfo);
 			}
 			IFBCGCCJBHI d = new IFBCGCCJBHI();
-			d.KHEKNNFCAOI();
+			d.KHEKNNFCAOI_Init();
 			string s = string.Format("{0}", "----");
 			if(d.JHKAEJBNGKE_RateLeftToNext > 0)
 			{

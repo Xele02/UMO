@@ -17,10 +17,10 @@ public class LMJHOAHBDKN : CMPLGKFJCIC<MFKPFMCLOIB> // TypeDefIndex: 10435
 
 	// RVA: 0x10BBAB4 Offset: 0x10BBAB4 VA: 0x10BBAB4
 	public LMJHOAHBDKN(GIINMFDIIMD CDGMPGLAING)
-        : base(CDGMPGLAING, (GIINMFDIIMD IDLHJIOMJBK) =>
+        : base(CDGMPGLAING, (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
         {
             //0x10BBD44
-            return new MFKPFMCLOIB(IDLHJIOMJBK);
+            return new MFKPFMCLOIB(_IDLHJIOMJBK_Data);
         })
     {
         CMCKNKKCNDK_Status = (NHCDBBBMFFG)(int)CDGMPGLAING.DLENPPIJNPA_json["status"];
@@ -36,21 +36,21 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
     {
         public int KJPDHNJGEAH_EntityId; // 0x8
         public int HALIDDHLNEG_Damage; // 0xC
-        public int MHABJOMJCFI_AttackPlayerCount; // 0x10
+        public int MHABJOMJCFI_AttackPlayerCount; // 0x10 AttackPlayerCount
         public SakashoRaidbossEffectData NKDGDKKEPOO_EffectData; // 0x14
         public List<string> HOLACOMBPJH_NamespaceForResponse; // 0x18
         public List<string> FDDIKJOMBIO_NamespaceForSave; // 0x1C
         public string AHEFHIMGIBI_PlayerData; // 0x20
         public bool CHDDDCCHJJH_Replace; // 0x24
-        public long MCKEOKFMLAH; // 0x28
+        public long MCKEOKFMLAH_SaveId; // 0x28
 
         // // RVA: 0x1BA93BC Offset: 0x1BA93BC VA: 0x1BA93BC
-        public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE IDLHJIOMJBK, string JCJDPGMKJAJ_PlayerData)
+        public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_Data, string JCJDPGMKJAJ_PlayerData)
         {
             AHEFHIMGIBI_PlayerData = JCJDPGMKJAJ_PlayerData;
-            CHDDDCCHJJH_Replace = !IDLHJIOMJBK.BLOCFLFHCFJ_Keep;
-            FDDIKJOMBIO_NamespaceForSave = IDLHJIOMJBK.KFGDPMNCCFO_NaespaceForSave;
-            MCKEOKFMLAH = IDLHJIOMJBK.MCKEOKFMLAH;
+            CHDDDCCHJJH_Replace = !_IDLHJIOMJBK_Data.BLOCFLFHCFJ_Keep;
+            FDDIKJOMBIO_NamespaceForSave = _IDLHJIOMJBK_Data.KFGDPMNCCFO_NaespaceForSave;
+            MCKEOKFMLAH_SaveId = _IDLHJIOMJBK_Data.MCKEOKFMLAH_SaveId;
         }
     }
 
@@ -81,7 +81,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
         {
             HALIDDHLNEG_Damage = (int)_DLENPPIJNPA_json["damage"];
             AKLNMPMLDAJ_RaidBoss = new LMJHOAHBDKN(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"));
-            CDEFBMLKLCM_RecentAttackPlayers.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("recent_attack_players"), (GIINMFDIIMD IDLHJIOMJBK) =>
+            CDEFBMLKLCM_RecentAttackPlayers.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("recent_attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
             {
                 //0x1BA9250
                 return new GKIJMGEBIDG(_DLENPPIJNPA_json);
@@ -93,7 +93,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
     }
 
 	public PGAOPHPLLOG BIHCCEHLAOD = new PGAOPHPLLOG(); // 0x7C
-	public ODNJNIICCLB NFEAMMJIMPG; // 0x80
+	public ODNJNIICCLB NFEAMMJIMPG_Result; // 0x80
 
 	public override bool BNCFONNOHFO { get { return true; } } //0x1BA8A9C NPLNAJFJPEE
 
@@ -118,12 +118,12 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
 	// RVA: 0x1BA8E18 Offset: 0x1BA8E18 VA: 0x1BA8E18 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        PJKLMCGEJMK.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH;
-        NFEAMMJIMPG = new ODNJNIICCLB(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+        PJKLMCGEJMK.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH_SaveId;
+        NFEAMMJIMPG_Result = new ODNJNIICCLB(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 
 	// RVA: 0x1BA91DC Offset: 0x1BA91DC VA: 0x1BA91DC Slot: 17
-	public List<string> KPIDBPEKMFD_GetNamespaceForSave()
+	public List<string> KPIDBPEKMFD_GetNames()
     {
         return BIHCCEHLAOD.FDDIKJOMBIO_NamespaceForSave;
     }
@@ -131,12 +131,12 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
 	// RVA: 0x1BA9200 Offset: 0x1BA9200 VA: 0x1BA9200 Slot: 18
 	public long DPKGNBIAFDO_GetUpdatedAt()
     {
-        return NFEAMMJIMPG.LPJIIDJJKOE_UpdatedAt;
+        return NFEAMMJIMPG_Result.LPJIIDJJKOE_UpdatedAt;
     }
 
 	// RVA: 0x1BA9224 Offset: 0x1BA9224 VA: 0x1BA9224 Slot: 19
 	public int JNFCOPCBHAP_GetDataStatus()
     {
-        return NFEAMMJIMPG.ICEMJDBBDMG_DataStatus;
+        return NFEAMMJIMPG_Result.ICEMJDBBDMG_DataStatus;
     }
 }

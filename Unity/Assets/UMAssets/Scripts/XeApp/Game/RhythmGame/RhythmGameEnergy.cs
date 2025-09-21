@@ -58,8 +58,8 @@ namespace XeApp.Game.RhythmGame
 				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if (!musicInfo.IsLine6Mode)
 				{
-					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalFreeModeByDiff[(int)musicInfo.difficultyType];
-					goalValue = musicdb.HLLJIICKNIP_GoalFreeModeByDiff[(int)musicInfo.difficultyType];
+					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
+					goalValue = musicdb.HLLJIICKNIP_GoalByDiff[(int)musicInfo.difficultyType];
 					maxValue = musicdb.FENOHOEIJOE_MaxValue[(int)musicInfo.difficultyType];
 				}
 				else

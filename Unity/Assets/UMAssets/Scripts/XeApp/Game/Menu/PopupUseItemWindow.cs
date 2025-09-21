@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			//0x1160C00
 			_result = UseItemResult.None;
 			MNDAMOGGJBJ.MNDGNJLBANB reason = itemData.HDHNAIIAJCP();
-			if(reason == MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_None/*0*/)
+			if(reason == MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/)
 			{
 				useItemSeting.Buttons = new ButtonInfo[2]
 				{
@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for(int i = 0; i < itemData.INLBMFMOHCI_CostItems.Count; i++)
 			{
-				if (itemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt > 0)
+				if (itemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count > 0)
 					res++;
 			}
 			return res;

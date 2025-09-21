@@ -295,8 +295,8 @@ namespace XeApp.Game.Menu
 		public void Setup(FJIPMALKCBG viewData, int rivalStrength)
 		{
 			this.viewData = viewData;
-			myNameText.text = viewData.HIHPPOFHMNF_Player.OPFGFINHFCE_Name;
-			rivalNameText.text = viewData.EKOCEKHBHLE_Rival.OPFGFINHFCE_Name;
+			myNameText.text = viewData.HIHPPOFHMNF_Player.OPFGFINHFCE_name;
+			rivalNameText.text = viewData.EKOCEKHBHLE_Rival.OPFGFINHFCE_name;
 			layoutRankAnim.StartChildrenAnimGoStop((rivalStrength + 1).ToString("D2"));
 			myTotal.SetNumber(viewData.HIHPPOFHMNF_Player.BDLNMOIOMHK_Total, 0);
 			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_Total, 0);
@@ -586,7 +586,7 @@ namespace XeApp.Game.Menu
 			PlayCountUpLoopSE();
 			List<float> lf = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(8, 0.3f, 0.02f, ref lf);
-			comboCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.HIHPPOFHMNF_Player.NLKEBAOBJCM_Combo, lf, (int value) =>
+			comboCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.HIHPPOFHMNF_Player.NLKEBAOBJCM_combo, lf, (int value) =>
 			{
 				//0x18D5C54
 				myNumberCombo.SetNumber(value, 0);
@@ -595,7 +595,7 @@ namespace XeApp.Game.Menu
 				//0x18D5C94
 				return isSkiped;
 			})));
-			comboCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.EKOCEKHBHLE_Rival.NLKEBAOBJCM_Combo, lf, (int value) =>
+			comboCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.EKOCEKHBHLE_Rival.NLKEBAOBJCM_combo, lf, (int value) =>
 			{
 				//0x18D5C9C
 				rivalNumberCombo.SetNumber(value, 0);
@@ -632,7 +632,7 @@ namespace XeApp.Game.Menu
 			PlayCountUpLoopSE();
 			List<float> lf = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref lf);
-			scoreCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.HIHPPOFHMNF_Player.KNIFCANOHOC_ScorePoint, lf, (int value) =>
+			scoreCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.HIHPPOFHMNF_Player.KNIFCANOHOC_score, lf, (int value) =>
 			{
 				//0x18D5CE4
 				myNumberScore.SetNumber(value, 0);
@@ -641,7 +641,7 @@ namespace XeApp.Game.Menu
 				//0x18D5D24
 				return isSkiped;
 			})));
-			scoreCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.EKOCEKHBHLE_Rival.KNIFCANOHOC_ScorePoint, lf, (int value) =>
+			scoreCoroutines.Add(MoveNext(NumberAnimationUtility.Co_FakeCountup(viewData.EKOCEKHBHLE_Rival.KNIFCANOHOC_score, lf, (int value) =>
 			{
 				//0x18D5D2C
 				rivalNumberScore.SetNumber(value, 0);

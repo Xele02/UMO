@@ -67,7 +67,7 @@ namespace XeApp.Game.AR
 			}
 			
 			byte[] dataBytes = null;
-			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA_MxDir + string.Format(DATA_PATH, m_name), (byte[] data) => {
+			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + string.Format(DATA_PATH, m_name), (byte[] data) => {
 				//0xBBB378
 				dataBytes = data;
 			} ));
@@ -114,23 +114,23 @@ namespace XeApp.Game.AR
 			byte[] dataBytes = null;
 			IIEDOGCMCIE tar = new IIEDOGCMCIE();
 			tar.MCDJJPAKBLH(path);
-			while(!tar.PLOOEECNHFB)
+			while(!tar.PLOOEECNHFB_IsDone)
 			{
 				yield return null;
 			}
-			if(tar.NPNNPNAIONN == false)
+			if(tar.NPNNPNAIONN_IsError == false)
 			{
-				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
 					//0xBBB2D0
-					return _.OPFGFINHFCE_Name.Contains("schema_hash.bytes");
+					return _.OPFGFINHFCE_name.Contains("schema_hash.bytes");
 				});
 				if(file != null)
 				{
 					if(ValidateSchemaHash(file.DBBGALAPFGC_Data, m_name))
 					{
-						CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+						CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
 							//0xBBB100
-							return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", m_name));
+							return _.OPFGFINHFCE_name.Contains(string.Format("{0}.bytes", m_name));
 						});
 						if(db_file != null)
 						{
@@ -192,7 +192,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			GCGNICILKLD_AssetFileInfo found = req.NFEAMMJIMPG.KGHAJGGMPKL_Files.Find((GCGNICILKLD_AssetFileInfo _) => {
+			GCGNICILKLD_AssetFileInfo found = req.NFEAMMJIMPG_Result.KGHAJGGMPKL_files.Find((GCGNICILKLD_AssetFileInfo _) => {
 				// 0xBBB1A4
 				return _.OIEAICNAMNB_LocalFileName.Contains(string.Format("/db/{0}.dat", m_name));
 			});
@@ -202,7 +202,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA_MxDir + found.OIEAICNAMNB_LocalFileName);
+			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + found.OIEAICNAMNB_LocalFileName);
 
 			string dir = Path.GetDirectoryName(dest);
 			if(!Directory.Exists(dir))
@@ -214,7 +214,7 @@ namespace XeApp.Game.AR
 			{
 				if(File.Exists(dest))
 				{
-					if(CalcMD5(dest) == found.POEGMFKLFJG_Hash)
+					if(CalcMD5(dest) == found.POEGMFKLFJG_hash_value)
 					{
 						TodoLogger.Log(TodoLogger.Filesystem, "File match, don't dld");
 						yield break;
@@ -230,7 +230,7 @@ namespace XeApp.Game.AR
 				if(retry)
 					continue;
 #endif
-				string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
+				string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG_Result.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
 				TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
 
 				int retryCount = 0;

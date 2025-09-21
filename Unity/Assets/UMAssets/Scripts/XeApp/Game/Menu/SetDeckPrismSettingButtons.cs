@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 			ApplyPrismButton(prismData.FBGAKINEIPG);
 			ApplyValkyrieModeButton(prismData.OHLCKPIMMFH_ValkyrieMode);
 			ApplyNotesButton(m_prismData.DNLCLAOPFPF_ShowNotes);
-			ApplyDivaSpModeButton(m_prismData.HGEKDNNJAAC_DivaMode);
+			ApplyDivaSpModeButton(m_prismData.HGEKDNNJAAC_AwakenDivaMode);
 			m_originalSettingButton.gameObject.SetActive(isExistOriginalSetting);
 		}
 

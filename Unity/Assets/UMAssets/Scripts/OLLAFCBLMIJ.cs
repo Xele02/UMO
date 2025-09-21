@@ -8,7 +8,7 @@ public class OLLAFCBLMIJ
     public class KAAHBIABMBC
     {
         public int ECDKPAIEFFA_DayId; // 0x8
-        public int KLCMKLPIDDJ; // 0xC
+        public int KLCMKLPIDDJ_Month; // 0xC
         public int BAOFEFFADPD_Day; // 0x10
         public bool CDMGDFLPPHN_Entry; // 0x14
         public bool IADNLGMIHDK_IsStarted; // 0x15
@@ -34,7 +34,7 @@ public class OLLAFCBLMIJ
 	public int KGEKPADNGDM_CurrentDay; // 0x44
 
 	// RVA: 0x14AE2D8 Offset: 0x14AE2D8 VA: 0x14AE2D8
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
         CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
         {
@@ -49,7 +49,7 @@ public class OLLAFCBLMIJ
             {
                 KAAHBIABMBC d = new KAAHBIABMBC();
                 d.ECDKPAIEFFA_DayId = i + 1;
-                d.KLCMKLPIDDJ = 1;
+                d.KLCMKLPIDDJ_Month = 1;
                 d.BAOFEFFADPD_Day = i + 19;
                 d.CDMGDFLPPHN_Entry = false;
                 d.IADNLGMIHDK_IsStarted = false;
@@ -70,7 +70,7 @@ public class OLLAFCBLMIJ
             {
                 KAAHBIABMBC d = new KAAHBIABMBC();
                 d.ECDKPAIEFFA_DayId = i + 1;
-                d.KLCMKLPIDDJ = h.EENHCEEKBBD[i].KLCMKLPIDDJ;
+                d.KLCMKLPIDDJ_Month = h.EENHCEEKBBD[i].KLCMKLPIDDJ_Month;
                 d.BAOFEFFADPD_Day = h.EENHCEEKBBD[i].BAOFEFFADPD_Day;
                 d.CDMGDFLPPHN_Entry = ev.CKFNILGAOBK(d.ECDKPAIEFFA_DayId);
                 int a = ev.PLDDGDNLCAA(d.ECDKPAIEFFA_DayId);
@@ -117,7 +117,7 @@ public class OLLAFCBLMIJ
             {
                 if(CKPIHCGOEDP[_ECDKPAIEFFA_DayId - 1].OJDNGPNOMDE())
                 {
-                    CANAFALMGLI_EventPresentCampaign ev/*MOHDLLIJELH*/ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
+                    CANAFALMGLI_EventPresentCampaign ev/*MOHDLLIJELH_cont*/ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
                     {
                         //0xCAAF34
                         return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;

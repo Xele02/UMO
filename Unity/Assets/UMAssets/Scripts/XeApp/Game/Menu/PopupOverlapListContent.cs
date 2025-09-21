@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 			sceneStatePopup.IsOpenAnimeMoment = false;
 			sceneStatePopup.IsFriend = false;
 			sceneStatePopup.IsDiableLuckyLeaf = true;
-			sceneStatePopup.TitleText = GameMessageManager.GetSceneCardName(card.BCCHOBPJJKE_SceneId, card.JPIPENJGGDD_NumBoard, card.OPFGFINHFCE_SceneName);
+			sceneStatePopup.TitleText = GameMessageManager.GetSceneCardName(card.BCCHOBPJJKE_SceneId, card.JPIPENJGGDD_NumBoard, card.OPFGFINHFCE_name);
 			PopupWindowManager.Show(sceneStatePopup, (PopupWindowControl control, PopupButton.ButtonType label, PopupButton.ButtonLabel type) =>
 			{
 				//0x16A17CC

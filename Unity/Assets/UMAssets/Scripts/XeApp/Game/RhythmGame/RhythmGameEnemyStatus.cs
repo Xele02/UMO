@@ -80,7 +80,7 @@ namespace XeApp.Game.RhythmGame
 				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.LJPKLMJPLAC_DIn[(int)musicInfo.difficultyType];
 				goalValue = musicdb.MALHPBKPIDE_SdIn[(int)musicInfo.difficultyType];
-				enemyId = musicdb.LHICAKGHIGF[(int)musicInfo.difficultyType];
+				enemyId = musicdb.LHICAKGHIGF_EnemyIdByDiff[(int)musicInfo.difficultyType];
 			}
 			gameMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			int[] vals = new int[3] { gameMaster.IJDBNKCLGIC_BCoeff3, gameMaster.GLMKBFEHPLA_BCoeff4, gameMaster.LPDACKNMGNK_BCoeff5 };
@@ -121,7 +121,7 @@ namespace XeApp.Game.RhythmGame
 			int v2 = 0;
 			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieAttr))
 			{
-				v1 = data.NONBCCLGBAO_Hit;
+				v1 = data.NONBCCLGBAO_hit;
 				v2 = data.KINFGHHNFCF_Atk;
 			}
 			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];

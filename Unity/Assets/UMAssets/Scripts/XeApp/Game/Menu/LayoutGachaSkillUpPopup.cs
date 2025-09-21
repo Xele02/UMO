@@ -40,8 +40,8 @@ namespace XeApp.Game.Menu
 		{
 			GCIJNCFDNON_SceneInfo s1 = new GCIJNCFDNON_SceneInfo();
 			GCIJNCFDNON_SceneInfo s2 = new GCIJNCFDNON_SceneInfo();
-			s1.KHEKNNFCAOI(_sceneId, null, null, 0, 0, 0, false, 0, 0);
-			s2.KHEKNNFCAOI(_sceneId, null, null, 1, 0, 0, false, 0, 0);
+			s1.KHEKNNFCAOI_Init(_sceneId, null, null, 0, 0, 0, false, 0, 0);
+			s2.KHEKNNFCAOI_Init(_sceneId, null, null, 1, 0, 0, false, 0, 0);
 			GameManager.Instance.SceneIconCache.Load(_sceneId, 1, (IiconTexture image) =>
 			{
 				//0x1D4ED20

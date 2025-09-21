@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		public override void SetStatus(Transform parent, HGFPAFPGIKG view)
 		{
 			base.SetStatus(parent, view);
-			m_boxIndex = view.NNCCGILOOIE_ListIdx;
+			m_boxIndex = view.NNCCGILOOIE_Num;
 			UpdateList();
 		}
 
@@ -57,12 +57,12 @@ namespace XeApp.Game.Menu
 			int a = m_view.EDILCJAICBE(m_boxIndex - 1);
 			int b = m_view.EDILCJAICBE(m_boxIndex);
 			int c = m_view.EDILCJAICBE(m_boxIndex + 1);
-			m_buttonPrev.Disable = a == 0 ? true : m_view.IMMDGJAOPCD == b;
+			m_buttonPrev.Disable = a == 0 ? true : m_view.IMMDGJAOPCD_BoxId == b;
 			m_buttonNext.Disable = c == 0;
 			m_list = m_view.NHOBNJOLBPO(b, true);
 			SetupList(m_list.Count, true);
 			textTitle.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_gacha_box_text_08"), m_boxIndex + 1);
-			int d = m_view.IMMDGJAOPCD == b ? -1 : m_view.EDKNOJBCIJO(b);
+			int d = m_view.IMMDGJAOPCD_BoxId == b ? -1 : m_view.EDKNOJBCIJO(b);
 			SetRemainCount(d, d);
 			SetRemainCount(m_view.EPLMGDEGLKG(b), m_view.KMNNDEFMEKH());
 		}

@@ -99,7 +99,7 @@ namespace XeApp.Game.Gacha
 			m_sceneStatePopup.PageSave = SceneStatusParam.PageSave.Pickup;
 			m_sceneStatePopup.WindowSize = SizeType.Large;
 			m_viewPlayerStatus = new IFBCGCCJBHI();
-			m_viewPlayerStatus.KHEKNNFCAOI();
+			m_viewPlayerStatus.KHEKNNFCAOI_Init();
 		}
 
 		// RVA: 0x985508 Offset: 0x985508 VA: 0x985508 Slot: 12
@@ -147,7 +147,7 @@ namespace XeApp.Game.Gacha
 			m_userInfoUi.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurrentStamina, playerStatus.POKDILOKODG_MaxEnergy);
 			m_userInfoUi.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
 			m_userInfoUi.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
-			m_userInfoUi.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_MaxExp);
+			m_userInfoUi.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_LevelMaxExp);
 			m_userInfoUi.ChangeCurrencyValue(playerStatus.OIOFGIBDOPI_CurrencyNonPaid, playerStatus.FNCPAEFEECO_CurrencyPaid);
 			m_userInfoUi.ChangeMedalValue(playerStatus.AHHGKGOPGDE_MedalMonth, playerStatus.GBIKGLELKEO_MedalValue);
 			m_userInfoUi.ChangeUtaRateValue(playerStatus.ILELGGCCGMJ_UtaGrade, playerStatus.HDBFOIAGPJK_UtaRank);
@@ -165,8 +165,8 @@ namespace XeApp.Game.Gacha
 			m_sceneStatePopup.IsOpenAnimeMoment = false;
 			m_sceneStatePopup.IsFriend = false;
 			m_sceneStatePopup.IsDiableLuckyLeaf = true;
-			m_sceneStatePopup.TitleText = sceneData.OPFGFINHFCE_SceneName;
-			if(sceneData.OPFGFINHFCE_SceneName == "")
+			m_sceneStatePopup.TitleText = sceneData.OPFGFINHFCE_name;
+			if(sceneData.OPFGFINHFCE_name == "")
 			{
 				m_sceneStatePopup.TitleText = GameMessageManager.GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD_NumBoard, "");
 			}
@@ -338,7 +338,7 @@ namespace XeApp.Game.Gacha
 			bool b1 = false;
 			switch(GachaUtility.selectCategory)
 			{
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.HJNNKCMLGFL_0:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.HJNNKCMLGFL_0_None:
 					break;
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7:
@@ -380,7 +380,7 @@ namespace XeApp.Game.Gacha
 					}
 					if (price <= currentTicket)
 					{
-						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_Id;
+						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_id;
 						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId), price);
 						b1 = false;
 					}
@@ -412,7 +412,7 @@ namespace XeApp.Game.Gacha
 					}
 					else
 					{
-						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_Id;
+						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_id;
 						//LAB_009867b0
 						//LAB_0098690c
 						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId), price);
@@ -435,7 +435,7 @@ namespace XeApp.Game.Gacha
 			if(GachaUtility.netGachaProductData.FJAOAGNFABN_HasOneDay)
 			{
 				EGOLBAPFHHD_Common.PCHECKGDJDK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(GachaUtility.netGachaProductData.FDEBLMKEMLF_TypeAndSeriesId);
-				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH)
+				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH_Count)
 				{
 					m_resultButtonUi.HideRetry();
 					b1 = true;
@@ -455,7 +455,7 @@ namespace XeApp.Game.Gacha
 						maxLimit = 1;
 					}
 					m_resultButtonUi.SetRemainCount(count2, maxLimit);
-					m_resultButtonUi.SetTelopType(GachaUtility.selectCategory, GachaUtility.netGachaMultiProduct, GachaUtility.netGachaProductData.KACECFNECON == null ? "" : GachaUtility.netGachaProductData.KACECFNECON.MKJPDIHLGBF_FreeMulti);
+					m_resultButtonUi.SetTelopType(GachaUtility.selectCategory, GachaUtility.netGachaMultiProduct, GachaUtility.netGachaProductData.KACECFNECON_extra == null ? "" : GachaUtility.netGachaProductData.KACECFNECON_extra.MKJPDIHLGBF_FreeMulti);
 				}
 				else if(GachaUtility.selectedCountType == GachaUtility.CountType.Single)
 				{
@@ -465,7 +465,7 @@ namespace XeApp.Game.Gacha
 						maxLimit = 1;
 					}
 					m_resultButtonUi.SetRemainCount(count, max);
-					m_resultButtonUi.SetTelopType(GachaUtility.selectCategory, GachaUtility.netGachaSingleProduct, GachaUtility.netGachaProductData.KACECFNECON == null ? "" : GachaUtility.netGachaProductData.KACECFNECON.NEBCAAGLDHA_FreeSingle);
+					m_resultButtonUi.SetTelopType(GachaUtility.selectCategory, GachaUtility.netGachaSingleProduct, GachaUtility.netGachaProductData.KACECFNECON_extra == null ? "" : GachaUtility.netGachaProductData.KACECFNECON_extra.NEBCAAGLDHA_FreeSingle);
 				}
 				m_resultButtonUi.SetDrawRarity(GachaUtility.netGachaProductData.KKODAOIJHMC_GetKakuteiText(GachaUtility.netGachaCount));
 			}

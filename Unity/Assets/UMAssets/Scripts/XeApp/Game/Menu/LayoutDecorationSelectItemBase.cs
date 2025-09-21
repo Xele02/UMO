@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 			SetNewIcon(item.CADENLBDAEB_IsNew);
 			SetNum(item.BFINGCJHOHI_Count, item.BFINGCJHOHI_Count - postNum);
 			SetStatusIcon(-1 < postNum);
-			Id = item.PPFNGGCBJKC_Id;
+			Id = item.PPFNGGCBJKC_id;
 			SubId = subId;
 			Type = type;
 			m_textureId = Id;
@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 		public void SettingExchange(FJGOKILCBJA item, DecorationDecorator.TabType tab, LayoutDecorationWindow01.SelectItemType type, LayoutDecorationWindow01 window)
 		{
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-			k.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemFullId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemFullId));
+			k.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemId));
 			Setting(k, 0, false, tab, type, window);
 			IsNew = false;
 			if(m_newIcon != null)
@@ -699,7 +699,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18B704C Offset: 0x18B704C VA: 0x18B704C
 		private void ShowItemDetailPopup()
 		{
-			MenuScene.Instance.ShowItemDetail(Data.KGBAOKCMALD, SubId, 0, Data.OPFGFINHFCE_Name, Data.FEMMDNIELFC_Desc, null);
+			MenuScene.Instance.ShowItemDetail(Data.KGBAOKCMALD, SubId, 0, Data.OPFGFINHFCE_name, Data.FEMMDNIELFC_Desc, null);
 		}
 
 		// // RVA: 0x18B3C3C Offset: 0x18B3C3C VA: 0x18B3C3C

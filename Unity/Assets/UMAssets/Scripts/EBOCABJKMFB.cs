@@ -5,12 +5,12 @@ using System.Text.RegularExpressions;
 public class EBOCABJKMFB : IKMBBPDBECA
 {
 	//// RVA: 0x14FFF40 Offset: 0x14FFF40 VA: 0x14FFF40 Slot: 4
-	public override void KHEKNNFCAOI(string _DLENPPIJNPA_json)
+	public override void KHEKNNFCAOI_Init(string _DLENPPIJNPA_json)
 	{
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_DLENPPIJNPA_json);
 		if(data.BBAJPINMOEP_Contains("name"))
 		{
-			OPFGFINHFCE_Name = (string)data["name"];
+			OPFGFINHFCE_name = (string)data["name"];
 		}
 		if(data.BBAJPINMOEP_Contains("original_name"))
 		{
@@ -22,7 +22,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 		}
 		if(data.BBAJPINMOEP_Contains("desc"))
 		{
-			KLMPFGOCBHC_Description = (string)data["desc"];
+			KLMPFGOCBHC_description = (string)data["desc"];
 		}
 		if(data.BBAJPINMOEP_Contains("feature"))
 		{
@@ -76,20 +76,20 @@ public class EBOCABJKMFB : IKMBBPDBECA
 			if(kakutei > 4)
 			{
 				string s = kakutei.ToString();
-				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
+				s = Regex.Replace(s, "[0-9]", (Match _MABBBOEAPAA_p) =>
 				{
 					//0x15023C8
-					return Convert.ToChar(MABBBOEAPAA.Value[0] + 65248).ToString();
+					return Convert.ToChar(_MABBBOEAPAA_p.Value[0] + 65248).ToString();
 				});
 				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9949, s);
 			}
 			if(kakutei == 4)
 			{
 				string s = kakutei.ToString();
-				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
+				s = Regex.Replace(s, "[0-9]", (Match _MABBBOEAPAA_p) =>
 				{
 					//0x1502440
-					return Convert.ToChar(MABBBOEAPAA.Value[0] + 65248).ToString();
+					return Convert.ToChar(_MABBBOEAPAA_p.Value[0] + 65248).ToString();
 				});
 				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9950, s);
 			}
@@ -204,7 +204,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 				{
 					CEBFFLDKAEC_SecureInt d = new CEBFFLDKAEC_SecureInt();
 					d.DNJEJEANJGL_Value = a;
-					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a - 1].KELFCMEOPPM_Ep;
+					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a - 1].KELFCMEOPPM_EpisodeId;
 					HGBOODNMNFM h = NNDMIOEKKMM_NewEpisode.Find((HGBOODNMNFM _GHPLINIACBB_x) =>
 					{
 						//0x15024B8

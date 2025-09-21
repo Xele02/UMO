@@ -1,18 +1,18 @@
 ﻿
 public class JBECFDNKPFD
 {
-	public string HGEDPFFCDBG_DivaIds; // 0x8
-	public string MIDCDCFCJJM_DivaLevel; // 0xC
-	public string LLHFLCGIMPB_CostumeIds; // 0x10
-	public string JGJPKLCCOIO_Scenes; // 0x14
-	public string JNPCEKKNEBF_ScenesLevel; // 0x18
-	public int PCMDFNHIEBE_ValkyrieId; // 0x1C
+	public string HGEDPFFCDBG_char_id; // 0x8
+	public string MIDCDCFCJJM_char_level; // 0xC DivaLevel
+	public string LLHFLCGIMPB_char_cos; // 0x10
+	public string JGJPKLCCOIO_scene_id; // 0x14
+	public string JNPCEKKNEBF_scene_level; // 0x18
+	public int PCMDFNHIEBE_valkyrie_id; // 0x1C
 	public int CBOCBLLOMHE_ParaTotal; // 0x20
 	public int HBKBKHACHHI_ParaSoul; // 0x24
 	public int GMECIBOJCFF_ParaVoice; // 0x28
-	public int MIMLMJGGNJH_TeamCharm; // 0x2C
-	public int MINAGJOIGOP_TeamLuck; // 0x30
-	public int IPEKDLNEOFI_TeamLife; // 0x34
+	public int MIMLMJGGNJH_para_charm; // 0x2C
+	public int MINAGJOIGOP_para_luck; // 0x30
+	public int IPEKDLNEOFI_ParaLife; // 0x34
 	public int BFHPKJEKJNN_ParaSupport; // 0x38
 	public int DDBEJNGJIPF_Fold; // 0x3C
 	public int GELJFCKEBDM_FriendId; // 0x40

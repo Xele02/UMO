@@ -262,20 +262,20 @@ namespace XeApp.Game.Menu
 		{
 			SetMusicName(music_name, viewMusic.FKDCCLPGKDK_JacketAttr);
 			SwitchDifficulty((Difficulty.Type)difficulty, isLine6Mode);
-			int cnt = Mathf.Min(difficulty, viewMusic.MGJKEJHEBPO_DiffInfos.Count - 1);
-			SetClearNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].JNLKJCDFFMM_Clear);
-			SetScoreNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].KNIFCANOHOC_Score);
-			SetComboNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].NLKEBAOBJCM_Combo);
+			int cnt = Mathf.Min(difficulty, viewMusic.MGJKEJHEBPO_Blocks.Count - 1);
+			SetClearNumber(viewMusic.MGJKEJHEBPO_Blocks[cnt].JNLKJCDFFMM_clear);
+			SetScoreNumber(viewMusic.MGJKEJHEBPO_Blocks[cnt].KNIFCANOHOC_score);
+			SetComboNumber(viewMusic.MGJKEJHEBPO_Blocks[cnt].NLKEBAOBJCM_combo);
 			m_stampPlayList.Clear();
 			for(int i = 0; i < viewData.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
 				SetRewardStatus(i + 4, viewData.PDONJHCHBAE_ScoreReward[i], false);
-				SwitchRank(i + 4, (ResultScoreRank.Type) viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue));
+				SwitchRank(i + 4, (ResultScoreRank.Type) viewMusic.MGJKEJHEBPO_Blocks[cnt].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.HFPMKBAANFO_ComboReward.Count; i++)
 			{
 				SetRewardStatus(i + 8, viewData.HFPMKBAANFO_ComboReward[i], false);
-				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ_MusicLevel.CCFAAPPKILD_GetRankCombo(viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue));
+				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewMusic.MGJKEJHEBPO_Blocks[cnt].BAKLKJLPLOJ_MusicLevel.CCFAAPPKILD_GetRankCombo(viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.IOCLNNCJFKA_ClearReward.Count; i++)
 			{
@@ -412,8 +412,8 @@ namespace XeApp.Game.Menu
 				txt = string.Format("{0}", reward.FCDKJAKLGMB_TargetValue);
 			}
 			SetThresholdNumber(arrayIndex, txt);
-			SetItemNumber(arrayIndex, reward.JDLJPNMLFID);
-			SetIcon(arrayIndex, reward.KIJAPOFAGPN_GlobalItemId);
+			SetItemNumber(arrayIndex, reward.JDLJPNMLFID_ItemCount);
+			SetIcon(arrayIndex, reward.KIJAPOFAGPN_ItemId);
 			if(reward.CMCKNKKCNDK_Status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
 			{
 				if(reward.CMCKNKKCNDK_Status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)

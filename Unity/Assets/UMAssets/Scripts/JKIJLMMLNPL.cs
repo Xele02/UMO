@@ -30,7 +30,7 @@ public class JKIJLMMLNPL
 	public SeriesAttr.Type KOGEKHMBHOI_SceneSerie; // 0x1C
 	public int GCMIDNBBMLA_SceneAttrBonus; // 0x20
 	public int IDDAGCGIAPA_SceneSerieBonus; // 0x24
-	public List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA_MCannonPlate; // 0x28
+	public List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA_Scenes; // 0x28
 
 	// RVA: 0x1468C38 Offset: 0x1468C38 VA: 0x1468C38
 	public JKIJLMMLNPL()
@@ -39,7 +39,7 @@ public class JKIJLMMLNPL
 		KOGEKHMBHOI_SceneSerie = SeriesAttr.Type.None;
 		GCMIDNBBMLA_SceneAttrBonus = 0;
 		IDDAGCGIAPA_SceneSerieBonus = 0;
-		OPIBAPEGCLA_MCannonPlate = new List<GCIJNCFDNON_SceneInfo>(100);
+		OPIBAPEGCLA_Scenes = new List<GCIJNCFDNON_SceneInfo>(100);
 	}
 
 	// RVA: 0x1468CD4 Offset: 0x1468CD4 VA: 0x1468CD4
@@ -51,7 +51,7 @@ public class JKIJLMMLNPL
 		{
 			GCIJNCFDNON_SceneInfo viewscene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i];
 			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[viewscene.BCCHOBPJJKE_SceneId - 1];
-			if(dbScene.PPEGAKEIEGM_En == 2)
+			if(dbScene.PPEGAKEIEGM_Enabled == 2)
 			{
 				if(viewscene.CGKAEMGLHNK_IsUnlocked() && !viewscene.MCCIFLKCNKO_Feed && (CJNCOELLDFC == null || !CJNCOELLDFC(viewscene.BCCHOBPJJKE_SceneId)))
 				{
@@ -79,7 +79,7 @@ public class JKIJLMMLNPL
 		int val = 0;
 		for(int i = 0; i < cnt; i++)
 		{
-			OPIBAPEGCLA_MCannonPlate.Add(l[i].COIODGJDJEJ_scene);
+			OPIBAPEGCLA_Scenes.Add(l[i].COIODGJDJEJ_scene);
 			val += l[i].BDLNMOIOMHK_Total;
 		}
 		LOAJLHEIMFD_MCannonDamageBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_damage_base", 10000);

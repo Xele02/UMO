@@ -3,7 +3,7 @@ public class BKANGIKIEML
 {
 	public enum NODKLJHEAJB
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		DOEHLCLBCNN_1 = 1,
 		DJPFJGKGOOF_2 = 2,
 		PAAIHBHJJMM_3 = 3,

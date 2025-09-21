@@ -237,11 +237,11 @@ namespace XeApp
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
-						return viewData.PPFNGGCBJKC_Id;
+						return viewData.PPFNGGCBJKC_id;
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
 						return viewData.GBJFNGCDKPM_Type;
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
-						return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_Id);
+						return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_id);
 				}
 			}
 			return 0;
@@ -263,7 +263,7 @@ namespace XeApp
 		{
 			if(viewData == null)
 				return "";
-			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_Id);
+			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_id);
 			switch(viewData.NPADACLCNAN_Category)
 			{
 				case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:

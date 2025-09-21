@@ -70,19 +70,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1A77804 Offset: 0x1A77804 VA: 0x1A77804
 		public void SetRewardData(IIMNHDGFDAG info, HighScoreRatingRank.Type playerUtaGrade, string utaGradeMoreText)
 		{
-			SetHighScoreRatingRank((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
-			m_utaGradeText.text = HighScoreRatingRank.GetRankName((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
+			SetHighScoreRatingRank((HighScoreRatingRank.Type)info.ILELGGCCGMJ_UtaGrade);
+			m_utaGradeText.text = HighScoreRatingRank.GetRankName((HighScoreRatingRank.Type)info.ILELGGCCGMJ_UtaGrade);
 			if(!info.DJEMBILEBFP_IsPlayerRank)
 			{
-				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank == (int)playerUtaGrade);
+				SetFrameColor(info.ILELGGCCGMJ_UtaGrade == (int)playerUtaGrade);
 			}
 			else
 			{
-				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank <= (int)playerUtaGrade);
+				SetFrameColor(info.ILELGGCCGMJ_UtaGrade <= (int)playerUtaGrade);
 				m_utaGradeText.text += utaGradeMoreText;
 			}
-			m_bossRankLower.StartChildrenAnimGoStop(string.Format("{0:D2}", info.IOBJDNEGEBB_BossRankLower));
-			m_bossRankUppwer.StartChildrenAnimGoStop(string.Format("{0:D2}", info.PKLKOMIAKNL_BossRankUpper));
+			m_bossRankLower.StartChildrenAnimGoStop(string.Format("{0:D2}", info.IOBJDNEGEBB_RankLower));
+			m_bossRankUppwer.StartChildrenAnimGoStop(string.Format("{0:D2}", info.PKLKOMIAKNL_RankUpper));
 			m_lotCountText.text = string.Format(JpStringLiterals.StringLiteral_19505, info.CHOIMPLAOCO_RewardCountLower, info.EAOBPKJDDKC_RewardCountUpper);
 		}
 

@@ -65,22 +65,22 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("master");
 			SetFriListInfo(titleIndex, isAvailable, fri);
 			playerRank = fri.ILOJAJNCPEC_Rank;
-			lastLogin = fri.PCEGKKLKFNO.AJECHDLMKOE_LastLogin;
+			lastLogin = fri.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin;
 			musicRatio = fri.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
-			m_lobbyData = fri.PCEGKKLKFNO as NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO;
+			m_lobbyData = fri.PCEGKKLKFNO_FriendData as NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO;
 			if(fri.JIGONEMPPNP_Diva != null)
 			{
 				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
 				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
-			emblemId = fri.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
+			emblemId = fri.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
 			skill = "";
 			skillLevel = 0;
 			skillRank = 0;
 			isKira = false;
-			playerId = fri.MLPEHNBNOGD_Id;
+			playerId = fri.MLPEHNBNOGD_PlayerId;
 			if(fri.AFBMEMCHJCL_MainScene == null)
 			{
 				mcannonPower = 0;
@@ -106,11 +106,11 @@ namespace XeApp.Game.Menu
 				int skillId = fri.AFBMEMCHJCL_MainScene.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				if(skillId != 0)
 				{
-					skill = fri.AFBMEMCHJCL_MainScene.PFHJFIHGCKP_CenterSkillName1;
+					skill = fri.AFBMEMCHJCL_MainScene.PFHJFIHGCKP_CenterSkillName;
 					skillLevel = fri.AFBMEMCHJCL_MainScene.DDEDANKHHPN_SkillLevel;
 					skillRank = (SkillRank.Type) fri.AFBMEMCHJCL_MainScene.DHEFMEGKKDN_CenterSkillRank;
 				}
-				luck = fri.AFBMEMCHJCL_MainScene.MJBODMOLOBC_Luck;
+				luck = fri.AFBMEMCHJCL_MainScene.MJBODMOLOBC_luck;
 				total = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.Total;
 				life = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.life;
 				soul = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.soul;
@@ -121,13 +121,13 @@ namespace XeApp.Game.Menu
 				isKira = fri.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 			}
 			comment = fri.FGMPKKOOGCM_Comment;
-			login = string.Concat(JpStringLiterals.StringLiteral_16059, fri.PCEGKKLKFNO.LFKJNMFFCLH_LastLoginString);
+			login = string.Concat(JpStringLiterals.StringLiteral_16059, fri.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString);
 			mcannonPower = m_lobbyData.NOEAJIJIIHK_McPower;
 			mcannonPowerMes = mcannonPower.ToString();
 			funCount = m_lobbyData.AGDBNNEAIIC_FanNum;
 			isFavorite = m_lobbyData.BBNAEPGAMMA_IsFavorite;
 			isDivaLoad = false;
-			Friend = fri.PCEGKKLKFNO.LHMDABPNDDH_Type == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
 		}
 
 		// // RVA: 0xEC1C6C Offset: 0xEC1C6C VA: 0xEC1C6C

@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 			layout.SetStatus(setup.View, setup.IsBuy);
 			gameObject.SetActive(true);
 			layout.OnChangeCallback = OnChange;
-			OnChange(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setup.View.KIJAPOFAGPN_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem ? 1 : 0, false);
+			OnChange(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setup.View.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem ? 1 : 0, false);
 		}
 
 		// RVA: 0x11483A4 Offset: 0x11483A4 VA: 0x11483A4

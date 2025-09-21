@@ -422,8 +422,8 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < fm.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
-					data.KHEKNNFCAOI(fm.BFDEHIANFOG[i]);
-					if (data.MLPEHNBNOGD_Id == _playerId)
+					data.KHEKNNFCAOI_Init(fm.BFDEHIANFOG[i]);
+					if (data.MLPEHNBNOGD_PlayerId == _playerId)
 						friends = data;
 
 				}
@@ -445,7 +445,7 @@ namespace XeApp.Game.Menu
 			if(!IsError)
 			{
 				ProfilDateArgs arg = new ProfilDateArgs();
-				arg.isFavorite = friends.PCEGKKLKFNO.NEILEPPJKIN_IsFavorite != 0;
+				arg.isFavorite = friends.PCEGKKLKFNO_FriendData.NEILEPPJKIN_favorite != 0;
 				arg.data = friends;
 				arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
 				arg.btnType = IsMyData ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Fan;

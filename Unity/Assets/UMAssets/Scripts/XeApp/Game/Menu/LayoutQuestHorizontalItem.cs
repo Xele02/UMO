@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 			SetIcon(param.questData.JHAOHBNPMNA_EventId);
 			SetFont(param.questData.LFCOJABLOEN_EventId);
 			SwitchEmphasisIcon(param.questData.BEEIIJJKDBH_BadgeConstantId, param.questData.BHANMJKCCBC_BadgeText);
-			SwitchReceiptIcon(param.questData.PNFDMBHDPAJ);
+			SwitchReceiptIcon(param.questData.PNFDMBHDPAJ_IsRewardOnly);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(param.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38)
 			{
@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 				s = string.Format(bk.GetMessageByLabel("bingo_next_charange"), date.Year, date.Month, date.Day);
 			}
 			SetNextCharange(param.questData.BALFPCLMOGJ != 0, s);
-			SetTime(param.questData.PCCFAKEOBIC_End);
+			SetTime(param.questData.PCCFAKEOBIC_EndTime);
 		}
 
 		//// RVA: 0x1878728 Offset: 0x1878728 VA: 0x1878728

@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
 			{
 				//0x19DCEAC
-				return item.PPFNGGCBJKC == Id;
+				return item.PPFNGGCBJKC_id == Id;
 			});
 			if(charaStamp.IDELKEKDIFD_CharaId == m_caraId)
 			{

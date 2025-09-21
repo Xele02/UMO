@@ -433,7 +433,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E6F0C Offset: 0x18E6F0C VA: 0x18E6F0C
 		private bool IsLevelMax(int level)
 		{
-			return level >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
+			return level >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel;
 		}
 	}
 }

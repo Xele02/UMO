@@ -182,8 +182,8 @@ namespace XeApp.Game.Menu
 				{
 					m_tmpStatus.spNoteExpected[i] = 0;
 				}
-				friendLuck = viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
-				luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+				friendLuck = viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
+				luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 				baseStatus.Add(m_tmpStatus);
 			}
 			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID_Status, m_tmpStatus, baseLuck, friendLuck);
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 			if (viewFriendPlayerData == null || viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
 			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
-			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 			baseStatus.Add(m_tmpStatus);
 		}
 
@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
 						GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
-						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
+						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
 							GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
-							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
+							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 							limitOverStatus.Add(m_tmpLimitOverStatus);
 						}
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 			}
 			if (friendData == null || friendData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
-			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
+			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
 			AdjustOverLimit(m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene(), musicData);
 			limitOverStatus.Add(m_tmpLimitOverStatus);
 		}
@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
 						GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
-						l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+						l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
 					for (int j = 0; j < viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds.Count; j++)
@@ -334,7 +334,7 @@ namespace XeApp.Game.Menu
 						if(viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
 							GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
-							l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+							l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 							limitOverStatus.Add(m_tmpLimitOverStatus);
 						}
 					}
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < list.Count; i++)
 				{
-					if(list[i].JKDJCFEBDHC_BonusEnabled)
+					if(list[i].JKDJCFEBDHC_Enabled)
 					{
 						bonusPoint += list[i].HEDODOBGPPM_BonusValue;
 					}

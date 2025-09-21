@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 					//0x1044030
 					return GameMessageManager.MissionMessageTagFunc(m_strBulder, tag, data.GHBPLHBNMBK_FreeMusicId, data.LFGNLKKFOCD_IsLine6, (Difficulty.Type)data.FCNIAJHHGJH_Difficulty);
 				});
-				m_missionPerText.text = string.Format(bk.GetMessageByLabel("event_mission_message_000"), data.NFOOOBMJINC_MissionPercent);
+				m_missionPerText.text = string.Format(bk.GetMessageByLabel("event_mission_message_000"), data.NFOOOBMJINC_MissionBonusNum);
 				m_noClearPerText.text = JpStringLiterals.StringLiteral_18575;
 				if(!data.LFGNLKKFOCD_IsLine6)
 				{

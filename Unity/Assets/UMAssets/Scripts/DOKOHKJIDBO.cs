@@ -7,7 +7,7 @@ public delegate void DJBHIFLHJLK();
 public class DOKOHKJIDBO
 {
 	public ANCJLICGOLP IKCAJDOKNOM; // 0x8
-	public bool LNAHEIEIBOI; // 0xC
+	public bool LNAHEIEIBOI_Initialized; // 0xC
 	public string BEIFBNGMFPG = JpStringLiterals.StringLiteral_9874; // 0x10
 	public Dictionary<int, BEEINMBNKNM_Encryption> KCOIDGJOJHC_EncryptionMap = new Dictionary<int, BEEINMBNKNM_Encryption>(); // 0x14
 
@@ -21,7 +21,7 @@ public class DOKOHKJIDBO
 
 	// RVA: 0x12328E8 Offset: 0x12328E8 VA: 0x12328E8
 	// LFIEDDHNLBE : GameStart : true, Initialize : false
-	public void DBEPFLFHAFH_RequestMaster(bool LFIEDDHNLBE, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK MOBEEPPKFLG)
+	public void DBEPFLFHAFH_RequestMaster(bool LFIEDDHNLBE, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
 		// // RVA: 0x12330E0 Offset: 0x12330E0 VA: 0x12330E0
 		// internal bool APDFIGKALGM(SakashoErrorId LJJGBICGLLF) { }
@@ -31,7 +31,7 @@ public class DOKOHKJIDBO
 		// internal void CCHHOEDOHKN(CACGCMBKHDI JIPCHHHLOMM) { }
 
 		KCOIDGJOJHC_EncryptionMap.Clear();
-		LNAHEIEIBOI = false;
+		LNAHEIEIBOI_Initialized = false;
 
 		IKCAJDOKNOM = new ANCJLICGOLP();
 		IKCAJDOKNOM.KHEKNNFCAOI_Init();
@@ -45,7 +45,7 @@ public class DOKOHKJIDBO
 		};
 		
 		request.DFDLAIGFDAH = IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr();
-		request.MKGLJLCMGIB = IKCAJDOKNOM.IIEMACPEEBJ;
+		request.MKGLJLCMGIB = IKCAJDOKNOM.IIEMACPEEBJ_Deserialize;
 		request.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
 		{
 			//0x1233124
@@ -54,14 +54,14 @@ public class DOKOHKJIDBO
 				if(IKCAJDOKNOM.LPJLEHAJADA("s_0", 0) != 0)
 				{
 					ANDDAABHGIP();
-					LNAHEIEIBOI = true;
+					LNAHEIEIBOI_Initialized = true;
 					_BHFHGFKBOHH_OnSuccess.Invoke();
 					return;
 				}
 			}
-			if(LNAHEIEIBOI)
+			if(LNAHEIEIBOI_Initialized)
 			{
-				GNCHKCLDCBP(MOBEEPPKFLG);
+				GNCHKCLDCBP(_MOBEEPPKFLG_OnFail);
 				return;
 			}
 			_BHFHGFKBOHH_OnSuccess.Invoke();
@@ -71,7 +71,7 @@ public class DOKOHKJIDBO
 			//0x123329C
 			if(!JIPCHHHLOMM.DLKLLHPLANH && JIPCHHHLOMM.CJMFJOMECKI_ErrorId != SakashoErrorId.MASTER_DATA_NOT_FOUND)
 			{
-				MOBEEPPKFLG();
+				_MOBEEPPKFLG_OnFail();
 				return;
 			}
 			if(!LFIEDDHNLBE)
@@ -79,14 +79,14 @@ public class DOKOHKJIDBO
 				_BHFHGFKBOHH_OnSuccess();
 				return;
 			}
-			GNCHKCLDCBP(MOBEEPPKFLG);
+			GNCHKCLDCBP(_MOBEEPPKFLG_OnFail);
 		};
 	}
 
 	// RVA: 0x1232C34 Offset: 0x1232C34 VA: 0x1232C34
-	private void GNCHKCLDCBP(DJBHIFLHJLK MOBEEPPKFLG)
+	private void GNCHKCLDCBP(DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		JHHBAFKMBDL.HHCJCDFCLOB.MDKADDJMLHA(MOBEEPPKFLG);
+		JHHBAFKMBDL.HHCJCDFCLOB.MDKADDJMLHA(_MOBEEPPKFLG_OnFail);
 	}
 
 	// RVA: 0x1232CE4 Offset: 0x1232CE4 VA: 0x1232CE4
@@ -113,13 +113,13 @@ public class DOKOHKJIDBO
 	public void LoadEditor()
 	{
 		KCOIDGJOJHC_EncryptionMap.Clear();
-		LNAHEIEIBOI = false;
+		LNAHEIEIBOI_Initialized = false;
 
 		IKCAJDOKNOM = new ANCJLICGOLP();
 		IKCAJDOKNOM.KHEKNNFCAOI_Init();
 		string str = System.IO.File.ReadAllText(Application.dataPath + "/../../Data/RequestMaster.json");
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(str);
-		IKCAJDOKNOM.IIEMACPEEBJ(IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr(), data["master"]);
+		IKCAJDOKNOM.IIEMACPEEBJ_Deserialize(IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr(), data["master"]);
 		ANDDAABHGIP();
 	}
 }

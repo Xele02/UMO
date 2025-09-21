@@ -33,11 +33,11 @@ namespace XeApp.Game.Menu
 			{
 				SetImageInner(sceneCard, m_before, info.BCCHOBPJJKE_SceneId, 1);
 				SetImageInner(sceneCard, m_beforeEf, info.BCCHOBPJJKE_SceneId, 1);
-				int rank = info.JKGFBFPIMGA_BaseRarity > 3 ? 2 : 1;
+				int rank = info.JKGFBFPIMGA_Rarity > 3 ? 2 : 1;
 				SetImageInner(sceneCard, m_after, info.BCCHOBPJJKE_SceneId, rank);
-				SetImageFrameInner(sceneFrame, m_frameBefore, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_BaseRarity, 1);
-				SetImageFrameInner(sceneFrame, m_frameBeforeEf, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_BaseRarity, 1);
-				SetImageFrameInner(sceneFrame, m_frameAfter, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_BaseRarity, 2);
+				SetImageFrameInner(sceneFrame, m_frameBefore, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_Rarity, 1);
+				SetImageFrameInner(sceneFrame, m_frameBeforeEf, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_Rarity, 1);
+				SetImageFrameInner(sceneFrame, m_frameAfter, GetSceneCardIdFromAttrId(info.BCCHOBPJJKE_SceneId), info.JKGFBFPIMGA_Rarity, 2);
 			}
 				
 		}

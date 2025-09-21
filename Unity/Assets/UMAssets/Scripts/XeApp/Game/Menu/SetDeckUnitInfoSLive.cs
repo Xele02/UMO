@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo divaData = null;
 				if (prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0)
 				{
-					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i), 0, prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i), prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(i), null, null, false);
+					m_divaDatas[i].KHEKNNFCAOI_Init(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i), 0, prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i), prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(i), null, null, false);
 					divaData = m_divaDatas[i];
 				}
 				GetDivaControlBySlotNumber(i).SetForPrism(divaData);

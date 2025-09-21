@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 					{
 						GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
 						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
-							scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+							scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
 						m_limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 						{
 							GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
 							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
-								scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+								scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
 							m_limitOverStatus.Add(m_tmpLimitOverStatus);
 						}
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 				return;
 			GCIJNCFDNON_SceneInfo fscene = friendData.KHGKPKDBMOH_GetAssistScene();
 			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus,
-				fscene.JKGFBFPIMGA_Rarity, fscene.MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
+				fscene.JKGFBFPIMGA_Rarity, fscene.MJBODMOLOBC_luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
 			AdjustOverLimit(m_tmpLimitOverStatus, fscene, musicData);
 			m_limitOverStatus.Add(m_tmpLimitOverStatus);
 		}
@@ -464,7 +464,7 @@ namespace XeApp.Game.Menu
 			}
 			if (SubPlateResult.CDOCOLOKCJK())
 			{
-				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
 				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
@@ -472,7 +472,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				SetInvalidSubPlate();
-				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
 				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
@@ -664,7 +664,7 @@ namespace XeApp.Game.Menu
 					{
 						GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[1], (SkillRank.Type)m_mainScene.DHEFMEGKKDN_CenterSkillRank);
 						m_centerSkillEffectText[1].text = m_mainScene.IHLINMFMCDN_GetCenterSkillDesc(false);
-						m_centerSkillNameText[1].text = m_mainScene.PFHJFIHGCKP_CenterSkillName1;
+						m_centerSkillNameText[1].text = m_mainScene.PFHJFIHGCKP_CenterSkillName;
 						if(aa > 0)
 						{
 							GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[0], (SkillRank.Type)m_mainScene.FFDCGHDNDFJ_CenterSkillRank2);
@@ -722,7 +722,7 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
-			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 			baseStatus.Add(m_tmpStatus);
 		}
 
@@ -750,7 +750,7 @@ namespace XeApp.Game.Menu
 			int d = 0;
 			for (int i = 1; i < 4; i++)
 			{
-				int c = SubPlateResult.KOGBMDOONFA[i - 1, 0].IKEJLHJEANO - 1;
+				int c = SubPlateResult.KOGBMDOONFA_Info[i - 1, 0].IKEJLHJEANO - 1;
 				d |= (c + 1);
 				m_subStatus[i].Set(Mathf.Min(a[i], 999999).ToString(), false, (c > 0 && c < 3) && (c & 1) == 0, (c > 0 && c < 3) && (((6 >> (c & 7)) & 1) != 0), hexa);
 			}

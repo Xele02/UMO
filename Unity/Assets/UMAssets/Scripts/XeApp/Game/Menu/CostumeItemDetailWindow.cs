@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			LFAFJCNKLML.GFIPDFPIKIJ a;
 			LFAFJCNKLML.HKKKKFLBFJN(data, lv, out a, LFAFJCNKLML.EJOEMKJOCMH.LLCLFAACPLH/*2*/);
-			CostumeUpgradeUtility.SettingRewardIcon(data, a.GLCLFMGPMAN_ItemId, lv, a.NANNGLGOFKH_Value, m_rewardIcon, null);
+			CostumeUpgradeUtility.SettingRewardIcon(data, a.GLCLFMGPMAN_ItemId, lv, a.NANNGLGOFKH_value, m_rewardIcon, null);
 			m_itemNameText.text = a.AKNGHELNIHO_ItemName;
 			m_explanationText.text = a.IDCPALBPNFB_Explanation;
 		}

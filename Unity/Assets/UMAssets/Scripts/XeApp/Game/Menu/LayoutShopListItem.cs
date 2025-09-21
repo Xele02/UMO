@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textClose.text = bk.GetMessageByLabel("item_shop_closed");
-			m_button.Disable = view.MHKCPJDNJKI.Count < 1;
+			m_button.Disable = view.MHKCPJDNJKI_products.Count < 1;
 			m_textName.text = view.NEMKDKDIIDK_ShopName;
 			if(view.NEMKDKDIIDK_ShopName.Length < 11)
 			{

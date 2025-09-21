@@ -19,7 +19,7 @@ public class LHFOAFAOPLC
     }
 
 	// // RVA: 0x17F67FC Offset: 0x17F67FC VA: 0x17F67FC
-	public static void AMNOLHCJDPN(double NPPGKNGIFGK, string JMEMGIPGGIK)
+	public static void AMNOLHCJDPN(double _NPPGKNGIFGK_price, string _JMEMGIPGGIK_currency_code)
 	{
 		TodoLogger.LogError(TodoLogger.Adjust, "LHFOAFAOPLC.AMNOLHCJDPN trackEvent m3bsg4");
 	}

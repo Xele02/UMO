@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 					SwitchTbl(eTblType.Diva);
 				SetDivaImage(stageData.AHHJLDLAPAN_DivaId);
 				SetDivaName(stageData.AHHJLDLAPAN_DivaId);
-				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 				{
 					//0x15367E4
 					return stageData.AHHJLDLAPAN_DivaId == _.AHHJLDLAPAN_DivaId;
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		private string GetStoryTitle(int musicId)
 		{
 			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
-			return Database.Instance.musicText.Get(m.KNMGEEFGDNI_Nam).storyTitle;
+			return Database.Instance.musicText.Get(m.KNMGEEFGDNI_Name).storyTitle;
 		}
 
 		//// RVA: 0x1534BAC Offset: 0x1534BAC VA: 0x1534BAC

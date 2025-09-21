@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 						costumeModelId = viewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 						costumeColorId = viewDivaData.EKFONBFDAAP_ColorId;
 						JJOELIOGMKK_DivaIntimacyInfo d = new JJOELIOGMKK_DivaIntimacyInfo();
-						d.KHEKNNFCAOI(divaId);
+						d.KHEKNNFCAOI_Init(divaId);
 						d.HCDGELDHFHB(false);
 						intimacyLv = d.HEKJGCMNJAB_CurrentLevel;
 						if(prismData == null || !prismData.FBGAKINEIPG)
@@ -305,7 +305,7 @@ namespace XeApp.Game.Common
 				}
 				if(friendData != null && friendData.KHGKPKDBMOH_GetAssistScene() != null)
 				{
-					luck += friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+					luck += friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 				}
 				valkyrieId = 1;
 				int form = 0;
@@ -421,10 +421,10 @@ namespace XeApp.Game.Common
 				mode = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
 				musicId = 0;
 				freeMusicId = 0;
 				mvLimitTime = -1;
@@ -442,9 +442,9 @@ namespace XeApp.Game.Common
 				freeMusicId = 0;
 				this.storyMusicId = storyMusicId;
 				DJNPIGEFPMF_StoryMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CLHIABAKKJM_StoryMusicData[storyMusicId - 1];
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
 				tutorial = TutorialGameMode.Type.None;
 				musicId = info.DLAEJOBELBH_MusicId;
 				m_prismMusicId = 0;
@@ -459,7 +459,7 @@ namespace XeApp.Game.Common
 				musicLoadText = "";
 				IsDisableBattleEventIntermediateResult = false;
 				returnTransitionUniqueId = TransitionUniqueId.HOME;
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).LHICAKGHIGF[(int)difficultyType] - 1]);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).LHICAKGHIGF_EnemyIdByDiff[(int)difficultyType] - 1]);
 			}
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
@@ -510,9 +510,9 @@ namespace XeApp.Game.Common
 				mode = GameMode.Type.FreeBattle;
 				freeMusicId = tutorialMode == TutorialGameMode.Type.TutorialOne ? 37 : 38;
 				storyMusicId = 0;
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
 				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
 				m_prismMusicId = 0;
 				tutorial = tutorialMode;
@@ -592,7 +592,7 @@ namespace XeApp.Game.Common
 			m_teamInfo.SetupMvInfo(teamStatus, prismData);
 			m_mvInfo.isCutin = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DADIPGPHLDD_EffectCutin == 0;
 			m_mvInfo.isShowNotes = prismData.DNLCLAOPFPF_ShowNotes;
-			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC_DivaMode;
+			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC_AwakenDivaMode;
 			m_mvInfo.isModeValkyrie = prismData.OHLCKPIMMFH_ValkyrieMode;
 		}
 
@@ -668,9 +668,9 @@ namespace XeApp.Game.Common
 		{
 			if(forcePrism != null)
 			{
-				if (forcePrism.OENPCNBFPDA_Bg < 1)
+				if (forcePrism.OENPCNBFPDA_bg_id < 1)
 					return 0;
-				return forcePrism.OENPCNBFPDA_Bg;
+				return forcePrism.OENPCNBFPDA_bg_id;
 			}
 			return 0;
 		}

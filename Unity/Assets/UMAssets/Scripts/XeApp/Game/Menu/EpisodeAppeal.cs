@@ -314,8 +314,8 @@ namespace XeApp.Game.Menu
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(valkyrieId, 0, 0);
 			pilotId = p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId;
-			m_cosNameTextInstance.text = p.IJBLEJOKEFH_ValkyrieName + JpStringLiterals.StringLiteral_367 + p.MJJCKMPICIK_PilotName;
-			m_pilotNameTextInstance.text = p.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name;
+			m_cosNameTextInstance.text = p.IJBLEJOKEFH_Name + JpStringLiterals.StringLiteral_367 + p.MJJCKMPICIK_PilotName;
+			m_pilotNameTextInstance.text = p.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name;
 			op = AssetBundleManager.LoadAssetAsync(string.Format("dr/pl/{0:D3}.xab", pilotId), "pilot", typeof(Material));
 			yield return op;
 			m_modelInterface.PilotTextureMeshRoot.GetComponent<MeshRenderer>().material = op.GetAsset<Material>();

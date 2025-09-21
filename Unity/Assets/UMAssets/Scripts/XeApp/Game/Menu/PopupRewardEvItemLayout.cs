@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			string str2 = "";
 			if(!string.IsNullOrEmpty(str))
 			{
-				str2 = info.MBJIFDBEDAC_Cnt.ToString() + str;
+				str2 = info.MBJIFDBEDAC_item_count.ToString() + str;
 			}
 			m_ItemCountText.text = str2;
 			m_GetIconImage.enabled = isGet;

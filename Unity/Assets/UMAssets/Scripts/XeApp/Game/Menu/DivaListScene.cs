@@ -32,11 +32,11 @@ namespace XeApp.Game.Menu
 		{
 			m_divaSortExecutor.Initialize(PlayerData);
 			m_divaIndexList.Clear();
-			for(int i = 0; i < PlayerData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < PlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked)
+				if(PlayerData.NBIGLBMHEDC_DivaList[i].FJODMPGPDDD_Unlocked)
 				{
-					if(PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
+					if(PlayerData.NBIGLBMHEDC_DivaList[i].IPJMPBANBPP_Enabled)
 					{
 						m_divaIndexList.Add(i);
 					}
@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 		private void OnShowDivaStatus(int index)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.ShowDivaStatusPopupWindow(PlayerData.NBIGLBMHEDC_Divas[m_divaIndexList[index]], PlayerData, null, false, TransitionName, UpdateContent, true, false, -1, false);
+			MenuScene.Instance.ShowDivaStatusPopupWindow(PlayerData.NBIGLBMHEDC_DivaList[m_divaIndexList[index]], PlayerData, null, false, TransitionName, UpdateContent, true, false, -1, false);
 		}
 
 		// RVA: 0x17E78C4 Offset: 0x17E78C4 VA: 0x17E78C4 Slot: 21

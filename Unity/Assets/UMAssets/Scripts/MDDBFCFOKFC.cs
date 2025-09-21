@@ -17,7 +17,7 @@ public class MDDBFCFOKFC
 		public bool HEKJKLJDHNN_EnablePosterAnim { get { return AMEELEFFAEC == GCAHAAADBEH; } set { AMEELEFFAEC = value ? GCAHAAADBEH : GKIDNIKODDK; } } //0x130F564 JGCAHFJDAKI 0x130F580 CDBCKJDGPNF
 
 		//// RVA: 0x130ECE0 Offset: 0x130ECE0 VA: 0x130ECE0
-		public void KHEKNNFCAOI()
+		public void KHEKNNFCAOI_Init()
 		{
 			NPDKEIIMCDI_LastShowtime = 0;
 			CINLIMIKCAL_EnableBgEffect = false;
@@ -25,11 +25,11 @@ public class MDDBFCFOKFC
 		}
 
 		//// RVA: 0x130F3A0 Offset: 0x130F3A0 VA: 0x130F3A0
-		public void FPEKCEGADMG(BinaryWriter OMLLGAKPMAN)
+		public void FPEKCEGADMG(BinaryWriter _OMLLGAKPMAN_writer)
 		{
-			OMLLGAKPMAN.Write(NPDKEIIMCDI_LastShowtime);
-			OMLLGAKPMAN.Write(CINLIMIKCAL_EnableBgEffect);
-			OMLLGAKPMAN.Write(HEKJKLJDHNN_EnablePosterAnim);
+			_OMLLGAKPMAN_writer.Write(NPDKEIIMCDI_LastShowtime);
+			_OMLLGAKPMAN_writer.Write(CINLIMIKCAL_EnableBgEffect);
+			_OMLLGAKPMAN_writer.Write(HEKJKLJDHNN_EnablePosterAnim);
 		}
 
 		//// RVA: 0x130ED14 Offset: 0x130ED14 VA: 0x130ED14
@@ -51,7 +51,7 @@ public class MDDBFCFOKFC
 	}
 
 	public const int JNCCCCPBDIC = 2;
-	public IFHIAPIJGMI KOGBMDOONFA = new IFHIAPIJGMI(); // 0x8
+	public IFHIAPIJGMI KOGBMDOONFA_Info = new IFHIAPIJGMI(); // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 
 	// RVA: 0x130E700 Offset: 0x130E700 VA: 0x130E700
@@ -61,19 +61,19 @@ public class MDDBFCFOKFC
 	}
 
 	//// RVA: 0x130E7D4 Offset: 0x130E7D4 VA: 0x130E7D4
-	//public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
+	//public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	// RVA: 0x130E7DC Offset: 0x130E7DC VA: 0x130E7DC
 	public void PCODDPDFLHK_Load()
 	{
-		KOGBMDOONFA.KHEKNNFCAOI();
+		KOGBMDOONFA_Info.KHEKNNFCAOI_Init();
 		if(File.Exists(ELLBAAFKDCH_Filename))
 		{
 			using (FileStream f = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open))
 			{
 				using (BinaryReader b = new BinaryReader(f))
 				{
-					KOGBMDOONFA.FKGBNKPHCJL(b.ReadInt32(), b);
+					KOGBMDOONFA_Info.FKGBNKPHCJL(b.ReadInt32(), b);
 				}
 			}
 		}
@@ -90,7 +90,7 @@ public class MDDBFCFOKFC
 			using (BinaryWriter b = new BinaryWriter(f))
 			{
 				b.Write(2);
-				KOGBMDOONFA.FPEKCEGADMG(b);
+				KOGBMDOONFA_Info.FPEKCEGADMG(b);
 				b.Flush();
 				b.Close();
 			}

@@ -48,11 +48,11 @@ namespace XeApp.Game.Menu
 			m_Number01.SetNumber(0, 0);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormatSmart(bk.GetMessageByLabel("event_result_episode"), data.LIPIAPOGHIP_EpisodeBonus);
+			str.SetFormatSmart(bk.GetMessageByLabel("event_result_episode"), data.LIPIAPOGHIP_EpisodeNum);
 			m_text_episode.text = str.ToString();
 			m_text_episode_rate.text = (data.PFJMBKBEFMA_EpisodeRate - 100).ToString();
 			m_is_anim_episode_up = data.PFJMBKBEFMA_EpisodeRate - 100 > 0;
-			m_Number01.SetNumber(data.KNIFCANOHOC_ScorePoint, 0);
+			m_Number01.SetNumber(data.KNIFCANOHOC_score, 0);
 			m_Number02.SetNumber(data.LMBFJMBIIGN, 0);
 			m_Number03.SetNumber(data.JLIKEOKBBAM_HighScore, 0);
 			m_is_anim_new_recode = data.FFHMPNGJCLK_NewRecord;
@@ -82,15 +82,15 @@ namespace XeApp.Game.Menu
 			m_isSetup = false;
 			m_Number01.SetNumber(data.KHHPEIBPDAB, 0);
 			m_text_episode.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_result_episode"), data.ANOCILKJGOJ_EpisodeCnt);
-			m_text_episode_rate.text = (data.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
-			m_is_anim_episode_up = data.ODCLHPGHDHA_EpBonusMulti - 100 >= 0;
+			m_text_episode_rate.text = (data.ODCLHPGHDHA_EpisodeBonus - 100).ToString();
+			m_is_anim_episode_up = data.ODCLHPGHDHA_EpisodeBonus - 100 >= 0;
 			m_Number02.SetNumber(data.BFPBEAIBEDJ, 0);
 			m_Number03.SetNumber(data.IJPAKGFADJB_HiScore, 0);
 			m_is_anim_new_recode = data.GIIKOMPJOHA_IsHiScore;
 			m_text_rank.text = data.BKKPKIGLMCN_Ranks[1].ToString();
             KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(data.OENBOLPDBAB_FreeMusicId);
 			EEDKAACNBBG_MusicData md = new EEDKAACNBBG_MusicData();
-			md.KHEKNNFCAOI(fm.DLAEJOBELBH_MusicId);
+			md.KHEKNNFCAOI_Init(fm.DLAEJOBELBH_MusicId);
 			MenuScene.Instance.MusicJacketTextureCache.Load(md.JNCPEGJGHOG_JacketId, (IiconTexture texture) =>
 			{
 				//0x18DC870

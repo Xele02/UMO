@@ -154,12 +154,12 @@ namespace XeApp.Game.Menu
 		{
 			if(filter == null)
 			{
-				return p.HFCNOINEPLB.MHKCPJDNJKI.Count;
+				return p.HFCNOINEPLB.MHKCPJDNJKI_products.Count;
 			}
 			int a = 0;
-			for(int i = 0; i < p.HFCNOINEPLB.MHKCPJDNJKI.Count; i++)
+			for(int i = 0; i < p.HFCNOINEPLB.MHKCPJDNJKI_products.Count; i++)
 			{
-				a += filter(p.HFCNOINEPLB.MHKCPJDNJKI[i]) ? 1 : 0;
+				a += filter(p.HFCNOINEPLB.MHKCPJDNJKI_products[i]) ? 1 : 0;
 			}
 			return a;
 		}

@@ -29,9 +29,9 @@ class DataExporter
 		string fileOutput = "";
 		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
 		{
-			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_Cov > 0)
+			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_JacketId > 0)
 			{
-				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Nam).musicName;
+				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Name).musicName;
 				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieAttr);
 				if (Serie == "4") Serie = "Macross";
 				if (Serie == "3") Serie = "Macross 7";
@@ -40,7 +40,7 @@ class DataExporter
 				bool divaSolo = false;
 				int numMulti = -1;
 				EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
-				song.KHEKNNFCAOI(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_MusicId);
+				song.KHEKNNFCAOI_Init(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_MusicId);
 
 				for (int k = 0; k < 7; k++)
 				{
@@ -129,7 +129,7 @@ class DataExporter
 			{
 				return data.KKPAHLMJKIH_WavId == Int32.Parse(songId);
 			});
-			string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName : "";
+			string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Name).musicName : "";
 			if (dirInfo.Name.Contains("_3"))
 				Title += " (3 divas)";
 			if (dirInfo.Name.Contains("_2"))
@@ -170,7 +170,7 @@ class DataExporter
 		string txt = "";
 		int songId = Database.Instance.gameSetup.musicInfo.prismMusicId;
 		var music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(songId);
-		string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName : "";
+		string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Name).musicName : "";
 		txt += "Song : "+songId+" "+Title+"\n";
 		txt += "Num diva : "+Database.Instance.gameSetup.musicInfo.onStageDivaNum+"\n";
 		for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)

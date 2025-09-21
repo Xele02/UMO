@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 			public void SetPlayerIcon(IBIGBMDANNM friendPlayerData)
 			{
 				EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-				f.KHEKNNFCAOI(friendPlayerData);
+				f.KHEKNNFCAOI_Init(friendPlayerData);
 				GameManager.Instance.DivaIconCache.SetLoadingIcon(playerIcon);
 				GameManager.Instance.DivaIconCache.Load(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId,
 					f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture icon) =>
@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 			public void SetPlayerIconDeco(IBIGBMDANNM playerData)
 			{
 				EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-				f.KHEKNNFCAOI(playerData);
+				f.KHEKNNFCAOI_Init(playerData);
 				divaDecoration.Change(f.JIGONEMPPNP_Diva, f, DisplayType.Level, f.AFBMEMCHJCL_MainScene);
 			}
 

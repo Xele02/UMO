@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			MFDJIFIIPJD m = new MFDJIFIIPJD();
-			m.KHEKNNFCAOI(10001, MOEALEGLGCH.FLGEJDKMNMI());
+			m.KHEKNNFCAOI_Init(10001, MOEALEGLGCH.FLGEJDKMNMI());
 			PopupQuestRewardSetting s = new PopupQuestRewardSetting();
 			s.TitleText = bk.GetMessageByLabel("costume_upgrade_achievement_title_text");
 			s.IsCaption = true;

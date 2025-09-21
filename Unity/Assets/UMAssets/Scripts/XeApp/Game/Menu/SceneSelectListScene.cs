@@ -292,8 +292,8 @@ namespace XeApp.Game.Menu
 						rightVal = rscene.CMCKNKKCNDK_Status.charm;
 						break;
 					case SortItem.Get:
-						leftVal = lscene.NPHOIEOPIJO;
-						rightVal = rscene.NPHOIEOPIJO;
+						leftVal = lscene.NPHOIEOPIJO_Date;
+						rightVal = rscene.NPHOIEOPIJO_Date;
 						break;
 					case SortItem.Rarity:
 						leftVal = lscene.EKLIPGELKCL_Rarity;
@@ -308,8 +308,8 @@ namespace XeApp.Game.Menu
 						rightVal = rscene.CMCKNKKCNDK_Status.life;
 						break;
 					case SortItem.Luck:
-						leftVal = lscene.MJBODMOLOBC_Luck;
-						rightVal = rscene.MJBODMOLOBC_Luck;
+						leftVal = lscene.MJBODMOLOBC_luck;
+						rightVal = rscene.MJBODMOLOBC_luck;
 						break;
 					case SortItem.Support:
 						leftVal = lscene.CMCKNKKCNDK_Status.support;
@@ -902,7 +902,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_sceneSelectList.ShowEpisodePoint();
-				m_episodeData.KHEKNNFCAOI(m_episodeId);
+				m_episodeData.KHEKNNFCAOI_Init(m_episodeId);
 				m_sceneSelectList.SetEpisodePoint(m_episodeData.ABLHIAEDJAI_CurrentValue, m_episodeData.DMHDNKILKGI_MaxPoint);
 			}
 		}

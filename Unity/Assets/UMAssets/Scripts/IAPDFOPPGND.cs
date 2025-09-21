@@ -7,19 +7,19 @@ public class IAPDFOPPGND
 	public string ADCMNODJBGJ_Title; // 0x8
 	public string FEMMDNIELFC_Desc; // 0xC
 	public int EAHPLCJMPHD_PId; // 0x10 EmblemPic
-	public int HMFFHLPNMPH; // 0x14
+	public int HMFFHLPNMPH_Count; // 0x14
 	public int MDPKLNFFDBO_EmblemId; // 0x18
 	private int EILKGEADKGH_Order; // 0x1C
 
 	// // RVA: 0x120EB38 Offset: 0x120EB38 VA: 0x120EB38
-	public void KHEKNNFCAOI_Init(int ABLOIBMGLFD_EmId, int HMFFHLPNMPH)
+	public void KHEKNNFCAOI_Init(int ABLOIBMGLFD_EmId, int _HMFFHLPNMPH_Count)
 	{
 		IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo emblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table[ABLOIBMGLFD_EmId - 1];
 		MessageBank bank = MessageManager.Instance.GetBank("master");
 		ADCMNODJBGJ_Title = bank.GetMessageByLabel("em_nm_" + ABLOIBMGLFD_EmId.ToString("D4"));
 		FEMMDNIELFC_Desc = bank.GetMessageByLabel("em_dsc_" + ABLOIBMGLFD_EmId.ToString("D4"));
 		EAHPLCJMPHD_PId = emblem.HANMDEBPBHG_Pic;
-		this.HMFFHLPNMPH = HMFFHLPNMPH;
+		this.HMFFHLPNMPH_Count = _HMFFHLPNMPH_Count;
 		MDPKLNFFDBO_EmblemId = ABLOIBMGLFD_EmId;
 		EILKGEADKGH_Order = emblem.FPOMEEJFBIG_Order;
 	}
@@ -38,7 +38,7 @@ public class IAPDFOPPGND
 		List<IAPDFOPPGND> res = new List<IAPDFOPPGND>();
 		for (int i = 0; i < cnt; i++)
 		{
-			if (dbEmblem[i].PLALNIIBLOF_En == 2)
+			if (dbEmblem[i].PLALNIIBLOF_en == 2)
 			{
 				if(saveEmblems[i].FJODMPGPDDD_Unlocked || CDEOEEHBOBI_ForceAll)
 				{
@@ -60,9 +60,9 @@ public class IAPDFOPPGND
 	}
 
 	// // RVA: 0x120F5DC Offset: 0x120F5DC VA: 0x120F5DC
-	public static List<IAPDFOPPGND> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData KPMOBPNENCD, bool CDEOEEHBOBI)
+	public static List<IAPDFOPPGND> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData _KPMOBPNENCD_serverData, bool CDEOEEHBOBI)
 	{
-		int cnt = KPMOBPNENCD.OFAJDLJBMEM_Emblem.MDKOHOCONKE.Count;
+		int cnt = _KPMOBPNENCD_serverData.OFAJDLJBMEM_Emblem.MDKOHOCONKE.Count;
 		int dbCount = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table.Count;
 		if (dbCount < cnt)
 			cnt = dbCount;
@@ -70,8 +70,8 @@ public class IAPDFOPPGND
 		for(int i = 1; i < cnt; i++)
 		{
 			IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table[i];
-			JGGLDGNKELI_Emblem.AAHAAJEJNLJ saveEmblem = KPMOBPNENCD.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
-			if (dbEmblem.PLALNIIBLOF_En == 2)
+			JGGLDGNKELI_Emblem.AAHAAJEJNLJ saveEmblem = _KPMOBPNENCD_serverData.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
+			if (dbEmblem.PLALNIIBLOF_en == 2)
 			{
 				if(saveEmblem.FJODMPGPDDD_Unlocked || CDEOEEHBOBI)
 				{
@@ -96,5 +96,5 @@ public class IAPDFOPPGND
 	// public static int ODPDHDPHKGK() { }
 
 	// // RVA: 0x120FB74 Offset: 0x120FB74 VA: 0x120FB74
-	// public static int EPDPFMFIKFE(int MDPKLNFFDBO) { }
+	// public static int EPDPFMFIKFE(int _MDPKLNFFDBO_EmblemId) { }
 }

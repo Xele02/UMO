@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1BCB268 Offset: 0x1BCB268 VA: 0x1BCB268
 		public void SetDefault(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty sortProperty)
 		{
-			m_sortType = sortProperty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_sortItem;
+			m_sortType = sortProperty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_SortItem;
 			m_bossButtonStateBit = (uint)sortProperty.JGAFBCMOGLP_Raid.AOKFAJOMCKK_bossFilter;
 			m_rankButtonStateBit = (uint)sortProperty.JGAFBCMOGLP_Raid.MOAJJHLGILP_rankFilter;
 			m_joinButtonStateBit = (uint)sortProperty.JGAFBCMOGLP_Raid.COIKKDHMGID_joinFilter;
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1BCBF08 Offset: 0x1BCBF08 VA: 0x1BCBF08
 		public void ApplyLocalSaveData(ref ILDKBCLAFPB.IJDOCJCLAIL_SortProprty localSaveData)
 		{
-			localSaveData.JGAFBCMOGLP_Raid.LHPDCGNKPHD_sortItem = m_sortType;
+			localSaveData.JGAFBCMOGLP_Raid.LHPDCGNKPHD_SortItem = m_sortType;
 			localSaveData.JGAFBCMOGLP_Raid.AOKFAJOMCKK_bossFilter = (int)m_bossButtonStateBit;
 			localSaveData.JGAFBCMOGLP_Raid.MOAJJHLGILP_rankFilter = (int)m_rankButtonStateBit;
 			localSaveData.JGAFBCMOGLP_Raid.COIKKDHMGID_joinFilter = (int)m_joinButtonStateBit;

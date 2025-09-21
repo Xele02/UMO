@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 					texture.Set(layout.icon);
 					m_loadedFileCount++;
 				});
-				layout.count.SetNumber(data.HBHMAKNGKFK_Items[i].HMFFHLPNMPH_Cnt, 0);
+				layout.count.SetNumber(data.HBHMAKNGKFK_Items[i].HMFFHLPNMPH_Count, 0);
 				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK_Items[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
 				layout.total.text = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint.ToString();
 				layout.target_num = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint;
@@ -209,8 +209,8 @@ namespace XeApp.Game.Menu
 			m_RankNum.SetNumber(m_ResultData.BKKPKIGLMCN_Ranks[0], 0);
 			m_TotalText.text = m_ResultData.AHOKAPCGJMA_TotalPoint.ToString();
 			m_EpisodeBonus.text = m_ResultData.ANOCILKJGOJ_EpisodeCnt.ToString() + JpStringLiterals.StringLiteral_11079;
-			m_EpisodeBonusMulti.text = (m_ResultData.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
-			int s = m_ResultData.ODCLHPGHDHA_EpBonusMulti < 101 ? 1 : 0;
+			m_EpisodeBonusMulti.text = (m_ResultData.ODCLHPGHDHA_EpisodeBonus - 100).ToString();
+			int s = m_ResultData.ODCLHPGHDHA_EpisodeBonus < 101 ? 1 : 0;
 			m_UpAnim.StartChildrenAnimGoStop(s, s);
 			if(data.OKBEOCOKGEI < 2)
 			{
@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 					m_EventMusicRank.text = m_ResultData.BKKPKIGLMCN_Ranks[1].ToString();
 					m_EventDetailBtn.AddOnClickCallback(CallbackBtnClick_EventDetail);
 					EEDKAACNBBG_MusicData md2 = new EEDKAACNBBG_MusicData();
-					md2.KHEKNNFCAOI(fm.DLAEJOBELBH_MusicId);
+					md2.KHEKNNFCAOI_Init(fm.DLAEJOBELBH_MusicId);
 					MenuScene.Instance.MusicJacketTextureCache.Load(md2.JNCPEGJGHOG_JacketId, (IiconTexture texture) =>
 					{
 						//0x1D9D140

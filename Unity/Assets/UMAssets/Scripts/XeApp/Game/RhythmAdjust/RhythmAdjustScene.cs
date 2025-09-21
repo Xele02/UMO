@@ -357,7 +357,7 @@ namespace XeApp.Game.RhythmAdjust
 			}
 			SwitchMode(true);
 			layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.CHECK);
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress == 2)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress == 2)
 			{
 				this.StartCoroutineWatched(Co_TutorialEndFlow());
 			}
@@ -975,7 +975,7 @@ namespace XeApp.Game.RhythmAdjust
 		{
 			//0xF66F34
 			bool isWait = false;
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress = 1;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress = 1;
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			updater = UpdatePopupTask;
 			isWait = true;

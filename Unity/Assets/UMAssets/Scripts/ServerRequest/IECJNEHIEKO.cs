@@ -10,7 +10,7 @@ public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
 		public int NPAHGHOHMHN_Idx; // 0x8
 
 		//// RVA: 0x11ED20C Offset: 0x11ED20C VA: 0x11ED20C
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 		{
 			NPAHGHOHMHN_Idx = (int)OBHAFLMHAKG["comment_index"];
 		}
@@ -23,7 +23,7 @@ public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
 	public int DNJLJMKKDNA_EventId; // 0x8C
 	public int BOINIEAKFPL_ThreadId; // 0x90
 	public SakashoBbsCommentInfo KOGBMDOONFA_Info; // 0x94
-	public KFECPHAOCMN NFEAMMJIMPG; // 0x98
+	public KFECPHAOCMN NFEAMMJIMPG_Result; // 0x98
 	
 	// RVA: 0x11ECFDC Offset: 0x11ECFDC VA: 0x11ECFDC Slot: 12
 	public override void DHLDNIEELHO()
@@ -35,8 +35,8 @@ public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		KFECPHAOCMN d = new KFECPHAOCMN();
-		d.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
-		NFEAMMJIMPG = d;
+		d.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = d;
 		ILCCJNDFFOB.HHCJCDFCLOB.CHMEOKEKABD(this);
 	}
 }

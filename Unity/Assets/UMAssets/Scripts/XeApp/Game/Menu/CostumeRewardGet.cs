@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 				//cos.DAJGPBLEEOB_PrismCostumeModelId;
 				idx = cos.AHHJLDLAPAN_DivaId - 1;
 			}
-			return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_SerieAttr;
+			return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[idx].AIHCEGFANAM_SerieAttr;
 		}
 
 		// // RVA: 0x163745C Offset: 0x163745C VA: 0x163745C

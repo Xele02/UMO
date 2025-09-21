@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < data.total_feature_list.Count;i++)
 			{
-				m_rewardIcon[i].m_icon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUv_02.GetUVData(string.Format("pop_reward_ev_item_{0:00}", (int)data.total_feature_list[i].PEEAGFNOFFO_ItemId)));
+				m_rewardIcon[i].m_icon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUv_02.GetUVData(string.Format("pop_reward_ev_item_{0:00}", (int)data.total_feature_list[i].PEEAGFNOFFO_UnlockType)));
 				m_rewardIcon[i].m_remain.text = string.Format("{0}/{1}", data.total_feature_list[i].LIOEOPGDBJK_Received, (int)data.total_feature_list[i].MCJBEJBMJMF_Total);
 			}
 			m_rewardLayout.StartChildrenAnimGoStop(data.total_feature_list.Count > 3 ? "03" : data.total_feature_list.Count.ToString("D2"));

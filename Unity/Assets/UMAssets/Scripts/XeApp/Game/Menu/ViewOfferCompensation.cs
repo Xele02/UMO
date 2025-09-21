@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < d.ENEHOPNDNAF.Count; i++)
 				{
 					ViewOfferGetItem item = new ViewOfferGetItem();
-					item.itemId = d.ENEHOPNDNAF[i].PPFNGGCBJKC_Id;
+					item.itemId = d.ENEHOPNDNAF[i].PPFNGGCBJKC_id;
 					item.itemNum = d.ENEHOPNDNAF[i].BFINGCJHOHI_Count;
 					item.bonusNum = d.ENEHOPNDNAF[i].DKHIHHMOIKM_BonusNum;
 					item.itemType = (ViewOfferGetItem.ItemType)d.ENEHOPNDNAF[i].INDDJNMPONH_Type;

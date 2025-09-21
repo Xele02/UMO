@@ -383,7 +383,7 @@ namespace XeApp.Game.RhythmGame
 			string diff = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType];
 			if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
 				diff += "+";
-			object[] o = new object[2] { RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(m.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[ma - 1]),
+			object[] o = new object[2] { RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(m.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[ma - 1]),
 				diff };
 			res.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("common"), "game_popup_pause_text", o);
 			res.Buttons = new ButtonInfo[2]
@@ -533,7 +533,7 @@ namespace XeApp.Game.RhythmGame
 			setting.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
 			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_popup_mvpause_title");
 			object[] o = new object[2];
-			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam).musicName;
+			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name).musicName;
 			o[1] = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType] + ((Database.Instance.gameSetup.musicInfo.IsLine6Mode) ? "+" : "");
 			setting.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("menu"), "game_popup_mvpause_text", o);
 			setting.Buttons = new ButtonInfo[] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Negative },

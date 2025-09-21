@@ -3,7 +3,7 @@
 public class KCDJCKCKKFM { }
 public class KCDJCKCKKFM_HelpBrowser : DIHHCBACKGG_DbSection
 {
-	public DPGPEALHJOB[] LOMHJBIJMOD; // 0x20
+	public DPGPEALHJOB[] LOMHJBIJMOD_categories; // 0x20
 	public CEFDJALCHBL[] FBJCBCOEBBB; // 0x24
 
 	// RVA: 0x101FCA4 Offset: 0x101FCA4 VA: 0x101FCA4
@@ -15,23 +15,23 @@ public class KCDJCKCKKFM_HelpBrowser : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x101FD64 Offset: 0x101FD64 VA: 0x101FD64 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
-		LOMHJBIJMOD = null;
+		LOMHJBIJMOD_categories = null;
 		FBJCBCOEBBB = null;
 	}
 
 	// RVA: 0x101FD74 Offset: 0x101FD74 VA: 0x101FD74 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		IGDFIPKLHBA parser = IGDFIPKLHBA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
-		LOMHJBIJMOD = parser.FNOIEDBFLPH;
+		LOMHJBIJMOD_categories = parser.FNOIEDBFLPH;
 		FBJCBCOEBBB = parser.NAPKJCKIPEF;
 		return true;
 	}
 
 	// RVA: 0x101FDE4 Offset: 0x101FDE4 VA: 0x101FDE4 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return false;
 	}

@@ -84,22 +84,22 @@ public static class CMMKCEPBIHI
 	public static float FDLECNKJCGG_GaugeRatio { get; private set; } // 0x40 DCBOMKOHHEP IGEHABMEOHD FOLIPOFKIJA
 
 	// // RVA: 0x1085914 Offset: 0x1085914 VA: 0x1085914
-	public static void DIDENKKDJKI(ref AEGLGBOGDHH _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
+	public static void DIDENKKDJKI(ref AEGLGBOGDHH _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
 	{
 		for(int i = 0; i < MLAFAACKKBG.BCJEAJPLGMB_MainDivas.Count; i++)
 		{
 			FFHPBEPOMAK_DivaInfo divaInfo = MLAFAACKKBG.BCJEAJPLGMB_MainDivas[i];
 			if(divaInfo != null)
 			{
-				AECDJDIJJKD_ApplySkills(ref _HBODCMLFDOB_Result.GJLJJDIDODK[i], divaInfo, MLAFAACKKBG, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, PCEGKKLKFNO, KDOLMBEAGCI);
+				AECDJDIJJKD_ApplySkills(ref _HBODCMLFDOB_Result.GJLJJDIDODK[i], divaInfo, MLAFAACKKBG, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, _PCEGKKLKFNO_FriendData, KDOLMBEAGCI);
 			}
 		}
-		NJNBELLEGCN(ref _HBODCMLFDOB_Result.CLCIOEHGFNI, MLAFAACKKBG, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, PCEGKKLKFNO, KDOLMBEAGCI);
-		NIPJMNDBCNF(ref _HBODCMLFDOB_Result.JPMGNPAHGIB, MLAFAACKKBG, PCEGKKLKFNO, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, KDOLMBEAGCI);
+		NJNBELLEGCN(ref _HBODCMLFDOB_Result.CLCIOEHGFNI, MLAFAACKKBG, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, _PCEGKKLKFNO_FriendData, KDOLMBEAGCI);
+		NIPJMNDBCNF(ref _HBODCMLFDOB_Result.JPMGNPAHGIB, MLAFAACKKBG, _PCEGKKLKFNO_FriendData, _AHEFHIMGIBI_PlayerData, KKHIDFKKFJE, KDOLMBEAGCI);
 	}
 
 	// // RVA: 0x1085B98 Offset: 0x1085B98 VA: 0x1085B98
-	public static void AECDJDIJJKD_ApplySkills(ref EDMIONMCICN _HBODCMLFDOB_Result, FFHPBEPOMAK_DivaInfo _DGCJCAHIAPP_Diva, JLKEOGLJNOD_TeamInfo MLAFAACKKBG_Team, DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData)
+	public static void AECDJDIJJKD_ApplySkills(ref EDMIONMCICN _HBODCMLFDOB_Result, FFHPBEPOMAK_DivaInfo _DGCJCAHIAPP_Diva, JLKEOGLJNOD_TeamInfo MLAFAACKKBG_Team, DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData)
 	{
 		_HBODCMLFDOB_Result.JCHLONCMPAJ_Reset();
 		HPODBOHGGDH_SkillInfo skillInfo = new HPODBOHGGDH_SkillInfo();
@@ -138,14 +138,14 @@ public static class CMMKCEPBIHI
 				if(skillSceneId != 0)
 				{
 					skillInfo.EDEDFDDIOKO_Set(skillSceneId, sceneInfo.DDEDANKHHPN_SkillLevel, sceneInfo.AIHCEGFANAM_SerieAttr);
-					AECDJDIJJKD_ApplySkillForDiva(ref _HBODCMLFDOB_Result, _DGCJCAHIAPP_Diva, AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes, KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill, ref skillInfo, divaIdx, MLAFAACKKBG_Team);
+					AECDJDIJJKD_ApplySkillForDiva(ref _HBODCMLFDOB_Result, _DGCJCAHIAPP_Diva, AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes, KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene, ref skillInfo, divaIdx, MLAFAACKKBG_Team);
 				}
 			}
 		}
-		if(PCEGKKLKFNO_FriendData != null && PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
+		if(_PCEGKKLKFNO_FriendData != null && _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
 		{
 			skillId = 0;
-			GCIJNCFDNON_SceneInfo sceneInfo = PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene();
+			GCIJNCFDNON_SceneInfo sceneInfo = _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene();
 			int skillSceneId = 0;
 			if(KKHIDFKKFJE_MusicData == null)
 			{
@@ -158,7 +158,7 @@ public static class CMMKCEPBIHI
 			if(skillSceneId != 0)
 			{
 				skillInfo.EDEDFDDIOKO_Set(skillSceneId, sceneInfo.DDEDANKHHPN_SkillLevel, sceneInfo.AIHCEGFANAM_SerieAttr);
-				AECDJDIJJKD_ApplySkillForDiva(ref _HBODCMLFDOB_Result, _DGCJCAHIAPP_Diva, AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes, KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill, ref skillInfo, divaIdx, MLAFAACKKBG_Team);
+				AECDJDIJJKD_ApplySkillForDiva(ref _HBODCMLFDOB_Result, _DGCJCAHIAPP_Diva, AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes, KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene, ref skillInfo, divaIdx, MLAFAACKKBG_Team);
 			}
 		}
 		if(KKHIDFKKFJE_MusicData != null)
@@ -194,7 +194,7 @@ public static class CMMKCEPBIHI
 						_HBODCMLFDOB_Result.MCBLDOECHEK_MatchMusicAttrStatus[i].MKMIEGPOKGG_Soul = sceneInfo.CMCKNKKCNDK_Status.soul * 30 / 100;
 						_HBODCMLFDOB_Result.MCBLDOECHEK_MatchMusicAttrStatus[i].EACDINDLGLF_Voice = sceneInfo.CMCKNKKCNDK_Status.vocal * 30 / 100;
 						_HBODCMLFDOB_Result.MCBLDOECHEK_MatchMusicAttrStatus[i].LDLHPACIIAB_Charm = sceneInfo.CMCKNKKCNDK_Status.charm * 30 / 100;
-						_HBODCMLFDOB_Result.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm/*7*/;
+						_HBODCMLFDOB_Result.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_Total/*7*/;
 					}
 				}
 			}
@@ -216,13 +216,13 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1087134 Offset: 0x1087134 VA: 0x1087134
-	public static void NIPJMNDBCNF(ref EDMIONMCICN _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG_Team, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO_FriendData, DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData)
+	public static void NIPJMNDBCNF(ref EDMIONMCICN _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG_Team, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData)
 	{
 		HPODBOHGGDH_SkillInfo data = new HPODBOHGGDH_SkillInfo();
 		_HBODCMLFDOB_Result.JCHLONCMPAJ_Reset();
-		if(PCEGKKLKFNO_FriendData != null)
+		if(_PCEGKKLKFNO_FriendData != null)
 		{
-			PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene();
+			_PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene();
 			data.JCHLONCMPAJ_Reset();
 			if(MLAFAACKKBG_Team != null)
 			{
@@ -242,38 +242,38 @@ public static class CMMKCEPBIHI
 					if(a != 0)
 					{
 						data.EDEDFDDIOKO_Set(a, sceneInfo.DDEDANKHHPN_SkillLevel, sceneInfo.AIHCEGFANAM_SerieAttr);
-						AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, 0, ref data, -1, MLAFAACKKBG_Team);
+						AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, _PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, 0, ref data, -1, MLAFAACKKBG_Team);
 					}
 				}
 			}
-			if(PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
+			if(_PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
 			{
-				int a = PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.AIHCEGFANAM_SerieAttr);
+				int a = _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.AIHCEGFANAM_SerieAttr);
 				if(a != 0)
 				{
-					data.EDEDFDDIOKO_Set(a, PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().DDEDANKHHPN_SkillLevel, PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().AIHCEGFANAM_SerieAttr);
-					AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, 0, ref data, -1, MLAFAACKKBG_Team);
+					data.EDEDFDDIOKO_Set(a, _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().DDEDANKHHPN_SkillLevel, _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().AIHCEGFANAM_SerieAttr);
+					AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, _PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, 0, ref data, -1, MLAFAACKKBG_Team);
 				}
 			}
 			if(KKHIDFKKFJE_MusicData != null)
 			{
-				for(int i = 0; i < PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva.DJICAKGOGFO_SubSceneIds.Count + 1; i++)
+				for(int i = 0; i < _PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva.DJICAKGOGFO_SubSceneIds.Count + 1; i++)
 				{
 					bool isAttrValid = false;
 					StatusData st = null;
 					StatusData st2 = null;
 					if (i == 0)
 					{
-						if (PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
+						if (_PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
 						{
-							st2 = PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status;
-							isAttrValid = KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == 4 || KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().JGJFIJOCPAG_SceneAttr;
+							st2 = _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status;
+							isAttrValid = KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == 4 || KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().JGJFIJOCPAG_SceneAttr;
 							st = _HBODCMLFDOB_Result.BJABFKMIJHB_StatusMainScene;
 						}
 					}
 					else
 					{
-						GCIJNCFDNON_SceneInfo sceneInfo = PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[i - 1];
+						GCIJNCFDNON_SceneInfo sceneInfo = _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[i - 1];
 						if (sceneInfo != null)
 						{
 							st2 = sceneInfo.CMCKNKKCNDK_Status;
@@ -291,7 +291,7 @@ public static class CMMKCEPBIHI
 						_HBODCMLFDOB_Result.MCBLDOECHEK_MatchMusicAttrStatus[i].LDLHPACIIAB_Charm = (st2.charm * 30) / 100;
 						if(i == 0)
 						{
-							_HBODCMLFDOB_Result.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm/*7*/;
+							_HBODCMLFDOB_Result.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_Total/*7*/;
 						}
 					}
 				}
@@ -299,7 +299,7 @@ public static class CMMKCEPBIHI
 			if(KDOLMBEAGCI_EnemyData != null && KDOLMBEAGCI_EnemyData.PDHCABLLJPB_CenterSkillId != 0)
 			{
 				data.EDEDFDDIOKO_Set(KDOLMBEAGCI_EnemyData.PDHCABLLJPB_CenterSkillId, 1, 0);
-				AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill, ref data, -1, MLAFAACKKBG_Team);
+				AECDJDIJJKD_ApplySkillForDivaAndScenes(ref _HBODCMLFDOB_Result, _PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva, _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene(), _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[0], _PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[1], KKHIDFKKFJE_MusicData, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill, ref data, -1, MLAFAACKKBG_Team);
 			}
 			_HBODCMLFDOB_Result.ELFAIDEBLJB.Div(100);
 			_HBODCMLFDOB_Result.BJABFKMIJHB_StatusMainScene.Div(100);
@@ -380,7 +380,7 @@ public static class CMMKCEPBIHI
 					if (serie != CHMOEPNAJOO_SkillInfo.AIHCEGFANAM_SerieAttr)
 						serie = 0;
 				}
-				if (FNIEADNMMIA_CenterSkillCondMatchMusic((CenterSkillCondition.Type)effectInfo.OAFPGJLCNFM_CenterSkillCondition, KKHIDFKKFJE_MusicInfo, serie))
+				if (FNIEADNMMIA_CenterSkillCondMatchMusic((CenterSkillCondition.Type)effectInfo.OAFPGJLCNFM_cond, KKHIDFKKFJE_MusicInfo, serie))
 				{
 					if (FLPKCFDANMK_DivaMatchTarget(_DGCJCAHIAPP_Diva, (CenterSkillTarget.Type)effectInfo.GJLFANGDGCL_Target, ABBDKBOIBCG_DivaIdx))
 					{
@@ -502,7 +502,7 @@ public static class CMMKCEPBIHI
 			{
 				infoList = FOFADHAENKC_SkillDb.PHPGICHCBPM_EnemyEffectInfo;
 			}
-			else if (_GJLFANGDGCL_Target == JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill)
+			else if (_GJLFANGDGCL_Target == JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
 			{
 				infoList = FOFADHAENKC_SkillDb.PEPLECGHBFA_SceneEffectInfo;
 			}
@@ -614,82 +614,82 @@ public static class CMMKCEPBIHI
 		{
 			skillsInfoList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PHPGICHCBPM_EnemyEffectInfo;
 		}
-		else if (_GJLFANGDGCL_Target == JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill)
+		else if (_GJLFANGDGCL_Target == JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
 		{
 			skillsInfoList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo;
 		}
 		KFCIIMBBNCD sk = skillsInfoList[PGLJHBODOHN_SkillId - 1];
 		if(sk != null)
 		{
-			float modifierValue = sk.KCOHMHFBDKF_ValueByLevel[CIEOBFIIPLD_Level - 1];
+			float modifierValue = sk.KCOHMHFBDKF_Value1[CIEOBFIIPLD_Level - 1];
 			if (sk.BBFKKANELFP_EffectType == 1)
 			{
-				FOKHDKJJOFB_EffectByNumDiva fo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(sk.KCOHMHFBDKF_ValueByLevel[CIEOBFIIPLD_Level - 1]);
-				modifierValue = fo.NANNGLGOFKH_Value[CIEOBFIIPLD_Level - 1] * FPJIKEFIJOL_GetNumValidSceneForDivas(fo.FDBOPFEOENF_Diva, MLAFAACKKBG_TeamInfo) + fo.NNDBJGDFEEM_Min;
+				FOKHDKJJOFB_EffectByNumDiva fo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(sk.KCOHMHFBDKF_Value1[CIEOBFIIPLD_Level - 1]);
+				modifierValue = fo.NANNGLGOFKH_value[CIEOBFIIPLD_Level - 1] * FPJIKEFIJOL_GetNumValidSceneForDivas(fo.FDBOPFEOENF_Diva, MLAFAACKKBG_TeamInfo) + fo.NNDBJGDFEEM_Min;
 			}
-			CHJHPJHNCEB_ApplyModifiers(ref BALBKJFMDFN_StatusRes, JLJGCBOHJID_BaseStatus, sk.INDDJNMPONH_ModifierType, modifierValue);
+			CHJHPJHNCEB_ApplyModifiers(ref BALBKJFMDFN_StatusRes, JLJGCBOHJID_BaseStatus, sk.INDDJNMPONH_Type, modifierValue);
 		}
 	}
 
 	// // RVA: 0x10896DC Offset: 0x10896DC VA: 0x10896DC
-	private static void CHJHPJHNCEB_ApplyModifiers(ref StatusData BALBKJFMDFN_StatusRes, StatusData JLJGCBOHJID_BaseStatus, byte INDDJNMPONH_EffectType, float NANNGLGOFKH_Value)
+	private static void CHJHPJHNCEB_ApplyModifiers(ref StatusData BALBKJFMDFN_StatusRes, StatusData JLJGCBOHJID_BaseStatus, byte _INDDJNMPONH_Type, float _NANNGLGOFKH_value)
 	{
-		switch(INDDJNMPONH_EffectType)
+		switch(_INDDJNMPONH_Type)
 		{
 			case 1:
-				BALBKJFMDFN_StatusRes.life += (int)(JLJGCBOHJID_BaseStatus.life * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.support += (int)(JLJGCBOHJID_BaseStatus.support * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.fold += (int)(JLJGCBOHJID_BaseStatus.fold * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.life += (int)(JLJGCBOHJID_BaseStatus.life * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.support += (int)(JLJGCBOHJID_BaseStatus.support * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.fold += (int)(JLJGCBOHJID_BaseStatus.fold * _NANNGLGOFKH_value);
 				break;
 			case 2:
-				BALBKJFMDFN_StatusRes.life += (int)(JLJGCBOHJID_BaseStatus.life * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.life += (int)(JLJGCBOHJID_BaseStatus.life * _NANNGLGOFKH_value);
 				break;
 			case 3:
-				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
 				break;
 			case 4:
-				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.soul += (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
 				break;
 			case 5:
-				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.vocal += (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
 				break;
 			case 6:
-				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.charm += (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
 				break;
 			case 7:
-				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
 				break;
 			case 8:
-				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
 				break;
 			case 9:
-				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
 				break;
 			case 10:
-				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
 				break;
 			case 11:
-				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.soul -= (int)(JLJGCBOHJID_BaseStatus.soul * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
 				break;
 			case 12:
-				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * NANNGLGOFKH_Value);
-				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.vocal -= (int)(JLJGCBOHJID_BaseStatus.vocal * _NANNGLGOFKH_value);
+				BALBKJFMDFN_StatusRes.charm -= (int)(JLJGCBOHJID_BaseStatus.charm * _NANNGLGOFKH_value);
 				break;
 			case 13:
-				BALBKJFMDFN_StatusRes.fold -= (int)(JLJGCBOHJID_BaseStatus.fold * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.fold -= (int)(JLJGCBOHJID_BaseStatus.fold * _NANNGLGOFKH_value);
 				break;
 			case 14:
-				BALBKJFMDFN_StatusRes.support += (int)(JLJGCBOHJID_BaseStatus.support * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.support += (int)(JLJGCBOHJID_BaseStatus.support * _NANNGLGOFKH_value);
 				break;
 			case 15:
-				BALBKJFMDFN_StatusRes.fold += (int)(JLJGCBOHJID_BaseStatus.fold * NANNGLGOFKH_Value);
+				BALBKJFMDFN_StatusRes.fold += (int)(JLJGCBOHJID_BaseStatus.fold * _NANNGLGOFKH_value);
 				break;
 		}
 	}
@@ -701,7 +701,7 @@ public static class CMMKCEPBIHI
     }
 
 	// // RVA: 0x10868E8 Offset: 0x10868E8 VA: 0x10868E8
-	private static void NJNBELLEGCN(ref CFHDKAFLNEP _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
+	private static void NJNBELLEGCN(ref CFHDKAFLNEP _HBODCMLFDOB_Result, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
 	{
 		_HBODCMLFDOB_Result.JCHLONCMPAJ();
 		int[,] data = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate();
@@ -716,7 +716,7 @@ public static class CMMKCEPBIHI
 			for(int i = 0; i < _AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
 				GCIJNCFDNON_SceneInfo sceneInfo = _AHEFHIMGIBI_PlayerData.OPIBAPEGCLA_Scenes[i];
-				int enabled = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneInfo.BCCHOBPJJKE_SceneId - 1].PPEGAKEIEGM_En;
+				int enabled = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneInfo.BCCHOBPJJKE_SceneId - 1].PPEGAKEIEGM_Enabled;
 				if(enabled == 2)
 				{
 					if(sceneInfo.CGKAEMGLHNK_IsUnlocked(true) && !sceneInfo.MCCIFLKCNKO_Feed)
@@ -751,7 +751,7 @@ public static class CMMKCEPBIHI
 			}
 			if(b)
 			{
-				NJNBELLEGCN(ref _HBODCMLFDOB_Result, data, ll, _AHEFHIMGIBI_PlayerData, MLAFAACKKBG, KKHIDFKKFJE, PCEGKKLKFNO, KDOLMBEAGCI);
+				NJNBELLEGCN(ref _HBODCMLFDOB_Result, data, ll, _AHEFHIMGIBI_PlayerData, MLAFAACKKBG, KKHIDFKKFJE, _PCEGKKLKFNO_FriendData, KDOLMBEAGCI);
 			}
 			else
 			{
@@ -759,7 +759,7 @@ public static class CMMKCEPBIHI
 				{
 					for(int j = 0; j < data.GetLength(1); j++)
 					{
-						_HBODCMLFDOB_Result.KOGBMDOONFA[i, j].ADKDHKMPMHP_Rate = data[i, j];
+						_HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].ADKDHKMPMHP_Rate = data[i, j];
 					}					
 				}
 			}
@@ -767,7 +767,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1089E00 Offset: 0x1089E00 VA: 0x1089E00
-	public static void NJNBELLEGCN(ref CFHDKAFLNEP _HBODCMLFDOB_Result, int[,] EDAJDLJHBKP, List<List<GCIJNCFDNON_SceneInfo>> OPIBAPEGCLA, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
+	public static void NJNBELLEGCN(ref CFHDKAFLNEP _HBODCMLFDOB_Result, int[,] EDAJDLJHBKP, List<List<GCIJNCFDNON_SceneInfo>> _OPIBAPEGCLA_Scenes, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, JLKEOGLJNOD_TeamInfo MLAFAACKKBG, EEDKAACNBBG_MusicData KKHIDFKKFJE, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)
 	{
 		GCIJNCFDNON_SceneInfo sceneInfo = null;
 		if(MLAFAACKKBG != null)
@@ -792,9 +792,9 @@ public static class CMMKCEPBIHI
 			}
 		}
 		GCIJNCFDNON_SceneInfo sceneInfo2 = null;
-		if(PCEGKKLKFNO != null)
+		if(_PCEGKKLKFNO_FriendData != null)
 		{
-			sceneInfo2 = PCEGKKLKFNO.KHGKPKDBMOH_GetAssistScene();
+			sceneInfo2 = _PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene();
 			if(sceneInfo2 != null)
 			{
 				if(KKHIDFKKFJE == null)
@@ -814,11 +814,11 @@ public static class CMMKCEPBIHI
 		StatusData st2 = new StatusData();
 		for(int i = 0; i < LCLCCHLDNHJ_Costume.GFIKOEEBIJP; i++)
 		{
-			if(OPIBAPEGCLA[i].Count < 1)
+			if(_OPIBAPEGCLA_Scenes[i].Count < 1)
 			{
 				for(int j = 0; j < EDAJDLJHBKP.GetLength(1); j++)
 				{
-					_HBODCMLFDOB_Result.KOGBMDOONFA[i, j].ADKDHKMPMHP_Rate = EDAJDLJHBKP[i, j];
+					_HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].ADKDHKMPMHP_Rate = EDAJDLJHBKP[i, j];
 				}
 			}
 			else
@@ -830,8 +830,8 @@ public static class CMMKCEPBIHI
 				}
 				for(int j = 0; j < 3; j++)
 				{
-					OPIBAPEGCLA[i].Sort(MOGECDOLPPL[j]);
-					int val = Mathf.Min(3, OPIBAPEGCLA[i].Count);
+					_OPIBAPEGCLA_Scenes[i].Sort(MOGECDOLPPL[j]);
+					int val = Mathf.Min(3, _OPIBAPEGCLA_Scenes[i].Count);
 					int val2 = EDAJDLJHBKP[i, j];
 					if(val  < 1)
 					{
@@ -842,7 +842,7 @@ public static class CMMKCEPBIHI
 							data[j, k].PBPOLELIPJI_Id = 0;
 							data[j, k].IFFKEMEOFAE_EvolveId = 0;
 							data[j, k].ADKDHKMPMHP_Rate = val2;
-							data[j, k].OEOIHIIIMCK_Add = 0;
+							data[j, k].OEOIHIIIMCK_add = 0;
 							data[j, k].ALJGIPAGDJI = 0;
 							data[j, k].HIPODBKKJFL = 0;
 							data[j, k].KHDDPKHPJID = 0;
@@ -856,7 +856,7 @@ public static class CMMKCEPBIHI
 						int k = 0;
 						for(; k < val; k++)
 						{
-							GCIJNCFDNON_SceneInfo sceneInfo3 = OPIBAPEGCLA[i][k];
+							GCIJNCFDNON_SceneInfo sceneInfo3 = _OPIBAPEGCLA_Scenes[i][k];
 							data[j, k].PBPOLELIPJI_Id = sceneInfo3.BCCHOBPJJKE_SceneId;
 							data[j, k].IFFKEMEOFAE_EvolveId = sceneInfo3.CGIELKDLHGE_GetEvolveId();
 							data[j, k].ADKDHKMPMHP_Rate = val2;
@@ -911,13 +911,13 @@ public static class CMMKCEPBIHI
 							int bb = attrMatch ? 1 : 0;
 							if(attrMatch)
 								bb = d_ * 30;
-							data[j, k].OEOIHIIIMCK_Add = (((bb + e) / 100 + d_) * val2) / 100;
+							data[j, k].OEOIHIIIMCK_add = (((bb + e) / 100 + d_) * val2) / 100;
 							data[j, k].KHDDPKHPJID = (d_ * val2) / 100;
 							data[j, k].ALJGIPAGDJI = (attrMatch ? ((bb / 100) * val2) / 100 : 0);
 							bool cc = false;
 							if(c)
 							{
-								if(data[j, k].OEOIHIIIMCK_Add > 0)
+								if(data[j, k].OEOIHIIIMCK_add > 0)
 									cc = true;
 							}
 							data[j, k].LHFPLDHBAAN = cc;
@@ -930,7 +930,7 @@ public static class CMMKCEPBIHI
 							data[j, k].PBPOLELIPJI_Id = 0;
 							data[j, k].IFFKEMEOFAE_EvolveId = 0;
 							data[j, k].ADKDHKMPMHP_Rate = val2;
-							data[j, k].OEOIHIIIMCK_Add = 0;
+							data[j, k].OEOIHIIIMCK_add = 0;
 							data[j, k].ALJGIPAGDJI = 0;
 							data[j, k].HIPODBKKJFL = 0;
 							data[j, k].KHDDPKHPJID = 0;
@@ -955,12 +955,12 @@ public static class CMMKCEPBIHI
 								(id_j == 0 || id_j != id_k) && 
 								(id_k == 0 || id_k != id_l))
 							{
-								int v = data[0, j].OEOIHIIIMCK_Add + data[1, j].OEOIHIIIMCK_Add + data[2, j].OEOIHIIIMCK_Add;
+								int v = data[0, j].OEOIHIIIMCK_add + data[1, j].OEOIHIIIMCK_add + data[2, j].OEOIHIIIMCK_add;
 								if(maxAdd < v)
 								{
-									_HBODCMLFDOB_Result.KOGBMDOONFA[i, 0] = data[0, j];
-									_HBODCMLFDOB_Result.KOGBMDOONFA[i, 1] = data[1, k];
-									_HBODCMLFDOB_Result.KOGBMDOONFA[i, 2] = data[2, l];
+									_HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, 0] = data[0, j];
+									_HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, 1] = data[1, k];
+									_HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, 2] = data[2, l];
 									maxAdd = v;
 								}
 							}
@@ -969,7 +969,7 @@ public static class CMMKCEPBIHI
 				}
 				for(int j = 0; j < 3; j++)
 				{
-					HOBOLJEFDFF[j].Invoke(_HBODCMLFDOB_Result.CMCKNKKCNDK_Status, _HBODCMLFDOB_Result.KOGBMDOONFA[i, j].OEOIHIIIMCK_Add);
+					HOBOLJEFDFF[j].Invoke(_HBODCMLFDOB_Result.CMCKNKKCNDK_Status, _HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].OEOIHIIIMCK_add);
 				}
 			}
 		}
@@ -987,24 +987,24 @@ public static class CMMKCEPBIHI
 			{
 				if (skill.AKGNPLBDKLN_P2 == 0)
 					return;
-				a = KDDDDMMMBHE_GetEffectInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill, skill.AKGNPLBDKLN_P2, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill);
+				a = KDDDDMMMBHE_GetEffectInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill, skill.AKGNPLBDKLN_P2, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene);
 				skillId = skill.AKGNPLBDKLN_P2;
 			}
 			else if(i == 0)
 			{
 				if(skill.HEKHODDJHAO_P1 != 0)
 				{
-					a = KDDDDMMMBHE_GetEffectInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill, skill.HEKHODDJHAO_P1, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill);
+					a = KDDDDMMMBHE_GetEffectInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill, skill.HEKHODDJHAO_P1, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene);
 					skillId = skill.HEKHODDJHAO_P1;
 				}
 			}
 			if(a != null)
 			{
-				if(FNIEADNMMIA_CenterSkillCondMatchMusic((CenterSkillCondition.Type)a.OAFPGJLCNFM_CenterSkillCondition, KKHIDFKKFJE, _COIODGJDJEJ_scene.AIHCEGFANAM_SerieAttr))
+				if(FNIEADNMMIA_CenterSkillCondMatchMusic((CenterSkillCondition.Type)a.OAFPGJLCNFM_cond, KKHIDFKKFJE, _COIODGJDJEJ_scene.AIHCEGFANAM_SerieAttr))
 				{
 					if(FJHLLHFGICG_SceneMatchTarget(_COIODGJDJEJ_scene, (CenterSkillTarget.Type)a.GJLFANGDGCL_Target, -1, -1))
 					{
-						KDOFDLIMHJG_ApplySkill(ref BALBKJFMDFN, _COIODGJDJEJ_scene.CMCKNKKCNDK_Status, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_SceneSkill, skillId, _CNLIAMIIJID_AbilityLevel, MLAFAACKKBG);
+						KDOFDLIMHJG_ApplySkill(ref BALBKJFMDFN, _COIODGJDJEJ_scene.CMCKNKKCNDK_Status, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene, skillId, _CNLIAMIIJID_AbilityLevel, MLAFAACKKBG);
 					}
 				}
 			}
@@ -1140,7 +1140,7 @@ public static class CMMKCEPBIHI
 		}
 		for(int i = 0; i < 4; i++)
 		{
-			LKBGHCIKIOA_RankScore[i + 1] = resultTarget.KNIFCANOHOC_RankScore[i] * 1.0f / DNJCAKPKNDP_ScoreRatioByDifficulty[(int)AKNELONELJK_Difficulty];
+			LKBGHCIKIOA_RankScore[i + 1] = resultTarget.KNIFCANOHOC_score[i] * 1.0f / DNJCAKPKNDP_ScoreRatioByDifficulty[(int)AKNELONELJK_Difficulty];
 		}
 		int h = EPNPGMCGJKB(AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6);
 		FDLECNKJCGG_GaugeRatio = finalScore * 1.0f / h;
@@ -1216,7 +1216,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x108E2F8 Offset: 0x108E2F8 VA: 0x108E2F8
-	private static int CHCGGEPAAOE(DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData, int _DHIPGHBJLIL_Coef, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
+	private static int CHCGGEPAAOE(DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData, int _DHIPGHBJLIL_Coef, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		EDMIONMCICN data = new EDMIONMCICN();
 		data.OBKGEDCKHHE_Init();
@@ -1226,7 +1226,7 @@ public static class CMMKCEPBIHI
 			FFHPBEPOMAK_DivaInfo divaInfo = HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas[i];
 			if(divaInfo != null)
 			{
-				AECDJDIJJKD_ApplySkills(ref data, divaInfo, HEDKFICAPIJ_Team, AHEFHIMGIBI_PlayerData, KKHIDFKKFJE_MusicData, PCEGKKLKFNO_FriendData, KDOLMBEAGCI_EnemyData);
+				AECDJDIJJKD_ApplySkills(ref data, divaInfo, HEDKFICAPIJ_Team, AHEFHIMGIBI_PlayerData, KKHIDFKKFJE_MusicData, _PCEGKKLKFNO_FriendData, KDOLMBEAGCI_EnemyData);
 				data.IMLOCECFHGK(ref FLOHCPIIHEH_WorkStatus);
 				total += FLOHCPIIHEH_WorkStatus.soul + FLOHCPIIHEH_WorkStatus.vocal + FLOHCPIIHEH_WorkStatus.charm;
 			}
@@ -1264,7 +1264,7 @@ public static class CMMKCEPBIHI
 		{
 			for(int j = 0; j < 3; j++)
 			{
-				total += LNMECJDKFDN.KOGBMDOONFA[i, j].ALJGIPAGDJI;
+				total += LNMECJDKFDN.KOGBMDOONFA_Info[i, j].ALJGIPAGDJI;
 			}
 		}
 		return (total * _DHIPGHBJLIL_Coef) / 1000;
@@ -1302,7 +1302,7 @@ public static class CMMKCEPBIHI
 			{
 				for(int j = 0; j < 3; j++)
 				{
-					val += LNMECJDKFDN.KOGBMDOONFA[i,j].HIPODBKKJFL;
+					val += LNMECJDKFDN.KOGBMDOONFA_Info[i,j].HIPODBKKJFL;
 				}
 			}
 		}
@@ -1319,7 +1319,7 @@ public static class CMMKCEPBIHI
 		{
 			for(int j = 0; j < 3; j++)
 			{
-				val += _HBODCMLFDOB_Result.KOGBMDOONFA[i, j].KHDDPKHPJID;
+				val += _HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].KHDDPKHPJID;
 			}
 		}
 		CFHDKAFLNEP data = new CFHDKAFLNEP();
@@ -1330,7 +1330,7 @@ public static class CMMKCEPBIHI
 		{
 			for(int j = 0; j < 3; j++)
 			{
-				val2 += _HBODCMLFDOB_Result.KOGBMDOONFA[i, j].HIPODBKKJFL;
+				val2 += _HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].HIPODBKKJFL;
 			}
 		}
 		NJNBELLEGCN(ref data, HEDKFICAPIJ_Team, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, ALOBLKOHIKD_FriendData, null);
@@ -1339,7 +1339,7 @@ public static class CMMKCEPBIHI
 		{
 			for(int j = 0; j < 3; j++)
 			{
-				val3 += _HBODCMLFDOB_Result.KOGBMDOONFA[i, j].HIPODBKKJFL;
+				val3 += _HBODCMLFDOB_Result.KOGBMDOONFA_Info[i, j].HIPODBKKJFL;
 			}
 		}
 		val3 *= _DHIPGHBJLIL_Coef;
@@ -1373,7 +1373,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1093268 Offset: 0x1093268 VA: 0x1093268
-	private static int OPGMFCHDEDF(int KPIIIEGGPIB, GCIJNCFDNON_SceneInfo _COIODGJDJEJ_scene, int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, KLBKPANJCPL_Score POMOLHBFAPM, bool KIFJKGDBDBH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ, FFHPBEPOMAK_DivaInfo NENDFGDMJDN)
+	private static int OPGMFCHDEDF(int KPIIIEGGPIB, GCIJNCFDNON_SceneInfo _COIODGJDJEJ_scene, int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, KLBKPANJCPL_Score POMOLHBFAPM, bool _KIFJKGDBDBH_lucky, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ, FFHPBEPOMAK_DivaInfo NENDFGDMJDN)
 	{
 		if (KPIIIEGGPIB < 1)
 			return 0;
@@ -1383,14 +1383,14 @@ public static class CMMKCEPBIHI
 		{
 			int a = CKNDJNOFFGP_GetSkillValue(skillInfo, i, _COIODGJDJEJ_scene.AADFFCIDJCB_LiveSkillLevel, NENDFGDMJDN);
 			int b = IGDGGMIMLDN(a, DJLNOAMJECI, GMFMMDAKENC, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.FLJHGGKIOJH_SkillType, POMOLHBFAPM, HEDKFICAPIJ);
-			int c = MEAHJKCBGFE(FLKGCONIFEE, KHDDPKHPJID, DJLNOAMJECI, GMFMMDAKENC, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[_COIODGJDJEJ_scene.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[_COIODGJDJEJ_scene.AADFFCIDJCB_LiveSkillLevel - 1], skillInfo.ELEPHBOKIGK_Limit[0], POMOLHBFAPM, KIFJKGDBDBH);
+			int c = MEAHJKCBGFE(FLKGCONIFEE, KHDDPKHPJID, DJLNOAMJECI, GMFMMDAKENC, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[_COIODGJDJEJ_scene.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[_COIODGJDJEJ_scene.AADFFCIDJCB_LiveSkillLevel - 1], skillInfo.ELEPHBOKIGK_Limit[0], POMOLHBFAPM, _KIFJKGDBDBH_lucky);
 			res += c;
 		}
 		return res;
 	}
 
 	// // RVA: 0x108F96C Offset: 0x108F96C VA: 0x108F96C
-	private static int LKGBAIANMLE(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, bool HGEKDNNJAAC, bool OOOGNIPJMDE, bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
+	private static int LKGBAIANMLE(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, bool _HGEKDNNJAAC_AwakenDivaMode, bool _OOOGNIPJMDE_HadDivaMode, bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		int res = 0;
 		for (int i = 0; i < HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas.Count; i++)
@@ -1415,8 +1415,8 @@ public static class CMMKCEPBIHI
 									{
 										int a = CKNDJNOFFGP_GetSkillValue(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
 										int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], info.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
-										int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
-										int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, HGEKDNNJAAC, false);
+										int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, _OOOGNIPJMDE_HadDivaMode, OHLCKPIMMFH);
+										int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, false);
 										res += d + c;
 									}
 								}
@@ -1443,8 +1443,8 @@ public static class CMMKCEPBIHI
 										{
 											int a = CKNDJNOFFGP_GetSkillValue(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
 											int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], info.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
-											int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
-											int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, HGEKDNNJAAC, false);
+											int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, _OOOGNIPJMDE_HadDivaMode, OHLCKPIMMFH);
+											int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, j], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, false);
 											res += d + c;
 										}
 									}
@@ -1500,8 +1500,8 @@ public static class CMMKCEPBIHI
 				CDNKOFIELMK skillInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneInfo.HGONFBDIBPM_ActiveSkillId - 1];
 				for(int i = 0; i < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
-					int a = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.NKGHBKFMFCI_BuffValueByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], SkillTrigger.Type.None, 0, POMOLHBFAPM_Score, false, false, false);
-					int b = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.NKGHBKFMFCI_BuffValueByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], SkillTrigger.Type.None, 0, POMOLHBFAPM_Score, true, false);
+					int a = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.NKGHBKFMFCI_BuffValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], SkillTrigger.Type.None, 0, POMOLHBFAPM_Score, false, false, false);
+					int b = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.NKGHBKFMFCI_BuffValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1, i], SkillTrigger.Type.None, 0, POMOLHBFAPM_Score, true, false);
 					res += b + a;
 				}
 			}
@@ -1518,7 +1518,7 @@ public static class CMMKCEPBIHI
 			if(GMFMMDAKENC_MusicData is IBJAKJJICBC)
 			{
 				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData((GMFMMDAKENC_MusicData as IBJAKJJICBC).GHBPLHBNMBK_FreeMusicId);
-				short[] vals = GBNOALJPOBM_IsLine6 ? musicInfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicInfo.OCOGIADDNDN_SpNoteByDiff;
+				short[] vals = GBNOALJPOBM_IsLine6 ? musicInfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicInfo.OCOGIADDNDN_SpNotes;
 				if (vals[(int)AKNELONELJK_Difficulty] < 1)
 					res = 0;
 				else
@@ -1564,7 +1564,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x10915F0 Offset: 0x10915F0 VA: 0x10915F0
-	private static int OPKNHONFIOG(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, bool HGEKDNNJAAC, bool OOOGNIPJMDE, bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
+	private static int OPKNHONFIOG(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, bool _HGEKDNNJAAC_AwakenDivaMode, bool _OOOGNIPJMDE_HadDivaMode, bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		MEMCOJHNEIP.Clear();
 		GCIJNCFDNON_SceneInfo s = null;
@@ -1578,7 +1578,7 @@ public static class CMMKCEPBIHI
 					GCIJNCFDNON_SceneInfo sceneInfo = DJLNOAMJECI_PlayerData.OPIBAPEGCLA_Scenes[divaInfo.FGFIBOBAPIA_SceneId - 1];
 					if(sceneInfo.MKHFCGPJPFI_LimitOverCount > 0)
 					{
-						OMPNCHBNEPF.KHEKNNFCAOI(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_Luck);
+						OMPNCHBNEPF.KHEKNNFCAOI_Init(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_luck);
 						HHOKCLBEOHI(OMPNCHBNEPF.CMCKNKKCNDK_Status, sceneInfo, GMFMMDAKENC_MusicData);
 						MEMCOJHNEIP.Add(OMPNCHBNEPF.CMCKNKKCNDK_Status);
 					}
@@ -1592,7 +1592,7 @@ public static class CMMKCEPBIHI
 						GCIJNCFDNON_SceneInfo sceneInfo = DJLNOAMJECI_PlayerData.OPIBAPEGCLA_Scenes[divaInfo.DJICAKGOGFO_SubSceneIds[j] - 1];
 						if (sceneInfo.MKHFCGPJPFI_LimitOverCount > 0)
 						{
-							OMPNCHBNEPF.KHEKNNFCAOI(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_Luck);
+							OMPNCHBNEPF.KHEKNNFCAOI_Init(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_luck);
 							HHOKCLBEOHI(OMPNCHBNEPF.CMCKNKKCNDK_Status, sceneInfo, GMFMMDAKENC_MusicData);
 							MEMCOJHNEIP.Add(OMPNCHBNEPF.CMCKNKKCNDK_Status);
 						}
@@ -1603,7 +1603,7 @@ public static class CMMKCEPBIHI
 		if(ALOBLKOHIKD_FriendData != null && ALOBLKOHIKD_FriendData.KHGKPKDBMOH_GetAssistScene() != null && ALOBLKOHIKD_FriendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount > 0)
 		{
 			GCIJNCFDNON_SceneInfo sceneInfo = ALOBLKOHIKD_FriendData.KHGKPKDBMOH_GetAssistScene();
-			OMPNCHBNEPF.KHEKNNFCAOI(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_Luck);
+			OMPNCHBNEPF.KHEKNNFCAOI_Init(sceneInfo.JKGFBFPIMGA_Rarity, sceneInfo.MKHFCGPJPFI_LimitOverCount, sceneInfo.MJBODMOLOBC_luck);
 			HHOKCLBEOHI(OMPNCHBNEPF.CMCKNKKCNDK_Status, sceneInfo, GMFMMDAKENC_MusicData);
 			MEMCOJHNEIP.Add(OMPNCHBNEPF.CMCKNKKCNDK_Status);
 		}
@@ -1619,25 +1619,25 @@ public static class CMMKCEPBIHI
 				{
 					int a = CKNDJNOFFGP_GetSkillValue(skillInfo, i, s.AADFFCIDJCB_LiveSkillLevel, HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas[0]);
 					int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
-					int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type) skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type) skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[s.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type) skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
-					int g = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[s.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, false);
+					int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type) skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type) skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[s.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type) skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, _OOOGNIPJMDE_HadDivaMode, OHLCKPIMMFH);
+					int g = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[s.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, _HGEKDNNJAAC_AwakenDivaMode, false);
 					int d = MEAHJKCBGFE(0, KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[s.AADFFCIDJCB_LiveSkillLevel - 1, i], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], skillInfo.ELEPHBOKIGK_Limit[0], POMOLHBFAPM_Score, true);
 					e += c * rate / 100 + g * rate / 100 + d * rate / 100;
 				}
 			}
 		}
-		return ((KHDDPKHPJID / POMOLHBFAPM_Score.NLKEBAOBJCM_Cb) * ((POMOLHBFAPM_Score.NLKEBAOBJCM_Cb * 90 / 100) * (MEMCOJHNEIP.excellentRate + MEMCOJHNEIP.excellentRate_SameMusicAttr + MEMCOJHNEIP.excellentRate_SameSeriesAttr)) / 100 * 90) / 100 + e;
+		return ((KHDDPKHPJID / POMOLHBFAPM_Score.NLKEBAOBJCM_combo) * ((POMOLHBFAPM_Score.NLKEBAOBJCM_combo * 90 / 100) * (MEMCOJHNEIP.excellentRate + MEMCOJHNEIP.excellentRate_SameMusicAttr + MEMCOJHNEIP.excellentRate_SameSeriesAttr)) / 100 * 90) / 100 + e;
 	}
 
 	// // RVA: 0x1094624 Offset: 0x1094624 VA: 0x1094624
-	private static void HHOKCLBEOHI(LimitOverStatusData _CMCKNKKCNDK_Status, GCIJNCFDNON_SceneInfo PNLOINMCCKH, EEDKAACNBBG_MusicData KKHIDFKKFJE)
+	private static void HHOKCLBEOHI(LimitOverStatusData _CMCKNKKCNDK_Status, GCIJNCFDNON_SceneInfo _PNLOINMCCKH_Scene, EEDKAACNBBG_MusicData KKHIDFKKFJE)
 	{
-		if((int)PNLOINMCCKH.AIHCEGFANAM_SerieAttr != KKHIDFKKFJE.AIHCEGFANAM_SerieAttr)
+		if((int)_PNLOINMCCKH_Scene.AIHCEGFANAM_SerieAttr != KKHIDFKKFJE.AIHCEGFANAM_SerieAttr)
 		{
 			_CMCKNKKCNDK_Status.excellentRate_SameSeriesAttr = 0;
 			_CMCKNKKCNDK_Status.centerLiveSkillRate_SameSeriesAttr = 0;
 		}
-		if(KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr != 4 && KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr != PNLOINMCCKH.JGJFIJOCPAG_SceneAttr)
+		if(KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr != 4 && KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr != _PNLOINMCCKH_Scene.JGJFIJOCPAG_SceneAttr)
 		{
 			_CMCKNKKCNDK_Status.excellentRate_SameMusicAttr = 0;
 			_CMCKNKKCNDK_Status.centerLiveSkillRate_SameMusicAttr = 0;
@@ -1645,21 +1645,21 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x10939D4 Offset: 0x10939D4 VA: 0x10939D4
-	private static int IGDGGMIMLDN(int NKGHBKFMFCI, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NEJBNCHLMNJ, KLBKPANJCPL_Score POMOLHBFAPM, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ)
+	private static int IGDGGMIMLDN(int _NKGHBKFMFCI_BuffValue, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type _MCJEIDPDMLF_EffectId, int _NEJBNCHLMNJ_Type, KLBKPANJCPL_Score POMOLHBFAPM, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ)
 	{
-		int IILKAJBHLMJ = 0;
-		OKGLGHCBCJP_Database LKMHPJKIFDN = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
-		Func<GCIJNCFDNON_SceneInfo, FFHPBEPOMAK_DivaInfo, int> f = (GCIJNCFDNON_SceneInfo PNLOINMCCKH, FFHPBEPOMAK_DivaInfo _FDBOPFEOENF_Diva) =>
+		int IILKAJBHLMJ_Value = 0;
+		OKGLGHCBCJP_Database LKMHPJKIFDN_md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+		Func<GCIJNCFDNON_SceneInfo, FFHPBEPOMAK_DivaInfo, int> f = (GCIJNCFDNON_SceneInfo _PNLOINMCCKH_Scene, FFHPBEPOMAK_DivaInfo _FDBOPFEOENF_Diva) =>
 		{
 			//0x175A624
-			if (PNLOINMCCKH != null)
+			if (_PNLOINMCCKH_Scene != null)
 			{
-				int skillId = PNLOINMCCKH.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_SerieAttr : 0);
+				int skillId = _PNLOINMCCKH_Scene.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_SerieAttr : 0);
 				if(skillId > 0)
 				{
-					if(PNLOINMCCKH.DCLLIDMKNGO_IsDivaCompatible(_FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId))
+					if(_PNLOINMCCKH_Scene.DCLLIDMKNGO_IsDivaCompatible(_FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId))
 					{
-						PPGHMBNIAEC skillInfo = LKMHPJKIFDN.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
+						PPGHMBNIAEC skillInfo = LKMHPJKIFDN_md.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
 						if(skillInfo.AANDPLGPDEI())
 						{
 							if (!skillInfo.HDPIEILADDH(GMFMMDAKENC.DLAEJOBELBH_MusicId))
@@ -1673,18 +1673,18 @@ public static class CMMKCEPBIHI
 						for(int i = 0; i < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 						{
 							if(skillInfo.EGLDFPILJLG_SkillBuffEffect[i] == (int)SkillBuffEffect.Type.EffectValueUp &&
-								NEJBNCHLMNJ != 0 && NEJBNCHLMNJ == skillInfo.DPGDCJFBFGK_TargetSkillType)
+								_NEJBNCHLMNJ_Type != 0 && _NEJBNCHLMNJ_Type == skillInfo.DPGDCJFBFGK_TargetSkillType)
 							{
-								if(LKMHPJKIFDN.FOFADHAENKC_Skill.JBGPIPLAAIA(skillInfo.POMLAENHCHA_TargetSkillEffectId, (int)MCJEIDPDMLF))
+								if(LKMHPJKIFDN_md.FOFADHAENKC_Skill.JBGPIPLAAIA(skillInfo.POMLAENHCHA_TargetSkillEffectId, (int)_MCJEIDPDMLF_EffectId))
 								{
-									IILKAJBHLMJ += NKGHBKFMFCI * skillInfo.NKGHBKFMFCI_BuffValueByIndexAndLevel[PNLOINMCCKH.AADFFCIDJCB_LiveSkillLevel - 1, i];
+									IILKAJBHLMJ_Value += _NKGHBKFMFCI_BuffValue * skillInfo.NKGHBKFMFCI_BuffValue[_PNLOINMCCKH_Scene.AADFFCIDJCB_LiveSkillLevel - 1, i];
 								}
 							}
 						}
 					}
 				}
 			}
-			return IILKAJBHLMJ;
+			return IILKAJBHLMJ_Value;
 		};
 		for (int i = 0; i < HEDKFICAPIJ.BCJEAJPLGMB_MainDivas.Count; i++)
 		{
@@ -1706,16 +1706,16 @@ public static class CMMKCEPBIHI
 				}
 			}
 		}
-		return IILKAJBHLMJ;
+		return IILKAJBHLMJ_Value;
 	}
 
 	// // RVA: 0x1093FD0 Offset: 0x1093FD0 VA: 0x1093FD0
-	private static int CPPANAJNEDJ(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NKGHBKFMFCI, SkillDuration.Type _FPMFEKIPFPI_DurationType, int PHAGNOHBMCM, SkillTrigger.Type BAAFOOKFDLL, int LFGFBMJNBKN, KLBKPANJCPL_Score POMOLHBFAPM, bool HGEKDNNJAAC, bool OOOGNIPJMDE, bool OHLCKPIMMFH)
+	private static int CPPANAJNEDJ(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type _MCJEIDPDMLF_EffectId, int _NKGHBKFMFCI_BuffValue, SkillDuration.Type _FPMFEKIPFPI_DurationType, int _PHAGNOHBMCM_DurationByIndexAndLevel, SkillTrigger.Type BAAFOOKFDLL, int _LFGFBMJNBKN_ConfigValue, KLBKPANJCPL_Score POMOLHBFAPM, bool _HGEKDNNJAAC_AwakenDivaMode, bool _OOOGNIPJMDE_HadDivaMode, bool OHLCKPIMMFH)
 	{
 		int res = 0;
-		if (MCJEIDPDMLF > SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
+		if (_MCJEIDPDMLF_EffectId > SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
 			return 0;
-		if (((1 << ((int)MCJEIDPDMLF & 0xff)) & 0x180202) == 0)
+		if (((1 << ((int)_MCJEIDPDMLF_EffectId & 0xff)) & 0x180202) == 0)
 			return 0;
 		int v = 0;
 		if(_FPMFEKIPFPI_DurationType >= SkillDuration.Type.ValkyrieModeAndNoteResult && _FPMFEKIPFPI_DurationType <= SkillDuration.Type.AwakenDivaModeAndNoteResult)
@@ -1723,13 +1723,13 @@ public static class CMMKCEPBIHI
 			if(BAAFOOKFDLL == SkillTrigger.Type.AwakenDivaMode)
 			{
 				v = POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
-				if (!HGEKDNNJAAC)
+				if (!_HGEKDNNJAAC_AwakenDivaMode)
 					return 0;
 			}
 			else if(BAAFOOKFDLL == SkillTrigger.Type.DivaMode)
 			{
 				v = POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
-				OHLCKPIMMFH = OOOGNIPJMDE;
+				OHLCKPIMMFH = _OOOGNIPJMDE_HadDivaMode;
 				if (!OHLCKPIMMFH)
 					return 0;
 			}
@@ -1739,7 +1739,7 @@ public static class CMMKCEPBIHI
 				if (!OHLCKPIMMFH)
 					return 0;
 			}
-			res = NKGHBKFMFCI * KHDDPKHPJID / 100 * v / POMOLHBFAPM.NLKEBAOBJCM_Cb;
+			res = _NKGHBKFMFCI_BuffValue * KHDDPKHPJID / 100 * v / POMOLHBFAPM.NLKEBAOBJCM_combo;
 		}
 		else
 		{
@@ -1749,23 +1749,23 @@ public static class CMMKCEPBIHI
 			{
 				case SkillTrigger.Type.Timebomb:
 					v = POMOLHBFAPM.MCMIPODICAN_length;
-					if (LFGFBMJNBKN * 1000 - v != 0 && v <= LFGFBMJNBKN * 1000)
+					if (_LFGFBMJNBKN_ConfigValue * 1000 - v != 0 && v <= _LFGFBMJNBKN_ConfigValue * 1000)
 						return 0;
-					res = ((KHDDPKHPJID * NKGHBKFMFCI) / 100) * (PHAGNOHBMCM * 1000 / v);
+					res = ((KHDDPKHPJID * _NKGHBKFMFCI_BuffValue) / 100) * (_PHAGNOHBMCM_DurationByIndexAndLevel * 1000 / v);
 					break;
 				case SkillTrigger.Type.Combo:
-					v = POMOLHBFAPM.NLKEBAOBJCM_Cb;
-					if (v < LFGFBMJNBKN)
+					v = POMOLHBFAPM.NLKEBAOBJCM_combo;
+					if (v < _LFGFBMJNBKN_ConfigValue)
 						return 0;
 					v = POMOLHBFAPM.MCMIPODICAN_length;
-					res = ((KHDDPKHPJID * NKGHBKFMFCI) / 100) * (PHAGNOHBMCM * 1000 / v);
+					res = ((KHDDPKHPJID * _NKGHBKFMFCI_BuffValue) / 100) * (_PHAGNOHBMCM_DurationByIndexAndLevel * 1000 / v);
 					break;
 				case SkillTrigger.Type.EveryTime:
 					v = POMOLHBFAPM.MCMIPODICAN_length;
-					int b = LFGFBMJNBKN * 1000;
+					int b = _LFGFBMJNBKN_ConfigValue * 1000;
 					if (b - v != 0 && v <= b)
 						return 0;
-					res = ((KHDDPKHPJID * NKGHBKFMFCI) / 100) * (PHAGNOHBMCM * 1000 / v) * v / b;
+					res = ((KHDDPKHPJID * _NKGHBKFMFCI_BuffValue) / 100) * (_PHAGNOHBMCM_DurationByIndexAndLevel * 1000 / v) * v / b;
 					break;
 				case SkillTrigger.Type.EveryScore:
 					break;
@@ -1775,14 +1775,14 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x109435C Offset: 0x109435C VA: 0x109435C
-	private static int MCKHJBNJFJH(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NKGHBKFMFCI, SkillDuration.Type _FPMFEKIPFPI_DurationType, int PHAGNOHBMCM, SkillTrigger.Type BAAFOOKFDLL, int LFGFBMJNBKN, KLBKPANJCPL_Score POMOLHBFAPM, bool HGEKDNNJAAC, bool OHLCKPIMMFH)
+	private static int MCKHJBNJFJH(int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type _MCJEIDPDMLF_EffectId, int _NKGHBKFMFCI_BuffValue, SkillDuration.Type _FPMFEKIPFPI_DurationType, int _PHAGNOHBMCM_DurationByIndexAndLevel, SkillTrigger.Type BAAFOOKFDLL, int _LFGFBMJNBKN_ConfigValue, KLBKPANJCPL_Score POMOLHBFAPM, bool _HGEKDNNJAAC_AwakenDivaMode, bool OHLCKPIMMFH)
 	{
 		int skill_combo_bonus_value0 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("skill_combo_bonus_value0", 0);
-		if (_FPMFEKIPFPI_DurationType != SkillDuration.Type.Time || MCJEIDPDMLF != SkillBuffEffect.Type.ComboBonus)
+		if (_FPMFEKIPFPI_DurationType != SkillDuration.Type.Time || _MCJEIDPDMLF_EffectId != SkillBuffEffect.Type.ComboBonus)
 			return 0;
 		if (BAAFOOKFDLL == SkillTrigger.Type.EveryTime)
 			return 0;
-		int cb = POMOLHBFAPM.NLKEBAOBJCM_Cb;
+		int cb = POMOLHBFAPM.NLKEBAOBJCM_combo;
 		int len = POMOLHBFAPM.MCMIPODICAN_length;
 		int a = 0;
 		bool b = false;
@@ -1794,27 +1794,27 @@ public static class CMMKCEPBIHI
 		{
 			if (BAAFOOKFDLL != SkillTrigger.Type.AwakenDivaMode)
 			{
-				HGEKDNNJAAC = true;
+				_HGEKDNNJAAC_AwakenDivaMode = true;
 			}
-			b = HGEKDNNJAAC;
+			b = _HGEKDNNJAAC_AwakenDivaMode;
 			a = cb - POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
 		}
 		int res = 0;
 		if(b && skill_combo_bonus_value0 <= cb)
 		{
-			res = (PHAGNOHBMCM * 1000 / len) * (Mathf.Max(a / cb, 1) * NKGHBKFMFCI) / 100 * KHDDPKHPJID;
+			res = (_PHAGNOHBMCM_DurationByIndexAndLevel * 1000 / len) * (Mathf.Max(a / cb, 1) * _NKGHBKFMFCI_BuffValue) / 100 * KHDDPKHPJID;
 		}
 		return res;
 	}
 
 	// // RVA: 0x1093E5C Offset: 0x1093E5C VA: 0x1093E5C
-	private static int MEAHJKCBGFE(int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NKGHBKFMFCI, SkillDuration.Type _FPMFEKIPFPI_DurationType, int PHAGNOHBMCM, SkillTrigger.Type BAAFOOKFDLL, int LFGFBMJNBKN, int JLDDHNFKGHL, KLBKPANJCPL_Score POMOLHBFAPM, bool KIFJKGDBDBH/* = false*/)
+	private static int MEAHJKCBGFE(int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type _MCJEIDPDMLF_EffectId, int _NKGHBKFMFCI_BuffValue, SkillDuration.Type _FPMFEKIPFPI_DurationType, int _PHAGNOHBMCM_DurationByIndexAndLevel, SkillTrigger.Type BAAFOOKFDLL, int _LFGFBMJNBKN_ConfigValue, int JLDDHNFKGHL, KLBKPANJCPL_Score POMOLHBFAPM, bool _KIFJKGDBDBH_lucky/* = false*/)
 	{
 		int res = 0;
-		if (MCJEIDPDMLF < SkillBuffEffect.Type.Num && ((1 << ((int)MCJEIDPDMLF & 0xff)) & 0x180202) != 0 && BAAFOOKFDLL == SkillTrigger.Type.EveryScore)
+		if (_MCJEIDPDMLF_EffectId < SkillBuffEffect.Type.Num && ((1 << ((int)_MCJEIDPDMLF_EffectId & 0xff)) & 0x180202) != 0 && BAAFOOKFDLL == SkillTrigger.Type.EveryScore)
 		{
-			int i = FLKGCONIFEE / LFGFBMJNBKN * 10000;
-			if (KIFJKGDBDBH)
+			int i = FLKGCONIFEE / _LFGFBMJNBKN_ConfigValue * 10000;
+			if (_KIFJKGDBDBH_lucky)
 				i = 1;
 			res = 0;
 			int a = i;
@@ -1825,17 +1825,17 @@ public static class CMMKCEPBIHI
 				a = -a;
 				if (-a <= -i && a != i)
 					a = -i;
-				res = -(a * NKGHBKFMFCI / 100 * KHDDPKHPJID * PHAGNOHBMCM * 1000 / POMOLHBFAPM.MCMIPODICAN_length);
+				res = -(a * _NKGHBKFMFCI_BuffValue / 100 * KHDDPKHPJID * _PHAGNOHBMCM_DurationByIndexAndLevel * 1000 / POMOLHBFAPM.MCMIPODICAN_length);
 			}
 		}
 		return res;
 	}
 
 	// // RVA: 0x108EE08 Offset: 0x108EE08 VA: 0x108EE08
-	private static bool MODGPFEPLIP(ref EDMIONMCICN _HBODCMLFDOB_Result, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, Difficulty.Type AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, out bool HGEKDNNJAAC, out bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
+	private static bool MODGPFEPLIP(ref EDMIONMCICN _HBODCMLFDOB_Result, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, KLBKPANJCPL_Score POMOLHBFAPM_Score, Difficulty.Type AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, out bool _HGEKDNNJAAC_AwakenDivaMode, out bool OHLCKPIMMFH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		bool res = false;
-		HGEKDNNJAAC = false;
+		_HGEKDNNJAAC_AwakenDivaMode = false;
 		OHLCKPIMMFH = false;
 		int sup = 0;
 		int fold = 0;
@@ -1884,8 +1884,8 @@ public static class CMMKCEPBIHI
 			KEODKEGFDLD_FreeMusicInfo m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData((GMFMMDAKENC_MusicData as IBJAKJJICBC).GHBPLHBNMBK_FreeMusicId);
 			if(!_GIKLNODJKFK_IsLine6)
 			{
-				subGoal = m.HLKHOFPAOMK_SubGoalFreeModeByDiff[(int)AKNELONELJK_Difficulty];
-				goal = m.HLLJIICKNIP_GoalFreeModeByDiff[(int)AKNELONELJK_Difficulty];
+				subGoal = m.HLKHOFPAOMK_SubGoalByDiff[(int)AKNELONELJK_Difficulty];
+				goal = m.HLLJIICKNIP_GoalByDiff[(int)AKNELONELJK_Difficulty];
 				max = m.FENOHOEIJOE_MaxValue[(int)AKNELONELJK_Difficulty];
 			}
 			else
@@ -1911,7 +1911,7 @@ public static class CMMKCEPBIHI
 		else
 		{
 			OHLCKPIMMFH = true;
-			res = PKLPIDIBHMN(DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, POMOLHBFAPM_Score.GEIDIHCKDNO, (sup + FLOHCPIIHEH_WorkStatus.support) / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1, out HGEKDNNJAAC, HEDKFICAPIJ_Team);
+			res = PKLPIDIBHMN(DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, POMOLHBFAPM_Score.GEIDIHCKDNO, (sup + FLOHCPIIHEH_WorkStatus.support) / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1, out _HGEKDNNJAAC_AwakenDivaMode, HEDKFICAPIJ_Team);
 		}
 
 		return res;
@@ -1942,7 +1942,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1094918 Offset: 0x1094918 VA: 0x1094918
-	private static bool PKLPIDIBHMN(DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, Difficulty.Type _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, int EDGIJNGLBDE, float PGEDGKMCFLB, out bool HGEKDNNJAAC, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ)
+	private static bool PKLPIDIBHMN(DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, Difficulty.Type _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, int EDGIJNGLBDE, float PGEDGKMCFLB, out bool _HGEKDNNJAAC_AwakenDivaMode, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ)
 	{
 		DJNPIGEFPMF_StoryMusicInfo smd = null;
 		int goal;
@@ -1953,8 +1953,8 @@ public static class CMMKCEPBIHI
 			DJNPIGEFPMF_StoryMusicInfo g = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData((GMFMMDAKENC as LIEJFHMGNIA).KLCIIHKFPPO_StoryMusicId);
 			subGoal = g.HLKHOFPAOMK_SubGoalByDiff[(int)_AKNELONELJK_Difficulty];
 			goal = g.HLLJIICKNIP_GoalByDiff[(int)_AKNELONELJK_Difficulty];
-			enemyId = g.LHICAKGHIGF[(int)_AKNELONELJK_Difficulty];
-			smd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(g.KLCIIHKFPPO);
+			enemyId = g.LHICAKGHIGF_EnemyIdByDiff[(int)_AKNELONELJK_Difficulty];
+			smd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(g.KLCIIHKFPPO_StoryMusicId);
 		}
 		else
 		{
@@ -1997,7 +1997,7 @@ public static class CMMKCEPBIHI
 			dd += OEEDGPGEPFH(valk.OJHINEMKMOP(0) * PGEDGKMCFLB, valk.PAELLCKLEJP(0) * PGEDGKMCFLB, 
 				IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(enemyId).ADMMEMNGKEN_Avo, i, i + RhythmGameEnemyStatus.AttackComboCount, 1, 1, v, out p);
 		}
-		HGEKDNNJAAC = goal <= dd;
+		_HGEKDNNJAAC_AwakenDivaMode = goal <= dd;
 		return subGoal <= dd;
 	}
 
@@ -2026,7 +2026,7 @@ public static class CMMKCEPBIHI
 	// // RVA: 0x1093648 Offset: 0x1093648 VA: 0x1093648
 	private static int CKNDJNOFFGP_GetSkillValue(PPGHMBNIAEC KMHPOGKCHHK, int AOGDKBPNGCI, int GBMHFDKCFGB, FFHPBEPOMAK_DivaInfo HIDAJBOHJKH)
 	{
-		int v = KMHPOGKCHHK.NKGHBKFMFCI_BuffValueByIndexAndLevel[GBMHFDKCFGB - 1, AOGDKBPNGCI];
+		int v = KMHPOGKCHHK.NKGHBKFMFCI_BuffValue[GBMHFDKCFGB - 1, AOGDKBPNGCI];
 		if (KMHPOGKCHHK.EGLDFPILJLG_SkillBuffEffect[AOGDKBPNGCI] != (int)SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
 		{
 			if(KMHPOGKCHHK.EGLDFPILJLG_SkillBuffEffect[AOGDKBPNGCI] == (int)SkillBuffEffect.Type.ScoreUpPercentage_FoldWave)
@@ -2036,7 +2036,7 @@ public static class CMMKCEPBIHI
 			return v;
 		}
 		JJOELIOGMKK_DivaIntimacyInfo j = new JJOELIOGMKK_DivaIntimacyInfo();
-		j.KHEKNNFCAOI(HIDAJBOHJKH.AHHJLDLAPAN_DivaId);
+		j.KHEKNNFCAOI_Init(HIDAJBOHJKH.AHHJLDLAPAN_DivaId);
 		j.HCDGELDHFHB(false);
 		EHGAHMIBPIB s = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(v);
 		return Mathf.Min(j.HEKJGCMNJAB_CurrentLevel / s.KCOHMHFBDKF_Value1[GBMHFDKCFGB - 1] * s.HLMMBNCIIAC_Value2[GBMHFDKCFGB - 1], s.DOOGFEGEKLG_Max);

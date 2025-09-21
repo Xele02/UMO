@@ -5,18 +5,18 @@ using XeApp.Core.WorkerThread;
 
 public class HBFCGCGDINM
 {
-	public List<KOPCFBCDBPC> JOMCOLHEBBI; // 0x8
+	public List<KOPCFBCDBPC> JOMCOLHEBBI_step_up_lots; // 0x8
 
 	// RVA: 0x173F4A4 Offset: 0x173F4A4 VA: 0x173F4A4
-	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 	{
-		EDOHBJAPLPF_JsonData d = IDLHJIOMJBK[AFEHLCGHAEE_Strings.JOMCOLHEBBI_step_up_lots];
-		JOMCOLHEBBI = new List<KOPCFBCDBPC>(d.HNBFOAJIIAL_Count);
+		EDOHBJAPLPF_JsonData d = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.JOMCOLHEBBI_step_up_lots];
+		JOMCOLHEBBI_step_up_lots = new List<KOPCFBCDBPC>(d.HNBFOAJIIAL_Count);
 		for(int i = 0; i < d.HNBFOAJIIAL_Count; i++)
 		{
 			KOPCFBCDBPC data = new KOPCFBCDBPC();
-			data.KHEKNNFCAOI(d[i]);
-			JOMCOLHEBBI.Add(data);
+			data.KHEKNNFCAOI_Init(d[i]);
+			JOMCOLHEBBI_step_up_lots.Add(data);
 		}
 	}
 }
@@ -26,8 +26,8 @@ public class HBFCGCGDINM
 public class BHDAFKEKPEB { }
 public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 {
-	public HBFCGCGDINM NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } // 0xC7EF48 HGPAELCGELL
+	public HBFCGCGDINM NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0xC7EF48 HGPAELCGELL
 
 	// RVA: 0xC7EDB0 Offset: 0xC7EDB0 VA: 0xC7EDB0 Slot: 12
 	public override void DHLDNIEELHO()
@@ -38,7 +38,7 @@ public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 	// RVA: 0xC7EE8C Offset: 0xC7EE8C VA: 0xC7EE8C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = null;
+		NFEAMMJIMPG_Result = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);
 	}
 
@@ -46,7 +46,7 @@ public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 	private void DIAMDBHBKBH()
 	{
 		HBFCGCGDINM d = new HBFCGCGDINM();
-		d.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
-		NFEAMMJIMPG = d;
+		d.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = d;
 	}
 }

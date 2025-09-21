@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 			{
 				GetItemChange.StartChildrenAnimGoStop("01");
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-				scene.KHEKNNFCAOI(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
+				scene.KHEKNNFCAOI_Init(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
 				GameManager.Instance.SceneIconCache.Load(_itemId - 40000, scene.JOKJBMJBLBB_Single ? 2 : 1, (IiconTexture icon) =>
 				{
 					//0x1D50700
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		private void ShowSceneCardItem(int _itemId)
 		{
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(_itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
 			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 		}
 

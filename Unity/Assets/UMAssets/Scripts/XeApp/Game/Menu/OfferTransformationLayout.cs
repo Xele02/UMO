@@ -58,14 +58,14 @@ namespace XeApp.Game.Menu
 			{
 				IsLodingList[i] = false;
 			}
-			BOPFPIHGJMD.ADMNKELOLPN a2 = KDHGBOOECKC.HHCJCDFCLOB.KJGAJBOBIHK(info.FGHGMHPNEMG_Type, info.PPFNGGCBJKC);
+			BOPFPIHGJMD.ADMNKELOLPN a2 = KDHGBOOECKC.HHCJCDFCLOB.KJGAJBOBIHK(info.FGHGMHPNEMG_Type, info.PPFNGGCBJKC_id);
 			SettingText((KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0) * KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)) / 100, 
 						(KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1) * KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)) / 100);
-			bool b = SetRateState(m_data.NNDGIAEFMOG[0].LHMDABPNDDH, m_fighterUpState);
+			bool b = SetRateState(m_data.NNDGIAEFMOG[0].LHMDABPNDDH_state, m_fighterUpState);
 			m_fighterFontAnim.StartChildrenAnimLoop(b ? "lo_" : "st_wait");
-			b = SetRateState(m_data.NNDGIAEFMOG[1].LHMDABPNDDH, m_garwalkUpState);
+			b = SetRateState(m_data.NNDGIAEFMOG[1].LHMDABPNDDH_state, m_garwalkUpState);
 			m_garwalkFontAnim.StartChildrenAnimLoop(b ? "lo_" : "st_wait");
-			b = SetRateState(m_data.NNDGIAEFMOG[2].LHMDABPNDDH, m_batroidUpState);
+			b = SetRateState(m_data.NNDGIAEFMOG[2].LHMDABPNDDH_state, m_batroidUpState);
 			m_batroidFontAnim.StartChildrenAnimLoop(b ? "lo_" : "st_wait");
 			for(int i = 0; i < IsLodingList.Length; i++)
 			{
@@ -109,8 +109,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17128E8 Offset: 0x17128E8 VA: 0x17128E8
 		public void SettingText(int Attack, int Hit)
 		{
-			AttackText.text = OfferFormationScene.textColorChenge(m_info.KINFGHHNFCF, Attack);
-			HitText.text = OfferFormationScene.textColorChenge(m_info.NONBCCLGBAO, Hit);
+			AttackText.text = OfferFormationScene.textColorChenge(m_info.KINFGHHNFCF_Atk, Attack);
+			HitText.text = OfferFormationScene.textColorChenge(m_info.NONBCCLGBAO_hit, Hit);
 		}
 
 		//// RVA: 0x1712A14 Offset: 0x1712A14 VA: 0x1712A14
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 				list[i].enabled = true;
 				if(i > 0)
 				{
-					b = state[i] != BOPFPIHGJMD.MGPIJGMDLOM.HJNNKCMLGFL_3;
+					b = state[i] != BOPFPIHGJMD.MGPIJGMDLOM.HJNNKCMLGFL_3_None;
 				}
 				if(state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
 				{
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 			{
 				int index = i;
 				images[i].enabled = false;
-				if(state.LHMDABPNDDH[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
+				if(state.LHMDABPNDDH_state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
 				{
 					MenuScene.Instance.InputDisable();
 					GameManager.Instance.ItemTextureCache.Load(state.LNADJDFHHAI[i], (IiconTexture image) =>
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17132EC Offset: 0x17132EC VA: 0x17132EC
 		public void LowPowerIconEnable(int platoonId, int form)
 		{
-			if (m_info.JGAMLEMMJCJ_ClearTime < KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Type, m_info.PPFNGGCBJKC, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
+			if (m_info.JGAMLEMMJCJ_ClearTime < KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Type, m_info.PPFNGGCBJKC_id, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
 			{
 				m_lowPowerLayout.StartChildrenAnimGoStop("01");
 				m_lackPowerAnim.StartChildrenAnimLoop("lo_");

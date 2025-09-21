@@ -4,13 +4,13 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 {
 	private const int NNBHLPECAHJ = 1;
 	public bool BIOFMLDLNKD; // 0xC
-	public bool NPNNPNAIONN; // 0xD
-	public bool PLOOEECNHFB; // 0xE
+	public bool NPNNPNAIONN_IsError; // 0xD
+	public bool PLOOEECNHFB_IsDone; // 0xE
 
 	// // RVA: 0x120437C Offset: 0x120437C VA: 0x120437C
 	public void MCDJJPAKBLH(string _CJEKGLGBIHF_path)
     {
-        PLOOEECNHFB = false;
+        PLOOEECNHFB_IsDone = false;
         BIOFMLDLNKD = false;
         N.a.StartCoroutineWatched(ODDEPBIJHOE_Load(_CJEKGLGBIHF_path));
     }
@@ -27,8 +27,8 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
         Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(_CJEKGLGBIHF_path);
         if(request == null)
         {
-            PLOOEECNHFB = true;
-            NPNNPNAIONN = true;
+            PLOOEECNHFB_IsDone = true;
+            NPNNPNAIONN_IsError = true;
             TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error ODDEPBIJHOE_Load");
             yield break;
         }
@@ -38,7 +38,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
         }
         if(!request.IsSuccess)
         {
-            PLOOEECNHFB = true;
+            PLOOEECNHFB_IsDone = true;
         }
         else
         {
@@ -57,14 +57,14 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();
             }
-            BIOFMLDLNKD = KHEKNNFCAOI_Load(request.Result);
-            PLOOEECNHFB = true;
+            BIOFMLDLNKD = KHEKNNFCAOI_Init(request.Result);
+            PLOOEECNHFB_IsDone = true;
             if(BIOFMLDLNKD)
             {
                 yield break;
             }
         }
-        NPNNPNAIONN = true;
+        NPNNPNAIONN_IsError = true;
         TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error ODDEPBIJHOE_Load");
     }
 }

@@ -102,11 +102,11 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B226C Offset: 0x12B226C VA: 0x12B226C
-	public static byte[] IHDGCICCPIG_StringToByte(string LJNAKDMILMC)
+	public static byte[] IHDGCICCPIG_StringToByte(string _LJNAKDMILMC_key)
     {
-        int len = LJNAKDMILMC.Length;
+        int len = _LJNAKDMILMC_key.Length;
         List<byte> bytes = new List<byte>(0x20);
-        byte[] strBytes = System.Text.Encoding.UTF8.GetBytes(LJNAKDMILMC);
+        byte[] strBytes = System.Text.Encoding.UTF8.GetBytes(_LJNAKDMILMC_key);
         int idx = 0;
         uint var8 = 0xd4;
         uint var9 = (uint)(len + 100);

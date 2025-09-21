@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		{
 			if(episodeData.DKMLDEDKPBA_HasEpisode)
 			{
-				SetTexture(episodeData.KELFCMEOPPM_EpId);
+				SetTexture(episodeData.KELFCMEOPPM_EpisodeId);
 				SetGaugeRate(episodeData.ABLHIAEDJAI_CurrentValue, episodeData.LEGAKDFPPHA_AvaiablePoint, episodeData.DMHDNKILKGI_MaxPoint);
 			}
 		}

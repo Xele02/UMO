@@ -10,13 +10,13 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 		public bool EMEGKEGFJBK_FacebookLinkage; // 0x8
 
 		// RVA: 0x17CC0A4 Offset: 0x17CC0A4 VA: 0x17CC0A4
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			EMEGKEGFJBK_FacebookLinkage = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EMEGKEGFJBK_FacebookLinkage];
+			EMEGKEGFJBK_FacebookLinkage = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EMEGKEGFJBK_FacebookLinkage];
 		}
 	}
 
-	public EOOEOFIDGFC NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public EOOEOFIDGFC NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x17CBEE8 Offset: 0x17CBEE8 VA: 0x17CBEE8 Slot: 12
 	public override void DHLDNIEELHO()
@@ -27,7 +27,7 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 	// RVA: 0x17CBFC4 Offset: 0x17CBFC4 VA: 0x17CBFC4 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new EOOEOFIDGFC();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new EOOEOFIDGFC();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

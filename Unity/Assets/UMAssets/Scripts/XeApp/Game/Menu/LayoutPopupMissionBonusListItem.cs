@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1732F94 Offset: 0x1732F94 VA: 0x1732F94
 		public void SetStatus(KPJHLACKGJF_EventMission.HLMINENBCKO data)
 		{
-			m_textDate.text = data.HJAFPEBIBOP_DateText;
+			m_textDate.text = data.HJAFPEBIBOP_Limit;
 			m_textDesc.text = data.GJLFANGDGCL_Target;
 			SetIconImage(data.CIANOCNPIFF_Type, data.IIAAIPNHJFJ_Value);
 		}

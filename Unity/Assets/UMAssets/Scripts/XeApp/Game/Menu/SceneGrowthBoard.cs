@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 			});
 			m_parentObject = m_rangeObject.GetComponent<RectTransform>();
 			m_scrollWidth = m_scrollRect.GetComponent<RectTransform>().sizeDelta.x;
-			m_tempItemData.KHEKNNFCAOI(null);
+			m_tempItemData.KHEKNNFCAOI_Init(null);
 			if(m_scrollRect.verticalScrollbar != null)
 			{
 				m_scrollRect.verticalScrollbar.gameObject.SetActive(false);
@@ -598,7 +598,7 @@ namespace XeApp.Game.Menu
 					if(!m_boardSquareList[i][j].isOpen && m_boardSquareList[i][j].type == SquareType.Panel)
 					{
 						AFIFDLOAKGI a = GetPanelItem(m_boardSquareList[i][j].saveIndex);
-						if(a.INDDJNMPONH_StatType == 18)
+						if(a.INDDJNMPONH_Type == 18)
 						{
 							int[] intVal = new int[2];
 							intVal[0] = i;
@@ -640,17 +640,17 @@ namespace XeApp.Game.Menu
 					if(!m_boardSquareList[i][j].isOpen && m_boardSquareList[i][j].type == SquareType.Panel)
 					{
 						AFIFDLOAKGI a = GetPanelItem(m_boardSquareList[i][j].saveIndex);
-						if(a.INDDJNMPONH_StatType != 0)
+						if(a.INDDJNMPONH_Type != 0)
 						{
-							if (a.INDDJNMPONH_StatType != 17)
+							if (a.INDDJNMPONH_Type != 17)
 							{
-								if(a.INDDJNMPONH_StatType != 18)
+								if(a.INDDJNMPONH_Type != 18)
 								{
-									if (a.INDDJNMPONH_StatType != 19)
+									if (a.INDDJNMPONH_Type != 19)
 									{
-										if (a.INDDJNMPONH_StatType != 21)
+										if (a.INDDJNMPONH_Type != 21)
 										{
-											if (a.INDDJNMPONH_StatType != 20)
+											if (a.INDDJNMPONH_Type != 20)
 											{
 												int[] intVal = new int[2];
 												intVal[0] = i;
@@ -829,7 +829,7 @@ namespace XeApp.Game.Menu
 					if (board.type != SquareType.Panel)
 						return;
 					AFIFDLOAKGI a = GetPanelItem(board.saveIndex);
-					if(a.INDDJNMPONH_StatType == 20)
+					if(a.INDDJNMPONH_Type == 20)
 					{
 						if (m_sceneData.KPCLNEADGEM(board.saveIndex) == 0)
 							return;

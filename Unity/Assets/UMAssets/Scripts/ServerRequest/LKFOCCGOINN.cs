@@ -8,7 +8,7 @@ public class LKFOCCGOINN_GetURL : CACGCMBKHDI_Request
 	public class FLFKLJCAJPG_ResData
 	{
 		public string EEDAHFGPNPH_sss_temporary_token; // 0x8
-		public string MCHAINJKMEB_UrlWithToken; // 0xC
+		public string MCHAINJKMEB_url_with_token; // 0xC
 	}
 
 	public FLFKLJCAJPG_ResData NFEAMMJIMPG_Result; // 0x7C
@@ -19,7 +19,7 @@ public class LKFOCCGOINN_GetURL : CACGCMBKHDI_Request
 		FLFKLJCAJPG_ResData res = new FLFKLJCAJPG_ResData();
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
 		res.EEDAHFGPNPH_sss_temporary_token = (string)data[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token];
-		res.MCHAINJKMEB_UrlWithToken = (string)data[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token];
+		res.MCHAINJKMEB_url_with_token = (string)data[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token];
 		NFEAMMJIMPG_Result = res;
 	}
 }

@@ -3,7 +3,7 @@ public class NJLGICBHIOC
 {
     public enum EOFJDIACFEC
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0_None = 0,
         HIJCECJACBK = 1,
         NDGMFGMHCJM = 2,
         NEKIMLIDECE = 3,

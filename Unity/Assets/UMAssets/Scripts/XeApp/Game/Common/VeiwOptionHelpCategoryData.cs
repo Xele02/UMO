@@ -37,7 +37,7 @@ namespace XeApp.Game.Common
 						if(CanShowContents((VeiwOptionHelpContentData.ConditionId)list[found].EBEMOEPADJB[i].KDBLHOFCPIO, list[found].EBEMOEPADJB[i].KLHAFHMFFNK, (VeiwOptionHelpContentData.ConditionOperation) list[found].EBEMOEPADJB[i].BENBNKNPOAA))
 						{
 							VeiwOptionHelpContentData data = new VeiwOptionHelpContentData();
-							data.contentName = DatabaseTextConverter.TranslateHelpName(found, i, list[found].EBEMOEPADJB[i].OPFGFINHFCE);
+							data.contentName = DatabaseTextConverter.TranslateHelpName(found, i, list[found].EBEMOEPADJB[i].OPFGFINHFCE_name);
 							data.contentType = VeiwOptionHelpContentData.ContentType.Help;
 							data.helpId = list[found].EBEMOEPADJB[i].EJBGHLOOLBC;
 							helps.Add(data);
@@ -48,7 +48,7 @@ namespace XeApp.Game.Common
 				{
 					VeiwOptionHelpContentData data = new VeiwOptionHelpContentData();
 					data.wikiURL = list[found].OJMEIBNMLNP[i].HJLDBEJOMIO;
-					data.contentName = DatabaseTextConverter.TranslateHelpWikiName(found, i, list[found].OJMEIBNMLNP[i].OPFGFINHFCE);
+					data.contentName = DatabaseTextConverter.TranslateHelpWikiName(found, i, list[found].OJMEIBNMLNP[i].OPFGFINHFCE_name);
 					data.contentType = VeiwOptionHelpContentData.ContentType.Wiki;
 					wikis.Add(data);
 				}
@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 				int a = 0;
 				if(id == VeiwOptionHelpContentData.ConditionId.VopClearCount)
 				{
-					a = KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0/*0*/);
+					a = KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0_None/*0*/);
 				}
 				else if(id == VeiwOptionHelpContentData.ConditionId.HighScoreRate)
 				{
@@ -85,10 +85,10 @@ namespace XeApp.Game.Common
 		{
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<VeiwOptionHelpCategoryData> res = new List<VeiwOptionHelpCategoryData>();
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD.Length; i++)
+			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories.Length; i++)
 			{
-				DPGPEALHJOB h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD[i];
-				if (h.PLALNIIBLOF == 2)
+				DPGPEALHJOB h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories[i];
+				if (h.PLALNIIBLOF_en == 2)
 				{
 					if(t >= h.PDBPFJJCADD)
 					{
@@ -100,7 +100,7 @@ namespace XeApp.Game.Common
 							{
 								continue;
 							}
-							data.categoryName = DatabaseTextConverter.TranslateHelpCategory(i, h.OPFGFINHFCE);
+							data.categoryName = DatabaseTextConverter.TranslateHelpCategory(i, h.OPFGFINHFCE_name);
 							res.Add(data);
 						}
 					}

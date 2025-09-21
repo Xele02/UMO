@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104C2D4 Offset: 0x104C2D4 VA: 0x104C2D4
 		private MusicTextDatabase.TextInfo GetMusicTextInfo(int musicId)
 		{
-			return Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Nam);
+			return Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Name);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C91B4 Offset: 0x6C91B4 VA: 0x6C91B4

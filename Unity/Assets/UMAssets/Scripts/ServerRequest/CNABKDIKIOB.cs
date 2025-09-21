@@ -15,35 +15,35 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 				public long HBKKLHCNCKE_ExpireAt; // 0x10
 
 				// RVA: 0x175B248 Offset: 0x175B248 VA: 0x175B248
-				public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+				public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 				{
-					BBEMFICNDOG_Remaining = (int)IDLHJIOMJBK["remainings"];
-					HBKKLHCNCKE_ExpireAt = (long)IDLHJIOMJBK["expired_at"];
+					BBEMFICNDOG_Remaining = (int)_IDLHJIOMJBK_Data["remainings"];
+					HBKKLHCNCKE_ExpireAt = (long)_IDLHJIOMJBK_Data["expired_at"];
 				}
 			}
 
-			public int PPFNGGCBJKC_Id; // 0x8
+			public int PPFNGGCBJKC_id; // 0x8
 			public List<KIDKCJGODNG> FKIJMMGIDGG_Free; // 0xC
 			public List<KIDKCJGODNG> GHOBKCKLCJE_Paid; // 0x10
 
 			// RVA: 0x175AED4 Offset: 0x175AED4 VA: 0x175AED4
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+			public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 			{
-				PPFNGGCBJKC_Id = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id];
-				EDOHBJAPLPF_JsonData f = IDLHJIOMJBK["free"];
-				EDOHBJAPLPF_JsonData p = IDLHJIOMJBK["paid"];
+				PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id];
+				EDOHBJAPLPF_JsonData f = _IDLHJIOMJBK_Data["free"];
+				EDOHBJAPLPF_JsonData p = _IDLHJIOMJBK_Data["paid"];
 				FKIJMMGIDGG_Free = new List<KIDKCJGODNG>();
 				for(int i = 0; i < f.HNBFOAJIIAL_Count; i++)
 				{
 					KIDKCJGODNG data = new KIDKCJGODNG();
-					data.KHEKNNFCAOI(f[i]);
+					data.KHEKNNFCAOI_Init(f[i]);
 					FKIJMMGIDGG_Free.Add(data);
 				}
 				GHOBKCKLCJE_Paid = new List<KIDKCJGODNG>();
 				for (int i = 0; i < p.HNBFOAJIIAL_Count; i++)
 				{
 					KIDKCJGODNG data = new KIDKCJGODNG();
-					data.KHEKNNFCAOI(p[i]);
+					data.KHEKNNFCAOI_Init(p[i]);
 					GHOBKCKLCJE_Paid.Add(data);
 				}
 			}
@@ -52,20 +52,20 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 		public List<BNMFBONAKMG> OMDCENKJNKP = new List<BNMFBONAKMG>(); // 0x8
 
 		// RVA: 0x175ACCC Offset: 0x175ACCC VA: 0x175ACCC
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK["balances"];
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data["balances"];
 			OMDCENKJNKP = new List<BNMFBONAKMG>();
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				BNMFBONAKMG data = new BNMFBONAKMG();
-				data.KHEKNNFCAOI(b[i]);
+				data.KHEKNNFCAOI_Init(b[i]);
 				OMDCENKJNKP.Add(data);
 			}
 		}
 	}
 
-	public NDMAHKFPCAB NFEAMMJIMPG; // 0x7C
+	public NDMAHKFPCAB NFEAMMJIMPG_Result; // 0x7C
 	public List<int> CJNLEEEECOC; // 0x80
 
 	// RVA: 0x175AA5C Offset: 0x175AA5C VA: 0x175AA5C Slot: 12
@@ -77,7 +77,7 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 	// RVA: 0x175AB6C Offset: 0x175AB6C VA: 0x175AB6C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-		NFEAMMJIMPG = new NDMAHKFPCAB();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new NDMAHKFPCAB();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

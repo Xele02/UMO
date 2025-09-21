@@ -218,10 +218,10 @@ namespace XeApp.Game.Menu
 				GCIJNCFDNON_SceneInfo[] scenes = new GCIJNCFDNON_SceneInfo[2];
 				scenes[0] = new GCIJNCFDNON_SceneInfo();
 				scenes[1] = new GCIJNCFDNON_SceneInfo();
-				scenes[0].KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
-				scenes[1].KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 1, 0, 0, false, 0, 0);
+				scenes[0].KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				scenes[1].KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 1, 0, 0, false, 0, 0);
 				PopupRewardEv2DetailSetting s = new PopupRewardEv2DetailSetting();
-				s.TitleText = scenes[0].OPFGFINHFCE_SceneName;
+				s.TitleText = scenes[0].OPFGFINHFCE_name;
 				s.Scene = scenes;
 				s.WindowSize = SizeType.Large;
 				s.Buttons = new ButtonInfo[1]
@@ -249,10 +249,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDD1B0 Offset: 0xEDD1B0 VA: 0xEDD1B0
 		protected void OnSelectItem(Transform parent, HGFPAFPGIKG.CMEDMHFOFAH item)
 		{
-			if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_Start && 
-				EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && item.JOPPFEHKNFO_IsPickup)
+			if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_OpenTime && 
+				EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && item.JOPPFEHKNFO_Pickup)
 			{
-				OnItemSecret(parent, m_view.JOFAGCFNKIO_Start);
+				OnItemSecret(parent, m_view.JOFAGCFNKIO_OpenTime);
 			}
 			else
 			{

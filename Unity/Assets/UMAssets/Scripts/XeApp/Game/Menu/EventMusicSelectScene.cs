@@ -616,7 +616,7 @@ namespace XeApp.Game.Menu
 			EventMusicSelectSceneArgs argR = ArgsReturn as EventMusicSelectSceneArgs;
 			m_isEventChecked = false;
 			m_isEventTimeLimit = false;
-			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0;
+			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0_None;
 			m_eventCtrl = null;
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(arg != null)

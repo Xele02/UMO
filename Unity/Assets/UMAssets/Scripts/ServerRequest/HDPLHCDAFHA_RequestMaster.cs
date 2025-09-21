@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public delegate bool FAPJEIOBPDG(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool FAPJEIOBPDG(List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 [System.Obsolete("Use HDPLHCDAFHA_RequestMaster", true)]
 public class HDPLHCDAFHA{}

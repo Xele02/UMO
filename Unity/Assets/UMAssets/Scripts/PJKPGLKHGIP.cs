@@ -10,10 +10,10 @@ public class PJKPGLKHGIP
 	public int PAAFIOOKJIP_ReceivedSns; // 0x10
 
 	//// RVA: 0x937A2C Offset: 0x937A2C VA: 0x937A2C
-	//public bool LIPIIKKIKOI(int PPFNGGCBJKC) { }
+	//public bool LIPIIKKIKOI(int _PPFNGGCBJKC_id) { }
 
 	//// RVA: 0x937AFC Offset: 0x937AFC VA: 0x937AFC
-	//public void ANIJHEBLMGB(int PPFNGGCBJKC, int _BEBJKJKBOGH_Date) { }
+	//public void ANIJHEBLMGB(int _PPFNGGCBJKC_id, int _BEBJKJKBOGH_Date) { }
 
 	//// RVA: 0x937BB0 Offset: 0x937BB0 VA: 0x937BB0
 	public void JCHLONCMPAJ(string _CJEKGLGBIHF_path)
@@ -66,9 +66,9 @@ public class PJKPGLKHGIP
 					}
 				}
 			}
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns < PAAFIOOKJIP_ReceivedSns)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_recv_sns < PAAFIOOKJIP_ReceivedSns)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns = PAAFIOOKJIP_ReceivedSns;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_recv_sns = PAAFIOOKJIP_ReceivedSns;
 			}
 		}
 	}

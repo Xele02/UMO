@@ -5,17 +5,17 @@ public class PLLMDGNCGFL
 {
     public class OGGOJFIPCEP
     {
-        public long NPDKEIIMCDI; // 0x8
+        public long NPDKEIIMCDI_LastShowtime; // 0x8
 
         // RVA: 0xFEACCC Offset: 0xFEACCC VA: 0xFEACCC
-        // public void FPEKCEGADMG(BinaryWriter OMLLGAKPMAN) { }
+        // public void FPEKCEGADMG(BinaryWriter _OMLLGAKPMAN_writer) { }
 
         // // RVA: 0xFEA74C Offset: 0xFEA74C VA: 0xFEA74C
         // public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
     }
 
 	public const int JNCCCCPBDIC = 1;
-	public OGGOJFIPCEP KOGBMDOONFA = new OGGOJFIPCEP(); // 0x8
+	public OGGOJFIPCEP KOGBMDOONFA_Info = new OGGOJFIPCEP(); // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 
 	// RVA: 0xFEA1A8 Offset: 0xFEA1A8 VA: 0xFEA1A8
@@ -25,7 +25,7 @@ public class PLLMDGNCGFL
     }
 
 	// // RVA: 0xFEA27C Offset: 0xFEA27C VA: 0xFEA27C
-	// public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
+	// public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	// // RVA: 0xFEA284 Offset: 0xFEA284 VA: 0xFEA284
 	public void PCODDPDFLHK()
@@ -35,7 +35,7 @@ public class PLLMDGNCGFL
             FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open);
             BinaryReader br = new BinaryReader(fs);
             br.ReadInt32();
-            KOGBMDOONFA.NPDKEIIMCDI = br.ReadInt64();
+            KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime = br.ReadInt64();
             br.Close();
             br.Dispose();
             fs.Dispose();
@@ -53,7 +53,7 @@ public class PLLMDGNCGFL
             using(BinaryWriter bw = new BinaryWriter(fs))
             {
                 bw.Write(1);
-                bw.Write(KOGBMDOONFA.NPDKEIIMCDI);
+                bw.Write(KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime);
                 bw.Flush();
                 bw.Close();
             }

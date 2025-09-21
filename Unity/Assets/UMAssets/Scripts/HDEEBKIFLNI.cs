@@ -71,9 +71,9 @@ public class HDEEBKIFLNI
 	}
 
 	//// RVA: 0x1740FCC Offset: 0x1740FCC VA: 0x1740FCC
-	private void DJPGDJFEFFI_SetVersionValid(DGNPPLKNCGH_PlatformLink MKBOKLLDCFI, bool JKDJCFEBDHC)
+	private void DJPGDJFEFFI_SetVersionValid(DGNPPLKNCGH_PlatformLink MKBOKLLDCFI, bool _JKDJCFEBDHC_Enabled)
 	{
-		GJOFCDFLCGA_VersionValidByPlatform[(int)MKBOKLLDCFI] = JKDJCFEBDHC;
+		GJOFCDFLCGA_VersionValidByPlatform[(int)MKBOKLLDCFI] = _JKDJCFEBDHC_Enabled;
 	}
 
 	//// RVA: 0x1741018 Offset: 0x1741018 VA: 0x1741018

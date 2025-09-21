@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 			isShowingGuide = true;
 			yield return Co.R(TryTutorialCoroutine(CheckGameResultTutorialCondition, () => {
 				//0xB617DC
-				divaControl.RequestResultAnimStart((ResultScoreRank.Type)initParam.viewResultData.PENICOGGNLF_RankScore);
+				divaControl.RequestResultAnimStart((ResultScoreRank.Type)initParam.viewResultData.PENICOGGNLF_ScoreRank);
 				layoutPlayerRank.StartFinishGaugeAnim();
 				isShowingGuide = false;
 				layoutPlaylog.SetActiveHintButton(true);
@@ -549,13 +549,13 @@ namespace XeApp.Game.Menu
 								bool b9 = false;
 								if(initParam.viewResultData.DACPGGLFLJG_FullComboType != 0)
 								{
-									if(initParam.viewResultData.PENICOGGNLF_RankScore < 2)
+									if(initParam.viewResultData.PENICOGGNLF_ScoreRank < 2)
 										b9 = true;
 								}
 								bool b2 = false;
 								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 9)
 								{
-									if (initParam.viewResultData.PENICOGGNLF_RankScore < 2)
+									if (initParam.viewResultData.PENICOGGNLF_ScoreRank < 2)
 										b2 = true;
 								}
 								return b9 || b2;

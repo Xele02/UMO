@@ -18,7 +18,7 @@ public class OPKDHAODJOA
 	private NNDKLLAIINK LCIGLIDJILJ_Updater; // 0xC
 	private int NLGJBBGAOLH = 1; // 0x10
 	private int BLKIMNAILKK = 2; // 0x14
-	private int NNODMPKKCJH; // 0x18
+	private int NNODMPKKCJH_RequestId; // 0x18
 
 	public KJOKAECJKLE CMCKNKKCNDK_Status { get; private set; } // 0x1C CLCJNFNMNBH CNKGOPKANGF CHJGGLFGALP
 
@@ -32,8 +32,8 @@ public class OPKDHAODJOA
 		_ADKIDBJCAJA_action.LHGPAJGIAME_ResultTime = Time.realtimeSinceStartup;
 		_ADKIDBJCAJA_action.CFICLNJACCD_NumRetry = NLGJBBGAOLH;
 		_ADKIDBJCAJA_action.GJAEJFLLKGC_RetryTime = BLKIMNAILKK;
-		_ADKIDBJCAJA_action.CKOOCBJGHBI_RequestId = NNODMPKKCJH;
-		NNODMPKKCJH++;
+		_ADKIDBJCAJA_action.CKOOCBJGHBI_RequestId = NNODMPKKCJH_RequestId;
+		NNODMPKKCJH_RequestId++;
 		FCICFIAOLAM_RequestList.Add(_ADKIDBJCAJA_action);
 		return _ADKIDBJCAJA_action;
 	}
@@ -41,7 +41,7 @@ public class OPKDHAODJOA
 	//|
 	//|-RVA: 0x1AB6384 Offset: 0x1AB6384 VA: 0x1AB6384
 	//|-OPKDHAODJOA.IFFNCAFNEAG<MMCLJMPEFEP>
-	//|-OPKDHAODJOA.IFFNCAFNEAG<NFIMGIABIOI>
+	//|-OPKDHAODJOA.IFFNCAFNEAG<NFIMGIABIOI_GetBbsThreadComments>
 	//|-OPKDHAODJOA.IFFNCAFNEAG<object>
 	//*/
 

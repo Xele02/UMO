@@ -493,7 +493,7 @@ namespace XeApp.Game.Menu
 		{
 			m_layoutValSelect.HasAbility = m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel > 0;
 			ALEKLHIANJN a = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
-			m_layoutValSelect.SetAbility(a.OPFGFINHFCE_SkillName, a.CHHADJECKNL_GetLevel(), a.DMBDNIEEMCB_GetDesc(false));
+			m_layoutValSelect.SetAbility(a.OPFGFINHFCE_name, a.CHHADJECKNL_GetLevel(), a.DMBDNIEEMCB_GetDesc(false));
 		}
 
 		//// RVA: 0xBD2104 Offset: 0xBD2104 VA: 0xBD2104
@@ -502,7 +502,7 @@ namespace XeApp.Game.Menu
 			PNGOLKLFFLH valk = m_SeriesValkyrieList[SelectSeries][Select];
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IOAFPGDJCDH_ValkyrieTuneUp.IHAHBHEDIAK_SelectVfId = valk.GPPEFLKGGGJ_ValkyrieId;
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_ValkyrieName, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name, valk.KINFGHHNFCF_Atk.ToString(), valk.NONBCCLGBAO_Hit.ToString());
+			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_Name, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name, valk.KINFGHHNFCF_Atk.ToString(), valk.NONBCCLGBAO_hit.ToString());
 			ApplyAbility();
 			if(IsAbilityMax())
 			{
@@ -841,7 +841,7 @@ namespace XeApp.Game.Menu
 				{
 					m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
 					PIGBBNDPPJC e = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
-					string epName = e != null ? e.OPFGFINHFCE_Name : "";
+					string epName = e != null ? e.OPFGFINHFCE_name : "";
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					m_episodePop.SetEpisodeText(bk.GetMessageByLabel("costume_select_text_01"), string.Format(bk.GetMessageByLabel("costume_select_text_02"), epName));
 					m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
@@ -1058,7 +1058,7 @@ namespace XeApp.Game.Menu
 				if(!MenuScene.Instance.DirtyChangeScene)
 				{
 					PIGBBNDPPJC ep = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
-					string epName = ep != null ? ep.OPFGFINHFCE_Name : "";
+					string epName = ep != null ? ep.OPFGFINHFCE_name : "";
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if(ep == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK_EpisodeUnlocked)
 					{
@@ -1087,7 +1087,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_EpisodeList.Count; i++)
 			{
-				if (m_EpisodeList[i].KELFCMEOPPM_EpId == id)
+				if (m_EpisodeList[i].KELFCMEOPPM_EpisodeId == id)
 					return m_EpisodeList[i];
 			}
 			return null;

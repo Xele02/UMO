@@ -55,7 +55,7 @@ namespace XeApp.Game.Gacha
             m_name = GetCardName(item.JJBGOIMEIPF_ItemId);
             m_attrId = GetCardAttribute(item.JJBGOIMEIPF_ItemId);
             m_seriesId = GetCardSeries(item.JJBGOIMEIPF_ItemId);
-            m_isNew = item.JPIPENJGGDD_SceneMlt == 0;
+            m_isNew = item.JPIPENJGGDD_NumBoard == 0;
             m_isFeed = IsFeed(item.JJBGOIMEIPF_ItemId);
             m_spAnimId = -1;
             m_hasSpAnim = m_starNum > 3;

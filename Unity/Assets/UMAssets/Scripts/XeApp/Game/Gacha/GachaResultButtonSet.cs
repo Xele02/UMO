@@ -146,7 +146,7 @@ namespace XeApp.Game.Gacha
 		// RVA: 0x987E10 Offset: 0x987E10 VA: 0x987E10
 		public void SetTelopType(GCAHJLOGMCI.KNMMOMEHDON_GachaType selectMode, KBPDNHOKEKD_ProductId productData, string msg)
 		{
-            KBPDNHOKEKD_ProductId.KNEKLJHNHAK a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0;
+            KBPDNHOKEKD_ProductId.KNEKLJHNHAK a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None;
 			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_textTelop.text = "";
@@ -166,11 +166,11 @@ namespace XeApp.Game.Gacha
 			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3)
 			{
 				m_symbolButton.StartAnim("normal");
-				m_retryButton.SetConsume(productData.NPPGKNGIFGK_Price);
+				m_retryButton.SetConsume(productData.NPPGKNGIFGK_price);
 				m_layoutTelop.StartChildrenAnimGoStop("01");
 				m_textTelop.text = string.Format(bk.GetMessageByLabel("gacha_telop_04"), productData.HCMGHDNNJOM());
 			}
-			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0)
+			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None)
 			{
 				m_layoutTelop.StartChildrenAnimGoStop("02");
 			}

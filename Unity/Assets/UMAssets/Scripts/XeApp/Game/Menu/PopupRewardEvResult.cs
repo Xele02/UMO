@@ -46,12 +46,12 @@ namespace XeApp.Game.Menu
 					{
 						if(sceneData == null)
 							sceneData = new GCIJNCFDNON_SceneInfo();
-						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+						sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 					}
 					else
 					{
-						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemId, Item.MBJIFDBEDAC_Cnt, null);
+						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemId, Item.MBJIFDBEDAC_item_count, null);
 					}
 				}
 			}
@@ -289,14 +289,14 @@ namespace XeApp.Game.Menu
 				if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
 					IBJAKJJICBC ib = new IBJAKJJICBC();
-					ib.KHEKNNFCAOI(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					ib.KHEKNNFCAOI_Init(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
 					MusicName = ib.NEDBBJDAFBH_MusicName;
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
 				else if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{
 					IBJAKJJICBC ib = new IBJAKJJICBC();
-					ib.KHEKNNFCAOI(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					ib.KHEKNNFCAOI_Init(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
 					MusicName = ib.NEDBBJDAFBH_MusicName;
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 						scrollItem.Height = 104;
 						scrollItem.NeedPoint = m_setting.GetViewData.total_data_list[i].FIOIKMOIJGK_Point;
 						scrollItem.Item = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j];
-						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j].JOPPFEHKNFO_IsGold;
+						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j].JOPPFEHKNFO_Pickup;
 						scrollItem.ResourceType = 4;
 						m_scrollItemList.Add(scrollItem);
 					}
@@ -412,7 +412,7 @@ namespace XeApp.Game.Menu
 					scrollItem.Top = new Vector2((i / 2) * 480 + 10, -(f + (i % 2) * 108 + 4));
 					scrollItem.Height = 108;
 					scrollItem.Item = m_setting.GetViewData.rankingRewardList[i];
-					scrollItem.isGoldFrame = m_setting.GetViewData.rankingRewardList[i].JOPPFEHKNFO_IsGold;
+					scrollItem.isGoldFrame = m_setting.GetViewData.rankingRewardList[i].JOPPFEHKNFO_Pickup;
 					scrollItem.ResourceType = 3;
 					m_scrollItemList.Add(scrollItem);
 				}
@@ -564,7 +564,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1A7F6DC
 			ApplySetting(Type.CumulativePoint, parent, 0);
-			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
 			GameManager.Instance.ResetViewPlayerData();
 			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
 			{

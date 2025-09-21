@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 					SetLoaded();
 				});
 				m_divaIconDecoration.SetActive(true);
-				m_nameText.text = divaData.OPFGFINHFCE_Name;
+				m_nameText.text = divaData.OPFGFINHFCE_name;
 				m_nameText.alignment = UnityEngine.TextAnchor.MiddleLeft;
 				for(int i = 0; i < m_paramTexts.Length; i++)
 				{
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 				{
 					if(index < 1 && !m_isDisp2ndCenterSkill)
 					{
-						name = scene.PFHJFIHGCKP_CenterSkillName1;
+						name = scene.PFHJFIHGCKP_CenterSkillName;
 						desc = scene.IHLINMFMCDN_GetCenterSkillDesc(false);
 					}
 					else

@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		public void SetItem(GakuyaPresentListWindow.ItemInfo itemInfo)
 		{
 			m_itemInfo = itemInfo;
-			m_textName.text = itemInfo.m_presentData.OPFGFINHFCE_Name;
+			m_textName.text = itemInfo.m_presentData.OPFGFINHFCE_name;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textCount.text = string.Format(bk.GetMessageByLabel("gakuya_gift_stock_count"), itemInfo.m_presentData.GLHBKPNFLOP_Count);
 			SetTexture(itemInfo);
@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB74284 Offset: 0xB74284 VA: 0xB74284
 		private void SetTexture(GakuyaPresentListWindow.ItemInfo itemInfo)
 		{
-			int itemId = itemInfo.m_presentData.KIJAPOFAGPN_FullItemId;
+			int itemId = itemInfo.m_presentData.KIJAPOFAGPN_ItemId;
 			int index = itemInfo.m_index;
 			int presentId = itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId;
 			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture icon) =>
@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId == presentId)
 					{
-						if(m_itemInfo.m_presentData.KIJAPOFAGPN_FullItemId == itemId)
+						if(m_itemInfo.m_presentData.KIJAPOFAGPN_ItemId == itemId)
 						{
 							icon.Set(m_imagePresent);
 						}

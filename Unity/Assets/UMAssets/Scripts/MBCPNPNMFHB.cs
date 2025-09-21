@@ -6,7 +6,7 @@ using XeApp;
 using XeApp.Game.Common;
 using XeSys;
 
-public delegate void BODAGDPODNB(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN);
+public delegate void BODAGDPODNB(string HJLDBEJOMIO, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, bool EFDMHILHFPJ, bool OPEDAAIEOGN);
 public delegate bool LLKBLEFEGOO();
 
 public class MBCPNPNMFHB
@@ -55,10 +55,10 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2D92C Offset: 0xA2D92C VA: 0xA2D92C
-	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO INDDJNMPONH, IMCBBOAFION HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
+	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_Type, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
-		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA = INDDJNMPONH;
-		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(INDDJNMPONH);
+		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA_index = _INDDJNMPONH_Type;
+		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(_INDDJNMPONH_Type);
 		if(l != null)
 		{
 			bool DBJECEMOJON = true;
@@ -67,9 +67,9 @@ public class MBCPNPNMFHB
 			{
 				//0xA2E200
 				LKFOCCGOINN_GetURL res = NHECPMNKEFK as LKFOCCGOINN_GetURL;
-				LBONAHCGKBJ_UrlWithToken[(int)OIPCCBHIKIA] = res.NFEAMMJIMPG_Result.MCHAINJKMEB_UrlWithToken;
-				KNIKOPJKPCI_GetTime[(int)OIPCCBHIKIA] = Utility.GetCurrentUnixTime();
-				OIPOPJCPDPC_DisplayUrlCb(LBONAHCGKBJ_UrlWithToken[(int)OIPCCBHIKIA], HIDFAIBOHCC_OnSuccess, DBJECEMOJON, GAJMFACKAGL);
+				LBONAHCGKBJ_UrlWithToken[(int)OIPCCBHIKIA_index] = res.NFEAMMJIMPG_Result.MCHAINJKMEB_url_with_token;
+				KNIKOPJKPCI_GetTime[(int)OIPCCBHIKIA_index] = Utility.GetCurrentUnixTime();
+				OIPOPJCPDPC_DisplayUrlCb(LBONAHCGKBJ_UrlWithToken[(int)OIPCCBHIKIA_index], _HIDFAIBOHCC_OnSuccess, DBJECEMOJON, GAJMFACKAGL);
 			};
 			l.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 			{
@@ -86,31 +86,31 @@ public class MBCPNPNMFHB
 				}
 				else
 				{
-					HIDFAIBOHCC_OnSuccess();
+					_HIDFAIBOHCC_OnSuccess();
 				}
 			};
 			return;
 		}
-		HIDFAIBOHCC_OnSuccess();
+		_HIDFAIBOHCC_OnSuccess();
 	}
 
 	//// RVA: 0xA21E3C Offset: 0xA21E3C VA: 0xA21E3C
-	public void FLLLPBIECCP(string OKDLGFMLLFH, IMCBBOAFION HIDFAIBOHCC, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public void FLLLPBIECCP(string _OKDLGFMLLFH_Templ, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		AMFBEGANJGC_GetOriginalTemplateURL data = new AMFBEGANJGC_GetOriginalTemplateURL();
-		data.COHBIBEAMAF = OKDLGFMLLFH;
+		data.COHBIBEAMAF = _OKDLGFMLLFH_Templ;
 		data.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0xA2E580
 			AMFBEGANJGC_GetOriginalTemplateURL r = NHECPMNKEFK as AMFBEGANJGC_GetOriginalTemplateURL;
-			OIPOPJCPDPC_DisplayUrlCb(r.NFEAMMJIMPG_Result.MCHAINJKMEB_UrlWithToken, HIDFAIBOHCC, true, GAJMFACKAGL);
+			OIPOPJCPDPC_DisplayUrlCb(r.NFEAMMJIMPG_Result.MCHAINJKMEB_url_with_token, _HIDFAIBOHCC_OnSuccess, true, GAJMFACKAGL);
 		};
 		data.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0xA2E704
 			if(NHECPMNKEFK.CJMFJOMECKI_ErrorId != SakashoErrorId.NETWORK_ERROR && NHECPMNKEFK.CJMFJOMECKI_ErrorId != SakashoErrorId.INVALID_PLAYER_TOKEN && NHECPMNKEFK.CJMFJOMECKI_ErrorId != SakashoErrorId.INACTIVE_PLAYER_DEVICE)
 			{
-				HIDFAIBOHCC();
+				_HIDFAIBOHCC_OnSuccess();
 			}
 			else
 			{
@@ -121,7 +121,7 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2DE68 Offset: 0xA2DE68 VA: 0xA2DE68
-	public void PBIKAGIOOHC(string APLKCOFFHKN, IMCBBOAFION HIDFAIBOHCC, IMCBBOAFION _AOCANKOMKFG_OnError)
+	public void PBIKAGIOOHC(string APLKCOFFHKN, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
 		AIOILMKDPOG_GetInformationDetailURL req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new AIOILMKDPOG_GetInformationDetailURL());
 		req.APLKCOFFHKN = APLKCOFFHKN;
@@ -129,7 +129,7 @@ public class MBCPNPNMFHB
 		{
 			//0xA2E7AC
 			AIOILMKDPOG_GetInformationDetailURL r = NHECPMNKEFK as AIOILMKDPOG_GetInformationDetailURL;
-			OIPOPJCPDPC_DisplayUrlCb(r.NFEAMMJIMPG_Result.MCHAINJKMEB_UrlWithToken, HIDFAIBOHCC, true, GAJMFACKAGL);
+			OIPOPJCPDPC_DisplayUrlCb(r.NFEAMMJIMPG_Result.MCHAINJKMEB_url_with_token, _HIDFAIBOHCC_OnSuccess, true, GAJMFACKAGL);
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
@@ -142,15 +142,15 @@ public class MBCPNPNMFHB
 			}
 			else
 			{
-				HIDFAIBOHCC();
+				_HIDFAIBOHCC_OnSuccess();
 			}
 		};
 	}
 
 	//// RVA: 0xA2DB5C Offset: 0xA2DB5C VA: 0xA2DB5C
-	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO INDDJNMPONH)
+	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_Type)
 	{
-		switch(INDDJNMPONH)
+		switch(_INDDJNMPONH_Type)
 		{
 			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
 				return new KNOINKGFINE_GetInformationURL();
@@ -199,11 +199,11 @@ public class MBCPNPNMFHB
 		bool BEKAMBBOLBO_Done = false;
 		string HPEPNAGOHEN = null;
 		SakashoError DOGDHKIEBJA_Error = null;
-		OIDFKCIECJN = SakashoSupportSite.GetCommonTemplateURL(s, (string IDLHJIOMJBK) =>
+		OIDFKCIECJN = SakashoSupportSite.GetCommonTemplateURL(s, (string _IDLHJIOMJBK_Data) =>
 		{
 			//0xA2E9C4
 			BEKAMBBOLBO_Done = true;
-			HPEPNAGOHEN = IDLHJIOMJBK;
+			HPEPNAGOHEN = _IDLHJIOMJBK_Data;
 		}, (SakashoError _CNAIDEAFAAM_Error) =>
 		{
 			//0xA2E9D4
@@ -238,7 +238,7 @@ public class MBCPNPNMFHB
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
 				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA_Error.getErrorId().ToString());
-				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 				{
 					//0xA2E9FC
 					BEKAMBBOLBO_Done = true;
@@ -271,7 +271,7 @@ public class MBCPNPNMFHB
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
 			setting.Text = JpStringLiterals.StringLiteral_12459;
-			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0xA2E9E4
 				BEKAMBBOLBO_Done = true;
@@ -282,5 +282,5 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2E140 Offset: 0xA2E140 VA: 0xA2E140
-	//private bool ODKJMFJIMMA(SakashoErrorId PPFNGGCBJKC) { }
+	//private bool ODKJMFJIMMA(SakashoErrorId _PPFNGGCBJKC_id) { }
 }

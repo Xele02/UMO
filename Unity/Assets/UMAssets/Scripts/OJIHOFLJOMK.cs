@@ -11,9 +11,9 @@ public class OJIHOFLJOMK
 	private int JHGGFNECJOH = -1; // 0x8
 	private AndroidJavaObject MNAADDLICIB; // 0xC
 	private bool PMDGOAEICPG; // 0x10
-	private static string LJNAKDMILMC = "key"; // 0x0
+	private static string LJNAKDMILMC_key = "key"; // 0x0
 
-	public bool Unused() { return JHGGFNECJOH == -1 && LJNAKDMILMC == null; }
+	public bool Unused() { return JHGGFNECJOH == -1 && LJNAKDMILMC_key == null; }
 
 	//public bool KHIPIEBAFFL { get; }
 
@@ -24,7 +24,7 @@ public class OJIHOFLJOMK
 	//private static string CKFBNINKAPG(int IGHPMLOFGMO) { }
 
 	//// RVA: 0x148D8E4 Offset: 0x148D8E4 VA: 0x148D8E4
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
 	{
 		#if UNITY_ANDROID
 		MNAADDLICIB = new AndroidJavaObject("jp.co.xeen.xeapp.LocalNotification", Array.Empty<object>());
@@ -35,23 +35,23 @@ public class OJIHOFLJOMK
 	//private void BJOPNMIFIIM() { }
 
 	//// RVA: 0x148DA08 Offset: 0x148DA08 VA: 0x148DA08
-	//public void KNPBADBCOLO(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string LBNFBJFBDDE, string ADCMNODJBGJ, string LJGOOOMOMMA) { }
+	//public void KNPBADBCOLO(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string LBNFBJFBDDE, string ADCMNODJBGJ, string _LJGOOOMOMMA_message) { }
 
 	//// RVA: 0x148DD70 Offset: 0x148DD70 VA: 0x148DD70
-	public void LKCPCCANJFB_SendNotif(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string _ADCMNODJBGJ_Title, string LJGOOOMOMMA, int _EAHPLCJMPHD_PId, string JJCAHFAOPNI/* = "png"*/)
+	public void LKCPCCANJFB_SendNotif(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string _ADCMNODJBGJ_Title, string _LJGOOOMOMMA_message, int _EAHPLCJMPHD_PId, string JJCAHFAOPNI/* = "png"*/)
 	{
 		if(MNAADDLICIB != null)
 		{
 			/*if(false)
 			{ // test 30 sec notif
 				DateTime date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
-				UnityEngine.Debug.LogError("Send notif "+PEJIPAFKHKM+" "+date.ToLongDateString()+" "+date.ToLongTimeString()+" "+NNGBINEKMNO+" "+ADCMNODJBGJ+" "+LJGOOOMOMMA+" "+LEAIFBMIEIG);
+				UnityEngine.Debug.LogError("Send notif "+PEJIPAFKHKM+" "+date.ToLongDateString()+" "+date.ToLongTimeString()+" "+NNGBINEKMNO+" "+ADCMNODJBGJ+" "+_LJGOOOMOMMA_message+" "+LEAIFBMIEIG);
 				PEJIPAFKHKM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 30;
 				date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
 				UnityEngine.Debug.LogError(date.ToLongDateString()+" "+date.ToLongTimeString());
 			}*/
 			MNAADDLICIB.CallStatic("send", new object[7] {
-				PEJIPAFKHKM, NNGBINEKMNO, "", _ADCMNODJBGJ_Title, LJGOOOMOMMA, "", LEAIFBMIEIG
+				PEJIPAFKHKM, NNGBINEKMNO, "", _ADCMNODJBGJ_Title, _LJGOOOMOMMA_message, "", LEAIFBMIEIG
 			});
 		}
 	}

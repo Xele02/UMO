@@ -152,7 +152,7 @@ namespace XeApp
 				return;
 			}
 			viewIntimacyData = new JJOELIOGMKK_DivaIntimacyInfo();
-			viewIntimacyData.KHEKNNFCAOI(Setting.viewDecoItemData.FPCGPGJOKNH_CharaId);
+			viewIntimacyData.KHEKNNFCAOI_Init(Setting.viewDecoItemData.FPCGPGJOKNH_CharaId);
 			viewIntimacyData.HCDGELDHFHB(false);
 		}
 

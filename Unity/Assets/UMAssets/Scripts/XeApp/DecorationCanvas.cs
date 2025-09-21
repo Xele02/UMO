@@ -329,10 +329,10 @@ namespace XeApp
 			if(item.HAJKNHNAIKL_ItemId != 0)
 			{
 				KDKFHGHGFEK data = new KDKFHGHGFEK();
-				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_ItemId));
+				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_ItemId));
 				DecorationItemBaseSetting s = new DecorationItemBaseSetting(data);
 				s.InitPosition.x = item.GHPLINIACBB_x;
-				s.InitPosition.y = item.PMBEODGMMBB_PosY;
+				s.InitPosition.y = item.PMBEODGMMBB_y;
 				s.InitOrder = item.BNHOEFJAAKK_Prio;
 				s.InitFlip = item.BDEEIPPDCLE_Rvs;
 				s.InitWord = item.BEJGNPAAKNB_Word;
@@ -425,7 +425,7 @@ namespace XeApp
 		private void TryInstall(int itemId, DecorationConstants.Attribute.Type attr)
 		{
 			KDKFHGHGFEK data = new KDKFHGHGFEK();
-			data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId));
+			data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId));
 			string str = DecorationConstants.GetItemBundleName(data, false, attr);
 			if(str != "")
 			{
@@ -859,7 +859,7 @@ namespace XeApp
 					setting.IsOverlay = true;
 					setting.InitPosition = r.center;
 					setting.InitOrder = InitSortOrder(setting.PriorityControl);
-					resourceId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp, item.PPFNGGCBJKC_Id);
+					resourceId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp, item.PPFNGGCBJKC_id);
 				}
             }
 		}

@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15D4E58 Offset: 0x15D4E58 VA: 0x15D4E58
 		public void PopupSetting()
 		{
-			int offerId = m_OfferView.PPFNGGCBJKC;
+			int offerId = m_OfferView.PPFNGGCBJKC_id;
             BOPFPIHGJMD.MLBMHDCCGHI offerType = m_OfferView.FGHGMHPNEMG_Type;
 			OCMJNBIFJNM_Offer.JPOHOLBBFGP of = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP _) =>
 			{
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 				m_PopLayout.StartChildrenAnimGoStop(cnt.ToString("D2"));
-				SetTimeWatcher(of.NCDHKKCCGOD_Edt);
+				SetTimeWatcher(of.NCDHKKCCGOD_edt);
 				m_plantoonName.text = m_view.NPMKEEANPBE(of.OIOECMEEFKJ_VFp > 0 ? of.OIOECMEEFKJ_VFp : 1);
 			}
         }

@@ -73,7 +73,7 @@ namespace XeApp
 		public virtual bool IsLoaded { get { return m_isLoaded; } private set { m_isLoaded = value; } } //0x1AC3B3C 0x1AD02C0
 		protected bool UseRareBrakePosterAnim { get
 		{
-			if(!m_decoCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim)
+			if(!m_decoCanvas.DecoLocalSaveData.KOGBMDOONFA_Info.HEKJKLJDHNN_EnablePosterAnim)
 				return false;
 			return ViewData.OHAMGNMKOII();
 		} } //0x1AD02C8
@@ -134,14 +134,14 @@ namespace XeApp
 				return true;
 			} } //0x1AD07E4
 		public bool CanKira { get {
-				if(m_viewDecoItemData.PPFNGGCBJKC_Id != 0)
+				if(m_viewDecoItemData.PPFNGGCBJKC_id != 0)
 				{
 					return m_viewDecoItemData.FMGBBKHJDEC_CanKira;
 				}
 				return false;
 			} } //0x1AD085C
 		public KDKFHGHGFEK ViewData { get {
-				//m_viewDecoItemData.PPFNGGCBJKC = ;
+				//m_viewDecoItemData.PPFNGGCBJKC_id = ;
 				return m_viewDecoItemData;
 			} } //0x1AC85C4
 		public bool Lock { get; set; } // 0x15
@@ -239,7 +239,7 @@ namespace XeApp
 		//// RVA: 0x1AC41EC Offset: 0x1AC41EC VA: 0x1AC41EC Slot: 5
 		protected virtual Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
-			m_viewDecoItemData.KHEKNNFCAOI(id, itemCategory);
+			m_viewDecoItemData.KHEKNNFCAOI_Init(id, itemCategory);
 			return null;
 		}
 
@@ -684,7 +684,7 @@ namespace XeApp
 		//// RVA: 0x1AC8094 Offset: 0x1AC8094 VA: 0x1AC8094 Slot: 27
 		public virtual void SetInfo(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD info)
 		{
-			Position = new Vector2(info.GHPLINIACBB_x, info.PMBEODGMMBB_PosY);
+			Position = new Vector2(info.GHPLINIACBB_x, info.PMBEODGMMBB_y);
 			SortingOrder = info.BNHOEFJAAKK_Prio;
 			Flip(info.BDEEIPPDCLE_Rvs);
 			m_setting.InitWord = info.BEJGNPAAKNB_Word;

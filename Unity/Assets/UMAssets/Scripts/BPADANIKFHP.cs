@@ -9,7 +9,7 @@ public class BPADANIKFHP
         "rarity_1", "rarity_2", "rarity_3", "rarity_4", "rarity_5", "rarity_6"
     }; // 0x0
 	public int EAJCFBCHIFB_RarityCrypted = FBGGEFFJJHB_xor; // 0x8
-	public string MMOJHIPAAIK; // 0xC
+	public string MMOJHIPAAIK_probability; // 0xC
 	public List<KFKCGKGKBJL> HBHMAKNGKFK_Items; // 0x10
 
 	public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18EE244 OEEHBGECGKL 0x18EE258 GHLMHLJJBIG

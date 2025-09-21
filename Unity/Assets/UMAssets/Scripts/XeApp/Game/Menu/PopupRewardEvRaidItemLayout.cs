@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 			string s2 = "";
 			if(!string.IsNullOrEmpty(s))
 			{
-				s2 = info.MBJIFDBEDAC_Cnt.ToString() + s;
+				s2 = info.MBJIFDBEDAC_item_count.ToString() + s;
 			}
 			m_ItemCountText.text = s2;
 			m_medamaLayout.StartSiblingAnimGoStop(isPickup ? "02" : "01", isPickup ? "02" : "01");

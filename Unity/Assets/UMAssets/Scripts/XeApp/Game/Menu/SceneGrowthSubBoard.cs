@@ -65,43 +65,43 @@ namespace XeApp.Game.Menu
 					{
 						NLNDLEEJOFD n2 = d2.PDKGMFHIFML_Panels[j];
 						int v3 = 0;
-						int v4 = n2.JBGEEPFKIGG;
+						int v4 = n2.JBGEEPFKIGG_Value;
 						if (v4 == -1)
 						{
 							v4 = n.JJMEIHLNPDI(sceneData.JGJFIJOCPAG_SceneAttr, i);
-							v3 = n.JBGEEPFKIGG;
+							v3 = n.JBGEEPFKIGG_Value;
 						}
 						if(v4 > 0)
 						{
 							AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[v4 - 1];
-							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
-							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].saveIndex = (short)idx;
-							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].type = SquareType.Panel;
-							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
-							if(a_.INDDJNMPONH_StatType > 1 && a_.INDDJNMPONH_StatType < 5)
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].id = a_.INDDJNMPONH_Type;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].saveIndex = (short)idx;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].type = SquareType.Panel;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
+							if(a_.INDDJNMPONH_Type > 1 && a_.INDDJNMPONH_Type < 5)
 							{
 								if(v3 == 0)
 								{
 									//LAB_013653c8
-									v3 = a_.MKNDAOHGOAK;
+									v3 = a_.MKNDAOHGOAK_weight;
 								}
 								else
 								{
-									if(a_.MKNDAOHGOAK > 0)
+									if(a_.MKNDAOHGOAK_weight > 0)
 									{
-										v3 = a_.MKNDAOHGOAK;
+										v3 = a_.MKNDAOHGOAK_weight;
 									}
 								}
 								//LAB_0136544c
-								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].value = v3;
+								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].value = v3;
 							}
 							else
 							{
-								if(a_.INDDJNMPONH_StatType == 21 || a_.INDDJNMPONH_StatType == 19)
+								if(a_.INDDJNMPONH_Type == 21 || a_.INDDJNMPONH_Type == 19)
 									v3 = 1;
-								else if(a_.INDDJNMPONH_StatType == 18)
-									v3 = a_.MKNDAOHGOAK;
-								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].value = v3;
+								else if(a_.INDDJNMPONH_Type == 18)
+									v3 = a_.MKNDAOHGOAK_weight;
+								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_y].value = v3;
 							}
 							idx++;
 						}
@@ -112,12 +112,12 @@ namespace XeApp.Game.Menu
 				{
 					//L664
 					NLNDLEEJOFD n2 = d2.PDKGMFHIFML_Panels[d2.PDKGMFHIFML_Panels.Count - 1];
-					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG - 1];
-					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
-					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_Row].saveIndex = (short)v1;
-					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_Row].type = SquareType.Panel;
-					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_Row].value = a_.MKNDAOHGOAK;
-					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_Row].isOpen = sceneData.MCDPPBBLDKA(v1) > 0;
+					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG_Value - 1];
+					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_y].id = a_.INDDJNMPONH_Type;
+					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_y].saveIndex = (short)v1;
+					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_y].type = SquareType.Panel;
+					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_y].value = a_.MKNDAOHGOAK_weight;
+					m_boardSquareList[m_boardSquareList.Count - 1][n2.PMBEODGMMBB_y].isOpen = sceneData.MCDPPBBLDKA(v1) > 0;
 				}
 				int v3_ = 0;
 				for(int i = 0, idx2 = 0; i <= b; i++)
@@ -128,20 +128,20 @@ namespace XeApp.Game.Menu
 					for (int j = 0; j < d2.ADPJCNHAJPC_Roads.Count - 1; j++, idx2++)
 					{
 						NLNDLEEJOFD n2 = d2.ADPJCNHAJPC_Roads[j];
-						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG - 1];
+						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG_Value - 1];
 						if(v3_ + n2.GHPLINIACBB_x + 1 < m_boardSquareList.Count)
 						{
-							if(a_.INDDJNMPONH_StatType != 16)
+							if(a_.INDDJNMPONH_Type != 16)
 							{
-								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].type == SquareType.None)
+								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_y].type == SquareType.None)
 									continue;
 							}
-							if(m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].type != SquareType.Panel)
+							if(m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_y].type != SquareType.Panel)
 							{
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].isOpen = m_boardSquareList[v3_ + n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].isOpen;
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].id = n2.JBGEEPFKIGG - 2;
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].saveIndex = (short)(idx2);
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType != 16 ? SquareType.Road : SquareType.Start;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_y].isOpen = m_boardSquareList[v3_ + n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_y].isOpen;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_y].id = n2.JBGEEPFKIGG_Value - 2;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_y].saveIndex = (short)(idx2);
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_y].type = a_.INDDJNMPONH_Type != 16 ? SquareType.Road : SquareType.Start;
 							}
 						}
 					}
@@ -168,30 +168,30 @@ namespace XeApp.Game.Menu
 				{
 					int idx = j % (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1);
 					NLNDLEEJOFD n = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[idx];
-					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
+					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_Value - 1];
 					int x = (j / col) * col + n.GHPLINIACBB_x;
-					m_boardSquareList[x][n.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
-					m_boardSquareList[x][n.PMBEODGMMBB_Row].saveIndex = (short)j;
-					m_boardSquareList[x][n.PMBEODGMMBB_Row].type = SquareType.Panel;
-					m_boardSquareList[x][n.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(j) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
-					if(a_.INDDJNMPONH_StatType == 21 || a_.INDDJNMPONH_StatType == 19)
+					m_boardSquareList[x][n.PMBEODGMMBB_y].id = a_.INDDJNMPONH_Type;
+					m_boardSquareList[x][n.PMBEODGMMBB_y].saveIndex = (short)j;
+					m_boardSquareList[x][n.PMBEODGMMBB_y].type = SquareType.Panel;
+					m_boardSquareList[x][n.PMBEODGMMBB_y].isOpen = sceneData.OIEHPHINMIO(j) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
+					if(a_.INDDJNMPONH_Type == 21 || a_.INDDJNMPONH_Type == 19)
 					{
-						m_boardSquareList[x][n.PMBEODGMMBB_Row].value = 1;
+						m_boardSquareList[x][n.PMBEODGMMBB_y].value = 1;
 					}
-					else if(a_.INDDJNMPONH_StatType == 18)
+					else if(a_.INDDJNMPONH_Type == 18)
 					{
-						m_boardSquareList[x][n.PMBEODGMMBB_Row].value = a_.MKNDAOHGOAK;
+						m_boardSquareList[x][n.PMBEODGMMBB_y].value = a_.MKNDAOHGOAK_weight;
 					}
 				}
 				if(a < sceneData.JPIPENJGGDD_NumBoard)
 				{
 					NLNDLEEJOFD n = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1];
-					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
-					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
-					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_Row].saveIndex = (short)cnt2;
-					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_Row].type = SquareType.Panel;
-					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_Row].value = a_.MKNDAOHGOAK;
-					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_Row].isOpen = sceneData.MCDPPBBLDKA(cnt2) > 0;
+					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_Value - 1];
+					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_y].id = a_.INDDJNMPONH_Type;
+					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_y].saveIndex = (short)cnt2;
+					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_y].type = SquareType.Panel;
+					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_y].value = a_.MKNDAOHGOAK_weight;
+					m_boardSquareList[m_boardSquareList.Count - 1][n.PMBEODGMMBB_y].isOpen = sceneData.MCDPPBBLDKA(cnt2) > 0;
 				}
 				{
 					NLNDLEEJOFD n = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2];
@@ -199,21 +199,21 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < x; i++)
 					{
 						NLNDLEEJOFD n2 = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[i % (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1)];
-						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG - 1];
+						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG_Value - 1];
 						int x2 = (i / (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1) * n.GHPLINIACBB_x + n2.GHPLINIACBB_x);
 						if(x2 + 1 < m_boardSquareList.Count)
 						{
-							if(a_.INDDJNMPONH_StatType != 16)
+							if(a_.INDDJNMPONH_Type != 16)
 							{
-								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].type == 0)
+								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_y].type == 0)
 									continue;
 							}
-							if(m_boardSquareList[x2][n2.PMBEODGMMBB_Row].type != SquareType.Panel)
+							if(m_boardSquareList[x2][n2.PMBEODGMMBB_y].type != SquareType.Panel)
 							{
-								m_boardSquareList[x2][n2.PMBEODGMMBB_Row].isOpen = m_boardSquareList[x2 + 1][n2.PMBEODGMMBB_Row].isOpen;
-								m_boardSquareList[x2][n2.PMBEODGMMBB_Row].id = n2.JBGEEPFKIGG - 2;
-								m_boardSquareList[x2][n2.PMBEODGMMBB_Row].saveIndex = (short)i;
-								m_boardSquareList[x2][n2.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType == 16 ? SquareType.Start : SquareType.Road;
+								m_boardSquareList[x2][n2.PMBEODGMMBB_y].isOpen = m_boardSquareList[x2 + 1][n2.PMBEODGMMBB_y].isOpen;
+								m_boardSquareList[x2][n2.PMBEODGMMBB_y].id = n2.JBGEEPFKIGG_Value - 2;
+								m_boardSquareList[x2][n2.PMBEODGMMBB_y].saveIndex = (short)i;
+								m_boardSquareList[x2][n2.PMBEODGMMBB_y].type = a_.INDDJNMPONH_Type == 16 ? SquareType.Start : SquareType.Road;
 							}
 						}
 					}
@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 					{
 						m_boardSquareList[j][k].isOpen = m_sceneData.OIEHPHINMIO(m_boardSquareList[j][k].saveIndex) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 						AFIFDLOAKGI a2 = GetPanelItem(m_boardSquareList[j][k].saveIndex);
-						if (a2.INDDJNMPONH_StatType == 20)
+						if (a2.INDDJNMPONH_Type == 20)
 						{
 							m_boardSquareList[j][k].isPossible = IsPossiblePanel(j, k);
 							m_boardSquareList[j][k].isOpen = m_sceneData.MCDPPBBLDKA(m_boardSquareList[j][k].saveIndex) > 0;
@@ -303,9 +303,9 @@ namespace XeApp.Game.Menu
 			NLNDLEEJOFD n = m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2];
 			NLNDLEEJOFD n2 = m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads[m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads.Count - 2];
 			int cnt = Mathf.Max(n.GHPLINIACBB_x, n2.GHPLINIACBB_x);
-			int a = m_sceneData.IELENGDJPHF;
+			int a = m_sceneData.IELENGDJPHF_Ulk;
 			int b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(dbScene.EKLIPGELKCL_Rarity, dbScene.MCCIFLKCNKO_Feed);
-			if (b < m_sceneData.IELENGDJPHF)
+			if (b < m_sceneData.IELENGDJPHF_Ulk)
 				a = b;
 			int a2 = a - 1;
 			int d = 0;
@@ -326,10 +326,10 @@ namespace XeApp.Game.Menu
 						c = cnt2;
 					d = c;
 				}
-				if (m_sceneData.IELENGDJPHF <= b)
+				if (m_sceneData.IELENGDJPHF_Ulk <= b)
 					d -= c;
 			}
-			else if (b < m_sceneData.IELENGDJPHF)
+			else if (b < m_sceneData.IELENGDJPHF_Ulk)
 				d = a2 * cnt;
 			else
 				d = (a - 2) * cnt;

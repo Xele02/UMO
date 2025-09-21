@@ -697,13 +697,13 @@ namespace XeApp.Game.Menu
 				if(l[i].BFINGCJHOHI_Count > 0)
 				{
 					res.Add(new LayoutDecoCustomWindow01.SelectItemData() {
-						id = l[i].PPFNGGCBJKC,
+						id = l[i].PPFNGGCBJKC_id,
 						type = LayoutDecoCustomWindow01.SelectItemType.Chara,
 						text = null,
 						series = (SeriesAttr.Type)l[i].CPKMLLNADLJ_Serie,
 						isShopProduct = false,
 						charaId = l[i].IDELKEKDIFD_CharaId,
-						charaType = l[i].INDDJNMPONH,
+						charaType = l[i].INDDJNMPONH_Type,
 						emotion = l[i].BEHMEDMNJMC_EmotionId,
 						IsNew = false,
 						tabCategory = l[i].BEHMEDMNJMC_EmotionId,
@@ -723,20 +723,20 @@ namespace XeApp.Game.Menu
 				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif[i];
 				if(saveStamp.BFINGCJHOHI_Count > 0)
 				{
-					int itemid = saveStamp.PPFNGGCBJKC_Id;
+					int itemid = saveStamp.PPFNGGCBJKC_id;
 					IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbStamp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 					{
 						//0x158C7CC
-						return item.PPFNGGCBJKC == itemid;
+						return item.PPFNGGCBJKC_id == itemid;
 					});
 					res.Add(new LayoutDecoCustomWindow01.SelectItemData()
 					{
-						id = dbStamp.PPFNGGCBJKC,
+						id = dbStamp.PPFNGGCBJKC_id,
 						type = LayoutDecoCustomWindow01.SelectItemType.Serif,
 						text = null,
 						series = (SeriesAttr.Type) dbStamp.CPKMLLNADLJ_Serie,
 						isShopProduct = false,
-						charaId = dbStamp.JBFLEDKDFCO,
+						charaId = dbStamp.JBFLEDKDFCO_CId,
 						charaType = 0,
 						emotion = 0,
 						IsNew = false,
@@ -764,17 +764,17 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				List<FJGOKILCBJA> l2 = a.MHKCPJDNJKI.FindAll((FJGOKILCBJA item) =>
+				List<FJGOKILCBJA> l2 = a.MHKCPJDNJKI_products.FindAll((FJGOKILCBJA item) =>
 				{
 					//0x158C810
-					return category == EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemFullId);
+					return category == EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemId);
 				});
 				List<FJGOKILCBJA> l3 = l2.FindAll((FJGOKILCBJA item) =>
 				{
 					//0x158C8CC
 					if(item.EAIJAAEKDAB_GetNumRemain() != 0)
 					{
-						return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemFullId), null) == 0;
+						return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemId), null) == 0;
 					}
 					return false;
 				});
@@ -784,20 +784,20 @@ namespace XeApp.Game.Menu
 					data.series = SeriesAttr.Type.None;
 					data.tabCategory = 0;
 					data.charaId = 0;
-					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(l3[i].KIJAPOFAGPN_ItemFullId);
+					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(l3[i].KIJAPOFAGPN_ItemId);
 					if(id > 0)
 					{
 						if(category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 						{
 							IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[id - 1];
-							data.charaId = dbItem.JBFLEDKDFCO;
+							data.charaId = dbItem.JBFLEDKDFCO_CId;
 							data.tabCategory = dbItem.DMEDKJPOLCH_Category;
 							data.series = (SeriesAttr.Type)dbItem.CPKMLLNADLJ_Serie;
 						}
 						else if(category == EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara)
 						{
 							IHFIAFDLAAK_DecoStamp.MFHKPMPJGHC dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[id - 1];
-							data.charaId = dbItem.JBFLEDKDFCO_CharaId;
+							data.charaId = dbItem.JBFLEDKDFCO_CId;
 							data.tabCategory = dbItem.ALAEHBKAEPB;
 						}
 					}
@@ -842,7 +842,7 @@ namespace XeApp.Game.Menu
 				{
 					if(targetId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
 					{
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_CharaId;
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_CId;
 					}
 				}
 			}

@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			});
 			m_commonText[0].text = "";
 			m_commonText[2].text = GameMessageManager.GetSceneCardName(sceneData);
-			UpdateStatus(sceneData.CMCKNKKCNDK_Status, sceneData.MJBODMOLOBC_Luck);
+			UpdateStatus(sceneData.CMCKNKKCNDK_Status, sceneData.MJBODMOLOBC_luck);
 			for(int i = 0; i < 5; i++)
 			{
 				m_skillLevel[i].alignment = TextAnchor.MiddleCenter;
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_storyButton.Hidden = false;
-				m_eventStoryData.KHEKNNFCAOI_InitFromEventId(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
+				m_eventStoryData.KHEKNNFCAOI_Init(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
 				m_storyNewLayout.StartChildrenAnimGoStop("02");
 				bool disabled = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)
@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
 					{
 						disabled = false;
-						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
+						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_Id))
 						{
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
 						}
@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 					if(skill.HEKHODDJHAO_P1 != 0)
 					{
                         KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.HEKHODDJHAO_P1 - 1];
-						if(effect.KCOHMHFBDKF_ValueByLevel[before - 1] != effect.KCOHMHFBDKF_ValueByLevel[after - 1])
+						if(effect.KCOHMHFBDKF_Value1[before - 1] != effect.KCOHMHFBDKF_Value1[after - 1])
 						{
 							l.Add("[v1]");
 						}
@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 					if(skill.AKGNPLBDKLN_P2 != 0)
 					{
                         KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.AKGNPLBDKLN_P2 - 1];
-						if(effect.KCOHMHFBDKF_ValueByLevel[before - 1] != effect.KCOHMHFBDKF_ValueByLevel[after - 1])
+						if(effect.KCOHMHFBDKF_Value1[before - 1] != effect.KCOHMHFBDKF_Value1[after - 1])
 						{
 							l.Add("[v2]");
 						}
@@ -367,8 +367,8 @@ namespace XeApp.Game.Menu
 					DisableSkillCrossFade();
 					for(int i = 0; i < 2; i++)
 					{
-						if(skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[before - 1, i] != 
-							skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						if(skill.NKGHBKFMFCI_BuffValue[before - 1, i] != 
+							skill.NKGHBKFMFCI_BuffValue[after - 1, i])
 						{
 							l.Add(i == 0 ? "[v1]" : "[v2]");
 						}
@@ -405,7 +405,7 @@ namespace XeApp.Game.Menu
 					DisableSkillCrossFade();
 					for(int i = 0; i < 2; i++)
 					{
-						if(skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[before - 1, i] != skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						if(skill.NKGHBKFMFCI_BuffValue[before - 1, i] != skill.NKGHBKFMFCI_BuffValue[after - 1, i])
 						{
 							if(skill.EGLDFPILJLG_SkillBuffEffect[i] >= 19 && skill.EGLDFPILJLG_SkillBuffEffect[i] < 21)
 							{
@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 								l.Add(i == 0 ? "[v1]" : "[v2]");
 							}
 						}
-						if(skill.PHAGNOHBMCM_DurationByIndexAndLevel[before - 1, i] != skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						if(skill.PHAGNOHBMCM_DurationByIndexAndLevel[before - 1, i] != skill.NKGHBKFMFCI_BuffValue[after - 1, i])
 						{
 							l.Add(i == 0 ? "[dv]" : "[dv2]");
 						}
@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 				m_centerSkillCrossFade.StartAllAnimLoop("st_wait");
 			if(id1 > 0)
 			{
-				UpdateSkill(m_skillLevel[4], m_skillDescript[4], m_skillRankImages[4], m_skillInfoImages[4], m_skillInfoButtons[4], sceneData.PFHJFIHGCKP_CenterSkillName1, sceneData.IHLINMFMCDN_GetCenterSkillDesc(level, false), level, (SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
+				UpdateSkill(m_skillLevel[4], m_skillDescript[4], m_skillRankImages[4], m_skillInfoImages[4], m_skillInfoButtons[4], sceneData.PFHJFIHGCKP_CenterSkillName, sceneData.IHLINMFMCDN_GetCenterSkillDesc(level, false), level, (SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
 			}
 			if(id1 != id2 && id2 > 0)
 			{

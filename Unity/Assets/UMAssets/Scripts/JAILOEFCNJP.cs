@@ -5,7 +5,7 @@ public class JAILOEFCNJP
 {
 	public enum BEBLECKOAPK
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		GIDILNEPILF_1 = 1,
 		KNBIMNIGANP_2 = 2,
 	}
@@ -14,7 +14,7 @@ public class JAILOEFCNJP
 	public const int MBCILHCMGIO = 0;
 
 	// RVA: 0x141479C Offset: 0x141479C VA: 0x141479C
-	public static bool GEOMLGKCCNI(LGIDLHLBFFJ_MonthlyPass HMMNDKHKEBC, List<BCEHKBJAEDM> IDOLJENFBPM, long JHNMKKNEENE, out string HACIJHPHFHH, out BEBLECKOAPK MKBOKLLDCFI)
+	public static bool GEOMLGKCCNI(LGIDLHLBFFJ_MonthlyPass HMMNDKHKEBC, List<BCEHKBJAEDM> IDOLJENFBPM, long _JHNMKKNEENE_Time, out string HACIJHPHFHH, out BEBLECKOAPK MKBOKLLDCFI)
 	{
 		HACIJHPHFHH = HMMNDKHKEBC.POGHKGLHHFL();
 		MKBOKLLDCFI = BEBLECKOAPK.GIDILNEPILF_1/*1*/;
@@ -32,12 +32,12 @@ public class JAILOEFCNJP
 				long a = 0;
 				if(k.LKCCMBEOLLA != null)
 				{
-					a = k.LKCCMBEOLLA.NKMNFPMMJND;
+					a = k.LKCCMBEOLLA.NKMNFPMMJND_expired_at;
 				}
 				long d = 0;
 				if(k.PACPEOKLGCI != null)
 				{
-					d = k.PACPEOKLGCI.NKMNFPMMJND;
+					d = k.PACPEOKLGCI.NKMNFPMMJND_expired_at;
 				}
 				if(a < d)
 				{
@@ -57,30 +57,30 @@ public class JAILOEFCNJP
 				{
 					c = data.LKCCMBEOLLA;
 					t2 = c.FDFGEMODIIF;
-					t = c.NKMNFPMMJND;
+					t = c.NKMNFPMMJND_expired_at;
 					b = true;
 				}
 			}
 		}
 		bool b2 = false;
-		if(HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].NKMNFPMMJND_ExpiredAt != t)
+		if(HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].NKMNFPMMJND_expired_at != t)
 		{
 			HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].FDFGEMODIIF_StartedAt = t2;
-			HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].NKMNFPMMJND_ExpiredAt = t;
-			HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].EMOHDABPCHD_CheckAt = JHNMKKNEENE;
+			HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].NKMNFPMMJND_expired_at = t;
+			HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].EMOHDABPCHD_CheckAt = _JHNMKKNEENE_Time;
 			b2 = true;
 		}
 		long t3 = 0;
 		long t4 = 0;
 		if(b)
 		{
-			t3 = c.NKMNFPMMJND;
+			t3 = c.NKMNFPMMJND_expired_at;
 			t4 = c.FDFGEMODIIF;
 			if(c2 != null)
 			{
-				if(t3 < c2.NKMNFPMMJND)
+				if(t3 < c2.NKMNFPMMJND_expired_at)
 				{
-					t3 = c2.NKMNFPMMJND;
+					t3 = c2.NKMNFPMMJND_expired_at;
 					HACIJHPHFHH = HMMNDKHKEBC.KIHJLOGLAGI();
 					MKBOKLLDCFI = BEBLECKOAPK.KNBIMNIGANP_2;
 				}
@@ -90,27 +90,27 @@ public class JAILOEFCNJP
 		{
 			if(c2 != null)
 			{
-				t3 = c2.NKMNFPMMJND;
+				t3 = c2.NKMNFPMMJND_expired_at;
 				t4 = c2.FDFGEMODIIF;
 				HACIJHPHFHH = HMMNDKHKEBC.KIHJLOGLAGI();
 				MKBOKLLDCFI = BEBLECKOAPK.KNBIMNIGANP_2;
 			}
 		}
 		b = false;
-		if(HMMNDKHKEBC.FMPLMFLMJNE_Last[0].NKMNFPMMJND_ExpiredAt != t3)
+		if(HMMNDKHKEBC.FMPLMFLMJNE_Last[0].NKMNFPMMJND_expired_at != t3)
 		{
 			HMMNDKHKEBC.FMPLMFLMJNE_Last[0].FDFGEMODIIF_StartedAt = t4;
-			HMMNDKHKEBC.FMPLMFLMJNE_Last[0].NKMNFPMMJND_ExpiredAt = t3;
-			HMMNDKHKEBC.FMPLMFLMJNE_Last[0].EMOHDABPCHD_CheckAt = JHNMKKNEENE;
+			HMMNDKHKEBC.FMPLMFLMJNE_Last[0].NKMNFPMMJND_expired_at = t3;
+			HMMNDKHKEBC.FMPLMFLMJNE_Last[0].EMOHDABPCHD_CheckAt = _JHNMKKNEENE_Time;
 			b2 = true;
 		}
-		if(HMMNDKHKEBC.DNKJAIHCDFN_First[0].NKMNFPMMJND_ExpiredAt == 0 && t3 != 0)
+		if(HMMNDKHKEBC.DNKJAIHCDFN_First[0].NKMNFPMMJND_expired_at == 0 && t3 != 0)
 		{
 			if(HMMNDKHKEBC.DNKJAIHCDFN_First[0].EMOHDABPCHD_CheckAt == 0)
 			{
 				HMMNDKHKEBC.DNKJAIHCDFN_First[0].FDFGEMODIIF_StartedAt = t4;
-				HMMNDKHKEBC.DNKJAIHCDFN_First[0].NKMNFPMMJND_ExpiredAt = t3;
-				HMMNDKHKEBC.DNKJAIHCDFN_First[0].EMOHDABPCHD_CheckAt = JHNMKKNEENE;
+				HMMNDKHKEBC.DNKJAIHCDFN_First[0].NKMNFPMMJND_expired_at = t3;
+				HMMNDKHKEBC.DNKJAIHCDFN_First[0].EMOHDABPCHD_CheckAt = _JHNMKKNEENE_Time;
 			}
 		}
 		return b2;

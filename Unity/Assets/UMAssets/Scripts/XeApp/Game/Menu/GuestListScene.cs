@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/)
+				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/)
 				{
 					IKDICBBFBMI_EventBase ev = null;
 					if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
@@ -195,10 +195,10 @@ namespace XeApp.Game.Menu
 		private void Initialize()
 		{
 			ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList guestInfo = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect;
-			m_sortType = (SortItem)guestInfo.LHPDCGNKPHD_sortItem;
+			m_sortType = (SortItem)guestInfo.LHPDCGNKPHD_SortItem;
 			m_sortOrder = (GeneralList.SortOrder)guestInfo.EILKGEADKGH_Order;
 			m_seriesFilter = (uint)guestInfo.BBIIHLNBHDE_SerieFilter;
-			m_centerSkillFilter = (uint)guestInfo.LKPCKPJGJKN_centerSkillFilter;
+			m_centerSkillFilter = (uint)guestInfo.LKPCKPJGJKN_CenterSkillFilter;
 			if(PrevTransition == TransitionList.Type.TEAM_SELECT || PrevTransition == TransitionList.Type.PROFIL || PrevTransition == TransitionList.Type.GODIVA_TEAM_SELECT)
 			{
 				;
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 				for (int i = 0; i < l.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
-					data.KHEKNNFCAOI(l[i]);
+					data.KHEKNNFCAOI_Init(l[i]);
 					friends.Add(data);
 				}
 				MenuScene.Instance.InputDisable();
@@ -313,7 +313,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
-					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
+					data.KHEKNNFCAOI_Init(friendManager.BFDEHIANFOG[i]);
 					friends.Add(data);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
@@ -571,7 +571,7 @@ namespace XeApp.Game.Menu
 			elem.SetSupport(info.support.ToString());
 			elem.SetMusicRatio(info.musicRatio.ToString());
 			elem.SetMusicRank(info.scoreRatingRank);
-			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO);
+			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO_FriendData);
 			elem.ToggleMusicRatio(m_sortType);
 			elem.SetKira(info.isKira);
 			if(info.sceneId < 1)
@@ -581,7 +581,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				GCIJNCFDNON_SceneInfo g = new GCIJNCFDNON_SceneInfo();
-				g.KHEKNNFCAOI(info.sceneId, null, null, 0, 0, 0, false, 0, 0);
+				g.KHEKNNFCAOI_Init(info.sceneId, null, null, 0, 0, 0, false, 0, 0);
 				if(g.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(Database.Instance.gameSetup.musicInfo.musicId))
 				{
 					elem.SetSkillMask(GuestListElem.SkillMask.None);

@@ -13,10 +13,10 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 		public int MABJPACAAPI_Height; // 0x4
 
 		// RVA: 0x7FD02C Offset: 0x7FD02C VA: 0x7FD02C
-		public BIIAHJNILEE(int _GHPLINIACBB_x, int PMBEODGMMBB)
+		public BIIAHJNILEE(int _GHPLINIACBB_x, int _PMBEODGMMBB_y)
 		{
 			PHHAMBAEGPI_Width = _GHPLINIACBB_x;
-			MABJPACAAPI_Height = PMBEODGMMBB;
+			MABJPACAAPI_Height = _PMBEODGMMBB_y;
 		}
 	}
 
@@ -117,13 +117,13 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	}
 
 	// // RVA: 0x15F5A50 Offset: 0x15F5A50 VA: 0x15F5A50
-	private static uint LDOAOKFCOEE(byte[] IDLHJIOMJBK, int MMENOGLLOKL)
+	private static uint LDOAOKFCOEE(byte[] _IDLHJIOMJBK_Data, int MMENOGLLOKL)
 	{
 		byte[] b = new byte[4];
-		b[0] = IDLHJIOMJBK[MMENOGLLOKL + 3];
-		b[1] = IDLHJIOMJBK[MMENOGLLOKL + 2];
-		b[2] = IDLHJIOMJBK[MMENOGLLOKL + 1];
-		b[3] = IDLHJIOMJBK[MMENOGLLOKL + 0];
+		b[0] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 3];
+		b[1] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 2];
+		b[2] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 1];
+		b[3] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 0];
 		return BitConverter.ToUInt32(b, 0);
 	}
 

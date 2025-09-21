@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
         {
             //0x114886C
             yield return Co.R(base.LoadAssetBundlePrefab(parent));
-            if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(View.KIJAPOFAGPN_ItemFullId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
+            if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(View.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
                 yield break;
             yield return Co.R(m_content.GetComponent<LayoutPopupShop>().Co_LoadScrollItemContent());
         }

@@ -12,23 +12,23 @@ public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_Request
 		public int HMFFHLPNMPH_Count; // 0xC
 		public int CJNNMLLEKEF_PreviousPage; // 0x10
 		public int GPPOJHNNINK_CurrentPage; // 0x14
-		public int MDIBIIHAAPN_NextPage; // 0x18
+		public int MDIBIIHAAPN_next_page; // 0x18
 
 		// RVA: 0x17C3838 Offset: 0x17C3838 VA: 0x17C3838
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBOIBKJEIAP_Friends];
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HBOIBKJEIAP_Friends];
 			HBOIBKJEIAP_Friends = new List<CHPIKCFKJOA>(b.HNBFOAJIIAL_Count);
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				CHPIKCFKJOA data = new CHPIKCFKJOA();
-				data.KHEKNNFCAOI(b[i]);
+				data.KHEKNNFCAOI_Init(b[i]);
 				HBOIBKJEIAP_Friends.Add(data);
 			}
-			HMFFHLPNMPH_Count = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.HMFFHLPNMPH_count];
-			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
-			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
-			MDIBIIHAAPN_NextPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
+			HMFFHLPNMPH_Count = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HMFFHLPNMPH_Count];
+			CJNNMLLEKEF_PreviousPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
+			GPPOJHNNINK_CurrentPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
+			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
 		}
 	}
 
@@ -36,7 +36,7 @@ public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_Request
 	public int MLPLGFLKKLI_Ipp = CMNGPGIJAKL; // 0x80
 	public const int CMNGPGIJAKL = 100;
 
-	public FOPJAKMNIJM NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public FOPJAKMNIJM NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x17C3660 Offset: 0x17C3660 VA: 0x17C3660 Slot: 12
 	public override void DHLDNIEELHO()
@@ -47,7 +47,7 @@ public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_Request
 	// RVA: 0x17C3758 Offset: 0x17C3758 VA: 0x17C3758 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new FOPJAKMNIJM();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new FOPJAKMNIJM();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -46,10 +46,10 @@ public class AMCGONHBGGF
 	}
 
 	// // RVA: 0xCE101C Offset: 0xCE101C VA: 0xCE101C
-	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC_ToJsonData()
 	{
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
-		data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = DIPKCALNIII_DivaId;
+		data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id] = DIPKCALNIII_DivaId;
 		data[AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id] = BEEAIAAJOHD_CostumeId;
 		data["c_col"] = AFNIOJHODAG_CostumeColorId;
 		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();

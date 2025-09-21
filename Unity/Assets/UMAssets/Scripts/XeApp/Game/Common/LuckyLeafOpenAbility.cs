@@ -57,7 +57,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x110C5F8 Offset: 0x110C5F8 VA: 0x110C5F8
 		public void Setup(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			currentOverLimit.KHEKNNFCAOI(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_Luck);
+			currentOverLimit.KHEKNNFCAOI_Init(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_luck);
 			currentOverLimit.OPBFFEMJBFH();
 			string s = currentOverLimit.LJHOOPJACPI_LeafMax.ToString("00");
 			currentLeafLayout.StartChildrenAnimGoStop(s);

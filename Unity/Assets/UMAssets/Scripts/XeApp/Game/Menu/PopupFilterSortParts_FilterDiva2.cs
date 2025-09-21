@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 					int colId = 0;
 					if(a_is_has_only)
 					{
-						FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+						FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 						{
 							//0x1C89620
 							return _.AHHJLDLAPAN_DivaId == divaId;
@@ -197,16 +197,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1C88760 Offset: 0x1C88760 VA: 0x1C88760
 		public static uint CreateBit(PIGBBNDPPJC a_view)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_UnlockItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_UnlockItemId);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
 			int a = 0;
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 			{
-				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count + 2;
+				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 2;
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
 			{
-				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count + 1;
+				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 1;
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{

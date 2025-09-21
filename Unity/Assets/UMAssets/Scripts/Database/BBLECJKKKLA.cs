@@ -7,7 +7,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 	public class GJBPBKNHLHC_DecoSetItemInfo
 	{
 		public int EHOIENNDEDH_IdCrypted; // 0x8
-		public int HNJHPNPFAAN; // 0xC
+		public int HNJHPNPFAAN_EnabledCrypted; // 0xC
 		public int EAJCFBCHIFB_RarityCrypted; // 0x10
 		public int IPAKEGGICML; // 0x14
 		public int MMDBOPCEKCJ; // 0x18
@@ -16,13 +16,13 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 		public int GJFLAHAGDKG; // 0x24
 		public int[] OMALMJLHABC_SetContent; // 0x28
 
-		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xF2C094 DEMEPMAEJOO 0xF2BA2C HIGKAIDMOKN
-		public int PLALNIIBLOF { get { return HNJHPNPFAAN ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN = value ^ FBGGEFFJJHB_xor; } } //0xF2C12C JPCJNLHHIPE 0xF2BB64 JJFJNEJLBDG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xF2C094 DEMEPMAEJOO 0xF2BA2C HIGKAIDMOKN
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0xF2C12C JPCJNLHHIPE 0xF2BB64 JJFJNEJLBDG
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xF2C1C4 OEEHBGECGKL 0xF2BAC8 GHLMHLJJBIG
 		public int CPKMLLNADLJ_Serie { get { return IPAKEGGICML ^ FBGGEFFJJHB_xor; } set { IPAKEGGICML = value ^ FBGGEFFJJHB_xor; } } //0xF2C25C BJPJMGHCDNO 0xF2BC00 BPKIOJBKNBP
 		public int MLMCEBBDJOE { get { return MMDBOPCEKCJ ^ FBGGEFFJJHB_xor; } set { MMDBOPCEKCJ = value ^ FBGGEFFJJHB_xor; } } //0xF2C2F4 IGMHCODOFKG 0xF2BC9C IIIGDLGGEGK
 		public int ODNILEDOAIP { get { return HJCJMAONOMH ^ FBGGEFFJJHB_xor; } set { HJCJMAONOMH = value ^ FBGGEFFJJHB_xor; } } //0xF2C38C GNKPMBBAJHI 0xF2BD38 PPMACIMALAC
-		public int NPPGKNGIFGK { get { return HAIFEBPOPEF ^ FBGGEFFJJHB_xor; } set { HAIFEBPOPEF = value ^ FBGGEFFJJHB_xor; } } //0xF2C424 FLMDBAFHDNJ 0xF2BDD4 DIHIEJPOCOJ
+		public int NPPGKNGIFGK_price { get { return HAIFEBPOPEF ^ FBGGEFFJJHB_xor; } set { HAIFEBPOPEF = value ^ FBGGEFFJJHB_xor; } } //0xF2C424 FLMDBAFHDNJ 0xF2BDD4 DIHIEJPOCOJ
 		public int KEJMJPHFFOJ_Max { get { return GJFLAHAGDKG ^ FBGGEFFJJHB_xor; } set { GJFLAHAGDKG = value ^ FBGGEFFJJHB_xor; } } //0xF2C4BC FMNMLNIALNE 0xF2BE70 GBEPCBPOGDB
 
 		// // RVA: 0xF2C554 Offset: 0xF2C554 VA: 0xF2C554
@@ -60,26 +60,26 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xF2B498 Offset: 0xF2B498 VA: 0xF2B498 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
     {
 		CDENCMNHNGA_table.Clear();
     }
 
 	// // RVA: 0xF2B510 Offset: 0xF2B510 VA: 0xF2B510 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
     {
 		MDMEBHPAKIH parser = MDMEBHPAKIH.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		DDHCKMFAKFA[] array = parser.NFBMFDPFHCL;
 		for(int i = 0; i < array.Length; i++)
 		{
 			GJBPBKNHLHC_DecoSetItemInfo data = new GJBPBKNHLHC_DecoSetItemInfo();
-			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL_Rarity = array[i].FBFLDFMFFOH;
-			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.CPKMLLNADLJ_Serie = array[i].CPKMLLNADLJ;
 			data.MLMCEBBDJOE = array[i].MLMCEBBDJOE;
 			data.ODNILEDOAIP = array[i].ODNILEDOAIP;
-			data.NPPGKNGIFGK = array[i].NPPGKNGIFGK;
+			data.NPPGKNGIFGK_price = array[i].NPPGKNGIFGK;
 			int[] array2 = array[i].PIPDCAEIBPO;
 			data.OMALMJLHABC_SetContent = new int[array2.Length];
 			for(int j = 0; j < array2.Length; j++)
@@ -93,7 +93,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xF2BF0C Offset: 0xF2BF0C VA: 0xF2BF0C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return false;
 	}

@@ -77,9 +77,9 @@ namespace XeApp.Game.Menu
 			{
 				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				bool b = false;
-				if(time < m_view.JOFAGCFNKIO_Start)
+				if(time < m_view.JOFAGCFNKIO_OpenTime)
 				{
-					b = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_list[index].GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && m_list[index].JOPPFEHKNFO_IsPickup;
+					b = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_list[index].GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && m_list[index].JOPPFEHKNFO_Pickup;
 				}
 				l.SetStatus(m_list[index], b);
 			}

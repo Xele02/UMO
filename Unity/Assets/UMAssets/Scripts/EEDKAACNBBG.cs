@@ -14,7 +14,7 @@ public class EEDKAACNBBG_MusicData
 	public string NEDBBJDAFBH_MusicName; // 0x20
 	public string NBKFBCLDGAL_OfficialName; // 0x24
 	public string LJCEDBBNPBB_VocalName; // 0x28
-	public string KLMPFGOCBHC_Description; // 0x2C
+	public string KLMPFGOCBHC_description; // 0x2C
 	public string OLLHCHDEHHM_StoryDesc; // 0x30
 	public int EDDPAECJHHC_WavIdCrypted = FBGGEFFJJHB_xor; // 0x34
 	public int CALAEHJCPIC = FBGGEFFJJHB_xor; // 0x38
@@ -31,20 +31,20 @@ public class EEDKAACNBBG_MusicData
 	public bool IFNPBIJEPBO_IsDlded { get; private set; } // 0x3D ODDANOKGMLN GNLBOEKONDC OCOEKEKKGGG
 
 	// // RVA: 0x1C48944 Offset: 0x1C48944 VA: 0x1C48944 Slot: 4
-	public virtual void KHEKNNFCAOI(int _DLAEJOBELBH_MusicId)
+	public virtual void KHEKNNFCAOI_Init(int _DLAEJOBELBH_MusicId)
 	{
 		this.DLAEJOBELBH_MusicId = _DLAEJOBELBH_MusicId;
 		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[_DLAEJOBELBH_MusicId - 1];
-		JNCPEGJGHOG_JacketId = musicInfo.JNCPEGJGHOG_Cov;
+		JNCPEGJGHOG_JacketId = musicInfo.JNCPEGJGHOG_JacketId;
 		NNHOBFBCIIJ_Cd = musicInfo.NNHOBFBCIIJ_Cd;
 		EMIKBGHIOMN_SerieLogoId = musicInfo.EMIKBGHIOMN_SerieLogoId;
 		AIHCEGFANAM_SerieAttr = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
 		FKDCCLPGKDK_JacketAttr = musicInfo.FKDCCLPGKDK_Ma;
-		NEDBBJDAFBH_MusicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
-		NBKFBCLDGAL_OfficialName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).officialName;
-		LJCEDBBNPBB_VocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
-		KLMPFGOCBHC_Description = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).description;
-		OLLHCHDEHHM_StoryDesc = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).storyDesc;
+		NEDBBJDAFBH_MusicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName;
+		NBKFBCLDGAL_OfficialName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).officialName;
+		LJCEDBBNPBB_VocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).vocalName;
+		KLMPFGOCBHC_description = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).description;
+		OLLHCHDEHHM_StoryDesc = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).storyDesc;
 		KKPAHLMJKIH_WavId = musicInfo.KKPAHLMJKIH_WavId;
 		BNCMJNMIDIN_AvaiableDivaModes = 0;
 		if (musicInfo.NJAOOMHCIHL_DivaSolo > 0)
@@ -67,9 +67,9 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C49124 Offset: 0x1C49124 VA: 0x1C49124
-	public bool BENDFLDLIAG_IsAvaiableForNumDiva(int OFGIOBGAJPA_NumDiva)
+	public bool BENDFLDLIAG_IsAvaiableForNumDiva(int _OFGIOBGAJPA_NumDiva)
 	{
-		return (BNCMJNMIDIN_AvaiableDivaModes & (1 << (OFGIOBGAJPA_NumDiva - 1))) != 0;
+		return (BNCMJNMIDIN_AvaiableDivaModes & (1 << (_OFGIOBGAJPA_NumDiva - 1))) != 0;
 	}
 
 	// // RVA: 0x1C49144 Offset: 0x1C49144 VA: 0x1C49144
@@ -98,12 +98,12 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C491B4 Offset: 0x1C491B4 VA: 0x1C491B4
-	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType JONPKLHMOBL)
+	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType _JONPKLHMOBL_Category)
 	{
 		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
-		if (JONPKLHMOBL != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
+		if (_JONPKLHMOBL_Category != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
 		{
-			if(JONPKLHMOBL == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
+			if(_JONPKLHMOBL_Category == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
 			{
 				int numDiva = 1;
 				for(int i = 1; i <= 31; i++)

@@ -26,16 +26,16 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xBFE12C Offset: 0xBFE12C VA: 0xBFE12C
 		public FENCAJJBLBH CheckFalisification()
 		{
-			FENCAJJBLBH res = currentScore_.NMNHBJIAPGG;
+			FENCAJJBLBH res = currentScore_.NMNHBJIAPGG_CheckFalsification;
 			if (res == null)
 			{
-				res = nonExcellentScore_.NMNHBJIAPGG;
+				res = nonExcellentScore_.NMNHBJIAPGG_CheckFalsification;
 				if(res == null)
 				{
-					res = totalComboCount_.NMNHBJIAPGG;
+					res = totalComboCount_.NMNHBJIAPGG_CheckFalsification;
 					if(res == null)
 					{
-						res = scoreNotesValue_.NMNHBJIAPGG;
+						res = scoreNotesValue_.NMNHBJIAPGG_CheckFalsification;
 					}
 				}
 			}
@@ -121,9 +121,9 @@ namespace XeApp.Game.RhythmGame
 			int prevVal = 0;
 			if(currentRank != 0)
 			{
-				prevVal = musicLevelData.KNIFCANOHOC_RankScore[(int)currentRank - 1];
+				prevVal = musicLevelData.KNIFCANOHOC_score[(int)currentRank - 1];
 			}
-			int val = musicLevelData.KNIFCANOHOC_RankScore[(int)currentRank];
+			int val = musicLevelData.KNIFCANOHOC_score[(int)currentRank];
 			return (currentScore - prevVal) * 1.0f / (val - prevVal);
 		}
 	}

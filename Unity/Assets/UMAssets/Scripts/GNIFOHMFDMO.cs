@@ -12,10 +12,10 @@ public class GNIFOHMFDMO_DivaResultData
 		public double NMHNDLHJENB_PrevMusicExp; // 0x10
 		public double CFDGFLNIMCL_MusicExp; // 0x18
 		public double BKJJLJKGDJB_MusicExpDiff; // 0x20
-		public double HMBECPGHPOE; // 0x28
+		public double HMBECPGHPOE_DivaExps; // 0x28
 		public int IIHHAFPPFCP_PrevMusicLevel; // 0x30
 		public int AIMAJDEJDLM_MusicLevel; // 0x34
-		public int PKLPGBKKFOL; // 0x38
+		public int PKLPGBKKFOL_DivaLevels; // 0x38
 		public double NFJFBOBJONF_PrevExpFrag; // 0x40
 		public double DKLBOOEIKKL_ExpFrag; // 0x48
 		public double MECHKMMEIPP_PrevExp; // 0x50
@@ -23,7 +23,7 @@ public class GNIFOHMFDMO_DivaResultData
 		public double FADHHKOGJIP; // 0x60
 		public int AJCEIPJDMEC_PrevDivaLevel; // 0x68
 		public int JPGEAFPDHDE_DivaLevel; // 0x6C
-		public int PAOGPLDOMMI; // 0x70
+		public int PAOGPLDOMMI_Level; // 0x70
 		public KDOMGMCGHDC.HJNMIKNAMFH EEHOJJNJJAI; // 0x74
 		public KDOMGMCGHDC.HJNMIKNAMFH OJLEDBKKMLN; // 0x78
 		public int DACHHLHPAAB_BonusExp; // 0x7C
@@ -37,11 +37,11 @@ public class GNIFOHMFDMO_DivaResultData
 	public int CBCIFACJGHI_Exp; // 0x1C
 	public int DLAEJOBELBH_MusicId; // 0x20
 	private int DHJAFJKALCA_ForcedMusicId; // 0x24
-	public bool LFGNLKKFOCD_Is6Line; // 0x28
+	public bool LFGNLKKFOCD_IsLine6; // 0x28
 	public int HGHMMDOEGEF_ExpBonus; // 0x2C
 	public List<IKODHMDOMMP> NAIHIJAJPNK_Divas; // 0x30
 
-	//public int IOPCBBNHJIP { get; set; } 0x1E56110 PJKILEHFBHA 0x1E56124 BOBNBADBNGG
+	//public int IOPCBBNHJIP_ForcedMusicId { get; set; } 0x1E56110 PJKILEHFBHA 0x1E56124 BOBNBADBNGG
 
 	//// RVA: 0x1E5612C Offset: 0x1E5612C VA: 0x1E5612C
 	public KDOMGMCGHDC.HJNMIKNAMFH LNHIFELKOJF_GetPrevInfo(int AAIKJJHPEEL_DivaIdx, int _BAKLKJLPLOJ_MusicLevel)
@@ -56,7 +56,7 @@ public class GNIFOHMFDMO_DivaResultData
 	}
 
 	//// RVA: 0x1E56334 Offset: 0x1E56334 VA: 0x1E56334
-	public void KHEKNNFCAOI(int GHBPLHBNMBK_FreeMusicId, bool _GIKLNODJKFK_IsLine6)
+	public void KHEKNNFCAOI_Init(int GHBPLHBNMBK_FreeMusicId, bool _GIKLNODJKFK_IsLine6)
 	{
 		KEODKEGFDLD_FreeMusicInfo GEAANLPDJBP_FreeMusicData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
 		DLAEJOBELBH_MusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(GEAANLPDJBP_FreeMusicData.DLAEJOBELBH_MusicId).DLAEJOBELBH_MusicId;
@@ -66,15 +66,15 @@ public class GNIFOHMFDMO_DivaResultData
 			return GEAANLPDJBP_FreeMusicData.BLDDNEJDFON_ForcePrismId == _GHPLINIACBB_x.NMNDNFFJHPJ_Id;
 		});
 		if (forcedSetting != null)
-			DHJAFJKALCA_ForcedMusicId = forcedSetting.IOPCBBNHJIP_MusicId;
+			DHJAFJKALCA_ForcedMusicId = forcedSetting.IOPCBBNHJIP_ForcedMusicId;
 		AKNELONELJK_Difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
 		OGFBKCGGPBC_DiffPoint = JGEOBNENMAH.HHCJCDFCLOB.NGDDIIDJFNG;
 		GCAPLLEIAAI_LastScore = JGEOBNENMAH.HHCJCDFCLOB.GCAPLLEIAAI_LastScore;
 		FFEBMCAKOHK = JGEOBNENMAH.HHCJCDFCLOB.LKGONGDLJBH + 100;
 		BMGKGDPKJFA_Point = JGEOBNENMAH.HHCJCDFCLOB.MKEPHNGLHDL;
-		LFGNLKKFOCD_Is6Line = _GIKLNODJKFK_IsLine6;
+		LFGNLKKFOCD_IsLine6 = _GIKLNODJKFK_IsLine6;
 		CBCIFACJGHI_Exp = JGEOBNENMAH.HHCJCDFCLOB.CBCIFACJGHI_Exp;
-		HGHMMDOEGEF_ExpBonus = JGEOBNENMAH.HHCJCDFCLOB.HGHMMDOEGEF;
+		HGHMMDOEGEF_ExpBonus = JGEOBNENMAH.HHCJCDFCLOB.HGHMMDOEGEF_ExpBonus;
 		JJOPEDJCCJK_Exp dbExp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
 		DEKKMGAFJCG_Diva saveDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva;
 		DEKKMGAFJCG_Diva prevSaveDiva = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.DGCJCAHIAPP_Diva;
@@ -88,13 +88,13 @@ public class GNIFOHMFDMO_DivaResultData
 			{
 				DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo prevSaveDivaInfo = prevSaveDiva.LGKFMLIOPKL_GetDivaInfo(data.AHHJLDLAPAN_DivaId);
 				DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo saveDivaInfo = saveDiva.LGKFMLIOPKL_GetDivaInfo(data.AHHJLDLAPAN_DivaId);
-				data.NMHNDLHJENB_PrevMusicExp = prevSaveDivaInfo.LKIFDCEKDCK_Exps[DLAEJOBELBH_MusicId - 1];
-				data.CFDGFLNIMCL_MusicExp = saveDivaInfo.LKIFDCEKDCK_Exps[DLAEJOBELBH_MusicId - 1];
+				data.NMHNDLHJENB_PrevMusicExp = prevSaveDivaInfo.LKIFDCEKDCK_exp[DLAEJOBELBH_MusicId - 1];
+				data.CFDGFLNIMCL_MusicExp = saveDivaInfo.LKIFDCEKDCK_exp[DLAEJOBELBH_MusicId - 1];
 				data.BKJJLJKGDJB_MusicExpDiff = data.CFDGFLNIMCL_MusicExp - data.NMHNDLHJENB_PrevMusicExp;
-				data.HMBECPGHPOE = data.NMHNDLHJENB_PrevMusicExp;
+				data.HMBECPGHPOE_DivaExps = data.NMHNDLHJENB_PrevMusicExp;
 				data.IIHHAFPPFCP_PrevMusicLevel = prevSaveDivaInfo.ANAJIAENLNB_Level[DLAEJOBELBH_MusicId - 1];
 				data.AIMAJDEJDLM_MusicLevel = saveDivaInfo.ANAJIAENLNB_Level[DLAEJOBELBH_MusicId - 1];
-				data.PKLPGBKKFOL = data.IIHHAFPPFCP_PrevMusicLevel;
+				data.PKLPGBKKFOL_DivaLevels = data.IIHHAFPPFCP_PrevMusicLevel;
 				data.NFJFBOBJONF_PrevExpFrag = prevSaveDivaInfo.ACABEFKBBEN_ExpFrag;
 				data.DKLBOOEIKKL_ExpFrag = saveDivaInfo.ACABEFKBBEN_ExpFrag;
 				data.FADHHKOGJIP = 0;
@@ -102,7 +102,7 @@ public class GNIFOHMFDMO_DivaResultData
 				data.KNCMFPIODKJ_ExpFragDiff = data.DKLBOOEIKKL_ExpFrag - data.NFJFBOBJONF_PrevExpFrag;
 				data.AJCEIPJDMEC_PrevDivaLevel = prevSaveDivaInfo.OKMELNIIMMO_GetDivaLevel();
 				data.JPGEAFPDHDE_DivaLevel = saveDivaInfo.OKMELNIIMMO_GetDivaLevel();
-				data.PAOGPLDOMMI = data.AJCEIPJDMEC_PrevDivaLevel;
+				data.PAOGPLDOMMI_Level = data.AJCEIPJDMEC_PrevDivaLevel;
 				data.EEHOJJNJJAI = KDOMGMCGHDC.ODIAFJCPIFO(DLAEJOBELBH_MusicId, data.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData, data.IIHHAFPPFCP_PrevMusicLevel);
 				data.OJLEDBKKMLN = KDOMGMCGHDC.NEGKGKKLICK(DLAEJOBELBH_MusicId, data.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData);
 				if(JGEOBNENMAH.HHCJCDFCLOB.HMMFHMHENAO != null)
@@ -124,7 +124,7 @@ public class GNIFOHMFDMO_DivaResultData
 	//public void NFOHOGAJGHB(int _GHBPLHBNMBK_FreeMusicId) { }
 
 	//// RVA: 0x1E577F4 Offset: 0x1E577F4 VA: 0x1E577F4
-	//public void AJMKBHHAIEB(int _GHBPLHBNMBK_FreeMusicId, int HMBECPGHPOE, int[] _AHHJLDLAPAN_DivaId, int[] OELBLDNDMBN, int[] BCCEPIHPKAH) { }
+	//public void AJMKBHHAIEB(int _GHBPLHBNMBK_FreeMusicId, int _HMBECPGHPOE_DivaExps, int[] _AHHJLDLAPAN_DivaId, int[] OELBLDNDMBN, int[] BCCEPIHPKAH) { }
 
 	//// RVA: 0x1E58660 Offset: 0x1E58660 VA: 0x1E58660
 	//public bool NEINFNHHACO(LMLIDBBMBKJ KANEPEKDFLA, PNABDOFAFAB HANMMPCJKJE) { }

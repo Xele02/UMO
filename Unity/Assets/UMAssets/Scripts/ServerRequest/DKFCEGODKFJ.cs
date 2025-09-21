@@ -8,7 +8,7 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 {
 	public class ENKJGMFOJDI
 	{
-		public string IHALNOJAMLE_CounterName; // 0x8
+		public string IHALNOJAMLE_PlayerCounterMasterName; // 0x8
 		public List<int> FAMHAPONILI_PlayerIds; // 0xC
 	}
 
@@ -17,7 +17,7 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 		public Dictionary<int, int> OJCNJFLJCLA; // 0x8
 
 		// RVA: 0x198F458 Offset: 0x198F458 VA: 0x198F458
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 		{
 			if(OBHAFLMHAKG.BBAJPINMOEP_Contains("player_counters"))
 			{
@@ -34,18 +34,18 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 
 	public const int HIKCJJJPPOL = 100;
 	public ENKJGMFOJDI BIHCCEHLAOD = new ENKJGMFOJDI(); // 0x7C
-	public HJKLBEOACCA NFEAMMJIMPG; // 0x80
+	public HJKLBEOACCA NFEAMMJIMPG_Result; // 0x80
 
 	// RVA: 0x198F224 Offset: 0x198F224 VA: 0x198F224 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerCounter.GetPlayerCounters(BIHCCEHLAOD.IHALNOJAMLE_CounterName, BIHCCEHLAOD.FAMHAPONILI_PlayerIds.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerCounter.GetPlayerCounters(BIHCCEHLAOD.IHALNOJAMLE_PlayerCounterMasterName, BIHCCEHLAOD.FAMHAPONILI_PlayerIds.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x198F378 Offset: 0x198F378 VA: 0x198F378 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new HJKLBEOACCA();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new HJKLBEOACCA();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

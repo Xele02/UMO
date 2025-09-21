@@ -45,7 +45,7 @@ namespace XeApp.Game.Adv
 		{
 			if (listEntry[index].PBOHDAFOEIA.Length <= i)
 				return AdvScriptCommand.Label.Nop;
-			return (AdvScriptCommand.Label)listEntry[index].PBOHDAFOEIA[i].KAPMOPMDHJE;
+			return (AdvScriptCommand.Label)listEntry[index].PBOHDAFOEIA[i].KAPMOPMDHJE_label;
 		}
 
 		//// RVA: 0xE583C0 Offset: 0xE583C0 VA: 0xE583C0
@@ -53,10 +53,10 @@ namespace XeApp.Game.Adv
 		{
 			if(i < listEntry[index].PBOHDAFOEIA.Length)
 			{
-				if(j < listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO.Length)
+				if(j < listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO_Param.Length)
 				{
 					int res = 0;
-					if (int.TryParse(listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO[j], out res))
+					if (int.TryParse(listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO_Param[j], out res))
 					{
 						return res;
 					}
@@ -70,9 +70,9 @@ namespace XeApp.Game.Adv
 		{
 			if (i < listEntry[index].PBOHDAFOEIA.Length)
 			{
-				if (j < listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO.Length)
+				if (j < listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO_Param.Length)
 				{
-					return listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO[j];
+					return listEntry[index].PBOHDAFOEIA[i].PIBLLGLCJEO_Param[j];
 				}
 			}
 			return "";
@@ -121,11 +121,11 @@ namespace XeApp.Game.Adv
 			{
 				//0xE58BE8
 				CBBJHPBGBAJ_Archive c = new CBBJHPBGBAJ_Archive();
-				c.KHEKNNFCAOI_Load(fro.bytes);
-				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File f = c.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+				c.KHEKNNFCAOI_Init(fro.bytes);
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File f = c.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
 				{
 					//0xE58B5C
-					return x.OPFGFINHFCE_Name.Contains("adv_script");
+					return x.OPFGFINHFCE_name.Contains("adv_script");
 				});
 				if(f != null)
 				{

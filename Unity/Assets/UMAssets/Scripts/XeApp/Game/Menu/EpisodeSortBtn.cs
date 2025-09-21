@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 				//0xF08F3C
 				if(m_delegate_sort != null)
 				{
-					m_sort = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_sortItem;
+					m_sort = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_SortItem;
 					m_delegate_sort(m_sort, m_order);
 				}
 			}, null, m_is_save);

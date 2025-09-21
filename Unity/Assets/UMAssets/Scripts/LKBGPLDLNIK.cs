@@ -14,7 +14,7 @@ public class LKBGPLDLNIK
 	{
 		DateTime date = Utility.GetLocalDateTime(EMJFLGOJKHE);
 		long t = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
-		List<sbyte> gachaHour = GDEKCOOBLMA.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour;
+		List<sbyte> gachaHour = GDEKCOOBLMA.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour;
 		bool wasAfter = false;
 		for(int i = -1; i <= 1; i++)
 		{
@@ -36,23 +36,23 @@ public class LKBGPLDLNIK
 	}
 
 	//// RVA: 0x1808ED8 Offset: 0x1808ED8 VA: 0x1808ED8
-	public static int JPIMHNNGJGI(long JHNMKKNEENE, long EMJFLGOJKHE, PEBFNABDJDI_System GDEKCOOBLMA)
+	public static int JPIMHNNGJGI(long _JHNMKKNEENE_Time, long EMJFLGOJKHE, PEBFNABDJDI_System GDEKCOOBLMA)
 	{
 		if(EMJFLGOJKHE != 0)
 		{
 			long t = OEAJOJBJFNB(EMJFLGOJKHE, GDEKCOOBLMA);
-			if(t >= JHNMKKNEENE)
+			if(t >= _JHNMKKNEENE_Time)
 			{
-				return (int)(t - JHNMKKNEENE);
+				return (int)(t - _JHNMKKNEENE_Time);
 			}
 		}
 		return 0;
 	}
 
 	//// RVA: 0x1808F90 Offset: 0x1808F90 VA: 0x1808F90
-	public static int JPIMHNNGJGI(long JHNMKKNEENE)
+	public static int JPIMHNNGJGI(long _JHNMKKNEENE_Time)
 	{
-		return JPIMHNNGJGI(JHNMKKNEENE, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.NKIGFPJPALK_LastLotTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System);
+		return JPIMHNNGJGI(_JHNMKKNEENE_Time, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.NKIGFPJPALK_last_lot_time, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System);
 	}
 
 	//// RVA: 0x1809140 Offset: 0x1809140 VA: 0x1809140

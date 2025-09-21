@@ -99,8 +99,8 @@ namespace XeApp.Game.Menu
 		public void SetStatus(AODFBGCCBPE view, bool resetScroll/* = true*/)
 		{
 			m_view = view;
-			SetupList(view.MHKCPJDNJKI.Count, resetScroll);
-			m_noProductText.enabled = view.MHKCPJDNJKI.Count < 1;
+			SetupList(view.MHKCPJDNJKI_products.Count, resetScroll);
+			m_noProductText.enabled = view.MHKCPJDNJKI_products.Count < 1;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textTitle.text = view.NEMKDKDIIDK_ShopName;
 			m_layoutWarning.enabled = false;
@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDetailButton(FJGOKILCBJA view)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
+            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 			{
 				OpenPopupListItem(view, false);
@@ -229,11 +229,11 @@ namespace XeApp.Game.Menu
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo data = new GCIJNCFDNON_SceneInfo();
-				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(data, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 				return;
 			}
-			MenuScene.Instance.ShowItemDetail(view.KIJAPOFAGPN_ItemFullId, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId)), true);
+			MenuScene.Instance.ShowItemDetail(view.KIJAPOFAGPN_ItemId, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId)), true);
         }
 
 		// // RVA: 0x19427C8 Offset: 0x19427C8 VA: 0x19427C8
@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 			LayoutShopProductListItem c = content as LayoutShopProductListItem;
 			if(c != null)
 			{
-				c.SetStatus(m_view.INDDJNMPONH_Type, m_view.MHKCPJDNJKI[index]);
+				c.SetStatus(m_view.INDDJNMPONH_Type, m_view.MHKCPJDNJKI_products[index]);
 			}
 		}
 

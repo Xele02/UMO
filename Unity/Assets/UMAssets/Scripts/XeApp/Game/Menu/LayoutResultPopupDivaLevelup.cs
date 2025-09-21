@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D093E8 Offset: 0x1D093E8 VA: 0x1D093E8
 		private void StartLoadDivaIcon(int divaId)
 		{
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1];
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1];
 			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId, (IiconTexture iconTexture) =>
 			{
 				//0x1D09F5C

@@ -50,8 +50,8 @@ namespace XeApp.Game.AR
             NAIJIFAJGGK_RequestLoadPlayerData req;
 
             req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
-            req.HHIHCJKLJFF_BlockToRequest = arPlayerData.KPIDBPEKMFD_GetBlockList();
-            req.IJMPLDBGMHC_OnDataReceived = arPlayerData.IIEMACPEEBJ_Load;
+            req.HHIHCJKLJFF_Names = arPlayerData.KPIDBPEKMFD_GetNames();
+            req.IJMPLDBGMHC_OnDataReceived = arPlayerData.IIEMACPEEBJ_Deserialize;
             while(!req.PLOOEECNHFB_IsDone)
                 yield return null;
             if(req.NPNNPNAIONN_IsError)

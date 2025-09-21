@@ -121,12 +121,12 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-			f.KHEKNNFCAOI(m_rankingList[index]);
+			f.KHEKNNFCAOI_Init(m_rankingList[index]);
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.SCENE;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
-			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid_Result;
+			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
+			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid_Result;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 

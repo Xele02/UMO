@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 			else if(m_sortPlace == SortPlace.SceneSelect || m_sortPlace == SortPlace.SceneList || (int)m_sortPlace > 9)
 			{
 				m_sortMenuWindow.ShowFilter(m_sortPlace == SortPlace.SceneSelect, (int)m_sortPlace > 9);
-				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas);
+				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList);
 				m_rarityButtonStateBit = s.RarityFilter;
 				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Rare, s.RarityFilter);
 				m_attributeButtonStateBit = s.AttributeFilter;
@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 			else if(((int)m_sortPlace & 0xfffffffe) == 8)
 			{
 				m_sortMenuWindow.ShowDecoFilter(m_sortPlace == SortPlace.DecoInteriorList);
-				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas);
+				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList);
 				m_seriaseButtonStateBit = s.SeriaseFilter;
 				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Series, ((m_seriaseButtonStateBit & 2) << 1) | (m_seriaseButtonStateBit & 16) | ((m_seriaseButtonStateBit & 1) << 3) | ((m_seriaseButtonStateBit >> 1) & 2) | ((m_seriaseButtonStateBit << 28) >> 31));
 				if(m_sortPlace != SortPlace.DecoInteriorList)
@@ -423,11 +423,11 @@ namespace XeApp.Game.Menu
 		private void OnChangeCompatibleDivaFilter(uint bit)
 		{
 			m_compatibleButtonStateBit = 0;
-			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
 				if((bit & (1 << i)) != 0)
 				{
-					m_compatibleButtonStateBit |= (byte)(1 << (GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId - 1));
+					m_compatibleButtonStateBit |= (byte)(1 << (GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId - 1));
 				}
 			}
 		}
@@ -518,12 +518,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114B9A0 Offset: 0x114B9A0 VA: 0x114B9A0
 		private void ApplyFriendSortParam(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList friendProperty)
 		{
-			friendProperty.LHPDCGNKPHD_sortItem = (int)m_sortItem;
+			friendProperty.LHPDCGNKPHD_SortItem = (int)m_sortItem;
 			friendProperty.NPEEPPCPEPE_assistItem = (int)m_assistItem;
 			friendProperty.ACCHOFLOOEC_RarityFilter = (int)m_rarityButtonStateBit;
 			friendProperty.BOFFOHHLLFG_AttributeFilter = (int)m_attributeButtonStateBit;
 			friendProperty.BBIIHLNBHDE_SerieFilter = (int)m_seriaseButtonStateBit;
-			friendProperty.LKPCKPJGJKN_centerSkillFilter = (int)m_centerSkillButtonStateBit;
+			friendProperty.LKPCKPJGJKN_CenterSkillFilter = (int)m_centerSkillButtonStateBit;
 		}
 
 		//// RVA: 0x114BA5C Offset: 0x114BA5C VA: 0x114BA5C
@@ -678,21 +678,21 @@ namespace XeApp.Game.Menu
 								{
 									if(a1[k] < 1)
 									{
-										if(a.INDDJNMPONH[k] != 0)
+										if(a.INDDJNMPONH_Type[k] != 0)
 											b = true;
 										if(a.GJLFANGDGCL_Target[k] != 0)
 											b = true;
-										if(a.OAFPGJLCNFM[k] != 0)
+										if(a.OAFPGJLCNFM_cond[k] != 0)
 											b = true;
 									}
 									else
 									{
 										KFCIIMBBNCD dataK = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
-										if(dataK.INDDJNMPONH_ModifierType != a.INDDJNMPONH[k])
+										if(dataK.INDDJNMPONH_Type != a.INDDJNMPONH_Type[k])
 											b = true;
 										if(dataK.GJLFANGDGCL_Target != a.GJLFANGDGCL_Target[k])
 											b = true;
-										if(dataK.OAFPGJLCNFM_CenterSkillCondition != a.OAFPGJLCNFM[k])
+										if(dataK.OAFPGJLCNFM_cond != a.OAFPGJLCNFM_cond[k])
 											b = true;
 									}
 								}
@@ -801,7 +801,7 @@ namespace XeApp.Game.Menu
 							{
 								b3 = f.BHADMHLIFMM < scene.AOLIJKMIJJE_Diva;
 							}
-							if (!(b || f.CPNAGMFCIJK_TriggerType != skill.CPNAGMFCIJK_TriggerType || !b2 || f.NFIBKOACELP != skill.NFIBKOACELP_Attr || b3))
+							if (!(b || f.CPNAGMFCIJK_TriggerType != skill.CPNAGMFCIJK_TriggerType || !b2 || f.NFIBKOACELP_Attr != skill.NFIBKOACELP_Attr || b3))
 								return true;
 						}
 					}
@@ -813,7 +813,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114D304 Offset: 0x114D304 VA: 0x114D304
 		public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			int pt = musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].CIEOBFIIPLD_Level;
+			int pt = musicData.MGJKEJHEBPO_Blocks[(int)difficulty].CIEOBFIIPLD_Level;
 			return pt >= levelMin && pt <= levelMax;
 		}
 

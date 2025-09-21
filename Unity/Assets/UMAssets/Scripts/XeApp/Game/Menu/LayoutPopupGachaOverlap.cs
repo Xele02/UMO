@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 				SetDesc("");
 			}
 			SetPlateName(RecordPlateUtility.GetPlateName(info.BCCHOBPJJKE_SceneId, m_showType, m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/ && m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3/*3*/));
-			SetPlateImage(info.BCCHOBPJJKE_SceneId, info.JKGFBFPIMGA_BaseRarity < info.HNNAODKJGPD_NextRarity ? 2 : 1);
+			SetPlateImage(info.BCCHOBPJJKE_SceneId, info.JKGFBFPIMGA_Rarity < info.HNNAODKJGPD_NextRarity ? 2 : 1);
 			SwitchTblShowType(m_showType);
 		}
 

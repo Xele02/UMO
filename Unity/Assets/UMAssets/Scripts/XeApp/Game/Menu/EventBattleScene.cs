@@ -233,8 +233,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0FD14 Offset: 0xF0FD14 VA: 0xF0FD14 Slot: 51
 		protected override void OnDecideCurrentMusic()
 		{
-			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK_OverrideCenterSkill;
-			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE_OverrideLiveSkill;
+			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
+			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
 			base.OnDecideCurrentMusic();
 		}
 
@@ -702,7 +702,7 @@ namespace XeApp.Game.Menu
 					rank = scene.CGIELKDLHGE_GetEvolveId();
 					isKira = scene.MBMFJILMOBP_IsKira();
 				}
-				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
+				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name);
 				GameManager.Instance.DivaIconCache.Load(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId, m_battleInfo.ApplySelfDivaIcon);
@@ -729,9 +729,9 @@ namespace XeApp.Game.Menu
 				int str = musicData.DACLONHOFLA.BHCIFFILAKJ_Strength;
 				if(str > 2)
 					str = 3;
-				ev.ECFNKBGDJCA(list_no, musicData.DACLONHOFLA.OIPCCBHIKIA_Idx, str);
+				ev.ECFNKBGDJCA(list_no, musicData.DACLONHOFLA.OIPCCBHIKIA_index, str);
 				m_battleInfo.ApplyRivalRank((MusicSelectBattleInfo.RivalRankType)str);
-				m_battleInfo.ApplyRivalTitle(musicData.DACLONHOFLA.OPFGFINHFCE_Name);
+				m_battleInfo.ApplyRivalTitle(musicData.DACLONHOFLA.OPFGFINHFCE_name);
 				m_battleInfo.ApplyRivalScore(ev.HOJNMALLCME_GetClassMaxScore(str, 0));
 				GameManager.Instance.DivaIconCache.Load(musicData.DACLONHOFLA.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId, 
 					musicData.DACLONHOFLA.FDBOPFEOENF_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
@@ -1134,7 +1134,7 @@ namespace XeApp.Game.Menu
 			}
 			m_isEndActivateScene = true;
 			PMFBBLGPLLJ p = new PMFBBLGPLLJ();
-			p.KHEKNNFCAOI();
+			p.KHEKNNFCAOI_Init();
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
 				yield return Co.R(Co_UnlockedClass(p));
@@ -1677,7 +1677,7 @@ namespace XeApp.Game.Menu
 			if(isSelectClass)
 			{
 				PMFBBLGPLLJ p = new PMFBBLGPLLJ();
-				p.KHEKNNFCAOI();
+				p.KHEKNNFCAOI_Init();
 				yield return Co.R(Co_SelectClass(p));
 			}
         }

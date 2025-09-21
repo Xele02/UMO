@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
 								arg.defaultSelectScene = 0;
 								arg.divaSlotIndex = 0;
-								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].DIPKCALNIII_DivaId - 1];
+								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].DIPKCALNIII_DivaId - 1];
 								info.category = SceneGroupCategory.FORMATION;
 								info.nextName = TransitionList.Type.SCENE_SELECT;
 								info.parentName = TransitionList.Type.TEAM_EDIT;
@@ -738,7 +738,7 @@ namespace XeApp.Game.Menu
 		public void InitializePlayerStatusData()
 		{
 			m_playerStatusData = new IFBCGCCJBHI();
-			m_playerStatusData.KHEKNNFCAOI();
+			m_playerStatusData.KHEKNNFCAOI_Init();
 		}
 
 		// // RVA: 0xB30F18 Offset: 0xB30F18 VA: 0xB30F18
@@ -2262,7 +2262,7 @@ namespace XeApp.Game.Menu
 					return true;
 			}
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None)
 				return false;
 			else if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week)
 				return false;
@@ -2389,7 +2389,7 @@ namespace XeApp.Game.Menu
 				//0xB38AB4
 				if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2)
 				{
-					if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+					if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None)
 					{
 						Instance.HelpButton.HideEventHelpButton();
 						Instance.Mount(TransitionUniqueId.MUSICSELECT, new EventMusicSelectSceneArgs(unitqueId, false, false), true, MenuSceneCamebackInfo.CamBackUnityScene.None);

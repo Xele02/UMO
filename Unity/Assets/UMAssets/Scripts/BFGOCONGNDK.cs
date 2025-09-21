@@ -9,9 +9,9 @@ public class BFGOCONGNDK
 {
 	private const int NEBFFKCGIMK = 741042;
 	private const int OBHOPEGFNGN = 16;
-	public string IOIMHJAOKOO_FileHash; // 0x8
-	public int OENPCNBFPDA_BgId; // 0xC
-	public long PDBPFJJCADD_StartTime; // 0x10
+	public string IOIMHJAOKOO_Hash; // 0x8
+	public int OENPCNBFPDA_bg_id; // 0xC
+	public long PDBPFJJCADD_open_at; // 0x10
 	public long FDBNFFNFOND_CloseAt; // 0x18
 	public bool MBGHLLHFNHH; // 0x20
 
@@ -71,16 +71,16 @@ public class BFGOCONGNDK
 					string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/";
 					if(File.Exists(path))
 					{
-						OENPCNBFPDA_BgId = bg.bgId;
-						PDBPFJJCADD_StartTime = bg.startTime;
+						OENPCNBFPDA_bg_id = bg.bgId;
+						PDBPFJJCADD_open_at = bg.startTime;
 						FDBNFFNFOND_CloseAt = bg.endTime;
-						IOIMHJAOKOO_FileHash = g.POEGMFKLFJG_Hash;
+						IOIMHJAOKOO_Hash = g.POEGMFKLFJG_hash_value;
 						EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 						data["ver"] = AppInfo.appVersion;
 						data["b"] = AppInfo.buildVersion;
-						data["h"] = IOIMHJAOKOO_FileHash;
-						data["bg"] = OENPCNBFPDA_BgId;
-						data["s"] = PDBPFJJCADD_StartTime;
+						data["h"] = IOIMHJAOKOO_Hash;
+						data["bg"] = OENPCNBFPDA_bg_id;
+						data["s"] = PDBPFJJCADD_open_at;
 						data["e"] = FDBNFFNFOND_CloseAt;
 						KIJECNFNNDB_JsonWriter k = new KIJECNFNNDB_JsonWriter();
 						IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(data, k);
@@ -110,9 +110,9 @@ public class BFGOCONGNDK
 	// // RVA: 0xC7AF9C Offset: 0xC7AF9C VA: 0xC7AF9C
 	public bool DAONJOOCPFP(int ODJPFMGNDML_Id)
     {
-        OENPCNBFPDA_BgId = ODJPFMGNDML_Id; // Hack, force bg id since PCODDPDFLHK is not executed
+        OENPCNBFPDA_bg_id = ODJPFMGNDML_Id; // Hack, force bg id since PCODDPDFLHK is not executed
 
-		if(OENPCNBFPDA_BgId == ODJPFMGNDML_Id)
+		if(OENPCNBFPDA_bg_id == ODJPFMGNDML_Id)
 		{
 			string fileBg = FileSystemProxy.ConvertPath(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP_GetBgFileName(ODJPFMGNDML_Id));
 			//if(File.Exists(fileBg))
@@ -136,7 +136,7 @@ public class BFGOCONGNDK
 							f.Dispose();
 						}
 						TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK works");
-						//return strHash == IOIMHJAOKOO_FileHash;
+						//return strHash == IOIMHJAOKOO_Hash;
 						return true;
 					}
 				}

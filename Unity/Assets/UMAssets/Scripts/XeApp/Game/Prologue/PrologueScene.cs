@@ -35,7 +35,7 @@ namespace XeApp.Game.Prologue
 		//// RVA: 0xCA6A7C Offset: 0xCA6A7C VA: 0xCA6A7C
 		private bool IsPrologueEnded()
 		{
-			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress > 0;
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress > 0;
 		}
 
 		// RVA: 0xCA6B70 Offset: 0xCA6B70 VA: 0xCA6B70 Slot: 9
@@ -327,7 +327,7 @@ namespace XeApp.Game.Prologue
 		//// RVA: 0xCA7090 Offset: 0xCA7090 VA: 0xCA7090
 		private void SceneEnd()
 		{
-			int progress = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress;
+			int progress = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress;
 			if(progress > 0)
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
@@ -471,7 +471,7 @@ namespace XeApp.Game.Prologue
 				}
 			}
 			GCIJNCFDNON_SceneInfo sceneInfo = new GCIJNCFDNON_SceneInfo();
-			sceneInfo.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+			sceneInfo.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 			if(scene.KPIIIEGGPIB_LS > 0)
 			{
 				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1];

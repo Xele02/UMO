@@ -143,12 +143,12 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
+							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_Icon[0];
 							icon2 = 0;
 						}
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
 						isVisible = false;
-						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 						return;
 					}
 				case DisplayType.LiveSkill:
@@ -162,11 +162,11 @@ namespace XeApp.Game.Menu
 							icon2 = 0;
 							isActive = false;
 						}
-						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL[0];
-						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL[1];
+						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[0];
+						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[1];
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
 						isVisible = false;
-						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 						return;
 					}
 				case DisplayType.RecoveryNotes:
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 				case DisplayType.EpisodePoint:
 					m_sceneIconDecrationBehaviour.SetFraction(sceneData.CGJCEHGFHMA(), sceneData.JLNGOOGHCNA());
 					isVisible = true;
-					m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+					m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 					return;
 				case DisplayType.EpisodeName:
 					isShowLevel = true;
@@ -202,7 +202,7 @@ namespace XeApp.Game.Menu
 			}
 			m_sceneIconDecrationBehaviour.SetValue(val, isShowLevel, isMax, sceneData.MCCIFLKCNKO_Feed);
 			isVisible = true;
-			m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+			m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 		}
 
 		//// RVA: 0x136CE10 Offset: 0x136CE10 VA: 0x136CE10

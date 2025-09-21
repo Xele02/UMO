@@ -5,13 +5,13 @@ using UnityEngine;
 public class ONIGGMCFHAL {}
 public class ONIGGMCFHAL_IsBlacklisted : CACGCMBKHDI_Request
 {
-	public int MLPEHNBNOGD; // 0x7C
+	public int MLPEHNBNOGD_PlayerId; // 0x7C
 	public bool ELCCCJDLLAJ_Blacklisted; // 0x80
 
 	// RVA: 0xCAEDBC Offset: 0xCAEDBC VA: 0xCAEDBC Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA_CallContext = SakashoPlayerBlacklist.IsBlacklisted(MLPEHNBNOGD, DCKLDDCAJAP, MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoPlayerBlacklist.IsBlacklisted(MLPEHNBNOGD_PlayerId, DCKLDDCAJAP, MEOCKCJBDAD);
     }
 
 	// RVA: 0xCAEEA0 Offset: 0xCAEEA0 VA: 0xCAEEA0 Slot: 13

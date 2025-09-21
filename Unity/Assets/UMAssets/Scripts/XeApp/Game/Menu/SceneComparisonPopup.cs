@@ -218,17 +218,17 @@ namespace XeApp.Game.Menu
 								}
 								if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 2)
 								{
-									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+									divaInfo.KHEKNNFCAOI_Init(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
 										divaInfo.EKFONBFDAAP_ColorId, divaScene, new List<GCIJNCFDNON_SceneInfo>() { divaScene2, sceneInfo }, true);
 								}
 								else if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 1)
 								{
-									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+									divaInfo.KHEKNNFCAOI_Init(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
 										divaInfo.EKFONBFDAAP_ColorId, divaScene, new List<GCIJNCFDNON_SceneInfo>() { sceneInfo, divaScene3 }, true);
 								}
 								else if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 0)
 								{
-									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+									divaInfo.KHEKNNFCAOI_Init(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
 										divaInfo.EKFONBFDAAP_ColorId, sceneInfo, new List<GCIJNCFDNON_SceneInfo>() { divaScene2, divaScene3 }, true);
 								}
 								if(isGoDiva)

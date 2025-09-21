@@ -7,9 +7,9 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 {
 	public class KBLBMGDILAI
 	{
-		public int PPFNGGCBJKC; // 0x8
-		public int PPEGAKEIEGM; // 0xC
-		public long PDBPFJJCADD; // 0x10
+		public int PPFNGGCBJKC_id; // 0x8
+		public int PPEGAKEIEGM_Enabled; // 0xC
+		public long PDBPFJJCADD_open_at; // 0x10
 		public long FDBNFFNFOND_CloseAt; // 0x18
 		public int[] BMFACNFNCKC; // 0x20
 		public int[] MFKKADJIHHK; // 0x24
@@ -31,7 +31,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
-			if (CDENCMNHNGA_table[i].PPEGAKEIEGM == 2 && PACNICEIIDI >= CDENCMNHNGA_table[i].PDBPFJJCADD && PACNICEIIDI < CDENCMNHNGA_table[i].FDBNFFNFOND_CloseAt)
+			if (CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2 && PACNICEIIDI >= CDENCMNHNGA_table[i].PDBPFJJCADD_open_at && PACNICEIIDI < CDENCMNHNGA_table[i].FDBNFFNFOND_CloseAt)
 				return CDENCMNHNGA_table[i];
 		}
 		return null;
@@ -47,13 +47,13 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xCD1F5C Offset: 0xCD1F5C VA: 0xCD1F5C Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0xCD1FD4 Offset: 0xCD1FD4 VA: 0xCD1FD4 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		MBBEDEBFEHK parser = MBBEDEBFEHK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		LLLEJDAGGKF(parser);
@@ -61,7 +61,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xCD229C Offset: 0xCD229C VA: 0xCD229C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}
@@ -73,9 +73,9 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			KBLBMGDILAI data = new KBLBMGDILAI();
-			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
+			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
 			data.BMFACNFNCKC = array[i].BMFACNFNCKC;
 			data.MFKKADJIHHK = array[i].MFKKADJIHHK;

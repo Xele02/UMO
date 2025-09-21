@@ -57,8 +57,8 @@ public class BOBCNJIPPJN
 	}
 
 	// // RVA: 0x19CC280 Offset: 0x19CC280 VA: 0x19CC280
-	private static int HCPBJNNFONO(byte[] _DBBGALAPFGC_Data, byte[] IAKPCFDLMKP)
+	private static int HCPBJNNFONO(byte[] _DBBGALAPFGC_Data, byte[] _IAKPCFDLMKP_db)
 	{
-		return KEHJJDKPDLL(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length, IAKPCFDLMKP, IAKPCFDLMKP.Length);
+		return KEHJJDKPDLL(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length, _IAKPCFDLMKP_db, _IAKPCFDLMKP_db.Length);
 	}
 }

@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 		public void SetupRewardStat(IBJAKJJICBC musicData)
 		{
 			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
-			for(int i = 0; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
+			for(int i = 0; i < musicData.MGJKEJHEBPO_Blocks.Count; i++)
 			{
 				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 				m_rewardStats[i].Init(m_rewardData);
@@ -162,17 +162,17 @@ namespace XeApp.Game.Menu
 		{
 			if(!musicListData.IsHighLevel)
 			{
-				for(int i = 0; i < musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos.Count; i++)
+				for(int i = 0; i < musicListData.ViewMusic.MGJKEJHEBPO_Blocks.Count; i++)
 				{
-					m_difficultyButtonGroup.SetDifficultyStatus(i, musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos[i].CADENLBDAEB_IsNew,
-						musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos[i].BCGLDMKODLC_IsClear,
-						(RhythmGameConsts.ResultComboType)musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos[i].LCOHGOIDMDF_ComboRank);
+					m_difficultyButtonGroup.SetDifficultyStatus(i, musicListData.ViewMusic.MGJKEJHEBPO_Blocks[i].CADENLBDAEB_IsNew,
+						musicListData.ViewMusic.MGJKEJHEBPO_Blocks[i].BCGLDMKODLC_IsClear,
+						(RhythmGameConsts.ResultComboType)musicListData.ViewMusic.MGJKEJHEBPO_Blocks[i].LCOHGOIDMDF_ComboRank);
 				}
 			}
 			else
 			{
-				m_musicDetail.SetHighLevelClearStatus(musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos[musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos.Count - 1].BCGLDMKODLC_IsClear,
-					(RhythmGameConsts.ResultComboType)musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos[musicListData.ViewMusic.MGJKEJHEBPO_DiffInfos.Count - 1].LCOHGOIDMDF_ComboRank);
+				m_musicDetail.SetHighLevelClearStatus(musicListData.ViewMusic.MGJKEJHEBPO_Blocks[musicListData.ViewMusic.MGJKEJHEBPO_Blocks.Count - 1].BCGLDMKODLC_IsClear,
+					(RhythmGameConsts.ResultComboType)musicListData.ViewMusic.MGJKEJHEBPO_Blocks[musicListData.ViewMusic.MGJKEJHEBPO_Blocks.Count - 1].LCOHGOIDMDF_ComboRank);
 			}
 		}
 
@@ -257,9 +257,9 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < 5; i++)
 			{
-				if(musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score != null)
+				if(musicData.MGJKEJHEBPO_Blocks[i].HHMLMKAEJBJ_Score != null)
 				{
-					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
+					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_Blocks[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
 				}
 			}
 		}
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADB628 Offset: 0xADB628 VA: 0xADB628
 		public void SetMusicScore(IBJAKJJICBC musicData)
 		{
-			if(!musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BCGLDMKODLC_IsClear)
+			if(!musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BCGLDMKODLC_IsClear)
 			{
 				if(musicData.AFCMIOIGAJN_EventInfo == null)
 				{
@@ -276,9 +276,9 @@ namespace XeApp.Game.Menu
 					return;
 				}
 			}
-			int score = musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score;
+			int score = musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].KNIFCANOHOC_score;
 			m_musicDetail.SetHighScore(score, true);
-			m_musicDetail.SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(score));
+			m_musicDetail.SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(score));
 		}
 
 		// // RVA: 0xADB804 Offset: 0xADB804 VA: 0xADB804
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADBAD8 Offset: 0xADBAD8 VA: 0xADBAD8
 		public void SetEnergy(IBJAKJJICBC musicData)
 		{
-			m_playButton.SetEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BPLOEAHOPFI_Stamina);
+			m_playButton.SetEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_Stamina);
 		}
 
 		// // RVA: 0xAC7F7C Offset: 0xAC7F7C VA: 0xAC7F7C

@@ -10,9 +10,9 @@ public class ECEPJHGMGBJ : IBJAKJJICBC
 	public bool LFGNLKKFOCD_IsLine6 { get; set; } // 0xEC JPINIEEOCME PAIHMADGJKE ICADLJCGFIN
 
 	//// RVA: 0x1502C90 Offset: 0x1502C90 VA: 0x1502C90
-	new public void KHEKNNFCAOI(int _GHBPLHBNMBK_FreeMusicId)
+	new public void KHEKNNFCAOI_Init(int _GHBPLHBNMBK_FreeMusicId)
 	{
-		base.KHEKNNFCAOI(_GHBPLHBNMBK_FreeMusicId, false, 0, 0, 0, false, false, false);
+		base.KHEKNNFCAOI_Init(_GHBPLHBNMBK_FreeMusicId, false, 0, 0, 0, false, false, false);
 		LPALNMHPDKK_Score = 0;
 		HKIAHOEEMLC_PrevScore = 0;
 		AKNELONELJK_Difficulty = Difficulty.Type.Easy;

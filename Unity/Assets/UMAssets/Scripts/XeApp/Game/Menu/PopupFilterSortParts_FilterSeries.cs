@@ -93,8 +93,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1C8AF2C Offset: 0x1C8AF2C VA: 0x1C8AF2C
 		public static uint CreateBit(PIGBBNDPPJC a_view)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_UnlockItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_UnlockItemId);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
 			int a = 0;
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 			{

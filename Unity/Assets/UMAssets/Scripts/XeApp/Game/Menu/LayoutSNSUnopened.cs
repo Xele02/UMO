@@ -88,8 +88,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x193DE98 Offset: 0x193DE98 VA: 0x193DE98 Slot: 13
 		public override void SetStatus(SNSTalkCreater.ViewTalk talk)
 		{
-			SetTitle(talk.talk.OPFGFINHFCE_Name);
-			SetText(talk.talk.LJGOOOMOMMA_Desc);
+			SetTitle(talk.talk.OPFGFINHFCE_name);
+			SetText(talk.talk.LJGOOOMOMMA_message);
 		}
 
 		// RVA: 0x193DEFC Offset: 0x193DEFC VA: 0x193DEFC Slot: 5

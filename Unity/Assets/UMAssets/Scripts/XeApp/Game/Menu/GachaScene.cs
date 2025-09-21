@@ -60,12 +60,12 @@ namespace XeApp.Game.Menu
 			{
 				if(limitedLot != null)
 				{
-					limited_groups = limitedLot.OJGPPOKENLG_ProbabilityPerGroupKey;
+					limited_groups = limitedLot.OJGPPOKENLG_Groups;
 					limited_episodes = limitedLot.DDGPEFEEKFP_Items;
 				}
 				if(basicLot != null)
 				{
-					basic_groups = basicLot.OJGPPOKENLG_ProbabilityPerGroupKey;
+					basic_groups = basicLot.OJGPPOKENLG_Groups;
 					basic_episodes = basicLot.DDGPEFEEKFP_Items;
 				}
 				if (extra != null)
@@ -77,12 +77,12 @@ namespace XeApp.Game.Menu
 			{
 				if (limitedLot != null)
 				{
-					limited_groups = limitedLot.OJGPPOKENLG_ProbabilityPerGroupKey;
+					limited_groups = limitedLot.OJGPPOKENLG_Groups;
 					limited_episodes = limitedLot.DDGPEFEEKFP_Items;
 				}
 				if (basicLot != null)
 				{
-					basic_groups = basicLot.OJGPPOKENLG_ProbabilityPerGroupKey;
+					basic_groups = basicLot.OJGPPOKENLG_Groups;
 					basic_episodes = basicLot.DDGPEFEEKFP_Items;
 				}
 				if (extra != null)
@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(!err)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG.BBEPLKNMICJ_Balances);
+				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG_Result.BBEPLKNMICJ_Balances);
 				req = null;
 				done = false;
 				err = false;
@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 							yield return null;
 						if(!err)
 						{
-							GachaProductList = gpm.MHKCPJDNJKI_GatchaProducts;
+							GachaProductList = gpm.MHKCPJDNJKI_products;
 							gpm = null;
 						}
 						else
@@ -238,7 +238,7 @@ namespace XeApp.Game.Menu
 					if(m_view == null)
 					{
 						m_view = new BEPHBEGDFFK();
-						m_view.KHEKNNFCAOI();
+						m_view.KHEKNNFCAOI_Init();
 					}
 					SelectIndex = GachaProductList.FindIndex((LOBDIAABMKG x) =>
 					{
@@ -481,7 +481,7 @@ namespace XeApp.Game.Menu
 			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.ANGMDEPOBEE();
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GachaUtility.typeAndSeriesId = product.FDEBLMKEMLF_TypeAndSeriesId;
-			GachaUtility.selectCategory = product.INDDJNMPONH_Category;
+			GachaUtility.selectCategory = product.INDDJNMPONH_Type;
 			GachaUtility.UpdateGachaProductCategory();
 			GachaUtility.SetupFreeTimezone();
 			GachaUtility.SetupGachaLimitTime(time);
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 				//0xEECB20
 				if (conditionId != TutorialConditionId.Condition36)
 					return false;
-				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily;
+				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily;
 			}));
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
 			{
@@ -550,7 +550,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE74D0 Offset: 0xEE74D0 VA: 0xEE74D0
 		private int FindRelatedEpisodeId(int cardId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].KELFCMEOPPM_Ep;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].KELFCMEOPPM_EpisodeId;
 		}
 
 		//// RVA: 0xEE7600 Offset: 0xEE7600 VA: 0xEE7600
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7948 Offset: 0xEE7948 VA: 0xEE7948
 		private void OnTimeLimit()
 		{
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				GachaUtility.OpenTimeLimitPopup(ResetLotInfo);
 			}
@@ -601,7 +601,7 @@ namespace XeApp.Game.Menu
 			int id = FindRelatedEpisodeId(m_view.BADFIKBADNH_PickupId);
 			LGMEPLIJLNB data = LGMEPLIJLNB.BMFKMFNPGPC(id, true);
 			PIGBBNDPPJC p = new PIGBBNDPPJC();
-			p.KHEKNNFCAOI(id);
+			p.KHEKNNFCAOI_Init(id);
 			int fullItemId = data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullItemId);
             int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullItemId);
@@ -638,7 +638,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDrawGacha(int lotCount)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-			this.StartCoroutineWatched(OpenGachaPopup(GachaUtility.netGachaProductData.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3 || lotCount > 1 ? GachaUtility.CountType.Multi : GachaUtility.CountType.Single));
+			this.StartCoroutineWatched(OpenGachaPopup(GachaUtility.netGachaProductData.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3 || lotCount > 1 ? GachaUtility.CountType.Multi : GachaUtility.CountType.Single));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DCFEC Offset: 0x6DCFEC VA: 0x6DCFEC
@@ -773,7 +773,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
 					scene.IJIKIPDKCPP = m_view.EFCJADAPOMN ? 2 : 1;
-					scene.KHEKNNFCAOI(m_view.BADFIKBADNH_PickupId, null, null, m_view.EFCJADAPOMN ? 1 : 0, 0, 0, false, 0, 0);
+					scene.KHEKNNFCAOI_Init(m_view.BADFIKBADNH_PickupId, null, null, m_view.EFCJADAPOMN ? 1 : 0, 0, 0, false, 0, 0);
 					m_layoutBg.SetChangeBgLoopState(true, -1);
 					ShowSceneStatusPopup(scene, GameManager.Instance.ViewPlayerData, true, () =>
 					{
@@ -878,7 +878,7 @@ namespace XeApp.Game.Menu
 			}
 			int v3 = 0;
 			string s = "";
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				v3 = m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId;
 				s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
@@ -888,7 +888,7 @@ namespace XeApp.Game.Menu
 				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(v2);
 				if (tkt != null)
 				{
-					v3 = tkt.PPFNGGCBJKC_Id;
+					v3 = tkt.PPFNGGCBJKC_id;
 					s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
 				}
 			}
@@ -1108,7 +1108,7 @@ namespace XeApp.Game.Menu
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			HIMAFGJCECK limitedLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, true);
 			HIMAFGJCECK basicLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, false);
-			if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+			if(product.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 			{
 				if (limitedLot == null)
 				{
@@ -1133,7 +1133,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			m_appearLot = new AppearLot(limitedLot, basicLot, product.KACECFNECON);
+			m_appearLot = new AppearLot(limitedLot, basicLot, product.KACECFNECON_extra);
 			MakeAppearRateInGroup(m_rateInfoList, m_appearLot);
 			MakeAppearRateInEpisode(m_episodeInfoList, m_appearLot);
 		}
@@ -1144,9 +1144,9 @@ namespace XeApp.Game.Menu
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			if (stepIndex < 0)
 			{
-				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex;
 			}
-			m_appearLot = new AppearLot(product.NLGPIELHAKC(stepIndex, true), product.NLGPIELHAKC(stepIndex, false), product.KACECFNECON);
+			m_appearLot = new AppearLot(product.NLGPIELHAKC(stepIndex, true), product.NLGPIELHAKC(stepIndex, false), product.KACECFNECON_extra);
 			MakeAppearRateInGroup(m_rateInfoList, m_appearLot);
 			MakeAppearRateInEpisode(m_episodeInfoList, m_appearLot);
 		}
@@ -1166,12 +1166,12 @@ namespace XeApp.Game.Menu
 				GachaRateHeaderInfo info = new GachaRateHeaderInfo();
 				info.isLimited = false;
 				info.headerTitle = bk.GetMessageByLabel("popup_gacha_rate_basic_header");
-				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK : "";
-				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK : "";
-				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK : "";
-				info.s3Percent = r3 != null ? r3.MMOJHIPAAIK : "";
-				info.s2Percent = r2 != null ? r2.MMOJHIPAAIK : "";
-				info.s1Percent = r1 != null ? r1.MMOJHIPAAIK : "";
+				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK_probability : "";
+				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK_probability : "";
+				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK_probability : "";
+				info.s3Percent = r3 != null ? r3.MMOJHIPAAIK_probability : "";
+				info.s2Percent = r2 != null ? r2.MMOJHIPAAIK_probability : "";
+				info.s1Percent = r1 != null ? r1.MMOJHIPAAIK_probability : "";
 				info.listTitle = bk.GetMessageByLabel("popup_gacha_rate_basic_list");
 				infoList.Add(info);
 				if (r6 != null)
@@ -1201,9 +1201,9 @@ namespace XeApp.Game.Menu
 				BPADANIKFHP r4 = SelectRarity(lot.limited_groups, 4);
 				GachaRateHeaderInfo info = new GachaRateHeaderInfo();
 				info.isLimited = true;
-				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK : "";
-				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK : "";
-				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK : "";
+				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK_probability : "";
+				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK_probability : "";
+				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK_probability : "";
 				bool isHideRareMark = string.IsNullOrEmpty(info.s4Percent) && string.IsNullOrEmpty(info.s6Percent);
 				bool isHideRareMark2 = string.IsNullOrEmpty(info.s4Percent) && string.IsNullOrEmpty(info.s5Percent);
 				info.headerTitle = bk.GetMessageByLabel(lot.basic_groups == null ? "popup_gacha_rate_basic_header" : (isHideRareMark || isHideRareMark2 ? "popup_gacha_rate_limited5_header" : "popup_gacha_rate_limited_header"));
@@ -1240,12 +1240,12 @@ namespace XeApp.Game.Menu
 				GachaRateHeaderInfo info = new GachaRateHeaderInfo();
 				info.isLimited = false;
 				info.headerTitle = bk.GetMessageByLabel("popup_gacha_rate_basic_header");
-				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK : "";
-				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK : "";
-				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK : "";
-				info.s3Percent = r3 != null ? r3.MMOJHIPAAIK : "";
-				info.s2Percent = r2 != null ? r2.MMOJHIPAAIK : "";
-				info.s1Percent = r1 != null ? r1.MMOJHIPAAIK : "";
+				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK_probability : "";
+				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK_probability : "";
+				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK_probability : "";
+				info.s3Percent = r3 != null ? r3.MMOJHIPAAIK_probability : "";
+				info.s2Percent = r2 != null ? r2.MMOJHIPAAIK_probability : "";
+				info.s1Percent = r1 != null ? r1.MMOJHIPAAIK_probability : "";
 				info.listTitle = bk.GetMessageByLabel("popup_gacha_rate_basic_list");
 				infoList.Add(info);
 				for(int i = 0; i < lot.basic_episodes.Count; i++)
@@ -1267,9 +1267,9 @@ namespace XeApp.Game.Menu
 				BPADANIKFHP r4 = SelectRarity(lot.limited_groups, 4);
 				GachaRateHeaderInfo info = new GachaRateHeaderInfo();
 				info.isLimited = true;
-				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK : "";
-				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK : "";
-				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK : "";
+				info.s6Percent = r6 != null ? r6.MMOJHIPAAIK_probability : "";
+				info.s5Percent = r5 != null ? r5.MMOJHIPAAIK_probability : "";
+				info.s4Percent = r4 != null ? r4.MMOJHIPAAIK_probability : "";
 				bool isHideRareMark = string.IsNullOrEmpty(info.s4Percent) && string.IsNullOrEmpty(info.s6Percent);
 				info.headerTitle = bk.GetMessageByLabel(lot.basic_groups == null ? "popup_gacha_rate_basic_header" : (isHideRareMark ? "popup_gacha_rate_limited5_header" : "popup_gacha_rate_limited_header"));
 				info.listTitle = bk.GetMessageByLabel(lot.basic_groups == null ? "popup_gacha_rate_basic_list" : (isHideRareMark ? "popup_gacha_rate_limited5_list" : "popup_gacha_rate_limited_list"));
@@ -1295,7 +1295,7 @@ namespace XeApp.Game.Menu
 			{
 				GachaRateRarityInfo info = new GachaRateRarityInfo();
 				info.starNum = lot.EKLIPGELKCL_Rarity;
-				info.percent = lot.MMOJHIPAAIK;
+				info.percent = lot.MMOJHIPAAIK_probability;
 				infoList.Add(info);
 			}
 			for(int i = 0; i < lot.HBHMAKNGKFK_Items.Count; i++)
@@ -1303,8 +1303,8 @@ namespace XeApp.Game.Menu
 				GachaRateItemInfo info = new GachaRateItemInfo();
 				info.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
 				info.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
-				info.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_Probability;
-				info.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_IsPickup;
+				info.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_probability;
+				info.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_Pickup;
 				infoList.Add(info);
 			}
 		}
@@ -1322,8 +1322,8 @@ namespace XeApp.Game.Menu
 				GachaRateEpItemInfo info2 = new GachaRateEpItemInfo();
 				info2.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
 				info2.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
-				info2.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_Probability;
-				info2.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_IsPickup;
+				info2.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_probability;
+				info2.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_Pickup;
 				info2.starNum = lot.HBHMAKNGKFK_Items[i].FJNGOPBGEOI_GroupIdx;
 				infoList.Add(info2);
 			}

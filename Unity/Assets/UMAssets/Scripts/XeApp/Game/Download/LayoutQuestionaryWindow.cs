@@ -86,7 +86,7 @@ namespace XeApp.Game.DownLoad
 			m_notification1Text[0].text = str;
 			m_notification2Text.text = MessageManager.Instance.GetMessage("menu", "questionary_notification_002");
 			m_questionText.text = string.Format("Q{0}.{1}", data.EILKGEADKGH_Order, data.ADCMNODJBGJ_Title);
-			m_minAnswerCount = data.NNDBJGDFEEM_MinAnswer;
+			m_minAnswerCount = data.NNDBJGDFEEM_Min;
 			m_maxAnswerCount = data.DOOGFEGEKLG_Max;
 			CloseAllButton();
 			m_notificationTextChangeAnim.StartChildrenAnimGoStop(str.Length > 17 ? "02" : "01");
@@ -246,8 +246,8 @@ namespace XeApp.Game.DownLoad
 		//// RVA: 0x982AF4 Offset: 0x982AF4 VA: 0x982AF4
 		private string GetNotificationMessage(MBLFHJJEHLH_AnketoMgr.CGBKENNCMMC data)
 		{
-			string str = MessageManager.Instance.GetMessage("menu", string.Format("questionary_notification_{0:D3}", data.INDDJNMPONH_NotifId - 1));
-			if(data.INDDJNMPONH_NotifId == 2)
+			string str = MessageManager.Instance.GetMessage("menu", string.Format("questionary_notification_{0:D3}", data.INDDJNMPONH_Type - 1));
+			if(data.INDDJNMPONH_Type == 2)
 			{
 				if (data.DOOGFEGEKLG_Max > 2)
 					str = Smart.Format(str, data.DOOGFEGEKLG_Max);

@@ -471,7 +471,7 @@ namespace XeApp.Game.Menu
 				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.LMPCJJKHHPA_IsLine6();
 			GameManager.Instance.SelectedGuestData = null;
 			m_eventGoDivaData = new BBOPDOIIOGM();
-			m_eventGoDivaData.KHEKNNFCAOI();
+			m_eventGoDivaData.KHEKNNFCAOI_Init();
 			m_originalMusicLists = m_eventGoDivaData.IPJKJBBDFKC;
 			if(m_originalMusicLists.Count < 1)
 			{
@@ -538,7 +538,7 @@ namespace XeApp.Game.Menu
 			{
 				TryInstallMusicPict(str, m_originalMusicLists[i], m_isLine6Mode);
 			}
-			foreach(var d in m_eventGoDivaData.NBIGLBMHEDC_Divas)
+			foreach(var d in m_eventGoDivaData.NBIGLBMHEDC_DivaList)
 			{
 				GameManager.Instance.DivaIconCache.TryInstall(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, d.EKFONBFDAAP_ColorId);
 			}
@@ -580,7 +580,7 @@ namespace XeApp.Game.Menu
 			bool isError = false;
 			NetProcessSetting info = new NetProcessSetting();
 			info.AddRankingRequest(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, m_divaId - 1);
-			int cnt = m_eventGoDivaData.NBIGLBMHEDC_Divas.Count;
+			int cnt = m_eventGoDivaData.NBIGLBMHEDC_DivaList.Count;
 			m_divaRankingRequestedFlags = new List<bool>(cnt);
 			for(int i = 0; i < cnt; i++)
 			{
@@ -1164,8 +1164,8 @@ namespace XeApp.Game.Menu
 			}
 			MenuScene.Instance.divaManager.Release(true);
 			yield return Resources.UnloadUnusedAssets();
-			MenuScene.Instance.divaManager.Load(divaId, GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
-				GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].EKFONBFDAAP_ColorId, DivaResource.MenuFacialType.Home, false);
+			MenuScene.Instance.divaManager.Load(divaId, GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+				GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1].EKFONBFDAAP_ColorId, DivaResource.MenuFacialType.Home, false);
 			while(MenuScene.Instance.divaManager.IsLoading)
 				yield return null;
 			m_godivaCamera.SetDiva(divaId);
@@ -1218,12 +1218,12 @@ namespace XeApp.Game.Menu
 				m_eventInfo.SetNextPointInvalid();
 				m_eventInfo.SetNextRewardTextureInvalid();
 			}
-			for(int i = 0; i < m_eventGoDivaData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < m_eventGoDivaData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				m_selectDiva.SetDivaIcon(m_eventGoDivaData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId - 1, m_eventGoDivaData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 1 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 0 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].EKFONBFDAAP_ColorId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked);
+				m_selectDiva.SetDivaIcon(m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId - 1, m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, 
+					!m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 1 : m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+					!m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 0 : m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].EKFONBFDAAP_ColorId, 
+					!m_eventGoDivaData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked);
 			}
 			m_selectDiva.SetSelecting(m_divaId - 1);
 		}
@@ -1300,14 +1300,14 @@ namespace XeApp.Game.Menu
 			int godiva_max_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
 			godiva_max_level = Mathf.Min(godiva_max_level, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
 			FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO d;
-			if(m_divaId <= m_eventGoDivaData.NBIGLBMHEDC_Divas.Count && m_eventGoDivaData.NBIGLBMHEDC_Divas[m_divaId - 1].IHANGGCHPAL != null)
+			if(m_divaId <= m_eventGoDivaData.NBIGLBMHEDC_DivaList.Count && m_eventGoDivaData.NBIGLBMHEDC_DivaList[m_divaId - 1].IHANGGCHPAL != null)
 			{
-				d = m_eventGoDivaData.NBIGLBMHEDC_Divas[m_divaId - 1].IHANGGCHPAL;
+				d = m_eventGoDivaData.NBIGLBMHEDC_DivaList[m_divaId - 1].IHANGGCHPAL;
 			}
 			else
 			{
 				d = new FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO();
-				d.KHEKNNFCAOI(m_divaId);
+				d.KHEKNNFCAOI_Init(m_divaId);
 			}
 			m_eventInfo.SetStatusValue(LayoutEventGoDivaEventInfo.StatusType.Soul, d.KAMIJDBFGDB_EvSoLevel, godiva_max_level, m_eventGoDivaData.GGOHAGALIGB_GetDivaSoulExp(m_divaId), m_eventGoDivaData.DFONMIHHAGB_GetDivaSoulMExp(m_divaId), true);
 			m_eventInfo.SetStatusValue(LayoutEventGoDivaEventInfo.StatusType.Voice, d.BPEFIIEPJBM_EvVoLevel, godiva_max_level, m_eventGoDivaData.DFKNGEIBBAJ_GetDivaVoiceExp(m_divaId), m_eventGoDivaData.LPGFBLBEJNF_GetDivaVoiceMExp(m_divaId), true);
@@ -1531,7 +1531,7 @@ namespace XeApp.Game.Menu
 				if(!m_pageShownFlags[(int)pageType])
 				{
 					yield return Co.R(Co_Initialize_LoginBonusPopup(m_eventCtrl, GotoTitleFunc));
-					m_eventGoDivaData.KHEKNNFCAOI();
+					m_eventGoDivaData.KHEKNNFCAOI_Init();
 					ApplyEventCommonInfo();
 					if(!m_needAppliedMusicSelectSave)
 						yield break;
@@ -1794,7 +1794,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
-			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as LNELCMNJPIC_EventGoDiva;
+			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
 			int fever_ticket_rate = 0;
 			if(dbEv != null)
 				fever_ticket_rate = dbEv.LPJLEHAJADA("fever_ticket_rate", 0);
@@ -1963,12 +1963,12 @@ namespace XeApp.Game.Menu
 				return true;
 			if((filterBit & 1) != 0)
 			{
-				if(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].LCOHGOIDMDF_ComboRank > 0)
+				if(musicData.MGJKEJHEBPO_Blocks[(int)diff].LCOHGOIDMDF_ComboRank > 0)
 					return false;
 			}
 			if((filterBit & 2) == 0)
 				return true;
-			return musicData.MGJKEJHEBPO_DiffInfos[(int)diff].LCOHGOIDMDF_ComboRank < 2;
+			return musicData.MGJKEJHEBPO_Blocks[(int)diff].LCOHGOIDMDF_ComboRank < 2;
 		}
 
 		// // RVA: 0x106B804 Offset: 0x106B804 VA: 0x106B804
@@ -2125,7 +2125,7 @@ namespace XeApp.Game.Menu
 							if(l2[j].MOJMEFIENDM_WeeklyEventCount < 1)
 								continue;
 						}
-						if(difficulty == Difficulty.Type.Illegal || ((int)difficulty < l2[j].MGJKEJHEBPO_DiffInfos.Count && !l2[j].MGJKEJHEBPO_DiffInfos[(int)difficulty].POOMOBGPCNE_IsLocked))
+						if(difficulty == Difficulty.Type.Illegal || ((int)difficulty < l2[j].MGJKEJHEBPO_Blocks.Count && !l2[j].MGJKEJHEBPO_Blocks[(int)difficulty].POOMOBGPCNE_IsLocked))
 						{
 							//LAB_0106cc44
 							if(CheckMatchEventHomeMusicExpFilter(l2[j], t, true))
@@ -2323,7 +2323,7 @@ namespace XeApp.Game.Menu
 		private void OnClockStatusDetailButton()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.ShowGoDivaStatusDetail(m_eventGoDivaData.NBIGLBMHEDC_Divas[m_divaId - 1], null);
+			MenuScene.Instance.ShowGoDivaStatusDetail(m_eventGoDivaData.NBIGLBMHEDC_DivaList[m_divaId - 1], null);
 		}
 
 		// // RVA: 0x106DF98 Offset: 0x106DF98 VA: 0x106DF98

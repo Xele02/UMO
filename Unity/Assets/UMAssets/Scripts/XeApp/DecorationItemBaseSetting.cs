@@ -43,7 +43,7 @@ namespace XeApp
 		{
 			AttributeType = DecorationConstants.MakeAttribute(viewDecoItemData);
 			this.viewDecoItemData = new KDKFHGHGFEK();
-			this.viewDecoItemData.ODDIHGPONFL(viewDecoItemData);
+			this.viewDecoItemData.ODDIHGPONFL_Copy(viewDecoItemData);
 			AreaType = MakeAreaType((int)AttributeType);
 			IsAutoFlip = MakeAutoFlip(viewDecoItemData);
 			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN);

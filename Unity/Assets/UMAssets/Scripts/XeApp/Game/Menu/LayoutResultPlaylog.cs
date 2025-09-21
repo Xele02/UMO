@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 				}).ToArray();
 				for(int j = 0; j < hints.Length; j++)
 				{
-					if(view_data.PENICOGGNLF_RankScore < 2)
+					if(view_data.PENICOGGNLF_ScoreRank < 2)
 					{
 						if(hints[j].IsCheckHint(playlog))
 						{

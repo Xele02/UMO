@@ -44,21 +44,21 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_textEvTicket.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, dbTicket.PPFNGGCBJKC_Id));
+					m_textEvTicket.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, dbTicket.PPFNGGCBJKC_id));
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("02");
 				m_textPeriod.text = view.IFLJEIDBBPP();
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("04");
-				m_textDesc.text = view.DPBDFPPMIPH_Gacha.KACECFNECON.KLMPFGOCBHC_Description;
+				m_textDesc.text = view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.KLMPFGOCBHC_description;
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("03");
 				return;

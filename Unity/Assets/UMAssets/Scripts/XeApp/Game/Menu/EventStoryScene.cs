@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 			CCAAJNJGNDO.GALFFONBIJG data = m_eventStoryData.FFPCLEONGHE[index];
 			if(!data.GOBAMBLBCOM_IsPrologueOrEpilogue && !data.CMEKNACNMCE_IsUnknown3 && !data.DHJFHNFFDMG_IsUnknown4)
 			{
-				this.StartCoroutineWatched(Co_OpenSnsTalk(data.CLIHPOEBELF_RoomId, data.PBPOLELIPJI_AdventureId));
+				this.StartCoroutineWatched(Co_OpenSnsTalk(data.CLIHPOEBELF_RoomId, data.PBPOLELIPJI_Id));
 				return;
 			}
 			int eventUniqueId = m_eventStoryData.PPMNNKKFJNM_EventId;
@@ -273,8 +273,8 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(data.PBPOLELIPJI_AdventureId);
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(data.PBPOLELIPJI_AdventureId);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(data.PBPOLELIPJI_Id);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(data.PBPOLELIPJI_Id);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
 				a = new OAGBCBBHMPF.DKAMMIHBINF[4] {
@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 					OAGBCBBHMPF.DKAMMIHBINF.DECFIFJACCL/*1*/,
 					OAGBCBBHMPF.DKAMMIHBINF.EKJGOMKEJLK/*10*/
 				}[m_eventStoryData.IPCPFJJPIII - 1];
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(data.PBPOLELIPJI_AdventureId, a);
+			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(data.PBPOLELIPJI_Id, a);
 			Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			CCAAJNJGNDO.GALFFONBIJG c = m_eventStoryData.FFPCLEONGHE[index];
 			m_viewSceneData = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[CCAAJNJGNDO.FCMFPPALLOM(c.DEIJDMPOPJF) - 1];
-			m_strBuilder.SetFormat(bk.GetMessageByLabel("event_story_text_018"), m_viewSceneData.OPFGFINHFCE_SceneName);
+			m_strBuilder.SetFormat(bk.GetMessageByLabel("event_story_text_018"), m_viewSceneData.OPFGFINHFCE_name);
 			s.TitleText = bk.GetMessageByLabel("event_story_text_016");
 			s.Text = m_strBuilder.ToString();
 			s.Buttons = new ButtonInfo[2]
@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				MenuScene.Instance.InputEnable();
 				d = m_eventStoryData.FFPCLEONGHE[index];
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[d.PBPOLELIPJI_AdventureId];
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[d.PBPOLELIPJI_Id];
 				ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(sns.MALFHCHNEFN_RoomId, sns.AIPLIEMLHGC_SnsId, sns.AJIDLAGFPGM_TalkId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
 				textPopup.TitleText = bank.GetMessageByLabel("event_story_text_008");
 				textPopup.Text = bank.GetMessageByLabel("event_story_text_010");
@@ -556,11 +556,11 @@ namespace XeApp.Game.Menu
 				//0xB97410
 				if(m_eventStoryData.IMAGLAKEMIE_StoryType == 0)
 				{
-					m_eventStoryData.KHEKNNFCAOI_InitFromCurrentEvent(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM_EventId));
+					m_eventStoryData.KHEKNNFCAOI_Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM_EventId));
 				}
 				else
 				{
-					m_eventStoryData.KHEKNNFCAOI_InitFromEventId(m_eventStoryData.PPMNNKKFJNM_EventId);
+					m_eventStoryData.KHEKNNFCAOI_Init(m_eventStoryData.PPMNNKKFJNM_EventId);
 				}
 				m_eventStoryList.ListUpdate();
 			};

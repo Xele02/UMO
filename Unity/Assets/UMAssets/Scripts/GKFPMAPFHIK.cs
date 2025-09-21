@@ -27,13 +27,13 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	} //0xAB26F0 EFCMMCPAPOH
 
 	//// RVA: 0xAB28C4 Offset: 0xAB28C4 VA: 0xAB28C4
-	public bool KHEKNNFCAOI()
+	public bool KHEKNNFCAOI_Init()
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3/*3*/);
 		if(ev != null)
 		{
-			PNBAPMLNDLN_SetClear(ev.NDNDIAFEBFJ().KBAHNBKMFDL_IsMinigameClear);
+			PNBAPMLNDLN_SetClear(ev.NDNDIAFEBFJ().KBAHNBKMFDL_is_minigame_clear);
 			EKKFCEJECFK(ev.PGIIDPEGGPI_EventId);
 			return true;
 		}
@@ -41,7 +41,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	}
 
 	//// RVA: 0xAB2A18 Offset: 0xAB2A18 VA: 0xAB2A18
-	public AMLGMLNGMFB_EventAprilFool OEGDCBLNNFF(long JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
+	public AMLGMLNGMFB_EventAprilFool OEGDCBLNNFF(long _JHNMKKNEENE_Time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
 	{
 		List<IKDICBBFBMI_EventBase>  l = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
 		{
@@ -50,7 +50,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 		});
 		for (int i = 0; i < l.Count; i++)
 		{
-			l[i].HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
+			l[i].HCDGELDHFHB_UpdateStatus(_JHNMKKNEENE_Time);
 			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 			{
 				if((l[i] as AMLGMLNGMFB_EventAprilFool).NDIILFIFCDL_GetMinigameId() == 1)
@@ -68,7 +68,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 		if (ev == null)
 			return;
 		BCGLDMKODLC_IsClear = _BCGLDMKODLC_IsClear;
-		ev.NDNDIAFEBFJ().KBAHNBKMFDL_IsMinigameClear = _BCGLDMKODLC_IsClear;
+		ev.NDNDIAFEBFJ().KBAHNBKMFDL_is_minigame_clear = _BCGLDMKODLC_IsClear;
 	}
 
 	//// RVA: 0xAB2CE8 Offset: 0xAB2CE8 VA: 0xAB2CE8

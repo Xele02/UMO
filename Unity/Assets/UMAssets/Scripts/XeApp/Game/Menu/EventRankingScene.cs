@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 				m_eventCtrl = Arg.eventCtrl;
 				m_isPast = Arg.isPast;
 				int v1 = m_eventCtrl.DBOLCELMBJG_GetMainRankingIndex();
-				m_nameForApi[0] = m_eventCtrl.DAKMIKNKHMF_GetRankingInfoForIndex(v1).OCGFKMHNEOF_NameForApi;
+				m_nameForApi[0] = m_eventCtrl.DAKMIKNKHMF_GetRankingInfoForIndex(v1).OCGFKMHNEOF_name_for_api;
 				m_nameForApi[1] = "";
 				m_rankingMax = m_eventCtrl.NGIHFKHOJOK_GetRankingMax(false);
 				m_eventId = m_eventCtrl.PGIIDPEGGPI_EventId;
@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 					}
 					if(m_eventCtrl.NGIHFKHOJOK_GetRankingMax(false) > 1)
 					{
-						m_nameForApi[1] = m_eventCtrl.DAKMIKNKHMF_GetRankingInfoForIndex(v1 == 0 ? 1 : 0).OCGFKMHNEOF_NameForApi;
+						m_nameForApi[1] = m_eventCtrl.DAKMIKNKHMF_GetRankingInfoForIndex(v1 == 0 ? 1 : 0).OCGFKMHNEOF_name_for_api;
 						m_enableChangeRanking = true;
 					}
 					else
@@ -111,14 +111,14 @@ namespace XeApp.Game.Menu
 				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
 				EONOEHOKBEB_Music mi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[fmi.DLAEJOBELBH_MusicId - 1];
 				m_windowUi.ChangePreset(GeneralListWindow.Preset.ScoreEventRanking, false);
-				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_Ma - 1]);
+				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_Ma - 1]);
 				m_windowUi.SetMusicAttr((GameAttribute.Type) mi.FKDCCLPGKDK_Ma);
 				m_windowUi.SetMusicDiffVisible(false);
 				if(!m_isPast)
 					m_windowUi.SetRankingMessage(bk.GetMessageByLabel("ranking_message"));
 				else
 					m_windowUi.SetRankingMessage("");
-				GameManager.Instance.MusicJacketTextureCache.Load(mi.JNCPEGJGHOG_Cov, (IiconTexture image) =>
+				GameManager.Instance.MusicJacketTextureCache.Load(mi.JNCPEGJGHOG_JacketId, (IiconTexture image) =>
 				{
 					//0xB8E5B0
 					m_windowUi.SetMusicJacket(image);
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 				if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
 					IBJAKJJICBC ib = new IBJAKJJICBC();
-					ib.KHEKNNFCAOI(m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					ib.KHEKNNFCAOI_Init(m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
 					SetEventMusicRankingJacket(ib.JNCPEGJGHOG_JacketId, 0);
 				}
 				else
@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 						if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 						{
 							DCAKKIJODME dc = new DCAKKIJODME();
-							dc.KHEKNNFCAOI(false);
+							dc.KHEKNNFCAOI_Init(false);
 							List<EMGOCNMMPHC> l = dc.JNALKFEADEM();
 							for(int i = 0; i < l.Count; i++)
 							{
@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							ib.KHEKNNFCAOI(m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+							ib.KHEKNNFCAOI_Init(m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
 							SetEventMusicRankingJacket(ib.JNCPEGJGHOG_JacketId, 0);
 						}
 					}

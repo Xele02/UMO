@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		private void ShowSceneCardItem(int itemId)
 		{
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(itemId - 40000, null, null, 0, 0, 0, false, 0, 0);
 			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 		}
 

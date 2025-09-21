@@ -70,28 +70,28 @@ namespace XeApp.Game.Menu
 			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData;
 			if(stepRecord == null)
 			{
-				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(false);
 					if(d == null)
 					{
 						d = view.IIPOPGHKHBA(false);
 					}
-					if(view.DPBDFPPMIPH_Gacha.KACECFNECON.CICLLABDFFK_SaleButtonVisible)
+					if(view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.CICLLABDFFK_SaleButtonVisible)
 					{
-						ButtonL.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonL.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Hidden = true;
 						ButtonL.Hidden = false;
 					}
 					else
 					{
-						ButtonR.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonR.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Disable = d.CMHHHCAKPCD() < 1;
 						ButtonR.Hidden = false;
 						ButtonL.Hidden = true;
 					}
 				}
-				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
 					if(d == null)
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
-					if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
+					if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 					{
 						BEPHBEGDFFK.DMBKENKBIJD d2 = view.IIPOPGHKHBA(true);
 						if(d != null && d2 != null)
@@ -150,18 +150,18 @@ namespace XeApp.Game.Menu
 			string str = "";
 			bool b1 = false;
 			bool b2 = true;
-			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category)
+			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type)
 			{
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2_Regular:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 					b1 = false;
-					if (view.DPBDFPPMIPH_Gacha.KACECFNECON == null)
+					if (view.DPBDFPPMIPH_Gacha.KACECFNECON_extra == null)
 						break;
-					if (string.IsNullOrEmpty(view.DPBDFPPMIPH_Gacha.KACECFNECON.KLMPFGOCBHC_Description))
+					if (string.IsNullOrEmpty(view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.KLMPFGOCBHC_description))
 					{
-						if(view.DPBDFPPMIPH_Gacha.KACECFNECON.FLADABCFDFA_Pickup.Count < 1)
+						if(view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.FLADABCFDFA_Pickup.Count < 1)
 						{
 							b1 = false;
 							break;
@@ -172,14 +172,14 @@ namespace XeApp.Game.Menu
 					else
 					{
 						b1 = false;
-						str = bk.GetMessageByLabel(view.DPBDFPPMIPH_Gacha.KLMPFGOCBHC_Description);
+						str = bk.GetMessageByLabel(view.DPBDFPPMIPH_Gacha.KLMPFGOCBHC_description);
 					}
 					break;
 				default:
 					break;
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9:
 					b1 = false;
-					b2 = !view.DPBDFPPMIPH_Gacha.KACECFNECON.CICLLABDFFK_SaleButtonVisible;
+					b2 = !view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.CICLLABDFFK_SaleButtonVisible;
 					if(!b2)
 					{
 						int a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
@@ -247,12 +247,12 @@ namespace XeApp.Game.Menu
 			bool b1 = false;
 			bool b2;
 			string str;
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 			{
 				b2 = true;
 				str = "02";
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				b2 = true;
 				b1 = true;
@@ -343,22 +343,22 @@ namespace XeApp.Game.Menu
 			if(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData == null)
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("01");
-				if(view.DPBDFPPMIPH_Gacha.KACECFNECON != null)
+				if(view.DPBDFPPMIPH_Gacha.KACECFNECON_extra != null)
 				{
-					str = view.DPBDFPPMIPH_Gacha.KACECFNECON.MKJPDIHLGBF_FreeMulti;
+					str = view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.MKJPDIHLGBF_FreeMulti;
 				}
 			}
 			else
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
-				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
 				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Steps.Count, 0);
-				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
+				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.NMNLJFIDFJE_current_step_rest_count < 0 ? "02" : "01");
 				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Steps[stepNum - 1];
 				if(m != null)
 				{
-					str = m.KACECFNECON.KLMPFGOCBHC_Description;
+					str = m.KACECFNECON_extra.KLMPFGOCBHC_description;
 				}
 			}
 			if(!string.IsNullOrEmpty(str))
@@ -383,7 +383,7 @@ namespace XeApp.Game.Menu
 				}
 				switch (view.DPBDFPPMIPH_Gacha.FJICMLBOJCH())
 				{
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None:
 						m_layoutTelop.StartChildrenAnimGoStop("02");
 						break;
 					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC_1:

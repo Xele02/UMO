@@ -18,7 +18,7 @@ public class CKPOGHOIBEP
     }
 
 	// RVA: 0x1081770 Offset: 0x1081770 VA: 0x1081770
-	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA _COCEIPAKJKF_Item, Action JGELCIJAGFF, Action LIELJBACFKB, Action MOBEEPPKFLG, Action NIMPEHIECJH)
+	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA _COCEIPAKJKF_Item, Action JGELCIJAGFF, Action LIELJBACFKB, Action _MOBEEPPKFLG_OnFail, Action NIMPEHIECJH)
     {
         if(!PCIDGIBANFO)
         {
@@ -34,10 +34,10 @@ public class CKPOGHOIBEP
             };
             s.WindowSize = SizeType.Large;
             s.View = _COCEIPAKJKF_Item;
-            PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
+            PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
             {
                 //0x1081DD0
-                if(INDDJNMPONH == PopupButton.ButtonType.Positive)
+                if(_INDDJNMPONH_Type == PopupButton.ButtonType.Positive)
                 {
                     if(LEFBECMBOLH())
                     {
@@ -48,16 +48,16 @@ public class CKPOGHOIBEP
                             //0x108207C
                             MenuScene.Instance.InputEnable();
                             PCIDGIBANFO = false;
-                            if(MOBEEPPKFLG != null)
-                                MOBEEPPKFLG();
+                            if(_MOBEEPPKFLG_OnFail != null)
+                                _MOBEEPPKFLG_OnFail();
                         };
                         Action DMLJLPMBLCH = () =>
                         {
                             //0x108214C
                             MenuScene.Instance.InputEnable();
                             PCIDGIBANFO = false;
-                            if(MOBEEPPKFLG != null)
-                                MOBEEPPKFLG();
+                            if(_MOBEEPPKFLG_OnFail != null)
+                                _MOBEEPPKFLG_OnFail();
                         };
                         Action EEIFDMNADPA = () =>
                         {
@@ -93,7 +93,7 @@ public class CKPOGHOIBEP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9E98 Offset: 0x6B9E98 VA: 0x6B9E98
 	// // RVA: 0x1081C18 Offset: 0x1081C18 VA: 0x1081C18
-	public IEnumerator EHDNGPFPOKJ_Co_Buy(int NANNGLGOFKH, FJGOKILCBJA IFGEJDMMAHE, Action NIMPEHIECJH, Action MOBEEPPKFLG, Action FECMHKDMOHF, Action HPNGEKABKBE)
+	public IEnumerator EHDNGPFPOKJ_Co_Buy(int _NANNGLGOFKH_value, FJGOKILCBJA _IFGEJDMMAHE_Info, Action NIMPEHIECJH, Action _MOBEEPPKFLG_OnFail, Action FECMHKDMOHF, Action HPNGEKABKBE)
     {
         EKLNMHFCAOI.FKGCBLHOOCL_Category HMIHNDIJBJD;
 
@@ -101,7 +101,7 @@ public class CKPOGHOIBEP
         MenuScene.Instance.InputDisable();
         bool BEKAMBBOLBO_Done = false;
         bool GIGHIFOIMNA = false;
-        IFGEJDMMAHE.PFIBEGFOBEG_Buy(NANNGLGOFKH, () =>
+        _IFGEJDMMAHE_Info.PFIBEGFOBEG_Buy(_NANNGLGOFKH_value, () =>
         {
             //0x10823C4
             BEKAMBBOLBO_Done = true;
@@ -113,7 +113,7 @@ public class CKPOGHOIBEP
         }, () =>
         {
             //0x10823DC
-            MOBEEPPKFLG();
+            _MOBEEPPKFLG_OnFail();
         });
         yield return new WaitWhile(() =>
         {
@@ -129,14 +129,14 @@ public class CKPOGHOIBEP
         if(FECMHKDMOHF != null)
             FECMHKDMOHF();
         MessageBank bk = MessageManager.Instance.GetBank("menu");
-        HMIHNDIJBJD = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId);
+        HMIHNDIJBJD = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_IFGEJDMMAHE_Info.KIJAPOFAGPN_ItemId);
         TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("item_popup_shop_text_05"), SizeType.Middle, 
-            string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId) + " " + (NANNGLGOFKH * IFGEJDMMAHE.JDLJPNMLFID_ItemCount).ToString() + EKLNMHFCAOI.NDBLEADIDLA(HMIHNDIJBJD, EKLNMHFCAOI.DEACAHNLMNI_getItemId(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
+            string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(_IFGEJDMMAHE_Info.KIJAPOFAGPN_ItemId) + " " + (_NANNGLGOFKH_value * _IFGEJDMMAHE_Info.JDLJPNMLFID_ItemCount).ToString() + EKLNMHFCAOI.NDBLEADIDLA(HMIHNDIJBJD, EKLNMHFCAOI.DEACAHNLMNI_getItemId(_IFGEJDMMAHE_Info.KIJAPOFAGPN_ItemId))), new ButtonInfo[1]
             {
                 new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
             }, false, true);
         BEKAMBBOLBO_Done = false;
-        PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
+        PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
         {
             //0x1081DCC
             return;
@@ -154,7 +154,7 @@ public class CKPOGHOIBEP
         if(HMIHNDIJBJD == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
         {
             BEKAMBBOLBO_Done = false;
-            yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Shop, IFGEJDMMAHE.JANMJPOKLFL, () =>
+            yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Shop, _IFGEJDMMAHE_Info.JANMJPOKLFL_InventoryUtil, () =>
             {
                 //0x108243C
                 BEKAMBBOLBO_Done = true;

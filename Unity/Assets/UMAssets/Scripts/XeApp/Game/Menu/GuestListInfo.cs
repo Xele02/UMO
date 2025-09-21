@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		{
 			SetFriListInfo(titleIndex, isAvailable, fri);
 			playerRank = fri.ILOJAJNCPEC_Rank;
-			lastLogin = fri.PCEGKKLKFNO.AJECHDLMKOE_LastLogin;
+			lastLogin = fri.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin;
 			musicRatio = fri.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
 			if(fri.JIGONEMPPNP_Diva != null)
@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
-			emblemId = fri.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
+			emblemId = fri.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
 			isKira = false;
 			skill = "";
 			skillLevel = 0;
@@ -96,11 +96,11 @@ namespace XeApp.Game.Menu
 				if(v != 0)
 				{
 					int v2 = g.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
-					skill = v == v2 ? g.EFELCLMJEOL_CenterSkillName2 : g.PFHJFIHGCKP_CenterSkillName1;
+					skill = v == v2 ? g.EFELCLMJEOL_CenterSkillName2 : g.PFHJFIHGCKP_CenterSkillName;
 					skillLevel = g.DDEDANKHHPN_SkillLevel;
 					skillRank = (SkillRank.Type)(v == v2 ? g.FFDCGHDNDFJ_CenterSkillRank2 : g.DHEFMEGKKDN_CenterSkillRank);
 				}
-				luck = g.MJBODMOLOBC_Luck;
+				luck = g.MJBODMOLOBC_luck;
 				total = g.CMCKNKKCNDK_Status.Total;
 				life = g.CMCKNKKCNDK_Status.life;
 				soul = g.CMCKNKKCNDK_Status.soul;
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 				limitOverCount = g.MKHFCGPJPFI_LimitOverCount;
 			}
 			isDivaLoad = false;
-			Friend = fri.PCEGKKLKFNO.LHMDABPNDDH_Type == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
 		}
 
 		//// RVA: 0xE28CD8 Offset: 0xE28CD8 VA: 0xE28CD8

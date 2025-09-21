@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 							if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 							{
 								NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = GNGMCIAIKMA.HHCJCDFCLOB.MENDFPNPAAO_GetSaveBingo(bingoId);
-								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RewardId = reward.PPFNGGCBJKC;
+								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RewardId = reward.PPFNGGCBJKC_id;
 								bingo.AHCFGOGCJKI_St.AHHJLDLAPAN_DivaId = reward.AHHJLDLAPAN_DivaId;
 								bingo.AHCFGOGCJKI_St.DAJGPBLEEOB_ModelId = reward.DAJGPBLEEOB_ModelId;
 								MenuScene.SaveRequest();

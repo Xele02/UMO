@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using XeSys;
 
-public delegate bool LDDPADICHHB(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool LDDPADICHHB(List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 [System.Obsolete("Use NAIJIFAJGGK_RequestLoadPlayerData", true)]
 public class NAIJIFAJGGK { }
@@ -14,11 +14,11 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
         public long BIOGKIEECGN_CreatedAt; // 0x8
         public long IFNLEKOILPM_UpdatedAt; // 0x10
         public int CEMEIPNMAAD_Version; // 0x18
-        public sbyte MLGKDBJLNBM_DataStatus; // 0x1C
+        public sbyte MLGKDBJLNBM_data_status; // 0x1C
         public bool PLEAGPCJICK; // 0x1D
     }
 
-	public List<string> HHIHCJKLJFF_BlockToRequest { get; set; } // 0x7C OHINHCAEFDJ AOELBKNHIMG HGAICKPMCCB
+	public List<string> HHIHCJKLJFF_Names { get; set; } // 0x7C OHINHCAEFDJ AOELBKNHIMG HGAICKPMCCB
 	public LDDPADICHHB IJMPLDBGMHC_OnDataReceived { get; set; } // 0x80 LKIBOJLDBHM DCNBDAGBCPB LGLGACHHDGK
 	public PHAKFFBNNEI_PlayerDataResult NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 	public override bool EBPLLJGPFDA_HasResult { get {
@@ -34,7 +34,7 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 	// // RVA: 0x17C0114 Offset: 0x17C0114 VA: 0x17C0114 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA_CallContext = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_BlockToRequest.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_Names.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// // RVA: 0x17C0260 Offset: 0x17C0260 VA: 0x17C0260 Slot: 13
@@ -57,11 +57,11 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
         EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         tmp.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
         tmp.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
-        tmp.MLGKDBJLNBM_DataStatus = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
+        tmp.MLGKDBJLNBM_data_status = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
         DLKLLHPLANH = false;
         if(IJMPLDBGMHC_OnDataReceived != null)
         {
-            DLKLLHPLANH = !IJMPLDBGMHC_OnDataReceived(HHIHCJKLJFF_BlockToRequest, JsonUtil.GetObject(jsonData, "player"));
+            DLKLLHPLANH = !IJMPLDBGMHC_OnDataReceived(HHIHCJKLJFF_Names, JsonUtil.GetObject(jsonData, "player"));
         }
         GC.Collect();
         NFEAMMJIMPG_Result = tmp;

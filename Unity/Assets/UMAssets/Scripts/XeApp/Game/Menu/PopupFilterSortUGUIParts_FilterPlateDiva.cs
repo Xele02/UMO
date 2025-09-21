@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 					int colorId = 0;
 					if(a_is_has_only)
 					{
-						FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+						FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 						{
 							//0x1CA3B74
 							return _.AHHJLDLAPAN_DivaId == divaId;

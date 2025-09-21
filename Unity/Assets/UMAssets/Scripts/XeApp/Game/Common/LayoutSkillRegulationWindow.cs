@@ -140,7 +140,7 @@ namespace XeApp.Game.Common
 				SetLimitEnable(true, series);
 				SetLimitAttribute(m_sceneData.NNOLHKHJPFJ_GetCenterSkillMusicAttr(null, true), series);
 			}
-			m_skillNames[1].text = m_sceneData.PFHJFIHGCKP_CenterSkillName1;
+			m_skillNames[1].text = m_sceneData.PFHJFIHGCKP_CenterSkillName;
 			m_skillDetails[1].text = m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(false);
 			m_skillLevelTexts[1].text = string.Format("Lv{0}", m_sceneData.DDEDANKHHPN_SkillLevel);
 			m_logoSeriesExceptText[1].text = bk.GetMessageByLabel("liveskillregulation_except");

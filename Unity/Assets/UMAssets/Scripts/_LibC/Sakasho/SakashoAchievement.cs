@@ -88,18 +88,18 @@ namespace ExternLib
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 					if(ev != null)
 					{
-						PHBACNMCMHG_EventCollection NDFIEMPPMLF = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as PHBACNMCMHG_EventCollection;
-						if(NDFIEMPPMLF != null)
+						PHBACNMCMHG_EventCollection NDFIEMPPMLF_master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
+						if(NDFIEMPPMLF_master != null)
 						{
-							if(keys[i].StartsWith(NDFIEMPPMLF.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix))
+							if(keys[i].StartsWith(NDFIEMPPMLF_master.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix))
 							{
 								long pt = ev.FBGDBGKNKOD_GetCurrentPoint();
-								string idStr = keys[i].Replace(NDFIEMPPMLF.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, "");
+								string idStr = keys[i].Replace(NDFIEMPPMLF_master.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix, "");
 								int id = int.Parse(idStr);
 								bool itemFound = false;
-								for(int j = 0; j < NDFIEMPPMLF.FCIPEDFHFEM_TotalRewards.Count; j++)
+								for(int j = 0; j < NDFIEMPPMLF_master.FCIPEDFHFEM_TotalRewards.Count; j++)
 								{
-									PHBACNMCMHG_EventCollection.PFGFDNLGPKP item = NDFIEMPPMLF.FCIPEDFHFEM_TotalRewards[j].AHJNPEAMCCH_Rewards.Find((PHBACNMCMHG_EventCollection.PFGFDNLGPKP _) =>
+									PHBACNMCMHG_EventCollection.PFGFDNLGPKP item = NDFIEMPPMLF_master.FCIPEDFHFEM_TotalRewards[j].AHJNPEAMCCH_Rewards.Find((PHBACNMCMHG_EventCollection.PFGFDNLGPKP _) =>
 									{
 										return id == _.NMKEOMCMIPP_RewardId;
 									});
@@ -108,17 +108,17 @@ namespace ExternLib
 										EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
 										dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
 										dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Event reward";
-										dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = NDFIEMPPMLF.FCIPEDFHFEM_TotalRewards[i].DNBFMLBNAEE_Point <= pt;
+										dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = NDFIEMPPMLF_master.FCIPEDFHFEM_TotalRewards[i].DNBFMLBNAEE_Point <= pt;
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items] = new EDOHBJAPLPF_JsonData();
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 										EDOHBJAPLPF_JsonData it = new EDOHBJAPLPF_JsonData();
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].Add(it);
 										MFDJIFIIPJD data = new MFDJIFIIPJD();
-										data.KHEKNNFCAOI(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_Cnt);
+										data.KHEKNNFCAOI_Init(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_Count);
 										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
 										it[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId;
-										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_Cnt;
-										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_Type;
+										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_Count;
+										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_item_type;
 										res[AFEHLCGHAEE_Strings.CEDLLCCONJP_AchievementPrizes].Add(dataRes);
 										itemFound = true;
 										break;
@@ -127,7 +127,7 @@ namespace ExternLib
 								found = itemFound;
 							}
 						}
-						ACBAHDMEFFL_EventMission evMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as ACBAHDMEFFL_EventMission;
+						ACBAHDMEFFL_EventMission evMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
 						if(evMission != null)
 						{
 							if(keys[i].StartsWith(evMission.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix))
@@ -153,11 +153,11 @@ namespace ExternLib
 										EDOHBJAPLPF_JsonData it = new EDOHBJAPLPF_JsonData();
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].Add(it);
 										MFDJIFIIPJD data = new MFDJIFIIPJD();
-										data.KHEKNNFCAOI(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_Cnt);
+										data.KHEKNNFCAOI_Init(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_Count);
 										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
 										it[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId;
-										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_Cnt;
-										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_Type;
+										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_Count;
+										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_item_type;
 										res[AFEHLCGHAEE_Strings.CEDLLCCONJP_AchievementPrizes].Add(dataRes);
 										itemFound = true;
 										break;
@@ -269,14 +269,14 @@ namespace ExternLib
 					});
                     CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
-						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC;
+						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC_id;
 					});
                     if (reward.GLCLFMGPMAN_ItemId != 10000)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.GLCLFMGPMAN_ItemId);
 
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
-						item_count = reward.HMFFHLPNMPH_Cnt,
+						item_count = reward.HMFFHLPNMPH_Count,
 						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
 						item_type = 1,
 						item_value = 1001,
@@ -296,14 +296,14 @@ namespace ExternLib
 					});
                     CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
-						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC;
+						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC_id;
 					});
                     if (reward.GLCLFMGPMAN_ItemId != 10000)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.GLCLFMGPMAN_ItemId);
 
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
-						item_count = reward.HMFFHLPNMPH_Cnt,
+						item_count = reward.HMFFHLPNMPH_Count,
 						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
 						item_type = 1,
 						item_value = 1001,
@@ -348,16 +348,16 @@ namespace ExternLib
 					JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[dbEp.HHJGBJCIFON_Rewards[rewardId - 1]];
 					UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
-						item_count = reward.JDLJPNMLFID_Count,
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.KIJAPOFAGPN_Item),
+						item_count = reward.JDLJPNMLFID_ItemCount,
+						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.KIJAPOFAGPN_ItemId),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_episode,
 						closed_at = closeAt
 					}, playerAccount.playerData);
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
-						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.KIJAPOFAGPN_Item);
+					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.KIJAPOFAGPN_ItemId);
 					addedItem.AddInInventoryResult(d);
 				}
 				else if(key.StartsWith("new_offer_clear_key_"))
@@ -366,19 +366,19 @@ namespace ExternLib
 					int ofId = int.Parse(k2);
 					LGHIPHEDCNC_Offer.NONCDAINJLD of1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.HOJPJAFDIAD.Find((LGHIPHEDCNC_Offer.LHDLCLNBPLB _) =>
 					{
-						return _.LJNAKDMILMC == ofId;
+						return _.LJNAKDMILMC_key == ofId;
 					});
 					LGHIPHEDCNC_Offer.NONCDAINJLD of2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.FFKIBJKEBNP.Find((LGHIPHEDCNC_Offer.BFEIHCJHHAJ _) =>
 					{
-						return _.LJNAKDMILMC == ofId;
+						return _.LJNAKDMILMC_key == ofId;
 					});
 					LGHIPHEDCNC_Offer.NONCDAINJLD of3 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.PMCDKBBHCJK.Find((LGHIPHEDCNC_Offer.PDLENIHAMBC _) =>
 					{
-						return _.LJNAKDMILMC == ofId;
+						return _.LJNAKDMILMC_key == ofId;
 					});
 					LGHIPHEDCNC_Offer.NONCDAINJLD of4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.OICGEEKOLOG.Find((LGHIPHEDCNC_Offer.FCOBCHHKMOA _) =>
 					{
-						return _.LJNAKDMILMC == ofId;
+						return _.LJNAKDMILMC_key == ofId;
 					});
 					LGHIPHEDCNC_Offer.NONCDAINJLD of = of1;
 					if(of2 != null)
@@ -491,11 +491,11 @@ namespace ExternLib
 					{
 						bool blockFound = false;
 						{
-							ICFLJACCIKF_EventBattle dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as ICFLJACCIKF_EventBattle;
+							ICFLJACCIKF_EventBattle dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as ICFLJACCIKF_EventBattle;
 							if(dbSection != null)
 							{
 								blockFound = true;
-								if(key.StartsWith(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix))
+								if(key.StartsWith(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix))
 								{
 									bool found = false;
 									for(int k = 0; k < dbSection.FCIPEDFHFEM_TotalRewards.Count; k++)
@@ -504,15 +504,15 @@ namespace ExternLib
 										{
 											if(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 											{
-												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
+												if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 												{
 													MFDJIFIIPJD data = new MFDJIFIIPJD();
-													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
+													data.KHEKNNFCAOI_Init(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count);
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
-														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
+														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count,
 														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-														item_type = data.MJBKGOJBPAD_Type,
+														item_type = data.MJBKGOJBPAD_item_type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
 														closed_at = closeAt
@@ -526,32 +526,32 @@ namespace ExternLib
 									}
 									if(!found)
 									{
-										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_quests.Count; j++)
 										{
 											string itKey = "";
-											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_quests[j];
 											if(mission.IKJAAKEINHC_Slt < 1)
 											{
 												if(mission.HPAOAKMKCMA_Slt2 > 0)
 												{
-													itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+													itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
 												}
 											}
 											else
 											{
-												itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+												itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 												itKey += mission.IKJAAKEINHC_Slt.ToString();
 											}
 											if (key == itKey)
 											{
 												MFDJIFIIPJD data = new MFDJIFIIPJD();
-												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												data.KHEKNNFCAOI_Init(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
 													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-													item_type = data.MJBKGOJBPAD_Type,
+													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
@@ -569,16 +569,16 @@ namespace ExternLib
 								}
 								else
 								{
-									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix);
+									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix);
 								}
 							}
 						}
 						{
-							LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as LNELCMNJPIC_EventGoDiva;
+							LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
 							if(dbSection != null)
 							{
 								blockFound = true;
-								if(key.StartsWith(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix))
+								if(key.StartsWith(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix))
 								{
 									bool found = false;
 									for(int k = 0; k < dbSection.FCIPEDFHFEM_TotalRewards.Count; k++)
@@ -587,15 +587,15 @@ namespace ExternLib
 										{
 											if(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 											{
-												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
+												if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 												{
 													MFDJIFIIPJD data = new MFDJIFIIPJD();
-													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_ItemCnt);
+													data.KHEKNNFCAOI_Init(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count);
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
-														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_ItemCnt,
+														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count,
 														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-														item_type = data.MJBKGOJBPAD_Type,
+														item_type = data.MJBKGOJBPAD_item_type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
 														closed_at = closeAt
@@ -609,32 +609,32 @@ namespace ExternLib
 									}
 									if(!found)
 									{
-										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_quests.Count; j++)
 										{
 											string itKey = "";
-											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_quests[j];
 											if(mission.IKJAAKEINHC_Slt < 1)
 											{
 												if(mission.HPAOAKMKCMA_Slt2 > 0)
 												{
-													itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+													itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
 												}
 											}
 											else
 											{
-												itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+												itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 												itKey += mission.IKJAAKEINHC_Slt.ToString();
 											}
 											if (key == itKey)
 											{
 												MFDJIFIIPJD data = new MFDJIFIIPJD();
-												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												data.KHEKNNFCAOI_Init(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
 													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-													item_type = data.MJBKGOJBPAD_Type,
+													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
@@ -652,46 +652,46 @@ namespace ExternLib
 								}
 								else
 								{
-									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix);
+									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix);
 								}
 							}
 						}
 						{
-							BKOGPDBKFFJ_EventRaid dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as BKOGPDBKFFJ_EventRaid;
+							BKOGPDBKFFJ_EventRaid dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as BKOGPDBKFFJ_EventRaid;
 							if(dbSection != null)
 							{
 								blockFound = true;
-								if(key.StartsWith(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix))
+								if(key.StartsWith(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix))
 								{
 									bool found = false;
 									if(!found)
 									{
-										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_quests.Count; j++)
 										{
 											string itKey = "";
-											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_quests[j];
 											if(mission.IKJAAKEINHC_Slt < 1)
 											{
 												if(mission.HPAOAKMKCMA_Slt2 > 0)
 												{
-													itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+													itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
 												}
 											}
 											else
 											{
-												itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix;
+												itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix;
 												itKey += mission.IKJAAKEINHC_Slt.ToString();
 											}
 											if (key == itKey)
 											{
 												MFDJIFIIPJD data = new MFDJIFIIPJD();
-												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												data.KHEKNNFCAOI_Init(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
 													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-													item_type = data.MJBKGOJBPAD_Type,
+													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
@@ -709,98 +709,12 @@ namespace ExternLib
 								}
 								else
 								{
-									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix);
+									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_AchievementIdPrefix);
 								}
 							}
 						}
 						{
-							PHBACNMCMHG_EventCollection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as PHBACNMCMHG_EventCollection;
-							if(dbSection != null)
-							{
-								blockFound = true;
-								if(key.StartsWith(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix))
-								{
-									bool found = false;
-									if(!found)
-									{
-										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
-										{
-											string itKey = "";
-											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
-											if(mission.IKJAAKEINHC_Slt < 1)
-											{
-												if(mission.HPAOAKMKCMA_Slt2 > 0)
-												{
-													itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix;
-													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
-												}
-											}
-											else
-											{
-												itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix;
-												itKey += mission.IKJAAKEINHC_Slt.ToString();
-											}
-											if (key == itKey)
-											{
-												MFDJIFIIPJD data = new MFDJIFIIPJD();
-												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
-												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
-												{
-													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-													item_type = data.MJBKGOJBPAD_Type,
-													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
-													message = JpStringLiterals.StringLiteral_9777,
-													closed_at = closeAt
-												}, playerAccount.playerData);
-												addedItem.AddInInventoryResult(d);
-												found = true;
-												break;
-											}
-										}
-									}
-									if(!found)
-									{
-										for(int k = 0; k < dbSection.FCIPEDFHFEM_TotalRewards.Count && !found; k++)
-										{
-											for(int j = 0; j < dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards.Count; j++)
-											{
-												if(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
-												{
-													if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
-													{
-														MFDJIFIIPJD data = new MFDJIFIIPJD();
-														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
-														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
-														{
-															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
-															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-															item_type = data.MJBKGOJBPAD_Type,
-															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
-															message = "Event reward "+ev.DGCOMDILAKM_EventName,
-															closed_at = closeAt
-														}, playerAccount.playerData);
-														addedItem.AddInInventoryResult(d);
-														found = true;
-														break;
-													}
-												}
-											}
-										}
-									}
-									if(!found)
-									{
-										UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", reward item id not found");
-									}
-								}
-								else
-								{
-									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix);
-								}
-							}
-						}
-						{
-							ACBAHDMEFFL_EventMission dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as ACBAHDMEFFL_EventMission;
+							PHBACNMCMHG_EventCollection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -809,10 +723,10 @@ namespace ExternLib
 									bool found = false;
 									if(!found)
 									{
-										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_quests.Count; j++)
 										{
 											string itKey = "";
-											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_quests[j];
 											if(mission.IKJAAKEINHC_Slt < 1)
 											{
 												if(mission.HPAOAKMKCMA_Slt2 > 0)
@@ -829,12 +743,12 @@ namespace ExternLib
 											if (key == itKey)
 											{
 												MFDJIFIIPJD data = new MFDJIFIIPJD();
-												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												data.KHEKNNFCAOI_Init(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
 													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-													item_type = data.MJBKGOJBPAD_Type,
+													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
@@ -856,12 +770,98 @@ namespace ExternLib
 													if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 													{
 														MFDJIFIIPJD data = new MFDJIFIIPJD();
-														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
+														data.KHEKNNFCAOI_Init(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count);
 														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 														{
-															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
+															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count,
 															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-															item_type = data.MJBKGOJBPAD_Type,
+															item_type = data.MJBKGOJBPAD_item_type,
+															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
+															message = "Event reward "+ev.DGCOMDILAKM_EventName,
+															closed_at = closeAt
+														}, playerAccount.playerData);
+														addedItem.AddInInventoryResult(d);
+														found = true;
+														break;
+													}
+												}
+											}
+										}
+									}
+									if(!found)
+									{
+										UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", reward item id not found");
+									}
+								}
+								else
+								{
+									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix);
+								}
+							}
+						}
+						{
+							ACBAHDMEFFL_EventMission dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
+							if(dbSection != null)
+							{
+								blockFound = true;
+								if(key.StartsWith(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix))
+								{
+									bool found = false;
+									if(!found)
+									{
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_quests.Count; j++)
+										{
+											string itKey = "";
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_quests[j];
+											if(mission.IKJAAKEINHC_Slt < 1)
+											{
+												if(mission.HPAOAKMKCMA_Slt2 > 0)
+												{
+													itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix;
+													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
+												}
+											}
+											else
+											{
+												itKey += dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix;
+												itKey += mission.IKJAAKEINHC_Slt.ToString();
+											}
+											if (key == itKey)
+											{
+												MFDJIFIIPJD data = new MFDJIFIIPJD();
+												data.KHEKNNFCAOI_Init(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+												{
+													item_count = mission.JDLJPNMLFID_ItemCount,
+													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_type = data.MJBKGOJBPAD_item_type,
+													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
+													message = JpStringLiterals.StringLiteral_9777,
+													closed_at = closeAt
+												}, playerAccount.playerData);
+												addedItem.AddInInventoryResult(d);
+												found = true;
+												break;
+											}
+										}
+									}
+									if(!found)
+									{
+										for(int k = 0; k < dbSection.FCIPEDFHFEM_TotalRewards.Count && !found; k++)
+										{
+											for(int j = 0; j < dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards.Count; j++)
+											{
+												if(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
+												{
+													if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
+													{
+														MFDJIFIIPJD data = new MFDJIFIIPJD();
+														data.KHEKNNFCAOI_Init(dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count);
+														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+														{
+															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Count,
+															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+															item_type = data.MJBKGOJBPAD_item_type,
 															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 															message = "Event reward "+ev.DGCOMDILAKM_EventName,
 															closed_at = closeAt
@@ -887,7 +887,7 @@ namespace ExternLib
 						}
 						if(!blockFound)
 						{
-							UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find db section "+ev.JOPOPMLFINI_QuestId);
+							UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find db section "+ev.JOPOPMLFINI_QuestName);
 						}
 					}
 					else
@@ -903,7 +903,7 @@ namespace ExternLib
 					});
 					if(ev != null)
 					{
-						HIADOIECMFP_EventPresentCampaign dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as HIADOIECMFP_EventPresentCampaign;
+						HIADOIECMFP_EventPresentCampaign dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as HIADOIECMFP_EventPresentCampaign;
 						if(dbSection != null)
 						{
 							for(int j = 0; j < dbSection.OBPOHDENMHH.Count; j++)
@@ -914,15 +914,15 @@ namespace ExternLib
 									for(int k = 0; k < dbSection.OBPOHDENMHH[j].GLCLFMGPMAN_ItemId.Count; k++)
 									{
 										MFDJIFIIPJD data = new MFDJIFIIPJD();
-										data.KHEKNNFCAOI(dbSection.OBPOHDENMHH[j].GLCLFMGPMAN_ItemId[k], dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_Cnt[k]);
-										if((key.Contains("vc") && data.MJBKGOJBPAD_Type == 1) || 
-											(key.Contains("item") && data.MJBKGOJBPAD_Type == 0))
+										data.KHEKNNFCAOI_Init(dbSection.OBPOHDENMHH[j].GLCLFMGPMAN_ItemId[k], dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_item_count[k]);
+										if((key.Contains("vc") && data.MJBKGOJBPAD_item_type == 1) || 
+											(key.Contains("item") && data.MJBKGOJBPAD_item_type == 0))
 										{
 											UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 											{
-												item_count = dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_Cnt[k],
+												item_count = dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_item_count[k],
 												item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
-												item_type = data.MJBKGOJBPAD_Type,
+												item_type = data.MJBKGOJBPAD_item_type,
 												item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 												message = dbSection.OBPOHDENMHH[j].FEMMDNIELFC_Desc,
 												closed_at = closeAt
@@ -935,7 +935,7 @@ namespace ExternLib
 						}
 						else
 						{
-							UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find db section "+ev.JOPOPMLFINI_QuestId);
+							UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find db section "+ev.JOPOPMLFINI_QuestName);
 						}
 					}
 					else

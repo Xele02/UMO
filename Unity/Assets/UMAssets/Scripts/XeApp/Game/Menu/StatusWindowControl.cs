@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 				{
 					PopupWindowManager.Close(control, null);
 					PIGBBNDPPJC p = new PIGBBNDPPJC();
-					p.KHEKNNFCAOI(scene.KELFCMEOPPM_EpisodeId);
+					p.KHEKNNFCAOI_Init(scene.KELFCMEOPPM_EpisodeId);
 					EpisodeDetailArgs arg = new EpisodeDetailArgs();
 					arg.data = p;
 					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -272,7 +272,7 @@ namespace XeApp.Game.Menu
 						bool b;
 						if (!s.isGoDiva)
 						{
-							diva = viewPlayerData.NBIGLBMHEDC_Divas[s.id - 1];
+							diva = viewPlayerData.NBIGLBMHEDC_DivaList[s.id - 1];
 							b = false;
 						}
 						else

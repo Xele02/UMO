@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x7FA8FC Offset: 0x7FA8FC VA: 0x7FA8FC
 		public TipsData(BCKMELFCKKN_Tips.ALLFFCNKFBG data)
 		{
-			id = data.PPFNGGCBJKC_Id;
+			id = data.PPFNGGCBJKC_id;
 			title = data.ADCMNODJBGJ_Title;
 			message = data.JONNCMDGMKA_Message;
 			imageId = data.EAHPLCJMPHD_PId;
@@ -251,12 +251,12 @@ namespace XeApp.Game.Menu
 							if (!IsSessionEvent(tips.NCGNCEOOBGP_EventType))
 								continue;
 						}
-						if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_Start, tips.GJFPFFBAKGK_CloseAt))
+						if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_OpenedAt, tips.GJFPFFBAKGK_CloseAt))
 						{
 							int idx = m_historyList.FindIndex((int x) =>
 							{
 								//0xA9A1BC
-								return x == tips.PPFNGGCBJKC_Id;
+								return x == tips.PPFNGGCBJKC_id;
 							});
 							if(idx < 0)
 							{
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 									m_listUpList.Clear();
 									m_totalWeight = 0;
 								}
-								m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_PId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_Id, weight = m_totalWeight });
+								m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_PId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_id, weight = m_totalWeight });
 								m_totalWeight += tips.HFLGGIBMEOL[priorityTable];
 							}
 						}
@@ -443,7 +443,7 @@ namespace XeApp.Game.Menu
 							if (!IsSessionEvent(eventType))
 								continue;
 						}
-						if (!Utility.IsWithinPeriod(GetServerUnixTime(), tip.KJBGCLPMLCG_Start, tip.GJFPFFBAKGK_CloseAt))
+						if (!Utility.IsWithinPeriod(GetServerUnixTime(), tip.KJBGCLPMLCG_OpenedAt, tip.GJFPFFBAKGK_CloseAt))
 							continue;
 						m_tipsList.Add(new TipsData(tip));
 						if(tip.ILPJHHKLOEN_Situation == 0)

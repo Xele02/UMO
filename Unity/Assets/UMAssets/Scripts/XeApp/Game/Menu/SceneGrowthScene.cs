@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 			if(m_episodeData.DKMLDEDKPBA_HasEpisode)
 			{
 				isLodingTexture = true;
-				GameManager.Instance.EpisodeIconCache.Load(m_episodeData.KELFCMEOPPM_EpId, (IiconTexture texture) =>
+				GameManager.Instance.EpisodeIconCache.Load(m_episodeData.KELFCMEOPPM_EpisodeId, (IiconTexture texture) =>
 				{
 					//0x10E70EC
 					isLodingTexture = false;
@@ -624,7 +624,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < unlockIndexList.Count; i++)
 			{
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				if(a.INDDJNMPONH_StatType == 20)
+				if(a.INDDJNMPONH_Type == 20)
 				{
 					return unlockIndexList[i];
 				}
@@ -636,15 +636,15 @@ namespace XeApp.Game.Menu
 		private bool GetInfinityMinUnlockMaxCount(SceneGrowthBoard board, List<byte> unlockIndexList, MNDAMOGGJBJ exclusionItemData, out int max, out MNDAMOGGJBJ.MNDGNJLBANB reason)
 		{
 			max = 0;
-			reason = MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_None;
+			reason = MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None;
 			AFIFDLOAKGI aa = null;
 			int c = 0;
 			for(int i = 0; i < unlockIndexList.Count; i++)
 			{
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				if(a.INDDJNMPONH_StatType == 20)
+				if(a.INDDJNMPONH_Type == 20)
 				{
-					c = a.MKNDAOHGOAK;
+					c = a.MKNDAOHGOAK_weight;
 					m_viewSceneData.KPCLNEADGEM(unlockIndexList[i]);
 					aa = a;
 				}
@@ -833,7 +833,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
 			m_isAddtiveSubBoard = m_viewSceneData.NFILJJGGKNG_IsAdditiveSubBoard();
-			m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF < 2;
+			m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF_Ulk < 2;
 			m_viewSceneData.JGNBHPJCICN();
 			if(m_currentBoard != null)
 			{
@@ -1040,7 +1040,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			m_viewSceneData.EKLIPGELKCL_Rarity = (byte)(m_viewSceneData.JKGFBFPIMGA_Rarity + 1);
 			m_viewSceneData.JPIPENJGGDD_NumBoard = 1;
-			m_viewSceneData.IELENGDJPHF = 0;
+			m_viewSceneData.IELENGDJPHF_Ulk = 0;
 			JKNGJFOBADP d = new JKNGJFOBADP();
 			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.CDJJNKKIBJN, "");
 			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
@@ -1148,7 +1148,7 @@ namespace XeApp.Game.Menu
 			if(arg != null)
 			{
 				m_viewSceneData = arg.ViewSceneData;
-				m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
+				m_limitOverData.KHEKNNFCAOI_Init(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_luck);
 				m_lastBoardType = 0;
 				m_isAddtiveMainBoard = m_viewSceneData.ADMDGGOKPND_IsAdditiveMainBoard();
 				m_isAddtiveSubBoard = m_viewSceneData.NFILJJGGKNG_IsAdditiveSubBoard();
@@ -1161,8 +1161,8 @@ namespace XeApp.Game.Menu
 					//LAB_010e0ad0
 					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 					int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed);
-					m_isFirstInfinityPanelOpen = m_viewSceneData.IELENGDJPHF <= a;
-					m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF < 2;
+					m_isFirstInfinityPanelOpen = m_viewSceneData.IELENGDJPHF_Ulk <= a;
+					m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF_Ulk < 2;
 					m_viewSceneData.JGNBHPJCICN();
 				}
 				if(m_isAddtiveMainBoard || m_isAddtiveSubBoard)
@@ -1182,8 +1182,8 @@ namespace XeApp.Game.Menu
 				m_isBeginner = arg.IsFromBiginner;
 			}
 			//LAB_010e0d64
-			m_viewGrowItemData.KHEKNNFCAOI(null);
-			m_episodeData.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+			m_viewGrowItemData.KHEKNNFCAOI_Init(null);
+			m_episodeData.KHEKNNFCAOI_Init(m_viewSceneData.KELFCMEOPPM_EpisodeId);
 			m_currentBoard = null;
 			LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(m_viewSceneData.KELFCMEOPPM_EpisodeId, true);
 			m_lastRewardItemId = 0;
@@ -1313,7 +1313,7 @@ namespace XeApp.Game.Menu
 			if(label == PopupButton.ButtonLabel.Episode)
 			{
 				PIGBBNDPPJC data = new PIGBBNDPPJC();
-				data.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+				data.KHEKNNFCAOI_Init(m_viewSceneData.KELFCMEOPPM_EpisodeId);
 				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = data }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}
 		}
@@ -1395,7 +1395,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
+				m_limitOverData.KHEKNNFCAOI_Init(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_luck);
 				if(!m_limitOverData.EOBACDCDGOF_IsTerminate)
 				{
 					m_luckyLeafSetting.Setup(m_viewSceneData);
@@ -1421,7 +1421,7 @@ namespace XeApp.Game.Menu
 						{
 							m_viewGrowItemData.MDHKGJJBLNL();
 							MNDAMOGGJBJ.JFJJNPJNBPI d = new MNDAMOGGJBJ.JFJJNPJNBPI();
-							d.MBFFGGFGPEN(m_limitOverData.MJNOAMAFNHA, m_limitOverData.IJEOIMGILCK);
+							d.MBFFGGFGPEN(m_limitOverData.MJNOAMAFNHA_CostItemId, m_limitOverData.IJEOIMGILCK);
 							m_viewGrowItemData.INLBMFMOHCI_CostItems.Add(d);
 							m_viewGrowItemData.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 							this.StartCoroutineWatched(LimitOverMainCoroutine(m_viewGrowItemData));
@@ -1475,9 +1475,9 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.GotoTitle();
 				yield break;
 			}
-			MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+			MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 			m_viewSceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
-			m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_viewSceneData.MJBODMOLOBC_Luck);
+			m_limitOverData.KHEKNNFCAOI_Init(m_viewSceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_viewSceneData.MJBODMOLOBC_luck);
 			done = false;
 			MenuScene.Instance.InputDisable();
 			MenuScene.Instance.LimitOverControl.ShowRelease(m_viewSceneData, m_limitOverData, () =>
@@ -1884,7 +1884,7 @@ namespace XeApp.Game.Menu
 			m_viewGrowItemData.MDHKGJJBLNL();
 			MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, 1);
 			MNDAMOGGJBJ.MNDGNJLBANB reason = m_viewGrowItemData.HDHNAIIAJCP();
-			if (reason != MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_None/*0*/)
+			if (reason != MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/)
 			{
 				yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(m_viewGrowItemData, unlock));
 			}
@@ -1913,7 +1913,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						yield return this.StartCoroutineWatched(ShowInfinityItemuPopupCoroutine((short)unlockCount, (short)stockCount, (short)afi.MKNDAOHGOAK, reason, (PopupButton.ButtonType type, int itemCount) =>
+						yield return this.StartCoroutineWatched(ShowInfinityItemuPopupCoroutine((short)unlockCount, (short)stockCount, (short)afi.MKNDAOHGOAK_weight, reason, (PopupButton.ButtonType type, int itemCount) =>
 						{
 							//0x10E6D6C
 							count = itemCount;
@@ -1956,7 +1956,7 @@ namespace XeApp.Game.Menu
 				AFIFDLOAKGI a = board.GetPanelItem(unLockIndexList[i]);
 				//a.ENNLMALGDKN();
 				int count = 1;
-				if (a.INDDJNMPONH_StatType == 20)
+				if (a.INDDJNMPONH_Type == 20)
 				{
 					//a.PKLGGJPPBAN();
 					count = infLoopCount;
@@ -1978,7 +1978,7 @@ namespace XeApp.Game.Menu
 			{
 				int val = board.GetPanelValue(unlockIndexList[i]);
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				int type = a.INDDJNMPONH_StatType;
+				int type = a.INDDJNMPONH_Type;
 				int cnt = 1;
 				if (type == 20)
 				{
@@ -2029,7 +2029,7 @@ namespace XeApp.Game.Menu
 				List<int> l = new List<int>();
 				for (int i = 0; i < 22; i++)
 					l.Add(0);
-				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 				if(!m_viewSceneData.KEJMFDLFIEO())
 				{
 					JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
@@ -2048,7 +2048,7 @@ namespace XeApp.Game.Menu
 						AFIFDLOAKGI af = m_viewSceneData.LDGCIDPEMPG(m_unLockTargetPanelIndex[i]);
 						if(af != null)
 						{
-							l[af.INDDJNMPONH_StatType]++;
+							l[af.INDDJNMPONH_Type]++;
 						}
 						b |= !scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
 					}
@@ -2072,7 +2072,7 @@ namespace XeApp.Game.Menu
 						AFIFDLOAKGI af = m_viewSceneData.CDDHNNLPOLG(m_unLockTargetPanelIndex[i], m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
 						if(af != null)
 						{
-							if(af.INDDJNMPONH_StatType == 20)
+							if(af.INDDJNMPONH_Type == 20)
 							{
 								if(m_infinityPanelUnlockInfo.index > -1 && m_infinityPanelUnlockInfo.count > 0)
 								{
@@ -2080,13 +2080,13 @@ namespace XeApp.Game.Menu
 									AFIFDLOAKGI af2 = m_viewSceneData.CDDHNNLPOLG(m_infinityPanelUnlockInfo.index, m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
 									if(af2 != null)
 									{
-										l[af2.INDDJNMPONH_StatType]++;
+										l[af2.INDDJNMPONH_Type]++;
 									}
 								}
 							}
 							else
 							{
-								l[af.INDDJNMPONH_StatType]++;
+								l[af.INDDJNMPONH_Type]++;
 								b |= !scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]);
 							}
 						}
@@ -2102,7 +2102,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 				m_prevStatus.Copy(m_viewSceneData.CMCKNKKCNDK_Status);
-				m_prevLuck = m_viewSceneData.MJBODMOLOBC_Luck;
+				m_prevLuck = m_viewSceneData.MJBODMOLOBC_luck;
 				m_prevCenterSkillLevel = m_viewSceneData.DDEDANKHHPN_SkillLevel;
 				m_prevActiveSkillLevel = m_viewSceneData.PNHJPCPFNFI_ActiveSkillLevel;
 				m_prevLiveSkillLevel = m_viewSceneData.AADFFCIDJCB_LiveSkillLevel;
@@ -2116,7 +2116,7 @@ namespace XeApp.Game.Menu
 				if (m_subBoard != null)
 					m_subBoard.UpdateBoardLayout();
 				m_itemUnlockButtonLayout.UpdateLayout(m_currentBoard);
-				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
 			}
 		}
 
@@ -2354,7 +2354,7 @@ namespace XeApp.Game.Menu
 			while(isWaitSave)
 				yield return null;
 			int prev = m_limitOverData.LJHOOPJACPI_LeafMax;
-			m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
+			m_limitOverData.KHEKNNFCAOI_Init(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_luck);
 			if(prev < m_limitOverData.LJHOOPJACPI_LeafMax)
 			{
 				bool done = false;
@@ -2401,11 +2401,11 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.InputEnable();
 			}
 			//LAB_010f1f14
-			m_episodeData.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+			m_episodeData.KHEKNNFCAOI_Init(m_viewSceneData.KELFCMEOPPM_EpisodeId);
 			if(isCallEpisode)
 			{
 				m_episodeData = new PIGBBNDPPJC();
-				m_episodeData.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+				m_episodeData.KHEKNNFCAOI_Init(m_viewSceneData.KELFCMEOPPM_EpisodeId);
 				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = m_episodeData }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}
 			m_statusWindow.UpdateEpisode(m_episodeData);

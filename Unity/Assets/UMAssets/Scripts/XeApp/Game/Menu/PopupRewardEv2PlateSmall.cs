@@ -31,8 +31,8 @@ namespace XeApp.Game.Menu
 				texture.Set(plateImage);
 			});
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(data.plateNo, null, null, 0, 0, 0, false, 0, 0);
-			plateName.text = scene.OPFGFINHFCE_SceneName;
+			scene.KHEKNNFCAOI_Init(data.plateNo, null, null, 0, 0, 0, false, 0, 0);
+			plateName.text = scene.OPFGFINHFCE_name;
 			info.text = JpStringLiterals.StringLiteral_19433;
 		}
 

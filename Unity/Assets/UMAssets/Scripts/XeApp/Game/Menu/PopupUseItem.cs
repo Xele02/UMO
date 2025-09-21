@@ -34,9 +34,9 @@ namespace XeApp.Game.Menu
 			int cnt = 0;
 			for(int i = 0; i < s.ViewGrowItemData.INLBMFMOHCI_CostItems.Count; i++)
 			{
-				if(s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt > 0)
+				if(s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count > 0)
 				{
-					m_usetItemList.SetItem(cnt, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].PPFNGGCBJKC_Id, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt, s.ViewGrowItemData.JPLMJPGDPAN(i + 1));
+					m_usetItemList.SetItem(cnt, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].PPFNGGCBJKC_id, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count, s.ViewGrowItemData.JPLMJPGDPAN(i + 1));
 					cnt++;
 				}
 			}

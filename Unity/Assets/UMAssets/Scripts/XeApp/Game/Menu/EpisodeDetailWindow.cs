@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 		public void Init(PIGBBNDPPJC data)
 		{
 			m_data = data;
-			m_episode_name.text = data.OPFGFINHFCE_Name;
+			m_episode_name.text = data.OPFGFINHFCE_name;
 			if(!data.CCBKMCLDGAD_HasReward)
 			{
 				m_gauge_table.StartChildrenAnimGoStop(0, 0);
@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentValue, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
 				m_mask.StartChildrenAnimGoStop(a, a);
 				m_point_den.SetNumber(data.JBFLCHFEIGL.DNBFMLBNAEE_Point - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, 0);
-				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
 				this.StartCoroutineWatched(SetItemGaugeLine(EpisodeUtility.CalcEpisodeGaugeFrame(data.JBFLCHFEIGL.DNBFMLBNAEE_Point, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame)));
 				SetHasEpisodeGauge(EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA_AvaiablePoint, data.DMHDNKILKGI_MaxPoint, AvailableEpisodePointMaxFrame));
 			}
@@ -230,18 +230,18 @@ namespace XeApp.Game.Menu
 				m_line.gameObject.SetActive(false);
 				m_mask.StartChildrenAnimGoStop("st_out", "st_out");
 				m_point_den.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
-				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
 				SetHasEpisodeGauge(0);
 			}
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
-			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 			m_work_sb.SetFormat(JpStringLiterals.StringLiteral_15750, data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, RichTextUtility.MakeSizeTagString("EP", 22));
 			m_next.text = m_work_sb.ToString();
 			m_item_name.text = JpStringLiterals.StringLiteral_15778;
-			m_episode_info.text = data.KLMPFGOCBHC_Description;
-			SetEpisodeImage(m_data.KELFCMEOPPM_EpId);
+			m_episode_info.text = data.KLMPFGOCBHC_description;
+			SetEpisodeImage(m_data.KELFCMEOPPM_EpisodeId);
 			SetItemImage(m_data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-			m_sceneListArgs.episodeId = data.KELFCMEOPPM_EpId;
+			m_sceneListArgs.episodeId = data.KELFCMEOPPM_EpisodeId;
 			m_episodeFeedPlateAttention.StartChildrenAnimGoStop(data.JBCIDDKDJMM ? "01" : "02");
 		}
 
@@ -373,7 +373,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_reward_window.TitleText = bk.GetMessageByLabel("popup_title_episode_01");
 			m_reward_window.SetParent(transform);
-			m_reward_window.episodeId = m_data.KELFCMEOPPM_EpId;
+			m_reward_window.episodeId = m_data.KELFCMEOPPM_EpisodeId;
 			m_reward_window.WindowSize = SizeType.Large;
 			m_reward_window.Buttons = new ButtonInfo[1]
 			{

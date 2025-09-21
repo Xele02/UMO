@@ -153,7 +153,7 @@ namespace XeApp.Game.Common
 				//0xAE6F38
 				done = true;
 				tarFile = new CBBJHPBGBAJ_Archive();
-				tarFile.KHEKNNFCAOI_Load(fro.bytes);
+				tarFile.KHEKNNFCAOI_Init(fro.bytes);
 				return true;
 			}, null, 0, true);
 			FileLoader.Instance.Load();
@@ -199,10 +199,10 @@ namespace XeApp.Game.Common
 			str.SetFormat("{0}{1:D8}", strPrefix, score_id);
 			if(tarFile != null)
 			{
-				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tarFile.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tarFile.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
 				{
 					//0xAE702C
-					return x.OPFGFINHFCE_Name.Contains(str.ToString());
+					return x.OPFGFINHFCE_name.Contains(str.ToString());
 				});
 				if (file != null)
 				{
@@ -211,9 +211,9 @@ namespace XeApp.Game.Common
 				else
 				{
 					string listFiles = "";
-					foreach(var f in tarFile.KGHAJGGMPKL_Files)
+					foreach(var f in tarFile.KGHAJGGMPKL_files)
 					{
-						listFiles += f.OPFGFINHFCE_Name +" ";
+						listFiles += f.OPFGFINHFCE_name +" ";
 					}
 					TodoLogger.LogError(TodoLogger.Filesystem, "File "+str.ToString()+" not found in tarFile. Files are : "+listFiles);
 				}

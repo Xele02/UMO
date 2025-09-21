@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 		public void SetMusicData(EEDKAACNBBG_MusicData data, bool isDetailCD/* = false*/)
 		{
 			m_title.text = data.NBKFBCLDGAL_OfficialName;
-			m_info.text = data.KLMPFGOCBHC_Description;
+			m_info.text = data.KLMPFGOCBHC_description;
 			if(isDetailCD)
 			{
 				SetDetailCD(data.NNHOBFBCIIJ_Cd);

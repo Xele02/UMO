@@ -1,7 +1,7 @@
 
 public class FDPJBEAKPMA
 {
-	public int ILELGGCCGMJ_HighscoreRank; // 0x8
+	public int ILELGGCCGMJ_UtaGrade; // 0x8
 	public bool DJEMBILEBFP_IsPlayerRank; // 0xC
 	public int PKLKOMIAKNL_RankUpper; // 0x10
 	public int IOBJDNEGEBB_RankLower; // 0x14

@@ -7,15 +7,15 @@ public class BOAGCEOHJEO
 	public const double EKKGJBPGLDN = 0.49f;
 
 	//// RVA: 0x19CBBA8 Offset: 0x19CBBA8 VA: 0x19CBBA8
-	//public static double LLPDMEJCMGA(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI) { }
+	//public static double LLPDMEJCMGA(long _KINJOEIAHFK_StartTime, long _PCCFAKEOBIC_EndTime, long _KNIKOPJKPCI_GetTime) { }
 
 	//// RVA: 0x19CBC78 Offset: 0x19CBC78 VA: 0x19CBC78
-	public static double GOAOBNBGDBJ(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI, long _DNBFMLBNAEE_Point)
+	public static double GOAOBNBGDBJ(long _KINJOEIAHFK_StartTime, long _PCCFAKEOBIC_EndTime, long _KNIKOPJKPCI_GetTime, long _DNBFMLBNAEE_Point)
 	{
-		long pKNIKOPJKPCI = KNIKOPJKPCI;
-		if (KNIKOPJKPCI == 0)
-			KNIKOPJKPCI = PCCFAKEOBIC;
-		double d = (PCCFAKEOBIC - KNIKOPJKPCI) * 0.49f / (PCCFAKEOBIC - pKNIKOPJKPCI);
+		long pKNIKOPJKPCI_GetTime = _KNIKOPJKPCI_GetTime;
+		if (_KNIKOPJKPCI_GetTime == 0)
+			_KNIKOPJKPCI_GetTime = _PCCFAKEOBIC_EndTime;
+		double d = (_PCCFAKEOBIC_EndTime - _KNIKOPJKPCI_GetTime) * 0.49f / (_PCCFAKEOBIC_EndTime - pKNIKOPJKPCI_GetTime);
 		if (d < 0)
 			d = 0;
 		if (d >= 0.49f)
@@ -30,20 +30,20 @@ public class BOAGCEOHJEO
 	}
 
 	//// RVA: 0x19CBDEC Offset: 0x19CBDEC VA: 0x19CBDEC
-	public static void IIEMACPEEBJ(EDOHBJAPLPF_JsonData IDLHJIOMJBK, out double IGFLJCNGAML, out long _DNBFMLBNAEE_Point)
+	public static void IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data, out double IGFLJCNGAML, out long _DNBFMLBNAEE_Point)
 	{
 		IGFLJCNGAML = 0;
-		if (IDLHJIOMJBK.NFPOKKABOHN_IsDouble)
+		if (_IDLHJIOMJBK_Data.NFPOKKABOHN_IsDouble)
 		{
-			IGFLJCNGAML = (double)IDLHJIOMJBK;
+			IGFLJCNGAML = (double)_IDLHJIOMJBK_Data;
 		}
-		else if(IDLHJIOMJBK.MDDJBLEDMBJ_IsInt)
+		else if(_IDLHJIOMJBK_Data.MDDJBLEDMBJ_IsInt)
 		{
-			IGFLJCNGAML = (int)IDLHJIOMJBK;
+			IGFLJCNGAML = (int)_IDLHJIOMJBK_Data;
 		}
-		else if(IDLHJIOMJBK.DCPEFFOMOOK_IsLong)
+		else if(_IDLHJIOMJBK_Data.DCPEFFOMOOK_IsLong)
 		{
-			IGFLJCNGAML = (long)IDLHJIOMJBK;
+			IGFLJCNGAML = (long)_IDLHJIOMJBK_Data;
 		}
 		_DNBFMLBNAEE_Point = (long)CFLDNJANAPI_Truncate(IGFLJCNGAML);
 	}

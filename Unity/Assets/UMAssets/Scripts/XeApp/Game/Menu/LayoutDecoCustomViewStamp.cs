@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
 			{
 				//0x19E3DF8
-				return stampId == item.PPFNGGCBJKC;
+				return stampId == item.PPFNGGCBJKC_id;
 			});
 			if(m_charaId == n.IDELKEKDIFD_CharaId)
 			{
@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19E3EC0
-				return item.PPFNGGCBJKC == serifId;
+				return item.PPFNGGCBJKC_id == serifId;
 			});
 			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(n.GBJFNGCDKPM_Type, (IiconTexture image) =>
 			{
@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 			n = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19E3F88
-				return item.PPFNGGCBJKC == serifId;
+				return item.PPFNGGCBJKC_id == serifId;
 			});
 			m_textAnim.StartChildrenAnimGoStop(string.Format("{0:D2}", n.LDLGLHBGOKE_FontSize));
 			string s = NCPPAHHCCAO.GHHOBKGGADG(serifId);

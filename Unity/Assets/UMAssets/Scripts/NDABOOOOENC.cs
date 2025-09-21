@@ -6,7 +6,7 @@ using XeApp;
 
 public class NDABOOOOENC
 {
-	private static string[] JIMKNDJMCID = new string[31] {"", "CgkIt5LD99oYEAIQAQ", "CgkIt5LD99oYEAIQAg", "CgkIt5LD99oYEAIQAw", "CgkIt5LD99oYEAIQBA", "CgkIt5LD99oYEAIQBQ", 
+	private static string[] JIMKNDJMCID_Keys = new string[31] {"", "CgkIt5LD99oYEAIQAQ", "CgkIt5LD99oYEAIQAg", "CgkIt5LD99oYEAIQAw", "CgkIt5LD99oYEAIQBA", "CgkIt5LD99oYEAIQBQ", 
 														"CgkIt5LD99oYEAIQBg", "CgkIt5LD99oYEAIQBw", "CgkIt5LD99oYEAIQCA", "CgkIt5LD99oYEAIQCQ", "CgkIt5LD99oYEAIQCg",
 														"CgkIt5LD99oYEAIQCw", "CgkIt5LD99oYEAIQDA", "CgkIt5LD99oYEAIQDQ", "CgkIt5LD99oYEAIQDg", "CgkIt5LD99oYEAIQDw",
 														"CgkIt5LD99oYEAIQEA", "CgkIt5LD99oYEAIQEQ", "CgkIt5LD99oYEAIQEg", "CgkIt5LD99oYEAIQEw", "CgkIt5LD99oYEAIQFA",
@@ -171,16 +171,16 @@ public class NDABOOOOENC
 	}
 
 	// // RVA: 0x1ADC3E8 Offset: 0x1ADC3E8 VA: 0x1ADC3E8
-	public void GLHANCMGNDM_UpdateAchievement(int PPFNGGCBJKC, double JBGEEPFKIGG/* = 100*/)
+	public void GLHANCMGNDM_UpdateAchievement(int _PPFNGGCBJKC_id, double _JBGEEPFKIGG_Value/* = 100*/)
 	{
 		if(!AppEnv.IsCBT() && GKDLPKNOGCK_Initialized)
 		{
-			if(PPFNGGCBJKC < JIMKNDJMCID.Length)
+			if(_PPFNGGCBJKC_id < JIMKNDJMCID_Keys.Length)
 			{
-				string achId = JIMKNDJMCID[PPFNGGCBJKC];
-				if(PPFNGGCBJKC >= 27 && PPFNGGCBJKC < 31)
+				string achId = JIMKNDJMCID_Keys[_PPFNGGCBJKC_id];
+				if(_PPFNGGCBJKC_id >= 27 && _PPFNGGCBJKC_id < 31)
 				{
-					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("gpgs_key_" + PPFNGGCBJKC, "");
+					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("gpgs_key_" + _PPFNGGCBJKC_id, "");
 					if (!string.IsNullOrEmpty(str))
 						achId = str;
 				}
@@ -210,7 +210,7 @@ public class NDABOOOOENC
 						{
 							if(dbquest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbquest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbquest.PPFNGGCBJKC_id, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
 								{
 									res.Add(dbquest.HDBFCIOCNPA_AchievementId);
 								}
@@ -251,7 +251,7 @@ public class NDABOOOOENC
 						{
 							if(dbQuest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC_id, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
 								{
 									GLHANCMGNDM_UpdateAchievement(dbQuest.HDBFCIOCNPA_AchievementId, 100);
 								}

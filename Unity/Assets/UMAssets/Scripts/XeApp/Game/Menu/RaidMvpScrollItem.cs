@@ -58,14 +58,14 @@ namespace XeApp.Game.Menu
 		public void UpdateContent(int index, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ.CALIFIMGGMD playerData)
 		{
 			m_index = index;
-			SetPlayerName(playerData.LBODHBDOMGK_Name);
+			SetPlayerName(playerData.LBODHBDOMGK_PlayerName);
 			SetPlayerDamage(playerData.HALIDDHLNEG_Damage);
 			SetPlayerRank(playerData.ADFIHAPELAN_PLevel);
 			SetPlayerBe(playerData.OFHFGHJEKKL);
 			SetPlayerRankImage(playerData.HIMMCGKKOOL_Rate);
 			SetPlayerEventRank(playerData.FJOLNJLLJEJ_Rank);
 			EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-			f.KHEKNNFCAOI(playerData);
+			f.KHEKNNFCAOI_Init(playerData);
 			SetPlayerIcon(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
 			SetPlayerPlate(f.AFBMEMCHJCL_MainScene);
 			m_divaDecoration.Change(f.JIGONEMPPNP_Diva, f, DisplayType.Level, f.AFBMEMCHJCL_MainScene);

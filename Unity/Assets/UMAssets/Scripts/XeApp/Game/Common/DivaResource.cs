@@ -539,7 +539,7 @@ namespace XeApp.Game.Common
 			// private StringBuilder <bundleName>5__2; // 0x28
 			// private StringBuilder <assetName>5__3; // 0x2C
 			// private AssetBundleLoadAllAssetOperationBase <operation>5__4; // 0x30
-			// private LCLCCHLDNHJ.ILODJKFJJDO <cosMaster>5__5; // 0x34
+			// private LCLCCHLDNHJ_Costume.ILODJKFJJDO <cosMaster>5__5; // 0x34
 			// 0x1BFDE5C
 			
 			StringBuilder bundleName = new StringBuilder();

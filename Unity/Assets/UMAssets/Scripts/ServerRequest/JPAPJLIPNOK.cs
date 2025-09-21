@@ -8,7 +8,7 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 	private bool CHEGCAOBBEA; // 0x80
 
 	public string FPCIBJLJOFI_Type { get; set; } // 0x7C LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
-	public IKAHKDKIGNA NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public IKAHKDKIGNA NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 	public override bool EBPLLJGPFDA_HasResult { get { return CHEGCAOBBEA; } } //0x1BA51CC HGPAELCGELL
 
 	// RVA: 0x1BA5024 Offset: 0x1BA5024 VA: 0x1BA5024 Slot: 12
@@ -34,41 +34,41 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 	private void JFEPLJOIFBI()
     { 
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        NFEAMMJIMPG = new IKAHKDKIGNA();
-        NFEAMMJIMPG.KHEKNNFCAOI(json);
-        NFEAMMJIMPG.PNELHHHCFAI_PlatformName = FPCIBJLJOFI_Type;
+        NFEAMMJIMPG_Result = new IKAHKDKIGNA();
+        NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(json);
+        NFEAMMJIMPG_Result.PNELHHHCFAI_list_name = FPCIBJLJOFI_Type;
         CHEGCAOBBEA = true;
     }
 }
 
 public class IKAHKDKIGNA
 {
-	public List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL_Files; // 0x8
+	public List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL_files; // 0x8
 	public string GLMGHMCOMEC_BaseUrl; // 0xC
-	public string PNELHHHCFAI_PlatformName; // 0x10
+	public string PNELHHHCFAI_list_name; // 0x10
 
 	// // RVA: 0x8DB638 Offset: 0x8DB638 VA: 0x8DB638
-	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
     {
-        EDOHBJAPLPF_JsonData files = IDLHJIOMJBK[AFEHLCGHAEE_Strings.KGHAJGGMPKL_files/*files*/];
+        EDOHBJAPLPF_JsonData files = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.KGHAJGGMPKL_files/*files*/];
         int num = files.HNBFOAJIIAL_Count;
-        KGHAJGGMPKL_Files = new List<GCGNICILKLD_AssetFileInfo>(num);
+        KGHAJGGMPKL_files = new List<GCGNICILKLD_AssetFileInfo>(num);
         for(int i = 0; i < num; i++)
         {
             EDOHBJAPLPF_JsonData fileData = files[i];
             GCGNICILKLD_AssetFileInfo fileInfo = new GCGNICILKLD_AssetFileInfo();
-            fileInfo.KHEKNNFCAOI_Load(fileData, i);
-            KGHAJGGMPKL_Files.Add(fileInfo);
+            fileInfo.KHEKNNFCAOI_Init(fileData, i);
+            KGHAJGGMPKL_files.Add(fileInfo);
         }
-        GLMGHMCOMEC_BaseUrl = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GLMGHMCOMEC_BaseUrl/*base_url*/];
+        GLMGHMCOMEC_BaseUrl = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GLMGHMCOMEC_BaseUrl/*base_url*/];
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0
 	public bool PPCCFNAPHCH_FileExists(string CKDFCDDOBDH)
 	{
-		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
+		for(int i = 0; i < KGHAJGGMPKL_files.Count; i++)
 		{
-			if (KGHAJGGMPKL_Files[i].OIEAICNAMNB_LocalFileName == "/android/" + CKDFCDDOBDH)
+			if (KGHAJGGMPKL_files[i].OIEAICNAMNB_LocalFileName == "/android/" + CKDFCDDOBDH)
 				return true;
 		}
 		return false;
@@ -78,11 +78,11 @@ public class IKAHKDKIGNA
 	public GCGNICILKLD_AssetFileInfo BIKLNKNFFMK_GetAssetFileInfo(string CKDFCDDOBDH)
 	{
 		string p = "/android/" + CKDFCDDOBDH;
-		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
+		for(int i = 0; i < KGHAJGGMPKL_files.Count; i++)
 		{
-			if(KGHAJGGMPKL_Files[i].OIEAICNAMNB_LocalFileName == p)
+			if(KGHAJGGMPKL_files[i].OIEAICNAMNB_LocalFileName == p)
 			{
-				return KGHAJGGMPKL_Files[i];
+				return KGHAJGGMPKL_files[i];
 			}
 		}
 		return null;

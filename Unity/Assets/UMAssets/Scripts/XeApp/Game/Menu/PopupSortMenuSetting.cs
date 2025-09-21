@@ -110,12 +110,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x115161C Offset: 0x115161C VA: 0x115161C
 		private void SetFriendSortProprty(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList friendProperty)
 		{
-			SortItem = (SortItem)friendProperty.LHPDCGNKPHD_sortItem;
+			SortItem = (SortItem)friendProperty.LHPDCGNKPHD_SortItem;
 			AssistItem = (AssistItem)friendProperty.NPEEPPCPEPE_assistItem;
 			RarityFilter = (uint)friendProperty.ACCHOFLOOEC_RarityFilter;
 			AttributeFilter = (uint)friendProperty.BOFFOHHLLFG_AttributeFilter;
 			SeriaseFilter = (uint)friendProperty.BBIIHLNBHDE_SerieFilter;
-			CenterSkillFilter = (uint)friendProperty.LKPCKPJGJKN_centerSkillFilter;
+			CenterSkillFilter = (uint)friendProperty.LKPCKPJGJKN_CenterSkillFilter;
 		}
 	}
 }

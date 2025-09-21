@@ -47,11 +47,11 @@ namespace XeApp.Game.Menu
 		public FriendListInfo(short titleIndex, bool isAvailable, EAJCBFGKKFA_FriendInfo fri)
 		{
 			SetFriListInfo(titleIndex, isAvailable, fri);
-			playerId = fri.MLPEHNBNOGD_Id;
+			playerId = fri.MLPEHNBNOGD_PlayerId;
 			playerRank = fri.ILOJAJNCPEC_Rank;
-			lastLogin = fri.PCEGKKLKFNO.AJECHDLMKOE_LastLogin;
-			requestDate = fri.PCEGKKLKFNO.DHIFKMEFABP;
-			emblemId = fri.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
+			lastLogin = fri.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin;
+			requestDate = fri.PCEGKKLKFNO_FriendData.DHIFKMEFABP;
+			emblemId = fri.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
 			musicRatio = fri.BJGOPOEAAIC_UtaRate;
 			if(fri.JIGONEMPPNP_Diva != null)
@@ -86,11 +86,11 @@ namespace XeApp.Game.Menu
 				int skillId = fri.AFBMEMCHJCL_MainScene.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				if(skillId != 0)
 				{
-					skill = fri.AFBMEMCHJCL_MainScene.PFHJFIHGCKP_CenterSkillName1;
+					skill = fri.AFBMEMCHJCL_MainScene.PFHJFIHGCKP_CenterSkillName;
 					skillLevel = fri.AFBMEMCHJCL_MainScene.DDEDANKHHPN_SkillLevel;
 					skillRank = (SkillRank.Type)fri.AFBMEMCHJCL_MainScene.DHEFMEGKKDN_CenterSkillRank;
 				}
-				luck = fri.AFBMEMCHJCL_MainScene.MJBODMOLOBC_Luck;
+				luck = fri.AFBMEMCHJCL_MainScene.MJBODMOLOBC_luck;
 				total = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.Total;
 				life = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.life;
 				soul = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.soul;
@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 				support = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.support;
 				isKira = fri.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 			}
-			login = JpStringLiterals.StringLiteral_16059 + fri.PCEGKKLKFNO.LFKJNMFFCLH_LastLoginString;
+			login = JpStringLiterals.StringLiteral_16059 + fri.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString;
 			if(requestDate != 0)
 			{
 				request = JpStringLiterals.StringLiteral_16060 + PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(requestDate, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());

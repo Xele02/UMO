@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 		{
 			LFAFJCNKLML.GFIPDFPIKIJ v;
 			LFAFJCNKLML.HKKKKFLBFJN(m_data, GetRankToIndex(), out v, 0);
-			CostumeUpgradeUtility.SettingRewardIcon(m_data, v.GLCLFMGPMAN_ItemId, GetRankToIndex(), v.NANNGLGOFKH_Value, m_reward_icon, null);
+			CostumeUpgradeUtility.SettingRewardIcon(m_data, v.GLCLFMGPMAN_ItemId, GetRankToIndex(), v.NANNGLGOFKH_value, m_reward_icon, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CD95C Offset: 0x6CD95C VA: 0x6CD95C

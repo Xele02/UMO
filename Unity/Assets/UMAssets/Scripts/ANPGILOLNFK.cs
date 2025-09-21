@@ -3,15 +3,15 @@ public class ANPGILOLNFK
 {
 	public enum CDOGFBNLIPG
 	{
-		HJNNKCMLGFL_0 = 0,
-		PHABJLGFJNI_1 = 1,
-		OFADCIAGMDG = 2,
-		DHGCJEOPEIE_3 = 3,
-		CEIJKIOOIPE_4 = 4,
-		LAOEGNLOJHC_5 = 5,
-		NOBPFBOJLJD = 6,
-		MKADAMIGMPO_7 = 7,
-		KEBIIAMNKAJ = 8,
+		HJNNKCMLGFL_0_None = 0,
+		PHABJLGFJNI_1_Regular = 1,
+		OFADCIAGMDG_2_Continue = 2,
+		DHGCJEOPEIE_3_Comback1 = 3,
+		CEIJKIOOIPE_4_Comback2 = 4,
+		LAOEGNLOJHC_5_Start = 5,
+		NOBPFBOJLJD_6_Campaign = 6,
+		MKADAMIGMPO_7_Total = 7,
+		KEBIIAMNKAJ_8_Return = 8,
 	}
 
 	public static string[] POFDDFCGEGP = new string[9] {
@@ -29,7 +29,7 @@ public class ANPGILOLNFK
 			if(_BPEAIOBHMFD_NameForApis.Contains(POFDDFCGEGP[i]))
 				return (CDOGFBNLIPG)(i);
 		}
-		return CDOGFBNLIPG.HJNNKCMLGFL_0;
+		return CDOGFBNLIPG.HJNNKCMLGFL_0_None;
 	}
 
 	//// RVA: 0xD57550 Offset: 0xD57550 VA: 0xD57550

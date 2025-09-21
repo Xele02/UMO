@@ -10,20 +10,20 @@ public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_Request
 	{
 		public int CJNNMLLEKEF_PreviousPage; // 0xC
 		public int GPPOJHNNINK_CurrentPage; // 0x10
-		public int MDIBIIHAAPN_NextPage; // 0x14
+		public int MDIBIIHAAPN_next_page; // 0x14
 
 		// RVA: 0x16C1E8C Offset: 0x16C1E8C VA: 0x16C1E8C
-		new public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		new public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
-			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
-			MDIBIIHAAPN_NextPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
+			CJNNMLLEKEF_PreviousPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
+			GPPOJHNNINK_CurrentPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
+			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
 			EJDEDOJFOOK = new List<OBGBKHKMDNF>();
-			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.DHDHHHOAIKF_regular_ranking_ranks];
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.DHDHHHOAIKF_regular_ranking_ranks];
 			for (int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				OBGBKHKMDNF data = new OBGBKHKMDNF();
-				data.KHEKNNFCAOI(b[i]);
+				data.KHEKNNFCAOI_Init(b[i]);
 				EJDEDOJFOOK.Add(data);
 			}
 		}
@@ -35,7 +35,7 @@ public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_Request
 	public int MLPLGFLKKLI_Ipp = 10; // 0x88
 
 	public override bool OIDCBBGLPHL { get { return true; } } //0x16C1C90 GINMIBJOABO
-	public NOEPOENCKJJ NFEAMMJIMPG { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public NOEPOENCKJJ NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x16C1CA8 Offset: 0x16C1CA8 VA: 0x16C1CA8 Slot: 12
 	public override void DHLDNIEELHO()
@@ -46,7 +46,7 @@ public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_Request
 	// RVA: 0x16C1DAC Offset: 0x16C1DAC VA: 0x16C1DAC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new NOEPOENCKJJ();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new NOEPOENCKJJ();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -12,15 +12,15 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
         public long CHEAKMNHEAM_LastPlayedAt; // 0x10
 
         // RVA: 0x93E510 Offset: 0x93E510 VA: 0x93E510
-        public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
         {
-            CHEAKMNHEAM_LastPlayedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CHEAKMNHEAM_LastPlayedAt];
-            EDOHBJAPLPF_JsonData list = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
+            CHEAKMNHEAM_LastPlayedAt = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CHEAKMNHEAM_LastPlayedAt];
+            EDOHBJAPLPF_JsonData list = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
             CEBOHGGJBMN_LoginBonuses = new List<GMHKBJLIILI>(list.HNBFOAJIIAL_Count);
             for(int i = 0; i < list.HNBFOAJIIAL_Count; i++)
             {
                 GMHKBJLIILI data = new GMHKBJLIILI();
-                data.KHEKNNFCAOI(list[i]);
+                data.KHEKNNFCAOI_Init(list[i]);
                 CEBOHGGJBMN_LoginBonuses.Add(data);
             }
         }
@@ -28,7 +28,7 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
 
 	public List<int> EAFEGCPEKDC_Ids; // 0x7C
 
-	public MNIIGPNDJOC NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public MNIIGPNDJOC NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x93E2A8 Offset: 0x93E2A8 VA: 0x93E2A8 Slot: 12
 	public override void DHLDNIEELHO()
@@ -46,7 +46,7 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
 	// RVA: 0x93E430 Offset: 0x93E430 VA: 0x93E430 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        NFEAMMJIMPG = new MNIIGPNDJOC();
-        NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+        NFEAMMJIMPG_Result = new MNIIGPNDJOC();
+        NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 }

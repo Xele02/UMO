@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			m_haveItemVal = s.m_haveItemVal;
 			m_isLoadingPresentTexture = true;
 			m_maxUseItemVal = s.m_maxUseItemVal;
-			GameManager.Instance.ItemTextureCache.Load(s.m_divaPresentData.KIJAPOFAGPN_FullItemId, (IiconTexture icon) =>
+			GameManager.Instance.ItemTextureCache.Load(s.m_divaPresentData.KIJAPOFAGPN_ItemId, (IiconTexture icon) =>
 			{
 				//0x17A7528
 				icon.Set(m_imagePresent);

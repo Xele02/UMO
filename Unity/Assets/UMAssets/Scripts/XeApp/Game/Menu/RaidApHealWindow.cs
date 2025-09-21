@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_popupCloseEvent = popupCloseEvent;
 			IFBCGCCJBHI data = new IFBCGCCJBHI();
-			data.KHEKNNFCAOI();
+			data.KHEKNNFCAOI_Init();
 			data.FBANBDCOEJL();
 			MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1), (IiconTexture texture) =>
 			{

@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		private void SetTextTimerInner()
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			SetTextTimer(GetStringDay(m_entranceViewData.PNFDMBHDPAJ ? "quest_tiemr_e002" : "quest_tiemr_e001", m_entranceViewData.KINJOEIAHFK_Start, m_entranceViewData.PCCFAKEOBIC_End));
+			SetTextTimer(GetStringDay(m_entranceViewData.PNFDMBHDPAJ_IsRewardOnly ? "quest_tiemr_e002" : "quest_tiemr_e001", m_entranceViewData.KINJOEIAHFK_StartTime, m_entranceViewData.PCCFAKEOBIC_EndTime));
 		}
 
 		// // RVA: 0x187B124 Offset: 0x187B124 VA: 0x187B124

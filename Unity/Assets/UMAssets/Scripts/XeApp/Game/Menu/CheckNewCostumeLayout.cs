@@ -66,10 +66,10 @@ namespace XeApp.Game.Menu
 				}
 			}
 			PIGBBNDPPJC data = new PIGBBNDPPJC();
-			data.KHEKNNFCAOI(dInfo.KELFCMEOPPM_EpisodeId);
-			m_episodeText.text = JpStringLiterals.StringLiteral_15053 + data.OPFGFINHFCE_Name + JpStringLiterals.StringLiteral_15054;
-			m_costumeNameText.text = dInfo.FFKMJNHFFFL_Costume.OPFGFINHFCE_Name;
-			m_costumeInfoText.text = data.OPFGFINHFCE_Name + JpStringLiterals.StringLiteral_15055;
+			data.KHEKNNFCAOI_Init(dInfo.KELFCMEOPPM_EpisodeId);
+			m_episodeText.text = JpStringLiterals.StringLiteral_15053 + data.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_15054;
+			m_costumeNameText.text = dInfo.FFKMJNHFFFL_Costume.OPFGFINHFCE_name;
+			m_costumeInfoText.text = data.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_15055;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_episodeDesc1Text.text = bk.GetMessageByLabel("gacha_main_ep_caution01");
 			m_episodeDesc2Text.text = bk.GetMessageByLabel("gacha_main_ep_caution02");

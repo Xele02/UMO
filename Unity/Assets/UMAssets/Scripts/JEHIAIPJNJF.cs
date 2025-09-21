@@ -40,7 +40,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
         public string AJPIGKBIDDL_LocalFileName; // 0x8
         public string NFCMNIEHJML_ServerPath; // 0xC
         public string ADHHKEMDOIK_LocalPath; // 0x10
-        public int OIPCCBHIKIA_Idx; // 0x14
+        public int OIPCCBHIKIA_index; // 0x14
         public double KMABBBKJFCB_Percent; // 0x18
         public bool NEDNDAKLBMJ; // 0x20
         public bool IKBKLPNADJM; // 0x21
@@ -57,7 +57,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
         public int JBPJJGNGMFG; // 0x40
     }
  
-    public delegate void FMOECHMCHPE(JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo KOGBMDOONFA);
+    public delegate void FMOECHMCHPE(JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo _KOGBMDOONFA_Info);
     
 	public static bool MLILLALMIPI_Initialized = false; // 0x0
 	public const int AEFPOPCGGJJ = 3;
@@ -185,7 +185,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
     }
 
 	// // RVA: 0x1C34F08 Offset: 0x1C34F08 VA: 0x1C34F08
-	public void DOMFHDPMCCO_AddFiles(List<GCGNICILKLD_AssetFileInfo> IDJBKGBMDAJ, string JCILKDKNDLE_BaseUrl, string OGCDNCDMLCA_LocalPath)
+	public void DOMFHDPMCCO_AddFiles(List<GCGNICILKLD_AssetFileInfo> IDJBKGBMDAJ, string JCILKDKNDLE_BaseUrl, string _OGCDNCDMLCA_LocalPath)
 	{
 		StringBuilder str = new StringBuilder(256);
 		BIBKLAMCKGN = false;
@@ -198,11 +198,11 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			str.Set(JCILKDKNDLE_BaseUrl);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB_LocalFileName);
 			data.NFCMNIEHJML_ServerPath = FileSystemProxy.ConvertURL(JCILKDKNDLE_BaseUrl + IDJBKGBMDAJ[i].MFBMBPJAADA_FileName);
-			str.Set(OGCDNCDMLCA_LocalPath);
+			str.Set(_OGCDNCDMLCA_LocalPath);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB_LocalFileName);
 			data.LAPFOLJGJMB_AssetFileInfo = IDJBKGBMDAJ[i];
 			data.ADHHKEMDOIK_LocalPath = str.ToString();
-			data.OIPCCBHIKIA_Idx = i;
+			data.OIPCCBHIKIA_index = i;
 			JOJMBFBGMGN_DldQueue.Add(data);
 		}
 		
@@ -219,7 +219,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			data.AJPIGKBIDDL_LocalFileName = CEKHMLAEKIK[i].CJEKGLGBIHF_path;
 			data.NFCMNIEHJML_ServerPath = FileSystemProxy.ConvertURL(CEKHMLAEKIK[i].BLHCFFOHBNF_ServerPath);
 			data.ADHHKEMDOIK_LocalPath = CEKHMLAEKIK[i].NOCCPNGFFPF_FullLocalPath;
-			data.OIPCCBHIKIA_Idx = i;
+			data.OIPCCBHIKIA_index = i;
 			JOJMBFBGMGN_DldQueue.Add(data);
 		}
 
@@ -239,7 +239,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	}
 
 	// // RVA: 0x1C355BC Offset: 0x1C355BC VA: 0x1C355BC
-	public void LAOEGNLOJHC()
+	public void LAOEGNLOJHC_Start()
 	{
 		Debug.Log(string.Format(JpStringLiterals.StringLiteral_11855, CMCKNKKCNDK_Status.ToString()));
 		IMDNPMAIJFO_UpdateStorageInfo();
@@ -443,9 +443,9 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 						{
 							MD5 md5 = MD5.Create();
 							string h = KEHOJEJMGLJ.IFCHFDEDCGF_GetFileHash(md5, info.ICKGJODOCBB.ADHHKEMDOIK_LocalPath);
-							if(h != g.POEGMFKLFJG_Hash)
+							if(h != g.POEGMFKLFJG_hash_value)
 							{
-								UnityEngine.Debug.LogError("Wrong hash for "+info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName+" "+h+" != "+g.POEGMFKLFJG_Hash);
+								UnityEngine.Debug.LogError("Wrong hash for "+info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName+" "+h+" != "+g.POEGMFKLFJG_hash_value);
 								status = CriFsWebInstaller.Status.Error;
 								info.IOKJFDPOEFP_InstallerStatusInfo.status = status;
 							}
@@ -511,13 +511,13 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	}
 
 	// // RVA: 0x1C37140 Offset: 0x1C37140 VA: 0x1C37140
-	private void DLHJNILCAGE(JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo PHKJOMLDNOB)
+	private void DLHJNILCAGE(JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo _PHKJOMLDNOB_context)
 	{
-		if(PHKJOMLDNOB.GGFGJEDLKNC)
+		if(_PHKJOMLDNOB_context.GGFGJEDLKNC)
 			return;
 		bool a = false;
 		string str = "";
-		switch(PHKJOMLDNOB.IOKJFDPOEFP_InstallerStatusInfo.error)
+		switch(_PHKJOMLDNOB_context.IOKJFDPOEFP_InstallerStatusInfo.error)
 		{
 			case CriFsWebInstaller.Error.None:
 				str = "None";
@@ -557,12 +557,12 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			"Install Error = ",
 			str,
 			" [",
-			PHKJOMLDNOB.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
+			_PHKJOMLDNOB_context.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
 			"]"
 		}));
 		if(!(a && !BIBKLAMCKGN))
 		{
-			PHKJOMLDNOB.GGFGJEDLKNC = true;
+			_PHKJOMLDNOB_context.GGFGJEDLKNC = true;
 			return;
 		}
 		BIBKLAMCKGN = true;
@@ -571,7 +571,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			"code=[",
 			str,
 			"],url=[",
-			PHKJOMLDNOB.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
+			_PHKJOMLDNOB_context.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
 			"]"
 		}));
 	}

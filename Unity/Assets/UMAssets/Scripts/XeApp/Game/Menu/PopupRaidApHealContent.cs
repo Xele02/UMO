@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(t_exec)
 			{
-				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0));
+				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0_None));
 				closeEvent();
 			}
 			MenuScene.Instance.InputEnable();
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 			{
 				EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id),
 				1, 
-				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0),
+				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0_None),
 				a, a - 1
 			});
 			return s;

@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < 2; i++)
 			{
 				ALEKLHIANJN d = i == 0 ? before : after;
-				m_abilityLayout[i].abiltiy_category.text = d.OPFGFINHFCE_SkillName;
+				m_abilityLayout[i].abiltiy_category.text = d.OPFGFINHFCE_name;
 				m_abilityLayout[i].abiltiy_level.text = LVTEXT + d.CHHADJECKNL_GetLevel();
 				m_abilityLayout[i].abiltiy_description.text = d.DMBDNIEEMCB_GetDesc(i != 0);
 			}
@@ -159,24 +159,24 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < list.Count; i++)
 			{
 				int num = i;
-				MenuScene.Instance.ItemTextureCache.Load(list[i].PPFNGGCBJKC, (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(list[i].PPFNGGCBJKC_id, (IiconTexture texture) =>
 				{
 					//0x1666584
 					texture.Set(m_itemTex[num]);
 				});
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(list[i].PPFNGGCBJKC);
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(list[i].PPFNGGCBJKC);
-				strs[i] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(list[i].PPFNGGCBJKC);
+                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(list[i].PPFNGGCBJKC_id);
+				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(list[i].PPFNGGCBJKC_id);
+				strs[i] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(list[i].PPFNGGCBJKC_id);
 				int haveCurrent = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(db, save, cat, id, null);
 				m_detailNeedItemButton[i].ClearOnClickCallback();
 				m_detailNeedItemButton[i].AddOnClickCallback(() =>
 				{
 					//0x16666C4
-					MenuScene.Instance.ShowItemDetail(list[num].PPFNGGCBJKC, haveCurrent, null);
+					MenuScene.Instance.ShowItemDetail(list[num].PPFNGGCBJKC_id, haveCurrent, null);
 				});
 				m_haveItemText[i].text = haveCurrent.ToString();
-				m_needItemText[i].text = list[i].NANNGLGOFKH.ToString();
-				if(haveCurrent < list[i].NANNGLGOFKH)
+				m_needItemText[i].text = list[i].NANNGLGOFKH_value.ToString();
+				if(haveCurrent < list[i].NANNGLGOFKH_value)
 				{
 					RichTextUtility.ChangeColor(m_haveItemText[i], StatusTextColor.NormalColor);
 				}

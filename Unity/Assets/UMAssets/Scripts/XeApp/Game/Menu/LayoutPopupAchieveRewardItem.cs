@@ -43,8 +43,8 @@ namespace XeApp.Game.Menu
 					SetConditions("");
 					break;
 			}
-			SetItemName((rewardData.HHACNFODNEF_Category == 3 ? rewardData.JDLJPNMLFID.ToString() : rewardData.JDMIKEEIJFP + JpStringLiterals.StringLiteral_12037 + rewardData.JDLJPNMLFID.ToString()) + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rewardData.KIJAPOFAGPN_GlobalItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(rewardData.KIJAPOFAGPN_GlobalItemId), rewardData.JDLJPNMLFID));
-			SetIcon(rewardData.KIJAPOFAGPN_GlobalItemId);
+			SetItemName((rewardData.HHACNFODNEF_ItemCategory == 3 ? rewardData.JDLJPNMLFID_ItemCount.ToString() : rewardData.JDMIKEEIJFP + JpStringLiterals.StringLiteral_12037 + rewardData.JDLJPNMLFID_ItemCount.ToString()) + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rewardData.KIJAPOFAGPN_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(rewardData.KIJAPOFAGPN_ItemId), rewardData.JDLJPNMLFID_ItemCount));
+			SetIcon(rewardData.KIJAPOFAGPN_ItemId);
 		}
 
 		//// RVA: 0x15E228C Offset: 0x15E228C VA: 0x15E228C

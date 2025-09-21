@@ -44,14 +44,14 @@ namespace XeApp.Game.Menu
 			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.GGDBEANLCPC.HALIDDHLNEG_Damage);
 			m_text01.text = "";
 			m_text02.text = "";
-			if(ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate.Count < 1)
+			if(ev.GGDBEANLCPC.OPIBAPEGCLA_Scenes.Count < 1)
 			{
 				m_text03.text = bk.GetMessageByLabel("pop_raid_cannon_plate_text03");
 				m_text04.text = bk.GetMessageByLabel("pop_raid_cannon_plate_text04");
 			}
 			else
 			{
-				m_text03.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text02"), ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate.Count);
+				m_text03.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text02"), ev.GGDBEANLCPC.OPIBAPEGCLA_Scenes.Count);
 				m_text04.text = "";
 			}
 			m_animText.StartChildrenAnimGoStop("03");
@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 					m_animText.StartChildrenAnimGoStop("01");
 				}
 			}
-			UpdateContent(ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate);
+			UpdateContent(ev.GGDBEANLCPC.OPIBAPEGCLA_Scenes);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x714E2C Offset: 0x714E2C VA: 0x714E2C

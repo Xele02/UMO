@@ -3,7 +3,7 @@ public class BOPFPIHGJMD
 {
 	public enum ADMNKELOLPN
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		CCAPCGPIIPF_1 = 1,
 		NBHIECDDJHH_2 = 2,
 		HFPIACELNLL_3 = 3,
@@ -13,14 +13,14 @@ public class BOPFPIHGJMD
 
     public enum JFHCHOILMEL
     {
-        HJNNKCMLGFL_0 = 0,
+        HJNNKCMLGFL_0_None = 0,
         MLFOEICOGAP_1 = 1,
         GNHENCIPDFK_2 = 2,
     }
 	
 	public enum CMBJEEGFODD
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		DPNBNKOOJHI_1 = 1,
 		ELCJGBEKIKD_2 = 2,
 		PIICPBCIHKN_4 = 4,
@@ -31,7 +31,7 @@ public class BOPFPIHGJMD
 	
 	public enum DBNJDPHLLHI
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		CELJMOGCFCK = 1,
 		OEMJLNBLENB = 2,
 		FDKLFCEMHBP = 3,
@@ -47,7 +47,7 @@ public class BOPFPIHGJMD
 	
 	public enum AHIOHONIGDH
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		HOOPCKAOMGG_1 = 1,
 		GLICCOKGLPF_2 = 2,
 		IHCCBHDNHPC_4 = 4,
@@ -57,7 +57,7 @@ public class BOPFPIHGJMD
 	
 	public enum LGEIPIHHNPH
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		HOOPCKAOMGG_1 = 1,
 		GLICCOKGLPF_2 = 2,
 		IHCCBHDNHPC_3 = 3,
@@ -70,7 +70,7 @@ public class BOPFPIHGJMD
 	
 	public enum HDHDOOLPBEO
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		CCDOBDNDPIL_1 = 1,
 		LJJODKKOOFD_2 = 2,
 		MOADAEHPFPA_3 = 3,
@@ -78,7 +78,7 @@ public class BOPFPIHGJMD
 
     public enum LEIPFJHOFPC
     {
-        HJNNKCMLGFL_0 = 0,
+        HJNNKCMLGFL_0_None = 0,
         NBDBAFGEEGA_1 = 1,
         GLFGNEILACA_2 = 2,
         GEJGMBBCFEE = 3,
@@ -86,21 +86,21 @@ public class BOPFPIHGJMD
 	
 	public enum LBGOHNCBMDG
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		KHBGFKPCOMI = 1,
 		GIFEEFPDPBD = 2,
 	}
 	
 	public enum AGGLEGJDLGF
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0_None = 0,
 		JPAODAPCJGG_1_Program = 1,
 		NLGNJNJBLEJ_2_Stone = 2,
 	}
 	
 	public enum GNGGLPCONLM
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		OCKIDPJNNBP_1 = 1,
 		HHPBNBIEGHK_2 = 2,
 		BCMLFJPLKAM_4 = 4,
@@ -109,7 +109,7 @@ public class BOPFPIHGJMD
 
 	public enum MLBMHDCCGHI
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		HEFPAOLDHCK_1_Day = 1,
 		FDOOAJLGFAE_2_Week = 2,
 		FMLPIOFBCMA_3_Diva = 3,
@@ -142,7 +142,7 @@ public class BOPFPIHGJMD
 	
 	public enum FPKMKLDDCNL
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		HNOJIKHAPHA_1 = 1,
 		HCBFMFONIOE = 2,
 		KHLPAOENONH = 3,
@@ -162,7 +162,7 @@ public class BOPFPIHGJMD
 		INIMBLOHIEF_0 = 0,
 		FMHLGHDKJBC_1 = 1,
 		JIOPJDJBLFK_2 = 2,
-		HJNNKCMLGFL_3 = 3,
+		HJNNKCMLGFL_3_None = 3,
 	}
 	
 	public enum HBJMIJIOCAM

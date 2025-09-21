@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public void SetOfferInfomation(HEFCLPGPMLK.AAOPGOGGMID _view)
 		{
 			ViewOfferInfo = _view;
-			SetRecomValue(_view.KINFGHHNFCF, _view.NONBCCLGBAO);
+			SetRecomValue(_view.KINFGHHNFCF_Atk, _view.NONBCCLGBAO_hit);
 			SetofferType(ViewOfferInfo.CGKPIIFCCLD_OfferType);
 			m_OfferName.text = ViewOfferInfo.IJOLPDKFLPO_OfferName;
 			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ_ClearTime, ViewOfferInfo.JGAMLEMMJCJ_ClearTime);
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			bool IsMoreEnemyForces; // 0x38
 
 			//0x18539B8
-			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Type, ViewOfferInfo.PPFNGGCBJKC, vfpId, (FKGMGBHBNOC.HPJOCKGKNCC_Form) vfForm, IsCorrent);
+			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Type, ViewOfferInfo.PPFNGGCBJKC_id, vfpId, (FKGMGBHBNOC.HPJOCKGKNCC_Form) vfForm, IsCorrent);
 			ChengeTime = currntClearTime;
 			IsLackPower = ViewOfferInfo.IMPNNOLLMBK < NextClearTime;
 			StartLackPowerAnim();
@@ -206,7 +206,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1852C24 Offset: 0x1852C24 VA: 0x1852C24
 		private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
 		{
-			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0_None && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
 			{
 				if (m_LogoTextureUvNameTable[(int)seriesIcon - 1] == null)
 					m_SeriesLog.enabled = false;

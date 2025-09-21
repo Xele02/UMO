@@ -10,7 +10,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	public class GIEHECAKIFC_StoryInfo
 	{
 		[UMOMember(ReaderMember = "PPFNGGCBJKC")]
-		public int PPFNGGCBJKC_Id; // 0x8
+		public int PPFNGGCBJKC_id; // 0x8
 		[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
 		public int PPEGAKEIEGM_Enabled; // 0xC
 		[UMOMember(ReaderMember = "BCKCEEMNKCH")]
@@ -18,7 +18,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "BDJMFDKLHPM")]
 		public byte MGBDCFIKBPM_Serie; // 0x14
 		[UMOMember(ReaderMember = "PDBPFJJCADD", ReaderDisplay = "Date", Display = "Date")]
-		public long PDBPFJJCADD_PeriodStart; // 0x18
+		public long PDBPFJJCADD_open_at; // 0x18
 		[UMOMember(ReaderMember = "FDBNFFNFOND", ReaderDisplay = "Date", Display = "Date")]
 		public long FDBNFFNFOND_CloseAt; // 0x20
 	}
@@ -27,7 +27,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	public class ENDMMNNOAIL_StoryPartInfo
 	{
 		[UMOMember(ReaderMember = "PPFNGGCBJKC")]
-		public int PPFNGGCBJKC_Id; // 0x8
+		public int PPFNGGCBJKC_id; // 0x8
 		[UMOMember(ReaderMember = "PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
 		public int PPEGAKEIEGM_Enabled; // 0xC
 		[UMOMember(ReaderMember = "BCKCEEMNKCH")]
@@ -44,8 +44,8 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 
 	public class CHCCGPMJFEL
 	{
-		public int PPFNGGCBJKC; // 0x8
-		public int PPEGAKEIEGM; // 0xC
+		public int PPFNGGCBJKC_id; // 0x8
+		public int PPEGAKEIEGM_Enabled; // 0xC
 		public int BCCHOBPJJKE_SceneId; // 0x10
 		public int BPNKGDGBBFG; // 0x14
 	}
@@ -83,14 +83,14 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xFC6570 Offset: 0xFC6570 VA: 0xFC6570 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		ILEJEJKNOBN_StoryList.Clear();
 		JPIGOBGOMON_StoryPartsList.Clear();
 	}
 
 	// RVA: 0xFC6614 Offset: 0xFC6614 VA: 0xFC6614 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		BLOHGJIKLAK parser = BLOHGJIKLAK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		ILEJEJKNOBN_StoryList.Clear();
@@ -100,11 +100,11 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				GIEHECAKIFC_StoryInfo data = new GIEHECAKIFC_StoryInfo();
-				data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 				data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.MGBDCFIKBPM_Serie = (byte)array[i].BDJMFDKLHPM;
-				data.PDBPFJJCADD_PeriodStart = array[i].PDBPFJJCADD;
+				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
 				data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
 				ILEJEJKNOBN_StoryList.Add(data);
 			}
@@ -114,7 +114,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				ENDMMNNOAIL_StoryPartInfo data = new ENDMMNNOAIL_StoryPartInfo();
-				data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF;
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.JDJNNJEJDAJ_Type = (NMIGMCJHAIE)array[i].PIDAAPMCAML;
@@ -128,7 +128,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xFC6B30 Offset: 0xFC6B30 VA: 0xFC6B30 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}

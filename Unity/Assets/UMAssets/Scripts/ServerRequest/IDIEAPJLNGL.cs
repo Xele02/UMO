@@ -7,20 +7,20 @@ public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
 {
 	public class HEHEEIFJAKM
 	{
-		public int NHPDJADJNCL_FriendLimit; // 0x8
+		public int NHPDJADJNCL_friend_limit; // 0x8
 		public long IFNLEKOILPM_UpdatedAt; // 0x10
 
 		// RVA: 0x11EB99C Offset: 0x11EB99C VA: 0x11EB99C
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			NHPDJADJNCL_FriendLimit = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
-			IFNLEKOILPM_UpdatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];
+			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
+			IFNLEKOILPM_UpdatedAt = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.IFNLEKOILPM_UpdatedAt];
 		}
 	}
 
 	public int APOOBGPBNDG_FriendLimit; // 0x7C
 
-	public HEHEEIFJAKM NFEAMMJIMPG_ResultData { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HEHEEIFJAKM NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x11EB7D8 Offset: 0x11EB7D8 VA: 0x11EB7D8 Slot: 12
 	public override void DHLDNIEELHO()
@@ -31,7 +31,7 @@ public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
 	// RVA: 0x11EB8BC Offset: 0x11EB8BC VA: 0x11EB8BC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG_ResultData = new HEHEEIFJAKM();
-		NFEAMMJIMPG_ResultData.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new HEHEEIFJAKM();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 			public ScrollDivaListItem(int divaId)
 			{ 
 				DivaData = new FFHPBEPOMAK_DivaInfo();
-				DivaData.KHEKNNFCAOI(divaId, null, false);
+				DivaData.KHEKNNFCAOI_Init(divaId, null, false);
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			public ScrollCostumeListItem(int divaId, int costumeId, int colorId)
 			{
 				CostumeData = new CKFGMNAIBNG();
-				CostumeData.KHEKNNFCAOI(divaId, costumeId, 0, false);
+				CostumeData.KHEKNNFCAOI_Init(divaId, costumeId, 0, false);
 				ColorId = colorId;
 			}
 		}
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 				bool noSelection = true;
 				for(int i = 0; i < divaList.Count; i++)
 				{
-					ScrollDivaListItem item = new ScrollDivaListItem(divaList[i].PPFNGGCBJKC_Id);
+					ScrollDivaListItem item = new ScrollDivaListItem(divaList[i].PPFNGGCBJKC_id);
 					SetIconPosition(i % 2, i / 2, item);
 					item.ListIndex = i;
 					item.IsSet = divaList[i].CBLHLEKLLDE_IsSet;
@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 						noSelection = false;
 					}
 					m_scrollItem.Add(item);
-					GameManager.Instance.DivaIconCache.TryLoadDivaSmallBustupIcon(divaList[i].PPFNGGCBJKC_Id, 1);
+					GameManager.Instance.DivaIconCache.TryLoadDivaSmallBustupIcon(divaList[i].PPFNGGCBJKC_id, 1);
 				}
 				if(noSelection)
 				{
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < costumeList.Count; i++)
 				{
 					int divaId = m_prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(m_selectIndex);
-					int costumeId = costumeList[i].PPFNGGCBJKC_Id;
+					int costumeId = costumeList[i].PPFNGGCBJKC_id;
 					int colorId = costumeList[i].DOKKMMFKLJI_Color;
 					ScrollCostumeListItem item = new ScrollCostumeListItem(divaId, costumeId, colorId);
 					SetIconPosition(i % 2, i / 2, item);
@@ -154,13 +154,13 @@ namespace XeApp.Game.Menu
 				List<AOJGDNFAIJL_PrismData.MHOGKDIKIHE_ValkyrieInfo> l = m_prismData.PDECHELDNCC();
 				for (int i = 0; i < l.Count; i++)
 				{
-					ScrollValkyrieListItem item = new ScrollValkyrieListItem(l[i].PPFNGGCBJKC_Id);
+					ScrollValkyrieListItem item = new ScrollValkyrieListItem(l[i].PPFNGGCBJKC_id);
 					SetIconPosition(i % 2, i / 2, item);
 					item.ListIndex = i;
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_Id), 0);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_id), 0);
 				}
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 			{
 				txt = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_000_001");
 			}
-			listLayout.SetName(string.Format(txt, listItem.DivaData.OPFGFINHFCE_Name));
+			listLayout.SetName(string.Format(txt, listItem.DivaData.OPFGFINHFCE_name));
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();
 			GameManager.Instance.DivaIconCache.LoadDivaSmallBustupIcon(listItem.DivaData.AHHJLDLAPAN_DivaId, 1, (IiconTexture texture) => {
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_001");
-				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name);
+				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_Name, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name);
 			}
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();

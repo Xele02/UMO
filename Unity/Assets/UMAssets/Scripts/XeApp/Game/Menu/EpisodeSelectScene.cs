@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 			{
 				m_btn_sort.EnableSave(true);
 				m_btn_sort.m_order = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_Order;
-				m_btn_sort.m_sort = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_sortItem;
+				m_btn_sort.m_sort = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_SortItem;
 			}
 			else
 			{
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 				int idx = m_list_filter.FindIndex((PIGBBNDPPJC x) =>
 				{
 					//0xF07184
-					return x.KELFCMEOPPM_EpId == m_init_episodeid;
+					return x.KELFCMEOPPM_EpisodeId == m_init_episodeid;
 				});
 				m_icon_creater.Scroll.ResetScrollVelocity();
 				m_icon_creater.Scroll.SetPosition(idx, 0, 0, false);
@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 			m_init_episodeid = -1;
 			if(ArgsReturn != null && ArgsReturn is EpisodeDetailBackArgs)
 			{
-				m_init_episodeid = (ArgsReturn as EpisodeDetailBackArgs).data.KELFCMEOPPM_EpId;
+				m_init_episodeid = (ArgsReturn as EpisodeDetailBackArgs).data.KELFCMEOPPM_EpisodeId;
 			}
 			TryInstall();
 			m_icon_creater.InitializeScrollView(m_list_filter.Count, 0);
@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 			{
 				int idx = m_list_filter.FindIndex((PIGBBNDPPJC x) =>
 				{
-					return x.KELFCMEOPPM_EpId == 1;
+					return x.KELFCMEOPPM_EpisodeId == 1;
 				});
 				if(idx > -1)
 				{
@@ -247,10 +247,10 @@ namespace XeApp.Game.Menu
 				m_list_filter.Sort((PIGBBNDPPJC a, PIGBBNDPPJC b) =>
 				{
 					//0xF075B4
-					EKLNMHFCAOI.FKGCBLHOOCL_Category cat1 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a.KIJAPOFAGPN_UnlockItemId);
-					EKLNMHFCAOI.FKGCBLHOOCL_Category cat2 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(b.KIJAPOFAGPN_UnlockItemId);
-					int itemId1 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a.KIJAPOFAGPN_UnlockItemId);
-					int itemId2 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(b.KIJAPOFAGPN_UnlockItemId);
+					EKLNMHFCAOI.FKGCBLHOOCL_Category cat1 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a.KIJAPOFAGPN_ItemId);
+					EKLNMHFCAOI.FKGCBLHOOCL_Category cat2 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(b.KIJAPOFAGPN_ItemId);
+					int itemId1 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a.KIJAPOFAGPN_ItemId);
+					int itemId2 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(b.KIJAPOFAGPN_ItemId);
 					if (cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 					{
 						LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos1 = t_master_cos.EEOADCECNOM_GetCostumeInfo(itemId1);
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 							valk1 = valk2;
 							valk2 = tmp;
 						}
-						return valk2.IFGMKBKBFJI_IdCrypted - valk1.IFGMKBKBFJI_IdCrypted;
+						return valk2.IFGMKBKBFJI_ValkyrieIdCrypted - valk1.IFGMKBKBFJI_ValkyrieIdCrypted;
 					}
 					else if(cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{
@@ -288,18 +288,18 @@ namespace XeApp.Game.Menu
 							homeBg1 = homeBg2;
 							homeBg2 = tmp;
 						}
-						return homeBg2.PPFNGGCBJKC_Id - homeBg1.PPFNGGCBJKC_Id;
+						return homeBg2.PPFNGGCBJKC_id - homeBg1.PPFNGGCBJKC_id;
 					}
 					if(a_order == 1)
 					{
-						int res = b.KIJAPOFAGPN_UnlockItemId - a.KIJAPOFAGPN_UnlockItemId;
+						int res = b.KIJAPOFAGPN_ItemId - a.KIJAPOFAGPN_ItemId;
 						if (res == 0)
 							res = b.FKMAEKNOLJB_EpisodeNo - a.FKMAEKNOLJB_EpisodeNo;
 						return res;
 					}
 					else
 					{
-						int res = a.KIJAPOFAGPN_UnlockItemId - b.KIJAPOFAGPN_UnlockItemId;
+						int res = a.KIJAPOFAGPN_ItemId - b.KIJAPOFAGPN_ItemId;
 						if (res == 0)
 							res = a.FKMAEKNOLJB_EpisodeNo - b.FKMAEKNOLJB_EpisodeNo;
 						return res;

@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo divaInfo = playerData.DPLBHAIKPGL_GetTeam(false).BCJEAJPLGMB_MainDivas[0];
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
-				divaInfo = playerData.NBIGLBMHEDC_Divas[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+				divaInfo = playerData.NBIGLBMHEDC_DivaList[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
 			this.StartCoroutineWatched(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
 		}
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			if(facialType == DivaResource.MenuFacialType.Result)
 			{
 				NGJOPPIGCPM_ResultData data = new NGJOPPIGCPM_ResultData();
-				data.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId,
+				data.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId,
 					Database.Instance.gameSetup.musicInfo.difficultyType,
 					Database.Instance.gameSetup.EnableLiveSkip,
 					Database.Instance.gameSetup.musicInfo.IsLine6Mode,
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 				scoreRank = ResultScoreRank.Type.S;
 				if(!Database.Instance.gameSetup.musicInfo.IsMvMode)
 				{
-					scoreRank = (ResultScoreRank.Type)data.PENICOGGNLF_RankScore;
+					scoreRank = (ResultScoreRank.Type)data.PENICOGGNLF_ScoreRank;
 				}
 			}
 			resource.LoadBasicResource(divaId, modelId, colorId);

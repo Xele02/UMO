@@ -19,10 +19,10 @@ public class EBHIMFFJBIJ
         OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "created_at", 0);
         LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "updated_at", 0);
         FFDEBPDJOIJ_ExpiredAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "expired_at", 0);
-        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData IDLHJIOMJBK) =>
+        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) =>
         {
             //0x14FDF14
-            return (int)IDLHJIOMJBK;
+            return (int)_IDLHJIOMJBK_Data;
         }, 0);
     }
 }
@@ -40,17 +40,17 @@ public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
     {
         // RVA: 0xE85EF4 Offset: 0xE85EF4 VA: 0xE85EF4
         public ODMFEOAPAAA(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
-            : base(new GIINMFDIIMD(_DLENPPIJNPA_json), (GIINMFDIIMD IDLHJIOMJBK) =>
+            : base(new GIINMFDIIMD(_DLENPPIJNPA_json), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
             {
                 //0xE861A0
-                return new EBHIMFFJBIJ(IDLHJIOMJBK);
+                return new EBHIMFFJBIJ(_IDLHJIOMJBK_Data);
             })
         {;
         }
     }
 
 	public MNOBFFCNDLL BIHCCEHLAOD = new MNOBFFCNDLL(); // 0x7C
-	public ODMFEOAPAAA NFEAMMJIMPG; // 0x80
+	public ODMFEOAPAAA NFEAMMJIMPG_Result; // 0x80
 
 	// RVA: 0xE85D40 Offset: 0xE85D40 VA: 0xE85D40 Slot: 12
 	public override void DHLDNIEELHO()
@@ -61,6 +61,6 @@ public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
 	// RVA: 0xE85E38 Offset: 0xE85E38 VA: 0xE85E38 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        NFEAMMJIMPG = new ODMFEOAPAAA(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+        NFEAMMJIMPG_Result = new ODMFEOAPAAA(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 }

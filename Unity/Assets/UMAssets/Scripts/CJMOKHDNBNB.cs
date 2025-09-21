@@ -29,7 +29,7 @@ public class CJMOKHDNBNB
     }
 
 	// // RVA: 0x107D0D4 Offset: 0x107D0D4 VA: 0x107D0D4
-	// private static void KEBJPAEBMAI(string GPBJHKLFCEP, string CNHEPCPELGK, string OPFGFINHFCE, bool CCDFELBFMIE) { }
+	// private static void KEBJPAEBMAI(string GPBJHKLFCEP, string CNHEPCPELGK, string _OPFGFINHFCE_name, bool CCDFELBFMIE) { }
 
 	// // RVA: 0x107D1C8 Offset: 0x107D1C8 VA: 0x107D1C8
 	// public static void CHFFHOKMEMA() { }

@@ -464,13 +464,13 @@ namespace XeApp.Game.Menu
 				if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 				{
 					//LAB_00cec080
-					RaidController.PMIIMELDPAJ_GetMyBoss().LHPDDGIJKNB();
+					RaidController.PMIIMELDPAJ_GetMyBoss().LHPDDGIJKNB_Reset();
 				}
 				else if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 				{
 					if(!RaidController.PMIIMELDPAJ_GetMyBoss().ICCOOAAJEIN_CanReceiveReward)
 					{
-						RaidController.PMIIMELDPAJ_GetMyBoss().LHPDDGIJKNB();
+						RaidController.PMIIMELDPAJ_GetMyBoss().LHPDDGIJKNB_Reset();
 					}
 					else
 					{
@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 						List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ> l6 = new List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ>();
 						for(int i = 0; i < l.Count; i++)
 						{
-							if(l[i].INDDJNMPONH == PKNOKJNLPOE_EventRaid.BKKPEJEABJN.AOFLHCJEDOA_0)
+							if(l[i].INDDJNMPONH_Type == PKNOKJNLPOE_EventRaid.BKKPEJEABJN.AOFLHCJEDOA_0)
 							{
 								l5.Add(l[i]);
 							}
@@ -763,12 +763,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x181C990 Offset: 0x181C990 VA: 0x181C990
 		private void SortBossInfoList(ref List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> bossInfoList)
 		{
-            int sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_sortItem;
+            int sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_SortItem;
             int order = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.EILKGEADKGH_Order;
 			bossInfoList.Sort((PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
 			{
 				//0x1825830
-				return a.PPFNGGCBJKC_Id - b.PPFNGGCBJKC_Id;
+				return a.PPFNGGCBJKC_id - b.PPFNGGCBJKC_id;
 			});
 			switch(sort)
 			{
@@ -804,7 +804,7 @@ namespace XeApp.Game.Menu
 					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
 					{
 						//0x18259EC
-						return a.MHABJOMJCFI_JoinedMember - b.MHABJOMJCFI_JoinedMember;
+						return a.MHABJOMJCFI_AttackPlayerCount - b.MHABJOMJCFI_AttackPlayerCount;
 					});
 					break;
 				default:
@@ -1013,19 +1013,19 @@ namespace XeApp.Game.Menu
 			{
 				if(m_bossInfoViewList.Count != 0)
 				{
-					if(m_bossInfoViewList[index].PPFNGGCBJKC_Id == RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+					if(m_bossInfoViewList[index].PPFNGGCBJKC_id == RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id)
 					{
 						if(RaidController.LMIFOCDCNAI())
 						{
 							m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelp);
-							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
+							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id));
 							return;
 						}
-						if(!RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id))
+						if(!RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id))
 						{
 							m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelpDone);
-							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
-							m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id) != 0, false);
+							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id));
+							m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id), RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id) != 0, false);
 							return;
 						}
 					}
@@ -1067,7 +1067,7 @@ namespace XeApp.Game.Menu
 				m_bossInfoLayout.SetSongBonus(m_bossInfoList[idx].NFOOOBMJINC_MissionBonusNum);
 				m_bossInfoLayout.SetMissionInfoText(m_bossInfoList[idx].CJLHLKKNMEE_MissionText);
 				m_bossInfoLayout.SetSp(m_bossInfoList[idx].IKICLMGFFPB_IsSpecial);
-				m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoList[idx].PPFNGGCBJKC_Id));
+				m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoList[idx].PPFNGGCBJKC_id));
 				while(!waitBossImage)
 					yield return null;
 				m_bossSelectListLayout.gameObject.SetActive(true);
@@ -1102,9 +1102,9 @@ namespace XeApp.Game.Menu
 		{
 			if(m_bossInfoViewList.Count < index)
 				return;
-			controller.SetPlayerName(m_bossInfoViewList[index].LBODHBDOMGK_Name);
+			controller.SetPlayerName(m_bossInfoViewList[index].LBODHBDOMGK_PlayerName);
 			controller.SetTime(m_bossInfoViewList[index].OCFJGNPMJBA_GetTime());
-			controller.SetJoinMember(m_bossInfoViewList[index].MHABJOMJCFI_JoinedMember);
+			controller.SetJoinMember(m_bossInfoViewList[index].MHABJOMJCFI_AttackPlayerCount);
 			controller.SetPlayerIcon(m_bossInfoViewList[index]);
 			controller.SetPlayerIconDeco(m_bossInfoViewList[index]);
 			controller.SetRate(m_bossInfoViewList[index].HIMMCGKKOOL_Rate);
@@ -1133,7 +1133,7 @@ namespace XeApp.Game.Menu
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[index].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[index].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[index].IKICLMGFFPB_IsSpecial);
-			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[index].PPFNGGCBJKC_Id));
+			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[index].PPFNGGCBJKC_id));
 			m_macrossCannonButton.DisableMcrsCannonLine(false);
 			SetBossHelpButtonType(index);
 		}
@@ -1185,7 +1185,7 @@ namespace XeApp.Game.Menu
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[idx].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[idx].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[idx].IKICLMGFFPB_IsSpecial);
-			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[idx].PPFNGGCBJKC_Id));
+			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[idx].PPFNGGCBJKC_id));
 			SetBossHelpButtonType(idx);
 		}
 
@@ -1257,9 +1257,9 @@ namespace XeApp.Game.Menu
 						//0x18267F4
 						done = true;
 						m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelpDone);
-						int helpCount = RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id);
+						int helpCount = RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id);
 						m_bottomButtonLayout.SetBossHelpCount(helpCount);
-						m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), helpCount != 0, RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
+						m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id), helpCount != 0, RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id));
 						m_popRaidHelpCompletionListSetting.helperList = helper;
 						if(helper.Count < 1)
 						{
@@ -1453,12 +1453,12 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-			f.KHEKNNFCAOI(m_bossInfoViewList[index]);
+			f.KHEKNNFCAOI_Init(m_bossInfoViewList[index]);
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
-			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
+			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
+			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 
@@ -1681,7 +1681,7 @@ namespace XeApp.Game.Menu
 				m_eventMusicSelectArgs = new EventMusicSelectSceneArgs(m_eventCtrl.PGIIDPEGGPI_EventId, false, false);
 			m_isEventTimeLimit = false;
 			m_isEventChecked = false;
-			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0;
+			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0_None;
 			if(m_eventCtrl != null)
 			{
 				m_eventCtrl.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
@@ -2048,7 +2048,7 @@ namespace XeApp.Game.Menu
 			{
 				m_showTicketGainedPopup = true;
 				itemId = a_controller.BHABCGJCGNO.JJBGOIMEIPF_ItemId;
-				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_Cnt;
+				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_item_count;
 				bool done = false;
 				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 				{
@@ -2257,7 +2257,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18229F4 Offset: 0x18229F4 VA: 0x18229F4
 		private void CheckOfferNotice()
 		{
-			if(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
+			if(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_cond == 0)
 				return;
 			MenuScene.Instance.ShowOfferNotice(null);
 		}
@@ -2329,7 +2329,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_questList = FKMOKDCJFEN.KJHKBBBDBAL(RaidController.JOPOPMLFINI_QuestId, false, -1);
+				m_questList = FKMOKDCJFEN.KJHKBBBDBAL(RaidController.JOPOPMLFINI_QuestName, false, -1);
 			}
 		}
 

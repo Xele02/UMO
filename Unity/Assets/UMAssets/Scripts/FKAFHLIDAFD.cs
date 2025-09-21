@@ -7,7 +7,7 @@ public class FKAFHLIDAFD
 	internal BBHNACPENDM_ServerSaveData CCNKAKCBBDJ { get; set; } // 0xC MOMIOKHCMKH GHMKOMEKBFO KKOICOJPENH
 	public BBHNACPENDM_ServerSaveData FMFKHDPKLOC { get; internal set; } // 0x10 FDDDKGAMLLB AAMOPGKKGEI OBEALILDFEM
 	public bool KONHMOLMOCI { get; internal set; }  // 0x14 DEDJLABCBOH MDEMPMONBLE NAALAEJIEAI
-	public bool LNAHEIEIBOI { get; internal set; }  // 0x15 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
+	public bool LNAHEIEIBOI_Initialized { get; internal set; }  // 0x15 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
 	public bool BLCDJDJJBHC { get; internal set; }  // 0x16 BPLABMJENOI AAIACPOJKKO DNLNBFEHCKD
 	// public bool BBIOBFPCLOO { get; } 0x1187B54 BBBBKCIJNMG
 

@@ -6,7 +6,7 @@ public class LGNBLDHKLJK
 	private const int MBKBGBOEEHN = 86400;
 	private const int BJFJAGGBFFE = 2;
 	private long ABNEIOCBKPI_NextDay; // 0x8
-	public bool PPEGAKEIEGM = true; // 0x10
+	public bool PPEGAKEIEGM_Enabled = true; // 0x10
 
 	// // RVA: 0x17F59C8 Offset: 0x17F59C8 VA: 0x17F59C8
 	public void JOJFKIIHMOJ(long LKCCMBEOLLA)
@@ -18,7 +18,7 @@ public class LGNBLDHKLJK
 	// // RVA: 0x17F5AE4 Offset: 0x17F5AE4 VA: 0x17F5AE4
 	public bool LNLCIMPFCEK(long LKCCMBEOLLA)
 	{
-		if(!PPEGAKEIEGM || ABNEIOCBKPI_NextDay == 0)
+		if(!PPEGAKEIEGM_Enabled || ABNEIOCBKPI_NextDay == 0)
 		{
 			return false;
 		}

@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							m_missionSetData.KHEKNNFCAOI(ev);
+							m_missionSetData.KHEKNNFCAOI_Init(ev);
 						}
 						CrateQuestList();
 						CreateSnsList();
@@ -345,8 +345,8 @@ namespace XeApp.Game.Menu
 				m_missionText = m_missionText.Replace(JpStringLiterals.StringLiteral_5812, "");
 			else
 				m_missionText = m_missionText.Replace(JpStringLiterals.StringLiteral_5812, " ").Replace("  ", " ");
-			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK_OverrideCenterSkill;
-			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE_OverrideLiveSkill;
+			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
+			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
 			SaveDifficulty();
 			base.OnDecideCurrentMusic();
 		}
@@ -681,12 +681,12 @@ namespace XeApp.Game.Menu
 			{
 				if((filterBit & 1) != 0)
 				{
-					if(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].LCOHGOIDMDF_ComboRank > 0)
+					if(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].LCOHGOIDMDF_ComboRank > 0)
 						return false;
 				}
 				if((filterBit & 2) != 0)
 				{
-					if(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].LCOHGOIDMDF_ComboRank < 2)
+					if(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].LCOHGOIDMDF_ComboRank < 2)
 						return true;
 					return false;
 				}
@@ -1164,7 +1164,7 @@ namespace XeApp.Game.Menu
 			EventMusicSelectSceneArgs rargs = ArgsReturn as EventMusicSelectSceneArgs;
 			m_isEventChecked = false;
 			m_isEventTimeLimit = false;
-			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0;
+			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0_None;
 			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = null;
 			if(args != null)

@@ -299,11 +299,11 @@ namespace XeApp.Game.Menu
 			int[] a;
 			if (!data.isActive)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[data.skillId - 1].MKPJBDFDHOL;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[data.skillId - 1].MKPJBDFDHOL_ThumbId;
 			}
 			else
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].MKPJBDFDHOL;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].HEOLEHDFLJO_Icon;
 			}
 			rect = LayoutUGUIUtility.MakeUnityUVRect(m_UvListManager.GetUVData(string.Format("log_skill_icon_{0:00}", a[skillIndex])));
 			return true;

@@ -10,7 +10,7 @@ public class NADBPLMLIJA_GetToken : CACGCMBKHDI_Request
 		public string EEDAHFGPNPH_sss_temporary_token; // 0x8
 	}
 
-	public ACEGDBFIDHK NFEAMMJIMPG; // 0x7C
+	public ACEGDBFIDHK NFEAMMJIMPG_Result; // 0x7C
 
 	// RVA: 0x17BFD88 Offset: 0x17BFD88 VA: 0x17BFD88 Slot: 12
 	public override void DHLDNIEELHO()
@@ -22,7 +22,7 @@ public class NADBPLMLIJA_GetToken : CACGCMBKHDI_Request
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-		NFEAMMJIMPG = new ACEGDBFIDHK();
-		NFEAMMJIMPG.EEDAHFGPNPH_sss_temporary_token = (string)data[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token];
+		NFEAMMJIMPG_Result = new ACEGDBFIDHK();
+		NFEAMMJIMPG_Result.EEDAHFGPNPH_sss_temporary_token = (string)data[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token];
 	}
 }

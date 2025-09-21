@@ -49,7 +49,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			notesCount = musicData.musicScoreData.inputNoteTrack.Count;
 			GDMKJMAFJAG g = new GDMKJMAFJAG();
-			g.KHEKNNFCAOI(GetDropItemSet(), GetDropRateSet());
+			g.KHEKNNFCAOI_Init(GetDropItemSet(), GetDropRateSet());
 			itemSet = g.GEDOFFFKIFN;
 			rateSet = g.CGLAEOLPEGN;
 			if (g.CGLAEOLPEGN != null && g.GEDOFFFKIFN != null)
@@ -100,7 +100,7 @@ namespace XeApp.Game.RhythmGame
 			if (Database.Instance.gameSetup.musicInfo.isStoryMode)
 				return;
 			KEODKEGFDLD_FreeMusicInfo musicinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId);
-			short[] specialNoteByDifficulty = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicinfo.OCOGIADDNDN_SpNoteByDiff;
+			short[] specialNoteByDifficulty = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicinfo.OCOGIADDNDN_SpNotes;
 			if (specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType] < 1)
 				return;
 			List<int>[] validNotesIdxByModeType = new List<int>[4];
@@ -125,7 +125,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			rareItemRandSeed = Random.Range(0, 100000);
 			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
-			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
+			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				numItems = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			}
@@ -222,7 +222,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						int v = Random.Range(0, l3.Count);
 						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_Idx);
+						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
 						l3.RemoveAt(v);
 					}
 				}
@@ -231,7 +231,7 @@ namespace XeApp.Game.RhythmGame
 					for (int j = 0; j < assignedRareItemsByMode[(int)nt[i]].Count; j++)
 					{
 						onModeAttrAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_Idx);
+						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
 						l3.RemoveAt(assignedRareItemsByMode[(int)nt[i]][j].noteListIndex);
 					}
 				}
@@ -343,7 +343,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KCNHKNKNGNH;
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KCNHKNKNGNH_NormalRateId;
 			}
 			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.KPDHGNEILPO(v);
 		}

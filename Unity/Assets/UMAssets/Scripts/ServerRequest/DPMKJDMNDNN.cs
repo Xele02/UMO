@@ -17,34 +17,34 @@ public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
 	public class NOFBHALLIMD
 	{
 		public int HMFFHLPNMPH_Count; // 0x8
-		public int MDIBIIHAAPN_NextPage; // 0xC
+		public int MDIBIIHAAPN_next_page; // 0xC
 		public int GPPOJHNNINK_CurrentPage; // 0x10
 		public int CJNNMLLEKEF_PreviousPage; // 0x14
 		public List<IBBBOJEGGLE> FOCOFKEFHIO_BlackList; // 0x18
 
 		// RVA: 0x1235684 Offset: 0x1235684 VA: 0x1235684
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			FOCOFKEFHIO_BlackList = new List<IBBBOJEGGLE>(IDLHJIOMJBK["player_blacklist"].HNBFOAJIIAL_Count);
-			for(int i = 0; i < IDLHJIOMJBK["player_blacklist"].HNBFOAJIIAL_Count; i++)
+			FOCOFKEFHIO_BlackList = new List<IBBBOJEGGLE>(_IDLHJIOMJBK_Data["player_blacklist"].HNBFOAJIIAL_Count);
+			for(int i = 0; i < _IDLHJIOMJBK_Data["player_blacklist"].HNBFOAJIIAL_Count; i++)
 			{
-				EDOHBJAPLPF_JsonData jsonData = IDLHJIOMJBK["player_blacklist"][i];
+				EDOHBJAPLPF_JsonData jsonData = _IDLHJIOMJBK_Data["player_blacklist"][i];
 				IBBBOJEGGLE data = new IBBBOJEGGLE();
 				data.EHGBICNIBKE_PlayerId = JsonUtil.GetInt(jsonData, "player_id", 0);
 				data.EAIMNLAMBFJ_CreatedAt = JsonUtil.GetInt(jsonData, "created_at", 0);
 				data.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData, "created_by", 0);
 				FOCOFKEFHIO_BlackList.Add(data);
 			}
-			HMFFHLPNMPH_Count = JsonUtil.GetInt(IDLHJIOMJBK, "count", 0);
-			MDIBIIHAAPN_NextPage = JsonUtil. GetInt(IDLHJIOMJBK, "next_page", 0);
-			GPPOJHNNINK_CurrentPage = JsonUtil.GetInt(IDLHJIOMJBK, "current_page", 0);
-			CJNNMLLEKEF_PreviousPage = JsonUtil.GetInt(IDLHJIOMJBK, "previous_page", 0);
+			HMFFHLPNMPH_Count = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "count", 0);
+			MDIBIIHAAPN_next_page = JsonUtil. GetInt(_IDLHJIOMJBK_Data, "next_page", 0);
+			GPPOJHNNINK_CurrentPage = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "current_page", 0);
+			CJNNMLLEKEF_PreviousPage = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "previous_page", 0);
 		}
 	}
 
 	public int IGNIIEBMFIN_Page = 1; // 0x7C
 	public int MLPLGFLKKLI_Ipp = 30; // 0x80
-	public NOFBHALLIMD NFEAMMJIMPG; // 0x84
+	public NOFBHALLIMD NFEAMMJIMPG_Result; // 0x84
 
 	// RVA: 0x12354AC Offset: 0x12354AC VA: 0x12354AC Slot: 12
 	public override void DHLDNIEELHO()
@@ -55,7 +55,7 @@ public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
 	// RVA: 0x12355A4 Offset: 0x12355A4 VA: 0x12355A4 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new NOFBHALLIMD();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new NOFBHALLIMD();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -30,18 +30,18 @@ namespace XeApp.Game.Menu
 				FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
 				this.stat = stat;
 				this.count = count;
-				PPFNGGCBJKC_Id = src.PPFNGGCBJKC_Id;
+				PPFNGGCBJKC_id = src.PPFNGGCBJKC_id;
 				GBJFNGCDKPM_Type = src.GBJFNGCDKPM_Type;
 				PPEGAKEIEGM_Enabled = src.PPEGAKEIEGM_Enabled;
 				FEMMDNIELFC_Desc = src.FEMMDNIELFC_Desc;
 				BGBJPGEIEDE_DescBalloon = src.BGBJPGEIEDE_DescBalloon;
-				JOPOPMLFINI = src.JOPOPMLFINI;
+				JOPOPMLFINI_QuestName = src.JOPOPMLFINI_QuestName;
 				LMPPENOILPF = src.LMPPENOILPF;
 				KIJAPOFAGPN_ItemId = src.KIJAPOFAGPN_ItemId;
 				JDLJPNMLFID_ItemCount = src.JDLJPNMLFID_ItemCount;
 				EILKGEADKGH_Order = src.EILKGEADKGH_Order;
-				HHIBBHFHENH_NextStepId = src.HHIBBHFHENH_NextStepId;
-				KJBGCLPMLCG_Start = src.KJBGCLPMLCG_Start;
+				HHIBBHFHENH_LinkQuestId = src.HHIBBHFHENH_LinkQuestId;
+				KJBGCLPMLCG_OpenedAt = src.KJBGCLPMLCG_OpenedAt;
 				GJFPFFBAKGK_CloseAt = src.GJFPFFBAKGK_CloseAt;
 				DGMIADAEGAI_TargetDifficultyType = src.DGMIADAEGAI_TargetDifficultyType;
 				HBJJCDIMOPO_TargetMusicConditionId = src.HBJJCDIMOPO_TargetMusicConditionId;
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 				long end = 0;
 				if(d != null)
 				{
-					m_lobbyEventSetting = d.NGHKJOEDLIP;
+					m_lobbyEventSetting = d.NGHKJOEDLIP_Settings;
 					start = m_lobbyEventSetting.CJPMLAIFCDL_LobbyStart;
 					end = m_lobbyEventSetting.KCBGBFMGHPA_End;
 				}
@@ -206,7 +206,7 @@ namespace XeApp.Game.Menu
 				IKCGAJKCPFN q = quests.Find((IKCGAJKCPFN x) =>
 				{
 					//0xD17470
-					return mission[i].PPFNGGCBJKC_Id == x.PPFNGGCBJKC_Id;
+					return mission[i].PPFNGGCBJKC_id == x.PPFNGGCBJKC_id;
 				});
 				if(q != null)
 				{
@@ -329,7 +329,7 @@ namespace XeApp.Game.Menu
 			itemId = questMs.KIJAPOFAGPN_ItemId;
 			itemCount = questMs.JDLJPNMLFID_ItemCount;
 			MFDJIFIIPJD m = new MFDJIFIIPJD();
-			m.KHEKNNFCAOI(itemId, itemCount);
+			m.KHEKNNFCAOI_Init(itemId, itemCount);
 			bool cancel = false;
 			yield return Co.R(QuestUtility.PopupItemPossessionLimit(m, (bool isOk) =>
 			{
@@ -341,10 +341,10 @@ namespace XeApp.Game.Menu
 				yield break;
 			MenuScene.Instance.RaycastDisable();
 			List<int> l = new List<int>();
-			l.Add(questMs.PPFNGGCBJKC_Id);
+			l.Add(questMs.PPFNGGCBJKC_id);
 			bool done = false;
 			bool err = false;
-			FKMOKDCJFEN.JKBOOMAPOBL(FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event, l, questMs.JOPOPMLFINI, (List<int> _list, bool limit) =>
+			FKMOKDCJFEN.JKBOOMAPOBL(FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event, l, questMs.JOPOPMLFINI_QuestName, (List<int> _list, bool limit) =>
 			{
 				//0xD17560
 				done = true;
@@ -462,7 +462,7 @@ namespace XeApp.Game.Menu
                         List<int> l = IBJAKJJICBC.CJHOOLJFGFB();
 						l.Sort();
                         OHCAABOMEOF.KGOGMKMBCPP_EventType type = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
-						if(type == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 && JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId > 0)
+						if(type == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None && JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId > 0)
 						{
 							l.Insert(0, JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId);
 						}
@@ -588,7 +588,7 @@ namespace XeApp.Game.Menu
 			//0xD188D8
 			MenuScene.Instance.RaycastDisable();
 			MFDJIFIIPJD m = new MFDJIFIIPJD();
-			m.KHEKNNFCAOI(itemId, itemCount);
+			m.KHEKNNFCAOI_Init(itemId, itemCount);
 			if(m.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				bool popupWait = true;
@@ -629,13 +629,13 @@ namespace XeApp.Game.Menu
 			if(OnReceiveCallback != null)
 				OnReceiveCallback();
 			KBAGKBIBGPM_EventRaidLobby.JAIFDODKMIA saveLobby = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PJCMHDEJLGF_EventRaidLobby.FBCJICEPLED[m_lobbyEventSetting.MOEKELIIDEO_SaveIdx];
-			saveLobby.NNMPGOAGEOL_Quests[m_missionDataList[index].PPFNGGCBJKC_Id - 1].EALOBDHOCHP_Stat = 3;
-			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.JCHLONCMPAJ();
+			saveLobby.NNMPGOAGEOL_quests[m_missionDataList[index].PPFNGGCBJKC_id - 1].EALOBDHOCHP_Stat = 3;
+			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
 			StringBuilder str = new StringBuilder();
-			str.Append(saveLobby.NNMPGOAGEOL_Quests[index].PPFNGGCBJKC_Id);
+			str.Append(saveLobby.NNMPGOAGEOL_quests[index].PPFNGGCBJKC_id);
 			str.Append(':');
-			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.PCDOEIFMLHG_10, str.ToString());
-			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, itemId, itemCount, null, 0);
+			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.PCDOEIFMLHG_10, str.ToString());
+			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, itemId, itemCount, null, 0);
 			GameManager.Instance.ResetViewPlayerData();
 			bool IsDone = false;
 			bool IsError = false;

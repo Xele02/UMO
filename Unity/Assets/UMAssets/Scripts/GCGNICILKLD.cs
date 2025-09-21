@@ -30,7 +30,7 @@ public class GCGNICILKLD_AssetFileInfo
             return ELLCDOJOGKL_FileName.DNJEJEANJGL_Value;
         return null;
     } } //0x16AAC78 NJDFIHBJDOG
-	public string POEGMFKLFJG_Hash { get { // md5
+	public string POEGMFKLFJG_hash_value { get { // md5
         if(NKLIKAENLNC_Hash != null)
             return NKLIKAENLNC_Hash.DNJEJEANJGL_Value;
         return null;
@@ -43,7 +43,7 @@ public class GCGNICILKLD_AssetFileInfo
 	public uint HHPEMFKDHLK_FileHash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA
 
 	// RVA: 0x16AACEC Offset: 0x16AACEC VA: 0x16AACEC
-	public void KHEKNNFCAOI_Load(EDOHBJAPLPF_JsonData IDLHJIOMJBK_Json, int OIPCCBHIKIA_Idx)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data, int _OIPCCBHIKIA_index)
     {
         BBEGLBMOBOF_xorl = PMMJABPFGOA_Key2;
         JCKCPNHIKGP_Key1 = LAFJPOLCKLP_Key1;
@@ -54,7 +54,7 @@ public class GCGNICILKLD_AssetFileInfo
         if(PMMJABPFGOA_Key2 == 0)
             PMMJABPFGOA_Key2 = 0x74841251;
         
-        string file = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.MIMGPBHAJCO_file/*file*/];
+        string file = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.MIMGPBHAJCO_file/*file*/];
         ELLCDOJOGKL_FileName = new JDEFIJBCJLC_EncryptedString();
         ELLCDOJOGKL_FileName.DNJEJEANJGL_Value = file;
 
@@ -78,9 +78,9 @@ public class GCGNICILKLD_AssetFileInfo
         }
 
         NKLIKAENLNC_Hash = new JDEFIJBCJLC_EncryptedString();
-        NKLIKAENLNC_Hash.DNJEJEANJGL_Value = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.POEGMFKLFJG_hash_value/*hash_value*/];
+        NKLIKAENLNC_Hash.DNJEJEANJGL_Value = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.POEGMFKLFJG_hash_value/*hash_value*/];
 
-        LBALIFCJKON_Idx = OIPCCBHIKIA_Idx;
-        CFKONDFCBEB_LastUpdated = (int)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.CALJIGKCAAH_LastUpdated/*last_updated_at*/] ^ BBEGLBMOBOF_xorl;
+        LBALIFCJKON_Idx = _OIPCCBHIKIA_index;
+        CFKONDFCBEB_LastUpdated = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CALJIGKCAAH_LastUpdated/*last_updated_at*/] ^ BBEGLBMOBOF_xorl;
     }
 }

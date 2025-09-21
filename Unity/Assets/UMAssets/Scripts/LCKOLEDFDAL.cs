@@ -30,12 +30,12 @@ public class LCKOLEDFDAL
 	}
 
 	//// RVA: 0xD9ACF0 Offset: 0xD9ACF0 VA: 0xD9ACF0
-	public static SakashoProductCriteria CMNCOOIKDIH_GetCriteriaForLabel(int KAPMOPMDHJE)
+	public static SakashoProductCriteria CMNCOOIKDIH_GetCriteriaForLabel(int _KAPMOPMDHJE_label)
 	{
 		SakashoProductCriteria res = new SakashoProductCriteria();
 		res.CurrencyId = 2;
 		res.ProductType = 0;
-		res.Label = KAPMOPMDHJE;
+		res.Label = _KAPMOPMDHJE_label;
 		return res;
 	}
 

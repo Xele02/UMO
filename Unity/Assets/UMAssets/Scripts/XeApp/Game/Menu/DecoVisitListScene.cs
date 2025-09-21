@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 					//0x11D2BBC
 					int res = lhs.AJECHDLMKOE_LastLogin.CompareTo(rhs.AJECHDLMKOE_LastLogin);
 					if (res == 0)
-						res = lhs.MLPEHNBNOGD_Id.CompareTo(rhs.MLPEHNBNOGD_Id);
+						res = lhs.MLPEHNBNOGD_PlayerId.CompareTo(rhs.MLPEHNBNOGD_PlayerId);
 					if (isOrder)
 						res = -res;
 					return res;
@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 					IFICNCAHIGI b = rhs as IFICNCAHIGI;
 					int res = a.AGDBNNEAIIC_FanNum.CompareTo(b.AGDBNNEAIIC_FanNum);
 					if (res == 0)
-						res = lhs.MLPEHNBNOGD_Id.CompareTo(rhs.MLPEHNBNOGD_Id);
+						res = lhs.MLPEHNBNOGD_PlayerId.CompareTo(rhs.MLPEHNBNOGD_PlayerId);
 					if (isOrder)
 						res = -res;
 					return res;
@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 					//0x11D2AB8
 					int res = lhs.ADFIHAPELAN_PLevel.CompareTo(rhs.ADFIHAPELAN_PLevel);
 					if (res == 0)
-						res = lhs.MLPEHNBNOGD_Id.CompareTo(rhs.MLPEHNBNOGD_Id);
+						res = lhs.MLPEHNBNOGD_PlayerId.CompareTo(rhs.MLPEHNBNOGD_PlayerId);
 					if (isOrder)
 						res = -res;
 					return res;
@@ -361,8 +361,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = player;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_Id);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(player.MLPEHNBNOGD_Id, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_Id), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(player.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId), true, 0);
 			MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 			m_presentSentPlayerIdList.Clear();
 			for(int i = 0; i < present_max && i < m_friendPlayerData.Count; i++)
 			{
-				m_presentSentPlayerIdList.Add(m_friendPlayerData[i].MLPEHNBNOGD_Id);
+				m_presentSentPlayerIdList.Add(m_friendPlayerData[i].MLPEHNBNOGD_PlayerId);
 			}
 			yield return this.StartCoroutineWatched(Co_Gift(m_presentSentPlayerIdList));
 		}
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 		private void OnClickGiftButton(EAJCBFGKKFA_FriendInfo player)
 		{
 			m_presentSentPlayerIdList.Clear();
-			m_presentSentPlayerIdList.Add(player.MLPEHNBNOGD_Id);
+			m_presentSentPlayerIdList.Add(player.MLPEHNBNOGD_PlayerId);
 			this.StartCoroutineWatched(Co_Gift(m_presentSentPlayerIdList));
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 		}
@@ -473,8 +473,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.JCHLONCMPAJ();
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
 				m_sentGiftPopupSetting.itemId = _itemId;
 				m_sentGiftPopupSetting.count = _itemCount;
 				m_sentGiftPopupSetting.sentCount = _sentCount;
@@ -614,7 +614,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < cnt; i++)
 			{
 				EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-				f.KHEKNNFCAOI(list[i]);
+				f.KHEKNNFCAOI_Init(list[i]);
 				m_friendPlayerData.Add(f);
 			}
 		}
@@ -629,7 +629,7 @@ namespace XeApp.Game.Menu
 			//0x11D519C
 			bool isConnected = false;
 			PIGBKEIAMPE_FriendManager.KIELKOCLIGG k = new PIGBKEIAMPE_FriendManager.KIELKOCLIGG();
-			k.IPKCADIAAPG = m_listupFriendAndFavoriteCriteria;
+			k.IPKCADIAAPG_Criteria = m_listupFriendAndFavoriteCriteria;
 			k.BBCOJEPJNMO = (IBIGBMDANNM player) =>
 			{
 				//0x11D308C
@@ -708,7 +708,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_cashFriendPlayerData_Other.Count; i++)
 				{
 					IFICNCAHIGI it = m_cashFriendPlayerData_Other[i] as IFICNCAHIGI;
-					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_Id);
+					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_PlayerId);
 				}
 			}
 		}

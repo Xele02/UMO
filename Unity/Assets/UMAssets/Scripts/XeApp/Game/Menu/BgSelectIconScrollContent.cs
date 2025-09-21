@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		{
 			m_outline.enabled = true;
 			m_episodeId = episodeId;
-			m_sceneId = (short)bgData.PPFNGGCBJKC_Id;
+			m_sceneId = (short)bgData.PPFNGGCBJKC_id;
 			m_evolveId = 0;
 			m_isLock = isLock;
 			MenuScene.Instance.SceneIconCache.SetLoadingTexture(m_sceneIconImage);

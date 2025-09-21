@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB7D0CC Offset: 0xB7D0CC VA: 0xB7D0CC
 		public void Setup(FFHPBEPOMAK_DivaInfo divaData)
 		{
-			m_intimacyData.KHEKNNFCAOI(divaData.AHHJLDLAPAN_DivaId);
+			m_intimacyData.KHEKNNFCAOI_Init(divaData.AHHJLDLAPAN_DivaId);
 			m_textDivaLevel.text = divaData.CIEOBFIIPLD_Level.ToString();
 			m_textIntimacyLevel.text = m_intimacyData.HEKJGCMNJAB_CurrentLevel.ToString();
 			SetCostumeCount(divaData.AHHJLDLAPAN_DivaId);
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB77CB0 Offset: 0xB77CB0 VA: 0xB77CB0
 		public void UpdateIntimacy()
 		{
-			m_intimacyData.KHEKNNFCAOI(m_intimacyData.AHHJLDLAPAN_DivaId);
+			m_intimacyData.KHEKNNFCAOI_Init(m_intimacyData.AHHJLDLAPAN_DivaId);
 			m_textIntimacyLevel.text = m_intimacyData.HEKJGCMNJAB_CurrentLevel.ToString();
 		}
 

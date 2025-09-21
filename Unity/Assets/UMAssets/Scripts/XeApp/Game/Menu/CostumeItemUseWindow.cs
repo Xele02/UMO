@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 			m_item_value.text = m_item_use_num + " / " + m_have_item;
 			m_item_num.text = m_item_use_num.ToString();
 			RewardIndex();
-			int a1 = item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num;
+			int a1 = item_data.IILKAJBHLMJ_Value * m_item_use_num;
 			SetGauge((int)(m_data.ABLHIAEDJAI_CurrentValue * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point * 100), (int)((m_data.ABLHIAEDJAI_CurrentValue + a1) * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point * 100));
 			m_point_den.SetNumber(m_data.ABLHIAEDJAI_CurrentValue + a1, 0);
 			m_point_mol.SetNumber(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point, 0);
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if(item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_Point)
+				if(item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_Point)
 					return i;
 			}
 			return m_reward_list.Count - 1;
@@ -272,19 +272,19 @@ namespace XeApp.Game.Menu
 			item_data = NIHHKCDHLNH.FKDIMODKKJD(data.AHHJLDLAPAN_DivaId)[item_type];
 			m_item_use_type = item_type;
 			m_reward_list = data.OCOOHBINGBG_LevelInfo;
-			m_have_item = item_data.HMFFHLPNMPH_Cnt;
+			m_have_item = item_data.HMFFHLPNMPH_Count;
 			m_use_item_min = 0;
-			m_use_item_max = Mathf.CeilToInt((m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point - m_data.ABLHIAEDJAI_CurrentValue) * 1.0f / item_data.IILKAJBHLMJ_ItemPointValue);
+			m_use_item_max = Mathf.CeilToInt((m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point - m_data.ABLHIAEDJAI_CurrentValue) * 1.0f / item_data.IILKAJBHLMJ_Value);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
 			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_use_item_limit_text"), m_use_item_max);
 			m_caution.text = str.ToString();
-			m_item_name.text = item_data.OPFGFINHFCE_Name;
+			m_item_name.text = item_data.OPFGFINHFCE_name;
 			m_item_use_num = 0;
 			LFAFJCNKLML.GFIPDFPIKIJ g;
 			LFAFJCNKLML.HKKKKFLBFJN(m_data, m_data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF);
 			UpdateItemValue();
-			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_Value, m_reward_icon, null);
+			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_value, m_reward_icon, null);
 			SetUseItemImage(item_type + 220001);
 			m_have_uc.text = MOEALEGLGCH.LLCBDMCPBOD_GetHaveUc().ToString();
 			m_necessary_uc.text = m_data.KPJJLJLJDIA_GetUcCost(0).ToString();
@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1633FD8 Offset: 0x1633FD8 VA: 0x1633FD8
 		public int GetAddCostumePoint()
 		{
-			return m_item_use_num * item_data.IILKAJBHLMJ_ItemPointValue;
+			return m_item_use_num * item_data.IILKAJBHLMJ_Value;
 		}
 
 		// // RVA: 0x1633E44 Offset: 0x1633E44 VA: 0x1633E44

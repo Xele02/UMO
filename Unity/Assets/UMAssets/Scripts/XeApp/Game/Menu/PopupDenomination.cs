@@ -384,11 +384,11 @@ namespace XeApp.Game.Menu
 		private static void ApplyProductFilter(List<LGDNAJACFHI> list, AMOCLPHDGBP paidVcPurchase)
 		{
 			list.Clear();
-			for(int i = 0; i < paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI.Count; i++)
+			for(int i = 0; i < paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI_products.Count; i++)
 			{
-				if(sm_Setting.Filter == null || sm_Setting.Filter(paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI[i]))
+				if(sm_Setting.Filter == null || sm_Setting.Filter(paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI_products[i]))
 				{
-					list.Add(paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI[i]);
+					list.Add(paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI_products[i]);
 				}
 			}
 		}

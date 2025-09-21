@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 			{
 				m_viewMusic.PMKBMGNAJIL(ev, s.isLine6Mode);
 			}
-			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false, s.isLine6Mode);
+			m_viewMusic.KHEKNNFCAOI_Init(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false, s.isLine6Mode);
 			//LAB_00df0d5c
 			ViewInitialize(s);
 			if(s.mode == LayoutPopupAchieveReward.eMode.Result)
@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			}
 			if(m_achieveReward != null)
 			{
-				m_achieveReward.SetupReward(Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(m_viewMusic.GHBPLHBNMBK_FreeMusicId, m_viewMusic.DLAEJOBELBH_MusicId).KNMGEEFGDNI_Nam).musicName,
+				m_achieveReward.SetupReward(Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(m_viewMusic.GHBPLHBNMBK_FreeMusicId, m_viewMusic.DLAEJOBELBH_MusicId).KNMGEEFGDNI_Name).musicName,
 					(int)s.diff, m_viewFreeReward, m_viewMusic, s.isLine6Mode);
 			}
 			m_initialized = true;

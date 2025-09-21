@@ -46,14 +46,14 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(targetSkillEffectId != 0)
 			{
-				List<ALECCMCNIBG> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.KGICDMIJGDF_TargetSkillEffects;
+				List<ALECCMCNIBG> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.KGICDMIJGDF_Group;
 				for(int i = 0; i < l.Count; i++)
 				{
-					if(l[i].PPFNGGCBJKC_Id == targetSkillEffectId)
+					if(l[i].PPFNGGCBJKC_id == targetSkillEffectId)
 					{
-						for(int j = 0; j < l[i].LGFLNOJDHHC_SkillBuffEffects.Length; j++)
+						for(int j = 0; j < l[i].LGFLNOJDHHC_Targets.Length; j++)
 						{
-							if (l[i].LGFLNOJDHHC_SkillBuffEffects[j] == (int)a_effect_id)
+							if (l[i].LGFLNOJDHHC_Targets[j] == (int)a_effect_id)
 								return true;
 						}
 					}

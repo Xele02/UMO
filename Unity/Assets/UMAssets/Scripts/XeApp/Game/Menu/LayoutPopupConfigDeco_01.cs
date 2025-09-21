@@ -49,8 +49,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1EC173C Offset: 0x1EC173C VA: 0x1EC173C Slot: 9
 		public override void SetDecoOption(MDDBFCFOKFC saveData)
 		{
-			saveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect = m_configInfo.isEnableBgEffect;
-			saveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim = m_configInfo.isPosterAnime;
+			saveData.KOGBMDOONFA_Info.CINLIMIKCAL_EnableBgEffect = m_configInfo.isEnableBgEffect;
+			saveData.KOGBMDOONFA_Info.HEKJKLJDHNN_EnablePosterAnim = m_configInfo.isPosterAnime;
 		}
 
 		//// RVA: 0x1EC17C0 Offset: 0x1EC17C0 VA: 0x1EC17C0
@@ -75,8 +75,8 @@ namespace XeApp.Game.Menu
 		{
 			base.SetStatus(scroll);
 			SetText();
-			m_configInfo.isEnableBgEffect = SaveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect;
-			m_configInfo.isPosterAnime = SaveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim;
+			m_configInfo.isEnableBgEffect = SaveData.KOGBMDOONFA_Info.CINLIMIKCAL_EnableBgEffect;
+			m_configInfo.isPosterAnime = SaveData.KOGBMDOONFA_Info.HEKJKLJDHNN_EnablePosterAnim;
 			SetSelectToggleButton(0, m_configInfo.isEnableBgEffect ? 1 : 0);
 			SetSelectToggleButton(1, m_configInfo.isPosterAnime ? 1 : 0);
 		}

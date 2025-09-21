@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 					if(centerSkill1 > 0)
 					{
 						GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[0], (SkillRank.Type)sceneList[0].DHEFMEGKKDN_CenterSkillRank);
-						m_skillNameTexts[0].text = sceneList[0].PFHJFIHGCKP_CenterSkillName1;
+						m_skillNameTexts[0].text = sceneList[0].PFHJFIHGCKP_CenterSkillName;
 						m_skillNameTexts[0].alignment = TextAnchor.MiddleLeft;
 						m_skillDescriptTexts[0].alignment = TextAnchor.MiddleLeft;
 						m_skillLevelTexts[0].text = string.Format("Lv{0}", sceneList[0].DDEDANKHHPN_SkillLevel);
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 						else
 						{
 							GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[0], (SkillRank.Type)sceneList[0].DHEFMEGKKDN_CenterSkillRank);
-							m_skillNameTexts[0].text = sceneList[0].PFHJFIHGCKP_CenterSkillName1;
+							m_skillNameTexts[0].text = sceneList[0].PFHJFIHGCKP_CenterSkillName;
 						}
 						m_skillNameTexts[0].alignment = TextAnchor.MiddleLeft;
 						m_skillDescriptTexts[0].alignment = TextAnchor.MiddleLeft;
@@ -852,7 +852,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						e.KHEKNNFCAOI(musicId);
+						e.KHEKNNFCAOI_Init(musicId);
 						skillId = m_sceneList[0].MEOOLHNNMHL_GetCenterSkillId(false, e.FKDCCLPGKDK_JacketAttr, e.AIHCEGFANAM_SerieAttr);
 					}
 					if(!m_isCenterDiva)
@@ -974,7 +974,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1270228 Offset: 0x1270228 VA: 0x1270228
 		private void OnShowCenterSkillDetails()
 		{
-			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].PFHJFIHGCKP_CenterSkillName1, m_sceneList[0].IHLINMFMCDN_GetCenterSkillDesc(false));
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].PFHJFIHGCKP_CenterSkillName, m_sceneList[0].IHLINMFMCDN_GetCenterSkillDesc(false));
 		}
 
 		// // RVA: 0x1270360 Offset: 0x1270360 VA: 0x1270360

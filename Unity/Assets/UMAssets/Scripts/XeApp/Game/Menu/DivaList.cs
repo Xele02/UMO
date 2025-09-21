@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			for (i = 0; i < sortIndexList.Count; i++)
 			{
 				int index = i;
-				FFHPBEPOMAK_DivaInfo d = playerData.NBIGLBMHEDC_Divas[sortIndexList[i]];
+				FFHPBEPOMAK_DivaInfo d = playerData.NBIGLBMHEDC_DivaList[sortIndexList[i]];
 				int divaId = d.AHHJLDLAPAN_DivaId;
 				int modelId = d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				int colorId = d.EKFONBFDAAP_ColorId;
@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < sortIndexList.Count; i++)
 			{
-				m_divaIconDecoration[i].Change(playerData.NBIGLBMHEDC_Divas[sortIndexList[i]], playerData, type);
+				m_divaIconDecoration[i].Change(playerData.NBIGLBMHEDC_DivaList[sortIndexList[i]], playerData, type);
 			}
 		}
 

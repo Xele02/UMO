@@ -45,13 +45,13 @@ namespace XeApp.Game.Menu
 		public void Setup(BEPHBEGDFFK view)
 		{
 			m_view = view;
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				m_layoutType.StartChildrenAnimGoStop("02");
 				m_textDesc2.text = MessageManager.Instance.GetMessage("menu", "gacha_desc_04");
 				m_textNormal.text = MessageManager.Instance.GetMessage("menu", "gacha_desc_05");
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_layoutType.StartChildrenAnimGoStop("04");
 				m_buttonPassPurchase.Hidden = true;
@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 					m_buttonPassPurchase.Hidden = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != 3 && NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != 0;
 				}
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 			{
 				m_layoutType.StartChildrenAnimGoStop("03");
 			}
@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 			{
 				m_buttonMovie.Hidden = m_view.BMJOENJMFEL(sceneId).Count < 1;
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-				scene.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+				scene.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 				LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(scene.KELFCMEOPPM_EpisodeId, true);
 				if(l != null)
 				{

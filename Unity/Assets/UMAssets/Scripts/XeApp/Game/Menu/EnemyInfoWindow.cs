@@ -56,16 +56,16 @@ namespace XeApp.Game.Menu
 			int skillNum = 0;
 			if(data.PDHCABLLJPB_CenterSkillId > 0)
 			{
-				m_sp[0].text = data.PFHJFIHGCKP_CenterName;
+				m_sp[0].text = data.PFHJFIHGCKP_CenterSkillName;
 				skillNum = 1;
 			}
 			if(data.LMJFFFOEPLE_LiveSkillId > 0)
 			{
-				m_sp[skillNum].text = data.NDPPEMCHKHA_SkillName;
+				m_sp[skillNum].text = data.NDPPEMCHKHA_LiveSkillName1;
 				skillNum++;
 			}
-			m_name.text = data.OPFGFINHFCE_Name;
-			m_info.text = data.KLMPFGOCBHC_Desc;
+			m_name.text = data.OPFGFINHFCE_name;
+			m_info.text = data.KLMPFGOCBHC_description;
 			SetWindowStyle(skillNum);
 			m_enemy_id = data.EAHPLCJMPHD_PId;
 			m_is_tex_loaded = false;

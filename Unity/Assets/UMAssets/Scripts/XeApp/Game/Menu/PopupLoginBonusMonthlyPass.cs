@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			view = new GJFMKMJOFMB();
-			view.KHEKNNFCAOI(m_instance.m_isSuccess, forceAvailableTopplan);
+			view.KHEKNNFCAOI_Init(m_instance.m_isSuccess, forceAvailableTopplan);
 			if(m_instance.m_isSuccess || popupType != Type.RequestLoginBonus)
 			{
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "PopupLoginBonusMonthlyPass.Show");

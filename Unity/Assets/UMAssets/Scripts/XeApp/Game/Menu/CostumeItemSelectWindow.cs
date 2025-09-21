@@ -75,11 +75,11 @@ namespace XeApp.Game.Menu
 			m_item_list = NIHHKCDHLNH.FKDIMODKKJD(divaId);
 			for(int i = 0; i < 3; i++)
 			{
-				m_list[i].name.text = m_item_list[i].OPFGFINHFCE_Name;
+				m_list[i].name.text = m_item_list[i].OPFGFINHFCE_name;
 				m_list[i].info.text = m_item_list[i].KHLMJCJAOCC_DescShort;
-				m_list[i].item_num.text = JpStringLiterals.StringLiteral_15265 + m_item_list[i].HMFFHLPNMPH_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, 0);
-				m_list[i].btn.Disable = m_item_list[i].HMFFHLPNMPH_Cnt < 1;
-				SetItemImage(m_item_list[i].INFIBMLIHLO_ItemFullId, i);
+				m_list[i].item_num.text = JpStringLiterals.StringLiteral_15265 + m_item_list[i].HMFFHLPNMPH_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, 0);
+				m_list[i].btn.Disable = m_item_list[i].HMFFHLPNMPH_Count < 1;
+				SetItemImage(m_item_list[i].INFIBMLIHLO_ItemId, i);
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_makinaWipe.message_loop_anim.StartChildrenAnimLoop("lo_");
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 		public void ShowItemDetailWindow(int index)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.ShowItemDetail(m_item_list[index].INFIBMLIHLO_ItemFullId, m_item_list[index].HMFFHLPNMPH_Cnt, null);
+			MenuScene.Instance.ShowItemDetail(m_item_list[index].INFIBMLIHLO_ItemId, m_item_list[index].HMFFHLPNMPH_Count, null);
 		}
 
 		// // RVA: 0x1630FF0 Offset: 0x1630FF0 VA: 0x1630FF0

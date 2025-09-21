@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 				{
 					currentCount = d.HMFFHLPNMPH_Count - 1;
 				}
-				if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1)
+				if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular)
 				{
 					currentCount = data.MGANCKPFONE_CurrentCountModulo;
 				}
@@ -191,9 +191,9 @@ namespace XeApp.Game.Menu
 			SetStatusInner(data, currentCount, false);
 			m_isNextReward = false;
 			m_stampPlayDay = currentCount;
-			if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1)
+			if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular)
 			{
-				if(data.JPILDOGJLDG_LoginBonusPrizes.Count >= 8)
+				if(data.JPILDOGJLDG_login_bonus_prizes.Count >= 8)
 				{
 					m_isNextReward = m_stampPlayDay == 6;
 				}
@@ -222,20 +222,20 @@ namespace XeApp.Game.Menu
 		private void SetStatusInner(EPLAAEHPCDM data, int currentReciveCount, bool isNext)
 		{
 			int a1 = 7;
-			if(data.CKHOBDIKJFN_Type != ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1)
+			if(data.CKHOBDIKJFN_Type != ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular)
 			{
-				a1 = data.JPILDOGJLDG_LoginBonusPrizes.Count;
+				a1 = data.JPILDOGJLDG_login_bonus_prizes.Count;
 			}
 			int idx = 0;
 			if(isNext)
 			{
-				a1 = data.JPILDOGJLDG_LoginBonusPrizes.Count;
+				a1 = data.JPILDOGJLDG_login_bonus_prizes.Count;
 				idx = 7;
 			}
 			int arrayIdx = 0;
-			for(int i = idx; i < a1 && i < data.JPILDOGJLDG_LoginBonusPrizes.Count; i++)
+			for(int i = idx; i < a1 && i < data.JPILDOGJLDG_login_bonus_prizes.Count; i++)
 			{
-				CAEDGOPBDNK d = data.JPILDOGJLDG_LoginBonusPrizes[i];
+				CAEDGOPBDNK d = data.JPILDOGJLDG_login_bonus_prizes[i];
 				if(d.HBHMAKNGKFK_Items != null)
 				{
 					if(d.HBHMAKNGKFK_Items.Count > 0)
@@ -250,11 +250,11 @@ namespace XeApp.Game.Menu
 						{
 							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
 							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
-							SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
+							SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count);
 						}
 						else
 						{
-							if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
+							if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3_Comback1 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start)
 							{
 								int val;
 								int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
@@ -673,7 +673,7 @@ namespace XeApp.Game.Menu
 			//LAB_01d65fe8
 			while (layout.IsPlayingChildren())
 				yield return null;
-			data = m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay];
+			data = m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay];
 			if(data.HBHMAKNGKFK_Items.Count >= 2)
 			{
 				if(OnWaitDivaVoice != null)
@@ -836,9 +836,9 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
 				m_isPlayStampSe = true;
 			}
-			if(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count >= 1 && !m_isCheckItemPack)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count >= 1 && !m_isCheckItemPack)
 			{
-				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay], () =>
+				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{
 					//0x1D64734
 					m_isCheckItemPack = true;

@@ -9,9 +9,9 @@ public class MGCDMPJLFKP
 		public int FDEBLMKEMLF_TypeAndSeriesId; // 0x8
 		public int CLDKMLONBHJ; // 0xC
 		public int JDDIOOJHIHP; // 0x10
-		public int INHOGJODJFJ; // 0x14
+		public int INHOGJODJFJ_GroupId; // 0x14
 		public bool CADENLBDAEB_IsNew; // 0x18
-		public long NPDKEIIMCDI; // 0x20
+		public long NPDKEIIMCDI_LastShowtime; // 0x20
 	}
 
 	public const int JNCCCCPBDIC_Version = 3;
@@ -25,7 +25,7 @@ public class MGCDMPJLFKP
 	}
 
 	//// RVA: 0x1316510 Offset: 0x1316510 VA: 0x1316510
-	//public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
+	//public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x1316518 Offset: 0x1316518 VA: 0x1316518
 	public void PCODDPDFLHK()
@@ -47,9 +47,9 @@ public class MGCDMPJLFKP
 							m.FDEBLMKEMLF_TypeAndSeriesId = r.ReadInt32();
 							m.CLDKMLONBHJ = r.ReadInt32();
 							m.JDDIOOJHIHP = r.ReadInt32();
-							m.INHOGJODJFJ = 0;
+							m.INHOGJODJFJ_GroupId = 0;
 							m.CADENLBDAEB_IsNew = false;
-							m.NPDKEIIMCDI = 0;
+							m.NPDKEIIMCDI_LastShowtime = 0;
 							DHDCHLAIAMP.Add(m);
 						}
 					}
@@ -61,10 +61,10 @@ public class MGCDMPJLFKP
 							MIIIIBANPPB m = new MIIIIBANPPB();
 							m.FDEBLMKEMLF_TypeAndSeriesId = r.ReadInt32();
 							m.CLDKMLONBHJ = 0;
-							m.INHOGJODJFJ = r.ReadInt32();
+							m.INHOGJODJFJ_GroupId = r.ReadInt32();
 							m.CADENLBDAEB_IsNew = r.ReadBoolean();
 							m.JDDIOOJHIHP = r.ReadInt32();
-							m.NPDKEIIMCDI = 0;
+							m.NPDKEIIMCDI_LastShowtime = 0;
 							DHDCHLAIAMP.Add(m);
 						}
 					}
@@ -77,9 +77,9 @@ public class MGCDMPJLFKP
 							m.CADENLBDAEB_IsNew = false;
 							m.FDEBLMKEMLF_TypeAndSeriesId = 0;
 							m.CLDKMLONBHJ = 0;
-							m.INHOGJODJFJ = 0;
+							m.INHOGJODJFJ_GroupId = 0;
 							m.JDDIOOJHIHP = 0;
-							m.NPDKEIIMCDI = r.ReadInt64();
+							m.NPDKEIIMCDI_LastShowtime = r.ReadInt64();
 							DHDCHLAIAMP.Add(m);
 						}
 					}
@@ -101,7 +101,7 @@ public class MGCDMPJLFKP
 			{
 				b.Write(JNCCCCPBDIC_Version);
 				b.Write(1);
-				b.Write(DHDCHLAIAMP[0].NPDKEIIMCDI);
+				b.Write(DHDCHLAIAMP[0].NPDKEIIMCDI_LastShowtime);
 				b.Flush();
 				b.Close();
 			}

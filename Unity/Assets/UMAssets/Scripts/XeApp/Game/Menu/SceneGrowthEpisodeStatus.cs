@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			if(episodeData.DKMLDEDKPBA_HasEpisode)
 			{
 				m_strBuilder.SetFormat("{0} {1}", episodeData.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, RichTextUtility.MakeSizeTagString("EP", 19));
-				m_episodeName.text = episodeData.OPFGFINHFCE_Name;
+				m_episodeName.text = episodeData.OPFGFINHFCE_name;
 				m_nextRewordPoint.text = m_strBuilder.ToString();
 				if(!episodeData.CCBKMCLDGAD_HasReward)
 				{
@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 					//0x15ADE04
 					texture.Set(m_rewordIcon);
 				});
-				m_rewardNum.SetNumber(episodeData.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+				m_rewardNum.SetNumber(episodeData.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 			}
 		}
 	}

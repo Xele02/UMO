@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 			if(m_view == null)
 			{
 				m_view = new DCAKKIJODME();
-				m_view.KHEKNNFCAOI(false);
+				m_view.KHEKNNFCAOI_Init(false);
 			}
 			IsNumAnimation = isUpdateHiscore;
 		}

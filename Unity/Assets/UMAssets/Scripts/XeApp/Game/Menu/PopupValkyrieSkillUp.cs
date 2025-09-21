@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < list.Count; i++)
 			{
-				int id = list[i].PPFNGGCBJKC;
+				int id = list[i].PPFNGGCBJKC_id;
                 EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 				int cnt = 0;
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem)
@@ -40,9 +40,9 @@ namespace XeApp.Game.Menu
 				}
 				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 				{
-					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_GrowItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Count;
+					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_grow_item[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Count;
 				}
-				if(cnt < list[i].NANNGLGOFKH)
+				if(cnt < list[i].NANNGLGOFKH_value)
 					return true;
             }
 			return false;

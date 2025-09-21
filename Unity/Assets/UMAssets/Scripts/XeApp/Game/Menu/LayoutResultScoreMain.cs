@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 					count = resultData.GetNoteTypeCount(res);
 					break;
 				case CountType.Combo:
-					count = viewData.PBGLMBMEKAA_ComboCount;
+					count = viewData.PBGLMBMEKAA_LastCombo;
 					break;
 				case CountType.Score:
 					count = viewData.GCAPLLEIAAI_LastScore;
@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 			while (!countUpEnd)
 				yield return null;
 			countUpSEPlayback.Stop();
-			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
+			if(!viewData.PMCGHPOGLGM_IsSkip)
 			{
 				if(viewData.GCAPLLEIAAI_LastScore > viewData.HMDHDKLDPFK_PrevScore)
 				{
@@ -569,19 +569,19 @@ namespace XeApp.Game.Menu
 		{
 			//0x1D16EA0
 			layoutMainAnim.StartChildrenAnimGoStop("go_rank");
-			layoutScoreRankTable.StartChildrenAnimGoStop(viewData.PENICOGGNLF_RankScore, viewData.PENICOGGNLF_RankScore);
-			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimGoStop("go_in", "st_in");
+			layoutScoreRankTable.StartChildrenAnimGoStop(viewData.PENICOGGNLF_ScoreRank, viewData.PENICOGGNLF_ScoreRank);
+			layoutScoreRankIconList[viewData.PENICOGGNLF_ScoreRank].StartChildrenAnimGoStop("go_in", "st_in");
 			yield return Co.R(Co_WaitForSeconds(0.5f, true));
 			PlayJingle();
-			yield return Co.R(Co_WaitAnim(layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore], true));
-			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimLoop("logo_act", "loen_act");
+			yield return Co.R(Co_WaitAnim(layoutScoreRankIconList[viewData.PENICOGGNLF_ScoreRank], true));
+			layoutScoreRankIconList[viewData.PENICOGGNLF_ScoreRank].StartChildrenAnimLoop("logo_act", "loen_act");
 			if(resultData.GetNoteExcellentCount() > 0)
 			{
 				layoutExcellentAnim[0].StartChildrenAnimLoop("logo_act", "loen_act");
 				layoutExcellentAnim[1].StartChildrenAnimLoop("logo_act", "loen_act");
 				layoutExcellentAnim[2].StartChildrenAnimLoop("logo_act", "loen_act");
 			}
-			if (viewData.PENICOGGNLF_RankScore != 4)
+			if (viewData.PENICOGGNLF_ScoreRank != 4)
 				yield break;
 			yield return Co.R(Co_WaitForSeconds(0.5f, true));
 		}
@@ -672,7 +672,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D134D4 Offset: 0x1D134D4 VA: 0x1D134D4
 		private void PlayJingle()
 		{
-			switch(viewData.PENICOGGNLF_RankScore)
+			switch(viewData.PENICOGGNLF_ScoreRank)
 			{
 				case 0:
 					PlaySound(23, true);

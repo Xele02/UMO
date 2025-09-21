@@ -11,9 +11,9 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 		public int DJJGPACGEMM_ProductId; // 0x8
 
 		// RVA: 0x1743180 Offset: 0x1743180 VA: 0x1743180
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			DJJGPACGEMM_ProductId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DJJGPACGEMM_ProductId];
+			DJJGPACGEMM_ProductId = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.DJJGPACGEMM_ProductId];
 		}
 	}
 
@@ -23,21 +23,21 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 		public List<FDECBLBCNIC> HIAIAJJPCDE_recoverable_products; // 0xC
 
 		// RVA: 0x1742EB8 Offset: 0x1742EB8 VA: 0x1742EB8
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			OIJLNFJALJP_aborted_transaction_exists = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OIJLNFJALJP_aborted_transaction_exists];
-			EDOHBJAPLPF_JsonData l = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products];
+			OIJLNFJALJP_aborted_transaction_exists = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.OIJLNFJALJP_aborted_transaction_exists];
+			EDOHBJAPLPF_JsonData l = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products];
 			HIAIAJJPCDE_recoverable_products = new List<FDECBLBCNIC>(l.HNBFOAJIIAL_Count);
 			for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
 			{
 				FDECBLBCNIC data = new FDECBLBCNIC();
-				data.KHEKNNFCAOI(l[i]);
+				data.KHEKNNFCAOI_Init(l[i]);
 				HIAIAJJPCDE_recoverable_products.Add(data);
 			}
 		}
 	}
 
-	public NMEEMBOCCPA NFEAMMJIMPG; // 0x7C
+	public NMEEMBOCCPA NFEAMMJIMPG_Result; // 0x7C
 
 	// RVA: 0x1742CFC Offset: 0x1742CFC VA: 0x1742CFC Slot: 12
 	public override void DHLDNIEELHO()
@@ -48,7 +48,7 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 	// RVA: 0x1742DD8 Offset: 0x1742DD8 VA: 0x1742DD8 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new NMEEMBOCCPA();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new NMEEMBOCCPA();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

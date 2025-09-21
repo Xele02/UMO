@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		{
 			viewResultData = view_data;
 			EEDKAACNBBG_MusicData mData = new EEDKAACNBBG_MusicData();
-			mData.KHEKNNFCAOI(view_data.IOPCBBNHJIP_FixedMusicId);
+			mData.KHEKNNFCAOI_Init(view_data.IOPCBBNHJIP_ForcedMusicId);
 			textMusicName.text = mData.NEDBBJDAFBH_MusicName;
 			RichTextUtility.ChangeColor(textMusicName, GameAttributeTextColor.Colors[mData.FKDCCLPGKDK_JacketAttr - 1]);
 			layoutDifficulty.StartChildrenAnimGoStop(diff, diff);
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E1ADC Offset: 0x18E1ADC VA: 0x18E1ADC
 		private void SetRankingUV(NGJOPPIGCPM_ResultData.DFJMELLLNLH rankState)
 		{
-			if (rankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL)
+			if (rankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL_0_None)
 			{
 				TexUVData data = m_uvMan.GetUVData(rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH ? "g_r_rankin_bg" : "g_r_rankin_bg02");
 				for (int i = 0; i < imageSingRankBg.Length; i++)
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalUp());
 				yield return coRank;
 				yield return coRankTotal;
-				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL)
+				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL_0_None)
 				{
 					if(!isSkiped)
 					{
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
+				OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetRanks(0, false, () =>
 				{
 					//0x18E3164
 					_isDone = true;
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GHLGEECLCMH g = new GHLGEECLCMH();
-			g.KHEKNNFCAOI(viewResultData.LCKMBHDMPIP_SaveRecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
+			g.KHEKNNFCAOI_Init(viewResultData.LCKMBHDMPIP_SaveRecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
 			PopupMusicRateListContentSetting s = new PopupMusicRateListContentSetting();
 			s.View = g;
 			s.WindowSize = SizeType.Large;

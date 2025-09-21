@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			m_isSp.StartChildrenAnimGoStop(view.MPKBLMCNHOM_MissionIsSpecial ? "01" : "02");
 			m_layoutSwitch.StartChildrenAnimGoStop(isCannon ? "02" : "01");
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_nameText.text = view.OPFGFINHFCE_Name;
+			m_nameText.text = view.OPFGFINHFCE_name;
 			m_pointText.text = view.ENMEKLHFMDE_Point.ToString();
 			m_damageText.text = bk.GetMessageByLabel("raid_damage_result_text");
 			m_layoutRank.StartChildrenAnimGoStop(m_view.FJOLNJLLJEJ_Rank.ToString("D2"));

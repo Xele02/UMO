@@ -8,16 +8,16 @@ public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
 {
 	public class MJAEAHLDEHE
 	{
-		public int NHPDJADJNCL_FriendLimit; // 0x8
+		public int NHPDJADJNCL_friend_limit; // 0x8
 
 		// RVA: 0x1AF566C Offset: 0x1AF566C VA: 0x1AF566C
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			NHPDJADJNCL_FriendLimit = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
+			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
 		}
 	}
 
-	public MJAEAHLDEHE NFEAMMJIMPG_ResultData { get; set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public MJAEAHLDEHE NFEAMMJIMPG_Result { get; set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x1AF54B0 Offset: 0x1AF54B0 VA: 0x1AF54B0 Slot: 12
 	public override void DHLDNIEELHO()
@@ -28,7 +28,7 @@ public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
 	// RVA: 0x1AF558C Offset: 0x1AF558C VA: 0x1AF558C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG_ResultData = new MJAEAHLDEHE();
-		NFEAMMJIMPG_ResultData.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new MJAEAHLDEHE();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

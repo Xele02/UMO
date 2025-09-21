@@ -69,10 +69,10 @@ namespace XeApp.Game.Menu
 				m_name.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
 			TextGeneratorUtility.SetTextRectangleMessage(m_name, data.ADCMNODJBGJ_Title, 2, JpStringLiterals.StringLiteral_12038);
 			SetDegreeImage(data.MDPKLNFFDBO_EmblemId);
-			if(data.HMFFHLPNMPH > 0)
+			if(data.HMFFHLPNMPH_Count > 0)
 			{
 				SetDegreeNumVisible(true);
-				m_degree_num.SetNumber(data.HMFFHLPNMPH, 0);
+				m_degree_num.SetNumber(data.HMFFHLPNMPH_Count, 0);
 			}
 			else
 			{

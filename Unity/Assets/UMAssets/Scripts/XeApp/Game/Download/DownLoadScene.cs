@@ -81,7 +81,7 @@ namespace XeApp.Game.DownLoad
 					}
 				}
 			}
-			List<string> str = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IJCPBPFEGDM_GetEventsInstallFiles();
+			List<string> str = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IJCPBPFEGDM_GetResourcesFilePathList();
 			if(str.Count > 0)
 			{
 				if(KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE == null)
@@ -108,9 +108,9 @@ namespace XeApp.Game.DownLoad
 					{
 						KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.AddRange(path);
 					}
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.NGNECOFAMKP((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(false, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(false, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.GJDEHJBAMNH_SetSeries(MusicSelectConsts.SeriesType.All);
 				}
 			}
@@ -183,7 +183,7 @@ namespace XeApp.Game.DownLoad
 		private IEnumerator Co_InitializeQuestionary()
 		{
 			//0x11BF7A4
-			m_IsExecuteQuestionary = m_anketoMrg.KHEKNNFCAOI(1, false);
+			m_IsExecuteQuestionary = m_anketoMrg.KHEKNNFCAOI_Init(1, false);
 			if (!m_IsExecuteQuestionary)
 				yield break;
 			m_questionary = Instantiate(m_questionaryPrefab).GetComponent<LayoutQuestionary>();
@@ -200,7 +200,7 @@ namespace XeApp.Game.DownLoad
 		{
 			//0x11C102C
 			m_Layout.SwaipTouch.enabled = false;
-			yield return this.StartCoroutineWatched(m_questionary.Co_Proc(m_anketoMrg.KICOACCACII_QData, m_anketoMrg.MCJBEJBMJMF_TotalCount));
+			yield return this.StartCoroutineWatched(m_questionary.Co_Proc(m_anketoMrg.KICOACCACII_QData, m_anketoMrg.MCJBEJBMJMF_Total));
 			m_questionary.gameObject.SetActive(false);
 			m_Layout.SwaipTouch.enabled = true;
 		}

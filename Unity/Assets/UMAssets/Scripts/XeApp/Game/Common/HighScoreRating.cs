@@ -87,7 +87,7 @@ namespace XeApp.Game.Common
 			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			if (rec == null)
 				rec = serverData.LCKMBHDMPIP_RecordMusic;
-			int rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			int rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_IntArray["score_rating_coef"];
 			List<HSRatingData>[] l = new List<HSRatingData>[1];
 			l[0] = new List<HSRatingData>();
 			l[0].Clear();
@@ -155,7 +155,7 @@ namespace XeApp.Game.Common
 		{
 			if (rec == null)
 				rec = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
-			int score_rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			int score_rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_IntArray["score_rating_coef"];
 			List<HSRatingData>[] data = new List<HSRatingData>[1] { new List<HSRatingData>() };
 			data[0].Clear();
 			rateAttr[0] = 0;
@@ -224,7 +224,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5310 Offset: 0xEA5310 VA: 0xEA5310
 		public void CalcUtaRate(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatings)
 		{
-			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_IntArray["score_rating_coef"];
 			rateAttr[0] = 0;
 			rateTotal = 0;
 			if(hsRatings.Count > 0)
@@ -281,7 +281,7 @@ namespace XeApp.Game.Common
 				//0xEA7684
 				return free_music_id == x.FDMENECIKEL_RecordMusicId;
 			});
-			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_IntArray["score_rating_coef"];
 			int val = info.IFNDLIGGGHP_HighScoreScore;
 			if (val > 0)
 				return val / coef;
@@ -291,7 +291,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5D28 Offset: 0xEA5D28 VA: 0xEA5D28
 		public static int CalcUtaRate(int rating_score)
 		{
-			return rating_score / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			return rating_score / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_IntArray["score_rating_coef"];
 		}
 
 		//// RVA: 0xEA5E50 Offset: 0xEA5E50 VA: 0xEA5E50
@@ -379,20 +379,20 @@ namespace XeApp.Game.Common
 					if (rateTotal < d.ADKDHKMPMHP_Rate)
 					{
 						int r = d.ADKDHKMPMHP_Rate;
-						int pickup = d.JOPPFEHKNFO_Idx;
+						int pickup = d.JOPPFEHKNFO_Pickup;
 						if (d.HDOEJDHGFLH_ItemFullId > 0)
 						{
 							if(d.GCKPDEDJFIC_ItemCount > 0)
 							{
 								MFDJIFIIPJD m = new MFDJIFIIPJD();
-								m.KHEKNNFCAOI(d.HDOEJDHGFLH_ItemFullId, d.GCKPDEDJFIC_ItemCount);
+								m.KHEKNNFCAOI_Init(d.HDOEJDHGFLH_ItemFullId, d.GCKPDEDJFIC_ItemCount);
 								lm.Add(m);
 							}
 						}
 						for(int j = 0; j < d.AJMDFJFCIML_GetCount(); j++)
 						{
 							MFDJIFIIPJD m = new MFDJIFIIPJD();
-							m.KHEKNNFCAOI(d.FKNBLDPIPMC_GetItemId(j), d.NKOHMLHLJGL_GetItemCount(j));
+							m.KHEKNNFCAOI_Init(d.FKNBLDPIPMC_GetItemId(j), d.NKOHMLHLJGL_GetItemCount(j));
 							lm.Add(m);
 						}
 						res.Init(i, r - rateTotal, pickup, lm, false);
@@ -439,18 +439,18 @@ namespace XeApp.Game.Common
 						if(it.GCKPDEDJFIC_ItemCount > 0)
 						{
 							MFDJIFIIPJD data = new MFDJIFIIPJD();
-							data.KHEKNNFCAOI(it.HDOEJDHGFLH_ItemFullId, it.GCKPDEDJFIC_ItemCount);
+							data.KHEKNNFCAOI_Init(it.HDOEJDHGFLH_ItemFullId, it.GCKPDEDJFIC_ItemCount);
 							items.Add(data);
 						}
 					}
 					for(int j = 0; j < it.AJMDFJFCIML_GetCount(); j++)
 					{
 						MFDJIFIIPJD data = new MFDJIFIIPJD();
-						data.KHEKNNFCAOI(it.FKNBLDPIPMC_GetItemId(j), it.NKOHMLHLJGL_GetItemCount(j));
+						data.KHEKNNFCAOI_Init(it.FKNBLDPIPMC_GetItemId(j), it.NKOHMLHLJGL_GetItemCount(j));
 						items.Add(data);
 					}
 					UtaGradeData utaData = new UtaGradeData();
-					utaData.Init(i + 1, it.ADKDHKMPMHP_Rate, it.JOPPFEHKNFO_Idx, items, i + 1 == (int)nowGrade);
+					utaData.Init(i + 1, it.ADKDHKMPMHP_Rate, it.JOPPFEHKNFO_Pickup, items, i + 1 == (int)nowGrade);
 					res.Add(utaData);
 					items.Clear();
 				}

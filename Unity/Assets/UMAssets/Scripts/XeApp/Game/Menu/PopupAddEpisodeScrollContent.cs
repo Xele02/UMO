@@ -39,8 +39,8 @@ namespace XeApp.Game.Menu
 					data.m_episodeId = id;
 					data.m_type = s.Type;
 					PIGBBNDPPJC ep = new PIGBBNDPPJC();
-					ep.KHEKNNFCAOI(id);
-					data.m_viewEpisodeName = ep.OPFGFINHFCE_Name;
+					ep.KHEKNNFCAOI_Init(id);
+					data.m_viewEpisodeName = ep.OPFGFINHFCE_name;
 					LGMEPLIJLNB rwd = LGMEPLIJLNB.BMFKMFNPGPC(id, true);
 					if(rwd != null && rwd.GOOIIPFHOIG != null)
 						data.m_rewardItemId = rwd.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;

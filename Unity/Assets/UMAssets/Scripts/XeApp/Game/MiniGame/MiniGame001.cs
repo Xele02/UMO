@@ -70,7 +70,7 @@ namespace XeApp.Game.MiniGame
 			fadePlane.gameObject.SetActive(true);
 			fadePlane.Fade(0, 0);
 			m_viewShootingData = new GKFPMAPFHIK_ViewEventAprilFoolMiniGameData();
-			m_viewShootingData.KHEKNNFCAOI();
+			m_viewShootingData.KHEKNNFCAOI_Init();
 			m_resultData = new ShootingResulData();
 			m_resultData.Initialize();
 			m_titleLayout = GetComponentInChildren<ShootingTitleLayout>(true);
@@ -383,7 +383,7 @@ namespace XeApp.Game.MiniGame
 			m_isPause = false;
 			ShootingGameSceneState.MainSceneState = ShootingGameSceneState.GameMainState.Normal;
 			m_soundManager.BgmPlay(ShootingSoundManager.BGM_ID.Main);
-			m_viewShootingData.KHEKNNFCAOI();
+			m_viewShootingData.KHEKNNFCAOI_Init();
 			m_resultData.Initialize();
 			m_effectManager.Initialize();
 			m_coliisionManager.Initialize();
@@ -585,10 +585,10 @@ namespace XeApp.Game.MiniGame
 			{
 				AMLGMLNGMFB_EventAprilFool.JPGMKBANFGF data = new AMLGMLNGMFB_EventAprilFool.JPGMKBANFGF();
 				data.BCGLDMKODLC_IsClear = m_isClear;
-				data.KNIFCANOHOC_Score = score;
+				data.KNIFCANOHOC_score = score;
 				data.CHPIFIEEEEC_IsSecretCommand = m_secretCommand.IsSecretCommand;
 				af.LPFLADBKPNL(data, false);
-				score = af.MMICFFPMHIC.KNIFCANOHOC_Score;
+				score = af.MMICFFPMHIC.KNIFCANOHOC_score;
 				highScore = af.MMICFFPMHIC.LGDLEHHOIEL_HighScore;
 				isUseCommandScore = af.MMICFFPMHIC.PIBCFBBLHBB_IsUseCommandScore;
 				isUseCommandHighScore = af.MMICFFPMHIC.LNDLJBINJDE_IsUseCommandHighScore;

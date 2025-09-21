@@ -180,12 +180,12 @@ namespace XeApp.Game.DownLoad
 			diva.CPGFPEDMDEH_Have = 0;
 			diva.BEEAIAAJOHD_CostumeId = 0;
 			diva.AFNIOJHODAG_CostumeColorId = 0;
-			int mslot = diva.PIGLAEFPNEK_MSlot;
-			diva.PIGLAEFPNEK_MSlot = 0;
+			int mslot = diva.PIGLAEFPNEK_m_slot;
+			diva.PIGLAEFPNEK_m_slot = 0;
 			int id = m_Layout.GetSelectDivaId();
             diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(id);
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NGJEPEPIHIL(id);
-			diva.PIGLAEFPNEK_MSlot = mslot;
+			diva.PIGLAEFPNEK_m_slot = mslot;
 			m_Layout.SetEnabledOperation(false, false);
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(BBHNACPENDM_ServerSaveData.FBFCCLFFIAF, 0, 0);
@@ -211,13 +211,13 @@ namespace XeApp.Game.DownLoad
 				//0x11BB2C8
 				return !is_close;
 			});
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Where((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Where((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0x11BB2DC
 				return m_Layout.GetSelectDivaId() == _.AHHJLDLAPAN_DivaId;
 			}).First();
 			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
-			m_LayoutPopup.Show(diva.OPFGFINHFCE_Name);
+			m_LayoutPopup.Show(diva.OPFGFINHFCE_name);
 		}
 
 		// // RVA: 0x11BA530 Offset: 0x11BA530 VA: 0x11BA530
@@ -277,7 +277,7 @@ namespace XeApp.Game.DownLoad
 			g.transform.SetParent(m_Layout.transform.parent, false);
 			_unlockManager = g.GetComponent<UnlockDivaManager>();
 			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.FFFHCFBMHDD_34);
-			int serie = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].AIHCEGFANAM_SerieAttr;
+			int serie = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1].AIHCEGFANAM_SerieAttr;
 			UnlockFadeManager.Create();
 			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(serie));
 			_unlockManager.InitializeLayoutResource();

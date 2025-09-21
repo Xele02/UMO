@@ -107,9 +107,9 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			m_waitTime = 0;
 			m_sceneIds = null;
-			if (view.DPBDFPPMIPH_Gacha.KACECFNECON != null)
+			if (view.DPBDFPPMIPH_Gacha.KACECFNECON_extra != null)
 			{
-				m_sceneIds = m_view.DPBDFPPMIPH_Gacha.KACECFNECON.PGKIHFOKEHL_Feature;
+				m_sceneIds = m_view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.PGKIHFOKEHL_Feature;
 			}
 			if(m_view.DPBDFPPMIPH_Gacha.MFICPBJPCCJ_GachaBgId < 1)
 			{

@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 			m_bossHpNum.SetNumber(bossInfo.BCCOMAODPJI_Hp, 0);
 			SetRank(bossInfo.FJOLNJLLJEJ_Rank);
 			m_bossNameText.text = bossName;
-			m_joinNum.SetNumber(bossInfo.MHABJOMJCFI_JoinedMember, 0);
+			m_joinNum.SetNumber(bossInfo.MHABJOMJCFI_AttackPlayerCount, 0);
 			SetAssistNum(bossInfo.CLNPBIJBIIJ_SupportBonus);
 			SetAssistIsMax(assistBonusMax <= bossInfo.CLNPBIJBIIJ_SupportBonus);
 		}

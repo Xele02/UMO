@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 			int a = 1;
 			if (isUpper)
 				a = -1;
-			LAMCONGFONF.HHCJCDFCLOB.JPNACOLKHLB(GetListEdgeRank(isUpper), a, GetCurrentBaseRank(), () =>
+			LAMCONGFONF.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), a, GetCurrentBaseRank(), () =>
 			{
 				//0x1272EF8
 				OnReceivedRankingListAdditive(a, LAMCONGFONF.HHCJCDFCLOB.BMKBAMFBAPJ);

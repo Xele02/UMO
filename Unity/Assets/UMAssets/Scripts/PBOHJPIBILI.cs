@@ -30,9 +30,9 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBDB38 Offset: 0xCBDB38 VA: 0xCBDB38
-	public static void PGAGKCDGOIN_AddMcGauge(int OEOIHIIIMCK)
+	public static void PGAGKCDGOIN_AddMcGauge(int _OEOIHIIIMCK_add)
     {
-        CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge + OEOIHIIIMCK, PBOHJPIBILI.PFNBNKCPFLP_GetCannonStockMax() * 100 + 100);
+        CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge + _OEOIHIIIMCK_add, PBOHJPIBILI.PFNBNKCPFLP_GetCannonStockMax() * 100 + 100);
     }
 
 	// // RVA: 0xCBDC90 Offset: 0xCBDC90 VA: 0xCBDC90
@@ -51,11 +51,11 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBDDE0 Offset: 0xCBDDE0 VA: 0xCBDDE0
-	public static int DIDALOAJHBE(int KIJAPOFAGPN)
+	public static int DIDALOAJHBE(int _KIJAPOFAGPN_ItemId)
     {
-        if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN) == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
+        if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
         {
-            if(EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN) == 6)
+            if(EKLNMHFCAOI.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId) == 6)
             {
                 return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_gauge_item_value", 100);
             }
@@ -64,11 +64,11 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBDF5C Offset: 0xCBDF5C VA: 0xCBDF5C
-	public static int GJPMPGIIPHA(int KIJAPOFAGPN)
+	public static int GJPMPGIIPHA(int _KIJAPOFAGPN_ItemId)
     {
-        if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN) == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
+        if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
         {
-            if(EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN) == 6)
+            if(EKLNMHFCAOI.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId) == 6)
             {
                 return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 6, null);
             }
@@ -77,22 +77,22 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBE138 Offset: 0xCBE138 VA: 0xCBE138
-	public static int BPAOMGFCODD(int KIJAPOFAGPN, IMCBBOAFION _BHFHGFKBOHH_OnSuccess)
+	public static int BPAOMGFCODD(int _KIJAPOFAGPN_ItemId, IMCBBOAFION _BHFHGFKBOHH_OnSuccess)
     {
-        int num = GJPMPGIIPHA(KIJAPOFAGPN);
+        int num = GJPMPGIIPHA(_KIJAPOFAGPN_ItemId);
         if(num > 0)
         {
             if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PFAKPFKJJKA(true) == null)
             {
                 int newNum = Mathf.Max(0, num - 1);
                 EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, 
-                    EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN), EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN), newNum, null);
+                    EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_KIJAPOFAGPN_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId), newNum, null);
                 JMJOBHFFBGC_GetMcGauge();
-                int a = DIDALOAJHBE(KIJAPOFAGPN);
+                int a = DIDALOAJHBE(_KIJAPOFAGPN_ItemId);
                 PGAGKCDGOIN_AddMcGauge(a);
                 JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
                 JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-                ILCCJNDFFOB.HHCJCDFCLOB.MINOEGPNBIH(a, JMJOBHFFBGC_GetMcGauge(), KIJAPOFAGPN, newNum, "StringLiteral_13052", "");
+                ILCCJNDFFOB.HHCJCDFCLOB.MINOEGPNBIH(a, JMJOBHFFBGC_GetMcGauge(), _KIJAPOFAGPN_ItemId, newNum, "StringLiteral_13052", "");
             }
             MenuScene.SaveWithAchievement(0, () =>
             {

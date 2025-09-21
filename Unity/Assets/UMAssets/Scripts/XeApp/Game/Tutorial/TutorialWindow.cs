@@ -117,7 +117,7 @@ namespace XeApp.Game.Tutorial
 			});
 			m_messageList.Clear();
 			string str = "";
-			for (int i = 0; i < m_messageData.JONNCMDGMKA_Messages.Length; i++)
+			for (int i = 0; i < m_messageData.JONNCMDGMKA_Message.Length; i++)
 			{
 				if(!string.IsNullOrEmpty(m_messageData.ADCMNODJBGJ_Title[i]))
 				{
@@ -126,7 +126,7 @@ namespace XeApp.Game.Tutorial
 				if(m_messageData.KMDGMOMCDAD[i] < 1 || !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(m_messageData.KMDGMOMCDAD[i]))
 				{
 					//LAB_01917df8
-					m_messageList.Add(new MessageData() { messages = m_messageData.JONNCMDGMKA_Messages[i], title = str, pictId = m_messageData.MAPDMCPCLFA_PicIds[i] });
+					m_messageList.Add(new MessageData() { messages = m_messageData.JONNCMDGMKA_Message[i], title = str, pictId = m_messageData.MAPDMCPCLFA_PicIds[i] });
 				}
 			}
 			SetMaxPage(m_messageList.Count);

@@ -31,7 +31,7 @@ public class BEJIKEOAJHN_OptionSLive
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
-	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC_ToJsonData()
 	{
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 		res["volSeRhythm"] = LMDACNNJDOE_VolSeRhythm;

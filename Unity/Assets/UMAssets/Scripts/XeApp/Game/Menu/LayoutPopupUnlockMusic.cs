@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{
 			EEDKAACNBBG_MusicData data = new EEDKAACNBBG_MusicData();
-			data.KHEKNNFCAOI(info.param.id);
+			data.KHEKNNFCAOI_Init(info.param.id);
 			SetMusicJacket(data.JNCPEGJGHOG_JacketId);
 			SetMusicName(data.NEDBBJDAFBH_MusicName, data.FKDCCLPGKDK_JacketAttr);
 			SetVocalName(GetVocalNameLF(info.param.id));
@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		private string GetVocalNameLF(int id)
 		{
 			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[id - 1];
-			return Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Nam).vocalNameLF;
+			return Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).vocalNameLF;
 		}
 
 		//// RVA: 0x178FE30 Offset: 0x178FE30 VA: 0x178FE30

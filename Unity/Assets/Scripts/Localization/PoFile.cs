@@ -157,7 +157,7 @@ public class PoFile
                     }
                     writer.Flush();
                     byte[] data = stream.ToArray();
-                    archive.KGHAJGGMPKL_Files.Add(new CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File() { OPFGFINHFCE_Name = fileName, DBBGALAPFGC_Data = data });
+                    archive.KGHAJGGMPKL_files.Add(new CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File() { OPFGFINHFCE_name = fileName, DBBGALAPFGC_Data = data });
                     writer.Close();
                 }
             }

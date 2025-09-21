@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 			m_userInfo.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurrentStamina, playerStatus.POKDILOKODG_MaxEnergy);
 			m_userInfo.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
 			m_userInfo.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
-			m_userInfo.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_MaxExp);
+			m_userInfo.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_LevelMaxExp);
 			m_userInfo.ChangeCurrencyValue(playerStatus.OIOFGIBDOPI_CurrencyNonPaid, playerStatus.FNCPAEFEECO_CurrencyPaid + Database.Instance.tutorialPaidVC);
 			m_userInfo.ChangeMedalValue(playerStatus.AHHGKGOPGDE_MedalMonth, playerStatus.GBIKGLELKEO_MedalValue);
 			m_userInfo.ChangeUtaRateValue(playerStatus.ILELGGCCGMJ_UtaGrade, playerStatus.HDBFOIAGPJK_UtaRank);

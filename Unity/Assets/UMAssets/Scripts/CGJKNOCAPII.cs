@@ -5,18 +5,18 @@ using XeApp.Game.Menu;
 
 public class CGJKNOCAPII
 {
-	public string JOPOPMLFINI_QuastName; // 0x8
+	public string JOPOPMLFINI_QuestName; // 0x8
 	public string DGCOMDILAKM_EventName; // 0xC
 	public int PGIIDPEGGPI_EventId; // 0x10
 	public int JHAOHBNPMNA_EventId; // 0x14
 	public int LFCOJABLOEN_EventId; // 0x18
-	public long KINJOEIAHFK_Start; // 0x20
-	public long PCCFAKEOBIC_End; // 0x28
+	public long KINJOEIAHFK_StartTime; // 0x20
+	public long PCCFAKEOBIC_EndTime; // 0x28
 	public int BCOKKAALGHC_Group; // 0x30
-	public bool PNFDMBHDPAJ; // 0x34
+	public bool PNFDMBHDPAJ_IsRewardOnly; // 0x34
 	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x38
 	public string BHANMJKCCBC_BadgeText; // 0x3C
-	public int PKNLMLDKCLM_AchievedQuests; // 0x40
+	public int PKNLMLDKCLM_AchievedQuestCount; // 0x40
 	public IKDICBBFBMI_EventBase COAMJFMEIBF; // 0x44
 	public BKANGIKIEML.NODKLJHEAJB NNHHNFFLCFO; // 0x48
 	public long BALFPCLMOGJ; // 0x50
@@ -24,7 +24,7 @@ public class CGJKNOCAPII
 	//// RVA: 0x12BC47C Offset: 0x12BC47C VA: 0x12BC47C
 	public int KJILFMNCDLC()
 	{
-		return (int)(PCCFAKEOBIC_End - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+		return (int)(PCCFAKEOBIC_EndTime - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 	}
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
@@ -36,7 +36,7 @@ public class CGJKNOCAPII
 		long l4 = 0;
 		bool b1 = false;
 		CGJKNOCAPII res = new CGJKNOCAPII();
-		res.JOPOPMLFINI_QuastName = FBFNJMKPBBA.JOPOPMLFINI_QuestId;
+		res.JOPOPMLFINI_QuestName = FBFNJMKPBBA.JOPOPMLFINI_QuestName;
 		res.LFCOJABLOEN_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.DGCOMDILAKM_EventName = FBFNJMKPBBA.DGCOMDILAKM_EventName;
 		res.PGIIDPEGGPI_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
@@ -44,15 +44,15 @@ public class CGJKNOCAPII
 		res.COAMJFMEIBF = FBFNJMKPBBA;
 		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/)
 		{
-			res.KINJOEIAHFK_Start = FBFNJMKPBBA.GLIMIGNNGGB_RankingStart;
-			res.PCCFAKEOBIC_End = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd;
+			res.KINJOEIAHFK_StartTime = FBFNJMKPBBA.GLIMIGNNGGB_RankingStart;
+			res.PCCFAKEOBIC_EndTime = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd;
 		}
 		else
 		{
-			res.KINJOEIAHFK_Start = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd + 1;
-			res.PCCFAKEOBIC_End = FBFNJMKPBBA.LJOHLEGGGMC_RewardEnd;
+			res.KINJOEIAHFK_StartTime = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd + 1;
+			res.PCCFAKEOBIC_EndTime = FBFNJMKPBBA.LJOHLEGGGMC_RewardEnd;
 		}
-		res.PNFDMBHDPAJ = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/;
+		res.PNFDMBHDPAJ_IsRewardOnly = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/;
 		res.BCOKKAALGHC_Group = 0;
 		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
 		{
@@ -60,25 +60,25 @@ public class CGJKNOCAPII
 			res.BCOKKAALGHC_Group = ev.MEDEJHKNAFG_GetCurrentMissionGroup(out l1, out l2, out l3, out l4, out b1);
 			res.JHAOHBNPMNA_EventId = ev.CBEACDJOIBO_GetIconTextureId(BCOKKAALGHC_Group);
 			res.LFCOJABLOEN_EventId = ev.JLLGJIIHFJO_GetTitleTextureId(BCOKKAALGHC_Group);
-			res.KINJOEIAHFK_Start = b1 ? l3 : l1;
-			res.PCCFAKEOBIC_End = b1 ? l4 : l2;
-			res.PNFDMBHDPAJ = b1;
+			res.KINJOEIAHFK_StartTime = b1 ? l3 : l1;
+			res.PCCFAKEOBIC_EndTime = b1 ? l4 : l2;
+			res.PNFDMBHDPAJ_IsRewardOnly = b1;
 		}
 		res.NNHHNFFLCFO = ILLPDLODANB.ODEHLBNBPPE(FBFNJMKPBBA);
 		res.BEEIIJJKDBH_BadgeConstantId = 0;
 		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
-			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_QuastName);
+			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_QuestName);
 			if(l == null)
 			{
-				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuastName, false, res.BCOKKAALGHC_Group);
+				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuestName, false, res.BCOKKAALGHC_Group);
 			}
-			PKNLMLDKCLM_AchievedQuests = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
-			if(PKNLMLDKCLM_AchievedQuests > 0)
+			PKNLMLDKCLM_AchievedQuestCount = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			if(PKNLMLDKCLM_AchievedQuestCount > 0)
 			{
 				res.BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
-				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(PKNLMLDKCLM_AchievedQuests);
+				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(PKNLMLDKCLM_AchievedQuestCount);
 			}
 		}
 		res.BALFPCLMOGJ = 0;
@@ -99,7 +99,7 @@ public class CGJKNOCAPII
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 				{
-					if(time < ev.AGLILDLEFDK_Missions[0].KJBGCLPMLCG_Start)
+					if(time < ev.AGLILDLEFDK_Missions[0].KJBGCLPMLCG_OpenedAt)
 						continue;
 				}
 				if(ev is PKNOKJNLPOE_EventRaid)
@@ -119,7 +119,7 @@ public class CGJKNOCAPII
 					{
 						CGJKNOCAPII data = new CGJKNOCAPII();
 						data = data.BJKJLDPDEFA(ev, PNGKOHDEPFE);
-						if(!data.PNFDMBHDPAJ)
+						if(!data.PNFDMBHDPAJ_IsRewardOnly)
 						{
 							res.Add(data);
 						}
@@ -135,16 +135,16 @@ public class CGJKNOCAPII
 		res.Sort((CGJKNOCAPII HKICMNAACDA, CGJKNOCAPII BNKHBCBJBKI) =>
 		{
 			//0x12BD938
-			if (HKICMNAACDA.PCCFAKEOBIC_End == BNKHBCBJBKI.PCCFAKEOBIC_End)
+			if (HKICMNAACDA.PCCFAKEOBIC_EndTime == BNKHBCBJBKI.PCCFAKEOBIC_EndTime)
 				return HKICMNAACDA.JHAOHBNPMNA_EventId.CompareTo(BNKHBCBJBKI.JHAOHBNPMNA_EventId);
-			return HKICMNAACDA.PCCFAKEOBIC_End.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_End);
+			return HKICMNAACDA.PCCFAKEOBIC_EndTime.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_EndTime);
 		});
 		l2.Sort((CGJKNOCAPII HKICMNAACDA, CGJKNOCAPII BNKHBCBJBKI) =>
 		{
 			//0x12BD9C4
-			if (HKICMNAACDA.PCCFAKEOBIC_End == BNKHBCBJBKI.PCCFAKEOBIC_End)
+			if (HKICMNAACDA.PCCFAKEOBIC_EndTime == BNKHBCBJBKI.PCCFAKEOBIC_EndTime)
 				return HKICMNAACDA.JHAOHBNPMNA_EventId.CompareTo(BNKHBCBJBKI.JHAOHBNPMNA_EventId);
-			return HKICMNAACDA.PCCFAKEOBIC_End.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_End);
+			return HKICMNAACDA.PCCFAKEOBIC_EndTime.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_EndTime);
 		});
 		res.AddRange(l2);
 		return res;
@@ -154,25 +154,25 @@ public class CGJKNOCAPII
 	public CGJKNOCAPII NLCNDMLOCBC(int _APFDNBGMMMM_BingoId, bool PNGKOHDEPFE/* = true*/)
 	{
 		CGJKNOCAPII res = new CGJKNOCAPII();
-		res.JOPOPMLFINI_QuastName = "";
+		res.JOPOPMLFINI_QuestName = "";
 		res.DGCOMDILAKM_EventName = "";
 		res.PGIIDPEGGPI_EventId = _APFDNBGMMMM_BingoId;
 		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
 		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
 		res.COAMJFMEIBF = null;
 		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(_APFDNBGMMMM_BingoId);
-		res.KINJOEIAHFK_Start = bingo.PDBPFJJCADD_StartTime;
+		res.KINJOEIAHFK_StartTime = bingo.PDBPFJJCADD_open_at;
 		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38/*38*/;
 		res.BEEIIJJKDBH_BadgeConstantId = 0;
-		res.PCCFAKEOBIC_End = bingo.FDBNFFNFOND_CloseAt;
-		res.PNFDMBHDPAJ = false;
+		res.PCCFAKEOBIC_EndTime = bingo.FDBNFFNFOND_CloseAt;
+		res.PNFDMBHDPAJ_IsRewardOnly = false;
 		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
-			res.PKNLMLDKCLM_AchievedQuests = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
-			if(res.PKNLMLDKCLM_AchievedQuests > 0)
+			res.PKNLMLDKCLM_AchievedQuestCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			if(res.PKNLMLDKCLM_AchievedQuestCount > 0)
 			{
-				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuests);
+				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuestCount);
 			}
 		}
 		res.BALFPCLMOGJ = 0;
@@ -204,9 +204,9 @@ public class CGJKNOCAPII
 			res.Sort((CGJKNOCAPII HKICMNAACDA, CGJKNOCAPII BNKHBCBJBKI) =>
 			{
 				//0x12BDA50
-				if (HKICMNAACDA.PCCFAKEOBIC_End == BNKHBCBJBKI.PCCFAKEOBIC_End)
+				if (HKICMNAACDA.PCCFAKEOBIC_EndTime == BNKHBCBJBKI.PCCFAKEOBIC_EndTime)
 					return HKICMNAACDA.JHAOHBNPMNA_EventId.CompareTo(BNKHBCBJBKI.JHAOHBNPMNA_EventId);
-				return HKICMNAACDA.PCCFAKEOBIC_End.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_End);
+				return HKICMNAACDA.PCCFAKEOBIC_EndTime.CompareTo(BNKHBCBJBKI.PCCFAKEOBIC_EndTime);
 			});
 		}
 		return res;

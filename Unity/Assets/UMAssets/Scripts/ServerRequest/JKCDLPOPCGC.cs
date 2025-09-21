@@ -50,15 +50,15 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
         // RVA: 0x135BCFC Offset: 0x135BCFC VA: 0x135BCFC
         public CEHKLJKGJPI(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
         {
-            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"), (GIINMFDIIMD IDLHJIOMJBK) =>
+            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
             {
                 //0x135C358
-                return new MFKPFMCLOIB(IDLHJIOMJBK);
+                return new MFKPFMCLOIB(_IDLHJIOMJBK_Data);
             });
-            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(_DLENPPIJNPA_json.PFBEBCDEIND("attack_players"), (GIINMFDIIMD IDLHJIOMJBK) =>
+            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(_DLENPPIJNPA_json.PFBEBCDEIND("attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
             {
                 //0x135C3CC
-                return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(IDLHJIOMJBK));
+                return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_Data));
             });
             COGCGJLFDKG_FirstAttackPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {
@@ -75,7 +75,7 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
 
 	public const int ALFJFNDOBJA = 50;
 	public GDMIBMKBLDJ BIHCCEHLAOD = new GDMIBMKBLDJ(); // 0x7C
-	public CEHKLJKGJPI NFEAMMJIMPG; // 0x80
+	public CEHKLJKGJPI NFEAMMJIMPG_Result; // 0x80
 
 	// RVA: 0x135BACC Offset: 0x135BACC VA: 0x135BACC Slot: 12
 	public override void DHLDNIEELHO()
@@ -87,6 +87,6 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         Debug.LogError(NGCAIEGPLKD_result);
-        NFEAMMJIMPG = new CEHKLJKGJPI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+        NFEAMMJIMPG_Result = new CEHKLJKGJPI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 }

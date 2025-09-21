@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < cont.ACCNCHJBDHM_UsersList.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_UsersList[i]);
+					f.KHEKNNFCAOI_Init(cont.ACCNCHJBDHM_UsersList[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
@@ -598,7 +598,7 @@ namespace XeApp.Game.Menu
 			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
 			{
 				//0x129FBFC
-				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_Id;
+				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_PlayerId;
 			});
 			if(f != null)
 			{
@@ -616,7 +616,7 @@ namespace XeApp.Game.Menu
 			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
 			{
 				//0x129FCD8
-				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_Id;
+				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_PlayerId;
 			});
 			if(f != null)
 			{
@@ -632,8 +632,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = m_guestInfoList[elemIndex].friend;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_Id);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(arg.friendData.MLPEHNBNOGD_Id, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_Id), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(arg.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 			DecoVisitScene.transitionType = DecoVisitScene.TransitionType.None;
 			MenuScene.Instance.Mount(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
@@ -675,7 +675,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1299F6C Offset: 0x1299F6C VA: 0x1299F6C
 		private void InitializeSortSetting()
 		{
-			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_sortItem;
+			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_SortItem;
 			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_Order;
 			m_rarityFilter = (uint) sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_AttributeFilter;

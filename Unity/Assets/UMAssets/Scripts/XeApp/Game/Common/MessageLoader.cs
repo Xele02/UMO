@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 			{
 				if(defaultInstallSource == InstallSource.LocalStorage)
 				{
-					string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
+					string str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
 					Dictionary<string,string> dic = new Dictionary<string, string>(1);
 					dic.Add("sheet", ((int)sheet).ToString());
 					dic.Add("bankName", sheet.ToString());
@@ -108,15 +108,15 @@ namespace XeApp.Game.Common
 		private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version)
 		{
 			//0x11179A4
-			while(!tar.PLOOEECNHFB)
+			while(!tar.PLOOEECNHFB_IsDone)
 				yield return null;
 			StringBuilder str = new StringBuilder(64);
 			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
 			string name = str.ToString();
-			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
 			{
 				//0x1117860
-				return x.OPFGFINHFCE_Name.Contains(name);
+				return x.OPFGFINHFCE_name.Contains(name);
 			});
 			if(file != null)
 			{
@@ -161,9 +161,9 @@ namespace XeApp.Game.Common
 				StringBuilder str = new StringBuilder(64);
 				str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
 				string name = str.ToString();
-				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
 					//0x11177C0
-					return x.OPFGFINHFCE_Name.Contains(name);
+					return x.OPFGFINHFCE_name.Contains(name);
 				});
 				if(file == null)
 					return false;
@@ -195,12 +195,12 @@ namespace XeApp.Game.Common
 			string name = str.ToString();
 			CBBJHPBGBAJ_Archive tar = new CBBJHPBGBAJ_Archive();
 			if(fro.unityObject != null)
-				tar.KHEKNNFCAOI_Load((fro.unityObject as TextAsset).bytes);
+				tar.KHEKNNFCAOI_Init((fro.unityObject as TextAsset).bytes);
 			else if(fro.bytes != null)
-				tar.KHEKNNFCAOI_Load(fro.bytes);
-			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+				tar.KHEKNNFCAOI_Init(fro.bytes);
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
 				//Method$XeApp.Game.Common.MessageLoader.<>c__DisplayClass13_0.<LoadCallbackStorage2>b__0()
-				return x.OPFGFINHFCE_Name.Contains(name);
+				return x.OPFGFINHFCE_name.Contains(name);
 			});
 			if(file != null)
 			{

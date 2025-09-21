@@ -113,15 +113,15 @@ namespace XeApp.Game.Menu
 		{
 			this.viewDrop = viewDrop;
 			this.itemList = itemList;
-			numberLuck.SetNumber(viewDrop.MJBODMOLOBC_Luck, 0);
+			numberLuck.SetNumber(viewDrop.MJBODMOLOBC_luck, 0);
 			StringBuilder str = new StringBuilder(32);
-			textRareItemNum.text = viewDrop.MFNCONLNBPB_RareItemNum.ToString();
-			textNomralItemNum.text = viewDrop.OOEFNNNFOLF_NormalItemNum.ToString();
+			textRareItemNum.text = viewDrop.MFNCONLNBPB_Rare.ToString();
+			textNomralItemNum.text = viewDrop.OOEFNNNFOLF_Nomal.ToString();
 			textEventRareItemNum.text = viewDrop.POPPPGMKOHN_EventRareItemNum.ToString();
 			is_evenRareDrop = viewDrop.ELKAMCOPCDO_EventRareItemNum > 0;
-			layoutLuckType.StartChildrenAnimGoStop(viewDrop.MJBODMOLOBC_Luck == 0 ? "00": "01");
+			layoutLuckType.StartChildrenAnimGoStop(viewDrop.MJBODMOLOBC_luck == 0 ? "00": "01");
 			layoutScoreRankIcon.StartChildrenAnimGoStop((int)viewDrop.DCBDCHPKLCN_Rank, (int)viewDrop.DCBDCHPKLCN_Rank);
-			float a = (viewDrop.JKLNANHPJLO - 1) * 100;
+			float a = (viewDrop.JKLNANHPJLO_ScorePoint - 1) * 100;
 			for(int i = 0; i < textScoreRankBonus.Length; i++)
 			{
 				textScoreRankBonus[i].text = a.ToString() + JpStringLiterals.StringLiteral_17787;
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 		private void StartNextEventRareItemAnim()
 		{
             LayoutResultDropItem item = itemList[currentItemIndex];
-            if (item.itemInfo != null && item.itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+            if (item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				RecordPlateUtility.CheckPlateId(viewDrop.HBHMAKNGKFK_Items[currentItemIndex]);
 			}
@@ -303,7 +303,7 @@ namespace XeApp.Game.Menu
 				//0x1D96BBC
 				return layoutMain.IsPlayingChildren();
 			});
-			if(viewDrop.HBHMAKNGKFK_Items.Count > 0 && viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareItem)
+			if(viewDrop.HBHMAKNGKFK_Items.Count > 0 && viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareDrop)
 			{
 				StartNextRareItemAnim();
 			}
@@ -332,11 +332,11 @@ namespace XeApp.Game.Menu
 		private void StartNextRareItemAnim()
 		{
 			LayoutResultDropItem item = itemList[currentItemIndex];
-			if(item.itemInfo != null && item.itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				RecordPlateUtility.CheckPlateId(item.itemInfo);
 			}
-			if(!AddItem() && viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareItem)
+			if(!AddItem() && viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareDrop)
 			{
 				item.onFinished = StartNextRareItemAnim;
 			}
@@ -369,8 +369,8 @@ namespace XeApp.Game.Menu
 			//0x1D979CC
 			if(currentItemIndex < viewDrop.HBHMAKNGKFK_Items.Count)
 			{
-				isExistNormalItem = !viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareItem;
-				if (!viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareItem)
+				isExistNormalItem = !viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareDrop;
+				if (!viewDrop.HBHMAKNGKFK_Items[currentItemIndex].PHJHJGDLPED_IsRareDrop)
 				{
 					EnterMainStep(MainAnimStep.NOMAL_DROP);
 					yield return null;
@@ -500,7 +500,7 @@ namespace XeApp.Game.Menu
 				{
 					if(itemList[i].itemInfo != null)
 					{
-						if(!itemList[i].itemInfo.PHJHJGDLPED_IsRareItem && !itemList[i].itemInfo.BAKFIPIFDLE_IsEventRareItem)
+						if(!itemList[i].itemInfo.PHJHJGDLPED_IsRareDrop && !itemList[i].itemInfo.BAKFIPIFDLE_IsEventRareItem)
 						{
 							b |= itemList[i].itemInfo.DJJGNDCMNHF_BonusValue > 0;
 						}
@@ -801,7 +801,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < itemList.Count; i++)
 			{
-				if (itemList[i].itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
+				if (itemList[i].itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
 					return true;
 			}
 			return false;

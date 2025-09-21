@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnPreSetCanvas IsCanDoUnitHelp");
 			}
-			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_isLine6Mode, false, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0))
+			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_isLine6Mode, false, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None))
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnPreSetCanvas !SelectUnitDanceFocus");
 			}

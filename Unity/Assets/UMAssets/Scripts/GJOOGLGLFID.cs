@@ -6,7 +6,7 @@ public class FJIPMALKCBG
 	public bool GGOPOOLMLBA_IsPlayerWin; // 0x10
 
 	// RVA: 0x118706C Offset: 0x118706C VA: 0x118706C
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
         HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_EventBattle;
         if(ev == null)
@@ -21,9 +21,9 @@ public class FJIPMALKCBG
             HIHPPOFHMNF_Player = new BKKMNPEEILG();
             HIHPPOFHMNF_Player.GOCAPCKLAPI(ev, JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId);
             EKOCEKHBHLE_Rival = new BKKMNPEEILG();
-            EKOCEKHBHLE_Rival.KHEKNNFCAOI(ev, ev.DPPODNCOMIA_GetRivalIdx());
+            EKOCEKHBHLE_Rival.KHEKNNFCAOI_Init(ev, ev.DPPODNCOMIA_GetRivalIdx());
         }
-        GGOPOOLMLBA_IsPlayerWin = EKOCEKHBHLE_Rival.KNIFCANOHOC_ScorePoint <= HIHPPOFHMNF_Player.KNIFCANOHOC_ScorePoint;
+        GGOPOOLMLBA_IsPlayerWin = EKOCEKHBHLE_Rival.KNIFCANOHOC_score <= HIHPPOFHMNF_Player.KNIFCANOHOC_score;
     }
 }
 
@@ -70,7 +70,7 @@ public class GJOOGLGLFID
 	public int BNOLJMKCPJC { get { return DCAOLMHFDBP_Crypted ^ FBGGEFFJJHB_xor; } set { DCAOLMHFDBP_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE074 GKAFCGAIOBO 0xAAE088 GAONBELLDJC
 	public int FOFJCOHAFCG_EpisodeCnt { get { return CPHLLEKLFFG_Crypted ^ FBGGEFFJJHB_xor; } set { CPHLLEKLFFG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE09C MLACLHMAMKE 0xAAE0B0 JIJCJGDAJOL
 	public int CLEFJPKPOGB_EpBonusCnt { get { return FOKECLCJLJL_Crypted ^ FBGGEFFJJHB_xor; } set { FOKECLCJLJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE0C4 PLBDHPIJHFI 0xAAE0D8 OENPAHPKEGE
-	public int PHPANNCGOKC_PointDiff { get { return JIBDGBEKJFE_Crypted ^ FBGGEFFJJHB_xor; } set { JIBDGBEKJFE_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE0EC CFKJCBPGOGG 0xAAE100 LLFBDHKOCFC
+	public int PHPANNCGOKC_GetPoint { get { return JIBDGBEKJFE_Crypted ^ FBGGEFFJJHB_xor; } set { JIBDGBEKJFE_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE0EC CFKJCBPGOGG 0xAAE100 LLFBDHKOCFC
 	public int HNNAJJNMCKE_PrevPoint { get { return IAKOPOHILNJ_Crypted ^ FBGGEFFJJHB_xor; } set { IAKOPOHILNJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE114 CIBDKNPBJGF 0xAAE128 JJOBNIILJNK
 	public int AHOKAPCGJMA_TotalPoint { get { return HJOJJCKDPPJ_Crypted ^ FBGGEFFJJHB_xor; } set { HJOJJCKDPPJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE13C GKLPFHEELGM 0xAAE150 EJPEPBGDDJM
 	public int BJJGECFMNIP_Rank { get { return ONJLNJKLPAK_Crypted ^ FBGGEFFJJHB_xor; } set { ONJLNJKLPAK_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE164 PIIBCAGODGL 0xAAE178 FMOEJPCLILL
@@ -92,7 +92,7 @@ public class GJOOGLGLFID
 	public int BOLHMCFBGBP_ExRivalIdx { get { return DHPFMDOOMOH_Crypted ^ FBGGEFFJJHB_xor; } set { DHPFMDOOMOH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE3E4 KFHLDAHFMDH 0xAAE3F8 PENFGGBBGPJ
 
 	// // RVA: 0xAAE40C Offset: 0xAAE40C VA: 0xAAE40C
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
         HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_EventBattle;
         if(ev != null)
@@ -106,18 +106,18 @@ public class GJOOGLGLFID
             EDOJBIJKBMB_CWin = ev.CKCPAMDDNPF.BLAJKMAPEKP_CWin;
             BNOLJMKCPJC = ev.CKCPAMDDNPF.BOKPPBLPKEF;
             FOFJCOHAFCG_EpisodeCnt = ev.CKCPAMDDNPF.ANOCILKJGOJ_EpisodeCnt;
-            CLEFJPKPOGB_EpBonusCnt = ev.CKCPAMDDNPF.ODCLHPGHDHA_EpisodeCntBns;
+            CLEFJPKPOGB_EpBonusCnt = ev.CKCPAMDDNPF.ODCLHPGHDHA_EpisodeBonus;
             IDBJPDBLIIG_ScoreResultRank = ev.CKCPAMDDNPF.JIMGIIBCABI_ScoreResultRank;
             FCLGIPFPIPH_DashBonus = ev.CKCPAMDDNPF.FCLGIPFPIPH_DashBonus;
             HNNAJJNMCKE_PrevPoint = JGEOBNENMAH.HHCJCDFCLOB.FFDBCEDKMGN_PrevPoint;
             AHOKAPCGJMA_TotalPoint = JGEOBNENMAH.HHCJCDFCLOB.MMLPAMGJEOD_NewPoint;
-            PHPANNCGOKC_PointDiff = AHOKAPCGJMA_TotalPoint - HNNAJJNMCKE_PrevPoint;
+            PHPANNCGOKC_GetPoint = AHOKAPCGJMA_TotalPoint - HNNAJJNMCKE_PrevPoint;
             BJJGECFMNIP_Rank = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[0];
             EKOEECDHABK_ExRanking = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[1];
             BEOKMNIPFBA_MedalItemId = JGEOBNENMAH.HHCJCDFCLOB.BEOKMNIPFBA_MedalItemId;
             ODOOKDGCKMF_MedalNum = FCLGIPFPIPH_DashBonus * JGEOBNENMAH.HHCJCDFCLOB.ODOOKDGCKMF_MedalNum;
             BGJDHCEOIDB_BattleClass = ev.CKCPAMDDNPF.EIMCIBOANHE_CurrentClass;
-            AKNELONELJK_Difficulty = ev.CKCPAMDDNPF.LBLOIOMNEIH_Diff;
+            AKNELONELJK_Difficulty = ev.CKCPAMDDNPF.LBLOIOMNEIH_Difficulty;
             OHDIGACEJPM_DifficultyBonus = ev.CKCPAMDDNPF.APEFEONDBKL_DiffBonus;
             GLOKIBHBNDN_PrevExPoint = ev.CKCPAMDDNPF.ONLIMGFHGBH_ExPt;
             IBNOJFPGLHI_NextExPoint = ev.CKCPAMDDNPF.CINCDFAOEOJ_NewExPoint;

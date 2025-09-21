@@ -6,7 +6,7 @@ public class HGOAIGFPCBC
 {
 	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x8
 	public string BHANMJKCCBC_BadgeText; // 0xC
-	public int PKNLMLDKCLM_AchievedCount; // 0x10
+	public int PKNLMLDKCLM_AchievedQuestCount; // 0x10
 	
 	// RVA: 0x1751ED4 Offset: 0x1751ED4 VA: 0x1751ED4
 	public HGOAIGFPCBC()
@@ -15,11 +15,11 @@ public class HGOAIGFPCBC
 	}
 
 	//// RVA: 0x1751EDC Offset: 0x1751EDC VA: 0x1751EDC
-	public void FBANBDCOEJL(LayoutQuestTab.eTabType INDDJNMPONH, bool APEPILNOJHL)
+	public void FBANBDCOEJL(LayoutQuestTab.eTabType _INDDJNMPONH_Type, bool APEPILNOJHL)
 	{
 		if (APEPILNOJHL)
-			QuestUtility.UpdateQuestData(INDDJNMPONH);
-		FBANBDCOEJL(QuestUtility.GetAchievedCount(INDDJNMPONH));
+			QuestUtility.UpdateQuestData(_INDDJNMPONH_Type);
+		FBANBDCOEJL(QuestUtility.GetAchievedCount(_INDDJNMPONH_Type));
 	}
 
 	//// RVA: 0x1752070 Offset: 0x1752070 VA: 0x1752070
@@ -33,10 +33,10 @@ public class HGOAIGFPCBC
 	}
 
 	//// RVA: 0x1751FB4 Offset: 0x1751FB4 VA: 0x1751FB4
-	public void FBANBDCOEJL(int HMFFHLPNMPH)
+	public void FBANBDCOEJL(int _HMFFHLPNMPH_Count)
 	{
-		PKNLMLDKCLM_AchievedCount = HMFFHLPNMPH;
-		if(HMFFHLPNMPH < 1)
+		PKNLMLDKCLM_AchievedQuestCount = _HMFFHLPNMPH_Count;
+		if(_HMFFHLPNMPH_Count < 1)
 		{
 			BEEIIJJKDBH_BadgeConstantId = 0;
 			BHANMJKCCBC_BadgeText = "";
@@ -44,7 +44,7 @@ public class HGOAIGFPCBC
 		else
 		{
 			BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
-			BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(HMFFHLPNMPH);
+			BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(_HMFFHLPNMPH_Count);
 		}
 	}
 }

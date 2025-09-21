@@ -331,9 +331,9 @@ namespace XeApp.Game.Menu
 				int fnd = -1;
 				for(int i = 0; i < m_limitedTalkData.Count; i++)
 				{
-					if(t < m_limitedTalkData[i].KJBGCLPMLCG_StartAt)
+					if(t < m_limitedTalkData[i].KJBGCLPMLCG_OpenedAt)
 					{
-						t = m_limitedTalkData[i].KJBGCLPMLCG_StartAt;
+						t = m_limitedTalkData[i].KJBGCLPMLCG_OpenedAt;
 						fnd = i;
 					}
 				}

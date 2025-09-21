@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 			{
 				TextInfo textInfo = new TextInfo();
 				EDOHBJAPLPF_JsonData info = infos[i];
-				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
+				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id/*id*/];
 				string str1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
 				string str2 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_jp, i, "");
 				string str3 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_rm, i, "");
@@ -125,9 +125,9 @@ namespace XeApp.Game.Common
 			StringBuilder str = new StringBuilder();
 			str.AppendFormat("{0}_{1:D8}.bytes", s_path, 0);
 			string name = str.ToString();
-			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
 				//0xAECED8
-				return x.OPFGFINHFCE_Name.Contains(name);
+				return x.OPFGFINHFCE_name.Contains(name);
 			});
 			if(file != null)
 			{

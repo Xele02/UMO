@@ -77,12 +77,12 @@ namespace XeApp.Game.Menu
 		{
 			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(info.JJBGOIMEIPF_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				MenuScene.Instance.ShowItemDetail(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt, null);
+				MenuScene.Instance.ShowItemDetail(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_item_count, null);
 			}
 			else
 			{
 				GCIJNCFDNON_SceneInfo data = new GCIJNCFDNON_SceneInfo();
-				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(info.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(info.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(data, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 			}
 		}
@@ -180,9 +180,9 @@ namespace XeApp.Game.Menu
 				});
 				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = setting.Data.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory;
 				int id = setting.Data.HBHMAKNGKFK_Items[0].NNFNGLJOKKF_ItemId;
-				m_textName.text = string.Format("{0}  {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
+				m_textName.text = string.Format("{0}  {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
 				m_textDesc.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, id);
-				m_numberCount.SetNumber(setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt, 0);
+				m_numberCount.SetNumber(setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count, 0);
 			}
 			if (setting.SpItems == null || setting.SpItems.Count < 1)
 			{
@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 				});
 				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = setting.SpItems[0].NPPNDDMPFJJ_ItemCategory;
 				int id = setting.SpItems[0].NNFNGLJOKKF_ItemId;
-				m_textOmake.text = string.Format(MessageManager.Instance.GetMessage("menu", "pop_pass_loginbonus_caution"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.SpItems[0].MBJIFDBEDAC_Cnt, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
+				m_textOmake.text = string.Format(MessageManager.Instance.GetMessage("menu", "pop_pass_loginbonus_caution"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.SpItems[0].MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
 				m_textOmake.horizontalOverflow = HorizontalWrapMode.Wrap;
 				m_textOmake.verticalOverflow = VerticalWrapMode.Truncate;
 				m_textOmake.resizeTextForBestFit = true;

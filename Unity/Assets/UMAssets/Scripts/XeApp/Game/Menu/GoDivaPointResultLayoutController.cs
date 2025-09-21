@@ -115,9 +115,9 @@ namespace XeApp.Game.Menu
 				m_imageDiff.uvRect = m_imageDiffRectList_6Line[viewEventResultData.AKNELONELJK_Difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
-			m_textEpisodeCount.text = Smart.Format(bk.GetMessageByLabel("event_reward_result_episodebonus_unit"), viewEventData.LIPIAPOGHIP_EpisodeBonus);
+			m_textEpisodeCount.text = Smart.Format(bk.GetMessageByLabel("event_reward_result_episodebonus_unit"), viewEventData.LIPIAPOGHIP_EpisodeNum);
 			m_textEpisodeRate.text = ""+(viewEventData.PFJMBKBEFMA_EpisodeRate - 100);
-			m_ScorePoint.SetNumber(viewEventData.KNIFCANOHOC_ScorePoint, 0);
+			m_ScorePoint.SetNumber(viewEventData.KNIFCANOHOC_score, 0);
 			m_basePointText.text = viewEventData.EJDJIBPKKNO_BasePoint.ToString();
 			m_textPointTotal.text = viewEventData.AHOKAPCGJMA_TotalPoint.ToString();
 			m_scoreBonusText.text = viewEventData.OPILAHLPJGH_ScoreBonus.ToString();

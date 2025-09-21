@@ -9,12 +9,12 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 {
 	public class KLKLEALABPN
 	{
-		public int PPFNGGCBJKC; // 0x8
+		public int PPFNGGCBJKC_id; // 0x8
 		public sbyte PPEGAKEIEGM_Enabled; // 0xC
-		public sbyte INDDJNMPONH; // 0xD
+		public sbyte INDDJNMPONH_Type; // 0xD
 		public int NKCNHKHGJHN_TalkType; // 0x10
 		public int CHOFDPDFPDC_ConfigValue; // 0x14 //DivaId
-		public long PDBPFJJCADD_StartAt; // 0x18
+		public long PDBPFJJCADD_open_at; // 0x18
 		public long FDBNFFNFOND_CloseAt; // 0x20
 
 		// RVA: 0x1CB5F60 Offset: 0x1CB5F60 VA: 0x1CB5F60
@@ -32,32 +32,32 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1CB5AE8 Offset: 0x1CB5AE8 VA: 0x1CB5AE8 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x1CB5B60 Offset: 0x1CB5B60 VA: 0x1CB5B60 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		PCKMEHLNOFO parser = PCKMEHLNOFO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		OCANCOENHML[] array = parser.EKDAACJJAPP;
 		for(int i = 0; i < array.Length; i++)
 		{
 			KLKLEALABPN data = new KLKLEALABPN();
-			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.INDDJNMPONH = (sbyte)array[i].GBJFNGCDKPM;
+			data.INDDJNMPONH_Type = (sbyte)array[i].GBJFNGCDKPM;
 			data.NKCNHKHGJHN_TalkType = (int)array[i].CHOIMHCMAHG;
 			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
-			data.PDBPFJJCADD_StartAt = array[i].PDBPFJJCADD;
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
 			// UMO : Update all talk to work in current year
-			long prevStart = data.PDBPFJJCADD_StartAt;
-			if(data.PDBPFJJCADD_StartAt != 0)
+			long prevStart = data.PDBPFJJCADD_open_at;
+			if(data.PDBPFJJCADD_open_at != 0)
 			{
-				DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_StartAt);
-				data.PDBPFJJCADD_StartAt = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
+				DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at);
+				data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
 			}
 			if(data.FDBNFFNFOND_CloseAt != 0)
 			{
@@ -68,7 +68,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 				}
 				else
 				{
-					data.FDBNFFNFOND_CloseAt = data.PDBPFJJCADD_StartAt + (data.FDBNFFNFOND_CloseAt - prevStart);
+					data.FDBNFFNFOND_CloseAt = data.PDBPFJJCADD_open_at + (data.FDBNFFNFOND_CloseAt - prevStart);
 				}
 			}
 			CDENCMNHNGA_table.Add(data);
@@ -77,7 +77,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1CB5E3C Offset: 0x1CB5E3C VA: 0x1CB5E3C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return false;
 	}

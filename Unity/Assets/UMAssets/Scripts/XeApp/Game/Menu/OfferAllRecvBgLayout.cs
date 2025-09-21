@@ -171,9 +171,9 @@ namespace XeApp.Game.Menu
 			});
 			RecordPlateUtility.ClearShowedList();
 			GameManager.Instance.InputEnabled = prevInput;
-			while(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.Count > 0)
+			while(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.Count > 0)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.RemoveAt(0);
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.RemoveAt(0);
 			}
 		}
 

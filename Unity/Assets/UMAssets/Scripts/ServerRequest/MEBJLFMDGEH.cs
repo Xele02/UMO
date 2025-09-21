@@ -12,9 +12,9 @@ public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Reque
 		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances; // 0x8
 
 		// RVA: 0x1310B4C Offset: 0x1310B4C VA: 0x1310B4C
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
 			BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
@@ -27,7 +27,7 @@ public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Reque
 
 	public List<long> AMOMNBEAHBF_InventoryIds; // 0x7C
 
-	public NPBEINILKFE NFEAMMJIMPG { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public NPBEINILKFE NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x131095C Offset: 0x131095C VA: 0x131095C Slot: 12
 	public override void DHLDNIEELHO()
@@ -38,7 +38,7 @@ public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Reque
 	// RVA: 0x1310A6C Offset: 0x1310A6C VA: 0x1310A6C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new NPBEINILKFE();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new NPBEINILKFE();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 			m_windowControl = GetComponentInParent<PopupWindowControl>();
 			m_pageSave = pageSave;
 			m_sceneData = sceneData;
-			m_limitOverData.KHEKNNFCAOI(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_Luck);
+			m_limitOverData.KHEKNNFCAOI_Init(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_luck);
 			m_sceneDetails.text = sceneData.BGJNIABLBDB_GetSceneDetail();
 			m_gachaInfoLayout.StartAnimGoStop(sceneData.IJIKIPDKCPP == 0 ? "02" : "01");
 			m_loadingFlag = 0;
@@ -393,7 +393,7 @@ namespace XeApp.Game.Menu
 			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
 			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
 			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
-			UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_Luck);
+			UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_luck);
 			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
 			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
 			for(int i = 0; i < sceneData.CMCKNKKCNDK_Status.spNoteExpected.Length - 1; i++)
@@ -425,7 +425,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[0], (SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
-				m_skillNameTexts[0].text = sceneData.PFHJFIHGCKP_CenterSkillName1;
+				m_skillNameTexts[0].text = sceneData.PFHJFIHGCKP_CenterSkillName;
 				m_skillNameTexts[0].alignment = TextAnchor.MiddleLeft;
 				m_skillDescriptTexts[0].alignment = TextAnchor.MiddleLeft;
 				m_skillLevelTexts[0].text = string.Format("Lv{0}", sceneData.DDEDANKHHPN_SkillLevel);
@@ -553,15 +553,15 @@ namespace XeApp.Game.Menu
 				m_skillDetailIconImages[3].enabled = false;
 			}
 			int j = 0;
-			for (int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
+			for (int i = 0; i < playerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
+				if(playerData.NBIGLBMHEDC_DivaList[i].IPJMPBANBPP_Enabled)
 				{
 					m_strBuilder.Clear();
-					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
+					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId);
 					m_compatibleDivaIconImages[j].enabled = true;
 					m_compatibleDivaIconImages[j].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_strBuilder.ToString()));
-					m_compatibleMaskIconImages[j].enabled = !sceneData.DCLLIDMKNGO_IsDivaCompatible(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
+					m_compatibleMaskIconImages[j].enabled = !sceneData.DCLLIDMKNGO_IsDivaCompatible(playerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId);
 					j++;
 				}
 			}
@@ -581,8 +581,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_episodeData.KHEKNNFCAOI(sceneData.KELFCMEOPPM_EpisodeId);
-				m_episodeName.text = m_episodeData.OPFGFINHFCE_Name;
+				m_episodeData.KHEKNNFCAOI_Init(sceneData.KELFCMEOPPM_EpisodeId);
+				m_episodeName.text = m_episodeData.OPFGFINHFCE_name;
 				m_episodeButton.Hidden = false;
 			}
 			m_sceneButton.Disable = isFriend || isDisableZoom;
@@ -611,10 +611,10 @@ namespace XeApp.Game.Menu
 		{
 			if(!isDisableLuckyLeaf)
 			{
-				m_limitOverData.KHEKNNFCAOI(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_Luck);
+				m_limitOverData.KHEKNNFCAOI_Init(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_luck);
 				if (m_limitOverData.LJHOOPJACPI_LeafMax != 0)
 				{
-					if(sceneData.MJBODMOLOBC_Luck > 0)
+					if(sceneData.MJBODMOLOBC_luck > 0)
 					{
 						return m_statuChangeAnimeLabel.Length;
 					}
@@ -642,7 +642,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA5F960 Offset: 0xA5F960 VA: 0xA5F960
 		private void OnShowCenterSkillDetails()
 		{
-			ShowSkillWindow(m_sceneData.PFHJFIHGCKP_CenterSkillName1, m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(false));
+			ShowSkillWindow(m_sceneData.PFHJFIHGCKP_CenterSkillName, m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(false));
 		}
 
 		// // RVA: 0xA5FD4C Offset: 0xA5FD4C VA: 0xA5FD4C
@@ -872,7 +872,7 @@ namespace XeApp.Game.Menu
 		private void OnShowLimitBreakPopup()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.MKHFCGPJPFI_LimitOverCount, m_sceneData.MJBODMOLOBC_Luck);
+			m_limitOverData.KHEKNNFCAOI_Init(m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.MKHFCGPJPFI_LimitOverCount, m_sceneData.MJBODMOLOBC_luck);
 			if(!m_limitOverData.EOBACDCDGOF_IsTerminate)
 			{
 				m_luckyLeafSetting.Setup(m_sceneData);
@@ -897,9 +897,9 @@ namespace XeApp.Game.Menu
 					if(type == PopupButton.ButtonType.Positive)
 					{
 						MNDAMOGGJBJ m = new MNDAMOGGJBJ();
-						m.KHEKNNFCAOI(null);
+						m.KHEKNNFCAOI_Init(null);
 						m.MDHKGJJBLNL();
-						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH_Cnt = m_limitOverData.IJEOIMGILCK });
+						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_id = m_limitOverData.MJNOAMAFNHA_CostItemId, HMFFHLPNMPH_Count = m_limitOverData.IJEOIMGILCK });
 						m.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
 					}
@@ -951,9 +951,9 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_sceneData.BCCHOBPJJKE_SceneId - 1];
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[m_sceneData.BCCHOBPJJKE_SceneId - 1];
 				m_sceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
-				m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_sceneData.MJBODMOLOBC_Luck);
+				m_limitOverData.KHEKNNFCAOI_Init(m_sceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_sceneData.MJBODMOLOBC_luck);
 				done = false;
 				MenuScene.Instance.LimitOverControl.ShowRelease(m_sceneData, m_limitOverData, () =>
 				{

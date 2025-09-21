@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
+					f.KHEKNNFCAOI_Init(friendManager.BFDEHIANFOG[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());

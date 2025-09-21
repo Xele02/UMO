@@ -11,9 +11,9 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDC3B78 Offset: 0xDC3B78 VA: 0xDC3B78
 		public FENCAJJBLBH CheckFalisification()
 		{
-			FENCAJJBLBH res = current_.NMNHBJIAPGG;
+			FENCAJJBLBH res = current_.NMNHBJIAPGG_CheckFalsification;
 			if (res == null)
-				res = record_.NMNHBJIAPGG;
+				res = record_.NMNHBJIAPGG_CheckFalsification;
 			return res;
 		}
 

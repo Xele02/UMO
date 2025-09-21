@@ -74,13 +74,13 @@ namespace XeApp.Game.Menu
 		{
 			m_view = view;
 			GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-			scene.KHEKNNFCAOI(view.plateNo, null, null, 0, 0, 0, false, 0, 0);
+			scene.KHEKNNFCAOI_Init(view.plateNo, null, null, 0, 0, 0, false, 0, 0);
 			MenuScene.Instance.SceneIconCache.Load(view.plateNo, view.data.JOKJBMJBLBB_Single ? 2 : 1, (IiconTexture texture) =>
 			{
 				//0x1A64214
 				texture.Set(m_imagePlate);
 			});
-			m_textPlateName.text = scene.OPFGFINHFCE_SceneName;
+			m_textPlateName.text = scene.OPFGFINHFCE_name;
 			m_textPointTitle.text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_check_pt");
 			m_textRankingTitle.text = string.Format(JpStringLiterals.StringLiteral_19432, m_view.rankingTitle);
 			m_indexPointMax = ((m_view.point.Count - 1) / m_textPointList.Length) + 1;

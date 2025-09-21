@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 				m_imageJacket.enabled = true;
 				texture.Set(m_imageJacket);
 			});
-			m_numScore.SetNumber(m_view.KNIFCANOHOC_Sc, 0);
+			m_numScore.SetNumber(m_view.KNIFCANOHOC_score, 0);
 			m_numExBattleScore.SetNumber(m_view.KDNCMJBDCLE_ExBattleScore, 0);
 			m_numExBattleHiScore.SetNumber(m_view.LDIODNEADGG_Hs, 0);
 			if(m_view.FFHMPNGJCLK_NewRecord)

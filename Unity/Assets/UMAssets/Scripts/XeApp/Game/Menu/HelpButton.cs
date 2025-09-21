@@ -45,43 +45,43 @@ namespace XeApp.Game.Menu
 		private Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int> m_eventHelpIdDict = new Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int>(); // 0x50
 		private Dictionary<int, HelpInfo> ButtonDispPlaceDict = new Dictionary<int, HelpInfo>()
 		{
-			{ 4, new HelpInfo() { pattern = 1, searchId = 101, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 5, new HelpInfo() { pattern = 4, searchId = 102, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 36, new HelpInfo() { pattern = 5, searchId = 1000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 55, new HelpInfo() { pattern = 5, searchId = 3000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 48, new HelpInfo() { pattern = 5, searchId = 2000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 107, new HelpInfo() { pattern = 5, searchId = 14000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 6, new HelpInfo() { pattern = 1, searchId = 103, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 12, new HelpInfo() { pattern = 1, searchId = 117, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 7, new HelpInfo() { pattern = 1, searchId = 104, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 31, new HelpInfo() { pattern = 2, searchId = 105, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 28, new HelpInfo() { pattern = 2, searchId = 107, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 30, new HelpInfo() { pattern = 1, searchId = 108, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 37, new HelpInfo() { pattern = 2, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 39, new HelpInfo() { pattern = 1, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 38, new HelpInfo() { pattern = 1, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 56, new HelpInfo() { pattern = 2, searchId = 110, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 61, new HelpInfo() { pattern = 6, searchId = 8001, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 64, new HelpInfo() { pattern = 7, searchId = 8000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 71, new HelpInfo() { pattern = 2, searchId = 112, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 72, new HelpInfo() { pattern = 2, searchId = 112, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 73, new HelpInfo() { pattern = 2, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 74, new HelpInfo() { pattern = 1, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 76, new HelpInfo() { pattern = 2, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 75, new HelpInfo() { pattern = 1, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 78, new HelpInfo() { pattern = 1, searchId = 114, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 79, new HelpInfo() { pattern = 2, searchId = 118, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 60, new HelpInfo() { pattern = 8, searchId = 115, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 86, new HelpInfo() { pattern = 10, searchId = 122, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 90, new HelpInfo() { pattern = 12, searchId = 122, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 87, new HelpInfo() { pattern = 9, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 96, new HelpInfo() { pattern = 2, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 94, new HelpInfo() { pattern = 1, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 80, new HelpInfo() { pattern = 11, searchId = 121, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 98, new HelpInfo() { pattern = 2, searchId = 124, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 88, new HelpInfo() { pattern = 2, searchId = 120, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 100, new HelpInfo() { pattern = 10, searchId = 127, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } },
-			{ 108, new HelpInfo() { pattern = 1, searchId = 104, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 } }
+			{ 4, new HelpInfo() { pattern = 1, searchId = 101, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 5, new HelpInfo() { pattern = 4, searchId = 102, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 36, new HelpInfo() { pattern = 5, searchId = 1000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 55, new HelpInfo() { pattern = 5, searchId = 3000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 48, new HelpInfo() { pattern = 5, searchId = 2000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 107, new HelpInfo() { pattern = 5, searchId = 14000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 6, new HelpInfo() { pattern = 1, searchId = 103, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 12, new HelpInfo() { pattern = 1, searchId = 117, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 7, new HelpInfo() { pattern = 1, searchId = 104, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 31, new HelpInfo() { pattern = 2, searchId = 105, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 28, new HelpInfo() { pattern = 2, searchId = 107, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 30, new HelpInfo() { pattern = 1, searchId = 108, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 37, new HelpInfo() { pattern = 2, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 39, new HelpInfo() { pattern = 1, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 38, new HelpInfo() { pattern = 1, searchId = 109, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 56, new HelpInfo() { pattern = 2, searchId = 110, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 61, new HelpInfo() { pattern = 6, searchId = 8001, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 64, new HelpInfo() { pattern = 7, searchId = 8000, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 71, new HelpInfo() { pattern = 2, searchId = 112, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 72, new HelpInfo() { pattern = 2, searchId = 112, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 73, new HelpInfo() { pattern = 2, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 74, new HelpInfo() { pattern = 1, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 76, new HelpInfo() { pattern = 2, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 75, new HelpInfo() { pattern = 1, searchId = 111, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 78, new HelpInfo() { pattern = 1, searchId = 114, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 79, new HelpInfo() { pattern = 2, searchId = 118, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 60, new HelpInfo() { pattern = 8, searchId = 115, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 86, new HelpInfo() { pattern = 10, searchId = 122, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 90, new HelpInfo() { pattern = 12, searchId = 122, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 87, new HelpInfo() { pattern = 9, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 96, new HelpInfo() { pattern = 2, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 94, new HelpInfo() { pattern = 1, searchId = 123, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 80, new HelpInfo() { pattern = 11, searchId = 121, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 98, new HelpInfo() { pattern = 2, searchId = 124, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 88, new HelpInfo() { pattern = 2, searchId = 120, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 100, new HelpInfo() { pattern = 10, searchId = 127, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } },
+			{ 108, new HelpInfo() { pattern = 1, searchId = 104, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None } }
 		}; // 0x54
 		private Vector2[] AnchorPosTbl = new Vector2[14]
 			{
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE306A4 Offset: 0xE306A4 VA: 0xE306A4
 		public static int FindHelpUniqueId(int searchId)
 		{
-			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD;
+			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			// UMO : adapted to return the newest help without date restriction, this could not match exactly registred event help, but it should be fine
 			long foundt = -1;
@@ -175,13 +175,13 @@ namespace XeApp.Game.Menu
 			{
 				if (hp[i].DIJHLDAIBCA == searchId)
 				{
-					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE+" "+hp[i].PLALNIIBLOF+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND_CloseAt).ToLongDateString());
-					//if(time >= hp[i].PDBPFJJCADD)
+					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE_name+" "+hp[i].PLALNIIBLOF_en+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND_CloseAt).ToLongDateString());
+					//if(time >= hp[i].PDBPFJJCADD_open_at)
 					if(hp[i].PDBPFJJCADD > foundt || foundt == -1)
 					{
 						//if(hp[i].FDBNFFNFOND_CloseAt >= time)
 						{
-							//return hp[i].OBGBAOLONDD;
+							//return hp[i].OBGBAOLONDD_UniqueId;
 							res = hp[i].OBGBAOLONDD;
 							foundt = hp[i].PDBPFJJCADD;
 						}

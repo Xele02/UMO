@@ -18,10 +18,10 @@ public class FPGEMAIAMBF_RewardData
 		public int FCDKJAKLGMB_TargetValue; // 0x8
 		public KPGOMKPPJEE CMCKNKKCNDK_Status; // 0xC
 		public string JDMIKEEIJFP = ""; // 0x10
-		public int KIJAPOFAGPN_GlobalItemId = 0; // 0x14
-		public short MHFBCINOJEE_ItemId; // 0x18
-		public byte HHACNFODNEF_Category; // 0x1A
-		public int JDLJPNMLFID = 0; // 0x1C
+		public int KIJAPOFAGPN_ItemId = 0; // 0x14
+		public short MHFBCINOJEE_Num; // 0x18 ItemId
+		public byte HHACNFODNEF_ItemCategory; // 0x1A
+		public int JDLJPNMLFID_ItemCount = 0; // 0x1C
 
 		// RVA: 0x13FBB38 Offset: 0x13FBB38 VA: 0x13FBB38
 		//public string LDBPEIMINJB() { }
@@ -29,11 +29,11 @@ public class FPGEMAIAMBF_RewardData
 		// RVA: 0x13FAEB0 Offset: 0x13FAEB0 VA: 0x13FAEB0
 		public void GONNICAJNLK(int EIBBIJNFMDJ, HDNKOFNBCEO_RewardInfo LIFCHFOPHDH)
 		{
-			KIJAPOFAGPN_GlobalItemId = LIFCHFOPHDH.FKNBLDPIPMC_GetGlobalId(EIBBIJNFMDJ);
-			MHFBCINOJEE_ItemId = (short)EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN_GlobalItemId);
-			HHACNFODNEF_Category = (byte)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN_GlobalItemId);
-			JDLJPNMLFID = LIFCHFOPHDH.KAINPNMMAEK(EIBBIJNFMDJ);
-			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI.FKMCHHDOAAB(KIJAPOFAGPN_GlobalItemId));
+			KIJAPOFAGPN_ItemId = LIFCHFOPHDH.FKNBLDPIPMC_GetGlobalId(EIBBIJNFMDJ);
+			MHFBCINOJEE_Num = (short)EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN_ItemId);
+			HHACNFODNEF_ItemCategory = (byte)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN_ItemId);
+			JDLJPNMLFID_ItemCount = LIFCHFOPHDH.KAINPNMMAEK(EIBBIJNFMDJ);
+			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI.FKMCHHDOAAB(KIJAPOFAGPN_ItemId));
 		}
 	}
 
@@ -45,10 +45,10 @@ public class FPGEMAIAMBF_RewardData
 	public List<LOIJICNJMKA> HFPMKBAANFO_ComboReward; // 0x10
 
 	//// RVA: 0x13FA620 Offset: 0x13FA620 VA: 0x13FA620
-	public void JMHCEMHPPCM(int _GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_Is6Line, int MNNHHJBBICA_EventType/* = 0*/)
+	public void JMHCEMHPPCM(int _GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool _LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
 	{
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo;
-		if (MNNHHJBBICA_EventType == 4)
+		if (_MNNHHJBBICA_GameEventType == 4)
 		{
 			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) == null)
 			{
@@ -66,16 +66,16 @@ public class FPGEMAIAMBF_RewardData
 		}
 		KEODKEGFDLD_FreeMusicInfo freemusicData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(_GHBPLHBNMBK_FreeMusicId);
 		int musicId = freemusicData.DLAEJOBELBH_MusicId;
-		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_Difficulty, LFGNLKKFOCD_Is6Line);
-		List<byte> rewardScoreList = LFGNLKKFOCD_Is6Line ? musicInfo.DKIIINIEKHP_RewardScoreL6 : musicInfo.JDIDBMEMKBC_RewardScore;
-		List<byte> rewardComboList = LFGNLKKFOCD_Is6Line ? musicInfo.JNNIOJIDNKM_RewardComboL6 : musicInfo.AGGFHNMMGMN_RewardCombo;
-		List<byte> rewardClearList = LFGNLKKFOCD_Is6Line ? musicInfo.LGBKKDOLOFP_RewardClearL6 : musicInfo.HNDPLCDMOJF_RewardClear;
-		ADDHLABEFKH otherInfo2 = freemusicData.EMJCHPDJHEI(LFGNLKKFOCD_Is6Line, AKNELONELJK_Difficulty);
+		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_Difficulty, _LFGNLKKFOCD_IsLine6);
+		List<byte> rewardScoreList = _LFGNLKKFOCD_IsLine6 ? musicInfo.DKIIINIEKHP_RewardScoreL6 : musicInfo.JDIDBMEMKBC_RewardScore;
+		List<byte> rewardComboList = _LFGNLKKFOCD_IsLine6 ? musicInfo.JNNIOJIDNKM_RewardComboL6 : musicInfo.AGGFHNMMGMN_RewardCombo;
+		List<byte> rewardClearList = _LFGNLKKFOCD_IsLine6 ? musicInfo.LGBKKDOLOFP_RewardClearL6 : musicInfo.HNDPLCDMOJF_RewardClear;
+		ADDHLABEFKH otherInfo2 = freemusicData.EMJCHPDJHEI(_LFGNLKKFOCD_IsLine6, AKNELONELJK_Difficulty);
 		PDONJHCHBAE_ScoreReward = new List<LOIJICNJMKA>();
 		for(int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
-			lo.FCDKJAKLGMB_TargetValue = otherInfo2.KNIFCANOHOC_RankScore[i];
+			lo.FCDKJAKLGMB_TargetValue = otherInfo2.KNIFCANOHOC_score[i];
 			lo.CMCKNKKCNDK_Status = i < rewardScoreList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i+4, rewardInfo);
 			PDONJHCHBAE_ScoreReward.Add(lo);
@@ -84,7 +84,7 @@ public class FPGEMAIAMBF_RewardData
 		for(int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
-			lo.FCDKJAKLGMB_TargetValue = otherInfo2.NLKEBAOBJCM_RankCombo[i];
+			lo.FCDKJAKLGMB_TargetValue = otherInfo2.NLKEBAOBJCM_combo[i];
 			lo.CMCKNKKCNDK_Status = i < rewardComboList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i + 8, rewardInfo);
 			HFPMKBAANFO_ComboReward.Add(lo);
@@ -101,13 +101,13 @@ public class FPGEMAIAMBF_RewardData
 	}
 
 	//// RVA: 0x13FB01C Offset: 0x13FB01C VA: 0x13FB01C
-	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int MNNHHJBBICA_GameEventType/* = 0*/)
+	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
 	{
 		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo = null;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;
-		if (MNNHHJBBICA_GameEventType == 4)
+		if (_MNNHHJBBICA_GameEventType == 4)
 		{
 			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) as HLEBAINCOME_EventScore;
 			if(ev != null)
@@ -136,7 +136,7 @@ public class FPGEMAIAMBF_RewardData
 		for(int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
-			data2.FCDKJAKLGMB_TargetValue = data.KNIFCANOHOC_RankScore[i];
+			data2.FCDKJAKLGMB_TargetValue = data.KNIFCANOHOC_score[i];
 			data2.CMCKNKKCNDK_Status = i < prevRewardScore[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			if(prevRewardScore[AKNELONELJK_Difficulty] <= i)
 			{
@@ -154,7 +154,7 @@ public class FPGEMAIAMBF_RewardData
 		for (int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
-			data2.FCDKJAKLGMB_TargetValue = data.NLKEBAOBJCM_RankCombo[i];
+			data2.FCDKJAKLGMB_TargetValue = data.NLKEBAOBJCM_combo[i];
 			data2.CMCKNKKCNDK_Status = i < prevRewardCombo[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			if (prevRewardCombo[AKNELONELJK_Difficulty] <= i)
 			{

@@ -240,22 +240,22 @@ namespace ExternLib
 
 				Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
 				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
-				newData.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes);
+				newData.IIEMACPEEBJ_Deserialize(blocks.Keys.ToList(), jsonRes);
 
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_PlayerName = "Friend";
+				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_name = "Friend";
 				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_Prof = "Cool friend";
 				{
 					JNMFKOHFAFB_PublicStatus publicBlock = newData.LBDOLHGDIEB_GetBlock("public_status") as JNMFKOHFAFB_PublicStatus;
 					// build sceneList
 					List<GCIJNCFDNON_SceneInfo> scenes = new List<GCIJNCFDNON_SceneInfo>();
-					for (int i = 0; i < newData.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count; i++)
+					for (int i = 0; i < newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes.Count; i++)
 					{
-						GCIJNCFDNON_SceneInfo IFGEJDMMAHE = new GCIJNCFDNON_SceneInfo();
-						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i].PPEGAKEIEGM_En == 2)
+						GCIJNCFDNON_SceneInfo IFGEJDMMAHE_Info = new GCIJNCFDNON_SceneInfo();
+						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2)
 						{
-							MMPBPOIFDAF_Scene.PMKOFEIONEG scene = newData.PNLOINMCCKH_Scene.OPIBAPEGCLA[i];
-							IFGEJDMMAHE.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
-							scenes.Add(IFGEJDMMAHE);
+							MMPBPOIFDAF_Scene.PMKOFEIONEG scene = newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[i];
+							IFGEJDMMAHE_Info.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+							scenes.Add(IFGEJDMMAHE_Info);
 						}
 					}
 					scenes.Sort((GCIJNCFDNON_SceneInfo a, GCIJNCFDNON_SceneInfo b) =>
@@ -266,14 +266,14 @@ namespace ExternLib
 						return res;
 					});
 
-					publicBlock.AFBMEMCHJCL_MainScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_Mb, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					publicBlock.AFBMEMCHJCL_MainScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_unlock, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
 					for (int i = 0; i < 4; i++)
 					{
 						for (int j = 0; j < scenes.Count; j++)
 						{
 							if (scenes[j].JGJFIJOCPAG_SceneAttr == i || i == 0)
 							{
-								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_Mb, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
+								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_AssistScenes[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_unlock, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
 								break;
 							}
 						}

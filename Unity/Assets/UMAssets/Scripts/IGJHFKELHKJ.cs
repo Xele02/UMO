@@ -11,7 +11,7 @@ public class IGJHFKELHKJ
         public uint AAFDKMODECB; // 0x18
         public bool CPBPOIMHIML; // 0x1C
 
-        public uint IOIMHJAOKOO { get { return FBGGEFFJJHB_xor ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB_xor; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
+        public uint IOIMHJAOKOO_Hash { get { return FBGGEFFJJHB_xor ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB_xor; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
     }
     
 	private const int BIAOPOMKMJE = 0x28747411;
@@ -20,19 +20,19 @@ public class IGJHFKELHKJ
 	private string JHJMNLMNPGO_BasePath; // 0xC
 
 	// // RVA: 0x11F4DB4 Offset: 0x11F4DB4 VA: 0x11F4DB4
-	public HPJEDLPEJLF LBDOLHGDIEB(uint IOIMHJAOKOO)
+	public HPJEDLPEJLF LBDOLHGDIEB(uint _IOIMHJAOKOO_Hash)
 	{
-		if(!BEIEHPNODAM.ContainsKey(IOIMHJAOKOO))
+		if(!BEIEHPNODAM.ContainsKey(_IOIMHJAOKOO_Hash))
 			return null;
-		return BEIEHPNODAM[IOIMHJAOKOO];
+		return BEIEHPNODAM[_IOIMHJAOKOO_Hash];
 	}
 
 	// // RVA: 0x11F4E74 Offset: 0x11F4E74 VA: 0x11F4E74
-	public void IDJJFHFPNFG(uint IOIMHJAOKOO)
+	public void IDJJFHFPNFG(uint _IOIMHJAOKOO_Hash)
 	{
-		if(!BEIEHPNODAM.ContainsKey(IOIMHJAOKOO))
+		if(!BEIEHPNODAM.ContainsKey(_IOIMHJAOKOO_Hash))
 			return;
-		BEIEHPNODAM[IOIMHJAOKOO].CPBPOIMHIML = true;
+		BEIEHPNODAM[_IOIMHJAOKOO_Hash].CPBPOIMHIML = true;
 	}
 
 	// // RVA: 0x11F4F48 Offset: 0x11F4F48 VA: 0x11F4F48
@@ -47,12 +47,12 @@ public class IGJHFKELHKJ
 	}
 
 	// // RVA: 0x11F5114 Offset: 0x11F5114 VA: 0x11F5114
-	// public void IKIPLMFOCFF(uint IOIMHJAOKOO) { }
+	// public void IKIPLMFOCFF(uint _IOIMHJAOKOO_Hash) { }
 
 	// // RVA: 0x11F51E8 Offset: 0x11F51E8 VA: 0x11F51E8
-	public void LBBOGOBBAAD(HPJEDLPEJLF KOGBMDOONFA)
+	public void LBBOGOBBAAD(HPJEDLPEJLF _KOGBMDOONFA_Info)
 	{
-		BEIEHPNODAM.Add(KOGBMDOONFA.IOIMHJAOKOO, KOGBMDOONFA);
+		BEIEHPNODAM.Add(_KOGBMDOONFA_Info.IOIMHJAOKOO_Hash, _KOGBMDOONFA_Info);
 	}
 
 	// // RVA: 0x11F5320 Offset: 0x11F5320 VA: 0x11F5320
@@ -82,12 +82,12 @@ public class IGJHFKELHKJ
 					for(int i = 0; i < val; i++)
 					{
 						HPJEDLPEJLF data = new HPJEDLPEJLF();
-						data.IOIMHJAOKOO = b.ReadUInt32();
+						data.IOIMHJAOKOO_Hash = b.ReadUInt32();
 						b.ReadUInt32();
 						data.JMGLAOBOAHM = b.ReadInt64();
 						data.CPBPOIMHIML = false;
 						data.LGEGIKJGCCA = b.ReadInt64();
-						BEIEHPNODAM.Add(data.IOIMHJAOKOO, data);
+						BEIEHPNODAM.Add(data.IOIMHJAOKOO_Hash, data);
 					}
 				}
 			}
@@ -110,12 +110,12 @@ public class IGJHFKELHKJ
 					for (int i = 0; i < val; i++)
 					{
 						HPJEDLPEJLF data = new HPJEDLPEJLF();
-						data.IOIMHJAOKOO = b.ReadUInt32();
+						data.IOIMHJAOKOO_Hash = b.ReadUInt32();
 						b.ReadUInt32();
 						data.JMGLAOBOAHM = b.ReadInt64();
 						data.CPBPOIMHIML = false;
 						data.LGEGIKJGCCA = b.ReadInt64();
-						BEIEHPNODAM.Add(data.IOIMHJAOKOO, data);
+						BEIEHPNODAM.Add(data.IOIMHJAOKOO_Hash, data);
 					}
 				}
 			}

@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1791F24 Offset: 0x1791F24 VA: 0x1791F24
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{
-			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0x1792ABC
 				return info.param.id == _.AHHJLDLAPAN_DivaId;
@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			int divaId = 0;
 			if(diva != null)
 			{
-				SetDivaName(diva.OPFGFINHFCE_Name);
+				SetDivaName(diva.OPFGFINHFCE_name);
 				SetDivaImage(diva.AHHJLDLAPAN_DivaId);
 				divaId = diva.AHHJLDLAPAN_DivaId;
 				if(divaId == 9)

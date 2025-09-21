@@ -704,7 +704,7 @@ namespace XeApp.Game.Menu
 						return;
 					});
 				};
-				itemId = item.KIJAPOFAGPN_ItemFullId;
+				itemId = item.KIJAPOFAGPN_ItemId;
 			}
 			if(itemId == 0 || !TryInstall(itemId))
 			{
@@ -727,7 +727,7 @@ namespace XeApp.Game.Menu
 			m_strBuilder.Clear();
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-            k.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), cat);
+            k.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), cat);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
 			{
 				string str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgFloor);

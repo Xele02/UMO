@@ -54,14 +54,14 @@ namespace XeApp.Game.Menu
 				Reset();
 			else
 			{
-				SetDivaName(divaData.OPFGFINHFCE_Name);
+				SetDivaName(divaData.OPFGFINHFCE_name);
 				SetDivaSkillLevel(divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
 				int now = divaData.HMBECPGHPOE_DivaExps[musicId - 1] - a.PMBFNFOCNAJ_CurLevelMusicExp;
-				int max = a.PBGFIOONCMB_NextLevelMusicExp - a.PMBFNFOCNAJ_CurLevelMusicExp;
+				int max = a.PBGFIOONCMB_LevelMaxExp - a.PMBFNFOCNAJ_CurLevelMusicExp;
 				SetDivaExp(now, max);
 				m_boostExpIcon.enabled = isBoostExp;
 				SetGaugeValue(max < 1 ? 0 : (int)(now * 100.0f / max));
-				if (a.NBHEBLNHOJO_IsMax)
+				if (a.NBHEBLNHOJO_IsMaxLevel)
 				{
 					SwitchBarStatus(eGaugeStatus.Max);
 					SetUnlockText("");

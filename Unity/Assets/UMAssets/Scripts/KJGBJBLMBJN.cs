@@ -2,17 +2,17 @@
 public class KJGBJBLMBJN
 {
 	public BLHNHKMMPAD HBODCMLFDOB_Result = new BLHNHKMMPAD(); // 0x8
-	public string OPFGFINHFCE_Name; // 0xC
+	public string OPFGFINHFCE_name; // 0xC
 	public int BHCIFFILAKJ_Strength; // 0x10
 	public int PCPKGJIMLGO_Crypted; // 0x14
 
 	public int PBJLLAOJMAK_PId { get { return PCPKGJIMLGO_Crypted ^ 0x749f717e; } set { PCPKGJIMLGO_Crypted = value ^ 0x749f717e; } } //0x1A02F00 FOAOPKGHJGM 0x1A02F14 JGEILGLALBP
 
 	// RVA: 0x1A02F28 Offset: 0x1A02F28 VA: 0x1A02F28
-	public void LHPDDGIJKNB()
+	public void LHPDDGIJKNB_Reset()
     {
         HBODCMLFDOB_Result.LHPDDGIJKNB_Reset();
-        OPFGFINHFCE_Name = "";
+        OPFGFINHFCE_name = "";
         BHCIFFILAKJ_Strength = 0;
         PBJLLAOJMAK_PId = 0;
     }
@@ -22,7 +22,7 @@ public class KJGBJBLMBJN
 	{
 		if(!HBODCMLFDOB_Result.AGBOGBEOFME(OIKJFMGEICL.HBODCMLFDOB_Result))
 			return false;
-		if(OPFGFINHFCE_Name != OIKJFMGEICL.OPFGFINHFCE_Name)
+		if(OPFGFINHFCE_name != OIKJFMGEICL.OPFGFINHFCE_name)
 			return false;
 		if(PCPKGJIMLGO_Crypted != OIKJFMGEICL.PCPKGJIMLGO_Crypted)
 			return false;
@@ -32,10 +32,10 @@ public class KJGBJBLMBJN
 	}
 
 	// // RVA: 0x1A03064 Offset: 0x1A03064 VA: 0x1A03064
-	public void ODDIHGPONFL(KJGBJBLMBJN OIKJFMGEICL)
+	public void ODDIHGPONFL_Copy(KJGBJBLMBJN OIKJFMGEICL)
 	{
-		OPFGFINHFCE_Name = OIKJFMGEICL.OPFGFINHFCE_Name;
-		HBODCMLFDOB_Result.ODDIHGPONFL(OIKJFMGEICL.HBODCMLFDOB_Result);
+		OPFGFINHFCE_name = OIKJFMGEICL.OPFGFINHFCE_name;
+		HBODCMLFDOB_Result.ODDIHGPONFL_Copy(OIKJFMGEICL.HBODCMLFDOB_Result);
 		PCPKGJIMLGO_Crypted = OIKJFMGEICL.PCPKGJIMLGO_Crypted;
 		BHCIFFILAKJ_Strength = OIKJFMGEICL.BHCIFFILAKJ_Strength;
 	}
@@ -43,9 +43,9 @@ public class KJGBJBLMBJN
 	// // RVA: 0x1A030E8 Offset: 0x1A030E8 VA: 0x1A030E8
 	public EDOHBJAPLPF_JsonData OKJPIBHMKMJ()
 	{
-		EDOHBJAPLPF_JsonData res = HBODCMLFDOB_Result.NOJCMGAFAAC();
+		EDOHBJAPLPF_JsonData res = HBODCMLFDOB_Result.NOJCMGAFAAC_ToJsonData();
 		res["pid"] = PBJLLAOJMAK_PId;
-		res["name"] = OPFGFINHFCE_Name;
+		res["name"] = OPFGFINHFCE_name;
 		res["strg"] = BHCIFFILAKJ_Strength;
 		return res;
 	}

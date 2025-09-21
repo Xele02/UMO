@@ -225,11 +225,11 @@ namespace XeApp.Game.RhythmGame
 			int wavId = 0;
 			if(musicInfo.isFreeMode)
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId).KEFGPJBKAOD_BgId;
 			}
 			else
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId).KEFGPJBKAOD_BgId;
 			}
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
@@ -305,11 +305,11 @@ namespace XeApp.Game.RhythmGame
 			int stageId = 0;
 			if (music.isFreeMode)
 			{
-				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
+				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KEFGPJBKAOD_BgId;
 			}
 			else
 			{
-				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
+				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KEFGPJBKAOD_BgId;
 			}
 
 			PNGOLKLFFLH p = new PNGOLKLFFLH();

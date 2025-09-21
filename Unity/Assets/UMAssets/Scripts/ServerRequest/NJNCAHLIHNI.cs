@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long IFNLEKOILPM, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long _IFNLEKOILPM_UpdatedAt, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 [System.Obsolete("Use NJNCAHLIHNI_GetPlayerData", true)]
 public class NJNCAHLIHNI { }
@@ -13,7 +13,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		public int EHGBICNIBKE_PlayerId; // 0x8
 		public long IFNLEKOILPM_UpdatedAt; // 0x10
 		public EDOHBJAPLPF_JsonData HJDBGMMPPEF_PlayerData; // 0x18
-		public long IFCJDGINBGF; // 0x20
+		public long IFCJDGINBGF_facebook_uid; // 0x20
 	}
 
 	public class JFNMOPPICNP
@@ -22,23 +22,23 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	}
 
 	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
-	public List<string> HHIHCJKLJFF_BlockNames; // 0x80
+	public List<string> HHIHCJKLJFF_Names; // 0x80
 	public const int GLOLJBMGDNP = 50;
-	public MEIEDGPOMOO PINPBOCDKLI; // 0x84
+	public MEIEDGPOMOO PINPBOCDKLI_OnPlayerCb; // 0x84
 
-	public JFNMOPPICNP NFEAMMJIMPG { get; set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } //0x18ABEC8 HGPAELCGELL
+	public JFNMOPPICNP NFEAMMJIMPG_Result { get; set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x18ABEC8 HGPAELCGELL
 
 	// RVA: 0x18ABC90 Offset: 0x18ABC90 VA: 0x18ABC90 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI_PlayerIds.ToArray(), HHIHCJKLJFF_BlockNames.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI_PlayerIds.ToArray(), HHIHCJKLJFF_Names.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x18ABE0C Offset: 0x18ABE0C VA: 0x18ABE0C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = null;
+		NFEAMMJIMPG_Result = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);
 	}
 
@@ -63,17 +63,17 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 			d.HJDBGMMPPEF_PlayerData = p["player_data"];
 			res.AIGKNOKPMEJ_Players.Add(d);
 		}
-		if(PINPBOCDKLI != null)
+		if(PINPBOCDKLI_OnPlayerCb != null)
 		{
 			for(int i = 0; i < res.AIGKNOKPMEJ_Players.Count; i++)
 			{
-				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_BlockNames, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
+				bool b = PINPBOCDKLI_OnPlayerCb(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_Names, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
 				if(!b)
 				{
 					DLKLLHPLANH = true;
 				}
 			}
 		}
-		NFEAMMJIMPG = res;
+		NFEAMMJIMPG_Result = res;
 	}
 }

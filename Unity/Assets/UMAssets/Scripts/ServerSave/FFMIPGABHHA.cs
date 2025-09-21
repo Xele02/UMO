@@ -9,17 +9,17 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	public const long BBEGLBMOBOF_xorl = 0x77ccefaa9;
 	public static string POFDDFCGEGP = "_"; // 0x0
 	public string IOIMHJAOKOO_Hash; // 0x24
-	private long KLAPHOKNEDG_TimeCrypted; // 0x28
+	private long KLAPHOKNEDG_DateCrypted; // 0x28
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG_TimeCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_TimeCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG_DateCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_DateCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
-	public static string CAOGDCBPBAN(string MDADLCOCEBN, int _EHDDADDKMFI_f_id, int _FEOKKEPAIBB_diff)
+	public static string CAOGDCBPBAN(string _MDADLCOCEBN_session_id, int _EHDDADDKMFI_f_id, int _FEOKKEPAIBB_diff)
 	{
 		StringBuilder str = new StringBuilder();
-		str.Append(MDADLCOCEBN);
+		str.Append(_MDADLCOCEBN_session_id);
 		str.Append('-');
 		str.Append(_EHDDADDKMFI_f_id);
 		str.Append('-');
@@ -32,11 +32,11 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E4E1C Offset: 0x14E4E1C VA: 0x14E4E1C
 	public FFMIPGABHHA_SaveHash()
 	{
-		KMBPACJNEOF();
+		KMBPACJNEOF_Reset();
 	}
 
 	// // RVA: 0x14E4E48 Offset: 0x14E4E48 VA: 0x14E4E48 Slot: 4
-	public override void KMBPACJNEOF()
+	public override void KMBPACJNEOF_Reset()
 	{
 		BEBJKJKBOGH_Date = 0;
 		AFNJCFEKFDD_Dirty = 0;
@@ -44,10 +44,10 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14E4EC8 Offset: 0x14E4EC8 VA: 0x14E4EC8 Slot: 5
-	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long _MCKEOKFMLAH_SaveId)
 	{
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
-		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;
 		data[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
 		data["hash"] = IOIMHJAOKOO_Hash;
 		data["date"] = BEBJKJKBOGH_Date;
@@ -102,5 +102,5 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14E56AC Offset: 0x14E56AC VA: 0x14E56AC Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long _MCKEOKFMLAH_SaveId);
 }

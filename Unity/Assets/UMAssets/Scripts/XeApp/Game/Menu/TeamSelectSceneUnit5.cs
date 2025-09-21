@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 			if(m_isGoDivaEvent)
 			{
 				BBOPDOIIOGM b = new BBOPDOIIOGM();
-				b.KHEKNNFCAOI();
+				b.KHEKNNFCAOI_Init();
 				int id_ = b.EPCHEDJFAON_SelDiva;
 				if(id_ < 2)
 					id_ = 1;
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+				if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None)
 				{
 					m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId);
 				}
@@ -769,7 +769,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8406C Offset: 0xA8406C VA: 0xA8406C
 		private void UpdateEpisodeBonusList()
 		{
-			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 || 
+			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None || 
 				Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 				return;
 			if (m_eventCtrl == null)

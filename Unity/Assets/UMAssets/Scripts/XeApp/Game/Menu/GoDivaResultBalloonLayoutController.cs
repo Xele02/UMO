@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			StringBuilder str = new StringBuilder();
 			str.AppendFormat("diva{0:D3}", divaId);
 			MessageBank bk = MessageManager.Instance.GetBank(str.ToString());
-			m_textName.text = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].OPFGFINHFCE_Name;
+			m_textName.text = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1].OPFGFINHFCE_name;
 			str.Clear();
 			str.AppendFormat("go_diva_result_{0:D2}", balloonType);
 			m_text.text = bk.GetMessageByLabel(str.ToString());

@@ -218,21 +218,21 @@ namespace XeApp.Game.Menu
 				t = Mathf.Max(t, valkyrieList[i].DJJGNDCMNHF_BonusValue);
 			}
 			m_loadCount++;
-			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[0].IFGEJDMMAHE_ValkInfo.GPPEFLKGGGJ_ValkyrieId, valkyrieList[0].IFGEJDMMAHE_ValkInfo.GCCNMFHELCB_Form, (IiconTexture texture) =>
+			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[0].IFGEJDMMAHE_Info.GPPEFLKGGGJ_ValkyrieId, valkyrieList[0].IFGEJDMMAHE_Info.GCCNMFHELCB_Form, (IiconTexture texture) =>
 			{
 				//0xA49E88
 				texture.Set(cell.valImage1);
 				m_loadedCount++;
 			});
 			m_loadCount++;
-			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[1].IFGEJDMMAHE_ValkInfo.GPPEFLKGGGJ_ValkyrieId, valkyrieList[1].IFGEJDMMAHE_ValkInfo.GCCNMFHELCB_Form, (IiconTexture texture) =>
+			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[1].IFGEJDMMAHE_Info.GPPEFLKGGGJ_ValkyrieId, valkyrieList[1].IFGEJDMMAHE_Info.GCCNMFHELCB_Form, (IiconTexture texture) =>
 			{
 				//0xA49FB0
 				texture.Set(cell.valImage2);
 				m_loadedCount++;
 			});
 			m_loadCount++;
-			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[2].IFGEJDMMAHE_ValkInfo.GPPEFLKGGGJ_ValkyrieId, valkyrieList[2].IFGEJDMMAHE_ValkInfo.GCCNMFHELCB_Form, (IiconTexture texture) =>
+			GameManager.Instance.ValkyrieIconCache.LoadPortraitIcon(valkyrieList[2].IFGEJDMMAHE_Info.GPPEFLKGGGJ_ValkyrieId, valkyrieList[2].IFGEJDMMAHE_Info.GCCNMFHELCB_Form, (IiconTexture texture) =>
 			{
 				//0xA4A0D8
 				texture.Set(cell.valImage3);
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 			bool b2 = false;
 			for(int i = 0; i < valkyrieList.Count; i++)
 			{
-				b2 |= valkyrieList[i].IFGEJDMMAHE_ValkInfo.FJODMPGPDDD_Unlocked;
+				b2 |= valkyrieList[i].IFGEJDMMAHE_Info.FJODMPGPDDD_Unlocked;
 			}
 			cell.bonusMaxText3.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_episodebonus_max"), t);
 			cell.SetBouns(cell.bonusText3, m_unitBonusInfo.KMEDEGMLEBF_UnitBonusValkyrie, b, b2);
@@ -269,21 +269,21 @@ namespace XeApp.Game.Menu
 				t2 = Mathf.Max(t2, costumeList[i].DJJGNDCMNHF_BonusValue);
 			}
 			m_loadCount++;
-			GameManager.Instance.CostumeIconCache.Load(costumeList[0].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, costumeList[0].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
+			GameManager.Instance.CostumeIconCache.Load(costumeList[0].IFGEJDMMAHE_Info.AHHJLDLAPAN_DivaId, costumeList[0].IFGEJDMMAHE_Info.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 			{
 				//0xA4A200
 				texture.Set(cell.cosImage1);
 				m_loadedCount++;
 			});
 			m_loadCount++;
-			GameManager.Instance.CostumeIconCache.Load(costumeList[1].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, costumeList[1].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
+			GameManager.Instance.CostumeIconCache.Load(costumeList[1].IFGEJDMMAHE_Info.AHHJLDLAPAN_DivaId, costumeList[1].IFGEJDMMAHE_Info.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 			{
 				//0xA4A328
 				texture.Set(cell.cosImage2);
 				m_loadedCount++;
 			});
 			m_loadCount++;
-			GameManager.Instance.CostumeIconCache.Load(costumeList[2].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, costumeList[2].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
+			GameManager.Instance.CostumeIconCache.Load(costumeList[2].IFGEJDMMAHE_Info.AHHJLDLAPAN_DivaId, costumeList[2].IFGEJDMMAHE_Info.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 			{
 				//0xA4A450
 				texture.Set(cell.cosImage3);
@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 			bool b2 = false;
 			for(int i = 0; i < costumeList.Count; i++)
 			{
-				b2 |= costumeList[i].IFGEJDMMAHE_CostumeInfo.FJODMPGPDDD_Unlocked;
+				b2 |= costumeList[i].IFGEJDMMAHE_Info.FJODMPGPDDD_Unlocked;
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			cell.bonusMaxText2.text = string.Format(bk.GetMessageByLabel("popup_episodebonus_max"), t2);
@@ -309,9 +309,9 @@ namespace XeApp.Game.Menu
 		{
 			cell.cellType = CellType.Episode;
 			cell.SetCellType(CellType.Episode);
-			cell.nameText1.text = episodeData.OPFGFINHFCE_Name;
+			cell.nameText1.text = episodeData.OPFGFINHFCE_name;
 			CIKHPBBNEIM.ODGCADPPIFA c = new CIKHPBBNEIM.ODGCADPPIFA();
-			List<CIKHPBBNEIM.ODGCADPPIFA> l = m_unitBonusInfo.MBPCEBPHOBB.GGHMLFOFELH(episodeData.PPFNGGCBJKC_Id).FLJNOOPOAGI;
+			List<CIKHPBBNEIM.ODGCADPPIFA> l = m_unitBonusInfo.MBPCEBPHOBB.GGHMLFOFELH(episodeData.PPFNGGCBJKC_id).FLJNOOPOAGI;
 			bool isUse = false;
 			bool b = false;
 			bool b2 = false;
@@ -327,9 +327,9 @@ namespace XeApp.Game.Menu
 				b2 |= l[i].IADCHIFJHOJ_Unlocked;
 			}
 			cell.bonusMaxText1.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_episodebonus_max"), t);
-			cell.episodeId = episodeData.PPFNGGCBJKC_Id;
+			cell.episodeId = episodeData.PPFNGGCBJKC_id;
 			m_loadCount++;
-			GameManager.Instance.EpisodeIconCache.LoadBg(episodeData.PPFNGGCBJKC_Id, (IiconTexture texture) =>
+			GameManager.Instance.EpisodeIconCache.LoadBg(episodeData.PPFNGGCBJKC_id, (IiconTexture texture) =>
 			{
 				//0xA4A578
 				texture.Set(cell.sceneImage);

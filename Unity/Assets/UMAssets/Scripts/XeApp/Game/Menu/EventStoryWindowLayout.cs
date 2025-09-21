@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 			m_view = new DKKPBBBDKMJ();
 			m_seriesDataList = new List<DKKPBBBDKMJ.AGAAGMGKNCO>();
 			m_scroll = m_scrollList.transform.GetComponent<ScrollRect>();
-			m_view.KHEKNNFCAOI();
+			m_view.KHEKNNFCAOI_Init();
 			InittabList();
 			m_selectSeries = Series.OTHER;
 			SetInfoTab(0);
@@ -403,7 +403,7 @@ namespace XeApp.Game.Menu
 			if(isTrans)
 			{
 				CCAAJNJGNDO data = new CCAAJNJGNDO();
-				data.KHEKNNFCAOI_InitFromEventId(eventId);
+				data.KHEKNNFCAOI_Init(eventId);
 				EventStoryArgs args = new EventStoryArgs(data);
 				MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, args, true);
 			}

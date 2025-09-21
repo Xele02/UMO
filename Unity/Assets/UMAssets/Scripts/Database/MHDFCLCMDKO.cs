@@ -53,13 +53,13 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x132AE98 Offset: 0x132AE98 VA: 0x132AE98 Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
     {
 		CKADCLJDCJK_EnemyList.Clear();
 	}
 
 	// // RVA: 0x132AF10 Offset: 0x132AF10 VA: 0x132AF10 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
     {
 		NHADPDNKGIE parser = NHADPDNKGIE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		FJGJEJDJHEG(parser);
@@ -67,7 +67,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		TodoLogger.LogError(TodoLogger.DbJson, "Energy IIEMACPEEBJ");
 		return true;
@@ -92,7 +92,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x132B190 Offset: 0x132B190 VA: 0x132B190
-	// private bool FJGJEJDJHEG(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE) { }
+	// private bool FJGJEJDJHEG(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// // RVA: 0x132B5F8 Offset: 0x132B5F8 VA: 0x132B5F8 Slot: 11
 	public override uint CAOGDCBPBAN()

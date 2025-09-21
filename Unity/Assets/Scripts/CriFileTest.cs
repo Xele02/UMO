@@ -14,7 +14,9 @@ class CriFileTest : MonoBehaviour
 {   
     HcaAudioStream audioStream;
     Stream inputStream;
+#if AA
     int curPos = 0;
+#endif
     static float bytesToFloat(byte firstByte, byte secondByte)
     {
         // convert two bytes to one short (little endian)

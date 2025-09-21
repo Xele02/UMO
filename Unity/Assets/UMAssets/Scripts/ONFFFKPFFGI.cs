@@ -16,7 +16,7 @@ public class ONFFFKPFFGI
 	public List<ABBFICCGNOG> FPCLGFKEEFE { get { return LMMLAMKOAKA; } } //0xCAE5D8 FPNPEAAPJCL
 
 	// RVA: 0xCAE5E0 Offset: 0xCAE5E0 VA: 0xCAE5E0
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
         JADNGGIOOJH.PCODDPDFLHK();
         BJLEOACLGBO();
@@ -33,14 +33,14 @@ public class ONFFFKPFFGI
             JKMLBONMAHD_RichBanner.OIDOINPHPOE dbRich = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA_table[i];
             if(dbRich.PPEGAKEIEGM_Enabled > 1)
             {
-                if(CDCKLGCKHFG < dbRich.PDBPFJJCADD && time >= dbRich.PDBPFJJCADD)
+                if(CDCKLGCKHFG < dbRich.PDBPFJJCADD_open_at && time >= dbRich.PDBPFJJCADD_open_at)
                 {
                     if(dbRich.FDBNFFNFOND_CloseAt >= time)
                     {
                         if(dbRich.FJOLNJLLJEJ_Rank <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                         {
                             ABBFICCGNOG data = new ABBFICCGNOG();
-                            data.DCHDFOIHMJL = dbRich.KNHOMNONOEB;
+                            data.DCHDFOIHMJL = dbRich.KNHOMNONOEB_AssetId;
                             LMMLAMKOAKA.Add(data);
                         }
                     }
@@ -48,15 +48,15 @@ public class ONFFFKPFFGI
             }
         }
         CDCKLGCKHFG = time;
-        JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI = time;
+        JADNGGIOOJH.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime = time;
     }
 
 	// // RVA: 0xCAEA18 Offset: 0xCAEA18 VA: 0xCAEA18
-	private long JPAICCMDGHD(long JHNMKKNEENE)
+	private long JPAICCMDGHD(long _JHNMKKNEENE_Time)
     {
         long t = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime;
-        long t2 = Math.Max(t, JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI);
-        if(JHNMKKNEENE < t2)
+        long t2 = Math.Max(t, JADNGGIOOJH.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime);
+        if(_JHNMKKNEENE_Time < t2)
         {
             return 0;
         }
@@ -68,7 +68,7 @@ public class ONFFFKPFFGI
     {
         long t = JPAICCMDGHD(CDCKLGCKHFG);
         CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime = t;
-        JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI = t;
+        JADNGGIOOJH.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime = t;
         JADNGGIOOJH.HJMKBCFJOOH();
     }
 }

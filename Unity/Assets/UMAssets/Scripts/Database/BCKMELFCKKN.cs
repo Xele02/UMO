@@ -7,11 +7,11 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 {
 	public class ALLFFCNKFBG
 	{
-		public short PPFNGGCBJKC_Id; // 0x8
+		public short PPFNGGCBJKC_id; // 0x8
 		public sbyte PPEGAKEIEGM_Enabled; // 0xA
 		public sbyte NCGNCEOOBGP_EventType; // 0xB
 		public int[] HFLGGIBMEOL; // 0xC
-		public long KJBGCLPMLCG_Start; // 0x10
+		public long KJBGCLPMLCG_OpenedAt; // 0x10
 		public long GJFPFFBAKGK_CloseAt; // 0x18
 		public string ADCMNODJBGJ_Title; // 0x20
 		public string JONNCMDGMKA_Message; // 0x24
@@ -28,12 +28,12 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0xC6F9D8 Offset: 0xC6F9D8 VA: 0xC6F9D8
-	public ALLFFCNKFBG LBDOLHGDIEB_GetTips(int PPFNGGCBJKC)
+	public ALLFFCNKFBG LBDOLHGDIEB_GetTips(int _PPFNGGCBJKC_id)
 	{
 		return CDENCMNHNGA_table.Find((ALLFFCNKFBG _GHPLINIACBB_x) =>
 		{
 			//0xC7006C
-			return PPFNGGCBJKC == _GHPLINIACBB_x.PPFNGGCBJKC_Id;
+			return _PPFNGGCBJKC_id == _GHPLINIACBB_x.PPFNGGCBJKC_id;
 		});
 	}
 
@@ -47,13 +47,13 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xC6FBCC Offset: 0xC6FBCC VA: 0xC6FBCC Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0xC6FC44 Offset: 0xC6FC44 VA: 0xC6FC44 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		DGLENODDACE parser = DGLENODDACE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		KLNOMBKJDNN(parser);
@@ -61,7 +61,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xC7004C Offset: 0xC7004C VA: 0xC7004C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}
@@ -73,9 +73,9 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			ALLFFCNKFBG data = new ALLFFCNKFBG();
-			data.PPFNGGCBJKC_Id = (short)array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = (short)array[i].PPFNGGCBJKC;
 			data.NCGNCEOOBGP_EventType = (sbyte)array[i].CBDOEDKIOJK;
-			data.KJBGCLPMLCG_Start = array[i].MGPEOHKLOEP;
+			data.KJBGCLPMLCG_OpenedAt = array[i].MGPEOHKLOEP;
 			data.GJFPFFBAKGK_CloseAt = array[i].LFAFFICDFMJ;
 			data.ADCMNODJBGJ_Title = DatabaseTextConverter.TranslateTipsTitle(i, array[i].ADCMNODJBGJ);
 			data.JONNCMDGMKA_Message = DatabaseTextConverter.TranslateTipsMessage(i, array[i].IPBHCLIHAPG);
@@ -93,7 +93,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xC70054 Offset: 0xC70054 VA: 0xC70054
-	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0xC70064 Offset: 0xC70064 VA: 0xC70064 Slot: 11
 	public override uint CAOGDCBPBAN()

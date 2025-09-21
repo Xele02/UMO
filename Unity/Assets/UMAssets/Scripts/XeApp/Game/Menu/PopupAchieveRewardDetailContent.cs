@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 			m_layoutScrollList.Setup(setup.clearList, setup.scoreList, setup.comboList);
 			for(int i = 0; i < setup.clearList.Count; i++)
 			{
-				GameManager.Instance.ItemTextureCache.Load(setup.clearList[i].KIJAPOFAGPN_GlobalItemId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(setup.clearList[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
 				{
 					//0x132CB64
 					return;
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 			}
 			for (int i = 0; i < setup.scoreList.Count; i++)
 			{
-				GameManager.Instance.ItemTextureCache.Load(setup.scoreList[i].KIJAPOFAGPN_GlobalItemId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(setup.scoreList[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
 				{
 					//0x132CB68
 					return;
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 			}
 			for (int i = 0; i < setup.comboList.Count; i++)
 			{
-				GameManager.Instance.ItemTextureCache.Load(setup.comboList[i].KIJAPOFAGPN_GlobalItemId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(setup.comboList[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
 				{
 					//0x132CB6C
 					return;

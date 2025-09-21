@@ -104,12 +104,12 @@ namespace XeApp.Game.Menu
 				{
 					if(sceneData == null)
 						sceneData = new GCIJNCFDNON_SceneInfo();
-					sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Data.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+					sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Data.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 				}
 				else
 				{
-					MenuScene.Instance.ShowItemDetail(Data.JJBGOIMEIPF_ItemId, Data.MBJIFDBEDAC_Cnt, null);
+					MenuScene.Instance.ShowItemDetail(Data.JJBGOIMEIPF_ItemId, Data.MBJIFDBEDAC_item_count, null);
 				}
 			}
 		}

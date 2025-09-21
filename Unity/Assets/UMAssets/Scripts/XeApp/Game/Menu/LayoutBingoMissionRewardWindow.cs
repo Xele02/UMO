@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 			LayoutBingoMissionRewardContents c = content as LayoutBingoMissionRewardContents;
 			if(c != null)
 			{
-				c.Setup(itemInfoList[index].PPFNGGCBJKC_Id, itemInfoList[index].BFINGCJHOHI_Count, missionTextList[index].Replace("\n", ""), (int idx) =>
+				c.Setup(itemInfoList[index].PPFNGGCBJKC_id, itemInfoList[index].BFINGCJHOHI_Count, missionTextList[index].Replace("\n", ""), (int idx) =>
 				{
 					//0x14C6844
 					return;

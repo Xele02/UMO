@@ -7,17 +7,17 @@ public class KDOMGMCGHDC
 	public class HJNMIKNAMFH
 	{
 		public bool HHBJAEOIGIH_IsLocked; // 0x8
-		public bool NBHEBLNHOJO_IsMax; // 0x9
+		public bool NBHEBLNHOJO_IsMaxLevel; // 0x9
 		public int LHBDCGFOKCA_DivaId; // 0xC
 		public int CEFHDLLAPDH_MusicId; // 0x10
 		public int KDGIHMCBLND_MusicLevel; // 0x14
 		public int EHBAJPHFDOK_NextLevel; // 0x18
-		public int PBGFIOONCMB_NextLevelMusicExp; // 0x1C
+		public int PBGFIOONCMB_LevelMaxExp; // 0x1C
 		public int PMBFNFOCNAJ_CurLevelMusicExp; // 0x20
 		public string ONIAMNAJLKI_LockMessage = JpStringLiterals.StringLiteral_12215; // 0x24
 
 		//// RVA: 0xE86F90 Offset: 0xE86F90 VA: 0xE86F90
-		//public void ODDIHGPONFL(KDOMGMCGHDC.HJNMIKNAMFH GPBJHKLFCEP) { }
+		//public void ODDIHGPONFL_Copy(KDOMGMCGHDC.HJNMIKNAMFH GPBJHKLFCEP) { }
 	}
 
 	//// RVA: 0xE862CC Offset: 0xE862CC VA: 0xE862CC
@@ -32,9 +32,9 @@ public class KDOMGMCGHDC
 		res.CEFHDLLAPDH_MusicId = 0;
 		res.LHBDCGFOKCA_DivaId = 0;
 		res.HHBJAEOIGIH_IsLocked = false;
-		res.NBHEBLNHOJO_IsMax = false;
+		res.NBHEBLNHOJO_IsMaxLevel = false;
 
-		res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel + 1);
+		res.PBGFIOONCMB_LevelMaxExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel + 1);
 		res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
 		res.ONIAMNAJLKI_LockMessage = "";
 		HMJHLLPBCLD h = dbMusic.KCBOGEBCMMJ(HMJHLLPBCLD.ABDFBABHIHJ_GetId(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, res.EHBAJPHFDOK_NextLevel));
@@ -47,7 +47,7 @@ public class KDOMGMCGHDC
 					res.HHBJAEOIGIH_IsLocked = true;
 					res.KDGIHMCBLND_MusicLevel = h.KDGIHMCBLND_MusicLevel;
 					res.LHBDCGFOKCA_DivaId = h.LHBDCGFOKCA_DivaId;
-					res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
+					res.PBGFIOONCMB_LevelMaxExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
 					res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel - 1);
 					res.ONIAMNAJLKI_LockMessage = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_00"), MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
 				}
@@ -61,17 +61,17 @@ public class KDOMGMCGHDC
 					res.KDGIHMCBLND_MusicLevel = h.KDGIHMCBLND_MusicLevel;
 					res.LHBDCGFOKCA_DivaId = h.LHBDCGFOKCA_DivaId;
 					res.CEFHDLLAPDH_MusicId = h.CEFHDLLAPDH_MusicId;
-					res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
+					res.PBGFIOONCMB_LevelMaxExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
 					res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel - 1);
-					res.ONIAMNAJLKI_LockMessage = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_01"), Database.Instance.musicText.Get(dbMusic.IAJLOELFHKC_GetMusicInfo(h.CEFHDLLAPDH_MusicId).KNMGEEFGDNI_Nam).musicName, MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
+					res.ONIAMNAJLKI_LockMessage = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_01"), Database.Instance.musicText.Get(dbMusic.IAJLOELFHKC_GetMusicInfo(h.CEFHDLLAPDH_MusicId).KNMGEEFGDNI_Name).musicName, MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
 				}
 			}
 		}
 		if(res.EHBAJPHFDOK_NextLevel > 8)
 		{
 			res.EHBAJPHFDOK_NextLevel = 8;
-			res.NBHEBLNHOJO_IsMax = true;
-			res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(res.EHBAJPHFDOK_NextLevel);
+			res.NBHEBLNHOJO_IsMaxLevel = true;
+			res.PBGFIOONCMB_LevelMaxExp = dbExp.IECLHMBPEIJ_GetMusicExp(res.EHBAJPHFDOK_NextLevel);
 			res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(res.EHBAJPHFDOK_NextLevel - 1);
 		}
 		return res;
@@ -85,7 +85,7 @@ public class KDOMGMCGHDC
 		do
 		{
 			res = ODIAFJCPIFO(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, _AHEFHIMGIBI_PlayerData, level);
-		} while (!res.NBHEBLNHOJO_IsMax && !res.HHBJAEOIGIH_IsLocked && level++ < 8);
+		} while (!res.NBHEBLNHOJO_IsMaxLevel && !res.HHBJAEOIGIH_IsLocked && level++ < 8);
 		return res;
 	}
 

@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x159E450 Offset: 0x159E450 VA: 0x159E450
 		public void SetStatusRoom(GAKAAIHLFKI roomData, SNSTitleBar.eButtonType buttonType)
 		{
-			SetRoomName(roomData.OPFGFINHFCE_Name);
+			SetRoomName(roomData.OPFGFINHFCE_name);
 			SwitchTitle(SNSController.eType.Room);
 			SetButtonStatus(buttonType);
 		}

@@ -350,9 +350,9 @@ namespace XeApp.Game.Menu
 			AOJCMPIBFHD originalPrism = m_prismOriginalData.OOKAOFJBCFD();
 			m_lackDivaIds.Clear();
 			bool res = false;
-			for(int i = 0; i < originalPrism.OFGIOBGAJPA; i++)
+			for(int i = 0; i < originalPrism.OFGIOBGAJPA_NumDiva; i++)
 			{
-				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo x) =>
+				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo x) =>
 				{
 					//0x154B72C
 					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN_DivaId[i];

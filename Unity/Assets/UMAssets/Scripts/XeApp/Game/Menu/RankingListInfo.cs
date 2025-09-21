@@ -41,11 +41,11 @@ namespace XeApp.Game.Menu
 				sceneRank = friend.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId();
 				isKira = friend.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 			}
-			emblemId = friend.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
-			rankingOrder = friend.PCEGKKLKFNO.FJOLNJLLJEJ_Rank;
-			playerLevel = friend.PCEGKKLKFNO.ADFIHAPELAN_PLevel;
-			score = friend.PCEGKKLKFNO.KNIFCANOHOC_Score;
-			isOwner = friend.PCEGKKLKFNO.ONAFFLLLBHE_IsSelf;
+			emblemId = friend.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
+			rankingOrder = friend.PCEGKKLKFNO_FriendData.FJOLNJLLJEJ_Rank;
+			playerLevel = friend.PCEGKKLKFNO_FriendData.ADFIHAPELAN_PLevel;
+			score = friend.PCEGKKLKFNO_FriendData.KNIFCANOHOC_score;
+			isOwner = friend.PCEGKKLKFNO_FriendData.ONAFFLLLBHE_IsSelf;
 			musicRatio = friend.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = friend.AGJIIKKOKFJ_ScoreRatingRank;
 		}

@@ -134,8 +134,8 @@ namespace XeApp.Game.Menu
 				raidResultRewardLayoutController.gameObject.SetActive(false);
 				GJMCHHCPFDL g = new GJMCHHCPFDL();
 				DAFGPCEKAJB d = new DAFGPCEKAJB();
-				g.KHEKNNFCAOI(true);
-				d.KHEKNNFCAOI();
+				g.KHEKNNFCAOI_Init(true);
+				d.KHEKNNFCAOI_Init();
 				RaidResultCannonLayoutController.InitParam p = new RaidResultCannonLayoutController.InitParam();
 				p.viewEventRaidDamageData = g;
 				p.viewEventRaidRankingData = d;
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 		private void OnClickRaidDamageResultEnd()
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(ev.KONJMFICNJJ == null)
+			if(ev.KONJMFICNJJ_RewardsInfo == null)
 			{
 				this.StartCoroutineWatched(Co_RaidBossHelp());
 			}
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(cont.LMIFOCDCNAI())
 			{
-				if(cont.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+				if(cont.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id)
 				{
 					PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 					s.TitleText = bank.GetMessageByLabel("pop_raid_helprequest_title");
@@ -389,7 +389,7 @@ namespace XeApp.Game.Menu
 					initParam = new RaidResultRewardLayoutController.InitParam();
 					initParam.viewEventRaidRewardData = new PLFJMDBBAJD();
 					viewRaidReward = new PLFJMDBBAJD();
-					viewRaidReward.KHEKNNFCAOI(bossInfoList[i], () =>
+					viewRaidReward.KHEKNNFCAOI_Init(bossInfoList[i], () =>
 					{
 						//0x1818730
 						done = true;
@@ -406,7 +406,7 @@ namespace XeApp.Game.Menu
 			{
 				RaidResultRewardLayoutController.InitParam p = new RaidResultRewardLayoutController.InitParam();
 				p.viewEventRaidRewardData = new PLFJMDBBAJD();
-				p.viewEventRaidRewardData.KHEKNNFCAOI();
+				p.viewEventRaidRewardData.KHEKNNFCAOI_Init();
 				initParamList.Add(p);
 			}
 			raidResultRewardLayoutController.gameObject.SetActive(false);

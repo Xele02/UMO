@@ -272,8 +272,8 @@ namespace XeApp.Game.Menu
 			};
 			for(i = 0; i < highList.Count; i++)
 			{
-				view1.KHEKNNFCAOI(highList[i].BCCHOBPJJKE_SceneId, null, null, 0, 0, 0, false, 0, 0);
-				view2.KHEKNNFCAOI(highList[i].BCCHOBPJJKE_SceneId, null, null, 1, 0, 0, false, 0, 0);
+				view1.KHEKNNFCAOI_Init(highList[i].BCCHOBPJJKE_SceneId, null, null, 0, 0, 0, false, 0, 0);
+				view2.KHEKNNFCAOI_Init(highList[i].BCCHOBPJJKE_SceneId, null, null, 1, 0, 0, false, 0, 0);
 				if(MenuScene.Instance != null)
 					MenuScene.Instance.RaycastDisable();
 				m_gachaSkillUpSetting.SceneId = highList[i].BCCHOBPJJKE_SceneId;
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 				_divaId = data.AHHJLDLAPAN_DivaId;
 			int homeDiva = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
 			if(homeDiva > 0)
-				_divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeDiva - 1].AHHJLDLAPAN_DivaId;
+				_divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[homeDiva - 1].AHHJLDLAPAN_DivaId;
 			GameManager.Instance.NowLoading.Show();
 			bool isLoading = false;
 			mb.StartCoroutineWatched(LoadLayoutPlate(() =>

@@ -460,7 +460,7 @@ namespace XeApp.Game.Menu
 			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo s = new GCIJNCFDNON_SceneInfo();
-				s.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				s.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(s, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 			}
 			else

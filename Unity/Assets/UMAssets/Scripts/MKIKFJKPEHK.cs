@@ -38,21 +38,21 @@ public class MKIKFJKPEHK
 						KLOOIJIDKGO_Cost = new List<int>();
 						for(int i = 0; i < ev.MBHDIJJEOFL.Count; i++)
 						{
-							if(ev.MBHDIJJEOFL[i].INDDJNMPONH == a1)
+							if(ev.MBHDIJJEOFL[i].INDDJNMPONH_Type == a1)
 							{
-								if(ev.MBHDIJJEOFL[i].MAFAIIHJAFG <= (((int)ev.NGOFCFJHOMI_Status & 0xfffffffe) == 4 ? 1 : 0))
+								if(ev.MBHDIJJEOFL[i].MAFAIIHJAFG_spurt <= (((int)ev.NGOFCFJHOMI_Status & 0xfffffffe) == 4 ? 1 : 0))
 								{
 									int a2;
-									if(ev.MBHDIJJEOFL[i].INDDJNMPONH == 1)
+									if(ev.MBHDIJJEOFL[i].INDDJNMPONH_Type == 1)
 									{
-										a2 = ENKGMPLGEIJ.MGJKEJHEBPO_DiffInfos[FCHBEILHFBC].BPLOEAHOPFI_Stamina;
+										a2 = ENKGMPLGEIJ.MGJKEJHEBPO_Blocks[FCHBEILHFBC].BPLOEAHOPFI_Stamina;
 									}
 									else
 									{
 										a2 = ev.EAMODCHMCEL_GetTicketCost(FCHBEILHFBC, _GIKLNODJKFK_IsLine6);
 									}
-									KLOOIJIDKGO_Cost.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG * a2);
-									BGIKOPLLDJB_Rate.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG);
+									KLOOIJIDKGO_Cost.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_Value * a2);
+									BGIKOPLLDJB_Rate.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_Value);
 								}
 							}
 						}
@@ -63,7 +63,7 @@ public class MKIKFJKPEHK
 		}
 		else if(ENKGMPLGEIJ.MNNHHJBBICA_GameEventType == 0)
 		{
-			//ENKGMPLGEIJ.MFJKNCACBDG
+			//ENKGMPLGEIJ.MFJKNCACBDG_OpenEventType
 		}
 		return false;
 	}

@@ -9,16 +9,16 @@ public class PLFJMDBBAJD
 	public const int FBGGEFFJJHB_xor = 625060344;
 	public string FINCFIGKHPA_Name; // 0x8
 	public int JMFKPCFMNKN_Crypted; // 0xC
-	public int NFCALENBIBL_Crypted; // 0x10
+	public int NFCALENBIBL_LevelCrypted; // 0x10
 	public bool AJGFHCKFCHN; // 0x14
 	public int BKDNEBPBPKC_Crypted; // 0x18
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> PAHGKOAIPFL; // 0x1C
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> BLPPOBLGLAJ; // 0x20
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> NAJFDCBBCHD; // 0x24
 
-	public string OPFGFINHFCE_Name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xFE9224 DKJOHDGOIJE 0xFE922C MJAMIGECMMF
+	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xFE9224 DKJOHDGOIJE 0xFE922C MJAMIGECMMF
 	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE9234 EAKAGHDPEMI 0xFE9248 GHECCGBGCBI
-	public int CIEOBFIIPLD_Level { get { return NFCALENBIBL_Crypted ^ FBGGEFFJJHB_xor; } set { NFCALENBIBL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE925C OGKGFGMKPKB 0xFE9270 JOOMBHHPHBD
+	public int CIEOBFIIPLD_Level { get { return NFCALENBIBL_LevelCrypted ^ FBGGEFFJJHB_xor; } set { NFCALENBIBL_LevelCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFE925C OGKGFGMKPKB 0xFE9270 JOOMBHHPHBD
 	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN; } set { AJGFHCKFCHN = value; } } //0xFE9284 BOFCPLOLHCJ 0xFE928C FDPPEPOHFNA
 	public int HPPDFBKEJCG_BgId { get { return BKDNEBPBPKC_Crypted ^ FBGGEFFJJHB_xor; } set { BKDNEBPBPKC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE9294 BNBDOAMEEJN 0xFE92A8 GIAODJJHAEF
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> NEAPOLIIELG_MvpRewards { get { return PAHGKOAIPFL; } set { PAHGKOAIPFL = value; } } //0xFE92BC JBCIDFIBJMB 0xFE92C4 PJGAMCFPENJ
@@ -26,18 +26,18 @@ public class PLFJMDBBAJD
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> FGNHJFLBMIE_DefeatRewards { get { return NAJFDCBBCHD; } set { NAJFDCBBCHD = value; } } //0xFE92DC NPCCNIIELEL 0xFE92E4 AGPAFGCHEBM
 
 	// // RVA: 0xFE92EC Offset: 0xFE92EC VA: 0xFE92EC
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
 		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 		{
             PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ p = ev.JIBMOEHKMGB_SelectedBoss;
-            PKNOKJNLPOE_EventRaid.KJJDLBFDGDM p2 = ev.KONJMFICNJJ;
+            PKNOKJNLPOE_EventRaid.KJJDLBFDGDM p2 = ev.KONJMFICNJJ_RewardsInfo;
             CIEOBFIIPLD_Level = p.ANAJIAENLNB_Level;
             FJOLNJLLJEJ_Rank = p.FJOLNJLLJEJ_Rank;
             MPKBLMCNHOM_MissionIsSpecial = p.IKICLMGFFPB_IsSpecial;
             HPPDFBKEJCG_BgId = p.HPPDFBKEJCG_BgId;
-            OPFGFINHFCE_Name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_Type);
+            OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_Type);
 			if(p2 != null)
 			{
 				NEAPOLIIELG_MvpRewards = p2.NEAPOLIIELG_MvpRewards;
@@ -48,7 +48,7 @@ public class PLFJMDBBAJD
     }
 
 	// // RVA: 0xFE9520 Offset: 0xFE9520 VA: 0xFE9520
-	public void KHEKNNFCAOI(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ _GJFJLEOGFLD_RaidBoss, Action KBCBGIGOLHP)
+	public void KHEKNNFCAOI_Init(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ _GJFJLEOGFLD_RaidBoss, Action KBCBGIGOLHP)
 	{
 		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		if(ev != null)
@@ -60,12 +60,12 @@ public class PLFJMDBBAJD
 				FJOLNJLLJEJ_Rank = _GJFJLEOGFLD_RaidBoss.FJOLNJLLJEJ_Rank;
 				MPKBLMCNHOM_MissionIsSpecial = _GJFJLEOGFLD_RaidBoss.IKICLMGFFPB_IsSpecial;
 				HPPDFBKEJCG_BgId = _GJFJLEOGFLD_RaidBoss.HPPDFBKEJCG_BgId;
-				OPFGFINHFCE_Name = ev.AGEJGHGEGFF_GetBossName(_GJFJLEOGFLD_RaidBoss.INDDJNMPONH_Type);
-				if(ev.KONJMFICNJJ != null)
+				OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(_GJFJLEOGFLD_RaidBoss.INDDJNMPONH_Type);
+				if(ev.KONJMFICNJJ_RewardsInfo != null)
 				{
-					NEAPOLIIELG_MvpRewards = ev.KONJMFICNJJ.NEAPOLIIELG_MvpRewards;
-					JAGJOLBDBDK_FirstRewards = ev.KONJMFICNJJ.JAGJOLBDBDK_FirstRewards;
-					FGNHJFLBMIE_DefeatRewards = ev.KONJMFICNJJ.FGNHJFLBMIE_DefeatRewards;
+					NEAPOLIIELG_MvpRewards = ev.KONJMFICNJJ_RewardsInfo.NEAPOLIIELG_MvpRewards;
+					JAGJOLBDBDK_FirstRewards = ev.KONJMFICNJJ_RewardsInfo.JAGJOLBDBDK_FirstRewards;
+					FGNHJFLBMIE_DefeatRewards = ev.KONJMFICNJJ_RewardsInfo.FGNHJFLBMIE_DefeatRewards;
 					KBCBGIGOLHP();
 				}
 			}, () =>

@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1932768 Offset: 0x1932768 VA: 0x1932768 Slot: 13
 		public override void SetStatus(SNSTalkCreater.ViewTalk viewTalk)
 		{
-			SetText(viewTalk.talk.OPFGFINHFCE_Name);
+			SetText(viewTalk.talk.OPFGFINHFCE_name);
 		}
 
 		//// RVA: 0x1932870 Offset: 0x1932870 VA: 0x1932870 Slot: 7

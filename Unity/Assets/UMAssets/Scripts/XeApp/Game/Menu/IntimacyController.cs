@@ -394,7 +394,7 @@ namespace XeApp.Game.Menu
 							typeList = m_viewIntimacyData.HBODCMLFDOB_Result.CKDNPHLDIEM;
 							paramList = m_viewIntimacyData.HBODCMLFDOB_Result.EEIBCALKFFF;
 							levelUpBonus = false;
-							if (m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC)
+							if (m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC_IsLevelUp)
 							{
 								levelUpBonus = typeList.Count > 0;
 							}
@@ -531,7 +531,7 @@ namespace XeApp.Game.Menu
 			{
 				divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
 			}
-			m_viewIntimacyData.KHEKNNFCAOI(divaId);
+			m_viewIntimacyData.KHEKNNFCAOI_Init(divaId);
 			m_viewIntimacyData.HCDGELDHFHB(false);
 		}
 
@@ -891,7 +891,7 @@ namespace XeApp.Game.Menu
 			if(!m_isDisableIntimacyDeco && CheckUnlock())
 			{
 				FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
-				data.KHEKNNFCAOI(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
+				data.KHEKNNFCAOI_Init(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
 				if(data.FJODMPGPDDD_Unlocked && data.IPJMPBANBPP_Enabled)
 				{
 					if(viewIntimacyData.GMIEFBELJJH() > 0)
@@ -1091,7 +1091,7 @@ namespace XeApp.Game.Menu
 									m_layoutInfoDeco.Enter();
 									typeList = m_viewIntimacyData.HBODCMLFDOB_Result.CKDNPHLDIEM;
 									paramList = m_viewIntimacyData.HBODCMLFDOB_Result.EEIBCALKFFF;
-									if(!m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC)
+									if(!m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC_IsLevelUp)
 									{
 										levelUpBonus = false;
 									}

@@ -9,10 +9,10 @@ public class CLHMBMLOAOE
 	private long NJKMDELFJGE; // 0x10
 
 	public long FDFGEMODIIF { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
-	public long NKMNFPMMJND { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
+	public long NKMNFPMMJND_expired_at { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
 
 	//// RVA: 0x1083EB0 Offset: 0x1083EB0 VA: 0x1083EB0
-	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
 }
 
 public class BCEHKBJAEDM
@@ -23,7 +23,7 @@ public class BCEHKBJAEDM
 	public CLHMBMLOAOE FPIKAFLHBMO; // 0x14
 
 	//// RVA: 0xF2E4D0 Offset: 0xF2E4D0 VA: 0xF2E4D0
-	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
 }
 
 [System.Obsolete("Use BJGEJMNDOLK_GetSubscriptionStatuses", true)]
@@ -35,16 +35,16 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 		public List<BCEHKBJAEDM> FCABPFLKKBC = new List<BCEHKBJAEDM>(); // 0x8
 
 		// RVA: 0xC85A04 Offset: 0xC85A04 VA: 0xC85A04
-		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 		{
-			if(IDLHJIOMJBK.BBAJPINMOEP_Contains("subscription_statuses"))
+			if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("subscription_statuses"))
 			{
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Parse Subscription status");
 			}
 		}
 	}
 	
-	public FNFDLMDKONP NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public FNFDLMDKONP NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0xC857C8 Offset: 0xC857C8 VA: 0xC857C8 Slot: 12
 	public override void DHLDNIEELHO()
@@ -55,7 +55,7 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 	// RVA: 0xC858A4 Offset: 0xC858A4 VA: 0xC858A4 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		NFEAMMJIMPG = new FNFDLMDKONP();
-		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		NFEAMMJIMPG_Result = new FNFDLMDKONP();
+		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

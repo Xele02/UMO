@@ -825,7 +825,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
 		private void SetupAssetBundleBasePath()
 		{
-			string k = KEHOJEJMGLJ.OGCDNCDMLCA_PersistentDataPath;
+			string k = KEHOJEJMGLJ.OGCDNCDMLCA_LocalPath;
 			string platform = AssetBundleManager.GetPlatformName();
 			string path = Path.Combine(k, platform);
 			AssetBundleManager.BaseAssetBundleInstallPath = path;
@@ -1357,7 +1357,7 @@ namespace XeApp.Game
 			FFHPBEPOMAK_DivaInfo res = m_viewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			if(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
-				res = m_viewPlayerData.NBIGLBMHEDC_Divas[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+				res = m_viewPlayerData.NBIGLBMHEDC_DivaList[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
 			return res;
 		}
@@ -1426,7 +1426,7 @@ namespace XeApp.Game
 				Instance.GameUIIntro.onAnimationEndCallback = null;
 			};
 			isWait = true;
-			Instance.GameUIIntro.Enter(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam, Database.Instance.gameSetup.musicInfo.musicLoadText);
+			Instance.GameUIIntro.Enter(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name, Database.Instance.gameSetup.musicInfo.musicLoadText);
 			while (isWait)
 				yield return null;
 		}
@@ -1498,11 +1498,11 @@ namespace XeApp.Game
 			int a = 0;
 			if(mi.isFreeMode)
 			{
-				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(mi.freeMusicId).KEFGPJBKAOD_WavId;
+				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(mi.freeMusicId).KEFGPJBKAOD_BgId;
 			}
 			else
 			{
-				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(mi.storyMusicId).KEFGPJBKAOD_WavId;
+				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(mi.storyMusicId).KEFGPJBKAOD_BgId;
 			}
 			PNGOLKLFFLH b = new PNGOLKLFFLH();
 			b.KHEKNNFCAOI_Init(ti.prismValkyrieId, ti.valkyrieForm, 0);
@@ -1582,7 +1582,7 @@ namespace XeApp.Game
 				if(storyMusicId > 0)
 				{
 					DJNPIGEFPMF_StoryMusicInfo mData = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId);
-					enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(mData.LHICAKGHIGF[(int)difficulty]);
+					enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(mData.LHICAKGHIGF_EnemyIdByDiff[(int)difficulty]);
 					musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mData.DLAEJOBELBH_MusicId);
 				}
 				musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(0);
@@ -1610,11 +1610,11 @@ namespace XeApp.Game
 			int a;
 			if (!isFreeMode)
 			{
-				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).KEFGPJBKAOD_WavId;
+				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).KEFGPJBKAOD_BgId;
 			}
 			else
 			{
-				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).KEFGPJBKAOD_WavId;
+				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).KEFGPJBKAOD_BgId;
 			}
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(valkyrieId, valkyrieFormType, 0);

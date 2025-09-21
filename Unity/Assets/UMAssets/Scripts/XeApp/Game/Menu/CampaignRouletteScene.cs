@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnPreSetCanvas();
 			m_view = new LLBKNDPMGEP();
-			m_view.KHEKNNFCAOI();
+			m_view.KHEKNNFCAOI_Init();
 			m_loadCoroutine = this.StartCoroutineWatched(Co_Load(m_view.EKANGPODCEP_EventId));
 			m_layoutMain.SetParent(transform);
 			m_layoutResult.SetParent(null);

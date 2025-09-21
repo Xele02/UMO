@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 			if(viewData.GOOIIPFHOIG != null)
 				SetIconImage(viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			SetNumber(viewData.ABLHIAEDJAI_CurrentValue, viewData.HLDGMMDFNHB_TargetValue);
-			SetRewardNum(viewData.GOOIIPFHOIG == null ? 0 : viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt);
+			SetRewardNum(viewData.GOOIIPFHOIG == null ? 0 : viewData.GOOIIPFHOIG.MBJIFDBEDAC_item_count);
 		}
 
 		// RVA: 0x1870B58 Offset: 0x1870B58 VA: 0x1870B58

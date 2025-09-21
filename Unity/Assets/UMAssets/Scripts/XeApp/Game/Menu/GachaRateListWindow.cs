@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 			m_stepData = data;
 			if(m_stepIndex < 0)
 			{
-				m_stepIndex = data.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				m_stepIndex = data.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex;
 			}
 			m_buttonPrev.Disable = m_stepIndex < 2;
 			m_buttonNext.Disable = m_stepData.BMFEGOMNECF_Steps.Count <= m_stepIndex;

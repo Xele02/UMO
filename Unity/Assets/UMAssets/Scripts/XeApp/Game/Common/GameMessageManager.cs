@@ -41,7 +41,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE9907C Offset: 0xE9907C VA: 0xE9907C
 		public static string GetSceneCardName(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD_NumBoard, sceneData.OPFGFINHFCE_SceneName);
+			return GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD_NumBoard, sceneData.OPFGFINHFCE_name);
 		}
 
 		//// RVA: 0xE99144 Offset: 0xE99144 VA: 0xE99144
@@ -112,15 +112,15 @@ namespace XeApp.Game.Common
 				ADDHLABEFKH a = fm.EMJCHPDJHEI(is6Line, (int)diffculty);
 				if(tag == "scombo")
 				{
-					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[2]);
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_combo[2]);
 				}
 				else if(tag == "acombo")
 				{
-					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[1]);
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_combo[1]);
 				}
 				else if(tag == "bcombo")
 				{
-					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[0]);
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_combo[0]);
 				}
 			}
 			return strBuilder.ToString();

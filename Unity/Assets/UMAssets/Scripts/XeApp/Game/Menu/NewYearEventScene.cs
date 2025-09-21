@@ -47,10 +47,10 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_PushButton(OHKECKAPJJL info)
 		{
 			//0x151A060
-			if(info.LHMOAJAIJCO_IsNew)
+			if(info.LHMOAJAIJCO_is_new)
 			{
 				MenuScene.Instance.InputDisable();
-				m_eventCtrl.DHHNKEIBCOK(info.PPFNGGCBJKC_Id, false);
+				m_eventCtrl.DHHNKEIBCOK(info.PPFNGGCBJKC_id, false);
 				bool done = false;
 				MenuScene.Save(() =>
 				{
@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 				while(!done)
 					yield return null;
 				MenuScene.Instance.InputEnable();
-				info.LHMOAJAIJCO_IsNew = false;
+				info.LHMOAJAIJCO_is_new = false;
 				m_layoutMain.Apply(m_viewDataSpPage, m_currentTime);
 			}
 			if(info.LPDLBACJKIB_TransId == 0)
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		private void GotoEventGame(OHKECKAPJJL pageInfo)
 		{
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(pageInfo.GGHDEDJFFOM);
-			//pageInfo.PNDEAHGLJIC
+			//pageInfo.PNDEAHGLJIC_BtnType
 			if(ev != null)
 			{
 				if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DDEODFNANDO_8_ResultRewardToReceive)
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 							m_spChildEventControllers.Add(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventCtrl.NBLGLKGOKOD_GetSubSpId(i)));
 						}
 						yield return Co.R(Co_GetGachaProductList());
-						m_viewDataSpPage.KHEKNNFCAOI(NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts);
+						m_viewDataSpPage.KHEKNNFCAOI_Init(NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_products);
 						m_layoutMain.Apply(m_viewDataSpPage, m_currentTime);
 						while(!m_layoutMain.IsDownloaded)
 							yield return null;

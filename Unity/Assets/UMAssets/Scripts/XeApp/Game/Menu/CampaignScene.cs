@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnPreSetCanvas();
 			m_viewEntry = new OLLAFCBLMIJ();
-			m_viewEntry.KHEKNNFCAOI();
+			m_viewEntry.KHEKNNFCAOI_Init();
 			m_layoutEntry.Setup(m_viewEntry, true);
 			m_loadCoroutine = this.StartCoroutineWatched(Co_BgLoad(m_viewEntry.EKANGPODCEP_EventId));
 		}
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 					{
 						yield return Co.R(Co_StartStamp(today.ECDKPAIEFFA_DayId));
 						button.Disable = true;
-						m_viewEntry.KHEKNNFCAOI();
+						m_viewEntry.KHEKNNFCAOI_Init();
 						m_layoutEntry.Setup(m_viewEntry, false);
 						MenuScene.Instance.InputEnable();
 						if(isFirstEntry)

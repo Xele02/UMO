@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			bool res = false;
 			for(int i = 0; i < itemList.Count; i++)
 			{
-				if(itemList[i].HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				if(itemList[i].HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemList[i].KIJAPOFAGPN_ItemId);
 					if(itemId > 0)
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 					case eSceneType.Gacha:
 					case eSceneType.Offer:
 					case eSceneType.Bingo:
-						util = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL;
+						util = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil;
 						break;
 					case eSceneType.Quest:
 						util = CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE;
@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 					return null;
 			}
 			SceneCardCount = util.FIGHNFKAMGI.Count;
-			reward.KHEKNNFCAOI(util, allReceive);
+			reward.KHEKNNFCAOI_Init(util, allReceive);
 			if(sceneType == eSceneType.Result)
 			{
 				for(int i = 0; i < m_plateIds.Count; i++)
@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 		{
 			int a = (int)showType - 3;
 			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/)
-				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG.HJNNKCMLGFL/*0*/;
+				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG.HJNNKCMLGFL_0_None/*0*/;
 			return GameMessageManager.GetSceneCardName(cardId, ((int)showType | (a < 2 ? 1 : 0)) & (isMulti ? 1 : 0), "");
 		}
 	}

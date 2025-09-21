@@ -74,7 +74,7 @@ public class DocusaurusGenerator
         List<string> listStr = Database.PKOJMBICNHH_GetBlockNames();
 
         DbArchive = new IIEDOGCMCIE();
-        string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + "/db/md-20220626-000000_v00007790_s1_h00000000.dat";
+        string str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/md-20220626-000000_v00007790_s1_h00000000.dat";
         //DbArchive.MCDJJPAKBLH();
         try
         {
@@ -100,7 +100,7 @@ public class DocusaurusGenerator
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();
             }
-            bool res = DbArchive.KHEKNNFCAOI_Load(request.Result);
+            bool res = DbArchive.KHEKNNFCAOI_Init(request.Result);
             if(!res)
             {
                 throw new Exception("Failed to decrypt database");
@@ -108,9 +108,9 @@ public class DocusaurusGenerator
 
             {
                 long JHNMKKNEENE_Time = Utility.GetCurrentUnixTime();
-                CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File arch = DbArchive.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) =>
+                CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File arch = DbArchive.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) =>
                 {
-                    return _GHPLINIACBB_x.OPFGFINHFCE_Name.Contains("version.bytes");
+                    return _GHPLINIACBB_x.OPFGFINHFCE_name.Contains("version.bytes");
                 }); // 0x9FDDD8
                 if(arch != null)
                 {
@@ -120,26 +120,26 @@ public class DocusaurusGenerator
                     IMMAOANGPNK.MPFFINOMILP obj = null;
                     for(int i = 0; i < b.Length; i++)
                     {
-                        int val = b[i].BEBJKJKBOGH_Date;
+                        int val = b[i].BEBJKJKBOGH;
                         if(JHNMKKNEENE_Time >= val)
                         {
                             if(obj != null)
                             {
-                                if(obj.PDBPFJJCADD >= val)
+                                if(obj.PDBPFJJCADD_open_at >= val)
                                 {
                                     continue;
                                 }
                             }
                             obj = new IMMAOANGPNK.MPFFINOMILP();
-                            obj.OPFGFINHFCE_Name = b[i].OPFGFINHFCE;
-                            obj.PDBPFJJCADD = val;
+                            obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+                            obj.PDBPFJJCADD_open_at = val;
                             obj.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
                         }
                         else
                         {
                             IMMAOANGPNK.MPFFINOMILP obj2 = new IMMAOANGPNK.MPFFINOMILP();
-                            obj2.OPFGFINHFCE_Name = b[i].OPFGFINHFCE;
-                            obj2.PDBPFJJCADD = val;
+                            obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+                            obj2.PDBPFJJCADD_open_at = val;
                             obj2.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
                             MGFBEKNMJOA.Add(obj2);
                         }
@@ -151,12 +151,12 @@ public class DocusaurusGenerator
                     
                     MGFBEKNMJOA.Sort((IMMAOANGPNK.MPFFINOMILP HKICMNAACDA, IMMAOANGPNK.MPFFINOMILP BNKHBCBJBKI) => {
                         //0x9FDE64 
-                        return HKICMNAACDA.PDBPFJJCADD.CompareTo(BNKHBCBJBKI.PDBPFJJCADD);
+                        return HKICMNAACDA.PDBPFJJCADD_open_at.CompareTo(BNKHBCBJBKI.PDBPFJJCADD_open_at);
                     });
                     if(MGFBEKNMJOA.Count > 0)
                     {
                         IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
-                        if(JHNMKKNEENE_Time >= item.PDBPFJJCADD)
+                        if(JHNMKKNEENE_Time >= item.PDBPFJJCADD_open_at)
                         {
                             DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion = item.IJEKNCDIIAE_MVer;
                         }
@@ -169,7 +169,7 @@ public class DocusaurusGenerator
             roomText = new SNSRoomTextDatabase();
             roomText.LoadFromBinaryTAR(DbArchive);
 
-            bool valid = Database.IIEMACPEEBJ(listStr, DbArchive);
+            bool valid = Database.IIEMACPEEBJ_Deserialize(listStr, DbArchive);
             if(valid)
             {
                 if(valid)
@@ -201,7 +201,7 @@ public class DocusaurusGenerator
 
         try
         {
-            str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + "/db/ar_marker.dat";
+            str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/ar_marker.dat";
             IIEDOGCMCIE tar = new IIEDOGCMCIE();
 
             Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
@@ -226,15 +226,15 @@ public class DocusaurusGenerator
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();
             }
-            bool res = tar.KHEKNNFCAOI_Load(request.Result);
+            bool res = tar.KHEKNNFCAOI_Init(request.Result);
             if(!res)
             {
                 throw new Exception("Failed to decrypt database");
             }
 
-            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
                 //0xBBB100
-                return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", "ar_marker"));
+                return _.OPFGFINHFCE_name.Contains(string.Format("{0}.bytes", "ar_marker"));
             });
             if(db_file != null)
             {
@@ -250,7 +250,7 @@ public class DocusaurusGenerator
 
         try
         {
-            str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + "/db/ar_event.dat";
+            str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/ar_event.dat";
             IIEDOGCMCIE tar = new IIEDOGCMCIE();
 
             Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
@@ -275,15 +275,15 @@ public class DocusaurusGenerator
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();
             }
-            bool res = tar.KHEKNNFCAOI_Load(request.Result);
+            bool res = tar.KHEKNNFCAOI_Init(request.Result);
             if(!res)
             {
                 throw new Exception("Failed to decrypt database");
             }
 
-            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
                 //0xBBB100
-                return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", "ar_event"));
+                return _.OPFGFINHFCE_name.Contains(string.Format("{0}.bytes", "ar_event"));
             });
             if(db_file != null)
             {
@@ -896,11 +896,11 @@ public class DocusaurusGenerator
                 UnityEngine.Debug.LogError("Not decrypted done");
                 return;
             }
-            c.KHEKNNFCAOI_Load(request.Result);
-            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File f = c.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+            c.KHEKNNFCAOI_Init(request.Result);
+            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File f = c.KGHAJGGMPKL_files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
             {
                 //0xE58B5C
-                return x.OPFGFINHFCE_Name.Contains("adv_script");
+                return x.OPFGFINHFCE_name.Contains("adv_script");
             });
             if(f != null)
             {

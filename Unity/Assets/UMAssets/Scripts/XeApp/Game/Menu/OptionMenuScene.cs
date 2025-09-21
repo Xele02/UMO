@@ -621,7 +621,7 @@ namespace XeApp.Game.Menu
 						{
 							if(!isGotoTitle)
 							{
-								m_accountConfirmWindow.SetContent(sakashoMrg.MDAMJIGBOLD_PlayerId, playerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName, playerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level,
+								m_accountConfirmWindow.SetContent(sakashoMrg.MDAMJIGBOLD_PlayerId, playerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name, playerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level,
 									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook),
 									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter),
 									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line),

@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					SettingBg(item.PPFNGGCBJKC_Id);
+					SettingBg(item.PPFNGGCBJKC_id);
 				}
 			}
 		}

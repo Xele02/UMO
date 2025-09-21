@@ -23,7 +23,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x15C6F90 Offset: 0x15C6F90 VA: 0x15C6F90 Slot: 4
-	public override void KMBPACJNEOF()
+	public override void KMBPACJNEOF_Reset()
 	{
 		ENOBDCFHELD = (int)(Utility.GetCurrentUnixTime() ^ 0x401d3c7);
 		FCEJCHGLFGN = (int)(Utility.GetCurrentUnixTime() ^ 0x8f5f2da);
@@ -35,7 +35,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x15C70C0 Offset: 0x15C70C0 VA: 0x15C70C0 Slot: 5
-	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long _MCKEOKFMLAH_SaveId)
 	{
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
@@ -48,7 +48,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 		if(!EMBGIDLFKGM)
 		{
 			EDOHBJAPLPF_JsonData tmp = new EDOHBJAPLPF_JsonData();
-			tmp[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			tmp[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;
 			tmp[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE;
 			tmp[JIKKNHIAEKG_BlockName] = data;
 			data = tmp;
@@ -83,14 +83,14 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 				}
 				for(int i = 0; i < cnt; i++)
 				{
-					JBJHCJFOICD[i].IIEMACPEEBJ(ar[i], (EDOHBJAPLPF_JsonData JGNBPFCJLKI, string LJNAKDMILMC, int BAAPMIKMLPP) =>
+					JBJHCJFOICD[i].IIEMACPEEBJ_Deserialize(ar[i], (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, int BAAPMIKMLPP) =>
 					{
 						//0x15C8380
-						return CJAENOMGPDA_ReadInt(JGNBPFCJLKI, LJNAKDMILMC, BAAPMIKMLPP, ref isInvalid);
-					}, (EDOHBJAPLPF_JsonData JGNBPFCJLKI, string LJNAKDMILMC, string EMOLDMOBKLM) =>
+						return CJAENOMGPDA_ReadInt(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, BAAPMIKMLPP, ref isInvalid);
+					}, (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, string EMOLDMOBKLM) =>
 					{
 						//0x15C83D8
-						return FGCNMLBACGO_ReadString(JGNBPFCJLKI, LJNAKDMILMC, EMOLDMOBKLM, ref isInvalid);
+						return FGCNMLBACGO_ReadString(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, EMOLDMOBKLM, ref isInvalid);
 					});
 				}
 			}
@@ -123,7 +123,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x15C7BB0 Offset: 0x15C7BB0 VA: 0x15C7BB0 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
+	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long _MCKEOKFMLAH_SaveId);
 
 	// // RVA: 0x15C8268 Offset: 0x15C8268 VA: 0x15C8268 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

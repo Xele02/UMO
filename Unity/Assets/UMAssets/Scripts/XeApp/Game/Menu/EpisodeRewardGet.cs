@@ -228,12 +228,12 @@ namespace XeApp.Game.Menu
 				ALJHJDHNFFB_HomeBg.ADLLAFIDFAM dbBg = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table.Where((ALJHJDHNFFB_HomeBg.ADLLAFIDFAM _) =>
 				{
 					//0xEFFD10
-					return itemId == _.PPFNGGCBJKC_Id;
+					return itemId == _.PPFNGGCBJKC_id;
 				}).First();
 				int homeBgId = 12;
 				if(dbBg != null)
 				{
-					homeBgId = dbBg.PPFNGGCBJKC_Id;
+					homeBgId = dbBg.PPFNGGCBJKC_id;
 				}
 				this.StartCoroutineWatched(CallUnlockHomeBgScene(homeBgId));
 			}
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 				{
 					index = dbCos.AHHJLDLAPAN_DivaId - 1;
 				}
-				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[index].AIHCEGFANAM_SerieAttr;
+				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[index].AIHCEGFANAM_SerieAttr;
 			}
 			return res;
 		}

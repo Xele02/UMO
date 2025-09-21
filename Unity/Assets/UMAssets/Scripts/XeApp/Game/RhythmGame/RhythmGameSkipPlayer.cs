@@ -546,7 +546,7 @@ namespace XeApp.Game.RhythmGame
 				int sceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
 				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
-					//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[sceneId - 1].JPIPENJGGDD_Mlt;
+					//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[sceneId - 1].JPIPENJGGDD_NumBoard;
 				}
 			}
 			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
@@ -776,25 +776,25 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.MNNHHJBBICA_GameEventType = (int)Database.Instance.gameSetup.musicInfo.gameEventType;
 			clearSetup.MFJKNCACBDG_OpenEventType = (int)Database.Instance.gameSetup.musicInfo.openEventType;
 			clearSetup.OEILJHENAHN_PlayEventType = (int)Database.Instance.gameSetup.musicInfo.playEventType;
-			clearSetup.KNIFCANOHOC_Score = status.score.currentScore;
+			clearSetup.KNIFCANOHOC_score = status.score.currentScore;
 			clearSetup.EACPIDGGPPO_ExcellentScore = status.score.currentScore - status.score.nonExcellentScore;
-			clearSetup.NLKEBAOBJCM_MaxCombo = status.combo.record;
+			clearSetup.NLKEBAOBJCM_combo = status.combo.record;
 			clearSetup.LCOHGOIDMDF_ComboRank = 0;
-			clearSetup.MJBODMOLOBC_TeamLuck = Database.Instance.gameSetup.teamInfo.teamLuck;
+			clearSetup.MJBODMOLOBC_luck = Database.Instance.gameSetup.teamInfo.teamLuck;
 			clearSetup.DGMPBPMDBEC_DropItemList = new List<int>(dropItemList);
-			clearSetup.JNNDFGPMEDA_EnergyLeft = status.energy.GetGaugeValue();
-			clearSetup.JKPPKAHPPKH_LifeLeft = status.life.current;
-			clearSetup.IPEKDLNEOFI_TeamLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
+			clearSetup.JNNDFGPMEDA_Fold = status.energy.GetGaugeValue();
+			clearSetup.JKPPKAHPPKH_life = status.life.current;
+			clearSetup.IPEKDLNEOFI_ParaLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
 			clearSetup.HBKBKHACHHI_ParaSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
 			clearSetup.GMECIBOJCFF_ParaVoice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
-			clearSetup.MIMLMJGGNJH_TeamCharm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
+			clearSetup.MIMLMJGGNJH_para_charm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
 			clearSetup.BFHPKJEKJNN_ParaSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
 			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
 			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
 			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);
 			clearSetup.JEKDIEFPEON_RareItemRandomSeed = rNoteOwner.GetRareItemRandomSeed();
 			clearSetup.OOOGNIPJMDE_HadDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.Diva;
-			clearSetup.HGEKDNNJAAC_HadAwakenDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.AwakenDiva;
+			clearSetup.HGEKDNNJAAC_AwakenDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.AwakenDiva;
 			clearSetup.KNCBNGCDMII_HadValkyrieMode = logger.log.valkyrieModeData.type == RhythmGameMode.Type.Valkyrie;
 			clearSetup.EHCFOHAABDA_EnemyLeft = status.enemy.currentValue;
 			clearSetup.HNHCIGMKPDC_DivaIds = new List<int>();

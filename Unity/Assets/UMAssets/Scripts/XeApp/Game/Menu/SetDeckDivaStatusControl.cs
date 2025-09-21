@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 				SetInvalidMusicExp();
 			else
 			{
-				FFHPBEPOMAK_DivaInfo f = playerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo x) =>
+				FFHPBEPOMAK_DivaInfo f = playerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo x) =>
 				{
 					//0xA6CB60
 					return x.AHHJLDLAPAN_DivaId == divaData.AHHJLDLAPAN_DivaId;
@@ -150,17 +150,17 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_musicExpLevelText.text = (h.EHBAJPHFDOK_NextLevel + (h.NBHEBLNHOJO_IsMax ? 1 : 0) - 1).ToString();
+					m_musicExpLevelText.text = (h.EHBAJPHFDOK_NextLevel + (h.NBHEBLNHOJO_IsMaxLevel ? 1 : 0) - 1).ToString();
 					float f1 = 0;
-					if(h.PBGFIOONCMB_NextLevelMusicExp - h.PMBFNFOCNAJ_CurLevelMusicExp >= 1)
+					if(h.PBGFIOONCMB_LevelMaxExp - h.PMBFNFOCNAJ_CurLevelMusicExp >= 1)
 					{
-						f1 = (f.HMBECPGHPOE_DivaExps[musicId - 1] - h.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / (h.PBGFIOONCMB_NextLevelMusicExp - h.PMBFNFOCNAJ_CurLevelMusicExp);
+						f1 = (f.HMBECPGHPOE_DivaExps[musicId - 1] - h.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / (h.PBGFIOONCMB_LevelMaxExp - h.PMBFNFOCNAJ_CurLevelMusicExp);
 					}
 					m_musicExpGauge.CurrentValue = f1 * m_musicExpGauge.MaxValue;
 					m_musicExpGaugeBandObject.gameObject.SetActive(true);
 					if(m_musicExpGaugeBandHeadImage != null)
 					{
-						if(!h.NBHEBLNHOJO_IsMax)
+						if(!h.NBHEBLNHOJO_IsMaxLevel)
 						{
 							if(m_musicExpGauge.CurrentValue > 0)
 							{
@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 							m_musicExpGaugeBandHeadImage.gameObject.SetActive(false);
 						}
 					}
-					m_musicExpGaugeMaxImage.gameObject.SetActive(h.NBHEBLNHOJO_IsMax);
+					m_musicExpGaugeMaxImage.gameObject.SetActive(h.NBHEBLNHOJO_IsMaxLevel);
 				}
 			}
 		}

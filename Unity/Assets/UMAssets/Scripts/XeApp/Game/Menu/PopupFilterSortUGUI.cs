@@ -642,7 +642,7 @@ namespace XeApp.Game.Menu
 			m_plateFilterParts.filterSort.SetSortItem((SortItem)prop.LNFFKCDNCPN_sceneSelectSortItem);
 			m_plateFilterParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)prop.NPFGKBKKCFL_sceneSelectCompatibleFilter : 0);
 			m_plateFilterParts.filterDiva.SetBitCompatible(m_setting.m_param.EnableSave ? (uint)prop.JACFDEKLDCK_isCompatibleDivaCheck : 0);
-			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, true, false);
+			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, true, false);
 			m_plateFilterParts.filterDiva.SetSelectedDiva(m_setting.m_param.PlateSelectParam.SelectedDivaId);
 			m_plateFilterParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)prop.IMFEPOFGPHN_sceneSelectLiveSkillRangeFilter : 0);
 			m_plateFilterParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.AIPJDIPBDEA_sceneSelectLiveSkillRankFilter : 0);
@@ -696,7 +696,7 @@ namespace XeApp.Game.Menu
 			p.filterNotesExpectation.SetBit(0);
 			p.filterDiva.SetBit(0);
 			p.filterDiva.SetBitCompatible(0);
-			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, false, false);
 			p.filterSkill.SetBitSkillRange(0);
 			p.filterSkill.SetBitSkillRank(0);
 			p.filterSkill.SetBitSkill(0);
@@ -728,7 +728,7 @@ namespace XeApp.Game.Menu
 			m_plateFilterParts.filterSort.SetupItem(PopupSortMenu.SceneSortItem.ToArray());
 			m_plateFilterParts.filterSort.SetSortItem((SortItem)prop.GEAECNMDMHH_sceneListSortItem);
 			m_plateFilterParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)prop.PHCEMKLNJLH_sceneListCompatibleFilter : 0);
-			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, false, false);
 			m_plateFilterParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)prop.LALFKJDFPOD_sceneListLiveSkillRangeFilter : 0);
 			m_plateFilterParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.HKFPBAFALHO_sceneListLiveSkillRankFilter : 0);
 			m_plateFilterParts.filterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.BOMCDAIEFLN_sceneListLiveSkillFilter : 0);
@@ -780,7 +780,7 @@ namespace XeApp.Game.Menu
 			p.filterNotesExpectation.SetBit(0);
 			p.filterDiva.SetBit(0);
 			p.filterDiva.SetBitCompatible(0);
-			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, false, false);
 			p.filterSkill.SetBitSkillRange(0);
 			p.filterSkill.SetBitSkillRank(0);
 			p.filterSkill.SetBitSkill(0);
@@ -871,7 +871,7 @@ namespace XeApp.Game.Menu
 			m_shopProductParts.filterSort.SetupItem(PopupSortMenu.ShopSortItem.ToArray());
 			m_shopProductParts.filterSort.SetSortItem((SortItem)sort.LHPDCGNKPHD_SortItem);
 			m_shopProductParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)sort.ABLBLOEKBKA_CompatibleFilter : 0);
-			m_shopProductParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			m_shopProductParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, false, false);
 			m_shopProductParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)sort.OAJNACDACDF_LiveSkillRangeFilter : 0);
 			m_shopProductParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)sort.EAPCPNGAPBB_LiveSkillRankFilter : 0);
 			m_shopProductParts.filterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)sort.PPEFJBBGGHI_LiveSkillFilter : 0);
@@ -933,7 +933,7 @@ namespace XeApp.Game.Menu
 			p.filterNotesExpectation.SetBit(0);
 			p.filterDiva.SetBit(0);
 			p.filterDiva.SetBitCompatible(0);
-			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList, true, false, false);
 			p.filterSkill.SetBitSkillRange(0);
 			p.filterSkill.SetBitSkillRank(0);
 			p.filterSkill.SetBitSkill(0);
@@ -1000,14 +1000,14 @@ namespace XeApp.Game.Menu
 			filter.titleSort.SetTitle(bk.GetMessageByLabel("popup_sort_title_h1"));
 			filter.titleSort.EnableButton(false);
 			filter.filterSort.SetupItem(PopupSortMenu.MusicSelectSortItem.ToArray());
-			filter.filterSort.SetSortItem((SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.LHPDCGNKPHD_sortItem);
+			filter.filterSort.SetSortItem((SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.LHPDCGNKPHD_SortItem);
 			filter.titleFilter.SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
 			filter.titleFilter.SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetVerticalMusicSelectFilter);
 			filter.filterMusicBookMark.SetIndex(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.GONLKIDILLH_FilterMusicBookmark : 0);
 			filter.filterMusicBookMark.SetBookMarkText();
 			filter.filterMusicAttr.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.EOCPIGDIFNB_FilterMusicAttr : 0));
-			filter.filterCombo.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.JJNLEPEKNDO_ComboFilterBits : 0));
-			filter.filterReward.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.PGMJCBIHNHK_RewardFilterBits : 0));
+			filter.filterCombo.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.JJNLEPEKNDO_FilterCombo : 0));
+			filter.filterReward.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.PGMJCBIHNHK_FilterReward : 0));
 			filter.filterMusicLock.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.AONOGHPAENH_filterMusicUnLock : 0));
 			filter.filterRange.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.ALGFGPCPGFK_filterRange : 0));
 			filter.filterUnitLive.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.DPDBMECAIIO_FilterUnit : 0));
@@ -1020,11 +1020,11 @@ namespace XeApp.Game.Menu
 				return;
 			PopupFilterSortUGUIParts_FilterMusicSelect filter = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_FilterMusicSelect;
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.CLBMCCEEDGE_VerticalMusicSelect s = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect;
-            s.LHPDCGNKPHD_sortItem = (int)filter.filterSort.GetSortItem();
+            s.LHPDCGNKPHD_SortItem = (int)filter.filterSort.GetSortItem();
 			s.GONLKIDILLH_FilterMusicBookmark = filter.filterMusicBookMark.GetIndex();
 			s.EOCPIGDIFNB_FilterMusicAttr = (int)filter.filterMusicAttr.GetBit();
-			s.JJNLEPEKNDO_ComboFilterBits = (int)filter.filterCombo.GetBit();
-			s.PGMJCBIHNHK_RewardFilterBits = (int)filter.filterReward.GetBit();
+			s.JJNLEPEKNDO_FilterCombo = (int)filter.filterCombo.GetBit();
+			s.PGMJCBIHNHK_FilterReward = (int)filter.filterReward.GetBit();
 			s.AONOGHPAENH_filterMusicUnLock = (int)filter.filterMusicLock.GetBit();
 			s.ALGFGPCPGFK_filterRange = (int)filter.filterRange.GetBit();
 			s.DPDBMECAIIO_FilterUnit = (int)filter.filterUnitLive.GetBit();

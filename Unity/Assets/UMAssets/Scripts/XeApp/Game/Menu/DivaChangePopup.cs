@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_divaNameTexts[i].text = info[i].OPFGFINHFCE_Name;
+					m_divaNameTexts[i].text = info[i].OPFGFINHFCE_name;
 					m_textureLoadingCount++;
 					RawImage divaImage = m_divaImages[i];
 					MenuScene.Instance.DivaIconCache.LoadStateIcon(info[i].AHHJLDLAPAN_DivaId, info[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, info[i].EKFONBFDAAP_ColorId, (IiconTexture texture) =>

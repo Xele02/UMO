@@ -1940,9 +1940,9 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition12:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
 					{
-						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 						{
-							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, false);
+							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, false);
 							int res = 0;
 							for (int j = 0; j < cosList.Count; j++)
 							{
@@ -2035,9 +2035,9 @@ namespace XeApp.Game.Menu
 						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
 						{
 							int res = 0;
-							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
+							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 							{
-								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked ? 1 : 0;
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[i].FJODMPGPDDD_Unlocked ? 1 : 0;
 							}
 							return res > 1;
 						}
@@ -2056,7 +2056,7 @@ namespace XeApp.Game.Menu
 
 							AEKDNMPPOJN data = new AEKDNMPPOJN();
 							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
-							data.KHEKNNFCAOI(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
+							data.KHEKNNFCAOI_Init(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
 								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
 							if (data.LJHOOPJACPI_LeafMax > 0)
 								return true;

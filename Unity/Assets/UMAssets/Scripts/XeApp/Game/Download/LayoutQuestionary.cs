@@ -127,9 +127,9 @@ namespace XeApp.Game.DownLoad
 			m_messWindow.Show();
 			while (m_messWindow.IsPlaying())
 				yield return null;
-			for(i = 0; i < adv.JONNCMDGMKA_Messages.Length; i++)
+			for(i = 0; i < adv.JONNCMDGMKA_Message.Length; i++)
 			{
-				yield return Co.R(m_messWindow.Co_ProcMessage(adv.JONNCMDGMKA_Messages[i]));
+				yield return Co.R(m_messWindow.Co_ProcMessage(adv.JONNCMDGMKA_Message[i]));
 				yield return null;
 			}
 			m_messWindow.Hide();

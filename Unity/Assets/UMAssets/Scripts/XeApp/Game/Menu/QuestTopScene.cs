@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			int homeDivaId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
 			if(homeDivaId > 0)
 			{
-				divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeDivaId - 1].AHHJLDLAPAN_DivaId;
+				divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[homeDivaId - 1].AHHJLDLAPAN_DivaId;
 			}
 			return divaId;
 		}
@@ -796,7 +796,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_ShowBeginnerTutorial()
 		{
 			//0x9E05F0
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HDMADAHNLDN_49);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HDMADAHNLDN_Missions_49);
 			GameManager.PushBackButtonHandler backButtonDummy = () =>
 			{
 				//0x9DE3BC

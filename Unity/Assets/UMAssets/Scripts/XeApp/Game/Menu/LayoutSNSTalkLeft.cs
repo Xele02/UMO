@@ -102,8 +102,8 @@ namespace XeApp.Game.Menu
 		public override void SetStatus(SNSTalkCreater.ViewTalk talk)
 		{
 			m_viewData = talk.talk;
-			SetName(talk.chara.OPFGFINHFCE_Name + talk.chara.HAPAFECPFEK_AtName);
-			SetTalk(m_viewData.LJGOOOMOMMA_Desc);
+			SetName(talk.chara.OPFGFINHFCE_name + talk.chara.HAPAFECPFEK_AtName);
+			SetTalk(m_viewData.LJGOOOMOMMA_message);
 			SetDivaIconTexture(talk.chara.IDELKEKDIFD_CharaId);
 			SetEmotion(m_viewData.OKMMDJCAHNK_WinShapeId);
 			SetWindowSize(m_viewData.HMKFHLLAKCI_WindowSizeId);

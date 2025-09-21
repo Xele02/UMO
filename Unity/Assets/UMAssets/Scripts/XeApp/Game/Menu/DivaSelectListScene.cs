@@ -91,13 +91,13 @@ namespace XeApp.Game.Menu
 		private void Listup(int selectedDivaId)
 		{
 			m_divaSortIdList.Clear();
-			for(int i = 0; i < PlayerData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < PlayerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked)
+				if(PlayerData.NBIGLBMHEDC_DivaList[i].FJODMPGPDDD_Unlocked)
 				{
-					if (PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
+					if (PlayerData.NBIGLBMHEDC_DivaList[i].IPJMPBANBPP_Enabled)
 					{
-						if(PlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId != selectedDivaId)
+						if(PlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId != selectedDivaId)
 						{
 							m_divaSortIdList.Add(i);
 						}
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				afterDiva = PlayerData.NBIGLBMHEDC_Divas[index];
+				afterDiva = PlayerData.NBIGLBMHEDC_DivaList[index];
 				if (d == null)
 				{
 					FFHPBEPOMAK_DivaInfo f = PlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					MenuScene.Instance.ShowDivaStatusPopupWindow(PlayerData.NBIGLBMHEDC_Divas[sortListIndex], PlayerData, m_musicData, false, TransitionList.Type.UNDEFINED, UpdateContent, true, false, -1, false);
+					MenuScene.Instance.ShowDivaStatusPopupWindow(PlayerData.NBIGLBMHEDC_DivaList[sortListIndex], PlayerData, m_musicData, false, TransitionList.Type.UNDEFINED, UpdateContent, true, false, -1, false);
 				}
 			}
 		}
@@ -405,7 +405,7 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo diva = m_selectedDiva;
 				if(sortListIndex >= 0)
 				{
-					diva = PlayerData.NBIGLBMHEDC_Divas[m_divaSortIdList[sortListIndex]];
+					diva = PlayerData.NBIGLBMHEDC_DivaList[m_divaSortIdList[sortListIndex]];
 				}
 				if(diva != null)
 				{

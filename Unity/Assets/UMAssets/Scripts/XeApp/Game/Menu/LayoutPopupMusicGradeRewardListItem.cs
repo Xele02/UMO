@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus(LayoutMusicRateList.FlexibleListItem_Reward data)
 		{
 			m_itemId = data.Item.JJBGOIMEIPF_ItemId;
-			m_itemNum = data.Item.MBJIFDBEDAC_Cnt;
+			m_itemNum = data.Item.MBJIFDBEDAC_item_count;
 			m_layoutGradeIcon.StartChildrenAnimGoStop(data.Index == 0 ? "01" : "02");
 			m_textGrade.text = data.MusicGradeName;
 			SetGradeImage(data.MusicGrade);

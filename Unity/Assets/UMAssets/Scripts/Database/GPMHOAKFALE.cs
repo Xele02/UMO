@@ -30,11 +30,11 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
-	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_GetAdventure(int PPFNGGCBJKC)
+	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_GetAdventure(int _PPFNGGCBJKC_id)
 	{
-		if (PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA_table.Count)
+		if (_PPFNGGCBJKC_id != 0 && _PPFNGGCBJKC_id <= CDENCMNHNGA_table.Count)
 		{
-			return CDENCMNHNGA_table[PPFNGGCBJKC - 1];
+			return CDENCMNHNGA_table[_PPFNGGCBJKC_id - 1];
 		}
 		return null;
 	}
@@ -49,13 +49,13 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1E5F3AC Offset: 0x1E5F3AC VA: 0x1E5F3AC Slot: 8
-	protected override void KMBPACJNEOF()
+	protected override void KMBPACJNEOF_Reset()
 	{
 		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x1E5F424 Offset: 0x1E5F424 VA: 0x1E5F424 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
 	{
 		NJBPFPMDKHN parser = NJBPFPMDKHN.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		MGEJEAENEEG(parser);
@@ -63,7 +63,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1E5F6A8 Offset: 0x1E5F6A8 VA: 0x1E5F6A8 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}
@@ -87,7 +87,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1E5F6E8 Offset: 0x1E5F6E8 VA: 0x1E5F6E8
-	//private bool JANANCJMFPB(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	//private bool JANANCJMFPB(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x1E5F6F0 Offset: 0x1E5F6F0 VA: 0x1E5F6F0 Slot: 11
 	public override uint CAOGDCBPBAN()

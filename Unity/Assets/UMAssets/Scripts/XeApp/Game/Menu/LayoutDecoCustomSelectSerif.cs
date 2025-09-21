@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19DDDE4
-				return item.PPFNGGCBJKC == Id;
+				return item.PPFNGGCBJKC_id == Id;
 			});
 			int id = Id;
 			m_SerifId = n.GBJFNGCDKPM_Type;
@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 					IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 					{
 						//0x19DE044
-						return item.PPFNGGCBJKC == id;
+						return item.PPFNGGCBJKC_id == id;
 					});
 					m_textPatternAnim.StartChildrenAnimGoStop(string.Format("{0:D2}", n2.LDLGLHBGOKE_FontSize));
 					SetText(NCPPAHHCCAO.GHHOBKGGADG(Id));

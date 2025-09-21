@@ -218,12 +218,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17E425C Offset: 0x17E425C VA: 0x17E425C
 		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)
 		{
-			for(int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
+			for(int i = 0; i < playerData.NBIGLBMHEDC_DivaList.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked)
+				if(playerData.NBIGLBMHEDC_DivaList[i].FJODMPGPDDD_Unlocked)
 				{
-					TryInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
-					TryStateDivaIconInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
+					TryInstall(playerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
+					TryStateDivaIconInstall(playerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_DivaList[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
 				}
 			}
 		}

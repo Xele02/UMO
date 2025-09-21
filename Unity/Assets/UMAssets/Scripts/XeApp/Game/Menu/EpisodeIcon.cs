@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEF5B90 Offset: 0xEF5B90 VA: 0xEF5B90
 		public void SetViewData(PIGBBNDPPJC data)
 		{
-			m_episode_name.text = data.OPFGFINHFCE_Name;
+			m_episode_name.text = data.OPFGFINHFCE_name;
 			if(!data.CCBKMCLDGAD_HasReward)
 			{
 				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentValue, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 			str.SetFormat(JpStringLiterals.StringLiteral_15794, data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, RichTextUtility.MakeSizeTagString("EP", 16));
 			m_next.text = str.ToString();
 			m_episodeFeedPlateAttention.StartChildrenAnimGoStop(data.JBCIDDKDJMM ? "01" : "02");
-			SetEpisodeImage(data.KELFCMEOPPM_EpId);
+			SetEpisodeImage(data.KELFCMEOPPM_EpisodeId);
 			SetItemImage(data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 		}
 

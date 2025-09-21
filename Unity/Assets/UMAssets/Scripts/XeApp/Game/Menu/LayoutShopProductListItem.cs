@@ -108,9 +108,9 @@ namespace XeApp.Game.Menu
 			{
 				m_layoutLimit.StartChildrenAnimGoStop("limit_off");
 			}
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId);
+            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
+			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 			{
 				name += "(" + NCPPAHHCCAO.EFNHFKLKNHJ(id) + ")";
@@ -154,12 +154,12 @@ namespace XeApp.Game.Menu
 					});
 				}
 			}
-			m_itemIdList[1] = view.KIJAPOFAGPN_ItemFullId;
+			m_itemIdList[1] = view.KIJAPOFAGPN_ItemId;
 			m_imageItem[1].enabled = false;
-			GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemFullId, (IiconTexture image) =>
+			GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemId, (IiconTexture image) =>
 			{
 				//0x194611C
-				if(m_itemIdList[1] != view.KIJAPOFAGPN_ItemFullId)
+				if(m_itemIdList[1] != view.KIJAPOFAGPN_ItemId)
 					return;
 				m_imageItem[1].enabled = true;
 				image.Set(m_imageItem[1]);

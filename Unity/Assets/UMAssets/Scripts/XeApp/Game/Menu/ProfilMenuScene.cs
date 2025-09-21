@@ -173,10 +173,10 @@ namespace XeApp.Game.Menu
 						yield break;
 					}
 				}
-				m_mainGunPower = a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
+				m_mainGunPower = a_arg.data.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
 				t_is_end = false;
 				t_is_error = false;
-				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(a_arg.data.PCEGKKLKFNO.MLPEHNBNOGD_Id, (int fanCount) =>
+				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(a_arg.data.PCEGKKLKFNO_FriendData.MLPEHNBNOGD_PlayerId, (int fanCount) =>
 				{
 					//0x9CFAF8
 					m_fanCount = fanCount;
@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 					int otherLobbyId = 0;
 					t_is_end = false;
 					t_is_error = false;
-					lobbyController.LLLKDLPJHCF(a_arg.data.MLPEHNBNOGD_Id, (int u_id, int l_id) =>
+					lobbyController.LLLKDLPJHCF(a_arg.data.MLPEHNBNOGD_PlayerId, (int u_id, int l_id) =>
 					{
 						//0x9CFBF0
 						otherUniqueId = u_id;
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 				m_profil.HiddenVisitButton(!a_arg.isFavorite);
 				m_profil.SetFanCount(m_fanCount);
 				m_profil.SetMainGunPower(m_mainGunPower);
-				m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_arg.data.PCEGKKLKFNO.AJECHDLMKOE_LastLogin);
+				m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(a_arg.data.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_arg.data.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin);
 				m_profil.SetMusicRanking(m_musicRank);
 				m_profil.SetButtonType(a_arg.btnType);
 				m_profil.SetPlayerInfoWindow(_isCannonEnable, _isFanEnable);
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 					t_is_end = false;
 					t_is_error = false;
 					OEGIPPCADNA mng = OEGIPPCADNA.HHCJCDFCLOB;
-					mng.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
+					mng.MJFKJHJJLMN_GetRanks(0, false, () =>
 					{
 						//0x9CFC28
 						m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(mng.CDINKAANIAA_Rank, 0);

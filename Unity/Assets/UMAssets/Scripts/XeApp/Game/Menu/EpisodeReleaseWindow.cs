@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 			m_data = data;
 			item_data = EEDBNJAEKBI.FKDIMODKKJD()[item_type];
 			m_item_use_type = item_type;
-			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpId);
+			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpisodeId);
 			m_have_item = item_data.HMFFHLPNMPH_Count;
 			if (!m_data.CCBKMCLDGAD_HasReward)
 			{
@@ -347,7 +347,7 @@ namespace XeApp.Game.Menu
 				m_use_item_max = (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint) / item_data.IILKAJBHLMJ_Value;
 			}
 			m_caution.text = JpStringLiterals.StringLiteral_15830 + m_use_item_max.ToString() + Smart.Format(JpStringLiterals.StringLiteral_15831, m_use_item_max);
-			m_episode_item.text = item_data.OPFGFINHFCE_Name;
+			m_episode_item.text = item_data.OPFGFINHFCE_name;
 			m_item_use_num = 0;
 			UpdateItemValue();
 			rewardItemNum = m_reward_list.Count - 1;
@@ -355,8 +355,8 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < rewardItemNum; i++)
 			{
 				int index = i;
-				m_item_icon_list[i].num.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
-				m_item_icon_list[i].num2.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+				m_item_icon_list[i].num.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
+				m_item_icon_list[i].num2.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 				m_item_icon_list[i].get_icon.enabled = m_reward_list[i].HMEOAKCLKJE_IsReceived;
 				m_item_icon_list[i].image.enabled = false;
 				m_item_icon_list[i].image2.enabled = false;
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 			}
 			m_item_name.text = JpStringLiterals.StringLiteral_15778;
 			SetItemImage(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-			m_point_item_num.SetNumber(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+			m_point_item_num.SetNumber(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
 			m_next_point = data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint;
 			SetEpiItemImage(item_type + 80001);
 		}

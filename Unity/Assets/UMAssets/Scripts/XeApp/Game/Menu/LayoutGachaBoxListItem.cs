@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(data.GLCLFMGPMAN_ItemId);
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(data.GLCLFMGPMAN_ItemId);
             m_data = data;
-			m_textRemain.text = data.NNCCGILOOIE_Remain + "/" + data.BFGKGMOLAFL_Max;
+			m_textRemain.text = data.NNCCGILOOIE_Num + "/" + data.BFGKGMOLAFL_Max;
 			SetItemImage(data.GLCLFMGPMAN_ItemId);
 			m_imageStamp.enabled = false;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -64,8 +64,8 @@ namespace XeApp.Game.Menu
 					TextGeneratorUtility.SetTextRectangleMessage(m_textName, EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.GLCLFMGPMAN_ItemId), 1, JpStringLiterals.StringLiteral_12038);
 				}
 			}
-			m_textNum.text = data.LJKMKCOAICL.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
-			SetFrameUv(data.JOPPFEHKNFO_IsPickup ? "pop_reward_ev_frg2_{0:D2}" : "pop_reward_ev_fr_{0:D2}");
+			m_textNum.text = data.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+			SetFrameUv(data.JOPPFEHKNFO_Pickup ? "pop_reward_ev_frg2_{0:D2}" : "pop_reward_ev_fr_{0:D2}");
 		}
 
 		// // RVA: 0x19A4618 Offset: 0x19A4618 VA: 0x19A4618

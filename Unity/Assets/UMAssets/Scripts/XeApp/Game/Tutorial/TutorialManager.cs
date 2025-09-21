@@ -62,7 +62,7 @@ namespace XeApp.Game.Tutorial
 			{
 				if(master.CDENCMNHNGA_table[index].PPEGAKEIEGM_Enabled > 1)
 				{
-					int a = master.CDENCMNHNGA_table[index].PPFNGGCBJKC;
+					int a = master.CDENCMNHNGA_table[index].PPFNGGCBJKC_id;
 					if (master.CDENCMNHNGA_table[index].IODLCIBCONC > 0)
 						a = master.CDENCMNHNGA_table[index].IODLCIBCONC;
 					saveBitIndex = 0;
@@ -131,7 +131,7 @@ namespace XeApp.Game.Tutorial
 			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table.Count; i++)
 			{
 				PJANOOPJIDE_TutorialPict.HNHHGJCPMEA pic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table[i];
-				int id = pic.PPFNGGCBJKC;
+				int id = pic.PPFNGGCBJKC_id;
 				if (pic.IODLCIBCONC > 0)
 					id = pic.IODLCIBCONC;
 				if(id < 64)

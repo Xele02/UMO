@@ -6,13 +6,13 @@ using XeSys;
 using System;
 using XeApp;
 
-public delegate void OEEHODIFBIG(bool JKDJCFEBDHC);
-public delegate void DLMJDDACNLA(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, bool PANAGHJOMPO);
+public delegate void OEEHODIFBIG(bool _JKDJCFEBDHC_Enabled);
+public delegate void DLMJDDACNLA(IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP, bool PANAGHJOMPO);
 public delegate void EHLCCMEDIOH();
-public delegate void DMADPGMDPHC(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP);
-public delegate void MFKJNKIKBOP(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION KLMFJJCNBIP);
-public delegate void DIDEKBFMOBM(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string LJGOOOMOMMA, IMCBBOAFION KLMFJJCNBIP);
-public delegate void IHABJNEGMEA(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_Status, IMCBBOAFION KLMFJJCNBIP);
+public delegate void DMADPGMDPHC(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
+public delegate void MFKJNKIKBOP(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
+public delegate void DIDEKBFMOBM(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string _LJGOOOMOMMA_message, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
+public delegate void IHABJNEGMEA(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_Status, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
 
 public class INTERNAL_SEVER_ERROR_EXCEPTION : Exception
 {
@@ -67,14 +67,14 @@ public class PJKLMCGEJMK
     public bool OLBAIKLLIFE; // 0x64
     private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x68
     private bool DMGPJMPINFJ; // 0x6C
-    private PJKLMCGEJMK.FPHHIOBKMFD_Updater LCIGLIDJILJ_updater; // 0x74
+    private PJKLMCGEJMK.FPHHIOBKMFD_Updater LCIGLIDJILJ_Updater; // 0x74
 
     // private bool IGIIAEPHNCC { get; set; } // BLJMGAEEDAC 0x930B9C NNFLLPLMHBG 0x930C78
     // private int JMEKPMDNKEO { get; set; }  // MMACOJFDCJC 0x930D48 MLFFBGAHKJI 0x930E1C 
     // private KPKEOIJHIMN.GIDACIOHFNN DLDIKFJIGBE { get; set; } //  BEPAHJLMMOG 0x930EEC PFABEFOBEMC 0x930FC0
     public WorkerThreadQueue BNJPAKLNOPA_WorkerThreadQueue { get; set; } // 0x28 // EGCCKJEDANG IMDNDFIKMHN ODBGIMFJOHN
     public KPKEOIJHIMN DAOHAKABAFG { get { return OPFEFKOOMED; } } // JACGBOGNFKM 0x9310A0
-    // public OBOKMHHMOIL OAKOMPBPGLD { get; } // MFLBDBHHKMP 0x9310A8
+    // public OBOKMHHMOIL_ServerInfo OAKOMPBPGLD { get; } // MFLBDBHHKMP 0x9310A8
     public bool MBOIDKCMCDL { get { return NAJENHKNJLN; } set { NAJENHKNJLN = value; } } // NPCNCBJAJNO 0x9310B0 GOFGBIANJGF 0x9310B8
     public IIDJLAEDMPI FJDBNGEPKHL_Time { get { return HFMOEKIBNKA; } } // FIIMIGEKDCM 0x925074
     public LGNBLDHKLJK LOMEEJGIAHO { get { return DNMDKBFINPG; } } // LEFKJNJCAPO 0x9310C0
@@ -84,7 +84,7 @@ public class PJKLMCGEJMK
     public void IJBGPAENLJA_Start(MonoBehaviour _DANMJLOBLIE_mb)
     {
         CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_None;
-        LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
+        LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_TryStartRequest;
         HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(Utility.GetCurrentUnixTime());
         DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI_GetServerTime());
         BNJPAKLNOPA_WorkerThreadQueue = new XeApp.Core.WorkerThread.WorkerThreadQueue();
@@ -94,7 +94,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x931278 Offset: 0x931278 VA: 0x931278
     public void BAGMHFKPFIF_Update()
     {
-        LCIGLIDJILJ_updater();
+        LCIGLIDJILJ_Updater();
         DDBHLHBJEGP(CMCKNKKCNDK_Status);
     }
 
@@ -115,7 +115,7 @@ public class PJKLMCGEJMK
 
         CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_Running;
         N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
-        LCIGLIDJILJ_updater = this.JADLLIFCGLG_CheckRequest;
+        LCIGLIDJILJ_Updater = this.JADLLIFCGLG_CheckRequest;
     }
 
     // // RVA: 0x931934 Offset: 0x931934 VA: 0x931934
@@ -124,7 +124,7 @@ public class PJKLMCGEJMK
         if(FCICFIAOLAM_RequestList.Count == 0)
         {
             CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_None;
-            LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
+            LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_TryStartRequest;
             DMGPJMPINFJ = false;
             return;
         }
@@ -143,12 +143,12 @@ public class PJKLMCGEJMK
         if(FCICFIAOLAM_RequestList.Count < 1)
         {
             CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_None;
-            LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
+            LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_TryStartRequest;
         }
         else
         {
             N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
-            LCIGLIDJILJ_updater = this.JADLLIFCGLG_CheckRequest;
+            LCIGLIDJILJ_Updater = this.JADLLIFCGLG_CheckRequest;
         }
     }
 
@@ -322,9 +322,9 @@ public class PJKLMCGEJMK
                     OBOKMHHMOIL_ServerInfo b = _ADKIDBJCAJA_action.HOHOBEOJPBK_ServerInfo;
                     if(b != null)
                     {
-                        if(b.LCAINKFINEI_ServerCurrentDateTime != 0)
+                        if(b.LCAINKFINEI_SakashoCurrentDateTime != 0)
                         {
-                            HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(b.LCAINKFINEI_ServerCurrentDateTime);
+                            HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(b.LCAINKFINEI_SakashoCurrentDateTime);
                             NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK = false;
                         }
                         if(!string.IsNullOrEmpty(b.ABFADMDAAKJ_SakashoRecommendedClientVersion))
@@ -516,7 +516,7 @@ public class PJKLMCGEJMK
 
         //0x934E88
         yield return null;
-        bool KOMKKBDABJP = false;
+        bool KOMKKBDABJP_end = false;
         GOBDOEHKLHN p = JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB);
         if(KLCMLLLIANB == SakashoErrorId.MONTHLY_TOTAL_AMOUNT_OVER)
         {
@@ -532,9 +532,9 @@ public class PJKLMCGEJMK
                 IGAMFDCEGFC(KLCMLLLIANB, _ADKIDBJCAJA_action, MJACIGCPNDA, () =>
                 {
                     //0x9332C4
-                    KOMKKBDABJP = true;
+                    KOMKKBDABJP_end = true;
                 });
-                while(!KOMKKBDABJP)
+                while(!KOMKKBDABJP_end)
                     yield return null;
                 _ADKIDBJCAJA_action.EHLFONGENNK();
                 yield break;
@@ -547,14 +547,14 @@ public class PJKLMCGEJMK
             LJPJJHGIEAO(KLCMLLLIANB, _ADKIDBJCAJA_action, MJACIGCPNDA, () =>
             {
                 //0x9332D8
-                KOMKKBDABJP = true;
+                KOMKKBDABJP_end = true;
                 AAIOCNJGNEN = true;
             }, () =>
             {
                 //0x9332B8
-                KOMKKBDABJP = true;
+                KOMKKBDABJP_end = true;
             });
-            while(!KOMKKBDABJP)
+            while(!KOMKKBDABJP_end)
                 yield return null;
             _ADKIDBJCAJA_action.EHLFONGENNK();
             if(AAIOCNJGNEN)
@@ -575,14 +575,14 @@ public class PJKLMCGEJMK
                 DMGPJMPINFJ = true;
                 while(true)
                 {
-                    KOMKKBDABJP = false;
+                    KOMKKBDABJP_end = false;
                     _ADKIDBJCAJA_action.BOPHNJFGJBN();
                     NIJMLFNDAJP(KLCMLLLIANB, _ADKIDBJCAJA_action, "", () =>
                     {
                         //0x933270
-                        KOMKKBDABJP = true;
+                        KOMKKBDABJP_end = true;
                     });
-                    while(!KOMKKBDABJP)
+                    while(!KOMKKBDABJP_end)
                         yield return null;
                     _ADKIDBJCAJA_action.EHLFONGENNK();
                     if(_ADKIDBJCAJA_action.GEKKKPIIOAF != null)
@@ -604,7 +604,7 @@ public class PJKLMCGEJMK
                 AIEEDMCGNAE = null;
                 if(_ADKIDBJCAJA_action.HIBMKLEJEDP != null)
                 {
-                    AIEEDMCGNAE = _ADKIDBJCAJA_action.HIBMKLEJEDP.KLMPFGOCBHC;
+                    AIEEDMCGNAE = _ADKIDBJCAJA_action.HIBMKLEJEDP.KLMPFGOCBHC_description;
                 }
                 DMGPJMPINFJ = true;
                 if(AppEnv.IsCBT() && !string.IsNullOrEmpty(AIEEDMCGNAE))
@@ -625,13 +625,13 @@ public class PJKLMCGEJMK
                         {
                             while(true)
                             {
-                                KOMKKBDABJP = false;
+                                KOMKKBDABJP_end = false;
                                 JHHBAFKMBDL.HHCJCDFCLOB.LHHMCNLONCI(() =>
                                 {
                                     //0x93327C
-                                    KOMKKBDABJP = true;
+                                    KOMKKBDABJP_end = true;
                                 }, NPOFLDNNKAO);
-                                while(!KOMKKBDABJP)
+                                while(!KOMKKBDABJP_end)
                                     yield return null;
                             }
                         }
@@ -642,14 +642,14 @@ public class PJKLMCGEJMK
                 {
                     while(true)
                     {
-                        KOMKKBDABJP = false;
+                        KOMKKBDABJP_end = false;
                         _ADKIDBJCAJA_action.BOPHNJFGJBN();
                         LLFDDHIIPBK(KLCMLLLIANB, _ADKIDBJCAJA_action, AIEEDMCGNAE, () =>
                         {
                             //0x933288
-                            KOMKKBDABJP = true;
+                            KOMKKBDABJP_end = true;
                         });
-                        while(!KOMKKBDABJP)
+                        while(!KOMKKBDABJP_end)
                             yield return null;
                         _ADKIDBJCAJA_action.EHLFONGENNK();
                         yield return null;
@@ -659,9 +659,9 @@ public class PJKLMCGEJMK
                 LLFDDHIIPBK(KLCMLLLIANB, _ADKIDBJCAJA_action, AIEEDMCGNAE, () =>
                 {
                     //0x933294
-                    KOMKKBDABJP = true;
+                    KOMKKBDABJP_end = true;
                 });
-                while(!KOMKKBDABJP)
+                while(!KOMKKBDABJP_end)
                     yield return null;
                 _ADKIDBJCAJA_action.EHLFONGENNK();
                 AIEEDMCGNAE = null;
@@ -675,9 +675,9 @@ public class PJKLMCGEJMK
                 CCBAMLACFCF(KLCMLLLIANB, _ADKIDBJCAJA_action, JGJFFKPFMDB.NCDHNMILIOJ(KLCMLLLIANB, false), () =>
                 {
                     //0x9332A0
-                    KOMKKBDABJP = true;
+                    KOMKKBDABJP_end = true;
                 });
-                while(!KOMKKBDABJP)
+                while(!KOMKKBDABJP_end)
                     yield return null;
                 _ADKIDBJCAJA_action.EHLFONGENNK();
                 yield break;
@@ -689,9 +689,9 @@ public class PJKLMCGEJMK
         IGAMFDCEGFC(KLCMLLLIANB, _ADKIDBJCAJA_action, MJACIGCPNDA, () =>
         {
             //0x9332AC
-            KOMKKBDABJP = true;
+            KOMKKBDABJP_end = true;
         });
-        while(!KOMKKBDABJP)
+        while(!KOMKKBDABJP_end)
             yield return null;
         _ADKIDBJCAJA_action.EHLFONGENNK();
     }
@@ -704,15 +704,15 @@ public class PJKLMCGEJMK
         yield return null;
         if(EGAOFAHEPME == null)
             yield break;
-        bool KOMKKBDABJP = false;
+        bool KOMKKBDABJP_end = false;
         DMGPJMPINFJ = false;
         _ADKIDBJCAJA_action.BOPHNJFGJBN();
         EGAOFAHEPME(_ADKIDBJCAJA_action, (int)_CMCKNKKCNDK_Status, () =>
         {
             //0x933310
-            KOMKKBDABJP = true;
+            KOMKKBDABJP_end = true;
         });
-        while(!KOMKKBDABJP)
+        while(!KOMKKBDABJP_end)
             yield return null;
         _ADKIDBJCAJA_action.EHLFONGENNK();
     }
@@ -876,17 +876,17 @@ public class PJKLMCGEJMK
             SakashoErrorId CPILGOCFBNM_ErrorId = 0;
             int ACNDNOEBONM_CurrencyTotal = -1;
             BBEPLKNMICJ_Balances.Clear();
-            SakashoPayment.GetRemainingForCurrencyIds(JIELFJKDNKM, (string IDLHJIOMJBK) =>
+            SakashoPayment.GetRemainingForCurrencyIds(JIELFJKDNKM, (string _IDLHJIOMJBK_Data) =>
             {
                 //0x933384
-                EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(IDLHJIOMJBK);
+                EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_IDLHJIOMJBK_Data);
                 if(json.BBAJPINMOEP_Contains("balances"))
                 {
                     for(int i = 0; i < json["balances"].HNBFOAJIIAL_Count; i++)
                     {
                         MCKCJMLOAFP_CurrencyInfo m = new MCKCJMLOAFP_CurrencyInfo();
                         m.DPKCOKLMFMK(json["balances"][i]);
-                        if(m.PPFNGGCBJKC_Id == CPGFOBNKKBF_CurrencyId)
+                        if(m.PPFNGGCBJKC_id == CPGFOBNKKBF_CurrencyId)
                         {
                             ACNDNOEBONM_CurrencyTotal = m.BDLNMOIOMHK_Total;
                         }
@@ -971,10 +971,10 @@ public class PJKLMCGEJMK
             BEKAMBBOLBO_Done = false;
             CNAIDEAFAAM_Error = false;
             SakashoErrorId CPILGOCFBNM_ErrorId = 0;
-            SakashoPayment.GetProducts(GHDBABPAHKN, 1, 30, (string IDLHJIOMJBK) =>
+            SakashoPayment.GetProducts(GHDBABPAHKN, 1, 30, (string _IDLHJIOMJBK_Data) =>
             {
                 //0x933724
-                EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(IDLHJIOMJBK);
+                EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_IDLHJIOMJBK_Data);
                 if(json.BBAJPINMOEP_Contains("products"))
                 {
                     for(int i = 0; i < json["products"].HNBFOAJIIAL_Count; i++)

@@ -3,7 +3,7 @@ public class JKOHBJPCAJL
 { 
     public enum CNNCBDKIPGE
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0_None = 0,
         OKBECHJJKND = 1,
         ECKNIOGBKJO_2 = 2,
         LAGEBIAKBNF = 3,

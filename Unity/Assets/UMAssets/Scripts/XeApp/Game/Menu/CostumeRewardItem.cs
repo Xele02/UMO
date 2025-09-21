@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 			m_item_num.text = a.BONMCBFDMJE_ItemNum;
 			m_rank_num.StartChildrenAnimGoStop(rank, rank);
 			m_clear_icon.enabled = clear;
-			CostumeUpgradeUtility.SettingRewardIcon(data, a.GLCLFMGPMAN_ItemId, rank, a.NANNGLGOFKH_Value, m_reward_icon, null);
+			CostumeUpgradeUtility.SettingRewardIcon(data, a.GLCLFMGPMAN_ItemId, rank, a.NANNGLGOFKH_value, m_reward_icon, null);
 			m_item_detail_button.AddOnClickCallback(() =>
 			{
 				//0x163A2E8

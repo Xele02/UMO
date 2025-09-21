@@ -6,5 +6,5 @@ public interface BNKMBBKMBNC
 	//public abstract void NCMOCCDGKBP(AFIFDLOAKGI GEFIGDIDKPH, MNDAMOGGJBJ JICEBIKLCPF);
 
 	//// RVA: -1 Offset: -1 Slot: 1
-	//public abstract void NCMOCCDGKBP(MNDAMOGGJBJ JICEBIKLCPF, int KIJAPOFAGPN);
+	//public abstract void NCMOCCDGKBP(MNDAMOGGJBJ JICEBIKLCPF, int _KIJAPOFAGPN_ItemId);
 }

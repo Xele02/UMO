@@ -95,8 +95,8 @@ namespace XeApp.Game.Menu
 					playerId, name, playerRank,
 					MakeAccountLinkagingText(facebook, twitter, line, apple),
 					balanceData.BDLNMOIOMHK_Total,
-					balanceData.KCKBGALKNMA_NumPaidCrystal,
-					balanceData.JLNEMPJICEH_NumFreeCrystal,
+					balanceData.KCKBGALKNMA_paid,
+					balanceData.JLNEMPJICEH_free,
 					MakePassText(passAvailable,topPlan)
 				});
 				contentText.text = str.ToString();

@@ -14,7 +14,7 @@ public class ELFECIBLHGM
         public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ BHEHGCHGBDG; } set { AKHADFNHCBJ_LastShowDateCrypted = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
 
         // RVA: 0x1304EA8 Offset: 0x1304EA8 VA: 0x1304EA8
-        // public void KHEKNNFCAOI() { }
+        // public void KHEKNNFCAOI_Init() { }
     }
 
 	public const int JNCCCCPBDIC = 2;
@@ -25,14 +25,14 @@ public class ELFECIBLHGM
 	// RVA: 0x1304800 Offset: 0x1304800 VA: 0x1304800
 	public ELFECIBLHGM()
     {
-        KHEKNNFCAOI();
+        KHEKNNFCAOI_Init();
     }
 
 	// // RVA: 0x13048BC Offset: 0x13048BC VA: 0x13048BC
-	// public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
+	// public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	// // RVA: 0x1304820 Offset: 0x1304820 VA: 0x1304820
-	public void KHEKNNFCAOI()
+	public void KHEKNNFCAOI_Init()
     {
         ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ea0";
     }

@@ -122,12 +122,12 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			m_layoutMain.Setup(m_eventId, view);
 			m_prevBoxId = m_crntBoxId;
-			m_crntBoxId = m_view.IMMDGJAOPCD;
+			m_crntBoxId = m_view.IMMDGJAOPCD_BoxId;
 			m_prevPickup = m_crntPickup;
 			m_crntPickup = FindPickup(m_view);
 			if(m_crntPickup != null)
 			{
-				m_reactionList = m_view.MHCOADJDLLF(m_reactionTiming, HGFPAFPGIKG.FBGKMBHEOBC.HJNNKCMLGFL_0, HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0).FindAll(CheckReaction);
+				m_reactionList = m_view.MHCOADJDLLF(m_reactionTiming, HGFPAFPGIKG.FBGKMBHEOBC.HJNNKCMLGFL_0_None, HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0_None).FindAll(CheckReaction);
 				m_isBoxFull = m_view.JALHJAPAFLK_BoxCurrent == m_view.DMPELKEMCCJ_BoxTotal;
 			}
 		}
@@ -143,20 +143,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEE1754 Offset: 0xEE1754 VA: 0xEE1754
 		private bool CheckReaction(HGFPAFPGIKG.LBEPCOMCHNE reaction)
 		{
-			if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0 || reaction.FKDOMKHHOCD_CenterSkillCondition > HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5)
+			if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0_None || reaction.FKDOMKHHOCD_CenterSkillCondition > HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5)
 				return false;
 			switch(reaction.FKDOMKHHOCD_CenterSkillCondition)
 			{
 				case HGFPAFPGIKG.GDEJHABHLFH.HPFFBANMJOD_1:
 					break;
 				case HGFPAFPGIKG.GDEJHABHLFH.CPLKGJJFJKA_2:
-					return (m_crntPickup.NNCCGILOOIE_Remain - m_crntPickup.BFGKGMOLAFL_Max) < 0;
+					return (m_crntPickup.NNCCGILOOIE_Num - m_crntPickup.BFGKGMOLAFL_Max) < 0;
 				default:
 					if(m_prevBoxId != m_crntBoxId)
 						return false;
 					if(m_prevPickup == null)
 						return false;
-					if(m_prevPickup.NNCCGILOOIE_Remain <= m_crntPickup.NNCCGILOOIE_Remain)
+					if(m_prevPickup.NNCCGILOOIE_Num <= m_crntPickup.NNCCGILOOIE_Num)
 						return false;
 					if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3)
 					{
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			return view.GMENOMFADOH().Find((HGFPAFPGIKG.CMEDMHFOFAH x) =>
 			{
 				//0xEE1F34
-				return x.JOPPFEHKNFO_IsPickup;
+				return x.JOPPFEHKNFO_Pickup;
 			});
 		}
 

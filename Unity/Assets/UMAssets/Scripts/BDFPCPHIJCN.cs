@@ -7,7 +7,7 @@ using XeApp.Game.Common;
 public class BDFPCPHIJCN : LBHFILLFAGA
 {
 	private WWW IEJJKNOEKLM; // 0x4C
-	private int LGADCGFMLLD; // 0x50
+	private int LGADCGFMLLD_step; // 0x50
 	private AssetBundleCreateRequest NMNCMNNPNCI; // 0x54
 
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -40,7 +40,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 			IEJJKNOEKLM = new WWW("file://"+HHHEFALNMJO_mPath);
 #endif
 		}
-		LGADCGFMLLD = 0;
+		LGADCGFMLLD_step = 0;
 	}
 
 	// // RVA: 0xC70770 Offset: 0xC70770 VA: 0xC70770 Slot: 5
@@ -74,11 +74,11 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 #endif
 		if(!FHHAFJMELMD_alreadyLoading)
 		{
-			if(LGADCGFMLLD == 2)
+			if(LGADCGFMLLD_step == 2)
 			{
 				return false;
 			}
-			else if(LGADCGFMLLD == 1)
+			else if(LGADCGFMLLD_step == 1)
 			{
 				TodoLogger.Log(TodoLogger.Filesystem, "Bundle wait for load in memory");
 				if(NMNCMNNPNCI.isDone)
@@ -87,7 +87,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 					{
 						NMNCMNNPNCI = null;
 						TodoLogger.LogError(TodoLogger.Filesystem, "Error loading bundle");
-						LGADCGFMLLD = 2;
+						LGADCGFMLLD_step = 2;
 						PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Large, "Error loading asset bundle \n"+HHHEFALNMJO_mPath+"\nReplace it and retry or relaunch the game and enable Integrity Check.", 
 						new ButtonInfo[1]
 						{
@@ -111,7 +111,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 					return false;
 				}
 			}
-			else if(LGADCGFMLLD == 0)
+			else if(LGADCGFMLLD_step == 0)
 			{
 				byte[] data = IEJJKNOEKLM.bytes;
 				if(!BBGDFKAPJHN(data))
@@ -163,7 +163,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 #endif
 				//#endregion
 				NMNCMNNPNCI = AssetBundle.LoadFromMemoryAsync(data);
-				LGADCGFMLLD = 1;
+				LGADCGFMLLD_step = 1;
 				return false;
 			}
 		}

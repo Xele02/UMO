@@ -98,10 +98,10 @@ namespace XeApp.Game.Menu
 		public void SetStatus(FJGOKILCBJA view, bool isBuy)
 		{
 			m_view = view;
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId);
+			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
-            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId);
+            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
+            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
 			m_textName.text = name + " " + view.JDLJPNMLFID_ItemCount + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
 			m_ownItemNum = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
 			m_textOwn4d[1].text = m_ownItemNum.ToString();
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo sceneData = new GCIJNCFDNON_SceneInfo();
-				sceneData.KHEKNNFCAOI(id, null, null, 0, 0, 0, false, 0, 0);
+				sceneData.KHEKNNFCAOI_Init(id, null, null, 0, 0, 0, false, 0, 0);
 				m_imagePlate.enabled = false;
 				GameManager.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.JOKJBMJBLBB_Single ? 2 : 1, (IiconTexture image) =>
 				{
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 				{
 					m_imageItem[1].enabled = false;
-					GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemFullId, (IiconTexture image) =>
+					GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemId, (IiconTexture image) =>
 					{
 						//0x1787D58
 						m_imageItem[1].enabled = true;
@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_imageItem[0].enabled = false;
-					GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemFullId, (IiconTexture image) =>
+					GameManager.Instance.ItemTextureCache.Load(view.KIJAPOFAGPN_ItemId, (IiconTexture image) =>
 					{
 						//0x1787EBC
 						m_layoutItem.StartChildrenAnimGoStop("item");
@@ -185,13 +185,13 @@ namespace XeApp.Game.Menu
 			{
 				//0x17882F4
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				OpenPopupItemDetail(m_view.KIJAPOFAGPN_ItemFullId);
+				OpenPopupItemDetail(m_view.KIJAPOFAGPN_ItemId);
 			});
 			m_buttonPlate.AddOnClickCallback(() =>
 			{
 				//0x178837C
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				OpenPopupPlateDetail(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_view.KIJAPOFAGPN_ItemFullId));
+				OpenPopupPlateDetail(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_view.KIJAPOFAGPN_ItemId));
 			});
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 			{
@@ -311,7 +311,7 @@ namespace XeApp.Game.Menu
 		private void OpenPopupPlateDetail(int sceneId)
 		{
 			GCIJNCFDNON_SceneInfo sceneData = new GCIJNCFDNON_SceneInfo();
-			sceneData.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+			sceneData.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 			MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 		}
 

@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 				{
 					EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[skill.CEFHDLLAPDH_MusicId - 1];
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
-					PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_compatible_music_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("pop_compatible_music_desc"), RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[music.FKDCCLPGKDK_Ma - 1])), new ButtonInfo[1]
+					PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_compatible_music_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("pop_compatible_music_desc"), RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(music.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[music.FKDCCLPGKDK_Ma - 1])), new ButtonInfo[1]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 					}, false, true), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>

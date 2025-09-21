@@ -180,7 +180,7 @@ namespace XeApp.Game.Menu
 			ItemIconSpAnim.StartChildrenAnimGoStop("02");
 			DebutIcon.StartChildrenAnimGoStop("02");
 			SetOrderButtonState(m_view.MJKJGDOIAGO());
-			if (CheckOverEndTime(m_view.PCCFAKEOBIC_EndDate) && buttonState == OrderButtonState.PROGRESS)
+			if (CheckOverEndTime(m_view.PCCFAKEOBIC_EndTime) && buttonState == OrderButtonState.PROGRESS)
 				SetOrderButtonState(OrderButtonState.DONE);
 			SetLevelIcon(m_view.CIEOBFIIPLD_Level, m_view.NBLBJCLIDNN_MaxLevel);
 			SetOfferType(m_view.CGKPIIFCCLD_OfferType);
@@ -188,7 +188,7 @@ namespace XeApp.Game.Menu
 			EventIconSetting(m_view.HBJEDMOMAEE_SpOfferType);
 			OfferCategoryChenge();
 			SetTimeText(ClearTime, m_view.JGAMLEMMJCJ_ClearTime);
-			SetTimeWatcher(m_view.PCCFAKEOBIC_EndDate);
+			SetTimeWatcher(m_view.PCCFAKEOBIC_EndTime);
 			SetItemIconButton();
 			OfferDebutIcon.StartChildrenAnimGoStop(!IsBeginner ? "02" : "01");
 			AbsUpdate();
@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1864258
 				MenuScene.Instance.RaycastEnable();
-				if(buttonStateCheck(m_view.PCCFAKEOBIC_EndDate - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()))
+				if(buttonStateCheck(m_view.PCCFAKEOBIC_EndTime - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()))
 				{
 					StateUpdate();
 				}
@@ -490,9 +490,9 @@ namespace XeApp.Game.Menu
 				buttonState = OrderButtonState.DONE;
 				if(KDHGBOOECKC.HHCJCDFCLOB != null)
 				{
-					if(KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
+					if(KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC_id) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
 					{
-						KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved);
+						KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved);
 					}
 				}
 				m_view.CMCKNKKCNDK_Status = BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
@@ -510,9 +510,9 @@ namespace XeApp.Game.Menu
 			buttonState = OrderButtonState.DONE;
 			if (KDHGBOOECKC.HHCJCDFCLOB != null)
 			{
-				if (KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
+				if (KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC_id) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
 				{
-					KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved);
+					KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_view.FGHGMHPNEMG_Type, m_view.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved);
 				}
 			}
 			m_view.CMCKNKKCNDK_Status = BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
@@ -592,7 +592,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18601CC Offset: 0x18601CC VA: 0x18601CC
 		private void OfferCategoryChenge()
 		{
-			if(m_view.FGHGMHPNEMG_Type > BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0 && m_view.FGHGMHPNEMG_Type <= BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week)
+			if(m_view.FGHGMHPNEMG_Type > BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0_None && m_view.FGHGMHPNEMG_Type <= BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week)
 			{
 				ChengeSeriesLogo(m_view.DFMOGBOPLEF_Series);
 				ChengeSeriesIcon(m_view.DFMOGBOPLEF_Series);
@@ -650,7 +650,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x186252C Offset: 0x186252C VA: 0x186252C
 		private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
 		{
-			if(seriesIcon != BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7 && seriesIcon != BOPFPIHGJMD.LGEIPIHHNPH.CFBJGAGBJEN_5 && seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(seriesIcon != BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7 && seriesIcon != BOPFPIHGJMD.LGEIPIHHNPH.CFBJGAGBJEN_5 && seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0_None && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
 			{
 				if (seriesIcon == BOPFPIHGJMD.LGEIPIHHNPH.GDEJFFFHFGP_6)
 					seriesIcon = BOPFPIHGJMD.LGEIPIHHNPH.CFBJGAGBJEN_5;
@@ -665,7 +665,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1862674 Offset: 0x1862674 VA: 0x1862674
 		private void ChengeSeriesIcon(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
 		{
-			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0 && seriesIcon < BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0_None && seriesIcon < BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
 			{
 				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_IconTextureUvName, (int)seriesIcon));
 				if(data != null)
@@ -695,7 +695,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x185FC70 Offset: 0x185FC70 VA: 0x185FC70
 		private void SetLevelIcon(int level, int maxLevel)
 		{
-			OfferLevelMax.StartAllAnimGoStop(m_view.NBHEBLNHOJO ? "01" : "02");
+			OfferLevelMax.StartAllAnimGoStop(m_view.NBHEBLNHOJO_IsMaxLevel ? "01" : "02");
 			OfferLevel.StartAllAnimGoStop((maxLevel < 1 ? 1 : maxLevel).ToString("D2"));
 			for(int i = 0; i < 6; i++)
 			{

@@ -26,12 +26,12 @@ namespace XeApp.Game.Menu
 				m_imageItem.enabled = true;
 				image.Set(m_imageItem);
 			});
-			m_numCount.SetNumber(prize.LJKMKCOAICL, 0);
+			m_numCount.SetNumber(prize.LJKMKCOAICL_ItemCount, 0);
 			for(int i = 0; i < m_imageFrame.Length; i++)
 			{
-				m_imageFrame[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format(s_formatTable[i], prize.LIDBKCIMCKE_Rarity)));
+				m_imageFrame[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format(s_formatTable[i], prize.LIDBKCIMCKE_rarity)));
 			}
-			m_layoutPickup.StartChildrenAnimGoStop(!prize.JOPPFEHKNFO_IsPickup ? "02" : "01");
+			m_layoutPickup.StartChildrenAnimGoStop(!prize.JOPPFEHKNFO_Pickup ? "02" : "01");
 		}
 
 		// RVA: 0x19AA210 Offset: 0x19AA210 VA: 0x19AA210

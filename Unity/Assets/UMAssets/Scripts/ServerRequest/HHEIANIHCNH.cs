@@ -17,7 +17,7 @@ public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         NFEAMMJIMPG_Result = new HEHLBMMFMPL_PlayerStatusInfo();
-        NFEAMMJIMPG_Result.KHEKNNFCAOI(json);
+        NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(json);
     }
 }
 
@@ -38,22 +38,22 @@ public class HEHLBMMFMPL_PlayerStatusInfo
     }
 
 	// // RVA: 0x1748048 Offset: 0x1748048 VA: 0x1748048
-	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
     {
         EKFHOJIGHHH_IsCreated = 1;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated/*"is_created"*/))
+        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated/*"is_created"*/))
         {
-            EKFHOJIGHHH_IsCreated = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated];
+            EKFHOJIGHHH_IsCreated = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated];
         }
         EHGBICNIBKE_PlayerId = 0;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId/*"player_id"*/))
+        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId/*"player_id"*/))
         {
-            EHGBICNIBKE_PlayerId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId];
+            EHGBICNIBKE_PlayerId = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId];
         }
         JFMEKPDHJPP_PlayerAccountStatus = 0;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status/*"player_account_status"*/))
+        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.JFMEKPDHJPP_PlayerAccountStatus/*"player_account_status"*/))
         {
-            JFMEKPDHJPP_PlayerAccountStatus = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status];
+            JFMEKPDHJPP_PlayerAccountStatus = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.JFMEKPDHJPP_PlayerAccountStatus];
         }
     }
 }

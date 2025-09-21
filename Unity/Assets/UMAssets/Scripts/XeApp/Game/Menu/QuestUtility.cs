@@ -48,13 +48,13 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < m_eventViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_QuastName;
+						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_QuestName;
 						data.m_uniqueId = m_eventViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = m_eventViewList[i].COAMJFMEIBF.HIDHLFCBIDE_EventType;
-						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_QuastName, false, m_eventViewList[i].BCOKKAALGHC_Group);
+						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_QuestName, false, m_eventViewList[i].BCOKKAALGHC_Group);
 						data.m_achievedCount = GetQuestCountByStatus(data.m_viewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
-						m_eventViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
+						m_eventViewList[i].PKNLMLDKCLM_AchievedQuestCount = data.m_achievedCount;
 						if(data.m_achievedCount < 1)
 						{
 							m_eventViewList[i].BEEIIJJKDBH_BadgeConstantId = Common.BadgeConstant.ID.None;
@@ -89,12 +89,12 @@ namespace XeApp.Game.Menu
 					for (int i = 0; i < m_bingoViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_QuastName;
+						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_QuestName;
 						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO_12;
 						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI_EventId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
-						m_bingoViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
+						m_bingoViewList[i].PKNLMLDKCLM_AchievedQuestCount = data.m_achievedCount;
 						if(data.m_achievedCount < 1)
 						{
 							m_bingoViewList[i].BEEIIJJKDBH_BadgeConstantId = Common.BadgeConstant.ID.None;
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			return list.Find((CGJKNOCAPII _) =>
 			{
 				//0x9E7AF4
-				return _.PKNLMLDKCLM_AchievedQuests > 0;
+				return _.PKNLMLDKCLM_AchievedQuestCount > 0;
 			}) != null;
 		}
 
@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for(int i = 0; i < list.Count; i++)
 			{
-				res += list[i].PKNLMLDKCLM_AchievedQuests;
+				res += list[i].PKNLMLDKCLM_AchievedQuestCount;
 			}
 			return res;
 		}
@@ -533,7 +533,7 @@ namespace XeApp.Game.Menu
 							{
 								List<int> l = IBJAKJJICBC.CJHOOLJFGFB();
 								l.Sort();
-								if(JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 && JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId > 0)
+								if(JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None && JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId > 0)
 								{
 									l.Insert(0, JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId);
 								}
@@ -699,7 +699,7 @@ namespace XeApp.Game.Menu
 					MenuScene.Instance.RaycastDisable();
 					bool done = false;
 					bool err = false;
-					FKMOKDCJFEN.JKBOOMAPOBL(view.JONPKLHMOBL, l, view.JOPOPMLFINI, (List<int> _list, bool limit) =>
+					FKMOKDCJFEN.JKBOOMAPOBL(view.JONPKLHMOBL_Category, l, view.JOPOPMLFINI_QuestName, (List<int> _list, bool limit) =>
 					{
 						//0x9E7E00
 						done = true;
@@ -791,7 +791,7 @@ namespace XeApp.Game.Menu
 					bool done = false;
 					bool err = false;
 					bool isLimit = false;
-					FKMOKDCJFEN.JKBOOMAPOBL(view.JONPKLHMOBL, idList, view.JOPOPMLFINI, (List<int> _list, bool limit) =>
+					FKMOKDCJFEN.JKBOOMAPOBL(view.JONPKLHMOBL_Category, idList, view.JOPOPMLFINI_QuestName, (List<int> _list, bool limit) =>
 					{
 						//0x9E7E30
 						isLimit = limit;
@@ -837,7 +837,7 @@ namespace XeApp.Game.Menu
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
-			if(cat > EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_None && cat < EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem && ((0x39U >> ((int)cat - 1)) & 1) != 0) // 00111001
+			if(cat > EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None && cat < EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem && ((0x39U >> ((int)cat - 1)) & 1) != 0) // 00111001
 			{
 				return 0;
 			}
@@ -1001,20 +1001,20 @@ namespace XeApp.Game.Menu
 				HHPEMHHCKBE_Compo.MLMDKHBFOJM dbCompo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ALFKMKICDPP_Compo.CDENCMNHNGA_table[info.NNFNGLJOKKF_ItemId - 1];
 				for(int i = 0; i < dbCompo.JCJGGHGIKIJ(); i++)
 				{
-					if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_Cnt) > 0)
+					if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_item_count) > 0)
 					{
 						MFDJIFIIPJD data = new MFDJIFIIPJD();
-						data.KHEKNNFCAOI(dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_Cnt);
+						data.KHEKNNFCAOI_Init(dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_item_count);
 						l.Add(data);
 					}
 				}
 			}
 			else
 			{
-				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt) > 0)
+				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_item_count) > 0)
 				{
 					MFDJIFIIPJD data = new MFDJIFIIPJD();
-					data.KHEKNNFCAOI(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt);
+					data.KHEKNNFCAOI_Init(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_item_count);
 					l.Add(data);
 				}
 			}
@@ -1233,7 +1233,7 @@ namespace XeApp.Game.Menu
 				{
 					idx = cos.AHHJLDLAPAN_DivaId - 1;
 				}
-				return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_SerieAttr;
+				return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[idx].AIHCEGFANAM_SerieAttr;
 			}
 			return 1;
 		}

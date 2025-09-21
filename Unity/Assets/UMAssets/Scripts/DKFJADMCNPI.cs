@@ -16,7 +16,7 @@ public class DKFJADMCNPI
 
 	public enum NLKCMNHOBAI
 	{
-		HJNNKCMLGFL_0 = 0,
+		HJNNKCMLGFL_0_None = 0,
 		CLJMJHDGPOC_1 = 1,
 		IBGNFEOLKDP = 2,
 		KENMCJCIGIB_3 = 3,

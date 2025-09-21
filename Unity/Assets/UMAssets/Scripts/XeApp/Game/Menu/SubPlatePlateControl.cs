@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 			m_buffColor = ColorConvert.Convert(StatusTextColor.UpColor);
 			m_isClossFade = false;
 			m_debuffColor = ColorConvert.Convert(StatusTextColor.DebuffColor);
-			m_info = content.subPlateResult.KOGBMDOONFA[m_attribute, m_status];
+			m_info = content.subPlateResult.KOGBMDOONFA_Info[m_attribute, m_status];
 			if (m_info.CDOCOLOKCJK_HasRate)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				m_rateText.text = str.ToString();
 				if(!m_info.DFIGPDCBAPB_IsInvalid)
 				{
-					str.SetFormat("{0}", m_info.OEOIHIIIMCK_Add);
+					str.SetFormat("{0}", m_info.OEOIHIIIMCK_add);
 					m_addText.text = str.ToString();
 					if(m_info.IKEJLHJEANO == 1)
 					{

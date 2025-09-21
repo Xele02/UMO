@@ -580,14 +580,14 @@ namespace XeApp.Game.Menu
 			m_infos.SetActiveHideContent(true);
 			m_infos.SetDiva(divaId);
 			m_divaMessage.SetDiva(divaId);
-			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0xB7AE80
 				return _.AHHJLDLAPAN_DivaId == divaId;
 			});
 			if(d == null)
 			{
-				d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[0];
+				d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[0];
 			}
 			m_status.Setup(d);
 			bool isWaitRankingLoad = true;
@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
 			IBJAKJJICBC d = new IBJAKJJICBC();
-			d.KHEKNNFCAOI(1, false, 0, 0, 0, false, false, false);
+			d.KHEKNNFCAOI_Init(1, false, 0, 0, 0, false, false, false);
 			DivaTotalRankingSceneArgs args = new DivaTotalRankingSceneArgs();
 			args.MusicData = d;
 			args.DivaId = m_divaId;
@@ -939,7 +939,7 @@ namespace XeApp.Game.Menu
 			PIGBBNDPPJC episodeData = null;
 			for(int i = 0; i < m_episodeList.Count; i++)
 			{
-				if(m_episodeList[i].KELFCMEOPPM_EpId == costumeItemInfo.m_viewDiva.KELFCMEOPPM_EpisodeId)
+				if(m_episodeList[i].KELFCMEOPPM_EpisodeId == costumeItemInfo.m_viewDiva.KELFCMEOPPM_EpisodeId)
 				{
 					episodeData = m_episodeList[i];
 				}
@@ -958,7 +958,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode }
 				};
-				m_stringBuilder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), episodeData.OPFGFINHFCE_Name);
+				m_stringBuilder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), episodeData.OPFGFINHFCE_name);
 				s.m_text = m_stringBuilder.ToString();
 			}
 			else
@@ -1024,7 +1024,7 @@ namespace XeApp.Game.Menu
 					if(!presentDivaLimit)
 					{
 						PopupGakuyaPresentUseSetting s = new PopupGakuyaPresentUseSetting();
-						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_Name);
+						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_name);
 						s.Buttons = new ButtonInfo[2]
 						{
 							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -1057,7 +1057,7 @@ namespace XeApp.Game.Menu
 					else
 					{
 						PopupGakuyaPresentUse2Setting s = new PopupGakuyaPresentUse2Setting();
-						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_Name);
+						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_name);
 						s.Buttons = new ButtonInfo[2]
 						{
 							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -1147,7 +1147,7 @@ namespace XeApp.Game.Menu
 			{
 				id = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
 			}
-			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
+			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList)
 			{
 				if(id != d.AHHJLDLAPAN_DivaId)
 				{
@@ -1228,7 +1228,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB79CDC Offset: 0xB79CDC VA: 0xB79CDC
 		private void PreSetAllHomeCostume()
 		{
-			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
+			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList)
 			{
 				if(d.FJODMPGPDDD_Unlocked)
 				{
@@ -1255,7 +1255,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId = m_divaId;
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			List<int> l = new List<int>();
-			foreach(var diva in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
+			foreach(var diva in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList)
 			{
 				if(m_divaId != diva.AHHJLDLAPAN_DivaId && diva.FJODMPGPDDD_Unlocked)
 				{
@@ -1273,7 +1273,7 @@ namespace XeApp.Game.Menu
 			}
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Find((FFHPBEPOMAK_DivaInfo _) =>
 			{
 				//0xB7B6D4
 				return _.AHHJLDLAPAN_DivaId == m_divaId;
@@ -1300,7 +1300,7 @@ namespace XeApp.Game.Menu
 				{
 					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK/*7*/, a, 1, null);
 				}
-				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
 			}
 			bool isWait = true;
 			bool isSuccess = false;

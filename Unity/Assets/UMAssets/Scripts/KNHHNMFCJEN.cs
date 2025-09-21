@@ -31,7 +31,7 @@ internal class KNHHNMFCJEN
         int review_score_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_score_rank", 3);
         if(JGEOBNENMAH.HHCJCDFCLOB.CODDMAKLBDO_LastComboRank < review_combo_rank)
         {
-            if(review_score_rank <= JGEOBNENMAH.HHCJCDFCLOB.PENICOGGNLF)
+            if(review_score_rank <= JGEOBNENMAH.HHCJCDFCLOB.PENICOGGNLF_ScoreRank)
                 return true;
             return false;
         }

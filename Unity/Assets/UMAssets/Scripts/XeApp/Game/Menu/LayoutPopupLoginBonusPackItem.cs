@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 			string s = EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId);
 			if(!string.IsNullOrEmpty(s))
 			{
-				m_textItemNum.text = info.MBJIFDBEDAC_Cnt + s;
+				m_textItemNum.text = info.MBJIFDBEDAC_item_count + s;
 			}
 			else
 			{

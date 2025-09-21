@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 					m_bgDataList.RemoveAll((CGFNKMNBNBN x) =>
 					{
 						//0x95EDE4
-						return x.PPFNGGCBJKC_Id == setBgId;
+						return x.PPFNGGCBJKC_id == setBgId;
 					});
 					m_bgDataList.Insert(0, item);
 				}

@@ -69,9 +69,9 @@ namespace XeApp.Game.Menu
 				talkCreater.snsController = layoutController;
 			}
 			if (snsId < 1)
-				m_viewSnsData.KHEKNNFCAOI(false, IsTutorial, -1);
+				m_viewSnsData.KHEKNNFCAOI_Init(false, IsTutorial, -1);
 			else
-				m_viewSnsData.KHEKNNFCAOI(snsId);
+				m_viewSnsData.KHEKNNFCAOI_Init(snsId);
 			layoutController.Initialize(m_viewSnsData, isReview);
 			talkCreater.Initialize(m_viewSnsData);
 		}
