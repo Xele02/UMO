@@ -9,12 +9,12 @@ public class AHOBHNDOEBO : CACGCMBKHDI_Request
 		public List<FHPFLAGNCAF> MHKCPJDNJKI_products = new List<FHPFLAGNCAF>(); // 0x8
 
 		//// RVA: 0x15C92D0 Offset: 0x15C92D0 VA: 0x15C92D0
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
 			MHKCPJDNJKI_products.Clear();
-			if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("platform_products"))
+			if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains("platform_products"))
 			{
-				EDOHBJAPLPF_JsonData block = _IDLHJIOMJBK_Data["platform_products"];
+				EDOHBJAPLPF_JsonData block = _IDLHJIOMJBK_data["platform_products"];
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)
 				{
 					FHPFLAGNCAF data = new FHPFLAGNCAF();

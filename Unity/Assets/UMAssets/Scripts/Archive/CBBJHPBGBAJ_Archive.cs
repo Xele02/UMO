@@ -11,7 +11,7 @@ public class CBBJHPBGBAJ_Archive
 	public class JBCFNCNGLPM_File
 	{
 		public string OPFGFINHFCE_name; // 0x8
-		public byte[] DBBGALAPFGC_Data; // 0xC
+		public byte[] DBBGALAPFGC_bytes; // 0xC
 	}
 
 	private const int HMJJCPMKDEI_BlockSize = 512; // 0x0
@@ -37,7 +37,7 @@ public class CBBJHPBGBAJ_Archive
 				int size = CBOIHFIPHGN_GetSize(GANPCOAGBBK_db, offset);
 				byte[] dataBytes = new byte[size];
 				Buffer.BlockCopy(GANPCOAGBBK_db, offset + HMJJCPMKDEI_BlockSize, dataBytes, 0, size);
-				data.DBBGALAPFGC_Data = dataBytes;
+				data.DBBGALAPFGC_bytes = dataBytes;
 				KGHAJGGMPKL_files.Add(data);
 			}
 			int end = offset + HMJJCPMKDEI_BlockSize;

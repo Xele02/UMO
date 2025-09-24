@@ -129,7 +129,7 @@ namespace XeApp
 		public bool CanEdit { get {
 				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
-					return ViewData.GBJFNGCDKPM_Type != 11;
+					return ViewData.GBJFNGCDKPM_typ != 11;
 				}
 				return true;
 			} } //0x1AD07E4
@@ -685,10 +685,10 @@ namespace XeApp
 		public virtual void SetInfo(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD info)
 		{
 			Position = new Vector2(info.GHPLINIACBB_x, info.PMBEODGMMBB_y);
-			SortingOrder = info.BNHOEFJAAKK_Prio;
-			Flip(info.BDEEIPPDCLE_Rvs);
-			m_setting.InitWord = info.BEJGNPAAKNB_Word;
-			m_statusFlag = info.PMIPFEJFIHA_StatusFlag;
+			SortingOrder = info.BNHOEFJAAKK_prio;
+			Flip(info.BDEEIPPDCLE_rvs);
+			m_setting.InitWord = info.BEJGNPAAKNB_word;
+			m_statusFlag = info.PMIPFEJFIHA_stat;
 			IsMoved = false;
 		}
 

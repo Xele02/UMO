@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void FEFLFHNKFCN(BEAOCBFAHKF _NFEAMMJIMPG_Result, int _KAPMOPMDHJE_label, int _BPNPBJALGHM_Quantity, int _CPGFOBNKKBF_CurrencyId);
+public delegate void FEFLFHNKFCN(BEAOCBFAHKF _NFEAMMJIMPG_Result, int _KAPMOPMDHJE_label, int _BPNPBJALGHM_quantity, int _CPGFOBNKKBF_CurrencyId);
 
 public class IGCPCHNCJCF
 {
@@ -46,14 +46,14 @@ public class IGCPCHNCJCF
     }
 
 	// // RVA: 0x11F3098 Offset: 0x11F3098 VA: 0x11F3098
-	public void GBMFNHOFGOP_Purchase(int _KAPMOPMDHJE_label, int _BPNPBJALGHM_Quantity, FEFLFHNKFCN _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public void GBMFNHOFGOP_Purchase(int _KAPMOPMDHJE_label, int _BPNPBJALGHM_quantity, FEFLFHNKFCN _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
-		N.a.StartCoroutineWatched(DMIHMJHAAAF_Co_Purchase(_KAPMOPMDHJE_label, _BPNPBJALGHM_Quantity, _BHFHGFKBOHH_OnSuccess, NIMPEHIECJH, _AOCANKOMKFG_OnError));
+		N.a.StartCoroutineWatched(DMIHMJHAAAF_Co_Purchase(_KAPMOPMDHJE_label, _BPNPBJALGHM_quantity, _BHFHGFKBOHH_OnSuccess, NIMPEHIECJH, _AOCANKOMKFG_OnError));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9DD0 Offset: 0x6B9DD0 VA: 0x6B9DD0
 	// // RVA: 0x11F310C Offset: 0x11F310C VA: 0x11F310C
-	private IEnumerator DMIHMJHAAAF_Co_Purchase(int _KAPMOPMDHJE_label, int _BPNPBJALGHM_Quantity, FEFLFHNKFCN _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	private IEnumerator DMIHMJHAAAF_Co_Purchase(int _KAPMOPMDHJE_label, int _BPNPBJALGHM_quantity, FEFLFHNKFCN _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		KBPDNHOKEKD_ProductId PPMJJBAGPOG;
 		DOLDMCAMEOD_RequestRemainingForCurrencyIds PMNKDBLBFHM;
@@ -63,7 +63,7 @@ public class IGCPCHNCJCF
 		//0x11F35E8
 		object[] arg = new object[4]
 		{
-			JpStringLiterals.StringLiteral_11086, _KAPMOPMDHJE_label, ", quantity=", _BPNPBJALGHM_Quantity
+			JpStringLiterals.StringLiteral_11086, _KAPMOPMDHJE_label, ", quantity=", _BPNPBJALGHM_quantity
 		};
 		Debug.Log(string.Concat(arg));
 		PPMJJBAGPOG = MHKCPJDNJKI_products.Find((KBPDNHOKEKD_ProductId _GHPLINIACBB_x) =>
@@ -80,7 +80,7 @@ public class IGCPCHNCJCF
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(time >= PPMJJBAGPOG.KBFOIECIADN_opened_at)
 		{
-			if(PPMJJBAGPOG.EGBOHDFBAPB_CloseAt >= time)
+			if(PPMJJBAGPOG.EGBOHDFBAPB_closed_at >= time)
 			{
 				PMNKDBLBFHM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
 				PMNKDBLBFHM.CGCFENMHJIM_Ids = new List<int>();
@@ -96,7 +96,7 @@ public class IGCPCHNCJCF
 				}
 				NIEBENJFJDI = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
 				NIEBENJFJDI.AFKAGFOFAHM_ProductId = PPMJJBAGPOG.PPFNGGCBJKC_id;
-				NIEBENJFJDI.BPNPBJALGHM_Quantity = _BPNPBJALGHM_Quantity;
+				NIEBENJFJDI.BPNPBJALGHM_quantity = _BPNPBJALGHM_quantity;
 				NIEBENJFJDI.APHNELOFGAK_CurrencyId = APHNELOFGAK_CurrencyId;
 				while(!NIEBENJFJDI.PLOOEECNHFB_IsDone)
 					yield return null;
@@ -108,12 +108,12 @@ public class IGCPCHNCJCF
 						yield return null;
 					if(!AKAAHOAKKDF.NPNNPNAIONN_IsError)
 					{
-						CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(AKAAHOAKKDF.NFEAMMJIMPG_Result.BBEPLKNMICJ_Balances);
-						if(PPMJJBAGPOG.HMFDJHEEGNN_BuyLimit > 0)
+						CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(AKAAHOAKKDF.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
+						if(PPMJJBAGPOG.HMFDJHEEGNN_buy_limit > 0)
 						{
-							PPMJJBAGPOG.GIEBJDKLCDH_BoughtQuantity += _BPNPBJALGHM_Quantity;
+							PPMJJBAGPOG.GIEBJDKLCDH_bought_quantity += _BPNPBJALGHM_quantity;
 						}
-						_BHFHGFKBOHH_OnSuccess(NIEBENJFJDI.NFEAMMJIMPG_Result, _KAPMOPMDHJE_label, _BPNPBJALGHM_Quantity, APHNELOFGAK_CurrencyId);
+						_BHFHGFKBOHH_OnSuccess(NIEBENJFJDI.NFEAMMJIMPG_Result, _KAPMOPMDHJE_label, _BPNPBJALGHM_quantity, APHNELOFGAK_CurrencyId);
 						yield break;
 					}
 				}

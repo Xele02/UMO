@@ -8,12 +8,12 @@ public class PMDLLGNDFCJ
 	public List<long> COGMPENEPBD_InventoryIds; // 0xC
 
 	// RVA: 0xFED9B0 Offset: 0xFED9B0 VA: 0xFED9B0
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
-		LJNAKDMILMC_key = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.LJNAKDMILMC_key];
-		if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))
+		LJNAKDMILMC_key = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.LJNAKDMILMC_key];
+		if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))
 		{
-			EDOHBJAPLPF_JsonData inventory_ids = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
+			EDOHBJAPLPF_JsonData inventory_ids = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
 			COGMPENEPBD_InventoryIds = new List<long>(inventory_ids.HNBFOAJIIAL_Count);
 			for(int i = 0; i < inventory_ids.HNBFOAJIIAL_Count; i++)
 			{
@@ -25,18 +25,18 @@ public class PMDLLGNDFCJ
 
 public class BGKCFBHGNDI
 {
-	public List<PMDLLGNDFCJ> CEDLLCCONJP_AchievementPrizes; // 0x8
+	public List<PMDLLGNDFCJ> CEDLLCCONJP_achievement_prizes; // 0x8
 
 	// RVA: 0xC7CE74 Offset: 0xC7CE74 VA: 0xC7CE74
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
-		EDOHBJAPLPF_JsonData achievement_prizes = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CEDLLCCONJP_AchievementPrizes];
-		CEDLLCCONJP_AchievementPrizes = new List<PMDLLGNDFCJ>(achievement_prizes.HNBFOAJIIAL_Count);
+		EDOHBJAPLPF_JsonData achievement_prizes = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes];
+		CEDLLCCONJP_achievement_prizes = new List<PMDLLGNDFCJ>(achievement_prizes.HNBFOAJIIAL_Count);
 		for(int i = 0; i < achievement_prizes.HNBFOAJIIAL_Count; i++)
 		{
 			PMDLLGNDFCJ data = new PMDLLGNDFCJ();
 			data.KHEKNNFCAOI_Init(achievement_prizes[i]);
-			CEDLLCCONJP_AchievementPrizes.Add(data);
+			CEDLLCCONJP_achievement_prizes.Add(data);
 		}
 	}
 }

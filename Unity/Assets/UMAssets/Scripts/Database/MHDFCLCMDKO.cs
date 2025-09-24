@@ -59,9 +59,9 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x132AF10 Offset: 0x132AF10 VA: 0x132AF10 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
     {
-		NHADPDNKGIE parser = NHADPDNKGIE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		NHADPDNKGIE parser = NHADPDNKGIE.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		FJGJEJDJHEG(parser);
 		return true;
     }
@@ -69,6 +69,13 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
+		//CKADCLJDCJK_EnemyList = HPBPDHPIBGN_enemy
+		//	EJNIMIAPJFJ_Id = PPFNGGCBJKC_id
+		//	EAHPLCJMPHD_PId = HANMDEBPBHG_pic
+		//	EELBHDJJJHH_Plt = HDEBAGHEIKD_plt
+		//	EDLACELKJIK_LiveSkill = LNKKMBCDPHH_l_s
+		//	NJOPIPNGANO_CS = AKOJJJLPCKA_c_s
+		//	ADMMEMNGKEN_Avo = DFOIEJOKDKJ_avo
 		TodoLogger.LogError(TodoLogger.DbJson, "Energy IIEMACPEEBJ");
 		return true;
 	}

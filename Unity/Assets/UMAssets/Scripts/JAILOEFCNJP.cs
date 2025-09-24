@@ -35,9 +35,9 @@ public class JAILOEFCNJP
 					a = k.LKCCMBEOLLA.NKMNFPMMJND_expired_at;
 				}
 				long d = 0;
-				if(k.PACPEOKLGCI != null)
+				if(k.PACPEOKLGCI_Google != null)
 				{
-					d = k.PACPEOKLGCI.NKMNFPMMJND_expired_at;
+					d = k.PACPEOKLGCI_Google.NKMNFPMMJND_expired_at;
 				}
 				if(a < d)
 				{
@@ -52,11 +52,11 @@ public class JAILOEFCNJP
 			b = false;
 			if(data != null)
 			{
-				c2 = data.PACPEOKLGCI;
+				c2 = data.PACPEOKLGCI_Google;
 				if(data.LKCCMBEOLLA != null)
 				{
 					c = data.LKCCMBEOLLA;
-					t2 = c.FDFGEMODIIF;
+					t2 = c.FDFGEMODIIF_StartedAt;
 					t = c.NKMNFPMMJND_expired_at;
 					b = true;
 				}
@@ -75,7 +75,7 @@ public class JAILOEFCNJP
 		if(b)
 		{
 			t3 = c.NKMNFPMMJND_expired_at;
-			t4 = c.FDFGEMODIIF;
+			t4 = c.FDFGEMODIIF_StartedAt;
 			if(c2 != null)
 			{
 				if(t3 < c2.NKMNFPMMJND_expired_at)
@@ -91,7 +91,7 @@ public class JAILOEFCNJP
 			if(c2 != null)
 			{
 				t3 = c2.NKMNFPMMJND_expired_at;
-				t4 = c2.FDFGEMODIIF;
+				t4 = c2.FDFGEMODIIF_StartedAt;
 				HACIJHPHFHH = HMMNDKHKEBC.KIHJLOGLAGI();
 				MKBOKLLDCFI = BEBLECKOAPK.KNBIMNIGANP_2;
 			}

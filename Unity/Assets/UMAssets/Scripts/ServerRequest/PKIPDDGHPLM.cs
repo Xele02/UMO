@@ -8,20 +8,20 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
 {
     public class MNIIGPNDJOC
     {
-        public List<GMHKBJLIILI> CEBOHGGJBMN_LoginBonuses; // 0x8
-        public long CHEAKMNHEAM_LastPlayedAt; // 0x10
+        public List<GMHKBJLIILI> CEBOHGGJBMN_login_bonuses; // 0x8
+        public long CHEAKMNHEAM_last_played_at; // 0x10
 
         // RVA: 0x93E510 Offset: 0x93E510 VA: 0x93E510
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
         {
-            CHEAKMNHEAM_LastPlayedAt = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CHEAKMNHEAM_LastPlayedAt];
-            EDOHBJAPLPF_JsonData list = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
-            CEBOHGGJBMN_LoginBonuses = new List<GMHKBJLIILI>(list.HNBFOAJIIAL_Count);
+            CHEAKMNHEAM_last_played_at = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CHEAKMNHEAM_last_played_at];
+            EDOHBJAPLPF_JsonData list = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CEBOHGGJBMN_login_bonuses];
+            CEBOHGGJBMN_login_bonuses = new List<GMHKBJLIILI>(list.HNBFOAJIIAL_Count);
             for(int i = 0; i < list.HNBFOAJIIAL_Count; i++)
             {
                 GMHKBJLIILI data = new GMHKBJLIILI();
                 data.KHEKNNFCAOI_Init(list[i]);
-                CEBOHGGJBMN_LoginBonuses.Add(data);
+                CEBOHGGJBMN_login_bonuses.Add(data);
             }
         }
     }

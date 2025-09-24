@@ -66,9 +66,9 @@ namespace XeApp.Game.Menu
 		public void Setup(BBHNACPENDM_ServerSaveData a_player_data)
 		{
 			m_player_level = a_player_data.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel;
-			m_uta_grade = HighScoreRating.GetUtaGrade(a_player_data.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
-			m_login = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.BJDKMJFCOOM_LCnt;
-			m_mission = a_player_data.MHEAEGMIKIE_PublicStatus.APFOBLMCLAO_QCnt;
+			m_uta_grade = HighScoreRating.GetUtaGrade(a_player_data.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate);
+			m_login = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.BJDKMJFCOOM_LCnt;
+			m_mission = a_player_data.MHEAEGMIKIE_PublicStatus.APFOBLMCLAO_q_cnt;
 			Setup_Music(a_player_data);
 			Setup_Plate(a_player_data);
 			Setup_Valkyrie(a_player_data);
@@ -79,20 +79,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDE4E74 Offset: 0xDE4E74 VA: 0xDE4E74
 		private void Setup_Music(BBHNACPENDM_ServerSaveData a_player_data)
 		{
-			m_music_total = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.MILCBLJDADN_MusicClear;
+			m_music_total = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.MILCBLJDADN_MusicClear;
 			m_music_series = new int[5];
-			for(int i = 0; i < a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SerieClear.Length; i++)
+			for(int i = 0; i < a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.LHOCOEOKFNO_SerieClear.Length; i++)
 			{
-				m_music_series[new int[] { 3, 2, 1, 0, 4 }[i]] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SerieClear[i];
+				m_music_series[new int[] { 3, 2, 1, 0, 4 }[i]] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.LHOCOEOKFNO_SerieClear[i];
 			}
 			m_music_difficulty = new int[8];
-			for(int i = 0; i < a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.PHPPOGOEOAF_DiffClear.Length; i++)
+			for(int i = 0; i < a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.PHPPOGOEOAF_DiffClear.Length; i++)
 			{
-				m_music_difficulty[i] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.PHPPOGOEOAF_DiffClear[i];
+				m_music_difficulty[i] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.PHPPOGOEOAF_DiffClear[i];
 			}
-			m_music_difficulty[5] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.IAFPEPABGJJ_DiffClear16[2];
-			m_music_difficulty[6] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.IAFPEPABGJJ_DiffClear16[3];
-			m_music_difficulty[7] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.IAFPEPABGJJ_DiffClear16[4];
+			m_music_difficulty[5] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.IAFPEPABGJJ_DiffClear16[2];
+			m_music_difficulty[6] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.IAFPEPABGJJ_DiffClear16[3];
+			m_music_difficulty[7] = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.IAFPEPABGJJ_DiffClear16[4];
 		}
 
 		//// RVA: 0xDE51BC Offset: 0xDE51BC VA: 0xDE51BC
@@ -115,13 +115,13 @@ namespace XeApp.Game.Menu
 						if(i < saveScenes.OPIBAPEGCLA_Scenes.Count)
 						{
 							MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = saveScenes.OPIBAPEGCLA_Scenes[i];
-							if(saveScene.BEBJKJKBOGH_Date != 0)
+							if(saveScene.BEBJKJKBOGH_date != 0)
 							{
 								m_plate_now++;
 								if (dbScenes.ELKHCOEMNOJ(dbScene.BCCHOBPJJKE_SceneId, saveScene.DMNIMMGGJJJ_Leaf, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver) == 1)
 									m_plate_premium++;
 								if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) <=
-									saveScene.ANAJIAENLNB_Level)
+									saveScene.ANAJIAENLNB_lv)
 									m_plate_upgrade++;
 							}
 						}
@@ -142,8 +142,8 @@ namespace XeApp.Game.Menu
 				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[i];
 				if(dbValk.IPJMPBANBPP_Enabled)
 				{
-					GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbValk.BMIJDLBGFNP_SkillId);
-					if (valkSkill != null && valkSkill.DOOGFEGEKLG_Max > 0)
+					GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbValk.BMIJDLBGFNP_skill);
+					if (valkSkill != null && valkSkill.DOOGFEGEKLG_max > 0)
 						m_valkyrie_upgrade_max++;
 					m_valkyrie_max++;
 					if(i < a_player_data.JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList.Count)
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 						m_valkyrie_now++;
 						if(valkSkill != null)
 						{
-							if (valkSkill.DOOGFEGEKLG_Max <= saveValk.CIEOBFIIPLD_Level)
+							if (valkSkill.DOOGFEGEKLG_max <= saveValk.CIEOBFIIPLD_Level)
 								m_valkyrie_upgrade_now++;
 						}
 					}
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 					m_deco_bg_max++;
 					if (dbItem.PPFNGGCBJKC_id - 1 < a_player_data.OMMNKDEODJP_DecoItem.DJHBDDGEKGO_Bgs.Count)
 					{
-						if (a_player_data.OMMNKDEODJP_DecoItem.DJHBDDGEKGO_Bgs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_Count > 0)
+						if (a_player_data.OMMNKDEODJP_DecoItem.DJHBDDGEKGO_Bgs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_cnt > 0)
 							m_deco_bg_now++;
 					}
 				}
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 					m_deco_interia_max++;
 					if (dbItem.PPFNGGCBJKC_id - 1 < a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs.Count)
 					{
-						if (a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_Count > 0)
+						if (a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_cnt > 0)
 							m_deco_interia_now++;
 					}
 				}
@@ -203,12 +203,12 @@ namespace XeApp.Game.Menu
 			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
 			{
 				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
-				if (dbItem.PLALNIIBLOF_en == 2 && dbItem.GBJFNGCDKPM_Type == 12)
+				if (dbItem.PLALNIIBLOF_en == 2 && dbItem.GBJFNGCDKPM_typ == 12)
 				{
 					m_deco_mascot_max++;
 					if (dbItem.PPFNGGCBJKC_id - 1 < a_player_data.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp.Count)
 					{
-						if (a_player_data.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_Count > 0)
+						if (a_player_data.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_cnt > 0)
 							m_deco_mascot_now++;
 					}
 				}
@@ -223,7 +223,7 @@ namespace XeApp.Game.Menu
 					m_deco_phrase_max++;
 					if (dbItem.PPFNGGCBJKC_id - 1 < a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs.Count)
 					{
-						if (a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_Count > 0)
+						if (a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs[dbItem.PPFNGGCBJKC_id - 1].BFINGCJHOHI_cnt > 0)
 							m_deco_phrase_now++;
 					}
 				}

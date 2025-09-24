@@ -11,7 +11,7 @@ public class FFHFGBLNLGL
 		private int MPBBPNKICGA; // 0x10
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x14DDA18 DEMEPMAEJOO 0x14DD31C HIGKAIDMOKN
-		public int HMFFHLPNMPH_Count { get { return HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value; } } //0x14DDA20 NJOGDDPICKG 0x14DD324 NBBGMMBICNA
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value; } } //0x14DDA20 NJOGDDPICKG 0x14DD324 NBBGMMBICNA
 		public int MBACHPLELHF { get { return MPBBPNKICGA; } set { MPBBPNKICGA = value; } } //0x14DDA28 GBEOFPAFPEL 0x14DD32C GEBBPCBLJLG
 	}
 
@@ -42,7 +42,7 @@ public class FFHFGBLNLGL
 			{
 				IHJLLOMMCCG data = new IHJLLOMMCCG();
 				data.PPFNGGCBJKC_id = br.ReadInt32();
-				data.HMFFHLPNMPH_Count = br.ReadInt32();
+				data.HMFFHLPNMPH_count = br.ReadInt32();
 				data.MBACHPLELHF = br.ReadInt32();
 				//DHDCHLAIAMP.Add(data);
 			}
@@ -66,7 +66,7 @@ public class FFHFGBLNLGL
 		for(int i = 0; i < DHDCHLAIAMP.Count; i++)
 		{
 			br.Write(DHDCHLAIAMP[i].PPFNGGCBJKC_id);
-			br.Write(DHDCHLAIAMP[i].HMFFHLPNMPH_Count);
+			br.Write(DHDCHLAIAMP[i].HMFFHLPNMPH_count);
 			br.Write(DHDCHLAIAMP[i].MBACHPLELHF);
 		}
 		br.Flush();
@@ -89,7 +89,7 @@ public class FFHFGBLNLGL
 			d.PPFNGGCBJKC_id = _HHGMPEEGFMA_GachaId;
 			DHDCHLAIAMP.Add(d);
 		}
-		d.HMFFHLPNMPH_Count++;
+		d.HMFFHLPNMPH_count++;
 		d.MBACHPLELHF = BHBHMFCMLHN;
 	}
 
@@ -131,8 +131,8 @@ public class FFHFGBLNLGL
 			}
 			else
 			{
-				if(item.HMFFHLPNMPH_Count < DHDCHLAIAMP[i].HMFFHLPNMPH_Count)
-					item.HMFFHLPNMPH_Count = DHDCHLAIAMP[i].HMFFHLPNMPH_Count;
+				if(item.HMFFHLPNMPH_count < DHDCHLAIAMP[i].HMFFHLPNMPH_count)
+					item.HMFFHLPNMPH_count = DHDCHLAIAMP[i].HMFFHLPNMPH_count;
 			}
 		}
 	}

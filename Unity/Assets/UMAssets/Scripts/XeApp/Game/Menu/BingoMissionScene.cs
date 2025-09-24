@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 				{
 					GNGMCIAIKMA.JCIFAFBDALP data = new GNGMCIAIKMA.JCIFAFBDALP();
 					data.PPFNGGCBJKC_id = m_bingoInfo.CIDBGGOGGPL[i].GLCLFMGPMAN_ItemId;
-					data.BFINGCJHOHI_Count = m_bingoInfo.CIDBGGOGGPL[i].LJKMKCOAICL_ItemCount;
+					data.BFINGCJHOHI_cnt = m_bingoInfo.CIDBGGOGGPL[i].LJKMKCOAICL_ItemCount;
 					s.ItemInfoList.Add(data);
 					s.MissionTextList.Add(m_bingoInfo.CIDBGGOGGPL[i].FLGEGLADKHC_MissionText);
 				}

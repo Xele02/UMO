@@ -41,14 +41,14 @@ public static class AHAENNIFOAF
     }
 
 	// // RVA: 0x15C5378 Offset: 0x15C5378 VA: 0x15C5378
-	public static void OIEHNLEPEBG(StringBuilder _KOHNLDKIKPC_sb, int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, int _IBAKPKKEDJM_Month, int _BAOFEFFADPD_Day)
+	public static void OIEHNLEPEBG(StringBuilder _KOHNLDKIKPC_sb, int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, int _IBAKPKKEDJM_month, int _BAOFEFFADPD_day)
     {
         object[] o = new object[4]
         {
             _EKANGPODCEP_EventId,
             _AIBFGKBACCB_LobbyId,
-            _IBAKPKKEDJM_Month,
-            _BAOFEFFADPD_Day
+            _IBAKPKKEDJM_month,
+            _BAOFEFFADPD_day
         };
         _KOHNLDKIKPC_sb.SetFormat("{0}_{1}_cm_{2:D2}{3:D2}", o);
     }

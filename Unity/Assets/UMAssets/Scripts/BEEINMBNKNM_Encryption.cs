@@ -58,30 +58,30 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73C18 Offset: 0xC73C18 VA: 0xC73C18
-	private static /*extern*/ void FFPAGMCDALB(byte[] _CDENCMNHNGA_table, byte[] _DBBGALAPFGC_Data, int NFHFALDMGGC)
+	private static /*extern*/ void FFPAGMCDALB(byte[] _CDENCMNHNGA_table, byte[] _DBBGALAPFGC_bytes, int NFHFALDMGGC)
 	{
 			//TODO extract to lib file
 			// Decrypt xedec
-			uint offset = (uint)_DBBGALAPFGC_Data.Length;
-			for(int i = 0; i < _DBBGALAPFGC_Data.Length; i++)
+			uint offset = (uint)_DBBGALAPFGC_bytes.Length;
+			for(int i = 0; i < _DBBGALAPFGC_bytes.Length; i++)
 			{
 				uint val = (uint)((offset << 3)&0xffffffff);
 				offset = (uint)(val - offset);
 				offset++;
-				_DBBGALAPFGC_Data[i] = (byte)(_DBBGALAPFGC_Data[i] ^ _CDENCMNHNGA_table[offset%1024]);
+				_DBBGALAPFGC_bytes[i] = (byte)(_DBBGALAPFGC_bytes[i] ^ _CDENCMNHNGA_table[offset%1024]);
 			}
 	}
 
 	// RVA: 0xC73D28 Offset: 0xC73D28 VA: 0xC73D28
-	//private static extern void MFKJIGBFJEN(IntPtr _CDENCMNHNGA_table, IntPtr _DBBGALAPFGC_Data, int NFHFALDMGGC) { }
+	//private static extern void MFKJIGBFJEN(IntPtr _CDENCMNHNGA_table, IntPtr _DBBGALAPFGC_bytes, int NFHFALDMGGC) { }
 
 	// RVA: 0xC73E34 Offset: 0xC73E34 VA: 0xC73E34
-	//public void DMDLDOAOIAJ(byte[] _DBBGALAPFGC_Data) { }
+	//public void DMDLDOAOIAJ(byte[] _DBBGALAPFGC_bytes) { }
 
 	// RVA: 0xC70A18 Offset: 0xC70A18 VA: 0xC70A18
-	public void CLNHGLGOKPF_Decrypt(byte[] _DBBGALAPFGC_Data)
+	public void CLNHGLGOKPF_Decrypt(byte[] _DBBGALAPFGC_bytes)
 	{
-			FFPAGMCDALB(GPGMEAPLJAI_Key, _DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length);
+			FFPAGMCDALB(GPGMEAPLJAI_Key, _DBBGALAPFGC_bytes, _DBBGALAPFGC_bytes.Length);
 	}
 
 	// RVA: 0xC73ECC Offset: 0xC73ECC VA: 0xC73ECC
@@ -91,15 +91,15 @@ public class BEEINMBNKNM_Encryption
 	//public string AGKMBDIJHID(int _INDDJNMPONH_type) { }
 
 	// RVA: 0xC73F54 Offset: 0xC73F54 VA: 0xC73F54
-	public static uint GKBODMNBFJM(uint _IOIMHJAOKOO_Hash, byte[] _DBBGALAPFGC_Data)
+	public static uint GKBODMNBFJM(uint _IOIMHJAOKOO_Hash, byte[] _DBBGALAPFGC_bytes)
 	{
-		return ANMDMMBEJPB(_IOIMHJAOKOO_Hash, _DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length);
+		return ANMDMMBEJPB(_IOIMHJAOKOO_Hash, _DBBGALAPFGC_bytes, _DBBGALAPFGC_bytes.Length);
 	}
 
 	// RVA: 0xC73FC8 Offset: 0xC73FC8 VA: 0xC73FC8
-	private static /*extern*/ uint ANMDMMBEJPB(uint _IOIMHJAOKOO_Hash, /*IntPtr */byte[] _DBBGALAPFGC_Data, int NFHFALDMGGC)
+	private static /*extern*/ uint ANMDMMBEJPB(uint _IOIMHJAOKOO_Hash, /*IntPtr */byte[] _DBBGALAPFGC_bytes, int NFHFALDMGGC)
 	{
-		// return xedec_hash(_IOIMHJAOKOO_Hash, DBBGALAPFGC_Data, NFHFALDMGGC);
+		// return xedec_hash(_IOIMHJAOKOO_Hash, DBBGALAPFGC_bytes, NFHFALDMGGC);
 		TodoLogger.LogError(TodoLogger.Xedec, "BEEINMBNKNM_Encryption.ANMDMMBEJPB xedec_hash");
 		return 0;
 	}
@@ -111,17 +111,17 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC74128 Offset: 0xC74128 VA: 0xC74128
-	public void DGBPHDMEDNP(int _DHIPGHBJLIL_Coef, int _POMLAOPLMNA_offset, int DFIDIEENJAE)
+	public void DGBPHDMEDNP(int _DHIPGHBJLIL_coef, int _POMLAOPLMNA_offset, int DFIDIEENJAE)
 	{
-			GELENHPBKFA = _DHIPGHBJLIL_Coef;
+			GELENHPBKFA = _DHIPGHBJLIL_coef;
 			DLDLDGJEOJG = _POMLAOPLMNA_offset;
 			PLNOOFNMHAL = DFIDIEENJAE;
 	}
 
 	// RVA: 0xC74134 Offset: 0xC74134 VA: 0xC74134
-	public void LBGGPBBOIEH(byte[] _DBBGALAPFGC_Data)
+	public void LBGGPBBOIEH(byte[] _DBBGALAPFGC_bytes)
 	{ 
-		int size = _DBBGALAPFGC_Data.Length;
+		int size = _DBBGALAPFGC_bytes.Length;
 		PMBEODGMMBB_y = KNEFBLHBDBG;
 		if (size > 0)
 		{
@@ -129,15 +129,15 @@ public class BEEINMBNKNM_Encryption
 			for (int i = 0; i < size; i++)
 			{
 				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
-				_DBBGALAPFGC_Data[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_Data[i]);
+				_DBBGALAPFGC_bytes[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_bytes[i]);
 			}
 		}
 	}
 
 	// RVA: 0xC74230 Offset: 0xC74230 VA: 0xC74230
-	public void FAEFDAJAMCE(byte[] _DBBGALAPFGC_Data)
+	public void FAEFDAJAMCE(byte[] _DBBGALAPFGC_bytes)
 	{
-		uint size = (uint)_DBBGALAPFGC_Data.Length;
+		uint size = (uint)_DBBGALAPFGC_bytes.Length;
 		PMBEODGMMBB_y = KNEFBLHBDBG;
 		if (size > 0)
 		{
@@ -145,7 +145,7 @@ public class BEEINMBNKNM_Encryption
 			for (int i = 0; i < size; i++)
 			{
 				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
-				_DBBGALAPFGC_Data[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_Data[i]);
+				_DBBGALAPFGC_bytes[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_bytes[i]);
 			}
 		}
 	}

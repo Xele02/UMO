@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			OCMJNBIFJNM_Offer.JPOHOLBBFGP of = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP _) =>
 			{
 				//0x15D5C50
-				if(_.GBJFNGCDKPM_Type == (int)offerType && _.MLDPDLPHJPM_OfferId == offerId)
+				if(_.GBJFNGCDKPM_typ == (int)offerType && _.MLDPDLPHJPM_OfferId == offerId)
 				{
 					return true;
 				}

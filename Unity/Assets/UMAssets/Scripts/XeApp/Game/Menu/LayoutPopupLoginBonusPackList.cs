@@ -61,8 +61,8 @@ namespace XeApp.Game.Menu
 			LayoutPopupLoginBonusPackItem l = content as LayoutPopupLoginBonusPackItem;
 			if(l != null)
 			{
-				System.Collections.Generic.List<MFDJIFIIPJD> list = m_setting.Data.HBHMAKNGKFK_Items;
-				l.Setup(m_setting.Data.HBHMAKNGKFK_Items[index]);
+				System.Collections.Generic.List<MFDJIFIIPJD> list = m_setting.Data.HBHMAKNGKFK_items;
+				l.Setup(m_setting.Data.HBHMAKNGKFK_items[index]);
 				l.OnClickButton = () =>
 				{
 					//0x1732708
@@ -131,13 +131,13 @@ namespace XeApp.Game.Menu
 		public void InitLayoutType(CAEDGOPBDNK data)
 		{
 			LayoutType = Type.GetPack;
-			if(data.HBHMAKNGKFK_Items.Count < 2)
+			if(data.HBHMAKNGKFK_items.Count < 2)
 			{
 				LayoutType = Type.GetRarityUp;
-				if(data.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
+				if(data.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 				{
 					LayoutType = Type.GetItem;
-					if (data.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
+					if (data.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
 						LayoutType = Type.GetGachaTicket;
 				}
 			}
@@ -168,21 +168,21 @@ namespace XeApp.Game.Menu
 			}
 			m_layoutRoot.UpdateAllAnimation(2 * TimeWrapper.deltaTime, false);
 			m_layoutRoot.UpdateAll(m_identity, Color.white);
-			SetupList(setting.Data.HBHMAKNGKFK_Items.Count, true);
-			if(setting.Data.HBHMAKNGKFK_Items.Count == 1)
+			SetupList(setting.Data.HBHMAKNGKFK_items.Count, true);
+			if(setting.Data.HBHMAKNGKFK_items.Count == 1)
 			{
-				int itemId = setting.Data.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId;
+				int itemId = setting.Data.HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId;
 				GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture image) =>
 				{
 					//0x1732500
 					m_imageItem.enabled = true;
 					image.Set(m_imageItem);
 				});
-				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = setting.Data.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory;
-				int id = setting.Data.HBHMAKNGKFK_Items[0].NNFNGLJOKKF_ItemId;
-				m_textName.text = string.Format("{0}  {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
+				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = setting.Data.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory;
+				int id = setting.Data.HBHMAKNGKFK_items[0].NNFNGLJOKKF_ItemId;
+				m_textName.text = string.Format("{0}  {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), setting.Data.HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
 				m_textDesc.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, id);
-				m_numberCount.SetNumber(setting.Data.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count, 0);
+				m_numberCount.SetNumber(setting.Data.HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count, 0);
 			}
 			if (setting.SpItems == null || setting.SpItems.Count < 1)
 			{

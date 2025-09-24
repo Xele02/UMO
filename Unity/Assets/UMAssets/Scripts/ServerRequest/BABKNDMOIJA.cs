@@ -8,18 +8,21 @@ public class BABKNDMOIJA : CACGCMBKHDI_Request
 	{
 		public int NPMIJMFMEKB_target_player_id; // 0x8
 		public int NEILEPPJKIN_favorite; // 0xC
-		public long IFNLEKOILPM_UpdatedAt; // 0x10
+		public long IFNLEKOILPM_updated_at; // 0x10
 
 		// RVA: 0xF13EE0 Offset: 0xF13EE0 VA: 0xF13EE0
-		//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) { }
+		//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
+		//NPMIJMFMEKB_target_player_id = NPMIJMFMEKB_target_player_id
+		//NEILEPPJKIN_favorite = NEILEPPJKIN_favorite
+		//IFNLEKOILPM_updated_at = IFNLEKOILPM_updated_at
 	}
 
 	public class FCIINFAOJPO
 	{
-		public List<IMNICDGDCBB> HBOIBKJEIAP_Friends; // 0x8
+		public List<IMNICDGDCBB> HBOIBKJEIAP_friends; // 0x8
 
 		// RVA: 0xF13E50 Offset: 0xF13E50 VA: 0xF13E50
-		//public void KHEKNNFCAOI_Init(EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
+		//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
 	}
 
 	public const int HDJIHPCCJAF = 0;

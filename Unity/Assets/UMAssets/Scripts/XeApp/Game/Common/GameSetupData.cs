@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 					if(viewDivaData != null)
 					{
 						divaId = viewDivaData.AHHJLDLAPAN_DivaId;
-						costumeModelId = viewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+						costumeModelId = viewDivaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 						costumeColorId = viewDivaData.EKFONBFDAAP_ColorId;
 						JJOELIOGMKK_DivaIntimacyInfo d = new JJOELIOGMKK_DivaIntimacyInfo();
 						d.KHEKNNFCAOI_Init(divaId);
@@ -274,8 +274,8 @@ namespace XeApp.Game.Common
 							divaList_[0].SetupInfo(unit.BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, 0, i + 1);
 							if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
 							{
-								int godiva_fold_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_fold_correction_value", 300);
-								int godiva_support_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_support_correction_value", 300);
+								int godiva_fold_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_fold_correction_value", 300);
+								int godiva_support_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_support_correction_value", 300);
 								int i4 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.fold - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).fold, 0);
 								int i5 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.support - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).support, 0);
 								status.fold = (int)(godiva_fold_correction_value / 100.0f * i4) - i4;
@@ -328,7 +328,7 @@ namespace XeApp.Game.Common
 				if(limitOverStatus != null)
 				{
 					excellentRate = limitOverStatus.excellentRate_SameMusicAttr + limitOverStatus.excellentRate + limitOverStatus.excellentRate_SameSeriesAttr;
-					excellentScoreAdd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA("ex_effect", 0);
+					excellentScoreAdd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA_GetIntParam("ex_effect", 0);
 					if(divaList_[0].liveSkillIdList[0] > 0)
 					{
 						centerLiveSkillRate = limitOverStatus.centerLiveSkillRate_SameMusicAttr + limitOverStatus.centerLiveSkillRate + limitOverStatus.centerLiveSkillRate_SameSeriesAttr;

@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 		{
 			m_view = view;
 			m_damageText.text = view.AEIMNLACMFA_Damage.ToString();
-			m_rankText.text = view.FJOLNJLLJEJ_Rank.ToString();
+			m_rankText.text = view.FJOLNJLLJEJ_rank.ToString();
 		}
 
 		// // RVA: 0x1BDC878 Offset: 0x1BDC878 VA: 0x1BDC878

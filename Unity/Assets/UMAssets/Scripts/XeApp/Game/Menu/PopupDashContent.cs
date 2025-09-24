@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(setup.CostType == LayoutPopupDash.CostType.Energy)
 			{
-				int b = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina;
+				int b = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina;
 				int a = setup.OwnValue;
 				if(a < b)
 					a += b;

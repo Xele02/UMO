@@ -9,9 +9,9 @@ public class MNNCBFONAOL
 	// // RVA: 0x17B1624 Offset: 0x17B1624 VA: 0x17B1624
 	public static void KHEKNNFCAOI_Init()
     {
-        byte[] HKICMNAACDA = new byte[16];
-        byte[] BNKHBCBJBKI = new byte[16];
-        JEJMLJPJFBH(HKICMNAACDA, BNKHBCBJBKI);
+        byte[] HKICMNAACDA_a = new byte[16];
+        byte[] BNKHBCBJBKI_b = new byte[16];
+        JEJMLJPJFBH(HKICMNAACDA_a, BNKHBCBJBKI_b);
         byte[] seed3 = NLPIDMIPIIE();
 
         // Debug check from memory dumped data
@@ -20,14 +20,14 @@ public class MNNCBFONAOL
         byte[] check_seed3 = new byte[16] {0xC9, 0xB8, 0x54, 0xFD, 0x74, 0xF7, 0xAC, 0xD4, 0x24, 0x55, 0x6E, 0x5D, 0x23, 0x71, 0x12, 0x6C};
         for(int i = 0; i < 16; i++)
         {
-            Debug.Assert(check_seed1[i] == HKICMNAACDA[i]);
-            Debug.Assert(check_seed2[i] == BNKHBCBJBKI[i]);
+            Debug.Assert(check_seed1[i] == HKICMNAACDA_a[i]);
+            Debug.Assert(check_seed2[i] == BNKHBCBJBKI_b[i]);
             Debug.Assert(check_seed3[i] == seed3[i]);
         }
         // end
 
 
-        if(!DsfdLoader.Initialize(HKICMNAACDA, BNKHBCBJBKI, seed3, true))
+        if(!DsfdLoader.Initialize(HKICMNAACDA_a, BNKHBCBJBKI_b, seed3, true))
         {
             Debug.LogError("DsfdLoader.Initialize FAILED!!!!!!!!!!!");
         }
@@ -54,20 +54,20 @@ public class MNNCBFONAOL
     }
 
 	// // RVA: 0x17B174C Offset: 0x17B174C VA: 0x17B174C
-	private static void JEJMLJPJFBH(byte[] HKICMNAACDA, byte[] BNKHBCBJBKI)
+	private static void JEJMLJPJFBH(byte[] _HKICMNAACDA_a, byte[] _BNKHBCBJBKI_b)
     {
-        GCGCDFGCNEL_xedec_k(HKICMNAACDA, BNKHBCBJBKI);
+        GCGCDFGCNEL_xedec_k(_HKICMNAACDA_a, _BNKHBCBJBKI_b);
     }
 
 	// // RVA: 0x17B19F8 Offset: 0x17B19F8 VA: 0x17B19F8
-	private static /*extern */void GCGCDFGCNEL_xedec_k(/*IntPtr*/byte[] HKICMNAACDA, /*IntPtr*/byte[] BNKHBCBJBKI)
+	private static /*extern */void GCGCDFGCNEL_xedec_k(/*IntPtr*/byte[] _HKICMNAACDA_a, /*IntPtr*/byte[] _BNKHBCBJBKI_b)
     {
         byte[] key1 = new byte[16] { 0x50, 0xe4, 0xba, 0xd4, 0x30, 0xeb, 0x73, 0x1a, 0x85, 0x23, 0xeb, 0xa6, 0xdc, 0xdb, 0xbf, 0xe2 };
         byte[] key2 = new byte[16] { 0xb3, 0x05, 0x9c, 0xbf, 0x4a, 0x1e, 0xca, 0x43, 0xce, 0x95, 0x2f, 0x80, 0xc0, 0x89, 0xe4, 0x88 };
         for(int i = 0; i < 16; i++)
         {
-            HKICMNAACDA[i] = (byte)~key1[i];
-            BNKHBCBJBKI[i] = (byte)~key2[i];
+            _HKICMNAACDA_a[i] = (byte)~key1[i];
+            _BNKHBCBJBKI_b[i] = (byte)~key2[i];
         }
         
     }

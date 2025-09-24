@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 				layout = loadLayout;
 				uvMan = loadUvMan;
 			}));
-			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK_Items.Count;
+			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK_items.Count;
 			dropLayoutInitParam.layoutItemList = new List<LayoutResultDropItem>(num);
 			for(int i = 0; i < num; i++)
 			{
@@ -1321,7 +1321,7 @@ namespace XeApp.Game.Menu
 		private void InitRaidPointResult()
 		{
 			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
 			}

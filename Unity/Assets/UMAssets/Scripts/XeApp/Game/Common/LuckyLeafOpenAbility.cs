@@ -98,7 +98,7 @@ namespace XeApp.Game.Common
 			prevLeafEffectTexts[0].text = currentOverLimit.ABKCMICDHLN_LeafEffectExcellentRate;
 			prevLeafEffectTexts[1].text = currentOverLimit.ACKDDGKFNIJ_LeafEffectCenterSkillRate;
 			unlockCondition.text = currentOverLimit.IBKNFJLAGIH_UnlockCond;
-			skillCautionLayout.StartChildrenAnimGoStop(currentOverLimit.CMCKNKKCNDK_Status.centerLiveSkillRate > 0 ? "01" : "02");
+			skillCautionLayout.StartChildrenAnimGoStop(currentOverLimit.CMCKNKKCNDK_status.centerLiveSkillRate > 0 ? "01" : "02");
 			if(currentOverLimit.CJLNHKNLBGH.Count == 2)
 			{
 				statusLayoutUnder.StartChildrenAnimGoStop("03");

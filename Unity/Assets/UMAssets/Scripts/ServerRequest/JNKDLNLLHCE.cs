@@ -11,12 +11,12 @@ public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_Reques
         public List<long> COGMPENEPBD_InventoryIds = new List<long>(); // 0x8
 
         // RVA: 0x1B8FF68 Offset: 0x1B8FF68 VA: 0x1B8FF68
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
         {
             COGMPENEPBD_InventoryIds.Clear();
-            if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses))
+            if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses))
             {
-                EDOHBJAPLPF_JsonData bonus = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses];
+                EDOHBJAPLPF_JsonData bonus = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses];
                 for(int i = 0; i < bonus.HNBFOAJIIAL_Count; i++)
                 {
                     if(bonus[i].BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))

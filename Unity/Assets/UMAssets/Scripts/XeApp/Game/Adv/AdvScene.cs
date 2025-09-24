@@ -113,10 +113,10 @@ namespace XeApp.Game.Adv
 			a_.OBKGEDCKHHE();
 			IBJAKJJICBC ib_ = new IBJAKJJICBC();
 			ib_.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
-			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_Enemy);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_enemy);
 			a_.GEEDEOHGMOM(ref st);
 			st2.Clear();
-			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);
+			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_status);
 			st2.Add(st);
 			Database.Instance.gameSetup.teamInfo.SetupInfo(st2, GameManager.Instance.ViewPlayerData, 0, ib_, null, null, null, false);
 			JGEOBNENMAH.EDHCNKBMLGI j_ = new JGEOBNENMAH.EDHCNKBMLGI();

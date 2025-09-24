@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 			series = ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type);
 			m_pattern = 0;
 			m_quality = 2;
-			m_cannonDamangeLayout.Setup(ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), ev.GGDBEANLCPC.HALIDDHLNEG_Damage);
+			m_cannonDamangeLayout.Setup(ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), ev.GGDBEANLCPC.HALIDDHLNEG_Damage);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7139DC Offset: 0x7139DC VA: 0x7139DC

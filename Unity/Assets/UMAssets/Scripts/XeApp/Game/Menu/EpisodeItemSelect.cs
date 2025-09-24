@@ -93,8 +93,8 @@ namespace XeApp.Game.Menu
 			{
 				m_list[i].name.text = m_item_list[i].OPFGFINHFCE_name;
 				m_list[i].info.text = m_item_list[i].KLMPFGOCBHC_description;
-				m_list[i].item_num.text = JpStringLiterals.StringLiteral_15265 + m_item_list[i].HMFFHLPNMPH_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, 0);
-				if(m_item_list[i].HMFFHLPNMPH_Count < 1)
+				m_list[i].item_num.text = JpStringLiterals.StringLiteral_15265 + m_item_list[i].HMFFHLPNMPH_count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, 0);
+				if(m_item_list[i].HMFFHLPNMPH_count < 1)
 				{
 					m_list[i].btn.Disable = true;
 				}

@@ -103,8 +103,8 @@ namespace XeApp
 		//// RVA: 0x1AD6348 Offset: 0x1AD6348 VA: 0x1AD6348
 		private void InitOrderOffset()
 		{
-			int object_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("object_set_max", 50);
-			int chara_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("chara_set_max", 5);
+			int object_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("object_set_max", 50);
+			int chara_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("chara_set_max", 5);
 			int c = object_set_max + chara_set_max;
 			for(int i = 0; i < m_priorityOffset.Length; i++)
 			{
@@ -209,8 +209,8 @@ namespace XeApp
 			m_decorationCanvas.GetBgCenterLine(item.Setting.AttributeType, ref vs);
 			float f = m_decorationCanvas.GetVisibilityRect().width;
 			Vector2 v1 = new Vector2(0, (vs[0].y + vs[1].y) * 0.5f);
-			int tap_set_interval_rate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("tap_set_interval_rate", 50);
-			int tap_set_interval_loop_y = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("tap_set_interval_loop_y", 64);
+			int tap_set_interval_rate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_rate", 50);
+			int tap_set_interval_loop_y = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_loop_y", 64);
 			item.Position = v1;
 			int d = 0;
 			float f2 = 0;
@@ -856,7 +856,7 @@ namespace XeApp
 			{
 				if(k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 				{
-					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_Type == 1)
+					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_typ == 1)
 						res++;
 				}
 			}
@@ -1075,7 +1075,7 @@ namespace XeApp
 							if(s.PPFNGGCBJKC_id == chara.Setting.InitWord)
 							{
 								DecorationItemBaseSetting setting = new DecorationItemBaseSetting();
-								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_Type, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC_id), s.LDLGLHBGOKE_FontSize, chara));
+								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_typ, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC_id), s.LDLGLHBGOKE_FontSize, chara));
 								break;
 							}
 						}

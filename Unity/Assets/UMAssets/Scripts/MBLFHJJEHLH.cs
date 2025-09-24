@@ -13,13 +13,13 @@ public class MBLFHJJEHLH_AnketoMgr
 		public int EILKGEADKGH_Order; // 0xC
 		public int INDDJNMPONH_type; // 0x10 NotifId
 		public int CEMEIPNMAAD_Version; // 0x14
-		public string ADCMNODJBGJ_Title; // 0x18
+		public string ADCMNODJBGJ_title; // 0x18
 		public string[] LPKAJMLOAMF_ChoiceText; // 0x1C
 		public bool[] MHBBJADMHPN_ChoiceSelected; // 0x20
 		public int CIMPIIJBFPE = 1; // 0x24
 		public int DHEIGBMNBNK = 1; // 0x28
 		public int NNDBJGDFEEM_Min; // 0x2C
-		public int DOOGFEGEKLG_Max; // 0x30
+		public int DOOGFEGEKLG_max; // 0x30
 
 		//// RVA: 0xA2FF20 Offset: 0xA2FF20 VA: 0xA2FF20
 		public bool NMEMGMMNMDK()
@@ -97,22 +97,22 @@ public class MBLFHJJEHLH_AnketoMgr
 					data.PPFNGGCBJKC_id = question.PPFNGGCBJKC_id;
 					data.EILKGEADKGH_Order = question.EILKGEADKGH_Order;
 					data.INDDJNMPONH_type = question.INDDJNMPONH_type;
-					data.ADCMNODJBGJ_Title = question.ADCMNODJBGJ_Title;
+					data.ADCMNODJBGJ_title = question.ADCMNODJBGJ_title;
 					data.LPKAJMLOAMF_ChoiceText = question.BNMCMNPPPCI_ChoiceText;
 					data.MHBBJADMHPN_ChoiceSelected = new bool[data.LPKAJMLOAMF_ChoiceText.Length];
 					data.CIMPIIJBFPE = question.EMNLOGDDOBC;
 					data.DHEIGBMNBNK = question.IICECOLFEEL;
 					data.CEMEIPNMAAD_Version = question.LLNDMKBBNIJ_ver;
 					data.NNDBJGDFEEM_Min = question.NNDBJGDFEEM_Min;
-					data.DOOGFEGEKLG_Max = question.DOOGFEGEKLG_Max;
+					data.DOOGFEGEKLG_max = question.DOOGFEGEKLG_max;
 					KICOACCACII_QData.Add(data);
 				}
 			}
 		}
-		KICOACCACII_QData.Sort((CGBKENNCMMC HKICMNAACDA, CGBKENNCMMC BNKHBCBJBKI) =>
+		KICOACCACII_QData.Sort((CGBKENNCMMC _HKICMNAACDA_a, CGBKENNCMMC _BNKHBCBJBKI_b) =>
 		{
 			//0xA2FED8
-			return HKICMNAACDA.EILKGEADKGH_Order.CompareTo(BNKHBCBJBKI.EILKGEADKGH_Order);
+			return _HKICMNAACDA_a.EILKGEADKGH_Order.CompareTo(_BNKHBCBJBKI_b.EILKGEADKGH_Order);
 		});
 		return KICOACCACII_QData.Count > 0;
 	}

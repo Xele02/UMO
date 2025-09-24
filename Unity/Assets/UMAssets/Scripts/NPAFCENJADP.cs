@@ -41,9 +41,9 @@ public class NPAFCENJADP
     }
 
 	// // RVA: 0x1CB0944 Offset: 0x1CB0944 VA: 0x1CB0944
-	public void KLLOMGPHGLL_RemoveEvents(int _HMFFHLPNMPH_Count)
+	public void KLLOMGPHGLL_RemoveEvents(int _HMFFHLPNMPH_count)
 	{
-		for(int i = _HMFFHLPNMPH_Count; i > 0; i--)
+		for(int i = _HMFFHLPNMPH_count; i > 0; i--)
 		{
 			MGJKEJHEBPO_Blocks.RemoveAt(0);
 		}

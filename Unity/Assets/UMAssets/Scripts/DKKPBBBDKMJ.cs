@@ -61,7 +61,7 @@ public class DKKPBBBDKMJ
 								{
 									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
-									HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+									HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_date, scene.DMNIMMGGJJJ_Leaf);
 									if(HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 									{
 										if(scene2.PPEGAKEIEGM_Enabled > 1)
@@ -113,7 +113,7 @@ public class DKKPBBBDKMJ
 					data.CADENLBDAEB_IsNew = hasNewAdv;
 					data.CPKMLLNADLJ_Serie = storyEvent.MGBDCFIKBPM_Serie;
 					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD_open_at);
-					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_CloseAt);
+					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_close_at);
 					FAEDHJHCEFJ.Clear();
 					FAEDHJHCEFJ.AppendFormat(bk.GetMessageByLabel("event_story_list_period"), new object[6]
 					{
@@ -157,7 +157,7 @@ public class DKKPBBBDKMJ
 					{
 						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
 						MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
-						HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+						HOMGKHBHDME.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_date, scene.DMNIMMGGJJJ_Leaf);
 						a1++;
 						if (HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 						{

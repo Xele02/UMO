@@ -154,7 +154,7 @@ public class BEPHBEGDFFK
 									data.NCIBIAJJBFF = DPBDFPPMIPH_Gacha.ABNMIDCBENB_OneDay;
 									if(l != null)
 									{
-										data.NCIBIAJJBFF -= l.HMFFHLPNMPH_Count;
+										data.NCIBIAJJBFF -= l.HMFFHLPNMPH_count;
 									}
 								}
 								COMCFOFCGJM.Add(data);
@@ -315,7 +315,7 @@ public class BEPHBEGDFFK
 			int num = CIOECGOMILE.HHCJCDFCLOB.NBJOCMAJLPK_GetTotalCurrency(a);
 			NKFJNAANPNP.MOJLCADLMKH data = new NKFJNAANPNP.MOJLCADLMKH();
 			data.LHPDDGIJKNB_Reset((int)(_JHNMKKNEENE_Time * 0x227));
-			data.HMFFHLPNMPH_Count = num;
+			data.HMFFHLPNMPH_count = num;
 			data.HNKFMAJIFJD_ExpireAt = DPBDFPPMIPH.HIPBEKBFNBG(a);
 			res.Add(data);
 		}
@@ -331,16 +331,16 @@ public class BEPHBEGDFFK
 			});
 			if (d.Count < 1)
 				return res;
-			d.Sort((HPBDNNACBAK.MBMMGKJBJGD HKICMNAACDA, HPBDNNACBAK.MBMMGKJBJGD BNKHBCBJBKI) =>
+			d.Sort((HPBDNNACBAK.MBMMGKJBJGD _HKICMNAACDA_a, HPBDNNACBAK.MBMMGKJBJGD _BNKHBCBJBKI_b) =>
 			{
 				//0xC79964
-				return (int)(HKICMNAACDA.DJJENNPDPCM_ExpireAt - BNKHBCBJBKI.DJJENNPDPCM_ExpireAt);
+				return (int)(_HKICMNAACDA_a.DJJENNPDPCM_ExpireAt - _BNKHBCBJBKI_b.DJJENNPDPCM_ExpireAt);
 			});
 			for(int i = 0; i < d.Count; i++)
 			{
 				NKFJNAANPNP.MOJLCADLMKH data = new NKFJNAANPNP.MOJLCADLMKH();
 				data.LHPDDGIJKNB_Reset((int)(_JHNMKKNEENE_Time * 0x227));
-				data.HMFFHLPNMPH_Count = d[i].HNBFOAJIIAL_Count;
+				data.HMFFHLPNMPH_count = d[i].HNBFOAJIIAL_Count;
 				data.HNKFMAJIFJD_ExpireAt = (int)d[i].DJJENNPDPCM_ExpireAt;
 				res.Add(data);
 			}
@@ -364,7 +364,7 @@ public class BEPHBEGDFFK
 		{
 			NKFJNAANPNP.MOJLCADLMKH data = new NKFJNAANPNP.MOJLCADLMKH();
 			data.LHPDDGIJKNB_Reset((int)(_JHNMKKNEENE_Time * 0x227));
-			data.HMFFHLPNMPH_Count = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, itemId, null);
+			data.HMFFHLPNMPH_count = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, itemId, null);
 			data.HNKFMAJIFJD_ExpireAt = 0;
 			res.Add(data);
 		}

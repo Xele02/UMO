@@ -24,9 +24,9 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	#endregion
 
 	// ???
-	// private static string HKICMNAACDA = "JsonData array"; // 0x0
-	// private static string BNKHBCBJBKI = "JsonData object"; // 0x4
-	// private static string CKHEDJODNIP = "Uninitialized JsonData"; // 0x8
+	// private static string HKICMNAACDA_a = "JsonData array"; // 0x0
+	// private static string BNKHBCBJBKI_b = "JsonData object"; // 0x4
+	// private static string CKHEDJODNIP_c = "Uninitialized JsonData"; // 0x8
 
 	#region Properties
 	// // RVA: 0x1509FFC Offset: 0x1509FFC VA: 0x1509FFC

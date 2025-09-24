@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue())
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue())
 				{
 					PopupWindowManager.OpenStaminaMaxWindow(null);
 				}

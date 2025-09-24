@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
 			k.KHEKNNFCAOI_Init(serifId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
 			m_serif[showIndexList[index]].SetText(k.DOIGLOBENMG_StampName);
-			m_serif[showIndexList[index]].SetAttrTexture(k.GBJFNGCDKPM_Type);
+			m_serif[showIndexList[index]].SetAttrTexture(k.GBJFNGCDKPM_typ);
 			m_serif[showIndexList[index]].SetFontType(k.DBGAJBIBODC_FontType);
 		}
 

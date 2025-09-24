@@ -414,14 +414,14 @@ namespace XeApp.Game.Menu
 			SetThresholdNumber(arrayIndex, txt);
 			SetItemNumber(arrayIndex, reward.JDLJPNMLFID_ItemCount);
 			SetIcon(arrayIndex, reward.KIJAPOFAGPN_ItemId);
-			if(reward.CMCKNKKCNDK_Status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
+			if(reward.CMCKNKKCNDK_status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
 			{
-				if(reward.CMCKNKKCNDK_Status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
+				if(reward.CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
 				{
 					SwitchStampAnim(arrayIndex, eStampStatus.Press);
 					return;
 				}
-				if (reward.CMCKNKKCNDK_Status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
+				if (reward.CMCKNKKCNDK_status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
 					return;
 				m_stampPlayList.Add(arrayIndex);
 			}

@@ -43,23 +43,23 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	private List<NNJFKLBPBNK_SecureString> IFBBNEGGCIH; // 0x2C
 	private List<CEBFFLDKAEC_SecureInt> JNJAOACIGOC; // 0x30
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_String { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_IntArray { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0x1BA762C Offset: 0x1BA762C VA: 0x1BA762C
-	//public string EFEGBHACJAL(string _LJNAKDMILMC_key, string KKMJBMKHGNH) { }
+	//public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval) { }
 
 	//// RVA: 0x1BA7710 Offset: 0x1BA7710 VA: 0x1BA7710
-	//public int LPJLEHAJADA(string _LJNAKDMILMC_key, int KKMJBMKHGNH) { }
+	//public int LPJLEHAJADA_GetIntParam(string _LJNAKDMILMC_key, int _KKMJBMKHGNH_noval) { }
 
 	// RVA: 0x1BA77F4 Offset: 0x1BA77F4 VA: 0x1BA77F4
 	public JPJGOECJFEE_EventGoDivaRanking()
 	{
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
-		OHJFBLFELNK_IntArray = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
+		OHJFBLFELNK_m_intParam = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		JNJAOACIGOC = new List<CEBFFLDKAEC_SecureInt>();
-		FJOEBCMGDMI_String = new Dictionary<string, NNJFKLBPBNK_SecureString>();
+		FJOEBCMGDMI_m_stringParam = new Dictionary<string, NNJFKLBPBNK_SecureString>();
 		IFBBNEGGCIH = new List<NNJFKLBPBNK_SecureString>();
 		LMHMIIKCGPE = 33;
 	}
@@ -68,16 +68,16 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	protected override void KMBPACJNEOF_Reset()
 	{
 		NGHKJOEDLIP_Settings.LHPDDGIJKNB_Reset();
-		FJOEBCMGDMI_String.Clear();
-		OHJFBLFELNK_IntArray.Clear();
+		FJOEBCMGDMI_m_stringParam.Clear();
+		OHJFBLFELNK_m_intParam.Clear();
 		JNJAOACIGOC.Clear();
 		IFBBNEGGCIH.Clear();
 	}
 
 	// RVA: 0x1BA7C58 Offset: 0x1BA7C58 VA: 0x1BA7C58 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		CEGLELHPKBO parser = CEGLELHPKBO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		CEGLELHPKBO parser = CEGLELHPKBO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		DGKKMKLCEDF(parser);
 		{
 			KAGMCEBLHAI[] array = parser.BHGDNGHDDAC;
@@ -85,7 +85,7 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 			{
 				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
 				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
-				OHJFBLFELNK_IntArray.Add(array[i].LJNAKDMILMC, data);
+				OHJFBLFELNK_m_intParam.Add(array[i].LJNAKDMILMC, data);
 				JNJAOACIGOC.Add(data);
 			}
 		}
@@ -95,7 +95,7 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 			{
 				NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
 				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
-				FJOEBCMGDMI_String.Add(array[i].LJNAKDMILMC, data);
+				FJOEBCMGDMI_m_stringParam.Add(array[i].LJNAKDMILMC, data);
 				IFBBNEGGCIH.Add(data);
 			}
 		}

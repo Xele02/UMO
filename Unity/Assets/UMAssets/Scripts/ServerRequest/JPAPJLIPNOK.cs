@@ -44,13 +44,13 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 public class IKAHKDKIGNA
 {
 	public List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL_files; // 0x8
-	public string GLMGHMCOMEC_BaseUrl; // 0xC
+	public string GLMGHMCOMEC_base_url; // 0xC
 	public string PNELHHHCFAI_list_name; // 0x10
 
 	// // RVA: 0x8DB638 Offset: 0x8DB638 VA: 0x8DB638
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
     {
-        EDOHBJAPLPF_JsonData files = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.KGHAJGGMPKL_files/*files*/];
+        EDOHBJAPLPF_JsonData files = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.KGHAJGGMPKL_files/*files*/];
         int num = files.HNBFOAJIIAL_Count;
         KGHAJGGMPKL_files = new List<GCGNICILKLD_AssetFileInfo>(num);
         for(int i = 0; i < num; i++)
@@ -60,7 +60,7 @@ public class IKAHKDKIGNA
             fileInfo.KHEKNNFCAOI_Init(fileData, i);
             KGHAJGGMPKL_files.Add(fileInfo);
         }
-        GLMGHMCOMEC_BaseUrl = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GLMGHMCOMEC_BaseUrl/*base_url*/];
+        GLMGHMCOMEC_base_url = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.GLMGHMCOMEC_base_url/*base_url*/];
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0

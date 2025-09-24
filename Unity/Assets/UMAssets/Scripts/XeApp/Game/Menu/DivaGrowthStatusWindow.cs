@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17E008C Offset: 0x17E008C VA: 0x17E008C
 		public void UpdateContent(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData)
 		{
-			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
+			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x17E06F0
 				texture.Set(m_divaImage);

@@ -298,8 +298,8 @@ namespace XeApp.Game.Menu
 			myNameText.text = viewData.HIHPPOFHMNF_Player.OPFGFINHFCE_name;
 			rivalNameText.text = viewData.EKOCEKHBHLE_Rival.OPFGFINHFCE_name;
 			layoutRankAnim.StartChildrenAnimGoStop((rivalStrength + 1).ToString("D2"));
-			myTotal.SetNumber(viewData.HIHPPOFHMNF_Player.BDLNMOIOMHK_Total, 0);
-			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_Total, 0);
+			myTotal.SetNumber(viewData.HIHPPOFHMNF_Player.BDLNMOIOMHK_total, 0);
+			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_total, 0);
 			if(!viewData.HIHPPOFHMNF_Player.JCOJKAHFADL_Is6Line)
 			{
 				myDiffImage.uvRect = diffImageRectList[viewData.HIHPPOFHMNF_Player.AKNELONELJK_difficulty];

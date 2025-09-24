@@ -19,10 +19,10 @@ public class EBHIMFFJBIJ
         OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "created_at", 0);
         LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "updated_at", 0);
         FFDEBPDJOIJ_ExpiredAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "expired_at", 0);
-        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) =>
+        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
         {
             //0x14FDF14
-            return (int)_IDLHJIOMJBK_Data;
+            return (int)_IDLHJIOMJBK_data;
         }, 0);
     }
 }
@@ -40,10 +40,10 @@ public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
     {
         // RVA: 0xE85EF4 Offset: 0xE85EF4 VA: 0xE85EF4
         public ODMFEOAPAAA(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
-            : base(new GIINMFDIIMD(_DLENPPIJNPA_json), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            : base(new GIINMFDIIMD(_DLENPPIJNPA_json), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0xE861A0
-                return new EBHIMFFJBIJ(_IDLHJIOMJBK_Data);
+                return new EBHIMFFJBIJ(_IDLHJIOMJBK_data);
             })
         {;
         }

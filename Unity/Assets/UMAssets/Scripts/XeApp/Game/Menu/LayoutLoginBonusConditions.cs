@@ -138,38 +138,38 @@ namespace XeApp.Game.Menu
 				GMHKBJLIILI g = manager.GAOEDFGMHFD.Find((GMHKBJLIILI _) =>
 				{
 					//0x1D59914
-					return data.BPEAIOBHMFD_NameForApis == _.BPEAIOBHMFD_NameForApis;
+					return data.BPEAIOBHMFD_name_for_apis == _.BPEAIOBHMFD_name_for_apis;
 				});
 				if(g != null)
 				{
-					if (g.HMFFHLPNMPH_Count > 0)
-						a1 = g.HMFFHLPNMPH_Count - 1;
+					if (g.HMFFHLPNMPH_count > 0)
+						a1 = g.HMFFHLPNMPH_count - 1;
 				}
 			}
 			ResetRewardData();
 			int idx2 = 0;
 			for(int i = 0; i < 14 && i < data.JPILDOGJLDG_login_bonus_prizes.Count; i++)
 			{
-				if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items != null)
+				if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items != null)
 				{
-					if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items.Count > 0)
+					if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items.Count > 0)
 					{
 						m_prizeObject[i].iconLayout.enabled = true;
 						if (i < a1)
 							SwitchStampAnim(i, eStampStatus.Press);
 						a2++;
-						if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0] == null)
+						if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0] == null)
 						{
 							m_prizeObject[i].iconLayout.enabled = false;
 						}
 						else
 						{
-							if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items.Count < 2)
+							if(data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items.Count < 2)
 							{
-								SetItemIconS(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
-								SetItemIconL(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
-								SwitchUnitPrice(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
-								SetNumItem(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count);
+								SetItemIconS(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
+								SetItemIconL(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
+								SwitchUnitPrice(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+								SetNumItem(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count);
 							}
 							else
 							{
@@ -493,7 +493,7 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
 				m_isPlayStampSe = true;
 			}
-			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1 && !m_isCheckItemPack)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_items.Count > 1 && !m_isCheckItemPack)
 			{
 				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{
@@ -602,7 +602,7 @@ namespace XeApp.Game.Menu
 			}
 			while (layout.IsPlayingChildren())
 				yield return null;
-			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_items.Count > 1)
 			{
 				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{
@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 		private void OpenItemPackPopup(CAEDGOPBDNK data, Action callback)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			string str = bk.GetMessageByLabel(string.Format(m_rewardData.BPEAIOBHMFD_NameForApis + "_{0:00}", m_stampPlayDay + 1));
+			string str = bk.GetMessageByLabel(string.Format(m_rewardData.BPEAIOBHMFD_name_for_apis + "_{0:00}", m_stampPlayDay + 1));
 			if(str.Contains("!not exist"))
 				str = bk.GetMessageByLabel("popup_loginbonus_comeback_pack_001");
 			PopupLoginBonusPackSetting s = new PopupLoginBonusPackSetting();

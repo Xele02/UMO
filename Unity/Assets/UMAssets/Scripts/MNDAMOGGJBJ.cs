@@ -7,13 +7,13 @@ public class MNDAMOGGJBJ
 	public struct JFJJNPJNBPI
 	{
 		public int PPFNGGCBJKC_id; // 0x0
-		public int HMFFHLPNMPH_Count; // 0x4
+		public int HMFFHLPNMPH_count; // 0x4
 
 		//// RVA: 0x7FD6EC Offset: 0x7FD6EC VA: 0x7FD6EC
 		public void MBFFGGFGPEN(int BBPHAPFBFHK, int HFJLPAOGLEH)
 		{
 			PPFNGGCBJKC_id = BBPHAPFBFHK;
-			HMFFHLPNMPH_Count = HFJLPAOGLEH;
+			HMFFHLPNMPH_count = HFJLPAOGLEH;
 		}
 	}
 
@@ -92,7 +92,7 @@ public class MNDAMOGGJBJ
 	//// RVA: 0x17B076C Offset: 0x17B076C VA: 0x17B076C
 	private int CPBDJHKHEFN_GetNumItemLeftAfterUse(int _PPFNGGCBJKC_id)
 	{
-		return JBMLCIPKFDF_GetNumItemInInventory(_PPFNGGCBJKC_id) - INLBMFMOHCI_CostItems[_PPFNGGCBJKC_id - 1].HMFFHLPNMPH_Count;
+		return JBMLCIPKFDF_GetNumItemInInventory(_PPFNGGCBJKC_id) - INLBMFMOHCI_CostItems[_PPFNGGCBJKC_id - 1].HMFFHLPNMPH_count;
 	}
 
 	//// RVA: 0x17B0810 Offset: 0x17B0810 VA: 0x17B0810
@@ -120,9 +120,9 @@ public class MNDAMOGGJBJ
 		int idx = -1;
 		for(int i = 0; i < INLBMFMOHCI_CostItems.Count; i++)
 		{
-			if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count < 1)
+			if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count < 1)
 			{
-				if (INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count < 0)
+				if (INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count < 0)
 					return -2;
 			}
 			idx = 1;
@@ -155,9 +155,9 @@ public class MNDAMOGGJBJ
 		MNDGNJLBANB res = haveUC < CMBGGPOFBOO_UcCost ? MNDGNJLBANB.EDBCFDJBFID_LackUC/*1*/ : MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/;
 		for(int i = 0; i < INLBMFMOHCI_CostItems.Count; i++)
 		{
-			if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count > 0)
+			if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count > 0)
 			{
-				if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Count > JBMLCIPKFDF_GetNumItemInInventory(i + 1))
+				if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count > JBMLCIPKFDF_GetNumItemInInventory(i + 1))
 				{
 					return (MNDGNJLBANB)((int)res | 2);
 				}

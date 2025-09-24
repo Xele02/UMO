@@ -300,9 +300,9 @@ namespace XeApp.Game.MusicSelect
 									return x.MPLGPBNJDJB_FreeMusicId == musicData.GHBPLHBNMBK_FreeMusicId;
 								});
 								aprilFoolEndTime = eventApril.DPJCPDKALGI_RankingEnd;
-								if (dd.FDBNFFNFOND_CloseAt != 0)
+								if (dd.FDBNFFNFOND_close_at != 0)
 								{
-									aprilFoolEndTime = dd.FDBNFFNFOND_CloseAt;
+									aprilFoolEndTime = dd.FDBNFFNFOND_close_at;
 								}
 								if (eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI() != 0 && dd.PPFNGGCBJKC_id == eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI())
 								{
@@ -317,7 +317,7 @@ namespace XeApp.Game.MusicSelect
 						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsMusicOpen(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
-							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 						}
 					}
 					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF_ViewOrder % 10);

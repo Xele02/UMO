@@ -80,8 +80,8 @@ namespace XeApp.Game.Menu
 		{
 			m_viewData = viewData;
 			SetDaily(viewData.EFJDHILLIEK_IsDaily);
-			FKMOKDCJFEN.ADCPCCNCOMD_Status status = viewData.CMCKNKKCNDK_Status;
-			if (viewData.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
+			FKMOKDCJFEN.ADCPCCNCOMD_Status status = viewData.CMCKNKKCNDK_status;
+			if (viewData.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
 			{
 				status = !viewData.PNFDMBHDPAJ_IsRewardOnly && viewData.NNHHNFFLCFO != 0 ? FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1 : FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0_None;
 			}

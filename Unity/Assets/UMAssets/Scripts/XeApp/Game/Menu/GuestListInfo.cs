@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 			if(fri.JIGONEMPPNP_Diva != null)
 			{
 				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
-				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
 			emblemId = fri.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
@@ -101,13 +101,13 @@ namespace XeApp.Game.Menu
 					skillRank = (SkillRank.Type)(v == v2 ? g.FFDCGHDNDFJ_CenterSkillRank2 : g.DHEFMEGKKDN_CenterSkillRank);
 				}
 				luck = g.MJBODMOLOBC_luck;
-				total = g.CMCKNKKCNDK_Status.Total;
-				life = g.CMCKNKKCNDK_Status.life;
-				soul = g.CMCKNKKCNDK_Status.soul;
-				voice = g.CMCKNKKCNDK_Status.vocal;
-				charm = g.CMCKNKKCNDK_Status.charm;
-				fold = g.CMCKNKKCNDK_Status.fold;
-				support = g.CMCKNKKCNDK_Status.support;
+				total = g.CMCKNKKCNDK_status.Total;
+				life = g.CMCKNKKCNDK_status.life;
+				soul = g.CMCKNKKCNDK_status.soul;
+				voice = g.CMCKNKKCNDK_status.vocal;
+				charm = g.CMCKNKKCNDK_status.charm;
+				fold = g.CMCKNKKCNDK_status.fold;
+				support = g.CMCKNKKCNDK_status.support;
 				isKira = g.MBMFJILMOBP_IsKira();
 				centerSkillRank = g.DHEFMEGKKDN_CenterSkillRank;
 				centerSkillRank2 = g.FFDCGHDNDFJ_CenterSkillRank2;

@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 									if(QuestUtility.m_dailyViewList.FindAll((FKMOKDCJFEN _) =>
 									{
 										//0x9DE2D0
-										return _.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
+										return _.CMCKNKKCNDK_status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
 									}).Count == 0)
 									{
 										m_tabType = LayoutQuestTab.eTabType.Normal;
@@ -599,7 +599,7 @@ namespace XeApp.Game.Menu
 			List<FKMOKDCJFEN> l2 = new List<FKMOKDCJFEN>();
 			for(int i = 0; i < l.Count; i++)
 			{
-				if (l[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+				if (l[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
 					l2.Add(l[i]);
 			}
 			QuestUtility.ReceiveAll(l2, () =>
@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x9DE914
 					LHFOAFAOPLC.FPCGNJMEHCI();
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 2;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end = 2;
 					MenuScene.SaveRequest();
 					GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
 					MenuScene.Instance.InputEnable();

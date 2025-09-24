@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 						EventMusicSelectSceneBase.OpenWeekRecoveryWindow(musicData, OnWeekRecovery, cancelCallback);
 						return false;
 					}
-					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_Stamina)
+					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_stamina)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 				return m_questList.FindIndex((FKMOKDCJFEN x) =>
 				{
 					//0x1510CB8
-					return x.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
 				}) > -1;
 			}
 			return false;
@@ -379,15 +379,15 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_eventCtrl.PFPJHJJAGAG_Rewards.Count; i++)
 				{
-					for(int j = 0; j < m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items.Count; j++)
+					for(int j = 0; j < m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items.Count; j++)
 					{
-						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
+						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
 						{
 							for(int k = 0; k < m_snsData.NPKPBDIDBBG_Room.Count; k++)
 							{
 								for(int kk = 0; kk < m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA.Count; kk++)
 								{
-									if(m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].AIPLIEMLHGC_SnsId == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
+									if(m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].AIPLIEMLHGC_SnsId == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId)
 									{
 										if(!m_snsData.NPKPBDIDBBG_Room[k].CNEOPOINCBA[kk].EDCBHGECEBE_Read)
 										{
@@ -741,9 +741,9 @@ namespace XeApp.Game.Menu
 			}
 			if(!musicData.HDPMAJKGIOI)
 			{
-				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_Stamina);
+				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_stamina);
 			}
-			data.enemyHasSkill = musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HPBPDHPIBGN_Enemy.CDEFLIHHNAB_HasSkills;
+			data.enemyHasSkill = musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HPBPDHPIBGN_enemy.CDEFLIHHNAB_HasSkills;
 			data.isReceiveMission = IsReceiveMission();
 			data.isNewStory = IsNewStory();
 			if(musicData.LEBDMNIGOJB_IsScoreEvent)
@@ -757,7 +757,7 @@ namespace XeApp.Game.Menu
 			if(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
+				str.Set(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_lv.ToString());
 				if(isLine6Mode)
 				{
 					str.Append("+");

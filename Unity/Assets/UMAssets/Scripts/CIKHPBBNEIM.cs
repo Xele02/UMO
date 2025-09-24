@@ -100,11 +100,11 @@ public class CIKHPBBNEIM
                         GJLFANGDGCL_Target.ALDAOOLPHCH_BonusAfter = (int)(f * a2);
                         for(int k = 0; k < 3; k++)
                         {
-                            if(MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_Diva[k].DIPKCALNIII_DivaId != 0)
+                            if(MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_diva[k].DIPKCALNIII_diva_id != 0)
                             {
                                 for(int kk = 0; kk < 3; kk++)
                                 {
-                                    if(GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId == MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_Diva[k].EBDNICPAFLB_SSlot[kk])
+                                    if(GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId == MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_diva[k].EBDNICPAFLB_s_slot[kk])
                                     {
                                         GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = true;
                                     }
@@ -140,18 +140,18 @@ public class CIKHPBBNEIM
                     }
                 }
             }
-            p.FLJNOOPOAGI.Sort((ODGCADPPIFA HKICMNAACDA, ODGCADPPIFA BNKHBCBJBKI) =>
+            p.FLJNOOPOAGI.Sort((ODGCADPPIFA _HKICMNAACDA_a, ODGCADPPIFA _BNKHBCBJBKI_b) =>
             {
                 //0xFFA0B4
-                if(HKICMNAACDA.BPMAIEFLOPP == BNKHBCBJBKI.BPMAIEFLOPP)
+                if(_HKICMNAACDA_a.BPMAIEFLOPP == _BNKHBCBJBKI_b.BPMAIEFLOPP)
                 {
-                    if(BNKHBCBJBKI.ALDAOOLPHCH_BonusAfter == HKICMNAACDA.ALDAOOLPHCH_BonusAfter)
+                    if(_BNKHBCBJBKI_b.ALDAOOLPHCH_BonusAfter == _HKICMNAACDA_a.ALDAOOLPHCH_BonusAfter)
                     {
-                        return BNKHBCBJBKI.BCCHOBPJJKE_SceneId.CompareTo(HKICMNAACDA.BCCHOBPJJKE_SceneId);
+                        return _BNKHBCBJBKI_b.BCCHOBPJJKE_SceneId.CompareTo(_HKICMNAACDA_a.BCCHOBPJJKE_SceneId);
                     }
-                    return BNKHBCBJBKI.ALDAOOLPHCH_BonusAfter.CompareTo(HKICMNAACDA.ALDAOOLPHCH_BonusAfter);
+                    return _BNKHBCBJBKI_b.ALDAOOLPHCH_BonusAfter.CompareTo(_HKICMNAACDA_a.ALDAOOLPHCH_BonusAfter);
                 }
-                return BNKHBCBJBKI.BPMAIEFLOPP.CompareTo(HKICMNAACDA.BPMAIEFLOPP);
+                return _BNKHBCBJBKI_b.BPMAIEFLOPP.CompareTo(_HKICMNAACDA_a.BPMAIEFLOPP);
             });
             int a3 = -1;
             int a4 = -1;

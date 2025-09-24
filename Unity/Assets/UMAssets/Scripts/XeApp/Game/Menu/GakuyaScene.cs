@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(Co_ApplyDivaInfos(m_divaId));
 			}
 			//LAB_00b813f0
-			int intimacy_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("intimacy_player_level", 8);
+			int intimacy_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("intimacy_player_level", 8);
 			int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 			m_infos.SetGiftLock(level, intimacy_player_level);
 			m_homeButton.OnClickHomeButtonCallback = OnClickHomeButton;
@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 			int bgmId = BgmPlayer.MENU_BGM_ID_BASE;
 			if(MenuScene.Instance.BgControl.limitedHomeBg.m_music_id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 			{
-				string home_bgm_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+				string home_bgm_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 				string[] home_bgm_ids = home_bgm_id.Split(new char[] { ',' });
 				if(home_bgm_ids.Length == 3)
 				{
@@ -473,12 +473,12 @@ namespace XeApp.Game.Menu
 			coroutineSave = this.StartCoroutineWatched(Co_Save());
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			bool isClose = false;
-			string v = JKNGJFOBADP.JKOAGEAPJHI(m_intimacyController.viewData.HBODCMLFDOB_Result.IOCFPAAEFHM_FullItemId, m_intimacyController.viewData.HBODCMLFDOB_Result.LEAKFAFGEKK_Count, 20);
+			string v = JKNGJFOBADP.JKOAGEAPJHI(m_intimacyController.viewData.HBODCMLFDOB_result.IOCFPAAEFHM_FullItemId, m_intimacyController.viewData.HBODCMLFDOB_result.LEAKFAFGEKK_Count, 20);
 			PopupPresentSetting s = new PopupPresentSetting();
 			s.TitleText = bk.GetMessageByLabel("");
 			s.itemName = v;
-			s.itemId = m_intimacyController.viewData.HBODCMLFDOB_Result.IOCFPAAEFHM_FullItemId;
-			s.itemDetail = m_intimacyController.viewData.HBODCMLFDOB_Result.JLKIADFKPFL_Desc;
+			s.itemId = m_intimacyController.viewData.HBODCMLFDOB_result.IOCFPAAEFHM_FullItemId;
+			s.itemDetail = m_intimacyController.viewData.HBODCMLFDOB_result.JLKIADFKPFL_Desc;
 			s.WindowSize = 0;
 			s.IsCaption = false;
 			s.Buttons = new ButtonInfo[1]
@@ -611,7 +611,7 @@ namespace XeApp.Game.Menu
 				GakuyaCostumeListWindow.ItemInfo cosInfo = m_costumeListWindow.GetItem(i);
 				string p = ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, cosInfo.m_cosId), cosInfo.m_cosColor);
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
-				p = CostumeTextureCache.MakeCostumeTexturePath(divaId, cosInfo.m_viewDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, cosInfo.m_cosColor);
+				p = CostumeTextureCache.MakeCostumeTexturePath(divaId, cosInfo.m_viewDiva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, cosInfo.m_cosColor);
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
 			}
 			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
@@ -833,7 +833,7 @@ namespace XeApp.Game.Menu
 				if (item.m_cosColor == 0)
 					item.m_viewDiva.LEHDLBJJBNC();
 				else
-					item.m_viewDiva.FFKMJNHFFFL_Costume.PDADHMIODCA(item.m_cosColor, false);
+					item.m_viewDiva.FFKMJNHFFFL_costume.PDADHMIODCA(item.m_cosColor, false);
 			}
 			m_costumeListWindow.SetTryIndex(index);
 		}
@@ -1015,7 +1015,7 @@ namespace XeApp.Game.Menu
 				return;
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			bool presentDivaLimit = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled();
-			if(!m_intimacyController.viewData.HBODCMLFDOB_Result.PFIILLOIDIL || presentDivaLimit)
+			if(!m_intimacyController.viewData.HBODCMLFDOB_result.PFIILLOIDIL || presentDivaLimit)
 			{
 				if(m_intimacyController.viewData.NCNAPMHEINJ())
 				{
@@ -1155,7 +1155,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, d.EKFONBFDAAP_ColorId));
+					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, d.EKFONBFDAAP_ColorId));
 				}
 			}
 		}

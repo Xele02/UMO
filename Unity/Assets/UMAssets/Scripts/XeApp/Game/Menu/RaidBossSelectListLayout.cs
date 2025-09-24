@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
 				f.KHEKNNFCAOI_Init(friendPlayerData);
 				GameManager.Instance.DivaIconCache.SetLoadingIcon(playerIcon);
-				GameManager.Instance.DivaIconCache.Load(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId,
+				GameManager.Instance.DivaIconCache.Load(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId,
 					f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture icon) =>
 					{
 						//0x1464208

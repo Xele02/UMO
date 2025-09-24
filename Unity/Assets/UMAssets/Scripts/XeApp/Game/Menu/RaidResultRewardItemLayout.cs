@@ -125,12 +125,12 @@ namespace XeApp.Game.Menu
 					m_layoutMain.StartSiblingAnimGoStop("03");
 				}
 			}
-			string s = string.Format("{0:D2}", m_view.FJOLNJLLJEJ_Rank);
+			string s = string.Format("{0:D2}", m_view.FJOLNJLLJEJ_rank);
 			m_bossRank.StartChildrenAnimGoStop(s, s);
 			m_bossNameText.text = m_view.OPFGFINHFCE_name;
 			for(int i = 0; i < m_view.NEAPOLIIELG_MvpRewards.Count; i++)
 			{
-				mvpItemCell.itemNum[i].SetNumber(m_view.NEAPOLIIELG_MvpRewards[i].HMFFHLPNMPH_Count, 0);
+				mvpItemCell.itemNum[i].SetNumber(m_view.NEAPOLIIELG_MvpRewards[i].HMFFHLPNMPH_count, 0);
 				int idx = i;
 				MenuScene.Instance.ItemTextureCache.Load(m_view.NEAPOLIIELG_MvpRewards[i].PPFNGGCBJKC_id, (IiconTexture texture) =>
 				{
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_view.JAGJOLBDBDK_FirstRewards.Count; i++)
 			{
-				firstItemCell.itemNum[i].SetNumber(m_view.JAGJOLBDBDK_FirstRewards[i].HMFFHLPNMPH_Count, 0);
+				firstItemCell.itemNum[i].SetNumber(m_view.JAGJOLBDBDK_FirstRewards[i].HMFFHLPNMPH_count, 0);
 				int idx = i;
 				MenuScene.Instance.ItemTextureCache.Load(m_view.JAGJOLBDBDK_FirstRewards[i].PPFNGGCBJKC_id, (IiconTexture texture) =>
 				{
@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_view.FGNHJFLBMIE_DefeatRewards.Count; i++)
 			{
-				defeatItemCell.itemNum[i].SetNumber(m_view.FGNHJFLBMIE_DefeatRewards[i].HMFFHLPNMPH_Count, 0);
+				defeatItemCell.itemNum[i].SetNumber(m_view.FGNHJFLBMIE_DefeatRewards[i].HMFFHLPNMPH_count, 0);
 				int idx = i;
 				MenuScene.Instance.ItemTextureCache.Load(m_view.FGNHJFLBMIE_DefeatRewards[i].PPFNGGCBJKC_id, (IiconTexture texture) =>
 				{

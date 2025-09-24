@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 				if(friendData.JIGONEMPPNP_Diva != null)
 				{
 					divaId = friendData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
-					costumeId = friendData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+					costumeId = friendData.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 					colorId = friendData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 				}
 				MenuScene.Instance.DivaIconCache.Load(divaId, costumeId, colorId, (IiconTexture iconTexture) =>

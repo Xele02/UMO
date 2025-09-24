@@ -24,7 +24,7 @@ public class NCPPAHHCCAO
 	public int EDEEMPJPFCP { get { return LAPHCBOBAJN ^ FBGGEFFJJHB_xor; } set { LAPHCBOBAJN = FBGGEFFJJHB_xor ^ value; } } //0x1ADA180 LNELAEPIDOL 0x1ADA190 FMPMDBENAGN
 	public int HDHNEILDILJ_SnsCharaId { get { return KAFDPIJEBPN ^ FBGGEFFJJHB_xor; } set { KAFDPIJEBPN = FBGGEFFJJHB_xor ^ value; } } //0x1ADA1A0 MLECPDIKEPC 0x1ADA1B0 LBGPIFGNOMF
 	public int CPKMLLNADLJ_Serie { get { return IPAKEGGICML ^ FBGGEFFJJHB_xor; } set { IPAKEGGICML = FBGGEFFJJHB_xor ^ value; } } //0x1ADA1C0 BJPJMGHCDNO 0x1ADA1D0 BPKIOJBKNBP
-	public int BFINGCJHOHI_Count { get { return IFEHKNJONPL_CountCrypted ^ FBGGEFFJJHB_xor; } set { IFEHKNJONPL_CountCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA1E0 LFMCLIDAPHB 0x1ADA1F0 EDAEPDGGFJJ
+	public int BFINGCJHOHI_cnt { get { return IFEHKNJONPL_CountCrypted ^ FBGGEFFJJHB_xor; } set { IFEHKNJONPL_CountCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA1E0 LFMCLIDAPHB 0x1ADA1F0 EDAEPDGGFJJ
 
 	// RVA: 0x1ADA200 Offset: 0x1ADA200 VA: 0x1ADA200
 	public NCPPAHHCCAO()
@@ -39,7 +39,7 @@ public class NCPPAHHCCAO
 		EKLIPGELKCL_Rarity = 0;
 		HDHNEILDILJ_SnsCharaId = 0;
 		EDEEMPJPFCP = 0;
-		BFINGCJHOHI_Count = 0;
+		BFINGCJHOHI_cnt = 0;
 		BBEGLBMOBOF_xorl = FBGGEFFJJHB_xor;
 		PPFNGGCBJKC_id = 0;
 		INDDJNMPONH_type = 0;
@@ -68,8 +68,8 @@ public class NCPPAHHCCAO
 						{
 							NCPPAHHCCAO stamp = new NCPPAHHCCAO();
 							stamp.PPFNGGCBJKC_id = dbStamp.PPFNGGCBJKC_id;
-							stamp.INDDJNMPONH_type = dbStamp.GBJFNGCDKPM_Type;
-							stamp.IDELKEKDIFD_CharaId = dbStamp.JBFLEDKDFCO_CId;
+							stamp.INDDJNMPONH_type = dbStamp.GBJFNGCDKPM_typ;
+							stamp.IDELKEKDIFD_CharaId = dbStamp.JBFLEDKDFCO_cid;
 							stamp.BEHMEDMNJMC_EmotionId = dbStamp.ALAEHBKAEPB;
 							stamp.EKLIPGELKCL_Rarity = dbStamp.EKLIPGELKCL_Rarity;
 							stamp.EDEEMPJPFCP = dbStamp.NGILPOOLBCF;
@@ -86,7 +86,7 @@ public class NCPPAHHCCAO
 									}
 								}
 							}
-							stamp.BFINGCJHOHI_Count = saveStamp.BFINGCJHOHI_Count;
+							stamp.BFINGCJHOHI_cnt = saveStamp.BFINGCJHOHI_cnt;
 							l.Add(stamp);
 						}
 					}
@@ -105,7 +105,7 @@ public class NCPPAHHCCAO
 	//// RVA: 0x1ADAE28 Offset: 0x1ADAE28 VA: 0x1ADAE28
 	public static string EFNHFKLKNHJ(int _PPFNGGCBJKC_id)
 	{
-		//string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
+		//string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
 		// UMO : desc_string_hanyo is the same as StringLiteral_12526, so use that to have the translation string.
 		string str = JpStringLiterals.StringLiteral_12526;
 		if(_PPFNGGCBJKC_id > 0)
@@ -113,12 +113,12 @@ public class NCPPAHHCCAO
 			if(_PPFNGGCBJKC_id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count)
 			{
 				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP serif = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[_PPFNGGCBJKC_id - 1];
-				if(serif.JBFLEDKDFCO_CId > 0)
+				if(serif.JBFLEDKDFCO_cid > 0)
 				{
-					if(serif.JBFLEDKDFCO_CId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
+					if(serif.JBFLEDKDFCO_cid <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
 					{
-						BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[serif.JBFLEDKDFCO_CId - 1];
-						//return sns.OPFGFINHFCE_name + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
+						BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[serif.JBFLEDKDFCO_cid - 1];
+						//return sns.OPFGFINHFCE_name + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
 						// UMO : desc_string_senyo is the same as StringLiteral_12528, so use that to have the translation string.
 						return sns.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_12528;
 					}
@@ -144,7 +144,7 @@ public class NCPPAHHCCAO
 	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_type, string _LJNAKDMILMC_key)
 	{
 		List<int> res = new List<int>();
-		string str = _LKMHPJKIFDN_md.GAPONCJOKAC_DecoStamp.EFEGBHACJAL(_LJNAKDMILMC_key, "");
+		string str = _LKMHPJKIFDN_md.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam(_LJNAKDMILMC_key, "");
 		string[] strs = str.Split(new char[] { ',' });
 		for(int i = 0; i < strs.Length; i++)
 		{

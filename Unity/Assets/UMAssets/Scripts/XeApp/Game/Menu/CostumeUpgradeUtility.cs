@@ -289,10 +289,10 @@ namespace XeApp.Game.Menu
 			int a2 = data.ABLHIAEDJAI_CurrentValue;
 			for(int i = data.GKIKAABHAAD_Level; i < data.OCOOHBINGBG_LevelInfo.Count; i++)
 			{
-				if(data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_Point >= a2 + a1)
+				if(data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_point >= a2 + a1)
 				{
 					res.Add(data.OCOOHBINGBG_LevelInfo[i]);
-					a1 = data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_Point - a2;
+					a1 = data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_point - a2;
 					a2 = 0;
 				}
 			}

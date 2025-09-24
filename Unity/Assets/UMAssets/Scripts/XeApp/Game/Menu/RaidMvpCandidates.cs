@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 			while(!isDone)
 				yield return null;
 			m_mvpLayout.SetBossName(raidController.AGEJGHGEGFF_GetBossName(m_boss_info.INDDJNMPONH_type));
-			m_mvpLayout.SetBossRank(m_boss_info.FJOLNJLLJEJ_Rank);
+			m_mvpLayout.SetBossRank(m_boss_info.FJOLNJLLJEJ_rank);
 			m_mvpLayout.SetBossImage(m_boss_info.HPPDFBKEJCG_BgId);
 			m_mvpLayout.SetPlayerDamage(m_boss_info.AEGFDINOACE_PlayerDamage);
 			m_mvpLayout.PushProfileButtonListner += OnClickProfileButton;

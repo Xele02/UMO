@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B6713C Offset: 0x1B6713C VA: 0x1B6713C
 		public void SettingNextRewardPoint()
 		{
-			m_next_rank_point = m_data.OCOOHBINGBG_LevelInfo[GetRankToIndex()].DNBFMLBNAEE_Point;
+			m_next_rank_point = m_data.OCOOHBINGBG_LevelInfo[GetRankToIndex()].DNBFMLBNAEE_point;
 		}
 
 		// // RVA: 0x1B67260 Offset: 0x1B67260 VA: 0x1B67260

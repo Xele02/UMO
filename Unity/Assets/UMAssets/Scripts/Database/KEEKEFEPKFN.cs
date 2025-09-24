@@ -49,9 +49,9 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xE87750 Offset: 0xE87750 VA: 0xE87750 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MDOBMPOHGJO parser = MDOBMPOHGJO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MDOBMPOHGJO parser = MDOBMPOHGJO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		OMNECLCMFOL[] array = parser.KKOAFINEAAG;
 		if (array.Length >= 28)
 			return false;

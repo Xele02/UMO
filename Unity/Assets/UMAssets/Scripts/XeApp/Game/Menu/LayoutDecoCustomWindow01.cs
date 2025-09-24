@@ -400,7 +400,7 @@ namespace XeApp.Game.Menu
 				if(targetId > 0)
 				{
 					if (targetId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_CId;
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_cid;
 				}
 			}
 			return 0;

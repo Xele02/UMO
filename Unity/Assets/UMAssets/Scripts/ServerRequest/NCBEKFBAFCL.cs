@@ -7,12 +7,12 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 {
 	public class EOOEOFIDGFC
 	{
-		public bool EMEGKEGFJBK_FacebookLinkage; // 0x8
+		public bool EMEGKEGFJBK_facebook_linkage; // 0x8
 
 		// RVA: 0x17CC0A4 Offset: 0x17CC0A4 VA: 0x17CC0A4
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EMEGKEGFJBK_FacebookLinkage = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EMEGKEGFJBK_FacebookLinkage];
+			EMEGKEGFJBK_facebook_linkage = (bool)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.EMEGKEGFJBK_facebook_linkage];
 		}
 	}
 

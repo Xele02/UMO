@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long _IFNLEKOILPM_UpdatedAt, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
+public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_player_id, long _IFNLEKOILPM_updated_at, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 [System.Obsolete("Use NJNCAHLIHNI_GetPlayerData", true)]
 public class NJNCAHLIHNI { }
@@ -10,8 +10,8 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 {
 	public class OKMDAFICFHJ
 	{
-		public int EHGBICNIBKE_PlayerId; // 0x8
-		public long IFNLEKOILPM_UpdatedAt; // 0x10
+		public int EHGBICNIBKE_player_id; // 0x8
+		public long IFNLEKOILPM_updated_at; // 0x10
 		public EDOHBJAPLPF_JsonData HJDBGMMPPEF_PlayerData; // 0x18
 		public long IFCJDGINBGF_facebook_uid; // 0x20
 	}
@@ -58,8 +58,8 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		{
 			EDOHBJAPLPF_JsonData p = data["players"][i];
 			OKMDAFICFHJ d = new OKMDAFICFHJ();
-			d.EHGBICNIBKE_PlayerId = (int)p["player_id"];
-			d.IFNLEKOILPM_UpdatedAt = (int)p["updated_at"];
+			d.EHGBICNIBKE_player_id = (int)p["player_id"];
+			d.IFNLEKOILPM_updated_at = (int)p["updated_at"];
 			d.HJDBGMMPPEF_PlayerData = p["player_data"];
 			res.AIGKNOKPMEJ_Players.Add(d);
 		}
@@ -67,7 +67,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		{
 			for(int i = 0; i < res.AIGKNOKPMEJ_Players.Count; i++)
 			{
-				bool b = PINPBOCDKLI_OnPlayerCb(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_Names, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
+				bool b = PINPBOCDKLI_OnPlayerCb(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_player_id, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_updated_at, HHIHCJKLJFF_Names, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
 				if(!b)
 				{
 					DLKLLHPLANH = true;

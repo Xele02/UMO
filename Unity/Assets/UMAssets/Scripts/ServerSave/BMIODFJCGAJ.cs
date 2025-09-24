@@ -11,7 +11,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public const int ECFEMKGFDCE = 2;
 	private const int OIEOCBIJLDC = 10;
 	public int FBGGEFFJJHB_xor = 0x2ca3b889; // 0x24
-	public int EHGBICNIBKE_PlayerId; // 0x28
+	public int EHGBICNIBKE_player_id; // 0x28
 	public string LJNAKDMILMC_key = ""; // 0x2C
 	public string OPFGFINHFCE_name = ""; // 0x30
 	public int EOPEEENMHEN_Crypted; // 0x34
@@ -34,7 +34,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public int EEAPIKNJNDB_ConsecutiveWin { get { return DPOOAOPAAGC_Crypted ^ FBGGEFFJJHB_xor; } set { DPOOAOPAAGC_Crypted = value ^ FBGGEFFJJHB_xor; } } //  KNLJPLHJMHI 0x19C8140  IMHAJFDFGJL 0x19C8150
 	public int KEFMAJJPAKM_CWinMax { get { return BAHBNDPEMJP_Crypted ^ FBGGEFFJJHB_xor; } set { BAHBNDPEMJP_Crypted = value ^ FBGGEFFJJHB_xor; } } // JPBMCILHBLO 0x19C8160 PNCBJOMBOEJ 0x19C8170
 	public int FGEIOMGBGLI_Twin { get { return PGPDMJICNLO_Crypted ^ FBGGEFFJJHB_xor; } set { PGPDMJICNLO_Crypted = value ^ FBGGEFFJJHB_xor; } } // HOPMOAGHMHO 0x19C8180 IOCOHNGCFKJ 0x19C8190
-	public int DIPKCALNIII_DivaId { get { return AOFGNAJLLPD_DivaIdCrypted ^ FBGGEFFJJHB_xor; } set { AOFGNAJLLPD_DivaIdCrypted = value ^ FBGGEFFJJHB_xor; } } // EOGPBFIDAPF 0x19C81A0 JDNCGPBAFMB 0x19C81B0
+	public int DIPKCALNIII_diva_id { get { return AOFGNAJLLPD_DivaIdCrypted ^ FBGGEFFJJHB_xor; } set { AOFGNAJLLPD_DivaIdCrypted = value ^ FBGGEFFJJHB_xor; } } // EOGPBFIDAPF 0x19C81A0 JDNCGPBAFMB 0x19C81B0
 	public int GOIKCKHMBDL_FreeMusicId { get { return CJAOMKLHFJL_Crypted ^ FBGGEFFJJHB_xor; } set { CJAOMKLHFJL_Crypted = value ^ FBGGEFFJJHB_xor; } } // BPGCGEDHBEH 0x19C81C0 ICPMFBIDFFO 0x19C81D0
 	public int JKAMFMNGEBB_high_score { get { return JBFANBKCHMG_Crypted ^ FBGGEFFJJHB_xor; } set { JBFANBKCHMG_Crypted = value ^ FBGGEFFJJHB_xor; } } // EAOCMNMBDEG 0x19C81E0 ILFAFLEFJCF 0x19C81F0
 	public override bool DMICHEJIAJL { get { return false; } } // 0x19CA08C NFKFOODCJJB
@@ -51,7 +51,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		OPFGFINHFCE_name = string.Copy(_OPFGFINHFCE_name);
 		IPPNCOHEEOD_ScoreAverage = 0;
 		GOIKCKHMBDL_FreeMusicId = 0;
-		DIPKCALNIII_DivaId = 0;
+		DIPKCALNIII_diva_id = 0;
 		JKAMFMNGEBB_high_score = 0;
 		OBGBAOLONDD_UniqueId = GPLGIGCNNAD;
 		for(int i = 0; i < 10; i++)
@@ -108,7 +108,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		data["cwin_max"] = KEFMAJJPAKM_CWinMax;
 		data["twin"] = FGEIOMGBGLI_Twin;
 		data["f"] = GOIKCKHMBDL_FreeMusicId;
-		data["dv"] = DIPKCALNIII_DivaId;
+		data["dv"] = DIPKCALNIII_diva_id;
 		data["hs"] = JKAMFMNGEBB_high_score;
 		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 		data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -207,7 +207,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 			}
 		}
 		GOIKCKHMBDL_FreeMusicId = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "f", 0, ref isInvalid), 0, 2000);
-		DIPKCALNIII_DivaId = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "dv", 0, ref isInvalid), 1, 10);
+		DIPKCALNIII_diva_id = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "dv", 0, ref isInvalid), 1, 10);
 		JKAMFMNGEBB_high_score = Mathf.Max(0, CJAENOMGPDA_ReadInt(block, "hs", 0, ref isInvalid));
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;
@@ -226,7 +226,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		OPFGFINHFCE_name = other.OPFGFINHFCE_name;
 		OBGBAOLONDD_UniqueId = other.OBGBAOLONDD_UniqueId;
 		GOIKCKHMBDL_FreeMusicId = other.GOIKCKHMBDL_FreeMusicId;
-		DIPKCALNIII_DivaId = other.DIPKCALNIII_DivaId;
+		DIPKCALNIII_diva_id = other.DIPKCALNIII_diva_id;
 		JKAMFMNGEBB_high_score = other.JKAMFMNGEBB_high_score;
 		AILDCKKOLJG_Results.Clear();
 		for(int i = 0; i < other.AILDCKKOLJG_Results.Count; i++)
@@ -262,7 +262,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 			return false;
 		if(GOIKCKHMBDL_FreeMusicId != other.GOIKCKHMBDL_FreeMusicId)
 			return false;
-		if(DIPKCALNIII_DivaId != other.DIPKCALNIII_DivaId)
+		if(DIPKCALNIII_diva_id != other.DIPKCALNIII_diva_id)
 			return false;
 		if(JKAMFMNGEBB_high_score != other.JKAMFMNGEBB_high_score)
 			return false;

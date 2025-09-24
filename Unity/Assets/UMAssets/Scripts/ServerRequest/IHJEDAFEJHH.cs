@@ -13,7 +13,7 @@ public class JAMDHMMODCG
 	public string OPFGFINHFCE_name; // 0x8
 	public string KLMPFGOCBHC_description; // 0xC
 	public List<GODKIBIPNLG> PJJFEAHIPGL_inventories; // 0x10
-	public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances; // 0x14
+	public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_balances; // 0x14
 	public IAPIDHGIEED LKHAAGIJEPG_player_status; // 0x18
 	public static string[] OBHNPDJPJCC = new string[18]
 	{
@@ -38,12 +38,12 @@ public class JAMDHMMODCG
 	}; // 0x0
 
 	//// RVA: 0x1415014 Offset: 0x1415014 VA: 0x1415014
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
-		OPFGFINHFCE_name = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
-		KLMPFGOCBHC_description = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
+		OPFGFINHFCE_name = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
+		KLMPFGOCBHC_description = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
 		PJJFEAHIPGL_inventories = new List<GODKIBIPNLG>();
-		EDOHBJAPLPF_JsonData inv = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
+		EDOHBJAPLPF_JsonData inv = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
 		for(int i = 0; i < OBHNPDJPJCC.Length; i++)
 		{
 			if(inv.BBAJPINMOEP_Contains(OBHNPDJPJCC[i]))
@@ -61,16 +61,16 @@ public class JAMDHMMODCG
 				PJJFEAHIPGL_inventories.Add(data);
 			}
 		}
-		EDOHBJAPLPF_JsonData balances = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
-		BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(balances.HNBFOAJIIAL_Count);
+		EDOHBJAPLPF_JsonData balances = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
+		BBEPLKNMICJ_balances = new List<MCKCJMLOAFP_CurrencyInfo>(balances.HNBFOAJIIAL_Count);
 		for(int i = 0; i < balances.HNBFOAJIIAL_Count; i++)
 		{
 			MCKCJMLOAFP_CurrencyInfo m = new MCKCJMLOAFP_CurrencyInfo();
 			m.DPKCOKLMFMK(balances[i]);
-			BBEPLKNMICJ_Balances.Add(m);
+			BBEPLKNMICJ_balances.Add(m);
 		}
 		LKHAAGIJEPG_player_status = new IAPIDHGIEED();
-		LKHAAGIJEPG_player_status.KHEKNNFCAOI_Init(_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.LKHAAGIJEPG_player_status]);
+		LKHAAGIJEPG_player_status.KHEKNNFCAOI_Init(_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.LKHAAGIJEPG_player_status]);
 	}
 }
 

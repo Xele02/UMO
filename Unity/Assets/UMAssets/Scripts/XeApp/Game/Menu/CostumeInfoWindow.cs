@@ -113,11 +113,11 @@ namespace XeApp.Game.Menu
 			sts[1] = stA;
 			for(int i = 0; i < 2; i++)
 			{
-				sts[i].Add(list[i].CMCKNKKCNDK_Status);
+				sts[i].Add(list[i].CMCKNKKCNDK_status);
 			}
 			for(int i = 0; i < 2; i++)
 			{
-				m_panel_data[i].name.text = list[i].FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(list[i].EKFONBFDAAP_ColorId);
+				m_panel_data[i].name.text = list[i].FFKMJNHFFFL_costume.HCPCHEPCFEA_GetCostumeName(list[i].EKFONBFDAAP_ColorId);
 				SetParamText(m_panel_data[i].total, sts[i].Total, stA.Total - stB.Total, i == 1);
 				SetParamText(m_panel_data[i].soul, sts[i].soul, stA.soul - stB.soul, i == 1);
 				SetParamText(m_panel_data[i].voice, sts[i].vocal, stA.vocal - stB.vocal, i == 1);
@@ -126,10 +126,10 @@ namespace XeApp.Game.Menu
 				SetParamText(m_panel_data[i].support, sts[i].support, stA.support - stB.support, i == 1);
 				SetParamText(m_panel_data[i].fold, sts[i].fold, stA.fold - stB.fold, i == 1);
 				m_panel_data[i].effect1.text = "";
-				m_panel_data[i].effect2.alignment = list[i].FFKMJNHFFFL_Costume.ENMAEBJGEKL_SkillId == 0 ? TextAnchor.UpperCenter : TextAnchor.UpperLeft;
-				m_panel_data[i].effect2.text = list[i].FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
+				m_panel_data[i].effect2.alignment = list[i].FFKMJNHFFFL_costume.ENMAEBJGEKL_SkillId == 0 ? TextAnchor.UpperCenter : TextAnchor.UpperLeft;
+				m_panel_data[i].effect2.text = list[i].FFKMJNHFFFL_costume.FCEGELPJAMH_SkillDesc;
 				int index = i;
-				GameManager.Instance.CostumeIconCache.Load(list[i].AHHJLDLAPAN_DivaId, list[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, list[i].EKFONBFDAAP_ColorId, (IiconTexture icon) => {
+				GameManager.Instance.CostumeIconCache.Load(list[i].AHHJLDLAPAN_DivaId, list[i].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, list[i].EKFONBFDAAP_ColorId, (IiconTexture icon) => {
 					//0x162FDD4
 					icon.Set(m_panel_data[index].costume);
 				});

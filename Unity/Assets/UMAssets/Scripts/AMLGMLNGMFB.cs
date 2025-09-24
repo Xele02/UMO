@@ -144,7 +144,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		List<FKMOKDCJFEN> l2 = FKMOKDCJFEN.KJHKBBBDBAL(JOPOPMLFINI_QuestName, true, -1);
 		for(int i = 0; i < l2.Count; i++)
 		{
-			if(l2[i].DLAFBGPFEON > 0 && l2[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1/*1*/)
+			if(l2[i].DLAFBGPFEON > 0 && l2[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1/*1*/)
 			{
 				l.Remove(l2[i].DLAFBGPFEON);
 			}
@@ -183,7 +183,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		{
 			if(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId == l[i].MPLGPBNJDJB_FreeMusicId)
 			{
-				if (eInfo.NJOPIPNGANO_CS == l[i].MLKFDMFDFCE_enemy_c_skill && eInfo.EDLACELKJIK_LiveSkill == l[i].DKOPDNHDLIA_EnemyLSkill)
+				if (eInfo.NJOPIPNGANO_CS == l[i].MLKFDMFDFCE_enemy_c_skill && eInfo.EDLACELKJIK_LiveSkill == l[i].DKOPDNHDLIA_enemy_l_skill)
 					return l[i].PPFNGGCBJKC_id;
 			}
 		}
@@ -220,11 +220,11 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 							if (idx > -1)
 								continue;
 						}
-						if(MABBBOEAPAA_p.PDBPFJJCADD_open_at != 0 || MABBBOEAPAA_p.FDBNFFNFOND_CloseAt != 0)
+						if(MABBBOEAPAA_p.PDBPFJJCADD_open_at != 0 || MABBBOEAPAA_p.FDBNFFNFOND_close_at != 0)
 						{
 							if(_JHNMKKNEENE_Time >= MABBBOEAPAA_p.PDBPFJJCADD_open_at)
 							{
-								if(MABBBOEAPAA_p.FDBNFFNFOND_CloseAt >= _JHNMKKNEENE_Time)
+								if(MABBBOEAPAA_p.FDBNFFNFOND_close_at >= _JHNMKKNEENE_Time)
 									NFMDLCBJOIB_SongCacheList.Add(MABBBOEAPAA_p);
 							}
 						}
@@ -282,11 +282,11 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].PDBPFJJCADD_open_at != 0 && l[i].FDBNFFNFOND_CloseAt != 0 && time >= l[i].PDBPFJJCADD_open_at && l[i].FDBNFFNFOND_CloseAt >= time)
+				if(l[i].PDBPFJJCADD_open_at != 0 && l[i].FDBNFFNFOND_close_at != 0 && time >= l[i].PDBPFJJCADD_open_at && l[i].FDBNFFNFOND_close_at >= time)
 				{
 					if(l[i].MPLGPBNJDJB_FreeMusicId == _GHBPLHBNMBK_FreeMusicId)
 					{
-						return l[i].FDBNFFNFOND_CloseAt;
+						return l[i].FDBNFFNFOND_close_at;
 					}
 				}
 			}
@@ -303,7 +303,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for (int i = 0; i < l.Count; i++)
 			{
-				if (l[i].PDBPFJJCADD_open_at != 0 && l[i].FDBNFFNFOND_CloseAt != 0 && l[i].FDBNFFNFOND_CloseAt < DPJCPDKALGI_RankingEnd && time >= l[i].PDBPFJJCADD_open_at && l[i].FDBNFFNFOND_CloseAt >= time)
+				if (l[i].PDBPFJJCADD_open_at != 0 && l[i].FDBNFFNFOND_close_at != 0 && l[i].FDBNFFNFOND_close_at < DPJCPDKALGI_RankingEnd && time >= l[i].PDBPFJJCADD_open_at && l[i].FDBNFFNFOND_close_at >= time)
 				{
 					if (l[i].MPLGPBNJDJB_FreeMusicId == _GHBPLHBNMBK_FreeMusicId)
 					{
@@ -352,15 +352,15 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			AGLILDLEFDK_Missions = dbAf.NNMPGOAGEOL_quests;
 			OLDFFDMPEBM_Quests = save.NNMPGOAGEOL_quests;
 			if (save.MPCAGEPEJJJ_Key != dbAf.NGHKJOEDLIP_Settings.OCGFKMHNEOF_name_for_api
-				|| (!RuntimeSettings.CurrentSettings.UnlimitedEvent && save.EGBOHDFBAPB_CloseAt < dbAf.NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart) // UMO : don't check date as event date are dynamically updated.
-				|| (RuntimeSettings.CurrentSettings.UnlimitedEvent && (save.EGBOHDFBAPB_CloseAt == 0 || save.NNMPGOAGEOL_quests.Count == 0 || save.NNMPGOAGEOL_quests[0].PPFNGGCBJKC_id == 0)) // UMO detect old save not initialized
+				|| (!RuntimeSettings.CurrentSettings.UnlimitedEvent && save.EGBOHDFBAPB_closed_at < dbAf.NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart) // UMO : don't check date as event date are dynamically updated.
+				|| (RuntimeSettings.CurrentSettings.UnlimitedEvent && (save.EGBOHDFBAPB_closed_at == 0 || save.NNMPGOAGEOL_quests.Count == 0 || save.NNMPGOAGEOL_quests[0].PPFNGGCBJKC_id == 0)) // UMO detect old save not initialized
 			)
 			{
 				save.LHPDDGIJKNB_Reset();
 				save.MPCAGEPEJJJ_Key = dbAf.NGHKJOEDLIP_Settings.OCGFKMHNEOF_name_for_api;
-				save.EGBOHDFBAPB_CloseAt = dbAf.NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd;
+				save.EGBOHDFBAPB_closed_at = dbAf.NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd;
 				save.LGADCGFMLLD_step = 0;
-				save.BEBJKJKBOGH_Date = _JHNMKKNEENE_Time;
+				save.BEBJKJKBOGH_date = _JHNMKKNEENE_Time;
 				KOMAHOAEMEK(true);
 				OAFLKGCGEOA(false);
 			}
@@ -517,7 +517,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		if (db != null)
 		{
 			KCGOMAFPGDD_EventAprilFool dbAf = db as KCGOMAFPGDD_EventAprilFool;
-			return dbAf.LPJLEHAJADA(_LJNAKDMILMC_key, MNCOAGOKNAO);
+			return dbAf.LPJLEHAJADA_GetIntParam(_LJNAKDMILMC_key, MNCOAGOKNAO);
 		}
 		return MNCOAGOKNAO;
 	}
@@ -528,7 +528,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		DIHHCBACKGG_DbSection dbBlock = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName);
 		if(dbBlock != null)
 		{
-			return (dbBlock as KCGOMAFPGDD_EventAprilFool).EFEGBHACJAL(_LJNAKDMILMC_key, MNCOAGOKNAO);
+			return (dbBlock as KCGOMAFPGDD_EventAprilFool).EFEGBHACJAL_GetStringParam(_LJNAKDMILMC_key, MNCOAGOKNAO);
 		}
 		return MNCOAGOKNAO;
 	}
@@ -554,7 +554,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			KCGOMAFPGDD_EventAprilFool dbAf = dbBlock as KCGOMAFPGDD_EventAprilFool;
 			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 			{
-				return dbAf.LPJLEHAJADA("pickup_enable_rank", 6) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				return dbAf.LPJLEHAJADA_GetIntParam("pickup_enable_rank", 6) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 			}
 		}
 		return false;
@@ -641,8 +641,8 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 				NGHLIKFIIGI_SaveData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.ILINBDKMAPM_EventAprilFool.FBCJICEPLED[dbAf.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
 				if(NGHLIKFIIGI_SaveData.CFKFIODHFNC_Act == 0)
 				{
-					HPHKCOMJELK = dbAf.EFEGBHACJAL("activate_item_name", "");
-					HLGAPELJDPA = dbAf.LPJLEHAJADA("activate_item_value", 0);
+					HPHKCOMJELK = dbAf.EFEGBHACJAL_GetStringParam("activate_item_name", "");
+					HLGAPELJDPA = dbAf.LPJLEHAJADA_GetIntParam("activate_item_value", 0);
 					CJHGIMICABA = new List<GJDFHLBONOL>();
 					KGJIJEKKFDB = new SakashoInventoryCriteria();
 					KGJIJEKKFDB.OnlyUnreceived = true;
@@ -662,7 +662,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 						}
 						for(int i = 0; i < NMBJNEPMHOO.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories.Count; i++)
 						{
-							if(NMBJNEPMHOO.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i].HAAJGNCFNJM_ItemName == HPHKCOMJELK)
+							if(NMBJNEPMHOO.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i].HAAJGNCFNJM_item_name == HPHKCOMJELK)
 							{
 								if(NMBJNEPMHOO.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i].OCNINMIMHGC_item_value == HLGAPELJDPA)
 								{
@@ -700,7 +700,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		if (db != null)
 		{
 			KCGOMAFPGDD_EventAprilFool dbAf = db as KCGOMAFPGDD_EventAprilFool;
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.ILINBDKMAPM_EventAprilFool.FBCJICEPLED[dbAf.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx].AAJOOBMPOEP;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.ILINBDKMAPM_EventAprilFool.FBCJICEPLED[dbAf.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx].AAJOOBMPOEP_Nsxq;
 		}
 		return null;
 	}
@@ -739,14 +739,14 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 				c = OLDFFDMPEBM_Quests.Count;
 			for(int i = 0; i < c; i++)
 			{
-				if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_Stat == 1)
+				if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_stat == 1)
 				{
 					if(GBNDFCEDNMG.EIJIGDCMJLB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, AGLILDLEFDK_Missions[i], OMNOFMEBLAD, this, false))
 					{
 						BOHCAIIBPEJ(AGLILDLEFDK_Missions[i], OLDFFDMPEBM_Quests[i], OMNOFMEBLAD, this);
 						if(b)
 						{
-							if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_Stat == 2)
+							if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_stat == 2)
 							{
 								if(AGLILDLEFDK_Missions[i].HMOJCCPIPBP_TargetMusicType == 6)
 								{
@@ -816,7 +816,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 							IKCGAJKCPFN ik = OLDFFDMPEBM_Quests[l[i].DNJEJEANJGL_Value - 1];
 							if(PMPLBAOGLNC.PPEGAKEIEGM_Enabled == 2)
 							{
-								if(ik.EALOBDHOCHP_Stat == 1)
+								if(ik.EALOBDHOCHP_stat == 1)
 								{
 									if(PMPLBAOGLNC.HHIBBHFHENH_LinkQuestId > 0)
 									{
@@ -886,12 +886,12 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 						int a = 0;
 						for(int i = 0; i < c; i++)
 						{
-							if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_Stat > 0)
+							if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_stat > 0)
 							{
 								if(AGLILDLEFDK_Missions[i].HDAMBOOCIAA_ClearType != dbAf.NGHKJOEDLIP_Settings.OFGDLGBFOOA)
 								{
 									a++;
-									if (OLDFFDMPEBM_Quests[i].EALOBDHOCHP_Stat > 2)
+									if (OLDFFDMPEBM_Quests[i].EALOBDHOCHP_stat > 2)
 										c++;
 								}
 							}

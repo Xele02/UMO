@@ -37,7 +37,7 @@ public class NHDJHOPLMDE
 	public EPIFHEDDJAE.NGEDJNHECKN EICJJFIBCEF { get { return (EPIFHEDDJAE.NGEDJNHECKN)(AMFILEGKAML ^ FBGGEFFJJHB_xor); } set { AMFILEGKAML = (int)value ^ FBGGEFFJJHB_xor; } } //0x18905D0 LLBFBCBNLLA 0x18905E0 AGEJCMNBHJJ
 
 	//// RVA: 0x18905F0 Offset: 0x18905F0 VA: 0x18905F0
-	public NHDJHOPLMDE(int _LLOBHDMHJIG_Id, int _ANAJIAENLNB_Level/* = 0*/)
+	public NHDJHOPLMDE(int _LLOBHDMHJIG_Id, int _ANAJIAENLNB_lv/* = 0*/)
 	{
 		if(_LLOBHDMHJIG_Id > 0)
 		{
@@ -48,31 +48,31 @@ public class NHDJHOPLMDE
 					JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(_LLOBHDMHJIG_Id);
 					if (dbInfo != null && dbInfo.PPEGAKEIEGM_Enabled == 2)
 					{
-						GKFMJAHKEMA_ValSkill.CCPFGNNIBDD info1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbInfo.BMIJDLBGFNP_SkillId);
+						GKFMJAHKEMA_ValSkill.CCPFGNNIBDD info1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbInfo.BMIJDLBGFNP_skill);
 						if (info1 != null)
 						{
 							GKFMJAHKEMA_ValSkill.GBDONNIHJHG info2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.OOEFAGKHOCE(info1.KFLIHDFDBOA);
 							if(info2 != null)
 							{
 								GPPEFLKGGGJ_ValkyrieId = _LLOBHDMHJIG_Id;
-								ENMAEBJGEKL_SkillId = dbInfo.BMIJDLBGFNP_SkillId;
+								ENMAEBJGEKL_SkillId = dbInfo.BMIJDLBGFNP_skill;
 								BHGDALFOHBL = info1.KFLIHDFDBOA;
 								EICJJFIBCEF = (EPIFHEDDJAE.NGEDJNHECKN)info2.CBDFEJIBAMO;
 								CHOFDPDFPDC_ConfigValue = (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)info2.ODMJFHDIGLP_cnd;
 								OPFGFINHFCE_name = MessageManager.Instance.GetBank("master").GetMessageByLabel("val_skill_nm_"+ info2.CBDFEJIBAMO.ToString("D4"));
 								KLMPFGOCBHC_description = MessageManager.Instance.GetBank("master").GetMessageByLabel("val_skill_dsc_" + info1.KFLIHDFDBOA.ToString("D4"));
-								NBLBJCLIDNN_MaxLevel = info1.DOOGFEGEKLG_Max;
-								int skill_level_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.LPJLEHAJADA("skill_level_max", 4);
+								NBLBJCLIDNN_MaxLevel = info1.DOOGFEGEKLG_max;
+								int skill_level_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.LPJLEHAJADA_GetIntParam("skill_level_max", 4);
 								if (skill_level_max < NBLBJCLIDNN_MaxLevel)
 									NBLBJCLIDNN_MaxLevel = skill_level_max;
-								if(_ANAJIAENLNB_Level < 1)
+								if(_ANAJIAENLNB_lv < 1)
 								{
-									_ANAJIAENLNB_Level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(GPPEFLKGGGJ_ValkyrieId);
+									_ANAJIAENLNB_lv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(GPPEFLKGGGJ_ValkyrieId);
 								}
 								CIEOBFIIPLD_Level = NBLBJCLIDNN_MaxLevel;
-								if (_ANAJIAENLNB_Level <= NBLBJCLIDNN_MaxLevel)
+								if (_ANAJIAENLNB_lv <= NBLBJCLIDNN_MaxLevel)
 								{
-									CIEOBFIIPLD_Level = _ANAJIAENLNB_Level;
+									CIEOBFIIPLD_Level = _ANAJIAENLNB_lv;
 								}
 								int val = MMODCBJCDMA;
 								if (CIEOBFIIPLD_Level >= 1)

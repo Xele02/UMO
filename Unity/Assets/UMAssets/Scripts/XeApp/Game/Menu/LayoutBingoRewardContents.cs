@@ -55,11 +55,11 @@ namespace XeApp.Game.Menu
 			string str;
 			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemInfo.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemId), _itemInfo.HAAJGNCFNJM_ItemName);
+				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemId), _itemInfo.HAAJGNCFNJM_item_name);
 			}
 			else
 			{
-				str = _itemInfo.HAAJGNCFNJM_ItemName;
+				str = _itemInfo.HAAJGNCFNJM_item_name;
 			}
 			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_item_type, 0));
 			SetSpItem(_itemInfo.MPKBLMCNHOM);

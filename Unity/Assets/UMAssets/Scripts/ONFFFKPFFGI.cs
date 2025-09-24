@@ -35,9 +35,9 @@ public class ONFFFKPFFGI
             {
                 if(CDCKLGCKHFG < dbRich.PDBPFJJCADD_open_at && time >= dbRich.PDBPFJJCADD_open_at)
                 {
-                    if(dbRich.FDBNFFNFOND_CloseAt >= time)
+                    if(dbRich.FDBNFFNFOND_close_at >= time)
                     {
-                        if(dbRich.FJOLNJLLJEJ_Rank <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+                        if(dbRich.FJOLNJLLJEJ_rank <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                         {
                             ABBFICCGNOG data = new ABBFICCGNOG();
                             data.DCHDFOIHMJL = dbRich.KNHOMNONOEB_AssetId;

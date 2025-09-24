@@ -177,7 +177,7 @@ namespace XeApp.Game.DownLoad
 		private void OnClickDecide()
 		{
 			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1);
-			diva.CPGFPEDMDEH_Have = 0;
+			diva.CPGFPEDMDEH_have = 0;
 			diva.BEEAIAAJOHD_CostumeId = 0;
 			diva.AFNIOJHODAG_CostumeColorId = 0;
 			int mslot = diva.PIGLAEFPNEK_m_slot;

@@ -85,11 +85,11 @@ namespace XeApp.Game.Menu
 		private void ListupOriginalSpItem()
 		{
 			m_spItemOriginalListupList.Clear();
-			foreach (var k in m_decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_Items)
+			foreach (var k in m_decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_items)
 			{
-				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(k.HAJKNHNAIKL_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(k.HAJKNHNAIKL_rsc) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
-					m_spItemOriginalListupList.Add(k.HAJKNHNAIKL_ItemId);
+					m_spItemOriginalListupList.Add(k.HAJKNHNAIKL_rsc);
 				}
 			}
 		}
@@ -97,24 +97,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11C7EEC Offset: 0x11C7EEC VA: 0x11C7EEC
 		private void RsetSpItemChargeTime(long chargeTime, List<int> spItemOrigianList, DAJBODHMLAB_DecoPublicSet decoPublicSetData)
 		{
-			foreach(var it in decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_Items)
+			foreach(var it in decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_items)
 			{
-				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(it.HAJKNHNAIKL_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(it.HAJKNHNAIKL_rsc) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
 					if(spItemOrigianList.Exists((int x) =>
 					{
 						//0x11CA9E4
-						return it.HAJKNHNAIKL_ItemId == x;
+						return it.HAJKNHNAIKL_rsc == x;
 					}))
 					{
-						int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(it.HAJKNHNAIKL_ItemId);
+						int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(it.HAJKNHNAIKL_rsc);
 						NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-						if(dbSp.GBJFNGCDKPM_Type <= 3)
+						if(dbSp.GBJFNGCDKPM_typ <= 3)
 						{
 							BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[id - 1];
 							saveSp.FOONCJDLLIK_ChargeTime = chargeTime;
 							saveSp.EMHCHMHMFHJ_ChargeTimeOffset = 0;
-							DecoScene.SendPushMessage(dbSp, saveSp.ANAJIAENLNB_Level, chargeTime, 0);
+							DecoScene.SendPushMessage(dbSp, saveSp.ANAJIAENLNB_lv, chargeTime, 0);
 						}
 					}
 				}
@@ -161,15 +161,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11C867C Offset: 0x11C867C VA: 0x11C867C
 		private void SettingStorageData()
 		{
-			if(m_decoPrivateSetData.JBJHCJFOICD != null)
+			if(m_decoPrivateSetData.JBJHCJFOICD_SetArr != null)
 			{
-				for(int i = 0; i < m_decoPrivateSetData.JBJHCJFOICD.Count; i++)
+				for(int i = 0; i < m_decoPrivateSetData.JBJHCJFOICD_SetArr.Count; i++)
 				{
 					string name = UnusedStorageName();
 					bool isUse = false;
-					if(m_decoPrivateSetData.JBJHCJFOICD[i].CIKOPIFGLGA())
+					if(m_decoPrivateSetData.JBJHCJFOICD_SetArr[i].CIKOPIFGLGA())
 					{
-						name = m_decoPrivateSetData.JBJHCJFOICD[i].CPOONLHIMKC_DecoRoomName;
+						name = m_decoPrivateSetData.JBJHCJFOICD_SetArr[i].CPOONLHIMKC_DecoRoomName;
 						isUse = true;
 					}
 					m_layoutDecorationStorageWindow.SettingList(i, name, isUse, OnClickStorageDeleteButton, OnClickStorageSelectButton, OnClickStorageSaveButton, OnClickMapNameEditButton);
@@ -416,7 +416,7 @@ namespace XeApp.Game.Menu
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 			{
-				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM_Type == 11;
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM_typ == 11;
 			}
 			return false;
 		}
@@ -479,24 +479,24 @@ namespace XeApp.Game.Menu
 		{
 			//0x11CB2B4
 			m_spItemListupList.Clear();
-			for(int i = 0; i < m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items.Count; i++)
+			for(int i = 0; i < m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_items.Count; i++)
 			{
-				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_items[i].HAJKNHNAIKL_rsc) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
-					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
+					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_items[i].HAJKNHNAIKL_rsc);
 					NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-					if(dbSp.GBJFNGCDKPM_Type < 4)
+					if(dbSp.GBJFNGCDKPM_typ < 4)
 					{
-						m_spItemListupList.Add(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
+						m_spItemListupList.Add(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_items[i].HAJKNHNAIKL_rsc);
 					}
 				}
 			}
 			for(int i = 0; i < m_spItemListupList.Count; i++)
 			{
-				DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD it = m_decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_Items.Find((DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD x) =>
+				DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD it = m_decoPublicSetData.LJMCPFACDGJ.HBHMAKNGKFK_items.Find((DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD x) =>
 				{
 					//0x11CAB34
-					return x.HAJKNHNAIKL_ItemId == m_spItemListupList[i];
+					return x.HAJKNHNAIKL_rsc == m_spItemListupList[i];
 				});
 				if(it != null)
 				{
@@ -619,7 +619,7 @@ namespace XeApp.Game.Menu
 		private void OnClickMapNameEditButton(LayoutDecorationStorageList.StorageSetting setting)
 		{
 			m_setting = setting;
-			string name = m_decoPrivateSetData.JBJHCJFOICD[m_setting.m_id].CPOONLHIMKC_DecoRoomName;
+			string name = m_decoPrivateSetData.JBJHCJFOICD_SetArr[m_setting.m_id].CPOONLHIMKC_DecoRoomName;
 			m_mapNameController.MapNameEdit(name, TryChangeMapName, NoChangeMapName);
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 		}
@@ -713,7 +713,7 @@ namespace XeApp.Game.Menu
 		private int GetUseStorageNum()
 		{
 			int res = 0;
-			foreach(var slot in m_decoPrivateSetData.JBJHCJFOICD)
+			foreach(var slot in m_decoPrivateSetData.JBJHCJFOICD_SetArr)
 			{
 				if (slot.CIKOPIFGLGA())
 					res++;

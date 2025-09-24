@@ -10,8 +10,8 @@ public class JKMLBONMAHD_RichBanner : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id; // 0x8
 		public sbyte PPEGAKEIEGM_Enabled; // 0xC
 		public long PDBPFJJCADD_open_at; // 0x10
-		public long FDBNFFNFOND_CloseAt; // 0x18
-		public int FJOLNJLLJEJ_Rank; // 0x20
+		public long FDBNFFNFOND_close_at; // 0x18
+		public int FJOLNJLLJEJ_rank; // 0x20
 		public int KNHOMNONOEB_AssetId; // 0x24
 
 		// RVA: 0x1469C34 Offset: 0x1469C34 VA: 0x1469C34
@@ -35,9 +35,9 @@ public class JKMLBONMAHD_RichBanner : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x146986C Offset: 0x146986C VA: 0x146986C Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MLAEPADJOJH parser = MLAEPADJOJH.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MLAEPADJOJH parser = MLAEPADJOJH.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		CDHIKHMHMPC[] array = parser.MJBONPHHNKG;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -46,8 +46,8 @@ public class JKMLBONMAHD_RichBanner : DIHHCBACKGG_DbSection
 			data.KNHOMNONOEB_AssetId = array[i].KNHOMNONOEB;
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
-			data.FJOLNJLLJEJ_Rank = array[i].FJOLNJLLJEJ;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
+			data.FJOLNJLLJEJ_rank = array[i].FJOLNJLLJEJ;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

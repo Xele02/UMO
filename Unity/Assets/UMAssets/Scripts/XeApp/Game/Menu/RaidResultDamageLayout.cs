@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 			m_nameText.text = view.OPFGFINHFCE_name;
 			m_pointText.text = view.ENMEKLHFMDE_Point.ToString();
 			m_damageText.text = bk.GetMessageByLabel("raid_damage_result_text");
-			m_layoutRank.StartChildrenAnimGoStop(m_view.FJOLNJLLJEJ_Rank.ToString("D2"));
+			m_layoutRank.StartChildrenAnimGoStop(m_view.FJOLNJLLJEJ_rank.ToString("D2"));
 			m_bossHpGauge.StartChildrenAnimGoStop((int)m_view.LBEIIEKJFPA_DamageBefore, (int)m_view.LBEIIEKJFPA_DamageBefore);
 			m_bossHpGaugeAnim.StartChildrenAnimGoStop("st_stop");
 			m_numDamage.SetNumber(m_view.FCIBJNKGMOB_Damage, 0);

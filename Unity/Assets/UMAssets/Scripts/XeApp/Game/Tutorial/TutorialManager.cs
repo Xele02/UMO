@@ -77,7 +77,7 @@ namespace XeApp.Game.Tutorial
 					{
 						for(int i = 0; i < master.CDENCMNHNGA_table[index].AKBHPFBDDOL_Val.Length; i++)
 						{
-							if(master.CDENCMNHNGA_table[index].FJOLNJLLJEJ_Rank[i] <= playerRank)
+							if(master.CDENCMNHNGA_table[index].FJOLNJLLJEJ_rank[i] <= playerRank)
 							{
 								if(checker((TutorialConditionId)master.CDENCMNHNGA_table[index].AKBHPFBDDOL_Val[i]))
 								{

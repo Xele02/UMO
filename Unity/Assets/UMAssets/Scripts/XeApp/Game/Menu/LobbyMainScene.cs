@@ -1356,7 +1356,7 @@ namespace XeApp.Game.Menu
 					}
 					if(m_windowUi.IsUpdatePossible())
 					{
-						int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_auto_update_op", 1);
+						int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
 						m_RaidLobbyController.MICOCAOLCEJ(bbs_auto_update_op, (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, (List<NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE> blist) =>
 						{
 							//0x12A81A4
@@ -1417,7 +1417,7 @@ namespace XeApp.Game.Menu
 			ANPBHCNJIDI.AIFBLOAGFOP a = new ANPBHCNJIDI.AIFBLOAGFOP();
 			a.AHHJLDLAPAN_DivaId = divaId;
 			a.EBBJPBGHJOL_text = m_messgeText;
-			a.LBODBHCBAMD = isViewing;
+			a.LBODBHCBAMD_Vwt = isViewing;
 			a.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, a, () =>
 			{
@@ -1460,7 +1460,7 @@ namespace XeApp.Game.Menu
 				yield break;
 			MenuScene.Instance.InputDisable();
 			m_windowUi.LockScroll();
-			int viewing_another_lobby_check_num = m_RaidLobbyController.FJLIDJJAGOM().LPJLEHAJADA("viewing_another_lobby_check_num", 10);
+			int viewing_another_lobby_check_num = m_RaidLobbyController.FJLIDJJAGOM().LPJLEHAJADA_GetIntParam("viewing_another_lobby_check_num", 10);
 			m_RaidLobbyController.NKLFDHJKIII(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.GGCIMLDFDOC_0_Chat, m_PlayerId, viewing_another_lobby_check_num, (bool flg) =>
 			{
 				//0xD08F3C

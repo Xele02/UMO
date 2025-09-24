@@ -8,13 +8,13 @@ public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
 	public class HEHEEIFJAKM
 	{
 		public int NHPDJADJNCL_friend_limit; // 0x8
-		public long IFNLEKOILPM_UpdatedAt; // 0x10
+		public long IFNLEKOILPM_updated_at; // 0x10
 
 		// RVA: 0x11EB99C Offset: 0x11EB99C VA: 0x11EB99C
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
-			IFNLEKOILPM_UpdatedAt = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.IFNLEKOILPM_UpdatedAt];
+			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
+			IFNLEKOILPM_updated_at = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];
 		}
 	}
 

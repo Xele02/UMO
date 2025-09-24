@@ -276,20 +276,20 @@ namespace XeApp.Game.Menu
 				switch (m_sortType)
 				{
 					case SortItem.Total:
-						leftVal = lscene.CMCKNKKCNDK_Status.Total;
-						rightVal = rscene.CMCKNKKCNDK_Status.Total;
+						leftVal = lscene.CMCKNKKCNDK_status.Total;
+						rightVal = rscene.CMCKNKKCNDK_status.Total;
 						break;
 					case SortItem.Soul:
-						leftVal = lscene.CMCKNKKCNDK_Status.soul;
-						rightVal = rscene.CMCKNKKCNDK_Status.soul;
+						leftVal = lscene.CMCKNKKCNDK_status.soul;
+						rightVal = rscene.CMCKNKKCNDK_status.soul;
 						break;
 					case SortItem.Voice:
-						leftVal = lscene.CMCKNKKCNDK_Status.vocal;
-						rightVal = rscene.CMCKNKKCNDK_Status.vocal;
+						leftVal = lscene.CMCKNKKCNDK_status.vocal;
+						rightVal = rscene.CMCKNKKCNDK_status.vocal;
 						break;
 					case SortItem.Charm:
-						leftVal = lscene.CMCKNKKCNDK_Status.charm;
-						rightVal = rscene.CMCKNKKCNDK_Status.charm;
+						leftVal = lscene.CMCKNKKCNDK_status.charm;
+						rightVal = rscene.CMCKNKKCNDK_status.charm;
 						break;
 					case SortItem.Get:
 						leftVal = lscene.NPHOIEOPIJO_Date;
@@ -304,28 +304,28 @@ namespace XeApp.Game.Menu
 						rightVal = rscene.CIEOBFIIPLD_Level;
 						break;
 					case SortItem.Life:
-						leftVal = lscene.CMCKNKKCNDK_Status.life;
-						rightVal = rscene.CMCKNKKCNDK_Status.life;
+						leftVal = lscene.CMCKNKKCNDK_status.life;
+						rightVal = rscene.CMCKNKKCNDK_status.life;
 						break;
 					case SortItem.Luck:
 						leftVal = lscene.MJBODMOLOBC_luck;
 						rightVal = rscene.MJBODMOLOBC_luck;
 						break;
 					case SortItem.Support:
-						leftVal = lscene.CMCKNKKCNDK_Status.support;
-						rightVal = rscene.CMCKNKKCNDK_Status.support;
+						leftVal = lscene.CMCKNKKCNDK_status.support;
+						rightVal = rscene.CMCKNKKCNDK_status.support;
 						break;
 					case SortItem.Fold:
-						leftVal = lscene.CMCKNKKCNDK_Status.fold;
-						rightVal = rscene.CMCKNKKCNDK_Status.fold;
+						leftVal = lscene.CMCKNKKCNDK_status.fold;
+						rightVal = rscene.CMCKNKKCNDK_status.fold;
 						break;
 					case SortItem.RecoveryNotes:
 					case SortItem.ItemNotes:
 					case SortItem.ScoreUpNotes:
 					case SortItem.SupportNotes:
 					case SortItem.FoldNotes:
-						leftVal = lscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
-						rightVal = rscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+						leftVal = lscene.CMCKNKKCNDK_status.spNoteExpected[(int)m_sortType - 10];
+						rightVal = rscene.CMCKNKKCNDK_status.spNoteExpected[(int)m_sortType - 10];
 						break;
 					default:
 						break;

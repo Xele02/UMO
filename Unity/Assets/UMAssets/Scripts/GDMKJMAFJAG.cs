@@ -31,9 +31,9 @@ public class GDMKJMAFJAG
 			{
 				if (GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i) != 0)
 				{
-					if(GOIIICHHHCL.ADKDHKMPMHP_Rate[i] > 0)
+					if(GOIIICHHHCL.ADKDHKMPMHP_rate[i] > 0)
 					{
-						if(GOIIICHHHCL.HMFFHLPNMPH_Count[i] > 0)
+						if(GOIIICHHHCL.HMFFHLPNMPH_count[i] > 0)
 						{
 							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i)) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 							{
@@ -62,21 +62,21 @@ public class GDMKJMAFJAG
 					int v = UnityEngine.Random.Range(0, l[i].Count);
 					int val = l[i][v];
 					l[i].RemoveAt(v);
-					b += CGLAEOLPEGN.ADKDHKMPMHP_Rate[val];
-					CGLAEOLPEGN.ADKDHKMPMHP_Rate[val] = 0;
+					b += CGLAEOLPEGN.ADKDHKMPMHP_rate[val];
+					CGLAEOLPEGN.ADKDHKMPMHP_rate[val] = 0;
 				}
 				if(b > 0)
 				{
 					int c = 0;
 					for (j = 0; j < l[i].Count; j++)
 					{
-						c += CGLAEOLPEGN.ADKDHKMPMHP_Rate[l[i][j]];
+						c += CGLAEOLPEGN.ADKDHKMPMHP_rate[l[i][j]];
 					}
 					if (c != 0)
 					{
 						for (j = 0; j < l[i].Count; j++)
 						{
-							CGLAEOLPEGN.ADKDHKMPMHP_Rate[l[i][j]] = (CGLAEOLPEGN.ADKDHKMPMHP_Rate[l[i][j]] * b) / c;
+							CGLAEOLPEGN.ADKDHKMPMHP_rate[l[i][j]] = (CGLAEOLPEGN.ADKDHKMPMHP_rate[l[i][j]] * b) / c;
 						}
 					}
 				}
@@ -141,27 +141,27 @@ public class OPGDJANLKBM { }
 public class OPGDJANLKBM_RateInfo
 {
 	public int BFOLFCOBBJD_RateId; // 0x8
-	public List<int> HMFFHLPNMPH_Count; // 0xC
-	public List<int> ADKDHKMPMHP_Rate; // 0x10
-	public List<int> DOOGFEGEKLG_Max; // 0x14
+	public List<int> HMFFHLPNMPH_count; // 0xC
+	public List<int> ADKDHKMPMHP_rate; // 0x10
+	public List<int> DOOGFEGEKLG_max; // 0x14
 
 	// RVA: 0xCB2388 Offset: 0xCB2388 VA: 0xCB2388
 	public OPGDJANLKBM_RateInfo()
 	{
-		HMFFHLPNMPH_Count = new List<int>(20);
+		HMFFHLPNMPH_count = new List<int>(20);
 		for(int i = 0; i < 20; i++)
 		{
-			HMFFHLPNMPH_Count.Add(0);
+			HMFFHLPNMPH_count.Add(0);
 		}
-		ADKDHKMPMHP_Rate = new List<int>(20);
+		ADKDHKMPMHP_rate = new List<int>(20);
 		for (int i = 0; i < 20; i++)
 		{
-			ADKDHKMPMHP_Rate.Add(0);
+			ADKDHKMPMHP_rate.Add(0);
 		}
-		DOOGFEGEKLG_Max = new List<int>(20);
+		DOOGFEGEKLG_max = new List<int>(20);
 		for (int i = 0; i < 20; i++)
 		{
-			DOOGFEGEKLG_Max.Add(0);
+			DOOGFEGEKLG_max.Add(0);
 		}
 	}
 
@@ -174,9 +174,9 @@ public class OPGDJANLKBM_RateInfo
 		BFOLFCOBBJD_RateId = GPBJHKLFCEP.BFOLFCOBBJD_RateId;
 		for(int i = 0; i < 20; i++)
 		{
-			ADKDHKMPMHP_Rate[i] = GPBJHKLFCEP.ADKDHKMPMHP_Rate[i];
-			DOOGFEGEKLG_Max[i] = GPBJHKLFCEP.DOOGFEGEKLG_Max[i];
-			HMFFHLPNMPH_Count[i] = GPBJHKLFCEP.HMFFHLPNMPH_Count[i];
+			ADKDHKMPMHP_rate[i] = GPBJHKLFCEP.ADKDHKMPMHP_rate[i];
+			DOOGFEGEKLG_max[i] = GPBJHKLFCEP.DOOGFEGEKLG_max[i];
+			HMFFHLPNMPH_count[i] = GPBJHKLFCEP.HMFFHLPNMPH_count[i];
 		}
 	}
 }

@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo dInfo = null;
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == cos_id)
+				if(l[i].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId == cos_id)
 				{
 					dInfo = l[i];
 					break;
@@ -68,12 +68,12 @@ namespace XeApp.Game.Menu
 			PIGBBNDPPJC data = new PIGBBNDPPJC();
 			data.KHEKNNFCAOI_Init(dInfo.KELFCMEOPPM_EpisodeId);
 			m_episodeText.text = JpStringLiterals.StringLiteral_15053 + data.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_15054;
-			m_costumeNameText.text = dInfo.FFKMJNHFFFL_Costume.OPFGFINHFCE_name;
+			m_costumeNameText.text = dInfo.FFKMJNHFFFL_costume.OPFGFINHFCE_name;
 			m_costumeInfoText.text = data.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_15055;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_episodeDesc1Text.text = bk.GetMessageByLabel("gacha_main_ep_caution01");
 			m_episodeDesc2Text.text = bk.GetMessageByLabel("gacha_main_ep_caution02");
-			m_skillText.text = dInfo.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
+			m_skillText.text = dInfo.FFKMJNHFFFL_costume.FCEGELPJAMH_SkillDesc;
 			SetCostumeTexture(diva_id, cos_id, color_id);
 			SetDivaIcon(diva_id, cos_id, color_id);
 			CostumeNameBack.StartChildrenAnimGoStop(diva_id - 1, diva_id - 1);

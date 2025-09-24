@@ -16,11 +16,11 @@ namespace ExternLib
 			});
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res[AFEHLCGHAEE_Strings.DJJGPACGEMM_ProductId] = (int)jsonData["productId"];
-			res[AFEHLCGHAEE_Strings.BPNPBJALGHM_Quantity] = (int)jsonData["quantity"];
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items] = new EDOHBJAPLPF_JsonData();
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].Add(new EDOHBJAPLPF_JsonData());
+			res[AFEHLCGHAEE_Strings.DJJGPACGEMM_product_id] = (int)jsonData["productId"];
+			res[AFEHLCGHAEE_Strings.BPNPBJALGHM_quantity] = (int)jsonData["quantity"];
+			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(new EDOHBJAPLPF_JsonData());
 			for(int i = 0; i < (int)jsonData["quantity"]; i++)
 			{
 				EDOHBJAPLPF_JsonData d = new EDOHBJAPLPF_JsonData();
@@ -28,7 +28,7 @@ namespace ExternLib
 				d["item_name"] = "scene";
 				int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_SceneId;
 				d["item_value"] = id;
-				res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items].Add(d);
+				res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(d);
 			}
 			
 			SendMessage(callbackId, res);

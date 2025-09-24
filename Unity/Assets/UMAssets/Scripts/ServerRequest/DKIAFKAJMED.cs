@@ -10,9 +10,9 @@ public class DKIAFKAJMED_GetTwitterLinkageStatus : CACGCMBKHDI_Request
 		public bool MKHDOLLACEF_TwitterLinkage; // 0x8
 
 		// RVA: 0x198F944 Offset: 0x198F944 VA: 0x198F944
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			MKHDOLLACEF_TwitterLinkage = (bool)_IDLHJIOMJBK_Data["twitter_linkage"];
+			MKHDOLLACEF_TwitterLinkage = (bool)_IDLHJIOMJBK_data["twitter_linkage"];
 		}
 	}
 

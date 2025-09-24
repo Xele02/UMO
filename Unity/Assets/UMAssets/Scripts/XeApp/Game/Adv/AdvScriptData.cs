@@ -25,7 +25,7 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xE51FF8 Offset: 0xE51FF8 VA: 0xE51FF8
 		public string GetMessage(int index)
 		{
-			return listEntry[index].IPBHCLIHAPG;
+			return listEntry[index].IPBHCLIHAPG_Msg;
 		}
 
 		//// RVA: 0xE51F18 Offset: 0xE51F18 VA: 0xE51F18
@@ -129,7 +129,7 @@ namespace XeApp.Game.Adv
 				});
 				if(f != null)
 				{
-					Init(f.DBBGALAPFGC_Data);
+					Init(f.DBBGALAPFGC_bytes);
 				}
 				if (onFinish != null)
 					onFinish();

@@ -9,24 +9,24 @@ public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_Request
 	public class DEGAKGMBJDF
 	{
 		public bool ONGLFBEGEMI_ExistUncompletedTransaction; // 0x8
-		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(); // 0xC
+		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_balances = new List<MCKCJMLOAFP_CurrencyInfo>(); // 0xC
 		
 		// RVA: 0xDF7A24 Offset: 0xDF7A24 VA: 0xDF7A24
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
 			ONGLFBEGEMI_ExistUncompletedTransaction = false;
-			if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("exist_uncompleted_transactions"))
+			if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains("exist_uncompleted_transactions"))
 			{
-				ONGLFBEGEMI_ExistUncompletedTransaction = (bool)_IDLHJIOMJBK_Data["exist_uncompleted_transactions"];
+				ONGLFBEGEMI_ExistUncompletedTransaction = (bool)_IDLHJIOMJBK_data["exist_uncompleted_transactions"];
 			}
-			if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("balances"))
+			if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains("balances"))
 			{
-				EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data["balances"];
+				EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_data["balances"];
 				for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 				{
 					MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
 					data.DPKCOKLMFMK(b[i]);
-					BBEPLKNMICJ_Balances.Add(data);
+					BBEPLKNMICJ_balances.Add(data);
 				}
 			}
 		}

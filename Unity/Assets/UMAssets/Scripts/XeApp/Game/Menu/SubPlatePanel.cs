@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_statusText.Length; i++)
 			{
 				m_isClossFade[i] = false;
-				int val = s_funcGetStatus[i](m_content.subPlateResult.CMCKNKKCNDK_Status);
+				int val = s_funcGetStatus[i](m_content.subPlateResult.CMCKNKKCNDK_status);
 				m_statusText[i].text = val.ToString();
 				if(i < 1)
 				{

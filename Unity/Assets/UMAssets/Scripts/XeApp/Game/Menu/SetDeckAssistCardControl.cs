@@ -76,8 +76,8 @@ namespace XeApp.Game.Menu
 		public void UpdateContent(BKKMNPEEILG ghostData)
 		{
 			m_viewFriendData = null;
-			SetDiva(ghostData.FDBOPFEOENF_Diva);
-			SetScene(ghostData.FDBOPFEOENF_Diva, ghostData.AFBMEMCHJCL_MainScene, null);
+			SetDiva(ghostData.FDBOPFEOENF_diva);
+			SetScene(ghostData.FDBOPFEOENF_diva, ghostData.AFBMEMCHJCL_MainScene, null);
 			m_assistIconObject.SetActive(false);
 			m_rivalIconObject.SetActive(true);
 			m_rivalRankImage.gameObject.SetActive(true);

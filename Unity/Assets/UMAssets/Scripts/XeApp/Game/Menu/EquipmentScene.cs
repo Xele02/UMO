@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!isGoDiva || isCenter)
 				{
-					MenuScene.Instance.DivaIconCache.Load(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
+					MenuScene.Instance.DivaIconCache.Load(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
 						//0xF0E21C
 						texture.Set(m_divaIconImage);
 					});

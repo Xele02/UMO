@@ -9,7 +9,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	private static class GJKDBILDDME
 	{
 		public const string PPFNGGCBJKC_id = "id";
-		public const string FBFLDFMFFOH = "rar";
+		public const string FBFLDFMFFOH_rar = "rar";
 		public const string JBGEEPFKIGG_val = "val";
 	}
 
@@ -21,7 +21,8 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 		private int ICKOHEDLEFP_ValueCrypted; // 0x14
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } }// 0x13FDEC0 DEMEPMAEJOO 0x13FDB7C HIGKAIDMOKN
-		public int FBFLDFMFFOH_Rarity { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB_xor; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB_xor; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
+		// Rarity
+		public int FBFLDFMFFOH_rar { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB_xor; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB_xor; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } }// 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
 
 		// RVA: 0x13FDAD8 Offset: 0x13FDAD8 VA: 0x13FDAD8
@@ -29,7 +30,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 		{
 			FBGGEFFJJHB_xor = (int)Utility.GetCurrentUnixTime();
 			PPFNGGCBJKC_id = 0;
-			FBFLDFMFFOH_Rarity = 0;
+			FBFLDFMFFOH_rar = 0;
 			JBGEEPFKIGG_val = 0;
 		}
 
@@ -55,9 +56,9 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x13FD8F0 Offset: 0x13FD8F0 VA: 0x13FD8F0 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		ALFKCDIOOHC parser = ALFKCDIOOHC.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		ALFKCDIOOHC parser = ALFKCDIOOHC.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		NPMGLCODOBA[] array = parser.HKOCCOIGLIK;
 		if(array.Length < 2)
 		{
@@ -65,7 +66,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 			{
 				KFFELNOEBPB data = new KFFELNOEBPB();
 				data.PPFNGGCBJKC_id = (int)array[0].PPFNGGCBJKC;
-				data.FBFLDFMFFOH_Rarity = (int)array[0].FBFLDFMFFOH;
+				data.FBFLDFMFFOH_rar = (int)array[0].FBFLDFMFFOH;
 				data.JBGEEPFKIGG_val = (int)array[0].JBGEEPFKIGG;
 				CDENCMNHNGA_table.Add(data);
 			}
@@ -77,6 +78,9 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	// RVA: 0x13FDBAC Offset: 0x13FDBAC VA: 0x13FDBAC Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
+		// PPFNGGCBJKC_id = id
+		// FBFLDFMFFOH_rar = rar
+		// JBGEEPFKIGG_val = val
 		TodoLogger.LogError(TodoLogger.DbJson, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
 		return true;
 	}

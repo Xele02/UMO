@@ -9,7 +9,7 @@ public class BOPPPCKONML
 	public const int HIPKCMPGCDK = 50;
 	public const int ECFEMKGFDCE = 1;
 	public const int MMAMNHPKOPH = 5;
-	private static string PLHNDPDKNLB = "inventory_record"; // 0x0
+	private static string PLHNDPDKNLB_inventory_record = "inventory_record"; // 0x0
 	public long KAKFEGGEKLB_save_id; // 0x8
 	public long JJJEFNCIFJN; // 0x10
 	public int AGPKGMFOJHC_rev; // 0x18
@@ -32,7 +32,7 @@ public class BOPPPCKONML
 		{
 			GJDFHLBONOL data = new GJDFHLBONOL();
 			data.LJGOOOMOMMA_message = "";
-			data.HAAJGNCFNJM_ItemName = "";
+			data.HAAJGNCFNJM_item_name = "";
 			PJJFEAHIPGL_inventories.Add(data);
 		}
 		LCEMDBMFMFK.Clear();
@@ -40,7 +40,7 @@ public class BOPPPCKONML
 		{
 			GJDFHLBONOL data = new GJDFHLBONOL();
 			data.LJGOOOMOMMA_message = "";
-			data.HAAJGNCFNJM_ItemName = "";
+			data.HAAJGNCFNJM_item_name = "";
 			LCEMDBMFMFK.Add(data);
 		}
 	}
@@ -80,7 +80,7 @@ public class BOPPPCKONML
 	private bool IIEMACPEEBJ_Deserialize(List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player)
 	{
 		LHPDDGIJKNB_Reset();
-		EDOHBJAPLPF_JsonData data = _NMICBJDPLOH_player[PLHNDPDKNLB];
+		EDOHBJAPLPF_JsonData data = _NMICBJDPLOH_player[PLHNDPDKNLB_inventory_record];
 		if (!data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev))
 			LCKPHJINHPH = true;
 		if (!data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id))
@@ -89,9 +89,9 @@ public class BOPPPCKONML
 		JJJEFNCIFJN = KAKFEGGEKLB_save_id;
 		AGPKGMFOJHC_rev = JsonUtil.GetInt(data, AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 0);
 		ECPCDCKJOPC = AGPKGMFOJHC_rev;
-		if(data.BBAJPINMOEP_Contains(PLHNDPDKNLB))
+		if(data.BBAJPINMOEP_Contains(PLHNDPDKNLB_inventory_record))
 		{
-			EDOHBJAPLPF_JsonData dataList = data[PLHNDPDKNLB];
+			EDOHBJAPLPF_JsonData dataList = data[PLHNDPDKNLB_inventory_record];
 			for(int i = 0; i < dataList.HNBFOAJIIAL_Count; i++)
 			{
 				if (i < 50)
@@ -101,17 +101,17 @@ public class BOPPPCKONML
 						LCKPHJINHPH = true;
 					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm))
 						LCKPHJINHPH = true;
-					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BFINGCJHOHI_Count))
+					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt))
 						LCKPHJINHPH = true;
-					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date))
+					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BEBJKJKBOGH_date))
 						LCKPHJINHPH = true;
-					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.FPOMEEJFBIG_Order))
+					if (d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr))
 						LCKPHJINHPH = true;
 					PJJFEAHIPGL_inventories[i].LJGOOOMOMMA_message = JsonUtil.GetString(d, "m", "");
 					PJJFEAHIPGL_inventories[i].JJBGOIMEIPF_ItemId = JsonUtil.GetInt(d, AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm, 0);
-					PJJFEAHIPGL_inventories[i].MBJIFDBEDAC_item_count = JsonUtil.GetInt(d, AFEHLCGHAEE_Strings.BFINGCJHOHI_Count, 0);
-					PJJFEAHIPGL_inventories[i].LNDEFMALKAN_received_at = JsonUtil.GetLong(d, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0);
-					PJJFEAHIPGL_inventories[i].EILKGEADKGH_Order = JsonUtil.GetLong(d, AFEHLCGHAEE_Strings.FPOMEEJFBIG_Order, 0);
+					PJJFEAHIPGL_inventories[i].MBJIFDBEDAC_item_count = JsonUtil.GetInt(d, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0);
+					PJJFEAHIPGL_inventories[i].LNDEFMALKAN_received_at = JsonUtil.GetLong(d, AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0);
+					PJJFEAHIPGL_inventories[i].EILKGEADKGH_Order = JsonUtil.GetLong(d, AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr, 0);
 					LCEMDBMFMFK[i].ODDIHGPONFL_Copy(PJJFEAHIPGL_inventories[i]);
 				}
 				else
@@ -127,9 +127,9 @@ public class BOPPPCKONML
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 		res["m"] = AIMLPJOGPID.LJGOOOMOMMA_message;
 		res[AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm] = AIMLPJOGPID.JJBGOIMEIPF_ItemId;
-		res[AFEHLCGHAEE_Strings.BFINGCJHOHI_Count] = AIMLPJOGPID.MBJIFDBEDAC_item_count;
-		res[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = AIMLPJOGPID.LNDEFMALKAN_received_at;
-		res[AFEHLCGHAEE_Strings.FPOMEEJFBIG_Order] = AIMLPJOGPID.EILKGEADKGH_Order;
+		res[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = AIMLPJOGPID.MBJIFDBEDAC_item_count;
+		res[AFEHLCGHAEE_Strings.BEBJKJKBOGH_date] = AIMLPJOGPID.LNDEFMALKAN_received_at;
+		res[AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr] = AIMLPJOGPID.EILKGEADKGH_Order;
 		return res;
 	}
 
@@ -151,13 +151,13 @@ public class BOPPPCKONML
 			{
 				if (PJJFEAHIPGL_inventories[i].EILKGEADKGH_Order != LCEMDBMFMFK[i].EILKGEADKGH_Order)
 				{
-					d.OJLJAHAGBLK(PLHNDPDKNLB, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + PLHNDPDKNLB + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + i, AHGNJOONPHI(PJJFEAHIPGL_inventories[i]));
+					d.OJLJAHAGBLK(PLHNDPDKNLB_inventory_record, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + PLHNDPDKNLB_inventory_record + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + i, AHGNJOONPHI(PJJFEAHIPGL_inventories[i]));
 				}
 			}
-			d.OJLJAHAGBLK(PLHNDPDKNLB, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, (EDOHBJAPLPF_JsonData)KAKFEGGEKLB_save_id);
+			d.OJLJAHAGBLK(PLHNDPDKNLB_inventory_record, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, (EDOHBJAPLPF_JsonData)KAKFEGGEKLB_save_id);
 			if(ECPCDCKJOPC != 1)
 			{
-				d.OJLJAHAGBLK(PLHNDPDKNLB, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 1);
+				d.OJLJAHAGBLK(PLHNDPDKNLB_inventory_record, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 1);
 			}
 			return d.MGPEIGDOMPH.EJCOJCGIBNG_ToJson();*/
 		}
@@ -173,9 +173,9 @@ public class BOPPPCKONML
 			EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 1;
 			res[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = KAKFEGGEKLB_save_id;
-			res[PLHNDPDKNLB] = data;
+			res[PLHNDPDKNLB_inventory_record] = data;
 			EDOHBJAPLPF_JsonData res2 = new EDOHBJAPLPF_JsonData();
-			res2[PLHNDPDKNLB] = res;
+			res2[PLHNDPDKNLB_inventory_record] = res;
 			KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
 			IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(res2, writer);
 			return writer.ToString();
@@ -258,7 +258,7 @@ public class BOPPPCKONML
 		};
 		bool isPartial = false;
 		req.AHEFHIMGIBI_PlayerData = OKJPIBHMKMJ(out isPartial, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1);
-		req.CHDDDCCHJJH_Replace = !isPartial;
+		req.CHDDDCCHJJH_replace = !isPartial;
 		req.MCKEOKFMLAH_SaveId = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1;
 		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -315,9 +315,9 @@ public class BOPPPCKONML
 				GJDFHLBONOL d = new GJDFHLBONOL();
 				d.LJGOOOMOMMA_message = JsonUtil.GetString(l[i], "m", "");
 				d.JJBGOIMEIPF_ItemId = JsonUtil.GetInt(l[i], AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm, 0);
-				d.MBJIFDBEDAC_item_count = JsonUtil.GetInt(l[i], AFEHLCGHAEE_Strings.BFINGCJHOHI_Count, 0);
-				d.LNDEFMALKAN_received_at = JsonUtil.GetLong(l[i], AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0);
-				d.EILKGEADKGH_Order = JsonUtil.GetLong(l[i], AFEHLCGHAEE_Strings.FPOMEEJFBIG_Order, 0);
+				d.MBJIFDBEDAC_item_count = JsonUtil.GetInt(l[i], AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0);
+				d.LNDEFMALKAN_received_at = JsonUtil.GetLong(l[i], AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0);
+				d.EILKGEADKGH_Order = JsonUtil.GetLong(l[i], AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr, 0);
 				if ((CJBHNAPHONN - 1) < d.EILKGEADKGH_Order)
 					CJBHNAPHONN = d.EILKGEADKGH_Order + 1;
 				res.Add(d);

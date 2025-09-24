@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 			{
 				m_set_degree.name.horizontalOverflow = HorizontalWrapMode.Wrap;
 			}
-			TextGeneratorUtility.SetTextRectangleMessage(m_set_degree.name, m_degree_list[index].ADCMNODJBGJ_Title, 2, JpStringLiterals.StringLiteral_12038);
+			TextGeneratorUtility.SetTextRectangleMessage(m_set_degree.name, m_degree_list[index].ADCMNODJBGJ_title, 2, JpStringLiterals.StringLiteral_12038);
 			m_set_btn_index = index;
 			SetDegreeImage(m_degree_list[index].MDPKLNFFDBO_EmblemId);
 			m_set_degree.btn.Hidden = index == 0;
@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 			{
 				m_select_degree.name.horizontalOverflow = HorizontalWrapMode.Wrap;
 			}
-			TextGeneratorUtility.SetTextRectangleMessage(m_select_degree.name, m_degree_list[index].ADCMNODJBGJ_Title, 2, JpStringLiterals.StringLiteral_12038);
+			TextGeneratorUtility.SetTextRectangleMessage(m_select_degree.name, m_degree_list[index].ADCMNODJBGJ_title, 2, JpStringLiterals.StringLiteral_12038);
 			m_select_btn_index = index;
 			SetSelectDegreeImage(m_degree_list[index].MDPKLNFFDBO_EmblemId);
 			if(index == 0)

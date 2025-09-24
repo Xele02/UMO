@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 		{
 			if(myArgs.view.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
-				int deco_tab_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.LPJLEHAJADA("deco_tab_num", 4);
+				int deco_tab_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.LPJLEHAJADA_GetIntParam("deco_tab_num", 4);
 				m_listDecoProduct.SetTabNum(deco_tab_num == 4);
 				m_listDecoProduct.OnChangeEvent = OnBuyItem;
 				m_listDecoProduct.Hide();
@@ -576,7 +576,7 @@ namespace XeApp.Game.Menu
 			int a = 0;
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem.CDENCMNHNGA_table[id - 1].EMIJNAFJFJO_Expir;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem.CDENCMNHNGA_table[id - 1].EMIJNAFJFJO_expir;
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 			{
@@ -826,7 +826,7 @@ namespace XeApp.Game.Menu
 							//0xC46280
 							return item.PPFNGGCBJKC_id == id;
 						});
-						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM_Type, m_interiorFilter))
+						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM_typ, m_interiorFilter))
 							continue;
 					}
 					//LAB_00c40fe8
@@ -973,20 +973,20 @@ namespace XeApp.Game.Menu
 			switch(m_sortType)
 			{
 				case SortItem.Total:
-					a = leftScene.CMCKNKKCNDK_Status.Total;
-					b = rightScene.CMCKNKKCNDK_Status.Total;
+					a = leftScene.CMCKNKKCNDK_status.Total;
+					b = rightScene.CMCKNKKCNDK_status.Total;
 					break;
 				case SortItem.Soul:
-					a = leftScene.CMCKNKKCNDK_Status.soul;
-					b = rightScene.CMCKNKKCNDK_Status.soul;
+					a = leftScene.CMCKNKKCNDK_status.soul;
+					b = rightScene.CMCKNKKCNDK_status.soul;
 					break;
 				case SortItem.Voice:
-					a = leftScene.CMCKNKKCNDK_Status.vocal;
-					b = rightScene.CMCKNKKCNDK_Status.vocal;
+					a = leftScene.CMCKNKKCNDK_status.vocal;
+					b = rightScene.CMCKNKKCNDK_status.vocal;
 					break;
 				case SortItem.Charm:
-					a = leftScene.CMCKNKKCNDK_Status.charm;
-					b = rightScene.CMCKNKKCNDK_Status.charm;
+					a = leftScene.CMCKNKKCNDK_status.charm;
+					b = rightScene.CMCKNKKCNDK_status.charm;
 					break;
 				case SortItem.Get:
 					a = leftScene.NPHOIEOPIJO_Date;
@@ -1001,28 +1001,28 @@ namespace XeApp.Game.Menu
 					b = rightScene.CIEOBFIIPLD_Level;
 					break;
 				case SortItem.Life:
-					a = leftScene.CMCKNKKCNDK_Status.life;
-					b = rightScene.CMCKNKKCNDK_Status.life;
+					a = leftScene.CMCKNKKCNDK_status.life;
+					b = rightScene.CMCKNKKCNDK_status.life;
 					break;
 				case SortItem.Luck:
 					a = leftScene.MJBODMOLOBC_luck;
 					b = rightScene.MJBODMOLOBC_luck;
 					break;
 				case SortItem.Support:
-					a = leftScene.CMCKNKKCNDK_Status.support;
-					b = rightScene.CMCKNKKCNDK_Status.support;
+					a = leftScene.CMCKNKKCNDK_status.support;
+					b = rightScene.CMCKNKKCNDK_status.support;
 					break;
 				case SortItem.Fold:
-					a = leftScene.CMCKNKKCNDK_Status.fold;
-					b = rightScene.CMCKNKKCNDK_Status.fold;
+					a = leftScene.CMCKNKKCNDK_status.fold;
+					b = rightScene.CMCKNKKCNDK_status.fold;
 					break;
 				case SortItem.RecoveryNotes:
 				case SortItem.ItemNotes:
 				case SortItem.ScoreUpNotes:
 				case SortItem.SupportNotes:
 				case SortItem.FoldNotes:
-					a = leftScene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
-					b = rightScene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+					a = leftScene.CMCKNKKCNDK_status.spNoteExpected[(int)m_sortType - 10];
+					b = rightScene.CMCKNKKCNDK_status.spNoteExpected[(int)m_sortType - 10];
 					break;
 				default:
 					break;

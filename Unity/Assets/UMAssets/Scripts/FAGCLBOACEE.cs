@@ -103,7 +103,7 @@ public class FAGCLBOACEE
 	}
 
 	// // RVA: 0xFC2314 Offset: 0xFC2314 VA: 0xFC2314
-	public static List<FAGCLBOACEE> ICBFAFNOHIB(int _IJEKNCDIIAE_MVer)
+	public static List<FAGCLBOACEE> ICBFAFNOHIB(int _IJEKNCDIIAE_mver)
 	{
 		List<FAGCLBOACEE> res = new List<FAGCLBOACEE>();
 		LPPGENBEECK_MusicMaster dbMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
@@ -115,9 +115,9 @@ public class FAGCLBOACEE
 			{
 				if(fData.DEPGBBJMFED_CategoryId != 5)
 				{
-					if(fData.IJEKNCDIIAE_MVer > 1)
+					if(fData.IJEKNCDIIAE_mver > 1)
 					{
-						if(_IJEKNCDIIAE_MVer < fData.IJEKNCDIIAE_MVer)
+						if(_IJEKNCDIIAE_mver < fData.IJEKNCDIIAE_mver)
 						{
 							int BPFBEOEFKMA = fData.GHBPLHBNMBK_FreeMusicId;
 							int idx = mList.FindIndex((LAEGMENIEDB_Story.ALGOILKGAAH _GHPLINIACBB_x) =>
@@ -243,7 +243,7 @@ public class FAGCLBOACEE
 				l.Add(list[j]);
 			}
 		}
-		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 		int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 		if(level >= multi_dance_player_level)
 		{

@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);
-			m_status.Add(divaData.CMCKNKKCNDK_Status);
+			m_status.Add(divaData.CMCKNKKCNDK_status);
 			UpdateContent(divaData, m_sceneList, divaSlotNumber, musicData);
 			m_divaIconDecoration.Change(divaData, playerData, DisplayType.Level);
 			m_isFriend = false;
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 			{
 				m_sceneList.Add(friendData.HDJOHAJPGBA_SubScene[i]);
 			}
-			m_status.Add(friendData.JIGONEMPPNP_Diva.CMCKNKKCNDK_Status);
+			m_status.Add(friendData.JIGONEMPPNP_Diva.CMCKNKKCNDK_status);
 			UpdateContent(friendData.JIGONEMPPNP_Diva, m_sceneList, -1, musicData);
 			m_isFriend = true;
 			m_divaIconDecoration.Change(friendData.JIGONEMPPNP_Diva, friendData, DisplayType.Level, friendData.KHGKPKDBMOH_GetAssistScene());
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 			{
 				m_liveSkillTypeTbl[i].StartChildrenAnimGoStop("01");
 			}
-			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
+			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x1270CA0
 				texture.Set(m_divaIconImage);

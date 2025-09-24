@@ -15,7 +15,7 @@ public class IBIGBMDANNM
 	public LJJOIIAEICI LHMDABPNDDH_state; // 0x28
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_PlayerData; // 0x2C
 	public bool ONAFFLLLBHE_IsSelf; // 0x30
-	public int FJOLNJLLJEJ_Rank; // 0x34
+	public int FJOLNJLLJEJ_rank; // 0x34
 	public long KNIFCANOHOC_score; // 0x38
 	public double HMLEDBJDCAF_PreciseScore; // 0x40
 
@@ -23,8 +23,8 @@ public class IBIGBMDANNM
 	public int ADFIHAPELAN_PLevel { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel = value; } } //0x121255C NBALCMLLJGJ 0x12125A8 CPMNIMFDFAM
 	public string LBODHBDOMGK_PlayerName { get { return AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name; } set { AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = value; } }// 0x12125FC JLFIGDAGIEB 0x1212648 KMHENDLDBEA
 	public string LFKJNMFFCLH_LastLoginString { get; set; } // 0x20 JDLEEBJKOIL LMGFMDMOCIC KKODLMIGNIG
-	public int PDJEMLMOEPF_DivaId { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_DivaId; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_DivaId = value; } } //0x12126AC OICEHMGFBOG 0x12126F8 GIAENPIECFL
-	public int FCKJJGIMPPI_Level { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_Level; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_Level = value; } } //0x121274C KHAEBKHHDDH 0x1212798 FODBHLHKHFI
+	public int PDJEMLMOEPF_DivaId { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id = value; } } //0x12126AC OICEHMGFBOG 0x12126F8 GIAENPIECFL
+	public int FCKJJGIMPPI_Level { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv = value; } } //0x121274C KHAEBKHHDDH 0x1212798 FODBHLHKHFI
 	public int NOEAJIJIIHK_McPower { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = value; } } //0x12127EC IKHEOMAMDGP 0x1212838 MMLGLIOAOBA
 	//public bool CADENLBDAEB_IsNew { get; } 0x121288C KJGFPPLHLAB
 	public int NEILEPPJKIN_favorite { get; set; } // 0x24 MBBNGAAAJKL 0x12128A0 CPCOJHKJPAG 0x12128A8 JOPFPEAKGOH
@@ -33,22 +33,22 @@ public class IBIGBMDANNM
 	//public string LDBPEIMINJB() { }
 
 	//// RVA: 0x1212D10 Offset: 0x1212D10 VA: 0x1212D10 Slot: 4
-	public virtual bool EDEDFDDIOKO_Set(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_UpdatedAt, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public virtual bool EDEDFDDIOKO_Set(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_updated_at, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
 		BBHNACPENDM_ServerSaveData data = new BBHNACPENDM_ServerSaveData();
 		data.EBKCPELHDKN_InitWithBaseAndPublicStatus();
-		return NLENMNMCJCJ(_PPFNGGCBJKC_id, _IFNLEKOILPM_UpdatedAt, _MLEHCBKPNGK_IsFriend, _OHNJJIMGKGK_Names, _IDLHJIOMJBK_Data, data);
+		return NLENMNMCJCJ(_PPFNGGCBJKC_id, _IFNLEKOILPM_updated_at, _MLEHCBKPNGK_IsFriend, _OHNJJIMGKGK_Names, _IDLHJIOMJBK_data, data);
 	}
 
 	//// RVA: 0x1212DEC Offset: 0x1212DEC VA: 0x1212DEC Slot: 5
-	protected virtual bool NLENMNMCJCJ(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_UpdatedAt, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
+	protected virtual bool NLENMNMCJCJ(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_updated_at, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
 	{
-		if(_AHEFHIMGIBI_PlayerData.IIEMACPEEBJ_Deserialize(_OHNJJIMGKGK_Names, _IDLHJIOMJBK_Data))
+		if(_AHEFHIMGIBI_PlayerData.IIEMACPEEBJ_Deserialize(_OHNJJIMGKGK_Names, _IDLHJIOMJBK_data))
 		{
-			AJECHDLMKOE_LastLogin = _IFNLEKOILPM_UpdatedAt;
+			AJECHDLMKOE_LastLogin = _IFNLEKOILPM_updated_at;
 			MLPEHNBNOGD_PlayerId = _PPFNGGCBJKC_id;
 			this.AHEFHIMGIBI_PlayerData = _AHEFHIMGIBI_PlayerData;
-			LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(_IFNLEKOILPM_UpdatedAt, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(_IFNLEKOILPM_updated_at, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			LHMDABPNDDH_state = _MLEHCBKPNGK_IsFriend ? LJJOIIAEICI.HEEJBCDDOJJ_Friend : LJJOIIAEICI.CCAPCGPIIPF_Guest;
 			return true;
 		}
@@ -56,10 +56,10 @@ public class IBIGBMDANNM
 	}
 
 	//// RVA: -1 Offset: -1
-	public static FriendPlayerDataClass HEGEKFMJNCC<FriendPlayerDataClass>(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_UpdatedAt, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) where FriendPlayerDataClass : IBIGBMDANNM, new()
+	public static FriendPlayerDataClass HEGEKFMJNCC<FriendPlayerDataClass>(int _PPFNGGCBJKC_id, long _IFNLEKOILPM_updated_at, bool _MLEHCBKPNGK_IsFriend, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) where FriendPlayerDataClass : IBIGBMDANNM, new()
 	{
 		FriendPlayerDataClass res = new FriendPlayerDataClass();
-		if(res.EDEDFDDIOKO_Set(_PPFNGGCBJKC_id, _IFNLEKOILPM_UpdatedAt, _MLEHCBKPNGK_IsFriend, _OHNJJIMGKGK_Names, _IDLHJIOMJBK_Data))
+		if(res.EDEDFDDIOKO_Set(_PPFNGGCBJKC_id, _IFNLEKOILPM_updated_at, _MLEHCBKPNGK_IsFriend, _OHNJJIMGKGK_Names, _IDLHJIOMJBK_data))
 		{
 			return res;
 		}

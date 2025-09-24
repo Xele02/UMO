@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 				return serifId == item.PPFNGGCBJKC_id;
 			});
 			m_serifImage.enabled = false;
-			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(s.GBJFNGCDKPM_Type, (IiconTexture image) =>
+			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(s.GBJFNGCDKPM_typ, (IiconTexture image) =>
 			{
 				//0x19DC580
 				SetImage(image, m_serifImage);

@@ -45,15 +45,15 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1E330 Offset: 0xB1E330 VA: 0xB1E330
-	public static string MLCPIKEMFBK_GetErrorText(int _CMCKNKKCNDK_Status)
+	public static string MLCPIKEMFBK_GetErrorText(int _CMCKNKKCNDK_status)
 	{
 		if(MessageManager.Instance.IsExistBank(LGNLCJIKOEO))
 		{
-			return MessageManager.Instance.GetBank(LGNLCJIKOEO).GetMessageByLabel(ECLAOLBGCDD_tbl[4] + _CMCKNKKCNDK_Status.ToString(ECLAOLBGCDD_tbl[3]));
+			return MessageManager.Instance.GetBank(LGNLCJIKOEO).GetMessageByLabel(ECLAOLBGCDD_tbl[4] + _CMCKNKKCNDK_status.ToString(ECLAOLBGCDD_tbl[3]));
 		}
 		else
 		{
-			return ECLAOLBGCDD_tbl[5] + _CMCKNKKCNDK_Status;
+			return ECLAOLBGCDD_tbl[5] + _CMCKNKKCNDK_status;
 		}
 	}
 
@@ -110,7 +110,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EC54 Offset: 0xB1EC54 VA: 0xB1EC54
-	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_Status, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_status, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = JpStringLiterals.StringLiteral_11776;
@@ -118,7 +118,7 @@ public class JHHBAFKMBDL
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
-		s.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
+		s.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_status);
 		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134718C
@@ -127,7 +127,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EEEC Offset: 0xB1EEEC VA: 0xB1EEEC
-	public void CIKMDHMMCIL_ShowErrorPopup(int _CMCKNKKCNDK_Status, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL_ShowErrorPopup(int _CMCKNKKCNDK_status, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting setting = new TextPopupSetting();
 		setting.TitleText = JpStringLiterals.StringLiteral_11921;
@@ -135,7 +135,7 @@ public class JHHBAFKMBDL
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
-		setting.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
+		setting.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_status);
 		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471C0
 			EDIIEFHAOGP();
@@ -620,10 +620,10 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB236E0 Offset: 0xB236E0 VA: 0xB236E0
-	public void JNFBLHKMMBI(string _ADCMNODJBGJ_Title, string _LJGOOOMOMMA_message, IMCBBOAFION _HIDFAIBOHCC_OnSuccess)
+	public void JNFBLHKMMBI(string _ADCMNODJBGJ_title, string _LJGOOOMOMMA_message, IMCBBOAFION _HIDFAIBOHCC_OnSuccess)
 	{
 		TextPopupSetting s = new TextPopupSetting();
-		s.TitleText = _ADCMNODJBGJ_Title;
+		s.TitleText = _ADCMNODJBGJ_title;
 		s.Buttons = new ButtonInfo[1]
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }

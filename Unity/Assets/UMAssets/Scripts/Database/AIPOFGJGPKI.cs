@@ -10,7 +10,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id; // 0x8
 		public int PPEGAKEIEGM_Enabled; // 0xC
 		public long PDBPFJJCADD_open_at; // 0x10
-		public long FDBNFFNFOND_CloseAt; // 0x18
+		public long FDBNFFNFOND_close_at; // 0x18
 		public int[] BMFACNFNCKC; // 0x20
 		public int[] MFKKADJIHHK; // 0x24
 
@@ -31,7 +31,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
-			if (CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2 && PACNICEIIDI >= CDENCMNHNGA_table[i].PDBPFJJCADD_open_at && PACNICEIIDI < CDENCMNHNGA_table[i].FDBNFFNFOND_CloseAt)
+			if (CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2 && PACNICEIIDI >= CDENCMNHNGA_table[i].PDBPFJJCADD_open_at && PACNICEIIDI < CDENCMNHNGA_table[i].FDBNFFNFOND_close_at)
 				return CDENCMNHNGA_table[i];
 		}
 		return null;
@@ -53,9 +53,9 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xCD1FD4 Offset: 0xCD1FD4 VA: 0xCD1FD4 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MBBEDEBFEHK parser = MBBEDEBFEHK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MBBEDEBFEHK parser = MBBEDEBFEHK.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		LLLEJDAGGKF(parser);
 		return true;
 	}
@@ -76,7 +76,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
 			data.BMFACNFNCKC = array[i].BMFACNFNCKC;
 			data.MFKKADJIHHK = array[i].MFKKADJIHHK;
 			CDENCMNHNGA_table.Add(data);

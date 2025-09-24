@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 			OCMJNBIFJNM_Offer.JPOHOLBBFGP of = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP _) =>
 			{
 				//0x18591AC
-				if (_.GBJFNGCDKPM_Type != (int)m_viewOfferInfo.FGHGMHPNEMG_Type)
+				if (_.GBJFNGCDKPM_typ != (int)m_viewOfferInfo.FGHGMHPNEMG_Type)
 					return false;
 				return _.MLDPDLPHJPM_OfferId == m_viewOfferInfo.PPFNGGCBJKC_id;
 			});
@@ -492,7 +492,7 @@ namespace XeApp.Game.Menu
 				for(i = 0; i < NotReceiveItemList.Count; i++)
 				{
 					IsOpnePopup = true;
-					ShowNotReceivedPopup(NotReceiveItemList[i].PPFNGGCBJKC_id, NotReceiveItemList[i].BFINGCJHOHI_Count, () =>
+					ShowNotReceivedPopup(NotReceiveItemList[i].PPFNGGCBJKC_id, NotReceiveItemList[i].BFINGCJHOHI_cnt, () =>
 					{
 						//0x1859300
 						IsOpnePopup = false;

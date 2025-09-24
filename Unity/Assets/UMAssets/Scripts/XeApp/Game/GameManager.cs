@@ -596,7 +596,7 @@ namespace XeApp.Game
 			UnityEngine.Screen.orientation = ScreenOrientation.AutoRotation;
 			UnityEngine.QualitySettings.vSyncCount = 0;
 			UnityEngine.Application.targetFrameRate = 60;
-			GHNFIINGIGM.HKICMNAACDA();
+			GHNFIINGIGM.HKICMNAACDA_a();
 			if(localSave == null)
 			{
 				localSave = new ILDKBCLAFPB(AFEHLCGHAEE_Strings.IEGHKKJJMHI_SaveCipherPass, AFEHLCGHAEE_Strings.HBMPOOCGNEN_SaveCipherSalt);

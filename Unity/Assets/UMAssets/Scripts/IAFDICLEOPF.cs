@@ -52,10 +52,10 @@ public class IAFDICLEOPF
         }
         dd = _MOHDLLIJELH_cont.LOLJPCKNLGI(d.HBBKFIMJHEL_Mid);
         d.ANMCFINOHFH = b.PPFNGGCBJKC_id;
-        d.JOMGCCBFKEF_MissionId = _MOHDLLIJELH_cont.KMOALEJMJKA_GetMission(dd.FCBDGLEPGFJ_Mid).PPFNGGCBJKC_id;
+        d.JOMGCCBFKEF_MissionId = _MOHDLLIJELH_cont.KMOALEJMJKA_GetMission(dd.FCBDGLEPGFJ_mid).PPFNGGCBJKC_id;
         d.CIEOBFIIPLD_Level = _CIEOBFIIPLD_Level;
         d.FEMMDNIELFC_Desc = dd.FEMMDNIELFC_Desc;
-        d.JKPDKNPDEBC_EnemyHasSkill = dd.MLKFDMFDFCE_enemy_c_skill != 0 || dd.DKOPDNHDLIA_EnemyLSkill != 0;
+        d.JKPDKNPDEBC_EnemyHasSkill = dd.MLKFDMFDFCE_enemy_c_skill != 0 || dd.DKOPDNHDLIA_enemy_l_skill != 0;
         GAAHOOBMDEE_Mission.Add(d);
     }
 }

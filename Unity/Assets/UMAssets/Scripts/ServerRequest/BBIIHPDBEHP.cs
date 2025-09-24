@@ -9,11 +9,11 @@ public class BBIIHPDBEHP : CACGCMBKHDI_Request
         public List<long> COGMPENEPBD_InventoryIds; // 0x8
 
         // // RVA: 0xF2B0E0 Offset: 0xF2B0E0 VA: 0xF2B0E0
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
         {
-            if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))
+            if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))
             {
-                EDOHBJAPLPF_JsonData l = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
+                EDOHBJAPLPF_JsonData l = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
                 COGMPENEPBD_InventoryIds = new List<long>(l.HNBFOAJIIAL_Count);
                 for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
                 {

@@ -39,7 +39,7 @@
 //       {
 //         uint_list.Add(readData.GetLACEJFCOFHG(j));
 //       }
-//       data.DIPKCALNIII_DivaId = uint_list.ToArray();
+//       data.DIPKCALNIII_diva_id = uint_list.ToArray();
 //       data.ELDPFJIDNAB = readData.GHPIPMFBJHH;
 //       data.NDIJPKPDOMG = readData.EMFHICAOLOA;
 

@@ -18,8 +18,8 @@ namespace XeApp.Game.Common
 			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[id - 1];
 			EGOLBAPFHHD_Common.FKLHGOGJOHH saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KFEBOFKAHAJ_EngItem[id - 1];
 			this.id = id;
-			haveCount = saveItem.BFINGCJHOHI_Count;
-			maxCount = dbItem.DOOGFEGEKLG_Max;
+			haveCount = saveItem.BFINGCJHOHI_cnt;
+			maxCount = dbItem.DOOGFEGEKLG_max;
 			healValue = dbItem.JBGEEPFKIGG_val;
 			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
 			desc = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
@@ -49,7 +49,7 @@ namespace XeApp.Game.Common
 		{
 			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[left.id - 1];
 			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[right.id - 1];
-			return dbItem1.FPOMEEJFBIG_Order - dbItem2.FPOMEEJFBIG_Order;
+			return dbItem1.FPOMEEJFBIG_odr - dbItem2.FPOMEEJFBIG_odr;
 		}
 	}
 }

@@ -213,7 +213,7 @@ namespace XeApp.Game.Menu
 			{
 				int advId = 88;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
-					advId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("first_adv_id", 88);
+					advId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA_GetIntParam("first_adv_id", 88);
 				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(advId);
 				if(adv == null)
 				{

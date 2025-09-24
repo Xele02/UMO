@@ -73,16 +73,16 @@ namespace XeApp.Game.Menu
 		{
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(view.FJOLNJLLJEJ_Rank < 4)
+			if(view.FJOLNJLLJEJ_rank < 4)
 			{
 				m_imageRank.enabled = true;
-				m_imageRank.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_m_rank" + view.FJOLNJLLJEJ_Rank.ToString("D2")));
+				m_imageRank.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_m_rank" + view.FJOLNJLLJEJ_rank.ToString("D2")));
 				m_textRank.text = "";
 			}
 			else
 			{
 				m_imageRank.enabled = false;
-				m_textRank.text = view.FJOLNJLLJEJ_Rank.ToString();
+				m_textRank.text = view.FJOLNJLLJEJ_rank.ToString();
 			}
 			m_textName.text = RichTextUtility.MakeColorTagString(view.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[Mathf.Clamp(view.FKDCCLPGKDK_JacketAttr - 1, 0, GameAttributeTextColor.Colors.Length)]);
 			SetFrameUv(s_frameAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);

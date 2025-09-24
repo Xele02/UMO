@@ -10,7 +10,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE = 1;
 	public const int FIKANMEAEIF = 5;
 	public const int CAHJOIDBJDJ = 5;
-	public List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN> JBJHCJFOICD = new List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN>(); // 0x24
+	public List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN> JBJHCJFOICD_SetArr = new List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN>(); // 0x24
 	private int ENOBDCFHELD; // 0x28
 	private int FCEJCHGLFGN; // 0x2C
 
@@ -27,10 +27,10 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	{
 		ENOBDCFHELD = (int)(Utility.GetCurrentUnixTime() ^ 0x401d3c7);
 		FCEJCHGLFGN = (int)(Utility.GetCurrentUnixTime() ^ 0x8f5f2da);
-		JBJHCJFOICD.Clear();
+		JBJHCJFOICD_SetArr.Clear();
 		for(int i = 0; i < 5; i++)
 		{
-			JBJHCJFOICD.Add(new DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN());
+			JBJHCJFOICD_SetArr.Add(new DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN());
 		}
 	}
 
@@ -40,9 +40,9 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 		data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-		for(int i = 0; i < JBJHCJFOICD.Count; i++)
+		for(int i = 0; i < JBJHCJFOICD_SetArr.Count; i++)
 		{
-			data2.Add(JBJHCJFOICD[i].OKJPIBHMKMJ());
+			data2.Add(JBJHCJFOICD_SetArr[i].OKJPIBHMKMJ());
 		}
 		data["set_arr"] = data2;
 		if(!EMBGIDLFKGM)
@@ -83,7 +83,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 				}
 				for(int i = 0; i < cnt; i++)
 				{
-					JBJHCJFOICD[i].IIEMACPEEBJ_Deserialize(ar[i], (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, int BAAPMIKMLPP) =>
+					JBJHCJFOICD_SetArr[i].IIEMACPEEBJ_Deserialize(ar[i], (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, int BAAPMIKMLPP) =>
 					{
 						//0x15C8380
 						return CJAENOMGPDA_ReadInt(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, BAAPMIKMLPP, ref isInvalid);
@@ -104,9 +104,9 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		AHHPBMBBCFM_DecoPrivateSet other = GPBJHKLFCEP as AHHPBMBBCFM_DecoPrivateSet;
-		for(int i = 0; i < JBJHCJFOICD.Count; i++)
+		for(int i = 0; i < JBJHCJFOICD_SetArr.Count; i++)
 		{
-			JBJHCJFOICD[i].BMGGKONLFIC_Copy(other.JBJHCJFOICD[i]);
+			JBJHCJFOICD_SetArr[i].BMGGKONLFIC_Copy(other.JBJHCJFOICD_SetArr[i]);
 		}
 	}
 
@@ -114,9 +114,9 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		AHHPBMBBCFM_DecoPrivateSet other = GPBJHKLFCEP as AHHPBMBBCFM_DecoPrivateSet;
-		for(int i = 0; i < JBJHCJFOICD.Count; i++)
+		for(int i = 0; i < JBJHCJFOICD_SetArr.Count; i++)
 		{
-			if(!JBJHCJFOICD[i].AGBOGBEOFME(other.JBJHCJFOICD[i]))
+			if(!JBJHCJFOICD_SetArr[i].AGBOGBEOFME(other.JBJHCJFOICD_SetArr[i]))
 				return false;
 		}
 		return true;

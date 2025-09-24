@@ -117,13 +117,13 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	}
 
 	// // RVA: 0x15F5A50 Offset: 0x15F5A50 VA: 0x15F5A50
-	private static uint LDOAOKFCOEE(byte[] _IDLHJIOMJBK_Data, int MMENOGLLOKL)
+	private static uint LDOAOKFCOEE(byte[] _IDLHJIOMJBK_data, int MMENOGLLOKL)
 	{
 		byte[] b = new byte[4];
-		b[0] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 3];
-		b[1] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 2];
-		b[2] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 1];
-		b[3] = _IDLHJIOMJBK_Data[MMENOGLLOKL + 0];
+		b[0] = _IDLHJIOMJBK_data[MMENOGLLOKL + 3];
+		b[1] = _IDLHJIOMJBK_data[MMENOGLLOKL + 2];
+		b[2] = _IDLHJIOMJBK_data[MMENOGLLOKL + 1];
+		b[3] = _IDLHJIOMJBK_data[MMENOGLLOKL + 0];
 		return BitConverter.ToUInt32(b, 0);
 	}
 

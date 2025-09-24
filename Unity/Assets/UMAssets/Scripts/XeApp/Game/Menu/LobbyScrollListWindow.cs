@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				NKOBMDPHNGP_EventRaidLobby.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_EventRaidLobby.NGHEKBHLBAN.CFBJGAGBJEN_0);
-				SetGuideCharaData(d.FDBOPFEOENF_Diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_message);
+				SetGuideCharaData(d.FDBOPFEOENF_diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_message);
 			}
 		}
 

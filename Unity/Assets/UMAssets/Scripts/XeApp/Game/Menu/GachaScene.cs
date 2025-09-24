@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(!err)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG_Result.BBEPLKNMICJ_Balances);
+				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
 				req = null;
 				done = false;
 				err = false;
@@ -1144,7 +1144,7 @@ namespace XeApp.Game.Menu
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			if (stepIndex < 0)
 			{
-				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex;
+				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_current_step_index;
 			}
 			m_appearLot = new AppearLot(product.NLGPIELHAKC(stepIndex, true), product.NLGPIELHAKC(stepIndex, false), product.KACECFNECON_extra);
 			MakeAppearRateInGroup(m_rateInfoList, m_appearLot);
@@ -1298,13 +1298,13 @@ namespace XeApp.Game.Menu
 				info.percent = lot.MMOJHIPAAIK_probability;
 				infoList.Add(info);
 			}
-			for(int i = 0; i < lot.HBHMAKNGKFK_Items.Count; i++)
+			for(int i = 0; i < lot.HBHMAKNGKFK_items.Count; i++)
 			{
 				GachaRateItemInfo info = new GachaRateItemInfo();
-				info.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
-				info.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
-				info.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_probability;
-				info.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_Pickup;
+				info.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_items[i].JJBGOIMEIPF_ItemId);
+				info.name = lot.HBHMAKNGKFK_items[i].JBLCNEILLMJ_ItemName;
+				info.percent = lot.HBHMAKNGKFK_items[i].MMOJHIPAAIK_probability;
+				info.pickup = lot.HBHMAKNGKFK_items[i].JOPPFEHKNFO_Pickup;
 				infoList.Add(info);
 			}
 		}
@@ -1317,14 +1317,14 @@ namespace XeApp.Game.Menu
 			info.episodeId = lot.GDEJFKCMNAC_EpisodeId;
 			info.episodeContent = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(lot.GDEJFKCMNAC_EpisodeId);
 			infoList.Add(info);
-			for(int i = 0; i < lot.HBHMAKNGKFK_Items.Count; i++)
+			for(int i = 0; i < lot.HBHMAKNGKFK_items.Count; i++)
 			{
 				GachaRateEpItemInfo info2 = new GachaRateEpItemInfo();
-				info2.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
-				info2.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
-				info2.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_probability;
-				info2.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_Pickup;
-				info2.starNum = lot.HBHMAKNGKFK_Items[i].FJNGOPBGEOI_GroupIdx;
+				info2.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_items[i].JJBGOIMEIPF_ItemId);
+				info2.name = lot.HBHMAKNGKFK_items[i].JBLCNEILLMJ_ItemName;
+				info2.percent = lot.HBHMAKNGKFK_items[i].MMOJHIPAAIK_probability;
+				info2.pickup = lot.HBHMAKNGKFK_items[i].JOPPFEHKNFO_Pickup;
+				info2.starNum = lot.HBHMAKNGKFK_items[i].FJNGOPBGEOI_GroupIdx;
 				infoList.Add(info2);
 			}
 		}

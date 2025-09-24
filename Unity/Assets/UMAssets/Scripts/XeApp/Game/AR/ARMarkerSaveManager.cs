@@ -38,7 +38,7 @@ namespace XeApp.Game.AR
             ARSaveData.Instance.Load();
             arPlayerData = new BBHNACPENDM_ServerSaveData();
             arPlayerData.GGBOGLKKKDM();
-            timeoutTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("ar_net_timeout", 10);
+            timeoutTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("ar_net_timeout", 10);
             N.a.StartCoroutineWatched(Co_Load(onSuccess, onErrorToTitle));
         }
 
@@ -59,7 +59,7 @@ namespace XeApp.Game.AR
                 onErrorToTitle();
                 yield break;
             }
-            if(arPlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+            if(arPlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 2)
             {
                 isExistPlayerData = false;
                 onSuccess();
@@ -81,7 +81,7 @@ namespace XeApp.Game.AR
             l.Add("ar_marker");
             r.HHIHCJKLJFF_Names = l;
             r.AHEFHIMGIBI_PlayerData = str;
-            r.CHDDDCCHJJH_Replace = true;
+            r.CHDDDCCHJJH_replace = true;
             while(!r.PLOOEECNHFB_IsDone)
                 yield return null;
             if(r.NPNNPNAIONN_IsError)
@@ -97,7 +97,7 @@ namespace XeApp.Game.AR
             {
                 if(marker_no <= arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM.Count)
                 {
-                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 }
             }
             if(isExistPlayerData)

@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		public void LoadResoruce()
 		{
 			IsLoaded = false;
-			int is_enable_famous_phrase_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA("is_enable_famous_phrase_4", 0);
+			int is_enable_famous_phrase_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA_GetIntParam("is_enable_famous_phrase_4", 0);
 			if(is_enable_famous_phrase_4 == 0)
 			{
 				tabCallBackList[1] = new TabCallBackData(2, new TabType[5] { TabType.Use, TabType.Temp, TabType.serif1, TabType.serif2, TabType.serif3 });

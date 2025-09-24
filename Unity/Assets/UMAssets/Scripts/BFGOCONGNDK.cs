@@ -12,7 +12,7 @@ public class BFGOCONGNDK
 	public string IOIMHJAOKOO_Hash; // 0x8
 	public int OENPCNBFPDA_bg_id; // 0xC
 	public long PDBPFJJCADD_open_at; // 0x10
-	public long FDBNFFNFOND_CloseAt; // 0x18
+	public long FDBNFFNFOND_close_at; // 0x18
 	public bool MBGHLLHFNHH; // 0x20
 
 	// // RVA: 0xC79E1C Offset: 0xC79E1C VA: 0xC79E1C
@@ -73,7 +73,7 @@ public class BFGOCONGNDK
 					{
 						OENPCNBFPDA_bg_id = bg.bgId;
 						PDBPFJJCADD_open_at = bg.startTime;
-						FDBNFFNFOND_CloseAt = bg.endTime;
+						FDBNFFNFOND_close_at = bg.endTime;
 						IOIMHJAOKOO_Hash = g.POEGMFKLFJG_hash_value;
 						EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 						data["ver"] = AppInfo.appVersion;
@@ -81,7 +81,7 @@ public class BFGOCONGNDK
 						data["h"] = IOIMHJAOKOO_Hash;
 						data["bg"] = OENPCNBFPDA_bg_id;
 						data["s"] = PDBPFJJCADD_open_at;
-						data["e"] = FDBNFFNFOND_CloseAt;
+						data["e"] = FDBNFFNFOND_close_at;
 						KIJECNFNNDB_JsonWriter k = new KIJECNFNNDB_JsonWriter();
 						IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(data, k);
 						FileStream fs = new FileStream(HIOMFHINAAH_GetFileName(), FileMode.Create);

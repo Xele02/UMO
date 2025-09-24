@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 			{
 				if(musicData.MGJKEJHEBPO_Blocks[i].HHMLMKAEJBJ_Score != null)
 				{
-					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_Blocks[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
+					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_Blocks[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_lv, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
 				}
 			}
 		}
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADBAD8 Offset: 0xADBAD8 VA: 0xADBAD8
 		public void SetEnergy(IBJAKJJICBC musicData)
 		{
-			m_playButton.SetEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_Stamina);
+			m_playButton.SetEnergy(musicData.MGJKEJHEBPO_Blocks[(int)m_difficulty].BPLOEAHOPFI_stamina);
 		}
 
 		// // RVA: 0xAC7F7C Offset: 0xAC7F7C VA: 0xAC7F7C

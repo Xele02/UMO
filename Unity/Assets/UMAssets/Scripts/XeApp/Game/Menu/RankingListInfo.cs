@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 				isKira = friend.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 			}
 			emblemId = friend.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
-			rankingOrder = friend.PCEGKKLKFNO_FriendData.FJOLNJLLJEJ_Rank;
+			rankingOrder = friend.PCEGKKLKFNO_FriendData.FJOLNJLLJEJ_rank;
 			playerLevel = friend.PCEGKKLKFNO_FriendData.ADFIHAPELAN_PLevel;
 			score = friend.PCEGKKLKFNO_FriendData.KNIFCANOHOC_score;
 			isOwner = friend.PCEGKKLKFNO_FriendData.ONAFFLLLBHE_IsSelf;

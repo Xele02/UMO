@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!data.KACECFNECON_extra.LKGELAPAACK)
 				{
-					m_point_episode.SetNumber(data.KACECFNECON_extra.DNBFMLBNAEE_Point, 0);
+					m_point_episode.SetNumber(data.KACECFNECON_extra.DNBFMLBNAEE_point, 0);
 					m_roop_text_image.enabled = false;
 				}
 				else

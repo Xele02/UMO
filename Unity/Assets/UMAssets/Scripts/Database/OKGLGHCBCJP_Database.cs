@@ -547,7 +547,7 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x1490734 Offset: 0x1490734 VA: 0x1490734
-	// private static string JEHFDJPOEFF(string HKICMNAACDA) { }
+	// private static string JEHFDJPOEFF(string _HKICMNAACDA_a) { }
 
 	// // RVA: 0x1490738 Offset: 0x1490738 VA: 0x1490738
 	// private static bool FNHALBBECIM(OKGLGHCBCJP.BEOKNKGHFFE _NEJBNCHLMNJ_Type) { }
@@ -669,12 +669,12 @@ public class OKGLGHCBCJP_Database
 				}
 				for(int j = 0; j < _JOBKIDDLCPL_schedules.Count; j++)
 				{
-					if(_JHNMKKNEENE_Time >= _JOBKIDDLCPL_schedules[j].KBFOIECIADN_opened_at && _JHNMKKNEENE_Time < _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_CloseAt)
+					if(_JHNMKKNEENE_Time >= _JOBKIDDLCPL_schedules[j].KBFOIECIADN_opened_at && _JHNMKKNEENE_Time < _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_closed_at)
 					{
 						if(IJBLEJOKEFH_Name[i] != "" && _JOBKIDDLCPL_schedules[j].OPFGFINHFCE_name == IJBLEJOKEFH_Name[i])
 						{
 							IIILDINMAKI_SectionNames[i] = _JOBKIDDLCPL_schedules[j].OPFGFINHFCE_name;
-							GJFPFFBAKGK_CloseAt[i] = _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_CloseAt;
+							GJFPFFBAKGK_CloseAt[i] = _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_closed_at;
 							valid = true;
 						}
 					}
@@ -895,7 +895,7 @@ public class OKGLGHCBCJP_Database
 		Dictionary<string, int> data = new Dictionary<string, int>();
 		if(found != null)
 		{
-			BNBONBECPKB b = BNBONBECPKB.HEGEKFMJNCC(found.DBBGALAPFGC_Data);
+			BNBONBECPKB b = BNBONBECPKB.HEGEKFMJNCC(found.DBBGALAPFGC_bytes);
 			LPMLJGGJGGK[] array = b.GMLFFMJMPCC;
 			for(int i = 0; i < array.Length; i++)
 			{
@@ -940,7 +940,7 @@ public class OKGLGHCBCJP_Database
 						return false;
 					}
 					read = true;
-					if(!item.IIEMACPEEBJ_Deserialize(found2.DBBGALAPFGC_Data))
+					if(!item.IIEMACPEEBJ_Deserialize(found2.DBBGALAPFGC_bytes))
 					{
 						throw new Exception(item.JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash /*'/'*/ + item.HDIDJNCGICK_LoadError);
 					}
@@ -952,7 +952,7 @@ public class OKGLGHCBCJP_Database
 				});
 				if(!read && found2 != null)
 				{
-					string jsonStr = Encoding.UTF8.GetString(found2.DBBGALAPFGC_Data);
+					string jsonStr = Encoding.UTF8.GetString(found2.DBBGALAPFGC_bytes);
 					EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(jsonStr);
 					if(!item.IIEMACPEEBJ_Deserialize(json, 0))
 					{

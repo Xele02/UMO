@@ -585,7 +585,7 @@ namespace XeApp.Game.Menu
 				StringBuilder str = new StringBuilder(1024);
 				if(m_windowUi.IsUpdatePossible())
 				{
-					int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_auto_update_op", 1);
+					int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
 					m_chatContller.FBANBDCOEJL(bbs_auto_update_op, () =>
 					{
 						//0xC55428

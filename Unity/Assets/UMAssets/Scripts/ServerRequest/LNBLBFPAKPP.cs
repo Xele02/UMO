@@ -11,12 +11,12 @@ public class LNBLBFPAKPP_GetLineLinkageStatus : CACGCMBKHDI_Request
 		public int OOOIPFEGKFD_Version; // 0xC
 
 		// RVA: 0x10BC580 Offset: 0x10BC580 VA: 0x10BC580
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EFKMIECABBK_LineLinkage = (bool)_IDLHJIOMJBK_Data["line_linkage"];
+			EFKMIECABBK_LineLinkage = (bool)_IDLHJIOMJBK_data["line_linkage"];
 			OOOIPFEGKFD_Version = 0;
-			if (_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("line_linkage_version"))
-				OOOIPFEGKFD_Version = (int)_IDLHJIOMJBK_Data["line_linkage_version"];
+			if (_IDLHJIOMJBK_data.BBAJPINMOEP_Contains("line_linkage_version"))
+				OOOIPFEGKFD_Version = (int)_IDLHJIOMJBK_data["line_linkage_version"];
 		}
 	}
 

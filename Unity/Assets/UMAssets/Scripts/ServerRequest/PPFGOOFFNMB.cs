@@ -7,17 +7,17 @@ public class PPFGOOFFNMB_GetTopRanks : CACGCMBKHDI_Request
 {
 	public class NJAPFHHAOHE : NJNCENEFCEI
 	{
-		public int CJNNMLLEKEF_PreviousPage; // 0xC
-		public int GPPOJHNNINK_CurrentPage; // 0x10
+		public int CJNNMLLEKEF_previous_page; // 0xC
+		public int GPPOJHNNINK_current_page; // 0x10
 		public int MDIBIIHAAPN_next_page; // 0x14
 
 		//// RVA: 0xDF6BE8 Offset: 0xDF6BE8 VA: 0xDF6BE8 Slot: 4
-		public new virtual void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public new virtual void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			base.KHEKNNFCAOI_Init(_IDLHJIOMJBK_Data);
-			CJNNMLLEKEF_PreviousPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
-			GPPOJHNNINK_CurrentPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
-			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
+			base.KHEKNNFCAOI_Init(_IDLHJIOMJBK_data);
+			CJNNMLLEKEF_previous_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page];
+			GPPOJHNNINK_current_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page];
+			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
 		}
 	}
 

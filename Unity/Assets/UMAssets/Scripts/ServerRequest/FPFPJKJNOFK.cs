@@ -11,16 +11,16 @@ public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_Request
 	{
 		public double HOCPLDLAIGL_Score; // 0x8
 		public long KNIFCANOHOC_score; // 0x10
-		public long FJOLNJLLJEJ_Rank; // 0x18
+		public long FJOLNJLLJEJ_rank; // 0x18
 		public bool POOLBEALDMA_DroppedPlayer; // 0x20
 		public List<long> COGMPENEPBD_InventoryIds; // 0x24
 
 		// RVA: 0x13FA430 Offset: 0x13FA430 VA: 0x13FA430
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			BOAGCEOHJEO.IIEMACPEEBJ_Deserialize(_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.KNIFCANOHOC_score], out HOCPLDLAIGL_Score, out KNIFCANOHOC_score);
-			FJOLNJLLJEJ_Rank = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.FJOLNJLLJEJ_Rank, 0);
-			POOLBEALDMA_DroppedPlayer = (bool)_IDLHJIOMJBK_Data["ranking_dropped_player"];
+			BOAGCEOHJEO.IIEMACPEEBJ_Deserialize(_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.KNIFCANOHOC_score], out HOCPLDLAIGL_Score, out KNIFCANOHOC_score);
+			FJOLNJLLJEJ_rank = JsonUtil.GetLong(_IDLHJIOMJBK_data, AFEHLCGHAEE_Strings.FJOLNJLLJEJ_rank, 0);
+			POOLBEALDMA_DroppedPlayer = (bool)_IDLHJIOMJBK_data["ranking_dropped_player"];
 		}
 	}
 

@@ -20,7 +20,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "PDBPFJJCADD", ReaderDisplay = "Date", Display = "Date")]
 		public long PDBPFJJCADD_open_at; // 0x18
 		[UMOMember(ReaderMember = "FDBNFFNFOND", ReaderDisplay = "Date", Display = "Date")]
-		public long FDBNFFNFOND_CloseAt; // 0x20
+		public long FDBNFFNFOND_close_at; // 0x20
 	}
 
 	[UMOClass(ReaderClass = "MCCFOKHKJIC")]
@@ -90,9 +90,9 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xFC6614 Offset: 0xFC6614 VA: 0xFC6614 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		BLOHGJIKLAK parser = BLOHGJIKLAK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		BLOHGJIKLAK parser = BLOHGJIKLAK.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		ILEJEJKNOBN_StoryList.Clear();
 		JPIGOBGOMON_StoryPartsList.Clear();
 		{
@@ -105,7 +105,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.MGBDCFIKBPM_Serie = (byte)array[i].BDJMFDKLHPM;
 				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-				data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
+				data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
 				ILEJEJKNOBN_StoryList.Add(data);
 			}
 		}

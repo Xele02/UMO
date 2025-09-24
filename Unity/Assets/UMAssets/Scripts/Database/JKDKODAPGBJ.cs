@@ -18,9 +18,10 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D158 DEMEPMAEJOO 0x135CBF8 HIGKAIDMOKN
 		public int PPEGAKEIEGM_Enabled { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D1F0 KPOEEPIMMJP 0x135CB5C NCIEAFEDPBH
 		public int HJAFPEBIBOP_Limit { get { return JEDNBJLMBKE ^ FBGGEFFJJHB_xor; } set { JEDNBJLMBKE = value ^ FBGGEFFJJHB_xor; } } //0x135D288 GNDLHNBPMHN 0x135CD30 HPFNBOKBEDD
-		public int DOOGFEGEKLG_Max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D320 AECMFIOFFJN 0x135CDCC NGOJJDOCIDG
+		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D320 AECMFIOFFJN 0x135CDCC NGOJJDOCIDG
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D3B8 OLOCMINKGON 0x135CC94 ABAFHIBFKCE
-		public int FPOMEEJFBIG_Order { get { return JDIJODDBCPK_OderCrypted ^ FBGGEFFJJHB_xor; } set { JDIJODDBCPK_OderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D450 OEEBAHNAPEC 0x135CE68 BEHAPLPPLNE
+		// Order
+		public int FPOMEEJFBIG_odr { get { return JDIJODDBCPK_OderCrypted ^ FBGGEFFJJHB_xor; } set { JDIJODDBCPK_OderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D450 OEEBAHNAPEC 0x135CE68 BEHAPLPPLNE
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D4E8 OEEHBGECGKL 0x135CF04 GHLMHLJJBIG
 
 		// RVA: 0x135D08C Offset: 0x135D08C VA: 0x135D08C
@@ -46,9 +47,9 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x135C7C0 Offset: 0x135C7C0 VA: 0x135C7C0 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MKLLOAPBIGJ parser = MKLLOAPBIGJ.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MKLLOAPBIGJ parser = MKLLOAPBIGJ.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		FHAPNNHNNCN[] array = parser.JNMKOOKNLIN;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -57,9 +58,9 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 			data.HJAFPEBIBOP_Limit = array[i].HJAFPEBIBOP;
-			data.DOOGFEGEKLG_Max = array[i].DOOGFEGEKLG;
+			data.DOOGFEGEKLG_max = array[i].DOOGFEGEKLG;
 			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
-			data.FPOMEEJFBIG_Order = array[i].FPOMEEJFBIG;
+			data.FPOMEEJFBIG_odr = array[i].FPOMEEJFBIG;
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
 			CDENCMNHNGA_table.Add(data);
 		}

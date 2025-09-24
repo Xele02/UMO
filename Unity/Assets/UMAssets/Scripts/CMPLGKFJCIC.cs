@@ -78,9 +78,9 @@ public class GIINMFDIIMD
 	}
 
 	// // RVA: 0xAA7C70 Offset: 0xAA7C70 VA: 0xAA7C70
-	public static EDOHBJAPLPF_JsonData JNEJKMKNIJJ(GIINMFDIIMD _IDLHJIOMJBK_Data)
+	public static EDOHBJAPLPF_JsonData JNEJKMKNIJJ(GIINMFDIIMD _IDLHJIOMJBK_data)
 	{
-		return _IDLHJIOMJBK_Data.DLENPPIJNPA_json;
+		return _IDLHJIOMJBK_data.DLENPPIJNPA_json;
 	}
 }
 
@@ -88,7 +88,7 @@ public class LBICPMOLOKD
 {
 	public int PPFNGGCBJKC_id; // 0x8
 	public string MMEBLOIJBKE_UniqueKey; // 0xC
-	public int BCCOMAODPJI_Hp; // 0x10
+	public int BCCOMAODPJI_hp; // 0x10
 	public int FFBHEHAIHMA_MaxHp; // 0x14
 	public int CKFNNECHOGG_ComboCount; // 0x18
 	public int MHABJOMJCFI_AttackPlayerCount; // 0x1C AttackPlayerCount
@@ -101,14 +101,14 @@ public class LBICPMOLOKD
     {
         PPFNGGCBJKC_id = (int)CDGMPGLAING.DLENPPIJNPA_json["id"];
         MMEBLOIJBKE_UniqueKey = (string)CDGMPGLAING.DLENPPIJNPA_json["unique_key"];
-        BCCOMAODPJI_Hp = (int)CDGMPGLAING.DLENPPIJNPA_json["hp"];
+        BCCOMAODPJI_hp = (int)CDGMPGLAING.DLENPPIJNPA_json["hp"];
         FFBHEHAIHMA_MaxHp = (int)CDGMPGLAING.DLENPPIJNPA_json["max_hp"];
         CKFNNECHOGG_ComboCount = (int)CDGMPGLAING.DLENPPIJNPA_json["combo_count"];
         MHABJOMJCFI_AttackPlayerCount = (int)CDGMPGLAING.DLENPPIJNPA_json["attack_player_count"];
-        MBEMFKGBIEO_EncounterPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("encounter_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) =>
+        MBEMFKGBIEO_EncounterPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("encounter_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
         {
             //0xD9953C
-            return (int)_IDLHJIOMJBK_Data;
+            return (int)_IDLHJIOMJBK_data;
         }, 0);
         OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "created_at", 0);
         PPLAPJDENND_EscapedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "escaped_at", 0);
@@ -123,9 +123,9 @@ public class CMPLGKFJCIC<EffectInfoClass> : LBICPMOLOKD
 	public CMPLGKFJCIC(GIINMFDIIMD CDGMPGLAING, Func<GIINMFDIIMD, EffectInfoClass> KACGHAKGAGH)
         : base(CDGMPGLAING)
     {
-        MGPCMCNFFIM_Effects.MAECPJAJNBO(CDGMPGLAING.DLENPPIJNPA_json.PFBEBCDEIND("effects"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+        MGPCMCNFFIM_Effects.MAECPJAJNBO(CDGMPGLAING.DLENPPIJNPA_json.PFBEBCDEIND("effects"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
 		{
-			return KACGHAKGAGH(_IDLHJIOMJBK_Data);
+			return KACGHAKGAGH(_IDLHJIOMJBK_data);
 		});
     }
 	/* GenericInstMethod :
@@ -139,7 +139,7 @@ public class CMPLGKFJCIC<EffectInfoClass> : LBICPMOLOKD
 
 public class NCMFOICNJEB<EffectInfoClass> : CMPLGKFJCIC<EffectInfoClass>
 {
-	public NHCDBBBMFFG CMCKNKKCNDK_Status; // 0x3c
+	public NHCDBBBMFFG CMCKNKKCNDK_status; // 0x3c
 	public int OKIEOLAAJNM_LastAttackPlayerId; // 0x40
 	public bool DLMNFENNCJG_HasAttacked; // 0x44
 	public bool ICCOOAAJEIN_CanReceiveReward; // 0x45
@@ -152,19 +152,19 @@ public class NCMFOICNJEB<EffectInfoClass> : CMPLGKFJCIC<EffectInfoClass>
 	public NCMFOICNJEB(GIINMFDIIMD CDGMPGLAING, Func<GIINMFDIIMD, EffectInfoClass> KACGHAKGAGH)
 		: base(CDGMPGLAING, KACGHAKGAGH)
 	{
-		CMCKNKKCNDK_Status = (NHCDBBBMFFG) (int)CDGMPGLAING.DLENPPIJNPA_json["status"];
-		OKIEOLAAJNM_LastAttackPlayerId = CDGMPGLAING.DLENPPIJNPA_json["last_attack_player_id"].DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) =>
+		CMCKNKKCNDK_status = (NHCDBBBMFFG) (int)CDGMPGLAING.DLENPPIJNPA_json["status"];
+		OKIEOLAAJNM_LastAttackPlayerId = CDGMPGLAING.DLENPPIJNPA_json["last_attack_player_id"].DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
 		{
 			//0x26C2814
-			return (int)_IDLHJIOMJBK_Data;
+			return (int)_IDLHJIOMJBK_data;
 		}, 0);
 		DLMNFENNCJG_HasAttacked = (bool)CDGMPGLAING.DLENPPIJNPA_json["has_attacked"];
 		ICCOOAAJEIN_CanReceiveReward = (bool)CDGMPGLAING.DLENPPIJNPA_json["can_receive_rewards"];
 		CAKONDPGDIL_CanRequestHelp = (bool)CDGMPGLAING.DLENPPIJNPA_json["can_request_help"];
-		CNGBMPCDFFE_RequestPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("request_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data) =>
+		CNGBMPCDFFE_RequestPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("request_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
 		{
 			//0x26C2898
-			return (int)_IDLHJIOMJBK_Data;
+			return (int)_IDLHJIOMJBK_data;
 		}, 0);
 	}
 	/* GenericInstMethod :

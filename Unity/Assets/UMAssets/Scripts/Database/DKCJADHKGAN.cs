@@ -83,9 +83,9 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x198DD00 Offset: 0x198DD00 VA: 0x198DD00 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		PMHJIJGDJMO parser = PMHJIJGDJMO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		PMHJIJGDJMO parser = PMHJIJGDJMO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		FBCAIGGLGMK[] array = parser.MDFFJJKBDFC;
 		for(int i = 0; i < array.Length; i++)
 		{

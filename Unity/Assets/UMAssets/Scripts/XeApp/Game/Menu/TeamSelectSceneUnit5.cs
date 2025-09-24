@@ -2126,7 +2126,7 @@ namespace XeApp.Game.Menu
 					FFHPBEPOMAK_DivaInfo diva = unit.BCJEAJPLGMB_MainDivas[j];
 					if(diva != null)
 					{
-						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId);
+						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId);
 						if(diva.FGFIBOBAPIA_SceneId > 0)
 						{
 							GCIJNCFDNON_SceneInfo sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1];
@@ -2147,7 +2147,7 @@ namespace XeApp.Game.Menu
 					FFHPBEPOMAK_DivaInfo diva = unit.CMOPCCAJAAO_AddDivas[j];
 					if (diva != null)
 					{
-						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId);
+						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId);
 					}
 				}
 			}

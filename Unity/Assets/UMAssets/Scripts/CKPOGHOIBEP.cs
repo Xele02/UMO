@@ -18,7 +18,7 @@ public class CKPOGHOIBEP
     }
 
 	// RVA: 0x1081770 Offset: 0x1081770 VA: 0x1081770
-	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA _COCEIPAKJKF_Item, Action JGELCIJAGFF, Action LIELJBACFKB, Action _MOBEEPPKFLG_OnFail, Action NIMPEHIECJH)
+	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA _COCEIPAKJKF_item, Action JGELCIJAGFF, Action LIELJBACFKB, Action _MOBEEPPKFLG_OnFail, Action NIMPEHIECJH)
     {
         if(!PCIDGIBANFO)
         {
@@ -33,7 +33,7 @@ public class CKPOGHOIBEP
                 new ButtonInfo() { Label = PopupButton.ButtonLabel.Exchange, Type = PopupButton.ButtonType.Positive }
             };
             s.WindowSize = SizeType.Large;
-            s.View = _COCEIPAKJKF_Item;
+            s.View = _COCEIPAKJKF_item;
             PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
             {
                 //0x1081DD0
@@ -74,7 +74,7 @@ public class CKPOGHOIBEP
                                 LIELJBACFKB();
                         };
                         int DPHIJHDAPLJ = 1;
-                        CFLCEFJJPDH.StartCoroutineWatched(EHDNGPFPOKJ_Co_Buy(DPHIJHDAPLJ, _COCEIPAKJKF_Item, CMJMGEFNBDK, DMLJLPMBLCH, EEIFDMNADPA, NDBKOPGCPHJ));
+                        CFLCEFJJPDH.StartCoroutineWatched(EHDNGPFPOKJ_Co_Buy(DPHIJHDAPLJ, _COCEIPAKJKF_item, CMJMGEFNBDK, DMLJLPMBLCH, EEIFDMNADPA, NDBKOPGCPHJ));
                     }
                 }
                 else

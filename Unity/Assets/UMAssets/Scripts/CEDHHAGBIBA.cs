@@ -43,11 +43,11 @@ public class CEDHHAGBIBA
 	// public static string AMNBKLLDGKJ(byte[] IDDIIHBJPEE) { }
 
 	// // RVA: 0x12B1D48 Offset: 0x12B1D48 VA: 0x12B1D48
-	public static int GNJBKANDLEE_ReadInt(EDOHBJAPLPF_JsonData IDLHJIOMJBK_Data, string PGHEHAFKPMC_Key)
+	public static int GNJBKANDLEE_ReadInt(EDOHBJAPLPF_JsonData IDLHJIOMJBK_data, string PGHEHAFKPMC_Key)
 	{
-		if(IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
+		if(IDLHJIOMJBK_data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
 		{
-			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_Data[PGHEHAFKPMC_Key];
+			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_data[PGHEHAFKPMC_Key];
 			if (d != null)
 			{
 				if (d.DCPEFFOMOOK_IsLong)
@@ -64,11 +64,11 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B1F2C Offset: 0x12B1F2C VA: 0x12B1F2C
-	public static long NIKODNFGCEM_ReadLong(EDOHBJAPLPF_JsonData IDLHJIOMJBK_Data, string PGHEHAFKPMC_Key)
+	public static long NIKODNFGCEM_ReadLong(EDOHBJAPLPF_JsonData IDLHJIOMJBK_data, string PGHEHAFKPMC_Key)
 	{
-		if(IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
+		if(IDLHJIOMJBK_data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
 		{
-			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_Data[PGHEHAFKPMC_Key];
+			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_data[PGHEHAFKPMC_Key];
 			if (d != null)
 			{
 				if(d.DCPEFFOMOOK_IsLong)
@@ -85,11 +85,11 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B2120 Offset: 0x12B2120 VA: 0x12B2120
-	public static string BNCLNFJHEND_ReadString(EDOHBJAPLPF_JsonData IDLHJIOMJBK_Data, string PGHEHAFKPMC_Key)
+	public static string BNCLNFJHEND_ReadString(EDOHBJAPLPF_JsonData IDLHJIOMJBK_data, string PGHEHAFKPMC_Key)
 	{
-		if(IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
+		if(IDLHJIOMJBK_data.BBAJPINMOEP_Contains(PGHEHAFKPMC_Key))
 		{
-			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_Data[PGHEHAFKPMC_Key];
+			EDOHBJAPLPF_JsonData d = IDLHJIOMJBK_data[PGHEHAFKPMC_Key];
 			if(d != null)
 			{
 				if(d.EPNAPDBIJJE_IsString)

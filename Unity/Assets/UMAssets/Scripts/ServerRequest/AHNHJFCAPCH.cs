@@ -12,16 +12,16 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 		public int KJPDHNJGEAH_EntityId; // 0x8
 		public List<string> OHNJJIMGKGK_Names; // 0xC
 		public string AHEFHIMGIBI_PlayerData; // 0x10
-		public bool CHDDDCCHJJH_Replace; // 0x14
+		public bool CHDDDCCHJJH_replace; // 0x14
 		public long MCKEOKFMLAH_SaveId; // 0x18
 
 		//// RVA: 0x15C9014 Offset: 0x15C9014 VA: 0x15C9014
-		public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_Data, string _JCJDPGMKJAJ_PlayerData, int _PPFNGGCBJKC_id)
+		public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string _JCJDPGMKJAJ_PlayerData, int _PPFNGGCBJKC_id)
 		{
 			AHEFHIMGIBI_PlayerData = _JCJDPGMKJAJ_PlayerData;
-			CHDDDCCHJJH_Replace = !_IDLHJIOMJBK_Data.BLOCFLFHCFJ_Keep;
-			OHNJJIMGKGK_Names = _IDLHJIOMJBK_Data.KFGDPMNCCFO_NaespaceForSave;
-			MCKEOKFMLAH_SaveId = _IDLHJIOMJBK_Data.MCKEOKFMLAH_SaveId;
+			CHDDDCCHJJH_replace = !_IDLHJIOMJBK_data.BLOCFLFHCFJ_Keep;
+			OHNJJIMGKGK_Names = _IDLHJIOMJBK_data.KFGDPMNCCFO_NaespaceForSave;
+			MCKEOKFMLAH_SaveId = _IDLHJIOMJBK_data.MCKEOKFMLAH_SaveId;
 			KJPDHNJGEAH_EntityId = _PPFNGGCBJKC_id;
 		}
 	}
@@ -48,7 +48,7 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 	public override void DHLDNIEELHO()
 	{
 		EBGACDGNCAA_CallContext = SakashoRaidboss.SetRaidbossRewardsReceivedAndSave(BIHCCEHLAOD.KJPDHNJGEAH_EntityId, BIHCCEHLAOD.OHNJJIMGKGK_Names.ToArray(), 
-			BIHCCEHLAOD.AHEFHIMGIBI_PlayerData, BIHCCEHLAOD.CHDDDCCHJJH_Replace, DCKLDDCAJAP, MEOCKCJBDAD);
+			BIHCCEHLAOD.AHEFHIMGIBI_PlayerData, BIHCCEHLAOD.CHDDDCCHJJH_replace, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x15C8CBC Offset: 0x15C8CBC VA: 0x15C8CBC Slot: 13

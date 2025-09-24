@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 			m_add_episode_point = add_point;
 			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpisodeId);
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, (int)(m_point));
-			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM_ItemName;
+			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM_item_name;
 			m_point_den.SetNumber(data.ABLHIAEDJAI_CurrentValue, 0);
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
 			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_item_count, 0);
@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 			SetItemImage(m_reward_list[GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint)].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			WaitComp();
 			WaitFrameAnim();
-			m_gauge_max_point = m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint;
+			m_gauge_max_point = m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint;
 			m_is_comp = false;
 			m_after_point = data.ABLHIAEDJAI_CurrentValue + add_point;
 			if (!data.CCBKMCLDGAD_HasReward && data.DMHDNKILKGI_MaxPoint <= m_after_point)
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 				{
 					time += dt;
 					int a = Mathf.Max(currentReward.CCDPNBJMKDI_StartPoint, m_currentPoint);
-					int b = Mathf.Min(currentReward.DNBFMLBNAEE_Point, m_addPoint + m_currentPoint);
+					int b = Mathf.Min(currentReward.DNBFMLBNAEE_point, m_addPoint + m_currentPoint);
 					float f = Mathf.Lerp(a, b, time);
 					currentPoint = (int)(f);
 					if (currentPoint >= b)
@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 						UpdateNext(r, m_episodeData.DMHDNKILKGI_MaxPoint, isComp);
 					}
 					UpdateText(currentPoint, m_reward_index);
-					if (currentReward.DNBFMLBNAEE_Point <= currentPoint)
+					if (currentReward.DNBFMLBNAEE_point <= currentPoint)
 					{
 						if ((currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory < EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume || currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory > EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie) &&
 							currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
@@ -465,7 +465,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12824C0 Offset: 0x12824C0 VA: 0x12824C0
 		private int CalcNextRewardPoint(int currentPoint, int lastRewardIndex)
 		{
-			return m_reward_list[lastRewardIndex].DNBFMLBNAEE_Point - currentPoint;
+			return m_reward_list[lastRewardIndex].DNBFMLBNAEE_point - currentPoint;
 		}
 
 		//// RVA: 0x1280D34 Offset: 0x1280D34 VA: 0x1280D34
@@ -473,7 +473,7 @@ namespace XeApp.Game.Menu
 		{
 			for (int i = 0; i < list.Count - 1; i++)
 			{
-				if (point < list[i].DNBFMLBNAEE_Point)
+				if (point < list[i].DNBFMLBNAEE_point)
 					return i;
 			}
 			return list.Count - 1;
@@ -505,7 +505,7 @@ namespace XeApp.Game.Menu
 			int start = (int)(f);
 			if(!isComp)
 			{
-				start = EpisodeUtility.CalcEpisodeGaugeFrame(reward.DNBFMLBNAEE_Point, max, (int)f);
+				start = EpisodeUtility.CalcEpisodeGaugeFrame(reward.DNBFMLBNAEE_point, max, (int)f);
 				if (f <= start)
 					start = (int)(f - 1);
 			}

@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo diva = null;
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == cos_id)
+				if(l[i].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId == cos_id)
 				{
 					diva = l[i];
 					break;
@@ -78,9 +78,9 @@ namespace XeApp.Game.Menu
 			}
 			m_isCosutimeIconLoaded = false;
 			m_isDivaIconLoaded = false;
-			m_name.text = diva.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(color_id);
+			m_name.text = diva.FFKMJNHFFFL_costume.HCPCHEPCFEA_GetCostumeName(color_id);
 			m_info.text = diva.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_15055;
-			m_skill.text = diva.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
+			m_skill.text = diva.FFKMJNHFFFL_costume.FCEGELPJAMH_SkillDesc;
 			SetCostumeTexture(diva_id, cos_id, color_id);
 			SetDivaIcon(diva_id, cos_id, color_id);
 			m_name_table.StartChildrenAnimGoStop(diva_id - 1, diva_id - 1);

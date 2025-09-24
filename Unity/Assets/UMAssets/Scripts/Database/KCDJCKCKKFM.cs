@@ -22,9 +22,9 @@ public class KCDJCKCKKFM_HelpBrowser : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x101FD74 Offset: 0x101FD74 VA: 0x101FD74 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		IGDFIPKLHBA parser = IGDFIPKLHBA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		IGDFIPKLHBA parser = IGDFIPKLHBA.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		LOMHJBIJMOD_categories = parser.FNOIEDBFLPH;
 		FBJCBCOEBBB = parser.NAPKJCKIPEF;
 		return true;

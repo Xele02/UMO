@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			m_lastLoginTimeText.text = friend.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString;
 			if(!friend.BHJLNGEDEGN)
 			{
-				m_mapNameText.text = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
+				m_mapNameText.text = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
 			}
 			else
 			{
@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x19ECFD0
 			bool isLoaded = false;
-			GameManager.Instance.DivaIconCache.Load(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
+			GameManager.Instance.DivaIconCache.Load(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x19ECB88
 				isLoaded = true;

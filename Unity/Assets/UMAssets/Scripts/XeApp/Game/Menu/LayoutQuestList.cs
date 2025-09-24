@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x187A2A8 Offset: 0x187A2A8 VA: 0x187A2A8
 		public void SetStatus()
 		{
-			int quest_lump_receive_max_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("quest_lump_receive_max_num", 30);
+			int quest_lump_receive_max_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("quest_lump_receive_max_num", 30);
 			m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), quest_lump_receive_max_num);
 			m_buttonReceiveAll.Disable = !QuestUtility.FindAchievedQuestList(m_viewList);
 			SetTextTimerInner();
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 			m_viewList.Sort((FKMOKDCJFEN a, FKMOKDCJFEN b) =>
 			{
 				//0x187B900
-				int res = sortTbl[(int)a.CMCKNKKCNDK_Status] - sortTbl[(int)b.CMCKNKKCNDK_Status];
+				int res = sortTbl[(int)a.CMCKNKKCNDK_status] - sortTbl[(int)b.CMCKNKKCNDK_status];
 				if(res == 0)
 					res = a.EEFLOOBOAGF_ViewOrder - b.EEFLOOBOAGF_ViewOrder;
 				return res;

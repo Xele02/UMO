@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB83FA0
 				LAMCONGFONF.OJFOLGKMBIG obj = rankingManager.CEPOFDBHIAC(divaData.AHHJLDLAPAN_DivaId - 1, false);
-				SetDivaRanking(obj.FJOLNJLLJEJ_Rank);
+				SetDivaRanking(obj.FJOLNJLLJEJ_rank);
 				if (success != null)
 					success(obj);
 			}, () =>
@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 		private int GetDivaBaseTotalStatus(FFHPBEPOMAK_DivaInfo divaData)
 		{
 			BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[divaData.AHHJLDLAPAN_DivaId - 1];
-			EPPOHFLMDBC_DivaStats s = d.CMCKNKKCNDK_Status[divaData.CIEOBFIIPLD_Level];
+			EPPOHFLMDBC_DivaStats s = d.CMCKNKKCNDK_status[divaData.CIEOBFIIPLD_Level];
 			return s.PFJCOCPKABN_Soul + s.JFJDLEMNKFE_Vocal + s.GDOLPGBLMEA_Charm;
 		}
 
@@ -179,11 +179,11 @@ namespace XeApp.Game.Menu
 			foreach(var k in l)
 			{
 				total++;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_costume.JPIDIENBGKH_CostumeId);
 				if (k.JLKPGDEKPEO_IsHave)
 					cnt++;
 				short[] tcols = cinfo.CHDBGFLFPNC_GetAllAvaiableColors();
-				short[] cols = cinfo.KKLPLPGBOFD_GetAvaiableColor(k.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level);
+				short[] cols = cinfo.KKLPLPGBOFD_GetAvaiableColor(k.FFKMJNHFFFL_costume.GKIKAABHAAD_Level);
 				for(int i = 0; i < tcols.Length; i++)
 				{
 					total++;

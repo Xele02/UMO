@@ -47,10 +47,10 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
             if(!r)
             {
                 ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
-                int val1 = a.LPJLEHAJADA("m_0", 0);
-                int val2 = a.LPJLEHAJADA("m_1", 0);
-                int val3 = a.LPJLEHAJADA("m_2", 0);
-                int val4 = a.LPJLEHAJADA("m_3", 0);
+                int val1 = a.LPJLEHAJADA_GetIntParam("m_0", 0);
+                int val2 = a.LPJLEHAJADA_GetIntParam("m_1", 0);
+                int val3 = a.LPJLEHAJADA_GetIntParam("m_2", 0);
+                int val4 = a.LPJLEHAJADA_GetIntParam("m_3", 0);
                 BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);

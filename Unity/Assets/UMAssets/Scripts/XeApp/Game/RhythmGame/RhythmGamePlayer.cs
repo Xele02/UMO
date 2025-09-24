@@ -886,7 +886,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			RhythmGameInputPerformer r = gamePerformer.GetComponent<RhythmGameInputPerformer>();
 			r.InitializeGame(this, rNoteOwner, uiController.Hud, GameManager.Instance.GetSystemCanvasCamera());
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("cs_support_check_touch_fingerid", 0) > 0)
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("cs_support_check_touch_fingerid", 0) > 0)
 			{
 				r.delegateCheckInput = this.CheckInputCallback;
 			}
@@ -1257,13 +1257,13 @@ namespace XeApp.Game.RhythmGame
 				if(resource.musicData.valkyrieModeJudgeMillisec > -1)
 				{
 					battleEventResult01.onFireEvent = ShowBattleResult01;
-					battleEventResult01.millisec = resource.musicData.valkyrieModeJudgeMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("battle_event_valkyrie_result_offset", 0);
+					battleEventResult01.millisec = resource.musicData.valkyrieModeJudgeMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_valkyrie_result_offset", 0);
 				}
 				battleEventResult02 = new RhythmGameScoreEvent();
 				if(resource.musicData.divaModeStartMillisec > -1)
 				{
 					battleEventResult02.onFireEvent = ShowBattleResult02;
-					battleEventResult02.millisec = resource.musicData.divaModeStartMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("battle_event_diva_result_offset", 0);
+					battleEventResult02.millisec = resource.musicData.divaModeStartMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_diva_result_offset", 0);
 				}
 			}
 			if(setting.m_enable_cutin)
@@ -2020,7 +2020,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitTime;
 					activeSkillRestartTimer.m_msec_st = a_notes_msec;
-					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("activeskill_cool_time", 0);
+					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("activeskill_cool_time", 0);
 					return;
 				}
 			}
@@ -2836,12 +2836,12 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.DGMPBPMDBEC_DropItemList = new List<int>(dropItemList);
 			clearSetup.JNNDFGPMEDA_Fold = status.energy.GetGaugeValue();
 			clearSetup.JKPPKAHPPKH_life = status.life.current;
-			clearSetup.IPEKDLNEOFI_ParaLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
-			clearSetup.HBKBKHACHHI_ParaSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
-			clearSetup.GMECIBOJCFF_ParaVoice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
+			clearSetup.IPEKDLNEOFI_para_life = Database.Instance.gameSetup.teamInfo.teamStatus.life;
+			clearSetup.HBKBKHACHHI_para_soul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
+			clearSetup.GMECIBOJCFF_para_voice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
 			clearSetup.MIMLMJGGNJH_para_charm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
-			clearSetup.BFHPKJEKJNN_ParaSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
-			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
+			clearSetup.BFHPKJEKJNN_para_support = Database.Instance.gameSetup.teamInfo.teamStatus.support;
+			clearSetup.DDBEJNGJIPF_para_foldwave = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
 			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
 			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);
 			clearSetup.JEKDIEFPEON_RareItemRandomSeed = rNoteOwner.GetRareItemRandomSeed();

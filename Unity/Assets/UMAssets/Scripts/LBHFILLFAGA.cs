@@ -221,13 +221,13 @@ public abstract class LBHFILLFAGA
 	}
 
 	// // RVA: 0xD98928 Offset: 0xD98928 VA: 0xD98928
-	private bool GOGBNFLIJAB(byte[] _DBBGALAPFGC_Data, byte[] PJCEJFENECH)
+	private bool GOGBNFLIJAB(byte[] _DBBGALAPFGC_bytes, byte[] PJCEJFENECH)
 	{
-		if(PJCEJFENECH.Length <= _DBBGALAPFGC_Data.Length)
+		if(PJCEJFENECH.Length <= _DBBGALAPFGC_bytes.Length)
 		{
 			for(int i = 0; i < ILINJKLDCJD.Length; i++)
 			{
-				if(_DBBGALAPFGC_Data[i] != ILINJKLDCJD[i])
+				if(_DBBGALAPFGC_bytes[i] != ILINJKLDCJD[i])
 					return false;
 			}
 			return true;
@@ -236,32 +236,32 @@ public abstract class LBHFILLFAGA
 	}
 
 	// // RVA: 0xD98AE0 Offset: 0xD98AE0 VA: 0xD98AE0
-	protected bool BBGDFKAPJHN(byte[] _DBBGALAPFGC_Data) 
+	protected bool BBGDFKAPJHN(byte[] _DBBGALAPFGC_bytes) 
     {
-		if(_DBBGALAPFGC_Data.Length > 15)
+		if(_DBBGALAPFGC_bytes.Length > 15)
 		{
-			if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, ILINJKLDCJD))
+			if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, ILINJKLDCJD))
 			{
-				if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, MPNFIMBCMFK))
+				if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, MPNFIMBCMFK))
 				{
-					if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, OBIKJLFDNJA))
+					if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, OBIKJLFDNJA))
 					{
-						if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, NFIOLMJLGFM))
+						if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, NFIOLMJLGFM))
 						{
-							if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, OPMNFNHOMJF))
+							if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, OPMNFNHOMJF))
 							{
-								if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, LLJJCPNHPFP))
+								if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, LLJJCPNHPFP))
 								{
-									if(BitConverter.ToUInt32(_DBBGALAPFGC_Data, 0) != 0x46464952)
+									if(BitConverter.ToUInt32(_DBBGALAPFGC_bytes, 0) != 0x46464952)
 									{
-										if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, BGLBMKIKKKP))
+										if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, BGLBMKIKKKP))
 										{
-											if(!GOGBNFLIJAB(_DBBGALAPFGC_Data, LEAAJEJAMMH))
+											if(!GOGBNFLIJAB(_DBBGALAPFGC_bytes, LEAAJEJAMMH))
 											{
 												bool val = false;
 												for(int i = 0; i < 12; i++)
 												{
-													val |= (_DBBGALAPFGC_Data[i + 4] != 0xff);
+													val |= (_DBBGALAPFGC_bytes[i + 4] != 0xff);
 												}
 												return !val;
 											}

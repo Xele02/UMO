@@ -85,9 +85,9 @@ namespace XeApp.Game.Menu
 				m_layoutRoot_.StartChildrenAnimGoStop("01");
 				Setup(m_right);
 			}
-			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB_Result.PFIILLOIDIL ? "01" : "02");
+			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB_result.PFIILLOIDIL ? "01" : "02");
 			m_numLevel.SetNumber(m_viewData.HEKJGCMNJAB_CurrentLevel, 0);
-			if(!m_viewData.HBODCMLFDOB_Result.PFIILLOIDIL)
+			if(!m_viewData.HBODCMLFDOB_result.PFIILLOIDIL)
 			{
 				SetExp(m_viewData.KPEAGFJHNDP_CurrentLevelExp, m_viewData.KOKCFJDMJLI);
 				UpdateGaugePosition(m_viewData.KPEAGFJHNDP_CurrentLevelExp * 1.0f / m_viewData.KOKCFJDMJLI);
@@ -134,12 +134,12 @@ namespace XeApp.Game.Menu
 			int i; // 0x1C
 
 			//0x19EACF0
-			if(m_viewData.HBODCMLFDOB_Result.HOMOKJEKKNK_Bonus < 1)
+			if(m_viewData.HBODCMLFDOB_result.HOMOKJEKKNK_Bonus < 1)
 			{
 				m_layoutPointAnim = m_layoutPointAnimTbl[0];
 			}
 			coutupCoroutines = new List<Coroutine>();
-			yield return Co.R(Co_CountPoint(coutupCoroutines, m_viewData.HBODCMLFDOB_Result.ODHAIDDEFJL_GetExp, m_viewData.HBODCMLFDOB_Result.HOMOKJEKKNK_Bonus));
+			yield return Co.R(Co_CountPoint(coutupCoroutines, m_viewData.HBODCMLFDOB_result.ODHAIDDEFJL_GetExp, m_viewData.HBODCMLFDOB_result.HOMOKJEKKNK_Bonus));
 			for(i = 0; i < coutupCoroutines.Count; i++)
 			{
 				yield return coutupCoroutines[i];
@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return null;
 			}
-			if(!m_viewData.HBODCMLFDOB_Result.EDPNAEOKGNM)
+			if(!m_viewData.HBODCMLFDOB_result.EDPNAEOKGNM)
 			{
 				coutupCoroutines.Add(this.StartCoroutineWatched(Co_ExpGaugeAnim((bool isLevelUp) =>
 				{
@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 			float timeLength; // 0x38
 
 			//0x19EA678
-			result = m_viewData.HBODCMLFDOB_Result;
+			result = m_viewData.HBODCMLFDOB_result;
 			int a1 = m_viewData.JCFAPAOLDOI(result.CPDEMMFGKED_Level + 1);
 			crntMaxExp = m_viewData.JCFAPAOLDOI(result.KBHJOBKOOGC_NextLevel + 1);
 			float f = 1;

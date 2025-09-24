@@ -113,7 +113,7 @@ namespace XeApp
 				if(c.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj ||
 					c.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 				{
-					cnt += c.BFINGCJHOHI_Count;
+					cnt += c.BFINGCJHOHI_cnt;
 				}
 			}
 			return cnt;
@@ -305,7 +305,7 @@ namespace XeApp
 				//0x1ABFF68
 				return IsClearedSprite;
 			});
-			foreach(var c in decoSet.HBHMAKNGKFK_Items)
+			foreach(var c in decoSet.HBHMAKNGKFK_items)
 			{
 				yield return this.StartCoroutineWatched(Co_LoadItem(c));
 			}
@@ -326,19 +326,19 @@ namespace XeApp
 		private IEnumerator Co_LoadItem(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD item)
 		{
 			//0x1AC2D34
-			if(item.HAJKNHNAIKL_ItemId != 0)
+			if(item.HAJKNHNAIKL_rsc != 0)
 			{
 				KDKFHGHGFEK data = new KDKFHGHGFEK();
-				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_ItemId));
+				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_rsc), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_rsc));
 				DecorationItemBaseSetting s = new DecorationItemBaseSetting(data);
 				s.InitPosition.x = item.GHPLINIACBB_x;
 				s.InitPosition.y = item.PMBEODGMMBB_y;
-				s.InitOrder = item.BNHOEFJAAKK_Prio;
-				s.InitFlip = item.BDEEIPPDCLE_Rvs;
-				s.InitWord = item.BEJGNPAAKNB_Word;
-				s.InitStatusFlag = item.PMIPFEJFIHA_StatusFlag;
-				DecorationItemArgsBase args = GenerateArgs(item.HAJKNHNAIKL_ItemId);
-				LoadItemResource(item.HAJKNHNAIKL_ItemId, s, 0, args);
+				s.InitOrder = item.BNHOEFJAAKK_prio;
+				s.InitFlip = item.BDEEIPPDCLE_rvs;
+				s.InitWord = item.BEJGNPAAKNB_word;
+				s.InitStatusFlag = item.PMIPFEJFIHA_stat;
+				DecorationItemArgsBase args = GenerateArgs(item.HAJKNHNAIKL_rsc);
+				LoadItemResource(item.HAJKNHNAIKL_rsc, s, 0, args);
 				yield return new WaitUntil(() =>
 				{
 					//0x1ABFF70
@@ -400,15 +400,15 @@ namespace XeApp
 			TryInstall(decoSet.KIDHLCNFCKN_FloorId, DecorationConstants.Attribute.Type.BgFloor);
 			TryInstall(decoSet.DJCJMCHMIMA_WallLId, DecorationConstants.Attribute.Type.BgWallL);
 			TryInstall(decoSet.KCMEAABOIOA_WallRId, DecorationConstants.Attribute.Type.BgWallR);
-			for(int i = 0; i < decoSet.HBHMAKNGKFK_Items.Count; i++)
+			for(int i = 0; i < decoSet.HBHMAKNGKFK_items.Count; i++)
 			{
-				if(decoSet.HBHMAKNGKFK_Items[i].BEJGNPAAKNB_Word > 0)
+				if(decoSet.HBHMAKNGKFK_items[i].BEJGNPAAKNB_word > 0)
 				{
-					TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, decoSet.HBHMAKNGKFK_Items[i].BEJGNPAAKNB_Word), DecorationConstants.Attribute.Type.None);
+					TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, decoSet.HBHMAKNGKFK_items[i].BEJGNPAAKNB_word), DecorationConstants.Attribute.Type.None);
 				}
-				if(decoSet.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId > 0)
+				if(decoSet.HBHMAKNGKFK_items[i].HAJKNHNAIKL_rsc > 0)
 				{
-					TryInstall(decoSet.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId, DecorationConstants.Attribute.Type.None);
+					TryInstall(decoSet.HBHMAKNGKFK_items[i].HAJKNHNAIKL_rsc, DecorationConstants.Attribute.Type.None);
 				}
 			}
 			m_strBuilder.Set("dc/ch/cmn.xab");
@@ -850,7 +850,7 @@ namespace XeApp
                 NDBFKHKMMCE_DecoItem.FIDBAFHNGCF item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Find((NDBFKHKMMCE_DecoItem.FIDBAFHNGCF p) =>
 				{
 					//0x1AC008C
-					return p.GBJFNGCDKPM_Type == 11;
+					return p.GBJFNGCDKPM_typ == 11;
 				});
 				if(item != null)
 				{

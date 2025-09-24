@@ -388,24 +388,24 @@ namespace XeApp.Game.Menu
 				texture.Set(m_seriesIconImage);
 				m_loadingFlag |= LoadingFlag.Logo;
 			});
-			m_paramTexts[0].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
-			m_paramTexts[1].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
-			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
-			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
-			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+			m_paramTexts[0].text = sceneData.CMCKNKKCNDK_status.Total.ToString();
+			m_paramTexts[1].text = sceneData.CMCKNKKCNDK_status.soul.ToString();
+			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_status.vocal.ToString();
+			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_status.charm.ToString();
+			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_status.life.ToString();
 			UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_luck);
-			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
-			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
-			for(int i = 0; i < sceneData.CMCKNKKCNDK_Status.spNoteExpected.Length - 1; i++)
+			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_status.support.ToString();
+			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_status.fold.ToString();
+			for(int i = 0; i < sceneData.CMCKNKKCNDK_status.spNoteExpected.Length - 1; i++)
 			{
-				if(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1] < 1)
+				if(sceneData.CMCKNKKCNDK_status.spNoteExpected[i + 1] < 1)
 				{
 					m_nortsTexts[i].text = "0";
 					m_nortsLayout[i].StartChildrenAnimGoStop("02");
 				}
 				else
 				{
-					m_nortsTexts[i].text = sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1].ToString();
+					m_nortsTexts[i].text = sceneData.CMCKNKKCNDK_status.spNoteExpected[i + 1].ToString();
 					m_nortsLayout[i].StartChildrenAnimGoStop("01");
 				}
 			}
@@ -633,7 +633,7 @@ namespace XeApp.Game.Menu
 		public void UpdateLimitBreak()
 		{
 			m_luckyLeaf.SetLeafNum(m_limitOverData.DJEHLEJCPEL_LeafNum, m_limitOverData.LJHOOPJACPI_LeafMax);
-			m_limitBreak.SetValue(m_limitOverData.CMCKNKKCNDK_Status);
+			m_limitBreak.SetValue(m_limitOverData.CMCKNKKCNDK_status);
 		}
 
 		// // RVA: 0xA5F8CC Offset: 0xA5F8CC VA: 0xA5F8CC
@@ -899,7 +899,7 @@ namespace XeApp.Game.Menu
 						MNDAMOGGJBJ m = new MNDAMOGGJBJ();
 						m.KHEKNNFCAOI_Init(null);
 						m.MDHKGJJBLNL();
-						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_id = m_limitOverData.MJNOAMAFNHA_CostItemId, HMFFHLPNMPH_Count = m_limitOverData.IJEOIMGILCK });
+						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_id = m_limitOverData.MJNOAMAFNHA_CostItemId, HMFFHLPNMPH_count = m_limitOverData.IJEOIMGILCK });
 						m.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
 					}

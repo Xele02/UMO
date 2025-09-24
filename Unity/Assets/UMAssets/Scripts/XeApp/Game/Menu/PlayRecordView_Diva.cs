@@ -36,15 +36,15 @@ namespace XeApp.Game.Menu
 		public void Setup(int a_diva_id, BBHNACPENDM_ServerSaveData a_player_data)
 		{
 			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo saveDiva = a_player_data.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[a_diva_id - 1];
-			m_diva_level = saveDiva.HEBKEJBDCBH_DivaLevel;
+			m_diva_level = saveDiva.HEBKEJBDCBH_diva_lv;
 			m_intimacy_touch = Mathf.Max(0, saveDiva.NEAADNDKGLG_IntimacyTouchTotal);
 			m_intimacy_present = Mathf.Max(0, saveDiva.DDODJCCIENF_IntimacyPresentTotal);
-			for(int i = 0; i < saveDiva.ANAJIAENLNB_Level.Count; i++)
+			for(int i = 0; i < saveDiva.ANAJIAENLNB_lv.Count; i++)
 			{
-				if (KDOMGMCGHDC.BKEMLLBKELP(saveDiva.ANAJIAENLNB_Level[i]))
+				if (KDOMGMCGHDC.BKEMLLBKELP(saveDiva.ANAJIAENLNB_lv[i]))
 					m_music_lv_max++;
 			}
-			int maxLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
+			int maxLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
 			m_diva_event_soul = saveDiva.MMCEMJILMJI_EvSoLevel;
 			m_diva_event_soul_max = maxLevel;
 			m_diva_event_voice = saveDiva.HDPANGMKKCP_EvVoLevel;
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 								data.m_enable = false;
 								data.m_title = string.Format(JpStringLiterals.StringLiteral_19018, o);
 								data.m_time = date;
-								if (saveSns.BEBJKJKBOGH_Date != 0)
+								if (saveSns.BEBJKJKBOGH_date != 0)
 								{
 									data.m_enable = true;
 									m_sns_cnt++;

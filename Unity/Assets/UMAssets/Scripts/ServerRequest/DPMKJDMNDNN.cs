@@ -5,9 +5,9 @@ using XeSys;
 
 public class IBBBOJEGGLE
 {
-	public int EHGBICNIBKE_PlayerId; // 0x8
+	public int EHGBICNIBKE_player_id; // 0x8
 	public int EAIMNLAMBFJ_CreatedAt; // 0xC
-	public long BIOGKIEECGN_CreatedAt; // 0x10
+	public long BIOGKIEECGN_created_at; // 0x10
 }
 
 [System.Obsolete("Use DPMKJDMNDNN_GetBlackList", true)]
@@ -16,29 +16,29 @@ public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
 {
 	public class NOFBHALLIMD
 	{
-		public int HMFFHLPNMPH_Count; // 0x8
+		public int HMFFHLPNMPH_count; // 0x8
 		public int MDIBIIHAAPN_next_page; // 0xC
-		public int GPPOJHNNINK_CurrentPage; // 0x10
-		public int CJNNMLLEKEF_PreviousPage; // 0x14
+		public int GPPOJHNNINK_current_page; // 0x10
+		public int CJNNMLLEKEF_previous_page; // 0x14
 		public List<IBBBOJEGGLE> FOCOFKEFHIO_BlackList; // 0x18
 
 		// RVA: 0x1235684 Offset: 0x1235684 VA: 0x1235684
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			FOCOFKEFHIO_BlackList = new List<IBBBOJEGGLE>(_IDLHJIOMJBK_Data["player_blacklist"].HNBFOAJIIAL_Count);
-			for(int i = 0; i < _IDLHJIOMJBK_Data["player_blacklist"].HNBFOAJIIAL_Count; i++)
+			FOCOFKEFHIO_BlackList = new List<IBBBOJEGGLE>(_IDLHJIOMJBK_data["player_blacklist"].HNBFOAJIIAL_Count);
+			for(int i = 0; i < _IDLHJIOMJBK_data["player_blacklist"].HNBFOAJIIAL_Count; i++)
 			{
-				EDOHBJAPLPF_JsonData jsonData = _IDLHJIOMJBK_Data["player_blacklist"][i];
+				EDOHBJAPLPF_JsonData jsonData = _IDLHJIOMJBK_data["player_blacklist"][i];
 				IBBBOJEGGLE data = new IBBBOJEGGLE();
-				data.EHGBICNIBKE_PlayerId = JsonUtil.GetInt(jsonData, "player_id", 0);
+				data.EHGBICNIBKE_player_id = JsonUtil.GetInt(jsonData, "player_id", 0);
 				data.EAIMNLAMBFJ_CreatedAt = JsonUtil.GetInt(jsonData, "created_at", 0);
-				data.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData, "created_by", 0);
+				data.BIOGKIEECGN_created_at = JsonUtil.GetLong(jsonData, "created_by", 0);
 				FOCOFKEFHIO_BlackList.Add(data);
 			}
-			HMFFHLPNMPH_Count = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "count", 0);
-			MDIBIIHAAPN_next_page = JsonUtil. GetInt(_IDLHJIOMJBK_Data, "next_page", 0);
-			GPPOJHNNINK_CurrentPage = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "current_page", 0);
-			CJNNMLLEKEF_PreviousPage = JsonUtil.GetInt(_IDLHJIOMJBK_Data, "previous_page", 0);
+			HMFFHLPNMPH_count = JsonUtil.GetInt(_IDLHJIOMJBK_data, "count", 0);
+			MDIBIIHAAPN_next_page = JsonUtil. GetInt(_IDLHJIOMJBK_data, "next_page", 0);
+			GPPOJHNNINK_current_page = JsonUtil.GetInt(_IDLHJIOMJBK_data, "current_page", 0);
+			CJNNMLLEKEF_previous_page = JsonUtil.GetInt(_IDLHJIOMJBK_data, "previous_page", 0);
 		}
 	}
 

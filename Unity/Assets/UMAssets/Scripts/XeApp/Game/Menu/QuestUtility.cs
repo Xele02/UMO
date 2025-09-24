@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < list.Count; i++)
 				{
-					if (list[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+					if (list[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
 						return true;
 				}
 			}
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < list.Count; i++)
 				{
-					if(list[i].CMCKNKKCNDK_Status == status)
+					if(list[i].CMCKNKKCNDK_status == status)
 					{
 						res++;
 					}
@@ -213,7 +213,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x9E7A80
 				if (_.OAPCHMHAJID)
-					return _.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
+					return _.CMCKNKKCNDK_status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
 				return false;
 			}) != null;
 		}
@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 			return list.Find((FKMOKDCJFEN _) =>
 			{
 				//0x9E7AC4
-				return _.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+				return _.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
 			}) != null;
 		}
 
@@ -715,7 +715,7 @@ namespace XeApp.Game.Menu
 					if(!err)
 					{
 						GameManager.Instance.ResetViewPlayerData();
-						view.CMCKNKKCNDK_Status = FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
+						view.CMCKNKKCNDK_status = FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
 						if(m_beginnerViewList.Count == 1)
 						{
 							if(view.OAPCHMHAJID)
@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 			viewList = new List<FKMOKDCJFEN>();
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(list[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+				if(list[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
 				{
 					viewList.Add(list[i]);
 				}

@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 				if(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId >= 1)
 				{
 					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1];
-					costumeId = diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+					costumeId = diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 					colorId = diva.EKFONBFDAAP_ColorId;
 					divaId = diva.AHHJLDLAPAN_DivaId;
 				}
@@ -253,9 +253,9 @@ namespace XeApp.Game.Menu
 					intimacy.KHEKNNFCAOI_Init(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId);
 					for(int j = 0; j < divaLayouts[i].numberIntimacy.Length; j++)
 					{
-						divaLayouts[i].numberIntimacy[j].SetNumber(intimacy.HBODCMLFDOB_Result.IGNABALECPK, 0);
+						divaLayouts[i].numberIntimacy[j].SetNumber(intimacy.HBODCMLFDOB_result.IGNABALECPK, 0);
 					}
-					if (i == 0 && intimacy.HBODCMLFDOB_Result.IGNABALECPK > 0)
+					if (i == 0 && intimacy.HBODCMLFDOB_result.IGNABALECPK > 0)
 						IsCenterIntimacyBonus = true;
 				}
 			}
@@ -645,7 +645,7 @@ namespace XeApp.Game.Menu
 			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
 			JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
 			intimacy.KHEKNNFCAOI_Init(info.AHHJLDLAPAN_DivaId);
-			if(intimacy.HBODCMLFDOB_Result.IGNABALECPK >= 1)
+			if(intimacy.HBODCMLFDOB_result.IGNABALECPK >= 1)
 			{
 				if (divaIndex == 0)
 					layoutCenterBonusTable.StartChildrenAnimLoop(1, 1);
@@ -664,7 +664,7 @@ namespace XeApp.Game.Menu
 		{
 			JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
 			intimacy.KHEKNNFCAOI_Init(viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AHHJLDLAPAN_DivaId);
-			if (intimacy.HBODCMLFDOB_Result.IGNABALECPK < 1)
+			if (intimacy.HBODCMLFDOB_result.IGNABALECPK < 1)
 				return;
 			divaLayouts[divaIndex].layoutIntimacy.StartChildrenAnimGoStop("go_out", "st_out");
 		}

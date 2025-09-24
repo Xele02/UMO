@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 				//0x1D5EFF0
 				if(OnClickButton != null)
 				{
-					OnClickButton(m_info.HBHMAKNGKFK_Items, m_info.OBGHDLKKMLJ);
+					OnClickButton(m_info.HBHMAKNGKFK_items, m_info.OBGHDLKKMLJ);
 				}
 			});
 			Loaded();

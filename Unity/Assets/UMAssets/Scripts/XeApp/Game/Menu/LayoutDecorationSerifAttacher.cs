@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 				if(it == null)
 					return;
 				m_fontSizeId = it.LDLGLHBGOKE_FontSize;
-				m_frameType = it.GBJFNGCDKPM_Type;
+				m_frameType = it.GBJFNGCDKPM_typ;
 				m_text = NCPPAHHCCAO.GHHOBKGGADG(m_serifId);
 			}
 		}

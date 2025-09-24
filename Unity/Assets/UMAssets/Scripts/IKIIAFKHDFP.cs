@@ -56,10 +56,10 @@ public class IKIIAFKHDFP
 		}
 		else
 		{
-			List<int> l = new List<int>(DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses.Count);
-			for(int i = 0; i < DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses.Count; i++)
+			List<int> l = new List<int>(DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses.Count);
+			for(int i = 0; i < DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses.Count; i++)
 			{
-				MKCJNKIEADB d = DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses[i];
+				MKCJNKIEADB d = DLOIHKKKNBB_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses[i];
 				if(d.ILOKENBBBAE_Available(CDEDDEECBBF_LastRequestTime))
 				{
 					l.Add(d.PPFNGGCBJKC_id);
@@ -96,18 +96,18 @@ public class IKIIAFKHDFP
 		}
 		else
 		{
-			List<int> l = new List<int>(PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses.Count);
-			for(int i = 0; i < PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses.Count; i++)
+			List<int> l = new List<int>(PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses.Count);
+			for(int i = 0; i < PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses.Count; i++)
 			{
-				KJKDAGGGJCO data = PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses[i];
-				if(data.ILLPEMPBDJG_CanReceiveNext)
+				KJKDAGGGJCO data = PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses[i];
+				if(data.ILLPEMPBDJG_can_receive_next)
 				{
 					l.Add(data.PPFNGGCBJKC_id);
 				}
 			}
 			if(l.Count != 0)
 			{
-				yield return N.a.StartCoroutineWatched(PBAHIIPCGKO_Coroutine_03_GetDetail(l, PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses, MKECMMAJBBH, NDLCLMAFABH, _MOBEEPPKFLG_OnFail));
+				yield return N.a.StartCoroutineWatched(PBAHIIPCGKO_Coroutine_03_GetDetail(l, PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses, MKECMMAJBBH, NDLCLMAFABH, _MOBEEPPKFLG_OnFail));
 			}
 			else
 			{
@@ -136,15 +136,15 @@ public class IKIIAFKHDFP
 		{
 			//LAB_008e7c2c
 			HPDLPGDILBH = LJMDGBEDJCI[i];
-			if(HPDLPGDILBH.ILLPEMPBDJG_CanReceiveNext)
+			if(HPDLPGDILBH.ILLPEMPBDJG_can_receive_next)
 			{
 				DCNALBIJJGP = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new MIILMDFOKBC_GetLoginBonusRecord());
 				DCNALBIJJGP.PIDIKFIFAPG_Id = HPDLPGDILBH.PPFNGGCBJKC_id;
 				DCNALBIJJGP.MLPLGFLKKLI_Ipp = 14;
 				DCNALBIJJGP.IGNIIEBMFIN_Page = 1;
 				DCNALBIJJGP.FNDBKPJDEDC_AllPrizes = true;
-				DCNALBIJJGP.OCGFKMHNEOF_name_for_api = HPDLPGDILBH.BPEAIOBHMFD_NameForApis;
-				AOJPLMHAEMM = HPDLPGDILBH.HMFFHLPNMPH_Count;
+				DCNALBIJJGP.OCGFKMHNEOF_name_for_api = HPDLPGDILBH.BPEAIOBHMFD_name_for_apis;
+				AOJPLMHAEMM = HPDLPGDILBH.HMFFHLPNMPH_count;
 				if(HPDLPGDILBH.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7_Total)
 				{
 					DCNALBIJJGP.FNDBKPJDEDC_AllPrizes = false;
@@ -207,7 +207,7 @@ public class IKIIAFKHDFP
 							*/
 							if(a2 < DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes.Count)
 							{
-								DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[a2].IANDDEFHKAN_RequiredCount = j + 1;
+								DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[a2].IANDDEFHKAN_required_count = j + 1;
 								l.Add(DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[a2]);
 							}
 						}
@@ -218,7 +218,7 @@ public class IKIIAFKHDFP
 						{
 							if(j + a6 < DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes.Count)
 							{
-								DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[j + a6].IANDDEFHKAN_RequiredCount = j + 1;
+								DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[j + a6].IANDDEFHKAN_required_count = j + 1;
 								l.Add(DCNALBIJJGP.NFEAMMJIMPG_Result.JPILDOGJLDG_login_bonus_prizes[j + a6]);
 							}
 						}
@@ -249,10 +249,10 @@ public class IKIIAFKHDFP
 		else
 		{
 			FMAMKPJMFHJ = KAKLGPBKBPL;
-			FMAMKPJMFHJ.Sort((EPLAAEHPCDM HKICMNAACDA, EPLAAEHPCDM BNKHBCBJBKI) =>
+			FMAMKPJMFHJ.Sort((EPLAAEHPCDM _HKICMNAACDA_a, EPLAAEHPCDM _BNKHBCBJBKI_b) =>
 			{
 				//0x8E67F8
-				return HKICMNAACDA.PJHKECDOALD - BNKHBCBJBKI.PJHKECDOALD;
+				return _HKICMNAACDA_a.PJHKECDOALD - _BNKHBCBJBKI_b.PJHKECDOALD;
 			});
 			yield return N.a.StartCoroutineWatched(EBKAAOEFIDI_Coroutine_04_Increment(_EAFEGCPEKDC_Ids, MKECMMAJBBH, NDLCLMAFABH, _MOBEEPPKFLG_OnFail));
 		}
@@ -289,7 +289,7 @@ public class IKIIAFKHDFP
 		}
 		else
 		{
-			GAOEDFGMHFD = PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_LoginBonuses;
+			GAOEDFGMHFD = PNLGHFCFPPK_Request.NFEAMMJIMPG_Result.CEBOHGGJBMN_login_bonuses;
 			FBKCFKPLMAL_AddItems();
 			CLOEPIEINPM_UpdateNotif();
 			FBHGHFANDEJ_MergeComeBack();
@@ -308,9 +308,9 @@ public class IKIIAFKHDFP
 			{
 				GAOEDFGMHFD[i].OPFGFINHFCE_name,
 				":",
-				GAOEDFGMHFD[i].BPEAIOBHMFD_NameForApis,
+				GAOEDFGMHFD[i].BPEAIOBHMFD_name_for_apis,
 				":",
-				GAOEDFGMHFD[i].HMFFHLPNMPH_Count
+				GAOEDFGMHFD[i].HMFFHLPNMPH_count
 			});
 			for(int j = 0; j < GAOEDFGMHFD[i].PJJFEAHIPGL_inventories.Count; j++)
 			{
@@ -361,19 +361,19 @@ public class IKIIAFKHDFP
 			{
 				GAOEDFGMHFD[i].OPFGFINHFCE_name,
 				":",
-				GAOEDFGMHFD[i].BPEAIOBHMFD_NameForApis,
+				GAOEDFGMHFD[i].BPEAIOBHMFD_name_for_apis,
 				":",
-				GAOEDFGMHFD[i].HMFFHLPNMPH_Count
+				GAOEDFGMHFD[i].HMFFHLPNMPH_count
 			});
-			if(GAOEDFGMHFD[i].BPEAIOBHMFD_NameForApis.Contains("start"))
+			if(GAOEDFGMHFD[i].BPEAIOBHMFD_name_for_apis.Contains("start"))
 			{
-				if(GAOEDFGMHFD[i].HMFFHLPNMPH_Count == 2)
+				if(GAOEDFGMHFD[i].HMFFHLPNMPH_count == 2)
 				{
 					EOHDAOAJOHH.HHCJCDFCLOB.JOADGPOBFMC();
 				}
-				else if(GAOEDFGMHFD[i].HMFFHLPNMPH_Count == 1)
+				else if(GAOEDFGMHFD[i].HMFFHLPNMPH_count == 1)
 				{
-					EOHDAOAJOHH.HHCJCDFCLOB.COGJLOMPOKK(1, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("start_dash_notify_hour", 12));
+					EOHDAOAJOHH.HHCJCDFCLOB.COGJLOMPOKK(1, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("start_dash_notify_hour", 12));
 				}
 			}
 		}
@@ -386,11 +386,11 @@ public class IKIIAFKHDFP
 		int a2 = -1;
 		for(int i = 0; i < GAOEDFGMHFD.Count; i++)
 		{
-			if(GAOEDFGMHFD[i].BPEAIOBHMFD_NameForApis.Contains("comback1_"))
+			if(GAOEDFGMHFD[i].BPEAIOBHMFD_name_for_apis.Contains("comback1_"))
 			{
 				a2 = i;
 			}
-			else if(GAOEDFGMHFD[i].BPEAIOBHMFD_NameForApis.Contains("comback2_"))
+			else if(GAOEDFGMHFD[i].BPEAIOBHMFD_name_for_apis.Contains("comback2_"))
 			{
 				a1 = i;
 			}
@@ -400,21 +400,21 @@ public class IKIIAFKHDFP
 			GAOEDFGMHFD[a2].PJJFEAHIPGL_inventories.InsertRange(0, GAOEDFGMHFD[a1].PJJFEAHIPGL_inventories);
 			for(int i = 0; i < FMAMKPJMFHJ.Count; i++)
 			{
-				if(FMAMKPJMFHJ[i].BPEAIOBHMFD_NameForApis.Contains("comback1_"))
+				if(FMAMKPJMFHJ[i].BPEAIOBHMFD_name_for_apis.Contains("comback1_"))
 				{
 					for(int j = 0; j < FMAMKPJMFHJ.Count; j++)
 					{
-						if(FMAMKPJMFHJ[j].BPEAIOBHMFD_NameForApis.Contains("comback2_"))
+						if(FMAMKPJMFHJ[j].BPEAIOBHMFD_name_for_apis.Contains("comback2_"))
 						{
 							if(FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes.Count == FMAMKPJMFHJ[j].JPILDOGJLDG_login_bonus_prizes.Count)
 							{
 								for(int k = 0; k < FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes.Count; k++)
 								{
-									if(FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_Items != null)
+									if(FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_items != null)
 									{
 										if(FMAMKPJMFHJ[j].JPILDOGJLDG_login_bonus_prizes[k] != null)
 										{
-											FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_Items.InsertRange(0, FMAMKPJMFHJ[j].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_Items);
+											FMAMKPJMFHJ[i].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_items.InsertRange(0, FMAMKPJMFHJ[j].JPILDOGJLDG_login_bonus_prizes[k].HBHMAKNGKFK_items);
 										}
 									}
 								}
@@ -428,7 +428,7 @@ public class IKIIAFKHDFP
 			GAOEDFGMHFD.RemoveAt(a1);
 			for(int i = 0; i < FMAMKPJMFHJ.Count; i++)
 			{
-				if(FMAMKPJMFHJ[i].BPEAIOBHMFD_NameForApis.Contains("comback2_"))
+				if(FMAMKPJMFHJ[i].BPEAIOBHMFD_name_for_apis.Contains("comback2_"))
 				{
 					FMAMKPJMFHJ.RemoveAt(i);
 					i--;

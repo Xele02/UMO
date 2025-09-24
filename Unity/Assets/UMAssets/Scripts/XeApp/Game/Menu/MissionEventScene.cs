@@ -345,8 +345,8 @@ namespace XeApp.Game.Menu
 				m_missionText = m_missionText.Replace(JpStringLiterals.StringLiteral_5812, "");
 			else
 				m_missionText = m_missionText.Replace(JpStringLiterals.StringLiteral_5812, " ").Replace("  ", " ");
-			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
-			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
+			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.DCOALMMJDJK_OverrideCenterSkill;
+			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.KKPLDFNDFDE_OverrideLiveSkill;
 			SaveDifficulty();
 			base.OnDecideCurrentMusic();
 		}
@@ -625,8 +625,8 @@ namespace XeApp.Game.Menu
 		private bool IsFilter()
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.KLIBOIEIMBA_EventMission save = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BPFEOJEAEGK_EventMission;
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			return (save.KHAJGNDEPMG_FilterMusicLevelMin != 0 && save.KHAJGNDEPMG_FilterMusicLevelMin != music_level_limitmin) || 
 				(save.IKFKKJLBBBN_FilterMusicLevelMax != 0 && save.IKFKKJLBBBN_FilterMusicLevelMax != music_level_limitmax) ||
 				save.DPDBMECAIIO_FilterUnit != 0 || save.PGMJCBIHNHK_FilterReward != 0 || save.JGOJDHFAHHE_FilterScoreRank != 0 || 
@@ -647,8 +647,8 @@ namespace XeApp.Game.Menu
 		private bool CheckMatchMusicFilter(IBJAKJJICBC musicData, long currentTime)
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.KLIBOIEIMBA_EventMission save = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BPFEOJEAEGK_EventMission;
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			return CheckMusicFilter_MusicLevel(save.KHAJGNDEPMG_FilterMusicLevelMin == 0 ? music_level_limitmin : save.KHAJGNDEPMG_FilterMusicLevelMin, 
 				save.IKFKKJLBBBN_FilterMusicLevelMax == 0 ? music_level_limitmax : save.IKFKKJLBBBN_FilterMusicLevelMax, musicData, diff) && 
 				CheckMusicFilter_MusicAttr(save.EOCPIGDIFNB_FilterMusicAttr, musicData) && 
@@ -983,7 +983,7 @@ namespace XeApp.Game.Menu
 			{
 				m_eventInfo.SetRewardValid(true);
 				m_eventInfo.SetNextValue(EP_ToString(rwd.OJELCGDDAOM_MissingPoint));
-				GameManager.Instance.ItemTextureCache.Load(rwd.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
+				GameManager.Instance.ItemTextureCache.Load(rwd.HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
 				{
 					//0xB49070
 					m_eventInfo.SetRewardIcon(image);

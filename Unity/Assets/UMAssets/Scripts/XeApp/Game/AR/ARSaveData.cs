@@ -269,13 +269,13 @@ namespace XeApp.Game.AR
 				{
 					if(IsHaveStamp(d[i].markerId))
 					{
-						if(l[i].BEBJKJKBOGH_Date == 0)
+						if(l[i].BEBJKJKBOGH_date == 0)
 						{
-							l[i].BEBJKJKBOGH_Date = time;
+							l[i].BEBJKJKBOGH_date = time;
 							res = true;
 						}
 					}
-					else if(l[i].BEBJKJKBOGH_Date != 0)
+					else if(l[i].BEBJKJKBOGH_date != 0)
 					{
 						res = true;
 						SetHaveStamp(d[i].markerId, true);

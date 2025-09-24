@@ -22,7 +22,7 @@ public class LFPOMKLKHPB
 	// // RVA: 0xD6F134 Offset: 0xD6F134 VA: 0xD6F134
 	public void LKLCOEJLBGG()
     {
-        CDMPNFPDBOO_DlSizeTimeout = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("dlsize_timeout", 60);
+        CDMPNFPDBOO_DlSizeTimeout = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("dlsize_timeout", 60);
 		PLOOEECNHFB_IsDone = false;
 		AAAOKDDILCP_IsError = false;
 		StringBuilder str = new StringBuilder();

@@ -37,7 +37,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		private int HLMAFFLCCKD_CountCrypted; // 0x10
 
 		public int JPMAHJJMMIA { get { return HAPFMIDIMCH ^ FBGGEFFJJHB_xor; } set { HAPFMIDIMCH = value ^ FBGGEFFJJHB_xor; } } //0x1AE66B8 EEIHPMNJMKG 0x1AE62E4 MGAEEIHCOAL
-		public int HMFFHLPNMPH_Count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66C8 NJOGDDPICKG 0x1AE62F4 NBBGMMBICNA
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66C8 NJOGDDPICKG 0x1AE62F4 NBBGMMBICNA
 
 		// RVA: 0x1AE62BC Offset: 0x1AE62BC VA: 0x1AE62BC
 		public NDONMEAEGFF(int _FBGGEFFJJHB_xor)
@@ -72,9 +72,9 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1AE5C2C Offset: 0x1AE5C2C VA: 0x1AE5C2C Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MEIHPKLEAKP parser = MEIHPKLEAKP.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MEIHPKLEAKP parser = MEIHPKLEAKP.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		{
 			CFNMIJDKIJH[] array = parser.DJOIJIADLCC;
 			for(int i = 0; i < array.Length; i++)
@@ -104,7 +104,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 				{
 					NDONMEAEGFF data = new NDONMEAEGFF(FBGGEFFJJHB_xor);
 					data.JPMAHJJMMIA = array[i].JPMAHJJMMIA[j];
-					data.HMFFHLPNMPH_Count = array2[j];
+					data.HMFFHLPNMPH_count = array2[j];
 					lData.Add(data);
 				}
 				JDLCJAILIME.Add(lData);

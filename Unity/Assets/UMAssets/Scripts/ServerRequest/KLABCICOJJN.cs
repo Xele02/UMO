@@ -17,7 +17,7 @@ public class KLABCICOJJN_SendPushNotification : CACGCMBKHDI_Request
         res.AndroidCollapseKey = JDDGPJDKHNE.GPLMOKEIOLE();
         res.AndroidChannelId = "info";
         res.AndroidIconName = "icon";
-        res.TimeToLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("push_notification_time_to_live", 600);
+        res.TimeToLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("push_notification_time_to_live", 600);
         res.IOSCategory = "myNotificationCategory";
         return res;
     }

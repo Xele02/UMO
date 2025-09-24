@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 			{
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
 				{
-					int facebookDisable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("facebook_disable", 0);
+					int facebookDisable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("facebook_disable", 0);
 					if(facebookDisable > 0)
 					{
 						Hidden = true;

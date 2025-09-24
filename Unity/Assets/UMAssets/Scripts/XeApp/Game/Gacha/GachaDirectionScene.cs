@@ -435,7 +435,7 @@ namespace XeApp.Game.Gacha
 			if(GachaUtility.netGachaProductData.FJAOAGNFABN_HasOneDay)
 			{
 				EGOLBAPFHHD_Common.PCHECKGDJDK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(GachaUtility.netGachaProductData.FDEBLMKEMLF_TypeAndSeriesId);
-				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH_Count)
+				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH_count)
 				{
 					m_resultButtonUi.HideRetry();
 					b1 = true;
@@ -718,7 +718,7 @@ namespace XeApp.Game.Gacha
 			}
 			else
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina)
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina)
 				{
 					inputEnable = false;
 					PopupWindowManager.OpenStaminaWindow(m_denomControl, () =>

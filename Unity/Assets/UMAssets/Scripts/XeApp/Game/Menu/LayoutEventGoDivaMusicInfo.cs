@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 			SetBonusIconOnOff(isOpenBonus);
 			if(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HHMLMKAEJBJ_Score != null)
 			{
-				SetLevel(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level, is6LineMode);
+				SetLevel(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_lv, is6LineMode);
 			}
 			if(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BCGLDMKODLC_IsClear)
 			{
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1992634 Offset: 0x1992634 VA: 0x1992634
 		public void SetPlayButton(IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_Stamina);
+			SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_stamina);
 			SetPlayButtonType(musicData.IFNPBIJEPBO_IsDlded ? PlayButtonWrapper.Type.PlayEn : PlayButtonWrapper.Type.Download);
 		}
 

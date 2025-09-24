@@ -9,9 +9,9 @@ public class PIKEPLLPNNH
 	public List<OBGBKHKMDNF> DHDHHHOAIKF_regular_ranking_ranks; // 0x8
 
 	// RVA: 0x92F268 Offset: 0x92F268 VA: 0x92F268
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
-		EDOHBJAPLPF_JsonData regular_ranking_ranks = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.DHDHHHOAIKF_regular_ranking_ranks];
+		EDOHBJAPLPF_JsonData regular_ranking_ranks = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.DHDHHHOAIKF_regular_ranking_ranks];
 		DHDHHHOAIKF_regular_ranking_ranks = new List<OBGBKHKMDNF>(regular_ranking_ranks.HNBFOAJIIAL_Count);
 		for(int i = 0; i < regular_ranking_ranks.HNBFOAJIIAL_Count; i++)
 		{

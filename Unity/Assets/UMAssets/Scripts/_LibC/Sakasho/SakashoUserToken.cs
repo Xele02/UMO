@@ -243,7 +243,7 @@ namespace ExternLib
 				newData.IIEMACPEEBJ_Deserialize(blocks.Keys.ToList(), jsonRes);
 
 				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_name = "Friend";
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_Prof = "Cool friend";
+				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_prof = "Cool friend";
 				{
 					JNMFKOHFAFB_PublicStatus publicBlock = newData.LBDOLHGDIEB_GetBlock("public_status") as JNMFKOHFAFB_PublicStatus;
 					// build sceneList
@@ -254,13 +254,13 @@ namespace ExternLib
 						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2)
 						{
 							MMPBPOIFDAF_Scene.PMKOFEIONEG scene = newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[i];
-							IFGEJDMMAHE_Info.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+							IFGEJDMMAHE_Info.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_date, scene.DMNIMMGGJJJ_Leaf);
 							scenes.Add(IFGEJDMMAHE_Info);
 						}
 					}
 					scenes.Sort((GCIJNCFDNON_SceneInfo a, GCIJNCFDNON_SceneInfo b) =>
 					{
-						int res = b.CMCKNKKCNDK_Status.Total - a.CMCKNKKCNDK_Status.Total;
+						int res = b.CMCKNKKCNDK_status.Total - a.CMCKNKKCNDK_status.Total;
 						if (res == 0)
 							res = a.BCCHOBPJJKE_SceneId - b.BCCHOBPJJKE_SceneId;
 						return res;

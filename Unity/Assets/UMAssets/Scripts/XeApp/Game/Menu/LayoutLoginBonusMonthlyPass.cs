@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		public static void OpenItemPackPopup(List<MFDJIFIIPJD> items, List<MFDJIFIIPJD> spItems, bool isTelop, Action closeCallback)
 		{
 			CAEDGOPBDNK c = new CAEDGOPBDNK();
-			c.HBHMAKNGKFK_Items = items;
+			c.HBHMAKNGKFK_items = items;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			PopupLoginBonusPackSetting s = new PopupLoginBonusPackSetting();
 			s.TitleText = bk.GetMessageByLabel("pop_pass_loginbonus_title");

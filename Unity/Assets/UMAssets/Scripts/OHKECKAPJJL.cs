@@ -102,9 +102,9 @@ public class OHKECKAPJJL
 	public int LPDLBACJKIB_TransId { get { return CKNBCJIIMAM_Crypted ^ FBGGEFFJJHB_xor; } set { CKNBCJIIMAM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1DE1B00 KJEJNNIKGJA 0x1DE1B10 FPPDFHIGMCE
 	public bool FICHDKOOOOB_Enabled { get { return ANBAEAGJNEE_Crypted == HKKJGAJPNIL_True; } set { ANBAEAGJNEE_Crypted = value ? HKKJGAJPNIL_True : FKHFJOKHNAK_False; } } //0x1DE1B20 MIMBAGECCNP 0x1DE1B34 NGGOBNINJOD
 	public long PDBPFJJCADD_open_at { get { return PCLNFCNIECH_OpenAtCrypted ^ BBEGLBMOBOF_xorl; } set { PCLNFCNIECH_OpenAtCrypted = value ^ BBEGLBMOBOF_xorl; } } //0x1DE1B64 FOACOMBHPAC 0x1DE1B78 NBACOBCOJCA
-	public long FDBNFFNFOND_CloseAt { get { return HHPIJHADAOB_CloseAtCrypted ^ BBEGLBMOBOF_xorl; } set { HHPIJHADAOB_CloseAtCrypted = value ^ BBEGLBMOBOF_xorl; } } //0x1DE1B98 BPJOGHJCLDJ 0x1DE1BAC NLJKMCHOCBK
+	public long FDBNFFNFOND_close_at { get { return HHPIJHADAOB_CloseAtCrypted ^ BBEGLBMOBOF_xorl; } set { HHPIJHADAOB_CloseAtCrypted = value ^ BBEGLBMOBOF_xorl; } } //0x1DE1B98 BPJOGHJCLDJ 0x1DE1BAC NLJKMCHOCBK
 	public bool LHMOAJAIJCO_is_new { get { return MFHADBAGMCE_is_new_Crypted == HKKJGAJPNIL_True; } set { MFHADBAGMCE_is_new_Crypted = value ? HKKJGAJPNIL_True : FKHFJOKHNAK_False; } } //0x1DE1BCC ECKLIIBFNGI 0x1DE1BE0 BGNCBCKNKNK
-	public int BDEOMEBFDFF_GachaId { get { return HPNLHEAENJB_Crypted ^ FBGGEFFJJHB_xor; } set { HPNLHEAENJB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1DE1C10 OEIBDDGJBMK 0x1DE1C20 LELOPHJEIIM
+	public int BDEOMEBFDFF_gacha_id { get { return HPNLHEAENJB_Crypted ^ FBGGEFFJJHB_xor; } set { HPNLHEAENJB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1DE1C10 OEIBDDGJBMK 0x1DE1C20 LELOPHJEIIM
 	public int LCCDKCPBJAK_BannerId { get { return KIAAIBDCMCC_Crypted ^ FBGGEFFJJHB_xor; } set { KIAAIBDCMCC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1DE1C30 EJCGPCCMFOC 0x1DE1C40 PIDILOOINOG
 	public OHKBMOEIPEP IJIDIJBPGNB { get { return (OHKBMOEIPEP)(AIMMOBGOLML_Crypted ^ FBGGEFFJJHB_xor); } set { AIMMOBGOLML_Crypted = (int)value ^ FBGGEFFJJHB_xor; } } //0x1DE1C50 OMIAAFEEGBJ 0x1DE1C60 PEBNFGKBHIE
 	public NBADGBJMBMM MMJHAMFEHCH { get { return (NBADGBJMBMM)(BAILLKDINBE_Crypted ^ FBGGEFFJJHB_xor); } set { BAILLKDINBE_Crypted = (int)value ^ FBGGEFFJJHB_xor; } } //0x1DE1C70 IILBCPNOFLG 0x1DE1C80 DIMLNOKMHHO
@@ -130,8 +130,8 @@ public class OHKECKAPJJL
         LPDLBACJKIB_TransId = 0;
         FICHDKOOOOB_Enabled = false;
         PDBPFJJCADD_open_at = 0;
-        FDBNFFNFOND_CloseAt = 0;
-        BDEOMEBFDFF_GachaId = 0;
+        FDBNFFNFOND_close_at = 0;
+        BDEOMEBFDFF_gacha_id = 0;
         LCCDKCPBJAK_BannerId = 0;
         IJIDIJBPGNB = OHKBMOEIPEP.HJNNKCMLGFL_0_None;
         MMJHAMFEHCH = NBADGBJMBMM.HIDGJCIFFNJ_0;

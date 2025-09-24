@@ -42,9 +42,9 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x9F6434 Offset: 0x9F6434 VA: 0x9F6434 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		EMEEODMLEHD parser = EMEEODMLEHD.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		EMEEODMLEHD parser = EMEEODMLEHD.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		KLNOMBKJDNN(parser);
 		return true;
 	}
@@ -75,7 +75,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x9F6690 Offset: 0x9F6690 VA: 0x9F6690
-	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	//private bool KLNOMBKJDNN(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x9F66A0 Offset: 0x9F66A0 VA: 0x9F66A0 Slot: 11
 	public override uint CAOGDCBPBAN()

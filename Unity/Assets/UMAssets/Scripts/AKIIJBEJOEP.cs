@@ -45,7 +45,7 @@ public class AKIIJBEJOEP
 	private const int DFMOPCKCCHF_False = 249;
 
 	public int PPFNGGCBJKC_id { get { return FBGGEFFJJHB_xor ^ EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xCD7520 DEMEPMAEJOO 0xCD2FBC HIGKAIDMOKN
-	public int GBJFNGCDKPM_Type { get { return FBGGEFFJJHB_xor ^ NOFECLGOLAI_TypeCrypted; } set { NOFECLGOLAI_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xCD7530 CEJJMKODOGK 0xCD2FCC HOHCEBMMACI
+	public int GBJFNGCDKPM_typ { get { return FBGGEFFJJHB_xor ^ NOFECLGOLAI_TypeCrypted; } set { NOFECLGOLAI_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xCD7530 CEJJMKODOGK 0xCD2FCC HOHCEBMMACI
 	public bool PPCFIHMDMLM { get { return (FBGGEFFJJHB_xor ^ NOFECLGOLAI_TypeCrypted) == 2; } } //0xCD7540 FEIHHNDGFPE
 	public int KGICDMIJGDF_Group { get { return FBGGEFFJJHB_xor ^ NNDGELGIMAO_GroupCrypted; } set { NNDGELGIMAO_GroupCrypted = value ^ FBGGEFFJJHB_xor; } } //0xCD755C ENACPBCEBLF 0xCD2FDC KPCDPMGBPAG
 	public int HMOJCCPIPBP_TargetMusicType { get { return FBGGEFFJJHB_xor ^ DKOFFHFCPDD_TargetMusicTypeCrypted; } set { DKOFFHFCPDD_TargetMusicTypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xCD756C ANNDMDFNGKG 0xCD2FEC LGCPDDPGCAB
@@ -78,7 +78,7 @@ public class AKIIJBEJOEP
 	{
 		this.JOPOPMLFINI_QuestName = _JOPOPMLFINI_QuestName;
 		FBGGEFFJJHB_xor = KNEFBLHBDBG;
-		GBJFNGCDKPM_Type = 0;
+		GBJFNGCDKPM_typ = 0;
 		KGICDMIJGDF_Group = 0;
 		HMOJCCPIPBP_TargetMusicType = 0;
 		HBJJCDIMOPO_TargetMusicConditionId = 0;
@@ -111,7 +111,28 @@ public class AKIIJBEJOEP
 	}
 
 	//// RVA: 0xCD3184 Offset: 0xCD3184 VA: 0xCD3184
-	//public void KHEKNNFCAOI_Init(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
+	//public void KHEKNNFCAOI_Init(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
+	//FEMMDNIELFC_Desc = desc
+	//BGBJPGEIEDE_DescBalloon = desc_balloon
+	//PPFNGGCBJKC_id = id
+	//GBJFNGCDKPM_typ = typ
+	//KGICDMIJGDF_Group = group
+	//PPEGAKEIEGM_Enabled = en
+	//HMOJCCPIPBP_TargetMusicType = target_music_type
+	//HBJJCDIMOPO_TargetMusicConditionId = target_music_condition_id
+	//DGMIADAEGAI_TargetDifficultyType = target_difficulty_type
+	//NAPODHGLKAJ_TargetUnitType = target_unit_type
+	//FHILEEHDDKN_TargetUnitConditionId = target_unit_condition_id
+	//FAHLEOKHBGH_TargetUnitConditionValue = target_unit_condition_value
+	//HDAMBOOCIAA_ClearType = clear_type
+	//DEIEONIILLJ_ClearConditionId = clear_condition_id
+	//JJECMJFDEEP_ClearConditionValue = clear_condition_value
+	//GLDIGCJNOBO_ClearCount = clear_count
+	//KABNKDJJKCN_NextMusic = next_music_id
+	//KIJAPOFAGPN_ItemId = item_id
+	//JDLJPNMLFID_ItemCount = item_count
+	//IKJAAKEINHC_Slt = slt
+	//HPAOAKMKCMA_Slt2 = slt2
 
 	//// RVA: 0xCD3B78 Offset: 0xCD3B78 VA: 0xCD3B78
 	public void KHEKNNFCAOI_Init(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, HMNJADGBKFA JMHECKKKMLK)
@@ -121,7 +142,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)data.PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)data.GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)data.GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)data.PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)data.BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)data.PJGIAKGGHPF;
@@ -157,7 +178,7 @@ public class AKIIJBEJOEP
 		MLIOEHFFKOL data = JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1];
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.FEMMDNIELFC);
 		PPFNGGCBJKC_id = (int)data.PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)data.GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)data.GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)data.PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)data.BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)data.PJGIAKGGHPF;
@@ -194,7 +215,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)data.PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)data.GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)data.GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)data.PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)data.BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)data.PJGIAKGGHPF;
@@ -231,7 +252,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, data.BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)data.PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)data.GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)data.GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)data.PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)data.BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)data.PJGIAKGGHPF;
@@ -267,7 +288,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
 		KGICDMIJGDF_Group = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].KGICDMIJGDF;
 		PPEGAKEIEGM_Enabled = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BDKFOMGCOOE;
@@ -304,7 +325,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PJGIAKGGHPF;
@@ -340,7 +361,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PJGIAKGGHPF;
@@ -376,7 +397,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PJGIAKGGHPF;
@@ -442,7 +463,7 @@ public class AKIIJBEJOEP
 		FEMMDNIELFC_Desc = DatabaseTextConverter.TranslateEventMissionDesc(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].FEMMDNIELFC);
 		BGBJPGEIEDE_DescBalloon = DatabaseTextConverter.TranslateEventMissionDesc2(_JOPOPMLFINI_QuestName, _PPFNGGCBJKC_id, JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BGBJPGEIEDE/*_DescBalloon*/);
 		PPFNGGCBJKC_id = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PPFNGGCBJKC;
-		GBJFNGCDKPM_Type = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
+		GBJFNGCDKPM_typ = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].GBJFNGCDKPM;
 		PPEGAKEIEGM_Enabled = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PLALNIIBLOF;
 		HMOJCCPIPBP_TargetMusicType = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].BDKFOMGCOOE;
 		HBJJCDIMOPO_TargetMusicConditionId = (int)JMHECKKKMLK.MDDOGIAFDEI[_PPFNGGCBJKC_id - 1].PJGIAKGGHPF;
@@ -473,7 +494,21 @@ public class AKIIJBEJOEP
 	}
 
 	//// RVA: 0xCD6B18 Offset: 0xCD6B18 VA: 0xCD6B18
-	//public void IFMHPIGMJBC(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
+	//public void IFMHPIGMJBC(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
+	//FEMMDNIELFC_Desc = desc
+	//PPFNGGCBJKC_id = id
+	//GBJFNGCDKPM_typ = typ
+	//PPEGAKEIEGM_Enabled = en
+	//HMOJCCPIPBP_TargetMusicType = target_music_type
+	//HBJJCDIMOPO_TargetMusicConditionId = target_music_condition_id
+	//DGMIADAEGAI_TargetDifficultyType = target_difficulty_type
+	//HDAMBOOCIAA_ClearType = clear_type
+	//DEIEONIILLJ_ClearConditionId = clear_condition_id
+	//JJECMJFDEEP_ClearConditionValue = clear_condition_value
+	//GLDIGCJNOBO_ClearCount = clear_count
+	//KIJAPOFAGPN_ItemId = item_id
+	//JDLJPNMLFID_ItemCount = item_count
+	//IKJAAKEINHC_Slt = slt
 
 	//// RVA: 0xCD7024 Offset: 0xCD7024 VA: 0xCD7024
 	public void IFMHPIGMJBC(string _JOPOPMLFINI_QuestName, int _PPFNGGCBJKC_id, int KNEFBLHBDBG, HGHOHICGBEP JMHECKKKMLK)

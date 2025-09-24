@@ -4,7 +4,7 @@ public class IELJJAAJAOE
 	public int KIJAPOFAGPN_ItemId; // 0x8
 	public int OIPCCBHIKIA_index; // 0xC
 	public int OMAJOEOOAJJ_Count0; // 0x10
-	public int HMFFHLPNMPH_Count; // 0x14
+	public int HMFFHLPNMPH_count; // 0x14
 	public int JPIPENJGGDD_NumBoard; // 0x18
 	public int PLKAGPBEHMB_LuckPlus; // 0x1C
 	public int ONDODHPHOOF_ConvertItemId; // 0x20

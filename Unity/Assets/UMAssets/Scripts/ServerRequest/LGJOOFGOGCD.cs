@@ -9,14 +9,14 @@ public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
 	public class GIAIPIKNBBB
 	{
 		public List<GJDFHLBONOL> PJJFEAHIPGL_inventories; // 0x8
-		public int CJNNMLLEKEF_PreviousPage; // 0xC
-		public int GPPOJHNNINK_CurrentPage; // 0x10
+		public int CJNNMLLEKEF_previous_page; // 0xC
+		public int GPPOJHNNINK_current_page; // 0x10
 		public int MDIBIIHAAPN_next_page; // 0x14
 
 		// RVA: 0x17F4420 Offset: 0x17F4420 VA: 0x17F4420
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
 			PJJFEAHIPGL_inventories = new List<GJDFHLBONOL>(b.HNBFOAJIIAL_Count);
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
@@ -24,9 +24,9 @@ public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
 				data.DPKCOKLMFMK(b[i]);
 				PJJFEAHIPGL_inventories.Add(data);
 			}
-			CJNNMLLEKEF_PreviousPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
-			GPPOJHNNINK_CurrentPage = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
-			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
+			CJNNMLLEKEF_previous_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page];
+			GPPOJHNNINK_current_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page];
+			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
 		}
 	}
 

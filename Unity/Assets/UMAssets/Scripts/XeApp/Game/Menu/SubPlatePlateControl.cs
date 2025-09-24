@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				StringBuilder str = new StringBuilder(16);
-				str.SetFormat(bk.GetMessageByLabel("subplate_rate_text"), m_info.ADKDHKMPMHP_Rate);
+				str.SetFormat(bk.GetMessageByLabel("subplate_rate_text"), m_info.ADKDHKMPMHP_rate);
 				m_rateText.text = str.ToString();
 				if(!m_info.DFIGPDCBAPB_IsInvalid)
 				{

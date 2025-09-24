@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 				}
 				return frameAnim.FrameCount * 1.0f / frameAnim.FrameNum <= animEndRate;
 			});
-			ChangeBaseCountNumber(itemInfo.HMFFHLPNMPH_Count);
+			ChangeBaseCountNumber(itemInfo.HMFFHLPNMPH_count);
 			FinalizeBonusCountNumber();
 			if (itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
@@ -435,7 +435,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D9205C Offset: 0x1D9205C VA: 0x1D9205C
 		public void FinalizeBaseCountNumber()
 		{
-			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusValue + itemInfo.HMFFHLPNMPH_Count);
+			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusValue + itemInfo.HMFFHLPNMPH_count);
 		}
 
 		//// RVA: 0x1D9232C Offset: 0x1D9232C VA: 0x1D9232C

@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 			m_isReShow = false;
 			m_isResetItem = false;
 			m_speakChara = null;
-			m_isEnableFamousPhrase4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA("is_enable_famous_phrase_4", 0) == 1;
+			m_isEnableFamousPhrase4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA_GetIntParam("is_enable_famous_phrase_4", 0) == 1;
 			GameManager.Instance.MenuResidentTextureCache.LoadLogo(4, (IiconTexture texture) =>
 			{
 				//0x18C6630
@@ -839,7 +839,7 @@ namespace XeApp.Game.Menu
 				{
 					int c = GetPostNum(ss.Data.KGBAOKCMALD);
 					ss.SetStatusIcon(c > -1);
-					ss.SetNum(ss.Data.BFINGCJHOHI_Count, ss.Data.BFINGCJHOHI_Count - c);
+					ss.SetNum(ss.Data.BFINGCJHOHI_cnt, ss.Data.BFINGCJHOHI_cnt - c);
 					return;
 				}
 			}
@@ -856,7 +856,7 @@ namespace XeApp.Game.Menu
 				{
 					int c = GetPostNum(d.KGBAOKCMALD);
 					ss.SetStatusIcon(c > -1);
-					ss.SetNum(d.BFINGCJHOHI_Count, d.BFINGCJHOHI_Count - c);
+					ss.SetNum(d.BFINGCJHOHI_cnt, d.BFINGCJHOHI_cnt - c);
 				}
 			}
 		}

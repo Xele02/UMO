@@ -29,7 +29,7 @@ public abstract class DIHHCBACKGG_DbSection
 	protected abstract void KMBPACJNEOF_Reset();
 
 	// // RVA: 0x198ABEC Offset: 0x198ABEC VA: 0x198ABEC Slot: 9
-	public virtual bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data) 
+	public virtual bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes) 
     { 
         return true;
     }
@@ -59,16 +59,16 @@ public abstract class DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
-	public int JKAECBCNHAN_IsEnabled(int _IJEKNCDIIAE_MVer, int _PLALNIIBLOF_en, int DBHPPMPNCKF/* = 0*/)
+	public int JKAECBCNHAN_IsEnabled(int _IJEKNCDIIAE_mver, int _PLALNIIBLOF_en, int DBHPPMPNCKF/* = 0*/)
 	{
 		if(DBHPPMPNCKF != 0)
 		{
 			if (DBHPPMPNCKF <= IEFOPDOOLOK_MasterVersion)
 				return 0;
 		}
-		if(_IJEKNCDIIAE_MVer != 0)
+		if(_IJEKNCDIIAE_mver != 0)
 		{
-			if (_IJEKNCDIIAE_MVer <= IEFOPDOOLOK_MasterVersion)
+			if (_IJEKNCDIIAE_mver <= IEFOPDOOLOK_MasterVersion)
 				return _PLALNIIBLOF_en;
 		}
 		if (_PLALNIIBLOF_en == 2)

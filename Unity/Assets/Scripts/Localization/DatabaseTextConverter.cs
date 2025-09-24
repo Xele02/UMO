@@ -176,7 +176,7 @@ public static class DatabaseTextConverter
             for(int i = 0; i < tipsDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("tips_{0:D4}_title", i);
-                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title);
+                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_title);
                 prfx = string.Format("tips_{0:D4}_msg", i);
                 poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message);
             }
@@ -209,10 +209,10 @@ public static class DatabaseTextConverter
             PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
             for(int i = 0; i < tutoDb.CDENCMNHNGA_table.Count; i++)
             {
-                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title.Length; j++)
+                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_title.Length; j++)
                 {
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", i, j);
-                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title[j]);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_title[j]);
                 }
                 for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message.Length; j++)
                 {
@@ -287,7 +287,7 @@ public static class DatabaseTextConverter
             {
                 {
                     string prfx = string.Format("anketo_{0:D4}_question", i);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_title);
                 }
                 for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].BNMCMNPPPCI_ChoiceText.Length; j++)
                 {
@@ -485,7 +485,7 @@ public static class DatabaseTextConverter
                     for(int i = 1; i <= 4; i++)
                     {
                         string prfx = string.Format("event_msg_lobby_{0}_battlelog_text_{1:D2}", blockDbLobby.NNMPGOAGEOL_quests[i].JOPOPMLFINI_QuestName, i);
-                        poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL(string.Format("battlelog_text_{0:D2}", i), ""));
+                        poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL_GetStringParam(string.Format("battlelog_text_{0:D2}", i), ""));
                     }
                 }
                 PHBACNMCMHG_EventCollection blockDbCollection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as PHBACNMCMHG_EventCollection;
@@ -530,10 +530,10 @@ public static class DatabaseTextConverter
                         string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDbMission.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
-                    for(int i = 0; i < blockDbMission.LGODPKPFGHF.Count; i++)
+                    for(int i = 0; i < blockDbMission.LGODPKPFGHF_MissionCond.Count; i++)
                     {
-                        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LGODPKPFGHF[i].PPFNGGCBJKC_id);
-                        poFile.translationData.Add(prfx, blockDbMission.LGODPKPFGHF[i].FEMMDNIELFC_Desc);
+                        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LGODPKPFGHF_MissionCond[i].PPFNGGCBJKC_id);
+                        poFile.translationData.Add(prfx, blockDbMission.LGODPKPFGHF_MissionCond[i].FEMMDNIELFC_Desc);
                     }
                 }
             }
@@ -697,7 +697,7 @@ public static class DatabaseTextConverter
                             Encoding.ASCII.GetBytes(Convert.ToString(511, 8).PadLeft(7, '0')).CopyTo(buffer, 100);
                             Encoding.ASCII.GetBytes(Convert.ToString(61, 8).PadLeft(7, '0')).CopyTo(buffer, 108);
                             Encoding.ASCII.GetBytes(Convert.ToString(61, 8).PadLeft(7, '0')).CopyTo(buffer, 116);
-                            Encoding.ASCII.GetBytes(Convert.ToString(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data.Length, 8).PadLeft(11, '0')).CopyTo(buffer, 124);
+                            Encoding.ASCII.GetBytes(Convert.ToString(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_bytes.Length, 8).PadLeft(11, '0')).CopyTo(buffer, 124);
                             Encoding.ASCII.GetBytes(Convert.ToString((long)(DateTime.Now - TheEpoch).TotalSeconds, 8).PadLeft(11, '0')).CopyTo(buffer, 136);
                             buffer[156] = (byte)'0';
 
@@ -714,8 +714,8 @@ public static class DatabaseTextConverter
                             writer.Write(buffer);
                             offset += 512;
 
-                            writer.Write(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data);
-                            offset += archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_Data.Length;
+                            writer.Write(archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_bytes);
+                            offset += archive.KGHAJGGMPKL_files[i].DBBGALAPFGC_bytes.Length;
                             while((offset % 512) != 0)
                             {
                                 writer.Write((byte)0);
@@ -776,7 +776,7 @@ public static class DatabaseTextConverter
                     if(file != null)
                     {
                         MessageBank bank = new MessageBank();
-                        bank.Setup(file.DBBGALAPFGC_Data, ((eBank)i).ToString());
+                        bank.Setup(file.DBBGALAPFGC_bytes, ((eBank)i).ToString());
                         banks[i] = bank;
                     }
                 }

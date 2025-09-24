@@ -68,20 +68,20 @@ namespace XeApp.Game.Menu
 					}
 					if(dbCostume.DAJGPBLEEOB_ModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
 					{
-						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_DivaId).CPGFPEDMDEH_Have != 0)
+						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_DivaId).CPGFPEDMDEH_have != 0)
 						{
 							//LAB_00de38f4
 							m_costume_now_array[0]++;
 							m_costume_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 							if(dbCostume.LLLCMHENKKN_LevelMax > 0)
 							{
-								if(dbCostume.LLLCMHENKKN_LevelMax <= saveCostume.ANAJIAENLNB_Level)
+								if(dbCostume.LLLCMHENKKN_LevelMax <= saveCostume.ANAJIAENLNB_lv)
 								{
 									m_costume_upgrade_now_array[0]++;
 									m_costume_upgrade_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 								}
 							}
-							int numCol = dbCostume.KKLPLPGBOFD_GetAvaiableColor(saveCostume.ANAJIAENLNB_Level).Length;
+							int numCol = dbCostume.KKLPLPGBOFD_GetAvaiableColor(saveCostume.ANAJIAENLNB_lv).Length;
 							m_costume_color_now_array[0] += numCol;
 							m_costume_color_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 						}

@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 				item.Height = 44;
 				item.ResourceType = 2;
 				item.Period = list[i].HNKFMAJIFJD_ExpireAt;
-				item.Num = list[i].HMFFHLPNMPH_Count;
+				item.Num = list[i].HMFFHLPNMPH_count;
 				m_list.Add(item);
 				a += 18 + 26;
 			}

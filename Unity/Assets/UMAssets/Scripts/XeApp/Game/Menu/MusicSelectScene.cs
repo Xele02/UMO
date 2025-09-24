@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnPreSetCanvas !SelectUnitDanceFocus");
 			}
 			SetupViewMusicData();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) > 0)
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 0)
 			{
 				NKGJPJPHLIF.DPCCNOCAHGC = false;
 			}
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xF3526C
 			m_isInitialized = false;
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) > 1)
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 1)
 			{
 				NKGJPJPHLIF.DPCCNOCAHGC = true;
 			}
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			m_musicInfo.MakeCache();
 			m_cdSelect.MakeCache();
 			m_sliveButton.SetOptionStyle(m_isSimulationLive ? MusicSelectSLiveButton.Style.SimulationLive : MusicSelectSLiveButton.Style.BasicLive);
-			m_sliveButton.SetUnlockRank(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5));
+			m_sliveButton.SetUnlockRank(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5));
 			MessageBank menuBank = MessageManager.Instance.GetBank("menu");
 			m_musicInfo.SetNoInfoMessage(menuBank.GetMessageByLabel("music_not_exist_text_00"), menuBank.GetMessageByLabel("music_not_exist_line6_text_00"));
 			ApplyBasicInfo();

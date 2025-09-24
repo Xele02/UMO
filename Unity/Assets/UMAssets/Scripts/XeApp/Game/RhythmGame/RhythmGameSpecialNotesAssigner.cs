@@ -54,7 +54,7 @@ namespace XeApp.Game.RhythmGame
 			rateSet = g.CGLAEOLPEGN;
 			if (g.CGLAEOLPEGN != null && g.GEDOFFFKIFN != null)
 			{
-				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_Rate);
+				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_rate);
 				for(int i = 0; i < itemWeightTable.Count; i++)
 				{
 					if(itemSet.FKNBLDPIPMC_GetItemId(i) == 0)
@@ -62,7 +62,7 @@ namespace XeApp.Game.RhythmGame
 						itemWeightTable[i] = 0;
 					}
 				}
-				itemLotCountList = new int[rateSet.ADKDHKMPMHP_Rate.Count];
+				itemLotCountList = new int[rateSet.ADKDHKMPMHP_rate.Count];
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace XeApp.Game.RhythmGame
 				int t = numItemsByMode[(int)nt[i]];
 				numItemsByMode[(int)nt[i]] = Mathf.Min(numItemsByMode[(int)nt[i]], validNotesIdxByModeType[(int)nt[i]].Count);
 
-				int v = Mathf.Clamp((int)(ar[i].PHGLKBPLFDH_RMax / 100.0f * validNotesIdxByModeType[(int)nt[i]].Count), ar[i].MPPANPOOIIB_NMin, ar[i].GKPPCFMBANO_NMax);
+				int v = Mathf.Clamp((int)(ar[i].PHGLKBPLFDH_rmax / 100.0f * validNotesIdxByModeType[(int)nt[i]].Count), ar[i].MPPANPOOIIB_NMin, ar[i].GKPPCFMBANO_NMax);
 				t = (numItemsByMode[(int)nt[i]] - validNotesIdxByModeType[(int)nt[i]].Count) + v;
 				if (t > 0)
 					v = v - t;
@@ -282,10 +282,10 @@ namespace XeApp.Game.RhythmGame
 			{
 				int a = LotsItem(itemWeightTable);
 				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC_GetItemId(a), a | 0x40000000);
-				if(rateSet.DOOGFEGEKLG_Max[a] != 0)
+				if(rateSet.DOOGFEGEKLG_max[a] != 0)
 				{
 					itemLotCountList[a]++;
-					if(rateSet.DOOGFEGEKLG_Max[a] <= itemLotCountList[a])
+					if(rateSet.DOOGFEGEKLG_max[a] <= itemLotCountList[a])
 					{
 						itemWeightTable[a] = 0;
 					}

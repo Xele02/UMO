@@ -38,7 +38,7 @@ public class OJIHOFLJOMK
 	//public void KNPBADBCOLO(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string LBNFBJFBDDE, string ADCMNODJBGJ, string _LJGOOOMOMMA_message) { }
 
 	//// RVA: 0x148DD70 Offset: 0x148DD70 VA: 0x148DD70
-	public void LKCPCCANJFB_SendNotif(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string _ADCMNODJBGJ_Title, string _LJGOOOMOMMA_message, int _EAHPLCJMPHD_PId, string JJCAHFAOPNI/* = "png"*/)
+	public void LKCPCCANJFB_SendNotif(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string _ADCMNODJBGJ_title, string _LJGOOOMOMMA_message, int _EAHPLCJMPHD_PId, string JJCAHFAOPNI/* = "png"*/)
 	{
 		if(MNAADDLICIB != null)
 		{
@@ -51,7 +51,7 @@ public class OJIHOFLJOMK
 				UnityEngine.Debug.LogError(date.ToLongDateString()+" "+date.ToLongTimeString());
 			}*/
 			MNAADDLICIB.CallStatic("send", new object[7] {
-				PEJIPAFKHKM, NNGBINEKMNO, "", _ADCMNODJBGJ_Title, _LJGOOOMOMMA_message, "", LEAIFBMIEIG
+				PEJIPAFKHKM, NNGBINEKMNO, "", _ADCMNODJBGJ_title, _LJGOOOMOMMA_message, "", LEAIFBMIEIG
 			});
 		}
 	}

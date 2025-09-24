@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 				m_item_need_num.SetNumber(m_itemCount, 0);
 				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB_FindItem(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA_Category.GLHANCMGNDM_2);
                 EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC_id);
-				m_item_have_num.text = saveCos.BFINGCJHOHI_Count.ToString();
+				m_item_have_num.text = saveCos.BFINGCJHOHI_cnt.ToString();
 				SetItemIcon(m_itemId);
             }
 			m_rank = data.GKIKAABHAAD_Level;

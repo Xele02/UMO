@@ -66,9 +66,9 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xF2B510 Offset: 0xF2B510 VA: 0xF2B510 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
     {
-		MDMEBHPAKIH parser = MDMEBHPAKIH.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MDMEBHPAKIH parser = MDMEBHPAKIH.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		DDHCKMFAKFA[] array = parser.NFBMFDPFHCL;
 		for(int i = 0; i < array.Length; i++)
 		{

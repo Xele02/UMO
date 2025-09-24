@@ -37,7 +37,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "NONBCCLGBAO", Desc = "Battle hit stat", CryptedInMemory = true)]
 		public short NONBCCLGBAO_hit { get { return (short)(CDDLNKAPCFB_HitCrypted ^ FBGGEFFJJHB_xor); } set { CDDLNKAPCFB_HitCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
 		[UMOMember(ReaderMember = "BMIJDLBGFNP", Desc = "Battle skill id", CryptedInMemory = true)]
-		public short BMIJDLBGFNP_SkillId { get { return (short)(AENGKBBMPGM_SkillIdCrypted ^ FBGGEFFJJHB_xor); } } //0x1BA75A0 NIHGHMNFOAO
+		public short BMIJDLBGFNP_skill { get { return (short)(AENGKBBMPGM_SkillIdCrypted ^ FBGGEFFJJHB_xor); } } //0x1BA75A0 NIHGHMNFOAO
 		[UMOMember(ReaderMember = "BFCBGDOICCO", Desc = "Version when enabled in deco room", CryptedInMemory = true)]
 		public int MIHAHCEANII { get { return BFFGMECIOIA_Crypted ^ FBGGEFFJJHB_xor; } set { BFFGMECIOIA_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
 		public bool IPJMPBANBPP_Enabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB
@@ -102,9 +102,9 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1BA6D74 Offset: 0x1BA6D74 VA: 0x1BA6D74 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		NJOFJDHEGIK parser = NJOFJDHEGIK.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		NJOFJDHEGIK parser = NJOFJDHEGIK.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		return JANANCJMFPB(parser);
 	}
 
@@ -142,7 +142,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1BA7170 Offset: 0x1BA7170 VA: 0x1BA7170
-	//private bool JANANCJMFPB(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	//private bool JANANCJMFPB(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x1BA7198 Offset: 0x1BA7198 VA: 0x1BA7198 Slot: 11
 	public override uint CAOGDCBPBAN()

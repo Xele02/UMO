@@ -49,9 +49,9 @@ public class DOKOHKJIDBO
 		request.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
 		{
 			//0x1233124
-			if(IKCAJDOKNOM.LPJLEHAJADA("m_0", 0) != 0)
+			if(IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("m_0", 0) != 0)
 			{
-				if(IKCAJDOKNOM.LPJLEHAJADA("s_0", 0) != 0)
+				if(IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_0", 0) != 0)
 				{
 					ANDDAABHGIP();
 					LNAHEIEIBOI_Initialized = true;
@@ -98,13 +98,13 @@ public class DOKOHKJIDBO
 		KCOIDGJOJHC_EncryptionMap.Clear();
 		for(int i = 1; i < 11; i++)
 		{
-			if(IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_0", 0) != 0)
+			if(IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("w"+i+"_0", 0) != 0)
 			{
 				BEEINMBNKNM_Encryption encryptor = new BEEINMBNKNM_Encryption();
-				encryptor.DGBPHDMEDNP(IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_0", 0), 
-									IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_1", 0),
-									IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_2", 0));
-				encryptor.KHEKNNFCAOI_Init((uint)IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_3", 0) + 7);
+				encryptor.DGBPHDMEDNP(IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("w"+i+"_0", 0), 
+									IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("w"+i+"_1", 0),
+									IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("w"+i+"_2", 0));
+				encryptor.KHEKNNFCAOI_Init((uint)IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("w"+i+"_3", 0) + 7);
 				KCOIDGJOJHC_EncryptionMap.Add(i, encryptor);
 			}
 		}

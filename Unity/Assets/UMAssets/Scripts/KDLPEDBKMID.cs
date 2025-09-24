@@ -10,7 +10,7 @@ using XeSys;
 using XeApp.Game.Common;
 
 public delegate bool OMIFMMJPMDJ(int _INDDJNMPONH_type, float LNAHJANMJNM);
-public delegate void OBHIGCFPKJN(string _DOGDHKIEBJA_Error, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
+public delegate void OBHIGCFPKJN(string _DOGDHKIEBJA_error, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
 
 public class KDLPEDBKMID
 {
@@ -333,7 +333,7 @@ public class KDLPEDBKMID
 				GCGNICILKLD_AssetFileInfo fileinfo = DHBFAKEGDOG(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
 				if(fileinfo != null)
 				{
-					KEHOJEJMGLJ.GFOMKMANCPP(JGBPLIGAILE.ADHHKEMDOIK_LocalPath, fileinfo.CALJIGKCAAH_LastUpdated, fileinfo.HHPEMFKDHLK_FileHash, true);
+					KEHOJEJMGLJ.GFOMKMANCPP(JGBPLIGAILE.ADHHKEMDOIK_LocalPath, fileinfo.CALJIGKCAAH_last_updated_at, fileinfo.HHPEMFKDHLK_FileHash, true);
 					KEHOJEJMGLJ.HHCJCDFCLOB.KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
 					PKKHIEAEDPC a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
 					if(a != null)
@@ -354,7 +354,7 @@ public class KDLPEDBKMID
 				yield return null;
 				//2
 				PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
-				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2_Success)
+				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2_Success)
 				{
 					HANBBBBLLGP = 100.0f;
 					OEPPEGHGNNO(3, 100);
@@ -365,7 +365,7 @@ public class KDLPEDBKMID
 				}
 				else
 				{
-					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_4_AllError)
+					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_4_AllError)
 					{
 						string errorStr = "network";
 						if(PMDNNKAPIKJ_FileDownloader.BHICPONFJKM_SpaceError)
@@ -413,7 +413,7 @@ public class KDLPEDBKMID
 						//goto LAB_00e84f9c;
 						//4
 						//LAB_00e84f9c;
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
 							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
@@ -431,7 +431,7 @@ public class KDLPEDBKMID
 						//goto LAB_00e852c8;
 						// To 5
 						//5
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
 							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
@@ -476,7 +476,7 @@ public class KDLPEDBKMID
 							PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
 						}
 #endif
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
 							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
@@ -517,7 +517,7 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE7EF18 Offset: 0xE7EF18 VA: 0xE7EF18
-	private void EEHMGCMAOAB(string _DOGDHKIEBJA_Error, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP)
+	private void EEHMGCMAOAB(string _DOGDHKIEBJA_error, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP)
 	{
 		NEFKBBNKNPP();
 	}

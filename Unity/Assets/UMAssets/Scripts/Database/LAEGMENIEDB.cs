@@ -79,9 +79,9 @@ public class LAEGMENIEDB_Story : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xD8F2BC Offset: 0xD8F2BC VA: 0xD8F2BC Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MEPHNDCDFFJ parser = MEPHNDCDFFJ.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MEPHNDCDFFJ parser = MEPHNDCDFFJ.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		ILCNBIAEIFB[] array = parser.PEJOABFFHHA;
 		int k = (int)Utility.GetCurrentUnixTime();
 		k *= 0xbe1f5;

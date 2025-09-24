@@ -2032,7 +2032,7 @@ namespace XeApp.Game.Menu
 							if ((m_args as TeamEditSceneArgs).IsFromBeginner)
 								return false;
 						}
-						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_stat < 2)
 						{
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
@@ -2066,7 +2066,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition48:
 					if(m_transitionName == TransitionList.Type.MUSIC_SELECT)
 					{
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 					}
 					break;
 				case TutorialConditionId.Condition49:

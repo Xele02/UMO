@@ -5,10 +5,10 @@ namespace XeSys
 	public class JsonUtil
 	{
 		// // RVA: 0x2389D1C Offset: 0x2389D1C VA: 0x2389D1C
-		// public static EDOHBJAPLPF GetArray(EDOHBJAPLPF jdata, string key) { }
+		// public static EDOHBJAPLPF_JsonData GetArray(EDOHBJAPLPF_JsonData jdata, string key) { }
 
 		// // RVA: 0x2389D78 Offset: 0x2389D78 VA: 0x2389D78
-		// public static EDOHBJAPLPF GetArrayObject(EDOHBJAPLPF jdata, string key, int index) { }
+		// public static EDOHBJAPLPF_JsonData GetArrayObject(EDOHBJAPLPF_JsonData jdata, string key, int index) { }
 
 		// // RVA: 0x2389DA8 Offset: 0x2389DA8 VA: 0x2389DA8
 		public static EDOHBJAPLPF_JsonData GetObject(EDOHBJAPLPF_JsonData jdata, string key)
@@ -42,13 +42,13 @@ namespace XeSys
 		}
 
 		// // RVA: 0x238A09C Offset: 0x238A09C VA: 0x238A09C
-		// public static string GetString(EDOHBJAPLPF jdata, string key) { }
+		// public static string GetString(EDOHBJAPLPF_JsonData jdata, string key) { }
 
 		// // RVA: 0x238A108 Offset: 0x238A108 VA: 0x238A108
-		// public static float GetFloat(EDOHBJAPLPF jdata, string key, float notExistValue) { }
+		// public static float GetFloat(EDOHBJAPLPF_JsonData jdata, string key, float notExistValue) { }
 
 		// // RVA: 0x238A308 Offset: 0x238A308 VA: 0x238A308
-		// public static float GetFloat(EDOHBJAPLPF jdata, string key) { }
+		// public static float GetFloat(EDOHBJAPLPF_JsonData jdata, string key) { }
 
 		// // RVA: 0x238A310 Offset: 0x238A310 VA: 0x238A310
 		public static int GetInt(EDOHBJAPLPF_JsonData jdata, string key, int notExistValue)
@@ -168,10 +168,10 @@ namespace XeSys
 		}
 
 		// // RVA: 0x238AACC Offset: 0x238AACC VA: 0x238AACC
-		// public static bool GetFlag(EDOHBJAPLPF jdata, string key) { }
+		// public static bool GetFlag(EDOHBJAPLPF_JsonData jdata, string key) { }
 
 		// // RVA: 0x238AAF0 Offset: 0x238AAF0 VA: 0x238AAF0
-		// public static bool IsExist(EDOHBJAPLPF from, string key) { }
+		// public static bool IsExist(EDOHBJAPLPF_JsonData from, string key) { }
 
 		// // RVA: 0x238AB24 Offset: 0x238AB24 VA: 0x238AB24
 		// public static void WriteValue(KIJECNFNNDB writer, string propertyName, object value) { }

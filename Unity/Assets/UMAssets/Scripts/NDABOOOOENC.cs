@@ -110,10 +110,10 @@ public class NDABOOOOENC
 				KBCANNBANIL_ReadStatusOnSavedFile();
 				if(FAGBLGODELF_LoginStatus == 1 || HCEMFKINGPE_Force)
 				{
-					Social.localUser.Authenticate((bool _FHANAFNKIFC_Success) =>
+					Social.localUser.Authenticate((bool _FHANAFNKIFC_success) =>
 					{
 						//0x1ADDD84
-						if(_FHANAFNKIFC_Success)
+						if(_FHANAFNKIFC_success)
 						{
 							HJOPHGFDHAM_SetStatus(1);
 							Debug.Log(JpStringLiterals.StringLiteral_12573);
@@ -180,11 +180,11 @@ public class NDABOOOOENC
 				string achId = JIMKNDJMCID_Keys[_PPFNGGCBJKC_id];
 				if(_PPFNGGCBJKC_id >= 27 && _PPFNGGCBJKC_id < 31)
 				{
-					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("gpgs_key_" + _PPFNGGCBJKC_id, "");
+					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("gpgs_key_" + _PPFNGGCBJKC_id, "");
 					if (!string.IsNullOrEmpty(str))
 						achId = str;
 				}
-				Social.ReportProgress(achId, 100, (bool _FHANAFNKIFC_Success) =>
+				Social.ReportProgress(achId, 100, (bool _FHANAFNKIFC_success) =>
 				{
 					//0x1ADDD80
 					return;

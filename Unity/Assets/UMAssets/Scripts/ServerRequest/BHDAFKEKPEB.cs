@@ -8,9 +8,9 @@ public class HBFCGCGDINM
 	public List<KOPCFBCDBPC> JOMCOLHEBBI_step_up_lots; // 0x8
 
 	// RVA: 0x173F4A4 Offset: 0x173F4A4 VA: 0x173F4A4
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 	{
-		EDOHBJAPLPF_JsonData d = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.JOMCOLHEBBI_step_up_lots];
+		EDOHBJAPLPF_JsonData d = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.JOMCOLHEBBI_step_up_lots];
 		JOMCOLHEBBI_step_up_lots = new List<KOPCFBCDBPC>(d.HNBFOAJIIAL_Count);
 		for(int i = 0; i < d.HNBFOAJIIAL_Count; i++)
 		{

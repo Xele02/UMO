@@ -12,13 +12,13 @@ public class JKIJLMMLNPL
 		public GCIJNCFDNON_SceneInfo COIODGJDJEJ_scene; // 0x8
 		public int ODNDCOMBAOH; // 0xC
 		public int CGIKGNJJCIG; // 0x10
-		public int BDLNMOIOMHK_Total; // 0x14
+		public int BDLNMOIOMHK_total; // 0x14
 
 		// RVA: 0x146948C Offset: 0x146948C VA: 0x146948C
 		public void NCLLHLHCOJE()
 		{
-			int t = COIODGJDJEJ_scene.CMCKNKKCNDK_Status.Total;
-			BDLNMOIOMHK_Total = (t * ODNDCOMBAOH) / 100 + t + (t * CGIKGNJJCIG) / 100;
+			int t = COIODGJDJEJ_scene.CMCKNKKCNDK_status.Total;
+			BDLNMOIOMHK_total = (t * ODNDCOMBAOH) / 100 + t + (t * CGIKGNJJCIG) / 100;
 		}
 	}	
 
@@ -70,22 +70,22 @@ public class JKIJLMMLNPL
 				}
 			}
 		}
-		l.Sort((GMJBEOLMJKB HKICMNAACDA, GMJBEOLMJKB BNKHBCBJBKI) =>
+		l.Sort((GMJBEOLMJKB _HKICMNAACDA_a, GMJBEOLMJKB _BNKHBCBJBKI_b) =>
 		{
 			//0x14696C0
-			return BNKHBCBJBKI.BDLNMOIOMHK_Total - HKICMNAACDA.BDLNMOIOMHK_Total;
+			return _BNKHBCBJBKI_b.BDLNMOIOMHK_total - _HKICMNAACDA_a.BDLNMOIOMHK_total;
 		});
-		cnt = Mathf.Min(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_plate_max", 100), l.Count);
+		cnt = Mathf.Min(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_plate_max", 100), l.Count);
 		int val = 0;
 		for(int i = 0; i < cnt; i++)
 		{
 			OPIBAPEGCLA_Scenes.Add(l[i].COIODGJDJEJ_scene);
-			val += l[i].BDLNMOIOMHK_Total;
+			val += l[i].BDLNMOIOMHK_total;
 		}
-		LOAJLHEIMFD_MCannonDamageBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_damage_base", 10000);
-		EDJHGLOKLEN_MCannonDamageUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_damage_urate", 10000) * GameManager.Instance.ViewPlayerData.BJGOPOEAAIC_UtaRate;
-		DMDHECLBECL_MCannonDamagePlate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_damage_plate", 10) * val;
-		HALIDDHLNEG_Damage = (EDJHGLOKLEN_MCannonDamageUtaRate + LOAJLHEIMFD_MCannonDamageBase + DMDHECLBECL_MCannonDamagePlate) / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_damage_denomi", 1000);
+		LOAJLHEIMFD_MCannonDamageBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_base", 10000);
+		EDJHGLOKLEN_MCannonDamageUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_urate", 10000) * GameManager.Instance.ViewPlayerData.BJGOPOEAAIC_UtaRate;
+		DMDHECLBECL_MCannonDamagePlate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_plate", 10) * val;
+		HALIDDHLNEG_Damage = (EDJHGLOKLEN_MCannonDamageUtaRate + LOAJLHEIMFD_MCannonDamageBase + DMDHECLBECL_MCannonDamagePlate) / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_denomi", 1000);
 	}
 
 	// RVA: 0x1469518 Offset: 0x1469518 VA: 0x1469518

@@ -50,15 +50,15 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
         // RVA: 0x135BCFC Offset: 0x135BCFC VA: 0x135BCFC
         public CEHKLJKGJPI(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
         {
-            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0x135C358
-                return new MFKPFMCLOIB(_IDLHJIOMJBK_Data);
+                return new MFKPFMCLOIB(_IDLHJIOMJBK_data);
             });
-            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(_DLENPPIJNPA_json.PFBEBCDEIND("attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(_DLENPPIJNPA_json.PFBEBCDEIND("attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0x135C3CC
-                return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_Data));
+                return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_data));
             });
             COGCGJLFDKG_FirstAttackPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {

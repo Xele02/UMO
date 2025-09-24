@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 			SetEnabledNumStatus(true);
 			SetDetailButtonShow();
 			SetNewIcon(item.CADENLBDAEB_IsNew);
-			SetNum(item.BFINGCJHOHI_Count, item.BFINGCJHOHI_Count - postNum);
+			SetNum(item.BFINGCJHOHI_cnt, item.BFINGCJHOHI_cnt - postNum);
 			SetStatusIcon(-1 < postNum);
 			Id = item.PPFNGGCBJKC_id;
 			SubId = subId;

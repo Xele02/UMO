@@ -11,8 +11,8 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 {
     public class PHAKFFBNNEI_PlayerDataResult
     {
-        public long BIOGKIEECGN_CreatedAt; // 0x8
-        public long IFNLEKOILPM_UpdatedAt; // 0x10
+        public long BIOGKIEECGN_created_at; // 0x8
+        public long IFNLEKOILPM_updated_at; // 0x10
         public int CEMEIPNMAAD_Version; // 0x18
         public sbyte MLGKDBJLNBM_data_status; // 0x1C
         public bool PLEAGPCJICK; // 0x1D
@@ -55,8 +55,8 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
     {
         PHAKFFBNNEI_PlayerDataResult tmp = new PHAKFFBNNEI_PlayerDataResult();
         EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        tmp.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
-        tmp.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
+        tmp.BIOGKIEECGN_created_at = JsonUtil.GetLong(jsonData["created_at"]);
+        tmp.IFNLEKOILPM_updated_at = JsonUtil.GetLong(jsonData["updated_at"]);
         tmp.MLGKDBJLNBM_data_status = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
         DLKLLHPLANH = false;
         if(IJMPLDBGMHC_OnDataReceived != null)

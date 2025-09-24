@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills.Find((PPGHMBNIAEC _) =>
 				{
 					//0xCFC72C
-					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE_LiveSkillId;
+					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE_lid;
 				});
 				if(skill != null)
 				{

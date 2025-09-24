@@ -119,9 +119,9 @@ namespace XeApp.Game.Tutorial
 			string str = "";
 			for (int i = 0; i < m_messageData.JONNCMDGMKA_Message.Length; i++)
 			{
-				if(!string.IsNullOrEmpty(m_messageData.ADCMNODJBGJ_Title[i]))
+				if(!string.IsNullOrEmpty(m_messageData.ADCMNODJBGJ_title[i]))
 				{
-					str = m_messageData.ADCMNODJBGJ_Title[i];
+					str = m_messageData.ADCMNODJBGJ_title[i];
 				}
 				if(m_messageData.KMDGMOMCDAD[i] < 1 || !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(m_messageData.KMDGMOMCDAD[i]))
 				{

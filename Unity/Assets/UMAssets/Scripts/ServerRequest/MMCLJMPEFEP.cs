@@ -10,22 +10,22 @@ public class MMCLJMPEFEP_GetBbsThreads : CACGCMBKHDI_Request
 	{
 		public List<JKHBHIGMJIC> NMHGLNGACMI_Threads = new List<JKHBHIGMJIC>(); // 0x8
 		public int MDIBIIHAAPN_next_page; // 0xC
-		public int CJNNMLLEKEF_PreviousPage; // 0x10
-		public int GPPOJHNNINK_CurrentPage; // 0x14
+		public int CJNNMLLEKEF_previous_page; // 0x10
+		public int GPPOJHNNINK_current_page; // 0x14
 
 		//// RVA: 0x1964324 Offset: 0x1964324 VA: 0x1964324
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EDOHBJAPLPF_JsonData threads = _IDLHJIOMJBK_Data["threads"];
+			EDOHBJAPLPF_JsonData threads = _IDLHJIOMJBK_data["threads"];
 			for(int i = 0; i < threads.HNBFOAJIIAL_Count; i++)
 			{
 				JKHBHIGMJIC thread = new JKHBHIGMJIC();
 				thread.KHEKNNFCAOI_Init(threads[i]);
 				NMHGLNGACMI_Threads.Add(thread);
 			}
-			CJNNMLLEKEF_PreviousPage = (int)_IDLHJIOMJBK_Data["previous_page"];
-			GPPOJHNNINK_CurrentPage = (int)_IDLHJIOMJBK_Data["current_page"];
-			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_Data["next_page"];
+			CJNNMLLEKEF_previous_page = (int)_IDLHJIOMJBK_data["previous_page"];
+			GPPOJHNNINK_current_page = (int)_IDLHJIOMJBK_data["current_page"];
+			MDIBIIHAAPN_next_page = (int)_IDLHJIOMJBK_data["next_page"];
 		}
 	}
 

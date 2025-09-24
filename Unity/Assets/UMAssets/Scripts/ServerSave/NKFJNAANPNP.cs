@@ -89,7 +89,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 		private int HLMAFFLCCKD_CountCrypted; // 0x10
 
 		public int HNKFMAJIFJD_ExpireAt { get { return PIOJIJEDDJP ^ FBGGEFFJJHB_xor; } set { PIOJIJEDDJP = FBGGEFFJJHB_xor ^ value; } } //0xC13BD0 CEOIBKAGPAG 0xC13BA8 DLHBCINBDFI
-		public int HMFFHLPNMPH_Count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = FBGGEFFJJHB_xor ^ value; } } //0xC13BE0 NJOGDDPICKG 0xC13BB8 NBBGMMBICNA
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = FBGGEFFJJHB_xor ^ value; } } //0xC13BE0 NJOGDDPICKG 0xC13BB8 NBBGMMBICNA
 
 		//// RVA: 0xC13B98 Offset: 0xC13B98 VA: 0xC13B98
 		public void LHPDDGIJKNB_Reset(int KNEFBLHBDBG)
@@ -187,10 +187,10 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 			if (IDJIDAPJCBE[i].NIENPFFLMCH(_JHNMKKNEENE_Time))
 				res.Add(i);
 		}
-		res.Sort((int HKICMNAACDA, int BNKHBCBJBKI) =>
+		res.Sort((int _HKICMNAACDA_a, int _BNKHBCBJBKI_b) =>
 		{
 			//0xC15EE4
-			return IDJIDAPJCBE[HKICMNAACDA].PGPGPJNBIOH_uid.CompareTo(IDJIDAPJCBE[BNKHBCBJBKI].PGPGPJNBIOH_uid);
+			return IDJIDAPJCBE[_HKICMNAACDA_a].PGPGPJNBIOH_uid.CompareTo(IDJIDAPJCBE[_BNKHBCBJBKI_b].PGPGPJNBIOH_uid);
 		});
 		return res;
 	}
@@ -213,7 +213,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 				MOJLCADLMKH data = new MOJLCADLMKH();
 				data.LHPDDGIJKNB_Reset((int)(_JHNMKKNEENE_Time * 0x227));
 				data.HNKFMAJIFJD_ExpireAt = IDJIDAPJCBE[i].HNKFMAJIFJD;
-				data.HMFFHLPNMPH_Count = 1;
+				data.HMFFHLPNMPH_count = 1;
 				res.Add(data);
 			}
 		}
@@ -237,13 +237,13 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				r.HMFFHLPNMPH_Count += res[i].HMFFHLPNMPH_Count;
+				r.HMFFHLPNMPH_count += res[i].HMFFHLPNMPH_count;
 			}
 		}
-		res.Sort((MOJLCADLMKH HKICMNAACDA, MOJLCADLMKH BNKHBCBJBKI) =>
+		res.Sort((MOJLCADLMKH _HKICMNAACDA_a, MOJLCADLMKH _BNKHBCBJBKI_b) =>
 		{
 			//0xC16074
-			return HKICMNAACDA.HNKFMAJIFJD_ExpireAt.CompareTo(BNKHBCBJBKI.HNKFMAJIFJD_ExpireAt);
+			return _HKICMNAACDA_a.HNKFMAJIFJD_ExpireAt.CompareTo(_BNKHBCBJBKI_b.HNKFMAJIFJD_ExpireAt);
 		});
 		return res;
 	}

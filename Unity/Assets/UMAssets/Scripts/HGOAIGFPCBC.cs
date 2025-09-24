@@ -33,10 +33,10 @@ public class HGOAIGFPCBC
 	}
 
 	//// RVA: 0x1751FB4 Offset: 0x1751FB4 VA: 0x1751FB4
-	public void FBANBDCOEJL(int _HMFFHLPNMPH_Count)
+	public void FBANBDCOEJL(int _HMFFHLPNMPH_count)
 	{
-		PKNLMLDKCLM_AchievedQuestCount = _HMFFHLPNMPH_Count;
-		if(_HMFFHLPNMPH_Count < 1)
+		PKNLMLDKCLM_AchievedQuestCount = _HMFFHLPNMPH_count;
+		if(_HMFFHLPNMPH_count < 1)
 		{
 			BEEIIJJKDBH_BadgeConstantId = 0;
 			BHANMJKCCBC_BadgeText = "";
@@ -44,7 +44,7 @@ public class HGOAIGFPCBC
 		else
 		{
 			BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
-			BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(_HMFFHLPNMPH_Count);
+			BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(_HMFFHLPNMPH_count);
 		}
 	}
 }

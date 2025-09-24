@@ -8,7 +8,7 @@ public struct KLNBIIPKNIB
 {
 	public int MLPEHNBNOGD_PlayerId; // 0x0
 	public long KNIFCANOHOC_score; // 0x8
-	public int FJOLNJLLJEJ_Rank; // 0x10
+	public int FJOLNJLLJEJ_rank; // 0x10
 }
 
 public class OFGCBEPEFOH
@@ -61,7 +61,7 @@ public class AGLHPOOPOCG
 	private void HKMNKGFJLEA()
 	{
 		BFILINGKCFK = true;
-		OAKDPFFGCLJ_TopPlayerScore = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate;
+		OAKDPFFGCLJ_TopPlayerScore = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate;
 	}
 
 	//// RVA: 0x15C48CC Offset: 0x15C48CC VA: 0x15C48CC
@@ -93,18 +93,18 @@ public class AGLHPOOPOCG
 		{
 			//0x15C4D58
 			PFDPLFOGMNF_GetRegularRankingTopRank r = NHECPMNKEFK as PFDPLFOGMNF_GetRegularRankingTopRank;
-			if(r.NFEAMMJIMPG_Result.EJDEDOJFOOK.Count == 0)
+			if(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks.Count == 0)
 			{
 				_KLMFJJCNBIP_OnSuccess(null);
 			}
 			else
 			{
 				List<int> l = new List<int>();
-				for(int i = 0; i < r.NFEAMMJIMPG_Result.EJDEDOJFOOK.Count; i++)
+				for(int i = 0; i < r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks.Count; i++)
 				{
-					l.Add(r.NFEAMMJIMPG_Result.EJDEDOJFOOK[i].EHGBICNIBKE_PlayerId);
+					l.Add(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks[i].EHGBICNIBKE_player_id);
 				}
-				FGEIGGNCGGD(r.NFEAMMJIMPG_Result.EJDEDOJFOOK, _KLMFJJCNBIP_OnSuccess);
+				FGEIGGNCGGD(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks, _KLMFJJCNBIP_OnSuccess);
 			}
 		};
 	}
@@ -115,7 +115,7 @@ public class AGLHPOOPOCG
 		List<KLNBIIPKNIB> l = new List<KLNBIIPKNIB>();
 		for(int i = 0; i < NFMMAELFANG.Count; i++)
 		{
-			l.Add(new KLNBIIPKNIB() { MLPEHNBNOGD_PlayerId = NFMMAELFANG[i].EHGBICNIBKE_PlayerId, KNIFCANOHOC_score = NFMMAELFANG[i].KNIFCANOHOC_score, FJOLNJLLJEJ_Rank = NFMMAELFANG[i].FJOLNJLLJEJ_Rank });
+			l.Add(new KLNBIIPKNIB() { MLPEHNBNOGD_PlayerId = NFMMAELFANG[i].EHGBICNIBKE_player_id, KNIFCANOHOC_score = NFMMAELFANG[i].KNIFCANOHOC_score, FJOLNJLLJEJ_rank = NFMMAELFANG[i].FJOLNJLLJEJ_rank });
 		}
 		_KLMFJJCNBIP_OnSuccess(l);
 	}

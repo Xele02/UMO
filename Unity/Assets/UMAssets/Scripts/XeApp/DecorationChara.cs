@@ -123,7 +123,7 @@ namespace XeApp
 			sr = m_spriteRenderer;
 			if(sr == null)
 				yield break;
-			int chara_long_tap_threshold_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("chara_long_tap_threshold_milli", 2000);
+			int chara_long_tap_threshold_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("chara_long_tap_threshold_milli", 2000);
 			longTapThreshold = chara_long_tap_threshold_milli / 1000.0f;
 			cbn = DecorationConstants.DecoAssetPath + string.Format(AssetPathFormat, "cmn");
 			yield return AssetBundleManager.LoadAllAssetAsync(cbn);
@@ -146,7 +146,7 @@ namespace XeApp
 		//// RVA: 0x1AC3BFC Offset: 0x1AC3BFC VA: 0x1AC3BFC
 		private void InitViewIntimacy()
 		{
-			if(Setting.viewDecoItemData.GBJFNGCDKPM_Type != 1)
+			if(Setting.viewDecoItemData.GBJFNGCDKPM_typ != 1)
 			{
 				viewIntimacyData = null;
 				return;
@@ -181,7 +181,7 @@ namespace XeApp
 			while(!base.IsLoaded)
 				yield return null;
 			yield return Co.R(Co_LoadAnim());
-			int deco_chara_scale = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("deco_chara_scale", 1000);
+			int deco_chara_scale = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_chara_scale", 1000);
 			m_object.transform.localScale = new Vector3(deco_chara_scale / 1000.0f, deco_chara_scale / 1000.0f, 1);
 			pincher = Pincher.Instantiate(this, m_spriteRenderer);
 			reaction = ReactionPhrase.Instantiate(m_spriteRenderer.transform, this);

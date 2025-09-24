@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 			InitializeSortSetting();
 			base.OnPreSetCanvas();
 			m_buttonRuntime.Hide();
-			m_isDeco = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) != 0;
+			m_isDeco = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("deco_player_level", 0) != 0;
 			this.StartCoroutineWatched(Co_Initialize());
 			m_favoritCount = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
 			m_updater = () =>

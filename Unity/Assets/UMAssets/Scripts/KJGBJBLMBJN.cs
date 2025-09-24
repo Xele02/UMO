@@ -1,7 +1,7 @@
 
 public class KJGBJBLMBJN
 {
-	public BLHNHKMMPAD HBODCMLFDOB_Result = new BLHNHKMMPAD(); // 0x8
+	public BLHNHKMMPAD HBODCMLFDOB_result = new BLHNHKMMPAD(); // 0x8
 	public string OPFGFINHFCE_name; // 0xC
 	public int BHCIFFILAKJ_Strength; // 0x10
 	public int PCPKGJIMLGO_Crypted; // 0x14
@@ -11,7 +11,7 @@ public class KJGBJBLMBJN
 	// RVA: 0x1A02F28 Offset: 0x1A02F28 VA: 0x1A02F28
 	public void LHPDDGIJKNB_Reset()
     {
-        HBODCMLFDOB_Result.LHPDDGIJKNB_Reset();
+        HBODCMLFDOB_result.LHPDDGIJKNB_Reset();
         OPFGFINHFCE_name = "";
         BHCIFFILAKJ_Strength = 0;
         PBJLLAOJMAK_PId = 0;
@@ -20,7 +20,7 @@ public class KJGBJBLMBJN
 	// // RVA: 0x1A02FC4 Offset: 0x1A02FC4 VA: 0x1A02FC4
 	public bool AGBOGBEOFME(KJGBJBLMBJN OIKJFMGEICL)
 	{
-		if(!HBODCMLFDOB_Result.AGBOGBEOFME(OIKJFMGEICL.HBODCMLFDOB_Result))
+		if(!HBODCMLFDOB_result.AGBOGBEOFME(OIKJFMGEICL.HBODCMLFDOB_result))
 			return false;
 		if(OPFGFINHFCE_name != OIKJFMGEICL.OPFGFINHFCE_name)
 			return false;
@@ -35,7 +35,7 @@ public class KJGBJBLMBJN
 	public void ODDIHGPONFL_Copy(KJGBJBLMBJN OIKJFMGEICL)
 	{
 		OPFGFINHFCE_name = OIKJFMGEICL.OPFGFINHFCE_name;
-		HBODCMLFDOB_Result.ODDIHGPONFL_Copy(OIKJFMGEICL.HBODCMLFDOB_Result);
+		HBODCMLFDOB_result.ODDIHGPONFL_Copy(OIKJFMGEICL.HBODCMLFDOB_result);
 		PCPKGJIMLGO_Crypted = OIKJFMGEICL.PCPKGJIMLGO_Crypted;
 		BHCIFFILAKJ_Strength = OIKJFMGEICL.BHCIFFILAKJ_Strength;
 	}
@@ -43,7 +43,7 @@ public class KJGBJBLMBJN
 	// // RVA: 0x1A030E8 Offset: 0x1A030E8 VA: 0x1A030E8
 	public EDOHBJAPLPF_JsonData OKJPIBHMKMJ()
 	{
-		EDOHBJAPLPF_JsonData res = HBODCMLFDOB_Result.NOJCMGAFAAC_ToJsonData();
+		EDOHBJAPLPF_JsonData res = HBODCMLFDOB_result.NOJCMGAFAAC_ToJsonData();
 		res["pid"] = PBJLLAOJMAK_PId;
 		res["name"] = OPFGFINHFCE_name;
 		res["strg"] = BHCIFFILAKJ_Strength;

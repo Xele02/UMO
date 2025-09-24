@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
 								arg.defaultSelectScene = 0;
 								arg.divaSlotIndex = 0;
-								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].DIPKCALNIII_DivaId - 1];
+								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].DIPKCALNIII_diva_id - 1];
 								info.category = SceneGroupCategory.FORMATION;
 								info.nextName = TransitionList.Type.SCENE_SELECT;
 								info.parentName = TransitionList.Type.TEAM_EDIT;
@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 						t_diva2 = Database.Instance.gameSetup.teamInfo.divaList[1];
 						t_diva3 = Database.Instance.gameSetup.teamInfo.divaList[2];
 						t_diva_num = Database.Instance.gameSetup.musicInfo.onStageDivaNum;
-						int disable_game_start_multi_voices = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("disable_game_start_multi_voices", 0);
+						int disable_game_start_multi_voices = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("disable_game_start_multi_voices", 0);
 						if (disable_game_start_multi_voices != 0)
 							t_diva_num = 1;
 						bool isEndedChangeCueSheet = false;
@@ -1384,7 +1384,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("other_item_show", 0) < 1 || !isTab)
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("other_item_show", 0) < 1 || !isTab)
 			{
 				m_popupItemListSetting.Tabs = new PopupTabButton.ButtonLabel[0];
 			}
@@ -1753,7 +1753,7 @@ namespace XeApp.Game.Menu
 			//0xB419F0
 			if (!HighScoreRating.IsNotReceivedRewardUtaGrade())
 				yield break;
-			grade = HighScoreRating.GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			grade = HighScoreRating.GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate);
 			HighScoreRating hs = new HighScoreRating();
 			hs.Init();
 			rewardList = hs.GetUtaGradeList(grade);
@@ -1949,7 +1949,7 @@ namespace XeApp.Game.Menu
 
 			//0xB3E720
 			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave();
-			ticketCount = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("live_skip_ticket_present_count", 3);
+			ticketCount = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("live_skip_ticket_present_count", 3);
 			isPossibleReceveLiveSkipTicket = false;
 			if (CIOECGOMILE.HHCJCDFCLOB.NKMNJIAGHBB() && ticketCount > 0)
 				isPossibleReceveLiveSkipTicket = true;

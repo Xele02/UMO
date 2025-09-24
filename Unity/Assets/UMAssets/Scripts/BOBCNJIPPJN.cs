@@ -5,36 +5,36 @@ using System.IO;
 public class BOBCNJIPPJN
 {
 	// RVA: 0x19CC098 Offset: 0x19CC098 VA: 0x19CC098
-	public static bool AGJJGJCIMKI(byte[] _DBBGALAPFGC_Data)
+	public static bool AGJJGJCIMKI(byte[] _DBBGALAPFGC_bytes)
     {
-        if(_DBBGALAPFGC_Data.Length < 16)
+        if(_DBBGALAPFGC_bytes.Length < 16)
             return false;
-        return _DBBGALAPFGC_Data[0] == 0x1f && _DBBGALAPFGC_Data[1] == 0x8B && _DBBGALAPFGC_Data[2] == 0x8;
+        return _DBBGALAPFGC_bytes[0] == 0x1f && _DBBGALAPFGC_bytes[1] == 0x8B && _DBBGALAPFGC_bytes[2] == 0x8;
     }
 
 	// // RVA: 0x19CC130 Offset: 0x19CC130 VA: 0x19CC130
-	public static int JAIEEHOPAFD(byte[] _DBBGALAPFGC_Data)
+	public static int JAIEEHOPAFD(byte[] _DBBGALAPFGC_bytes)
 	{
-		if(AGJJGJCIMKI(_DBBGALAPFGC_Data))
+		if(AGJJGJCIMKI(_DBBGALAPFGC_bytes))
 		{
-			return BitConverter.ToInt32(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length - 4);
+			return BitConverter.ToInt32(_DBBGALAPFGC_bytes, _DBBGALAPFGC_bytes.Length - 4);
 		}
-		return _DBBGALAPFGC_Data.Length;
+		return _DBBGALAPFGC_bytes.Length;
 	}
 
 	// // RVA: 0x19CC1E4 Offset: 0x19CC1E4 VA: 0x19CC1E4
-	public static byte[] JCBCBNFPJDH(byte[] _DBBGALAPFGC_Data)
+	public static byte[] JCBCBNFPJDH(byte[] _DBBGALAPFGC_bytes)
 	{
-		if(AGJJGJCIMKI(_DBBGALAPFGC_Data))
+		if(AGJJGJCIMKI(_DBBGALAPFGC_bytes))
 		{
-			byte[] res = new byte[JAIEEHOPAFD(_DBBGALAPFGC_Data)];
-			if(HCPBJNNFONO(_DBBGALAPFGC_Data, res) != 0)
+			byte[] res = new byte[JAIEEHOPAFD(_DBBGALAPFGC_bytes)];
+			if(HCPBJNNFONO(_DBBGALAPFGC_bytes, res) != 0)
 			{
-				return _DBBGALAPFGC_Data;
+				return _DBBGALAPFGC_bytes;
 			}
 			return res;
 		}
-		return _DBBGALAPFGC_Data;
+		return _DBBGALAPFGC_bytes;
 	}
 
 	// // RVA: 0x19CC338 Offset: 0x19CC338 VA: 0x19CC338
@@ -57,8 +57,8 @@ public class BOBCNJIPPJN
 	}
 
 	// // RVA: 0x19CC280 Offset: 0x19CC280 VA: 0x19CC280
-	private static int HCPBJNNFONO(byte[] _DBBGALAPFGC_Data, byte[] _IAKPCFDLMKP_db)
+	private static int HCPBJNNFONO(byte[] _DBBGALAPFGC_bytes, byte[] _IAKPCFDLMKP_db)
 	{
-		return KEHJJDKPDLL(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length, _IAKPCFDLMKP_db, _IAKPCFDLMKP_db.Length);
+		return KEHJJDKPDLL(_DBBGALAPFGC_bytes, _DBBGALAPFGC_bytes.Length, _IAKPCFDLMKP_db, _IAKPCFDLMKP_db.Length);
 	}
 }

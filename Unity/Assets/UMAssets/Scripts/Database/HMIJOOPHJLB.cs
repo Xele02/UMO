@@ -62,11 +62,11 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
     }
 
 	// RVA: 0x15F63F4 Offset: 0x15F63F4 VA: 0x15F63F4 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
     {
         int time = (int)Utility.GetCurrentUnixTime();
         time *= 0x96a;
-        PBLHKFHDMGG reader = PBLHKFHDMGG.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+        PBLHKFHDMGG reader = PBLHKFHDMGG.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
         ELHKLDPNKBD[] array = reader.HNKCJKLONLN;
         time += 2;
         for(int i = 0; i < array.Length; i++)

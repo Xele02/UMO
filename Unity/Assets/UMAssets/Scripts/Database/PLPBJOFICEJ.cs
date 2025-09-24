@@ -29,7 +29,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "JBGEEPFKIGG", CryptedInMemory = true, Desc = "Point applied when used to upgrade costume.")]
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC544 OLOCMINKGON 0xFEBF00 ABAFHIBFKCE
 		[UMOMember(ReaderMember = "FDBOPFEOENF", CryptedInMemory = true, Desc = "Could be level or diva id")]
-		public int FDBOPFEOENF_Diva { get { return LLEMDLLGIAH ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG 0xFEBF9C GHECGDMEBFF
+		public int FDBOPFEOENF_diva { get { return LLEMDLLGIAH ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG 0xFEBF9C GHECGDMEBFF
 		[UMOMember(ReaderMember = "GBJFNGCDKPM", CryptedInMemory = true, Desc = "Only cat 2 ?")]
 		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC37C GHAILOLPHPF 0xFEC038 BACGOKIGMBC
 
@@ -68,7 +68,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 		return CDENCMNHNGA_table.Find((IBEMFIAFIKH_ItemInfo _KOGBMDOONFA_Info) =>
 		{
 			//0xFEC274
-			return _KOGBMDOONFA_Info.FDBOPFEOENF_Diva == _MCDINKAKFGG_DivaId && _KOGBMDOONFA_Info.INDDJNMPONH_type == (int)_INDDJNMPONH_type;
+			return _KOGBMDOONFA_Info.FDBOPFEOENF_diva == _MCDINKAKFGG_DivaId && _KOGBMDOONFA_Info.INDDJNMPONH_type == (int)_INDDJNMPONH_type;
 		});
 	}
 
@@ -89,9 +89,9 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xFEBAF0 Offset: 0xFEBAF0 VA: 0xFEBAF0 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MADCJBCGGEE parser = MADCJBCGGEE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MADCJBCGGEE parser = MADCJBCGGEE.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		FLNGBOANAGE[] array = parser.GKNGIIHMBOD;
 		CDENCMNHNGA_table = new List<IBEMFIAFIKH_ItemInfo>(array.Length);
 		for(int i = 0; i < array.Length; i++)
@@ -100,7 +100,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
 			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.FDBOPFEOENF_Diva = array[i].FDBOPFEOENF;
+			data.FDBOPFEOENF_diva = array[i].FDBOPFEOENF;
 			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
 			CDENCMNHNGA_table.Add(data);
 		}

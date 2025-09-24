@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 			//0x9CFCC4
 			bool t_is_end = false;
 			bool t_is_error = false;
-			_isFanEnable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) > 0;
+			_isFanEnable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("deco_player_level", 0) > 0;
 			_isCannonEnable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BLEDNLHJDEF_IsCannonEnabled();
 			if(a_arg != null && !a_arg.isShowMyProfil)
 			{

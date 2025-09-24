@@ -39,9 +39,9 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xA01064 Offset: 0xA01064 VA: 0xA01064 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MADCJBCGGEE parser = MADCJBCGGEE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MADCJBCGGEE parser = MADCJBCGGEE.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		FLNGBOANAGE[] array = parser.GKNGIIHMBOD;
 		CDENCMNHNGA_table = new List<NHJLDENJKBE>(array.Length);
 		for(int i = 0; i < array.Length; i++)

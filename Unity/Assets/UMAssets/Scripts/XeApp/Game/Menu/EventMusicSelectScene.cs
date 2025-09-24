@@ -431,7 +431,7 @@ namespace XeApp.Game.Menu
 			{
 				m_eventInfo.SetRewardValid(true);
 				m_eventInfo.SetNextValue(EP_ToString(rwd.OJELCGDDAOM_MissingPoint));
-				GameManager.Instance.ItemTextureCache.Load(rwd.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
+				GameManager.Instance.ItemTextureCache.Load(rwd.HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
 				{
 					//0x13B3C48
 					m_eventInfo.SetRewardIcon(image);

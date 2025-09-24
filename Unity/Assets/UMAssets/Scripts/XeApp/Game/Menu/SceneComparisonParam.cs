@@ -166,14 +166,14 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_paramTexts[0].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
-				m_paramTexts[1].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
-				m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
-				m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
-				m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+				m_paramTexts[0].text = sceneData.CMCKNKKCNDK_status.Total.ToString();
+				m_paramTexts[1].text = sceneData.CMCKNKKCNDK_status.soul.ToString();
+				m_paramTexts[2].text = sceneData.CMCKNKKCNDK_status.vocal.ToString();
+				m_paramTexts[3].text = sceneData.CMCKNKKCNDK_status.charm.ToString();
+				m_paramTexts[4].text = sceneData.CMCKNKKCNDK_status.life.ToString();
 				UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_luck);
-				m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
-				m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
+				m_paramTexts[6].text = sceneData.CMCKNKKCNDK_status.support.ToString();
+				m_paramTexts[7].text = sceneData.CMCKNKKCNDK_status.fold.ToString();
 			}
 			if(m_arrowImages.Length != 0)
 			{
@@ -181,39 +181,39 @@ namespace XeApp.Game.Menu
 				{
 					if(sceneData != null)
 					{
-						ComparisonValue(m_paramTexts[0], 0, sceneData.CMCKNKKCNDK_Status.Total, 0);
-						ComparisonValue(m_paramTexts[1], 0, sceneData.CMCKNKKCNDK_Status.soul, 1);
-						ComparisonValue(m_paramTexts[2], 0, sceneData.CMCKNKKCNDK_Status.vocal, 2);
-						ComparisonValue(m_paramTexts[3], 0, sceneData.CMCKNKKCNDK_Status.charm, 3);
-						ComparisonValue(m_paramTexts[4], 0, sceneData.CMCKNKKCNDK_Status.life, 4);
+						ComparisonValue(m_paramTexts[0], 0, sceneData.CMCKNKKCNDK_status.Total, 0);
+						ComparisonValue(m_paramTexts[1], 0, sceneData.CMCKNKKCNDK_status.soul, 1);
+						ComparisonValue(m_paramTexts[2], 0, sceneData.CMCKNKKCNDK_status.vocal, 2);
+						ComparisonValue(m_paramTexts[3], 0, sceneData.CMCKNKKCNDK_status.charm, 3);
+						ComparisonValue(m_paramTexts[4], 0, sceneData.CMCKNKKCNDK_status.life, 4);
 						ComparisonValue(m_paramTexts[5], 0, sceneData.MJBODMOLOBC_luck, 5);
-						ComparisonValue(m_paramTexts[6], 0, sceneData.CMCKNKKCNDK_Status.support, 6);
-						ComparisonValue(m_paramTexts[7], 0, sceneData.CMCKNKKCNDK_Status.fold, 7);
+						ComparisonValue(m_paramTexts[6], 0, sceneData.CMCKNKKCNDK_status.support, 6);
+						ComparisonValue(m_paramTexts[7], 0, sceneData.CMCKNKKCNDK_status.fold, 7);
 					}
 				}
 				else
 				{
 					if(sceneData == null)
 					{
-						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_Status.Total, 0, 0);
-						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_Status.soul, 0, 1);
-						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, 0, 2);
-						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, 0, 3);
-						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, 0, 4);
+						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_status.Total, 0, 0);
+						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_status.soul, 0, 1);
+						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_status.vocal, 0, 2);
+						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_status.charm, 0, 3);
+						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_status.life, 0, 4);
 						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_luck, 0, 5);
-						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, 0, 6);
-						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, 0, 7);
+						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_status.support, 0, 6);
+						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_status.fold, 0, 7);
 					}
 					else
 					{
-						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_Status.Total, sceneData.CMCKNKKCNDK_Status.Total, 0);
-						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_Status.soul, sceneData.CMCKNKKCNDK_Status.soul, 1);
-						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, sceneData.CMCKNKKCNDK_Status.vocal, 2);
-						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, sceneData.CMCKNKKCNDK_Status.charm, 3);
-						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, sceneData.CMCKNKKCNDK_Status.life, 4);
+						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_status.Total, sceneData.CMCKNKKCNDK_status.Total, 0);
+						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_status.soul, sceneData.CMCKNKKCNDK_status.soul, 1);
+						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_status.vocal, sceneData.CMCKNKKCNDK_status.vocal, 2);
+						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_status.charm, sceneData.CMCKNKKCNDK_status.charm, 3);
+						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_status.life, sceneData.CMCKNKKCNDK_status.life, 4);
 						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_luck, sceneData.MJBODMOLOBC_luck, 5);
-						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, sceneData.CMCKNKKCNDK_Status.support, 6);
-						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, sceneData.CMCKNKKCNDK_Status.fold, 7);
+						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_status.support, sceneData.CMCKNKKCNDK_status.support, 6);
+						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_status.fold, sceneData.CMCKNKKCNDK_status.fold, 7);
 					}
 				}
 			}
@@ -265,15 +265,15 @@ namespace XeApp.Game.Menu
 				int numNote = 0;
 				if(divaData != null)
 				{
-					numNote = divaData.CMCKNKKCNDK_Status.spNoteExpected.Length;
+					numNote = divaData.CMCKNKKCNDK_status.spNoteExpected.Length;
 				}
 				int numNoteDisp = m_notes.Length;
 				int cnt = 0;
 				for(int i = 1; i < numNote && cnt < numNoteDisp; i++)
 				{
-					if(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i] > 0)
+					if(sceneData.CMCKNKKCNDK_status.spNoteExpected[i] > 0)
 					{
-						m_notes[cnt].SetNotesValue(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i]);
+						m_notes[cnt].SetNotesValue(sceneData.CMCKNKKCNDK_status.spNoteExpected[i]);
 						m_notes[cnt].SetNotesIcon((SpecialNoteAttribute.Type)i);
 						cnt++;
 					}

@@ -11,9 +11,9 @@ public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
 		public int NHPDJADJNCL_friend_limit; // 0x8
 
 		// RVA: 0x1AF566C Offset: 0x1AF566C VA: 0x1AF566C
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
+			NHPDJADJNCL_friend_limit = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.NHPDJADJNCL_friend_limit];
 		}
 	}
 

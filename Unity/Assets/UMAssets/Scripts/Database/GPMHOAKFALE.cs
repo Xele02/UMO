@@ -55,9 +55,9 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1E5F424 Offset: 0x1E5F424 VA: 0x1E5F424 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		NJBPFPMDKHN parser = NJBPFPMDKHN.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		NJBPFPMDKHN parser = NJBPFPMDKHN.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		MGEJEAENEEG(parser);
 		return true;
 	}
@@ -87,7 +87,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1E5F6E8 Offset: 0x1E5F6E8 VA: 0x1E5F6E8
-	//private bool JANANCJMFPB(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	//private bool JANANCJMFPB(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x1E5F6F0 Offset: 0x1E5F6F0 VA: 0x1E5F6F0 Slot: 11
 	public override uint CAOGDCBPBAN()

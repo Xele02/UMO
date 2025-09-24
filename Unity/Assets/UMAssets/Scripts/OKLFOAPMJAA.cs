@@ -30,7 +30,7 @@ public class OKLFOAPMJAA
 		// RVA: 0x14A0C1C Offset: 0x14A0C1C VA: 0x14A0C1C
 		public BABPHOEGLPC(string LFGDLECGDCL, int EMGJJFKONHK, bool LAGDKBMDHLD/* = false*/, IGJCFFIGKIJ CHKHBIMFOHO/* = null*/)
 		{
-			int bbs_comment_load_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_comment_load_count", 10);
+			int bbs_comment_load_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_comment_load_count", 10);
 			OBKGEDCKHHE(LFGDLECGDCL, bbs_comment_load_count, bbs_comment_load_count, EMGJJFKONHK, LAGDKBMDHLD, CHKHBIMFOHO);
 		}
 
@@ -42,7 +42,7 @@ public class OKLFOAPMJAA
 			DPNKNANKDAM = LAGDKBMDHLD;
 			GNIINAKDJPA = Mathf.Min(MKLHCKJEKKC, 30);
 			LDACLKFJEHH = PLBOJBHAPLO;
-			BIDNGGDPPIM_AutoUpdateInterval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_auto_update_interval", 10);
+			BIDNGGDPPIM_AutoUpdateInterval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_interval", 10);
 			LKMKNEGCCHF = new List<ANPBHCNJIDI.NNPGLGHDBKN>(MKLHCKJEKKC);
 			if(CHKHBIMFOHO == null)
 			{
@@ -97,11 +97,11 @@ public class OKLFOAPMJAA
 				{
 					//0x14A2C94
 					PLOOEECNHFB = true;
-				}, (CACGCMBKHDI_Request HKICMNAACDA) =>
+				}, (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
 				{
 					//0x14A2CA0
 					NPNNPNAIONN_IsError = true;
-				}, (CACGCMBKHDI_Request HKICMNAACDA) =>
+				}, (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
 				{
 					//0x14A2CAC
 					NPNNPNAIONN_IsError = true;
@@ -205,9 +205,9 @@ public class OKLFOAPMJAA
 	//public bool AHDINMJFBNI { get; }
 
 	//// RVA: 0x14A07C8 Offset: 0x14A07C8 VA: 0x14A07C8
-	private int LPJLEHAJADA(string _PIBLLGLCJEO_Param, int MNCOAGOKNAO)
+	private int LPJLEHAJADA_GetIntParam(string _PIBLLGLCJEO_Param, int MNCOAGOKNAO)
 	{
-		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA(_PIBLLGLCJEO_Param, MNCOAGOKNAO);
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam(_PIBLLGLCJEO_Param, MNCOAGOKNAO);
 	}
 
 	//// RVA: 0x14A08A8 Offset: 0x14A08A8 VA: 0x14A08A8
@@ -223,9 +223,9 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A09AC Offset: 0x14A09AC VA: 0x14A09AC
 	public void OBKGEDCKHHE()
 	{
-		FBEGBNBANPO = new KKLGJPAIHJN(LPJLEHAJADA("bbs_update_button_interval", 3), 0);
-		NINFIBPLBFO = new KKLGJPAIHJN(LPJLEHAJADA("bbs_write_button_interval", 3), 0);
-		GIGGFFIEDEK = new KKLGJPAIHJN(LPJLEHAJADA("bbs_no_touch_wait", 60), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+		FBEGBNBANPO = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_update_button_interval", 3), 0);
+		NINFIBPLBFO = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_write_button_interval", 3), 0);
+		GIGGFFIEDEK = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_no_touch_wait", 60), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 	}
 
 	//// RVA: 0x14A0D44 Offset: 0x14A0D44 VA: 0x14A0D44
@@ -362,7 +362,7 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A1A0C Offset: 0x14A1A0C VA: 0x14A1A0C
 	public bool JFLNJEIOFDE()
 	{
-		int comment_max_count = LPJLEHAJADA("bbs_comment_max_count", 10000);
+		int comment_max_count = LPJLEHAJADA_GetIntParam("bbs_comment_max_count", 10000);
 		if(comment_max_count <= JNBFDCGMECE.LPEPBLHCGKP.HDMKAIKOMCB.Count)
 			return false;
 		return JNBFDCGMECE.LPEPBLHCGKP.GMNAECEEHHJ();
@@ -409,7 +409,7 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A1EEC Offset: 0x14A1EEC VA: 0x14A1EEC
 	public void HCMMMCFFGCA_UpdateThreadComment(ANPBHCNJIDI.NNPGLGHDBKN _HCAHCFGPJIF_Desc, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		int update_comment_op = LPJLEHAJADA("update_comment_op", 0);
+		int update_comment_op = LPJLEHAJADA_GetIntParam("update_comment_op", 0);
 		NINFIBPLBFO.IDAPJFGJHND();
 		FKPJGFFFCDG = true;
 		JNBFDCGMECE.LPEPBLHCGKP.HCMMMCFFGCA_UpdateThreadComment(update_comment_op, _HCAHCFGPJIF_Desc, () =>

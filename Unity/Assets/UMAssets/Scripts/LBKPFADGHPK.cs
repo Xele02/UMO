@@ -1,7 +1,7 @@
 
 using System.Collections.Generic;
 
-public delegate bool CCHAFMBDGOB(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long _IFNLEKOILPM_UpdatedAt, bool DMBJLEIGCCG, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
+public delegate bool CCHAFMBDGOB(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_player_id, long _IFNLEKOILPM_updated_at, bool DMBJLEIGCCG, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player);
 
 public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 {
@@ -30,10 +30,10 @@ public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 		res.HHIHCJKLJFF_Names = HHIHCJKLJFF_Names;
 		res.IGNIIEBMFIN_Page = MDEGLGEMHGG_Page;
 		res.PINPBOCDKLI_OnPlayerCb = PINPBOCDKLI_OnPlayerCb;
-		res.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request HKICMNAACDA) =>
+		res.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
 		{
 			//0xD99834
-			MDEGLGEMHGG_Page = (HKICMNAACDA as LNGMNNNJBJP_SearchForPlayer).NFEAMMJIMPG_Result.MDIBIIHAAPN_next_page;
+			MDEGLGEMHGG_Page = (_HKICMNAACDA_a as LNGMNNNJBJP_SearchForPlayer).NFEAMMJIMPG_Result.MDIBIIHAAPN_next_page;
 		};
 		return res;
 	}

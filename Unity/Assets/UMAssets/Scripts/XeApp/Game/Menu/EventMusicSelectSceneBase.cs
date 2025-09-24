@@ -753,7 +753,7 @@ namespace XeApp.Game.Menu
 			if(viewBoostData.DPICLLJJPAC(selectMusicData, (int)diff, isLine6ModeFlag))
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				//selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].BPLOEAHOPFI_Stamina;
+				//selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].BPLOEAHOPFI_stamina;
 				string str1 = "popup_dash_energy_title";
 				if(viewBoostData.NMKDLINPAFM_UseTicket)
 				{
@@ -862,7 +862,7 @@ namespace XeApp.Game.Menu
 				int v = 0;
 				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
-					v += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have;
+					v += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_have;
 				}
 				if(v < danceDivaCount)
 				{
@@ -972,8 +972,8 @@ namespace XeApp.Game.Menu
 			m_musicDecideInfo = MusicDecideInfo.Empty;
 			if(selectMusicData.OEILJHENAHN_PlayEventType == 10)
 			{
-				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
-				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
+				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.DCOALMMJDJK_OverrideCenterSkill;
+				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.KKPLDFNDFDE_OverrideLiveSkill;
 				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(selectMusicData.EKANGPODCEP_EventId);
 			}
 			OnDecideCurrentMusic(ref m_musicDecideInfo);
@@ -1249,7 +1249,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
-			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy, null);
+			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_enemy, null);
 		}
 
 		// // RVA: 0x13BDA1C Offset: 0x13BDA1C VA: 0x13BDA1C
@@ -1353,7 +1353,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13BD010 Offset: 0x13BD010 VA: 0x13BD010
 		private static void OpenMusicDetailWindow(MonoBehaviour owner, IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			MenuScene.Instance.MusicPopupWindowControl.Show(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.DLAEJOBELBH_MusicId, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_Enemy, null, false);
+			MenuScene.Instance.MusicPopupWindowControl.Show(owner, MusicPopupWindowControl.CallType.MusicSelect, musicData.DLAEJOBELBH_MusicId, musicData.MGJKEJHEBPO_Blocks[(int)difficulty].HPBPDHPIBGN_enemy, null, false);
 		}
 
 		// // RVA: 0x13BD2AC Offset: 0x13BD2AC VA: 0x13BD2AC

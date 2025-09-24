@@ -206,7 +206,7 @@ namespace XeApp.Game.Common
 				});
 				if (file != null)
 				{
-					res = MusicScoreData.Instantiate(file.DBBGALAPFGC_Data);
+					res = MusicScoreData.Instantiate(file.DBBGALAPFGC_bytes);
 				}
 				else
 				{

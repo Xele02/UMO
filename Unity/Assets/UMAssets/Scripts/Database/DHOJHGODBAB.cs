@@ -47,9 +47,9 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1989194 Offset: 0x1989194 VA: 0x1989194 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		GEDOHHLGKCG parser = GEDOHHLGKCG.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		GEDOHHLGKCG parser = GEDOHHLGKCG.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		if(EELEJILKBIM_LoadDailyQuest(parser) && GBNIHKOIMFO_LoadNormalQuest(parser))
 		{
 			IHJNKFOJPKM(parser);
@@ -134,7 +134,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			LCKMNLOLDPD data = new LCKMNLOLDPD();
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.GLCLFMGPMAN_ItemId = (int)array[i].CLDDAEMKHOG;
-			data.HMFFHLPNMPH_Count = (int)array[i].PIMBMBIICMK;
+			data.HMFFHLPNMPH_count = (int)array[i].PIMBMBIICMK;
 			data.BGFPPGPJONG_QuestKeyId = (int)array[i].LJNAKDMILMC;
 			data.APNMKLJMPMD_Type = (int)array[i].OILNNGPCLGD;
 			LFAAEPAAEMB.Add(data);
@@ -220,7 +220,7 @@ public class LCKMNLOLDPD
 
 	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A97C DEMEPMAEJOO 0xD9A98C HIGKAIDMOKN
 	public int GLCLFMGPMAN_ItemId { get { return AHGCGHAAHOO_ItemIdCrypted ^ FBGGEFFJJHB_xor; } set { AHGCGHAAHOO_ItemIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A99C LNJAENEGDEL 0xD9A9AC JHIDBGCHOKL
-	public int HMFFHLPNMPH_Count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9BC NJOGDDPICKG 0xD9A9CC NBBGMMBICNA
+	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9BC NJOGDDPICKG 0xD9A9CC NBBGMMBICNA
 	public int BGFPPGPJONG_QuestKeyId { get { return IPFBMBMNAGL_Crypted ^ FBGGEFFJJHB_xor; } set { IPFBMBMNAGL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9DC LBMNPGFFCJN 0xD9A9EC NDNCLLKIJHA
 	public int APNMKLJMPMD_Type { get { return OHDDANALELB_Crypted ^ FBGGEFFJJHB_xor; } set { OHDDANALELB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9FC ICCFOKKODOH 0xD9AA0C CBPDLNBEJAE
 

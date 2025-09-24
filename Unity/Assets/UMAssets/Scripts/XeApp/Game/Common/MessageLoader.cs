@@ -121,7 +121,7 @@ namespace XeApp.Game.Common
 			if(file != null)
 			{
 				Release(sheet);
-				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
+				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_bytes);
 			}
 			m_isLoading = false;
 		}
@@ -168,7 +168,7 @@ namespace XeApp.Game.Common
 				if(file == null)
 					return false;
 				Release(sheet);
-				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
+				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_bytes);
 				return true;
 			}
 		}
@@ -205,7 +205,7 @@ namespace XeApp.Game.Common
 			if(file != null)
 			{
 				Release((eSheet)sheet);
-				MessageManager.Instance.RegisterBank(((eSheet)sheet).ToString(), file.DBBGALAPFGC_Data);
+				MessageManager.Instance.RegisterBank(((eSheet)sheet).ToString(), file.DBBGALAPFGC_bytes);
 			}
 			m_isLoading = false;
 			return true;

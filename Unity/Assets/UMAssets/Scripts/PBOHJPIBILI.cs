@@ -9,7 +9,7 @@ public class PBOHJPIBILI
 	// // RVA: 0xCBD7E8 Offset: 0xCBD7E8 VA: 0xCBD7E8
 	public static int PFNBNKCPFLP_GetCannonStockMax()
     {
-        return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_stock_max", 1);
+        return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_stock_max", 1);
     }
 
 	// RVA: 0xCBD8D8 Offset: 0xCBD8D8 VA: 0xCBD8D8
@@ -57,7 +57,7 @@ public class PBOHJPIBILI
         {
             if(EKLNMHFCAOI.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId) == 6)
             {
-                return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("mcannon_gauge_item_value", 100);
+                return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_gauge_item_value", 100);
             }
         }
         return 0;

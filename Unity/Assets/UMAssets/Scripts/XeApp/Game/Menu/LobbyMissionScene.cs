@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 				this.stat = stat;
 				this.count = count;
 				PPFNGGCBJKC_id = src.PPFNGGCBJKC_id;
-				GBJFNGCDKPM_Type = src.GBJFNGCDKPM_Type;
+				GBJFNGCDKPM_typ = src.GBJFNGCDKPM_typ;
 				PPEGAKEIEGM_Enabled = src.PPEGAKEIEGM_Enabled;
 				FEMMDNIELFC_Desc = src.FEMMDNIELFC_Desc;
 				BGBJPGEIEDE_DescBalloon = src.BGBJPGEIEDE_DescBalloon;
@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 				});
 				if(q != null)
 				{
-					LobbyQuestInfo info = new LobbyQuestInfo(mission[i], q.EALOBDHOCHP_Stat, q.HMFFHLPNMPH_Count);
+					LobbyQuestInfo info = new LobbyQuestInfo(mission[i], q.EALOBDHOCHP_stat, q.HMFFHLPNMPH_count);
 					m_missionDataList.Add(info);
 				}
 			}
@@ -629,7 +629,7 @@ namespace XeApp.Game.Menu
 			if(OnReceiveCallback != null)
 				OnReceiveCallback();
 			KBAGKBIBGPM_EventRaidLobby.JAIFDODKMIA saveLobby = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PJCMHDEJLGF_EventRaidLobby.FBCJICEPLED[m_lobbyEventSetting.MOEKELIIDEO_SaveIdx];
-			saveLobby.NNMPGOAGEOL_quests[m_missionDataList[index].PPFNGGCBJKC_id - 1].EALOBDHOCHP_Stat = 3;
+			saveLobby.NNMPGOAGEOL_quests[m_missionDataList[index].PPFNGGCBJKC_id - 1].EALOBDHOCHP_stat = 3;
 			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
 			StringBuilder str = new StringBuilder();
 			str.Append(saveLobby.NNMPGOAGEOL_quests[index].PPFNGGCBJKC_id);

@@ -13,7 +13,7 @@ public class MOLKENLNCPE_DropData
         public int MHFBCINOJEE_Num; // 0xC
         public EKLNMHFCAOI.FKGCBLHOOCL_Category HHACNFODNEF_ItemCategory; // 0x10
         public string JDMIKEEIJFP; // 0x14
-        public int HMFFHLPNMPH_Count; // 0x18
+        public int HMFFHLPNMPH_count; // 0x18
         public int DJJGNDCMNHF_BonusValue; // 0x1C
         public int LIDBKCIMCKE_rarity; // 0x20
         public bool BAKFIPIFDLE_IsEventRareItem; // 0x24
@@ -27,7 +27,7 @@ public class MOLKENLNCPE_DropData
         // public string LDBPEIMINJB() { }
     }
 
-	public List<MOLKENLNCPE_DropData.CEFIOPJKEIC> HBHMAKNGKFK_Items = new List<CEFIOPJKEIC>(8); // 0x8
+	public List<MOLKENLNCPE_DropData.CEFIOPJKEIC> HBHMAKNGKFK_items = new List<CEFIOPJKEIC>(8); // 0x8
 	public int POPPPGMKOHN_EventRareItemNum; // 0xC
 	public int ELKAMCOPCDO_EventRareItemNum; // 0x10
 	public int MFNCONLNBPB_Rare; // 0x14
@@ -64,8 +64,8 @@ public class MOLKENLNCPE_DropData
 			data.ONDODHPHOOF_ConvertItemId = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].ONDODHPHOOF_ConvertItemId;
 			data.ABIFFLDIAMM_ConvertItemCount = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].ABIFFLDIAMM_ConvertItemCount;
 			data.LHEDLDEMPPG_IsNew = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].LHEDLDEMPPG_IsNew;
-			data.HMFFHLPNMPH_Count = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].OMAJOEOOAJJ_Count0;
-			data.DJJGNDCMNHF_BonusValue = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].HMFFHLPNMPH_Count - JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].OMAJOEOOAJJ_Count0;
+			data.HMFFHLPNMPH_count = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].OMAJOEOOAJJ_Count0;
+			data.DJJGNDCMNHF_BonusValue = JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].HMFFHLPNMPH_count - JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].OMAJOEOOAJJ_Count0;
 			if(!data.PHJHJGDLPED_IsRareDrop)
 			{
 				if (!data.BAKFIPIFDLE_IsEventRareItem)
@@ -77,7 +77,7 @@ public class MOLKENLNCPE_DropData
 			{
 				MFNCONLNBPB_Rare += JGEOBNENMAH.HHCJCDFCLOB.DCELMKFJHPG[i].OMAJOEOOAJJ_Count0;
 			}
-			HBHMAKNGKFK_Items.Add(data);
+			HBHMAKNGKFK_items.Add(data);
 		}
 		if(ELKAMCOPCDO_EventRareItemNum > 0)
 		{

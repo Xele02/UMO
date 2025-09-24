@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 						}
 						m_boardSquareList.Add(squares);
 					}
-					int rarity_up_item_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
+					int rarity_up_item_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("rarity_up_item_id", 230001);
 					rarity_up_item_id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(rarity_up_item_id);
 					int cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(rarity_up_item_id);
 					m_boardSquareList[c][2].id = 0;

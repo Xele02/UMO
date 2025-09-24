@@ -177,11 +177,11 @@ namespace XeApp.Game.Menu
 				GMHKBJLIILI d = l.Find((GMHKBJLIILI _) =>
 				{
 					//0x1D6492C
-					return _.BPEAIOBHMFD_NameForApis == data.BPEAIOBHMFD_NameForApis;
+					return _.BPEAIOBHMFD_name_for_apis == data.BPEAIOBHMFD_name_for_apis;
 				});
-				if(d != null && d.HMFFHLPNMPH_Count > 0)
+				if(d != null && d.HMFFHLPNMPH_count > 0)
 				{
-					currentCount = d.HMFFHLPNMPH_Count - 1;
+					currentCount = d.HMFFHLPNMPH_count - 1;
 				}
 				if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular)
 				{
@@ -236,9 +236,9 @@ namespace XeApp.Game.Menu
 			for(int i = idx; i < a1 && i < data.JPILDOGJLDG_login_bonus_prizes.Count; i++)
 			{
 				CAEDGOPBDNK d = data.JPILDOGJLDG_login_bonus_prizes[i];
-				if(d.HBHMAKNGKFK_Items != null)
+				if(d.HBHMAKNGKFK_items != null)
 				{
-					if(d.HBHMAKNGKFK_Items.Count > 0)
+					if(d.HBHMAKNGKFK_items.Count > 0)
 					{
 						m_prizeObject[arrayIdx].iconLayout.enabled = true;
 						SwitchDayEnable(arrayIdx, true);
@@ -246,18 +246,18 @@ namespace XeApp.Game.Menu
 						{
 							SwitchStampAnim(arrayIdx, eStampStatus.Press);
 						}
-						if(d.HBHMAKNGKFK_Items.Count < 2)
+						if(d.HBHMAKNGKFK_items.Count < 2)
 						{
-							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
-							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
-							SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_item_count);
+							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
+							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+							SetNumItem(arrayIdx, d.HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count);
 						}
 						else
 						{
 							if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3_Comback1 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start)
 							{
 								int val;
-								int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
+								int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
 								SetItemPackIcon(arrayIdx, (ItemPackImageTextureCache.Type)val);
 							}
 							else
@@ -674,7 +674,7 @@ namespace XeApp.Game.Menu
 			while (layout.IsPlayingChildren())
 				yield return null;
 			data = m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay];
-			if(data.HBHMAKNGKFK_Items.Count >= 2)
+			if(data.HBHMAKNGKFK_items.Count >= 2)
 			{
 				if(OnWaitDivaVoice != null)
 				{
@@ -715,7 +715,7 @@ namespace XeApp.Game.Menu
 		private void OpenItemPackPopup(CAEDGOPBDNK data, Action callback)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			string str = m_rewardData.BPEAIOBHMFD_NameForApis + "_{0:00}";
+			string str = m_rewardData.BPEAIOBHMFD_name_for_apis + "_{0:00}";
 			str = bk.GetMessageByLabel(string.Format(str, m_stampPlayDay + 1));
 			if(str.Contains("!not exist"))
 			{
@@ -836,7 +836,7 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
 				m_isPlayStampSe = true;
 			}
-			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count >= 1 && !m_isCheckItemPack)
+			if(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay].HBHMAKNGKFK_items.Count >= 1 && !m_isCheckItemPack)
 			{
 				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_login_bonus_prizes[m_stampPlayDay], () =>
 				{

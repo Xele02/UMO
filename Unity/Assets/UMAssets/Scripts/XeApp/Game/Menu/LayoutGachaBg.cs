@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 			float interval;
 
 			//0x199C56C
-			interval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("interval_time_gacha_bg", 5000);
+			interval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA_GetIntParam("interval_time_gacha_bg", 5000);
 			while(true)
 			{
 				while (m_loopStop)

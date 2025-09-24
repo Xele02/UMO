@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 				if(f != null)
 				{
 					divaId = f.AHHJLDLAPAN_DivaId;
-					cosId = f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+					cosId = f.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 					colId = f.EKFONBFDAAP_ColorId;
 				}
 				if(isGoDiva && i != 0)
@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 				m_statusResultWork.Add(m_costumeResultWork);
 				if(friendData != null && friendData.KHGKPKDBMOH_GetAssistScene() != null)
 				{
-					m_statusResultWork.Add(friendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+					m_statusResultWork.Add(friendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_status);
 				}
 				m_strBuilder.Set(m_statusResultWork.Total.ToString());
 				if(musicData != null && m_statusCalculateWork.COCIPAJKDAF() > 0)

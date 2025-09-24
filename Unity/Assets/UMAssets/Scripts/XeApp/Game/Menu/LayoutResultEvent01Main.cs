@@ -187,20 +187,20 @@ namespace XeApp.Game.Menu
 			m_is_loading = true;
 			m_is_loading_music_jacket = true;
 			m_loadedFileCount = 0;
-			m_loadingFileCount = data.HBHMAKNGKFK_Items.Count;
-			for(int i = 0; i < data.HBHMAKNGKFK_Items.Count; i++)
+			m_loadingFileCount = data.HBHMAKNGKFK_items.Count;
+			for(int i = 0; i < data.HBHMAKNGKFK_items.Count; i++)
 			{
 				ItemLayout layout = m_ItemLayoutList[i];
-				GameManager.Instance.ItemTextureCache.Load(data.HBHMAKNGKFK_Items[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(data.HBHMAKNGKFK_items[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
 				{
 					//0x1D9DC04
 					texture.Set(layout.icon);
 					m_loadedFileCount++;
 				});
-				layout.count.SetNumber(data.HBHMAKNGKFK_Items[i].HMFFHLPNMPH_Count, 0);
-				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK_Items[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
-				layout.total.text = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint.ToString();
-				layout.target_num = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint;
+				layout.count.SetNumber(data.HBHMAKNGKFK_items[i].HMFFHLPNMPH_count, 0);
+				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK_items[i].DNBFMLBNAEE_point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
+				layout.total.text = data.HBHMAKNGKFK_items[i].AHOKAPCGJMA_TotalPoint.ToString();
+				layout.target_num = data.HBHMAKNGKFK_items[i].AHOKAPCGJMA_TotalPoint;
 			}
 			for(int i = 0; i < m_PointText.Length; i++)
 			{

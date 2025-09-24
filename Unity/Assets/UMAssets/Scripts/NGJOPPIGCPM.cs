@@ -208,7 +208,7 @@ public class NGJOPPIGCPM_ResultData
 		HIBKLIFIBKA_RankNum = data2.LGPGIGPHJJB_GetRankNum();
 		IHEKLEFBAEL_PrevUtaRate = data2.KNLMOBHBPII_PrevUtaRate;
 		JAFCLELELID_PrevScoreRatingRanking = data2.KIPEPDKGCCG_PrevScoreRatingRanking;
-		BJGOPOEAAIC_UtaRate = data2.ADKDHKMPMHP_Rate;
+		BJGOPOEAAIC_UtaRate = data2.ADKDHKMPMHP_rate;
 		AGJIIKKOKFJ_ScoreRatingRank = data2.LLNHMMBFPMA_ScoreRatingRanking;
 		NOPDDMJIFFO_IsBetterUtaRate = IHEKLEFBAEL_PrevUtaRate < BJGOPOEAAIC_UtaRate;
 		EPHLOKIIFMH_PrevUtaRateTotal = data2.DEMOACDDPHM_PrevUtaRateTotal;

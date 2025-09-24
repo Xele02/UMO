@@ -94,19 +94,19 @@ namespace XeApp.Game.Menu
 			{
 				case DisplayType.Total:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.Total.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.Total.ToString());
 					break;
 				case DisplayType.Soul:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.soul.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.soul.ToString());
 					break;
 				case DisplayType.Vocal:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.vocal.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.vocal.ToString());
 					break;
 				case DisplayType.Charm:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.charm.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.charm.ToString());
 					break;
 				default:
 					break;
@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 					break;
 				case DisplayType.Life:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.life.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.life.ToString());
 					break;
 				case DisplayType.Luck:
 					SetParamEnable(true);
@@ -124,11 +124,11 @@ namespace XeApp.Game.Menu
 					break;
 				case DisplayType.Support:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.support.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.support.ToString());
 					break;
 				case DisplayType.Fold:
 					SetParamEnable(true);
-					ApplyParam(sceneData.CMCKNKKCNDK_Status.fold.ToString());
+					ApplyParam(sceneData.CMCKNKKCNDK_status.fold.ToString());
 					break;
 				case DisplayType.ActiveSkill:
 					SetSkillIconEnable(true);

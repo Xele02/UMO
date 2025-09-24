@@ -7,8 +7,8 @@ public class GCODMEIACDE
     public class PKJINGDIFNG
     {
         public int KIJAPOFAGPN_ItemId; // 0x8
-        public int DNBFMLBNAEE_Point; // 0xC
-        public int HMFFHLPNMPH_Count; // 0x10
+        public int DNBFMLBNAEE_point; // 0xC
+        public int HMFFHLPNMPH_count; // 0x10
         public int AHOKAPCGJMA_TotalPoint; // 0x14
     }
 
@@ -28,7 +28,7 @@ public class GCODMEIACDE
 	public int IJPAKGFADJB_HiScore; // 0x3C
 	public bool GIIKOMPJOHA_IsHiScore; // 0x40
 	public int OENBOLPDBAB_FreeMusicId; // 0x44
-	public List<PKJINGDIFNG> HBHMAKNGKFK_Items = new List<PKJINGDIFNG>(); // 0x48
+	public List<PKJINGDIFNG> HBHMAKNGKFK_items = new List<PKJINGDIFNG>(); // 0x48
 
 	// RVA: 0x16B4404 Offset: 0x16B4404 VA: 0x16B4404
 	public void KHEKNNFCAOI_Init()
@@ -56,7 +56,7 @@ public class GCODMEIACDE
         BKKPKIGLMCN_Ranks[0] = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[0];
         BKKPKIGLMCN_Ranks[1] = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[1];
         PLKMAOGKFPP = 0;
-        HBHMAKNGKFK_Items.Clear();
+        HBHMAKNGKFK_items.Clear();
         for(int i = 0; i < 3; i++)
         {
             if(JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] != 0)
@@ -64,9 +64,9 @@ public class GCODMEIACDE
                 HGLPLKKBBOL_EventItem.JMCDEDCMCJE it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DHOFNBMPBAG_EventItem.CDENCMNHNGA_table[JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] - 1];
                 PKJINGDIFNG d = new PKJINGDIFNG();
                 d.KIJAPOFAGPN_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem, JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i]);
-                d.DNBFMLBNAEE_Point = it.JBGEEPFKIGG_val;
-                d.HMFFHLPNMPH_Count = JGEOBNENMAH.HHCJCDFCLOB.CMCDIOOEHMI[i];
-                d.AHOKAPCGJMA_TotalPoint = d.DNBFMLBNAEE_Point * d.HMFFHLPNMPH_Count;
+                d.DNBFMLBNAEE_point = it.JBGEEPFKIGG_val;
+                d.HMFFHLPNMPH_count = JGEOBNENMAH.HHCJCDFCLOB.CMCDIOOEHMI[i];
+                d.AHOKAPCGJMA_TotalPoint = d.DNBFMLBNAEE_point * d.HMFFHLPNMPH_count;
                 Debug.Log(string.Concat(new object[8]
                 {
                     "StringLiteral_10444",
@@ -74,12 +74,12 @@ public class GCODMEIACDE
                     ",",
                     it.JBGEEPFKIGG_val,
                     " x ",
-                    d.HMFFHLPNMPH_Count,
+                    d.HMFFHLPNMPH_count,
                     "=",
                     d.AHOKAPCGJMA_TotalPoint
                 }));
-                HBHMAKNGKFK_Items.Add(d);
-                PLKMAOGKFPP += d.HMFFHLPNMPH_Count;
+                HBHMAKNGKFK_items.Add(d);
+                PLKMAOGKFPP += d.HMFFHLPNMPH_count;
             }
         }
         BEOKMNIPFBA_MedalItemId = JGEOBNENMAH.HHCJCDFCLOB.BEOKMNIPFBA_MedalItemId;

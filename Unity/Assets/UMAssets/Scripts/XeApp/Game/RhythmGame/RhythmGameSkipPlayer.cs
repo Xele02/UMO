@@ -784,12 +784,12 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.DGMPBPMDBEC_DropItemList = new List<int>(dropItemList);
 			clearSetup.JNNDFGPMEDA_Fold = status.energy.GetGaugeValue();
 			clearSetup.JKPPKAHPPKH_life = status.life.current;
-			clearSetup.IPEKDLNEOFI_ParaLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
-			clearSetup.HBKBKHACHHI_ParaSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
-			clearSetup.GMECIBOJCFF_ParaVoice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
+			clearSetup.IPEKDLNEOFI_para_life = Database.Instance.gameSetup.teamInfo.teamStatus.life;
+			clearSetup.HBKBKHACHHI_para_soul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
+			clearSetup.GMECIBOJCFF_para_voice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
 			clearSetup.MIMLMJGGNJH_para_charm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
-			clearSetup.BFHPKJEKJNN_ParaSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
-			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
+			clearSetup.BFHPKJEKJNN_para_support = Database.Instance.gameSetup.teamInfo.teamStatus.support;
+			clearSetup.DDBEJNGJIPF_para_foldwave = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
 			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
 			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);
 			clearSetup.JEKDIEFPEON_RareItemRandomSeed = rNoteOwner.GetRareItemRandomSeed();

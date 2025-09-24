@@ -51,21 +51,21 @@ public class ENBPNDFOOCK_RequestRaidbossHelp : CACGCMBKHDI_Request
             }
         }
 
-        public List<GHPAICMBHNJ> LBMEJEDJJFM = new List<GHPAICMBHNJ>(); // 0x8
-        public List<EPKECJKFKJH> ENDAPLAFFAI = new List<EPKECJKFKJH>(); // 0xC
+        public List<GHPAICMBHNJ> LBMEJEDJJFM_friend_help_players = new List<GHPAICMBHNJ>(); // 0x8
+        public List<EPKECJKFKJH> ENDAPLAFFAI_other_help_players = new List<EPKECJKFKJH>(); // 0xC
 
         // RVA: 0x130A0E8 Offset: 0x130A0E8 VA: 0x130A0E8
         public FHFAAOMLEPF(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
         {
-            LBMEJEDJJFM.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("friend_help_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            LBMEJEDJJFM_friend_help_players.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("friend_help_players"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0x130A518
-                return new GHPAICMBHNJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_Data));
+                return new GHPAICMBHNJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_data));
             });
-            ENDAPLAFFAI.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("other_help_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            ENDAPLAFFAI_other_help_players.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("other_help_players"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0x130A59C
-                return new EPKECJKFKJH(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_Data));
+                return new EPKECJKFKJH(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_data));
             });
         }
     }

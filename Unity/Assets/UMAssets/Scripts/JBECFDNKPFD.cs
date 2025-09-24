@@ -7,14 +7,14 @@ public class JBECFDNKPFD
 	public string JGJPKLCCOIO_scene_id; // 0x14
 	public string JNPCEKKNEBF_scene_level; // 0x18
 	public int PCMDFNHIEBE_valkyrie_id; // 0x1C
-	public int CBOCBLLOMHE_ParaTotal; // 0x20
-	public int HBKBKHACHHI_ParaSoul; // 0x24
-	public int GMECIBOJCFF_ParaVoice; // 0x28
+	public int CBOCBLLOMHE_para_total; // 0x20
+	public int HBKBKHACHHI_para_soul; // 0x24
+	public int GMECIBOJCFF_para_voice; // 0x28
 	public int MIMLMJGGNJH_para_charm; // 0x2C
 	public int MINAGJOIGOP_para_luck; // 0x30
-	public int IPEKDLNEOFI_ParaLife; // 0x34
-	public int BFHPKJEKJNN_ParaSupport; // 0x38
-	public int DDBEJNGJIPF_Fold; // 0x3C
+	public int IPEKDLNEOFI_para_life; // 0x34
+	public int BFHPKJEKJNN_para_support; // 0x38
+	public int DDBEJNGJIPF_para_foldwave; // 0x3C
 	public int GELJFCKEBDM_FriendId; // 0x40
 	public int ANOPDAGJIKG_FriendSceneId; // 0x44
 	public int JBODHPPGKJO_FriendSceneLevel; // 0x48

@@ -8,8 +8,8 @@ public class NMFABEKNBKJ
     public class CIDEHGHGPIO
     {
         public string JCOGNKFNDEB_token; // 0x8
-        public long BIOGKIEECGN_CreatedAt; // 0x10
-        public long IFNLEKOILPM_UpdatedAt; // 0x18
+        public long BIOGKIEECGN_created_at; // 0x10
+        public long IFNLEKOILPM_updated_at; // 0x18
     }
 
     private enum LOICDBFAAJL
@@ -40,7 +40,7 @@ public class NMFABEKNBKJ
 	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM ODAMFOMFIPC ELGNDAPOEPK
 
 	// // RVA: 0x1CAB7E0 Offset: 0x1CAB7E0 VA: 0x1CAB7E0
-	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string IPBHCLIHAPG = "") { }
+	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg = "") { }
 
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
 	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
@@ -67,8 +67,8 @@ public class NMFABEKNBKJ
 		MABFNKCMEDL_CreateNotification("sns", JpStringLiterals.StringLiteral_10294, 3);
 		MABFNKCMEDL_CreateNotification("vop", "VOP", 3);
 		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.JIMJHIDEHNM_ApCounter, JpStringLiterals.StringLiteral_10282, 3);
-		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BGCAPDNMPOK, JpStringLiterals.StringLiteral_12695, 3);
-		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BCFFEECIMJG, JpStringLiterals.StringLiteral_12696, 3);
+		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BGCAPDNMPOK_Deco, JpStringLiterals.StringLiteral_12695, 3);
+		MABFNKCMEDL_CreateNotification(EAPDJLPDHEJ.BCFFEECIMJG_LimitedItem, JpStringLiterals.StringLiteral_12696, 3);
 		while(!FCMTokenReceiver.isDpendencyChecked)
 		{
 			yield return null;
@@ -145,16 +145,16 @@ public class NMFABEKNBKJ
 				{
 					BEKAMBBOLBO_Done = false;
 					SakashoError MIIDBEIOBNK_Error = null;
-					SakashoSystemCallback.OnSuccess BAHANNNJCGC = (string _IDLHJIOMJBK_Data) =>
+					SakashoSystemCallback.OnSuccess BAHANNNJCGC = (string _IDLHJIOMJBK_data) =>
 					{
 						//0x1CACE60
 						BEKAMBBOLBO_Done = true;
 					};
-					SakashoAPICallContext OIDFKCIECJN = SakashoFCMPushNotification.AcceptPushNotification(FCMTokenReceiver.fcmToken, BAHANNNJCGC, (SakashoError _DOGDHKIEBJA_Error) =>
+					SakashoAPICallContext OIDFKCIECJN = SakashoFCMPushNotification.AcceptPushNotification(FCMTokenReceiver.fcmToken, BAHANNNJCGC, (SakashoError _DOGDHKIEBJA_error) =>
 					{
 						//0x1CACED0
 						//DOGDHKIEBJA.ResponseBodyJSON;
-						MIIDBEIOBNK_Error = _DOGDHKIEBJA_Error;
+						MIIDBEIOBNK_Error = _DOGDHKIEBJA_error;
 						BEKAMBBOLBO_Done = true;
 					});
 					float CPOFOJKLNGH = 0;
@@ -197,7 +197,7 @@ public class NMFABEKNBKJ
 		for (int i = 0; i < NDPMMJINHNA_TokenList.Count; i++)
 		{
 			bool BEKAMBBOLBO_Done = false;
-			SakashoFCMPushNotification.BlockPushNotification(NDPMMJINHNA_TokenList[i].JCOGNKFNDEB_token, (string _IDLHJIOMJBK_Data) =>
+			SakashoFCMPushNotification.BlockPushNotification(NDPMMJINHNA_TokenList[i].JCOGNKFNDEB_token, (string _IDLHJIOMJBK_data) =>
 			{
 				//0x1CACFB4
 				BEKAMBBOLBO_Done = true;
@@ -225,18 +225,18 @@ public class NMFABEKNBKJ
 			SakashoError MIIDBEIOBNK_Error = null;
 			float KPCGLMELHFG_time = 0;
 			bool BEKAMBBOLBO_Done = false;
-			SakashoAPICallContext IBLABDHABAJ = SakashoFCMPushNotification.GetFCMTokens((string _IDLHJIOMJBK_Data) =>
+			SakashoAPICallContext IBLABDHABAJ = SakashoFCMPushNotification.GetFCMTokens((string _IDLHJIOMJBK_data) =>
 			{
 				//0x1CACFD4
 				BEKAMBBOLBO_Done = true;
-				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_IDLHJIOMJBK_Data);
+				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_IDLHJIOMJBK_data);
 				EDOHBJAPLPF_JsonData block = data["fcm_tokens"];
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)
 				{
 					CIDEHGHGPIO res = new CIDEHGHGPIO();
 					res.JCOGNKFNDEB_token = CEDHHAGBIBA.BNCLNFJHEND_ReadString(block[i], "fcm_token");
-					res.BIOGKIEECGN_CreatedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "created_at");
-					res.IFNLEKOILPM_UpdatedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "updated_at");
+					res.BIOGKIEECGN_created_at = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "created_at");
+					res.IFNLEKOILPM_updated_at = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(block[i], "updated_at");
 					NDPMMJINHNA_TokenList.Add(res);
 				}
 			}, (SakashoError _CNAIDEAFAAM_Error) =>

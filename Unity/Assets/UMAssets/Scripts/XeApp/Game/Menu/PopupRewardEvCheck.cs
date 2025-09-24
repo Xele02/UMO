@@ -368,10 +368,10 @@ namespace XeApp.Game.Menu
 						for(int j = 0; j < l.Count; j++)
 						{
 							MFDJIFIIPJD m = new MFDJIFIIPJD();
-							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_Count);
-							h.HBHMAKNGKFK_Items.Add(m);
+							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_count);
+							h.HBHMAKNGKFK_items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						mvp_reward_list.Add(h);
 						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_First_1);
@@ -380,10 +380,10 @@ namespace XeApp.Game.Menu
 						for(int j = 0; j < l.Count; j++)
 						{
 							MFDJIFIIPJD m = new MFDJIFIIPJD();
-							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_Count);
-							h.HBHMAKNGKFK_Items.Add(m);
+							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_count);
+							h.HBHMAKNGKFK_items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						attack1st_reward_list.Add(h);
 						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_Defeat_0);
@@ -392,10 +392,10 @@ namespace XeApp.Game.Menu
 						for(int j = 0; j < l.Count; j++)
 						{
 							MFDJIFIIPJD m = new MFDJIFIIPJD();
-							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_Count);
-							h.HBHMAKNGKFK_Items.Add(m);
+							m.KHEKNNFCAOI_Init(l[j].PPFNGGCBJKC_id, l[j].HMFFHLPNMPH_count);
+							h.HBHMAKNGKFK_items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						disempowerment_reward_list.Add(h);
 					}
@@ -536,13 +536,13 @@ namespace XeApp.Game.Menu
 			int a1 = 0;
 			for(int i = 0; i < viewData.total_data_list.Count; i++)
 			{
-				for(int j = 0; j < viewData.total_data_list[i].HBHMAKNGKFK_Items.Count; j++)
+				for(int j = 0; j < viewData.total_data_list[i].HBHMAKNGKFK_items.Count; j++)
 				{
 					PointListItem it = new PointListItem();
 					it.Top = new Vector2(0, -(a1 * 104 + 10));
 					it.Height = 104;
 					it.ResourceType = 3;
-					it.Item = viewData.total_data_list[i].HBHMAKNGKFK_Items[j];
+					it.Item = viewData.total_data_list[i].HBHMAKNGKFK_items[j];
 					it.NeedPoint = viewData.total_data_list[i].FIOIKMOIJGK_Point;
 					it.IsGet = viewData.total_data_list[i].HMEOAKCLKJE_IsReceived;
 					it.isGoldFrame = it.Item.JOPPFEHKNFO_Pickup;
@@ -561,20 +561,20 @@ namespace XeApp.Game.Menu
 				s.Label = MakeRankingSeparatorLabel(viewData.rank_data_list[i]);
 				m_rankingList.Add(s);
 				f1 += 55;
-				for(int j = 0; j < viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count; j++)
+				for(int j = 0; j < viewData.rank_data_list[i].HBHMAKNGKFK_items.Count; j++)
 				{
 					RankingListItem it = new RankingListItem();
 					it.Top = new Vector2((j & 1) * 480 + 10, -(f1 + (j >> 1) * 108 + 4));
 					it.Height = 108;
 					it.ResourceType = 2;
-					it.Data = viewData.rank_data_list[i].HBHMAKNGKFK_Items[j];
+					it.Data = viewData.rank_data_list[i].HBHMAKNGKFK_items[j];
 					it.IsGet = false;
 					it.isGoldFrame = it.Data.JOPPFEHKNFO_Pickup;
 					m_rankingList.Add(it);
 					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 				}
-				if(viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count > 0)
-					f1 += (viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count >> 1) * 104 + 104;
+				if(viewData.rank_data_list[i].HBHMAKNGKFK_items.Count > 0)
+					f1 += (viewData.rank_data_list[i].HBHMAKNGKFK_items.Count >> 1) * 104 + 104;
 			}
 			if(viewData.is_enable_score_ranking)
 			{
@@ -588,20 +588,20 @@ namespace XeApp.Game.Menu
 					s.Label = MakeRankingSeparatorLabel(viewData.rank_data_list2[i]);
 					m_rankingList2.Add(s);
 					f1 += 55;
-					for(int j = 0; j < viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count; j++)
+					for(int j = 0; j < viewData.rank_data_list2[i].HBHMAKNGKFK_items.Count; j++)
 					{
 						RankingListItem it = new RankingListItem();
 						it.Top = new Vector2((j & 1) * 480 + 10, -(f1 + (j >> 1) * 108 + 4));
 						it.Height = 108;
 						it.ResourceType = 2;
-						it.Data = viewData.rank_data_list2[i].HBHMAKNGKFK_Items[j];
+						it.Data = viewData.rank_data_list2[i].HBHMAKNGKFK_items[j];
 						it.IsGet = false;
 						it.isGoldFrame = it.Data.JOPPFEHKNFO_Pickup;
 						m_rankingList.Add(it);
 						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 					}
-					if(viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count > 0)
-						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count >> 1) * 104 + 104;
+					if(viewData.rank_data_list2[i].HBHMAKNGKFK_items.Count > 0)
+						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK_items.Count >> 1) * 104 + 104;
 				}
 			}
 			if(viewData.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
@@ -616,15 +616,15 @@ namespace XeApp.Game.Menu
 					sep.BossName = viewData.disempowerment_reward_list[i].GJAOLNLFEBD_BossName;
 					m_rewardDisempowermentList.Add(sep);
 					f1 += 85;
-					for(int j = 0; j < viewData.disempowerment_reward_list[i].HBHMAKNGKFK_Items.Count; j++)
+					for(int j = 0; j < viewData.disempowerment_reward_list[i].HBHMAKNGKFK_items.Count; j++)
 					{
 						RaidRewardListItem it = new RaidRewardListItem();
 						it.Top = new Vector2(140, -f1);
 						it.Height = 104;
 						it.ResourceType = 4;
-						it.Item = viewData.disempowerment_reward_list[i].HBHMAKNGKFK_Items[j];
+						it.Item = viewData.disempowerment_reward_list[i].HBHMAKNGKFK_items[j];
 						it.IsPickupItem = viewData.disempowerment_reward_list[i].OFEGDGADHPK_IsPickupItem[j];
-						it.Rate = viewData.disempowerment_reward_list[i].ADKDHKMPMHP_Rate[j];
+						it.Rate = viewData.disempowerment_reward_list[i].ADKDHKMPMHP_rate[j];
 						m_rewardDisempowermentList.Add(it);
 						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId, 0));
 						f1 += 104;

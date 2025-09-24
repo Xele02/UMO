@@ -9,11 +9,11 @@ public class HIMAFGJCECK
 	public IKMBBPDBECA KACECFNECON_extra; // 0x14
 
 	// // RVA: 0x18373CC Offset: 0x18373CC VA: 0x18373CC
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data, IKMBBPDBECA KPCLJMBJEOI)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, IKMBBPDBECA KPCLJMBJEOI)
 	{
-		KLMPFGOCBHC_description = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
+		KLMPFGOCBHC_description = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
 		KACECFNECON_extra = KPCLJMBJEOI;
-		EDOHBJAPLPF_JsonData d = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PNIFJJPHLDH_probability_per_group_key];
+		EDOHBJAPLPF_JsonData d = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PNIFJJPHLDH_probability_per_group_key];
 		OJGPPOKENLG_Groups = new List<BPADANIKFHP>();
 		for(int i = 0; i < BPADANIKFHP.GIFAIIDJPND.Count; i++)
 		{
@@ -23,11 +23,11 @@ public class HIMAFGJCECK
 				BPADANIKFHP data = new BPADANIKFHP();
 				data.EKLIPGELKCL_Rarity = BPADANIKFHP.GIFAIIDJPND.Count - i;
 				data.MMOJHIPAAIK_probability = (string)d[s];
-				data.HBHMAKNGKFK_Items = new List<KFKCGKGKBJL>();
+				data.HBHMAKNGKFK_items = new List<KFKCGKGKBJL>();
 				OJGPPOKENLG_Groups.Add(data);
 			}
 		}
-		d = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items];
+		d = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items];
 		DDGPEFEEKFP_Items = new List<IJPECOFPOCH>();
 		List<KFKCGKGKBJL> l2 = new List<KFKCGKGKBJL>(d.HNBFOAJIIAL_Count);
 		for(int i = 0; i < d.HNBFOAJIIAL_Count; i++)
@@ -59,7 +59,7 @@ public class HIMAFGJCECK
 						data2.MGJBGEFMPIL = 500000 + data.GDEJFKCMNAC_EpisodeId;
 					else
 						data2.MGJBGEFMPIL = KACECFNECON_extra.GGBDGHNAIDG(data.GDEJFKCMNAC_EpisodeId);
-					data2.HBHMAKNGKFK_Items = new List<KFKCGKGKBJL>();
+					data2.HBHMAKNGKFK_items = new List<KFKCGKGKBJL>();
 					DDGPEFEEKFP_Items.Add(data2);
 				}
 				l2.Add(data);
@@ -92,7 +92,7 @@ public class HIMAFGJCECK
 			});
 			if(idx > -1)
 			{
-				OJGPPOKENLG_Groups[idx].HBHMAKNGKFK_Items.Add(data);
+				OJGPPOKENLG_Groups[idx].HBHMAKNGKFK_items.Add(data);
 			}
 			idx = DDGPEFEEKFP_Items.FindIndex((IJPECOFPOCH _GHPLINIACBB_x) =>
 			{
@@ -101,7 +101,7 @@ public class HIMAFGJCECK
 			});
 			if(idx > -1)
 			{
-				DDGPEFEEKFP_Items[idx].HBHMAKNGKFK_Items.Add(data);
+				DDGPEFEEKFP_Items[idx].HBHMAKNGKFK_items.Add(data);
 			}
 		}
 	}

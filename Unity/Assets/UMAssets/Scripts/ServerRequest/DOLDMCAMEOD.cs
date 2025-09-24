@@ -7,18 +7,18 @@ public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
 {
     public class LDADODICMLG_ResultData
     {
-        public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances; // 0x8
+        public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_balances; // 0x8
 
         // RVA: 0x1233554 Offset: 0x1233554 VA: 0x1233554
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
-			BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
+			BBEPLKNMICJ_balances = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
 				data.DPKCOKLMFMK(b[i]);
-				BBEPLKNMICJ_Balances.Add(data);
+				BBEPLKNMICJ_balances.Add(data);
 			}
 		}
     }

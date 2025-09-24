@@ -63,7 +63,7 @@ public class EEDKAACNBBG_MusicData
 	// // RVA: 0x1C49024 Offset: 0x1C49024 VA: 0x1C49024
 	public int JFEEHOKLFPO_GetMultiDanceMinLevel()
 	{
-		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 	}
 
 	// // RVA: 0x1C49124 Offset: 0x1C49124 VA: 0x1C49124
@@ -100,7 +100,7 @@ public class EEDKAACNBBG_MusicData
 	// // RVA: 0x1C491B4 Offset: 0x1C491B4 VA: 0x1C491B4
 	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType _JONPKLHMOBL_Category)
 	{
-		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 		if (_JONPKLHMOBL_Category != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
 		{
 			if(_JONPKLHMOBL_Category == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
@@ -117,7 +117,7 @@ public class EEDKAACNBBG_MusicData
 				int cnt = 0;
 				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have > 0)
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_have > 0)
 						cnt++;
 				}
 				if (cnt < numDiva)

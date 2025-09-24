@@ -19,7 +19,7 @@ public class DGLBJJCIIDG
 	public int EDHAJJHIKHE_LSkill { get { return HAKIFBIKHFF_Crypted ^ FBGGEFFJJHB_xor; } set { HAKIFBIKHFF_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1986034 EIEHOAIEGJE 0x1986048 ILEEIPGLDEO
 
 	// RVA: 0x198605C Offset: 0x198605C VA: 0x198605C
-	public void KHEKNNFCAOI_Init(int _PPFNGGCBJKC_id, int _GOIKCKHMBDL_FreeMusicId, int _PDBPFJJCADD_open_at, int _FDBNFFNFOND_CloseAt, int _CPBFAMJEODF_CSkill, int _MGHPJNNDCIG_l_skill)
+	public void KHEKNNFCAOI_Init(int _PPFNGGCBJKC_id, int _GOIKCKHMBDL_FreeMusicId, int _PDBPFJJCADD_open_at, int _FDBNFFNFOND_close_at, int _CPBFAMJEODF_c_skill, int _MGHPJNNDCIG_l_skill)
     {
         NPHNPEAGFFM_Id = _PPFNGGCBJKC_id;
         GHBPLHBNMBK_FreeMusicId = _GOIKCKHMBDL_FreeMusicId;
@@ -31,8 +31,8 @@ public class DGLBJJCIIDG
             JNCPEGJGHOG_JacketId = data.JNCPEGJGHOG_JacketId;
         }
         KJBGCLPMLCG_OpenedAt = _PDBPFJJCADD_open_at;
-        GJFPFFBAKGK_CloseAt = _FDBNFFNFOND_CloseAt;
-        EKHAFFFELCO_CSkill = _CPBFAMJEODF_CSkill;
+        GJFPFFBAKGK_CloseAt = _FDBNFFNFOND_close_at;
+        EKHAFFFELCO_CSkill = _CPBFAMJEODF_c_skill;
         EDHAJJHIKHE_LSkill = _MGHPJNNDCIG_l_skill;
     }
 }

@@ -142,11 +142,11 @@ namespace XeApp.Game.Menu
 			if(m_scoreMasterInfo == null)
 			{
 				m_scoreMasterInfo = new KLBKPANJCPL_Score();
-				m_scoreMasterInfo.MCMIPODICAN_length = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("default_autoset_music_length1", 100000);
-				m_scoreMasterInfo.NLKEBAOBJCM_combo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("default_autoset_full_combo1", 200);
-				m_scoreMasterInfo.OABPNBLPHHP_ValkStartTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("default_autoset_valkyrie_start_time1", 60000);
-				m_scoreMasterInfo.GIABDDFGHOK_DivaStartTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("default_autoset_diva_start_time1", 76000);
-				m_scoreMasterInfo.JJBOEMOJPEC_DivaNote = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("default_autoset_diva_note1", 50);
+				m_scoreMasterInfo.MCMIPODICAN_length = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("default_autoset_music_length1", 100000);
+				m_scoreMasterInfo.NLKEBAOBJCM_combo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("default_autoset_full_combo1", 200);
+				m_scoreMasterInfo.OABPNBLPHHP_ValkStartTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("default_autoset_valkyrie_start_time1", 60000);
+				m_scoreMasterInfo.GIABDDFGHOK_DivaStartTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("default_autoset_diva_start_time1", 76000);
+				m_scoreMasterInfo.JJBOEMOJPEC_DivaNote = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("default_autoset_diva_note1", 50);
 				m_simpleAutoSettingPanel.AttributeGroup.gameObject.SetActive(true);
 			}
 			else
@@ -311,7 +311,7 @@ namespace XeApp.Game.Menu
 								weight = 0,
 								skillWeight = li,
 								total = 0,
-								status = playerData.OPIBAPEGCLA_Scenes[i].CMCKNKKCNDK_Status,
+								status = playerData.OPIBAPEGCLA_Scenes[i].CMCKNKKCNDK_status,
 								excelentRate = a.OBMGLMLCGJC_ExcellentRate,
 								luck = playerData.OPIBAPEGCLA_Scenes[i].MJBODMOLOBC_luck
 							});
@@ -705,37 +705,37 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_sortSceneList.Count; i++)
 			{
 				GCIJNCFDNON_SceneInfo scene = sceneList[m_sortSceneList[i].sceneListIndex];
-				int total = scene.CMCKNKKCNDK_Status.Total;
+				int total = scene.CMCKNKKCNDK_status.Total;
 				int a;
 				bool b;
 				switch(SelectStatus)
 				{
 					case 0:
-						a = scene.CMCKNKKCNDK_Status.Total;
+						a = scene.CMCKNKKCNDK_status.Total;
 						b = true;
 						break;
 					case 1:
-						a = scene.CMCKNKKCNDK_Status.soul;
+						a = scene.CMCKNKKCNDK_status.soul;
 						b = true;
 						break;
 					case 2:
-						a = scene.CMCKNKKCNDK_Status.vocal;
+						a = scene.CMCKNKKCNDK_status.vocal;
 						b = true;
 						break;
 					case 3:
-						a = scene.CMCKNKKCNDK_Status.charm;
+						a = scene.CMCKNKKCNDK_status.charm;
 						b = true;
 						break;
 					case 4:
-						a = scene.CMCKNKKCNDK_Status.life;
+						a = scene.CMCKNKKCNDK_status.life;
 						b = false;
 						break;
 					case 5:
-						a = scene.CMCKNKKCNDK_Status.support;
+						a = scene.CMCKNKKCNDK_status.support;
 						b = false;
 						break;
 					case 6:
-						a = scene.CMCKNKKCNDK_Status.fold;
+						a = scene.CMCKNKKCNDK_status.fold;
 						b = false;
 						break;
 					case 7:
@@ -843,7 +843,7 @@ namespace XeApp.Game.Menu
 					}
 					SortParam sp = m_sortSceneList[i];
 					sp.weight = skillValue;
-					sp.total = sceneList[m_sortSceneList[i].sceneListIndex].CMCKNKKCNDK_Status.Total;
+					sp.total = sceneList[m_sortSceneList[i].sceneListIndex].CMCKNKKCNDK_status.Total;
 					if (SelectMusicAttribute == sceneList[m_sortSceneList[i].sceneListIndex].JGJFIJOCPAG_SceneAttr)
 						sp.total = sp.total * 130 / 100;
 					m_sortSceneList[i] = sp;
@@ -922,7 +922,7 @@ namespace XeApp.Game.Menu
 							{
 								FOKHDKJJOFB_EffectByNumDiva eff = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(info.KCOHMHFBDKF_Value1[skillLevel - 1]);
 								val = eff.NANNGLGOFKH_value[skillLevel - 1]
-										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_Diva, unitData) + eff.NNDBJGDFEEM_Min;
+										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_diva, unitData) + eff.NNDBJGDFEEM_Min;
 							}
 						}
 						if(skill.AKGNPLBDKLN_P2 > 0)
@@ -932,7 +932,7 @@ namespace XeApp.Game.Menu
 							{
 								FOKHDKJJOFB_EffectByNumDiva eff = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(info2.KCOHMHFBDKF_Value1[skillLevel - 1]);
 								int val2 = eff.NANNGLGOFKH_value[skillLevel - 1]
-										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_Diva, unitData) + eff.NNDBJGDFEEM_Min;
+										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_diva, unitData) + eff.NNDBJGDFEEM_Min;
 								if(val < val2)
 								{
 									val = info.KCOHMHFBDKF_Value1[skillLevel - 1];
@@ -943,7 +943,7 @@ namespace XeApp.Game.Menu
 							val = val * 130 / 100;
 						SortParam sp = m_intimacyList[i];
 						sp.weight = val;
-						sp.total = sceneList[m_intimacyList[i].sceneListIndex].CMCKNKKCNDK_Status.Total;
+						sp.total = sceneList[m_intimacyList[i].sceneListIndex].CMCKNKKCNDK_status.Total;
 						if (SelectMusicAttribute == sceneList[m_intimacyList[i].sceneListIndex].JGJFIJOCPAG_SceneAttr)
 							sp.total = sp.total * 130 / 100;
 						m_intimacyList[i] = sp;
@@ -1013,7 +1013,7 @@ namespace XeApp.Game.Menu
 									sp.skillWeight[j] = sp.skillWeight[j] * 130 / 100;
 								}
 							}
-							sp.total = sceneList[m_sortSceneList[i].sceneListIndex].CMCKNKKCNDK_Status.Total;
+							sp.total = sceneList[m_sortSceneList[i].sceneListIndex].CMCKNKKCNDK_status.Total;
 							if (SelectMusicAttribute == sceneList[m_sortSceneList[i].sceneListIndex].JGJFIJOCPAG_SceneAttr)
 								sp.total = sp.total * 130 / 100;
 							m_sortSceneList[i] = sp;
@@ -1067,14 +1067,14 @@ namespace XeApp.Game.Menu
 				EHGAHMIBPIB skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(value);
 				value = skill.KCOHMHFBDKF_Value1[sceneData.AADFFCIDJCB_LiveSkillLevel - 1];
 				int[] value2 = skill.HLMMBNCIIAC_Value2;
-				return Mathf.Min(viewIntimacy.HEKJGCMNJAB_CurrentLevel / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_Max) * duration;
+				return Mathf.Min(viewIntimacy.HEKJGCMNJAB_CurrentLevel / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_max) * duration;
 			}
 			if(eff == 19)
 			{
 				EHGAHMIBPIB skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(value);
 				value = skill.KCOHMHFBDKF_Value1[sceneData.AADFFCIDJCB_LiveSkillLevel - 1];
 				int[] value2 = skill.HLMMBNCIIAC_Value2;
-				return Mathf.Min(100 / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_Max) * duration;
+				return Mathf.Min(100 / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_max) * duration;
 			}
 			if(eff != 18)
 			{
@@ -1083,7 +1083,7 @@ namespace XeApp.Game.Menu
 			int mul = 0;
 			if (liveSkill.CPNAGMFCIJK_TriggerType == 6 || liveSkill.CPNAGMFCIJK_TriggerType == 9)
 				mul = m_scoreMasterInfo.NLKEBAOBJCM_combo - m_scoreMasterInfo.JJBOEMOJPEC_DivaNote;
-			return value * duration * Mathf.Max(mul / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("skill_combo_bonus_value0", 0), 0);
+			return value * duration * Mathf.Max(mul / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("skill_combo_bonus_value0", 0), 0);
 		}
 
 		//// RVA: 0x1338F64 Offset: 0x1338F64 VA: 0x1338F64

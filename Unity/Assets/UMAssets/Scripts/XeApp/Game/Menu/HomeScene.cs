@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 				bgmId = BgmPlayer.MENU_BGM_ID_BASE;
 				if (MenuScene.Instance.BgControl.limitedHomeBg.m_music_id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 				{
-					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 					string[] strs = str.Split(new char[] { ',' });
 					if(strs.Length == 3)
 					{
@@ -2044,7 +2044,7 @@ namespace XeApp.Game.Menu
 			{
 				int d = 0;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
-					d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("decolturemode_first_adv_id", 0);
+					d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("decolturemode_first_adv_id", 0);
 				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(d);
 				if(adv == null)
 				{
@@ -2171,7 +2171,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Coroutine_ShowInformation()
 		{
 			//0x13DA8F8
-			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 2)
 				yield break;
 			ShowInformation(false);
 			while(m_isDisplayingInfo)
@@ -2191,7 +2191,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadLayoutOperationBase lyOp; // 0x3C
 
 			//0x13CD970
-			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 2)
 				yield break;
 			localSaveData = new LAGEHKFIPPC();
 			localSaveData.PCODDPDFLHK_Load();
@@ -2252,7 +2252,7 @@ namespace XeApp.Game.Menu
 			//0x13D7AEC
 			if (m_richBannerData.FPCLGFKEEFE.Count == 0)
 				yield break;
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 2)
 				yield break;
 			bool isWait = true;
 			HomeRichBanner richBanner = null;
@@ -2491,7 +2491,7 @@ namespace XeApp.Game.Menu
 			//0x13D71BC
 			if(m_pickupWebViewList.Count > 0)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end == 2)
 				{
 					MenuScene.Instance.InputDisable();
 					for(i = 0; i < m_pickupWebViewList.Count; i++)
@@ -3083,9 +3083,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_CheckPlayerForceRename(Action onTransition)
 		{
 			//0x13CAF10
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename)
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.FNLNIKFNHAM_force_rename)
 				yield break;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename = false;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.FNLNIKFNHAM_force_rename = false;
 			MenuScene.SaveRequest();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			bool isClosed = false;
@@ -3110,7 +3110,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971360 Offset: 0x971360 VA: 0x971360
 		private bool CanRareBreakAdv()
 		{
-			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end == 2)
 			{
 				int id = GetRareBreakAdvId();
 				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(id) == false)
@@ -3125,7 +3125,7 @@ namespace XeApp.Game.Menu
 		private int GetRareBreakAdvId()
 		{
 			CEBFFLDKAEC_SecureInt val = new CEBFFLDKAEC_SecureInt();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK_IntArray.TryGetValue("rare_break_adv_id", out val))
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK_m_intParam.TryGetValue("rare_break_adv_id", out val))
 			{
 				return val.DNJEJEANJGL_Value;
 			}
@@ -3141,7 +3141,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x970F60 Offset: 0x970F60 VA: 0x970F60
 		private int GetEventAdvId()
 		{
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end == 2)
 			{
 				for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 				{
@@ -3338,7 +3338,7 @@ namespace XeApp.Game.Menu
 			saveData_limit = GameManager.Instance.localSave.EPJOACOONAC_GetSave().KPHPNFBBLPA_LimitedItemWarning;
 			TimeSpan timeSpan;
 			int p = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.JCJKKMECCFI(currentTime);
-			if (IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, saveData_limit.DIKBJMJBOIL_RateUpDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("limited_item_show_warning_time", 3), out timeSpan))
+			if (IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, saveData_limit.DIKBJMJBOIL_RateUpDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("limited_item_show_warning_time", 3), out timeSpan))
 			{
 				yield return ShowLimitedItemPopup(itemId, itemCount, p, timeSpan, () =>
 				{
@@ -3376,7 +3376,7 @@ namespace XeApp.Game.Menu
 				t = saveDataLimit.HCKHMGNIKMB_GachaTicketDate;
 			}
 			TimeSpan ts;
-			int range = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("limited_item_show_warning_time", 3);
+			int range = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("limited_item_show_warning_time", 3);
 			long expire = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(itemValue, currentTime);
 			if(IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, t, expire, range, out ts))
 			{
@@ -3428,7 +3428,7 @@ namespace XeApp.Game.Menu
 			{
 				a = saveDataLimit.HCKHMGNIKMB_GachaTicketDate;
 			}
-			int gacha_period_show_warning_time = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("gacha_period_show_warning_time", 0);
+			int gacha_period_show_warning_time = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("gacha_period_show_warning_time", 0);
 			TimeSpan ts;
 			if(!IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, a, period, gacha_period_show_warning_time, out ts))
 				yield break;
@@ -3599,7 +3599,7 @@ namespace XeApp.Game.Menu
 			//0x13CC2C8
 			bool isClose = false;
 			saveDataLimit = GameManager.Instance.localSave.EPJOACOONAC_GetSave().KPHPNFBBLPA_LimitedItemWarning;
-			if(!IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, HPBDNNACBAK.FIHFDIBDKKE(currencyId) ? saveDataLimit.LDKICHJMLOH_PassGachaTicketDate : saveDataLimit.KFPALNAJJBP_EventGachaTicketDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("limited_item_show_warning_time", 0), out gachaTicketDateSpan))
+			if(!IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, HPBDNNACBAK.FIHFDIBDKKE(currencyId) ? saveDataLimit.LDKICHJMLOH_PassGachaTicketDate : saveDataLimit.KFPALNAJJBP_EventGachaTicketDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("limited_item_show_warning_time", 0), out gachaTicketDateSpan))
 				yield break;
 			bank = MessageManager.Instance.GetBank("menu");
 			setting = new PopupItemUseConfirmSetting();
@@ -3651,7 +3651,7 @@ namespace XeApp.Game.Menu
 			bool isClose = false;
 			saveDataLimit = GameManager.Instance.localSave.EPJOACOONAC_GetSave().KPHPNFBBLPA_LimitedItemWarning;
 			TimeSpan ts;
-			if(!IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, HPBDNNACBAK.FIHFDIBDKKE(currencyId) ? saveDataLimit.LDKICHJMLOH_PassGachaTicketDate : saveDataLimit.KFPALNAJJBP_EventGachaTicketDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("gacha_period_show_warning_time", 0), out ts))
+			if(!IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, HPBDNNACBAK.FIHFDIBDKKE(currencyId) ? saveDataLimit.LDKICHJMLOH_PassGachaTicketDate : saveDataLimit.KFPALNAJJBP_EventGachaTicketDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("gacha_period_show_warning_time", 0), out ts))
 				yield break;
 			bank = MessageManager.Instance.GetBank("menu");
 			setting = new PopupItemGachaPeriodConfirmSetting();

@@ -9,7 +9,7 @@ public class JDEFIJBCJLC_EncryptedString
 		{
 			if(DLHDPLPLCAC != null)
 			{
-				return FFGBKEEIBNL.HKICMNAACDA(DLHDPLPLCAC);
+				return FFGBKEEIBNL.HKICMNAACDA_a(DLHDPLPLCAC);
 			}
 			return null;
 			//JADLONAJDAK 0x1C32C68

@@ -13,7 +13,7 @@ public class PJKPGLKHGIP
 	//public bool LIPIIKKIKOI(int _PPFNGGCBJKC_id) { }
 
 	//// RVA: 0x937AFC Offset: 0x937AFC VA: 0x937AFC
-	//public void ANIJHEBLMGB(int _PPFNGGCBJKC_id, int _BEBJKJKBOGH_Date) { }
+	//public void ANIJHEBLMGB(int _PPFNGGCBJKC_id, int _BEBJKJKBOGH_date) { }
 
 	//// RVA: 0x937BB0 Offset: 0x937BB0 VA: 0x937BB0
 	public void JCHLONCMPAJ(string _CJEKGLGBIHF_path)
@@ -60,9 +60,9 @@ public class PJKPGLKHGIP
 				if(((ONOICEHIHPJ_Ids[i] - 1) >> 4) < 125)
 				{
 					DDEMMEPBOIA_Sns.EFIFBJGKPJF data = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FLHMJHBOBEA_Sns.HAJEJPFGILG[ONOICEHIHPJ_Ids[i] - 1];
-					if(data.BEBJKJKBOGH_Date == 0)
+					if(data.BEBJKJKBOGH_date == 0)
 					{
-						data.BEBJKJKBOGH_Date = KJNJHHHELBK_Dates[i];
+						data.BEBJKJKBOGH_date = KJNJHHHELBK_Dates[i];
 					}
 				}
 			}

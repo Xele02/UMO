@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_isShow = false;
 			currentGaugeType = GaugeType.None;
-			healTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("raid_event_ap_second", 1200);
+			healTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("raid_event_ap_second", 1200);
 			m_viewPlayerStatus = new IFBCGCCJBHI();
 			m_viewPlayerStatus.KHEKNNFCAOI_Init();
 			m_raidBarAnim = layout.FindViewByExId("sw_raid_bar_anim_01_sw_raid_bar_01") as AbsoluteLayout;

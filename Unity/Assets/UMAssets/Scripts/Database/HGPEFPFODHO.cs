@@ -18,7 +18,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		private List<int> FAEPDABICLE_Crypted = new List<int>(); // 0x28
 
 		public int PPFNGGCBJKC_id { get { return FBGGEFFJJHB_xor ^ EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1753ABC DEMEPMAEJOO 0x1752F5C HIGKAIDMOKN
-		public int ADKDHKMPMHP_Rate { get { return FBGGEFFJJHB_xor ^ CHGFBPOFICJ_RateCrypted; } set { CHGFBPOFICJ_RateCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1753DC4 KCLKBHDMAFH 0x1752FCC GOLECEILPOI
+		public int ADKDHKMPMHP_rate { get { return FBGGEFFJJHB_xor ^ CHGFBPOFICJ_RateCrypted; } set { CHGFBPOFICJ_RateCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1753DC4 KCLKBHDMAFH 0x1752FCC GOLECEILPOI
 		//Idx
 		public int JOPPFEHKNFO_Pickup { get { return FBGGEFFJJHB_xor ^ ECDMGKIIKFL_Crypted; } set { ECDMGKIIKFL_Crypted = FBGGEFFJJHB_xor ^ value; } } //0x1753B28 FNIOGOJFLMG 0x175303C AJIOKKIJBED
 		public int BGFPPGPJONG { get { return FBGGEFFJJHB_xor ^ IPFBMBMNAGL_Crypted; } set { IPFBMBMNAGL_Crypted = FBGGEFFJJHB_xor ^ value; } } //0x1753E30 LBMNPGFFCJN 0x17530AC NDNCLLKIJHA
@@ -82,23 +82,23 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 	public const int LDCCLENAKII = 1;
 	public List<LGNDICJEDNE> PGHCCAMKCIO; // 0x20
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_String { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_IntArray { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0x175215C Offset: 0x175215C VA: 0x175215C
-	public string EFEGBHACJAL(string _LJNAKDMILMC_key, string KKMJBMKHGNH)
+	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)
 	{
-		if (!FJOEBCMGDMI_String.ContainsKey(_LJNAKDMILMC_key))
-			return KKMJBMKHGNH;
-		return FJOEBCMGDMI_String[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
+		if (!FJOEBCMGDMI_m_stringParam.ContainsKey(_LJNAKDMILMC_key))
+			return _KKMJBMKHGNH_noval;
+		return FJOEBCMGDMI_m_stringParam[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
 	}
 
 	//// RVA: 0x1752240 Offset: 0x1752240 VA: 0x1752240
-	public int LPJLEHAJADA(string _LJNAKDMILMC_key, int KKMJBMKHGNH)
+	public int LPJLEHAJADA_GetIntParam(string _LJNAKDMILMC_key, int _KKMJBMKHGNH_noval)
 	{
-		if (!OHJFBLFELNK_IntArray.ContainsKey(_LJNAKDMILMC_key))
-			return KKMJBMKHGNH;
-		return OHJFBLFELNK_IntArray[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
+		if (!OHJFBLFELNK_m_intParam.ContainsKey(_LJNAKDMILMC_key))
+			return _KKMJBMKHGNH_noval;
+		return OHJFBLFELNK_m_intParam[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
 	}
 
 	// RVA: 0x1752324 Offset: 0x1752324 VA: 0x1752324
@@ -108,22 +108,22 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		LMHMIIKCGPE = 52;
 		FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
 		PGHCCAMKCIO = new List<LGNDICJEDNE>();
-		FJOEBCMGDMI_String = new Dictionary<string, NNJFKLBPBNK_SecureString>();
-		OHJFBLFELNK_IntArray = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
+		FJOEBCMGDMI_m_stringParam = new Dictionary<string, NNJFKLBPBNK_SecureString>();
+		OHJFBLFELNK_m_intParam = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 	}
 
 	// RVA: 0x17524A8 Offset: 0x17524A8 VA: 0x17524A8 Slot: 8
 	protected override void KMBPACJNEOF_Reset()
 	{
 		PGHCCAMKCIO.Clear();
-		FJOEBCMGDMI_String.Clear();
-		OHJFBLFELNK_IntArray.Clear();
+		FJOEBCMGDMI_m_stringParam.Clear();
+		OHJFBLFELNK_m_intParam.Clear();
 	}
 
 	// RVA: 0x1752578 Offset: 0x1752578 VA: 0x1752578 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		GHFFJFCGDCB parser = GHFFJFCGDCB.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		GHFFJFCGDCB parser = GHFFJFCGDCB.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		MEEGJHBABOG(parser);
 		{
 			BAAELIGJGIJ[] array = parser.BHGDNGHDDAC;
@@ -131,7 +131,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 			{
 				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
 				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
-				OHJFBLFELNK_IntArray.Add(array[i].LJNAKDMILMC, data);
+				OHJFBLFELNK_m_intParam.Add(array[i].LJNAKDMILMC, data);
 			}
 		}
 		{
@@ -140,7 +140,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 			{
 				NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
 				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
-				FJOEBCMGDMI_String.Add(array[i].LJNAKDMILMC, data);
+				FJOEBCMGDMI_m_stringParam.Add(array[i].LJNAKDMILMC, data);
 			}
 		}
 		return true;
@@ -154,7 +154,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		{
 			LGNDICJEDNE data = new LGNDICJEDNE();
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-			data.ADKDHKMPMHP_Rate = array[i].ADKDHKMPMHP;
+			data.ADKDHKMPMHP_rate = array[i].ADKDHKMPMHP;
 			data.JOPPFEHKNFO_Pickup = array[i].JOPPFEHKNFO;
 			data.BGFPPGPJONG = (int)array[i].LJNAKDMILMC;
 			for(int j = 0; j < array[i].GLCLFMGPMAN.Length; j++)

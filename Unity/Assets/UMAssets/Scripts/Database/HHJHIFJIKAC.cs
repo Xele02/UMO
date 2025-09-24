@@ -23,7 +23,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
         public int PPFNGGCBJKC_id; // 0x8
         public int PLALNIIBLOF_en; // 0xC
         public int PDBPFJJCADD_open_at; // 0x10
-        public int EGBOHDFBAPB_CloseAt; // 0x14
+        public int EGBOHDFBAPB_closed_at; // 0x14
         public int KMENGHEAIOC; // 0x18
         public int JDANEOJCLBB; // 0x1C
         public int CPGFOBNKKBF_CurrencyId; // 0x20
@@ -38,7 +38,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 		{
 			if(PLALNIIBLOF_en == 2 && INDDJNMPONH_type == 3)
 			{
-				return PDBPFJJCADD_open_at <= _JHNMKKNEENE_Time && _JHNMKKNEENE_Time <= EGBOHDFBAPB_CloseAt;
+				return PDBPFJJCADD_open_at <= _JHNMKKNEENE_Time && _JHNMKKNEENE_Time <= EGBOHDFBAPB_closed_at;
 			}
 			return false;
 		}
@@ -83,7 +83,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 		{
 			if(CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_type == (int)CHOIMHCMAHG)
 			{
-				if (CDENCMNHNGA_table[i].PDBPFJJCADD_open_at <= _EOLFJGMAJAB_CurrentTime && CDENCMNHNGA_table[i].EGBOHDFBAPB_CloseAt >= _EOLFJGMAJAB_CurrentTime)
+				if (CDENCMNHNGA_table[i].PDBPFJJCADD_open_at <= _EOLFJGMAJAB_CurrentTime && CDENCMNHNGA_table[i].EGBOHDFBAPB_closed_at >= _EOLFJGMAJAB_CurrentTime)
 				{
 					return CDENCMNHNGA_table[i];
 				}
@@ -107,9 +107,9 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1831514 Offset: 0x1831514 VA: 0x1831514 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
     {
-		FGALMCADGMO parser = FGALMCADGMO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		FGALMCADGMO parser = FGALMCADGMO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		MEEJPBEAKKP[] array = parser.BHOHDFAFCNL;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -117,10 +117,10 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.EGBOHDFBAPB_CloseAt = array[i].EGBOHDFBAPB;
-			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_CloseAt).ToLongDateString());
+			data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB;
+			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_closed_at).ToLongDateString());
 			// UMO unlock
-			data.EGBOHDFBAPB_CloseAt = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
+			data.EGBOHDFBAPB_closed_at = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;
 			data.JDANEOJCLBB = array[i].JDANEOJCLBB;
 			data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF;

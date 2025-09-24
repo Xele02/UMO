@@ -198,17 +198,17 @@ public class MBCPNPNMFHB
 		DNALKLKKGAG = 0;
 		bool BEKAMBBOLBO_Done = false;
 		string HPEPNAGOHEN = null;
-		SakashoError DOGDHKIEBJA_Error = null;
-		OIDFKCIECJN = SakashoSupportSite.GetCommonTemplateURL(s, (string _IDLHJIOMJBK_Data) =>
+		SakashoError DOGDHKIEBJA_error = null;
+		OIDFKCIECJN = SakashoSupportSite.GetCommonTemplateURL(s, (string _IDLHJIOMJBK_data) =>
 		{
 			//0xA2E9C4
 			BEKAMBBOLBO_Done = true;
-			HPEPNAGOHEN = _IDLHJIOMJBK_Data;
+			HPEPNAGOHEN = _IDLHJIOMJBK_data;
 		}, (SakashoError _CNAIDEAFAAM_Error) =>
 		{
 			//0xA2E9D4
 			BEKAMBBOLBO_Done = false;
-			DOGDHKIEBJA_Error = _CNAIDEAFAAM_Error;
+			DOGDHKIEBJA_error = _CNAIDEAFAAM_Error;
 		});
 		OLIDBAGENIL = false;
 		while(!BEKAMBBOLBO_Done)
@@ -227,9 +227,9 @@ public class MBCPNPNMFHB
 		{
 			if(HPEPNAGOHEN == null)
 			{
-				if(DOGDHKIEBJA_Error == null)
+				if(DOGDHKIEBJA_error == null)
 					yield break;
-				Debug.Log("errorId=" + DOGDHKIEBJA_Error.getErrorId().ToString());
+				Debug.Log("errorId=" + DOGDHKIEBJA_error.getErrorId().ToString());
 				BEKAMBBOLBO_Done = false;
 				TextPopupSetting setting = new TextPopupSetting();
 				setting.TitleText = JpStringLiterals.StringLiteral_11918;
@@ -237,7 +237,7 @@ public class MBCPNPNMFHB
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
-				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA_Error.getErrorId().ToString());
+				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA_error.getErrorId().ToString());
 				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 				{
 					//0xA2E9FC

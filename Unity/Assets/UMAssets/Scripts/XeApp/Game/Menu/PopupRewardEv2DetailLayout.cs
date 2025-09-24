@@ -200,24 +200,24 @@ namespace XeApp.Game.Menu
 				texture.Set(m_seriesIconImage);
 				m_loadingFlag |= LoadingFlag.Logo;
 			});
-			m_paramTexts[0].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
-			m_paramTexts[1].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
-			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
-			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
-			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+			m_paramTexts[0].text = sceneData.CMCKNKKCNDK_status.Total.ToString();
+			m_paramTexts[1].text = sceneData.CMCKNKKCNDK_status.soul.ToString();
+			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_status.vocal.ToString();
+			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_status.charm.ToString();
+			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_status.life.ToString();
 			UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_luck);
-			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
-			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
-			for(int i = 0; i < sceneData.CMCKNKKCNDK_Status.spNoteExpected.Length - 1; i++)
+			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_status.support.ToString();
+			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_status.fold.ToString();
+			for(int i = 0; i < sceneData.CMCKNKKCNDK_status.spNoteExpected.Length - 1; i++)
 			{
-				if(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1] < 1)
+				if(sceneData.CMCKNKKCNDK_status.spNoteExpected[i + 1] < 1)
 				{
 					m_nortsTexts[i].text = "";
 					m_nortsLayout[i].StartChildrenAnimGoStop("02");
 				}
 				else
 				{
-					m_nortsTexts[i].text = sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1].ToString();
+					m_nortsTexts[i].text = sceneData.CMCKNKKCNDK_status.spNoteExpected[i + 1].ToString();
 					m_nortsLayout[i].StartChildrenAnimGoStop("01");
 				}
 			}

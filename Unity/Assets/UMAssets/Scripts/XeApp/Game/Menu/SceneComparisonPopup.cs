@@ -249,11 +249,11 @@ namespace XeApp.Game.Menu
 		public void SetNotes(int index, SceneComparisonPopupSetting setting)
 		{
 			GCIJNCFDNON_SceneInfo scene = index == 0 ? setting.BeforeScene : setting.AfterScene;
-			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Heal, scene != null ? scene.CMCKNKKCNDK_Status.spNoteExpected[1] : 0);
-			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Item, scene != null ? scene.CMCKNKKCNDK_Status.spNoteExpected[3] : 0);
-			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.HighScore, scene != null ? scene.CMCKNKKCNDK_Status.spNoteExpected[2] : 0);
-			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Fold, scene != null ? scene.CMCKNKKCNDK_Status.spNoteExpected[4] : 0);
-			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Attack, scene != null ? scene.CMCKNKKCNDK_Status.spNoteExpected[5] : 0);
+			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Heal, scene != null ? scene.CMCKNKKCNDK_status.spNoteExpected[1] : 0);
+			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Item, scene != null ? scene.CMCKNKKCNDK_status.spNoteExpected[3] : 0);
+			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.HighScore, scene != null ? scene.CMCKNKKCNDK_status.spNoteExpected[2] : 0);
+			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Fold, scene != null ? scene.CMCKNKKCNDK_status.spNoteExpected[4] : 0);
+			m_params[index].SetNotesValue(SpecialNoteAttribute.Type.Attack, scene != null ? scene.CMCKNKKCNDK_status.spNoteExpected[5] : 0);
 		}
 
 		//// RVA: 0x15A4A88 Offset: 0x15A4A88 VA: 0x15A4A88

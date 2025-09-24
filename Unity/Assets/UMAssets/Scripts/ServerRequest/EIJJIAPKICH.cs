@@ -10,10 +10,10 @@ public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA_CallContext = SakashoSupportSite.GetToken((string _IDLHJIOMJBK_Data) =>
+        EBGACDGNCAA_CallContext = SakashoSupportSite.GetToken((string _IDLHJIOMJBK_data) =>
 		{
 			//0x12EBA6C
-			DCKLDDCAJAP(_IDLHJIOMJBK_Data);
+			DCKLDDCAJAP(_IDLHJIOMJBK_data);
 			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_SakashoCurrentDateTime);
 			Debug.Log("ServerTime Updated ok");
 		}, (SakashoError FMEMECBIDIB) =>

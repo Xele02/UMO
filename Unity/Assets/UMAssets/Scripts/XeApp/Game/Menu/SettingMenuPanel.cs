@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 					int valkyrietuneup_first_adv_id = 0;
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					{
-						valkyrietuneup_first_adv_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("valkyrietuneup_first_adv_id", 89);
+						valkyrietuneup_first_adv_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_first_adv_id", 89);
 					}
 					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(valkyrietuneup_first_adv_id);
 					if(dbAdv == null)
@@ -211,7 +211,7 @@ namespace XeApp.Game.Menu
 			{
 				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("valkyrietuneup_player_level", 0) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_player_level", 0) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				}
 			}
 			return false;

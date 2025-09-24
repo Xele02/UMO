@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadAssetOperation t_operation; // 0x1C
 
 			//0xA44C8C
-			int totalinfoimage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("playrecord_totalinfo_image", 6);
+			int totalinfoimage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("playrecord_totalinfo_image", 6);
 			int num = 1;
 			if(totalinfoimage > 0)
 			{

@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class EJGJAFBLHHM
 {
-	private static string AMIFBFDPOGL = "base"; // 0x4
+	private static string AMIFBFDPOGL_base = "base"; // 0x4
 	private int PPOJCDCCFNI; // 0x8
 	public string IPLCMPCDNJJ = ""; // 0xC
 	public long FFDEBPDJOIJ; // 0x10
 
-	public bool Unused() { return AMIFBFDPOGL == ""; }
+	public bool Unused() { return AMIFBFDPOGL_base == ""; }
 
 	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 

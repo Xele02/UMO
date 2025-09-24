@@ -299,7 +299,7 @@ namespace XeApp.Game.Gacha
 				}
 				else if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 				{
-					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP_virtual_currency_amount;
+					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_current_step_index).LCJPKJMMIAP_virtual_currency_amount;
 				}
 				if(lotType == LotType.Ticket)
 				{
@@ -340,7 +340,7 @@ namespace XeApp.Game.Gacha
 			}
 			if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 			{
-				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex);
+				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_current_step_index);
 				return m.MFFNDOEPJFO_NormalCount + m.EKOFPNGPCIP_RareCount;
 			}
 			if (netGachaMultiProduct == null)

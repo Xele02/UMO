@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x11D5F8C Offset: 0x11D5F8C VA: 0x11D5F8C Slot: 4
 		protected override void Awake()
 		{
-			string bgm_ids = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+			string bgm_ids = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 			string[] bgm_ids_array = bgm_ids.Split(new char[] { ',' });
 			if(bgm_ids_array.Length == 3)
 			{

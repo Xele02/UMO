@@ -58,9 +58,9 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1833230 Offset: 0x1833230 VA: 0x1833230 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		FPDHPIEBAHD parser = FPDHPIEBAHD.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		FPDHPIEBAHD parser = FPDHPIEBAHD.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		AKJNKDNCCCC[] array = parser.LIFDACJBDBA;
 		int k = (int)Utility.GetCurrentUnixTime();
 		k = k * 0x761fed + 5;

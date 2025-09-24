@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 				int id = MenuScene.Instance.BgControl.limitedHomeBg.m_music_id;
 				if(id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 				{
-					string strid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+					string strid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 					string[] strs = strid.Split(new char[] { ',' });
 					if(strs.Length == 3)
 					{
@@ -437,7 +437,7 @@ namespace XeApp.Game.Menu
 			if (lastLoginTime < prev)
 				lastLoginTime = prev;
 			TimeSpan s = Utility.GetLocalDateTime(loginTime) - Utility.GetLocalDateTime(lastLoginTime);
-			return s.Days >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("comeback_login_bonus_talk", 7);
+			return s.Days >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("comeback_login_bonus_talk", 7);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC92C Offset: 0x6EC92C VA: 0x6EC92C

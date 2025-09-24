@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 					int adv = 0;
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					{
-						adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mcrslobby_first_adv_id", 0);
+						adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mcrslobby_first_adv_id", 0);
 					}
 					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(adv))
 					{

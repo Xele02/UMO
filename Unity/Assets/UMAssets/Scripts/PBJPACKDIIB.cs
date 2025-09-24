@@ -19,7 +19,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
     public class JBJMNJMJFOJ
     {
         public int CMEJFJFOIIJ_QuestId; // 0x8
-        public int HMFFHLPNMPH_Count; // 0xC
+        public int HMFFHLPNMPH_count; // 0xC
     }
     
 	private List<IFCOFHAFMON> EKFEHIHJHEN = new List<IFCOFHAFMON>(16); // 0x8
@@ -78,7 +78,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 			}
 			data.KGICDMIJGDF_Group = ABMADBCLLHH.ToString();
 			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ_QuestId);
-			data.ADCMNODJBGJ_Title = ABMADBCLLHH.ToString();
+			data.ADCMNODJBGJ_title = ABMADBCLLHH.ToString();
 			KEPNMGHABPI k = KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(data);
 			SakashoBbsCommentInfo info = new SakashoBbsCommentInfo();
 			info.Nickname = "dummy";
@@ -159,12 +159,12 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 					{
 						m = new JBJMNJMJFOJ();
 						m.CMEJFJFOIIJ_QuestId = NIIAFJMLOED;
-						m.HMFFHLPNMPH_Count = LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
+						m.HMFFHLPNMPH_count = LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
 						ONIOKEOLKNK.Add(m);
 					}
 					else
 					{
-						m.HMFFHLPNMPH_Count += LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
+						m.HMFFHLPNMPH_count += LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
 					}
 				}
 			}

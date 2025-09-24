@@ -14,7 +14,7 @@ public class EBNNKJCEEFN
 		StringBuilder str = new StringBuilder(32);
 		AHAENNIFOAF.BCJOMHAIGGJ(str, _MLPEHNBNOGD_PlayerId);
 		res.OBKGEDCKHHE(str.ToString(), 60, true, null);
-		res.EEBMKLOIEMB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_auto_update_interval_deco", 10));
+		res.EEBMKLOIEMB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_interval_deco", 10));
 		if (_MLPEHNBNOGD_PlayerId == NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId)
 			res.PFMOHFOOBCL(AHAENNIFOAF.IAOPMEAIHLH.BJNAMAANNMB_3);
 		return res;

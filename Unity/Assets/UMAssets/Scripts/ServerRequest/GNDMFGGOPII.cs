@@ -11,9 +11,9 @@ public class GNDMFGGOPII_GetInventoryRecords : CACGCMBKHDI_Request
         public List<GJDFHLBONOL> PJJFEAHIPGL_inventories; // 0x8
 
         // RVA: 0xAB8938 Offset: 0xAB8938 VA: 0xAB8938
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
         {
-            EDOHBJAPLPF_JsonData data = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
+            EDOHBJAPLPF_JsonData data = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
             PJJFEAHIPGL_inventories = new List<GJDFHLBONOL>(data.HNBFOAJIIAL_Count);
             for(int i = 0; i < data.HNBFOAJIIAL_Count; i++)
             {

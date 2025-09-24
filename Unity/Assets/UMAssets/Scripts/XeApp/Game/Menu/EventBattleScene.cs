@@ -233,8 +233,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0FD14 Offset: 0xF0FD14 VA: 0xF0FD14 Slot: 51
 		protected override void OnDecideCurrentMusic()
 		{
-			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill;
-			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill;
+			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.DCOALMMJDJK_OverrideCenterSkill;
+			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.KKPLDFNDFDE_OverrideLiveSkill;
 			base.OnDecideCurrentMusic();
 		}
 
@@ -612,7 +612,7 @@ namespace XeApp.Game.Menu
 				{
 					m_eventInfo.SetRewardValid(true);
 					m_eventInfo.SetNextValue(m_eventCtrl.ILICNKILFKJ_GetNextReward().OJELCGDDAOM_MissingPoint.ToString());
-					GameManager.Instance.ItemTextureCache.Load(m_eventCtrl.ILICNKILFKJ_GetNextReward().HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
+					GameManager.Instance.ItemTextureCache.Load(m_eventCtrl.ILICNKILFKJ_GetNextReward().HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
 					{
 						//0xF1362C
 						m_eventInfo.SetRewardIcon(image);
@@ -704,7 +704,7 @@ namespace XeApp.Game.Menu
 				}
 				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name);
 				GameManager.Instance.DivaIconCache.Load(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, 
-					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId, m_battleInfo.ApplySelfDivaIcon);
 				GameManager.Instance.SceneIconCache.Load(sceneId, rank, (IiconTexture texture) =>
 				{
@@ -733,16 +733,16 @@ namespace XeApp.Game.Menu
 				m_battleInfo.ApplyRivalRank((MusicSelectBattleInfo.RivalRankType)str);
 				m_battleInfo.ApplyRivalTitle(musicData.DACLONHOFLA.OPFGFINHFCE_name);
 				m_battleInfo.ApplyRivalScore(ev.HOJNMALLCME_GetClassMaxScore(str, 0));
-				GameManager.Instance.DivaIconCache.Load(musicData.DACLONHOFLA.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId, 
-					musicData.DACLONHOFLA.FDBOPFEOENF_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
-					musicData.DACLONHOFLA.FDBOPFEOENF_Diva.EKFONBFDAAP_ColorId, m_battleInfo.ApplyRivalDivaIcon);
+				GameManager.Instance.DivaIconCache.Load(musicData.DACLONHOFLA.FDBOPFEOENF_diva.AHHJLDLAPAN_DivaId, 
+					musicData.DACLONHOFLA.FDBOPFEOENF_diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, 
+					musicData.DACLONHOFLA.FDBOPFEOENF_diva.EKFONBFDAAP_ColorId, m_battleInfo.ApplyRivalDivaIcon);
 				GameManager.Instance.SceneIconCache.Load(sceneId, rank, (IiconTexture texture) =>
 				{
 					//0x1056110
 					m_battleInfo.ApplyRivalSceneIcon(texture, isKira);
 				});
 				m_rivalDivaDeco.SetActive(true);
-				m_rivalDivaDeco.Change(musicData.DACLONHOFLA.FDBOPFEOENF_Diva, DisplayType.Level);
+				m_rivalDivaDeco.Change(musicData.DACLONHOFLA.FDBOPFEOENF_diva, DisplayType.Level);
 				m_rivalSceneDeco.SetActive(true);
 				m_rivalSceneDeco.Change(musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene, DisplayType.Level);
 				m_battleExGauge.Setup(ev.HEOGGKBILIA_GetCurrentClassEmblemId(), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Strength, true), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Strength, false), ev.GGBNNMCLDMO_GetExPoint(), 100);
@@ -1773,9 +1773,9 @@ namespace XeApp.Game.Menu
 			//0x1057910
 			for(int i = 0; i < musicList.Count; i++)
 			{
-				GameManager.Instance.DivaIconCache.TryInstall(musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId,
-					musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
-					musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.EKFONBFDAAP_ColorId);
+				GameManager.Instance.DivaIconCache.TryInstall(musicList[i].DACLONHOFLA.FDBOPFEOENF_diva.AHHJLDLAPAN_DivaId,
+					musicList[i].DACLONHOFLA.FDBOPFEOENF_diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, 
+					musicList[i].DACLONHOFLA.FDBOPFEOENF_diva.EKFONBFDAAP_ColorId);
 				if(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene != null)
 				{
 					GameManager.Instance.SceneIconCache.TryInstall(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.BCCHOBPJJKE_SceneId, 
@@ -1784,7 +1784,7 @@ namespace XeApp.Game.Menu
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(musicList[i].JNCPEGJGHOG_JacketId));
 			}
 			GameManager.Instance.DivaIconCache.TryInstall(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId,
-				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId,
+				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId,
 				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
             FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
             if (diva.FGFIBOBAPIA_SceneId > 0)

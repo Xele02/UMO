@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1875634 Offset: 0x1875634 VA: 0x1875634
 		public void UpdatePlayButton(IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_Stamina);
+			SetNeedEnergy(musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_stamina);
 			SetPlayBtn(musicData.IFNPBIJEPBO_IsDlded ? PlayButtonWrapper.Type.PlayEn : PlayButtonWrapper.Type.Download);
 		}
 

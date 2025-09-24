@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 			if(fri.JIGONEMPPNP_Diva != null)
 			{
 				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
-				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
 			isKira = false;
@@ -91,13 +91,13 @@ namespace XeApp.Game.Menu
 					skillRank = (SkillRank.Type)fri.AFBMEMCHJCL_MainScene.DHEFMEGKKDN_CenterSkillRank;
 				}
 				luck = fri.AFBMEMCHJCL_MainScene.MJBODMOLOBC_luck;
-				total = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.Total;
-				life = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.life;
-				soul = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.soul;
-				voice = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.vocal;
-				charm = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.charm;
-				fold = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.fold;
-				support = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_Status.support;
+				total = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.Total;
+				life = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.life;
+				soul = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.soul;
+				voice = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.vocal;
+				charm = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.charm;
+				fold = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.fold;
+				support = fri.AFBMEMCHJCL_MainScene.CMCKNKKCNDK_status.support;
 				isKira = fri.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 			}
 			login = JpStringLiterals.StringLiteral_16059 + fri.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString;

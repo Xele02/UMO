@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		public TipsData(BCKMELFCKKN_Tips.ALLFFCNKFBG data)
 		{
 			id = data.PPFNGGCBJKC_id;
-			title = data.ADCMNODJBGJ_Title;
+			title = data.ADCMNODJBGJ_title;
 			message = data.JONNCMDGMKA_Message;
 			imageId = data.EAHPLCJMPHD_PId;
 			graffitiId = data.LKDJHPLBKAI_GraffitiId;

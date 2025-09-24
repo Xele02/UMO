@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 					SwitchBarStatus(eGaugeStatus.Lock);
 					SetUnlockText(a.ONIAMNAJLKI_LockMessage);
 				}
-				SetDivaIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId);
+				SetDivaIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId);
 			}
 		}
 

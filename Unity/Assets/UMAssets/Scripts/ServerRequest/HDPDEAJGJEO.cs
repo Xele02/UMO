@@ -8,12 +8,12 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 {
 	public class FDECBLBCNIC
 	{
-		public int DJJGPACGEMM_ProductId; // 0x8
+		public int DJJGPACGEMM_product_id; // 0x8
 
 		// RVA: 0x1743180 Offset: 0x1743180 VA: 0x1743180
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			DJJGPACGEMM_ProductId = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.DJJGPACGEMM_ProductId];
+			DJJGPACGEMM_product_id = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.DJJGPACGEMM_product_id];
 		}
 	}
 
@@ -23,10 +23,10 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 		public List<FDECBLBCNIC> HIAIAJJPCDE_recoverable_products; // 0xC
 
 		// RVA: 0x1742EB8 Offset: 0x1742EB8 VA: 0x1742EB8
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			OIJLNFJALJP_aborted_transaction_exists = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.OIJLNFJALJP_aborted_transaction_exists];
-			EDOHBJAPLPF_JsonData l = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products];
+			OIJLNFJALJP_aborted_transaction_exists = (bool)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.OIJLNFJALJP_aborted_transaction_exists];
+			EDOHBJAPLPF_JsonData l = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products];
 			HIAIAJJPCDE_recoverable_products = new List<FDECBLBCNIC>(l.HNBFOAJIIAL_Count);
 			for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
 			{

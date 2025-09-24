@@ -25,35 +25,35 @@ public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 public class HEHLBMMFMPL {}
 public class HEHLBMMFMPL_PlayerStatusInfo
 {
-	public int EKFHOJIGHHH_IsCreated; // 0x8
-	public int EHGBICNIBKE_PlayerId; // 0xC
-	public int JFMEKPDHJPP_PlayerAccountStatus; // 0x10
+	public int EKFHOJIGHHH_is_created; // 0x8
+	public int EHGBICNIBKE_player_id; // 0xC
+	public int JFMEKPDHJPP_player_account_status; // 0x10
 
 	// public bool NNJKNHKFPBB { get; }
 
 	// RVA: 0x1748038 Offset: 0x1748038 VA: 0x1748038
 	public bool OGADPAILFBC_IsCreated()
     {
-        return EKFHOJIGHHH_IsCreated == 1;
+        return EKFHOJIGHHH_is_created == 1;
     }
 
 	// // RVA: 0x1748048 Offset: 0x1748048 VA: 0x1748048
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
     {
-        EKFHOJIGHHH_IsCreated = 1;
-        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated/*"is_created"*/))
+        EKFHOJIGHHH_is_created = 1;
+        if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EKFHOJIGHHH_is_created/*"is_created"*/))
         {
-            EKFHOJIGHHH_IsCreated = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EKFHOJIGHHH_IsCreated];
+            EKFHOJIGHHH_is_created = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.EKFHOJIGHHH_is_created];
         }
-        EHGBICNIBKE_PlayerId = 0;
-        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId/*"player_id"*/))
+        EHGBICNIBKE_player_id = 0;
+        if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EHGBICNIBKE_player_id/*"player_id"*/))
         {
-            EHGBICNIBKE_PlayerId = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.EHGBICNIBKE_PlayerId];
+            EHGBICNIBKE_player_id = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.EHGBICNIBKE_player_id];
         }
-        JFMEKPDHJPP_PlayerAccountStatus = 0;
-        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.JFMEKPDHJPP_PlayerAccountStatus/*"player_account_status"*/))
+        JFMEKPDHJPP_player_account_status = 0;
+        if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status/*"player_account_status"*/))
         {
-            JFMEKPDHJPP_PlayerAccountStatus = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.JFMEKPDHJPP_PlayerAccountStatus];
+            JFMEKPDHJPP_player_account_status = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status];
         }
     }
 }

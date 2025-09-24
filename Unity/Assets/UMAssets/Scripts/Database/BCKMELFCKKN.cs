@@ -13,7 +13,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 		public int[] HFLGGIBMEOL; // 0xC
 		public long KJBGCLPMLCG_OpenedAt; // 0x10
 		public long GJFPFFBAKGK_CloseAt; // 0x18
-		public string ADCMNODJBGJ_Title; // 0x20
+		public string ADCMNODJBGJ_title; // 0x20
 		public string JONNCMDGMKA_Message; // 0x24
 		public int EAHPLCJMPHD_PId; // 0x28 ImageId
 		public int LKDJHPLBKAI_GraffitiId; // 0x2C
@@ -22,7 +22,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 		public int NLPDDGADNFP_DivaRId; // 0x38
 		public int ILPJHHKLOEN_Situation; // 0x3C
 
-		//public int BNHOEFJAAKK { get; } 0xC700A4 NNDJHLOPFJB
+		//public int BNHOEFJAAKK_prio { get; } 0xC700A4 NNDJHLOPFJB
 	}
 
 	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
@@ -53,9 +53,9 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0xC6FC44 Offset: 0xC6FC44 VA: 0xC6FC44 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		DGLENODDACE parser = DGLENODDACE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		DGLENODDACE parser = DGLENODDACE.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		KLNOMBKJDNN(parser);
 		return true;
 	}
@@ -77,7 +77,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 			data.NCGNCEOOBGP_EventType = (sbyte)array[i].CBDOEDKIOJK;
 			data.KJBGCLPMLCG_OpenedAt = array[i].MGPEOHKLOEP;
 			data.GJFPFFBAKGK_CloseAt = array[i].LFAFFICDFMJ;
-			data.ADCMNODJBGJ_Title = DatabaseTextConverter.TranslateTipsTitle(i, array[i].ADCMNODJBGJ);
+			data.ADCMNODJBGJ_title = DatabaseTextConverter.TranslateTipsTitle(i, array[i].ADCMNODJBGJ);
 			data.JONNCMDGMKA_Message = DatabaseTextConverter.TranslateTipsMessage(i, array[i].IPBHCLIHAPG);
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EAHPLCJMPHD_PId = array[i].HANMDEBPBHG;
@@ -93,7 +93,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xC70054 Offset: 0xC70054 VA: 0xC70054
-	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	//private bool KLNOMBKJDNN(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0xC70064 Offset: 0xC70064 VA: 0xC70064 Slot: 11
 	public override uint CAOGDCBPBAN()

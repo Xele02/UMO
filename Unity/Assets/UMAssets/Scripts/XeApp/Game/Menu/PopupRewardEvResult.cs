@@ -245,8 +245,8 @@ namespace XeApp.Game.Menu
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
-				Rank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_Rank;
-				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_Point;
+				Rank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_rank;
+				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_point;
 				evHighScore = 0;
 				evScoreRank = 0;
 				EventId = eventController.PGIIDPEGGPI_EventId;
@@ -259,9 +259,9 @@ namespace XeApp.Game.Menu
 					MusicName = ib.NEDBBJDAFBH_MusicName;
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
-				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items.Count; i++)
+				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_items.Count; i++)
 				{
-					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items[i]);
+					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_items[i]);
 				}
 				int r = Rank;
 				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[rankingIndex].Count; i++)
@@ -279,8 +279,8 @@ namespace XeApp.Game.Menu
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
-				evScoreRank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_Rank;
-				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_Point;
+				evScoreRank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_rank;
+				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_point;
 				Rank = evScoreRank;
 				evHighScore = (int)CurrentPoint;
 				EventId = eventController.PGIIDPEGGPI_EventId;
@@ -301,9 +301,9 @@ namespace XeApp.Game.Menu
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
 				//LAB_011427dc
-				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items.Count; i++)
+				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_items.Count; i++)
 				{
-					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items[i]);
+					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_items[i]);
 				}
 				int r = Rank;
 				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[1].Count; i++)
@@ -391,14 +391,14 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_setting.GetViewData.total_data_list.Count; i++)
 				{
-					for(int j = 0; j < m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items.Count; j++)
+					for(int j = 0; j < m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_items.Count; j++)
 					{
 						ScrollListItem scrollItem = new ScrollListItem();
 						scrollItem.Top = new Vector2(0, -(f + m_scrollItemList.Count * 104 + 10));
 						scrollItem.Height = 104;
 						scrollItem.NeedPoint = m_setting.GetViewData.total_data_list[i].FIOIKMOIJGK_Point;
-						scrollItem.Item = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j];
-						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j].JOPPFEHKNFO_Pickup;
+						scrollItem.Item = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_items[j];
+						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_items[j].JOPPFEHKNFO_Pickup;
 						scrollItem.ResourceType = 4;
 						m_scrollItemList.Add(scrollItem);
 					}

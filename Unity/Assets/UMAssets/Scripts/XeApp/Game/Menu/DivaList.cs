@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 				int index = i;
 				FFHPBEPOMAK_DivaInfo d = playerData.NBIGLBMHEDC_DivaList[sortIndexList[i]];
 				int divaId = d.AHHJLDLAPAN_DivaId;
-				int modelId = d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+				int modelId = d.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 				int colorId = d.EKFONBFDAAP_ColorId;
 				MenuScene.Instance.DivaIconCache.LoadStateIcon(divaId, modelId, colorId, (IiconTexture texture) =>
 				{

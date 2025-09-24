@@ -6,7 +6,7 @@ using XeSys;
 public class NFBNDLNCHMG
 {
 	public string KKDHGJGDCCK_PlayerCounterMasterName; // 0x8
-	public int EHGBICNIBKE_PlayerId; // 0xC
+	public int EHGBICNIBKE_player_id; // 0xC
 	public long KKPOJIAKIII_PlayerCount; // 0x10
 	public int BBAPLGHKEHP_CountDelta; // 0x18
 	public int GADKJMMJGGE_EffectiveCountDelta; // 0x1C
@@ -15,7 +15,7 @@ public class NFBNDLNCHMG
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
     {
         KKDHGJGDCCK_PlayerCounterMasterName = (string)OBHAFLMHAKG["player_counter_master_name"];
-        EHGBICNIBKE_PlayerId = (int)OBHAFLMHAKG["player_id"];
+        EHGBICNIBKE_player_id = (int)OBHAFLMHAKG["player_id"];
         KKPOJIAKIII_PlayerCount = JsonUtil.GetLong(OBHAFLMHAKG["player_count"]);
         BBAPLGHKEHP_CountDelta = (int)OBHAFLMHAKG["count_delta"];
         GADKJMMJGGE_EffectiveCountDelta = (int)OBHAFLMHAKG["effective_count_delta"];
@@ -25,14 +25,14 @@ public class NFBNDLNCHMG
 public class KMHEIPCJHOB
 {
 	public string KKDHGJGDCCK_PlayerCounterMasterName; // 0x8
-	public int EHGBICNIBKE_PlayerId; // 0xC
+	public int EHGBICNIBKE_player_id; // 0xC
 	public string EJJNDLJIIIF_ErrorCode; // 0x10
 
 	// RVA: 0x111D9F0 Offset: 0x111D9F0 VA: 0x111D9F0
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
     {
         KKDHGJGDCCK_PlayerCounterMasterName = (string)OBHAFLMHAKG["player_counter_master_name"];
-        EHGBICNIBKE_PlayerId = (int)OBHAFLMHAKG["player_id"];
+        EHGBICNIBKE_player_id = (int)OBHAFLMHAKG["player_id"];
         EJJNDLJIIIF_ErrorCode = (string)OBHAFLMHAKG["error_code"];
     }
 }
@@ -43,8 +43,8 @@ public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_Request
 {
     public class BAKPFHFBOND
     {
-        public List<NFBNDLNCHMG> MEOGLBGCOID = new List<NFBNDLNCHMG>(); // 0x8
-        public List<KMHEIPCJHOB> BFPPMMKPNHA = new List<KMHEIPCJHOB>(); // 0xC
+        public List<NFBNDLNCHMG> MEOGLBGCOID_counter_update_result = new List<NFBNDLNCHMG>(); // 0x8
+        public List<KMHEIPCJHOB> BFPPMMKPNHA_counter_update_failures = new List<KMHEIPCJHOB>(); // 0xC
 
         // RVA: 0xCD2808 Offset: 0xCD2808 VA: 0xCD2808
         public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
@@ -56,7 +56,7 @@ public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_Request
                 {
                     NFBNDLNCHMG d = new NFBNDLNCHMG();
                     d.KHEKNNFCAOI_Init(data[i]);
-                    MEOGLBGCOID.Add(d);
+                    MEOGLBGCOID_counter_update_result.Add(d);
                 }
             }
             if(OBHAFLMHAKG.BBAJPINMOEP_Contains("counter_update_failures"))
@@ -66,7 +66,7 @@ public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_Request
                 {
                     KMHEIPCJHOB d = new KMHEIPCJHOB();
                     d.KHEKNNFCAOI_Init(data[i]);
-                    BFPPMMKPNHA.Add(d);
+                    BFPPMMKPNHA_counter_update_failures.Add(d);
                 }
             }
         }

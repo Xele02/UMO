@@ -39,9 +39,9 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1984508 Offset: 0x1984508 VA: 0x1984508 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		MMEGEEMJBDH parser = MMEGEEMJBDH.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		MMEGEEMJBDH parser = MMEGEEMJBDH.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		LPBEJIIKIDI[] array = parser.KLFCPLCMION;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -57,6 +57,10 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1984900 Offset: 0x1984900 VA: 0x1984900 Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
+		//CDENCMNHNGA_table = uc_item
+		//	PPFNGGCBJKC_id = PPFNGGCBJKC_id
+		//	EKLIPGELKCL_Rarity = FBFLDFMFFOH_rar
+		//	JBGEEPFKIGG_val = JBGEEPFKIGG_val
 		TodoLogger.LogError(TodoLogger.DbJson, "DGDIEDDPNNG_UcItem.IIEMACPEEBJ");
 		return true;
 	}

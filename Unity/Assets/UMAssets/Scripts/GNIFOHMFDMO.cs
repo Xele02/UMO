@@ -52,7 +52,7 @@ public class GNIFOHMFDMO_DivaResultData
 	//// RVA: 0x1E56244 Offset: 0x1E56244 VA: 0x1E56244
 	public int HMHJOEMJOKE_GetCenterDivaBonus()
 	{
-		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("center_diva_bonus", 0);
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("center_diva_bonus", 0);
 	}
 
 	//// RVA: 0x1E56334 Offset: 0x1E56334 VA: 0x1E56334
@@ -92,11 +92,11 @@ public class GNIFOHMFDMO_DivaResultData
 				data.CFDGFLNIMCL_MusicExp = saveDivaInfo.LKIFDCEKDCK_exp[DLAEJOBELBH_MusicId - 1];
 				data.BKJJLJKGDJB_MusicExpDiff = data.CFDGFLNIMCL_MusicExp - data.NMHNDLHJENB_PrevMusicExp;
 				data.HMBECPGHPOE_DivaExps = data.NMHNDLHJENB_PrevMusicExp;
-				data.IIHHAFPPFCP_PrevMusicLevel = prevSaveDivaInfo.ANAJIAENLNB_Level[DLAEJOBELBH_MusicId - 1];
-				data.AIMAJDEJDLM_MusicLevel = saveDivaInfo.ANAJIAENLNB_Level[DLAEJOBELBH_MusicId - 1];
+				data.IIHHAFPPFCP_PrevMusicLevel = prevSaveDivaInfo.ANAJIAENLNB_lv[DLAEJOBELBH_MusicId - 1];
+				data.AIMAJDEJDLM_MusicLevel = saveDivaInfo.ANAJIAENLNB_lv[DLAEJOBELBH_MusicId - 1];
 				data.PKLPGBKKFOL_DivaLevels = data.IIHHAFPPFCP_PrevMusicLevel;
-				data.NFJFBOBJONF_PrevExpFrag = prevSaveDivaInfo.ACABEFKBBEN_ExpFrag;
-				data.DKLBOOEIKKL_ExpFrag = saveDivaInfo.ACABEFKBBEN_ExpFrag;
+				data.NFJFBOBJONF_PrevExpFrag = prevSaveDivaInfo.ACABEFKBBEN_exp_frag;
+				data.DKLBOOEIKKL_ExpFrag = saveDivaInfo.ACABEFKBBEN_exp_frag;
 				data.FADHHKOGJIP = 0;
 				data.MECHKMMEIPP_PrevExp = data.NFJFBOBJONF_PrevExpFrag;
 				data.KNCMFPIODKJ_ExpFragDiff = data.DKLBOOEIKKL_ExpFrag - data.NFJFBOBJONF_PrevExpFrag;

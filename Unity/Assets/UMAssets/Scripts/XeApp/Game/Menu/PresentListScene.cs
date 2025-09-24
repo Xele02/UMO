@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			int bgmId = BgmPlayer.MENU_BGM_ID_BASE;
 			if(MenuScene.Instance.BgControl.limitedHomeBg.m_music_id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 			{
-				string home_bgm_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+				string home_bgm_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 				string[] strs = home_bgm_id.Split(new char[] { ',' });
 				if(strs.Length == 3)
 				{

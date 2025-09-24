@@ -14,7 +14,7 @@ public class ANPGILOLNFK
 		KEBIIAMNKAJ_8_Return = 8,
 	}
 
-	public static string[] POFDDFCGEGP = new string[9] {
+	public static string[] POFDDFCGEGP_Underscore = new string[9] {
 		"", "regular", "continue", "comback1", "comback2", "start", "campaign", "total", "return"
 	}; // 0x0
 	public static int[] FENFHPPHCBE = new int[9] {
@@ -22,23 +22,23 @@ public class ANPGILOLNFK
 	}; // 0x4
 
 	//// RVA: 0xD573E0 Offset: 0xD573E0 VA: 0xD573E0
-	public static CDOGFBNLIPG OLMFIANJBOB_GetType(string _BPEAIOBHMFD_NameForApis)
+	public static CDOGFBNLIPG OLMFIANJBOB_GetType(string _BPEAIOBHMFD_name_for_apis)
 	{
-		for(int i = 1; i < POFDDFCGEGP.Length; i++)
+		for(int i = 1; i < POFDDFCGEGP_Underscore.Length; i++)
 		{
-			if(_BPEAIOBHMFD_NameForApis.Contains(POFDDFCGEGP[i]))
+			if(_BPEAIOBHMFD_name_for_apis.Contains(POFDDFCGEGP_Underscore[i]))
 				return (CDOGFBNLIPG)(i);
 		}
 		return CDOGFBNLIPG.HJNNKCMLGFL_0_None;
 	}
 
 	//// RVA: 0xD57550 Offset: 0xD57550 VA: 0xD57550
-	public static int AFMHNPCDAFI_GetBgId(string _BPEAIOBHMFD_NameForApis)
+	public static int AFMHNPCDAFI_GetBgId(string _BPEAIOBHMFD_name_for_apis)
 	{
-		int idx = _BPEAIOBHMFD_NameForApis.IndexOf("_bg_");
+		int idx = _BPEAIOBHMFD_name_for_apis.IndexOf("_bg_");
 		if(idx > -1)
 		{
-			string s = _BPEAIOBHMFD_NameForApis.Substring(idx + 4);
+			string s = _BPEAIOBHMFD_name_for_apis.Substring(idx + 4);
 			int id = 0;
 			if(int.TryParse(s, out id))
 				return id;

@@ -67,7 +67,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		public int NNAOOLFLCAE_Crypted; // 0x38
 		public int OGBIPMPCBEF_Crypted; // 0x3C
 		public List<EHDCAEHLLKF> PKPLOGBIDIG_Prizes = new List<EHDCAEHLLKF>(100); // 0x40
-		public long EGBOHDFBAPB_CloseAt; // 0x48
+		public long EGBOHDFBAPB_closed_at; // 0x48
 		public bool IMFBCJOIJKJ_Entry; // 0x50
 
 		public int DNJLJMKKDNA_EventId { get { return KGAHLMDIFIE_Crypted ^ ENOBDCFHELD; } set { KGAHLMDIFIE_Crypted = value ^ ENOBDCFHELD; JHPJAPKMCML_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA78 DONEINFNFCP 0xCDB2AC EPEBGHFNMKP
@@ -85,7 +85,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 			FCEJCHGLFGN = ENOBDCFHELD ^ 0x7411141;
 			if(!IJKLOFCMKCK)
 			{
-				EGBOHDFBAPB_CloseAt = 0;
+				EGBOHDFBAPB_closed_at = 0;
 				DNJLJMKKDNA_EventId = 0;
 				IMFBCJOIJKJ_Entry = false;
 				BGCOKABBHNC_GachaTicketCnt = 0;
@@ -114,7 +114,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 			NNCCGILOOIE_Num = GPBJHKLFCEP.NNCCGILOOIE_Num;
 			IGHIADKHGHG_DrawCnt = GPBJHKLFCEP.IGHIADKHGHG_DrawCnt;
 			BGCOKABBHNC_GachaTicketCnt = GPBJHKLFCEP.BGCOKABBHNC_GachaTicketCnt;
-			EGBOHDFBAPB_CloseAt = GPBJHKLFCEP.EGBOHDFBAPB_CloseAt;
+			EGBOHDFBAPB_closed_at = GPBJHKLFCEP.EGBOHDFBAPB_closed_at;
 			IMFBCJOIJKJ_Entry = GPBJHKLFCEP.IMFBCJOIJKJ_Entry;
 			for(int i = 0; i < 100; i++)
 			{
@@ -131,7 +131,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 			if(NNCCGILOOIE_Num != OIKJFMGEICL.NNCCGILOOIE_Num) return false;
 			if(IGHIADKHGHG_DrawCnt != OIKJFMGEICL.IGHIADKHGHG_DrawCnt) return false;
 			if(BGCOKABBHNC_GachaTicketCnt != OIKJFMGEICL.BGCOKABBHNC_GachaTicketCnt) return false;
-			if(EGBOHDFBAPB_CloseAt != OIKJFMGEICL.EGBOHDFBAPB_CloseAt) return false;
+			if(EGBOHDFBAPB_closed_at != OIKJFMGEICL.EGBOHDFBAPB_closed_at) return false;
 			if(IMFBCJOIJKJ_Entry != OIKJFMGEICL.IMFBCJOIJKJ_Entry) return false;
 			for(int i = 0; i < 100; i++)
 			{
@@ -178,8 +178,8 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		for(int i = 0; i < 6; i++)
 		{
 			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
-			data2[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = FBCJICEPLED[i].EGBOHDFBAPB_CloseAt;
-			data2[AFEHLCGHAEE_Strings.CDMGDFLPPHN_Entry] = FBCJICEPLED[i].IMFBCJOIJKJ_Entry ? 1 : 0;
+			data2[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = FBCJICEPLED[i].EGBOHDFBAPB_closed_at;
+			data2[AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry] = FBCJICEPLED[i].IMFBCJOIJKJ_Entry ? 1 : 0;
 			data2["event_id"] = FBCJICEPLED[i].DNJLJMKKDNA_EventId;
 			data2["pickup"] = FBCJICEPLED[i].FEFCFGNGPGC_Pickup;
 			data2["box_id"] = FBCJICEPLED[i].IMMDGJAOPCD_BoxId;
@@ -235,8 +235,8 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 					for(int i = 0; i < cnt; i++)
 					{
 						FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
-						FBCJICEPLED[i].EGBOHDFBAPB_CloseAt = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
-						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_Entry, 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].EGBOHDFBAPB_closed_at = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
+						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry, 0, ref isInvalid) != 0;
 						FBCJICEPLED[i].DNJLJMKKDNA_EventId = CJAENOMGPDA_ReadInt(block[i], "event_id", 0, ref isInvalid);
 						FBCJICEPLED[i].FEFCFGNGPGC_Pickup = CJAENOMGPDA_ReadInt(block[i], "pickup", 0, ref isInvalid);
 						FBCJICEPLED[i].IMMDGJAOPCD_BoxId = CJAENOMGPDA_ReadInt(block[i], "box_id", 0, ref isInvalid);

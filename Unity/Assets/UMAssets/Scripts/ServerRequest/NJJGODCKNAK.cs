@@ -6,23 +6,23 @@ using XeSys;
 public class KJKDAGGGJCO
 {
 	public int PPFNGGCBJKC_id; // 0x8
-	public string BPEAIOBHMFD_NameForApis; // 0xC
-	public bool ILLPEMPBDJG_CanReceiveNext; // 0x10
-	public int HMFFHLPNMPH_Count; // 0x14
-	public long HLMLHOFHIOK_LastReceivedAt; // 0x18
+	public string BPEAIOBHMFD_name_for_apis; // 0xC
+	public bool ILLPEMPBDJG_can_receive_next; // 0x10
+	public int HMFFHLPNMPH_count; // 0x14
+	public long HLMLHOFHIOK_last_received_at; // 0x18
 	public ANPGILOLNFK.CDOGFBNLIPG CKHOBDIKJFN_Type; // 0x20
 
 	// RVA: 0x1A033B8 Offset: 0x1A033B8 VA: 0x1A033B8
-	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
     {
-        PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id];
-        BPEAIOBHMFD_NameForApis = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.BPEAIOBHMFD_NameForApis];
-        ILLPEMPBDJG_CanReceiveNext = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.ILLPEMPBDJG_CanReceiveNext];
-        HMFFHLPNMPH_Count = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HMFFHLPNMPH_Count];
-        HLMLHOFHIOK_LastReceivedAt = 0;
-        CKHOBDIKJFN_Type = ANPGILOLNFK.OLMFIANJBOB_GetType(BPEAIOBHMFD_NameForApis);
-        if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.HLMLHOFHIOK_LastReceivedAt) && _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HLMLHOFHIOK_LastReceivedAt] != null)
-            HLMLHOFHIOK_LastReceivedAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.HLMLHOFHIOK_LastReceivedAt);
+        PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id];
+        BPEAIOBHMFD_name_for_apis = (string)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.BPEAIOBHMFD_name_for_apis];
+        ILLPEMPBDJG_can_receive_next = (bool)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.ILLPEMPBDJG_can_receive_next];
+        HMFFHLPNMPH_count = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.HMFFHLPNMPH_count];
+        HLMLHOFHIOK_last_received_at = 0;
+        CKHOBDIKJFN_Type = ANPGILOLNFK.OLMFIANJBOB_GetType(BPEAIOBHMFD_name_for_apis);
+        if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.HLMLHOFHIOK_last_received_at) && _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.HLMLHOFHIOK_last_received_at] != null)
+            HLMLHOFHIOK_last_received_at = JsonUtil.GetLong(_IDLHJIOMJBK_data, AFEHLCGHAEE_Strings.HLMLHOFHIOK_last_received_at);
     }
 }
 
@@ -32,18 +32,18 @@ public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
 {
     public class OLNONCJIHBA
     {
-        public List<KJKDAGGGJCO> CEBOHGGJBMN_LoginBonuses = new List<KJKDAGGGJCO>(); // 0x8
+        public List<KJKDAGGGJCO> CEBOHGGJBMN_login_bonuses = new List<KJKDAGGGJCO>(); // 0x8
 
         // // RVA: 0x18ABA28 Offset: 0x18ABA28 VA: 0x18ABA28
-        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+        public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
         {
-            EDOHBJAPLPF_JsonData list = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
-            CEBOHGGJBMN_LoginBonuses = new List<KJKDAGGGJCO>(list.HNBFOAJIIAL_Count);
+            EDOHBJAPLPF_JsonData list = _IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.CEBOHGGJBMN_login_bonuses];
+            CEBOHGGJBMN_login_bonuses = new List<KJKDAGGGJCO>(list.HNBFOAJIIAL_Count);
             for(int i = 0; i < list.HNBFOAJIIAL_Count; i++)
             {
                 KJKDAGGGJCO data = new KJKDAGGGJCO();
                 data.KHEKNNFCAOI_Init(list[i]);
-                CEBOHGGJBMN_LoginBonuses.Add(data);
+                CEBOHGGJBMN_login_bonuses.Add(data);
             }
         }
     }

@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 			});
 			if(file != null)
 			{
-				textData.Init(file.DBBGALAPFGC_Data, 0);
+				textData.Init(file.DBBGALAPFGC_bytes, 0);
 			}
 		}
 

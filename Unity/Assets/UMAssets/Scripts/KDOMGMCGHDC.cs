@@ -54,7 +54,7 @@ public class KDOMGMCGHDC
 			}
 			else if(h.LHBDCGFOKCA_DivaId != 0)
 			{
-				int currentMusicLevel = saveDiva.LGKFMLIOPKL_GetDivaInfo(h.LHBDCGFOKCA_DivaId).ANAJIAENLNB_Level[h.CEFHDLLAPDH_MusicId - 1];
+				int currentMusicLevel = saveDiva.LGKFMLIOPKL_GetDivaInfo(h.LHBDCGFOKCA_DivaId).ANAJIAENLNB_lv[h.CEFHDLLAPDH_MusicId - 1];
 				if(currentMusicLevel < h.KDGIHMCBLND_MusicLevel)
 				{
 					res.HHBJAEOIGIH_IsLocked = true;

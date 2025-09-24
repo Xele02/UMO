@@ -54,11 +54,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17CF09C Offset: 0x17CF09C VA: 0x17CF09C
 		public void Init(IAPDFOPPGND data)
 		{
-			m_name.text = data.ADCMNODJBGJ_Title;
+			m_name.text = data.ADCMNODJBGJ_title;
 			m_name.verticalOverflow = UnityEngine.VerticalWrapMode.Overflow;
 			m_name.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
 			m_info.text = data.FEMMDNIELFC_Desc;
-			m_number.SetNumber(data.HMFFHLPNMPH_Count + 1, 0);
+			m_number.SetNumber(data.HMFFHLPNMPH_count + 1, 0);
 			SetDegreeImage(data.MDPKLNFFDBO_EmblemId);
 		}
 

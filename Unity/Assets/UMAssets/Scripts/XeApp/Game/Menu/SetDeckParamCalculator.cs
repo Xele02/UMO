@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 			baseStatus.Clear();
 			addStatus.Clear();
 			luck = 0;
-			//viewUnitData.CMCKNKKCNDK_Status ??
+			//viewUnitData.CMCKNKKCNDK_status ??
 			baseStatus.Copy(viewUnitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
 			result.OBKGEDCKHHE();
@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 			int friendLuck = 0;
 			if(viewFriendPlayerData != null && viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() != null)
 			{
-				m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+				m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_status);
 				for(int i = 0; i < m_tmpStatus.spNoteExpected.Length; i++)
 				{
 					m_tmpStatus.spNoteExpected[i] = 0;
@@ -203,54 +203,54 @@ namespace XeApp.Game.Menu
 				totalScore += CMMKCEPBIHI.NDNOLJACLLC_GetScore((CMMKCEPBIHI.NOJENDEDECD_ScoreType)i);
 			}
 			logParams.NDKKNEIDCFF_TotalScoreExpected = totalScore;
-			logParams.LPKBGBLIDCE = 0;
-			logParams.OIKJEAEJOME = 0;
-			logParams.LCFAJIELMMF = 0;
-			logParams.JJDKFJACLMD = 0;
+			logParams.LPKBGBLIDCE_ParaSceneSoul = 0;
+			logParams.OIKJEAEJOME_ParaSceneVocal = 0;
+			logParams.LCFAJIELMMF_ParaSceneCharm = 0;
+			logParams.JJDKFJACLMD_ParaSceneLife = 0;
 			for(int i = 0; i < result.GJLJJDIDODK.Length; i++)
 			{
-				logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.soul + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.soul;
-				logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.charm + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.charm;
-				logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.vocal;
-				logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.life + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.life;
+				logParams.LPKBGBLIDCE_ParaSceneSoul += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.soul + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.soul;
+				logParams.LCFAJIELMMF_ParaSceneCharm += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.charm + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.charm;
+				logParams.OIKJEAEJOME_ParaSceneVocal += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.vocal;
+				logParams.JJDKFJACLMD_ParaSceneLife += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.life + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.life;
 				for(int j = 0; j < result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes.Length; j++)
 				{
-					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].soul;
-					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].charm;
-					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].vocal;
-					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].life;
+					logParams.LPKBGBLIDCE_ParaSceneSoul += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].soul;
+					logParams.LCFAJIELMMF_ParaSceneCharm += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].charm;
+					logParams.OIKJEAEJOME_ParaSceneVocal += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].vocal;
+					logParams.JJDKFJACLMD_ParaSceneLife += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].life;
 				}
 				for (int j = 0; j < result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene.Length; j++)
 				{
-					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].soul;
-					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].charm;
-					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].vocal;
-					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].life;
+					logParams.LPKBGBLIDCE_ParaSceneSoul += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].soul;
+					logParams.LCFAJIELMMF_ParaSceneCharm += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].charm;
+					logParams.OIKJEAEJOME_ParaSceneVocal += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].vocal;
+					logParams.JJDKFJACLMD_ParaSceneLife += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].life;
 				}
-				logParams.IPPIIBLLDDG[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.soul;
-				logParams.HHNPILDOHKP[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.charm;
-				logParams.MHPLFJHDIEP[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.vocal;
+				logParams.IPPIIBLLDDG_ParaCosSoul[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.soul;
+				logParams.HHNPILDOHKP_ParaCosCharm[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.charm;
+				logParams.MHPLFJHDIEP_ParaCosVocal[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.vocal;
 			}
 			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
 				f = viewUnitData.BCJEAJPLGMB_MainDivas[i];
 				if (f == null)
 				{
-					logParams.EEKANKOEJIL[i] = 0;
-					logParams.HNINPGMPGMJ[i] = 0;
-					logParams.DNGJJFFKOBG[i] = 0;
-					logParams.NBCMAGJGHLC[i] = 0;
-					logParams.LBGNJCODPEJ[i] = 0;
-					logParams.EGEKLGIEKLL[i] = 0;
+					logParams.EEKANKOEJIL_ParaDivaSoul[i] = 0;
+					logParams.HNINPGMPGMJ_ParaDivaCharm[i] = 0;
+					logParams.DNGJJFFKOBG_ParaDivaVocal[i] = 0;
+					logParams.NBCMAGJGHLC_ParaGoDivaSoul[i] = 0;
+					logParams.LBGNJCODPEJ_ParaGoDivaCharm[i] = 0;
+					logParams.EGEKLGIEKLL_ParaGoDivaVocal[i] = 0;
 				}
 				else
 				{
-					logParams.EEKANKOEJIL[i] = f.JLJGCBOHJID_Status.soul - f.IHANGGCHPAL.PNOKIEEILJN();
-					logParams.HNINPGMPGMJ[i] = f.JLJGCBOHJID_Status.charm - f.IHANGGCHPAL.KDKCMCBLEMG();
-					logParams.DNGJJFFKOBG[i] = f.JLJGCBOHJID_Status.vocal - f.IHANGGCHPAL.LCDIGPJJJGI();
-					logParams.NBCMAGJGHLC[i] = f.IHANGGCHPAL.PNOKIEEILJN();
-					logParams.LBGNJCODPEJ[i] = f.IHANGGCHPAL.KDKCMCBLEMG();
-					logParams.EGEKLGIEKLL[i] = f.IHANGGCHPAL.LCDIGPJJJGI();
+					logParams.EEKANKOEJIL_ParaDivaSoul[i] = f.JLJGCBOHJID_Status.soul - f.IHANGGCHPAL.PNOKIEEILJN();
+					logParams.HNINPGMPGMJ_ParaDivaCharm[i] = f.JLJGCBOHJID_Status.charm - f.IHANGGCHPAL.KDKCMCBLEMG();
+					logParams.DNGJJFFKOBG_ParaDivaVocal[i] = f.JLJGCBOHJID_Status.vocal - f.IHANGGCHPAL.LCDIGPJJJGI();
+					logParams.NBCMAGJGHLC_ParaGoDivaSoul[i] = f.IHANGGCHPAL.PNOKIEEILJN();
+					logParams.LBGNJCODPEJ_ParaGoDivaCharm[i] = f.IHANGGCHPAL.KDKCMCBLEMG();
+					logParams.EGEKLGIEKLL_ParaGoDivaVocal[i] = f.IHANGGCHPAL.LCDIGPJJJGI();
 				}
 			}
 		}
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			m_tmpStatus.Clear();
 			if (viewFriendPlayerData == null || viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
-			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_status);
 			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 			baseStatus.Add(m_tmpStatus);
 		}

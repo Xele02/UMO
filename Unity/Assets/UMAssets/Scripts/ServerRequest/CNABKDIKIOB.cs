@@ -15,10 +15,10 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 				public long HBKKLHCNCKE_ExpireAt; // 0x10
 
 				// RVA: 0x175B248 Offset: 0x175B248 VA: 0x175B248
-				public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+				public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 				{
-					BBEMFICNDOG_Remaining = (int)_IDLHJIOMJBK_Data["remainings"];
-					HBKKLHCNCKE_ExpireAt = (long)_IDLHJIOMJBK_Data["expired_at"];
+					BBEMFICNDOG_Remaining = (int)_IDLHJIOMJBK_data["remainings"];
+					HBKKLHCNCKE_ExpireAt = (long)_IDLHJIOMJBK_data["expired_at"];
 				}
 			}
 
@@ -27,11 +27,11 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 			public List<KIDKCJGODNG> GHOBKCKLCJE_Paid; // 0x10
 
 			// RVA: 0x175AED4 Offset: 0x175AED4 VA: 0x175AED4
-			public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+			public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 			{
-				PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id];
-				EDOHBJAPLPF_JsonData f = _IDLHJIOMJBK_Data["free"];
-				EDOHBJAPLPF_JsonData p = _IDLHJIOMJBK_Data["paid"];
+				PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id];
+				EDOHBJAPLPF_JsonData f = _IDLHJIOMJBK_data["free"];
+				EDOHBJAPLPF_JsonData p = _IDLHJIOMJBK_data["paid"];
 				FKIJMMGIDGG_Free = new List<KIDKCJGODNG>();
 				for(int i = 0; i < f.HNBFOAJIIAL_Count; i++)
 				{
@@ -49,18 +49,18 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 			}
 		}
 
-		public List<BNMFBONAKMG> OMDCENKJNKP = new List<BNMFBONAKMG>(); // 0x8
+		public List<BNMFBONAKMG> OMDCENKJNKP_Balances = new List<BNMFBONAKMG>(); // 0x8
 
 		// RVA: 0x175ACCC Offset: 0x175ACCC VA: 0x175ACCC
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_Data["balances"];
-			OMDCENKJNKP = new List<BNMFBONAKMG>();
+			EDOHBJAPLPF_JsonData b = _IDLHJIOMJBK_data["balances"];
+			OMDCENKJNKP_Balances = new List<BNMFBONAKMG>();
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				BNMFBONAKMG data = new BNMFBONAKMG();
 				data.KHEKNNFCAOI_Init(b[i]);
-				OMDCENKJNKP.Add(data);
+				OMDCENKJNKP_Balances.Add(data);
 			}
 		}
 	}

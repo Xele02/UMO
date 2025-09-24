@@ -5,7 +5,7 @@ using XeSys;
 
 public class IMKNEDJDNGC
 {
-	public long BEBJKJKBOGH_Date; // 0x8
+	public long BEBJKJKBOGH_date; // 0x8
 	public int FMDCAFCHBJH_Offset; // 0x10
 	public int AIPLIEMLHGC_SnsId; // 0x14
 	public int AJIDLAGFPGM_TalkId; // 0x18
@@ -40,7 +40,7 @@ public class GAKAAIHLFKI
 	public int HIDHLFCBIDE_EventType; // 0x18
 	public long JBOECJOONLP; // 0x20
 	public int IHCEJBAEEDO; // 0x28
-	public int IJEKNCDIIAE_MVer; // 0x2C
+	public int IJEKNCDIIAE_mver; // 0x2C
 	public long ILDLJMCIKAK; // 0x30
 	public int AIPLIEMLHGC_SnsId; // 0x38
 	public List<IMKNEDJDNGC> CNEOPOINCBA = new List<IMKNEDJDNGC>(); // 0x3C
@@ -50,7 +50,7 @@ public class GAKAAIHLFKI
 	{
 		for(int i = 0; i < CNEOPOINCBA.Count; i++)
 		{
-			if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+			if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_date)
 				return i;
 			if(CNEOPOINCBA[i].GAIEHFCHAOK_New)
 			{
@@ -85,7 +85,7 @@ public class GAKAAIHLFKI
 		int res = 0;
 		for(int i = 0; i < CNEOPOINCBA.Count; i++)
 		{
-			if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+			if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_date)
 				return res;
 			if (CNEOPOINCBA[i].OIPCCBHIKIA_index + 1 <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC_SnsId - 1].LDJIMGPHFPA_Cnt)
 				res++;
@@ -101,7 +101,7 @@ public class GAKAAIHLFKI
 		{
 			if(!MIENHPPDMNG || !CNEOPOINCBA[i].EDCBHGECEBE_Read)
 			{
-				if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+				if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_date)
 					return res;
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC_SnsId - 1].LDJIMGPHFPA_Cnt < CNEOPOINCBA[i].OIPCCBHIKIA_index + 1)
 					res++;
@@ -120,7 +120,7 @@ public class GAKAAIHLFKI
 		{
 			if(!CNEOPOINCBA[i].EDCBHGECEBE_Read)
 			{
-				if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+				if (_JHNMKKNEENE_Time < CNEOPOINCBA[i].BEBJKJKBOGH_date)
 					return false;
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC_SnsId - 1].LDJIMGPHFPA_Cnt < CNEOPOINCBA[i].OIPCCBHIKIA_index + 1)
 					return true;

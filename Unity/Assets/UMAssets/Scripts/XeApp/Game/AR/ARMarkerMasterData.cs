@@ -164,7 +164,7 @@ namespace XeApp.Game.AR
 					nd.costumeId = array[i].BEEAIAAJOHD;
 					float.TryParse(array[i].FPLEBCKDCBE, out nd.position.x);
 					float.TryParse(array[i].MDLMHEDHPHA, out nd.position.y);
-					float.TryParse(array[i].CDKLKKKGAMB, out nd.position.z);
+					float.TryParse(array[i].CDKLKKKGAMB/*pos_z*/, out nd.position.z);
 					float.TryParse(array[i].OAPEIEHMIJD, out nd.rotation.x);
 					float.TryParse(array[i].IMGHEKMHHPC, out nd.rotation.y);
 					float.TryParse(array[i].GJEEMHGGDKD, out nd.rotation.z);

@@ -90,10 +90,10 @@ public class DocusaurusGenerator
             if(!r)
             {
                 //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
-                int val1 = 17;//a.LPJLEHAJADA("m_0", 0);
-                int val2 = 1;//a.LPJLEHAJADA("m_1", 0);
-                int val3 = 1;//a.LPJLEHAJADA("m_2", 0);
-                int val4 = 683274560;//a.LPJLEHAJADA("m_3", 0);
+                int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
+                int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
+                int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
+                int val4 = 683274560;//a.LPJLEHAJADA_GetIntParam("m_3", 0);
                 BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
@@ -115,7 +115,7 @@ public class DocusaurusGenerator
                 if(arch != null)
                 {
                     List<IMMAOANGPNK.MPFFINOMILP> MGFBEKNMJOA = new List<IMMAOANGPNK.MPFFINOMILP>();
-                    IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(arch.DBBGALAPFGC_Data);
+                    IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(arch.DBBGALAPFGC_bytes);
                     JGIHJPPECBB[] b = a.MLOPDBGPLFI;
                     IMMAOANGPNK.MPFFINOMILP obj = null;
                     for(int i = 0; i < b.Length; i++)
@@ -133,14 +133,14 @@ public class DocusaurusGenerator
                             obj = new IMMAOANGPNK.MPFFINOMILP();
                             obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
                             obj.PDBPFJJCADD_open_at = val;
-                            obj.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
+                            obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
                         }
                         else
                         {
                             IMMAOANGPNK.MPFFINOMILP obj2 = new IMMAOANGPNK.MPFFINOMILP();
                             obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
                             obj2.PDBPFJJCADD_open_at = val;
-                            obj2.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
+                            obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
                             MGFBEKNMJOA.Add(obj2);
                         }
                     }
@@ -149,16 +149,16 @@ public class DocusaurusGenerator
                         MGFBEKNMJOA.Add(obj);
                     }
                     
-                    MGFBEKNMJOA.Sort((IMMAOANGPNK.MPFFINOMILP HKICMNAACDA, IMMAOANGPNK.MPFFINOMILP BNKHBCBJBKI) => {
+                    MGFBEKNMJOA.Sort((IMMAOANGPNK.MPFFINOMILP _HKICMNAACDA_a, IMMAOANGPNK.MPFFINOMILP _BNKHBCBJBKI_b) => {
                         //0x9FDE64 
-                        return HKICMNAACDA.PDBPFJJCADD_open_at.CompareTo(BNKHBCBJBKI.PDBPFJJCADD_open_at);
+                        return _HKICMNAACDA_a.PDBPFJJCADD_open_at.CompareTo(_BNKHBCBJBKI_b.PDBPFJJCADD_open_at);
                     });
                     if(MGFBEKNMJOA.Count > 0)
                     {
                         IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
                         if(JHNMKKNEENE_Time >= item.PDBPFJJCADD_open_at)
                         {
-                            DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion = item.IJEKNCDIIAE_MVer;
+                            DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion = item.IJEKNCDIIAE_mver;
                         }
                     }
                 }
@@ -216,10 +216,10 @@ public class DocusaurusGenerator
             if(!r)
             {
                 //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
-                int val1 = 17;//a.LPJLEHAJADA("m_0", 0);
-                int val2 = 1;//a.LPJLEHAJADA("m_1", 0);
-                int val3 = 1;//a.LPJLEHAJADA("m_2", 0);
-                int val4 = 683274560;//a.LPJLEHAJADA("m_3", 0);
+                int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
+                int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
+                int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
+                int val4 = 683274560;//a.LPJLEHAJADA_GetIntParam("m_3", 0);
                 BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
@@ -239,8 +239,8 @@ public class DocusaurusGenerator
             if(db_file != null)
             {
                 ARMarkerData = new ARMarkerMasterData();
-                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_marker.bytes", db_file.DBBGALAPFGC_Data);
-                ARMarkerData.Initialize(db_file.DBBGALAPFGC_Data);
+                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_marker.bytes", db_file.DBBGALAPFGC_bytes);
+                ARMarkerData.Initialize(db_file.DBBGALAPFGC_bytes);
             }
 
         } catch(Exception e)
@@ -265,10 +265,10 @@ public class DocusaurusGenerator
             if(!r)
             {
                 //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
-                int val1 = 17;//a.LPJLEHAJADA("m_0", 0);
-                int val2 = 1;//a.LPJLEHAJADA("m_1", 0);
-                int val3 = 1;//a.LPJLEHAJADA("m_2", 0);
-                int val4 = 683274560;//a.LPJLEHAJADA("m_3", 0);
+                int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
+                int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
+                int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
+                int val4 = 683274560;//a.LPJLEHAJADA_GetIntParam("m_3", 0);
                 BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
@@ -288,8 +288,8 @@ public class DocusaurusGenerator
             if(db_file != null)
             {
                 AREventData = new AREventMasterData();
-                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_event.bytes", db_file.DBBGALAPFGC_Data);
-                AREventData.Initialize(db_file.DBBGALAPFGC_Data);
+                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_event.bytes", db_file.DBBGALAPFGC_bytes);
+                AREventData.Initialize(db_file.DBBGALAPFGC_bytes);
             }
 
         } catch(Exception e)
@@ -904,7 +904,7 @@ public class DocusaurusGenerator
             });
             if(f != null)
             {
-                File.WriteAllBytes(outName, f.DBBGALAPFGC_Data);
+                File.WriteAllBytes(outName, f.DBBGALAPFGC_bytes);
             }
         }
         {

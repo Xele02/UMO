@@ -67,12 +67,12 @@ namespace XeApp.Game.Menu
 		{
 			if (m_name.horizontalOverflow != UnityEngine.HorizontalWrapMode.Wrap)
 				m_name.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
-			TextGeneratorUtility.SetTextRectangleMessage(m_name, data.ADCMNODJBGJ_Title, 2, JpStringLiterals.StringLiteral_12038);
+			TextGeneratorUtility.SetTextRectangleMessage(m_name, data.ADCMNODJBGJ_title, 2, JpStringLiterals.StringLiteral_12038);
 			SetDegreeImage(data.MDPKLNFFDBO_EmblemId);
-			if(data.HMFFHLPNMPH_Count > 0)
+			if(data.HMFFHLPNMPH_count > 0)
 			{
 				SetDegreeNumVisible(true);
-				m_degree_num.SetNumber(data.HMFFHLPNMPH_Count, 0);
+				m_degree_num.SetNumber(data.HMFFHLPNMPH_count, 0);
 			}
 			else
 			{

@@ -12,12 +12,12 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 		public int EILKGEADKGH_Order; // 0x10
 		public int INDDJNMPONH_type; // 0x14 NotifId
 		public int GJLFANGDGCL_Target; // 0x18 // Category
-		public string ADCMNODJBGJ_Title; // 0x1C
+		public string ADCMNODJBGJ_title; // 0x1C
 		public string[] BNMCMNPPPCI_ChoiceText; // 0x20
 		public int EMNLOGDDOBC; // 0x24
 		public int IICECOLFEEL; // 0x28
 		public int NNDBJGDFEEM_Min; // 0x2C
-		public int DOOGFEGEKLG_Max; // 0x30
+		public int DOOGFEGEKLG_max; // 0x30
 		public int LLNDMKBBNIJ_ver; // 0x34
 	}
 
@@ -42,9 +42,9 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x14103E4 Offset: 0x14103E4 VA: 0x14103E4 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		HHHEIMGFICD parser = HHHEIMGFICD.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		HHHEIMGFICD parser = HHHEIMGFICD.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		KLNOMBKJDNN(parser);
 		return true;
 	}
@@ -66,7 +66,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EILKGEADKGH_Order = array[i].EILKGEADKGH;
 			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
-			data.ADCMNODJBGJ_Title = DatabaseTextConverter.TranslateAnketoQuestion(i, array[i].ADCMNODJBGJ);
+			data.ADCMNODJBGJ_title = DatabaseTextConverter.TranslateAnketoQuestion(i, array[i].ADCMNODJBGJ);
 			data.BNMCMNPPPCI_ChoiceText = new string[array[i].BNMCMNPPPCI.Length];
 			for(int j = 0; j < data.BNMCMNPPPCI_ChoiceText.Length; j++)
 			{
@@ -76,7 +76,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 			data.EMNLOGDDOBC = array[i].EMNLOGDDOBC;
 			data.IICECOLFEEL = array[i].IICECOLFEEL;
 			data.NNDBJGDFEEM_Min = array[i].NNDBJGDFEEM;
-			data.DOOGFEGEKLG_Max = array[i].DOOGFEGEKLG;
+			data.DOOGFEGEKLG_max = array[i].DOOGFEGEKLG;
 			data.LLNDMKBBNIJ_ver = array[i].LLNDMKBBNIJ;
 			CDENCMNHNGA_table.Add(data);
 		}
@@ -84,7 +84,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x14107A4 Offset: 0x14107A4 VA: 0x14107A4
-	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	//private bool KLNOMBKJDNN(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x14107AC Offset: 0x14107AC VA: 0x14107AC Slot: 11
 	public override uint CAOGDCBPBAN()

@@ -822,7 +822,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var r in rewards)
 			{
-				if (r.CMCKNKKCNDK_Status == 0)
+				if (r.CMCKNKKCNDK_status == 0)
 					return false;
 			}
 			return true;

@@ -384,7 +384,7 @@ namespace XeApp.Game.Common
 			List<EEDBNJAEKBI> l2 = EEDBNJAEKBI.FKDIMODKKJD();
 			for(int i = 0; i < l2.Count; i++)
 			{
-				m_itemList.Add(new ItemInfo(EKLNMHFCAOI.DEACAHNLMNI_getItemId(l2[i].INFIBMLIHLO_ItemId), l2[i].HMFFHLPNMPH_Count, EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem));
+				m_itemList.Add(new ItemInfo(EKLNMHFCAOI.DEACAHNLMNI_getItemId(l2[i].INFIBMLIHLO_ItemId), l2[i].HMFFHLPNMPH_count, EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem));
 			}
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NEGKEEAFKHP_MvTicket.CDENCMNHNGA_table.Count; i++)
 			{
@@ -435,7 +435,7 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount(); i++)
 			{
 				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cosItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
-				m_itemList.Add(new ItemInfo(cosItem.PPFNGGCBJKC_id, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cosItem.PPFNGGCBJKC_id).BFINGCJHOHI_Count, EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem));
+				m_itemList.Add(new ItemInfo(cosItem.PPFNGGCBJKC_id, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cosItem.PPFNGGCBJKC_id).BFINGCJHOHI_cnt, EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem));
 			}
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FBGKBGNIHGC_ValItem.CDENCMNHNGA_table.Count; i++)
 			{
@@ -446,7 +446,7 @@ namespace XeApp.Game.Common
 					//0xB007C0
 					return valId == item.PPFNGGCBJKC_id;
 				});
-				m_itemList.Add(new ItemInfo(valId, saveItem.BFINGCJHOHI_Count, EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem));
+				m_itemList.Add(new ItemInfo(valId, saveItem.BFINGCJHOHI_cnt, EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem));
 			}
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG.Count; i++)
 			{

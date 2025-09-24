@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA6CE20 Offset: 0xA6CE20 VA: 0xA6CE20
 		public void UpdateBaseGaugeRatio()
 		{
-			UnitExpectedScore.baseGaugeRatio = Mathf.CeilToInt((IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("score_gauge_rate_margin", 10) * 0.01f + CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio) * 10.0f) / 10.0f;
+			UnitExpectedScore.baseGaugeRatio = Mathf.CeilToInt((IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("score_gauge_rate_margin", 10) * 0.01f + CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio) * 10.0f) / 10.0f;
 			UnitExpectedScore.baseGaugeScale = 0;
 		}
 

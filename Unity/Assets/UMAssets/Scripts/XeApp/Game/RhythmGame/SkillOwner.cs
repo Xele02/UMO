@@ -226,12 +226,12 @@ namespace XeApp.Game.RhythmGame
 				if(ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_FoldWave)
 				{
 					res = (status.energy.GetGaugeValue() / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1];
-					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_Max));
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_max));
 				}
 				else if (ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
 				{
 					res = (Database.Instance.gameSetup.teamInfo.divaList[a_skill.ownerDivaIndex].intimacyLv / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).KCOHMHFBDKF_Value1[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1];
-					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_Max));
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_max));
 				}
 			}
 			return res;

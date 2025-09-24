@@ -49,7 +49,7 @@ public class ANPBHCNJIDI
 		{
 			OPFGFINHFCE_name = LBJACBOOLEL.MNKCOFJKJJM_Nickname;
 			MLPEHNBNOGD_PlayerId = LBJACBOOLEL.PNDINAAEGBE_WriterId;
-			EKEGHNPNCEH_UpdateAt = LBJACBOOLEL.IFNLEKOILPM_UpdatedAt;
+			EKEGHNPNCEH_UpdateAt = LBJACBOOLEL.IFNLEKOILPM_updated_at;
 			OIPCCBHIKIA_index = LBJACBOOLEL.NPAHGHOHMHN_Idx;
 			AHHJLDLAPAN_DivaId = JsonUtil.GetInt(_DLENPPIJNPA_json, "dv", 1);
 			NNOHKLNKGAD_CostumeId = JsonUtil.GetInt(_DLENPPIJNPA_json, "dvc", 1);
@@ -100,13 +100,13 @@ public class ANPBHCNJIDI
 		//// RVA: 0xD570D4 Offset: 0xD570D4 VA: 0xD570D4
 		public void PCEHLFNFIDA(BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
 		{
-			AHHJLDLAPAN_DivaId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_DivaId;
+			AHHJLDLAPAN_DivaId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id;
 			NNOHKLNKGAD_CostumeId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.BEEAIAAJOHD_CostumeId;
 			DJHMGDKKKFO_ColorId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AFNIOJHODAG_CostumeColorId;
-			MDPKLNFFDBO_EmblemId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ABLOIBMGLFD_EmId;
-			KDHCKDHIHIP_EmblemCount = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.FHCAFLCLGAA_EmCnt;
+			MDPKLNFFDBO_EmblemId = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ABLOIBMGLFD_em_id;
+			KDHCKDHIHIP_EmblemCount = _AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.FHCAFLCLGAA_em_cnt;
 			AILEOFKIELL_UtaRateRank = OEGIPPCADNA.BFKAHKBKBJE(_AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, 0);
-			KIFEGLJLEDC_TotalUtaRate = _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate;
+			KIFEGLJLEDC_TotalUtaRate = _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate;
 			if(NNOHKLNKGAD_CostumeId == 0)
 			{
 				NNOHKLNKGAD_CostumeId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(AHHJLDLAPAN_DivaId, 0).JPIDIENBGKH_CostumeId;
@@ -117,7 +117,7 @@ public class ANPBHCNJIDI
 	public class AIFBLOAGFOP : NNPGLGHDBKN
 	{
 		public string EBBJPBGHJOL_text; // 0x3C
-		public bool LBODBHCBAMD; // 0x40
+		public bool LBODBHCBAMD_Vwt; // 0x40
 
 		// RVA: 0xD547F8 Offset: 0xD547F8 VA: 0xD547F8
 		public AIFBLOAGFOP()
@@ -131,7 +131,7 @@ public class ANPBHCNJIDI
 			if(!base.KLAOLMDCLHO(LBJACBOOLEL, _DLENPPIJNPA_json))
 				return false;
 			EBBJPBGHJOL_text = LBJACBOOLEL.NLBNJIFGPJL_Content;
-			LBODBHCBAMD = JsonUtil.GetInt(_DLENPPIJNPA_json, "vwt", 0) == 1;
+			LBODBHCBAMD_Vwt = JsonUtil.GetInt(_DLENPPIJNPA_json, "vwt", 0) == 1;
 			return true;
 		}
 
@@ -140,7 +140,7 @@ public class ANPBHCNJIDI
 		{
 			base.EFOOHDOMCAI(_KOGBMDOONFA_Info, _DLENPPIJNPA_json);
 			_KOGBMDOONFA_Info.Content = EBBJPBGHJOL_text;
-			if (!LBODBHCBAMD)
+			if (!LBODBHCBAMD_Vwt)
 				return;
 			_DLENPPIJNPA_json["vwt"] = 1;
 		}
@@ -309,7 +309,7 @@ public class ANPBHCNJIDI
 				{
 					if(JNBDLNBKDCO_BossImage < 1)
 					{
-						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("raid_boss_image_max", 16) < JNBDLNBKDCO_BossImage)
+						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("raid_boss_image_max", 16) < JNBDLNBKDCO_BossImage)
 							return false;
 					}
 					if(KKPAHLMJKIH_WavId > 0)

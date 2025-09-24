@@ -18,12 +18,12 @@ public class ELNKLCNHDEE
 	private string BIDDPDCFFHA; // 0x1C
 
 	// RVA: 0x1305F24 Offset: 0x1305F24 VA: 0x1305F24
-	public void HBOKJNECOPA(string _HAAJGNCFNJM_ItemName/* = "trigger_item"*/)
+	public void HBOKJNECOPA(string _HAAJGNCFNJM_item_name/* = "trigger_item"*/)
     {
         NPNNPNAIONN_IsError = false;
         PLOOEECNHFB_IsDone = false;
         GBCOABCAJHG = false;
-        BIDDPDCFFHA = _HAAJGNCFNJM_ItemName;
+        BIDDPDCFFHA = _HAAJGNCFNJM_item_name;
         N.a.StartCoroutineWatched(JBGPGBKBOMH_Co_GetLotResultData());
     }
 
@@ -57,7 +57,7 @@ public class ELNKLCNHDEE
             }
             for(int i = 0; i < BPOJOBICBAC.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories.Count; i++)
             {
-                if(BPOJOBICBAC.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i].HAAJGNCFNJM_ItemName == BIDDPDCFFHA)
+                if(BPOJOBICBAC.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i].HAAJGNCFNJM_item_name == BIDDPDCFFHA)
                 {
                     NMJONJBONLM.Add(BPOJOBICBAC.NFEAMMJIMPG_Result.PJJFEAHIPGL_inventories[i]);
                 }
@@ -74,10 +74,10 @@ public class ELNKLCNHDEE
         }
         else
         {
-            NMJONJBONLM.Sort((GJDFHLBONOL HKICMNAACDA, GJDFHLBONOL BNKHBCBJBKI) =>
+            NMJONJBONLM.Sort((GJDFHLBONOL _HKICMNAACDA_a, GJDFHLBONOL _BNKHBCBJBKI_b) =>
             {
                 //0x1306130
-                return HKICMNAACDA.OCNINMIMHGC_item_value.CompareTo(BNKHBCBJBKI.OCNINMIMHGC_item_value);
+                return _HKICMNAACDA_a.OCNINMIMHGC_item_value.CompareTo(_BNKHBCBJBKI_b.OCNINMIMHGC_item_value);
             });
             for(int i = 0; i < NMJONJBONLM.Count; i++)
             {

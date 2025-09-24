@@ -11,23 +11,23 @@ public class ANCJLICGOLP
         HDEONBGNOIO = 2
     }
 
-	private Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_IntArray; // 0x8
-	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI_String; // 0xC
+	private Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam; // 0x8
+	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI_m_stringParam; // 0xC
 	public List<MFJONNINDCJ> JGJJIBPPEPD_List; // 0x10
 	private static List<string> OHNJJIMGKGK_Names; // 0x0
 
 	// RVA: 0xD52C1C Offset: 0xD52C1C VA: 0xD52C1C
-	public int LPJLEHAJADA(string _LJNAKDMILMC_key, int KKMJBMKHGNH)
+	public int LPJLEHAJADA_GetIntParam(string _LJNAKDMILMC_key, int _KKMJBMKHGNH_noval)
 	{
-		if(!OHJFBLFELNK_IntArray.ContainsKey(_LJNAKDMILMC_key))
+		if(!OHJFBLFELNK_m_intParam.ContainsKey(_LJNAKDMILMC_key))
 		{
-			return KKMJBMKHGNH;
+			return _KKMJBMKHGNH_noval;
 		}
-		return OHJFBLFELNK_IntArray[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
+		return OHJFBLFELNK_m_intParam[_LJNAKDMILMC_key].DNJEJEANJGL_Value;
 	}
 
 	// RVA: 0xD52D00 Offset: 0xD52D00 VA: 0xD52D00
-	//public string EFEGBHACJAL(string _LJNAKDMILMC_key, string KKMJBMKHGNH) { }
+	//public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval) { }
 
 	// RVA: 0xD52DE4 Offset: 0xD52DE4 VA: 0xD52DE4
 	public List<string> ELJGLMPOINC_GetTypesStr()
@@ -37,8 +37,8 @@ public class ANCJLICGOLP
 
 	public void KHEKNNFCAOI_Init()
 	{
-		OHJFBLFELNK_IntArray = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
-		FJOEBCMGDMI_String = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
+		OHJFBLFELNK_m_intParam = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
+		FJOEBCMGDMI_m_stringParam = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
 		JGJJIBPPEPD_List = new List<MFJONNINDCJ>();
 	}
 
@@ -62,7 +62,7 @@ public class ANCJLICGOLP
 				if(r)
 				{
 					EDOHBJAPLPF_JsonData a = AAEDAEHIONI[s];
-					a = a[AFEHLCGHAEE_Strings.IDLHJIOMJBK_Data]; // data
+					a = a[AFEHLCGHAEE_Strings.IDLHJIOMJBK_data]; // data
 					EDOHBJAPLPF_JsonData b = AAEDAEHIONI[s];
 					b = b[AFEHLCGHAEE_Strings.KAPMOPMDHJE_label]; // label
 					int label = (int)b;
@@ -111,8 +111,8 @@ public class ANCJLICGOLP
 			{
 				EDOHBJAPLPF_JsonData a = IMKIBKOICBF[OIPCCBHIKIA_index];
 				MFJONNINDCJ b = new MFJONNINDCJ();
-				EDOHBJAPLPF_JsonData IDLHJIOMJBK_Data = a["f"];
-				string s = (string)IDLHJIOMJBK_Data;
+				EDOHBJAPLPF_JsonData IDLHJIOMJBK_data = a["f"];
+				string s = (string)IDLHJIOMJBK_data;
 				b.MKANHLNEEGL_filter = s;
 				EDOHBJAPLPF_JsonData c = a["k"];
 				int NANNGLGOFKH_value = (int)c;
@@ -139,7 +139,7 @@ public class ANCJLICGOLP
 				elem.DNJEJEANJGL_Value = val;
 				subData = data["k"];
 				string key = (string)subData;
-				OHJFBLFELNK_IntArray.Add(key, elem);
+				OHJFBLFELNK_m_intParam.Add(key, elem);
 				idx++;
 			} while(idx != IMKIBKOICBF.HNBFOAJIIAL_Count);
 		}
@@ -158,7 +158,7 @@ public class ANCJLICGOLP
 				EDOHBJAPLPF_JsonData data = IMKIBKOICBF[OIPCCBHIKIA_index];
 				JDEFIJBCJLC_EncryptedString elem = new JDEFIJBCJLC_EncryptedString();
 				elem.DNJEJEANJGL_Value = (string)data["v"];
-				FJOEBCMGDMI_String.Add((string)data["k"], elem);
+				FJOEBCMGDMI_m_stringParam.Add((string)data["k"], elem);
 				OIPCCBHIKIA_index++;
 			} while(OIPCCBHIKIA_index != size);
 		}

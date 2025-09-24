@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 			}
 			m_rootPanel.Left.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
 			m_rootPanel.Right.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower));
-			m_buttonSet.SetEnemyHasSkill(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.CDEFLIHHNAB_HasSkills);
+			m_buttonSet.SetEnemyHasSkill(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.CDEFLIHHNAB_HasSkills);
 			m_buttonSet.SetBadge(RaidActSelectOptionButton.OptionType.EvMission, IsReceiveMission());
 			m_musicInfo.ChangeSelectedDiff(diff);
 			m_musicInfo.SetMusicTitle(m_selectMusicData.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[m_selectMusicData.FKDCCLPGKDK_JacketAttr - 1], false);
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 			if(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
+				str.Set(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_lv.ToString());
 				if(m_isLine6Mode)
 				{
 					str.Append("+");
@@ -693,8 +693,8 @@ namespace XeApp.Game.Menu
 				(OHCAABOMEOF.KGOGMKMBCPP_EventType)m_selectMusicData.OEILJHENAHN_PlayEventType,
 				false, m_isLine6Mode,
 				raidController.JIBMOEHKMGB_SelectedBoss.CJLHLKKNMEE_MissionText,
-				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.DCOALMMJDJK_OverrideCenterSkill,
-				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy.KKPLDFNDFDE_OverrideLiveSkill,
+				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.DCOALMMJDJK_OverrideCenterSkill,
+				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.KKPLDFNDFDE_OverrideLiveSkill,
 				m_selectMusicData.ALMOMLMCHNA_OtherEndTime,
 				m_selectMusicData.IHPCKOMBGKJ_End,
 				raidController != null ? raidController.PGIIDPEGGPI_EventId : 0, GetDanceDivaCount(), 0);
@@ -833,7 +833,7 @@ namespace XeApp.Game.Menu
 				int cnt = 0;
 				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
-					cnt += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have;
+					cnt += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_have;
 				}
 				if(cnt < danceDivaCount)
 				{
@@ -949,7 +949,7 @@ namespace XeApp.Game.Menu
 				raidController.GKCEHODEPMJ_GetBosses_WithOptionalPlayersNames(false, () =>
 				{
 					//0x144612C
-					if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+					if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 					{
 						PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 						{
@@ -957,7 +957,7 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Return(true);
 						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
-					else if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+					else if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 					{
 						endCallback();
 						return;
@@ -1050,7 +1050,7 @@ namespace XeApp.Game.Menu
 			{
 				GameManager.Instance.CloseSnsNotice();
 				GameManager.Instance.CloseOfferNotice();
-				MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(this, MusicPopupWindowControl.CallType.MusicSelect, m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy, null);
+				MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(this, MusicPopupWindowControl.CallType.MusicSelect, m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy, null);
 			}
 		}
 
@@ -1061,7 +1061,7 @@ namespace XeApp.Game.Menu
 		private void OpenMusicDetailWindow()
 		{
 			MenuScene.Instance.MusicPopupWindowControl.Show(this, MusicPopupWindowControl.CallType.MusicSelect, m_selectMusicData.DLAEJOBELBH_MusicId, 
-				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy, null, false);
+				m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy, null, false);
 		}
 
 		// // RVA: 0x9F0930 Offset: 0x9F0930 VA: 0x9F0930
@@ -1093,7 +1093,7 @@ namespace XeApp.Game.Menu
 				return m_questList.FindIndex((FKMOKDCJFEN x) =>
 				{
 					//0x14456EC
-					return x.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
 				}) > -1;
 			}
 			return false;

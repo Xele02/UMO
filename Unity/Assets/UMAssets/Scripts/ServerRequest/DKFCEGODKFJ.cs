@@ -14,18 +14,18 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 
 	public class HJKLBEOACCA
 	{
-		public Dictionary<int, int> OJCNJFLJCLA; // 0x8
+		public Dictionary<int, int> OJCNJFLJCLA_player_counters; // 0x8
 
 		// RVA: 0x198F458 Offset: 0x198F458 VA: 0x198F458
 		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 		{
 			if(OBHAFLMHAKG.BBAJPINMOEP_Contains("player_counters"))
 			{
-				OJCNJFLJCLA = new Dictionary<int, int>(OBHAFLMHAKG["player_counters"].HNBFOAJIIAL_Count);
+				OJCNJFLJCLA_player_counters = new Dictionary<int, int>(OBHAFLMHAKG["player_counters"].HNBFOAJIIAL_Count);
 				for(int i = 0; i < OBHAFLMHAKG["player_counters"].HNBFOAJIIAL_Count; i++)
 				{
 					string s = OBHAFLMHAKG["player_counters"].FLPBHNAOIOB(i);
-					OJCNJFLJCLA.Add(int.Parse(s),
+					OJCNJFLJCLA_player_counters.Add(int.Parse(s),
 						(int)OBHAFLMHAKG["player_counters"][s]["player_count"]);
 				}
 			}

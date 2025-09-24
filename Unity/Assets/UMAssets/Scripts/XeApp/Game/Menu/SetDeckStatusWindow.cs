@@ -464,10 +464,10 @@ namespace XeApp.Game.Menu
 			}
 			if (SubPlateResult.CDOCOLOKCJK())
 			{
-				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
-				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
 			else
 			{
@@ -494,7 +494,7 @@ namespace XeApp.Game.Menu
 				m_tmpStatus.Clear();
 				if(viewFriendData.KHGKPKDBMOH_GetAssistScene() != null)
 				{
-					m_tmpStatus.Copy(viewFriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+					m_tmpStatus.Copy(viewFriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_status);
 				}
 				m_notesTexts[0].text = (m_baseStatus.spNoteExpected[1] - m_tmpStatus.spNoteExpected[1]).ToString();
 				m_notesTexts[2].text = (m_baseStatus.spNoteExpected[3] - m_tmpStatus.spNoteExpected[3]).ToString();
@@ -721,7 +721,7 @@ namespace XeApp.Game.Menu
 			{
 				return;
 			}
-			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_status);
 			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck;
 			baseStatus.Add(m_tmpStatus);
 		}
@@ -742,10 +742,10 @@ namespace XeApp.Game.Menu
 			string hexa = "#" + m_normalColorCode.HexStringRGBA();
 			int[] a = new int[4]
 			{
-				SubPlateResult.CMCKNKKCNDK_Status.Total,
-				SubPlateResult.CMCKNKKCNDK_Status.soul,
-				SubPlateResult.CMCKNKKCNDK_Status.vocal,
-				SubPlateResult.CMCKNKKCNDK_Status.charm
+				SubPlateResult.CMCKNKKCNDK_status.Total,
+				SubPlateResult.CMCKNKKCNDK_status.soul,
+				SubPlateResult.CMCKNKKCNDK_status.vocal,
+				SubPlateResult.CMCKNKKCNDK_status.charm
 			};
 			int d = 0;
 			for (int i = 1; i < 4; i++)

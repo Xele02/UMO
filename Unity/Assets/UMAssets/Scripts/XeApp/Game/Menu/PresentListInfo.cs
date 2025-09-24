@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				DateTime date = Utility.GetLocalDateTime(data.BIOGKIEECGN_CreatedAt);
+				DateTime date = Utility.GetLocalDateTime(data.BIOGKIEECGN_created_at);
 				time = string.Format(bk.GetMessageByLabel("pbox_text_10"), new object[5]
 				{
 					date.Year, string.Format("{0:D2}", date.Month), string.Format("{0:D2}", date.Day), 
@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				limit = JpStringLiterals.StringLiteral_19639;
 				if (!data.JLFHLOCONEE())
 				{
-					long close = data.EGBOHDFBAPB_CloseAt;
+					long close = data.EGBOHDFBAPB_closed_at;
 					int[] ints = new int[3] { 86400, 3600, 60 };
 					int a1 = 12;
 					long a2 = close / ints[0];

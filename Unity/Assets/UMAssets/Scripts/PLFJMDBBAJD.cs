@@ -17,7 +17,7 @@ public class PLFJMDBBAJD
 	public List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.EGMFNKCKOLB> NAJFDCBBCHD; // 0x24
 
 	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xFE9224 DKJOHDGOIJE 0xFE922C MJAMIGECMMF
-	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE9234 EAKAGHDPEMI 0xFE9248 GHECCGBGCBI
+	public int FJOLNJLLJEJ_rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE9234 EAKAGHDPEMI 0xFE9248 GHECCGBGCBI
 	public int CIEOBFIIPLD_Level { get { return NFCALENBIBL_LevelCrypted ^ FBGGEFFJJHB_xor; } set { NFCALENBIBL_LevelCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFE925C OGKGFGMKPKB 0xFE9270 JOOMBHHPHBD
 	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN; } set { AJGFHCKFCHN = value; } } //0xFE9284 BOFCPLOLHCJ 0xFE928C FDPPEPOHFNA
 	public int HPPDFBKEJCG_BgId { get { return BKDNEBPBPKC_Crypted ^ FBGGEFFJJHB_xor; } set { BKDNEBPBPKC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xFE9294 BNBDOAMEEJN 0xFE92A8 GIAODJJHAEF
@@ -33,8 +33,8 @@ public class PLFJMDBBAJD
 		{
             PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ p = ev.JIBMOEHKMGB_SelectedBoss;
             PKNOKJNLPOE_EventRaid.KJJDLBFDGDM p2 = ev.KONJMFICNJJ_RewardsInfo;
-            CIEOBFIIPLD_Level = p.ANAJIAENLNB_Level;
-            FJOLNJLLJEJ_Rank = p.FJOLNJLLJEJ_Rank;
+            CIEOBFIIPLD_Level = p.ANAJIAENLNB_lv;
+            FJOLNJLLJEJ_rank = p.FJOLNJLLJEJ_rank;
             MPKBLMCNHOM_MissionIsSpecial = p.IKICLMGFFPB_IsSpecial;
             HPPDFBKEJCG_BgId = p.HPPDFBKEJCG_BgId;
             OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_type);
@@ -56,8 +56,8 @@ public class PLFJMDBBAJD
 			ev.JKBOOMAPOBL(_GJFJLEOGFLD_RaidBoss, () =>
 			{
 				//0xFE98E4
-				CIEOBFIIPLD_Level = _GJFJLEOGFLD_RaidBoss.ANAJIAENLNB_Level;
-				FJOLNJLLJEJ_Rank = _GJFJLEOGFLD_RaidBoss.FJOLNJLLJEJ_Rank;
+				CIEOBFIIPLD_Level = _GJFJLEOGFLD_RaidBoss.ANAJIAENLNB_lv;
+				FJOLNJLLJEJ_rank = _GJFJLEOGFLD_RaidBoss.FJOLNJLLJEJ_rank;
 				MPKBLMCNHOM_MissionIsSpecial = _GJFJLEOGFLD_RaidBoss.IKICLMGFFPB_IsSpecial;
 				HPPDFBKEJCG_BgId = _GJFJLEOGFLD_RaidBoss.HPPDFBKEJCG_BgId;
 				OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(_GJFJLEOGFLD_RaidBoss.INDDJNMPONH_type);

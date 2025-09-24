@@ -15,7 +15,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 		public int NKCNHKHGJHN_TalkType; // 0x10
 		public int CHOFDPDFPDC_ConfigValue; // 0x14 //DivaId
 		public long PDBPFJJCADD_open_at; // 0x18
-		public long FDBNFFNFOND_CloseAt; // 0x20
+		public long FDBNFFNFOND_close_at; // 0x20
 
 		// RVA: 0x1CB5F60 Offset: 0x1CB5F60 VA: 0x1CB5F60
 		//public uint CAOGDCBPBAN() { }
@@ -38,9 +38,9 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x1CB5B60 Offset: 0x1CB5B60 VA: 0x1CB5B60 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		PCKMEHLNOFO parser = PCKMEHLNOFO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		PCKMEHLNOFO parser = PCKMEHLNOFO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		OCANCOENHML[] array = parser.EKDAACJJAPP;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -51,7 +51,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 			data.NKCNHKHGJHN_TalkType = (int)array[i].CHOIMHCMAHG;
 			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
 			// UMO : Update all talk to work in current year
 			long prevStart = data.PDBPFJJCADD_open_at;
 			if(data.PDBPFJJCADD_open_at != 0)
@@ -59,16 +59,16 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 				DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at);
 				data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
 			}
-			if(data.FDBNFFNFOND_CloseAt != 0)
+			if(data.FDBNFFNFOND_close_at != 0)
 			{
 				if(prevStart == 0)
 				{
-					DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_CloseAt);
-					data.FDBNFFNFOND_CloseAt = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
+					DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_close_at);
+					data.FDBNFFNFOND_close_at = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
 				}
 				else
 				{
-					data.FDBNFFNFOND_CloseAt = data.PDBPFJJCADD_open_at + (data.FDBNFFNFOND_CloseAt - prevStart);
+					data.FDBNFFNFOND_close_at = data.PDBPFJJCADD_open_at + (data.FDBNFFNFOND_close_at - prevStart);
 				}
 			}
 			CDENCMNHNGA_table.Add(data);

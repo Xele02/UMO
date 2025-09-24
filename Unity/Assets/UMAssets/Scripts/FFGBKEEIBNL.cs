@@ -5,7 +5,7 @@ using System;
 public class FFGBKEEIBNL
 {
 	// RVA: 0x14DC6CC Offset: 0x14DC6CC VA: 0x14DC6CC
-	public static string HKICMNAACDA(byte[] IDDIIHBJPEE)
+	public static string HKICMNAACDA_a(byte[] IDDIIHBJPEE)
     {
         List<byte> l = new List<byte>(40);
         byte var8;
@@ -23,7 +23,7 @@ public class FFGBKEEIBNL
         }
         if(IDDIIHBJPEE[IDDIIHBJPEE.Length - 1] != var8)
         {
-            //UnityEngine.Debug.LogError("HKICMNAACDA failed"+BitConverter.ToString(IDDIIHBJPEE));
+            //UnityEngine.Debug.LogError("HKICMNAACDA_a failed"+BitConverter.ToString(IDDIIHBJPEE));
             return null;
         }
 
@@ -40,7 +40,7 @@ public class FFGBKEEIBNL
                 var9++;
             }
         }
-        //UnityEngine.Debug.LogError("HKICMNAACDA return "+Encoding.UTF8.GetString(l.ToArray()));
+        //UnityEngine.Debug.LogError("HKICMNAACDA_a return "+Encoding.UTF8.GetString(l.ToArray()));
         return Encoding.UTF8.GetString(l.ToArray());
     }
 }

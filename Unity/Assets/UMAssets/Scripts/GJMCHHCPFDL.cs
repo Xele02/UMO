@@ -23,7 +23,7 @@ public class GJMCHHCPFDL
 	public int FCIBJNKGMOB_Damage { get { return LLJGFFDPGAI_Crypted ^ FBGGEFFJJHB_xor; } set { LLJGFFDPGAI_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD650 IGPNLOPKDLO 0xAAD664 NBMNDKHMNHD
 	public int AHOKAPCGJMA_TotalPoint { get { return HJOJJCKDPPJ_Crypted ^ FBGGEFFJJHB_xor; } set { HJOJJCKDPPJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD678 GKLPFHEELGM 0xAAD68C EJPEPBGDDJM
 	public int LGFFMGDBIAH_ranking { get { return KBLGJMJLJBD_Crypted ^ FBGGEFFJJHB_xor; } set { KBLGJMJLJBD_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6A0 AFEPCFJGPKA 0xAAD6B4 LJLAKALHFNN
-	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6C8 EAKAGHDPEMI 0xAAD6DC GHECCGBGCBI
+	public int FJOLNJLLJEJ_rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD6C8 EAKAGHDPEMI 0xAAD6DC GHECCGBGCBI
 	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name; } set { FINCFIGKHPA_Name = value; } } //0xAAD6F0 DKJOHDGOIJE 0xAAD6F8 MJAMIGECMMF
 	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN; } set { AJGFHCKFCHN = value; } } //0xAAD700 BOFCPLOLHCJ 0xAAD708 FDPPEPOHFNA
 	public int HPPDFBKEJCG_BgId { get { return BKDNEBPBPKC_Crypted ^ FBGGEFFJJHB_xor; } set { BKDNEBPBPKC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAD710 BNBDOAMEEJN 0xAAD724 GIAODJJHAEF
@@ -50,7 +50,7 @@ public class GJMCHHCPFDL
 			FCIBJNKGMOB_Damage = p.FCIBJNKGMOB_Damage;
 			LBEIIEKJFPA_DamageBefore = FCIBJNKGMOB_Damage * 100.0f / BDNGBCKEADA_MaxHp;
 			ODFNMNDFEFN_DamageAfter = GKHMIECGPJO_HpAfter * 100.0f / BDNGBCKEADA_MaxHp;
-			FJOLNJLLJEJ_Rank = ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank;
+			FJOLNJLLJEJ_rank = ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_rank;
 			MPKBLMCNHOM_MissionIsSpecial = ev.JIBMOEHKMGB_SelectedBoss.IKICLMGFFPB_IsSpecial;
 			HPPDFBKEJCG_BgId = ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId;
 			OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type);

@@ -8,10 +8,10 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 {
 	public class JNHAEJLAPDC_PlayerInfo
 	{
-		public int EHGBICNIBKE_PlayerId; // 0x8
+		public int EHGBICNIBKE_player_id; // 0x8
 		public int NANNGLGOFKH_value; // 0xC
 		public bool MLEHCBKPNGK_IsFriend; // 0x10
-		public long IFNLEKOILPM_UpdatedAt; // 0x18
+		public long IFNLEKOILPM_updated_at; // 0x18
 		public EDOHBJAPLPF_JsonData HJDBGMMPPEF_PlayerData; // 0x20
 		public long IFCJDGINBGF_facebook_uid; // 0x28
 	}
@@ -19,8 +19,8 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 	public class FKNFPJEGMOO
 	{
 		public List<LNGMNNNJBJP_SearchForPlayer.JNHAEJLAPDC_PlayerInfo> AIGKNOKPMEJ_Players; // 0x8
-		public int CJNNMLLEKEF_PreviousPage; // 0xC
-		public int GPPOJHNNINK_CurrentPage; // 0x10
+		public int CJNNMLLEKEF_previous_page; // 0xC
+		public int GPPOJHNNINK_current_page; // 0x10
 		public int MDIBIIHAAPN_next_page; // 0x14
 	}
 
@@ -61,26 +61,26 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 		FKNFPJEGMOO res = new FKNFPJEGMOO();
 		EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
 		int num = json["players"].HNBFOAJIIAL_Count;
-		res.CJNNMLLEKEF_PreviousPage = (int)json["previous_page"];
-		res.GPPOJHNNINK_CurrentPage = (int)json["current_page"];
+		res.CJNNMLLEKEF_previous_page = (int)json["previous_page"];
+		res.GPPOJHNNINK_current_page = (int)json["current_page"];
 		res.MDIBIIHAAPN_next_page = (int)json["next_page"];
 		res.AIGKNOKPMEJ_Players = new List<JNHAEJLAPDC_PlayerInfo>();
 		for(int i = 0; i < num; i++)
 		{
 			EDOHBJAPLPF_JsonData playerJson = json["players"][i];
 			JNHAEJLAPDC_PlayerInfo data = new JNHAEJLAPDC_PlayerInfo();
-			data.EHGBICNIBKE_PlayerId = (int)playerJson["player_id"];
+			data.EHGBICNIBKE_player_id = (int)playerJson["player_id"];
 			data.NANNGLGOFKH_value = (int)playerJson["value"];
 			if(!playerJson["updated_at"].MDDJBLEDMBJ_IsInt)
 			{
 				if(playerJson["updated_at"].DCPEFFOMOOK_IsLong)
 				{
-					data.IFNLEKOILPM_UpdatedAt = (long)playerJson["updated_at"];
+					data.IFNLEKOILPM_updated_at = (long)playerJson["updated_at"];
 				}
 			}
 			else
 			{
-				data.IFNLEKOILPM_UpdatedAt = (int)playerJson["updated_at"];
+				data.IFNLEKOILPM_updated_at = (int)playerJson["updated_at"];
 			}
 			data.HJDBGMMPPEF_PlayerData = playerJson["player_data"];
 			data.MLEHCBKPNGK_IsFriend = (bool)playerJson["is_friend"];
@@ -90,7 +90,7 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 		{
 			for(int i = 0; i < num; i++)
 			{
-				PINPBOCDKLI_OnPlayerCb(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_UpdatedAt, res.AIGKNOKPMEJ_Players[i].MLEHCBKPNGK_IsFriend, HHIHCJKLJFF_Names, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
+				PINPBOCDKLI_OnPlayerCb(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_player_id, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_updated_at, res.AIGKNOKPMEJ_Players[i].MLEHCBKPNGK_IsFriend, HHIHCJKLJFF_Names, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
 			}
 		}
 		NFEAMMJIMPG_Result = res;

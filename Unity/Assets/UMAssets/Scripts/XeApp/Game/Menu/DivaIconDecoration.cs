@@ -139,12 +139,12 @@ namespace XeApp.Game.Menu
 			{
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(false, false);
 				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_Count);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_count);
 			}
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);
-			m_status.Add(divaData.CMCKNKKCNDK_Status);
+			m_status.Add(divaData.CMCKNKKCNDK_status);
 			Change(divaData, null, luck, 0, type);
 		}
 
@@ -181,10 +181,10 @@ namespace XeApp.Game.Menu
 				}
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(isFriend, isFav);
 				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_Count);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_count);
 			}
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_Status);
+			m_status.Add(divaData.CMCKNKKCNDK_status);
 			Change(divaData, null, luck, 0, type);
 		}
 
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 		public void Change(FFHPBEPOMAK_DivaInfo divaData, DisplayType type)
 		{
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_Status);
+			m_status.Add(divaData.CMCKNKKCNDK_status);
 			Change(divaData, null, 0, 0, type);
 		}
 
@@ -203,10 +203,10 @@ namespace XeApp.Game.Menu
 			{
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend, isFavorite);
 				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_Count);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_count);
 			}
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_Status);
+			m_status.Add(divaData.CMCKNKKCNDK_status);
 			Change(divaData, null, 0, 0, type);
 		}
 

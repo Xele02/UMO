@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 				if(arg.before_costume_data == null)
 				{
 					m_before_costume = new CostumeData();
-					m_before_costume.id = currentViewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
+					m_before_costume.id = currentViewDivaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 					m_before_costume.color_id = currentViewDivaData.EKFONBFDAAP_ColorId;
 
 				}

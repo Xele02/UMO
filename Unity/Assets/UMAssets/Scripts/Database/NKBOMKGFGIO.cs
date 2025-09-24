@@ -19,7 +19,7 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBC8 OEEHBGECGKL 0x18AE668 GHLMHLJJBIG
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBD8 OLOCMINKGON 0x18AE678 ABAFHIBFKCE
 		public int EILKGEADKGH_Order{ get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBE8 NPDDACIHBKD 0x18AE688 BJJMCKHBPNH
-		public int DOOGFEGEKLG_Max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBF8 AECMFIOFFJN 0x18AE698 NGOJJDOCIDG
+		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBF8 AECMFIOFFJN 0x18AE698 NGOJJDOCIDG
 
 		//// RVA: 0x18AEB70 Offset: 0x18AEB70 VA: 0x18AEB70
 		//public uint CAOGDCBPBAN() { }
@@ -42,9 +42,9 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x18AE380 Offset: 0x18AE380 VA: 0x18AE380 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		CHIHOOMFLNA parser = CHIHOOMFLNA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		CHIHOOMFLNA parser = CHIHOOMFLNA.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		DNNGNDOKKGA[] array = parser.KADBDHBKNMK;
 		int k = (int)Utility.GetCurrentUnixTime();
 		k *= 0x2014;
@@ -56,7 +56,7 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
 			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
 			data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG;
-			data.DOOGFEGEKLG_Max = (int)array[i].DOOGFEGEKLG;
+			data.DOOGFEGEKLG_max = (int)array[i].DOOGFEGEKLG;
 			k *= 0x356;
 			CDENCMNHNGA_table.Add(data);
 		}
@@ -66,6 +66,12 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	// RVA: 0x18AE6A8 Offset: 0x18AE6A8 VA: 0x18AE6A8 Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
+		//CDENCMNHNGA_table = COCEIPAKJKF_item
+		//	PPFNGGCBJKC_id = PPFNGGCBJKC_id
+		//	EKLIPGELKCL_Rarity = FBFLDFMFFOH_rar
+		//	JBGEEPFKIGG_val = JBGEEPFKIGG_val
+		//	EILKGEADKGH_Order = odr
+		//	DOOGFEGEKLG_max = max
 		TodoLogger.LogError(TodoLogger.DbJson, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
 		return true;
 	}

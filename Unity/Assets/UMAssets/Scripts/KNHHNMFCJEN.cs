@@ -13,10 +13,10 @@ internal class KNHHNMFCJEN
 	// // RVA: 0x11213B0 Offset: 0x11213B0 VA: 0x11213B0
 	private static bool EALAEJFNMGK()
     {
-        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_ver", 1);
+        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
         if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep == 0)
         {
-            int review_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_player_level", 8);
+            int review_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_player_level", 8);
             if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < review_player_level)
                 return false;
         }
@@ -27,8 +27,8 @@ internal class KNHHNMFCJEN
             if(CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level == CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                 return false;
         }
-        int review_combo_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_combo_rank", 1);
-        int review_score_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_score_rank", 3);
+        int review_combo_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_combo_rank", 1);
+        int review_score_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_score_rank", 3);
         if(JGEOBNENMAH.HHCJCDFCLOB.CODDMAKLBDO_LastComboRank < review_combo_rank)
         {
             if(review_score_rank <= JGEOBNENMAH.HHCJCDFCLOB.PENICOGGNLF_ScoreRank)
@@ -45,11 +45,11 @@ internal class KNHHNMFCJEN
         {
             if(!AppEnv.IsCBT())
             {
-                if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 0)
+                if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 0)
                 {
-                    if((IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_show", 0) & 1) != 0)
+                    if((IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_show", 0) & 1) != 0)
                     {
-                        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("review_ver", 1);
+                        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
                         if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep != ver)
                         {
                             return EALAEJFNMGK();

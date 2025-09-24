@@ -54,11 +54,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19ABD00 Offset: 0x19ABD00 VA: 0x19ABD00
 		public void Setup(KOPCFBCDBPC stepUpRecord, BEPHBEGDFFK view)
 		{
-			int step = stepUpRecord.LKHAAGIJEPG_player_status.DBNAGGGJDAB_CurrentStepIndex;
-			MMNNAPPLHFM m = stepUpRecord.BMFEGOMNECF_Steps.Find((MMNNAPPLHFM x) =>
+			int step = stepUpRecord.LKHAAGIJEPG_player_status.DBNAGGGJDAB_current_step_index;
+			MMNNAPPLHFM m = stepUpRecord.BMFEGOMNECF_steps.Find((MMNNAPPLHFM x) =>
 			{
 				//0x19AD67C
-				return step == x.AGBCJMMMLON_StepIndex;
+				return step == x.AGBCJMMMLON_step_index;
 			});
 			Setup(view.DPBDFPPMIPH_Gacha, stepUpRecord.LKPHIGAFJKD_virtual_currency.PPFNGGCBJKC_id, m.EKOFPNGPCIP_RareCount + m.MFFNDOEPJFO_NormalCount, m.LCJPKJMMIAP_virtual_currency_amount, m.KACECFNECON_extra != null ? m.KACECFNECON_extra.MDEIKCBEHHC : "", false, 0, view.MFMBCIKGCFC(), view.JHNMKKNEENE_Time);
 		}

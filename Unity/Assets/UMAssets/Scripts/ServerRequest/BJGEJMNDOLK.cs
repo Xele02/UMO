@@ -8,22 +8,27 @@ public class CLHMBMLOAOE
 	private long OILIPGICBIK; // 0x8
 	private long NJKMDELFJGE; // 0x10
 
-	public long FDFGEMODIIF { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
+	public long FDFGEMODIIF_StartedAt { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
 	public long NKMNFPMMJND_expired_at { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
 
 	//// RVA: 0x1083EB0 Offset: 0x1083EB0 VA: 0x1083EB0
-	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
+	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
+	//FDFGEMODIIF_StartedAt = started_at
+	//NKMNFPMMJND_expired_at = expired_at
 }
 
 public class BCEHKBJAEDM
 {
-	public string FJGCDPLCIAK_UniqueKey; // 0x8
+	public string FJGCDPLCIAK_unique_key; // 0x8
 	public CLHMBMLOAOE LKCCMBEOLLA; // 0xC
-	public CLHMBMLOAOE PACPEOKLGCI; // 0x10
-	public CLHMBMLOAOE FPIKAFLHBMO; // 0x14
+	public CLHMBMLOAOE PACPEOKLGCI_Google; // 0x10
+	public CLHMBMLOAOE FPIKAFLHBMO_Apple; // 0x14
 
 	//// RVA: 0xF2E4D0 Offset: 0xF2E4D0 VA: 0xF2E4D0
-	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF _IDLHJIOMJBK_Data) { }
+	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
+	//FJGCDPLCIAK_unique_key = unique_key
+	//PACPEOKLGCI_Google = google
+	//FPIKAFLHBMO_Apple = apple
 }
 
 [System.Obsolete("Use BJGEJMNDOLK_GetSubscriptionStatuses", true)]
@@ -32,14 +37,15 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 {
 	public class FNFDLMDKONP
 	{
-		public List<BCEHKBJAEDM> FCABPFLKKBC = new List<BCEHKBJAEDM>(); // 0x8
+		public List<BCEHKBJAEDM> FCABPFLKKBC_subscription_statuses = new List<BCEHKBJAEDM>(); // 0x8
 
 		// RVA: 0xC85A04 Offset: 0xC85A04 VA: 0xC85A04
-		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
+		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)
 		{
-			if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("subscription_statuses"))
+			if(_IDLHJIOMJBK_data.BBAJPINMOEP_Contains("subscription_statuses"))
 			{
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Parse Subscription status");
+				//FCABPFLKKBC_subscription_statuses = subscription_statuses
 			}
 		}
 	}

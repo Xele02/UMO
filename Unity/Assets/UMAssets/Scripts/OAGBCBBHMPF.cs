@@ -258,7 +258,7 @@ public class OAGBCBBHMPF
                                                             "DECO_ITEM_SET", "DECO_STAMP_SAVE", "RAID_BOSS_APPEARENCE", "DECO_SNS",
                                                             "LOBBY_VISIT", "HOME_CLOTHS", "GODIVA_EVENT_STAGE_START", "GODIVA_EVENT_STAGE_END",
                                                             "GODIVA_EVENT_USED_FEVERITEM", "HOME_DIVA_MODIFY", "HOME_MODIFY"}; // 0x0
-	public static string[] KDIDJBOMHFO = new string[50] {
+	public static string[] KDIDJBOMHFO_LoadStepNames = new string[50] {
 		JpStringLiterals.StringLiteral_11078,
 		JpStringLiterals.StringLiteral_12839,
 		JpStringLiterals.StringLiteral_12840,

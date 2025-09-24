@@ -15,7 +15,7 @@ public class NIHHKCDHLNH
 	public int IKNHMPPGMNJ_IdCrypted; // 0x24
 	public int PNPLHCKGKIL_ItemFullIdCrypted; // 0x28
 
-	public int HMFFHLPNMPH_Count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0634 NJOGDDPICKG 0x18A0644 NBBGMMBICNA
+	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0634 NJOGDDPICKG 0x18A0644 NBBGMMBICNA
 	public int GLBEAENLHKC_Count { get { return BOJAGEIAMMA ^ FBGGEFFJJHB_xor; } set { BOJAGEIAMMA = value ^ FBGGEFFJJHB_xor; } } //0x18A0654 NOAKFOIOJBH 0x18A0664 PBGBHOBHBMG
 	public int IILKAJBHLMJ_Value { get { return OKPOKEIGAPH ^ FBGGEFFJJHB_xor; } set { OKPOKEIGAPH = value ^ FBGGEFFJJHB_xor; } } //0x18A0674 LIHGICFGMBF 0x18A0684 ECBDNGPJMOD
 	public int PBPOLELIPJI_Id { get { return IKNHMPPGMNJ_IdCrypted ^ FBGGEFFJJHB_xor; } set { IKNHMPPGMNJ_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0694 AJNJOPJNMHL 0x18A06A4 NHLEGIJDHAF
@@ -26,7 +26,7 @@ public class NIHHKCDHLNH
     {
         FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
         INFIBMLIHLO_ItemId = 0;
-        HMFFHLPNMPH_Count = 0;
+        HMFFHLPNMPH_count = 0;
         GLBEAENLHKC_Count = 0;
         IILKAJBHLMJ_Value = 0;
         PBPOLELIPJI_Id = 0;
@@ -45,7 +45,7 @@ public class NIHHKCDHLNH
         KLMPFGOCBHC_description = bk.GetMessageByLabel(str.ToString());
         str.SetFormat("cs_i_dsc_short_{0:D4}", _MHFBCINOJEE_Num);
         KHLMJCJAOCC_DescShort = bk.GetMessageByLabel(str.ToString());
-        HMFFHLPNMPH_Count = saveItem.BFINGCJHOHI_Count;
+        HMFFHLPNMPH_count = saveItem.BFINGCJHOHI_cnt;
         GLBEAENLHKC_Count = 9999;
         IILKAJBHLMJ_Value = item.JBGEEPFKIGG_val;
         PBPOLELIPJI_Id = _MHFBCINOJEE_Num;
@@ -60,7 +60,7 @@ public class NIHHKCDHLNH
         for(int i = 0; i < cnt; i++)
         {
             PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
-            if(item.FDBOPFEOENF_Diva == 0)
+            if(item.FDBOPFEOENF_diva == 0)
             {
                 if(item.INDDJNMPONH_type == 1)
                 {

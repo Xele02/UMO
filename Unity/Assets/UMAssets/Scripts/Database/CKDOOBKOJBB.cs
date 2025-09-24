@@ -42,9 +42,9 @@ public class CKDOOBKOJBB_RareUpItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x107D400 Offset: 0x107D400 VA: 0x107D400 Slot: 9
-	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_Data)
+	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
-		HDPPMMGCPFC parser = HDPPMMGCPFC.HEGEKFMJNCC(_DBBGALAPFGC_Data);
+		HDPPMMGCPFC parser = HDPPMMGCPFC.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		JMHHPHHACHH[] array = parser.ECFMCPJIDJN;
 		for(int i = 0; i < array.Length; i++)
 		{

@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 			List<OLLAFCBLMIJ.KAAHBIABMBC> l = view.CKPIHCGOEDP.FindAll((OLLAFCBLMIJ.KAAHBIABMBC x) =>
 			{
 				//0x19D5E80
-				return x.CDMGDFLPPHN_Entry;
+				return x.CDMGDFLPPHN_entry;
 			});
 			m_textCount.text = l.Count.ToString() + "/" + view.CKPIHCGOEDP.Count.ToString();
 			m_buttonEntry.Disable = !view.NDAMKMGINBM_CanEntryToday;

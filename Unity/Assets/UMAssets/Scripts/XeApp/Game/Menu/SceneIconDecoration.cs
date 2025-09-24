@@ -104,16 +104,16 @@ namespace XeApp.Game.Menu
 			switch (type)
 			{
 				case DisplayType.Total:
-					val = sceneData.CMCKNKKCNDK_Status.Total;
+					val = sceneData.CMCKNKKCNDK_status.Total;
 					break;
 				case DisplayType.Soul:
-					val = sceneData.CMCKNKKCNDK_Status.soul;
+					val = sceneData.CMCKNKKCNDK_status.soul;
 					break;
 				case DisplayType.Vocal:
-					val = sceneData.CMCKNKKCNDK_Status.vocal;
+					val = sceneData.CMCKNKKCNDK_status.vocal;
 					break;
 				case DisplayType.Charm:
-					val = sceneData.CMCKNKKCNDK_Status.charm;
+					val = sceneData.CMCKNKKCNDK_status.charm;
 					break;
 				case DisplayType.Get:
 				case DisplayType.Rarity:
@@ -124,13 +124,13 @@ namespace XeApp.Game.Menu
 					val = sceneData.CIEOBFIIPLD_Level;
 					break;
 				case DisplayType.Life:
-					val = sceneData.CMCKNKKCNDK_Status.life;
+					val = sceneData.CMCKNKKCNDK_status.life;
 					break;
 				case DisplayType.Support:
-					val = sceneData.CMCKNKKCNDK_Status.support;
+					val = sceneData.CMCKNKKCNDK_status.support;
 					break;
 				case DisplayType.Fold:
-					val = sceneData.CMCKNKKCNDK_Status.fold;
+					val = sceneData.CMCKNKKCNDK_status.fold;
 					break;
 				case DisplayType.ActiveSkill:
 					{
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 				case DisplayType.ScoreUpNotes:
 				case DisplayType.SupportNotes:
 				case DisplayType.FoldNotes:
-					val = sceneData.CMCKNKKCNDK_Status.spNoteExpected[(int)type - 12];
+					val = sceneData.CMCKNKKCNDK_status.spNoteExpected[(int)type - 12];
 					break;
 				case DisplayType.EpisodePoint:
 					m_sceneIconDecrationBehaviour.SetFraction(sceneData.CGJCEHGFHMA(), sceneData.JLNGOOGHCNA());

@@ -12,18 +12,18 @@ public class SakashoRaidbossEffectData
 
 public class LMJHOAHBDKN : CMPLGKFJCIC<MFKPFMCLOIB> // TypeDefIndex: 10435
 {
-	public NHCDBBBMFFG CMCKNKKCNDK_Status; // 0x3C
+	public NHCDBBBMFFG CMCKNKKCNDK_status; // 0x3C
 	public int OKIEOLAAJNM_LastAttackPlayerId; // 0x40
 
 	// RVA: 0x10BBAB4 Offset: 0x10BBAB4 VA: 0x10BBAB4
 	public LMJHOAHBDKN(GIINMFDIIMD CDGMPGLAING)
-        : base(CDGMPGLAING, (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+        : base(CDGMPGLAING, (GIINMFDIIMD _IDLHJIOMJBK_data) =>
         {
             //0x10BBD44
-            return new MFKPFMCLOIB(_IDLHJIOMJBK_Data);
+            return new MFKPFMCLOIB(_IDLHJIOMJBK_data);
         })
     {
-        CMCKNKKCNDK_Status = (NHCDBBBMFFG)(int)CDGMPGLAING.DLENPPIJNPA_json["status"];
+        CMCKNKKCNDK_status = (NHCDBBBMFFG)(int)CDGMPGLAING.DLENPPIJNPA_json["status"];
         OKIEOLAAJNM_LastAttackPlayerId = (int)CDGMPGLAING.DLENPPIJNPA_json["last_attack_player_id"];
     }
 }
@@ -41,16 +41,16 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
         public List<string> HOLACOMBPJH_NamespaceForResponse; // 0x18
         public List<string> FDDIKJOMBIO_NamespaceForSave; // 0x1C
         public string AHEFHIMGIBI_PlayerData; // 0x20
-        public bool CHDDDCCHJJH_Replace; // 0x24
+        public bool CHDDDCCHJJH_replace; // 0x24
         public long MCKEOKFMLAH_SaveId; // 0x28
 
         // // RVA: 0x1BA93BC Offset: 0x1BA93BC VA: 0x1BA93BC
-        public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_Data, string JCJDPGMKJAJ_PlayerData)
+        public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string JCJDPGMKJAJ_PlayerData)
         {
             AHEFHIMGIBI_PlayerData = JCJDPGMKJAJ_PlayerData;
-            CHDDDCCHJJH_Replace = !_IDLHJIOMJBK_Data.BLOCFLFHCFJ_Keep;
-            FDDIKJOMBIO_NamespaceForSave = _IDLHJIOMJBK_Data.KFGDPMNCCFO_NaespaceForSave;
-            MCKEOKFMLAH_SaveId = _IDLHJIOMJBK_Data.MCKEOKFMLAH_SaveId;
+            CHDDDCCHJJH_replace = !_IDLHJIOMJBK_data.BLOCFLFHCFJ_Keep;
+            FDDIKJOMBIO_NamespaceForSave = _IDLHJIOMJBK_data.KFGDPMNCCFO_NaespaceForSave;
+            MCKEOKFMLAH_SaveId = _IDLHJIOMJBK_data.MCKEOKFMLAH_SaveId;
         }
     }
 
@@ -81,7 +81,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
         {
             HALIDDHLNEG_Damage = (int)_DLENPPIJNPA_json["damage"];
             AKLNMPMLDAJ_RaidBoss = new LMJHOAHBDKN(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"));
-            CDEFBMLKLCM_RecentAttackPlayers.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("recent_attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_Data) =>
+            CDEFBMLKLCM_RecentAttackPlayers.MAECPJAJNBO(_DLENPPIJNPA_json.PFBEBCDEIND("recent_attack_players"), (GIINMFDIIMD _IDLHJIOMJBK_data) =>
             {
                 //0x1BA9250
                 return new GKIJMGEBIDG(_DLENPPIJNPA_json);
@@ -112,7 +112,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
         EBGACDGNCAA_CallContext = SakashoRaidboss.AttackRaidbossAndSave(BIHCCEHLAOD.KJPDHNJGEAH_EntityId,
             Mathf.Max(BIHCCEHLAOD.HALIDDHLNEG_Damage, 0), Mathf.Clamp(BIHCCEHLAOD.MHABJOMJCFI_AttackPlayerCount, 0, 10), 
             BIHCCEHLAOD.NKDGDKKEPOO_EffectData, BIHCCEHLAOD.HOLACOMBPJH_NamespaceForResponse.ToArray(), BIHCCEHLAOD.FDDIKJOMBIO_NamespaceForSave.ToArray(), 
-            BIHCCEHLAOD.AHEFHIMGIBI_PlayerData, BIHCCEHLAOD.CHDDDCCHJJH_Replace, DCKLDDCAJAP, MEOCKCJBDAD);
+            BIHCCEHLAOD.AHEFHIMGIBI_PlayerData, BIHCCEHLAOD.CHDDDCCHJJH_replace, DCKLDDCAJAP, MEOCKCJBDAD);
     }
 
 	// RVA: 0x1BA8E18 Offset: 0x1BA8E18 VA: 0x1BA8E18 Slot: 13

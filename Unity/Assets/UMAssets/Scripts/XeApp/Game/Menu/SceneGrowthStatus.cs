@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			});
 			m_commonText[0].text = "";
 			m_commonText[2].text = GameMessageManager.GetSceneCardName(sceneData);
-			UpdateStatus(sceneData.CMCKNKKCNDK_Status, sceneData.MJBODMOLOBC_luck);
+			UpdateStatus(sceneData.CMCKNKKCNDK_status, sceneData.MJBODMOLOBC_luck);
 			for(int i = 0; i < 5; i++)
 			{
 				m_skillLevel[i].alignment = TextAnchor.MiddleCenter;

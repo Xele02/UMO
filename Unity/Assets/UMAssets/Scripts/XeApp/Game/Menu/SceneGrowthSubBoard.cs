@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 				NHINPDLLFIO n = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.GJLBMELKHEM[sceneData.ILABPFOMEAG_Va - 1];
 				for(int i = 0; i < b; i++)
 				{
-					DMPDJFAGCPN d = sceneData.JCNIAPAJAOB;
+					DMPDJFAGCPN_BoardLayout d = sceneData.JCNIAPAJAOB;
 					if (i < n.JPJNKNOJBMM_Mlt)
 						d = sceneData.IKBBCHGLLKB;
 					NLNDLEEJOFD n2 = d.PDKGMFHIFML_Panels[d.PDKGMFHIFML_Panels.Count - 2];
@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 					}
 					m_boardSquareList.Add(squares);
 				}
-				DMPDJFAGCPN d2 = sceneData.JCNIAPAJAOB;
+				DMPDJFAGCPN_BoardLayout d2 = sceneData.JCNIAPAJAOB;
 				int x = 0;
 				int idx = 0;
 				for (int i = 0; i < b; i++)

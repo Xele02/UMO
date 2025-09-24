@@ -10,7 +10,7 @@ public class LGDNAJACFHI
 	public long EBEOPONDEKB_OpenedAt; // 0x18
 	public long EMEKFFHCHMH_RewardEnd2; // 0x20
 	public string PGODOPKCHBD_PlatformProductId; // 0x28
-	public string EFIMCLPAEEN_ImageUrl; // 0x2C
+	public string EFIMCLPAEEN_imageUrl; // 0x2C
 	public int NPPGKNGIFGK_price; // 0x30
 	public int GCJMGMBNBCB_BuyLimit; // 0x34
 	public int AJIFADGGAAJ_BoughtQuantity; // 0x38
@@ -51,12 +51,12 @@ public class LGDNAJACFHI
 		PPFNGGCBJKC_id = _MEANCEOIMGE_Summon.PPFNGGCBJKC_id;
 		OPFGFINHFCE_name = _MEANCEOIMGE_Summon.OPFGFINHFCE_name;
 		EBEOPONDEKB_OpenedAt = _MEANCEOIMGE_Summon.KBFOIECIADN_opened_at;
-		EMEKFFHCHMH_RewardEnd2 = _MEANCEOIMGE_Summon.EGBOHDFBAPB_CloseAt;
-		PGODOPKCHBD_PlatformProductId = _MEANCEOIMGE_Summon.GLHKICCPGKJ_PlatformProductId;
-		EFIMCLPAEEN_ImageUrl = _MEANCEOIMGE_Summon.EFIMCLPAEEN_ImageUrl;
+		EMEKFFHCHMH_RewardEnd2 = _MEANCEOIMGE_Summon.EGBOHDFBAPB_closed_at;
+		PGODOPKCHBD_PlatformProductId = _MEANCEOIMGE_Summon.GLHKICCPGKJ_platform_product_id;
+		EFIMCLPAEEN_imageUrl = _MEANCEOIMGE_Summon.EFIMCLPAEEN_imageUrl;
 		NPPGKNGIFGK_price = _MEANCEOIMGE_Summon.NPPGKNGIFGK_price;
-		GCJMGMBNBCB_BuyLimit = _MEANCEOIMGE_Summon.HMFDJHEEGNN_BuyLimit;
-		AJIFADGGAAJ_BoughtQuantity = _MEANCEOIMGE_Summon.GIEBJDKLCDH_BoughtQuantity;
+		GCJMGMBNBCB_BuyLimit = _MEANCEOIMGE_Summon.HMFDJHEEGNN_buy_limit;
+		AJIFADGGAAJ_BoughtQuantity = _MEANCEOIMGE_Summon.GIEBJDKLCDH_bought_quantity;
 		JLGHMCBLENL_IsBeginner = false;
 		NIIIKPNBLNP = true;
 		KAPMOPMDHJE_label = _MEANCEOIMGE_Summon.KAPMOPMDHJE_label;
@@ -83,7 +83,7 @@ public class LGDNAJACFHI
 				break;
 			}
 		}
-		FDGKHGFMCJJ = vcItem.HMFFHLPNMPH_Count;
+		FDGKHGFMCJJ = vcItem.HMFFHLPNMPH_count;
 		if(FDGKHGFMCJJ == 0)
 		{
 			FDGKHGFMCJJ = ACGBOGBBFFL();
@@ -103,7 +103,7 @@ public class LGDNAJACFHI
 			CBMFOOHOAOE_Purchase res = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
 			res.ICDEFIIADDO_Timeout = 8640000;
 			res.AFKAGFOFAHM_ProductId = PPFNGGCBJKC_id;
-			res.BPNPBJALGHM_Quantity = 1;
+			res.BPNPBJALGHM_quantity = 1;
 			return res;
 		}
 		return null;

@@ -751,10 +751,10 @@ namespace XeApp.Game.Tutorial
 			a.OBKGEDCKHHE();
 			IBJAKJJICBC ib = new IBJAKJJICBC();
 			ib.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
-			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_Enemy);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_enemy);
 			a.GEEDEOHGMOM(ref status1);
 			status2.Clear();
-			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);
+			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_status);
 			status2.Add(status1);
 			Database.Instance.gameSetup.teamInfo.SetupInfo(status2, GameManager.Instance.ViewPlayerData, 0, ib, null, null, null, false);
 			JGEOBNENMAH.EDHCNKBMLGI res = new JGEOBNENMAH.EDHCNKBMLGI();
@@ -783,7 +783,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
 		public static bool IsBeginnerMission()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd < 2;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end < 2;
 		}
 	}
 }

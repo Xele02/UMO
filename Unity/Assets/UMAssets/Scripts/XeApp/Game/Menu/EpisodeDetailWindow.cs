@@ -217,9 +217,9 @@ namespace XeApp.Game.Menu
 				m_next_image.enabled = true;
 				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentValue, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
 				m_mask.StartChildrenAnimGoStop(a, a);
-				m_point_den.SetNumber(data.JBFLCHFEIGL.DNBFMLBNAEE_Point - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, 0);
-				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
-				this.StartCoroutineWatched(SetItemGaugeLine(EpisodeUtility.CalcEpisodeGaugeFrame(data.JBFLCHFEIGL.DNBFMLBNAEE_Point, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame)));
+				m_point_den.SetNumber(data.JBFLCHFEIGL.DNBFMLBNAEE_point - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, 0);
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_point - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
+				this.StartCoroutineWatched(SetItemGaugeLine(EpisodeUtility.CalcEpisodeGaugeFrame(data.JBFLCHFEIGL.DNBFMLBNAEE_point, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame)));
 				SetHasEpisodeGauge(EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA_AvaiablePoint, data.DMHDNKILKGI_MaxPoint, AvailableEpisodePointMaxFrame));
 			}
 			else
@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 				m_line.gameObject.SetActive(false);
 				m_mask.StartChildrenAnimGoStop("st_out", "st_out");
 				m_point_den.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
-				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_Point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_point - GetPoint0(data.KELFCMEOPPM_EpisodeId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_point - GetPoint0(data.KELFCMEOPPM_EpisodeId)) * 100.0f));
 				SetHasEpisodeGauge(0);
 			}
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
@@ -253,14 +253,14 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < rewards.Count; i++)
 			{
 				a = i;
-				if (rewards[i].DNBFMLBNAEE_Point > m_data.ABLHIAEDJAI_CurrentValue)
+				if (rewards[i].DNBFMLBNAEE_point > m_data.ABLHIAEDJAI_CurrentValue)
 					break;
 			}
 			if (a < 1)
 				return 0;
 			else
 			{
-				return rewards[a - 1].DNBFMLBNAEE_Point;
+				return rewards[a - 1].DNBFMLBNAEE_point;
 			}
 		}
 

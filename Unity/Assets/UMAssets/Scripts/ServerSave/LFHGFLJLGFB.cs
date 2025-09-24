@@ -10,7 +10,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	private const int ODDKIBLJKPI = 50;
 	private int ENOBDCFHELD; // 0x24
 	private int FCEJCHGLFGN; // 0x28
-	private List<CEBFFLDKAEC_SecureInt> FNDJLOMNECG; // 0x2C
+	private List<CEBFFLDKAEC_SecureInt> FNDJLOMNECG_PlayerList; // 0x2C
 
 	//public int KPEBMCLONHK { get; } ??
 	public override bool DMICHEJIAJL { get { return false; } } // 0xD6C5FC NFKFOODCJJB
@@ -18,7 +18,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
 	public LFHGFLJLGFB_FavoritePlayer()
 	{
-		FNDJLOMNECG = new List<CEBFFLDKAEC_SecureInt>(50);
+		FNDJLOMNECG_PlayerList = new List<CEBFFLDKAEC_SecureInt>(50);
 		KMBPACJNEOF_Reset();
 	}
 
@@ -27,7 +27,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	{
 		ENOBDCFHELD = (int)Utility.GetCurrentUnixTime() ^ 0x5721577;
 		FCEJCHGLFGN = (int)Utility.GetCurrentUnixTime() ^ 0x3846732;
-		FNDJLOMNECG.Clear();
+		FNDJLOMNECG_PlayerList.Clear();
 	}
 
 	// // RVA: 0xD6B5B0 Offset: 0xD6B5B0 VA: 0xD6B5B0
@@ -38,13 +38,13 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	{
 		CEBFFLDKAEC_SecureInt val = new CEBFFLDKAEC_SecureInt();
 		val.DNJEJEANJGL_Value = _PPFNGGCBJKC_id;
-		FNDJLOMNECG.Add(val);
+		FNDJLOMNECG_PlayerList.Add(val);
 	}
 
 	// // RVA: 0xD6B79C Offset: 0xD6B79C VA: 0xD6B79C
 	public void LJBFHCDHOHP(int _PPFNGGCBJKC_id)
 	{
-		FNDJLOMNECG.Remove(FNDJLOMNECG.Find((CEBFFLDKAEC_SecureInt GGHLPLMKFFE) =>
+		FNDJLOMNECG_PlayerList.Remove(FNDJLOMNECG_PlayerList.Find((CEBFFLDKAEC_SecureInt GGHLPLMKFFE) =>
 		{
 			//0xD6C750
 			return GGHLPLMKFFE.DNJEJEANJGL_Value == _PPFNGGCBJKC_id;
@@ -54,19 +54,19 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6B8D0 Offset: 0xD6B8D0 VA: 0xD6B8D0
 	public int EFNAAHDHCEL()
 	{
-		return FNDJLOMNECG.Count;
+		return FNDJLOMNECG_PlayerList.Count;
 	}
 
 	// // RVA: 0xD6B948 Offset: 0xD6B948 VA: 0xD6B948
 	public int OKAOABMKPGP(int _OIPCCBHIKIA_index)
 	{
-		return FNDJLOMNECG[_OIPCCBHIKIA_index].DNJEJEANJGL_Value;
+		return FNDJLOMNECG_PlayerList[_OIPCCBHIKIA_index].DNJEJEANJGL_Value;
 	}
 
 	// // RVA: 0xD6B9E8 Offset: 0xD6B9E8 VA: 0xD6B9E8
 	public bool FFKIDMKHIOE(int _PPFNGGCBJKC_id)
 	{
-		return FNDJLOMNECG.Find((CEBFFLDKAEC_SecureInt GGHLPLMKFFE) =>
+		return FNDJLOMNECG_PlayerList.Find((CEBFFLDKAEC_SecureInt GGHLPLMKFFE) =>
 		{
 			//0xD6C6C8
 			return GGHLPLMKFFE.DNJEJEANJGL_Value == _PPFNGGCBJKC_id;
@@ -83,9 +83,9 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 		{
 			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			for(int i = 0; i < FNDJLOMNECG.Count; i++)
+			for(int i = 0; i < FNDJLOMNECG_PlayerList.Count; i++)
 			{
-				data2.Add(FNDJLOMNECG[i].DNJEJEANJGL_Value);
+				data2.Add(FNDJLOMNECG_PlayerList[i].DNJEJEANJGL_Value);
 			}
 			data["list"] = data2;
 		}
@@ -109,7 +109,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 			if ((int)OILEIIEIBHP[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != 1)
 				isInvalid = true;
 		}
-		FNDJLOMNECG.Clear();
+		FNDJLOMNECG_PlayerList.Clear();
 		if(OILEIIEIBHP.BBAJPINMOEP_Contains("list"))
 		{
 			IBCGPBOGOGP_ReadIntArray(OILEIIEIBHP, "list", 0, 50, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
@@ -128,10 +128,10 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		LFHGFLJLGFB_FavoritePlayer f = GPBJHKLFCEP as LFHGFLJLGFB_FavoritePlayer;
-		FNDJLOMNECG.Clear();
-		for(int i = 0; i < f.FNDJLOMNECG.Count; i++)
+		FNDJLOMNECG_PlayerList.Clear();
+		for(int i = 0; i < f.FNDJLOMNECG_PlayerList.Count; i++)
 		{
-			BNFBKGHBHHN(f.FNDJLOMNECG[i].DNJEJEANJGL_Value);
+			BNFBKGHBHHN(f.FNDJLOMNECG_PlayerList[i].DNJEJEANJGL_Value);
 		}
 	}
 
@@ -139,14 +139,14 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		LFHGFLJLGFB_FavoritePlayer other = GPBJHKLFCEP as LFHGFLJLGFB_FavoritePlayer;
-		if (FNDJLOMNECG.Count != other.FNDJLOMNECG.Count)
+		if (FNDJLOMNECG_PlayerList.Count != other.FNDJLOMNECG_PlayerList.Count)
 			return false;
-		for(int i = 0; i < FNDJLOMNECG.Count; i++)
+		for(int i = 0; i < FNDJLOMNECG_PlayerList.Count; i++)
 		{
-			if (other.FNDJLOMNECG.Find((CEBFFLDKAEC_SecureInt JKDKBCPFFEL) =>
+			if (other.FNDJLOMNECG_PlayerList.Find((CEBFFLDKAEC_SecureInt JKDKBCPFFEL) =>
 			 {
 				 //0xD6C70C
-				 return JKDKBCPFFEL.DNJEJEANJGL_Value == FNDJLOMNECG[i].DNJEJEANJGL_Value;
+				 return JKDKBCPFFEL.DNJEJEANJGL_Value == FNDJLOMNECG_PlayerList[i].DNJEJEANJGL_Value;
 			 }) == null)
 				return false;
 		}

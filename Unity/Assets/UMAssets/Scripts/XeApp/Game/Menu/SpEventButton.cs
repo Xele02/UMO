@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 					m_layoutLimit.StartChildrenAnimGoStop("00");
 				else
 					m_layoutLimit.StartChildrenAnimGoStop("02");
-				DateTime dt = Utility.GetLocalDateTime(viewData.FDBNFFNFOND_CloseAt);
+				DateTime dt = Utility.GetLocalDateTime(viewData.FDBNFFNFOND_close_at);
 				m_textLimit.text = string.Format(bk.GetMessageByLabel("event_sp_close_at"), new object[5]
 				{
 					dt.Year, dt.Month, dt.Day, dt.Minute, dt.Second
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 				{
 					m_layoutDisable.StartChildrenAnimGoStop("03");
 					m_layoutLimit.StartChildrenAnimGoStop("02");
-					DateTime dt = Utility.GetLocalDateTime(viewData.FDBNFFNFOND_CloseAt);
+					DateTime dt = Utility.GetLocalDateTime(viewData.FDBNFFNFOND_close_at);
 					m_textLimit.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_sp_close_at"), new object[5]
 					{
 						dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute

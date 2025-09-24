@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 			if(isEvent)
 				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			
-			openSimulationLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= 
+			openSimulationLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5) <= 
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 
 			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
@@ -988,7 +988,7 @@ namespace XeApp.Game.Menu
 		{
 			long date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			int lastMusicId = GetLastStoryFreeMusicId();
-			int song_Thresold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("verticalmusicselect_music_type_threshold", 96000);
+			int song_Thresold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("verticalmusicselect_music_type_threshold", 96000);
 			m_originalMusicDataList.Clear();
 			m_originalEventMusicDataList.Clear();
 			for(int i = 0; i < eventCategoryId; i++)
@@ -1571,7 +1571,7 @@ namespace XeApp.Game.Menu
 			SetPlayButton(selectMusicListData);
 			SetSimulationButton(selectMusicListData);
 			m_musicSelectUISapporter.SetEnergy(selectMusicData);
-			m_musicSelectUISapporter.SetEnemyData(selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_Enemy);
+			m_musicSelectUISapporter.SetEnemyData(selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy);
 			m_musicSelectUISapporter.SetMusicJacketNew(selectMusicData);
 			m_musicSelectUISapporter.SetMusicJacket(selectMusicData.JNCPEGJGHOG_JacketId);
 			m_musicSelectUISapporter.SetMusicLevel(selectMusicData);
@@ -2146,7 +2146,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEF84C Offset: 0xBEF84C VA: 0xBEF84C
 		private bool IsCanDoUnitHelp()
 		{
-			int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+			int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 			if(multi_dance_player_level <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
 			{
 				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))

@@ -131,7 +131,7 @@ namespace XeApp.Game.Common
 			});
 			if(file != null)
 			{
-				Init(file.DBBGALAPFGC_Data);
+				Init(file.DBBGALAPFGC_bytes);
 				isLoading = false;
 			}
 		}

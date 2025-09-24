@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 				bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 				if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
 				{
-					if(enabled && !m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+					if(enabled && !m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 					{
 						bool b = GameMessageManager.CheckBasara(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 				bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 				if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
 				{
-					if(enabled &&!m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+					if(enabled &&!m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 					{
 						bool b = GameMessageManager.CheckBasara(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
 			{
-				if(enabled && !m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+				if(enabled && !m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 				{
 					m_systemMessage.Leave(force);
 				}
@@ -294,7 +294,7 @@ namespace XeApp.Game.Menu
 			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
 			{
-				if (enabled && !m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+				if (enabled && !m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 				{
 					m_systemMessage.Leave(animTime, force);
 				}
@@ -327,7 +327,7 @@ namespace XeApp.Game.Menu
 
 			//0x14B5004
 			bool m_isPause = false;
-			isLevelMax = m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL;
+			isLevelMax = m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL;
 			LeaveLongTouchTips(false);
 			m_layoutInfo.Setup(m_viewIntimacyData, true);
 			m_layoutInfo.Enter();
@@ -391,10 +391,10 @@ namespace XeApp.Game.Menu
 							m_loopSE.Stop();
 							if (reactionCallback != null)
 								reactionCallback(true);
-							typeList = m_viewIntimacyData.HBODCMLFDOB_Result.CKDNPHLDIEM;
-							paramList = m_viewIntimacyData.HBODCMLFDOB_Result.EEIBCALKFFF;
+							typeList = m_viewIntimacyData.HBODCMLFDOB_result.CKDNPHLDIEM;
+							paramList = m_viewIntimacyData.HBODCMLFDOB_result.EEIBCALKFFF;
 							levelUpBonus = false;
-							if (m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC_IsLevelUp)
+							if (m_viewIntimacyData.HBODCMLFDOB_result.LDHOOPGDBJC_IsLevelUp)
 							{
 								levelUpBonus = typeList.Count > 0;
 							}
@@ -898,7 +898,7 @@ namespace XeApp.Game.Menu
 					{
 						if(viewIntimacyData.HEKJGCMNJAB_CurrentLevel < 1)
 							return false;
-						if(!viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+						if(!viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 							return true;
 					}
 					this.StartCoroutineWatched(Co_TapShowInfo(viewIntimacyData, chara));
@@ -921,10 +921,10 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_TapLockedChara(JJOELIOGMKK_DivaIntimacyInfo v)
 		{
 			//0x14B880C
-			m_layoutMessageDeco.SetTextLock(v.AHHJLDLAPAN_DivaId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL(GameMessageManager.CheckBasara(v.AHHJLDLAPAN_DivaId) ? "diva_intimacy_lock_basara" : "diva_intimacy_lock", JpStringLiterals.StringLiteral_16496));
+			m_layoutMessageDeco.SetTextLock(v.AHHJLDLAPAN_DivaId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam(GameMessageManager.CheckBasara(v.AHHJLDLAPAN_DivaId) ? "diva_intimacy_lock_basara" : "diva_intimacy_lock", JpStringLiterals.StringLiteral_16496));
 			MenuScene.Instance.InputDisable();
 			m_layoutMessageDeco.Enter();
-			int intimacy_lock_msg_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("intimacy_lock_msg_milli", 2000);
+			int intimacy_lock_msg_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_lock_msg_milli", 2000);
 			yield return new WaitForSeconds(intimacy_lock_msg_milli / 1000.0f);
 			m_layoutMessageDeco.Leave();
 			yield return new WaitWhile(() =>
@@ -943,7 +943,7 @@ namespace XeApp.Game.Menu
 			m_layoutInfoDeco.Setup(v, chara, chara.cam);
 			MenuScene.Instance.InputDisable();
 			m_layoutInfoDeco.Enter();
-			int m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("intimacy_show_info_milli", 2000);
+			int m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_show_info_milli", 2000);
 			yield return new WaitForSeconds(m / 1000.0f);
 			m_layoutInfoDeco.Leave();
 			yield return new WaitUntil(() =>
@@ -1006,7 +1006,7 @@ namespace XeApp.Game.Menu
 
 			//0x14BA09C
 			m_isPause = false;
-			isLevelMax = m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL;
+			isLevelMax = m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL;
 			intimacyCount = m_viewIntimacyData.GMIEFBELJJH();
 			while(true)
 			{
@@ -1089,9 +1089,9 @@ namespace XeApp.Game.Menu
 										reactionCallback(true);
 									MenuScene.Instance.InputDisable();
 									m_layoutInfoDeco.Enter();
-									typeList = m_viewIntimacyData.HBODCMLFDOB_Result.CKDNPHLDIEM;
-									paramList = m_viewIntimacyData.HBODCMLFDOB_Result.EEIBCALKFFF;
-									if(!m_viewIntimacyData.HBODCMLFDOB_Result.LDHOOPGDBJC_IsLevelUp)
+									typeList = m_viewIntimacyData.HBODCMLFDOB_result.CKDNPHLDIEM;
+									paramList = m_viewIntimacyData.HBODCMLFDOB_result.EEIBCALKFFF;
+									if(!m_viewIntimacyData.HBODCMLFDOB_result.LDHOOPGDBJC_IsLevelUp)
 									{
 										levelUpBonus = false;
 									}
@@ -1360,7 +1360,7 @@ namespace XeApp.Game.Menu
 			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
 			SetGakuyaType();
 			m_serifType = SerifPlayType.N_GRATEFUL;
-			if(m_viewIntimacyData.HBODCMLFDOB_Result.HOMOKJEKKNK_Bonus > 0)
+			if(m_viewIntimacyData.HBODCMLFDOB_result.HOMOKJEKKNK_Bonus > 0)
 				m_serifType = SerifPlayType.B_GRATEFUL;
 			if(m_divaTalk != null)
 				OnChangedGakuyaDivaTalk();
@@ -1384,8 +1384,8 @@ namespace XeApp.Game.Menu
 			{
 				yield return null;
 			}
-			typeList = m_viewIntimacyData.HBODCMLFDOB_Result.CKDNPHLDIEM;
-			paramList = m_viewIntimacyData.HBODCMLFDOB_Result.EEIBCALKFFF;
+			typeList = m_viewIntimacyData.HBODCMLFDOB_result.CKDNPHLDIEM;
+			paramList = m_viewIntimacyData.HBODCMLFDOB_result.EEIBCALKFFF;
 			for(i = 0; i < typeList.Count; i++)
 			{
 				m_systemMessage.SetTextLevelUpBonus(m_viewIntimacyData.AHHJLDLAPAN_DivaId, m_viewIntimacyData.IGLBKDDCKEJ(), typeList[i], paramList[i]);
@@ -1457,7 +1457,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x14B31D8 Offset: 0x14B31D8 VA: 0x14B31D8
 		public void SetGakuyaType()
 		{
-			if(!IsPupUpWindow && !m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+			if(!IsPupUpWindow && !m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 			{
 				m_serifType = m_viewIntimacyData.NCNAPMHEINJ() ? SerifPlayType.TIPS : SerifPlayType.NONE;
 			}
@@ -1469,7 +1469,7 @@ namespace XeApp.Game.Menu
 			if (!itemCountCheck())
 			{
 				m_lsitType = ListType.LEVEL_LIMIT;
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled() || m_viewIntimacyData.HBODCMLFDOB_Result.PFIILLOIDIL)
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled() || m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 				{
 					m_lsitType = ListType.COUNT_NONE;
 					if (m_viewIntimacyData.NCNAPMHEINJ())

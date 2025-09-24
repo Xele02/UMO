@@ -70,7 +70,7 @@ public abstract class IKMBBPDBECA
 		{
 			if(_KNMLPAAHAOF_IsStartGacha)
 				MDEIKCBEHHC = JpStringLiterals.StringLiteral_11115;
-			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("disable_decul_gacha_kakutei_4", 0);
+			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("disable_decul_gacha_kakutei_4", 0);
 			if(disable_decul_gacha_kakutei_4 != 0)
 				return;
 			if(OriginalName.Contains(JpStringLiterals.StringLiteral_11117_Jp))

@@ -69,7 +69,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem)
 		{
 			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
-			int t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].EMIJNAFJFJO_Expir;
+			int t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].EMIJNAFJFJO_expir;
 			if (limitTime < time || t == 0)
 				ShowItemDetail(id, count);
 			else
