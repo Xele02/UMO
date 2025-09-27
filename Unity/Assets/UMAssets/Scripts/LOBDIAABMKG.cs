@@ -841,21 +841,21 @@ public class LOBDIAABMKG
 
 		//0x10CCFD8
 		bool CNAIDEAFAAM_Error = false;
-		bool BEKAMBBOLBO = false;
+		bool BEKAMBBOLBO_Done = false;
 		PNLGHFCFPPK_Request = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new EDOGNHECOMI_GetStepUpLotDetail(true));
 		PNLGHFCFPPK_Request.MMEBLOIJBKE_UniqueKey = NECDFDNBHFK_StepData.FJGCDPLCIAK_unique_key;
 		PNLGHFCFPPK_Request.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0x10CCA30
 			CNAIDEAFAAM_Error = true;
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		};
 		PNLGHFCFPPK_Request.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0x10CCA3C
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		};
-		while (!BEKAMBBOLBO)
+		while (!BEKAMBBOLBO_Done)
 			yield return null;
 		if(!CNAIDEAFAAM_Error)
 		{

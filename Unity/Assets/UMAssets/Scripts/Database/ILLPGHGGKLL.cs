@@ -62,12 +62,12 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			AFBMNDPOALE data = new AFBMNDPOALE();
-			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
 			data.JONNCMDGMKA_Message = new string[array[i].IPBHCLIHAPG.Length];
 			for(int j = 0; j < data.JONNCMDGMKA_Message.Length; j++)
 				data.JONNCMDGMKA_Message[j] = DatabaseTextConverter.TranslateTutoMiniAdventureMessage(i, j, array[i].IPBHCLIHAPG[j]);
 			data.CJPMCKIOCGI = array[i].OGDLCNPFODO;
-			data.NDFOAINJPIN_pos = array[i].NDFOAINJPIN;
+			data.NDFOAINJPIN_pos = array[i].NDFOAINJPIN_pos;
 			data.KGJHFFNFPOK_CharacterId = array[i].ECEOBKOFJHK;
 			CDENCMNHNGA_table.Add(data);
 		}

@@ -87,7 +87,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 						DAGLEHBMBLF data = new DAGLEHBMBLF(FBGGEFFJJHB_xor);
 						data.BCGKLONODHO = array2[j];
 						data.KPBJHHHMOJE_TimeToChargeMin = array[i].KPBJHHHMOJE[j];
-						data.NANNGLGOFKH_value = array[i].JBGEEPFKIGG[j];
+						data.NANNGLGOFKH_value = array[i].JBGEEPFKIGG_val[j];
 						lData.Add(data);
 					}
 				}
@@ -99,7 +99,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				List<NDONMEAEGFF> lData = new List<NDONMEAEGFF>();
-				int[] array2 = array[i].HMFFHLPNMPH;
+				int[] array2 = array[i].HMFFHLPNMPH_count;
 				for (int j = 0; j < array2.Length; j++)
 				{
 					NDONMEAEGFF data = new NDONMEAEGFF(FBGGEFFJJHB_xor);

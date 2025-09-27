@@ -524,21 +524,21 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 			GFIBLLLHMPD_StartAdventureId = ev.NGHKJOEDLIP_Settings.HIOOGLEJBKM_StartAdventureId;
 			CAKEOPLJDAF_EndAdventureId = ev.NGHKJOEDLIP_Settings.FJCADCDNPMP_EndAdventureId;
 			LHAKGDAGEMM_EpBonusInfos.Clear();
-			for(int i = 0; i < ev.LHAKGDAGEMM_EpBonusInfo.Count; i++)
+			for(int i = 0; i < ev.LHAKGDAGEMM_EpBonusInfos.Count; i++)
 			{
 				CEGDBNNIDIG d = new CEGDBNNIDIG();
-				d.KELFCMEOPPM_EpisodeId = ev.LHAKGDAGEMM_EpBonusInfo[i].KHPHAAMGMJP;
-				d.MIHNKIHNBBL_BaseBonus = ev.LHAKGDAGEMM_EpBonusInfo[i].OFIAENKCJME / 100.0f;
-				d.MLLPMJFOKEC_GachaIds.AddRange(ev.LHAKGDAGEMM_EpBonusInfo[i].KDNMBOBEGJM_GachaIds);
+				d.KELFCMEOPPM_EpisodeId = ev.LHAKGDAGEMM_EpBonusInfos[i].KHPHAAMGMJP;
+				d.MIHNKIHNBBL_BaseBonus = ev.LHAKGDAGEMM_EpBonusInfos[i].OFIAENKCJME / 100.0f;
+				d.MLLPMJFOKEC_GachaIds.AddRange(ev.LHAKGDAGEMM_EpBonusInfos[i].KDNMBOBEGJM_GachaIds);
 				LHAKGDAGEMM_EpBonusInfos.Add(d);
 			}
 			PGDAMNENGDA_EpBonusBySceneRarity.Clear();
-			for(int i = 0; i < ev.OGMHMAGDNAM.Count; i++)
+			for(int i = 0; i < ev.OGMHMAGDNAM_EpBonusBySceneRarity.Count; i++)
 			{
 				NJJDBBCHBNP d = new NJJDBBCHBNP();
-				d.GJEADBKFAPA = ev.OGMHMAGDNAM[i].PPFNGGCBJKC_id;
-				d.IJKFFIKGLJM_BonusBefore = ev.OGMHMAGDNAM[i].GNFBMCGMCFO_BonusBefore;
-				d.DCBMFNOIENM_BonusAfter = ev.OGMHMAGDNAM[i].BFFGFAMJAIG_BonusAfter;
+				d.GJEADBKFAPA = ev.OGMHMAGDNAM_EpBonusBySceneRarity[i].PPFNGGCBJKC_id;
+				d.IJKFFIKGLJM_BonusBefore = ev.OGMHMAGDNAM_EpBonusBySceneRarity[i].GNFBMCGMCFO_BonusBefore;
+				d.DCBMFNOIENM_BonusAfter = ev.OGMHMAGDNAM_EpBonusBySceneRarity[i].BFFGFAMJAIG_BonusAfter;
 				PGDAMNENGDA_EpBonusBySceneRarity.Add(d);
 			}
 			DHOMAEOEFMJ_EpBonuByScene.Clear();

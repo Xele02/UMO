@@ -76,15 +76,15 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			EJAKHFONNGN data = new EJAKHFONNGN();
-			if(array[i].IJEKNCDIIAE <= IEFOPDOOLOK_MasterVersion)
+			if(array[i].IJEKNCDIIAE_mver <= IEFOPDOOLOK_MasterVersion)
 			{
-				if(array[i].PLALNIIBLOF > 1)
+				if(array[i].PLALNIIBLOF_en > 1)
 				{
-					data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-					data.GJDNBENICPF_vcid = (int)array[i].GJDNBENICPF;
-					data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
-					data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE;
-					data.DOOGFEGEKLG_max = (int)array[i].DOOGFEGEKLG;
+					data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+					data.GJDNBENICPF_vcid = (int)array[i].GJDNBENICPF_vcid;
+					data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
+					data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE_mver;
+					data.DOOGFEGEKLG_max = (int)array[i].DOOGFEGEKLG_max;
 					CDENCMNHNGA_table.Add(data);
 					DHIACJMOEBH.Add(data.GJDNBENICPF_vcid);
 				}

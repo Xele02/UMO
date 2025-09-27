@@ -4,9 +4,9 @@ using UnityEngine;
 public class EJGJAFBLHHM
 {
 	private static string AMIFBFDPOGL_base = "base"; // 0x4
-	private int PPOJCDCCFNI; // 0x8
-	public string IPLCMPCDNJJ = ""; // 0xC
-	public long FFDEBPDJOIJ; // 0x10
+	private int PPOJCDCCFNI_TutorialEnd; // 0x8
+	public string IPLCMPCDNJJ_passphrase = ""; // 0xC
+	public long FFDEBPDJOIJ_ExpiredAt; // 0x10
 
 	public bool Unused() { return AMIFBFDPOGL_base == ""; }
 
@@ -25,5 +25,5 @@ public class EJGJAFBLHHM
 	//public void GAHFKKPLIHH() { }
 
 	//// RVA: 0x12EEB9C Offset: 0x12EEB9C VA: 0x12EEB9C
-	//public void AFOLPGDADKI(int JHNBJJKKGAK, string IPLCMPCDNJJ, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
+	//public void AFOLPGDADKI(int JHNBJJKKGAK, string _IPLCMPCDNJJ_passphrase, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
 }

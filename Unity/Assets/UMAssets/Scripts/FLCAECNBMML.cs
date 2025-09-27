@@ -19,7 +19,7 @@ public class FLCAECNBMML
 	public string OLLPPGOGEKF; // 0x40
 	public bool HFAKHLBIJIP; // 0x44
 	public bool CDAECHLAIGH; // 0x45
-	public bool AJGFHCKFCHN; // 0x46
+	public bool AJGFHCKFCHN_Crypted; // 0x46
 
 	public int CFLEMFADGLG_AttackType { get { return GGMMNICCNMI_Crypted ^ FBGGEFFJJHB_xor; } set { GGMMNICCNMI_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11923F8 KAHCHHILDEM 0x119240C MDOJKNFKJGE
 	public int JBJJFDIHKMB_ScorePoint { get { return IJHLNEJFMNB_Crypted ^ FBGGEFFJJHB_xor; } set { IJHLNEJFMNB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1192420 OJAKCDKDJOP 0x1192434 AKCBKALINGO
@@ -38,7 +38,7 @@ public class FLCAECNBMML
 	public string BLFHMNHMDHF_Mission { get { return OLLPPGOGEKF; } set { OLLPPGOGEKF = value; } } //0x1192628 GFKGANIPGBD 0x1192630 JPKEKHLLGAP
 	public bool GGLJDBHDAJN_MissionCompleted { get { return HFAKHLBIJIP; } set { HFAKHLBIJIP = value; } } //0x1192638 PDAENNBCBJM 0x1192640 HFHCLGNLNGF
 	public bool KOOPHLLHEFM_IsSupBonusMax { get { return CDAECHLAIGH; } set { CDAECHLAIGH = value; } } //0x1192648 IAAPIODEDCO 0x1192650 PDCNLJFFANN
-	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN; } set { AJGFHCKFCHN = value; } } //0x1192658 BOFCPLOLHCJ 0x1192660 FDPPEPOHFNA
+	public bool MPKBLMCNHOM_MissionIsSpecial { get { return AJGFHCKFCHN_Crypted; } set { AJGFHCKFCHN_Crypted = value; } } //0x1192658 BOFCPLOLHCJ 0x1192660 FDPPEPOHFNA
 
 	// // RVA: 0x1192668 Offset: 0x1192668 VA: 0x1192668
 	public void KHEKNNFCAOI_Init()

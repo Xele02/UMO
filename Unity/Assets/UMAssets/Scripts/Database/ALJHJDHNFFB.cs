@@ -75,17 +75,17 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			ADLLAFIDFAM data = new ADLLAFIDFAM();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.GBJFNGCDKPM_typ = (int)array[i].GBJFNGCDKPM;
-			data.OENPCNBFPDA_bg_id = array[i].OENPCNBFPDA;
-			data.KFNDHKFLPPK_mus_id = array[i].KFNDHKFLPPK;
-			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
-			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
-			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.GBJFNGCDKPM_typ = (int)array[i].GBJFNGCDKPM_typ;
+			data.OENPCNBFPDA_bg_id = array[i].OENPCNBFPDA_bg_id;
+			data.KFNDHKFLPPK_mus_id = array[i].KFNDHKFLPPK_mus_id;
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
+			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
+			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE_mver;
 			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ;
-			data.AIHCEGFANAM_SerieAttr = (SeriesAttr.Type)array[i].JPFMJHLCMJL;
-			data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE);
+			data.AIHCEGFANAM_SerieAttr = (SeriesAttr.Type)array[i].JPFMJHLCMJL_sa;
+			data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE_name);
 
 			if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)
 			{

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public class OEJEEHMMPBK
 {
 	private const int FBGGEFFJJHB_xor = 0x2541a98f;
-	public int GKGHEKGGAIF_StepIdxCrypted = FBGGEFFJJHB_xor; // 0x8
+	public int GKGHEKGGAIF_StepIndexCrypted = FBGGEFFJJHB_xor; // 0x8
 	public ABPEPHGCNDA GOKKEPEDLIM_NormalLots; // 0xC
 	public ABPEPHGCNDA EFMGKHGMNKA_RareLots; // 0x10
 
-	public int AGBCJMMMLON_step_index { get { return GKGHEKGGAIF_StepIdxCrypted ^ FBGGEFFJJHB_xor; } set { GKGHEKGGAIF_StepIdxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1DCBE80 AOGDFNLPBNO 0x1DCBE94 MPINCEJGHJN
+	public int AGBCJMMMLON_step_index { get { return GKGHEKGGAIF_StepIndexCrypted ^ FBGGEFFJJHB_xor; } set { GKGHEKGGAIF_StepIndexCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1DCBE80 AOGDFNLPBNO 0x1DCBE94 MPINCEJGHJN
 
 	// RVA: 0x1DCBEA8 Offset: 0x1DCBEA8 VA: 0x1DCBEA8
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, IKMBBPDBECA _KACECFNECON_extra)

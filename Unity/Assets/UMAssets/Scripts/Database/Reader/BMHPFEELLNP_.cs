@@ -30,8 +30,8 @@
 //     {
 //       JCFEECCNGIF readData = table.GetCGPPMMAJNGN(i);
 //       MDCGKDDENNG data = new MDCGKDDENNG();
-//       data.KLMIFEKNBLL = readData.AMFPDKACLLL;
-//       data.IJEKNCDIIAE = readData.OFMGALJGDAO;
+//       data.KLMIFEKNBLL_m_id = readData.AMFPDKACLLL;
+//       data.IJEKNCDIIAE_mver = readData.OFMGALJGDAO;
 //       data.PLALNIIBLOF = readData.CFLMCGOJJJD;
 //       // uint[]
 //       List<uint> uint_list = new List<uint>();

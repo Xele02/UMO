@@ -21,7 +21,7 @@ internal struct PNELLEFDAMJ_ArrayMetadata
 	// RVA: 0x7FBD8C Offset: 0x7FBD8C VA: 0x7FBD8C
 	//public Type IGCFEPKFDIG() { }
 	// RVA: 0x7FBD94 Offset: 0x7FBD94 VA: 0x7FBD94
-	//public void GMAMBBAPNBP(Type NANNGLGOFKH) { }
+	//public void GMAMBBAPNBP(Type _NANNGLGOFKH_value) { }
 	public Type CHHEJNLOIEB_ElementType
 	{
 		get
@@ -37,7 +37,7 @@ internal struct PNELLEFDAMJ_ArrayMetadata
 	// RVA: 0x7FBD9C Offset: 0x7FBD9C VA: 0x7FBD9C
 	//public bool HJENKHBBMMO() { }
 	// RVA: 0x7FBDA4 Offset: 0x7FBDA4 VA: 0x7FBDA4
-	//public void ELGAJICNGBG(bool NANNGLGOFKH) { }
+	//public void ELGAJICNGBG(bool _NANNGLGOFKH_value) { }
 	public bool EPNGJLOKGIF_IsArray
 	{
 		get { return FGKEHMPKILA_is_array; }
@@ -46,7 +46,7 @@ internal struct PNELLEFDAMJ_ArrayMetadata
 	// RVA: 0x7FBDAC Offset: 0x7FBDAC VA: 0x7FBDAC
 	//public bool GBCGDJBLLED() { }
 	// RVA: 0x7FBDB4 Offset: 0x7FBDB4 VA: 0x7FBDB4
-	//public void IBHPIGONLKH(bool NANNGLGOFKH) { }
+	//public void IBHPIGONLKH(bool _NANNGLGOFKH_value) { }
 	public bool AHEAPECLDEJ_IsList
 	{
 		get { return KKHKAKEDAPG_is_list; }
@@ -64,7 +64,7 @@ internal struct OBDHMJIBHIP_ObjectMetadata
 	// RVA: 0x7FF6EC Offset: 0x7FF6EC VA: 0x7FF6EC
 	//public Type IGCFEPKFDIG() { }
 	// RVA: 0x7FF6F4 Offset: 0x7FF6F4 VA: 0x7FF6F4
-	//public void GMAMBBAPNBP(Type NANNGLGOFKH) { }
+	//public void GMAMBBAPNBP(Type _NANNGLGOFKH_value) { }
 	public Type CHHEJNLOIEB_ElementType
 	{
 		get
@@ -80,16 +80,16 @@ internal struct OBDHMJIBHIP_ObjectMetadata
 	// RVA: 0x7FF6FC Offset: 0x7FF6FC VA: 0x7FF6FC
 	//public bool JKPHKHMJJDB() { }
 	// RVA: 0x7FF704 Offset: 0x7FF704 VA: 0x7FF704
-	//public void DOPOGIEGKHG(bool NANNGLGOFKH) { }
+	//public void DOPOGIEGKHG(bool _NANNGLGOFKH_value) { }
 	public bool EBIEKOOCMMM_IsDictionary
 	{
 		get { return FCILDCFBKMG_is_dictionary; }
 		set { FCILDCFBKMG_is_dictionary = value; }
 	}
 	// RVA: 0x7FF70C Offset: 0x7FF70C VA: 0x7FF70C
-	//public IDictionary<string, HNPAFOGPHIM> KOLEKPEKEEK() { }
+	//public IDictionary<string, HNPAFOGPHIM_PropertyMetadata> KOLEKPEKEEK() { }
 	// RVA: 0x7FF714 Offset: 0x7FF714 VA: 0x7FF714
-	//public void KLANBAKIPFH(IDictionary<string, HNPAFOGPHIM> NANNGLGOFKH) { }
+	//public void KLANBAKIPFH(IDictionary<string, HNPAFOGPHIM_PropertyMetadata> _NANNGLGOFKH_value) { }
 	public IDictionary<string, HNPAFOGPHIM_PropertyMetadata> GJENOLNPNAC_Properties
 	{
 		get { return LALJJDFLKGD_properties; }
@@ -926,7 +926,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB5D18 Offset: 0x1AB5D18 VA: 0x1AB5D18
-    |-IKPIMINCOPI.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -939,7 +939,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB5E90 Offset: 0x1AB5E90 VA: 0x1AB5E90
-    |-IKPIMINCOPI.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -952,7 +952,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB602C Offset: 0x1AB602C VA: 0x1AB602C
-    |-IKPIMINCOPI.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
     */
 
 	// RVA: 0x8F1F68 Offset: 0x8F1F68 VA: 0x8F1F68
@@ -982,7 +982,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1C79A5C Offset: 0x1C79A5C VA: 0x1C79A5C
-    |-IKPIMINCOPI.LIEDACPLEMK<object>
+    |-IKPIMINCOPI_JsonMapper.LIEDACPLEMK<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -999,7 +999,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1C79C44 Offset: 0x1C79C44 VA: 0x1C79C44
-    |-IKPIMINCOPI.MJBPPCBFPFG<object, object>
+    |-IKPIMINCOPI_JsonMapper.MJBPPCBFPFG<object, object>
     */
 
 	// RVA: 0x8F22BC Offset: 0x8F22BC VA: 0x8F22BC

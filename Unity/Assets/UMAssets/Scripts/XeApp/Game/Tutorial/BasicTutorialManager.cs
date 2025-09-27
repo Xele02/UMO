@@ -160,7 +160,7 @@ namespace XeApp.Game.Tutorial
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress != 0)
 				return;
-			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_Start_0);
+			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0_Start);
 		}
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0

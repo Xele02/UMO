@@ -1621,7 +1621,7 @@ namespace ExternLib
 				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table.Count; i++)
 				{
                     DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table[i];
-                    if (item.DLCGAMHADEN == label)
+                    if (item.DLCGAMHADEN_Label == label)
 					{
 						EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 						data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id] = item.PPFNGGCBJKC_id;
@@ -1739,7 +1739,7 @@ namespace ExternLib
 							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KGOFMDMDFCJ_BonusId[i]) == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 							{
 								HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[i]) - 1];
-								//if(db.INDDJNMPONH == 1)
+								//if(db.INDDJNMPONH_type == 1)
 								//{
 									AddToBalance(db.CPGFOBNKKBF_CurrencyId, item.NNIIINKFDBG_BonusCount[i] * quantity);
 									GetBalances(res, new List<int>() { db.CPGFOBNKKBF_CurrencyId });

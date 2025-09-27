@@ -383,12 +383,12 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 			GFIBLLLHMPD_StartAdventureId = INJCPCDPGHH.NGHKJOEDLIP_Settings.HIOOGLEJBKM_StartAdventureId;
 			CAKEOPLJDAF_EndAdventureId = INJCPCDPGHH.NGHKJOEDLIP_Settings.FJCADCDNPMP_EndAdventureId;
 			LHAKGDAGEMM_EpBonusInfos.Clear();
-			for(int i = 0; i < INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfo.Count; i++)
+			for(int i = 0; i < INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfos.Count; i++)
 			{
 				CEGDBNNIDIG d = new CEGDBNNIDIG();
-				d.KELFCMEOPPM_EpisodeId = INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfo[i].KHPHAAMGMJP_Id;
-				d.MIHNKIHNBBL_BaseBonus = INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfo[i].OFIAENKCJME_BaseBonus / 100.0f;
-				d.MLLPMJFOKEC_GachaIds.AddRange(INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfo[i].KDNMBOBEGJM_GachaIds);
+				d.KELFCMEOPPM_EpisodeId = INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfos[i].KHPHAAMGMJP_Id;
+				d.MIHNKIHNBBL_BaseBonus = INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfos[i].OFIAENKCJME_BaseBonus / 100.0f;
+				d.MLLPMJFOKEC_GachaIds.AddRange(INJCPCDPGHH.LHAKGDAGEMM_EpBonusInfos[i].KDNMBOBEGJM_GachaIds);
 				LHAKGDAGEMM_EpBonusInfos.Add(d);
 			}
 			PGDAMNENGDA_EpBonusBySceneRarity.Clear();
@@ -1149,7 +1149,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 			{
                 FJGNPNFLHPH_EventCollection.JIALCLGJPKL save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MBAHCFLBDHN_EventCollection.FBCJICEPLED[ev.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
 				int cnt = ev.NGHKJOEDLIP_Settings.KIGCDOJGJEP(_AKNELONELJK_difficulty, _GIKLNODJKFK_IsLine6) * LCCGDFGGIHI * HADLPHIMBHH_BoostRatio;
-				//UnityEngine.Debug.LogError(cnt+" "+ev.NGHKJOEDLIP.KIGCDOJGJEP(_AKNELONELJK_difficulty, GIKLNODJKFK_IsLine6)+" "+LCCGDFGGIHI+" "+HADLPHIMBHH_BoostRatio+" "+save.KCGJGPOFOCD_ticket);
+				//UnityEngine.Debug.LogError(cnt+" "+ev.NGHKJOEDLIP_Settings.KIGCDOJGJEP(_AKNELONELJK_difficulty, GIKLNODJKFK_IsLine6)+" "+LCCGDFGGIHI+" "+HADLPHIMBHH_BoostRatio+" "+save.KCGJGPOFOCD_ticket);
 				if(cnt - save.KCGJGPOFOCD_ticket != 0 && save.KCGJGPOFOCD_ticket <= cnt)
 					return false;
                 save.KCGJGPOFOCD_ticket -= cnt;

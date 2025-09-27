@@ -15,11 +15,11 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		public int OIFAFKDMEEJ_EnabledCrypted; // 0x10
 		public int INAKHLKLFOK_FileIdCrypted; // 0x14
 
-		[UMOMember(ReaderMember = "PPFNGGCBJKC", CryptedInMemory = true, Desc = "Adventure id")]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", CryptedInMemory = true, Desc = "Adventure id")]
 		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB_xor; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB_xor; } } //0x1E5F810 OPOKKOIDCLG 0x1E5F6B8 CKNHCODBIAG
 		[UMOMember(ReaderMember = "CEHGGKDLAFA", CryptedInMemory = true, Desc = "Id of the file to read for the adv setup (/adv/xxx.dat)")]
 		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK_FileIdCrypted ^ FBGGEFFJJHB_xor; } set { INAKHLKLFOK_FileIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
-		[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2", CryptedInMemory = true)]
 		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F830 KPOEEPIMMJP 0x1E5F6C8 NCIEAFEDPBH
 
 		// RVA: 0x1E5F7EC Offset: 0x1E5F7EC VA: 0x1E5F7EC
@@ -77,8 +77,8 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		{
 			NGDBKCKMDHE_AdventureData data = new NGDBKCKMDHE_AdventureData();
 			data.FBGGEFFJJHB_xor = k;
-			data.BPNKGDGBBFG = array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.BPNKGDGBBFG = array[i].PPFNGGCBJKC_id;
+			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, 0);
 			data.KKPPFAHFOJI_FileId = array[i].CEHGGKDLAFA;
 			CDENCMNHNGA_table.Add(data);
 			k *= 0x8d;

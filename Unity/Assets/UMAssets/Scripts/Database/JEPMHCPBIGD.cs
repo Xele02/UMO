@@ -72,11 +72,11 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			MPIILICCLDD data = new MPIILICCLDD();
-			data.KIJAPOFAGPN_ItemId = (int)array[i].GLCLFMGPMAN;
+			data.KIJAPOFAGPN_ItemId = (int)array[i].GLCLFMGPMAN_ItemId;
 			data.FBNCFENGOOD_PosX = array[i].FPLEBCKDCBE;
 			data.LOEJKNILJKF_PosY = array[i].MDLMHEDHPHA;
 			data.NEGMFBPNJGK_rvs = array[i].NEGMFBPNJGK == 1;
-			data.DAPGDCPDCNA_Prio = (int)array[i].DAPGDCPDCNA;
+			data.DAPGDCPDCNA_Prio = (int)array[i].DAPGDCPDCNA_Prio;
 			data.BEJGNPAAKNB_word = (int)array[i].BEJGNPAAKNB;
 			data.OPAHFDJPFJO_placing = array[i].OPAHFDJPFJO == 1;
 			CDENCMNHNGA_table.Add(data);
@@ -94,7 +94,7 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 		//DAPGDCPDCNA_Prio = prio
 		//BEJGNPAAKNB_word = word
 		//OPAHFDJPFJO_placing = placing
-		TodoLogger.LogError(TodoLogger.DbJson, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 

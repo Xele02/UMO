@@ -413,14 +413,14 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 		{
 			AFIFDLOAKGI data = new AFIFDLOAKGI();
 			data.FBGGEFFJJHB_xor = (int)key;
-			data.MKPJBDFDHOL_ThumbId = (int)array[i].HEOLEHDFLJO;
-			data.INDDJNMPONH_type = (int)array[i].GBJFNGCDKPM;
-			data.MKNDAOHGOAK_weight = (int)array[i].KMIDKGMIIBK;
-			data.PBIHLJKLHGJ_UCNumber = (int)array[i].ACGLMKEBMDL;
+			data.MKPJBDFDHOL_ThumbId = (int)array[i].HEOLEHDFLJO_ico;
+			data.INDDJNMPONH_type = (int)array[i].GBJFNGCDKPM_typ;
+			data.MKNDAOHGOAK_weight = (int)array[i].KMIDKGMIIBK_w;
+			data.PBIHLJKLHGJ_UCNumber = (int)array[i].ACGLMKEBMDL_uc;
 			data.IGNCGOMDGKI_Ngi = new List<int>();
-			for(int j = 0; j < array[i].IFILLPEKJFK.Length; j++)
+			for(int j = 0; j < array[i].IFILLPEKJFK_ngi.Length; j++)
 			{
-				data.IGNCGOMDGKI_Ngi.Add((int)(array[i].IFILLPEKJFK[j] ^ (data.FBGGEFFJJHB_xor * (j + 2))));
+				data.IGNCGOMDGKI_Ngi.Add((int)(array[i].IFILLPEKJFK_ngi[j] ^ (data.FBGGEFFJJHB_xor * (j + 2))));
 			}
 			data.IEILOCENAMF = new List<int>();
 			for (int j = 0; j < array[i].BONFLFAPFDG.Length; j++)
@@ -474,10 +474,10 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			NHINPDLLFIO data = new NHINPDLLFIO();
-			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-			data.JPJNKNOJBMM_Mlt = array[i].ALMNMBDELDB;
-			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
-			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+			data.JPJNKNOJBMM_Mlt = array[i].ALMNMBDELDB_mlt;
+			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG_val;
+			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
 			data.GMDCKJBIOGL = new List<CEBFFLDKAEC_SecureInt>();
 			for(int j = 0; j < array[i].JFJFMFNMPPF.Length; j++)
 			{
@@ -504,7 +504,7 @@ public class AFIFDLOAKGI
 	public int PIMKKONMBOG_ItemIdCrypted; // 0xC
 	public int MKENMKMJFKP_TypeCrypted; // 0x10
 	public int BOCMGOHDKDK; // 0x14
-	public int DBCAOAIFOCJ; // 0x18
+	public int DBCAOAIFOCJ_weightCrypted; // 0x18
 	public int OANJBGBHDPJ; // 0x1C
 	public List<int> IGNCGOMDGKI_Ngi; // 0x20
 	public List<int> IEILOCENAMF; // 0x24
@@ -513,7 +513,7 @@ public class AFIFDLOAKGI
 	public int MKPJBDFDHOL_ThumbId { get { return BOCMGOHDKDK ^ FBGGEFFJJHB_xor; } set { BOCMGOHDKDK = value ^ FBGGEFFJJHB_xor; } } //0x15C2AB8 MIDKFOPDBEJ 0x15C2AC8 IBBBHHLGEPJ
 	// StatType
 	public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15C2AD8 GHAILOLPHPF 0x15C2AE8 BACGOKIGMBC
-	public int MKNDAOHGOAK_weight { get { return DBCAOAIFOCJ ^ FBGGEFFJJHB_xor; } set { DBCAOAIFOCJ = value ^ FBGGEFFJJHB_xor; } } //0x15C2AF8 MGMCJMODMAN 0x15C2B08 LOBLFMFJDEC
+	public int MKNDAOHGOAK_weight { get { return DBCAOAIFOCJ_weightCrypted ^ FBGGEFFJJHB_xor; } set { DBCAOAIFOCJ_weightCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15C2AF8 MGMCJMODMAN 0x15C2B08 LOBLFMFJDEC
 	public int PBIHLJKLHGJ_UCNumber { get { return OANJBGBHDPJ ^ FBGGEFFJJHB_xor; } set { OANJBGBHDPJ = value ^ FBGGEFFJJHB_xor; } } //0x15C2B18 FNBANHKHHDK 0x15C2B28 KCMBEMCKBED
 
 	// RVA: 0x15C2B38 Offset: 0x15C2B38 VA: 0x15C2B38
@@ -636,7 +636,7 @@ public class DMPDJFAGCPN_BoardLayout
 	// // RVA: 0x122C934 Offset: 0x122C934 VA: 0x122C934
 	public bool KHEKNNFCAOI_Init(AOGBEJNPKFB _IDLHJIOMJBK_data)
 	{
-		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC;
+		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC_id;
 		PDKGMFHIFML_Panels = new List<NLNDLEEJOFD>(_IDLHJIOMJBK_data.CFMBELIAJIB.Length);
 		for(int i = 0; i < _IDLHJIOMJBK_data.CFMBELIAJIB.Length; i+=3)
 		{
@@ -661,7 +661,7 @@ public class DMPDJFAGCPN_BoardLayout
 	// // RVA: 0x122CCB4 Offset: 0x122CCB4 VA: 0x122CCB4
 	public bool KHEKNNFCAOI_Init(MNFBFBKBJLB _IDLHJIOMJBK_data)
 	{
-		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC;
+		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC_id;
 		PDKGMFHIFML_Panels = new List<NLNDLEEJOFD>(_IDLHJIOMJBK_data.CFMBELIAJIB.Length);
 		for (int i = 0; i < _IDLHJIOMJBK_data.CFMBELIAJIB.Length; i += 3)
 		{
@@ -686,7 +686,7 @@ public class DMPDJFAGCPN_BoardLayout
 	// // RVA: 0x122D034 Offset: 0x122D034 VA: 0x122D034
 	public bool MNKHDMMDPKG(MNFBFBKBJLB _IDLHJIOMJBK_data)
 	{
-		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC;
+		PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC_id;
 		PDKGMFHIFML_Panels = new List<NLNDLEEJOFD>(_IDLHJIOMJBK_data.CFMBELIAJIB.Length);
 		for (int i = 0; i < _IDLHJIOMJBK_data.CFMBELIAJIB.Length; i += 3)
 		{

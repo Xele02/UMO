@@ -295,7 +295,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 			}
 		}
 		{
-			uint[] array = parser.BPLOEAHOPFI;
+			uint[] array = parser.BPLOEAHOPFI_stamina;
 			for (int i = 0; i < array.Length; i++)
 			{
 				ILJKACFDKHI_StaminaKey.Add(key);
@@ -304,7 +304,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 			}
 		}
 		{
-			uint[] array = parser.JPFFIBCDCNJ;
+			uint[] array = parser.JPFFIBCDCNJ_friend;
 			for (int i = 0; i < array.Length; i++)
 			{
 				LEKPPFJMFMH_FriendKey.Add(key);
@@ -317,13 +317,13 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				GPLPAOGMPAM_Music data = new GPLPAOGMPAM_Music();
-				data.LKIFDCEKDCK_exp = array[i].LKIFDCEKDCK;
-				data.HMFFHLPNMPH_count = array[i].BFINGCJHOHI;
+				data.LKIFDCEKDCK_exp = array[i].LKIFDCEKDCK_exp;
+				data.HMFFHLPNMPH_count = array[i].BFINGCJHOHI_cnt;
 				GNIPHICJAIA_Music.Add(data);
 			}
 		}
 		{
-			uint[] array = parser.FDBOPFEOENF;
+			uint[] array = parser.FDBOPFEOENF_diva;
 			for (int i = 0; i < array.Length; i++)
 			{
 				JNIHDCMHINF_DivaKey.Add(key);
@@ -353,10 +353,10 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				GDBAIHMLCBI_GetPExp data = new GDBAIHMLCBI_GetPExp();
-				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-				data.GJLFANGDGCL_Target = (int)array[i].AGNHPHEJKMK;
+				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+				data.GJLFANGDGCL_Target = (int)array[i].AGNHPHEJKMK_tgt;
 				data.MNEDFIBOJAI_Key = key;
-				data.KFJDNFCBBBL_CoefCrypted = (int)array[i].DHIPGHBJLIL ^ key;
+				data.KFJDNFCBBBL_CoefCrypted = (int)array[i].DHIPGHBJLIL_coef ^ key;
 				HBDIDGBMDIA_GetPExp.Add(data);
 			}
 		}
@@ -378,7 +378,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 		//	PPFNGGCBJKC_id = id
 		//	GJLFANGDGCL_Target = tgt
 		//	DHIPGHBJLIL_coef = coef
-        TodoLogger.LogError(TodoLogger.DbJson, "Exp Json IIEMACPEEBJ");
+        TodoLogger.LogError(TodoLogger.DbJson, "Exp Json IIEMACPEEBJ_Deserialize");
         return true;
     }
 

@@ -98,7 +98,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	}
 
 	//// RVA: 0x17B90C0 Offset: 0x17B90C0 VA: 0x17B90C0
-	//public void DOMFHDPMCCO(BBHNACPENDM.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP, List<int> MEGNAIJPBFF) { }
+	//public void DOMFHDPMCCO(BBHNACPENDM.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP, List<int> _MEGNAIJPBFF_InventoryClosedAt) { }
 
 	//// RVA: 0x17B9184 Offset: 0x17B9184 VA: 0x17B9184
 	private bool DEJPNPMHPJD()

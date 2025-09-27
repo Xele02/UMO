@@ -7,10 +7,10 @@ public class GBAMMLEAIOF
 	public int PGEDKFOIPIP_EventIdx; // 0xC
 
 	// // RVA: 0x1401894 Offset: 0x1401894 VA: 0x1401894
-	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] _IDLHJIOMJBK_data)
+	public void KHEKNNFCAOI_Init(int _PGEDKFOIPIP_EventIdx, byte[] _IDLHJIOMJBK_data)
 	{
 		EJJEHEHFMGO = _IDLHJIOMJBK_data;
-		this.PGEDKFOIPIP_EventIdx = PGEDKFOIPIP;
+		this.PGEDKFOIPIP_EventIdx = _PGEDKFOIPIP_EventIdx;
 		for(int i = 0; i < _IDLHJIOMJBK_data.Length; i++)
 		{
 			EJJEHEHFMGO[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);

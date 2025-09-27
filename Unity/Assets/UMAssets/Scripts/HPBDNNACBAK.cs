@@ -373,11 +373,11 @@ public class HPBDNNACBAK
 	// // RVA: 0x1602AD8 Offset: 0x1602AD8 VA: 0x1602AD8
 	public void OMPBFINJHDF_RequestVirtualCurrencyBalancesWithExpiredAt(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		// public CNABKDIKIOB LECJIEDBMKP; // 0xC
+		// public CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt LECJIEDBMKP; // 0xC
 		// // RVA: 0x160637C Offset: 0x160637C VA: 0x160637C
-		// internal void HBLACKDFCAA(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void HBLACKDFCAA(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 		// // RVA: 0x1606AB4 Offset: 0x1606AB4 VA: 0x1606AB4
-		// internal void FCGLLIIOJNI(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void FCGLLIIOJNI(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 
 		CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt LECJIEDBMKP = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest<CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt>(new CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt());
 		LECJIEDBMKP.CJNLEEEECOC = new List<int>(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH);
@@ -536,7 +536,7 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x1603B50 Offset: 0x1603B50 VA: 0x1603B50
-	// private void ILNEOCCIPDA(Dictionary<int, List<KBPDNHOKEKD>> EKFKOGHAKNE, GCAHJLOGMCI.KNMMOMEHDON _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId) { }
+	// private void ILNEOCCIPDA(Dictionary<int, List<KBPDNHOKEKD_ProductId>> EKFKOGHAKNE, GCAHJLOGMCI.KNMMOMEHDON _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId) { }
 
 	// // RVA: 0x16038F4 Offset: 0x16038F4 VA: 0x16038F4
 	private void KDGFJJHFKIL(Dictionary<int, List<KBPDNHOKEKD_ProductId>> EKFKOGHAKNE_GachaList, GCAHJLOGMCI.KNMMOMEHDON_GachaType _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId)
@@ -844,7 +844,7 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x1605F14 Offset: 0x1605F14 VA: 0x1605F14
-	// private bool MFGDDLPKFGF(KBPDNHOKEKD.KNEKLJHNHAK LJPMEHDDBGP) { }
+	// private bool MFGDDLPKFGF(KBPDNHOKEKD_ProductId.KNEKLJHNHAK LJPMEHDDBGP) { }
 
 	// // RVA: 0x1605F2C Offset: 0x1605F2C VA: 0x1605F2C
 	public bool GGBCCADCPNP()

@@ -71,7 +71,7 @@ public interface IHIFCPDDDKN_IJsonWrapper : IList, IOrderedDictionary
 	void EOPNENFNMGE_SetInt(int JBGEEPFKIGG_val);
 
 	// // RVA: -1 Offset: -1 Slot: 16
-	void LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType INDDJNMPONH);
+	void LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType _INDDJNMPONH_type);
 
 	// // RVA: -1 Offset: -1 Slot: 17
 	void BOGHKGJMJKL_SetLong(long JBGEEPFKIGG_val);

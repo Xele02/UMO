@@ -64,7 +64,7 @@ public class FEAOOBFHMBL
 							}
 							else
 							{
-								/*if(q.AKBHPFBDDOL > 16)
+								/*if(q.AKBHPFBDDOL_Val > 16)
 								{
 									LAB_00fced48
 								}*/

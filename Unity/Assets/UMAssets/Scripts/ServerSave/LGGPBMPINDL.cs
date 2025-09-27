@@ -48,7 +48,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		StringBuilder str = new StringBuilder(32);
 		str.SetFormat("lobby_id_{0:D5}", OBGBAOLONDD_UniqueId);
-		UnityEngine.Debug.LogError("Save OBGBAOLONDD "+str.ToString()+" "+MEBHCFJCKFE_LobbyId);
+		UnityEngine.Debug.LogError("Save OBGBAOLONDD_UniqueId "+str.ToString()+" "+MEBHCFJCKFE_LobbyId);
 		data[str.ToString()] = MEBHCFJCKFE_LobbyId;
 		data[AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime] = NFIOKIBPJCJ_uptime;
 		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;

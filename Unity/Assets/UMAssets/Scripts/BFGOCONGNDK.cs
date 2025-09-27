@@ -22,9 +22,9 @@ public class BFGOCONGNDK
 	}
 
 	// // RVA: 0xC79EFC Offset: 0xC79EFC VA: 0xC79EFC
-	public static string NLMBMNKEINP_GetBgFileName(int KEFGPJBKAOD)
+	public static string NLMBMNKEINP_GetBgFileName(int _KEFGPJBKAOD_BgId)
     {
-        return "ct/bg/tl/"+ KEFGPJBKAOD.ToString("D4") + ".xab";
+        return "ct/bg/tl/"+ _KEFGPJBKAOD_BgId.ToString("D4") + ".xab";
     }
 
 	// // RVA: 0xC79F98 Offset: 0xC79F98 VA: 0xC79F98

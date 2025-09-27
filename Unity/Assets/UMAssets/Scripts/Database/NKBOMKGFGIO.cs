@@ -52,11 +52,11 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 		{
 			PDPBHLDICEJ data = new PDPBHLDICEJ();
 			data.FBGGEFFJJHB_xor = k;
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG;
-			data.DOOGFEGEKLG_max = (int)array[i].DOOGFEGEKLG;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
+			data.DOOGFEGEKLG_max = (int)array[i].DOOGFEGEKLG_max;
 			k *= 0x356;
 			CDENCMNHNGA_table.Add(data);
 		}
@@ -72,7 +72,7 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 		//	JBGEEPFKIGG_val = JBGEEPFKIGG_val
 		//	EILKGEADKGH_Order = odr
 		//	DOOGFEGEKLG_max = max
-		TodoLogger.LogError(TodoLogger.DbJson, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 

@@ -174,12 +174,12 @@ namespace XeSys
 		// public static bool IsExist(EDOHBJAPLPF_JsonData from, string key) { }
 
 		// // RVA: 0x238AB24 Offset: 0x238AB24 VA: 0x238AB24
-		// public static void WriteValue(KIJECNFNNDB writer, string propertyName, object value) { }
+		// public static void WriteValue(KIJECNFNNDB_JsonWriter writer, string propertyName, object value) { }
 
 		// // RVA: 0x238AD40 Offset: 0x238AD40 VA: 0x238AD40
-		// public static void WriteObject(KIJECNFNNDB writer, string objectName, Dictionary<string, object> properties) { }
+		// public static void WriteObject(KIJECNFNNDB_JsonWriter writer, string objectName, Dictionary<string, object> properties) { }
 
 		// // RVA: 0x238AF4C Offset: 0x238AF4C VA: 0x238AF4C
-		// public static void WriteArray(KIJECNFNNDB writer, string arrayName, List<object> objects) { }
+		// public static void WriteArray(KIJECNFNNDB_JsonWriter writer, string arrayName, List<object> objects) { }
 	}
 }

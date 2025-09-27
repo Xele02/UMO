@@ -8,7 +8,7 @@ namespace XeApp.Game.AR
 		[UMOClass()]
 		public class Campaign
 		{
-			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
+			[UMOMember(ReaderMember = "DNJLJMKKDNA_EventId")]
 			public string eventId = ""; // 0x8
 			[UMOMember(ReaderMember = "KIGNIOGKEGD", Display = "Date")]
 			public long startTime; // 0x10
@@ -27,18 +27,18 @@ namespace XeApp.Game.AR
 			public long startTime; // 0x8
 			[UMOMember(ReaderMember = "LOPHEKJBJKD", Display = "Date")]
 			public long endTime; // 0x10
-			[UMOMember(ReaderMember = "PLALNIIBLOF")]
+			[UMOMember(ReaderMember = "PLALNIIBLOF_en")]
 			public int enable; // 0x18
 		}
 
 		[UMOClass(ReaderClass = "LFHPPKNLGLJ")]
 		public class Data
 		{
-			[UMOMember(ReaderMember = "IKPIDCFOFEA")]
+			[UMOMember(ReaderMember = "IKPIDCFOFEA_no")]
 			public int no; // 0x8
-			[UMOMember(ReaderMember = "PLALNIIBLOF")]
+			[UMOMember(ReaderMember = "PLALNIIBLOF_en")]
 			public int enable; // 0xC
-			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
+			[UMOMember(ReaderMember = "DNJLJMKKDNA_EventId")]
 			public string eventId = ""; // 0x10
 			[UMOMember(ReaderMember = "OFJIBKAOMKO")]
 			public string eventName = ""; // 0x14
@@ -58,9 +58,9 @@ namespace XeApp.Game.AR
 			public long startTime; // 0x8
 			[UMOMember(ReaderMember = "AKKDBALDNAN", Display = "Date")]
 			public long endTime; // 0x10
-			[UMOMember(ReaderMember = "PLALNIIBLOF")]
+			[UMOMember(ReaderMember = "PLALNIIBLOF_en")]
 			public int enable; // 0x18
-			[UMOMember(ReaderMember = "OENPCNBFPDA")]
+			[UMOMember(ReaderMember = "OENPCNBFPDA_bg_id")]
 			public int bgId; // 0x1C
 		}
 
@@ -99,13 +99,13 @@ namespace XeApp.Game.AR
 			for(int i = 0; i < fileData.GHGFEFIAIFC.Length; i++)
 			{
 				Data data = new Data();
-				data.no = fileData.GHGFEFIAIFC[i].IKPIDCFOFEA;
-				data.enable = fileData.GHGFEFIAIFC[i].PLALNIIBLOF;
-				data.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA.ToLower();
+				data.no = fileData.GHGFEFIAIFC[i].IKPIDCFOFEA_no;
+				data.enable = fileData.GHGFEFIAIFC[i].PLALNIIBLOF_en;
+				data.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA_EventId.ToLower();
 				data.eventName = fileData.GHGFEFIAIFC[i].OFJIBKAOMKO;
 				data.snsTemplateTable[0] = fileData.GHGFEFIAIFC[i].AMLNJJHJEHE;
 				data.snsTemplateTable[1] = fileData.GHGFEFIAIFC[i].DJJAKCKDGMA;
-				data.campaign.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA.ToLower();
+				data.campaign.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA_EventId.ToLower();
 				data.campaign.startTime = fileData.GHGFEFIAIFC[i].KIGNIOGKEGD;
 				data.campaign.endTime = fileData.GHGFEFIAIFC[i].AKCAHAKHIPI;
 				data.campaign.bannerId = fileData.GHGFEFIAIFC[i].LCCDKCPBJAK;
@@ -116,8 +116,8 @@ namespace XeApp.Game.AR
 			for(int i = 0; i < fileData.DEJCELHJKHN.Length; i++)
 			{
 				Chenge_bg data = new Chenge_bg();
-				data.bgId = fileData.DEJCELHJKHN[i].OENPCNBFPDA;
-				data.enable = fileData.DEJCELHJKHN[i].PLALNIIBLOF;
+				data.bgId = fileData.DEJCELHJKHN[i].OENPCNBFPDA_bg_id;
+				data.enable = fileData.DEJCELHJKHN[i].PLALNIIBLOF_en;
 				data.startTime = fileData.DEJCELHJKHN[i].KBPENAAJPHN;
 				data.endTime = fileData.DEJCELHJKHN[i].AKKDBALDNAN;
 				m_chengeBg.Add(data);
@@ -126,15 +126,15 @@ namespace XeApp.Game.AR
 			for(int i = 0; i < fileData.BHGDNGHDDAC.Length; i++)
 			{
 				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
-				data.DNJEJEANJGL_Value = fileData.BHGDNGHDDAC[i].JBGEEPFKIGG;
-				m_intParam.Add(fileData.BHGDNGHDDAC[i].LJNAKDMILMC, data);
+				data.DNJEJEANJGL_Value = fileData.BHGDNGHDDAC[i].JBGEEPFKIGG_val;
+				m_intParam.Add(fileData.BHGDNGHDDAC[i].LJNAKDMILMC_key, data);
 			}
 			m_stringParam = new Dictionary<string, NNJFKLBPBNK_SecureString>();
 			for(int i = 0; i < fileData.MHGMDJNOLMI.Length; i++)
 			{
 				NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
-				data.DNJEJEANJGL_Value = fileData.MHGMDJNOLMI[i].JBGEEPFKIGG;
-				m_stringParam.Add(fileData.MHGMDJNOLMI[i].LJNAKDMILMC, data);
+				data.DNJEJEANJGL_Value = fileData.MHGMDJNOLMI[i].JBGEEPFKIGG_val;
+				m_stringParam.Add(fileData.MHGMDJNOLMI[i].LJNAKDMILMC_key, data);
 
 			}
 			m_eventTime.Clear();
@@ -143,7 +143,7 @@ namespace XeApp.Game.AR
 				EventTime data = new EventTime();
 				data.startTime = fileData.GCKNBNMLCEF[i].JLIPMPMDEHI;
 				data.endTime = fileData.GCKNBNMLCEF[i].LOPHEKJBJKD;
-				data.enable = fileData.GCKNBNMLCEF[i].PLALNIIBLOF;
+				data.enable = fileData.GCKNBNMLCEF[i].PLALNIIBLOF_en;
 				m_eventTime.Add(data);
 			}
 			// Add Ar time for UMO

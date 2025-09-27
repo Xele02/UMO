@@ -26,9 +26,9 @@ public class DOKOHKJIDBO
 		// // RVA: 0x12330E0 Offset: 0x12330E0 VA: 0x12330E0
 		// internal bool APDFIGKALGM(SakashoErrorId LJJGBICGLLF) { }
 		// // RVA: 0x1233124 Offset: 0x1233124 VA: 0x1233124
-		// internal void OMGNDJPDAMH(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void OMGNDJPDAMH(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 		// // RVA: 0x123329C Offset: 0x123329C VA: 0x123329C
-		// internal void CCHHOEDOHKN(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void CCHHOEDOHKN(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 
 		KCOIDGJOJHC_EncryptionMap.Clear();
 		LNAHEIEIBOI_Initialized = false;

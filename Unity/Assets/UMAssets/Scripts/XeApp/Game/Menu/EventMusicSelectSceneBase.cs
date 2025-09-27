@@ -1150,7 +1150,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13BC530 Offset: 0x13BC530 VA: 0x13BC530
-		// protected static bool IsEventMissionSupport(IKDICBBFBMI eventCtrl) { }
+		// protected static bool IsEventMissionSupport(IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// // RVA: 0x13BC5C8 Offset: 0x13BC5C8 VA: 0x13BC5C8
 		// protected static bool CheckCurrentEventLimit(KGCNCBOKCBA.GNENJEHKMHD term = 5) { }

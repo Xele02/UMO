@@ -72,7 +72,7 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
         for(int i = 0; i < array.Length; i++)
         {
             OAMBPGCJEGJ data = new OAMBPGCJEGJ();
-            data.DOMFHDPMCCO(time, (int)array[i].LJELGFAFGAB, (int)array[i].KNEDJFLCCLN, (int)array[i].MBAMIOJNGBD);
+            data.DOMFHDPMCCO(time, (int)array[i].LJELGFAFGAB_so, (int)array[i].KNEDJFLCCLN_vo, (int)array[i].MBAMIOJNGBD_ch);
             LENIIENHJJK.Add(data);
             time += 3;
         }

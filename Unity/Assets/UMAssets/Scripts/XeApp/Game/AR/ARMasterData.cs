@@ -162,7 +162,7 @@ namespace XeApp.Game.AR
 				// // RVA: 0xBBB3A4 Offset: 0xBBB3A4 VA: 0xBBB3A4
 				// internal void <Coroutine_Download>b__2() { }
 			// private PJKLMCGEJMK <am>5__2; // 0x20
-			// private JPAPJLIPNOK <req>5__3; // 0x24
+			// private JPAPJLIPNOK_RequestAssetList <req>5__3; // 0x24
 			// private string <src>5__4; // 0x28
 			// private bool <loop>5__5; // 0x2C
 			// private int <retryCount>5__6; // 0x30
@@ -320,13 +320,13 @@ namespace XeApp.Game.AR
 			LPMLJGGJGGK[] l = b.GMLFFMJMPCC;
 			for(int i = 0; i < l.Length; i++)
 			{
-				if(l[i].OPFGFINHFCE == name)
+				if(l[i].OPFGFINHFCE_name == name)
 				{
 					for(int j = 0; j < LIGPJAIDNOA.MHDFCBBFMOA.Length; j++)
 					{
 						if(LIGPJAIDNOA.MHDFCBBFMOA[j] == name)
 						{
-							if(LIGPJAIDNOA.INPAHCHFIHM[j] == l[i].IOIMHJAOKOO)
+							if(LIGPJAIDNOA.INPAHCHFIHM[j] == l[i].IOIMHJAOKOO_Hash)
 								return true;
 							else
 								return false;

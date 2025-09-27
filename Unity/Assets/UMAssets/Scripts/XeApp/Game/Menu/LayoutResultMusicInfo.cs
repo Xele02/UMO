@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GHLGEECLCMH g = new GHLGEECLCMH();
-			g.KHEKNNFCAOI_Init(viewResultData.LCKMBHDMPIP_SaveRecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
+			g.KHEKNNFCAOI_Init(viewResultData.LCKMBHDMPIP_RecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
 			PopupMusicRateListContentSetting s = new PopupMusicRateListContentSetting();
 			s.View = g;
 			s.WindowSize = SizeType.Large;

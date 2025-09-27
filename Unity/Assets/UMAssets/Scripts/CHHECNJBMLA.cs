@@ -78,12 +78,12 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x12BF370 Offset: 0x12BF370 VA: 0x12BF370 Slot: 27
-	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
+	public override int HLOGNJNGDJO_GetHelpId(int _OIPCCBHIKIA_index/* = 0*/)
 	{
 		IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
 		if(evDb != null)
 		{
-			return evDb.NGHKJOEDLIP_Settings.EJBGHLOOLBC_HelpIds[OIPCCBHIKIA];
+			return evDb.NGHKJOEDLIP_Settings.EJBGHLOOLBC_HelpIds[_OIPCCBHIKIA_index];
 		}
 		return 0;
 	}
@@ -819,7 +819,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 			if(num < 0)
 				num = 0;
 			EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(ticketId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(ticketId), num, null);
-            MDBEKHIHBJM m = JMLKAGOACAE[l[found].OIPCCBHIKIA_index]; // PKPLOGBIDIG
+            MDBEKHIHBJM m = JMLKAGOACAE[l[found].OIPCCBHIKIA_index]; // PKPLOGBIDIG_Prizes
 			ALIPBIMCAPN_EventBoxGacha.EHDCAEHLLKF savePrize = save.PKPLOGBIDIG_Prizes.Find((ALIPBIMCAPN_EventBoxGacha.EHDCAEHLLKF _GHPLINIACBB_x) =>
 			{
 				//0x12C6CD4
@@ -935,7 +935,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 		IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
 		if(evDb != null)
 		{
-            //ALIPBIMCAPN_EventBoxGacha.GLNFOMDKJJH save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[evDb.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
+            //ALIPBIMCAPN_EventBoxGacha.GLNFOMDKJJH save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[evDb.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
 			int res = 0;
 			for(int i = 0; i < JMLKAGOACAE.Count; i++)
 			{

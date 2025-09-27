@@ -47,9 +47,9 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			NHJLDENJKBE data = new NHJLDENJKBE();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
+			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM_typ;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

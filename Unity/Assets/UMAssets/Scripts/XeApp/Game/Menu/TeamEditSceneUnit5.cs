@@ -394,7 +394,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xFA2310 Offset: 0xFA2310 VA: 0xFA2310
-		//private bool IsDifferHomeDivaModel(JLKEOGLJNOD unitData) { }
+		//private bool IsDifferHomeDivaModel(JLKEOGLJNOD_TeamInfo unitData) { }
 
 		// RVA: 0xFA2804 Offset: 0xFA2804 VA: 0xFA2804 Slot: 25
 		protected override void OnTutorial()

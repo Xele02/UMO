@@ -175,15 +175,15 @@ namespace XeApp.Game.Menu
 			{
 				if (hp[i].DIJHLDAIBCA == searchId)
 				{
-					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE_name+" "+hp[i].PLALNIIBLOF_en+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND_close_at).ToLongDateString());
+					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE_name+" "+hp[i].PLALNIIBLOF_en+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD_open_at).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND_close_at).ToLongDateString());
 					//if(time >= hp[i].PDBPFJJCADD_open_at)
-					if(hp[i].PDBPFJJCADD > foundt || foundt == -1)
+					if(hp[i].PDBPFJJCADD_open_at > foundt || foundt == -1)
 					{
 						//if(hp[i].FDBNFFNFOND_close_at >= time)
 						{
 							//return hp[i].OBGBAOLONDD_UniqueId;
-							res = hp[i].OBGBAOLONDD;
-							foundt = hp[i].PDBPFJJCADD;
+							res = hp[i].OBGBAOLONDD_UniqueId;
+							foundt = hp[i].PDBPFJJCADD_open_at;
 						}
 					}
 				}

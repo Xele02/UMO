@@ -90,17 +90,17 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			JFFPEKOEINE data = new JFFPEKOEINE();
-			data.JCADAMLIOKK_Id = (int)array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
-			data.KINJOEIAHFK_StartTime = array[i].FNEIADJMHHO;
-			data.PCCFAKEOBIC_EndTime = array[i].KOMKKBDABJP;
+			data.JCADAMLIOKK_Id = (int)array[i].PPFNGGCBJKC_id;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF_en, 0);
+			data.KINJOEIAHFK_StartTime = array[i].FNEIADJMHHO_st;
+			data.PCCFAKEOBIC_EndTime = array[i].KOMKKBDABJP_end;
 			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
-			data.ELEPHBOKIGK_Limit = array[i].BFINGCJHOHI;
-			data.AEHCKNNGAKF_BonusMaxCount = array[i].OEOIHIIIMCK;
-			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndTime).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndTime).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK_Limit+" "+data.AEHCKNNGAKF_BonusMaxCount);
-			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
+			data.ELEPHBOKIGK_Limit = array[i].BFINGCJHOHI_cnt;
+			data.AEHCKNNGAKF_BonusMaxCount = array[i].OEOIHIIIMCK_add;
+			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK_StartTime).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartTime).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndTime).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndTime).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK_Limit+" "+data.AEHCKNNGAKF_BonusMaxCount);
+			for(int j = 0; j < array[i].EHDDADDKMFI_f_id.Length; j++)
 			{
-				data.BEPAMEEBPGI_SongIdByWeekday.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
+				data.BEPAMEEBPGI_SongIdByWeekday.Add(JCAGLPANMFC(array[i].EHDDADDKMFI_f_id[j]));
 				/*for(int k = 0; k < data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1].Count; k++)
 				{
 					UnityEngine.Debug.LogError(j+" "+data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1][k]);

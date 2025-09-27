@@ -438,7 +438,7 @@ namespace XeApp.Game.Menu
 				if(isCancel)
 					yield break;
 			}
-			//UnityEngine.Debug.LogError(view.OPKDAIMPJBH_ShopId+" "+view.AFKAGFOFAHM_ProductId+" "+view.GJGNOFAPFJD+" "+view.KIJAPOFAGPN_ItemFullId+" "+view.KAPMOPMDHJE_label);
+			//UnityEngine.Debug.LogError(view.OPKDAIMPJBH_ShopId+" "+view.AFKAGFOFAHM_ProductId+" "+view.GJGNOFAPFJD+" "+view.KIJAPOFAGPN_ItemId+" "+view.KAPMOPMDHJE_label);
 			//LAB_00c48f00
 			this.StartCoroutineWatched(Co_OnBuyItem(value, view));
 		}

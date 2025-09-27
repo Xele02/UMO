@@ -183,7 +183,7 @@ public class BBHNACPENDM_ServerSaveData
 	public const ulong ICEMOLCMHGG = 1;
 	private int BFACFIBJBPA_Crypted; // 0xDC
 	public long MCKEOKFMLAH_SaveId; // 0xE0
-	// private KIJECNFNNDB LAFGAPBDKML = new KIJECNFNNDB(); // 0xE8
+	// private KIJECNFNNDB_JsonWriter LAFGAPBDKML = new KIJECNFNNDB_JsonWriter(); // 0xE8
 	public List<KLFDBFMNLBL_ServerSaveBlock> MGJKEJHEBPO_Blocks; // 0xEC
 	private static Dictionary<ulong, FFECIIHJDJA_CreateBlockDelegate> BGEJFKHOMOC_CreateFuncs; // 0xC
 	public static readonly int FBFCCLFFIAF = 1; // 0x10
@@ -373,7 +373,7 @@ public class BBHNACPENDM_ServerSaveData
 	// /* GenericInstMethod :
 	// |
 	// |-RVA: 0x1AB5360 Offset: 0x1AB5360 VA: 0x1AB5360
-	// |-BBHNACPENDM.LBDOLHGDIEB<object>
+	// |-BBHNACPENDM_ServerSaveData.LBDOLHGDIEB<object>
 	// */
 
 	// // RVA: 0xF1C528 Offset: 0xF1C528 VA: 0xF1C528

@@ -1307,7 +1307,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32898 Offset: 0xB32898 VA: 0xB32898
-		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
+		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA_FriendInfo friendData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
 
 		// // RVA: 0xB32938 Offset: 0xB32938 VA: 0xB32938
 		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isFriend/* = false*/, bool isReward/* = false*/, SceneStatusParam.PageSave pageSave/* = SceneStatusParam.PageSave.Player*/, bool isDisableZoom/* = false*/)

@@ -277,7 +277,7 @@ public class KDLPEDBKMID
 			// public KDLPEDBKMID KIGBLACMODG; // 0x8
 			// public PJKLMCGEJMK CPHFEPHDJIB_ServerRequester; // 0xC
 			// RVA: 0xE84268 Offset: 0xE84268 VA: 0xE84268
-			// internal void EGDGJOPDNFF(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
+			// internal void EGDGJOPDNFF(JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL JGBPLIGAILE) { }
 		// private KDLPEDBKMID.<>c__DisplayClass44_1 LBLMCMHMNGC; // 0x18
 			// public int APGOAMNGFFF; // 0x8
 			// RVA: 0xE849D8 Offset: 0xE849D8 VA: 0xE849D8
@@ -536,7 +536,7 @@ public class KDLPEDBKMID
 					files.Add(NFKOAFFBHOL[i]);
 				}
 			}
-			KEODKEGFDLD_FreeMusicInfo fInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[_GHBPLHBNMBK_FreeMusicId - 1];
+			KEODKEGFDLD_FreeMusicInfo fInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[_GHBPLHBNMBK_FreeMusicId - 1];
 			str.SetFormat("mc/{0:D4}/sc.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fInfo.DLAEJOBELBH_MusicId).KKPAHLMJKIH_WavId);
 			if(!FileSystemProxy.FileExists(Application.persistentDataPath + "/data" + KPIAEBMBBPE_GetPathRelativeToDataDir(str.ToString())))
 				files.Add(str.ToString());

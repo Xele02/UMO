@@ -45,13 +45,13 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			KLKLEALABPN data = new KLKLEALABPN();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.INDDJNMPONH_type = (sbyte)array[i].GBJFNGCDKPM;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
+			data.INDDJNMPONH_type = (sbyte)array[i].GBJFNGCDKPM_typ;
 			data.NKCNHKHGJHN_TalkType = (int)array[i].CHOIMHCMAHG;
-			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
-			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
+			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
 			// UMO : Update all talk to work in current year
 			long prevStart = data.PDBPFJJCADD_open_at;
 			if(data.PDBPFJJCADD_open_at != 0)

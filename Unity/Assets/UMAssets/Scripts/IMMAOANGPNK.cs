@@ -421,9 +421,9 @@ public class IMMAOANGPNK
 				for (int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
-					info.OPFGFINHFCE_name = schedule_item[i].OPFGFINHFCE;
-					info.KBFOIECIADN_opened_at = schedule_item[i].KBFOIECIADN;
-					info.EGBOHDFBAPB_closed_at = schedule_item[i].EGBOHDFBAPB;
+					info.OPFGFINHFCE_name = schedule_item[i].OPFGFINHFCE_name;
+					info.KBFOIECIADN_opened_at = schedule_item[i].KBFOIECIADN_opened_at;
+					info.EGBOHDFBAPB_closed_at = schedule_item[i].EGBOHDFBAPB_closed_at;
 					// UMO Event
 					if(currentEvent != null && currentEvent.EnableBlock(info.OPFGFINHFCE_name))
 					//if(info.OPFGFINHFCE_name.Contains("april"))
@@ -493,8 +493,8 @@ public class IMMAOANGPNK
 	{
 		
 	// public static readonly IMMAOANGPNK.<>c <>9; // 0x0
-	// public static Predicate<CBBJHPBGBAJ.JBCFNCNGLPM> <>9__42_0; // 0x4
-	// public static Predicate<CBBJHPBGBAJ.JBCFNCNGLPM> <>9__44_0; // 0x8
+	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM> <>9__42_0; // 0x4
+	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM> <>9__44_0; // 0x8
 	// public static Comparison<IMMAOANGPNK.MPFFINOMILP> <>9__44_1; // 0xC
 		MGFBEKNMJOA.Clear();
 		
@@ -509,7 +509,7 @@ public class IMMAOANGPNK
 			MPFFINOMILP obj = null;
 			for(int i = 0; i < b.Length; i++)
 			{
-				int val = b[i].BEBJKJKBOGH;
+				int val = b[i].BEBJKJKBOGH_date;
 				if(_JHNMKKNEENE_Time >= val)
 				{
 					if(obj != null)
@@ -520,16 +520,16 @@ public class IMMAOANGPNK
 						}
 					}
 					obj = new MPFFINOMILP();
-					obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+					obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
 					obj.PDBPFJJCADD_open_at = val;
-					obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
+					obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
 				}
 				else
 				{
 					MPFFINOMILP obj2 = new MPFFINOMILP();
-					obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+					obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
 					obj2.PDBPFJJCADD_open_at = val;
-					obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
+					obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
 					MGFBEKNMJOA.Add(obj2);
 				}
 			}

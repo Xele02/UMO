@@ -94,7 +94,7 @@ public abstract class CACGCMBKHDI_Request
 
     // [ConditionalAttribute] // RVA: 0x6C3D70 Offset: 0x6C3D70 VA: 0x6C3D70
     // // RVA: 0x18F25D0 Offset: 0x18F25D0 VA: 0x18F25D0
-    // public void FGNOINLMJLN(string _INDDJNMPO_INDDJNMPONH_typeNH_Type, string HEKJBOPBDIA) { }
+    // public void FGNOINLMJLN(string _INDDJNMPONH_type, string HEKJBOPBDIA) { }
 
     // // RVA: 0x18F272C Offset: 0x18F272C VA: 0x18F272C Slot: 10
     // public virtual bool CPIIKMBBKAI() { }

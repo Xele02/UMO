@@ -335,8 +335,8 @@ public class NKGJPJPHLIF
 	private IEnumerator PFKIHFCAPNC_Coroutine_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _JGKOLBLPMPG_OnFail, bool MKFJAGGLEFL, bool _FBBNPFFEJBN_Force)
 	{
 		// public NKGJPJPHLIF KIGBLACMODG; // 0x10
-		// private HHEIANIHCNH FFEEIONIBFF; // 0x24
-		// private PKNOGNLPHAE CNEMMHHJKNG; // 0x28
+		// private HHEIANIHCNH_RequestPlayerStatus FFEEIONIBFF; // 0x24
+		// private PKNOGNLPHAE_CreatePlayer CNEMMHHJKNG; // 0x28
 		//0xC1B698
 
 		//UMO
@@ -692,9 +692,9 @@ public class NKGJPJPHLIF
 	public void LLMEJNALPJD(bool _FBBNPFFEJBN_Force, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail, bool LFIEDDHNLBE)
 	{
 		// // RVA: 0xC1A8F0 Offset: 0xC1A8F0 VA: 0xC1A8F0
-		// internal void OOLONOGEELA(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void OOLONOGEELA(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 		// // RVA:  Offset: 0xC1AA34 VA: 0xC1AA34
-		// internal void HPCLPPCILDO(CACGCMBKHDI JIPCHHHLOMM) { }
+		// internal void HPCLPPCILDO(CACGCMBKHDI_Request JIPCHHHLOMM) { }
 
 		if((IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() - GOEPLCHCCBC) <= 1799 && !_FBBNPFFEJBN_Force)
 		{

@@ -68,10 +68,10 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		{
 			MLMDKHBFOJM data = new MLMDKHBFOJM();
 			data.FBGGEFFJJHB_xor = k;
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.EKLIPGELKCL_Rarity = array[i].EKLIPGELKCL;
-			int[] l1 = array[i].AIHOJKFNEEN;
-			uint[] l2 = array[i].BFINGCJHOHI;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.EKLIPGELKCL_Rarity = array[i].EKLIPGELKCL_Rarity;
+			int[] l1 = array[i].AIHOJKFNEEN_itm;
+			uint[] l2 = array[i].BFINGCJHOHI_cnt;
 			data.AHGCGHAAHOO_ItemIdCrypted = new int[l1.Length];
 			data.OGEBLOHMGAM_Crypted = new int[l2.Length];
 			for(int j = 0; j < l1.Length; j++)
@@ -93,7 +93,7 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	// RVA: 0x183367C Offset: 0x183367C VA: 0x183367C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HHPEMHHCKBE_Compo.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HHPEMHHCKBE_Compo.IIEMACPEEBJ_Deserialize");
 		return 0;
 	}
 }

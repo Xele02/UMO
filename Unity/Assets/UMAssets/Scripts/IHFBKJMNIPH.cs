@@ -13,7 +13,7 @@ public abstract class IHFBKJMNIPH<ActionClass> where ActionClass : CACGCMBKHDI_R
 	///* GenericInstMethod :
 	//|
 	//|-RVA: 0x26C1ADC Offset: 0x26C1ADC VA: 0x26C1ADC
-	//|-IHFBKJMNIPH<object>.LJDCONBNPBM
+	//|-IHFBKJMNIPH<object>.LJDCONBNPBM_Initialize
 	//*/
 
 	//// RVA: -1 Offset: -1 Slot: 5
@@ -73,8 +73,8 @@ public abstract class IHFBKJMNIPH<ActionClass> where ActionClass : CACGCMBKHDI_R
 	///* GenericInstMethod :
 	//|
 	//|-RVA: 0x26C1B5C Offset: 0x26C1B5C VA: 0x26C1B5C
-	//|-IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>.MEGIEMBDGBE
-	//|-IHFBKJMNIPH<LNGMNNNJBJP>.MEGIEMBDGBE
-	//|-IHFBKJMNIPH<object>.MEGIEMBDGBE
+	//|-IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>.MEGIEMBDGBE_Coroutine
+	//|-IHFBKJMNIPH<LNGMNNNJBJP>.MEGIEMBDGBE_Coroutine
+	//|-IHFBKJMNIPH<object>.MEGIEMBDGBE_Coroutine
 	//*/
 }

@@ -25,7 +25,7 @@ public class IAPDFOPPGND
 	}
 
 	// // RVA: 0x120EDCC Offset: 0x120EDCC VA: 0x120EDCC
-	// public void KHEKNNFCAOI_Init(JNMFKOHFAFB FIAMPPHKOOF) { }
+	// public void KHEKNNFCAOI_Init(JNMFKOHFAFB_PublicStatus FIAMPPHKOOF) { }
 
 	// // RVA: 0x120F0BC Offset: 0x120F0BC VA: 0x120F0BC
 	public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI_ForceAll)

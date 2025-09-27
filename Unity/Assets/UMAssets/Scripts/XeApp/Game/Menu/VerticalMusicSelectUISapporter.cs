@@ -71,10 +71,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADA0C0 Offset: 0xADA0C0 VA: 0xADA0C0
-		// private void CrateQuestList(IKDICBBFBMI eventCtrl) { }
+		// private void CrateQuestList(IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// // RVA: 0xADA168 Offset: 0xADA168 VA: 0xADA168
-		// private void CreateSnsList(IKDICBBFBMI eventCtrl) { }
+		// private void CreateSnsList(IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// // RVA: 0xADA1F4 Offset: 0xADA1F4 VA: 0xADA1F4
 		// public bool IsNewStory() { }

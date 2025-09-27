@@ -11,7 +11,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	public class KJPIDJOMODA_ValkyrieInfo
 	{
 		public short[] NLBLLLLBHOP_StatusCrypted = new short[2]; // 0x8
-		[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
+		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
 		public short PPEGAKEIEGM_Enabled; // 0xC
 		public short IMGMAKOGIFP_CryptedPilotId; // 0xE
 		public short IFGMKBKBFJI_ValkyrieIdCrypted; // 0x10
@@ -19,24 +19,24 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public short HNJNKCPDKAL_CryptedModelId; // 0x14
 		public short KIDNEIEHOMN_AtkCrypted; // 0x16
 		public short CDDLNKAPCFB_HitCrypted; // 0x18
-		[UMOMember(ReaderMember = "JPFMJHLCMJL", Desc = "Serie")]
+		[UMOMember(ReaderMember = "JPFMJHLCMJL_sa", Desc = "Serie")]
 		public sbyte AIHCEGFANAM_SerieAttr; // 0x1A
 		[UMOMember(ReaderMember = "GMELAKNFKMG", Desc = "Bitfield for each enabled form")]
 		public sbyte CMAJHIMEIAC; // 0x1B
 		public short AENGKBBMPGM_SkillIdCrypted; // 0x1C
 		public int BFFGMECIOIA_Crypted; // 0x20
 
-		[UMOMember(ReaderMember = "PPFNGGCBJKC", Desc = "Valkyrie id", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", Desc = "Valkyrie id", CryptedInMemory = true)]
 		public short GPPEFLKGGGJ_ValkyrieId { get { return (short)(IFGMKBKBFJI_ValkyrieIdCrypted ^ FBGGEFFJJHB_xor); } set { IFGMKBKBFJI_ValkyrieIdCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA72D8 PCDKIHHDCHI 0x1BA6D54 LANEIFNCIAA
-		[UMOMember(ReaderMember = "HDEBAGHEIKD", Desc = "Pilot id", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "HDEBAGHEIKD_plt", Desc = "Pilot id", CryptedInMemory = true)]
 		public short PFGJJLGLPAC_PilotId { get { return (short)(IMGMAKOGIFP_CryptedPilotId ^ FBGGEFFJJHB_xor); } set { IMGMAKOGIFP_CryptedPilotId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7530 PODJOBBGCNC 0x1BA7178 AMDGADPHLEF
-		[UMOMember(ReaderMember = "FLNJLKKAFPB", Desc = "Model id", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "FLNJLKKAFPB_mdl", Desc = "Model id", CryptedInMemory = true)]
 		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB_xor); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7544 LHPKEPPBKPF 0x1BA6D64 OIOEEEDODJA
-		[UMOMember(ReaderMember = "FCBJFKGDINH", Desc = "Battle attack stat", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "FCBJFKGDINH_atk", Desc = "Battle attack stat", CryptedInMemory = true)]
 		public short KINFGHHNFCF_Atk { get { return (short)(KIDNEIEHOMN_AtkCrypted ^ FBGGEFFJJHB_xor); } set { KIDNEIEHOMN_AtkCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
-		[UMOMember(ReaderMember = "NONBCCLGBAO", Desc = "Battle hit stat", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "NONBCCLGBAO_hit", Desc = "Battle hit stat", CryptedInMemory = true)]
 		public short NONBCCLGBAO_hit { get { return (short)(CDDLNKAPCFB_HitCrypted ^ FBGGEFFJJHB_xor); } set { CDDLNKAPCFB_HitCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
-		[UMOMember(ReaderMember = "BMIJDLBGFNP", Desc = "Battle skill id", CryptedInMemory = true)]
+		[UMOMember(ReaderMember = "BMIJDLBGFNP_skill", Desc = "Battle skill id", CryptedInMemory = true)]
 		public short BMIJDLBGFNP_skill { get { return (short)(AENGKBBMPGM_SkillIdCrypted ^ FBGGEFFJJHB_xor); } } //0x1BA75A0 NIHGHMNFOAO
 		[UMOMember(ReaderMember = "BFCBGDOICCO", Desc = "Version when enabled in deco room", CryptedInMemory = true)]
 		public int MIHAHCEANII { get { return BFFGMECIOIA_Crypted ^ FBGGEFFJJHB_xor; } set { BFFGMECIOIA_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
@@ -123,14 +123,14 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 			return false;
 		for(int i = 0; i < array.Length; i++)
 		{
-			CDENCMNHNGA_table[i].GPPEFLKGGGJ_ValkyrieId = (short)(array[i].PPFNGGCBJKC);
-			CDENCMNHNGA_table[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB);
-			CDENCMNHNGA_table[i].AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
-			CDENCMNHNGA_table[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD);
-			CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled = (short)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			CDENCMNHNGA_table[i].KINFGHHNFCF_Atk = (short)(array[i].FCBJFKGDINH);
-			CDENCMNHNGA_table[i].NONBCCLGBAO_hit = (short)(array[i].NONBCCLGBAO);
-			CDENCMNHNGA_table[i].AENGKBBMPGM_SkillIdCrypted = (short)(array[i].BMIJDLBGFNP ^ CDENCMNHNGA_table[i].FBGGEFFJJHB_xor);
+			CDENCMNHNGA_table[i].GPPEFLKGGGJ_ValkyrieId = (short)(array[i].PPFNGGCBJKC_id);
+			CDENCMNHNGA_table[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB_mdl);
+			CDENCMNHNGA_table[i].AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL_sa;
+			CDENCMNHNGA_table[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD_plt);
+			CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled = (short)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
+			CDENCMNHNGA_table[i].KINFGHHNFCF_Atk = (short)(array[i].FCBJFKGDINH_atk);
+			CDENCMNHNGA_table[i].NONBCCLGBAO_hit = (short)(array[i].NONBCCLGBAO_hit);
+			CDENCMNHNGA_table[i].AENGKBBMPGM_SkillIdCrypted = (short)(array[i].BMIJDLBGFNP_skill ^ CDENCMNHNGA_table[i].FBGGEFFJJHB_xor);
 			CDENCMNHNGA_table[i].MIHAHCEANII = (short)(array[i].BFCBGDOICCO);
 			CDENCMNHNGA_table[i].CMAJHIMEIAC = 0;
 			for (int j = 0; j < 3; j++)

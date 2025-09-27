@@ -19,18 +19,18 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 		public int EHOIENNDEDH_IdCrypted; // 0x8
 		public int EAJCFBCHIFB_RarityCrypted; // 0xC
 		public int ICKOHEDLEFP_ValueCrypted; // 0x10
-		public int LLEMDLLGIAH; // 0x14
+		public int LLEMDLLGIAH_divaCrypted; // 0x14
 		public int MKENMKMJFKP_TypeCrypted; // 0x18
 
-		[UMOMember(ReaderMember = "PPFNGGCBJKC", CryptedInMemory = true, Desc = "Item id")]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", CryptedInMemory = true, Desc = "Item id")]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC414 DEMEPMAEJOO 0xFEBDC8 HIGKAIDMOKN
-		[UMOMember(ReaderMember = "FBFLDFMFFOH", CryptedInMemory = true, Desc = "Item rarity")]
+		[UMOMember(ReaderMember = "FBFLDFMFFOH_rar", CryptedInMemory = true, Desc = "Item rarity")]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC4AC OEEHBGECGKL 0xFEBE64 GHLMHLJJBIG
-		[UMOMember(ReaderMember = "JBGEEPFKIGG", CryptedInMemory = true, Desc = "Point applied when used to upgrade costume.")]
+		[UMOMember(ReaderMember = "JBGEEPFKIGG_val", CryptedInMemory = true, Desc = "Point applied when used to upgrade costume.")]
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC544 OLOCMINKGON 0xFEBF00 ABAFHIBFKCE
-		[UMOMember(ReaderMember = "FDBOPFEOENF", CryptedInMemory = true, Desc = "Could be level or diva id")]
-		public int FDBOPFEOENF_diva { get { return LLEMDLLGIAH ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG 0xFEBF9C GHECGDMEBFF
-		[UMOMember(ReaderMember = "GBJFNGCDKPM", CryptedInMemory = true, Desc = "Only cat 2 ?")]
+		[UMOMember(ReaderMember = "FDBOPFEOENF_diva", CryptedInMemory = true, Desc = "Could be level or diva id")]
+		public int FDBOPFEOENF_diva { get { return LLEMDLLGIAH_divaCrypted ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH_divaCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG 0xFEBF9C GHECGDMEBFF
+		[UMOMember(ReaderMember = "GBJFNGCDKPM_typ", CryptedInMemory = true, Desc = "Only cat 2 ?")]
 		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC37C GHAILOLPHPF 0xFEC038 BACGOKIGMBC
 
 		//// RVA: 0xFEC1C0 Offset: 0xFEC1C0 VA: 0xFEC1C0
@@ -97,11 +97,11 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			IBEMFIAFIKH_ItemInfo data = new IBEMFIAFIKH_ItemInfo();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.FDBOPFEOENF_diva = array[i].FDBOPFEOENF;
-			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.FDBOPFEOENF_diva = array[i].FDBOPFEOENF_diva;
+			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM_typ;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

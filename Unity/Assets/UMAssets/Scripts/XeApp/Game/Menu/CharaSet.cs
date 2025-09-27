@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		//public void Release() { }
 
 		//// RVA: 0x10AD85C Offset: 0x10AD85C VA: 0x10AD85C
-		//public void SetDiva(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, UnitWindowConstant.OperationMode opMode, EEDKAACNBBG musicData, bool isGoDiva) { }
+		//public void SetDiva(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, UnitWindowConstant.OperationMode opMode, EEDKAACNBBG_MusicData musicData, bool isGoDiva) { }
 
 		//// RVA: 0x10AFA18 Offset: 0x10AFA18 VA: 0x10AFA18
 		//public void SetShowMultiIcon(bool isShow) { }

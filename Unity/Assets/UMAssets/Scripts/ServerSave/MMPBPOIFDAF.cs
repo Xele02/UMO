@@ -163,7 +163,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x196E8D8 Offset: 0x196E8D8 VA: 0x196E8D8
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, MMPBPOIFDAF.PMKOFEIONEG _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, MMPBPOIFDAF_Scene.PMKOFEIONEG _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
 
 		// // RVA: 0x196AE2C Offset: 0x196AE2C VA: 0x196AE2C
 		public void IDBDAPPJOND()
@@ -207,9 +207,9 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x1972140 Offset: 0x1972140 VA: 0x1972140
-		public void DDLEICINOHK_Unlock(long BEBJKJKBOGH, int _JKONPJKILCH_inventory_id)
+		public void DDLEICINOHK_Unlock(long _BEBJKJKBOGH_date, int _JKONPJKILCH_inventory_id)
 		{
-			BEBJKJKBOGH_date = BEBJKJKBOGH;
+			BEBJKJKBOGH_date = _BEBJKJKBOGH_date;
 			JPIPENJGGDD_NumBoard = 0;
 			IELENGDJPHF_Ulk = 0;
 			MJBODMOLOBC_luck = 0;
@@ -227,9 +227,9 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x1972278 Offset: 0x1972278 VA: 0x1972278
-		public void DJNPIJPHKKJ(long BEBJKJKBOGH, int _JKONPJKILCH_inventory_id)
+		public void DJNPIJPHKKJ(long _BEBJKJKBOGH_date, int _JKONPJKILCH_inventory_id)
 		{
-			BEBJKJKBOGH_date = BEBJKJKBOGH;
+			BEBJKJKBOGH_date = _BEBJKJKBOGH_date;
 			JPIPENJGGDD_NumBoard = 1;
 			IELENGDJPHF_Ulk = 1;
 			MJBODMOLOBC_luck = 0;

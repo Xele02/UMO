@@ -39,11 +39,11 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			NGKJHBDEELB data = new NGKJHBDEELB();
-			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-			data.KNHOMNONOEB_AssetId = array[i].KNHOMNONOEB;
-			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+			data.KNHOMNONOEB_AssetId = array[i].KNHOMNONOEB_AssetId;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, 0);
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

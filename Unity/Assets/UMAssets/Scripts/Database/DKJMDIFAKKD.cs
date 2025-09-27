@@ -98,7 +98,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x198FDE0 Offset: 0x198FDE0 VA: 0x198FDE0
-	//public DKJMDIFAKKD.EBGPAPPHBAH NHJNPOEKDKK(string _OPFGFINHFCE_name, long _JHNMKKNEENE_Time, int _KAPMOPMDHJE_label) { }
+	//public DKJMDIFAKKD_VcItem.EBGPAPPHBAH NHJNPOEKDKK(string _OPFGFINHFCE_name, long _JHNMKKNEENE_Time, int _KAPMOPMDHJE_label) { }
 
 	// RVA: 0x198FF90 Offset: 0x198FF90 VA: 0x198FF90
 	public DKJMDIFAKKD_VcItem()
@@ -124,24 +124,24 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				EBGPAPPHBAH data = new EBGPAPPHBAH();
-				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-				data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateVcItemName(i, array[i].OPFGFINHFCE);
-				data.OriginalName = array[i].OPFGFINHFCE;
-				data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF;
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+				data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateVcItemName(i, array[i].OPFGFINHFCE_name);
+				data.OriginalName = array[i].OPFGFINHFCE_name;
+				data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF_CurrencyId;
 				data.GLHKICCPGKJ_platform_product_id = array[i].PDHGIGPAEBG.Split(new char[1] { ',' });
-				data.HMFFHLPNMPH_count = array[i].BFINGCJHOHI;
-				data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
-				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-				data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB;
-				data.HPGNBPIBAOM_IsBeginner = array[i].HPGNBPIBAOM != 0;
+				data.HMFFHLPNMPH_count = array[i].BFINGCJHOHI_cnt;
+				data.INDDJNMPONH_type = array[i].GBJFNGCDKPM_typ;
+				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+				data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB_closed_at;
+				data.HPGNBPIBAOM_IsBeginner = array[i].HPGNBPIBAOM_IsBeginner != 0;
 				data.AFHPLBPHEGA = array[i].AFHPLBPHEGA != 0;
-				data.HEOLEHDFLJO_ico = array[i].HEOLEHDFLJO;
-				data.KLMPFGOCBHC_description = DatabaseTextConverter.TranslateVcItemDesc(i, array[i].KLMPFGOCBHC);
-				data.KGOFMDMDFCJ_BonusId = array[i].KGOFMDMDFCJ;
-				data.NNIIINKFDBG_BonusCount = array[i].NNIIINKFDBG;
+				data.HEOLEHDFLJO_ico = array[i].HEOLEHDFLJO_ico;
+				data.KLMPFGOCBHC_description = DatabaseTextConverter.TranslateVcItemDesc(i, array[i].KLMPFGOCBHC_description);
+				data.KGOFMDMDFCJ_BonusId = array[i].KGOFMDMDFCJ_BonusId;
+				data.NNIIINKFDBG_BonusCount = array[i].NNIIINKFDBG_BonusCount;
 				data.IHCLFMKAJND = array[i].IHCLFMKAJND;
-				data.DLCGAMHADEN_Label = array[i].DLCGAMHADEN;
-				data.EILKGEADKGH_Order = array[i].EILKGEADKGH;
+				data.DLCGAMHADEN_Label = array[i].DLCGAMHADEN_Label;
+				data.EILKGEADKGH_Order = array[i].EILKGEADKGH_Order;
 				//UnityEngine.Debug.LogError("1 "+data.OPFGFINHFCE_name+" "+data.DLCGAMHADEN_Label+" "+string.Join(" ", data.KGOFMDMDFCJ_BonusId.ToList()));
 				CDENCMNHNGA_table.Add(data);
 			}
@@ -151,11 +151,11 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				BCEMHEAKBCC data = new BCEMHEAKBCC();
-				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF;
-				data.KAPMOPMDHJE_label = array[i].KAPMOPMDHJE;
-				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-				data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB;
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF_en;
+				data.KAPMOPMDHJE_label = array[i].KAPMOPMDHJE_label;
+				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+				data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB_closed_at;
 				//UnityEngine.Debug.LogError("2 "+data.PPFNGGCBJKC_id+" "+data.PPEGAKEIEGM_Enabled+" "+data.KAPMOPMDHJE_label+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_closed_at).ToLongDateString());
 				DateTime now = DateTime.Now;
 				if(data.PPFNGGCBJKC_id == 2)
@@ -240,7 +240,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x199081C Offset: 0x199081C VA: 0x199081C Slot: 10
-	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
 		return true;
 	}

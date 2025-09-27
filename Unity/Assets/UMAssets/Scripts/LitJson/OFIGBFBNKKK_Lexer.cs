@@ -38,7 +38,7 @@ internal class OFIGBFBNKKK_Lexer
 	// // RVA: 0x1DCE574 Offset: 0x1DCE574 VA: 0x1DCE574
 	// public bool CELGLBHMGFD() { }
 	// // RVA: 0x1DCE57C Offset: 0x1DCE57C VA: 0x1DCE57C
-	// public void EBLEFGNMNAK(bool NANNGLGOFKH) { }
+	// public void EBLEFGNMNAK(bool _NANNGLGOFKH_value) { }
 	public bool KCAALEDBLEN_AllowComments
 	{
 		get { return POOCLDIALDJ_allow_comments; }
@@ -48,7 +48,7 @@ internal class OFIGBFBNKKK_Lexer
 	// // RVA: 0x1DCE584 Offset: 0x1DCE584 VA: 0x1DCE584
 	// public bool IOHEILNOGLK() { }
 	// // RVA: 0x1DCE58C Offset: 0x1DCE58C VA: 0x1DCE58C
-	// public void NJIGIFMIGLB(bool NANNGLGOFKH) { }
+	// public void NJIGIFMIGLB(bool _NANNGLGOFKH_value) { }
 	public bool MOGFDBHPGMG_AllowSingleQuotedStrings
 	{
 		get { return EAJKFKCMFEM_allow_single_quoted_strings; }

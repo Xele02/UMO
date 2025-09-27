@@ -41,19 +41,19 @@ namespace XeApp.Game.AR
 		[UMOClass(ReaderClass = "BMPAGNNCFEC")]
 		public class Data
 		{
-			[UMOMember(ReaderMember = "IKPIDCFOFEA")]
+			[UMOMember(ReaderMember = "IKPIDCFOFEA_no")]
 			public int no; // 0x8
-			[UMOMember(ReaderMember = "PLALNIIBLOF")]
+			[UMOMember(ReaderMember = "PLALNIIBLOF_en")]
 			public int enable; // 0xC
 			[UMOMember(ReaderMember = "FILGCAEHBAC")]
 			public string markerId = ""; // 0x10
-			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
+			[UMOMember(ReaderMember = "DNJLJMKKDNA_EventId")]
 			public string eventId = ""; // 0x14
 			[UMOMember(ReaderMember = "BFGNMDGOEID")]
 			public ARDivaPatternId pattern = ARDivaPatternId.None; // 0x18
-			[UMOMember(ReaderMember = "DIPKCALNIII")]
+			[UMOMember(ReaderMember = "DIPKCALNIII_diva_id")]
 			public int divaId; // 0x1C
-			[UMOMember(ReaderMember = "BEEAIAAJOHD")]
+			[UMOMember(ReaderMember = "BEEAIAAJOHD_CostumeId")]
 			public int costumeId; // 0x20
 			[UMOMember(ReaderMember = "FPLEBCKDCBE|MDLMHEDHPHA|CDKLKKKGAMB")]
 			public Vector3 position = Vector3.zero; // 0x24
@@ -133,8 +133,8 @@ namespace XeApp.Game.AR
 				for(int i = 0; i < array.Length; i++)
 				{
 					CueSheetData d = new CueSheetData();
-					d.no = array[i].IKPIDCFOFEA;
-					d.enable = array[i].PLALNIIBLOF;
+					d.no = array[i].IKPIDCFOFEA_no;
+					d.enable = array[i].PLALNIIBLOF_en;
 					d.markerNo = array[i].HIEKBDMHKLP;
 					d.cueSheetId = array[i].BLOIKEAGFED;
 					d.soundStart = array[i].IOCAJMALMLJ;
@@ -155,13 +155,13 @@ namespace XeApp.Game.AR
 				for(int i = 0; i < array.Length; i++)
 				{
 					Data nd = new Data();
-					nd.no = array[i].IKPIDCFOFEA;
-					nd.enable = array[i].PLALNIIBLOF;
+					nd.no = array[i].IKPIDCFOFEA_no;
+					nd.enable = array[i].PLALNIIBLOF_en;
 					nd.markerId = array[i].FILGCAEHBAC;
-					nd.eventId = array[i].DNJLJMKKDNA.ToLower();
+					nd.eventId = array[i].DNJLJMKKDNA_EventId.ToLower();
 					nd.pattern = (ARDivaPatternId)array[i].BFGNMDGOEID;
-					nd.divaId = array[i].DIPKCALNIII;
-					nd.costumeId = array[i].BEEAIAAJOHD;
+					nd.divaId = array[i].DIPKCALNIII_diva_id;
+					nd.costumeId = array[i].BEEAIAAJOHD_CostumeId;
 					float.TryParse(array[i].FPLEBCKDCBE, out nd.position.x);
 					float.TryParse(array[i].MDLMHEDHPHA, out nd.position.y);
 					float.TryParse(array[i].CDKLKKKGAMB/*pos_z*/, out nd.position.z);

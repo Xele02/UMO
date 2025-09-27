@@ -879,7 +879,7 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// public override bool GNGPNMHGDGE() { }
 
 	// // RVA: 0x1128C10 Offset: 0x1128C10 VA: 0x1128C10
-	// public OEIJEFBBJBD.AODDNOGBFLP ILJMDJCGMPA(int DFFPLNMAKKD) { }
+	// public OEIJEFBBJBD_EventSp.AODDNOGBFLP ILJMDJCGMPA(int DFFPLNMAKKD) { }
 
 	// // RVA: 0x1128DB4 Offset: 0x1128DB4 VA: 0x1128DB4
 	public void CIHGOMNFPNJ_IncDivaTouchCount()

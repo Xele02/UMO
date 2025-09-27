@@ -180,7 +180,7 @@ public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x14ED278 Offset: 0x14ED278 VA: 0x14ED278
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, FJGNPNFLHPH.JIALCLGJPKL _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, FJGNPNFLHPH_EventCollection.JIALCLGJPKL _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 	}
 
 	private const int ECFEMKGFDCE = 2;
@@ -192,7 +192,7 @@ public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_ServerSaveBlock
 	public const int HLFODAFJJPK = 9999;
 	public long AFNJCFEKFDD_Dirty; // 0x28
 	public List<JIALCLGJPKL> FBCJICEPLED = new List<JIALCLGJPKL>(); // 0x30
-	public List<IKCGAJKCPFN> NNMPGOAGEOL = new List<IKCGAJKCPFN>(); // 0x34
+	public List<IKCGAJKCPFN> NNMPGOAGEOL_quests = new List<IKCGAJKCPFN>(); // 0x34
 
 	public override bool DMICHEJIAJL { get { return true; } } // 0x14F0124 NFKFOODCJJB
 

@@ -42,7 +42,7 @@ public class KIJECNFNNDB_JsonWriter
 	// // RVA: 0x1A00114 Offset: 0x1A00114 VA: 0x1A00114
 	// public int NFLBKBBHCEK() { }
 	// // RVA: 0x1A0011C Offset: 0x1A0011C VA: 0x1A0011C
-	// public void EKMBOPHIGKI(int NANNGLGOFKH) { }
+	// public void EKMBOPHIGKI(int _NANNGLGOFKH_value) { }
 	public int HACADAOCICG_IndentValue
 	{
 		get { return LKLPPIPLNOK_indent_value; }
@@ -56,7 +56,7 @@ public class KIJECNFNNDB_JsonWriter
 	// // RVA: 0x1A00148 Offset: 0x1A00148 VA: 0x1A00148
 	// public bool LJEINOMHCIO() { }
 	// // RVA: 0x1A00150 Offset: 0x1A00150 VA: 0x1A00150
-	// public void HBHPGCJDHNJ(bool NANNGLGOFKH) { }
+	// public void HBHPGCJDHNJ(bool _NANNGLGOFKH_value) { }
 	public bool GALFODHMEOL_PrettyPrint
 	{
 		get { return ALHHKDHPEPC_pretty_print; }
@@ -73,7 +73,7 @@ public class KIJECNFNNDB_JsonWriter
 	// // RVA: 0x1A00160 Offset: 0x1A00160 VA: 0x1A00160
 	// public bool DBGNLAOMAJN() { }
 	// // RVA: 0x1A00168 Offset: 0x1A00168 VA: 0x1A00168
-	// public void DNMHCBKDJCK(bool NANNGLGOFKH) { }
+	// public void DNMHCBKDJCK(bool _NANNGLGOFKH_value) { }
 	public bool GEJEDJNKBOF_Validate
 	{
 		get { return CNIIGLNMFGC_validate; }

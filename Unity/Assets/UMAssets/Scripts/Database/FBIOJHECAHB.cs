@@ -9,37 +9,37 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	[UMOClass(ReaderClass = "BCCFAPDAFOE")]
 	public class GIEHECAKIFC_StoryInfo
 	{
-		[UMOMember(ReaderMember = "PPFNGGCBJKC")]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id")]
 		public int PPFNGGCBJKC_id; // 0x8
-		[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
+		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
 		public int PPEGAKEIEGM_Enabled; // 0xC
 		[UMOMember(ReaderMember = "BCKCEEMNKCH")]
 		public int OAFJONPIFGM_EventId; // 0x10
-		[UMOMember(ReaderMember = "BDJMFDKLHPM")]
+		[UMOMember(ReaderMember = "BDJMFDKLHPM_s_id")]
 		public byte MGBDCFIKBPM_Serie; // 0x14
-		[UMOMember(ReaderMember = "PDBPFJJCADD", ReaderDisplay = "Date", Display = "Date")]
+		[UMOMember(ReaderMember = "PDBPFJJCADD_open_at", ReaderDisplay = "Date", Display = "Date")]
 		public long PDBPFJJCADD_open_at; // 0x18
-		[UMOMember(ReaderMember = "FDBNFFNFOND", ReaderDisplay = "Date", Display = "Date")]
+		[UMOMember(ReaderMember = "FDBNFFNFOND_close_at", ReaderDisplay = "Date", Display = "Date")]
 		public long FDBNFFNFOND_close_at; // 0x20
 	}
 
 	[UMOClass(ReaderClass = "MCCFOKHKJIC")]
 	public class ENDMMNNOAIL_StoryPartInfo
 	{
-		[UMOMember(ReaderMember = "PPFNGGCBJKC")]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id")]
 		public int PPFNGGCBJKC_id; // 0x8
-		[UMOMember(ReaderMember = "PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
+		[UMOMember(ReaderMember = "PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
 		public int PPEGAKEIEGM_Enabled; // 0xC
 		[UMOMember(ReaderMember = "BCKCEEMNKCH")]
 		public int OAFJONPIFGM_EventId; // 0x10
 		[UMOMember(ReaderMember = "PIDAAPMCAML")]
 		public NMIGMCJHAIE JDJNNJEJDAJ_Type; // 0x14
-		[UMOMember(ReaderMember = "OIAAFFHGBBD")]
+		[UMOMember(ReaderMember = "OIAAFFHGBBD_AdvId")]
 		public int LOHMKCPKBON_AdvId; // 0x18
-		[UMOMember(ReaderMember = "ODNOJKHHEOP")]
+		[UMOMember(ReaderMember = "ODNOJKHHEOP_c_id")]
 		public int CHOFDPDFPDC_ConfigValue; // 0x1C
-		[UMOMember(ReaderMember = "DFMOIKJOCGH")]
-		public int PFGAKEDKOPD_UnlockSpCost; // 0x20
+		[UMOMember(ReaderMember = "DFMOIKJOCGH")] // UnlockSpCost
+		public int PFGAKEDKOPD_UnlockCost; // 0x20
 	}
 
 	public class CHCCGPMJFEL
@@ -100,12 +100,12 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				GIEHECAKIFC_StoryInfo data = new GIEHECAKIFC_StoryInfo();
-				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-				data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+				data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, 0);
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
-				data.MGBDCFIKBPM_Serie = (byte)array[i].BDJMFDKLHPM;
-				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-				data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
+				data.MGBDCFIKBPM_Serie = (byte)array[i].BDJMFDKLHPM_s_id;
+				data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+				data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
 				ILEJEJKNOBN_StoryList.Add(data);
 			}
 		}
@@ -114,13 +114,13 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			for(int i = 0; i < array.Length; i++)
 			{
 				ENDMMNNOAIL_StoryPartInfo data = new ENDMMNNOAIL_StoryPartInfo();
-				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF;
+				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF_en;
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.JDJNNJEJDAJ_Type = (NMIGMCJHAIE)array[i].PIDAAPMCAML;
-				data.LOHMKCPKBON_AdvId = array[i].OIAAFFHGBBD;
-				data.CHOFDPDFPDC_ConfigValue = array[i].ODNOJKHHEOP;
-				data.PFGAKEDKOPD_UnlockSpCost = array[i].DFMOIKJOCGH;
+				data.LOHMKCPKBON_AdvId = array[i].OIAAFFHGBBD_AdvId;
+				data.CHOFDPDFPDC_ConfigValue = array[i].ODNOJKHHEOP_c_id;
+				data.PFGAKEDKOPD_UnlockCost = array[i].DFMOIKJOCGH;
 				JPIGOBGOMON_StoryPartsList.Add(data);
 			}
 		}

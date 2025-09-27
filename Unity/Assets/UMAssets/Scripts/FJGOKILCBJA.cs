@@ -22,7 +22,7 @@ public class FJGOKILCBJA
 	public int PIMKKONMBOG_ItemIdCrypted; // 0x44
 	public int ALJGJMBFKHE_ItemCountCrypted; // 0x48
 	public int AIDNHPGEHPM_MaxCountCrypted; // 0x4C
-	public int CKNFCDCKFDE_Crypted; // 0x50
+	public int CKNFCDCKFDE_CountCrypted; // 0x50
 	public int LDLHJMBGGGJ_Crypted; // 0x54
 	public int PAFAKOPJLEE_Crypted; // 0x58
 	public int KEHENBMEFJN_Crypted; // 0x5C
@@ -36,7 +36,7 @@ public class FJGOKILCBJA
 	public int JPJMHLNOIAJ_ItemCostFullId { get { return NGGNFHPOMOO_Crypted ^ 0x137418ff; } set { NGGNFHPOMOO_Crypted = value ^ 0x137418ff; } } //0x117FC78 CFPIIDJJCHE 0x117FC8C PFKNCLBDBGH
 	public int DKEPCPPCIKA_Price { get { return EKAPPBELKDA_Crypted ^ 0x374147ee; } set { EKAPPBELKDA_Crypted = value ^ 0x374147ee; } } //0x117FCA0 HPLCJFNDOKC 0x117FCB4 HNIDHAHIBLF
 	public int ELEPHBOKIGK_Limit { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x247ef; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x247ef; } } //0x117FCC8 IIJFLONJAFL 0x117FCDC LHNFGPIGCNE
-	public int JLENMGOCHDG_Count { get { return CKNFCDCKFDE_Crypted ^ 0x377247ef; } set { CKNFCDCKFDE_Crypted = value ^ 0x377247ef; } } //0x117FCF0 OLJEIELPFMC 0x117FD04 JMNGGBCNLJN
+	public int JLENMGOCHDG_Count { get { return CKNFCDCKFDE_CountCrypted ^ 0x377247ef; } set { CKNFCDCKFDE_CountCrypted = value ^ 0x377247ef; } } //0x117FCF0 OLJEIELPFMC 0x117FD04 JMNGGBCNLJN
 	public int PBNCFGDPJKG_DecoItemSet { get { return KEHENBMEFJN_Crypted ^ 0x141871f; } set { KEHENBMEFJN_Crypted = value ^ 0x141871f; } } //0x117FD18 LCKOMDHNEBF 0x117FD2C LPODAPEMLEA
 	public int NFBLLKHBMEK { get { return LDLHJMBGGGJ_Crypted ^ 0x93a97a; } set { LDLHJMBGGGJ_Crypted = value ^ 0x93a97a; } } //0x117FD40 NCBIANHKGMG 0x117FD54 OFKJMDODHLO
 

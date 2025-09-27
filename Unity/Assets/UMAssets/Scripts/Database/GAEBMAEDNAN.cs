@@ -65,9 +65,9 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 			if(array.Length == 1)
 			{
 				KFFELNOEBPB data = new KFFELNOEBPB();
-				data.PPFNGGCBJKC_id = (int)array[0].PPFNGGCBJKC;
-				data.FBFLDFMFFOH_rar = (int)array[0].FBFLDFMFFOH;
-				data.JBGEEPFKIGG_val = (int)array[0].JBGEEPFKIGG;
+				data.PPFNGGCBJKC_id = (int)array[0].PPFNGGCBJKC_id;
+				data.FBFLDFMFFOH_rar = (int)array[0].FBFLDFMFFOH_rar;
+				data.JBGEEPFKIGG_val = (int)array[0].JBGEEPFKIGG_val;
 				CDENCMNHNGA_table.Add(data);
 			}
 			return true;
@@ -81,7 +81,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 		// PPFNGGCBJKC_id = id
 		// FBFLDFMFFOH_rar = rar
 		// JBGEEPFKIGG_val = val
-		TodoLogger.LogError(TodoLogger.DbJson, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 

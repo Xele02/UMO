@@ -1255,13 +1255,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD0D34 Offset: 0xAD0D34 VA: 0xAD0D34
-		// protected void OnClickEventRankingButton(IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI eventCtrl, int selectDiva = 0) { }
+		// protected void OnClickEventRankingButton(IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI_EventBase eventCtrl, int selectDiva = 0) { }
 
 		// // RVA: 0xAD0E84 Offset: 0xAD0E84 VA: 0xAD0E84
-		// protected void OnClickEventRewardButton(MonoBehaviour owner, IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI eventCtrl) { }
+		// protected void OnClickEventRewardButton(MonoBehaviour owner, IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// // RVA: 0xAD1110 Offset: 0xAD1110 VA: 0xAD1110
-		// protected void OnClickStoryButton(IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI eventCtrl) { }
+		// protected void OnClickStoryButton(IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// // RVA: 0xAD128C Offset: 0xAD128C VA: 0xAD128C
 		// protected void OnClickMissionButton() { }
@@ -1284,7 +1284,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD1ABC Offset: 0xAD1ABC VA: 0xAD1ABC
-		// protected void OnClickEventDetailButton(IKDICBBFBMI scoreEventCtrl) { }
+		// protected void OnClickEventDetailButton(IKDICBBFBMI_EventBase scoreEventCtrl) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6C5C Offset: 0x6F6C5C VA: 0x6F6C5C
 		// // RVA: 0xAC3990 Offset: 0xAC3990 VA: 0xAC3990
@@ -1814,7 +1814,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD2568 Offset: 0xAD2568 VA: 0xAD2568
-		// protected void SetupHelp(ref VerticalMusicSelectSceneBase.EventHelpInfo helpInfo, IKDICBBFBMI eventCtrl) { }
+		// protected void SetupHelp(ref VerticalMusicSelectSceneBase.EventHelpInfo helpInfo, IKDICBBFBMI_EventBase eventCtrl) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6CD4 Offset: 0x6F6CD4 VA: 0x6F6CD4
 		// // RVA: 0xAD28EC Offset: 0xAD28EC VA: 0xAD28EC

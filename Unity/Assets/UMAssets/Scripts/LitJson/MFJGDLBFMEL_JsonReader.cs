@@ -44,7 +44,7 @@ public class MFJGDLBFMEL_JsonReader
 	// RVA: 0x131369C Offset: 0x131369C VA: 0x131369C
 	//public bool CELGLBHMGFD() { }
 	// RVA: 0x13136C8 Offset: 0x13136C8 VA: 0x13136C8
-	//public void EBLEFGNMNAK(bool NANNGLGOFKH) { }
+	//public void EBLEFGNMNAK(bool _NANNGLGOFKH_value) { }
 	public bool KCAALEDBLEN_AllowComments {
 		get { return IMIGLMKHEMM_lexer.KCAALEDBLEN_AllowComments; }
 		set { IMIGLMKHEMM_lexer.KCAALEDBLEN_AllowComments = value; }
@@ -52,7 +52,7 @@ public class MFJGDLBFMEL_JsonReader
 	// RVA: 0x13136FC Offset: 0x13136FC VA: 0x13136FC
 	//public bool IOHEILNOGLK() { }
 	// RVA: 0x1313728 Offset: 0x1313728 VA: 0x1313728
-	//public void NJIGIFMIGLB(bool NANNGLGOFKH) { }
+	//public void NJIGIFMIGLB(bool _NANNGLGOFKH_value) { }
 	public bool MOGFDBHPGMG_AllowSingleQuotedStrings {
 		get { return IMIGLMKHEMM_lexer.MOGFDBHPGMG_AllowSingleQuotedStrings; }
 		set { IMIGLMKHEMM_lexer.MOGFDBHPGMG_AllowSingleQuotedStrings = value; }
@@ -64,7 +64,7 @@ public class MFJGDLBFMEL_JsonReader
 	//public bool AAPFEAAPCLJ() { }
 	public bool PBDIDOBJELC_EndOfJson { get { return NPNHFHOJLCC_end_of_json; } }
 	// RVA: 0x131376C Offset: 0x131376C VA: 0x131376C
-	//public LIMGNGJNDAK HEBLJBNFHGA() { }
+	//public LIMGNGJNDAK_JsonToken HEBLJBNFHGA() { }
 	public LIMGNGJNDAK_JsonToken FDPPJPGNCMK_Token { get { return JCOGNKFNDEB_token; } }
 	// RVA: 0x1313774 Offset: 0x1313774 VA: 0x1313774
 	//public object CCPMBFFCDMJ() { }

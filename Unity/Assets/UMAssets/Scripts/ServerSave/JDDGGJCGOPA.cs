@@ -379,7 +379,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x1C288EC Offset: 0x1C288EC VA: 0x1C288EC
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, JDDGGJCGOPA.EHFMCGGNPIJ _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 
 		// // RVA: 0x1C267CC Offset: 0x1C267CC VA: 0x1C267CC
 		public void IFGGJEPHIAN()
@@ -603,14 +603,14 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C2F164 Offset: 0x1C2F164 VA: 0x1C2F164
-	public static void NPGCCNCHDLF(int FAENAMBEGMD, out bool _GIKLNODJKFK_IsLine6, out int _AKNELONELJK_difficulty, out int _OIPCCBHIKIA_index)
+	public static void NPGCCNCHDLF(int _FAENAMBEGMD_reward, out bool _GIKLNODJKFK_IsLine6, out int _AKNELONELJK_difficulty, out int _OIPCCBHIKIA_index)
 	{
-		_GIKLNODJKFK_IsLine6 = (FAENAMBEGMD & 0xffff0000U) == 0x10000;
-		_AKNELONELJK_difficulty = (int)((FAENAMBEGMD & 0x0000ff00U) >> 8);
-		_OIPCCBHIKIA_index = FAENAMBEGMD & 0xff;
+		_GIKLNODJKFK_IsLine6 = (_FAENAMBEGMD_reward & 0xffff0000U) == 0x10000;
+		_AKNELONELJK_difficulty = (int)((_FAENAMBEGMD_reward & 0x0000ff00U) >> 8);
+		_OIPCCBHIKIA_index = _FAENAMBEGMD_reward & 0xff;
 
 		// Debug
-		if (IEFAHENNHAH(_GIKLNODJKFK_IsLine6, _AKNELONELJK_difficulty, _OIPCCBHIKIA_index) != FAENAMBEGMD)
+		if (IEFAHENNHAH(_GIKLNODJKFK_IsLine6, _AKNELONELJK_difficulty, _OIPCCBHIKIA_index) != _FAENAMBEGMD_reward)
 			UnityEngine.Debug.LogError("Error converting music id");
 	}
 }

@@ -16,7 +16,7 @@ public class KEHOJEJMGLJ
 
 	private enum LIFANPDHNHE
 	{
-		FKPEAGGKNLC_Start_0 = 0,
+		FKPEAGGKNLC_0_Start = 0,
 		MJKPBANHCOE = 1,
 		KBMHDBKJKEO = 2,
 		KHLKPDFNABB = 3,
@@ -243,14 +243,14 @@ public class KEHOJEJMGLJ
 
 			// private KEHOJEJMGLJ.<>c__DisplayClass75_1 LBLMCMHMNGC; // 0x18
 				// public Dictionary<string, int> FAOOOLDDBBB_LocalFilesStatus; // 0x8
-				// public JPAPJLIPNOK COJNCNGHIJC_Req; // 0xC
+				// public JPAPJLIPNOK_RequestAssetList COJNCNGHIJC_Req; // 0xC
 				// public KEHOJEJMGLJ.<>c__DisplayClass75_0 PGFMIBMJBHD; // 0x10
 				// RVA: 0xE8CE74 Offset: 0xE8CE74 VA: 0xE8CE74
 				// internal void IPGJJANJOMJ() { }
 				// // RVA: 0xE8D3C0 Offset: 0xE8D3C0 VA: 0xE8D3C0
 				// internal void EGDGJOPDNFF() { }
 				// // RVA: 0xE8D424 Offset: 0xE8D424 VA: 0xE8D424
-				// internal void FKJIINPOGKK(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
+				// internal void FKJIINPOGKK(JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL JGBPLIGAILE) { }
 				// // RVA: 0xE8D8B0 Offset: 0xE8D8B0 VA: 0xE8D8B0
 				// internal void BCMEPPIPGIB() { }
 
@@ -940,7 +940,7 @@ public class KEHOJEJMGLJ
 								{
 									if(fileKeepStatus != HODOGPOKOOJ.KMBJEEFHJOH.MCDCNJCJCAB)
 									{
-										ICCMKHKNAMJ.Add(afinfo);
+										ICCMKHKNAMJ_ToDldList.Add(afinfo);
 										//LAB_00e8a99c
 										continue;
 									}
@@ -978,7 +978,7 @@ public class KEHOJEJMGLJ
 						if(h != afinfo.POEGMFKLFJG_hash_value)
 						{
 							UnityEngine.Debug.Log("Wrong hash for "+localPath+" "+h+" != "+afinfo.POEGMFKLFJG_hash_value);
-							ICCMKHKNAMJ.Add(afinfo);
+							ICCMKHKNAMJ_ToDldList.Add(afinfo);
 						}
 					}
 #endif

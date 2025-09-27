@@ -29,7 +29,7 @@ public class NGJOPPIGCPM_ResultData
 	public int NOCGJFJNADE_ComboCrypted = FBGGEFFJJHB_xor; // 0x34
 	public sbyte APMFDBAODEM_IsBetterScoreCrypted = JFOFMKBJBBE_False; // 0x38
 	public sbyte AOBEEDHDHOL_IsBetterComboCrypted = JFOFMKBJBBE_False; // 0x39
-	public JDDGGJCGOPA_RecordMusic LCKMBHDMPIP_SaveRecordMusic; // 0x3C
+	public JDDGGJCGOPA_RecordMusic LCKMBHDMPIP_RecordMusic; // 0x3C
 	public JDDGGJCGOPA_RecordMusic OEELDFNNLKK_SaveRecordMusic2; // 0x40
 	public int ABCAPIDDPID_PrevUtaRateCrypted = FBGGEFFJJHB_xor; // 0x44
 	public int HKEGJMFNLFM_PrevScoreRatingRankingCrypted = FBGGEFFJJHB_xor; // 0x48
@@ -94,9 +94,9 @@ public class NGJOPPIGCPM_ResultData
 		{
 			DHJAFJKALCA_ForcedMusicId = forcedPrism.IOPCBBNHJIP_ForcedMusicId;
 		}
-		LCKMBHDMPIP_SaveRecordMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
+		LCKMBHDMPIP_RecordMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
 		OEELDFNNLKK_SaveRecordMusic2 = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic;
-		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_SaveRecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
+		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		int savedCombo = mInfo1.PDNJGJNGPNJ_MaxCombo;
 		int savedScore = mInfo1.ODEHJGPDFCL_Score;
@@ -202,7 +202,7 @@ public class NGJOPPIGCPM_ResultData
 		PMCGHPOGLGM_IsSkip = JIBFGLODGHN_EnableLiveSkip;
 		BPGDOBCMDBP_CategoryId = HMONFKMAFDD.DEPGBBJMFED_CategoryId;
 		GHLGEECLCMH data2 = new GHLGEECLCMH();
-		data2.KHEKNNFCAOI_Init(GHBPLHBNMBK_FreeMusicId, LCKMBHDMPIP_SaveRecordMusic, OEELDFNNLKK_SaveRecordMusic2);
+		data2.KHEKNNFCAOI_Init(GHBPLHBNMBK_FreeMusicId, LCKMBHDMPIP_RecordMusic, OEELDFNNLKK_SaveRecordMusic2);
 		data2.GLAHMLIFAPB(GHBPLHBNMBK_FreeMusicId, 0);
 		JLBJIIBGCOE_RankState = data2.AGKAOEEFAAH_GetRankState();
 		HIBKLIFIBKA_RankNum = data2.LGPGIGPHJJB_GetRankNum();

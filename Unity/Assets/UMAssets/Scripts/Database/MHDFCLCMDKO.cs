@@ -76,7 +76,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 		//	EDLACELKJIK_LiveSkill = LNKKMBCDPHH_l_s
 		//	NJOPIPNGANO_CS = AKOJJJLPCKA_c_s
 		//	ADMMEMNGKEN_Avo = DFOIEJOKDKJ_avo
-		TodoLogger.LogError(TodoLogger.DbJson, "Energy IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Energy IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 
@@ -87,12 +87,12 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			CJLENGHPIDH_EnemyInfo data = new CJLENGHPIDH_EnemyInfo();
-			data.EJNIMIAPJFJ_Id = (int)array[i].PPFNGGCBJKC;
-			data.EAHPLCJMPHD_PId = (int)array[i].HANMDEBPBHG;
-			data.EELBHDJJJHH_Plt = (int)array[i].HDEBAGHEIKD;
-			data.EDLACELKJIK_LiveSkill = (int)array[i].LNKKMBCDPHH;
-			data.NJOPIPNGANO_CS = (int)array[i].AKOJJJLPCKA;
-			data.ADMMEMNGKEN_Avo = (int)array[i].DFOIEJOKDKJ;
+			data.EJNIMIAPJFJ_Id = (int)array[i].PPFNGGCBJKC_id;
+			data.EAHPLCJMPHD_PId = (int)array[i].HANMDEBPBHG_pic;
+			data.EELBHDJJJHH_Plt = (int)array[i].HDEBAGHEIKD_plt;
+			data.EDLACELKJIK_LiveSkill = (int)array[i].LNKKMBCDPHH_l_s;
+			data.NJOPIPNGANO_CS = (int)array[i].AKOJJJLPCKA_c_s;
+			data.ADMMEMNGKEN_Avo = (int)array[i].DFOIEJOKDKJ_avo;
 			CKADCLJDCJK_EnemyList.Add(data);
 		}
 		return true;

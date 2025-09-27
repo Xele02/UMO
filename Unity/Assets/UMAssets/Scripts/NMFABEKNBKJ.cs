@@ -36,7 +36,7 @@ public class NMFABEKNBKJ
 
 	public static NMFABEKNBKJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 	public int HBAFMHEBNDP { get; private set; } // 0xC DJEKENHJEOE DAJMGNFAEEG PPFBDNBNDDB
-	public bool PLOOEECNHFB { get; private set; } // 0x10 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
+	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x10 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
 	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM ODAMFOMFIPC ELGNDAPOEPK
 
 	// // RVA: 0x1CAB7E0 Offset: 0x1CAB7E0 VA: 0x1CAB7E0
@@ -47,7 +47,7 @@ public class NMFABEKNBKJ
     {
 		HHCJCDFCLOB = this;
 		HBAFMHEBNDP = -1;
-		PLOOEECNHFB = false;
+		PLOOEECNHFB_IsDone = false;
 		ECCHBMAGKLF = false;
     }
 
@@ -108,7 +108,7 @@ public class NMFABEKNBKJ
 				}));
 			}
 		}
-		PLOOEECNHFB = true;
+		PLOOEECNHFB_IsDone = true;
 		if (PONEMLJPAOE != null)
 			PONEMLJPAOE();
 		if (_CNJANCCFBIL_Cb != null)
@@ -153,7 +153,7 @@ public class NMFABEKNBKJ
 					SakashoAPICallContext OIDFKCIECJN = SakashoFCMPushNotification.AcceptPushNotification(FCMTokenReceiver.fcmToken, BAHANNNJCGC, (SakashoError _DOGDHKIEBJA_error) =>
 					{
 						//0x1CACED0
-						//DOGDHKIEBJA.ResponseBodyJSON;
+						//DOGDHKIEBJA_error.ResponseBodyJSON;
 						MIIDBEIOBNK_Error = _DOGDHKIEBJA_error;
 						BEKAMBBOLBO_Done = true;
 					});
@@ -178,12 +178,12 @@ public class NMFABEKNBKJ
 	}
 
 	// // RVA: 0x1CABC20 Offset: 0x1CABC20 VA: 0x1CABC20
-	public void MDJNLBOLPNJ_BlockFCM(IMCBBOAFION CNJANCCFBIL)
+	public void MDJNLBOLPNJ_BlockFCM(IMCBBOAFION _CNJANCCFBIL_Cb)
 	{
 		N.a.StartCoroutineWatched(KGGHPICPOAA_Corotuine_GetFCMTokens(() =>
 		{
 			//0x1CACF48
-			N.a.StartCoroutineWatched(LODINIOCACA_Corotuine_Block_FCM(CNJANCCFBIL));
+			N.a.StartCoroutineWatched(LODINIOCACA_Corotuine_Block_FCM(_CNJANCCFBIL_Cb));
 		}));
 	}
 

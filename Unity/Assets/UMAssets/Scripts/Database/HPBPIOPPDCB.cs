@@ -78,27 +78,27 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 			{
 				long val2 = time * 0x96a + 2;
 				BJPLLEBHAGO_DivaInfo data = CDENCMNHNGA_table[i];
-				data.AHHJLDLAPAN_DivaId = (sbyte)array[i].PPFNGGCBJKC;
-				data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
-				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
-				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
-				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-				data.DOAJJALOKLI_Month = (sbyte)array[i].KLCMKLPIDDJ;
-				data.PKNONBBKCCP_Day = (sbyte)array[i].BAOFEFFADPD;
+				data.AHHJLDLAPAN_DivaId = (sbyte)array[i].PPFNGGCBJKC_id;
+				data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL_sa;
+				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH_body;
+				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB_ps;
+				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
+				data.DOAJJALOKLI_Month = (sbyte)array[i].KLCMKLPIDDJ_Month;
+				data.PKNONBBKCCP_Day = (sbyte)array[i].BAOFEFFADPD_day;
 				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN;
 				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
 
 				EPPOHFLMDBC_DivaStats data2 = new EPPOHFLMDBC_DivaStats();
 				// UMO, Restore old diva life stat (not end game 9999)
-				data2.DOMFHDPMCCO_Init(0, (int)val2, (short)/*array[i].DFEDIAPLFHN.BCCOMAODPJI*/oldDivaLevels[i], (short)array[i].DFEDIAPLFHN.LJELGFAFGAB, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN,
-						(short)array[i].DFEDIAPLFHN.MBAMIOJNGBD, (short)array[i].DFEDIAPLFHN.ADLGKMBIPCA, (short)array[i].DFEDIAPLFHN.PIPCIMIALOO);
+				data2.DOMFHDPMCCO_Init(0, (int)val2, (short)/*array[i].DFEDIAPLFHN.BCCOMAODPJI_hp*/oldDivaLevels[i], (short)array[i].DFEDIAPLFHN.LJELGFAFGAB_so, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN_vo,
+						(short)array[i].DFEDIAPLFHN.MBAMIOJNGBD_ch, (short)array[i].DFEDIAPLFHN.ADLGKMBIPCA_fd, (short)array[i].DFEDIAPLFHN.PIPCIMIALOO_sp);
 				data.CMCKNKKCNDK_status[0].ODDIHGPONFL_Copy(data2);
 				val2 = val2 * 0xb + 3;
-				AGNCAAFGLBE_MaxLevels = array[i].DFEDIAPLFHN.OEOIHIIIMCK.Length / 2;
+				AGNCAAFGLBE_MaxLevels = array[i].DFEDIAPLFHN.OEOIHIIIMCK_add.Length / 2;
 				for(int k = 0, j = 1; j <= AGNCAAFGLBE_MaxLevels; j++, k+=2)
 				{
 					data2.ANAJIAENLNB_lv = j;
-					data2.ANIJHEBLMGB_AddStat((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k+1]);
+					data2.ANIJHEBLMGB_AddStat((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k+1]);
 					data.CMCKNKKCNDK_status[j].FBGGEFFJJHB_xor = (int)val2;
 					data.CMCKNKKCNDK_status[j].ODDIHGPONFL_Copy(data2);
 					val2 = val2 * 0xb;

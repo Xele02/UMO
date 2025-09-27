@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 			int found = -1;
 			for(int i = 0; i < list.Length; i++)
 			{
-				if (list[i].OBGBAOLONDD == uniqueId)
+				if (list[i].OBGBAOLONDD_UniqueId == uniqueId)
 				{
 					found = i;
 					break;
@@ -39,7 +39,7 @@ namespace XeApp.Game.Common
 							VeiwOptionHelpContentData data = new VeiwOptionHelpContentData();
 							data.contentName = DatabaseTextConverter.TranslateHelpName(found, i, list[found].EBEMOEPADJB[i].OPFGFINHFCE_name);
 							data.contentType = VeiwOptionHelpContentData.ContentType.Help;
-							data.helpId = list[found].EBEMOEPADJB[i].EJBGHLOOLBC;
+							data.helpId = list[found].EBEMOEPADJB[i].EJBGHLOOLBC_HelpIds;
 							helps.Add(data);
 						}
 					}
@@ -90,12 +90,12 @@ namespace XeApp.Game.Common
 				DPGPEALHJOB h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories[i];
 				if (h.PLALNIIBLOF_en == 2)
 				{
-					if(t >= h.PDBPFJJCADD)
+					if(t >= h.PDBPFJJCADD_open_at)
 					{
-						if(h.FDBNFFNFOND/*_CloseAt*/ >= t || XeSys.Utility.GetLocalDateTime(h.PDBPFJJCADD).Year > 2024) // Umo update, help will stop in 2029, allow all that was runnin after game close to be always enabled
+						if(h.FDBNFFNFOND_close_at/*_CloseAt*/ >= t || XeSys.Utility.GetLocalDateTime(h.PDBPFJJCADD_open_at).Year > 2024) // Umo update, help will stop in 2029, allow all that was runnin after game close to be always enabled
 						{
 							VeiwOptionHelpCategoryData data = new VeiwOptionHelpCategoryData();
-							data.Init(h.OBGBAOLONDD);
+							data.Init(h.OBGBAOLONDD_UniqueId);
 							if (!data.isContainHelp && !data.isContainWiki)
 							{
 								continue;

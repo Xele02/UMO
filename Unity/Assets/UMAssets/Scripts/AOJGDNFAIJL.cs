@@ -105,7 +105,7 @@ public class AOJGDNFAIJL_PrismData
                 {
                     ENCKALOAAMB_SelectedDivaIds[0] = OOEPMEDAJNJ_TeamSave.AIPJAKIFMPN_dv1;
                     ENCKALOAAMB_SelectedDivaIds[1] = OOEPMEDAJNJ_TeamSave.JMAGFEENOED_dv2;
-                    ENCKALOAAMB_SelectedDivaIds[2] = OOEPMEDAJNJ_TeamSave.LFHILMNKGCB_Diva3Id;
+                    ENCKALOAAMB_SelectedDivaIds[2] = OOEPMEDAJNJ_TeamSave.LFHILMNKGCB_dv3;
                     ENCKALOAAMB_SelectedDivaIds[3] = OOEPMEDAJNJ_TeamSave.OLKOJOACIBD_dv4;
                     ENCKALOAAMB_SelectedDivaIds[4] = OOEPMEDAJNJ_TeamSave.INBGAKAAJPB_dv5;
 
@@ -566,7 +566,7 @@ public class AOJGDNFAIJL_PrismData
 			{
 				OOEPMEDAJNJ_TeamSave.AIPJAKIFMPN_dv1 = ENCKALOAAMB_SelectedDivaIds[0];
 				OOEPMEDAJNJ_TeamSave.JMAGFEENOED_dv2 = ENCKALOAAMB_SelectedDivaIds[1];
-				OOEPMEDAJNJ_TeamSave.LFHILMNKGCB_Diva3Id = ENCKALOAAMB_SelectedDivaIds[2];
+				OOEPMEDAJNJ_TeamSave.LFHILMNKGCB_dv3 = ENCKALOAAMB_SelectedDivaIds[2];
 				OOEPMEDAJNJ_TeamSave.OLKOJOACIBD_dv4 = ENCKALOAAMB_SelectedDivaIds[3];
 				OOEPMEDAJNJ_TeamSave.INBGAKAAJPB_dv5 = ENCKALOAAMB_SelectedDivaIds[4];
 

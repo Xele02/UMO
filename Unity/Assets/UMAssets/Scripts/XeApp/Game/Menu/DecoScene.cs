@@ -1736,10 +1736,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC61BE0 Offset: 0xC61BE0 VA: 0xC61BE0
-		//private DecorationDecorator.DecoratorType GetDecorationType(NDBFKHKMMCE.ANMODBDBNPK.DBAMIACJODJ itemCategory) { }
+		//private DecorationDecorator.DecoratorType GetDecorationType(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ itemCategory) { }
 
 		//// RVA: 0xC61C0C Offset: 0xC61C0C VA: 0xC61C0C
-		//private NDBFKHKMMCE.ANMODBDBNPK.DBAMIACJODJ GetItemCategory(DecorationDecorator.DecoratorType decoratorType) { }
+		//private NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ GetItemCategory(DecorationDecorator.DecoratorType decoratorType) { }
 
 		//// RVA: 0xC5FEC8 Offset: 0xC5FEC8 VA: 0xC5FEC8
 		private List<List<KDKFHGHGFEK>> CreateCategoryItemLists(DecorationDecorator.DecoratorType type, int charaId/* = -1*/)

@@ -240,23 +240,23 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			OPGDJANLKBM_RateInfo data = new OPGDJANLKBM_RateInfo();
-			data.BFOLFCOBBJD_RateId = (int)array[i].INJIPPBFMIG;
+			data.BFOLFCOBBJD_RateId = (int)array[i].INJIPPBFMIG_r_id;
 			{
-				uint[] array2 = array[i].EHKJFNAABMC;
+				uint[] array2 = array[i].EHKJFNAABMC_rat;
 				for(int j = 0; j < array2.Length; j++)
 				{
 					data.ADKDHKMPMHP_rate[j] = (int)array2[j];
 				}
 			}
 			{
-				uint[] array2 = array[i].BFINGCJHOHI;
+				uint[] array2 = array[i].BFINGCJHOHI_cnt;
 				for (int j = 0; j < array2.Length; j++)
 				{
 					data.HMFFHLPNMPH_count[j] = (int)array2[j];
 				}
 			}
 			{
-				uint[] array2 = array[i].DOOGFEGEKLG;
+				uint[] array2 = array[i].DOOGFEGEKLG_max;
 				for (int j = 0; j < array2.Length; j++)
 				{
 					data.DOOGFEGEKLG_max[j] = (int)array2[j];
@@ -281,8 +281,8 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			HNJKJCDDIMG_SetInfo data = new HNJKJCDDIMG_SetInfo();
-			data.LIHEBNPAIFI_SId = (int)array[i].BDJMFDKLHPM;
-			uint[] array2 = array[i].AIHOJKFNEEN;
+			data.LIHEBNPAIFI_SId = (int)array[i].BDJMFDKLHPM_s_id;
+			uint[] array2 = array[i].AIHOJKFNEEN_itm;
 			for(int j = 0; j < array2.Length; j++)
 			{
 				data.OEFHMMJFEKC_SetItemId(j, (int)array2[j]);
@@ -304,9 +304,9 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			OPGDJANLKBM_RateInfo data = new OPGDJANLKBM_RateInfo();
-			data.BFOLFCOBBJD_RateId = (int)array[i].INJIPPBFMIG;
+			data.BFOLFCOBBJD_RateId = (int)array[i].INJIPPBFMIG_r_id;
 			{
-				uint[] array2 = array[i].EHKJFNAABMC;
+				uint[] array2 = array[i].EHKJFNAABMC_rat;
 				for (int j = 0; j < array2.Length; j++)
 				{
 					data.ADKDHKMPMHP_rate[j] = (int)array2[j];
@@ -315,7 +315,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				}
 			}
 			{
-				uint[] array2 = array[i].DOOGFEGEKLG;
+				uint[] array2 = array[i].DOOGFEGEKLG_max;
 				for (int j = 0; j < array2.Length; j++)
 				{
 					data.DOOGFEGEKLG_max[j] = (int)array2[j];
@@ -339,8 +339,8 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		for (int i = 0; i < array.Length; i++)
 		{
 			HNJKJCDDIMG_SetInfo data = new HNJKJCDDIMG_SetInfo();
-			data.LIHEBNPAIFI_SId = (int)array[i].BDJMFDKLHPM;
-			uint[] array2 = array[i].AIHOJKFNEEN;
+			data.LIHEBNPAIFI_SId = (int)array[i].BDJMFDKLHPM_s_id;
+			uint[] array2 = array[i].AIHOJKFNEEN_itm;
 			for (int j = 0; j < array2.Length; j++)
 			{
 				data.OEFHMMJFEKC_SetItemId(j, (int)array2[j]);

@@ -914,7 +914,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B22FC Offset: 0x14B22FC VA: 0x14B22FC
-		//public bool CanIntimacyDeco(JJOELIOGMKK viewIntimacyData, DecorationChara chara) { }
+		//public bool CanIntimacyDeco(JJOELIOGMKK_DivaIntimacyInfo viewIntimacyData, DecorationChara chara) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6A94 Offset: 0x6E6A94 VA: 0x6E6A94
 		//// RVA: 0x14B2194 Offset: 0x14B2194 VA: 0x14B2194

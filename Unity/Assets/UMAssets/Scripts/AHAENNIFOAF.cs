@@ -60,9 +60,9 @@ public static class AHAENNIFOAF
     }
 
 	// // RVA: 0x15C567C Offset: 0x15C567C VA: 0x15C567C
-	private static void KBIOJNKNKAE(string BDJEICCDKHB, ref int _DNJLJMKKDNA_EventId, ref int _MEBHCFJCKFE_LobbyId)
+	private static void KBIOJNKNKAE(string _BDJEICCDKHB_ThreadGroup, ref int _DNJLJMKKDNA_EventId, ref int _MEBHCFJCKFE_LobbyId)
 	{
-		string[] strs = BDJEICCDKHB.Split(new char[] { '_' });
+		string[] strs = _BDJEICCDKHB_ThreadGroup.Split(new char[] { '_' });
 		if (strs.Length < 3)
 			return;
 		int.TryParse(strs[0], out _DNJLJMKKDNA_EventId);
@@ -70,39 +70,39 @@ public static class AHAENNIFOAF
 	}
 
 	// // RVA: 0x15C579C Offset: 0x15C579C VA: 0x15C579C
-	public static void IANGEPFFHHM(string BDJEICCDKHB, ref string JECLCENDGIH, ref int GFOIDCMEHGL, ref int _DNJLJMKKDNA_EventId, ref int _MEBHCFJCKFE_LobbyId)
+	public static void IANGEPFFHHM(string _BDJEICCDKHB_ThreadGroup, ref string _JECLCENDGIH_ThreadType, ref int _GFOIDCMEHGL_RoomUserId, ref int _DNJLJMKKDNA_EventId, ref int _MEBHCFJCKFE_LobbyId)
 	{
-		if(BDJEICCDKHB.Contains("_main"))
+		if(_BDJEICCDKHB_ThreadGroup.Contains("_main"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9360;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9360;
 		}
-		else if(BDJEICCDKHB.Contains("_blog"))
+		else if(_BDJEICCDKHB_ThreadGroup.Contains("_blog"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9362;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9362;
 		}
-		else if(BDJEICCDKHB.Contains("_memo"))
+		else if(_BDJEICCDKHB_ThreadGroup.Contains("_memo"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9364;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9364;
 		}
-		else if(BDJEICCDKHB.Contains("_deco"))
+		else if(_BDJEICCDKHB_ThreadGroup.Contains("_deco"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9366;
-			int.TryParse(BDJEICCDKHB.Replace("_deco", ""), out GFOIDCMEHGL);
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9366;
+			int.TryParse(_BDJEICCDKHB_ThreadGroup.Replace("_deco", ""), out _GFOIDCMEHGL_RoomUserId);
 			return;
 		}
-		else if(BDJEICCDKHB.Contains("_cm_"))
+		else if(_BDJEICCDKHB_ThreadGroup.Contains("_cm_"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9368;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9368;
 		}
-		else if(BDJEICCDKHB.Contains("_cm"))
+		else if(_BDJEICCDKHB_ThreadGroup.Contains("_cm"))
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9368;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9368;
 		}
 		else
 		{
-			JECLCENDGIH = JpStringLiterals.StringLiteral_9370;
+			_JECLCENDGIH_ThreadType = JpStringLiterals.StringLiteral_9370;
 			return;
 		}
-		KBIOJNKNKAE(BDJEICCDKHB, ref _DNJLJMKKDNA_EventId, ref _MEBHCFJCKFE_LobbyId);
+		KBIOJNKNKAE(_BDJEICCDKHB_ThreadGroup, ref _DNJLJMKKDNA_EventId, ref _MEBHCFJCKFE_LobbyId);
 	}
 }

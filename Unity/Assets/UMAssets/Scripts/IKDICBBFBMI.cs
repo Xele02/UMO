@@ -920,7 +920,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFD6C Offset: 0x8DFD6C VA: 0x8DFD6C Slot: 63
-	// public virtual MusicSelectCDSelect.EventType CFLLOAEALGN() { }
+	// public virtual MusicSelectCDSelect.EventType CFLLOAEALGN_GetMusicEventType() { }
 
 	// // RVA: 0x8DFD74 Offset: 0x8DFD74 VA: 0x8DFD74 Slot: 64
 	public virtual int IBFAJICMLGF_GetJacketRibbonType()

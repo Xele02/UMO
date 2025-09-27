@@ -67,15 +67,15 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				CNLPPCFJEID_QuestInfo data = BEGCHDHHEKC_DailyQuests[i];
-				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
+				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
 				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ;
-				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
+				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
 				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP;
-				data.AKBHPFBDDOL_Val = (int)array[i].JIMJHIDEHNM;
-				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB;
+				data.AKBHPFBDDOL_Val = (int)array[i].JIMJHIDEHNM_ApCounter;
+				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB_rw;
 				data.HHIBBHFHENH_LinkQuestId = 0;
-				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG;
-				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO;
+				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
+				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO_st;
 				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM;
 				data.DEPGBBJMFED_CategoryId = data.PPFNGGCBJKC_id;
 			}
@@ -97,21 +97,21 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				CNLPPCFJEID_QuestInfo data = GPMKFMFEKLN_NormalQuests[i];
-				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
+				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
 				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ;
-				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
+				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
 				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP;
 				data.AKBHPFBDDOL_Val = 0;
-				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB;
-				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG;
-				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO;
+				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB_rw;
+				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
+				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO_st;
 				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM;
-				data.OAPCHMHAJID = array[i].HPGNBPIBAOM != 0;
-				data.DEPGBBJMFED_CategoryId = (int)array[i].DMEDKJPOLCH;
+				data.OAPCHMHAJID = array[i].HPGNBPIBAOM_IsBeginner != 0;
+				data.DEPGBBJMFED_CategoryId = (int)array[i].DMEDKJPOLCH_cat;
 				data.HDBFCIOCNPA_AchievementId = (int)array[i].ADOJHHMMNIN;
 				data.LMPPENOILPF = (int)array[i].ADCKKAFCIAC;
 				data.EKANGPODCEP_EventId = array[i].JMMEGKGCIIL;
-				if(JKAECBCNHAN_IsEnabled((int)array[i].IJEKNCDIIAE, data.INDDJNMPONH_type != 0 ? 2 : data.INDDJNMPONH_type, 0) != 2)
+				if(JKAECBCNHAN_IsEnabled((int)array[i].IJEKNCDIIAE_mver, data.INDDJNMPONH_type != 0 ? 2 : data.INDDJNMPONH_type, 0) != 2)
 				{
 					data.INDDJNMPONH_type = 0;
 				}
@@ -132,10 +132,10 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			LCKMNLOLDPD data = new LCKMNLOLDPD();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
 			data.GLCLFMGPMAN_ItemId = (int)array[i].CLDDAEMKHOG;
 			data.HMFFHLPNMPH_count = (int)array[i].PIMBMBIICMK;
-			data.BGFPPGPJONG_QuestKeyId = (int)array[i].LJNAKDMILMC;
+			data.BGFPPGPJONG_QuestKeyId = (int)array[i].LJNAKDMILMC_key;
 			data.APNMKLJMPMD_Type = (int)array[i].OILNNGPCLGD;
 			LFAAEPAAEMB.Add(data);
 		}
@@ -167,7 +167,7 @@ public class CNLPPCFJEID_QuestInfo
 	private long MABPKDKBJAG_CloseAtCrypted; // 0x38
 	private int HHPFFPINGAA_OrderCrypted; // 0x40
 	private int ELFADCBHPCD; // 0x44
-	private int EGCMPELNLKP; // 0x48
+	private int EGCMPELNLKP_EventIdCrypted; // 0x48
 	public bool OAPCHMHAJID; // 0x4C
 	public int HDBFCIOCNPA_AchievementId; // 0x50
 
@@ -184,7 +184,7 @@ public class CNLPPCFJEID_QuestInfo
 	public int LMPPENOILPF { get { return ELFADCBHPCD ^ FBGGEFFJJHB_xor; } set { ELFADCBHPCD = value ^ FBGGEFFJJHB_xor; } } //0x175CE38 JAOMCMFJPDJ 0x175CD7C LINHGODPPMB
 	public long KJBGCLPMLCG_OpenedAt { get { return IBCNABKLHHH_StartCrypted ^ FBGGEFFJJHB_xor; } set { IBCNABKLHHH_StartCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE48 IDLJOCDJJOC 0x175CD44 ODIEKGPKOAC
 	public long GJFPFFBAKGK_CloseAt { get { return MABPKDKBJAG_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { MABPKDKBJAG_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE60 KPBMCJKFEGN 0x175CD58 IEFCDGKGICA
-	public int EKANGPODCEP_EventId { get { return EGCMPELNLKP ^ FBGGEFFJJHB_xor; } set { EGCMPELNLKP = value ^ FBGGEFFJJHB_xor; } } //0x175CE78 EBLAFEMDFGD 0x175CD8C AHEFELNFBDM
+	public int EKANGPODCEP_EventId { get { return EGCMPELNLKP_EventIdCrypted ^ FBGGEFFJJHB_xor; } set { EGCMPELNLKP_EventIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE78 EBLAFEMDFGD 0x175CD8C AHEFELNFBDM
 
 	//// RVA: 0x175CC78 Offset: 0x175CC78 VA: 0x175CC78
 	public void LHPDDGIJKNB_Reset(int _PPFNGGCBJKC_id, int KNEFBLHBDBG)

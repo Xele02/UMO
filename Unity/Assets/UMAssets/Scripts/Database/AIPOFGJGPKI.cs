@@ -73,10 +73,10 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			KBLBMGDILAI data = new KBLBMGDILAI();
-			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND;
+			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
+			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, 0);
+			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
+			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
 			data.BMFACNFNCKC = array[i].BMFACNFNCKC;
 			data.MFKKADJIHHK = array[i].MFKKADJIHHK;
 			CDENCMNHNGA_table.Add(data);

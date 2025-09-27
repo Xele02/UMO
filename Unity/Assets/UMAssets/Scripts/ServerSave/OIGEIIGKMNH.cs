@@ -59,7 +59,7 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x1DE53F4 Offset: 0x1DE53F4 VA: 0x1DE53F4
-		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, OIGEIIGKMNH.HLNPGNNPCGO _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
+		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
 	}
 
 	private const int ECFEMKGFDCE = 2;
@@ -103,12 +103,12 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1DE3734 Offset: 0x1DE3734 VA: 0x1DE3734
-	public bool KBBNHBBGDEC(int _FODKKJIDDKN_vf_Id, int CIEOBFIIPLD)
+	public bool KBBNHBBGDEC(int _FODKKJIDDKN_vf_Id, int _CIEOBFIIPLD_Level)
 	{
 		HLNPGNNPCGO_ValkyrieInfo d = JMJOPCDNHKK(_FODKKJIDDKN_vf_Id);
 		if(d != null && d.BEBJKJKBOGH_date != 0)
 		{
-			d.CIEOBFIIPLD_Level = CIEOBFIIPLD;
+			d.CIEOBFIIPLD_Level = _CIEOBFIIPLD_Level;
 			return true;
 		}
 		return false;

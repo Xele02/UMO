@@ -49,11 +49,11 @@ public class GJAEGCMKMEK_MvTicket : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			MBCLELGHPJF data = new MBCLELGHPJF();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
-			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
+			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE_mver;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

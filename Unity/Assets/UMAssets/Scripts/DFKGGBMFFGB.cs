@@ -169,7 +169,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	}
 
 	// // RVA: 0x1980528 Offset: 0x1980528 VA: 0x1980528
-	public bool HJBAALOOKMO(int _AHHJLDLAPAN_DivaId, int _LGBDBBFEPGL_SceneSlotIdx, int BCCHOBPJJKE)
+	public bool HJBAALOOKMO(int _AHHJLDLAPAN_DivaId, int _LGBDBBFEPGL_SceneSlotIdx, int _BCCHOBPJJKE_SceneId)
 	{
 		if(_LGBDBBFEPGL_SceneSlotIdx == 2)
 		{

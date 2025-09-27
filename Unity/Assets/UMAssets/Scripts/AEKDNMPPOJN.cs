@@ -263,5 +263,5 @@ public class AEKDNMPPOJN
 	}
 
 	// RVA: 0x15BDA5C Offset: 0x15BDA5C VA: 0x15BDA5C
-	//public static void LCHJNEOAMGJ(FFHPBEPOMAK_DivaInfo JCFNFJJKPAM, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, ref int OBMGLMLCGJC, ref int NJGBLBNALKM, ref int HONONDFIICC) { }
+	//public static void LCHJNEOAMGJ(FFHPBEPOMAK_DivaInfo JCFNFJJKPAM, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, ref int _OBMGLMLCGJC_ExcellentRate, ref int _NJGBLBNALKM_ExcellentEffect, ref int HONONDFIICC) { }
 }

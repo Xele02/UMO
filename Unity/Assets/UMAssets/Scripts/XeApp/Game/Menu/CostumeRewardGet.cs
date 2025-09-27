@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 			int idx = 0;
 			if(cos != null)
 			{
-				//cos.DAJGPBLEEOB_PrismCostumeModelId;
+				//cos.DAJGPBLEEOB_ModelId;
 				idx = cos.AHHJLDLAPAN_DivaId - 1;
 			}
 			return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[idx].AIHCEGFANAM_SerieAttr;

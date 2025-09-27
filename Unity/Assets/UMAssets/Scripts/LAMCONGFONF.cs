@@ -85,7 +85,7 @@ public class LAMCONGFONF
 		DPPIBCENJJJ = false;
 		PLOOEECNHFB_IsDone = false;
 		NPNNPNAIONN_IsError = false;
-		EECOJKDJIFG e = DAKMIKNKHMF(LHJCOPMMIGO);
+		EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
 		if(e == null)
 		{
 			PLOOEECNHFB_IsDone = true;
@@ -204,7 +204,7 @@ public class LAMCONGFONF
 	{
 		PLOOEECNHFB_IsDone = false;
 		NPNNPNAIONN_IsError = false;
-		EECOJKDJIFG e = DAKMIKNKHMF(LHJCOPMMIGO);
+		EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
 		if(e == null)
 		{
 			PLOOEECNHFB_IsDone = true;
@@ -270,7 +270,7 @@ public class LAMCONGFONF
 	//// RVA: 0xD918D8 Offset: 0xD918D8 VA: 0xD918D8
 	public void AMKJFGLEJGE_RequestUpdateEventPoint(int LHJCOPMMIGO, int _ABLHIAEDJAI_CurrentValue, long _JHNMKKNEENE_Time)
 	{
-		EECOJKDJIFG e = DAKMIKNKHMF(LHJCOPMMIGO);
+		EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
 		if(e != null)
 		{
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFHMLHKODOD_EventGoDivaRanking != null && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFHMLHKODOD_EventGoDivaRanking.NGHKJOEDLIP_Settings != null)
@@ -302,7 +302,7 @@ public class LAMCONGFONF
 	{
 		PLOOEECNHFB_IsDone = false;
 		NPNNPNAIONN_IsError = false;
-		EECOJKDJIFG e = DAKMIKNKHMF(LHJCOPMMIGO);
+		EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
 		if(e == null)
 		{
 			PLOOEECNHFB_IsDone = true;
@@ -398,7 +398,7 @@ public class LAMCONGFONF
 	}
 
 	//// RVA: 0xD91244 Offset: 0xD91244 VA: 0xD91244
-	private EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	private EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO)
 	{
 		if (AEJCLHOIDDD.Length <= LHJCOPMMIGO)
 			return null;

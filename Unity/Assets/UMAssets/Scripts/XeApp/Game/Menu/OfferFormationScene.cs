@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 		{
 			if (vfId < 2)
 				vfId = 1;
-			//LLOBHDMHJIG = id
+			//LLOBHDMHJIG_Id = id
 			HEFCLPGPMLK.ANKPCIEKPAH d = m_ValkyrieList.Find((HEFCLPGPMLK.ANKPCIEKPAH _) =>
 			{
 				//0x1529244

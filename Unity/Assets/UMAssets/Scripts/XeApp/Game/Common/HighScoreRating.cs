@@ -309,7 +309,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA5F6C Offset: 0xEA5F6C VA: 0xEA5F6C
-		//public int GetUtaRateTotal(List<JNMFKOHFAFB.LBGEDDJKOKF> hsRatingInfoList) { }
+		//public int GetUtaRateTotal(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatingInfoList) { }
 
 		//// RVA: 0xEA606C Offset: 0xEA606C VA: 0xEA606C
 		public int GetUtaRateTotal()

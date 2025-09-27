@@ -108,7 +108,7 @@ public class OAGBCBBHMPF
 	
 	public enum OGBCFNIKAFI
 	{
-		FKPEAGGKNLC_Start_0 = 0,
+		FKPEAGGKNLC_0_Start = 0,
 		BABBMOJCMDM_1 = 1,
 		MHFHGNFCEHJ = 2, // 2 => 12 %
 		NJLGGHGMLMN = 3,
@@ -157,7 +157,7 @@ public class OAGBCBBHMPF
 		KBHNAJGGEPE = 46,
 		CFHINEFGHPC_47 = 47,
 		LGFGBNKFPGH_48 = 48,
-		HDMADAHNLDN_Missions_49 = 49,//??
+		HDMADAHNLDN_49_Missions = 49,//??
 		CGKOFIKBMMI = 50,
 	}
 

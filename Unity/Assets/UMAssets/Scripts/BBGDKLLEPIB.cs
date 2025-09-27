@@ -13,7 +13,7 @@ public class BBGDKLLEPIB
 {
 	private enum GPPPPOFHAJC
 	{
-		FKPEAGGKNLC_Start_0 = 0,
+		FKPEAGGKNLC_0_Start = 0,
 		MJKPBANHCOE = 1,
 		KBMHDBKJKEO = 2,
 		KHLKPDFNABB = 3,
@@ -40,7 +40,7 @@ public class BBGDKLLEPIB
 	
 	private float NDEJCDBHPLB = 180.0f; // 0x8
 	public static bool BELNLBKJPCO = false; // 0x4
-	private string FPCIBJLJOFI = "db"; // 0xC
+	private string FPCIBJLJOFI_Type = "db"; // 0xC
 	public static string JNPHAJICDPN_SdFileName = "/db/sd.dat"; // 0xC
 	public static string FNHCECHLIJI_ArMarkerFileName = "/db/ar_marker.dat"; // 0x10
 	public static string NLOICACDGNI_ArEventFileName = "/db/ar_event.dat"; // 0x14
@@ -120,14 +120,14 @@ public class BBGDKLLEPIB
 				// public bool KOMKKBDABJP_end; // 0xC
 		// private BBGDKLLEPIB.<>c__DisplayClass45_1 LBLMCMHMNGC; // 0x18
 				// public Dictionary<string, int> FAOOOLDDBBB_LocalFilesStatus; // 0x8
-				// public JPAPJLIPNOK COJNCNGHIJC_Req; // 0xC
+				// public JPAPJLIPNOK_RequestAssetList COJNCNGHIJC_Req; // 0xC
 				// public BBGDKLLEPIB.<>c__DisplayClass45_0 PGFMIBMJBHD; // 0x10
 				// // RVA: 0xF1A184 Offset: 0xF1A184 VA: 0xF1A184
 				// internal void IPGJJANJOMJ() { }
 				// // RVA: 0xF1A2B8 Offset: 0xF1A2B8 VA: 0xF1A2B8
 				// internal void EGDGJOPDNFF() { }
 				// // RVA: 0xF1A318 Offset: 0xF1A318 VA: 0xF1A318
-				// internal void FKJIINPOGKK(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
+				// internal void FKJIINPOGKK(JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL JGBPLIGAILE) { }
 				// // RVA: 0xF1A474 Offset: 0xF1A474 VA: 0xF1A474
 				// internal void BCMEPPIPGIB() { }
 		// public DJBHIFLHJLK MOBEEPPKFLG_OnFail; // 0x1C
@@ -145,7 +145,7 @@ public class BBGDKLLEPIB
 				// // RVA: 0xF1A508 Offset: 0xF1A508 VA: 0xF1A508
 				// internal void CAPIELNEBFB() { }
 		// private PJKLMCGEJMK OKDOIAEGADK_Server; // 0x2C
-		// private JEHIAIPJNJF MHHFMCPJONH; // 0x30
+		// private JEHIAIPJNJF_FileDownloader MHHFMCPJONH; // 0x30
 		//0xF1A518
 		if(OEPPEGHGNNO == null)
 		{
@@ -166,7 +166,7 @@ public class BBGDKLLEPIB
 			while(true)
 			{
 				COJNCNGHIJC_Req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
-				COJNCNGHIJC_Req.FPCIBJLJOFI_Type = FPCIBJLJOFI;
+				COJNCNGHIJC_Req.FPCIBJLJOFI_Type = FPCIBJLJOFI_Type;
 				yield return COJNCNGHIJC_Req.GDPDELLNOBO_WaitDone(N.a);
 				// 1
 				if(COJNCNGHIJC_Req.NPNNPNAIONN_IsError)
@@ -420,9 +420,9 @@ public class BBGDKLLEPIB
 	}
 
 	// // RVA: 0xF17D68 Offset: 0xF17D68 VA: 0xF17D68
-	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
+	public void CIDPPOGCODB(Dictionary<string, int> _FAOOOLDDBBB_LocalFilesStatus)
 	{
-		foreach(var item in FAOOOLDDBBB)
+		foreach(var item in _FAOOOLDDBBB_LocalFilesStatus)
 		{
 			if(item.Value == 1)
 			{

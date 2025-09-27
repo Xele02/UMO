@@ -13,7 +13,7 @@ public class GCODMEIACDE
     }
 
 	public int PLKMAOGKFPP; // 0x8
-	public int FPEOGFMKMKJ; // 0xC
+	public int FPEOGFMKMKJ_Point; // 0xC
 	public int ANOCILKJGOJ_EpisodeCnt; // 0x10
 	public int ODCLHPGHDHA_EpisodeBonus; // 0x14
 	public int OKBEOCOKGEI; // 0x18
@@ -39,7 +39,7 @@ public class GCODMEIACDE
             OKBEOCOKGEI = 1;
             return;
         }
-        FPEOGFMKMKJ = ev.EELENPNCGLM.FPEOGFMKMKJ_Point;
+        FPEOGFMKMKJ_Point = ev.EELENPNCGLM.FPEOGFMKMKJ_Point;
         ANOCILKJGOJ_EpisodeCnt = ev.EELENPNCGLM.ANOCILKJGOJ_EpisodeCnt;
         ODCLHPGHDHA_EpisodeBonus = ev.EELENPNCGLM.ODCLHPGHDHA_EpisodeBonus;
         PHPANNCGOKC_GetPoint = ev.EELENPNCGLM.PIIEGNPOPJI_GetPoint;

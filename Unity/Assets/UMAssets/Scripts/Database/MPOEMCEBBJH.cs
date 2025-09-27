@@ -9,11 +9,11 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	[UMOClass(ReaderClass = "BPIFDOECJPH")]
 	public class KOAKMNKEHDE_PilotInfo
 	{
-		[UMOMember(ReaderMember = "PPFNGGCBJKC", Desc = "Id in the list")]
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", Desc = "Id in the list")]
 		public short PFGJJLGLPAC_PilotId; // 0x8
-		[UMOMember(ReaderMember = "JPFMJHLCMJL", Desc = "Serie")]
+		[UMOMember(ReaderMember = "JPFMJHLCMJL_sa", Desc = "Serie")]
 		public sbyte AIHCEGFANAM_SerieAttr; // 0xA
-		[UMOMember(ReaderMember = "MJMPANIBFED", Desc = "")]
+		[UMOMember(ReaderMember = "MJMPANIBFED_pid", Desc = "")]
 		public short CHIMPKJDCPP_Pid; // 0xC
 
 		//// RVA: 0x17BD028 Offset: 0x17BD028 VA: 0x17BD028
@@ -59,7 +59,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	// RVA: 0x17BCC98 Offset: 0x17BCC98 VA: 0x17BCC98 Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
-		TodoLogger.LogError(TodoLogger.DbJson, "Pilot IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Pilot IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 
@@ -70,9 +70,9 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 		for (int i = 0; i < array.Length; i++)
 		{
 			KOAKMNKEHDE_PilotInfo data = new KOAKMNKEHDE_PilotInfo();
-			data.PFGJJLGLPAC_PilotId = (short)array[i].PPFNGGCBJKC;
-			data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
-			data.CHIMPKJDCPP_Pid = (short)array[i].MJMPANIBFED;
+			data.PFGJJLGLPAC_PilotId = (short)array[i].PPFNGGCBJKC_id;
+			data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL_sa;
+			data.CHIMPKJDCPP_Pid = (short)array[i].MJMPANIBFED_pid;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

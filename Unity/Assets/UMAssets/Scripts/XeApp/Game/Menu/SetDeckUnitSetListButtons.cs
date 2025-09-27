@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xC38020
 		//public int CurrentIndex { get; } 0xC38028
-		//public JLKEOGLJNOD CurrentUnitData { get; } 0xC38030
+		//public JLKEOGLJNOD_TeamInfo CurrentUnitData { get; } 0xC38030
 		public int UnitCount { get { return m_unitCount; } } //0xC380E0
 		//public bool IsPageSwitching { get; } 0xC380E8
 		private int UnitButtonCount { get { return m_unitButtons.Count; } } //0xC380F0
@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 		//private int CalcPageNo(int unitIndex) { }
 
 		//// RVA: 0xC3974C Offset: 0xC3974C VA: 0xC3974C
-		//private JLKEOGLJNOD GetUnitData(int buttonNo, int pageNo) { }
+		//private JLKEOGLJNOD_TeamInfo GetUnitData(int buttonNo, int pageNo) { }
 
 		//// RVA: 0xC39138 Offset: 0xC39138 VA: 0xC39138
 		private JLKEOGLJNOD_TeamInfo GetUnitData(int unitIndex)

@@ -120,7 +120,7 @@ public class DocusaurusGenerator
                     IMMAOANGPNK.MPFFINOMILP obj = null;
                     for(int i = 0; i < b.Length; i++)
                     {
-                        int val = b[i].BEBJKJKBOGH;
+                        int val = b[i].BEBJKJKBOGH_date;
                         if(JHNMKKNEENE_Time >= val)
                         {
                             if(obj != null)
@@ -131,16 +131,16 @@ public class DocusaurusGenerator
                                 }
                             }
                             obj = new IMMAOANGPNK.MPFFINOMILP();
-                            obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+                            obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
                             obj.PDBPFJJCADD_open_at = val;
-                            obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
+                            obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
                         }
                         else
                         {
                             IMMAOANGPNK.MPFFINOMILP obj2 = new IMMAOANGPNK.MPFFINOMILP();
-                            obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE;
+                            obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
                             obj2.PDBPFJJCADD_open_at = val;
-                            obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE;
+                            obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
                             MGFBEKNMJOA.Add(obj2);
                         }
                     }

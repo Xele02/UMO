@@ -67,7 +67,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FABC0 Offset: 0x11FABC0 VA: 0x11FABC0 Slot: 10
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label)
 	{
-		TodoLogger.LogError(TodoLogger.DbJson, "Emblem IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Emblem IIEMACPEEBJ_Deserialize");
 		return false;
 	}
 
@@ -79,11 +79,11 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 			return false;
 		for(int i = 0; i < array.Length; i++)
 		{
-			CDENCMNHNGA_table[i].PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			CDENCMNHNGA_table[i].HANMDEBPBHG_pic = (int)array[i].HANMDEBPBHG;
-			CDENCMNHNGA_table[i].PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
-			CDENCMNHNGA_table[i].FPOMEEJFBIG_odr = (int)array[i].FPOMEEJFBIG;
-			CDENCMNHNGA_table[i].EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
+			CDENCMNHNGA_table[i].PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			CDENCMNHNGA_table[i].HANMDEBPBHG_pic = (int)array[i].HANMDEBPBHG_pic;
+			CDENCMNHNGA_table[i].PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
+			CDENCMNHNGA_table[i].FPOMEEJFBIG_odr = (int)array[i].FPOMEEJFBIG_odr;
+			CDENCMNHNGA_table[i].EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
 		}
 		return true;
 	}

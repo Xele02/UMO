@@ -49,10 +49,10 @@ public class CKDOOBKOJBB_RareUpItem : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			FEIHMMKMGOF data = new FEIHMMKMGOF();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
 			data.EIGNPDFHIJA = array[i].EIGNPDFHIJA;
 			CDENCMNHNGA_table.Add(data);
 		}

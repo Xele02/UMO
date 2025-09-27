@@ -91,12 +91,12 @@ public class OKLFOAPMJAA
 			FEAAEDHHBNB = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
 			if(DPNKNANKDAM)
 			{
-				bool PLOOEECNHFB = false;
+				bool PLOOEECNHFB_IsDone = false;
 				bool NPNNPNAIONN_IsError = false;
 				FEAAEDHHBNB.EKIJICIBGOG_GetBlacklist(false, () =>
 				{
 					//0x14A2C94
-					PLOOEECNHFB = true;
+					PLOOEECNHFB_IsDone = true;
 				}, (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
 				{
 					//0x14A2CA0
@@ -106,7 +106,7 @@ public class OKLFOAPMJAA
 					//0x14A2CAC
 					NPNNPNAIONN_IsError = true;
 				});
-				while(!NPNNPNAIONN_IsError && !PLOOEECNHFB)
+				while(!NPNNPNAIONN_IsError && !PLOOEECNHFB_IsDone)
 					yield return null;
 				if(NPNNPNAIONN_IsError)
 				{
@@ -119,18 +119,18 @@ public class OKLFOAPMJAA
 			BDGBGAEAMPK = 0;
 			while(true)
 			{
-				bool PLOOEECNHFB = false;
+				bool PLOOEECNHFB_IsDone = false;
 				bool NPNNPNAIONN_IsError = false;
 				LPEPBLHCGKP.GBLHONFLPPD(_KPNKPGLPDHI_Op, MKLHCKJEKKC, () =>
 				{
 					//0x14A2CC0
-					PLOOEECNHFB = true;
+					PLOOEECNHFB_IsDone = true;
 				}, () =>
 				{
 					//0x14A2CCC
 					NPNNPNAIONN_IsError = true;
 				});
-				while(!NPNNPNAIONN_IsError && !PLOOEECNHFB)
+				while(!NPNNPNAIONN_IsError && !PLOOEECNHFB_IsDone)
 				{
 					yield return null;
 				}
@@ -170,18 +170,18 @@ public class OKLFOAPMJAA
 			LKMKNEGCCHF.Clear();
 			while(LPEPBLHCGKP.GMNAECEEHHJ() && LPEPBLHCGKP.HDMKAIKOMCB.Count < PLBOJBHAPLO)
 			{
-				bool PLOOEECNHFB = false;
+				bool PLOOEECNHFB_IsDone = false;
 				bool NPNNPNAIONN_IsError = false;
 				yield return Co.R(DGGKAEPHMAJ_Coroutine_Next(_KPNKPGLPDHI_Op, 30, 0, () =>
 				{
 					//0x14A2CE0
-					PLOOEECNHFB = true;
+					PLOOEECNHFB_IsDone = true;
 				}, () =>
 				{
 					//0x14A2CEC
 					NPNNPNAIONN_IsError = true;
 				}, false));
-				while(!PLOOEECNHFB && !NPNNPNAIONN_IsError)
+				while(!PLOOEECNHFB_IsDone && !NPNNPNAIONN_IsError)
 					yield return null;
 				if(NPNNPNAIONN_IsError)
 				{

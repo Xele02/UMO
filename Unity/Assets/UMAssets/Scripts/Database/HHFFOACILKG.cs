@@ -149,15 +149,15 @@ public class HHFFOACILKG_Medal : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			HCFJGDFMHOJ data = new HCFJGDFMHOJ();
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.GBJFNGCDKPM_typ = (int)array[i].GBJFNGCDKPM;
-			data.IBAKPKKEDJM_month = (int)array[i].IBAKPKKEDJM;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
-			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.GBJFNGCDKPM_typ = (int)array[i].GBJFNGCDKPM_typ;
+			data.IBAKPKKEDJM_month = (int)array[i].IBAKPKKEDJM_month;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
+			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE_mver;
 			data.AHILKBKLFJM = array[i].AHILKBKLFJM;
 			data.ODPMNBBBBIM = array[i].ODPMNBBBBIM;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

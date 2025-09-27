@@ -50,10 +50,10 @@ public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 		{
 			JMCDEDCMCJE data = new JMCDEDCMCJE();
 			data.FBGGEFFJJHB_xor = k;
-			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
-			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
-			data.INDDJNMPONH_type = (int)array[i].GBJFNGCDKPM;
+			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
+			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG_val;
+			data.INDDJNMPONH_type = (int)array[i].GBJFNGCDKPM_typ;
 			k *= 0x6cd;
 			CDENCMNHNGA_table.Add(data);
 		}
@@ -68,7 +68,7 @@ public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 		//	EKLIPGELKCL_Rarity = FBFLDFMFFOH_rar
 		//	JBGEEPFKIGG_val = JBGEEPFKIGG_val
 		//	INDDJNMPONH_type = GBJFNGCDKPM_typ
-		TodoLogger.LogError(TodoLogger.DbJson, "HGLPLKKBBOL_EventItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "HGLPLKKBBOL_EventItem.IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 

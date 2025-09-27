@@ -1265,7 +1265,7 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x906284 Offset: 0x906284 VA: 0x906284
-	// public void GBABEMFLPBA(string _MDADLCOCEBN_session_id, int _CCHFKKINLHB_BfDiff, int _DAOBEIMNFLH_AfDiff, MHAPMOLCPKM _MOHDLLIJELH_cont) { }
+	// public void GBABEMFLPBA(string _MDADLCOCEBN_session_id, int _CCHFKKINLHB_BfDiff, int _DAOBEIMNFLH_AfDiff, MHAPMOLCPKM_EventQuest _MOHDLLIJELH_cont) { }
 	// session_id = _MDADLCOCEBN_session_id
 	// event_id = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId
 	// event_name = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName
@@ -1273,25 +1273,25 @@ public class ILCCJNDFFOB
 	// af_difficulty = _DAOBEIMNFLH_AfDiff
 
 	// // RVA: 0x906660 Offset: 0x906660 VA: 0x906660
-	// public void MFIIOABPKAO(string _MDADLCOCEBN_session_id, MHAPMOLCPKM _MOHDLLIJELH_cont) { }
+	// public void MFIIOABPKAO(string _MDADLCOCEBN_session_id, MHAPMOLCPKM_EventQuest _MOHDLLIJELH_cont) { }
 	// session_id = _MDADLCOCEBN_session_id
 	// event_id = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId
 	// mission_id = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.PPFNGGCBJKC_id
 	// difficulty = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.DGMIADAEGAI_TargetDifficultyType
-	// lucky = MOHDLLIJELH.FPILJDOPPJC_GetSelectedCardSaveInfo.KIFJKGDBDBH_lucky
-	// reset_uc = MOHDLLIJELH.CDKDCKOAEMA()
+	// lucky = MOHDLLIJELH_cont.FPILJDOPPJC_GetSelectedCardSaveInfo.KIFJKGDBDBH_lucky
+	// reset_uc = MOHDLLIJELH_cont.CDKDCKOAEMA()
 	// mission_cnt = _MOHDLLIJELH_cont.FPILJDOPPJC_GetSelectedCardSaveInfo.OLDAGCNLJOI_progress
 	// mission_clr_cnt = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.JJECMJFDEEP_ClearConditionValue
 	// mission_clr_cnt = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.GLDIGCJNOBO_ClearCount
 	// use_uc = 0
 
 	// // RVA: 0x906DD8 Offset: 0x906DD8 VA: 0x906DD8
-	// public void EPABCLLAJDP(string _MDADLCOCEBN_session_id, MHAPMOLCPKM _MOHDLLIJELH_cont, int _PFDFGDPLLCK_UseUc) { }
+	// public void EPABCLLAJDP(string _MDADLCOCEBN_session_id, MHAPMOLCPKM_EventQuest _MOHDLLIJELH_cont, int _PFDFGDPLLCK_UseUc) { }
 	// session_id = _MDADLCOCEBN_session_id
 	// event_id = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId
 	// mission_id = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.PPFNGGCBJKC_id
 	// difficulty = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.DGMIADAEGAI_TargetDifficultyType
-	// lucky = MOHDLLIJELH.FPILJDOPPJC_GetSelectedCardSaveInfo.KIFJKGDBDBH_lucky
+	// lucky = MOHDLLIJELH_cont.FPILJDOPPJC_GetSelectedCardSaveInfo.KIFJKGDBDBH_lucky
 	// mission_cnt = _MOHDLLIJELH_cont.FPILJDOPPJC_GetSelectedCardSaveInfo.OLDAGCNLJOI_progress
 	// mission_clr_cnt = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.JJECMJFDEEP_ClearConditionValue
 	// mission_clr_cnt = _MOHDLLIJELH_cont.GAPOCIFPDDO_GetSelectedCardInfo.GLDIGCJNOBO_ClearCount
@@ -2445,7 +2445,7 @@ public class ILCCJNDFFOB
 	// public void NJMBKGKPCKL() { }
 
 	// // RVA: 0x918698 Offset: 0x918698 VA: 0x918698
-	// public void PEBDGCDNPDM(NKOBMDPHNGP _MOHDLLIJELH_cont, string _INDDJNMPONH_type) { }
+	// public void PEBDGCDNPDM(NKOBMDPHNGP_EventRaidLobby _MOHDLLIJELH_cont, string _INDDJNMPONH_type) { }
 	// event_id = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId
 	// event_name = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName
 	// type = _INDDJNMPONH_type

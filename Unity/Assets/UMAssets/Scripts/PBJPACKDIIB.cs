@@ -83,12 +83,12 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 			SakashoBbsCommentInfo info = new SakashoBbsCommentInfo();
 			info.Nickname = "dummy";
 			info.Content = "dummy";
-			bool PLOOEECNHFB = false;
+			bool PLOOEECNHFB_IsDone = false;
 			bool NPNNPNAIONN_IsError = false;
 			k.IFFGEIMIKHH(0, info, () =>
 			{
 				//0xCBC894
-				PLOOEECNHFB = true;
+				PLOOEECNHFB_IsDone = true;
 			}, () =>
 			{
 				//0xCBC8A0
@@ -99,7 +99,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 				NPNNPNAIONN_IsError = true;
 			});
 			//LAB_00cbd1fc
-			while(!NPNNPNAIONN_IsError && !PLOOEECNHFB)
+			while(!NPNNPNAIONN_IsError && !PLOOEECNHFB_IsDone)
 			{
 				yield return null;
 			}
