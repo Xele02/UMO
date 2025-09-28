@@ -13,14 +13,14 @@ public class PBOHJPIBILI
     }
 
 	// RVA: 0xCBD8D8 Offset: 0xCBD8D8 VA: 0xCBD8D8
-	public static void GLEPHGKFFLL(out int GGNOGNOBJLP_CurrentStock, out int HLANCDFJFIA_CurrentGauge, out bool ANKEMCJFFIO_IsMax)
+	public static void GLEPHGKFFLL(out int _GGNOGNOBJLP_CurrentStock, out int _HLANCDFJFIA_CurrentGauge, out bool ANKEMCJFFIO_IsMax)
     {
-        GGNOGNOBJLP_CurrentStock = 0;
-        HLANCDFJFIA_CurrentGauge = 0;
+        _GGNOGNOBJLP_CurrentStock = 0;
+        _HLANCDFJFIA_CurrentGauge = 0;
         ANKEMCJFFIO_IsMax = false;
-        GGNOGNOBJLP_CurrentStock = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge / 100, PFNBNKCPFLP_GetCannonStockMax());
-        HLANCDFJFIA_CurrentGauge = GGNOGNOBJLP_CurrentStock * -100 + CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge;
-        ANKEMCJFFIO_IsMax = 99 < HLANCDFJFIA_CurrentGauge && PFNBNKCPFLP_GetCannonStockMax() <= GGNOGNOBJLP_CurrentStock;
+        _GGNOGNOBJLP_CurrentStock = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge / 100, PFNBNKCPFLP_GetCannonStockMax());
+        _HLANCDFJFIA_CurrentGauge = _GGNOGNOBJLP_CurrentStock * -100 + CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge;
+        ANKEMCJFFIO_IsMax = 99 < _HLANCDFJFIA_CurrentGauge && PFNBNKCPFLP_GetCannonStockMax() <= _GGNOGNOBJLP_CurrentStock;
     }
 
 	// // RVA: 0xCBDA5C Offset: 0xCBDA5C VA: 0xCBDA5C

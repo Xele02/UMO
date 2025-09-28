@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission && data.contExt != null)
 			{
-				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.contExt.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.contExt.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
 				if(dbEv != null)
 				{
 					str = dbEv.NGHKJOEDLIP_Settings.OPFGFINHFCE_name;

@@ -529,17 +529,17 @@ namespace XeApp.Game.Menu
 			IsSaveSucces = false;
 			bool isDone = false;
 			IHGHHPPDPEO data = new IHGHHPPDPEO();
-			data.JCHLONCMPAJ();
+			data.JCHLONCMPAJ_Clear();
 			int cnt = 0;
 			for(int i = 0; i < m_stampList.Count; i++)
 			{
 				if(m_stampList[i].type != LayoutDecoCustomStampItem.Type.Create)
 				{
-					data.ANIJHEBLMGB(i, m_stampList[i].stampId, m_stampList[i].serifId);
+					data.ANIJHEBLMGB_SetValue(i, m_stampList[i].stampId, m_stampList[i].serifId);
 					cnt++;
 				}
 			}
-			data.HJMKBCFJOOH(() =>
+			data.HJMKBCFJOOH_Save(() =>
 			{
 				//0x19E24B4
 				isDone = true;

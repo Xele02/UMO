@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(viewData.OAAKAAFFFLE >= OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended && viewData.OAAKAAFFFLE < OHKECKAPJJL.ONKLMFNGCHJ.IOPLLOIHMJC_7)
+				if(viewData.OAAKAAFFFLE >= OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End && viewData.OAAKAAFFFLE < OHKECKAPJJL.ONKLMFNGCHJ.IOPLLOIHMJC_7)
 					m_layoutLimit.StartChildrenAnimGoStop("00");
 				else
 					m_layoutLimit.StartChildrenAnimGoStop("02");
@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DE3A0 Offset: 0x12DE3A0 VA: 0x12DE3A0
 		private void ApplyGachaButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.FBFBGLONIME_6)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.FBFBGLONIME_6_AfterGacha)
 			{
 				if(viewData.PNDEAHGLJIC_BtnType == OHKECKAPJJL.GPNHNIGPGCL.LAJAJEMJBFC_12_Gacha3)
 				{
@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 					m_layoutLimit.StartChildrenAnimGoStop("00");
 				}
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 			}
@@ -194,7 +194,7 @@ namespace XeApp.Game.Menu
 				m_layoutMessage.StartChildrenAnimGoStop("02");
 				m_textMessage.text = bk.GetMessageByLabel("event_sp_reward");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DEBBC Offset: 0x12DEBBC VA: 0x12DEBBC
 		private void ApplyCampaignButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("02");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DEE74 Offset: 0x12DEE74 VA: 0x12DEE74
 		private void ApplyNyanCuziButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 		private void ApplyEventButton(OHKECKAPJJL viewData)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DF268 Offset: 0x12DF268 VA: 0x12DF268
 		private void ApplyDailyAdv(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 			}
@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 					Disable = true;
 				}
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -334,7 +334,7 @@ namespace XeApp.Game.Menu
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");

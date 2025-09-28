@@ -74,15 +74,15 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	//// RVA: 0xAB2CE8 Offset: 0xAB2CE8 VA: 0xAB2CE8
 	private void EKKFCEJECFK(int _EKANGPODCEP_EventId)
 	{
-		if (!OOBJBHJCLON_LocalSaveShooting.FKEJBAHCMGC(_EKANGPODCEP_EventId))
+		if (!OOBJBHJCLON_LocalSaveShooting.FKEJBAHCMGC_CheckEvent(_EKANGPODCEP_EventId))
 			return;
-		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 	}
 
 	//// RVA: 0xAB27DC Offset: 0xAB27DC VA: 0xAB27DC
-	private void BIEBAEDGDIA_SetHighScore(int LGDLEHHOIEL)
+	private void BIEBAEDGDIA_SetHighScore(int _LGDLEHHOIEL_HighScore)
 	{
-		OOBJBHJCLON_LocalSaveShooting.BIEBAEDGDIA_SetHighScore(LGDLEHHOIEL);
-		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		OOBJBHJCLON_LocalSaveShooting.BIEBAEDGDIA_SetHighScore(_LGDLEHHOIEL_HighScore);
+		GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 	}
 }

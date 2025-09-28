@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 					});
 					ItemIconNumList[i].SetNumber(m_view.PCPPHNINBBC[i], 0);
 					ItemIconAnimList[i].StartChildrenAnimGoStop("01");
-					ItemIconButtonList[i].Disable = m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete;
+					ItemIconButtonList[i].Disable = m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received;
 					ItemIconButtonList[i].Hidden = false;
 				}
 				else
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 		{
 			switch (type)
 			{
-				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1:
+				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1_Normal:
 					m_offerType.StartChildrenAnimGoStop("01");
 					break;
 				case BOPFPIHGJMD.ADMNKELOLPN.NBHIECDDJHH_2:
@@ -596,7 +596,7 @@ namespace XeApp.Game.Menu
 			{
 				ChengeSeriesLogo(m_view.DFMOGBOPLEF_Series);
 				ChengeSeriesIcon(m_view.DFMOGBOPLEF_Series);
-				OfferCategory.StartChildrenAnimGoStop(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete ? "03" : "01");
+				OfferCategory.StartChildrenAnimGoStop(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received ? "03" : "01");
 				OfferLogoState.StartChildrenAnimGoStop("01");
 			}
 			else if(m_view.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
@@ -607,7 +607,7 @@ namespace XeApp.Game.Menu
 			{
 				ChengeSeriesLogo(m_view.DFMOGBOPLEF_Series);
 				ChengeSeriesIcon(m_view.DFMOGBOPLEF_Series);
-				OfferCategory.StartChildrenAnimGoStop(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete ? "03" : "01");
+				OfferCategory.StartChildrenAnimGoStop(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received ? "03" : "01");
 				OfferLogoState.StartChildrenAnimGoStop("01");
 			}
 			m_contentFram.StartChildrenAnimGoStop(m_view.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week ? "02" : "01");
@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 			{
 				OfferCategory.StartChildrenAnimGoStop("02");
 			}
-			else if(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete)
+			else if(m_view.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received)
 			{
 				OfferCategory.StartChildrenAnimGoStop("03");
 			}
@@ -678,7 +678,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x185FF20 Offset: 0x185FF20 VA: 0x185FF20
 		private void EventIconSetting(BOPFPIHGJMD.HDHDOOLPBEO spOfferType)
 		{
-			if (spOfferType == BOPFPIHGJMD.HDHDOOLPBEO.CCDOBDNDPIL_1)
+			if (spOfferType == BOPFPIHGJMD.HDHDOOLPBEO.CCDOBDNDPIL_1_Event)
 			{
 				OfferEventIcon.StartChildrenAnimGoStop("01");
 				EventIcon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUvList_1.GetUVData(m_eventUvNameTable[0]));

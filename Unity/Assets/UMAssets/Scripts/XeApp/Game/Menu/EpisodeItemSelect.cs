@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		public void Init(PIGBBNDPPJC data)
 		{
 			m_data = data;
-			m_item_list = EEDBNJAEKBI.FKDIMODKKJD();
+			m_item_list = EEDBNJAEKBI.FKDIMODKKJD_GetList();
 			m_item_num_table.StartChildrenAnimGoStop(EPISODE_ITEM_TYPE_NUM - 1, EPISODE_ITEM_TYPE_NUM - 1);
 			for(int i = 0; i < EPISODE_ITEM_TYPE_NUM; i++)
 			{

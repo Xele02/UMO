@@ -30,7 +30,7 @@ public class LINJMMGGDKL_SecureInt2
 	// public void LHPDDGIJKNB_Reset(int HBDLKOBJHFP, int LMJDJEACHBC) { }
 
 	// // RVA: 0x18054F4 Offset: 0x18054F4 VA: 0x18054F4
-	// public void DNBGDMBCLMI() { }
+	// public void DNBGDMBCLMI_ChangeKey() { }
 
 	// // RVA: 0x18053B4 Offset: 0x18053B4 VA: 0x18053B4
 	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure()

@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Initialize()
 		{
 			//0x1448334
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_buttonSet.onClickMvpButton = OnClickMvpButton;
 			m_buttonSet.onClickEventRewardButton = OnClickEventRewardButton;
 			m_buttonSet.onClickMissionButton = OnClickMissionButton;
@@ -92,10 +92,10 @@ namespace XeApp.Game.Menu
 			IBJAKJJICBC ib = m_eventMusicData.Get(m_isLine6Mode ? m_currentSelectIndex6 : m_currentSelectIndex, m_isLine6Mode, false);
 			SetViewMusicData(ib.GHBPLHBNMBK_FreeMusicId);
 			m_bossInfoLayout.InitLayout(raidController.JIBMOEHKMGB_SelectedBoss, raidController.AGEJGHGEGFF_GetBossName(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), raidController.MCBGNPBECCI_SupportBonusMax());
-			m_rootPanel.Left.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
-			m_rootPanel.Right.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower));
-			m_rootPanel.Left.SetBonusNum(raidController.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
-			m_rootPanel.Right.SetBonusNum(raidController.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower));
+			m_rootPanel.Left.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
+			m_rootPanel.Left.SetBonusNum(raidController.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetBonusNum(raidController.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
 			UpdatePanelOkButton();
 			m_musicInfo.MakeCache();
 			CrateQuestList();
@@ -173,11 +173,11 @@ namespace XeApp.Game.Menu
 			TryInstall(str, m_eventMusicData);
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
-			bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.JGAFBCMOGLP_Raid.FKEJBAHCMGC(raidController.PGIIDPEGGPI_EventId);
+			bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.JGAFBCMOGLP_Raid.FKEJBAHCMGC_CheckEvent(raidController.PGIIDPEGGPI_EventId);
 			diff = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.JGAFBCMOGLP_Raid.FFACBDAJJJP_GetDifficulty();
 			if(b)
 			{
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
         }
 
@@ -327,7 +327,7 @@ namespace XeApp.Game.Menu
 						return;
 					}
 					raidController.FDNIODNLDAI(attackType);
-					if(attackType >= JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support && attackType < JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower)
+					if(attackType >= JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal && attackType < JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full)
 					{
 						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowRaidAssistHelp))
 						{
@@ -354,7 +354,7 @@ namespace XeApp.Game.Menu
 		{
 			m_isInitialized = false;
 			m_unitLiveLocalSaveData = new MMOLNAHHDOM();
-			m_unitLiveLocalSaveData.PCODDPDFLHK_Read();
+			m_unitLiveLocalSaveData.PCODDPDFLHK_Load();
 			m_isConfirmedUnitDance = false;
 			this.StartCoroutineWatched(Co_Initialize());
 		}
@@ -441,7 +441,7 @@ namespace XeApp.Game.Menu
 		protected override void OnDestoryScene()
 		{
 			Release();
-			m_unitLiveLocalSaveData.HJMKBCFJOOH_Write(false);
+			m_unitLiveLocalSaveData.HJMKBCFJOOH_Save(false);
 			if(isCallFriendSelect)
 			{
 				MenuScene.Instance.InputEnable();
@@ -514,12 +514,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9ED770 Offset: 0x9ED770 VA: 0x9ED770
 		private bool IsEnableUnitDance(bool line6Mode/* = False*/)
 		{
-			if(raidController != null && raidController.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+			if(raidController != null && raidController.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting)
 			{
                 List<IBJAKJJICBC> l = m_eventMusicData.GetList(line6Mode, false);
 				for(int i = 0; i < l.Count; i++)
 				{
-					if(l[i].JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid))
+					if(l[i].JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid))
 					{
 						return true;
 					}
@@ -566,8 +566,8 @@ namespace XeApp.Game.Menu
 				if(m_selectMusicData.MGJKEJHEBPO_Blocks[i].POOMOBGPCNE_IsLocked && diff >= (Difficulty.Type)i)
 					diff = (Difficulty.Type)(i - 1);
 			}
-			m_rootPanel.Left.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
-			m_rootPanel.Right.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower));
+			m_rootPanel.Left.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
 			m_buttonSet.SetEnemyHasSkill(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.CDEFLIHHNAB_HasSkills);
 			m_buttonSet.SetBadge(RaidActSelectOptionButton.OptionType.EvMission, IsReceiveMission());
 			m_musicInfo.ChangeSelectedDiff(diff);
@@ -676,7 +676,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9EC070 Offset: 0x9EC070 VA: 0x9EC070
 		private void DownloadCurrentMusic()
 		{
-			m_unitLiveLocalSaveData.HJMKBCFJOOH_Write(false);
+			m_unitLiveLocalSaveData.HJMKBCFJOOH_Save(false);
 			this.StartCoroutineWatched(Co_DownloadMusic(m_selectMusicData));
 		}
 
@@ -913,8 +913,8 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_WND_001);
 					while(m_popupUnitDanceWarning.WarningWindow.IsPlaying())
 						yield return null;
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-					m_unitLiveLocalSaveData.HJMKBCFJOOH_Write(false);
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
+					m_unitLiveLocalSaveData.HJMKBCFJOOH_Save(false);
 					MenuScene.Instance.InputEnable();
 					m_isConfirmedUnitDance = true;
 					positiveAction = null;
@@ -985,7 +985,7 @@ namespace XeApp.Game.Menu
 		{
 			m_isLine6Mode = style == 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			ChangedMusic(m_eventMusicData.Get(m_isLine6Mode ? m_currentSelectIndex6 : m_currentSelectIndex, m_isLine6Mode, false).GHBPLHBNMBK_FreeMusicId);
 		}
 
@@ -1093,7 +1093,7 @@ namespace XeApp.Game.Menu
 				return m_questList.FindIndex((FKMOKDCJFEN x) =>
 				{
 					//0x14456EC
-					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved;
 				}) > -1;
 			}
 			return false;
@@ -1134,7 +1134,7 @@ namespace XeApp.Game.Menu
 		private void SaveDifficulty()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.JGAFBCMOGLP_Raid.HJHBGHMNGKL_SetDifficulty(diff);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x9EF69C Offset: 0x9EF69C VA: 0x9EF69C

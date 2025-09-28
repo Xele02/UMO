@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 			}
 			switch(m_bbsType)
 			{
-				case ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Chat:
+				case ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Normal:
 				{
 					Debug.Log("StringLiteral_18437");
 					ANPBHCNJIDI.AIFBLOAGFOP data = _cm as ANPBHCNJIDI.AIFBLOAGFOP;
@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetChatPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Chat, m.Messge, m.Time);
+						l.SetChatPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Normal, m.Messge, m.Time);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);

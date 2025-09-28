@@ -32,8 +32,8 @@ public class OHKECKAPJJL
         LAOEGNLOJHC_2_Start = 2,
         EMAMLLFAOJI_3_Counting = 3,
         FKHAJADPBJK_4_Epilogue = 4,
-        OLCLJKOKJCD_5_Ended = 5,
-        FBFBGLONIME_6 = 6,
+        OLCLJKOKJCD_5_End = 5,
+        FBFBGLONIME_6_AfterGacha = 6,
         IOPLLOIHMJC_7 = 7,
     }
 
@@ -55,17 +55,17 @@ public class OHKECKAPJJL
 
     public enum FLIGIBMFEOA
     {
-        DOEHLCLBCNN = 1,
-        NKDOEBONGNI = 2,
+        DOEHLCLBCNN_1_Gacha = 1,
+        NKDOEBONGNI_2_EventMission = 2,
         NOBPFBOJLJD_3_Campaign = 3,
         FKAEGJHEHAO = 0,
-        OCCGDMDBCHK = 4,
-        CCDOBDNDPIL = 5,
-        ODPGFIPCFEF = 7,
-        ILBPPODCPPP = 8,
-        NNJBAJMNBCM = 9,
+        OCCGDMDBCHK_4_EventGacha = 4,
+        CCDOBDNDPIL_5_Event = 5,
+        ODPGFIPCFEF_7_DailyAdv = 7,
+        ILBPPODCPPP_8_Gacha2 = 8,
+        NNJBAJMNBCM_9_Offer = 9,
         JPDDBAEMJLJ = 10,
-        DIDJLIPNCKO = 11,
+        DIDJLIPNCKO_11_Bingo = 11,
     }
 
 	private int FBGGEFFJJHB_xor; // 0x8
@@ -113,13 +113,13 @@ public class OHKECKAPJJL
 	// RVA: 0x1DE1CD4 Offset: 0x1DE1CD4 VA: 0x1DE1CD4
 	public OHKECKAPJJL()
     {
-        FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
+        FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
         BBEGLBMOBOF_xorl = FBGGEFFJJHB_xor;
-        OBKGEDCKHHE(0);
+        OBKGEDCKHHE_Init(0);
     }
 
 	// // RVA: 0x1DE1DA0 Offset: 0x1DE1DA0 VA: 0x1DE1DA0
-	public void OBKGEDCKHHE(int _PPFNGGCBJKC_id)
+	public void OBKGEDCKHHE_Init(int _PPFNGGCBJKC_id)
     {
         BOJCOPAALNC_EventId = 0;
         GGHDEDJFFOM = 0;

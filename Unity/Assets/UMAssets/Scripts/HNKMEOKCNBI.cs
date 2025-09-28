@@ -23,7 +23,7 @@ public class HNKMEOKCNBI
     {
         HEEJBCDDOJJ_Friend = 0,
         HNANENNPBCO_Fan = 1,
-        KJHABBHBFPD_Other = 2,
+        KJHABBHBFPD_2_Other = 2,
     }
 
     public class BNJBDAEKDJC
@@ -117,7 +117,7 @@ public class HNKMEOKCNBI
 		string str = "";
 		string str1 = "";
 		string str2 = "";
-		if(_INDDJNMPONH_type == BEABGIOEFLG.KJHABBHBFPD_Other)
+		if(_INDDJNMPONH_type == BEABGIOEFLG.KJHABBHBFPD_2_Other)
 		{
 			str1 = "deco_visit_count_other";
 			str2 = "deco_visit_other_counter_key";

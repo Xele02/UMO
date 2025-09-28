@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 			m_plateEpisodeList.bannerTexCache = m_homeBannerTextureCache;
 			m_plateEpisodeList.Initialize(content.Parent, this);
 			m_bonusDetailPopup.m_parent = content.Parent;
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_unitBonusInfo = ev.ANMBIEIFKFF_UnitBonusInfo;
 			m_loadCount = 0;
 			m_loadedCount = 0;

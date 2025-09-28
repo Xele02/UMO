@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15AD3D4 Offset: 0x15AD3D4 VA: 0x15AD3D4
 		public void UpdateContent(PIGBBNDPPJC episodeData)
 		{
-			if(episodeData.DKMLDEDKPBA_HasEpisode)
+			if(episodeData.DKMLDEDKPBA_IsEnabled)
 			{
 				SetTexture(episodeData.KELFCMEOPPM_EpisodeId);
 				SetGaugeRate(episodeData.ABLHIAEDJAI_CurrentValue, episodeData.LEGAKDFPPHA_AvaiablePoint, episodeData.DMHDNKILKGI_MaxPoint);

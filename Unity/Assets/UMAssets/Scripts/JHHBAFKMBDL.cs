@@ -17,7 +17,7 @@ public class JHHBAFKMBDL
 	public bool Unused() { return KKOBJLMKOJH; }
 
 	// // RVA: 0xB1DEA0 Offset: 0xB1DEA0 VA: 0xB1DEA0
-	public void IJBGPAENLJA_Start(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 	}
@@ -110,7 +110,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EC54 Offset: 0xB1EC54 VA: 0xB1EC54
-	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_status, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL_ShowErrorPopup(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_status, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = JpStringLiterals.StringLiteral_11776;
@@ -259,10 +259,10 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1FC18 Offset: 0xB1FC18 VA: 0xB1FC18
-	public void DOHNKJKOGFJ(string LJPMEHDDBGP, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
+	public void DOHNKJKOGFJ(string _LJPMEHDDBGP_UnlockError, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
 	{
 		TextPopupSetting s = new TextPopupSetting();
-		if(LJPMEHDDBGP == "storage")
+		if(_LJPMEHDDBGP_UnlockError == "storage")
 		{
 			s.TitleText = JpStringLiterals.StringLiteral_11927;
 			s.Buttons = new ButtonInfo[1]
@@ -293,11 +293,11 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB2000C Offset: 0xB2000C VA: 0xB2000C
-	public void JDIDDHBIGIO(string LJPMEHDDBGP, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
+	public void JDIDDHBIGIO(string _LJPMEHDDBGP_UnlockError, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
 	{
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		TextPopupSetting s = new TextPopupSetting();
-		if(LJPMEHDDBGP == "storage")
+		if(_LJPMEHDDBGP_UnlockError == "storage")
 		{
 			s.TitleText = bk.GetMessageByLabel("popup_bunchinstall_error_storage_title");
 			s.Text = bk.GetMessageByLabel("popup_bunchinstall_error_storage_desc");
@@ -465,7 +465,7 @@ public class JHHBAFKMBDL
 	// public void EEBIICOLLIC(IMCBBOAFION BHEOPIPFEFJ) { }
 
 	// // RVA: 0xB0C15C Offset: 0xB0C15C VA: 0xB0C15C
-	public void GKMAHMLNMEK(IMCBBOAFION BHEOPIPFEFJ, string LJPMEHDDBGP) // Error popup
+	public void GKMAHMLNMEK(IMCBBOAFION BHEOPIPFEFJ, string _LJPMEHDDBGP_UnlockError) // Error popup
     {
         TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_title_app_error");
@@ -876,7 +876,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB25EF4 Offset: 0xB25EF4 VA: 0xB25EF4
-	public void NKIKBOJOCNN_ShowDldSizePopup(IMCBBOAFION _HIDFAIBOHCC_OnSuccess, JFDNPFFOACP NIMPEHIECJH, string EHKMFNJBLOL_Size)
+	public void NKIKBOJOCNN_ShowInstallFileSize(IMCBBOAFION _HIDFAIBOHCC_OnSuccess, JFDNPFFOACP NIMPEHIECJH, string EHKMFNJBLOL_Size)
 	{
 		TextPopupSetting popup = new TextPopupSetting();
 		popup.TitleText = MessageManager.Instance.GetMessage("menu", "popup_download_size_title");

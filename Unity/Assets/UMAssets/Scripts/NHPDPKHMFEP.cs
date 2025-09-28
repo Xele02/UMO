@@ -62,7 +62,7 @@ public class NHPDPKHMFEP
 
 	public enum GGNEBJEIFCP
 	{
-		CCAPCGPIIPF_0 = 0,
+		CCAPCGPIIPF_0_Normal = 0,
 		AJAHGGBMOJE_1 = 1,
 	}
 	
@@ -98,7 +98,7 @@ public class NHPDPKHMFEP
 		} }
 
 	// // RVA: 0x1897918 Offset: 0x1897918 VA: 0x1897918
-	public void IJBGPAENLJA()
+	public void IJBGPAENLJA_OnAwake()
 	{
 		HHCJCDFCLOB = this;
 	}
@@ -532,7 +532,7 @@ public class NHPDPKHMFEP
 			{
 				for(int i = 0; i < 39; i++)
 				{
-					BEJHIEGCGNE.JCHLONCMPAJ();
+					BEJHIEGCGNE.JCHLONCMPAJ_Clear();
 					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HMMNDKHKEBC_MonthlyPass.BGANHMCJIIC() != null)
 					{
 						TodoLogger.LogError(TodoLogger.MonthlyPass, "KBJJGEJAMOK");
@@ -548,7 +548,7 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x189B04C Offset: 0x189B04C VA: 0x189B04C
-	// public void GBMFNHOFGOP(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError, NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
+	// public void GBMFNHOFGOP_Purchase(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError, NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
 
 	// // RVA: 0x189B0C8 Offset: 0x189B0C8 VA: 0x189B0C8
 	public int PIEFCAPBEAI()
@@ -561,7 +561,7 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x189B218 Offset: 0x189B218 VA: 0x189B218
-	public int ALNBFHJBGIG()
+	public int ALNBFHJBGIG_GetDivaExpBonusRate()
 	{
 		if(GBCPDBJEDHL(false))
 		{
@@ -741,7 +741,7 @@ public class NHPDPKHMFEP
 				return _GHPLINIACBB_x.FJGCDPLCIAK_unique_key == topplan_unique_key;
 			});
 		}
-		else if(LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0)
+		else if(LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
 		{
 			return _MHKCPJDNJKI_products.Find((FHPFLAGNCAF _GHPLINIACBB_x) =>
 			{
@@ -759,7 +759,7 @@ public class NHPDPKHMFEP
 		string str = "";
 		if (LDKJENNJPFL == GGNEBJEIFCP.AJAHGGBMOJE_1)
 			str = "pop_pass_sp_text";
-		if (LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0)
+		if (LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
 			str = "pop_pass_text";
 		return string.Format("{0}\n{1}\n{2}", bk.GetMessageByLabel(str + "01"), bk.GetMessageByLabel(str + "02"), bk.GetMessageByLabel(str + "_android"));
 	}

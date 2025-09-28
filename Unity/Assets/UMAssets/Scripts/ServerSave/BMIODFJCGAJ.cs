@@ -8,7 +8,7 @@ using UnityEngine;
 public class BMIODFJCGAJ { }
 public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 {
-	public const int ECFEMKGFDCE = 2;
+	public const int ECFEMKGFDCE_CurrentVersion = 2;
 	private const int OIEOCBIJLDC = 10;
 	public int FBGGEFFJJHB_xor = 0x2ca3b889; // 0x24
 	public int EHGBICNIBKE_player_id; // 0x28
@@ -148,8 +148,8 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		{
 			db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
 		}
-		LJNAKDMILMC_key = FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
-		OPFGFINHFCE_name = FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, "", ref isInvalid);
+		LJNAKDMILMC_key = FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
+		OPFGFINHFCE_name = FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, "", ref isInvalid);
 		OBGBAOLONDD_UniqueId = 0;
 		for(int i = 3001; i < 4000; i++)
 		{
@@ -157,7 +157,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 			if(block.BBAJPINMOEP_Contains(str))
 			{
 				OBGBAOLONDD_UniqueId = i;
-				IPPNCOHEEOD_ScoreAverage = CJAENOMGPDA_ReadInt(block, str, 0, ref isInvalid);
+				IPPNCOHEEOD_ScoreAverage = CJAENOMGPDA_GetInt(block, str, 0, ref isInvalid);
 				break;
 			}
 		}
@@ -166,11 +166,11 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		{
 			s = "avg_" + OBGBAOLONDD_UniqueId.ToString("D4");
 		}
-		IPPNCOHEEOD_ScoreAverage = CJAENOMGPDA_ReadInt(block, s, 0, ref isInvalid);
-		NCAEFIHINAP_Cnt = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cnt", 0, ref isInvalid), 0, 9999);
-		EEAPIKNJNDB_ConsecutiveWin = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cwin", 0, ref isInvalid), 0, 999);
-		KEFMAJJPAKM_CWinMax = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cwin_max", 0, ref isInvalid), 0, 999);
-		FGEIOMGBGLI_Twin = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "twin", 0, ref isInvalid), 0, 999);
+		IPPNCOHEEOD_ScoreAverage = CJAENOMGPDA_GetInt(block, s, 0, ref isInvalid);
+		NCAEFIHINAP_Cnt = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "cnt", 0, ref isInvalid), 0, 9999);
+		EEAPIKNJNDB_ConsecutiveWin = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "cwin", 0, ref isInvalid), 0, 999);
+		KEFMAJJPAKM_CWinMax = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "cwin_max", 0, ref isInvalid), 0, 999);
+		FGEIOMGBGLI_Twin = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "twin", 0, ref isInvalid), 0, 999);
 		IPPNCOHEEOD_ScoreAverage = Mathf.Clamp(IPPNCOHEEOD_ScoreAverage, 0, 999999999);
 		if(block.BBAJPINMOEP_Contains("results"))
 		{
@@ -206,9 +206,9 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 				}
 			}
 		}
-		GOIKCKHMBDL_FreeMusicId = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "f", 0, ref isInvalid), 0, 2000);
-		DIPKCALNIII_diva_id = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "dv", 0, ref isInvalid), 1, 10);
-		JKAMFMNGEBB_high_score = Mathf.Max(0, CJAENOMGPDA_ReadInt(block, "hs", 0, ref isInvalid));
+		GOIKCKHMBDL_FreeMusicId = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "f", 0, ref isInvalid), 0, 2000);
+		DIPKCALNIII_diva_id = Mathf.Clamp(CJAENOMGPDA_GetInt(block, "dv", 0, ref isInvalid), 1, 10);
+		JKAMFMNGEBB_high_score = Mathf.Max(0, CJAENOMGPDA_GetInt(block, "hs", 0, ref isInvalid));
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;
 	}

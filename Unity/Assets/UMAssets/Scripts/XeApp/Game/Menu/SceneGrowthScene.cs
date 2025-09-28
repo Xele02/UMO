@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 			loadCount = 0;
 			m_isLoadingAppendAsset = true;
 			bool isLodingTexture = false;
-			if(m_episodeData.DKMLDEDKPBA_HasEpisode)
+			if(m_episodeData.DKMLDEDKPBA_IsEnabled)
 			{
 				isLodingTexture = true;
 				GameManager.Instance.EpisodeIconCache.Load(m_episodeData.KELFCMEOPPM_EpisodeId, (IiconTexture texture) =>
@@ -2106,9 +2106,9 @@ namespace XeApp.Game.Menu
 				m_prevCenterSkillLevel = m_viewSceneData.DDEDANKHHPN_SkillLevel;
 				m_prevActiveSkillLevel = m_viewSceneData.PNHJPCPFNFI_ActiveSkillLevel;
 				m_prevLiveSkillLevel = m_viewSceneData.AADFFCIDJCB_LiveSkillLevel;
-				m_viewSceneData.HCDGELDHFHB();
-				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
-				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+				m_viewSceneData.HCDGELDHFHB_UpdateStatus();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB_UpdateStatus();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB_UpdateStatus();
 				m_viewSceneData.OHJIKMCAOLE();
 				m_viewSceneData.EJLGAMEIMEG(m_viewGrowItemData, l);
 				this.StartCoroutineWatched(PlayUnlockPanelAnimationCoroutine(null));

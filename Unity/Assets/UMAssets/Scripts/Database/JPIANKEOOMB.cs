@@ -49,13 +49,13 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1BA75E4 Offset: 0x1BA75E4 VA: 0x1BA75E4
-		public short OJHINEMKMOP(int IGBFFCLMAMM)
+		public short OJHINEMKMOP(int _IGBFFCLMAMM_Form)
 		{
 			return KINFGHHNFCF_Atk;
 		}
 
 		//// RVA: 0x1BA75F8 Offset: 0x1BA75F8 VA: 0x1BA75F8
-		public short PAELLCKLEJP(int IGBFFCLMAMM)
+		public short PAELLCKLEJP(int _IGBFFCLMAMM_Form)
 		{
 			return NONBCCLGBAO_hit;
 		}
@@ -68,7 +68,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	public List<KJPIDJOMODA_ValkyrieInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x1BA6998 Offset: 0x1BA6998 VA: 0x1BA6998
-	public KJPIDJOMODA_ValkyrieInfo GCINIJEMHFK(int _PPFNGGCBJKC_id)
+	public KJPIDJOMODA_ValkyrieInfo GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)
 	{
 		if (_PPFNGGCBJKC_id == 0 || CDENCMNHNGA_table.Count < _PPFNGGCBJKC_id)
 			return null;

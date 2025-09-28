@@ -257,7 +257,7 @@ namespace XeApp.Game.Menu
 							FreeCategoryId.Type cat = FreeCategoryId.Type.None;
 							if(!SelectUnitDanceFocus(out mId, out cat, ref m_isLine6Mode, false, OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection))
 							{
-								mId = save.BMBELGEDKEG_GetFreeMusicId();
+								mId = save.BMBELGEDKEG_GetFreeMusic();
 							}
 							int idx = m_musicList.FindIndex(mId, m_isLine6Mode, false);
 							if(idx < 0)
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.OCBIOMPAJFF_CollectEvent.HJHBGHMNGKL_SetDifficulty(diff);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.OCBIOMPAJFF_CollectEvent.PDOLFONNGHB_SetFreeMusicId(freeMusicId);
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// RVA: 0x13B20C0 Offset: 0x13B20C0 VA: 0x13B20C0 Slot: 45
@@ -462,7 +462,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(viewBoostData.EFFBJDMGIGO(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.FKLMPGJPDLL_2)
+				if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.FKLMPGJPDLL_2)
 				{
 					//LAB_013b2f10
 					return base.CurrentMusicDecisionCheck(cancelCallback, viewBoostData, selectIndex);
@@ -492,7 +492,7 @@ namespace XeApp.Game.Menu
 		protected override void OnChangedDifficulty()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.OCBIOMPAJFF_CollectEvent.HJHBGHMNGKL_SetDifficulty(diff);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x13B2CB8 Offset: 0x13B2CB8 VA: 0x13B2CB8
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			m_isLine6Mode = style == 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			this.StartCoroutineWatched(Co_ChangeLiveMode(() =>
 			{
 				//0x13B4410
@@ -554,7 +554,7 @@ namespace XeApp.Game.Menu
 					m_eventInfo.IsPlaying() || m_eventBanner.IsPlaying();
 				yield return null;
 			}
-			int idx = m_musicList.FindIndex(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.OCBIOMPAJFF_CollectEvent.BMBELGEDKEG_GetFreeMusicId(), m_isLine6Mode, false);
+			int idx = m_musicList.FindIndex(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.OCBIOMPAJFF_CollectEvent.BMBELGEDKEG_GetFreeMusic(), m_isLine6Mode, false);
 			if(idx < 0)
 				idx = 0;
 			list_no = idx;
@@ -822,7 +822,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 				{
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
 					{

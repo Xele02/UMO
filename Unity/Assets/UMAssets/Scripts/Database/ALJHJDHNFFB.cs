@@ -49,7 +49,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xCDDE74 Offset: 0xCDDE74 VA: 0xCDDE74
-	public ADLLAFIDFAM GCINIJEMHFK(int _PPFNGGCBJKC_id)
+	public ADLLAFIDFAM GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)
 	{
 		if (_PPFNGGCBJKC_id != 0)
 		{
@@ -83,7 +83,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
 			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF_en;
 			data.IJEKNCDIIAE_mver = array[i].IJEKNCDIIAE_mver;
-			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ;
+			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ_Have;
 			data.AIHCEGFANAM_SerieAttr = (SeriesAttr.Type)array[i].JPFMJHLCMJL_sa;
 			data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE_name);
 

@@ -8,7 +8,7 @@ public class KGCNCBOKCBA
 		MINDIGBAJFG_3 = 3,
 		GDOPLACICFE_4 = 4,
 		MEAJLPAHINL_ChallengePeriod_5 = 5,
-		EMAMLLFAOJI_Counting_6 = 6,
+		EMAMLLFAOJI_6_Counting = 6,
 		EIFKDKFAHPH_7 = 7,
 		DDEODFNANDO_8_ResultRewardToReceive = 8,
 		BCKENOKGLIJ_9_ResultRewardreceived = 9,

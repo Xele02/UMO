@@ -33,8 +33,8 @@ namespace XeApp.Game.Menu
 			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(param.id);
 			lcontent.SetJacket(mData.JNCPEGJGHOG_JacketId);
 			lcontent.SetLogo(mData.EMIKBGHIOMN_SerieLogoId);
-			lcontent.SetMusicAttribute(mData.FKDCCLPGKDK_Ma);
-			lcontent.SetMusicName(Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).musicName, mData.FKDCCLPGKDK_Ma);
+			lcontent.SetMusicAttribute(mData.FKDCCLPGKDK_JacketAttr);
+			lcontent.SetMusicName(Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).musicName, mData.FKDCCLPGKDK_JacketAttr);
 			if (param.unlockType == PopupUnlock.eUnlockType.Line6Music)
 			{
 				lcontent.SetDifficulty(param.difficulty6LineBit, param.isLine6);

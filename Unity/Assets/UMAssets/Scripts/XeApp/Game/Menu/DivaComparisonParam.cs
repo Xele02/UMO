@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 							skillId2 = 0;
 						if(m_musicData == null)
 						{
-							//sceneInfo.MEOOLHNNMHL(false, 0, 0);
+							//sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 							if(skillId > 0)
 							{
 								SetSkillLevel(pos, sceneInfo.DDEDANKHHPN_SkillLevel, 0);

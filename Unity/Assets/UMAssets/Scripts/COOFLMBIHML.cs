@@ -16,7 +16,7 @@ public class COOFLMBIHML
 	private int DBOFPMOMPFH; // 0xC
 
 	//// RVA: 0x1765828 Offset: 0x1765828 VA: 0x1765828
-	public void KHEKNNFCAOI_Init(int FKDCCLPGKDK, OKGLGHCBCJP_Database _LKMHPJKIFDN_md, bool ECMMLBJNEKG/* = false*/)
+	public void KHEKNNFCAOI_Init(int _FKDCCLPGKDK_JacketAttr, OKGLGHCBCJP_Database _LKMHPJKIFDN_md, bool ECMMLBJNEKG/* = false*/)
 	{
 		List<int> rarityCnt = new List<int>();
 		for(int i = 0; i < 10; i++)
@@ -44,8 +44,8 @@ public class COOFLMBIHML
 				}
 			}
 		}
-		int c = _LKMHPJKIFDN_md.HGLIIPFLMFB_Drop.BFNDKINIEOE_GameDropMaEq[FKDCCLPGKDK - 1];
-		int d = _LKMHPJKIFDN_md.HGLIIPFLMFB_Drop.CFECAEBGLIH_GameDropMaNe[FKDCCLPGKDK - 1];
+		int c = _LKMHPJKIFDN_md.HGLIIPFLMFB_Drop.BFNDKINIEOE_GameDropMaEq[_FKDCCLPGKDK_JacketAttr - 1];
+		int d = _LKMHPJKIFDN_md.HGLIIPFLMFB_Drop.CFECAEBGLIH_GameDropMaNe[_FKDCCLPGKDK_JacketAttr - 1];
 		for (int i = 0; i < _LKMHPJKIFDN_md.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count; i++)
 		{
 			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = _LKMHPJKIFDN_md.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i];
@@ -60,9 +60,9 @@ public class COOFLMBIHML
 				{
 					int v = rarityCnt[scene.EKLIPGELKCL_Rarity - 1];
 					int r = (v * 100000) / total;
-					if(FKDCCLPGKDK != 4)
+					if(_FKDCCLPGKDK_JacketAttr != 4)
 					{
-						r = ((scene.FKDCCLPGKDK_Ma == FKDCCLPGKDK ? c : d) * r) / (c + d);
+						r = ((scene.FKDCCLPGKDK_JacketAttr == _FKDCCLPGKDK_JacketAttr ? c : d) * r) / (c + d);
 					}
 					if(r > 0)
 					{

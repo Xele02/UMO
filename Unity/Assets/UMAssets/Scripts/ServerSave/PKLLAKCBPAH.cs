@@ -5,7 +5,7 @@ using XeSys;
 public class PKLLAKCBPAH { }
 public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 {
-	 private const int ECFEMKGFDCE = 1;
+	 private const int ECFEMKGFDCE_CurrentVersion = 1;
 	 private int ENOBDCFHELD; // 0x24
 	 private int FCEJCHGLFGN; // 0x28
 	 private sbyte MLLAPPOGDJO; // 0x2C
@@ -42,8 +42,8 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				DGNMOIBJBBJ_HasEnabled = CJAENOMGPDA_ReadInt(block, "has_enabled", 0, ref isInvalid) != 0;
-				LAJDGNJCMEH_SetName = FGCNMLBACGO_ReadString(block, "set_name", "", ref isInvalid);
+				DGNMOIBJBBJ_HasEnabled = CJAENOMGPDA_GetInt(block, "has_enabled", 0, ref isInvalid) != 0;
+				LAJDGNJCMEH_SetName = FGCNMLBACGO_GetString(block, "set_name", "", ref isInvalid);
 			}
 			KFKDMBPNLJK_BlockInvalid = isInvalid;
 			return true;
@@ -89,7 +89,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 		{
 			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;
-			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE_CurrentVersion;
 			data2[JIKKNHIAEKG_BlockName] = data;
 			data = data2;
 		}

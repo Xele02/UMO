@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 			SetDivaRankingInvalid();
 			LAMCONGFONF rankingManager = LAMCONGFONF.HHCJCDFCLOB;
 			rankingManager.HDAMBNOFGAN(divaData.AHHJLDLAPAN_DivaId - 1, false);
-			rankingManager.HEOKADCEAGL(divaData.AHHJLDLAPAN_DivaId - 1, false, () =>
+			rankingManager.HEOKADCEAGL_GetRanks(divaData.AHHJLDLAPAN_DivaId - 1, false, () =>
 			{
 				//0xB83FA0
 				LAMCONGFONF.OJFOLGKMBIG obj = rankingManager.CEPOFDBHIAC(divaData.AHHJLDLAPAN_DivaId - 1, false);
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			foreach(var k in l)
 			{
 				total++;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_costume.JPIDIENBGKH_CostumeId);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_costume.JPIDIENBGKH_CostumeId);
 				if (k.JLKPGDEKPEO_IsHave)
 					cnt++;
 				short[] tcols = cinfo.CHDBGFLFPNC_GetAllAvaiableColors();

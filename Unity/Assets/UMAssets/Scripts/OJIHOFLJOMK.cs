@@ -35,7 +35,7 @@ public class OJIHOFLJOMK
 	//private void BJOPNMIFIIM() { }
 
 	//// RVA: 0x148DA08 Offset: 0x148DA08 VA: 0x148DA08
-	//public void KNPBADBCOLO(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string LBNFBJFBDDE, string _ADCMNODJBGJ_title, string _LJGOOOMOMMA_message) { }
+	//public void KNPBADBCOLO_Send(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string LBNFBJFBDDE, string _ADCMNODJBGJ_title, string _LJGOOOMOMMA_message) { }
 
 	//// RVA: 0x148DD70 Offset: 0x148DD70 VA: 0x148DD70
 	public void LKCPCCANJFB_SendNotif(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string _ADCMNODJBGJ_title, string _LJGOOOMOMMA_message, int _EAHPLCJMPHD_PId, string JJCAHFAOPNI/* = "png"*/)
@@ -57,7 +57,7 @@ public class OJIHOFLJOMK
 	}
 
 	//// RVA: 0x148E13C Offset: 0x148E13C VA: 0x148E13C
-	public void JCHLONCMPAJ_CancelNotif(int NNGBINEKMNO)
+	public void JCHLONCMPAJ_Clear(int NNGBINEKMNO)
 	{
 		if(MNAADDLICIB != null)
 		{

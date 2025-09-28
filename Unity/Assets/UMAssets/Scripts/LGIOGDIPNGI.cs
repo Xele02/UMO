@@ -3,14 +3,14 @@
 public class LGIOGDIPNGI { }
 public class LGIOGDIPNGI_RareUpItem : NKFJNAANPNP
 {
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const int EDIEJEICDGP = 9;
 	private const int MJFAFEOOEFF = 90;
 
 	// // RVA: 0x17F4078 Offset: 0x17F4078 VA: 0x17F4078
 	public LGIOGDIPNGI_RareUpItem()
 	{
-		DALBFCKKGGA = ECFEMKGFDCE;
+		DALBFCKKGGA_Version = ECFEMKGFDCE_CurrentVersion;
 		FIBFMLMHOGN = EDIEJEICDGP;
 		KOICDJCMKEC = 0x76a6ff;
 		if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)

@@ -6,7 +6,7 @@ using XeSys;
 public class FEAOOBFHMBL
 {
 	// RVA: 0xFCE76C Offset: 0xFCE76C VA: 0xFCE76C
-	public static void DOMFHDPMCCO_CheckDailyQuest(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, long _JHNMKKNEENE_Time, bool _FBBNPFFEJBN_Force)
+	public static void DOMFHDPMCCO_Init(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, long _JHNMKKNEENE_Time, bool _FBBNPFFEJBN_Force)
 	{
 		if(_LDEGEHAEALK_ServerData.GOACJBOCLHH_Quest != null)
 		{

@@ -14,6 +14,6 @@ public class MHOILBOJFHL
 		GHDACOGLNLJ_Contract = 8,
 		GOMOJLPBCAN = 9,
 		JMIDCMFKPOE_Credit = 10,
-		AEFCOHJBLPO = 11,
+		AEFCOHJBLPO_11_Num = 11,
 	}
 }

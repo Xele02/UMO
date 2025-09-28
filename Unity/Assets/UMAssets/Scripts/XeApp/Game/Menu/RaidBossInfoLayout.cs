@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x145C8D0 Offset: 0x145C8D0 VA: 0x145C8D0
 		public void SetBossName(int bossType)
 		{
-			m_bossNameText.text = (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid).AGEJGHGEGFF_GetBossName(bossType);
+			m_bossNameText.text = (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid).AGEJGHGEGFF_GetBossName(bossType);
 		}
 
 		// RVA: 0x145C818 Offset: 0x145C818 VA: 0x145C818

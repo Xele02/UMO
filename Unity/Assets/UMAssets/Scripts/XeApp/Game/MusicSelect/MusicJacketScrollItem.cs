@@ -141,7 +141,7 @@ namespace XeApp.Game.MusicSelect
 				m_textTitle.text = musicData.MusicName;
 				if(!isEvent)
 				{
-					m_imageBookMark.enabled = ViewBookMarkMusicData.KNKGEALPDGF(musicData.ViewMusic.DLAEJOBELBH_MusicId);
+					m_imageBookMark.enabled = ViewBookMarkMusicData.KNKGEALPDGF_GetBookmark(musicData.ViewMusic.DLAEJOBELBH_MusicId);
 				}
 				SetSelect(select);
 				SetAttr(musicData.ViewMusic.FKDCCLPGKDK_JacketAttr);

@@ -24,7 +24,7 @@ public class MBCPNPNMFHB
 	public LLKBLEFEGOO LKKNBHCGFBG { private get; set; } // 0x14 JGFDEEKLBGJ DPNHBBOHIIE NNHHILCHAEF
 
 	//// RVA: 0xA2D7CC Offset: 0xA2D7CC VA: 0xA2D7CC
-	public void IJBGPAENLJA()
+	public void IJBGPAENLJA_OnAwake()
 	{
 		HHCJCDFCLOB = this;
 		for (int i = 0; i < 11; i++)

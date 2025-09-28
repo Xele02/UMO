@@ -59,7 +59,7 @@ namespace XeApp.Game.Common
 						costumeColorId = viewDivaData.EKFONBFDAAP_ColorId;
 						JJOELIOGMKK_DivaIntimacyInfo d = new JJOELIOGMKK_DivaIntimacyInfo();
 						d.KHEKNNFCAOI_Init(divaId);
-						d.HCDGELDHFHB(false);
+						d.HCDGELDHFHB_UpdateStatus(false);
 						intimacyLv = d.HEKJGCMNJAB_CurrentLevel;
 						if(prismData == null || !prismData.FBGAKINEIPG)
 						{

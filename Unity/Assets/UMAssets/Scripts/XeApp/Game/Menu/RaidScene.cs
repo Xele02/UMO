@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 			{
 				done = false;
 				err = false;
-				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, 0, () =>
+				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, 0, () =>
 				{
 					//0x18264B0
 					done = true;
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 						m_topGauge.Initialize();
 						m_macrossCannonButton.Initialize();
 						m_eventBanner.ChangeEventBanner(m_eventCtrl.PGIIDPEGGPI_EventId);
-						if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+						if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting)
 						{
 							m_bossSortLayout.UpdateSortText();
 							m_bossSortLayout.RefreshUpdateButton();
@@ -822,7 +822,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.AOKFAJOMCKK_bossFilter = 0;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.MOAJJHLGILP_rankFilter = 0;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.COIKKDHMGID_joinFilter = 0;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x181D3A4 Offset: 0x181D3A4 VA: 0x181D3A4
@@ -1005,7 +1005,7 @@ namespace XeApp.Game.Menu
 		{
 			if(index < 0)
 				index = 0;
-			if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsLoaded)
+			if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsValid)
 			{
 				m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.EncounterBoss);
 			}
@@ -1157,7 +1157,7 @@ namespace XeApp.Game.Menu
 				if(type != PopupButton.ButtonType.Positive)
 					return;
 				(control.Content as PopupRaidBossSortContent).GetComponent<RaidBossSortWindow>().ApplyLocalSaveData(ref GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty);
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				this.StartCoroutineWatched(Co_UpdateBossInfoList(true, null));
 			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
@@ -1174,7 +1174,7 @@ namespace XeApp.Game.Menu
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.EILKGEADKGH_Order = 0;
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			m_bossSortLayout.UpdateOrderText();
 			SortBossInfoList(ref m_bossInfoViewList);
 			m_bossSelectListLayout.InitPanel(m_bossInfoViewList.Count, m_bossInfoViewList.IndexOf(RaidController.PMIIMELDPAJ_GetMyBoss()));
@@ -1484,7 +1484,7 @@ namespace XeApp.Game.Menu
 					{
 						MenuScene.Instance.InputDisable();
 						MenuScene.Instance.LobbyButtonControl.Hide(false);
-						PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+						PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 						ev.KECLCFBKMOA_EncounterBoss(() =>
 						{
 							//0x1828928
@@ -1560,7 +1560,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
-			if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+			if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting)
 			{
 				MenuScene.Instance.Call(TransitionList.Type.EVENT_RANKING, new EventRankingSceneArgs(m_eventCtrl, false, 0, 0), true);
 			}
@@ -1600,7 +1600,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				AODFBGCCBPE data = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE _) =>
+				AODFBGCCBPE data = AODFBGCCBPE.FKDIMODKKJD_GetList(false).Find((AODFBGCCBPE _) =>
 				{
 					//0x1825CD8
 					return _.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.FNJAOJBICJD_6_SuperGalaxyMedal;
@@ -1673,7 +1673,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OnPresetCanvas()
 		{
 			//0x182DAD0
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_eventMusicSelectArgs = Args as EventMusicSelectSceneArgs;
 			if(m_eventMusicSelectArgs == null)
 				m_eventMusicSelectArgs = ArgsReturn as EventMusicSelectSceneArgs;
@@ -1896,7 +1896,7 @@ namespace XeApp.Game.Menu
 				//LAB_0182ce7c
 				while(IsPlayingLayout())
 					yield return null;
-				if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+				if(m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting)
 				{
 					yield return this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
 				}
@@ -1954,7 +1954,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
 					{
-						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsLoaded)
+						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsValid)
 						{
 							List<ActionButton> btns = new List<ActionButton>(m_bottomButtonLayout.GetComponentsInChildren<ActionButton>(true));
 							ActionButton b = btns.Find((ActionButton _) =>
@@ -2341,7 +2341,7 @@ namespace XeApp.Game.Menu
 				return m_questList.FindIndex((FKMOKDCJFEN x) =>
 				{
 					//0x1825E4C
-					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved;
 				}) > -1;
 			}
 			return false;

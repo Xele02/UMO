@@ -76,7 +76,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 				ShowLimitedItemDetali(id, limitTime, count);
 			return;
 		}
-		else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
+		else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 		{
 			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
 		}
@@ -173,7 +173,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 	//// RVA: 0xDFAF28 Offset: 0xDFAF28 VA: 0xDFAF28
 	private static AODFBGCCBPE CheckItemShopData(int costItemId)
 	{
-		AODFBGCCBPE d = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE x) =>
+		AODFBGCCBPE d = AODFBGCCBPE.FKDIMODKKJD_GetList(false).Find((AODFBGCCBPE x) =>
 		{
 			//0xDFB234
 			return x.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3;

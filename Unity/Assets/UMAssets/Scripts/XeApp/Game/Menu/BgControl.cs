@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 							{
 								if (pData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId == id_id)
 								{
-									if (!pData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() || pData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed || pData.OPIBAPEGCLA_Scenes[i].CGIELKDLHGE_GetEvolveId() < id_cat)
+									if (!pData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked || pData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed || pData.OPIBAPEGCLA_Scenes[i].CGIELKDLHGE_GetEvolveId() < id_cat)
 									{
 										JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(GetDefaultHomeBg(), 0);
 										//LAB_01440528

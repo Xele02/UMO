@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 					if(a != 0)
 					{
 						JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
-						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 						{
 							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
 							{

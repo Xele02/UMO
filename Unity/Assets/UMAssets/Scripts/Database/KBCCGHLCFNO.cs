@@ -21,13 +21,13 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 		public int PHHBIBOJAEI { get { return ADKKKPFNBFO ^ FBGGEFFJJHB_xor; } set { ADKKKPFNBFO = value ^ FBGGEFFJJHB_xor; } } //0x101A900 KDCHICNAKGB 0x1019F98 NBOCNPBIPFD
 
 		// RVA: 0x101A998 Offset: 0x101A998 VA: 0x101A998
-		public int FKNBLDPIPMC(int _OIPCCBHIKIA_index)
+		public int FKNBLDPIPMC_GetItemCode(int _OIPCCBHIKIA_index)
 		{
 			return OMALMJLHABC_SetContent[_OIPCCBHIKIA_index * 2] ^ FBGGEFFJJHB_xor;
 		}
 
 		// // RVA: 0x101AA6C Offset: 0x101AA6C VA: 0x101AA6C
-		public int KAINPNMMAEK(int _OIPCCBHIKIA_index)
+		public int KAINPNMMAEK_GetItemCount(int _OIPCCBHIKIA_index)
 		{
 			return OMALMJLHABC_SetContent[_OIPCCBHIKIA_index * 2 + 1] ^ FBGGEFFJJHB_xor;
 		}

@@ -120,9 +120,9 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT);
 			}
-			int fId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(advId).KKPPFAHFOJI_FileId;
+			int fId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(advId).KKPPFAHFOJI_FileId;
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(advId, OAGBCBBHMPF.DKAMMIHBINF.KDDHGLNCFMF_8);
+			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(advId, OAGBCBBHMPF.DKAMMIHBINF.KDDHGLNCFMF_8);
 			Database.Instance.advSetup.Setup(fId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1518C68
 			bool isEnd = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() =>
+			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
 			{
 				//0x1518980
 				isEnd = true;
@@ -397,7 +397,7 @@ namespace XeApp.Game.Menu
 			//0x15189F8
 			m_isWaitPresetCanvas = false;
 			int v;
-			int.TryParse(m_viewDataSpPage.AFMHNPCDAFI(m_currentTime), out v);
+			int.TryParse(m_viewDataSpPage.AFMHNPCDAFI_GetBgId(m_currentTime), out v);
 			yield return this.StartCoroutineWatched(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.NewYearEvent, v, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			m_isWaitPresetCanvas = true;
 		}

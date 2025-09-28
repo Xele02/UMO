@@ -30,7 +30,7 @@ public class IMMAOANGPNK
 	public List<MPFFINOMILP> MGFBEKNMJOA { get; private set; } // 0x24 MGMCACBHEGK FNFJPHEBELC 0x9FB778 MNINNHABPAA 0x9FB780
 
 	// // RVA: 0x9FB788 Offset: 0x9FB788 VA: 0x9FB788
-	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 		LNAHEIEIBOI_Initialized = false;
@@ -41,7 +41,7 @@ public class IMMAOANGPNK
 	}
 
 	// // RVA: 0x9FB8A8 Offset: 0x9FB8A8 VA: 0x9FB8A8
-	public void BAGMHFKPFIF()
+	public void BAGMHFKPFIF_Update()
 	{
 		return;
 	}
@@ -93,7 +93,7 @@ public class IMMAOANGPNK
 
 		bool KOMKKBDABJP_end = false;
 		bool CNAIDEAFAAM_Error = false;
-		BBGDKLLEPIB.HHCJCDFCLOB.PAHGEEOFEPM(() => { KOMKKBDABJP_end = true; }, () => { KOMKKBDABJP_end = true; CNAIDEAFAAM_Error = true; }); //?? 0x101
+		BBGDKLLEPIB.HHCJCDFCLOB.PAHGEEOFEPM_Install(() => { KOMKKBDABJP_end = true; }, () => { KOMKKBDABJP_end = true; CNAIDEAFAAM_Error = true; }); //?? 0x101
 		while(!KOMKKBDABJP_end)
 		{
 			yield return null;
@@ -481,7 +481,7 @@ public class IMMAOANGPNK
 		{
 			if (JOBKIDDLCPL_schedules[i].KBFOIECIADN_opened_at <= _JHNMKKNEENE_Time && JOBKIDDLCPL_schedules[i].EGBOHDFBAPB_closed_at >= _JHNMKKNEENE_Time)
 			{
-				if (NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOBKIDDLCPL_schedules[i].OPFGFINHFCE_name) == null)
+				if (NKEBMCIMJND_Database.LBDOLHGDIEB_Find(JOBKIDDLCPL_schedules[i].OPFGFINHFCE_name) == null)
 					return true;
 			}
 		}
@@ -493,8 +493,8 @@ public class IMMAOANGPNK
 	{
 		
 	// public static readonly IMMAOANGPNK.<>c <>9; // 0x0
-	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM> <>9__42_0; // 0x4
-	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM> <>9__44_0; // 0x8
+	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File> <>9__42_0; // 0x4
+	// public static Predicate<CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File> <>9__44_0; // 0x8
 	// public static Comparison<IMMAOANGPNK.MPFFINOMILP> <>9__44_1; // 0xC
 		MGFBEKNMJOA.Clear();
 		

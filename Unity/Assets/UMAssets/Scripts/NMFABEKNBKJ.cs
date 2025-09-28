@@ -43,7 +43,7 @@ public class NMFABEKNBKJ
 	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg = "") { }
 
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
-	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
     {
 		HHCJCDFCLOB = this;
 		HBAFMHEBNDP = -1;
@@ -116,7 +116,7 @@ public class NMFABEKNBKJ
 	}
 
 	// // RVA: 0x1CAB998 Offset: 0x1CAB998 VA: 0x1CAB998
-	public void FCDDHHKAGEP_AcceptFCM(IMCBBOAFION _CNJANCCFBIL_Cb)
+	public void FCDDHHKAGEP_Request(IMCBBOAFION _CNJANCCFBIL_Cb)
 	{
 		N.a.StartCoroutineWatched(KGGHPICPOAA_Corotuine_GetFCMTokens(() =>
 		{

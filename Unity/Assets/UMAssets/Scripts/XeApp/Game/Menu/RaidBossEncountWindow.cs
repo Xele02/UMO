@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x145B6FC Offset: 0x145B6FC VA: 0x145B6FC
 		public void Initialize()
 		{
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			MenuScene.Instance.ItemTextureCache.Load(NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId(), (IiconTexture texture) =>
 			{

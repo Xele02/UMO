@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEF3414 Offset: 0xEF3414 VA: 0xEF3414
 		private int GetPoint0(int id)
 		{
-			List<LGMEPLIJLNB> rewards = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(id);
+			List<LGMEPLIJLNB> rewards = LGMEPLIJLNB.FKDIMODKKJD_GetList(id);
 			int a = -1;
 			for(int i = 0; i < rewards.Count; i++)
 			{

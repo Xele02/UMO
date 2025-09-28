@@ -276,11 +276,11 @@ namespace XeApp.Game.Menu
 						m_currentStep = Step.None;
 						m_cambackRankingStep = Step.None;
 						m_selectedCardIndex = ev.BHNEJEDEHJA_SelectedCardIdx();
-						bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.FKEJBAHCMGC_CheckEventId(m_eventId);
+						bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.FKEJBAHCMGC_CheckEvent(m_eventId);
 						diff = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.FFACBDAJJJP_GetDifficulty();
 						if(b)
 						{
-							GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+							GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 						}
 						ApplyBasicInfo();
 						ApplyMusicListInfo();
@@ -434,10 +434,10 @@ namespace XeApp.Game.Menu
 			if(!listIsEmpty)
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.HJHBGHMNGKL_SetDifficulty(diff);
-				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.ACGKEJKPFIA_SetMusicIdForCategory((FreeCategoryId.Type)categoryId, freeMusicId);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.ACGKEJKPFIA_SetSelectedSong((FreeCategoryId.Type)categoryId, freeMusicId);
 				m_LayoutMissonSelect.UpdatePlayButton(selectMusicData, diff);
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F2234 Offset: 0x6F2234 VA: 0x6F2234
@@ -830,7 +830,7 @@ namespace XeApp.Game.Menu
 		private void OnChangedSeries(FreeCategoryId.Type seriesId)
 		{
 			int a;
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.FKJBADIPKHK_GetMusicIdForCategory(seriesId, out a);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.FKJBADIPKHK_GetFreeMusicId(seriesId, out a);
 			int idx = FindMusicListIndex((int)seriesId, a);
 			if(idx < 0)
 				idx = 0;
@@ -921,7 +921,7 @@ namespace XeApp.Game.Menu
 				s.List = ev.AFOIGLCEBAE.FindAll((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
 				{
 					//0x10382CC
-					return _.CIANOCNPIFF_Type != KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_MusicId;
+					return _.CIANOCNPIFF_Type != KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_Music;
 				});
 				s.Buttons = new ButtonInfo[1]
 				{
@@ -1141,7 +1141,7 @@ namespace XeApp.Game.Menu
 		private void SaveDifficulty()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.KIKCCBMOLDM_MissionEvent.HJHBGHMNGKL_SetDifficulty(diff);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xB4701C Offset: 0xB4701C VA: 0xB4701C Slot: 16
@@ -1414,7 +1414,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!MenuScene.Instance.DirtyChangeScene)
 				{
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					{
 						yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
 						{
@@ -1782,7 +1782,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			m_isLine6Mode = style == 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			this.StartCoroutineWatched(Co_ChangeLiveMode(() =>
 			{
 				//0xB491E8

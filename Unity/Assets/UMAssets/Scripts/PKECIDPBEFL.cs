@@ -20,7 +20,7 @@ public class PKECIDPBEFL
 	public const long BBEGLBMOBOF_xorl = 0x1719a2f1e73;
 	public const int FBGGEFFJJHB_xor = 0x2242f969;
 	private const int MPLGOGILHHF = 0x15f7f449;
-	private const int JDNKJIFMONK = 1;
+	private const int JDNKJIFMONK_CurrentVersion = 1;
 	private const int EHMLNEGODOF = 0x96ac50;
 	private const int KCFFFBGPDBO = 0x299ce1af;
 	public const int FLMEHINJLML = 0;
@@ -76,7 +76,7 @@ public class PKECIDPBEFL
     }
 
 	// // RVA: 0x93A8F4 Offset: 0x93A8F4 VA: 0x93A8F4
-	public void DOMFHDPMCCO(List<DDBKLMKKCDL> _JPDPFGFMKHK_rankings, List<string> PNMLDKNKIIM, List<int> CIGDBPLIGKM, List<string> _JIMKNDJMCID_Keys, List<int> _EMEKFFHCHMH_RewardEnd2, bool DCOJMLNFPFM, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player, EDOHBJAPLPF_JsonData _LAEMKLPEIAK_Logs, List<int> _BIOBLLHBKBC_Gpgs, long IKHKMFNIHKH, long IAGGEOPLJIN, string _ECAOENGDBMI_SaveHash, int OKJNNGJJOFA, List<PBJPACKDIIB.IFCOFHAFMON> _CFLLEDGILPK_CoopQuest)
+	public void DOMFHDPMCCO_Init(List<DDBKLMKKCDL> _JPDPFGFMKHK_rankings, List<string> PNMLDKNKIIM, List<int> CIGDBPLIGKM, List<string> _JIMKNDJMCID_Keys, List<int> _EMEKFFHCHMH_RewardEnd2, bool DCOJMLNFPFM, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player, EDOHBJAPLPF_JsonData _LAEMKLPEIAK_Logs, List<int> _BIOBLLHBKBC_Gpgs, long _IKHKMFNIHKH_PlayAt, long _IAGGEOPLJIN_LimitAt, string _ECAOENGDBMI_SaveHash, int _OKJNNGJJOFA_RaidBossId, List<PBJPACKDIIB.IFCOFHAFMON> _CFLLEDGILPK_CoopQuest)
 	{
 		LHPDDGIJKNB_Reset();
 		HNDDJDMAAJD = JAFAIDPJALG();
@@ -93,15 +93,15 @@ public class PKECIDPBEFL
 			MEGNAIJPBFF_InventoryClosedAt.AddRange(_EMEKFFHCHMH_RewardEnd2);
 		if (_BIOBLLHBKBC_Gpgs != null)
 			BIOBLLHBKBC_Gpgs.AddRange(_BIOBLLHBKBC_Gpgs);
-		IKHKMFNIHKH_PlayAt = IKHKMFNIHKH;
-		IAGGEOPLJIN_LimitAt = IAGGEOPLJIN;
+		IKHKMFNIHKH_PlayAt = _IKHKMFNIHKH_PlayAt;
+		IAGGEOPLJIN_LimitAt = _IAGGEOPLJIN_LimitAt;
 		OHNJJIMGKGK_Names = _OHNJJIMGKGK_Names;
 		CHDDDCCHJJH_replace = DCOJMLNFPFM;
 		HJDBGMMPPEF_PlayerData = _NMICBJDPLOH_player;
 		LAEMKLPEIAK_Logs = _LAEMKLPEIAK_Logs;
 		ECAOENGDBMI_SaveHash = _ECAOENGDBMI_SaveHash;
 		DCLLGOECHPA_PidCrypted = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
-		OKJNNGJJOFA_RaidBossId = OKJNNGJJOFA;
+		OKJNNGJJOFA_RaidBossId = _OKJNNGJJOFA_RaidBossId;
 		if(_CFLLEDGILPK_CoopQuest != null)
 			CFLLEDGILPK_CoopQuest.AddRange(_CFLLEDGILPK_CoopQuest);
 	}
@@ -271,12 +271,12 @@ public class PKECIDPBEFL
 		encode.KHEKNNFCAOI_Init((uint)JFFMOOLBCEC);
 		encode.DGBPHDMEDNP(IMOMGKMFPBL, HGGDHFDIFFG, HJAHECBPNKM);
 		encode.LBGGPBBOIEH(buffer);
-		encode.AAGCKDHEMFD_GenerateKey();
+		encode.AAGCKDHEMFD_Finish();
 		return buffer;
 	}
 
 	// // RVA: 0x93C5CC Offset: 0x93C5CC VA: 0x93C5CC
-	private EDOHBJAPLPF_JsonData CLNHGLGOKPF(byte[] NIODCJLINJN)
+	private EDOHBJAPLPF_JsonData CLNHGLGOKPF_Decrypt(byte[] NIODCJLINJN)
 	{
 		CPBPFGEDMAO = 0;
 		if(NIODCJLINJN == null)
@@ -292,7 +292,7 @@ public class PKECIDPBEFL
 				b.KHEKNNFCAOI_Init((uint)JFFMOOLBCEC);
 				b.DGBPHDMEDNP(IMOMGKMFPBL, HGGDHFDIFFG, HJAHECBPNKM);
 				b.FAEFDAJAMCE(NIODCJLINJN);
-				b.AAGCKDHEMFD_GenerateKey();
+				b.AAGCKDHEMFD_Finish();
 				CPBPFGEDMAO = 4;
 				if(BitConverter.ToInt32(NIODCJLINJN, 0) == 0x15f7f449)
 				{
@@ -351,7 +351,7 @@ public class PKECIDPBEFL
 	public void MIABDPJHEHK(byte[] NIODCJLINJN)
     {
         LHPDDGIJKNB_Reset();
-		EDOHBJAPLPF_JsonData json = CLNHGLGOKPF(NIODCJLINJN);
+		EDOHBJAPLPF_JsonData json = CLNHGLGOKPF_Decrypt(NIODCJLINJN);
 		if(json != null)
 		{
 			EHGBICNIBKE_player_id = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(json, "pid");
@@ -496,7 +496,7 @@ public class PKECIDPBEFL
     }
 
 	// // RVA: 0x93DF78 Offset: 0x93DF78 VA: 0x93DF78
-	public void OJCJPCHFPGO()
+	public void OJCJPCHFPGO_Delete()
     {
         string path = JAFAIDPJALG();
         string dirName = Path.GetDirectoryName(path);

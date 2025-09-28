@@ -13,7 +13,7 @@ public class EJGJAFBLHHM
 	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 
 	//// RVA: 0x12EE308 Offset: 0x12EE308 VA: 0x12EE308
-	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 	}

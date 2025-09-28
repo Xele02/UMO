@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 			if(m_is_save)
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_Order = m_order;
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 			if(m_delegate_order != null)
 				m_delegate_order(m_sort, m_order);

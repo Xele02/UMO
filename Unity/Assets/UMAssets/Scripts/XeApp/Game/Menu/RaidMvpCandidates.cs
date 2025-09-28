@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 			RaidMvpCandidatesArgs arg = Args as RaidMvpCandidatesArgs;
 			if(arg != null)
 				m_boss_info = arg.bossInfo;
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(m_boss_info == null)
 			{
 				m_boss_info = raidController.JIBMOEHKMGB_SelectedBoss;

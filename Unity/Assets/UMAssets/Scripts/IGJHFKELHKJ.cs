@@ -20,7 +20,7 @@ public class IGJHFKELHKJ
 	private string JHJMNLMNPGO_BasePath; // 0xC
 
 	// // RVA: 0x11F4DB4 Offset: 0x11F4DB4 VA: 0x11F4DB4
-	public HPJEDLPEJLF LBDOLHGDIEB(uint _IOIMHJAOKOO_Hash)
+	public HPJEDLPEJLF LBDOLHGDIEB_Find(uint _IOIMHJAOKOO_Hash)
 	{
 		if(!BEIEHPNODAM.ContainsKey(_IOIMHJAOKOO_Hash))
 			return null;
@@ -56,7 +56,7 @@ public class IGJHFKELHKJ
 	}
 
 	// // RVA: 0x11F5320 Offset: 0x11F5320 VA: 0x11F5320
-	public void PCODDPDFLHK()
+	public void PCODDPDFLHK_Load()
 	{
 		IGJHFKELHKJ.FBGGEFFJJHB_xor = (uint)(Utility.GetCurrentUnixTime() + 100);
 		BEIEHPNODAM.Clear();
@@ -125,7 +125,7 @@ public class IGJHFKELHKJ
 	}
 
 	// // RVA: 0x11F6154 Offset: 0x11F6154 VA: 0x11F6154
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
 	{
 		JHJMNLMNPGO_BasePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys;
 		if(!Directory.Exists(JHJMNLMNPGO_BasePath))

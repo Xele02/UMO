@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				t_setting.OnClickNormal = () =>
 				{
 					//0xDE8940
-					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0;
+					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal;
 					t_cont.Close(() =>
 					{
 						//0xDE8A2C

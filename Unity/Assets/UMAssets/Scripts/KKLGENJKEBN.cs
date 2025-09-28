@@ -47,7 +47,7 @@ public class KKLGENJKEBN
 	//public void PAHLEGMEKHI(int _KNIFCANOHOC_score) { }
 
 	//// RVA: 0x1A04BAC Offset: 0x1A04BAC VA: 0x1A04BAC
-	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 	}

@@ -26,7 +26,7 @@ public class FDDIIKBJNNA
 	}
 
 	// // RVA: 0xFCAFC8 Offset: 0xFCAFC8 VA: 0xFCAFC8
-	// public void JCHLONCMPAJ() { }
+	// public void JCHLONCMPAJ_Clear() { }
 
 	// // RVA: 0xFC8418 Offset: 0xFC8418 VA: 0xFC8418
 	public void JALKJCLEPJN()
@@ -275,7 +275,7 @@ public class FDDIIKBJNNA
 										{
 											a = 1;
 											b = false;
-											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6 || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HINPDNKNAHO_10)
+											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HINPDNKNAHO_10)
 											{
 												b = ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11;
 												a = (sns_event_room_pre_open != 1 || b) ? 1 : 0;

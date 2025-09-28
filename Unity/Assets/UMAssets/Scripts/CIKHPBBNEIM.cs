@@ -28,19 +28,19 @@ public class CIKHPBBNEIM
 	private List<PBJEFDNBBCD> EMCDEMHBFDB = new List<PBJEFDNBBCD>(); // 0x8
 
 	// // RVA: 0xFF8418 Offset: 0xFF8418 VA: 0xFF8418
-	public void OBKGEDCKHHE(IKDICBBFBMI_EventBase OBMKLJFKAPH, bool _CMEOKJMCEBH_IsGoDiva)
+	public void OBKGEDCKHHE_Init(IKDICBBFBMI_EventBase OBMKLJFKAPH, bool _CMEOKJMCEBH_IsGoDiva)
     {
-        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(_CMEOKJMCEBH_IsGoDiva));
+        OBKGEDCKHHE_Init(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(_CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF9CE8 Offset: 0xFF9CE8 VA: 0xFF9CE8
 	public void NFEECBNKKHD(IKDICBBFBMI_EventBase OBMKLJFKAPH, int CEHNJCIIKDN, bool _CMEOKJMCEBH_IsGoDiva)
     {
-        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.JKIJFGGMNAN_GetUnit(CEHNJCIIKDN, _CMEOKJMCEBH_IsGoDiva));
+        OBKGEDCKHHE_Init(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.JKIJFGGMNAN_GetUnit(CEHNJCIIKDN, _CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF84F4 Offset: 0xFF84F4 VA: 0xFF84F4
-	private void OBKGEDCKHHE(IKDICBBFBMI_EventBase OBMKLJFKAPH, JLKEOGLJNOD_TeamInfo MLAFAACKKBG)
+	private void OBKGEDCKHHE_Init(IKDICBBFBMI_EventBase OBMKLJFKAPH, JLKEOGLJNOD_TeamInfo _MLAFAACKKBG_Unit)
     {
         EMCDEMHBFDB.Clear();
         for(int i = 0; i < OBMKLJFKAPH.LHAKGDAGEMM_EpBonusInfos.Count; i++)
@@ -100,11 +100,11 @@ public class CIKHPBBNEIM
                         GJLFANGDGCL_Target.ALDAOOLPHCH_BonusAfter = (int)(f * a2);
                         for(int k = 0; k < 3; k++)
                         {
-                            if(MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_diva[k].DIPKCALNIII_diva_id != 0)
+                            if(_MLAFAACKKBG_Unit.DJPFJGKGOOF_Setting.FDBOPFEOENF_diva[k].DIPKCALNIII_diva_id != 0)
                             {
                                 for(int kk = 0; kk < 3; kk++)
                                 {
-                                    if(GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId == MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_diva[k].EBDNICPAFLB_s_slot[kk])
+                                    if(GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId == _MLAFAACKKBG_Unit.DJPFJGKGOOF_Setting.FDBOPFEOENF_diva[k].EBDNICPAFLB_s_slot[kk])
                                     {
                                         GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = true;
                                     }

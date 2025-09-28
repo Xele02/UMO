@@ -9,7 +9,7 @@ public class HDEEBKIFLNI
 		AIECBKAKOGC_Twitter = 0,
 		LMODEBIKEBC_Line = 1,
 		OKEAEMBLENP_Facebook = 2,
-		AEFCOHJBLPO = 3,
+		AEFCOHJBLPO_3_Num = 3,
 	}
 
 	private bool[] AMBCBJHFIDD_LinkByPlatform = new bool[3]; // 0x8
@@ -18,7 +18,7 @@ public class HDEEBKIFLNI
 	public static HDEEBKIFLNI HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 
 	// RVA: 0x1740C5C Offset: 0x1740C5C VA: 0x1740C5C
-	public void IJBGPAENLJA(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 		for(int i = 0; i < AMBCBJHFIDD_LinkByPlatform.Length; i++)

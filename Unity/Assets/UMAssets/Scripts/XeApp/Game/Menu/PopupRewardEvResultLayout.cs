@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 						m_numTexts[3].text = view.CurrentPoint.ToString();
 						m_unitTexts[3].text = "";
 					}
-					else if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+					else if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 					{
 						m_numTexts[2].text = view.CurrentPoint.ToString();
 						m_unitTexts[2].text = JpStringLiterals.StringLiteral_19538;
@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 					{
 						m_rightTitleAnim.StartChildrenAnimGoStop("05");
 					}
-					else if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+					else if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 					{
 						m_rightTitleAnim.StartChildrenAnimGoStop("10");
 					}

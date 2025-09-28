@@ -179,7 +179,7 @@ namespace XeApp.Game.Common
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category itemCat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
 			List<NKFJNAANPNP.MOJLCADLMKH> res = new List<NKFJNAANPNP.MOJLCADLMKH>();
-			if(itemCat < EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
+			if(itemCat < EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 			{
 				if(itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
 				{
@@ -207,7 +207,7 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
+				if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 				{
 					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
 				}

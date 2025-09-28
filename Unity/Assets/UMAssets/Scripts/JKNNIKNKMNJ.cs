@@ -167,7 +167,7 @@ public class JKNNIKNKMNJ
 	// public long LEHHIGOOIJJ() { }
 
 	// // RVA: 0x1472DCC Offset: 0x1472DCC VA: 0x1472DCC
-	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool _DDGFCOPPBBN_test/* = true*/)
+	public bool IGFMNMADJPP_Consume(int CHIHFGDIBJM, bool _DDGFCOPPBBN_test/* = true*/)
 	{
 		long l1 = DCLKMNGMIKC_GetCurrentValue(false);
 		if (CHIHFGDIBJM <= l1 && !_DDGFCOPPBBN_test)

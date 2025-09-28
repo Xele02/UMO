@@ -47,7 +47,7 @@ namespace XeApp.Game.Gacha
 			}
 			else
 			{
-				if(cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC && cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
+				if(cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC && cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 				{
 					;
 				}

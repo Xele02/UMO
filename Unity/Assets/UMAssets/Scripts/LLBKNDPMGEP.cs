@@ -23,7 +23,7 @@ public class LLBKNDPMGEP
         CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
         {
             //0x180BCFC
-            return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
+            return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
         }) as CANAFALMGLI_EventPresentCampaign;
         if(ev != null)
         {

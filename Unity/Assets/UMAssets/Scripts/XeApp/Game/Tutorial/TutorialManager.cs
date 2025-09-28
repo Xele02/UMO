@@ -93,7 +93,7 @@ namespace XeApp.Game.Tutorial
 			}
 			if (hasShown)
 			{
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				Instance.Release();
 			}
 			GameManager.Instance.RemovePushBackButtonHandler(OnDummyBackButton);
@@ -107,7 +107,7 @@ namespace XeApp.Game.Tutorial
 		public static IEnumerator ShowTutorial(int id, UnityAction endAction)
 		{
 			//0xE474F4
-			PJANOOPJIDE_TutorialPict.HNHHGJCPMEA h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.LBDOLHGDIEB(id);
+			PJANOOPJIDE_TutorialPict.HNHHGJCPMEA h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.LBDOLHGDIEB_Find(id);
 			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
 			if(h != null && h.PPEGAKEIEGM_Enabled == 2)
 			{

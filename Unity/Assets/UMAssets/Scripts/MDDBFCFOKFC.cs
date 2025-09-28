@@ -25,7 +25,7 @@ public class MDDBFCFOKFC
 		}
 
 		//// RVA: 0x130F3A0 Offset: 0x130F3A0 VA: 0x130F3A0
-		public void FPEKCEGADMG(BinaryWriter _OMLLGAKPMAN_writer)
+		public void FPEKCEGADMG_Write(BinaryWriter _OMLLGAKPMAN_writer)
 		{
 			_OMLLGAKPMAN_writer.Write(NPDKEIIMCDI_LastShowtime);
 			_OMLLGAKPMAN_writer.Write(CINLIMIKCAL_EnableBgEffect);
@@ -33,7 +33,7 @@ public class MDDBFCFOKFC
 		}
 
 		//// RVA: 0x130ED14 Offset: 0x130ED14 VA: 0x130ED14
-		public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader)
+		public void FKGBNKPHCJL_Read(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader)
 		{
 			if(_CEMEIPNMAAD_Version == 2)
 			{
@@ -50,7 +50,7 @@ public class MDDBFCFOKFC
 		}
 	}
 
-	public const int JNCCCCPBDIC = 2;
+	public const int JNCCCCPBDIC_Version = 2;
 	public IFHIAPIJGMI KOGBMDOONFA_Info = new IFHIAPIJGMI(); // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 
@@ -73,7 +73,7 @@ public class MDDBFCFOKFC
 			{
 				using (BinaryReader b = new BinaryReader(f))
 				{
-					KOGBMDOONFA_Info.FKGBNKPHCJL(b.ReadInt32(), b);
+					KOGBMDOONFA_Info.FKGBNKPHCJL_Read(b.ReadInt32(), b);
 				}
 			}
 		}
@@ -90,7 +90,7 @@ public class MDDBFCFOKFC
 			using (BinaryWriter b = new BinaryWriter(f))
 			{
 				b.Write(2);
-				KOGBMDOONFA_Info.FPEKCEGADMG(b);
+				KOGBMDOONFA_Info.FPEKCEGADMG_Write(b);
 				b.Flush();
 				b.Close();
 			}
@@ -98,5 +98,5 @@ public class MDDBFCFOKFC
 	}
 
 	//// RVA: 0x130F47C Offset: 0x130F47C VA: 0x130F47C
-	//public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
+	//public void JCHLONCMPAJ_Clear(bool _OGBEGDKPDGK_NeedSave) { }
 }

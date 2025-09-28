@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.ICBNEOCAGKF_SceneStatusPage = m_statusDispIndex;
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xA5B624 Offset: 0xA5B624 VA: 0xA5B624
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 			m_pageSave = pageSave;
 			m_sceneData = sceneData;
 			m_limitOverData.KHEKNNFCAOI_Init(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_luck);
-			m_sceneDetails.text = sceneData.BGJNIABLBDB_GetSceneDetail();
+			m_sceneDetails.text = sceneData.BGJNIABLBDB_get_description();
 			m_gachaInfoLayout.StartAnimGoStop(sceneData.IJIKIPDKCPP == 0 ? "02" : "01");
 			m_loadingFlag = 0;
 			GameManager.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) =>

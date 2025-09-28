@@ -66,14 +66,14 @@ namespace XeApp.Game.Menu
 			raidController.LHEPBBADNIH();
 			ChangeRemainTime(raidController.DMNDFBJODBA_GetApLoadTimeLeft());
 			SetAPNum(raidController.HGJAGDPPALF_GetApNum(), raidController.BFPIHPBKEGK_GetApMax());
-			m_viewPlayerStatus.FBANBDCOEJL();
+			m_viewPlayerStatus.FBANBDCOEJL_Update();
 			m_paidStoneNum.SetNumber(m_viewPlayerStatus.FNCPAEFEECO_CurrencyPaid, 0);
 		}
 
 		// RVA: 0xCEE648 Offset: 0xCEE648 VA: 0xCEE648 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_isShow = false;
 			currentGaugeType = GaugeType.None;
 			healTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("raid_event_ap_second", 1200);

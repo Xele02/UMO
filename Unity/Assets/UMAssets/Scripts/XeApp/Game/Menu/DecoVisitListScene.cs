@@ -473,7 +473,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
 				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
 				m_sentGiftPopupSetting.itemId = _itemId;
 				m_sentGiftPopupSetting.count = _itemCount;

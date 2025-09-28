@@ -23,7 +23,7 @@ public class CNGFKOJANNP
 	}
 
 	// // RVA: 0x175B490 Offset: 0x175B490 VA: 0x175B490
-	public void IJBGPAENLJA_Init(MonoBehaviour _DANMJLOBLIE_mb)
+	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		FBGGEFFJJHB_xor = (int)(Utility.GetCurrentUnixTime() * 0x1d7);
 		HHCJCDFCLOB = this;

@@ -204,13 +204,13 @@ namespace XeApp.Game.Menu
 			{
 				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 2;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
 				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 1;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_DivaId;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostume(id).AHHJLDLAPAN_DivaId;
 			}
 			return (uint)(1 << a);
 		}

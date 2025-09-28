@@ -60,7 +60,7 @@ public class BIHCALIAJII_GachaLimit : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xC83460 Offset: 0xC83460 VA: 0xC83460
-	//public bool PJPDOCNJNGJ(int _HHGMPEEGFMA_GachaId, int _DNBFMLBNAEE_point) { }
+	//public bool PJPDOCNJNGJ_IsLimited(int _HHGMPEEGFMA_GachaId, int _DNBFMLBNAEE_point) { }
 
 	// RVA: 0xC8359C Offset: 0xC8359C VA: 0xC8359C
 	public BIHCALIAJII_GachaLimit()

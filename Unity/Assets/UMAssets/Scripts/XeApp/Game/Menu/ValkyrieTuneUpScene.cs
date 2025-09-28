@@ -501,7 +501,7 @@ namespace XeApp.Game.Menu
 		{
 			PNGOLKLFFLH valk = m_SeriesValkyrieList[SelectSeries][Select];
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IOAFPGDJCDH_ValkyrieTuneUp.IHAHBHEDIAK_SelectVfId = valk.GPPEFLKGGGJ_ValkyrieId;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_Name, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_name, valk.KINFGHHNFCF_Atk.ToString(), valk.NONBCCLGBAO_hit.ToString());
 			ApplyAbility();
 			if(IsAbilityMax())
@@ -602,7 +602,7 @@ namespace XeApp.Game.Menu
 				//0xBD6E38
 				return loading_count > 0;
 			});
-			m_EpisodeList = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(true);
+			m_EpisodeList = PIGBBNDPPJC.FKDIMODKKJD_GetList(true);
 			ResetSeriesButtonState();
 			m_SeriesTab.ChangeSelectSeries(SelectSeries + 1, ref SelectSeries, ref Select);
 			m_SeriesTab.ApplySelectSeriesButton(SelectSeries);

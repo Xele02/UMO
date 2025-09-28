@@ -62,7 +62,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1BB3044 Offset: 0x1BB3044 VA: 0x1BB3044 Slot: 6
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			m_xor = LPDNKHAIOLH.CEIBAFOCNCA();
+			m_xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
 			TicketLimitCount = 0;
 			UseTcketCount = 0;
 			PopupSkipTicketUseConfirmSetting s = setting as PopupSkipTicketUseConfirmSetting;

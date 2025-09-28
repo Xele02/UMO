@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			if(!m_isSimulationLive)
 			{
 				m_musicRate.Enter();
-				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid/*11*/)
+				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid/*11*/)
 				{
 					m_isShowBanner = true;
 				}
@@ -305,8 +305,8 @@ namespace XeApp.Game.Menu
 			long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 1; i < 7; i++)
 			{
-				List<IBJAKJJICBC> viewList = IBJAKJJICBC.FKDIMODKKJD(i, val, false, false, false, false);
-				List<IBJAKJJICBC> view6LineList = IBJAKJJICBC.FKDIMODKKJD(i, val, false, false, false, true);
+				List<IBJAKJJICBC> viewList = IBJAKJJICBC.FKDIMODKKJD_GetList(i, val, false, false, false, false);
+				List<IBJAKJJICBC> view6LineList = IBJAKJJICBC.FKDIMODKKJD_GetList(i, val, false, false, false, true);
 				List<IBJAKJJICBC> viewSimulationList = viewList;
 				List<IBJAKJJICBC> view6LineSimulationList = view6LineList;
 				if(i == 5)
@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.OGJDBPMKJKE_GetCategoryId();
 			int curMusicId = 0;
 			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = 0;
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.FKJBADIPKHK_GetSelectionForCategory(
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.FKJBADIPKHK_GetFreeMusicId(
 				categoryId,
 				out curMusicId, out eventType
 			);
@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
 				}
 			}
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/, false);
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
 			if(m_eventCtrl == null)
 			{
 				if(m_eventBanner != null)
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/);
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/);
 			if(m_scoreEventCtrl != null)
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "init score event music");
@@ -497,7 +497,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16828E4 Offset: 0x16828E4 VA: 0x16828E4
-		// private bool CheckShowEventBanner(OHCAABOMEOF.KGOGMKMBCPP eventType) { }
+		// private bool CheckShowEventBanner(OHCAABOMEOF.KGOGMKMBCPP_EventType eventType) { }
 
 		// // RVA: 0x168439C Offset: 0x168439C VA: 0x168439C
 		protected void OnChangeLiveMode(int mode)

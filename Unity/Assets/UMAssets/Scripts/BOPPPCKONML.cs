@@ -7,7 +7,7 @@ using XeSys;
 public class BOPPPCKONML
 {
 	public const int HIPKCMPGCDK = 50;
-	public const int ECFEMKGFDCE = 1;
+	public const int ECFEMKGFDCE_CurrentVersion = 1;
 	public const int MMAMNHPKOPH = 5;
 	private static string PLHNDPDKNLB_inventory_record = "inventory_record"; // 0x0
 	public long KAKFEGGEKLB_save_id; // 0x8
@@ -46,7 +46,7 @@ public class BOPPPCKONML
 	}
 
 	//// RVA: 0x19D13D0 Offset: 0x19D13D0 VA: 0x19D13D0
-	public void PCODDPDFLHK(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public void PCODDPDFLHK_Load(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		LHPDDGIJKNB_Reset();
 		NAIJIFAJGGK_RequestLoadPlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
@@ -67,7 +67,7 @@ public class BOPPPCKONML
 				{
 					PJJFEAHIPGL_inventories[i].ODDIHGPONFL_Copy(l2[i]);
 				}
-				HJMKBCFJOOH(_BHFHGFKBOHH_OnSuccess, _AOCANKOMKFG_OnError);
+				HJMKBCFJOOH_Save(_BHFHGFKBOHH_OnSuccess, _AOCANKOMKFG_OnError);
 			}
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
@@ -122,14 +122,14 @@ public class BOPPPCKONML
 	}
 
 	//// RVA: 0x19D1E44 Offset: 0x19D1E44 VA: 0x19D1E44
-	private EDOHBJAPLPF_JsonData AHGNJOONPHI(GJDFHLBONOL AIMLPJOGPID)
+	private EDOHBJAPLPF_JsonData AHGNJOONPHI(GJDFHLBONOL _AIMLPJOGPID_Data)
 	{
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
-		res["m"] = AIMLPJOGPID.LJGOOOMOMMA_message;
-		res[AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm] = AIMLPJOGPID.JJBGOIMEIPF_ItemId;
-		res[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = AIMLPJOGPID.MBJIFDBEDAC_item_count;
-		res[AFEHLCGHAEE_Strings.BEBJKJKBOGH_date] = AIMLPJOGPID.LNDEFMALKAN_received_at;
-		res[AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr] = AIMLPJOGPID.EILKGEADKGH_Order;
+		res["m"] = _AIMLPJOGPID_Data.LJGOOOMOMMA_message;
+		res[AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm] = _AIMLPJOGPID_Data.JJBGOIMEIPF_ItemId;
+		res[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = _AIMLPJOGPID_Data.MBJIFDBEDAC_item_count;
+		res[AFEHLCGHAEE_Strings.BEBJKJKBOGH_date] = _AIMLPJOGPID_Data.LNDEFMALKAN_received_at;
+		res[AFEHLCGHAEE_Strings.FPOMEEJFBIG_odr] = _AIMLPJOGPID_Data.EILKGEADKGH_Order;
 		return res;
 	}
 
@@ -219,7 +219,7 @@ public class BOPPPCKONML
 	}
 
 	//// RVA: 0x19D2D50 Offset: 0x19D2D50 VA: 0x19D2D50
-	public void ANIJHEBLMGB(GJDFHLBONOL CCBEKGNDDBE)
+	public void ANIJHEBLMGB_SetValue(GJDFHLBONOL CCBEKGNDDBE)
 	{
 		int idx = KCKOKCHMIBA();
 		long order = GDELKANOPBH();
@@ -229,7 +229,7 @@ public class BOPPPCKONML
 	}
 
 	//// RVA: 0x19D2F50 Offset: 0x19D2F50 VA: 0x19D2F50
-	public void HJMKBCFJOOH(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public void HJMKBCFJOOH_Save(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		bool b = false;
 		for(int i = 0; i < 50; i++)
@@ -281,7 +281,7 @@ public class BOPPPCKONML
 	}
 
 	//// RVA: 0x19D3498 Offset: 0x19D3498 VA: 0x19D3498
-	private string HIOMFHINAAH()
+	private string HIOMFHINAAH_GetFileName()
 	{
 		return string.Concat(new object[4]
 		{
@@ -293,7 +293,7 @@ public class BOPPPCKONML
 	public List<GJDFHLBONOL> LIIBNLMMMHK(out long CJBHNAPHONN)
 	{
 		List<GJDFHLBONOL> res = new List<GJDFHLBONOL>();
-		string path = HIOMFHINAAH();
+		string path = HIOMFHINAAH_GetFileName();
 		if(!File.Exists(path))
 		{
 			CJBHNAPHONN = 0;
@@ -337,7 +337,7 @@ public class BOPPPCKONML
 		}
 		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 		data2["list"] = data;
-		string path = HIOMFHINAAH();
+		string path = HIOMFHINAAH_GetFileName();
 		string dir = Path.GetDirectoryName(path);
 		if (!Directory.Exists(dir))
 			Directory.CreateDirectory(dir);

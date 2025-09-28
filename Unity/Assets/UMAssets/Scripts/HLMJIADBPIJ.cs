@@ -6,13 +6,13 @@ public class HLMJIADBPIJ
 	public static int MKLHIENKAFA = 864000; // 0x0
 
 	// RVA: 0x15F2314 Offset: 0x15F2314 VA: 0x15F2314
-	public static bool IBHJAMDGGMC(NJLGICBHIOC.EOFJDIACFEC _INDDJNMPONH_type, long _DPIBHFNDJII_UnlockCond1, long _EKPBOLNFGJB_UnlockCond2, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData, OKGLGHCBCJP_Database NKEBMCIMJND, long _JHNMKKNEENE_Time)
+	public static bool IBHJAMDGGMC(NJLGICBHIOC.EOFJDIACFEC _INDDJNMPONH_type, long _DPIBHFNDJII_UnlockCond1, long _EKPBOLNFGJB_UnlockCond2, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData, OKGLGHCBCJP_Database _NKEBMCIMJND_Database, long _JHNMKKNEENE_Time)
     {
         switch(_INDDJNMPONH_type)
 		{
 			case NJLGICBHIOC.EOFJDIACFEC.HIJCECJACBK/*1*/:
 				{
-					LAEGMENIEDB_Story.ALGOILKGAAH st = NKEBMCIMJND.OHCIFMDPAPD_Story.CDENCMNHNGA_table.Find((LAEGMENIEDB_Story.ALGOILKGAAH _GHPLINIACBB_x) =>
+					LAEGMENIEDB_Story.ALGOILKGAAH st = _NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA_table.Find((LAEGMENIEDB_Story.ALGOILKGAAH _GHPLINIACBB_x) =>
 					{
 						//0x15F3338
 						return _GHPLINIACBB_x.KLCIIHKFPPO_StoryMusicId == _DPIBHFNDJII_UnlockCond1;
@@ -64,11 +64,11 @@ public class HLMJIADBPIJ
 				{
 					if (_AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode == null)
 						return false;
-					if(_DPIBHFNDJII_UnlockCond1 - 1 < NKEBMCIMJND.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList.Count)
+					if(_DPIBHFNDJII_UnlockCond1 - 1 < _NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList.Count)
 					{
-						if (NKEBMCIMJND.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].PPEGAKEIEGM_Enabled != 2)
+						if (_NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].PPEGAKEIEGM_Enabled != 2)
 							return false;
-						return _AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].EBIIIAELNAA_Step + 1 <= NKEBMCIMJND.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].FGOGPCMHPIN_Count;
+						return _AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].EBIIIAELNAA_Step + 1 <= _NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[(int)_DPIBHFNDJII_UnlockCond1 - 1].FGOGPCMHPIN_Count;
 					}
 					return false;
 				}
@@ -116,12 +116,12 @@ public class HLMJIADBPIJ
 				}
 			case NJLGICBHIOC.EOFJDIACFEC.OMPHECLBFEH/*19*/:
 				{
-					JPCKBFBCJKD m = NKEBMCIMJND.IBPAFKKEKNK_Music.LLJOPJMIGPD((int)_DPIBHFNDJII_UnlockCond1);
+					JPCKBFBCJKD m = _NKEBMCIMJND_Database.IBPAFKKEKNK_Music.LLJOPJMIGPD((int)_DPIBHFNDJII_UnlockCond1);
 					if (m == null)
 						return false;
 					if (!_AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete)
 						return false;
-					if (!NKEBMCIMJND.IBPAFKKEKNK_Music.IAAMKEJKPPL(m, _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level))
+					if (!_NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAAMKEJKPPL(m, _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level))
 						return false;
 					return _AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[(int)_DPIBHFNDJII_UnlockCond1 - 1].DMANHOPOBMP_IsShowUnlock;
 				}

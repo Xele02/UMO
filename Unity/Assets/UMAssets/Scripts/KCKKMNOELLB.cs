@@ -38,7 +38,7 @@ public class KCKKMNOELLB_SecureLong
     }
 
 	// // RVA: 0x1022100 Offset: 0x1022100 VA: 0x1022100
-	// public void DNBGDMBCLMI() { }
+	// public void DNBGDMBCLMI_ChangeKey() { }
 
 	// // RVA: 0x1021F94 Offset: 0x1021F94 VA: 0x1021F94
 	public FENCAJJBLBH KPOCKNCJBPN()

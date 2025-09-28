@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class CFNMIJDKIJH
 {
 	public int[] BCGKLONODHO { get; set; } // 0x8 EJKADCKMMCN KAINPELLHFF EJPIFOFOINA
-	public int[] KPBJHHHMOJE { get; set; } // 0xC DDMBHIBNJIF NNBONJFLKFM FIOMMOICJLL
+	public int[] KPBJHHHMOJE_Time { get; set; } // 0xC DDMBHIBNJIF NNBONJFLKFM FIOMMOICJLL
 	public int[] JBGEEPFKIGG_val { get; set; } // 0x10 AHPLCJAKAOP OLOCMINKGON ABAFHIBFKCE
 }
 public class OLDDMCHLPEB
@@ -40,7 +40,7 @@ public class MEIHPKLEAKP
 			{
 				KPBJHHHMOJE_list.Add(DJOIJIADLCC_readData.GetAKKGNHMOBPP(KPBJHHHMOJE_idx));
 			}
-			DJOIJIADLCC_data.KPBJHHHMOJE = KPBJHHHMOJE_list.ToArray();
+			DJOIJIADLCC_data.KPBJHHHMOJE_Time = KPBJHHHMOJE_list.ToArray();
 
 			List<int> JBGEEPFKIGG_list = new List<int>();
 			for(int JBGEEPFKIGG_idx = 0; JBGEEPFKIGG_idx < DJOIJIADLCC_readData.CGKGLCKCAMCLength; JBGEEPFKIGG_idx++)

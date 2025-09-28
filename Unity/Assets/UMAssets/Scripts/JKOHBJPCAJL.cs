@@ -10,7 +10,7 @@ public class JKOHBJPCAJL
         EGIOFFACHCP_4 = 4,
         DBJIHJMNPAM_5 = 5,
         OAFEJPAEGEK = 6,
-        OLCLJKOKJCD = 7,
+        OLCLJKOKJCD_7_End = 7,
     }
 
 }

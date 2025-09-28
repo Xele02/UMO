@@ -70,12 +70,12 @@ namespace XeApp.Game.Menu
 						SetHomeBgName(GetHomeBgName(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId));
 						SetImageHomeBg(GetHomeBgId(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId));
 					}
-					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 					{
 						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4"))));
 						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					}
-					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 					{
 						SetRewardName(EKLNMHFCAOI.INCKKODFJAP_GetItemName(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId));
 						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
@@ -93,13 +93,13 @@ namespace XeApp.Game.Menu
 						SetHomeBgName(GetHomeBgName(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId));
 						SetImageHomeBg(GetHomeBgId(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId));
 					}
-					else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+					else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 					{
 						SetPilotName(GetPilotName(GetPilotIdForValkyrie(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId)));
 						SetImageValkyrie(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
 						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4"))));
 					}
-					else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+					else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 					{
 						SetDivaName(GetDivaShortName(GetDivaIdForCostume(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId)));
 						SetImageCostume(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
@@ -175,12 +175,12 @@ namespace XeApp.Game.Menu
 						m_stringIndex = 3;
 						m_typeTbl.StartChildrenAnimGoStop("06");
 					}
-					else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+					else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 					{
 						m_stringIndex = 2;
 						m_typeTbl.StartChildrenAnimGoStop("03");
 					}
-					else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+					else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 					{
 						m_stringIndex = 1;
 						m_typeTbl.StartChildrenAnimGoStop("02");
@@ -266,11 +266,11 @@ namespace XeApp.Game.Menu
 				{
 					SetDesc(bk.GetMessageByLabel("popup_add_episode_04"));
 				}
-				else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+				else if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 				{
 					SetDesc(bk.GetMessageByLabel("popup_add_episode_02"));
 				}
-				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					SetDesc(bk.GetMessageByLabel("popup_add_episode_03"));
 				}
@@ -283,11 +283,11 @@ namespace XeApp.Game.Menu
 			{
 				SetDesc(bk.GetMessageByLabel("popup_release_episode_03"));
 			}
-			else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
 				SetDesc(bk.GetMessageByLabel("popup_release_episode_02"));
 			}
-			else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
 				SetDesc(bk.GetMessageByLabel("popup_release_episode_01"));
 			}
@@ -300,9 +300,9 @@ namespace XeApp.Game.Menu
 			{
 				if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					m_descTbl.StartChildrenAnimGoStop("05");
-				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 					m_descTbl.StartChildrenAnimGoStop("02");
-				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				else if (itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 					m_descTbl.StartChildrenAnimGoStop("01");
 				else
 					m_descTbl.StartChildrenAnimGoStop("01");

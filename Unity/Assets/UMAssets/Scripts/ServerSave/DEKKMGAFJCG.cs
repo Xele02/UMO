@@ -31,7 +31,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 		public int HPJMPINPKEP_HomeCostumeId { get; set; } // 0x28 FFHDAPEBIOM JKALKLILMPH HALNDNAKBIE
 		public int KKEPMONFGEI_HomeCostumeColorId { get; set; } // 0x2C HGHGFBHGAKL EDJNFDAPBAP MJDLBJPPPOL
 		public List<int> ANAJIAENLNB_lv { get { return KJFGPMCKKOD; } } //0x1973BD8 MMOMNMBKHJF
-		public List<int> LKIFDCEKDCK_exp { get { return OJKHIMDICBI; } } //0x1973BE0 GOKMANFHFPC
+		public List<int> LKIFDCEKDCK_exp { get { return OJKHIMDICBI; } } //0x1973BE0 GOKMANFHFPC_get_exp
 		public List<int> KBOLNIBLIND_unlock { get { return OGKFEBONAAP; } } //0x1973BE8 HEOJHPJAPJC
 		public List<int> EBDNICPAFLB_s_slot { get { return NBJLJHECGEF; } } //0x1972894 GHDADHFINPE
 		public int KCCONFODCPN_IntimacyLevel { get { int val = LFIEICOKCDE_IntimacyLevelCrypted ^ (FBGGEFFJJHB_xor + 3); return val < 1 ? 0 : val; } set { LFIEICOKCDE_IntimacyLevelCrypted = (value > 0 ? value : 0) ^ (FBGGEFFJJHB_xor + 3); } } //0x1973C20 GMOJMNAFGFF 0x1975018 AFJNLICPHEM
@@ -175,7 +175,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x19765E4 Offset: 0x19765E4 VA: 0x19765E4
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, DEKKMGAFJCG_Diva.MNNLOBDPCCH _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string _JIKKNHIAEKG_BlockName, string MJBACHKCIHA, int _OIPCCBHIKIA_index, DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 	}
 
 	public class IFHCNLAODKG
@@ -186,7 +186,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 		public int NGEADPGADLI_DivaSlot = -1; // 0x14
 	}
 
-	public const int ECFEMKGFDCE = 2;
+	public const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const int LBBLNLCFIOH = 10;
 	private const int CIEBPOLGCBC = 300;
 	public const int NLKJKCPHOLP = 2;
@@ -205,7 +205,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1972580 Offset: 0x1972580 VA: 0x1972580
-	public IFHCNLAODKG JOGOEIEKIHP(int _BCCHOBPJJKE_SceneId)
+	public IFHCNLAODKG JOGOEIEKIHP_GetDivaInfoWithScene(int _BCCHOBPJJKE_SceneId)
 	{
 		if(_BCCHOBPJJKE_SceneId == 0)
 			return null;
@@ -343,17 +343,17 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 				{
 					EDOHBJAPLPF_JsonData subData = data[i];
 					MNNLOBDPCCH_DivaInfo info = NBIGLBMHEDC_DivaList[i];
-					int val = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.DIPKCALNIII_diva_id, i + 1, ref isInvalid);
+					int val = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.DIPKCALNIII_diva_id, i + 1, ref isInvalid);
 					if (info.DIPKCALNIII_diva_id != val)
 						val = i + 1;
 					info.DIPKCALNIII_diva_id = val;
-					info.HEBKEJBDCBH_diva_lv = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.HEBKEJBDCBH_diva_lv, 1, ref isInvalid);
-					info.ACABEFKBBEN_exp_frag = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.ACABEFKBBEN_exp_frag, 0, ref isInvalid);
-					info.PIGLAEFPNEK_m_slot = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.PIGLAEFPNEK_m_slot, 0, ref isInvalid);
-					info.BEEAIAAJOHD_CostumeId = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref isInvalid);
-					info.AFNIOJHODAG_CostumeColorId = CJAENOMGPDA_ReadInt(subData, "c_col", 0, ref isInvalid);
-					info.HPJMPINPKEP_HomeCostumeId = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.JJLLJCEJENB_h_c_id, 0, ref isInvalid);
-					info.KKEPMONFGEI_HomeCostumeColorId = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.FEDBLJNOCIH_h_c_col, 0, ref isInvalid);
+					info.HEBKEJBDCBH_diva_lv = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.HEBKEJBDCBH_diva_lv, 1, ref isInvalid);
+					info.ACABEFKBBEN_exp_frag = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.ACABEFKBBEN_exp_frag, 0, ref isInvalid);
+					info.PIGLAEFPNEK_m_slot = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.PIGLAEFPNEK_m_slot, 0, ref isInvalid);
+					info.BEEAIAAJOHD_CostumeId = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref isInvalid);
+					info.AFNIOJHODAG_CostumeColorId = CJAENOMGPDA_GetInt(subData, "c_col", 0, ref isInvalid);
+					info.HPJMPINPKEP_HomeCostumeId = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.JJLLJCEJENB_h_c_id, 0, ref isInvalid);
+					info.KKEPMONFGEI_HomeCostumeColorId = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.FEDBLJNOCIH_h_c_col, 0, ref isInvalid);
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					{
 						if (!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(info.DIPKCALNIII_diva_id))
@@ -377,7 +377,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 							info.KKEPMONFGEI_HomeCostumeColorId = 0;
 						}
 					}
-					info.CPGFPEDMDEH_have = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.CPGFPEDMDEH_have, 0, ref isInvalid);
+					info.CPGFPEDMDEH_have = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.CPGFPEDMDEH_have, 0, ref isInvalid);
 					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.ANAJIAENLNB_lv, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 					{
 						//0x197B738
@@ -398,17 +398,17 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 						//0x197B90C
 						info.EBDNICPAFLB_s_slot[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 					}, ref isInvalid);
-					info.KCCONFODCPN_IntimacyLevel = CJAENOMGPDA_ReadInt(subData, "intm_lv", 1, ref isInvalid);
-					info.BNDNNCHJGBB_IntimacyExp = CJAENOMGPDA_ReadInt(subData, "intm_exp", 0, ref isInvalid);
-					info.JLEPLIHFPKD_IntimacySkillLevel = CJAENOMGPDA_ReadInt(subData, "intm_skill_lv", 0, ref isInvalid);
-					info.GCGCFGJCLEL_IntimacyTension = CJAENOMGPDA_ReadInt(subData, "intm_tension", 0, ref isInvalid);
-					info.APKBMBKMPAB_IntimacyPresentCount = CJAENOMGPDA_ReadInt(subData, "intm_present_cnt", 1, ref isInvalid);
-					info.DDODJCCIENF_IntimacyPresentTotal = CJAENOMGPDA_ReadInt(subData, "intm_present_total", -1, ref isInvalid);
-					info.NFDPLBOIDAB_IntimacyTouchCount = CJAENOMGPDA_ReadInt(subData, "intm_touch_cnt", 0, ref isInvalid);
-					info.NEAADNDKGLG_IntimacyTouchTotal = CJAENOMGPDA_ReadInt(subData, "intm_touch_total", 0, ref isInvalid);
-					info.MMCEMJILMJI_EvSoLevel = CJAENOMGPDA_ReadInt(subData, "ev_so_lv", 0, ref isInvalid);
-					info.HDPANGMKKCP_EvVoLevel = CJAENOMGPDA_ReadInt(subData, "ev_vo_lv", 0, ref isInvalid);
-					info.FFMLBEEBHDD_EvChLevel = CJAENOMGPDA_ReadInt(subData, "ev_ch_lv", 0, ref isInvalid);
+					info.KCCONFODCPN_IntimacyLevel = CJAENOMGPDA_GetInt(subData, "intm_lv", 1, ref isInvalid);
+					info.BNDNNCHJGBB_IntimacyExp = CJAENOMGPDA_GetInt(subData, "intm_exp", 0, ref isInvalid);
+					info.JLEPLIHFPKD_IntimacySkillLevel = CJAENOMGPDA_GetInt(subData, "intm_skill_lv", 0, ref isInvalid);
+					info.GCGCFGJCLEL_IntimacyTension = CJAENOMGPDA_GetInt(subData, "intm_tension", 0, ref isInvalid);
+					info.APKBMBKMPAB_IntimacyPresentCount = CJAENOMGPDA_GetInt(subData, "intm_present_cnt", 1, ref isInvalid);
+					info.DDODJCCIENF_IntimacyPresentTotal = CJAENOMGPDA_GetInt(subData, "intm_present_total", -1, ref isInvalid);
+					info.NFDPLBOIDAB_IntimacyTouchCount = CJAENOMGPDA_GetInt(subData, "intm_touch_cnt", 0, ref isInvalid);
+					info.NEAADNDKGLG_IntimacyTouchTotal = CJAENOMGPDA_GetInt(subData, "intm_touch_total", 0, ref isInvalid);
+					info.MMCEMJILMJI_EvSoLevel = CJAENOMGPDA_GetInt(subData, "ev_so_lv", 0, ref isInvalid);
+					info.HDPANGMKKCP_EvVoLevel = CJAENOMGPDA_GetInt(subData, "ev_vo_lv", 0, ref isInvalid);
+					info.FFMLBEEBHDD_EvChLevel = CJAENOMGPDA_GetInt(subData, "ev_ch_lv", 0, ref isInvalid);
 					if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(info.PIGLAEFPNEK_m_slot))
 					{
 						info.PIGLAEFPNEK_m_slot = 0;

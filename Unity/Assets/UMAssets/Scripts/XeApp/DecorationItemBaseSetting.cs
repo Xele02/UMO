@@ -46,12 +46,12 @@ namespace XeApp
 			this.viewDecoItemData.ODDIHGPONFL_Copy(viewDecoItemData);
 			AreaType = MakeAreaType((int)AttributeType);
 			IsAutoFlip = MakeAutoFlip(viewDecoItemData);
-			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN);
+			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN_Attribute);
 			IsOnShelf = MakeOnShelf(viewDecoItemData);
 			IsShelf = false;
 			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM_typ, AttributeType);
-			AdjustOffset.x = viewDecoItemData.EDEEMPJPFCP;
-			AdjustOffset.y = viewDecoItemData.HDHNEILDILJ;
+			AdjustOffset.x = viewDecoItemData.EDEEMPJPFCP_OffsetX;
+			AdjustOffset.y = viewDecoItemData.HDHNEILDILJ_OffsetY;
 			FontSizeType = viewDecoItemData.DBGAJBIBODC_FontType;
 			Thickness = MakeThickness(viewDecoItemData);
 			Order = viewDecoItemData.EILKGEADKGH_Order;
@@ -91,8 +91,8 @@ namespace XeApp
 			AreaType = MakeAreaType((int)AttributeType);
 			IsAutoFlip = info.FAKNMCIIAEM_IsAutoFlip == 1;
 			IsOnShelf = info.CMMNFCJNIOO_IsOnShelf == 1;
-			AdjustOffset.x = info.NGILPOOLBCF;
-			AdjustOffset.y = info.JINEKNIBOFI;
+			AdjustOffset.x = info.NGILPOOLBCF_OffsetX;
+			AdjustOffset.y = info.JINEKNIBOFI_OffsetY;
 		}
 
 		//// RVA: 0x1AD0934 Offset: 0x1AD0934 VA: 0x1AD0934
@@ -124,7 +124,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD4E7C Offset: 0x1AD4E7C VA: 0x1AD4E7C
-		//private bool MakeIsShelf(EKLNMHFCAOI.FKGCBLHOOCL ctg, int type) { }
+		//private bool MakeIsShelf(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg, int type) { }
 
 		//// RVA: 0x1AD4D14 Offset: 0x1AD4D14 VA: 0x1AD4D14
 		private bool MakeOverlay(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg, DecorationConstants.Attribute.Type attr, int type)
@@ -164,6 +164,6 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD5168 Offset: 0x1AD5168 VA: 0x1AD5168
-		//private bool IsRug(EKLNMHFCAOI.FKGCBLHOOCL ctg, int type) { }
+		//private bool IsRug(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg, int type) { }
 	}
 }

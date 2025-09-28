@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 			int costumeId = itemInfo.m_cosId;
 			int costumeModelId = itemInfo.m_cosModelId;
 			int costumeColor = itemInfo.m_cosColor;
-			int id = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, costumeId);
+			int id = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, costumeId);
 			GameManager.Instance.ItemTextureCache.Load(id, costumeColor, (IiconTexture icon) =>
 			{
 				//0xB6D944

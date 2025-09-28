@@ -29,15 +29,15 @@ public class GDMKJMAFJAG
 			CGLAEOLPEGN.ODDIHGPONFL_Copy(GOIIICHHHCL);
 			for (int i = 0; i < 20; i++)
 			{
-				if (GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i) != 0)
+				if (GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i) != 0)
 				{
 					if(GOIIICHHHCL.ADKDHKMPMHP_rate[i] > 0)
 					{
 						if(GOIIICHHHCL.HMFFHLPNMPH_count[i] > 0)
 						{
-							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i)) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
+							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i)) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 							{
-								int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i));
+								int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i));
 								KEEKEFEPKFN_GrowItem.MDFGLOIGAFE_GrowItemData item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_table[itemId - 1];
 								if(item.INDDJNMPONH_type > 1)
 								{
@@ -108,7 +108,7 @@ public class HNJKJCDDIMG_SetInfo
 	//public uint CAOGDCBPBAN() { }
 
 	//// RVA: 0x15FC250 Offset: 0x15FC250 VA: 0x15FC250
-	public int FKNBLDPIPMC_GetItemId(int _OIPCCBHIKIA_index)
+	public int FKNBLDPIPMC_GetItemCode(int _OIPCCBHIKIA_index)
 	{
 		return PNFIBNJIOAN_Items[_OIPCCBHIKIA_index] ^ FBGGEFFJJHB_xor;
 	}
@@ -120,7 +120,7 @@ public class HNJKJCDDIMG_SetInfo
 	}
 
 	//// RVA: 0x15FC3E8 Offset: 0x15FC3E8 VA: 0x15FC3E8
-	public int KAINPNMMAEK_GetItemsCount()
+	public int KAINPNMMAEK_GetItemCount()
 	{
 		return PNFIBNJIOAN_Items.Count;
 	}
@@ -129,9 +129,9 @@ public class HNJKJCDDIMG_SetInfo
 	public void ODDIHGPONFL_Copy(HNJKJCDDIMG_SetInfo GPBJHKLFCEP)
 	{
 		LIHEBNPAIFI_SId = GPBJHKLFCEP.LIHEBNPAIFI_SId;
-		for(int i = 0; i < GPBJHKLFCEP.KAINPNMMAEK_GetItemsCount(); i++)
+		for(int i = 0; i < GPBJHKLFCEP.KAINPNMMAEK_GetItemCount(); i++)
 		{
-			OEFHMMJFEKC_SetItemId(i, GPBJHKLFCEP.FKNBLDPIPMC_GetItemId(i));
+			OEFHMMJFEKC_SetItemId(i, GPBJHKLFCEP.FKNBLDPIPMC_GetItemCode(i));
 		}
 	}
 }

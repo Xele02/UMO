@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(setup.CostType == LayoutPopupDash.CostType.Energy)
 			{
-				int b = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina;
+				int b = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount;
 				int a = setup.OwnValue;
 				if(a < b)
 					a += b;
@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x1344D2C
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.KJGPOAEGFHK_SetDashInfo(setup.EventId, selectIndex);
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				});
 			}
 			if(layout != null)

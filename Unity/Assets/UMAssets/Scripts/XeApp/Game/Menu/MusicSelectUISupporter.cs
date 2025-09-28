@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		// public LimitTimeWatcher musicTimeWatcher { get; } 0xF53A60
 		private bool listIsEmpty { get { return currentMusicList.GetCount(isLine6Mode, false) < 1; } } //0xF541D4
 		private IBJAKJJICBC selectMusicData { get { return currentMusicList.Get(m_listNo, isLine6Mode, false); } } //0xF54224
-		// private OHCAABOMEOF.KGOGMKMBCPP eventType { get; } 0xF57D8C
+		// private OHCAABOMEOF.KGOGMKMBCPP_EventType eventType { get; } 0xF57D8C
 		private bool scrollIsClamp { get { 
 			if(!ForceScrollClamp)
 			{
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 			}
 			return true;
 		 } } //0xF57DAC
-		public bool IsEventCounting { get { return eventStatus == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6; } } //0xF58044
+		public bool IsEventCounting { get { return eventStatus == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting; } } //0xF58044
 		public bool IsEventEndChallengePeriod { get { return eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5; } } //0xF585C0
 
 		// // RVA: 0xF53A68 Offset: 0xF53A68 VA: 0xF53A68
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(viewBoostData.EFFBJDMGIGO(boostSelectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.CNAMHABEOPF_1)
+					if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(boostSelectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.CNAMHABEOPF_1)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 				return m_questList.FindIndex((FKMOKDCJFEN x) =>
 				{
 					//0x1510CB8
-					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+					return x.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved;
 				}) > -1;
 			}
 			return false;
@@ -517,7 +517,7 @@ namespace XeApp.Game.Menu
 			m_musicInfo.SetEventDesc(musicData.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_description);
 			m_cdSelect.ApplyCursorNew(musicData.LDGOHPAPBMM_IsNew);
 			m_cdSelect.ApplyCursorAttr(GameAttribute.Type.None);
-			m_cdSelect.ApplyCursorEventType(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid ? MusicSelectCDSelect.EventType.Raid : MusicSelectCDSelect.EventType.Special, false);
+			m_cdSelect.ApplyCursorEventType(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid ? MusicSelectCDSelect.EventType.Raid : MusicSelectCDSelect.EventType.Special, false);
 			m_cdSelect.ApplyCursorEventStyle(MusicSelectCDSelect.EventStyle.ExEvent, false);
 			m_cdSelect.ApplyDropItemType(MusicSelectCDSelect.DropType.None);
 			m_cdSelect.ApplyCursorEventRemainCount(-1, false);

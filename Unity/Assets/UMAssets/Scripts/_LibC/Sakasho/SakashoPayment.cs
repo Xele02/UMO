@@ -1412,7 +1412,7 @@ namespace ExternLib
 								{
 									case 180015: // 4周年娘くじ☆抽選券 vc id 236-243 (idx 247-253) + 68-73(67-72) + 51-54(50-53)
 									{
-										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames().Find((string _) => 
+										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames().Find((string _) => 
 										{ 
 											return _ == "event_box_gacha_e" || _ == "event_box_gacha_f"; 
 										})) as IMDBGDNPLJA_EventBoxGacha;
@@ -1425,7 +1425,7 @@ namespace ExternLib
 									case 180009: //前夜祭娘くじ☆抽選券 vc id 220-227 (idx 231-238) + 99(95) + 56-61(55-60)
 									{
 										// Get the current kuji event
-										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection("event_box_gacha_d") as IMDBGDNPLJA_EventBoxGacha;
+										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find("event_box_gacha_d") as IMDBGDNPLJA_EventBoxGacha;
 										if(evDb != null)
 										{
 											giftId = evDb.KGDBEMPMAIJ_Boxes[0].GLCLFMGPMAN_ItemId;
@@ -1439,7 +1439,7 @@ namespace ExternLib
 									}
 									case 180017: //娘くじ☆抽選券 vc id 172-179(183-190) + 76(75) + 62-64(61-63) + 27-32(26-31)
 									{
-										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames().Find((string _) => 
+										IMDBGDNPLJA_EventBoxGacha evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames().Find((string _) => 
 										{ 
 											return _ == "event_box_gacha_a" || _ == "event_box_gacha_b" || _ == "event_box_gacha_c"; 
 										})) as IMDBGDNPLJA_EventBoxGacha;
@@ -1493,7 +1493,7 @@ namespace ExternLib
 				});
 				foreach(BKPAPCMJKHE_Shop.DNOENEKHGMI shop in shops)
 				{
-					List<FJGOKILCBJA> items = FJGOKILCBJA.FKDIMODKKJD(shop.OPKDAIMPJBH_ShopId, shop.EFNMDPKEJIM_LineupId, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+					List<FJGOKILCBJA> items = FJGOKILCBJA.FKDIMODKKJD_GetList(shop.OPKDAIMPJBH_ShopId, shop.EFNMDPKEJIM_LineupId, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 					for(int i = 0; i < items.Count; i++)
 					{
 						ProductInfo p = Products.Find((ProductInfo _) =>
@@ -1788,7 +1788,7 @@ namespace ExternLib
 						{
 							CHHECNJBMLA_EventBoxGacha ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _) =>
 							{
-								return _.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha;
+								return _.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha;
 							}) as CHHECNJBMLA_EventBoxGacha;
 							if(ev != null)
 							{

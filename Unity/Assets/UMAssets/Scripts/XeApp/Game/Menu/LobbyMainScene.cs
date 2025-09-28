@@ -438,7 +438,7 @@ namespace XeApp.Game.Menu
 			}
 			bool IsDone = false;
 			bool IsError = false;
-			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(evRaid != null)
 			{
 				evRaid.AMBHKLLAJID((int _bossNum, int _newBossNum) =>
@@ -1052,7 +1052,7 @@ namespace XeApp.Game.Menu
 			m_windowUi.IsIconChange = _change;
 			m_isChange = !_change;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().NNKKOLHBGEL_ChatCommon.OCFJGGFPIBK_ChatIconState = _change;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x12A45F0 Offset: 0x12A45F0 VA: 0x12A45F0
@@ -1171,7 +1171,7 @@ namespace XeApp.Game.Menu
 				IsGotoNotDeco = true;
 				m_windowUi.UnLockScroll();
 				MenuScene.Instance.RaycastEnable();
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 			else
 			{
@@ -1461,7 +1461,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			m_windowUi.LockScroll();
 			int viewing_another_lobby_check_num = m_RaidLobbyController.FJLIDJJAGOM().LPJLEHAJADA_GetIntParam("viewing_another_lobby_check_num", 10);
-			m_RaidLobbyController.NKLFDHJKIII(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.GGCIMLDFDOC_0_Chat, m_PlayerId, viewing_another_lobby_check_num, (bool flg) =>
+			m_RaidLobbyController.NKLFDHJKIII(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.GGCIMLDFDOC_0, m_PlayerId, viewing_another_lobby_check_num, (bool flg) =>
 			{
 				//0xD08F3C
 				isPost = flg;

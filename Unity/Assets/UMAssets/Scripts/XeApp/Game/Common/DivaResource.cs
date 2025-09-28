@@ -539,7 +539,7 @@ namespace XeApp.Game.Common
 			// private StringBuilder <bundleName>5__2; // 0x28
 			// private StringBuilder <assetName>5__3; // 0x2C
 			// private AssetBundleLoadAllAssetOperationBase <operation>5__4; // 0x30
-			// private LCLCCHLDNHJ_Costume.ILODJKFJJDO <cosMaster>5__5; // 0x34
+			// private LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo <cosMaster>5__5; // 0x34
 			// 0x1BFDE5C
 			
 			StringBuilder bundleName = new StringBuilder();
@@ -843,7 +843,7 @@ namespace XeApp.Game.Common
 				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
 				OKGLGHCBCJP_Database o = i.NKEBMCIMJND_Database;
 				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
-				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
+				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_Get(divaId);
 				int ms = b.IDDHKOEFJFB_BodyId;
 				yield return this.StartCoroutineWatched(Co_LoadMikeStandResource(ms));
 			}
@@ -1075,7 +1075,7 @@ namespace XeApp.Game.Common
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
-			BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
+			BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_Get(divaId);
 			int personalityId = b.FPMGHDKACOF_PersonalityId;
 			
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
@@ -1211,7 +1211,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			typeBundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			personalityId = divaParam.ChangePersonalityId(modelId, personalityId);
 			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
@@ -1406,7 +1406,7 @@ namespace XeApp.Game.Common
 
 			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString(), false);
 
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -1479,7 +1479,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			assetName = new StringBuilder();
 
-			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
+			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
 			divaBundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return Co.R(operationDiva);
@@ -1727,7 +1727,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			menuMotionOverride.talk = new List<MenuMotionOverrideResource.Talk>(2);
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;

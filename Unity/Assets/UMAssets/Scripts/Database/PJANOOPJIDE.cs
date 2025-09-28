@@ -22,7 +22,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	public List<HNHHGJCPMEA> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x92FFCC Offset: 0x92FFCC VA: 0x92FFCC
-	public HNHHGJCPMEA LBDOLHGDIEB(int _PPFNGGCBJKC_id)
+	public HNHHGJCPMEA LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)
 	{
 		return CDENCMNHNGA_table.Find((HNHHGJCPMEA _GHPLINIACBB_x) =>
 		{
@@ -72,9 +72,9 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, array[i].DBHPPMPNCKF);
 			data.KNHABOOAAIP = array[i].KNHABOOAAIP;
 			
-			data.JONNCMDGMKA_Message = new string[array[i].IPBHCLIHAPG.Length];
+			data.JONNCMDGMKA_Message = new string[array[i].IPBHCLIHAPG_Msg.Length];
 			for(int j = 0; j < data.JONNCMDGMKA_Message.Length; j++)
-				data.JONNCMDGMKA_Message[j] = DatabaseTextConverter.TranslateTutoPictMessage(i, j, array[i].IPBHCLIHAPG[j]);
+				data.JONNCMDGMKA_Message[j] = DatabaseTextConverter.TranslateTutoPictMessage(i, j, array[i].IPBHCLIHAPG_Msg[j]);
 
 			data.ADCMNODJBGJ_title = new string[array[i].ADCMNODJBGJ_title.Length];
 			for(int j = 0; j < data.ADCMNODJBGJ_title.Length; j++)

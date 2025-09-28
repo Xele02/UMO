@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19DBDA8 Offset: 0x19DBDA8 VA: 0x19DBDA8
 		public void SetStampInfo(int stampId, int serifId)
 		{
-			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 			{
 				//0x19DC474
 				return stampId == item.PPFNGGCBJKC_id;

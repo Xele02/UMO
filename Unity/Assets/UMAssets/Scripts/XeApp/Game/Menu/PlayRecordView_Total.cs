@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDE3EC0 Offset: 0xDE3EC0 VA: 0xDE3EC0
 		public void Setup(BBHNACPENDM_ServerSaveData a_player_data)
 		{
-			m_player_level = a_player_data.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel;
+			m_player_level = a_player_data.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_Level;
 			m_uta_grade = HighScoreRating.GetUtaGrade(a_player_data.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate);
 			m_login = a_player_data.OEKEIGFAIGN_Counter.BDLNMOIOMHK_total.BJDKMJFCOOM_LCnt;
 			m_mission = a_player_data.MHEAEGMIKIE_PublicStatus.APFOBLMCLAO_q_cnt;
@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 							if(saveScene.BEBJKJKBOGH_date != 0)
 							{
 								m_plate_now++;
-								if (dbScenes.ELKHCOEMNOJ(dbScene.BCCHOBPJJKE_SceneId, saveScene.DMNIMMGGJJJ_Leaf, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver) == 1)
+								if (dbScenes.ELKHCOEMNOJ_IsKira(dbScene.BCCHOBPJJKE_SceneId, saveScene.DMNIMMGGJJJ_Leaf, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver) == 1)
 									m_plate_premium++;
 								if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) <=
 									saveScene.ANAJIAENLNB_lv)

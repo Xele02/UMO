@@ -58,7 +58,7 @@ public class DDBNGDNJJHN_SecureFloat
 	//public void LHPDDGIJKNB_Reset(int HBDLKOBJHFP, int LMJDJEACHBC) { }
 
 	//// RVA: 0x1771AFC Offset: 0x1771AFC VA: 0x1771AFC
-	//public void DNBGDMBCLMI() { }
+	//public void DNBGDMBCLMI_ChangeKey() { }
 
 	//// RVA: 0x17713F0 Offset: 0x17713F0 VA: 0x17713F0
 	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure()

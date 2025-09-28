@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B5B4 Offset: 0xC3B5B4 VA: 0xC3B5B4
 		private void CallBackCostumeUpgrade()
 		{
-			if (MOEALEGLGCH.CDOCOLOKCJK())
+			if (MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, null, true);
@@ -126,10 +126,10 @@ namespace XeApp.Game.Menu
 					{
 						valkyrietuneup_first_adv_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_first_adv_id", 89);
 					}
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(valkyrietuneup_first_adv_id);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(valkyrietuneup_first_adv_id);
 					if(dbAdv == null)
 					{
-						dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(1);
+						dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(1);
 						if(dbAdv == null)
 							return;
 					}
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3C6E4 Offset: 0xC3C6E4 VA: 0xC3C6E4
 		private void SettingCostumeUpgradeBotton()
 		{
-			m_costumeUpgradeLock.StartChildrenAnimGoStop(MOEALEGLGCH.CDOCOLOKCJK() ? 1 : 0, MOEALEGLGCH.CDOCOLOKCJK() ? 1 : 0);
+			m_costumeUpgradeLock.StartChildrenAnimGoStop(MOEALEGLGCH.CDOCOLOKCJK_Avaiable() ? 1 : 0, MOEALEGLGCH.CDOCOLOKCJK_Avaiable() ? 1 : 0);
 		}
 
 		// RVA: 0xC3C260 Offset: 0xC3C260 VA: 0xC3C260
@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OnTutorial()
 		{
 			//0xC3CC8C
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK_Avaiable() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
 				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO.CAPLNONHNCO/*1*/, m_menuButtons[4], BasicTutorialMessageId.Id_CostumeUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal));
 			}

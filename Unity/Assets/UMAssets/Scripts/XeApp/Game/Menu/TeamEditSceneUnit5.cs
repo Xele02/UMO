@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 			if(GameManager.Instance.IsTutorial)
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType = 0;
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 			m_viewUnitData = PlayerData.DPLBHAIKPGL_GetTeam(false);
 			int divaSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem;
@@ -1033,7 +1033,7 @@ namespace XeApp.Game.Menu
 		private SetDeckUnitInfoAnimeControl.DispType ChangeUnitInfoDispType()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType = (GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType + 1) % 2;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			return (SetDeckUnitInfoAnimeControl.DispType)GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType;
 		}
 
@@ -1046,7 +1046,7 @@ namespace XeApp.Game.Menu
 			CFHDKAFLNEP c = new CFHDKAFLNEP();
 			if (m_dispType == DispType.UnitSet)
 				c = m_unitSetParamCalculator.SubPlateResult;
-			if(c.CDOCOLOKCJK())
+			if(c.CDOCOLOKCJK_Avaiable())
 			{
 				m_isShowSubPlate = true;
 				MenuScene.Instance.UnitSaveWindowControl.ShowSubPlateWindow(c, null, UnitWindowConstant.OperationMode.Check, null, () =>

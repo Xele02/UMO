@@ -28,7 +28,7 @@ public class CIFHILOJJFC
 	}
 
 	// // RVA: 0xFF54D4 Offset: 0xFF54D4 VA: 0xFF54D4
-	// public bool DFIGPDCBAPB() { }
+	// public bool DFIGPDCBAPB_IsInvalid() { }
 
 	// // RVA: 0xFF5578 Offset: 0xFF5578 VA: 0xFF5578
 	public int EIDAHHCEPPC_GetNumScenes()
@@ -116,5 +116,5 @@ public class CIFHILOJJFC
 	}
 
 	// // RVA: 0xFF6258 Offset: 0xFF6258 VA: 0xFF6258
-	// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, CIFHILOJJFC _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+	// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string _JIKKNHIAEKG_BlockName, string MJBACHKCIHA, int _OIPCCBHIKIA_index, CIFHILOJJFC _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 }

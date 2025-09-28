@@ -69,18 +69,18 @@ public class PDMEOLIBGJD : IKMBBPDBECA
 				}
 			}
 		}
-		MDEIKCBEHHC = "";
+		MDEIKCBEHHC_Kakutei = "";
 		if(data.BBAJPINMOEP_Contains("kakutei"))
 		{
-            MDEIKCBEHHC = data["kakutei"].ToString();
-            if(Regex.IsMatch(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053))
+            MDEIKCBEHHC_Kakutei = data["kakutei"].ToString();
+            if(Regex.IsMatch(MDEIKCBEHHC_Kakutei, JpStringLiterals.StringLiteral_13053))
             {
-                string s = Regex.Replace(Regex.Match(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053).Value, "[0-9]", (Match _MABBBOEAPAA_p) =>
+                string s = Regex.Replace(Regex.Match(MDEIKCBEHHC_Kakutei, JpStringLiterals.StringLiteral_13053).Value, "[0-9]", (Match _MABBBOEAPAA_p) =>
                 {
                     //0xCC431C
                     return Convert.ToChar(_MABBBOEAPAA_p.Value[0] + 65248).ToString();
                 });
-                MDEIKCBEHHC = Regex.Replace(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053, s);
+                MDEIKCBEHHC_Kakutei = Regex.Replace(MDEIKCBEHHC_Kakutei, JpStringLiterals.StringLiteral_13053, s);
             }
 		}
 		MFICPBJPCCJ_GachaBgId = 0;

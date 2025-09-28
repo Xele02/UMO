@@ -17,7 +17,7 @@ public class JDMLEAOJAJO
 	// // RVA: 0x1C336AC Offset: 0x1C336AC VA: 0x1C336AC
 	public ICFLJACCIKF_EventBattle FFMBHIBHPBA(HAEDCCLHEMN_EventBattle _MOHDLLIJELH_cont)
     {
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(_MOHDLLIJELH_cont.JOPOPMLFINI_QuestName);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(_MOHDLLIJELH_cont.JOPOPMLFINI_QuestName);
 		if(db != null)
 		{
 			return db as ICFLJACCIKF_EventBattle;
@@ -85,7 +85,7 @@ public class CDDODEHEKGB : JDMLEAOJAJO
         HAEDCCLHEMN_EventBattle data = GGBDCHMDCFA();
         if(data != null)
         {
-            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.JOPOPMLFINI_QuestName);
+            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.JOPOPMLFINI_QuestName);
             if(db != null)
             {
                 ICFLJACCIKF_EventBattle dbSection = db as ICFLJACCIKF_EventBattle;
@@ -230,15 +230,15 @@ public class DCAKKIJODME : JDMLEAOJAJO
                     data.DPCFADCFMOA_Win = data2.PFGLKPNGKLN_Wl;
                     data.EKHAFFFELCO_CSkill = dbEvent.IJJHFGOIDOK_EventMusic[l[i] - 1].CPBFAMJEODF_c_skill;
                     data.EDHAJJHIKHE_LSkill = dbEvent.IJJHFGOIDOK_EventMusic[l[i] - 1].MGHPJNNDCIG_l_skill;
-                    data.BGJDHCEOIDB_ClassRank = 1;
+                    data.BGJDHCEOIDB_BattleClass = 1;
                     if(data.OHBNMGEKPNF_HasC)
                     {
-                        data.BGJDHCEOIDB_ClassRank = data2.EPKDHJLMKLF_C;
+                        data.BGJDHCEOIDB_BattleClass = data2.EPKDHJLMKLF_C;
                     }
-                    data.IOOBNLAHLEJ_WinBonus = data2.LJLCKFLJNPC_Bn;
-                    data.FOFJCOHAFCG_Ec = data2.CEAEKLNDENC_Ec;
-                    data.CLEFJPKPOGB_Ep = data2.FAKIHAPMADE_Ep;
-                    if(MCBICECCNGO && i == ev.CKCPAMDDNPF.BOLHMCFBGBP_SongIdx)
+                    data.IOOBNLAHLEJ_WinPoint = data2.LJLCKFLJNPC_Bn;
+                    data.FOFJCOHAFCG_EpisodeCnt = data2.CEAEKLNDENC_Ec;
+                    data.CLEFJPKPOGB_EpBonusCnt = data2.FAKIHAPMADE_Ep;
+                    if(MCBICECCNGO && i == ev.CKCPAMDDNPF.BOLHMCFBGBP_Idx)
                     {
                         data.KDNCMJBDCLE_ExBattleScore = ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore;
                         data.LDIODNEADGG_Hs = ev.CKCPAMDDNPF.JCCABPBHJPA_ExHighScore;
@@ -247,7 +247,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
                     else
                     {
                         //LAB_0176f5f8
-                        data.KDNCMJBDCLE_ExBattleScore = ((data.IOOBNLAHLEJ_WinBonus + data.KNIFCANOHOC_score) * 10) / 10;
+                        data.KDNCMJBDCLE_ExBattleScore = ((data.IOOBNLAHLEJ_WinPoint + data.KNIFCANOHOC_score) * 10) / 10;
                         data.LDIODNEADGG_Hs = data2.JKAMFMNGEBB_high_score;
                         data.FFHMPNGJCLK_NewRecord = false;
                     }

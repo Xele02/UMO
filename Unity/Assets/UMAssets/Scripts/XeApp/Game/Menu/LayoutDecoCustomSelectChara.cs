@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19DCB3C Offset: 0x19DCB3C VA: 0x19DCB3C Slot: 6
 		public override void LoadTexture()
 		{
-			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 			{
 				//0x19DCEAC
 				return item.PPFNGGCBJKC_id == Id;

@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 		private bool IsMatchMusicAttr(GCIJNCFDNON_SceneInfo sceneData, int musicId)
 		{
 			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
-			return CMMKCEPBIHI.OJNOJNEKBKH(m != null ? m.FKDCCLPGKDK_Ma : 0, sceneData.JGJFIJOCPAG_SceneAttr);
+			return CMMKCEPBIHI.OJNOJNEKBKH(m != null ? m.FKDCCLPGKDK_JacketAttr : 0, sceneData.JGJFIJOCPAG_SceneAttr);
 		}
 		
 	}

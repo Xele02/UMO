@@ -334,9 +334,9 @@ namespace XeApp.Game.Menu
 		public void Init(PIGBBNDPPJC data, int item_type)
 		{
 			m_data = data;
-			item_data = EEDBNJAEKBI.FKDIMODKKJD()[item_type];
+			item_data = EEDBNJAEKBI.FKDIMODKKJD_GetList()[item_type];
 			m_item_use_type = item_type;
-			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpisodeId);
+			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetList(data.KELFCMEOPPM_EpisodeId);
 			m_have_item = item_data.HMFFHLPNMPH_count;
 			if (!m_data.CCBKMCLDGAD_HasReward)
 			{

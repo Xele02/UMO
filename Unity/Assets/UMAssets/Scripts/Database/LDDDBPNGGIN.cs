@@ -167,7 +167,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0798 Offset: 0xDA0798 VA: 0xDA0798
-	public byte[] CEKGFNKJDCF(KOGHKIODHPA_Board JEMMMJEJLNL, int _JPIPENJGGDD_NumBoard, int AOPBAOJIOGO, int _ILABPFOMEAG_Va, int _JKGFBFPIMGA_Rarity, bool _MCCIFLKCNKO_Feed)
+	public byte[] CEKGFNKJDCF(KOGHKIODHPA_Board _JEMMMJEJLNL_Board, int _JPIPENJGGDD_NumBoard, int _AOPBAOJIOGO_Sb, int _ILABPFOMEAG_Va, int _JKGFBFPIMGA_Rarity, bool _MCCIFLKCNKO_Feed)
 	{
 		int i = GENHLFPKOEE(_JKGFBFPIMGA_Rarity, _MCCIFLKCNKO_Feed);
 		if (_JPIPENJGGDD_NumBoard < i)
@@ -178,7 +178,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		}
 		else
 		{
-			int b = JEMMMJEJLNL.NENHCPMDAGM(i - 1, AOPBAOJIOGO, _ILABPFOMEAG_Va);
+			int b = _JEMMMJEJLNL_Board.NENHCPMDAGM(i - 1, _AOPBAOJIOGO_Sb, _ILABPFOMEAG_Va);
 			byte[] res = new byte[50];
 			for(int j = 0; j < b; j++)
 			{
@@ -189,10 +189,10 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0984 Offset: 0xDA0984 VA: 0xDA0984
-	public byte[] KLIGCACGHHN(KOGHKIODHPA_Board JEMMMJEJLNL_BoardDb, int AOPBAOJIOGO_Sb, int _ILABPFOMEAG_Va, int _JKGFBFPIMGA_Rarity, bool _MCCIFLKCNKO_Feed)
+	public byte[] KLIGCACGHHN(KOGHKIODHPA_Board _JEMMMJEJLNL_Board, int _AOPBAOJIOGO_Sb, int _ILABPFOMEAG_Va, int _JKGFBFPIMGA_Rarity, bool _MCCIFLKCNKO_Feed)
 	{
 		int id = GENHLFPKOEE(_JKGFBFPIMGA_Rarity, _MCCIFLKCNKO_Feed);
-		int id2 = JEMMMJEJLNL_BoardDb.NENHCPMDAGM(id, AOPBAOJIOGO_Sb, _ILABPFOMEAG_Va);
+		int id2 = _JEMMMJEJLNL_Board.NENHCPMDAGM(id, _AOPBAOJIOGO_Sb, _ILABPFOMEAG_Va);
 		int key = id * 1000 + id2;
 		if (GEDEIGJKMGI.ContainsKey(key))
 		{
@@ -318,7 +318,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA1040 Offset: 0xDA1040 VA: 0xDA1040
-	public int NBIAKELCBLC_GetNumItems(int _MJBODMOLOBC_luck, int HLOHIMEAPLH_Seed)
+	public int NBIAKELCBLC_GetNumItems(int _MJBODMOLOBC_luck, int _HLOHIMEAPLH_Seed)
 	{
 		if (_MJBODMOLOBC_luck < 1)
 			_MJBODMOLOBC_luck = 0;
@@ -329,9 +329,9 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		int mod = v % AMNBEMCJCHF_LuckCoef1;
 		if (mod > 0)
 		{
-			if (HLOHIMEAPLH_Seed < 0)
-				HLOHIMEAPLH_Seed = -HLOHIMEAPLH_Seed;
-			int mod2 = HLOHIMEAPLH_Seed % AMNBEMCJCHF_LuckCoef1;
+			if (_HLOHIMEAPLH_Seed < 0)
+				_HLOHIMEAPLH_Seed = -_HLOHIMEAPLH_Seed;
+			int mod2 = _HLOHIMEAPLH_Seed % AMNBEMCJCHF_LuckCoef1;
 			if (mod2 < mod)
 				res++;
 		}
@@ -339,7 +339,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA1120 Offset: 0xDA1120 VA: 0xDA1120
-	public static int NBIAKELCBLC_GetNumItems(int _MJBODMOLOBC_luck, int HLOHIMEAPLH, int BAFFAONJPCE, int BDMLMGBLGPC)
+	public static int NBIAKELCBLC_GetNumItems(int _MJBODMOLOBC_luck, int _HLOHIMEAPLH_Seed, int BAFFAONJPCE, int BDMLMGBLGPC)
 	{
 		if(_MJBODMOLOBC_luck < 1)
 			_MJBODMOLOBC_luck = 0;
@@ -348,9 +348,9 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		int res = BAFFAONJPCE / BDMLMGBLGPC;
 		if(BAFFAONJPCE % BDMLMGBLGPC > 0)
 		{
-			if(HLOHIMEAPLH < 0)
-				HLOHIMEAPLH = -HLOHIMEAPLH;
-			if((HLOHIMEAPLH % BDMLMGBLGPC) < (BAFFAONJPCE % BDMLMGBLGPC))
+			if(_HLOHIMEAPLH_Seed < 0)
+				_HLOHIMEAPLH_Seed = -_HLOHIMEAPLH_Seed;
+			if((_HLOHIMEAPLH_Seed % BDMLMGBLGPC) < (BAFFAONJPCE % BDMLMGBLGPC))
 				res++;
 		}
 		return res;
@@ -1088,13 +1088,13 @@ public class EGLJKICMCPG
 	public short[] MDDMKHJNCBO_RMin; // 0x10
 
 	// RVA: 0x1C4FDBC Offset: 0x1C4FDBC VA: 0x1C4FDBC
-	public short JNNKKPNGPAA(SpecialNoteAttribute.Type FJFCNGNGIBN)
+	public short JNNKKPNGPAA(SpecialNoteAttribute.Type _FJFCNGNGIBN_Attribute)
 	{
-		if(FJFCNGNGIBN < SpecialNoteAttribute.Type.Heal)
+		if(_FJFCNGNGIBN_Attribute < SpecialNoteAttribute.Type.Heal)
 		{
 			return 0;
 		}
-		return MDDMKHJNCBO_RMin[(int)FJFCNGNGIBN - 1];
+		return MDDMKHJNCBO_RMin[(int)_FJFCNGNGIBN_Attribute - 1];
 	}
 }
 
@@ -1102,22 +1102,22 @@ public class KLJCBKMHKNK
 {
 	public enum HHMPIIILOLD
 	{
-		CCAPCGPIIPF_Normal = 0,
-		PFIOMNHDHCO_Valkyrie = 1,
-		FMLPIOFBCMA_Diva = 2,
+		CCAPCGPIIPF_0_Normal = 0,
+		PFIOMNHDHCO_1_Valkyrie = 1,
+		FMLPIOFBCMA_2_Diva = 2,
 		CBHCEDGAGHL_AwakenDiva = 3,
 		EOMCAODFBCN_ValkyrieFail = 4,
 		FDBLOGGAKOE_DivaFail = 5,
 		MFOJOJCAJOP_AllItems = 6,
 		JKAPLHFHGKL = 6,
-		AEFCOHJBLPO = 7,
+		AEFCOHJBLPO_7_Num = 7,
 	}
 
 	public List<EGLJKICMCPG> CDENCMNHNGA_table = new List<EGLJKICMCPG>(); // 0x8
 	public int PPFNGGCBJKC_id; // 0xC
 
 	// RVA: 0x111C678 Offset: 0x111C678 VA: 0x111C678
-	public EGLJKICMCPG GCINIJEMHFK(HHMPIIILOLD _CNDDKMJAIBG_mode)
+	public EGLJKICMCPG GCINIJEMHFK_Get(HHMPIIILOLD _CNDDKMJAIBG_mode)
 	{
 		return CDENCMNHNGA_table[(int)_CNDDKMJAIBG_mode];
 	}

@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
             DCAKKIJODME viewExResultData = initParam.viewEventExRivalResultData;
             if (initParam.viewEventGameResultData.IDBJPDBLIIG_ScoreResultRank >= 3)
 			{
-				m_lastExRivalIdx = initParam.viewEventGameResultData.BOLHMCFBGBP_ExRivalIdx;
+				m_lastExRivalIdx = initParam.viewEventGameResultData.BOLHMCFBGBP_Idx;
                 EMGOCNMMPHC em = initParam.viewEventExRivalResultData.KLMPGMPHNOP(m_lastExRivalIdx);
                 m_isHighScore = em.FFHMPNGJCLK_NewRecord;
 				if(m_isHighScore)

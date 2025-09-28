@@ -836,7 +836,7 @@ namespace XeApp.Game.RhythmAdjust
 			}
 			else if(type == PopupButton.ButtonType.Positive)
 			{
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				NextScene("Menu");
 			}
 		}
@@ -905,7 +905,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF6217C Offset: 0xF6217C VA: 0xF6217C
 		private void EndTutorialAdjust()
 		{
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			BasicTutorialManager.Instance.HideCursor();
 			this.StartCoroutineWatched(Co_TutorialEndFlow());
 		}
@@ -976,7 +976,7 @@ namespace XeApp.Game.RhythmAdjust
 			//0xF66F34
 			bool isWait = false;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress = 1;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			updater = UpdatePopupTask;
 			isWait = true;
 			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_BeginAdjust, () =>

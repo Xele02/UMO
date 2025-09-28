@@ -17,7 +17,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	public List<AFBMNDPOALE> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x9F61C8 Offset: 0x9F61C8 VA: 0x9F61C8
-	public AFBMNDPOALE LBDOLHGDIEB(int _PPFNGGCBJKC_id)
+	public AFBMNDPOALE LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)
 	{
 		return CDENCMNHNGA_table.Find((AFBMNDPOALE _GHPLINIACBB_x) =>
 		{
@@ -63,9 +63,9 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 		{
 			AFBMNDPOALE data = new AFBMNDPOALE();
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
-			data.JONNCMDGMKA_Message = new string[array[i].IPBHCLIHAPG.Length];
+			data.JONNCMDGMKA_Message = new string[array[i].IPBHCLIHAPG_Msg.Length];
 			for(int j = 0; j < data.JONNCMDGMKA_Message.Length; j++)
-				data.JONNCMDGMKA_Message[j] = DatabaseTextConverter.TranslateTutoMiniAdventureMessage(i, j, array[i].IPBHCLIHAPG[j]);
+				data.JONNCMDGMKA_Message[j] = DatabaseTextConverter.TranslateTutoMiniAdventureMessage(i, j, array[i].IPBHCLIHAPG_Msg[j]);
 			data.CJPMCKIOCGI = array[i].OGDLCNPFODO;
 			data.NDFOAINJPIN_pos = array[i].NDFOAINJPIN_pos;
 			data.KGJHFFNFPOK_CharacterId = array[i].ECEOBKOFJHK;

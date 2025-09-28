@@ -6,7 +6,7 @@ public class FKAFHLIDAFD
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_PlayerData { get; internal set; } // 0x8 LCHHPGMCKJD GNMGJMDJEGI LGLGNHAMNIK
 	internal BBHNACPENDM_ServerSaveData CCNKAKCBBDJ { get; set; } // 0xC MOMIOKHCMKH GHMKOMEKBFO KKOICOJPENH
 	public BBHNACPENDM_ServerSaveData FMFKHDPKLOC { get; internal set; } // 0x10 FDDDKGAMLLB AAMOPGKKGEI OBEALILDFEM
-	public bool KONHMOLMOCI { get; internal set; }  // 0x14 DEDJLABCBOH MDEMPMONBLE NAALAEJIEAI
+	public bool KONHMOLMOCI_IsSaving { get; internal set; }  // 0x14 DEDJLABCBOH MDEMPMONBLE NAALAEJIEAI
 	public bool LNAHEIEIBOI_Initialized { get; internal set; }  // 0x15 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
 	public bool BLCDJDJJBHC { get; internal set; }  // 0x16 BPLABMJENOI AAIACPOJKKO DNLNBFEHCKD
 	// public bool BBIOBFPCLOO { get; } 0x1187B54 BBBBKCIJNMG

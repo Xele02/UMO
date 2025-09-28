@@ -17,34 +17,34 @@ public class EPPOHFLMDBC_DivaStats
 
 	[UMOMember(ReaderMember = "", ReaderDisplay = "DivaStat")] // Level
 	public int ANAJIAENLNB_lv { get { return FBGGEFFJJHB_xor ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
-	[UMOMember(ReaderMember = "BCCOMAODPJI_hp|OEOIHIIIMCK", ReaderDisplay = "DivaStat_1")]
+	[UMOMember(ReaderMember = "BCCOMAODPJI_hp|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_1")]
 	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_xor ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
-	[UMOMember(ReaderMember = "LJELGFAFGAB_so|OEOIHIIIMCK", ReaderDisplay = "DivaStat_2")]
+	[UMOMember(ReaderMember = "LJELGFAFGAB_so|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_2")]
 	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_xor ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
-	[UMOMember(ReaderMember = "KNEDJFLCCLN_vo|OEOIHIIIMCK", ReaderDisplay = "DivaStat_3")]
+	[UMOMember(ReaderMember = "KNEDJFLCCLN_vo|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_3")]
 	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_xor ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_xor ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
-	[UMOMember(ReaderMember = "MBAMIOJNGBD_ch|OEOIHIIIMCK", ReaderDisplay = "DivaStat_4")]
+	[UMOMember(ReaderMember = "MBAMIOJNGBD_ch|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_4")]
 	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_xor ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
-	[UMOMember(ReaderMember = "ADLGKMBIPCA_fd|OEOIHIIIMCK", ReaderDisplay = "DivaStat_5")]
+	[UMOMember(ReaderMember = "ADLGKMBIPCA_fd|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_5")]
 	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_xor ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
-	[UMOMember(ReaderMember = "PIPCIMIALOO_sp|OEOIHIIIMCK", ReaderDisplay = "DivaStat_6")]
+	[UMOMember(ReaderMember = "PIPCIMIALOO_sp|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_6")]
 	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_xor ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
-	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_lv, int _FBGGEFFJJHB_xor, short _JKPPKAHPPKH_life, short _MKMIEGPOKGG_Soul, short MELGGCAIONF_Vocal, short _LDLHPACIIAB_Charm, short _JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
+	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_lv, int _FBGGEFFJJHB_xor, short _JKPPKAHPPKH_life, short _MKMIEGPOKGG_Soul, short _MELGGCAIONF_Vocal, short _LDLHPACIIAB_Charm, short _JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
 	{
 		this.FBGGEFFJJHB_xor = _FBGGEFFJJHB_xor;
 		this.ANAJIAENLNB_lv = ANAJIAENLNB_lv;
 		HFIDCMNFBJG_Life = _JKPPKAHPPKH_life;
 		PFJCOCPKABN_Soul = _MKMIEGPOKGG_Soul;
-		JFJDLEMNKFE_Vocal = MELGGCAIONF_Vocal;
+		JFJDLEMNKFE_Vocal = _MELGGCAIONF_Vocal;
 		GDOLPGBLMEA_Charm = _LDLHPACIIAB_Charm;
 		ONDFNOOICLE_Fold = _JNNDFGPMEDA_Fold;
 		HCFOMFDPGEC_Support = IDOIMLGLPAB_Support;
 	}
 
 	// // RVA: 0xFC160C Offset: 0xFC160C VA: 0xFC160C
-	public void ANIJHEBLMGB_AddStat(int _INDDJNMPONH_type, short _JBGEEPFKIGG_val)
+	public void ANIJHEBLMGB_SetValue(int _INDDJNMPONH_type, short _JBGEEPFKIGG_val)
 	{
 		switch(_INDDJNMPONH_type)
 		{
@@ -110,9 +110,9 @@ public class BJPLLEBHAGO_DivaInfo
 	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD
 	[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
 	public sbyte PPEGAKEIEGM_Enabled { get; set; } // 0xC NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
-	[UMOMember(ReaderMember = "LIOGKHIGJKN", Name = "Free Music Id")]
+	[UMOMember(ReaderMember = "LIOGKHIGJKN_FreeMusicId", Name = "Free Music Id")]
 	public ushort LIOGKHIGJKN_FreeMusicId { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
-	[UMOMember(ReaderMember = "CMBCBNEODPD", Name = "Home Bg Id", Desc = "Default home background for the diva")]
+	[UMOMember(ReaderMember = "CMBCBNEODPD_HomeBgId", Name = "Home Bg Id", Desc = "Default home background for the diva")]
 	public ushort CMBCBNEODPD_HomeBgId { get; set; } // 0x12 CLHDIBCIJBB EIMFDHBOECI OJMIHHIIBPI
 
 	// // RVA: 0xC85E00 Offset: 0xC85E00 VA: 0xC85E00

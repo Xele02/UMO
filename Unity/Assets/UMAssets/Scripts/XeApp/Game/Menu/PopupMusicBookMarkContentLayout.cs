@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_bookMarkCheckBox.Length; i++)
 			{
-				if (ViewBookMarkMusicData.KNKGEALPDGF(SelectMusicData.DLAEJOBELBH_MusicId, i))
+				if (ViewBookMarkMusicData.KNKGEALPDGF_GetBookmark(SelectMusicData.DLAEJOBELBH_MusicId, i))
 					m_bookMarkCheckBox[i].SetOn();
 				else
 					m_bookMarkCheckBox[i].SetOff();
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_checkIsBookMark.Length; i++)
 			{
-				m_checkIsBookMark[i] = ViewBookMarkMusicData.KNKGEALPDGF(SelectMusicData.DLAEJOBELBH_MusicId, i);
+				m_checkIsBookMark[i] = ViewBookMarkMusicData.KNKGEALPDGF_GetBookmark(SelectMusicData.DLAEJOBELBH_MusicId, i);
 			}
 			for(int i = 0; i < m_checkBookMarkName.Length; i++)
 			{

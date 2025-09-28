@@ -39,7 +39,7 @@ public class OLLAFCBLMIJ
         CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
         {
             //0xCAAECC
-            return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
+            return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
         }) as CANAFALMGLI_EventPresentCampaign;
         CKPIHCGOEDP.Clear();
         KGEKPADNGDM_CurrentDay = 0;
@@ -120,7 +120,7 @@ public class OLLAFCBLMIJ
                     CANAFALMGLI_EventPresentCampaign ev/*MOHDLLIJELH_cont*/ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
                     {
                         //0xCAAF34
-                        return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
+                        return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
                     }) as CANAFALMGLI_EventPresentCampaign;
                     if(ev != null)
                     {

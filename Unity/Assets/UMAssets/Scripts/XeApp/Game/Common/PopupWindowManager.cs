@@ -382,7 +382,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC2BC8 Offset: 0x1BC2BC8 VA: 0x1BC2BC8
 		private static bool IsStaminaMax()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue(); 
+			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue(); 
 		}
 
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
@@ -442,7 +442,7 @@ namespace XeApp.Game.Common
 			int v = item.healValue;
 			if(item.healValue == 0)
 			{
-				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina;
+				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount;
 			}
 			string s = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
 			{
@@ -504,7 +504,7 @@ namespace XeApp.Game.Common
 			s.Text = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_01"), new object[4]
 			{
 				CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(),
-				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina,
+				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount,
 				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(),
 				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH()
 			});
@@ -552,7 +552,7 @@ namespace XeApp.Game.Common
 			TextPopupSetting s = new TextPopupSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
 			s.WindowSize = SizeType.Small;
-			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina);
+			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount);
 			s.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },

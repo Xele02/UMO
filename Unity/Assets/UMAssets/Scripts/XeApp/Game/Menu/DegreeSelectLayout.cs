@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11E5040 Offset: 0x11E5040 VA: 0x11E5040
 		public void Init(bool allDebug/* = false*/)
 		{
-			m_degree_list = IAPDFOPPGND.FKDIMODKKJD(allDebug);
+			m_degree_list = IAPDFOPPGND.FKDIMODKKJD_GetList(allDebug);
 			m_degree_mol.SetNumber(m_degree_list.Count - 1, 0);
 			m_set_btn_index = GetDegreeListIndex(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
 			InitSetDegree(m_set_btn_index);
@@ -456,7 +456,7 @@ namespace XeApp.Game.Menu
 			JDDGPJDKHNE.HHCJCDFCLOB.BGDOBGFECOB();
 			int oldEmblem = GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
 			GameManager.Instance.ViewPlayerData.HPLIKGGILHF(m_degree_list[m_select_btn_index].MDPKLNFFDBO_EmblemId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PGHFPIMIOKE(oldEmblem, GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PGHFPIMIOKE_Emblem(oldEmblem, GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
 			MenuScene.Save(null, null);
 		}
 

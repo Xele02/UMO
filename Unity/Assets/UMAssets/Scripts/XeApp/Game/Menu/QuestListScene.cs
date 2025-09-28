@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 			List<FKMOKDCJFEN> list = new List<FKMOKDCJFEN>();
 			for(int i = 0; i < m_questViewList.Count; i++)
 			{
-				if(m_questViewList[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+				if(m_questViewList[i].CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved)
 				{
 					list.Add(m_questViewList[i]);
 				}

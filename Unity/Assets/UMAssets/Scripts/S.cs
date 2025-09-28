@@ -7,7 +7,7 @@ public class S
 	public void A(MonoBehaviour b)
 	{
 		a = new NKGJPJPHLIF();
-		a.IJBGPAENLJA(b);
+		a.IJBGPAENLJA_OnAwake(b);
 	}
 
 	// RVA: 0xDFDC80 Offset: 0xDFDC80 VA: 0xDFDC80
@@ -15,7 +15,7 @@ public class S
 
 	public void C(MonoBehaviour b)
 	{
-		a.BAGMHFKPFIF();
+		a.BAGMHFKPFIF_Update();
 	}
 
 	// RVA: 0xDFDCB0 Offset: 0xDFDCB0 VA: 0xDFDCB0

@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3D988 Offset: 0xC3D988 VA: 0xC3D988
 		private void UpdateShopList()
 		{
-			m_list = AODFBGCCBPE.FKDIMODKKJD(false);
+			m_list = AODFBGCCBPE.FKDIMODKKJD_GetList(false);
 			m_updateShopList = false;
 			this.StartCoroutineWatched(AODFBGCCBPE.OMBGMOFMCLD_Coroutine_UpdateViewShopList(m_list, () =>
 			{

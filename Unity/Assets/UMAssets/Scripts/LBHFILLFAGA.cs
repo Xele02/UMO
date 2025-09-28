@@ -8,7 +8,7 @@ public abstract class LBHFILLFAGA
 {
 	public enum PLINNKMECEF
 	{
-		NFFGMBBNNPH_None = 0,
+		NFFGMBBNNPH_0_None = 0,
 		AMDJBGNGLDL_Start = 1,
 		KEDMBDBJBKM_Success = 2,
 		PNGOBECOOJM_Error = 3,
@@ -49,7 +49,7 @@ public abstract class LBHFILLFAGA
 		KCIDANFAFPP = false;
 		OJOLGGKILFL = false;
 		AJOAGOLGLAI = 1.0f;
-		LHMDABPNDDH_state = PLINNKMECEF.NFFGMBBNNPH_None;
+		LHMDABPNDDH_state = PLINNKMECEF.NFFGMBBNNPH_0_None;
 		FHHAFJMELMD_alreadyLoading = false;
 		IIMBNNKHGOM = 0;
 		JMHHKKFPPOL_time = 0.0f;
@@ -125,7 +125,7 @@ public abstract class LBHFILLFAGA
 	}
 
 	// // RVA: 0xD987D0 Offset: 0xD987D0 VA: 0xD987D0
-	public bool KIDJFNEGAHO_LoadData()
+	public bool KIDJFNEGAHO_Ended()
 	{
 		if(!KCIDANFAFPP && !FHHAFJMELMD_alreadyLoading)
 		{
@@ -190,7 +190,7 @@ public abstract class LBHFILLFAGA
 	// // RVA: 0xD988F4 Offset: 0xD988F4 VA: 0xD988F4 Slot: 11
 	public virtual void PAHHAMPDBFP()
 	{
-		LHMDABPNDDH_state = PLINNKMECEF.NFFGMBBNNPH_None; // 0
+		LHMDABPNDDH_state = PLINNKMECEF.NFFGMBBNNPH_0_None; // 0
 	}
 
 	// // RVA: 0xD988F8 Offset: 0xD988F8 VA: 0xD988F8 Slot: 12

@@ -191,7 +191,7 @@ namespace XeApp.Game.Menu
 			}
 			if (!save)
 				return;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		//// RVA: 0x159E1A4 Offset: 0x159E1A4 VA: 0x159E1A4

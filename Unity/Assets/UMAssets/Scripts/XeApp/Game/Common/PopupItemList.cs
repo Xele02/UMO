@@ -381,7 +381,7 @@ namespace XeApp.Game.Common
 			{
 				m_itemList.Add(new ItemInfo(l1[i].id, l1[i].haveCount, EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem));
 			}
-			List<EEDBNJAEKBI> l2 = EEDBNJAEKBI.FKDIMODKKJD();
+			List<EEDBNJAEKBI> l2 = EEDBNJAEKBI.FKDIMODKKJD_GetList();
 			for(int i = 0; i < l2.Count; i++)
 			{
 				m_itemList.Add(new ItemInfo(EKLNMHFCAOI.DEACAHNLMNI_getItemId(l2[i].INFIBMLIHLO_ItemId), l2[i].HMFFHLPNMPH_count, EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem));

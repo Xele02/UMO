@@ -18,7 +18,7 @@ public class ELNKLCNHDEE
 	private string BIDDPDCFFHA; // 0x1C
 
 	// RVA: 0x1305F24 Offset: 0x1305F24 VA: 0x1305F24
-	public void HBOKJNECOPA(string _HAAJGNCFNJM_item_name/* = "trigger_item"*/)
+	public void HBOKJNECOPA_GetMaster(string _HAAJGNCFNJM_item_name/* = "trigger_item"*/)
     {
         NPNNPNAIONN_IsError = false;
         PLOOEECNHFB_IsDone = false;

@@ -28,7 +28,7 @@ public class BFGOCONGNDK
     }
 
 	// // RVA: 0xC79F98 Offset: 0xC79F98 VA: 0xC79F98
-	public void PCODDPDFLHK_ReadStartBgInfo()
+	public void PCODDPDFLHK_Load()
     {
 		MBGHLLHFNHH = false;
 		string s = HIOMFHINAAH_GetFileName();
@@ -52,12 +52,12 @@ public class BFGOCONGNDK
 			}
 		}
 
-        TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.PCODDPDFLHK Implement when sys/05 is saved.");
+        TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.PCODDPDFLHK_Load Implement when sys/05 is saved.");
 		MBGHLLHFNHH = true;
     }
 
 	// // RVA: 0xC7A53C Offset: 0xC7A53C VA: 0xC7A53C
-	public void HJMKBCFJOOH_SaveStartBgInfo()
+	public void HJMKBCFJOOH_Save()
 	{
 		if(AREventMasterData.Instance.IsReady())
 		{
@@ -110,7 +110,7 @@ public class BFGOCONGNDK
 	// // RVA: 0xC7AF9C Offset: 0xC7AF9C VA: 0xC7AF9C
 	public bool DAONJOOCPFP(int ODJPFMGNDML_Id)
     {
-        OENPCNBFPDA_bg_id = ODJPFMGNDML_Id; // Hack, force bg id since PCODDPDFLHK is not executed
+        OENPCNBFPDA_bg_id = ODJPFMGNDML_Id; // Hack, force bg id since PCODDPDFLHK_Load is not executed
 
 		if(OENPCNBFPDA_bg_id == ODJPFMGNDML_Id)
 		{
@@ -135,7 +135,7 @@ public class BFGOCONGNDK
 						{
 							f.Dispose();
 						}
-						TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK works");
+						TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK_Load works");
 						//return strHash == IOIMHJAOKOO_Hash;
 						return true;
 					}

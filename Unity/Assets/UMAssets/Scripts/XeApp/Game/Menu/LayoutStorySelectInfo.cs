@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1534A14 Offset: 0x1534A14 VA: 0x1534A14
 		private string GetStoryTitle(int musicId)
 		{
-			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
+			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[musicId - 1];
 			return Database.Instance.musicText.Get(m.KNMGEEFGDNI_Name).storyTitle;
 		}
 

@@ -166,18 +166,18 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		IAIDGBJGDBH reader = IAIDGBJGDBH.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		NGHKJOEDLIP_Settings.PFNBMPCIIJJ_heal_sec = (int)reader.EOACHAJJLHB.PFNBMPCIIJJ;
-		NGHKJOEDLIP_Settings.KBNGOBEAHIC_key_path = reader.EOACHAJJLHB.KBNGOBEAHIC;
-		NGHKJOEDLIP_Settings.JOIEHMBKJHI_retry_wait_ms = reader.EOACHAJJLHB.JOIEHMBKJHI;
-		NGHKJOEDLIP_Settings.KHGJIGNHAGD_retry_try_cnt = reader.EOACHAJJLHB.KHGJIGNHAGD;
+		NGHKJOEDLIP_Settings.PFNBMPCIIJJ_heal_sec = (int)reader.EOACHAJJLHB.PFNBMPCIIJJ_heal_sec;
+		NGHKJOEDLIP_Settings.KBNGOBEAHIC_key_path = reader.EOACHAJJLHB.KBNGOBEAHIC_key_path;
+		NGHKJOEDLIP_Settings.JOIEHMBKJHI_retry_wait_ms = reader.EOACHAJJLHB.JOIEHMBKJHI_retry_wait_ms;
+		NGHKJOEDLIP_Settings.KHGJIGNHAGD_retry_try_cnt = reader.EOACHAJJLHB.KHGJIGNHAGD_retry_try_cnt;
 		NGHKJOEDLIP_Settings.EEBOIPHMMBP = 5;
 		NGHKJOEDLIP_Settings.IMNJNFICJPM = 5;
-		NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel = reader.EOACHAJJLHB.PIJNJBJMFHL;
-		NGHKJOEDLIP_Settings.KMNPFOPBDMA_RenameDay = (int)reader.EOACHAJJLHB.KMNPFOPBDMA;
+		NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel = reader.EOACHAJJLHB.PIJNJBJMFHL_plv;
+		NGHKJOEDLIP_Settings.KMNPFOPBDMA_RenameDay = (int)reader.EOACHAJJLHB.KMNPFOPBDMA_RenameDay;
 		NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour.Clear();
-		for(int i = 0; i < reader.EOACHAJJLHB.JEDMLKOECHN.Length; i++)
+		for(int i = 0; i < reader.EOACHAJJLHB.JEDMLKOECHN_gacha_hour.Length; i++)
 		{
-			NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour.Add((sbyte)reader.EOACHAJJLHB.JEDMLKOECHN[i]);
+			NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour.Add((sbyte)reader.EOACHAJJLHB.JEDMLKOECHN_gacha_hour[i]);
 		}
 		{
 			CAEJOAOPJCJ[] array = reader.POEOOJPBOJC;
@@ -428,7 +428,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC8734 Offset: 0xCC8734 VA: 0xCC8734
-	// public bool NJGEDPHNIKC() { }
+	// public bool NJGEDPHNIKC_IsPresentLimitEnabled() { }
 }
  
 public class CHBDMJBEENG

@@ -72,11 +72,11 @@ public class JDDGPJDKHNE
 	}
 
 	// // RVA: 0x1C30B70 Offset: 0x1C30B70 VA: 0x1C30B70
-	public void IJBGPAENLJA()
+	public void IJBGPAENLJA_OnAwake()
     {
 		HHCJCDFCLOB = this;
 		OMLLGAKPMAN_writer = new ILCCJNDFFOB();
-		OMLLGAKPMAN_writer.IJBGPAENLJA();
+		OMLLGAKPMAN_writer.IJBGPAENLJA_OnAwake();
 		UnityEngine.Debug.Log("load hadoopSaveFile");
 		BBMBNCPEAHC_EventsToSend = new NPAFCENJADP();
 		BBMBNCPEAHC_EventsToSend.KHEKNNFCAOI_Init(MKKOKHPMCHB());
@@ -88,7 +88,7 @@ public class JDDGPJDKHNE
     }
 
 	// // RVA: 0x1C30D88 Offset: 0x1C30D88 VA: 0x1C30D88
-	public void BAGMHFKPFIF()
+	public void BAGMHFKPFIF_Update()
     {
 		if(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
 			return;
@@ -168,7 +168,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
 	public void BLKLMNNOMGH()
 	{
-		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != /*1*/PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_Running)
+		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != /*1*/PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_1_Running)
 		{
 			if(!BBMBNCPEAHC_EventsToSend.LNHFLJBGGJB_IsRunning)
 			{
@@ -183,7 +183,7 @@ public class JDDGPJDKHNE
 				}
 				if(PJDLAMLLCPM)
 				{
-					BBMBNCPEAHC_EventsToSend.HJMKBCFJOOH();
+					BBMBNCPEAHC_EventsToSend.HJMKBCFJOOH_Save();
 					PJDLAMLLCPM = false;
 				}
 				if(BBMBNCPEAHC_EventsToSend.MGJKEJHEBPO_Blocks.Count != 0)
@@ -262,13 +262,13 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C30E40 Offset: 0x1C30E40 VA: 0x1C30E40
 	public void BJIOOOJGEPC()
 	{
-		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_Running)
+		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_1_Running)
 		{
 			if(!LAHBCJNDGCH.LNHFLJBGGJB_IsRunning)
 			{
 				if(NNOOHDDKILN)
 				{
-					LAHBCJNDGCH.HJMKBCFJOOH();
+					LAHBCJNDGCH.HJMKBCFJOOH_Save();
 					NNOOHDDKILN = false;
 				}
 				if(LAHBCJNDGCH.MGJKEJHEBPO_Blocks.Count != 0)

@@ -28,7 +28,7 @@ public class IAPDFOPPGND
 	// public void KHEKNNFCAOI_Init(JNMFKOHFAFB_PublicStatus FIAMPPHKOOF) { }
 
 	// // RVA: 0x120F0BC Offset: 0x120F0BC VA: 0x120F0BC
-	public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI_ForceAll)
+	public static List<IAPDFOPPGND> FKDIMODKKJD_GetList(bool _CDEOEEHBOBI_ForceAll)
 	{
 		List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
 		List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table;
@@ -40,7 +40,7 @@ public class IAPDFOPPGND
 		{
 			if (dbEmblem[i].PLALNIIBLOF_en == 2)
 			{
-				if(saveEmblems[i].FJODMPGPDDD_Unlocked || CDEOEEHBOBI_ForceAll)
+				if(saveEmblems[i].FJODMPGPDDD_Unlocked || _CDEOEEHBOBI_ForceAll)
 				{
 					IAPDFOPPGND data = new IAPDFOPPGND();
 					data.KHEKNNFCAOI_Init(i + 1, saveEmblems[i].FHCAFLCLGAA_em_cnt);
@@ -60,7 +60,7 @@ public class IAPDFOPPGND
 	}
 
 	// // RVA: 0x120F5DC Offset: 0x120F5DC VA: 0x120F5DC
-	public static List<IAPDFOPPGND> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData _KPMOBPNENCD_serverData, bool CDEOEEHBOBI)
+	public static List<IAPDFOPPGND> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData _KPMOBPNENCD_serverData, bool _CDEOEEHBOBI_ForceAll)
 	{
 		int cnt = _KPMOBPNENCD_serverData.OFAJDLJBMEM_Emblem.MDKOHOCONKE.Count;
 		int dbCount = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table.Count;
@@ -73,7 +73,7 @@ public class IAPDFOPPGND
 			JGGLDGNKELI_Emblem.AAHAAJEJNLJ saveEmblem = _KPMOBPNENCD_serverData.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
 			if (dbEmblem.PLALNIIBLOF_en == 2)
 			{
-				if(saveEmblem.FJODMPGPDDD_Unlocked || CDEOEEHBOBI)
+				if(saveEmblem.FJODMPGPDDD_Unlocked || _CDEOEEHBOBI_ForceAll)
 				{
 					IAPDFOPPGND data = new IAPDFOPPGND();
 					data.KHEKNNFCAOI_Init(i + 1, saveEmblem.FHCAFLCLGAA_em_cnt);

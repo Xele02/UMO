@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 			m_addPoint = add_point;
 			m_old_value = data.ABLHIAEDJAI_CurrentValue;
 			m_add_episode_point = add_point;
-			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpisodeId);
+			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetList(data.KELFCMEOPPM_EpisodeId);
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, (int)(m_point));
 			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM_item_name;
 			m_point_den.SetNumber(data.ABLHIAEDJAI_CurrentValue, 0);
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 					UpdateText(currentPoint, m_reward_index);
 					if (currentReward.DNBFMLBNAEE_point <= currentPoint)
 					{
-						if ((currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory < EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume || currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory > EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie) &&
+						if ((currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory < EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume || currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory > EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie) &&
 							currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 						{
 							SoundManager.Instance.sePlayerMenu.Stop();
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 				if (isStop)
 				{
-					m_episodeData.FBANBDCOEJL();
+					m_episodeData.FBANBDCOEJL_Update();
 					SoundManager.Instance.sePlayerMenu.Stop();
 					if (is_restart)
 					{
@@ -425,7 +425,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x12831D8
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.MKFNKOLCBOP_UpdateVFpUnlock(s.nextPlatoonNum);
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}

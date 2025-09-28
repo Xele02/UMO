@@ -17,7 +17,7 @@ public class GONMPHKGKHI_RewardView
 		MNGOJCFMBPP = 6,
 		BKHAAGAAIHJ_7 = 7,
 		JCGKGFLCKCP_8 = 8,
-		AEFCOHJBLPO = 9,
+		AEFCOHJBLPO_9_Num = 9,
 	}
 
 	public class LCMJJMNMIKG_RewardInfo
@@ -375,7 +375,7 @@ public class GONMPHKGKHI_RewardView
 	//public void NFOHOGAJGHB(List<int> _CGCFENMHJIM_Ids, List<int> PIHPOPCPAHL, bool IMBGFAJLPEK) { }
 
 	//// RVA: 0x1E5C984 Offset: 0x1E5C984 VA: 0x1E5C984
-	public bool LBHPMGDNPHK(CECMLGBLHHG _INDDJNMPONH_type)
+	public bool LBHPMGDNPHK_IsAvailable(CECMLGBLHHG _INDDJNMPONH_type)
 	{
 		List<LCMJJMNMIKG_RewardInfo> l1 = new List<LCMJJMNMIKG_RewardInfo>();
 		List<LCMJJMNMIKG_RewardInfo> l2 = new List<LCMJJMNMIKG_RewardInfo>();

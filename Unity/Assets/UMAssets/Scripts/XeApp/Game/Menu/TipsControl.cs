@@ -379,7 +379,7 @@ namespace XeApp.Game.Menu
 				m_musicInfo.Close();
 			}
 			m_isShow = false;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xA99794 Offset: 0xA99794 VA: 0xA99794
@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 						{
 							flags = m_listUpList[j].flags & 1;
 						}
-						BCKMELFCKKN_Tips.ALLFFCNKFBG tip = dbTips.LBDOLHGDIEB_GetTips(m_listUpList[j].tipsId);
+						BCKMELFCKKN_Tips.ALLFFCNKFBG tip = dbTips.LBDOLHGDIEB_Find(m_listUpList[j].tipsId);
 						int eventType = tip.NCGNCEOOBGP_EventType;
 						if (eventType > 0)
 						{

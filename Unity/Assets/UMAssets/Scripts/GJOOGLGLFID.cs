@@ -80,7 +80,7 @@ public class GJOOGLGLFID
 	public int BEOKMNIPFBA_MedalItemId { get { return FOOIDNLAAJM_Crypted ^ FBGGEFFJJHB_xor; } set { FOOIDNLAAJM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE204 AGLAALJHLBC 0xAAE218 PFDPANDECID
 	public int ODOOKDGCKMF_MedalNum { get { return JMJDBIGGGLH_Crypted ^ FBGGEFFJJHB_xor; } set { JMJDBIGGGLH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE22C DGFGDHAPJPJ 0xAAE240 GOIMAJACHOF
 	public int BGJDHCEOIDB_BattleClass { get { return BBJHIKDJEJL_Crypted ^ FBGGEFFJJHB_xor; } set { BBJHIKDJEJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE254 OCKGMLNANOK 0xAAE268 NINDNKAPBLB
-	public int IOOBNLAHLEJ_Point2 { get { return JNLBGAKBBMH_Crypted ^ FBGGEFFJJHB_xor; } set { JNLBGAKBBMH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE27C PILACCFMMMP 0xAAE290 LDNPPCPAFEO
+	public int IOOBNLAHLEJ_WinPoint { get { return JNLBGAKBBMH_Crypted ^ FBGGEFFJJHB_xor; } set { JNLBGAKBBMH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE27C PILACCFMMMP 0xAAE290 LDNPPCPAFEO
 	public int AKNELONELJK_difficulty { get { return CPCKPCJBDEL_Crypted ^ FBGGEFFJJHB_xor; } set { CPCKPCJBDEL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2A4 BPPILHGDABB 0xAAE2B8 PMMIIHKEGCI
 	public int OHDIGACEJPM_DifficultyBonus { get { return LNKHGJMLBMG_Crypted ^ FBGGEFFJJHB_xor; } set { LNKHGJMLBMG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2CC AHCIDJFMLNB 0xAAE2E0 LDFJHFHIMEP
 	public int GLOKIBHBNDN_PrevExPoint { get { return BCMMJJPHCGN_Crypted ^ FBGGEFFJJHB_xor; } set { BCMMJJPHCGN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2F4 OBDKENDNFNO 0xAAE308 DEIGANPJMKF
@@ -88,8 +88,10 @@ public class GJOOGLGLFID
 	public int LENOCEEGFLD_GetExGauge { get { return IPKLJCAIBGD_Crypted ^ FBGGEFFJJHB_xor; } set { IPKLJCAIBGD_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE344 GNNENEFGCCH 0xAAE358 GMGIDOMFIBI
 	public int JBCBPEPMAEP_ExBattleMusicScore { get { return HOEBCPACGMK_Crypted ^ FBGGEFFJJHB_xor; } set { HOEBCPACGMK_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE36C PHFFAIMOOGA 0xAAE380 NPLILLOICHN
 	public int NHNEMDAFPMJ_ExBattleScoreTotalBefore { get { return AGFLDOFHFFP_Crypted ^ FBGGEFFJJHB_xor; } set { AGFLDOFHFFP_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE394 DJAEAGDLGPO 0xAAE3A8 COPNOPBOKCK
-	public int IGIPKOJJIIA_ExBattleScoreTotalAfter { get { return GEOGJLLKONC_Crypted ^ FBGGEFFJJHB_xor; } set { GEOGJLLKONC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE3BC NMEEMHPEIFG 0xAAE3D0 DOJPMEDBMGB
-	public int BOLHMCFBGBP_ExRivalIdx { get { return DHPFMDOOMOH_Crypted ^ FBGGEFFJJHB_xor; } set { DHPFMDOOMOH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE3E4 KFHLDAHFMDH 0xAAE3F8 PENFGGBBGPJ
+	//ExBattleScoreTotalAfter
+	public int IGIPKOJJIIA_TotalScore { get { return GEOGJLLKONC_Crypted ^ FBGGEFFJJHB_xor; } set { GEOGJLLKONC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE3BC NMEEMHPEIFG 0xAAE3D0 DOJPMEDBMGB
+	// ExRivalIdx
+	public int BOLHMCFBGBP_Idx { get { return DHPFMDOOMOH_Crypted ^ FBGGEFFJJHB_xor; } set { DHPFMDOOMOH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE3E4 KFHLDAHFMDH 0xAAE3F8 PENFGGBBGPJ
 
 	// // RVA: 0xAAE40C Offset: 0xAAE40C VA: 0xAAE40C
 	public void KHEKNNFCAOI_Init()
@@ -99,7 +101,7 @@ public class GJOOGLGLFID
         {
             DPCFADCFMOA_Win = ev.CKCPAMDDNPF.BLAJKMAPEKP_CWin > 0;
             EJDJIBPKKNO_BasePoint = ev.CKCPAMDDNPF.FPEOGFMKMKJ_Point;
-            IOOBNLAHLEJ_Point2 = ev.CKCPAMDDNPF.FPEOGFMKMKJ_Point;
+            IOOBNLAHLEJ_WinPoint = ev.CKCPAMDDNPF.FPEOGFMKMKJ_Point;
             GCAPLLEIAAI_LastScore = ev.CKCPAMDDNPF.GCAPLLEIAAI_LastScore;
             GBLHPHCAPLG_ScoreBonus = ev.CKCPAMDDNPF.GBLHPHCAPLG_ScoreBonus;
             FFEBMCAKOHK = ev.CKCPAMDDNPF.MACJOPBCEEL;
@@ -125,8 +127,8 @@ public class GJOOGLGLFID
             LENOCEEGFLD_GetExGauge = ev.CKCPAMDDNPF.MBBPOOFCAKC_GetExGauge;
             JBCBPEPMAEP_ExBattleMusicScore = ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore;
             NHNEMDAFPMJ_ExBattleScoreTotalBefore = ev.CKCPAMDDNPF.NHNEMDAFPMJ_ExBattleScoreTotalBefore;
-            IGIPKOJJIIA_ExBattleScoreTotalAfter = ev.CKCPAMDDNPF.IGIPKOJJIIA_ExBattleScoreTotalAfter;
-            BOLHMCFBGBP_ExRivalIdx = ev.CKCPAMDDNPF.BOLHMCFBGBP_SongIdx;
+            IGIPKOJJIIA_TotalScore = ev.CKCPAMDDNPF.IGIPKOJJIIA_TotalScore;
+            BOLHMCFBGBP_Idx = ev.CKCPAMDDNPF.BOLHMCFBGBP_Idx;
             LFGNLKKFOCD_IsLine6 = ev.CKCPAMDDNPF.INPNFCNLAMA_IsLine6;
         }
     }

@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 				});
 				m_RankingType = RankingType.GoDivaScore;
 			}
-			else if(m_eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			else if(m_eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 			{
 				m_EventMusicRank = 0;
 				m_EventHiScore = 0;

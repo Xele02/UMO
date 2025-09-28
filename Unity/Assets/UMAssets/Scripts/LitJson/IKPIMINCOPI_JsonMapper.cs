@@ -926,7 +926,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB5D18 Offset: 0x1AB5D18 VA: 0x1AB5D18
-    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -939,7 +939,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB5E90 Offset: 0x1AB5E90 VA: 0x1AB5E90
-    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -952,7 +952,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1AB602C Offset: 0x1AB602C VA: 0x1AB602C
-    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL<object>
+    |-IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<object>
     */
 
 	// RVA: 0x8F1F68 Offset: 0x8F1F68 VA: 0x8F1F68
@@ -982,7 +982,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1C79A5C Offset: 0x1C79A5C VA: 0x1C79A5C
-    |-IKPIMINCOPI_JsonMapper.LIEDACPLEMK<object>
+    |-IKPIMINCOPI_JsonMapper.LIEDACPLEMK_RegisterExporter<object>
     */
 
 	// RVA: -1 Offset: -1
@@ -999,7 +999,7 @@ public class IKPIMINCOPI_JsonMapper
 	/* GenericInstMethod :
     |
     |-RVA: 0x1C79C44 Offset: 0x1C79C44 VA: 0x1C79C44
-    |-IKPIMINCOPI_JsonMapper.MJBPPCBFPFG<object, object>
+    |-IKPIMINCOPI_JsonMapper.MJBPPCBFPFG_RegisterImporter<object, object>
     */
 
 	// RVA: 0x8F22BC Offset: 0x8F22BC VA: 0x8F22BC

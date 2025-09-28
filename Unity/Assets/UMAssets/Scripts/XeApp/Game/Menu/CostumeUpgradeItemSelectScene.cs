@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 			m_upgradeData.AHLONCCGGHP();
 			if(m_upgradeData.GKIKAABHAAD_Level < m_upgradeData.LLLCMHENKKN_LevelMax)
 			{
-				if(m_upgradeData.CDOCOLOKCJK())
+				if(m_upgradeData.CDOCOLOKCJK_Avaiable())
 					return false;
 			}
 			MenuScene.Instance.Return(false);

@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				{
 					m_ranking_types[0] = EnRankingType.Score;
 				}
-				else if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				else if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 				{
 					m_ranking_types[0] = EnRankingType.Raid;
 					m_enableChangeRanking = false;
@@ -109,10 +109,10 @@ namespace XeApp.Game.Menu
 			if(m_current_ranking_type == EnRankingType.Score)
 			{
 				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
-				EONOEHOKBEB_Music mi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[fmi.DLAEJOBELBH_MusicId - 1];
+				EONOEHOKBEB_Music mi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[fmi.DLAEJOBELBH_MusicId - 1];
 				m_windowUi.ChangePreset(GeneralListWindow.Preset.ScoreEventRanking, false);
-				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_Ma - 1]);
-				m_windowUi.SetMusicAttr((GameAttribute.Type) mi.FKDCCLPGKDK_Ma);
+				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_JacketAttr - 1]);
+				m_windowUi.SetMusicAttr((GameAttribute.Type) mi.FKDCCLPGKDK_JacketAttr);
 				m_windowUi.SetMusicDiffVisible(false);
 				if(!m_isPast)
 					m_windowUi.SetRankingMessage(bk.GetMessageByLabel("ranking_message"));

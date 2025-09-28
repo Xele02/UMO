@@ -234,7 +234,7 @@ namespace ExternLib
 						(string)playerAccount.playerData.serverData["ticket"]["pending"] == "" && 
 						(string)playerAccount.playerData.serverData["ticket"]["entry_date"] != "")
 					{
-						HIADOIECMFP_EventPresentCampaign db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection("event_present_campaign_a") as HIADOIECMFP_EventPresentCampaign;
+						HIADOIECMFP_EventPresentCampaign db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find("event_present_campaign_a") as HIADOIECMFP_EventPresentCampaign;
 						if(db != null)
 						{
 							for(int i = 0; i < 10; i++)

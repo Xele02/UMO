@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 						m_costume_upgrade_max_array[0]++;
 						m_costume_upgrade_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 					}
-					if(dbCostume.DAJGPBLEEOB_ModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
+					if(dbCostume.DAJGPBLEEOB_ModelId == 1 || saveCostume.FJODMPGPDDD_Unlocked)
 					{
 						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_DivaId).CPGFPEDMDEH_have != 0)
 						{

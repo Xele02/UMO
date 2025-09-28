@@ -18,7 +18,7 @@ public class EJHPIMANJFP
 	}
 
 	// // RVA: 0x12EFAF4 Offset: 0x12EFAF4 VA: 0x12EFAF4
-	public void IJBGPAENLJA()
+	public void IJBGPAENLJA_OnAwake()
 	{
 		HHCJCDFCLOB = this;
 	}

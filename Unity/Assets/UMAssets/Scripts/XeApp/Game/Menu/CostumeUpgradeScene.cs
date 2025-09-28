@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16F7C00 Offset: 0x16F7C00 VA: 0x16F7C00
 		private bool CanShowTutorial()
 		{
-			if(MOEALEGLGCH.CDOCOLOKCJK())
+			if(MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
 			{
 				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 				{

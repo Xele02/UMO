@@ -27,19 +27,19 @@ public class EEDKAACNBBG_MusicData
 	public int EMIKBGHIOMN_SerieLogoId { get { return AHECDFEOOBF_SerieLogoIdCrypted ^ FBGGEFFJJHB_xor; } set { AHECDFEOOBF_SerieLogoIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1C48894 BJGJCKFOBCA 0x1C488A8 OAKIKBEEACC
 	public int FKDCCLPGKDK_JacketAttr { get { return BNJIMPADBAH_JacketAttrCrypted ^ FBGGEFFJJHB_xor; } set { BNJIMPADBAH_JacketAttrCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1C488BC FBADKBMGIBP 0x1C488D0 NCNMMABFHGN
 	public int KKPAHLMJKIH_WavId { get { return EDDPAECJHHC_WavIdCrypted ^ FBGGEFFJJHB_xor; } set { EDDPAECJHHC_WavIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1C488E4 ENODDPDBIPA 0x1C488F8 HOAKFLEAEOH
-	public int BKJGCEOEPFB_Variation { get { return CALAEHJCPIC ^ FBGGEFFJJHB_xor; } set { CALAEHJCPIC = value ^ FBGGEFFJJHB_xor; } } //0x1C4890C FNEBPBJBIIP 0x1C48920 OIDGLNHNGJB
+	public int BKJGCEOEPFB_VariationId { get { return CALAEHJCPIC ^ FBGGEFFJJHB_xor; } set { CALAEHJCPIC = value ^ FBGGEFFJJHB_xor; } } //0x1C4890C FNEBPBJBIIP 0x1C48920 OIDGLNHNGJB
 	public bool IFNPBIJEPBO_IsDlded { get; private set; } // 0x3D ODDANOKGMLN GNLBOEKONDC OCOEKEKKGGG
 
 	// // RVA: 0x1C48944 Offset: 0x1C48944 VA: 0x1C48944 Slot: 4
 	public virtual void KHEKNNFCAOI_Init(int _DLAEJOBELBH_MusicId)
 	{
 		this.DLAEJOBELBH_MusicId = _DLAEJOBELBH_MusicId;
-		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[_DLAEJOBELBH_MusicId - 1];
+		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[_DLAEJOBELBH_MusicId - 1];
 		JNCPEGJGHOG_JacketId = musicInfo.JNCPEGJGHOG_JacketId;
 		NNHOBFBCIIJ_Cd = musicInfo.NNHOBFBCIIJ_Cd;
 		EMIKBGHIOMN_SerieLogoId = musicInfo.EMIKBGHIOMN_SerieLogoId;
 		AIHCEGFANAM_SerieAttr = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
-		FKDCCLPGKDK_JacketAttr = musicInfo.FKDCCLPGKDK_Ma;
+		FKDCCLPGKDK_JacketAttr = musicInfo.FKDCCLPGKDK_JacketAttr;
 		NEDBBJDAFBH_MusicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName;
 		NBKFBCLDGAL_OfficialName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).officialName;
 		LJCEDBBNPBB_VocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).vocalName;

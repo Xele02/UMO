@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 								break;
 							}
 							saveCoroutine = null;
-							if(m_viewIntimacyData.FNGFADPFKOD())
+							if(m_viewIntimacyData.FNGFADPFKOD_DivaIntimacy())
 							{
 								saveCoroutine = this.StartCoroutineWatched(Co_Save());
 							}
@@ -465,7 +465,7 @@ namespace XeApp.Game.Menu
 									//0x14B437C
 									isClosePopup = true;
 									GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
-									GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+									GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 								}, null, null, null, true, true, false, null, null, null, null, null);
 								yield return new WaitUntil(() =>
 								{
@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 				divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
 			}
 			m_viewIntimacyData.KHEKNNFCAOI_Init(divaId);
-			m_viewIntimacyData.HCDGELDHFHB(false);
+			m_viewIntimacyData.HCDGELDHFHB_UpdateStatus(false);
 		}
 
 		//// RVA: 0x14AFCE8 Offset: 0x14AFCE8 VA: 0x14AFCE8
@@ -1066,7 +1066,7 @@ namespace XeApp.Game.Menu
 								if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC_GetCurrentValue(true) > 0)
 								{
 									saveCoroutine = null;
-									if(m_viewIntimacyData.FNGFADPFKOD())
+									if(m_viewIntimacyData.FNGFADPFKOD_DivaIntimacy())
 									{
 										saveCoroutine = this.StartCoroutineWatched(Co_Save());
 										yield return null;
@@ -1164,7 +1164,7 @@ namespace XeApp.Game.Menu
 											//0x14B47D4
 											isClosePopup = true;
 											GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
-											GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+											GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 										}, null, null, null, true, true, false, null, null, null, null, null);
 										yield return new WaitUntil(() =>
 										{
@@ -1255,7 +1255,7 @@ namespace XeApp.Game.Menu
 			m_divaTalk = divaTalk;
 			m_divaControl = divaControl;
 			m_viewList = new List<OJEGDIBEBHP>();
-			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
+			m_viewList = OJEGDIBEBHP.FKDIMODKKJD_GetList();
 			this.StartCoroutineWatched(InitGakuyaCoroutine(root, callback));
 		}
 
@@ -1302,7 +1302,7 @@ namespace XeApp.Game.Menu
 			m_gakuyaPresentListWindow.SetItems(m_viewList);
 			m_layoutInfo.Setup(m_viewIntimacyData, false);
 			m_gakuyaDivaMessage.SetPos(0);
-			m_viewIntimacyData.HCDGELDHFHB(false);
+			m_viewIntimacyData.HCDGELDHFHB_UpdateStatus(false);
 			SetGakuyaPresentListState();
 			SetPresentLimitCntLayout();
 		}
@@ -1312,7 +1312,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator co_UpdateGakuyaList(Action callBack)
 		{
 			//0x14BCAE4
-			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
+			m_viewList = OJEGDIBEBHP.FKDIMODKKJD_GetList();
 			SetGakuyaPresentListState();
 			SetPresentLimitCntLayout();
 			m_gakuyaPresentListWindow.SetItems(m_viewList);
@@ -1357,7 +1357,7 @@ namespace XeApp.Game.Menu
 					saveCoroutine = this.StartCoroutineWatched(Co_Data_Save());
 				}
 			}
-			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
+			m_viewList = OJEGDIBEBHP.FKDIMODKKJD_GetList();
 			SetGakuyaType();
 			m_serifType = SerifPlayType.N_GRATEFUL;
 			if(m_viewIntimacyData.HBODCMLFDOB_result.HOMOKJEKKNK_Bonus > 0)
@@ -1421,7 +1421,7 @@ namespace XeApp.Game.Menu
 						//0x14B49E4
 						isLoad = true;
 						GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
-						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+						GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 					}, null, null, null, true, true, false, null, null, null, null, null);
 					yield return new WaitUntil(() =>
 					{

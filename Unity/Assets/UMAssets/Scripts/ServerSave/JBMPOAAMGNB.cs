@@ -3,7 +3,7 @@
 public class JBMPOAAMGNB { }
 public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const int JDNKJIFMONK_CurrentVersion = 2;
 	private static string IMHFIDMLLNI = JpStringLiterals.StringLiteral_9806; // 0x0
 	private static string NBPICMBNPPB = JpStringLiterals.StringLiteral_9807; // 0x4
@@ -63,13 +63,13 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		{
 			isInvalid = true;
 		}
-		OPFGFINHFCE_name = CEDHHAGBIBA.KJFAGPBALNO(FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, IMHFIDMLLNI, ref isInvalid));
-		LLNDMKBBNIJ_ver = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.LLNDMKBBNIJ_ver, 1, ref isInvalid);
-		CMKKFCGBILD_prof = FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.CMKKFCGBILD_prof, NBPICMBNPPB, ref isInvalid);
-		IJHBIMNKOMC_tutorial_end = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.IJHBIMNKOMC_tutorial_end, 0, ref isInvalid);
-		FNLNIKFNHAM_force_rename = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.FNLNIKFNHAM_force_rename, 0, ref isInvalid) != 0;
-		PBEKKMOPENN_agree_tos_ver = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.PBEKKMOPENN_agree_tos_ver, 0, ref isInvalid);
-		AFPONJEJKCO_rename_date = FNLNIKFNHAM_force_rename ? 0 : DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.AFPONJEJKCO_rename_date, 0, ref isInvalid);
+		OPFGFINHFCE_name = CEDHHAGBIBA.KJFAGPBALNO(FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, IMHFIDMLLNI, ref isInvalid));
+		LLNDMKBBNIJ_ver = CJAENOMGPDA_GetInt(block, AFEHLCGHAEE_Strings.LLNDMKBBNIJ_ver, 1, ref isInvalid);
+		CMKKFCGBILD_prof = FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.CMKKFCGBILD_prof, NBPICMBNPPB, ref isInvalid);
+		IJHBIMNKOMC_tutorial_end = CJAENOMGPDA_GetInt(block, AFEHLCGHAEE_Strings.IJHBIMNKOMC_tutorial_end, 0, ref isInvalid);
+		FNLNIKFNHAM_force_rename = CJAENOMGPDA_GetInt(block, AFEHLCGHAEE_Strings.FNLNIKFNHAM_force_rename, 0, ref isInvalid) != 0;
+		PBEKKMOPENN_agree_tos_ver = CJAENOMGPDA_GetInt(block, AFEHLCGHAEE_Strings.PBEKKMOPENN_agree_tos_ver, 0, ref isInvalid);
+		AFPONJEJKCO_rename_date = FNLNIKFNHAM_force_rename ? 0 : DKMPHAPBDLH_GetLong(block, AFEHLCGHAEE_Strings.AFPONJEJKCO_rename_date, 0, ref isInvalid);
 		if(OPFGFINHFCE_name.Length > 10)
 			OPFGFINHFCE_name = OPFGFINHFCE_name.Substring(0, 10);
 		if (CMKKFCGBILD_prof.Length > 25)

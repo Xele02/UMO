@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 			int fullId = data.FKNBLDPIPMC_GetItemCode(index);
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullId);
             int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullId);
-			int a = data.NKOHMLHLJGL(index);
+			int a = data.NKOHMLHLJGL_GetItemCount(index);
 			SetItemImage(fullId);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id);

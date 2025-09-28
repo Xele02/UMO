@@ -18,7 +18,7 @@ public class LGMEPLIJLNB
 	//public bool DGCPCNOFLHP() { }
 
 	//// RVA: 0x17F4BDC Offset: 0x17F4BDC VA: 0x17F4BDC
-	public static List<LGMEPLIJLNB> FKDIMODKKJD_GetEpisodeRewards(int _KELFCMEOPPM_EpisodeId)
+	public static List<LGMEPLIJLNB> FKDIMODKKJD_GetList(int _KELFCMEOPPM_EpisodeId)
 	{
 		List<LGMEPLIJLNB> res = new List<LGMEPLIJLNB>();
         HMGPODKEFBA_EpisodeInfo NDFIEMPPMLF_master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[_KELFCMEOPPM_EpisodeId - 1];
@@ -116,11 +116,11 @@ public class PIGBBNDPPJC
 	public LGMEPLIJLNB JBFLCHFEIGL; // 0x48
 
 	//public bool OJOLGGKILFL { get; } 0x16D0300 KKEOAGANMNA
-	public bool DKMLDEDKPBA_HasEpisode { get { return KELFCMEOPPM_EpisodeId > 0; } } //0x16D0314 PCIINKJELKK
+	public bool DKMLDEDKPBA_IsEnabled { get { return KELFCMEOPPM_EpisodeId > 0; } } //0x16D0314 PCIINKJELKK
 	public bool IIEAILCOPDB { get { return DMHDNKILKGI_MaxPoint <= LEGAKDFPPHA_AvaiablePoint; } } //0x16D0328 EMKGOLJAJBG
 
 	//// RVA: 0x16D0340 Offset: 0x16D0340 VA: 0x16D0340
-	public void LEHDLBJJBNC()
+	public void LEHDLBJJBNC_SetNotNew()
 	{
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[KELFCMEOPPM_EpisodeId - 1].LHMOAJAIJCO_is_new = false;
 	}
@@ -156,7 +156,7 @@ public class PIGBBNDPPJC
 			FGOGPCMHPIN_Count = NDFIEMPPMLF_master.FGOGPCMHPIN_Count;
 			FKMAEKNOLJB_EpisodeNo = NDFIEMPPMLF_master.EILKGEADKGH_Order;
 			CADENLBDAEB_IsNew = serverEpInfo.LHMOAJAIJCO_is_new;
-			OPFGFINHFCE_name = EJOJNFDHDHN_GetEpName(_KELFCMEOPPM_EpisodeId);
+			OPFGFINHFCE_name = EJOJNFDHDHN_GetName(_KELFCMEOPPM_EpisodeId);
 			KLMPFGOCBHC_description = FKKHNDDGKJB_GetEpDesc(_KELFCMEOPPM_EpisodeId);
 			JBFLCHFEIGL = new LGMEPLIJLNB();
 			if(JJJNKGBCFMI_CurrentStep < FGOGPCMHPIN_Count)
@@ -184,8 +184,8 @@ public class PIGBBNDPPJC
 					JBFLCHFEIGL.HMEOAKCLKJE_IsReceived = serverEpInfo.MCIHDIBHHBI_IsRewardReceived(JJJNKGBCFMI_CurrentStep);
 				}
 			}
-			int cosItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, 0);
-			int valkItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, 0);
+			int cosItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, 0);
+			int valkItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, 0);
 			int homeBgItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg, 0);
 			foreach (var GKJBHCKCKIA in NDFIEMPPMLF_master.HHJGBJCIFON_Rewards)
 			{
@@ -224,7 +224,7 @@ public class PIGBBNDPPJC
 	}
 
 	//// RVA: 0x16D18D4 Offset: 0x16D18D4 VA: 0x16D18D4
-	public void FBANBDCOEJL()
+	public void FBANBDCOEJL_Update()
 	{
 		if(KELFCMEOPPM_EpisodeId > 0)
 		{
@@ -290,7 +290,7 @@ public class PIGBBNDPPJC
 	}
 
 	//// RVA: 0x16D2190 Offset: 0x16D2190 VA: 0x16D2190
-	public static List<PIGBBNDPPJC> FKDIMODKKJD_GetAvaiableEpisodes(bool DHFLBNAHGDF/* = false*/)
+	public static List<PIGBBNDPPJC> FKDIMODKKJD_GetList(bool DHFLBNAHGDF/* = false*/)
 	{
 		List<PIGBBNDPPJC> res = new List<PIGBBNDPPJC>(500);
 		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList.Count; i++)
@@ -358,7 +358,7 @@ public class PIGBBNDPPJC
 				int a = ep.OGDBKJKIGAJ_CurrentPoint;
 				ep.MOACIBEKLEN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode, _HMFFHLPNMPH_count * info2.JBGEEPFKIGG_val, false);
 				int a2 = ep.OGDBKJKIGAJ_CurrentPoint;
-				ILCCJNDFFOB.HHCJCDFCLOB.BBDKHAMANCB(KELFCMEOPPM_EpisodeId, a, a2, ep.EBIIIAELNAA_Step, JpStringLiterals.StringLiteral_13085, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, BNGHLLCONJM), _HMFFHLPNMPH_count);
+				ILCCJNDFFOB.HHCJCDFCLOB.BBDKHAMANCB_Episode(KELFCMEOPPM_EpisodeId, a, a2, ep.EBIIIAELNAA_Step, JpStringLiterals.StringLiteral_13085, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, BNGHLLCONJM), _HMFFHLPNMPH_count);
 			}
 			MenuScene.SaveWithAchievement(2, () =>
 			{
@@ -427,7 +427,7 @@ public class PIGBBNDPPJC
 	}
 
 	//// RVA: 0x16D0FEC Offset: 0x16D0FEC VA: 0x16D0FEC
-	public static string EJOJNFDHDHN_GetEpName(int _KELFCMEOPPM_EpisodeId)
+	public static string EJOJNFDHDHN_GetName(int _KELFCMEOPPM_EpisodeId)
 	{
 		return MessageManager.Instance.GetMessage("master", "ep_nm_" + _KELFCMEOPPM_EpisodeId.ToString("D4"));
 	}

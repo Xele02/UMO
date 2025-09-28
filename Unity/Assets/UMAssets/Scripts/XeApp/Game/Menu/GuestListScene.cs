@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_saveDataDirty)
 				{
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}
 				return base.IsEndExitAnimation();
 			}
@@ -651,7 +651,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 				{
 					return new RaidActSelectArgs(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, false));
 				}

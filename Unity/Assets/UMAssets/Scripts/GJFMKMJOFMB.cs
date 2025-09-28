@@ -158,7 +158,7 @@ public class GJFMKMJOFMB
 			for(int k = 0; k < dbPass.DMNJMOBEGLM(); k++)
 			{
 				MFDJIFIIPJD data2 = new MFDJIFIIPJD();
-				data2.KHEKNNFCAOI_Init(dbPass.FKNBLDPIPMC(k), dbPass.KAINPNMMAEK(k));
+				data2.KHEKNNFCAOI_Init(dbPass.FKNBLDPIPMC_GetItemCode(k), dbPass.KAINPNMMAEK_GetItemCount(k));
 				data.HBHMAKNGKFK_items.Add(data2);
 			}
 			if(HNNAJBJCNEJ)

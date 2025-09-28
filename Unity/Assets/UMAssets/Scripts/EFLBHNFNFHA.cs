@@ -16,7 +16,7 @@ public class EFLBHNFNFHA
 	}
 
 	//// RVA: 0x1C4C754 Offset: 0x1C4C754 VA: 0x1C4C754
-	public void PCODDPDFLHK_Refresh()
+	public void PCODDPDFLHK_Load()
 	{
 		CCNCPGJGNDP_SagashoGameId = 0;
 		CILPABJCBPH_AgreeTos = false;
@@ -48,7 +48,7 @@ public class EFLBHNFNFHA
 	}
 
 	//// RVA: 0x1C4C9FC Offset: 0x1C4C9FC VA: 0x1C4C9FC
-	public void HJMKBCFJOOH_SetAgreeTos()
+	public void HJMKBCFJOOH_Save()
 	{
 		if (CCNCPGJGNDP_SagashoGameId == 0)
 			return;

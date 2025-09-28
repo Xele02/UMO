@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 			List<CGFNKMNBNBN> homeBgList = new List<CGFNKMNBNBN>(bgList);
 			List<int> unlockBgIdList = new List<int>();
 			m_homeBgEpisodeList.Clear();
-			List<PIGBBNDPPJC> eps = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(false);
+			List<PIGBBNDPPJC> eps = PIGBBNDPPJC.FKDIMODKKJD_GetList(false);
 			for(int i = 0; i < eps.Count; i++)
 			{
 				if(!eps[i].CCBKMCLDGAD_HasReward)

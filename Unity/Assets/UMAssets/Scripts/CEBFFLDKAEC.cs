@@ -43,7 +43,7 @@ public class CEBFFLDKAEC_SecureInt
 	}
 
 	// // RVA: 0x12B13CC Offset: 0x12B13CC VA: 0x12B13CC
-	public void DNBGDMBCLMI()
+	public void DNBGDMBCLMI_ChangeKey()
 	{
 		KPOCKNCJBPN_CheckSecure();
 		if(NMNHBJIAPGG_CheckFalsification != null)

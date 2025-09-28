@@ -28,7 +28,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0xC6F9D8 Offset: 0xC6F9D8 VA: 0xC6F9D8
-	public ALLFFCNKFBG LBDOLHGDIEB_GetTips(int _PPFNGGCBJKC_id)
+	public ALLFFCNKFBG LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)
 	{
 		return CDENCMNHNGA_table.Find((ALLFFCNKFBG _GHPLINIACBB_x) =>
 		{
@@ -78,7 +78,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 			data.KJBGCLPMLCG_OpenedAt = array[i].MGPEOHKLOEP;
 			data.GJFPFFBAKGK_CloseAt = array[i].LFAFFICDFMJ_Done;
 			data.ADCMNODJBGJ_title = DatabaseTextConverter.TranslateTipsTitle(i, array[i].ADCMNODJBGJ_title);
-			data.JONNCMDGMKA_Message = DatabaseTextConverter.TranslateTipsMessage(i, array[i].IPBHCLIHAPG);
+			data.JONNCMDGMKA_Message = DatabaseTextConverter.TranslateTipsMessage(i, array[i].IPBHCLIHAPG_Msg);
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, array[i].PLALNIIBLOF_en, 0);
 			data.EAHPLCJMPHD_PId = array[i].HANMDEBPBHG_pic;
 			data.LKDJHPLBKAI_GraffitiId = array[i].HBDKKPIOFND;

@@ -24,7 +24,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x17BC85C Offset: 0x17BC85C VA: 0x17BC85C
-	public KOAKMNKEHDE_PilotInfo GCINIJEMHFK_GetPilot(int _PPFNGGCBJKC_id)
+	public KOAKMNKEHDE_PilotInfo GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)
 	{
 		if(_PPFNGGCBJKC_id != 0 && _PPFNGGCBJKC_id <= CDENCMNHNGA_table.Count)
 		{

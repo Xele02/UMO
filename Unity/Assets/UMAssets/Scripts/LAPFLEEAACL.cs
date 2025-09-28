@@ -8,7 +8,7 @@ public class LAPFLEEAACL
     {
         HJNNKCMLGFL_0_None = 0,
         NCKBNMCNDLC = 1,
-        EANGJBHNNHF = 2,
+        EANGJBHNNHF_2 = 2,
     }
 
 	public bool PLOOEECNHFB_IsDone; // 0x8
@@ -25,7 +25,7 @@ public class LAPFLEEAACL
     }
 
 	// // RVA: 0xD94650 Offset: 0xD94650 VA: 0xD94650
-	public void OFKONDFPMLJ_GetProduct()
+	public void OFKONDFPMLJ_GetProducts()
     {
 		MHKCPJDNJKI_products = null;
 		PPECNOCKNMC_FullItemId = 0;
@@ -159,7 +159,7 @@ public class LAPFLEEAACL
 		else
 		{
 			List<long> l = new List<long>();
-			JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
+			JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
 			for(int i = 0; i < FELJGLKGOLF.Count; i++)
 			{
 				string[] strs = new string[5]
@@ -197,5 +197,5 @@ public class LAPFLEEAACL
 	}
 
 	// // RVA: 0xD94EF4 Offset: 0xD94EF4 VA: 0xD94EF4
-	// public bool ELMHHMHLFJG(GJDFHLBONOL AIMLPJOGPID) { }
+	// public bool ELMHHMHLFJG(GJDFHLBONOL _AIMLPJOGPID_Data) { }
 }

@@ -510,7 +510,7 @@ namespace XeApp.Game.Menu
 			m_userInfo.SetLevelLimit(playerStatus.NMCICIHMOCM_PlayerLevelLimit);
 			m_userInfo.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurrentStamina, playerStatus.POKDILOKODG_MaxEnergy);
 			m_userInfo.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
-			m_userInfo.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
+			m_userInfo.ChangeLevelValue(playerStatus.DMBFOMLCGBG_Level);
 			m_userInfo.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_LevelMaxExp);
 			m_userInfo.ChangeCurrencyValue(playerStatus.OIOFGIBDOPI_CurrencyNonPaid, playerStatus.FNCPAEFEECO_CurrencyPaid + Database.Instance.tutorialPaidVC);
 			m_userInfo.ChangeMedalValue(playerStatus.AHHGKGOPGDE_MedalMonth, playerStatus.GBIKGLELKEO_MedalValue);
@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue())
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue())
 				{
 					PopupWindowManager.OpenStaminaMaxWindow(null);
 				}

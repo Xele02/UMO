@@ -121,7 +121,7 @@ namespace XeApp.Game.Gacha
         // // RVA: 0x983C58 Offset: 0x983C58 VA: 0x983C58
         private int GetCardAttribute(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].FKDCCLPGKDK_Ma;
+            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].FKDCCLPGKDK_JacketAttr;
         }
 
         // // RVA: 0x983DC8 Offset: 0x983DC8 VA: 0x983DC8

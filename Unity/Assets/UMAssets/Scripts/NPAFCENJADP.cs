@@ -35,7 +35,7 @@ public class NPAFCENJADP
         JCNNBEEHFLE_RequestId = 0;
         for(int i = 0; i < 2; i++)
         {
-            if(PCODDPDFLHK(i))
+            if(PCODDPDFLHK_Load(i))
                 break;
         }
     }
@@ -50,7 +50,7 @@ public class NPAFCENJADP
 	}
 
 	// // RVA: 0x1CB0560 Offset: 0x1CB0560 VA: 0x1CB0560
-	public bool PCODDPDFLHK(int IMJIADPJJMM)
+	public bool PCODDPDFLHK_Load(int IMJIADPJJMM)
     {
         MGJKEJHEBPO_Blocks.Clear();
         if(File.Exists(ELLBAAFKDCH_Filename[IMJIADPJJMM]))
@@ -86,7 +86,7 @@ public class NPAFCENJADP
     }
 
 	// // RVA: 0x1CB09D4 Offset: 0x1CB09D4 VA: 0x1CB09D4
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
 	{
 		LNHFLJBGGJB_IsRunning = true;
 		int iVar12 = 0x20;

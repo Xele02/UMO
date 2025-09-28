@@ -172,10 +172,10 @@ namespace XeApp.Game.Menu
 				//0x154A614
 				if(isSkip)
 				{
-					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 					{
 						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
-						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
+						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
 						{
 							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
 						}
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 				//0x154A934
 				string str = "popup_stamina_title_00";
 				string str2 = "popup_stamina_text_00";
-				if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 				{
 					str = "popup_ap_title_00";
 					str2 = "popup_ap_text_00";
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15487BC Offset: 0x15487BC VA: 0x15487BC
 		protected void UpdatePrismData(int musicId, GameSetupData.MusicInfo musicInfo)
 		{
-			m_prismData.OBKGEDCKHHE(musicId, 1 < musicInfo.onStageDivaNum);
+			m_prismData.OBKGEDCKHHE_Init(musicId, 1 < musicInfo.onStageDivaNum);
 		}
 
 		// // RVA: 0x1548820 Offset: 0x1548820 VA: 0x1548820
@@ -346,7 +346,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15490A0 Offset: 0x15490A0 VA: 0x15490A0
 		protected bool OriginalPrizmApply(int musicId, GameSetupData.MusicInfo musicInfo)
 		{
-			m_prismOriginalData.OBKGEDCKHHE(musicId, 1 < musicInfo.onStageDivaNum);
+			m_prismOriginalData.OBKGEDCKHHE_Init(musicId, 1 < musicInfo.onStageDivaNum);
 			AOJCMPIBFHD originalPrism = m_prismOriginalData.OOKAOFJBCFD();
 			m_lackDivaIds.Clear();
 			bool res = false;
@@ -413,7 +413,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154983C Offset: 0x154983C VA: 0x154983C
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
 		{
-			m_prismLogDiffData.OBKGEDCKHHE(musicId, musicInfo.onStageDivaNum > 1);
+			m_prismLogDiffData.OBKGEDCKHHE_Init(musicId, musicInfo.onStageDivaNum > 1);
 			ILCCJNDFFOB.HHCJCDFCLOB.CBKENDJIBDM(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
 				m_prismData.FBGAKINEIPG ? 1 : 0, m_prismData.OMNDNNFANCK_PrismDivaIds, m_prismData.DLPIKHDNIIE_PrismCostumeIds, 
 				m_prismData.FBAGIDFLHHI_PrismValkyrieId, m_prismLogDiffData.FBGAKINEIPG ? 1 : 0, m_prismLogDiffData.OMNDNNFANCK_PrismDivaIds, 

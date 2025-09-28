@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 				m_holdFriendInfo = false;
 				if(m_saveDataDirty)
 				{
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}
 				return base.IsEndExitAnimation();
 			}

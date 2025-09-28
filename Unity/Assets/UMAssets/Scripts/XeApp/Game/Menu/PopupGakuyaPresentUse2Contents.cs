@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
 			PopupGakuyaPresentUse2Setting s = setting as PopupGakuyaPresentUse2Setting;
-			xor = LPDNKHAIOLH.CEIBAFOCNCA();
+			xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
 			UseItemVal = 0;
 			m_popupControl = control;
 			Parent = s.m_parent;

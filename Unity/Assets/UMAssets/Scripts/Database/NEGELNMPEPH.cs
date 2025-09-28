@@ -14,7 +14,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		private int OHMGPDPKGLF_ValueCrypted = 0; // 0x14
 
 		public int BCGKLONODHO { get { return OAKFKBJFHBJ ^ FBGGEFFJJHB_xor; } set { OAKFKBJFHBJ = value ^ FBGGEFFJJHB_xor; } } //0x1AE6688 KAINPELLHFF 0x1AE628C EJPIFOFOINA
-		public int KPBJHHHMOJE_TimeToChargeMin { get { return COLOLEGLONK ^ FBGGEFFJJHB_xor; } set { COLOLEGLONK = value ^ FBGGEFFJJHB_xor; } } //0x1AE6698 NNBONJFLKFM 0x1AE629C FIOMMOICJLL
+		public int KPBJHHHMOJE_Time { get { return COLOLEGLONK ^ FBGGEFFJJHB_xor; } set { COLOLEGLONK = value ^ FBGGEFFJJHB_xor; } } //0x1AE6698 NNBONJFLKFM 0x1AE629C FIOMMOICJLL
 		public int NANNGLGOFKH_value { get { return OHMGPDPKGLF_ValueCrypted ^ FBGGEFFJJHB_xor; } set { OHMGPDPKGLF_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66A8 EDFAHCMGHKM 0x1AE62AC BKPDFNKGNHA
 		
 		// RVA: 0x1AE6264 Offset: 0x1AE6264 VA: 0x1AE6264
@@ -22,7 +22,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		{
 			this.FBGGEFFJJHB_xor = _FBGGEFFJJHB_xor;
 			BCGKLONODHO = 0;
-			KPBJHHHMOJE_TimeToChargeMin = 0;
+			KPBJHHHMOJE_Time = 0;
 			NANNGLGOFKH_value = 0;
 		}
 
@@ -86,7 +86,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 					{
 						DAGLEHBMBLF data = new DAGLEHBMBLF(FBGGEFFJJHB_xor);
 						data.BCGKLONODHO = array2[j];
-						data.KPBJHHHMOJE_TimeToChargeMin = array[i].KPBJHHHMOJE[j];
+						data.KPBJHHHMOJE_Time = array[i].KPBJHHHMOJE_Time[j];
 						data.NANNGLGOFKH_value = array[i].JBGEEPFKIGG_val[j];
 						lData.Add(data);
 					}

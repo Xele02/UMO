@@ -114,9 +114,9 @@ namespace XeApp.Game.Menu
 			m_seriesType = series.First;
 			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[arg.DivaId - 1];
 			m_growsList.Clear();
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics.Count; i++)
+			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music.Count; i++)
 			{
-				EONOEHOKBEB_Music e = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[i];
+				EONOEHOKBEB_Music e = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[i];
 				List<ListData> list;
 				if (!m_growsList.TryGetValue(e.AIHCEGFANAM_SerieAttr, out list))
 				{

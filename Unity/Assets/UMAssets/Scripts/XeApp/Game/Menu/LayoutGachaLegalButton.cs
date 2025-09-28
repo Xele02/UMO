@@ -45,17 +45,17 @@ namespace XeApp.Game.Menu
 		public void Setup(BEPHBEGDFFK view)
 		{
 			m_view = view;
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Normal)
 			{
 				m_layoutType.StartChildrenAnimGoStop("02");
 				m_textDesc2.text = MessageManager.Instance.GetMessage("menu", "gacha_desc_04");
 				m_textNormal.text = MessageManager.Instance.GetMessage("menu", "gacha_desc_05");
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 			{
 				m_layoutType.StartChildrenAnimGoStop("04");
 				m_buttonPassPurchase.Hidden = true;
-				if (m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId == EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1))
+				if (m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId == EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1))
 				{
 					m_buttonPassPurchase.Hidden = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != 3 && NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != 0;
 				}
@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 				LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(scene.KELFCMEOPPM_EpisodeId, true);
 				if(l != null)
 				{
-					m_layoutEpisode.StartChildrenAnimGoStop(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume ? "01" : "02");
+					m_layoutEpisode.StartChildrenAnimGoStop(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume ? "01" : "02");
 					m_buttonEpisode.Hidden = false;
 				}
 				else

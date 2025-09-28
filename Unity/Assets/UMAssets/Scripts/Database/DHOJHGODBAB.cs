@@ -8,7 +8,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 {
 	public List<CNLPPCFJEID_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x20 FGGBICBDOEN DEBOJOHHPPB CFINEIEEJGN
 	public List<CNLPPCFJEID_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x24 LKPJIEOOENM HDOHKBOJCDK CDNIDJPOHDJ
-	public List<LCKMNLOLDPD> LFAAEPAAEMB { get; private set; } // 0x28 LGPNBHKGMEA CBMPDJKIIOF EFCJGLJJBNA
+	public List<LCKMNLOLDPD> LFAAEPAAEMB_Rewards { get; private set; } // 0x28 LGPNBHKGMEA CBMPDJKIIOF EFCJGLJJBNA
 
 	// RVA: 0x1988E24 Offset: 0x1988E24 VA: 0x1988E24
 	public DHOJHGODBAB_Quest()
@@ -17,7 +17,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 		LNIMEIMBCMF = false;
 		BEGCHDHHEKC_DailyQuests = new List<CNLPPCFJEID_QuestInfo>();
 		GPMKFMFEKLN_NormalQuests = new List<CNLPPCFJEID_QuestInfo>();
-		LFAAEPAAEMB = new List<LCKMNLOLDPD>();
+		LFAAEPAAEMB_Rewards = new List<LCKMNLOLDPD>();
 		LMHMIIKCGPE = 67;
 	}
 
@@ -26,7 +26,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 	{
 		BEGCHDHHEKC_DailyQuests.Clear();
 		GPMKFMFEKLN_NormalQuests.Clear();
-		LFAAEPAAEMB.Clear();
+		LFAAEPAAEMB_Rewards.Clear();
 		int t = (int)Utility.GetCurrentUnixTime();
 		t *= 7;
 		int v = t;
@@ -52,7 +52,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 		GEDOHHLGKCG parser = GEDOHHLGKCG.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		if(EELEJILKBIM_LoadDailyQuest(parser) && GBNIHKOIMFO_LoadNormalQuest(parser))
 		{
-			IHJNKFOJPKM(parser);
+			IHJNKFOJPKM_LoadReward(parser);
 			return true;
 		}
 		return false;
@@ -68,15 +68,15 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			{
 				CNLPPCFJEID_QuestInfo data = BEGCHDHHEKC_DailyQuests[i];
 				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
-				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ;
+				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ_ConditionType;
 				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
-				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP;
+				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP_Target;
 				data.AKBHPFBDDOL_Val = (int)array[i].JIMJHIDEHNM_ApCounter;
 				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB_rw;
 				data.HHIBBHFHENH_LinkQuestId = 0;
 				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
 				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO_st;
-				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM;
+				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM_end;
 				data.DEPGBBJMFED_CategoryId = data.PPFNGGCBJKC_id;
 			}
 			return true;
@@ -98,14 +98,14 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			{
 				CNLPPCFJEID_QuestInfo data = GPMKFMFEKLN_NormalQuests[i];
 				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC_id;
-				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ;
+				data.INDDJNMPONH_type = (int)array[i].MAPNDFCJFLJ_ConditionType;
 				data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
-				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP;
+				data.FCDKJAKLGMB_TargetValue = (int)array[i].PMDLBHLNIDP_Target;
 				data.AKBHPFBDDOL_Val = 0;
 				data.EIHOBHDKCDB_RewardId = (int)array[i].JGOHPDKCJKB_rw;
 				data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
 				data.KJBGCLPMLCG_OpenedAt = array[i].FNEIADJMHHO_st;
-				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM;
+				data.GJFPFFBAKGK_CloseAt = array[i].EICJBAEDMNM_end;
 				data.OAPCHMHAJID = array[i].HPGNBPIBAOM_IsBeginner != 0;
 				data.DEPGBBJMFED_CategoryId = (int)array[i].DMEDKJPOLCH_cat;
 				data.HDBFCIOCNPA_AchievementId = (int)array[i].ADOJHHMMNIN;
@@ -126,7 +126,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1989B7C Offset: 0x1989B7C VA: 0x1989B7C
-	private bool IHJNKFOJPKM(GEDOHHLGKCG ENCJBKPHGAL)
+	private bool IHJNKFOJPKM_LoadReward(GEDOHHLGKCG ENCJBKPHGAL)
 	{
 		KLPHKNHEKPM[] array = ENCJBKPHGAL.APHNKNGKKFC;
 		for(int i = 0; i < array.Length; i++)
@@ -137,7 +137,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 			data.HMFFHLPNMPH_count = (int)array[i].PIMBMBIICMK;
 			data.BGFPPGPJONG_QuestKeyId = (int)array[i].LJNAKDMILMC_key;
 			data.APNMKLJMPMD_Type = (int)array[i].OILNNGPCLGD;
-			LFAAEPAAEMB.Add(data);
+			LFAAEPAAEMB_Rewards.Add(data);
 		}
 		return true;
 	}

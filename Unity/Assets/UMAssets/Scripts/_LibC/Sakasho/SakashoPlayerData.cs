@@ -26,14 +26,14 @@ namespace ExternLib
 			int baseVersion = 1;
 			// Config full unlocked profile
 			{
-				JBMPOAAMGNB_Base baseBlock = newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base;
+				JBMPOAAMGNB_Base baseBlock = newData.LBDOLHGDIEB_Find("base") as JBMPOAAMGNB_Base;
 				baseVersion = baseBlock.LLNDMKBBNIJ_ver;
 				baseBlock.LLNDMKBBNIJ_ver = JBMPOAAMGNB_Base.JDNKJIFMONK_CurrentVersion;
 				baseBlock.PBEKKMOPENN_agree_tos_ver = 1;
 				baseBlock.IJHBIMNKOMC_tutorial_end = 2;
 			}
 			{
-				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
+				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_Find("common") as EGOLBAPFHHD_Common;
 				// set max level
 				commonBlock.KIECDDFNCAN_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel;
 				// set max uta grade
@@ -76,11 +76,11 @@ namespace ExternLib
 
 			}
 			{
-				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
+				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_Find("counter") as FNBIIGJJGKA_Counter;
 				counterBlock.BDLNMOIOMHK_total.GKOAPFJFKEJ_VOpC[0] = Mathf.Max(50, counterBlock.BDLNMOIOMHK_total.GKOAPFJFKEJ_VOpC[0]);
 			}
 			{
-				BAHFBCEPFGP_AddMusic addMusicBlock = newData.LBDOLHGDIEB_GetBlock("add_music") as BAHFBCEPFGP_AddMusic;
+				BAHFBCEPFGP_AddMusic addMusicBlock = newData.LBDOLHGDIEB_Find("add_music") as BAHFBCEPFGP_AddMusic;
 				for (int i = 1; i < 38 * 8; i++)
 				{
 					for (int j = 2; j <= 5; j++)
@@ -88,7 +88,7 @@ namespace ExternLib
 				}
 			}
 			{
-				NEKDCJKANAH_StoryRecord storyBlock = newData.LBDOLHGDIEB_GetBlock("story_record") as NEKDCJKANAH_StoryRecord;
+				NEKDCJKANAH_StoryRecord storyBlock = newData.LBDOLHGDIEB_Find("story_record") as NEKDCJKANAH_StoryRecord;
 				LAEGMENIEDB_Story storyDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
 				for (int i = 0; i < storyDb.CDENCMNHNGA_table.Count; i++)
 				{
@@ -98,7 +98,7 @@ namespace ExternLib
 				storyBlock.EOHHFADHHBL_Complete = true;
 			}
 			{
-				DEKKMGAFJCG_Diva divaBlock = newData.LBDOLHGDIEB_GetBlock("diva") as DEKKMGAFJCG_Diva;
+				DEKKMGAFJCG_Diva divaBlock = newData.LBDOLHGDIEB_Find("diva") as DEKKMGAFJCG_Diva;
 				for (int i = 0; i < divaBlock.NBIGLBMHEDC_DivaList.Count; i++)
 				{
 					divaBlock.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_have = 1;
@@ -110,7 +110,7 @@ namespace ExternLib
 				}
 			}
 			{
-				DDEMMEPBOIA_Sns snsBlock = newData.LBDOLHGDIEB_GetBlock("sns") as DDEMMEPBOIA_Sns;
+				DDEMMEPBOIA_Sns snsBlock = newData.LBDOLHGDIEB_Find("sns") as DDEMMEPBOIA_Sns;
 				int numSns = 0;
 				for (int i = 0; i < 2000; i++)
 				{
@@ -125,12 +125,12 @@ namespace ExternLib
 						numSns++;
 					}
 				}
-				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
+				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_Find("common") as EGOLBAPFHHD_Common;
 				commonBlock.JLJJHDGEHLK_recv_sns = numSns;
 			}
 			{
 				MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
-				MMPBPOIFDAF_Scene saveScenes = newData.LBDOLHGDIEB_GetBlock("scene") as MMPBPOIFDAF_Scene;
+				MMPBPOIFDAF_Scene saveScenes = newData.LBDOLHGDIEB_Find("scene") as MMPBPOIFDAF_Scene;
 				for (int i = 0; i < dbScenes.CDENCMNHNGA_table.Count; i++)
 				{
 					MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = dbScenes.CDENCMNHNGA_table[i];
@@ -177,7 +177,7 @@ namespace ExternLib
 						{			
 							if(saveItem.BFINGCJHOHI_cnt < 1)
 							{
-								saveItem.PPJAGFPBFHJ(1);
+								saveItem.PPJAGFPBFHJ_SetItemCount(1);
 							}
 						}
 					}
@@ -202,7 +202,7 @@ namespace ExternLib
 				}
 			}
 			{
-				EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_GetBlock("costume") as EBFLJMOCLNA_Costume;
+				EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_Find("costume") as EBFLJMOCLNA_Costume;
 				LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 				for (int i = 0; i < costumeDb.CDENCMNHNGA_table.Count; i++)
 				{
@@ -222,7 +222,7 @@ namespace ExternLib
 				}
 			}
 			{
-				OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_GetBlock("valkyrie") as OIGEIIGKMNH_Valkyrie;
+				OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_Find("valkyrie") as OIGEIIGKMNH_Valkyrie;
 				GKFMJAHKEMA_ValSkill dbValkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill;
 				JPIANKEOOMB_Valkyrie dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
 				for (int i = 0; i < dbValk.CDENCMNHNGA_table.Count; i++)
@@ -242,7 +242,7 @@ namespace ExternLib
 				}
 			}
 			{
-				OCLHKHAMDHF_Episode epBlock = newData.LBDOLHGDIEB_GetBlock("episode") as OCLHKHAMDHF_Episode;
+				OCLHKHAMDHF_Episode epBlock = newData.LBDOLHGDIEB_Find("episode") as OCLHKHAMDHF_Episode;
 				KMOGDEOKHPG_Episode dbEp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode;
 				for (int i = 0; i < dbEp.BBAJKJPKOHD_EpisodeList.Count; i++)
 				{
@@ -260,7 +260,7 @@ namespace ExternLib
 			}
 			
 			// Reset End all normal quest which shouldn't have been, only end beginner quests
-			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
+			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_Find("quest") as ODPNBADOFAN_Quest;
 			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
 			{
 				if(baseVersion <= 1)
@@ -272,7 +272,7 @@ namespace ExternLib
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_stat = 3;
 			}
 			{
-				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;
+				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_Find("offer") as OCMJNBIFJNM_Offer;
 				offerBlock.JLFONLABECA_ShowTuto = -1; // set all tuto read
 			}
 

@@ -29,9 +29,9 @@ public class PNGOLKLFFLH
 	// public string GMJIKEHEPPA() { }
 
 	// // RVA: 0xFF1AB0 Offset: 0xFF1AB0 VA: 0xFF1AB0
-	public void KHEKNNFCAOI_Init(int GPPEFLKGGGJ_ValkyrieId, int IGBFFCLMAMM_Form/* = 0*/, long _BEBJKJKBOGH_date/* = 0*/)
+	public void KHEKNNFCAOI_Init(int GPPEFLKGGGJ_ValkyrieId, int _IGBFFCLMAMM_Form/* = 0*/, long _BEBJKJKBOGH_date/* = 0*/)
 	{
-		JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valkDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(GPPEFLKGGGJ_ValkyrieId);
+		JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valkDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK_Get(GPPEFLKGGGJ_ValkyrieId);
 		this.GPPEFLKGGGJ_ValkyrieId = GPPEFLKGGGJ_ValkyrieId;
 		NPHOIEOPIJO_Date = _BEBJKJKBOGH_date;
 		AIHCEGFANAM_SerieAttr = valkDb.AIHCEGFANAM_SerieAttr;
@@ -44,7 +44,7 @@ public class PNGOLKLFFLH
 		GJHJBLCPPKE_Names[0] = "" + IJBLEJOKEFH_Name + "(F)";
 		GJHJBLCPPKE_Names[1] = "" + IJBLEJOKEFH_Name + "(G)";
 		GJHJBLCPPKE_Names[2] = "" + IJBLEJOKEFH_Name + "(B)";
-		OELFCIKFMLL(IGBFFCLMAMM_Form);
+		OELFCIKFMLL(_IGBFFCLMAMM_Form);
 		OPBPKNHIPPE_Pilot.KHEKNNFCAOI_Init(valkDb.PFGJJLGLPAC_PilotId);
 		var saveValk = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList[GPPEFLKGGGJ_ValkyrieId - 1];
 		FJODMPGPDDD_Unlocked = saveValk.FJODMPGPDDD_Unlocked;
@@ -71,13 +71,13 @@ public class PNGOLKLFFLH
 	}
 
 	// // RVA: 0xFF2298 Offset: 0xFF2298 VA: 0xFF2298
-	public bool OELFCIKFMLL(int IGBFFCLMAMM_Form)
+	public bool OELFCIKFMLL(int _IGBFFCLMAMM_Form)
 	{
-		var dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(GPPEFLKGGGJ_ValkyrieId);
-		if (dbValk.ENIGAEMEAOP(IGBFFCLMAMM_Form))
+		var dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK_Get(GPPEFLKGGGJ_ValkyrieId);
+		if (dbValk.ENIGAEMEAOP(_IGBFFCLMAMM_Form))
 		{
-			GCCNMFHELCB_Form = IGBFFCLMAMM_Form;
-			KINFGHHNFCF_Atk = dbValk.OJHINEMKMOP(IGBFFCLMAMM_Form);
+			GCCNMFHELCB_Form = _IGBFFCLMAMM_Form;
+			KINFGHHNFCF_Atk = dbValk.OJHINEMKMOP(_IGBFFCLMAMM_Form);
 			NONBCCLGBAO_hit = dbValk.PAELLCKLEJP(GCCNMFHELCB_Form);
 			return true;
 		}
@@ -85,7 +85,7 @@ public class PNGOLKLFFLH
 	}
 
 	// // RVA: 0xFF240C Offset: 0xFF240C VA: 0xFF240C
-	public static List<PNGOLKLFFLH> FKDIMODKKJD(bool OJEBNBLHPNP/* = false*/)
+	public static List<PNGOLKLFFLH> FKDIMODKKJD_GetList(bool OJEBNBLHPNP/* = false*/)
 	{
 		List<PNGOLKLFFLH> res = new List<PNGOLKLFFLH>();
 		for(int i = 0; i < 100; i++)

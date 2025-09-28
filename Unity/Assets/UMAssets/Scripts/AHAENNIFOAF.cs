@@ -10,7 +10,7 @@ public static class AHAENNIFOAF
         JBMJEOBODHH_1 = 1,
         ANLJMCJAMFJ_2 = 2,
         BJNAMAANNMB_3 = 3,
-        AEFCOHJBLPO = 4,
+        AEFCOHJBLPO_4_Num = 4,
         HJNNKCMLGFL_M1_None = -1,
     }
 

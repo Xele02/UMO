@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		{
 			switch (offerType)
 			{
-				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1:
+				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1_Normal:
 					m_offerType.StartChildrenAnimGoStop("01");
 					break;
 				case BOPFPIHGJMD.ADMNKELOLPN.NBHIECDDJHH_2:

@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < playerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
-				if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked(true))
+				if(playerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked)
 				{
 					TryInstall(playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId, playerData.OPIBAPEGCLA_Scenes[i].CGIELKDLHGE_GetEvolveId());
 				}

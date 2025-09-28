@@ -19,7 +19,7 @@ public class EBHIMFFJBIJ
         OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "created_at", 0);
         LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "updated_at", 0);
         FFDEBPDJOIJ_ExpiredAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "expired_at", 0);
-        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
+        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB_Find("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
         {
             //0x14FDF14
             return (int)_IDLHJIOMJBK_data;

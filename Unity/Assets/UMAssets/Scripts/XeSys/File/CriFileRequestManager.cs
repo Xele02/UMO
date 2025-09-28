@@ -9,7 +9,7 @@ namespace XeSys.File
 	{
 		public enum IFDILJEGCLD
 		{
-			NFFGMBBNNPH_None = 0,
+			NFFGMBBNNPH_0_None = 0,
 			IADCGKMLFFE_Execute = 1,
 			MKEJFPFGLCF_Failed = 2,
 			JKONMHNBGLL_Cancel = 3,
@@ -53,7 +53,7 @@ namespace XeSys.File
 		{
 			DontDestroyOnLoad(this);
 			HHCJCDFCLOB = this;
-			NFABHMNAODN = IFDILJEGCLD.NFFGMBBNNPH_None;
+			NFABHMNAODN = IFDILJEGCLD.NFFGMBBNNPH_0_None;
 			LEDAPFHKIMD_RequestCancel = false;
 			CEKHMLAEKIK = new List<LBHFILLFAGA>(EOBEHIILNPF);
 			MEDMPJHJNBJ = new List<LBHFILLFAGA>(EOBEHIILNPF);
@@ -152,7 +152,7 @@ namespace XeSys.File
 			// private LBHFILLFAGA BPOJOBICBAC; // 0x1C
 			// private bool HAPBOLOABJI_hasFailed; // 0x20
 			//0x2038B0C
-			IFDILJEGCLD IKCDCEKDGHP = IFDILJEGCLD.NFFGMBBNNPH_None;
+			IFDILJEGCLD IKCDCEKDGHP = IFDILJEGCLD.NFFGMBBNNPH_0_None;
 			for(int i = 0; i < MEDMPJHJNBJ.Count;)
 			{
 				LBHFILLFAGA BPOJOBICBAC = MEDMPJHJNBJ[i];
@@ -193,7 +193,7 @@ namespace XeSys.File
 						BPOJOBICBAC.EBKOJBFMABH_elapsedTime = 0;
 						BPOJOBICBAC.GFCMEKDCCME_SetError();
 
-						while(!BPOJOBICBAC.KIDJFNEGAHO_LoadData())
+						while(!BPOJOBICBAC.KIDJFNEGAHO_Ended())
 						{
 							if(BPOJOBICBAC.EBKOJBFMABH_elapsedTime < ICDEFIIADDO_Timeout)
 							{
@@ -259,7 +259,7 @@ namespace XeSys.File
 
 		// [IteratorStateMachineAttribute] // RVA: 0x693828 Offset: 0x693828 VA: 0x693828
 		// // RVA: 0x2038984 Offset: 0x2038984 VA: 0x2038984
-		// private IEnumerator NBCKHIAINIM() { }
+		// private IEnumerator NBCKHIAINIM_Coroutine_Execute() { }
 
 		// // RVA: 0x2038A30 Offset: 0x2038A30 VA: 0x2038A30
 		private bool EKAEAKACODC_CanRetry(LBHFILLFAGA _COJNCNGHIJC_Req)
@@ -268,7 +268,7 @@ namespace XeSys.File
 		}
 
 		// // RVA: 0x2038A70 Offset: 0x2038A70 VA: 0x2038A70
-		// private bool GCPOIANJEOC(LBHFILLFAGA _COJNCNGHIJC_Req) { }
+		// private bool GCPOIANJEOC_IsCanceled(LBHFILLFAGA _COJNCNGHIJC_Req) { }
 
 		// // RVA: 0x2038A9C Offset: 0x2038A9C VA: 0x2038A9C
 		// private bool INODGGFPKOE_IsSuccess(LBHFILLFAGA _COJNCNGHIJC_Req) { }

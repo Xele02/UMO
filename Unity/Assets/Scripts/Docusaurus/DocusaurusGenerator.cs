@@ -61,7 +61,7 @@ public class DocusaurusGenerator
     {
         // Copy from IMMAOANGPNK.MHEKMICKGDM_LoadFromStorage();
         IMMAOANGPNK dataA = new IMMAOANGPNK();
-        dataA.IJBGPAENLJA(null);
+        dataA.IJBGPAENLJA_OnAwake(null);
         Database = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
         List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section> sections = new List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section>();
         for(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section i = 0; i < OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CGKOFIKBMMI; i++)
@@ -98,7 +98,7 @@ public class DocusaurusGenerator
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
                 encryption.FAEFDAJAMCE(result);
-                encryption.AAGCKDHEMFD_GenerateKey();
+                encryption.AAGCKDHEMFD_Finish();
             }
             bool res = DbArchive.KHEKNNFCAOI_Init(request.Result);
             if(!res)
@@ -224,7 +224,7 @@ public class DocusaurusGenerator
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
                 encryption.FAEFDAJAMCE(result);
-                encryption.AAGCKDHEMFD_GenerateKey();
+                encryption.AAGCKDHEMFD_Finish();
             }
             bool res = tar.KHEKNNFCAOI_Init(request.Result);
             if(!res)
@@ -273,7 +273,7 @@ public class DocusaurusGenerator
                 encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
                 encryption.FAEFDAJAMCE(result);
-                encryption.AAGCKDHEMFD_GenerateKey();
+                encryption.AAGCKDHEMFD_Finish();
             }
             bool res = tar.KHEKNNFCAOI_Init(request.Result);
             if(!res)
@@ -522,7 +522,7 @@ public class DocusaurusGenerator
             CheckPath(database_path);
 
             db_struct.Add(block);
-            DIHHCBACKGG_DbSection section = Database.LBDOLHGDIEB_GetDbSection(block);
+            DIHHCBACKGG_DbSection section = Database.LBDOLHGDIEB_Find(block);
 
             {
                 EDOHBJAPLPF_JsonData schema = GenerateStructInfo(section.GetType());

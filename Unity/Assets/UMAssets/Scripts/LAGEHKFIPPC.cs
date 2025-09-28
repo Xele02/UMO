@@ -8,13 +8,13 @@ public class LAGEHKFIPPC
 		public int IDCGBCGNOLH_Day; // 0x8
 
 		//// RVA: 0xD905C8 Offset: 0xD905C8 VA: 0xD905C8
-		//public void FPEKCEGADMG(BinaryWriter _OMLLGAKPMAN_writer) { }
+		//public void FPEKCEGADMG_Write(BinaryWriter _OMLLGAKPMAN_writer) { }
 
 		//// RVA: 0xD90054 Offset: 0xD90054 VA: 0xD90054
-		//public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
+		//public void FKGBNKPHCJL_Read(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
 	}
 
-	public const int JNCCCCPBDIC = 1;
+	public const int JNCCCCPBDIC_Version = 1;
 	public EHPHFDNBFAO KOGBMDOONFA_Info; // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 	
@@ -50,7 +50,7 @@ public class LAGEHKFIPPC
 			Directory.CreateDirectory(dirName);
 		FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create);
 		BinaryWriter br = new BinaryWriter(fs);
-		br.Write(JNCCCCPBDIC);
+		br.Write(JNCCCCPBDIC_Version);
 		br.Write(KOGBMDOONFA_Info.IDCGBCGNOLH_Day);
 		br.Flush();
 		br.Close();
@@ -59,5 +59,5 @@ public class LAGEHKFIPPC
 	}
 
 	//// RVA: 0xD90604 Offset: 0xD90604 VA: 0xD90604
-	//public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
+	//public void JCHLONCMPAJ_Clear(bool _OGBEGDKPDGK_NeedSave) { }
 }

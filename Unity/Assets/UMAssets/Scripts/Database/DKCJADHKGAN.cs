@@ -58,7 +58,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x198D990 Offset: 0x198D990 VA: 0x198D990
-	public bool FLPDCNBLOKL(long _JHNMKKNEENE_Time, int _GHBPLHBNMBK_FreeMusicId)
+	public bool FLPDCNBLOKL_IsSongForWeekDay(long _JHNMKKNEENE_Time, int _GHBPLHBNMBK_FreeMusicId)
 	{
 		JFFPEKOEINE data = PPIBJECKCEF(_JHNMKKNEENE_Time);
 		if(data != null)
@@ -146,13 +146,13 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x198E188 Offset: 0x198E188 VA: 0x198E188
-	private static List<int> JCAGLPANMFC(string IBDJFHFIIHN)
+	private static List<int> JCAGLPANMFC(string _IBDJFHFIIHN_s)
 	{
 		List<int> res = null;
-		if(!string.IsNullOrEmpty(IBDJFHFIIHN))
+		if(!string.IsNullOrEmpty(_IBDJFHFIIHN_s))
 		{
 			char[] sep = new char[1] { ',' };
-			string[] strs = IBDJFHFIIHN.Split(sep);
+			string[] strs = _IBDJFHFIIHN_s.Split(sep);
 			if(strs != null && strs.Length != 0)
 			{
 				res = new List<int>(strs.Length);

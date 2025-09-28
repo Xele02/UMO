@@ -916,7 +916,7 @@ namespace XeApp.Game.Menu
 				if(IsChangePlayerName(inputText))
 				{
 					MenuScene.Instance.InputDisable();
-					BHLFHHBDGHO.GEJEDJNKBOF(inputText, () =>
+					BHLFHHBDGHO.GEJEDJNKBOF_Validate(inputText, () =>
 					{
 						//0x117CC48
 						MenuScene.Instance.InputEnable();
@@ -1103,7 +1103,7 @@ namespace XeApp.Game.Menu
 				if(IsChangeComment(inputComment))
 				{
 					MenuScene.Instance.InputDisable();
-					BHLFHHBDGHO.GEJEDJNKBOF(inputComment, () =>
+					BHLFHHBDGHO.GEJEDJNKBOF_Validate(inputComment, () =>
 					{
 						//0x117CED8
 						this.StartCoroutineWatched(OnChangeCommentCoroutine2(inputComment));
@@ -1272,7 +1272,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117025C Offset: 0x117025C VA: 0x117025C
 		private IAPDFOPPGND GetDegreeData(int id)
 		{
-			List<IAPDFOPPGND> emblems = IAPDFOPPGND.FKDIMODKKJD(true);
+			List<IAPDFOPPGND> emblems = IAPDFOPPGND.FKDIMODKKJD_GetList(true);
 			for(int i = 0; i < emblems.Count; i++)
 			{
 				if(emblems[i].MDPKLNFFDBO_EmblemId == id)
@@ -1627,7 +1627,7 @@ namespace XeApp.Game.Menu
 					{
 						CostumeData d = new CostumeData();
 						d.data = m_costume_list[i];
-						d.color = m_costume_list[i].LLJPMOIPBAG(j);
+						d.color = m_costume_list[i].LLJPMOIPBAG_GetColorForLevel(j);
 						m_inner_costume_list.Add(d);
 					}
 				}

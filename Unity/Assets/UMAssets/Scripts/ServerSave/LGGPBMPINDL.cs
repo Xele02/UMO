@@ -6,7 +6,7 @@ using XeSys;
 public class LGGPBMPINDL { }
 public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	public int MEBHCFJCKFE_LobbyId; // 0x24
 	public int OBGBAOLONDD_UniqueId; // 0x28
 	public long NFIOKIBPJCJ_uptime; // 0x30
@@ -82,18 +82,18 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 			if(block.BBAJPINMOEP_Contains(str.ToString()))
 			{
 				OBGBAOLONDD_UniqueId = i;
-				MEBHCFJCKFE_LobbyId = CJAENOMGPDA_ReadInt(block, str.ToString(), 0, ref isInvalid);
-				KDMPHHFADMC_ClusterId = CJAENOMGPDA_ReadInt(block, str2.ToString(), 0, ref isInvalid);
+				MEBHCFJCKFE_LobbyId = CJAENOMGPDA_GetInt(block, str.ToString(), 0, ref isInvalid);
+				KDMPHHFADMC_ClusterId = CJAENOMGPDA_GetInt(block, str2.ToString(), 0, ref isInvalid);
 				break;
 			}
 		}
 		if(OBGBAOLONDD_UniqueId == 0)
 		{
-			MEBHCFJCKFE_LobbyId = CJAENOMGPDA_ReadInt(block, "lobby_id_00000", 0, ref isInvalid);
-			KDMPHHFADMC_ClusterId = CJAENOMGPDA_ReadInt(block, "lobby_cluster_id_", 0, ref isInvalid);
+			MEBHCFJCKFE_LobbyId = CJAENOMGPDA_GetInt(block, "lobby_id_00000", 0, ref isInvalid);
+			KDMPHHFADMC_ClusterId = CJAENOMGPDA_GetInt(block, "lobby_cluster_id_", 0, ref isInvalid);
 		}
 		UnityEngine.Debug.LogError("Read Lobby "+OBGBAOLONDD_UniqueId+" "+MEBHCFJCKFE_LobbyId);
-		NFIOKIBPJCJ_uptime = DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
+		NFIOKIBPJCJ_uptime = DKMPHAPBDLH_GetLong(block, AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;
 	}

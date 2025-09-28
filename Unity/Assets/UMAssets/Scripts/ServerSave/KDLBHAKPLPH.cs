@@ -8,14 +8,11 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 	public class KGFJLMLOFED
 	{
 		public int HIEKBDMHKLP_MarkerNo { get; set; } // 0x8 MICLNMBOAJD FEDEEOKEBBH AJEOEBDGIEJ
-		public long BEBJKJKBOGH_date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
-		//public bool FJODMPGPDDD_Unlocked { get; }
+		public long BEBJKJKBOGH_date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD_get_date IHAIKPNEEJE
+		//public bool FJODMPGPDDD_Unlocked { get; } 0xE7D534 CGKAEMGLHNK_get_Unlocked
 
 		//// RVA: 0xE7D51C Offset: 0xE7D51C VA: 0xE7D51C
-		//public void GLHANCMGNDM(long _JGNBPFCJLKI_d) { }
-
-		//// RVA: 0xE7D534 Offset: 0xE7D534 VA: 0xE7D534
-		//public bool CGKAEMGLHNK() { }
+		//public void GLHANCMGNDM_Unlock(long _JGNBPFCJLKI_d) { }
 
 		//// RVA: 0xE7C4C4 Offset: 0xE7C4C4 VA: 0xE7C4C4
 		public void ODDIHGPONFL_Copy(KGFJLMLOFED GPBJHKLFCEP)
@@ -34,10 +31,10 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0xE7CBEC Offset: 0xE7CBEC VA: 0xE7CBEC
-		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, KDLBHAKPLPH_ArMarker.KGFJLMLOFED _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
+		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string _JIKKNHIAEKG_BlockName, string MJBACHKCIHA, int _OIPCCBHIKIA_index, KDLBHAKPLPH_ArMarker.KGFJLMLOFED _OHMCIEMIKCE_t, bool KFCGIKHEEMB) { }
 	}
 
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	private const int KDNHEMPAGIE = 100;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
@@ -116,7 +113,7 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 						EDOHBJAPLPF_JsonData b = block[str];
 						KGFJLMLOFED data = DNKNFFPLGNM[i];
 						data.HIEKBDMHKLP_MarkerNo = i + 1;
-						data.BEBJKJKBOGH_date = DKMPHAPBDLH_ReadLong(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0, ref isInvalid);
+						data.BEBJKJKBOGH_date = DKMPHAPBDLH_GetLong(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0, ref isInvalid);
 					}
 				}
 			}

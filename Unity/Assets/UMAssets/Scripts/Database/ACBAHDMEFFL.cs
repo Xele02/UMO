@@ -40,7 +40,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 		public List<int> JKFPADIAKCK_Songs = new List<int>(); // 0x94
 		public List<int> EEOGPJJCKHH_Drops = new List<int>(); // 0x98
 
-		public string OCDMGOGMHGE_RewardPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x15B7B48 HBAAAKFHDBB 0x15B5690 NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x15B7B48 HBAAAKFHDBB 0x15B5690 NHJLJOIPOFK
 		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x15B7B74 NOEFEAIFHCL 0x15B56C4 GJIJFGNONEL
 
 		//// RVA: 0x15B3298 Offset: 0x15B3298 VA: 0x15B3298
@@ -62,7 +62,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 			HEDAGCNPHGD_RankingName = null;
 			OCGFKMHNEOF_name_for_api = null;
 			FEMMDNIELFC_Desc = null;
-			OCDMGOGMHGE_RewardPrefix = "";
+			OCDMGOGMHGE_KeyPrefix = "";
 			PJBILOFOCIC = "";
 			JHPCPNJJHLI_RankingThreshold.Clear();
 			EKJFNHHKBPL = 0;
@@ -169,8 +169,8 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 		{
 			LHPDDGIJKNB_Reset(KNEFBLHBDBG);
 			JOBECEGAHID d = JMHECKKKMLK.IEJLJIHIDJC[JBGJDEELLOP];
-			KHPHAAMGMJP_EpId = d.KHPHAAMGMJP;
-			OFIAENKCJME_BaseBonus = d.OFIAENKCJME;
+			KHPHAAMGMJP_EpId = d.KHPHAAMGMJP_EpId;
+			OFIAENKCJME_BaseBonus = d.OFIAENKCJME_BaseBonus;
 			for(int j = 0; j < d.JMLCLHHLJHM.Length; j++)
 			{
 				KDNMBOBEGJM_GachaIds.Add(d.JMLCLHHLJHM[j]);
@@ -194,7 +194,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 		public int NMKEOMCMIPP_RewardId; // 0x10
 		public int HJAFPEBIBOP_Limit; // 0x14
 
-		public bool PJPDOCNJNGJ { get { return HJAFPEBIBOP_Limit > 0; } } //0x15B81CC MBEBLALDBHJ
+		public bool PJPDOCNJNGJ_IsLimited { get { return HJAFPEBIBOP_Limit > 0; } } //0x15B81CC MBEBLALDBHJ
 	}
 
 	public class IOFFAADEIGD
@@ -475,7 +475,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		EDHLNJNFNDN reader = EDHLNJNFNDN.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		DGKKMKLCEDF(reader);
+		DGKKMKLCEDF_DeserializeSetting(reader);
 		GPEKKMGGBPF(reader);
 		CFOFJPLEDEA(reader);
 		GJEHPJJBCDE(reader);
@@ -566,7 +566,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x15B388C Offset: 0x15B388C VA: 0x15B388C
-	private bool DGKKMKLCEDF(EDHLNJNFNDN LKOMBCHIDMB)
+	private bool DGKKMKLCEDF_DeserializeSetting(EDHLNJNFNDN LKOMBCHIDMB)
 	{
 		NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId = (int)LKOMBCHIDMB.HMBHNLCFDIH.OBGBAOLONDD_UniqueId;
 		NGHKJOEDLIP_Settings.OPFGFINHFCE_name = LKOMBCHIDMB.HMBHNLCFDIH.OPFGFINHFCE_name;
@@ -585,7 +585,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP_Settings.POGEFBMBPCB_MonthOdd = (sbyte)LKOMBCHIDMB.HMBHNLCFDIH.JMJDLDEIFKE;
 		NGHKJOEDLIP_Settings.AHKNMANFILO_DayGroup = (sbyte)LKOMBCHIDMB.HMBHNLCFDIH.AHKNMANFILO_DayGroup;
 		NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx = (sbyte)LKOMBCHIDMB.HMBHNLCFDIH.MOEKELIIDEO_SaveIdx;
-		NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix = LKOMBCHIDMB.HMBHNLCFDIH.OCDMGOGMHGE;
+		NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix = LKOMBCHIDMB.HMBHNLCFDIH.OCDMGOGMHGE_KeyPrefix;
 		NGHKJOEDLIP_Settings.PJBILOFOCIC = LKOMBCHIDMB.HMBHNLCFDIH.PJBILOFOCIC;
 		NGHKJOEDLIP_Settings.MJBKGOJBPAD_item_type = LKOMBCHIDMB.HMBHNLCFDIH.MJBKGOJBPAD_item_type;
 		NGHKJOEDLIP_Settings.FEMMDNIELFC_Desc = LKOMBCHIDMB.HMBHNLCFDIH.FEMMDNIELFC_Desc;
@@ -619,7 +619,7 @@ public class ACBAHDMEFFL_EventMission : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x15B5650 Offset: 0x15B5650 VA: 0x15B5650
-	//private bool DGKKMKLCEDF(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
+	//private bool DGKKMKLCEDF_DeserializeSetting(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x15B56F8 Offset: 0x15B56F8 VA: 0x15B56F8
 	//private void EEEKPHDPJHG(List<int> NNDGIAEFMOG, EDOHBJAPLPF_JsonData OBHAFLMHAKG, string _OPFGFINHFCE_name, ref bool _NGJDHLGMHMH_IsInvalid) { }

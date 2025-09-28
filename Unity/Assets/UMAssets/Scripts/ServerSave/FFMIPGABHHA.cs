@@ -5,14 +5,14 @@ using System.Text;
 public class FFMIPGABHHA { }
 public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const long BBEGLBMOBOF_xorl = 0x77ccefaa9;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 	public string IOIMHJAOKOO_Hash; // 0x24
 	private long KLAPHOKNEDG_DateCrypted; // 0x28
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_DateCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_DateCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD_get_date 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
@@ -73,9 +73,9 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 				if ((int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != 2)
 					isInvalid = true;
 			}
-			IOIMHJAOKOO_Hash = FGCNMLBACGO_ReadString(block, "hash", "", ref isInvalid);
-			BEBJKJKBOGH_date = DKMPHAPBDLH_ReadLong(block, "date", 0, ref isInvalid);
-			AFNJCFEKFDD_Dirty = DKMPHAPBDLH_ReadLong(block, "dirty", 0, ref isInvalid);
+			IOIMHJAOKOO_Hash = FGCNMLBACGO_GetString(block, "hash", "", ref isInvalid);
+			BEBJKJKBOGH_date = DKMPHAPBDLH_GetLong(block, "date", 0, ref isInvalid);
+			AFNJCFEKFDD_Dirty = DKMPHAPBDLH_GetLong(block, "dirty", 0, ref isInvalid);
 		}
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;

@@ -50,7 +50,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 			PPFNGGCBJKC_id = _OIPCCBHIKIA_index + 1;
 			AACHOBAAALA_ImageId = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC_id;
 			OPFGFINHFCE_name = DatabaseTextConverter.TranslateLobbyGroupName(BlockName, PPFNGGCBJKC_id, _IDLHJIOMJBK_data.OPFGFINHFCE_name);
-			HEDAGCNPHGD_RankingName = _IDLHJIOMJBK_data.HEDAGCNPHGD;
+			HEDAGCNPHGD_RankingName = _IDLHJIOMJBK_data.HEDAGCNPHGD_RankingName;
 			OCDBMHBNLEF = new List<int>(_IDLHJIOMJBK_data.OCDBMHBNLEF.Length);
 			for(int i = 0; i < _IDLHJIOMJBK_data.OCDBMHBNLEF.Length; i++)
 			{
@@ -75,11 +75,11 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 		public LNECBHIKKHK(string BlockName, PALCPDPGOPC _IDLHJIOMJBK_data)
 		{
 			PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_data.PPFNGGCBJKC_id;
-			GJNIPHMPMIC_Phase = (int)_IDLHJIOMJBK_data.GJNIPHMPMIC;
+			GJNIPHMPMIC_Phase = (int)_IDLHJIOMJBK_data.GJNIPHMPMIC_Phase;
 			INDDJNMPONH_type = (int)_IDLHJIOMJBK_data.GBJFNGCDKPM_typ;
 			FDBOPFEOENF_diva = (int)_IDLHJIOMJBK_data.FDBOPFEOENF_diva;
 			MJMPANIBFED_pid = (int)_IDLHJIOMJBK_data.MJMPANIBFED_pid;
-			LICPCDCLOIO_Message = DatabaseTextConverter.TranslateLobbyGuideText( BlockName, PPFNGGCBJKC_id, _IDLHJIOMJBK_data.LICPCDCLOIO );
+			LICPCDCLOIO_Message = DatabaseTextConverter.TranslateLobbyGuideText( BlockName, PPFNGGCBJKC_id, _IDLHJIOMJBK_data.LICPCDCLOIO_Message );
 		}
 
 		//// RVA: 0xD66BB8 Offset: 0xD66BB8 VA: 0xD66BB8
@@ -141,7 +141,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		MAGFOKIIPPD data = MAGFOKIIPPD.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		DGKKMKLCEDF(data);
+		DGKKMKLCEDF_DeserializeSetting(data);
 		FOPPFILCLDJ(data);
 		JIBKOEFOAPG(data);
 		CFOFJPLEDEA(data);
@@ -189,7 +189,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xD65E34 Offset: 0xD65E34 VA: 0xD65E34
-	private bool DGKKMKLCEDF(MAGFOKIIPPD KNOEHKKNIJA)
+	private bool DGKKMKLCEDF_DeserializeSetting(MAGFOKIIPPD KNOEHKKNIJA)
 	{
 		NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId = (int)KNOEHKKNIJA.HMBHNLCFDIH.OBGBAOLONDD_UniqueId;
 		NGHKJOEDLIP_Settings.OPFGFINHFCE_name = KNOEHKKNIJA.HMBHNLCFDIH.OPFGFINHFCE_name;

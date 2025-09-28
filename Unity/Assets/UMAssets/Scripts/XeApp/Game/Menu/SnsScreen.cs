@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 				isExit = true;
 				QuestUtility.UpdateQuestData();
 				QuestUtility.FooterMenuBadge();
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(true);
 			}, roomCb, m_sceneType != eSceneType.Menu && ((int)m_sceneType & 0xfffffffe) == 2, buttonType));
 			while (layoutController.IsPlaying())
@@ -313,7 +313,7 @@ namespace XeApp.Game.Menu
 			{
 				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.PEPILDAEIEL/*45*/, 2, false);
 			}
-			ILCCJNDFFOB.HHCJCDFCLOB.HGOGFPOCKFA(roomId, 0, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.HGOGFPOCKFA_Sns(roomId, 0, 0);
 			if(!isBootAnimIn)
 			{
 				GameManager.Instance.NowLoading.Show();
@@ -347,7 +347,7 @@ namespace XeApp.Game.Menu
 				isExit = true;
 				QuestUtility.UpdateQuestData();
 				QuestUtility.FooterMenuBadge();
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(true);
 			}, () =>
 			{

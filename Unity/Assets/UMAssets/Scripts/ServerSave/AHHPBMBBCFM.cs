@@ -7,7 +7,7 @@ using XeSys;
 public class AHHPBMBBCFM { }
 public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	public const int FIKANMEAEIF = 5;
 	public const int CAHJOIDBJDJ = 5;
 	public List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN> JBJHCJFOICD_SetArr = new List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN>(); // 0x24
@@ -49,7 +49,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 		{
 			EDOHBJAPLPF_JsonData tmp = new EDOHBJAPLPF_JsonData();
 			tmp[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = _MCKEOKFMLAH_SaveId;
-			tmp[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE;
+			tmp[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = ECFEMKGFDCE_CurrentVersion;
 			tmp[JIKKNHIAEKG_BlockName] = data;
 			data = tmp;
 		}
@@ -86,11 +86,11 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 					JBJHCJFOICD_SetArr[i].IIEMACPEEBJ_Deserialize(ar[i], (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, int BAAPMIKMLPP) =>
 					{
 						//0x15C8380
-						return CJAENOMGPDA_ReadInt(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, BAAPMIKMLPP, ref isInvalid);
+						return CJAENOMGPDA_GetInt(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, BAAPMIKMLPP, ref isInvalid);
 					}, (EDOHBJAPLPF_JsonData _JGNBPFCJLKI_d, string _LJNAKDMILMC_key, string EMOLDMOBKLM) =>
 					{
 						//0x15C83D8
-						return FGCNMLBACGO_ReadString(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, EMOLDMOBKLM, ref isInvalid);
+						return FGCNMLBACGO_GetString(_JGNBPFCJLKI_d, _LJNAKDMILMC_key, EMOLDMOBKLM, ref isInvalid);
 					});
 				}
 			}

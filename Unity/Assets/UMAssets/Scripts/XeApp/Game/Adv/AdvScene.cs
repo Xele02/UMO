@@ -110,7 +110,7 @@ namespace XeApp.Game.Adv
 				Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(musicId, Difficulty.Type.Easy, false, new GameSetupData.MusicInfo.InitFreeMusicParam() { isDisableBattleEventIntermediateResult = false, returnTransitionUniqueId = 0 }, 0, 0, 0, false, false, "", 0, 0, -1, 0, 0, 1, 0);
 			}
 			AEGLGBOGDHH a_ = new AEGLGBOGDHH();
-			a_.OBKGEDCKHHE();
+			a_.OBKGEDCKHHE_Init();
 			IBJAKJJICBC ib_ = new IBJAKJJICBC();
 			ib_.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
 			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_enemy);

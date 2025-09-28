@@ -15,7 +15,7 @@ public class FFHFGBLNLGL
 		public int MBACHPLELHF { get { return MPBBPNKICGA; } set { MPBBPNKICGA = value; } } //0x14DDA28 GBEOFPAFPEL 0x14DD32C GEBBPCBLJLG
 	}
 
-	private const int JNCCCCPBDIC = 1;
+	private const int JNCCCCPBDIC_Version = 1;
 	private List<IHJLLOMMCCG> DHDCHLAIAMP = new List<IHJLLOMMCCG>(); // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 
@@ -29,7 +29,7 @@ public class FFHFGBLNLGL
 	//private void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x14DCD84 Offset: 0x14DCD84 VA: 0x14DCD84
-	public void PCODDPDFLHK()
+	public void PCODDPDFLHK_Load()
 	{
 		DHDCHLAIAMP.Clear();
 		if(File.Exists(ELLBAAFKDCH_Filename))
@@ -52,7 +52,7 @@ public class FFHFGBLNLGL
 	}
 
 	//// RVA: 0x14DD334 Offset: 0x14DD334 VA: 0x14DD334
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
 	{
 		string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if(!Directory.Exists(dir))
@@ -76,7 +76,7 @@ public class FFHFGBLNLGL
 	}
 
 	//// RVA: 0x14DDA30 Offset: 0x14DDA30 VA: 0x14DDA30
-	public void NIFJAPKCPOK(int _HHGMPEEGFMA_GachaId, int BHBHMFCMLHN)
+	public void NIFJAPKCPOK_SetGachaValue(int _HHGMPEEGFMA_GachaId, int BHBHMFCMLHN)
 	{
 		IHJLLOMMCCG d = DHDCHLAIAMP.Find((IHJLLOMMCCG _GHPLINIACBB_x) =>
 		{
@@ -110,10 +110,10 @@ public class FFHFGBLNLGL
 	}
 
 	//// RVA: 0x14DDD08 Offset: 0x14DDD08 VA: 0x14DDD08
-	public void NDLADIBEHAM()
+	public void NDLADIBEHAM_Clear()
 	{
 		DHDCHLAIAMP.Clear();
-		HJMKBCFJOOH();
+		HJMKBCFJOOH_Save();
 	}
 
 	//// RVA: 0x14DDD88 Offset: 0x14DDD88 VA: 0x14DDD88

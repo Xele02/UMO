@@ -192,7 +192,7 @@ public class FAGCLBOACEE
         List<LAEGMENIEDB_Story.ALGOILKGAAH> dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA_table;
         List<NEKDCJKANAH_StoryRecord.HKDNILFKCFC> saveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH;
         LPPGENBEECK_MusicMaster dbMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
-        List<LIEJFHMGNIA> l = LIEJFHMGNIA.FKDIMODKKJD(LIEJFHMGNIA.PJIJLMFBBCJ() - 1, true, true, false);
+        List<LIEJFHMGNIA> l = LIEJFHMGNIA.FKDIMODKKJD_GetList(LIEJFHMGNIA.PJIJLMFBBCJ() - 1, true, true, false);
         for(int i = 0; i < l.Count; i++)
         {
 			if (!l[i].BCGLDMKODLC_IsClear)
@@ -237,7 +237,7 @@ public class FAGCLBOACEE
 		List<IBJAKJJICBC> l = new List<IBJAKJJICBC>();
 		for(int i = 0; i < 6; i++)
 		{
-			List<IBJAKJJICBC> list = IBJAKJJICBC.FKDIMODKKJD(i + 1, time, false, false, false, false);
+			List<IBJAKJJICBC> list = IBJAKJJICBC.FKDIMODKKJD_GetList(i + 1, time, false, false, false, false);
 			for(int j = 0; j < list.Count; j++)
 			{
 				l.Add(list[j]);
@@ -249,15 +249,15 @@ public class FAGCLBOACEE
 		{
 			for(int i = 0; i < l.Count; i++)
 			{
-				KEODKEGFDLD_FreeMusicInfo fInfo = BMBELGEDKEG(l[i].DLAEJOBELBH_MusicId);
+				KEODKEGFDLD_FreeMusicInfo fInfo = BMBELGEDKEG_GetFreeMusic(l[i].DLAEJOBELBH_MusicId);
 				if(fInfo != null && fInfo.BHJNFBDNFEJ)
 				{
 					if(l[i].EKANGPODCEP_EventId == 0)
 					{
-						EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[l[i].DLAEJOBELBH_MusicId - 1];
+						EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[l[i].DLAEJOBELBH_MusicId - 1];
 						if(mData.PECMGDOMLAF_DivaMulti > 1)
 						{
-							if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MMGKPCIOHHC_AddMusic.CGEPJMFFLLJ(l[i].DLAEJOBELBH_MusicId, mData.PECMGDOMLAF_DivaMulti))
+							if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MMGKPCIOHHC_AddMusic.CGEPJMFFLLJ_IsShowUnitLiveAdd(l[i].DLAEJOBELBH_MusicId, mData.PECMGDOMLAF_DivaMulti))
 							{
 								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MMGKPCIOHHC_AddMusic.DDCBGCODHHN(l[i].DLAEJOBELBH_MusicId, mData.PECMGDOMLAF_DivaMulti);
 								FAGCLBOACEE data = new FAGCLBOACEE();
@@ -282,7 +282,7 @@ public class FAGCLBOACEE
 			List<IBJAKJJICBC> l = new List<IBJAKJJICBC>();
 			for (int i = 0; i < 9; i++)
 			{
-				List<IBJAKJJICBC> l2 = IBJAKJJICBC.FKDIMODKKJD(i + 1, time, false, false, false, true);
+				List<IBJAKJJICBC> l2 = IBJAKJJICBC.FKDIMODKKJD_GetList(i + 1, time, false, false, false, true);
 				for(int j = 0; j < l2.Count; j++)
 				{
 					l.Add(l2[j]);
@@ -315,7 +315,7 @@ public class FAGCLBOACEE
 	}
 
 	// // RVA: 0xFC451C Offset: 0xFC451C VA: 0xFC451C
-	public static KEODKEGFDLD_FreeMusicInfo BMBELGEDKEG(int _DLAEJOBELBH_MusicId)
+	public static KEODKEGFDLD_FreeMusicInfo BMBELGEDKEG_GetFreeMusic(int _DLAEJOBELBH_MusicId)
 	{
 		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData.Find((KEODKEGFDLD_FreeMusicInfo _GHPLINIACBB_x) =>
 		{
@@ -329,7 +329,7 @@ public class FAGCLBOACEE
 	}
 
 	// // RVA: 0xFC4CE4 Offset: 0xFC4CE4 VA: 0xFC4CE4
-	// private static List<FAGCLBOACEE.MFHPNBOLPAO> OBIJCNGEBOM(EGOLBAPFHHD ENIDMGPGGLI) { }
+	// private static List<FAGCLBOACEE.MFHPNBOLPAO> OBIJCNGEBOM(EGOLBAPFHHD_Common ENIDMGPGGLI) { }
 
 	// // RVA: 0xFC3720 Offset: 0xFC3720 VA: 0xFC3720
 	public static List<FAGCLBOACEE> KJDIPIAFNEN()
@@ -346,8 +346,8 @@ public class FAGCLBOACEE
                 if(GHBPLHBNMBK_FreeMusicId > 0)
                 {
                     long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-                    List<IBJAKJJICBC> d = IBJAKJJICBC.FKDIMODKKJD(-1, time, true, false, false, false);
-                    List<IBJAKJJICBC> e = IBJAKJJICBC.FKDIMODKKJD(5, time, true, false, false, false);
+                    List<IBJAKJJICBC> d = IBJAKJJICBC.FKDIMODKKJD_GetList(-1, time, true, false, false, false);
+                    List<IBJAKJJICBC> e = IBJAKJJICBC.FKDIMODKKJD_GetList(5, time, true, false, false, false);
                     IBJAKJJICBC d_ = d.Find((IBJAKJJICBC JPAEDJJFFOI) => {
                         //0xFC58C8
                         return JPAEDJJFFOI.GHBPLHBNMBK_FreeMusicId == GHBPLHBNMBK_FreeMusicId;
@@ -360,7 +360,7 @@ public class FAGCLBOACEE
                     {
                         KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
                         JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo saveMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
-                        int f = freeMusicInfo.EMJCHPDJHEI(is6Line, diff).DLPBHJALHCK_GetScoreRank(is6Line ? saveMusic.AHDKMPFDKPE_GetScoreL6_ForDiff(diff) : saveMusic.BDCAICINCKK_GetScoreForDiff(diff) );
+                        int f = freeMusicInfo.EMJCHPDJHEI(is6Line, diff).DLPBHJALHCK_GetScoreRank(is6Line ? saveMusic.AHDKMPFDKPE_GetScoreForDiffL6(diff) : saveMusic.BDCAICINCKK_GetScore(diff) );
                         if(f == 4)
                         {
                             FAGCLBOACEE data = new FAGCLBOACEE();

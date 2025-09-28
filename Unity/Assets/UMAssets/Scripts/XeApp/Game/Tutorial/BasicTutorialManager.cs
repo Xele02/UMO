@@ -121,7 +121,7 @@ namespace XeApp.Game.Tutorial
 		public IEnumerator PreDownLoadTextureResource(BasicTutorialMessageId id)
 		{
 			//0xE43BCC
-			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB((int)id);
+			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB_Find((int)id);
 			if(t == null)
 				yield break;
 			for(int i = 0; i < t.KGJHFFNFPOK_CharacterId.Length; i++)
@@ -157,7 +157,7 @@ namespace XeApp.Game.Tutorial
 		public static void SetupFirstTutorialLog()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress != 0)
 				return;
 			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0_Start);
@@ -178,7 +178,7 @@ namespace XeApp.Game.Tutorial
 					return;
 				Log(OAGBCBBHMPF.OGBCFNIKAFI.CFHINEFGHPC_47);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 1;
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 		}
 
@@ -193,14 +193,14 @@ namespace XeApp.Game.Tutorial
 				}
 				Log(OAGBCBBHMPF.OGBCFNIKAFI.LGFGBNKFPGH_48);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 2;
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 		}
 
 		// // RVA: 0xE3DF30 Offset: 0xE3DF30 VA: 0xE3DF30
 		public void ShowMessageWindow(BasicTutorialMessageId id, Action endCallBack, AdvMessageBase.TagConvertFunc func)
 		{
-			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB((int)id);
+			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB_Find((int)id);
 			if(data != null)
 			{
 				this.StartCoroutineWatched(ProcMessage(data, endCallBack, func));
@@ -724,7 +724,7 @@ namespace XeApp.Game.Tutorial
 		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint rPoint)
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.DGMFOHADMHN(rPoint);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xE41B10 Offset: 0xE41B10 VA: 0xE41B10
@@ -732,7 +732,7 @@ namespace XeApp.Game.Tutorial
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, Database.Instance.gameSetup, Database.Instance.gameResult);
 			UpdateLocalPlayerData();
-			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_ToMusicResult);
+			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_Ended);
 		}
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
@@ -748,7 +748,7 @@ namespace XeApp.Game.Tutorial
 			StatusData status2 = new StatusData();
 			Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(type);
 			AEGLGBOGDHH a = new AEGLGBOGDHH();
-			a.OBKGEDCKHHE();
+			a.OBKGEDCKHHE_Init();
 			IBJAKJJICBC ib = new IBJAKJJICBC();
 			ib.KHEKNNFCAOI_Init(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
 			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_Blocks[0].HPBPDHPIBGN_enemy);

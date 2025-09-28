@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 				m_eventStoryData = Database.Instance.advResult.EventStoryData;
 				pos = Database.Instance.advResult.RestorListPosition;
 				m_isRestor = true;
-				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_2_Scene/*2*/)
 				{
 					m_eventStoryData.HFLNCEOIBJI();
 				}
@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_2_Scene/*2*/)
 				{
 					return new SceneGrowthSceneArgs(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo x) =>
 					{
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 			GameAttribute.Type bgAttr = MenuScene.Instance.BgControl.GetCurrentAttr();
 			float pos = m_eventStoryList.GetListPosition();
 			TransitionUniqueId uniqueId = 0;
-			if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.CCDOBDNDPIL_0)
+			if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.CCDOBDNDPIL_0_Event)
 			{
 				switch(OHCAABOMEOF.BPJMGICFPBJ(m_eventStoryData.PPMNNKKFJNM_EventId))
 				{
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_2_Scene/*2*/)
 				{
 					uniqueId = (TransitionUniqueId)MenuScene.Instance.GetCurrentScene().uniqueId;
 				}
@@ -274,16 +274,16 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(data.PBPOLELIPJI_Id);
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(data.PBPOLELIPJI_Id);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(data.PBPOLELIPJI_Id);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
 				a = new OAGBCBBHMPF.DKAMMIHBINF[4] {
-					OAGBCBBHMPF.DKAMMIHBINF.BPCPDNGLNGO/*3*/,
-					OAGBCBBHMPF.DKAMMIHBINF.HEFPAOLDHCK/*4*/,
+					OAGBCBBHMPF.DKAMMIHBINF.BPCPDNGLNGO_3/*3*/,
+					OAGBCBBHMPF.DKAMMIHBINF.HEFPAOLDHCK_4_Daily/*4*/,
 					OAGBCBBHMPF.DKAMMIHBINF.DECFIFJACCL/*1*/,
-					OAGBCBBHMPF.DKAMMIHBINF.EKJGOMKEJLK/*10*/
+					OAGBCBBHMPF.DKAMMIHBINF.EKJGOMKEJLK_10_Scene/*10*/
 				}[m_eventStoryData.IPCPFJJPIII - 1];
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(data.PBPOLELIPJI_Id, a);
+			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(data.PBPOLELIPJI_Id, a);
 			Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
@@ -472,7 +472,7 @@ namespace XeApp.Game.Menu
 			c.SetUnlockText(d.OJAKFNNKADK_UnlockText);
 			if(d.KKLDIKMOACO_IsSNS)
 			{
-				c.SetLock(!d.CDOCOLOKCJK_Unlocked);
+				c.SetLock(!d.CDOCOLOKCJK_Avaiable);
 				bool b = false;
 				if(!d.OKKNPGJAPAO_IsUnlockTextEmpty)
 				{
@@ -487,13 +487,13 @@ namespace XeApp.Game.Menu
 			}
 			else if(d.CMEKNACNMCE_IsUnknown3)
 			{
-				c.SetLock(!d.CDOCOLOKCJK_Unlocked);
+				c.SetLock(!d.CDOCOLOKCJK_Avaiable);
 				c.EnableLockMessage(!d.OKKNPGJAPAO_IsUnlockTextEmpty);
 				c.EnableSnsIcon(false);
 				c.EnableThumbnail(true);
 				c.EnableArrow(true);
 				bool b = false;
-				if (!d.CDOCOLOKCJK_Unlocked)
+				if (!d.CDOCOLOKCJK_Avaiable)
 					b = !d.GELLHOIEABC_PreviousViewed;
 				c.EnableNoise(b);
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.DEAKHOJCBDM_Index);
@@ -509,7 +509,7 @@ namespace XeApp.Game.Menu
 				c.EnableNoise(false);
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.DEAKHOJCBDM_Index);
 				c.EnableNewIcon(d.IFNIEPPAMBE_IsNew);
-				if(!d.CDOCOLOKCJK_Unlocked)
+				if(!d.CDOCOLOKCJK_Avaiable)
 				{
 					c.SetButtonLabel(EventStoryListContent.ButtonLabel.Release);
 					c.ChangeReleaseFont(EventStoryListContent.ReleaseFont.UnRelease);
@@ -524,12 +524,12 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				c.SetLock(!d.CDOCOLOKCJK_Unlocked);
+				c.SetLock(!d.CDOCOLOKCJK_Avaiable);
 				c.EnableLockMessage(!d.OKKNPGJAPAO_IsUnlockTextEmpty);
 				c.EnableSnsIcon(false);
 				c.EnableThumbnail(true);
 				c.EnableArrow(true);
-				c.EnableNoise(!d.CDOCOLOKCJK_Unlocked);
+				c.EnableNoise(!d.CDOCOLOKCJK_Avaiable);
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD_2_Epilogue/*2*/);
 				c.EnableNewIcon(false);
 			}
@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				yield break;
 			MenuScene.Instance.InputDisable();
-			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM_Event/*1*/);
+			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM_EventStory/*1*/);
 			while (m_snsScreen != null && m_snsScreen.IsPlaying)
 				yield return null;
 			MenuScene.Instance.InputEnable();

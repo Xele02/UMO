@@ -730,7 +730,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				status.energy.DisableCallbackPilotVoice();
 				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();
-				a.OBKGEDCKHHE(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+				a.OBKGEDCKHHE_Init(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				float diff = difficulties[(int)Database.Instance.gameSetup.musicInfo.difficultyType] * 1.0f / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1;
 				status.enemy.SetFixDamageParamter(diff * a.FGCCCMAFCNH_GetMvValkAtk(), diff * a.GPGPOBJCMFB_GetMvValkAccuracy());
@@ -3566,7 +3566,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
 		public void Play()
 		{
-			//XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D
+			//XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D
 			if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
 			{
 				float val = resource.musicData.musicParam.stateOffsetSec;

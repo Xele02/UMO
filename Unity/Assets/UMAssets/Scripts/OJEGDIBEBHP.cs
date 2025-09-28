@@ -29,7 +29,7 @@ public class OJEGDIBEBHP
 	}
 
 	//// RVA: 0x148C500 Offset: 0x148C500 VA: 0x148C500
-	//public bool FBANBDCOEJL() { }
+	//public bool FBANBDCOEJL_Update() { }
 
 	//// RVA: 0x148C700 Offset: 0x148C700 VA: 0x148C700
 	public bool MCLFHOABKGP(int _AHHJLDLAPAN_DivaId)
@@ -42,7 +42,7 @@ public class OJEGDIBEBHP
 	}
 
 	//// RVA: 0x148C72C Offset: 0x148C72C VA: 0x148C72C
-	public static List<OJEGDIBEBHP> FKDIMODKKJD()
+	public static List<OJEGDIBEBHP> FKDIMODKKJD_GetList()
 	{
 		List<OJEGDIBEBHP> res = new List<OJEGDIBEBHP>();
 		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
@@ -98,5 +98,5 @@ public class OJEGDIBEBHP
 	}
 
 	//// RVA: 0x148CDD8 Offset: 0x148CDD8 VA: 0x148CDD8
-	//public static void HCDGELDHFHB(List<OJEGDIBEBHP> NNDGIAEFMOG) { }
+	//public static void HCDGELDHFHB_UpdateStatus(List<OJEGDIBEBHP> NNDGIAEFMOG) { }
 }

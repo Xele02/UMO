@@ -1909,7 +1909,7 @@ namespace XeApp.Game.Menu
 						int res = 0;
 						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
 						{
-							res += GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() ? 1 : 0;
+							res += GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked ? 1 : 0;
 						}
 						return res > 9;
 					}
@@ -2009,7 +2009,7 @@ namespace XeApp.Game.Menu
 						int res = 0;
 						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
 						{
-							if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked())
+							if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked)
 							{
 								res++;
 								if (res > 4)

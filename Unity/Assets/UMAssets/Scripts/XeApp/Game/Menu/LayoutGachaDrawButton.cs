@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 				//0x19AD67C
 				return step == x.AGBCJMMMLON_step_index;
 			});
-			Setup(view.DPBDFPPMIPH_Gacha, stepUpRecord.LKPHIGAFJKD_virtual_currency.PPFNGGCBJKC_id, m.EKOFPNGPCIP_RareCount + m.MFFNDOEPJFO_NormalCount, m.LCJPKJMMIAP_virtual_currency_amount, m.KACECFNECON_extra != null ? m.KACECFNECON_extra.MDEIKCBEHHC : "", false, 0, view.MFMBCIKGCFC(), view.JHNMKKNEENE_Time);
+			Setup(view.DPBDFPPMIPH_Gacha, stepUpRecord.LKPHIGAFJKD_virtual_currency.PPFNGGCBJKC_id, m.EKOFPNGPCIP_RareCount + m.MFFNDOEPJFO_NormalCount, m.LCJPKJMMIAP_virtual_currency_amount, m.KACECFNECON_extra != null ? m.KACECFNECON_extra.MDEIKCBEHHC_Kakutei : "", false, 0, view.MFMBCIKGCFC(), view.JHNMKKNEENE_Time);
 		}
 
 		// RVA: 0x19ABA40 Offset: 0x19ABA40 VA: 0x19ABA40
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			m_layoutFirstSale.StartChildrenAnimGoStop(isFirstSale ? "01" : "02");
 			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			SetButtonColor(isFirstSale, tkt != null);
-			if (gachaProduct.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if (gachaProduct.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Normal)
 			{
 				Disable = LKBGPLDLNIK.JPIMHNNGJGI(currentTime) != 0;
 			}
@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 				case 9:
 					m_layoutCostIcon.StartChildrenAnimGoStop("01");
 					m_layoutLotCost.StartChildrenAnimGoStop("01");
-					str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1) + bk.GetMessageByLabel("gacha_cost_01");
+					str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1) + bk.GetMessageByLabel("gacha_cost_01");
 					break;
 				default:
 					break;

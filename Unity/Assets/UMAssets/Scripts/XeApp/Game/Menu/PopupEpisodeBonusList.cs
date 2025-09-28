@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 					});
 					m_episodeLayoutParts[idx].rootLayout.StartChildrenAnimGoStop("01");
 					m_episodeLayoutParts[idx].rootLayout.StartAllAnimDecoLoop();
-					m_episodeLayoutParts[idx].episodeNameText.text = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
+					m_episodeLayoutParts[idx].episodeNameText.text = PIGBBNDPPJC.EJOJNFDHDHN_GetName(episodeId);
 					int bonusMax = -1;
 					CIKHPBBNEIM.ODGCADPPIFA d = new CIKHPBBNEIM.ODGCADPPIFA();
 					CIKHPBBNEIM.PBJEFDNBBCD p = m_setting.ViewEpisodeBonus.GGHMLFOFELH(episodeId);

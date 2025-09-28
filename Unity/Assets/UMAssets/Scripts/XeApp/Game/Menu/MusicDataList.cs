@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1049AAC Offset: 0x1049AAC VA: 0x1049AAC
-		// public IBJAKJJICBC Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode = False, bool simulation = False) { }
+		// public IBJAKJJICBC Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode = False, bool simulation = False) { }
 
 		// // RVA: 0x1049A04 Offset: 0x1049A04 VA: 0x1049A04
 		public IBJAKJJICBC Find(Predicate<IBJAKJJICBC> match, bool line6Mode/* = False*/, bool simulation/* = False*/)

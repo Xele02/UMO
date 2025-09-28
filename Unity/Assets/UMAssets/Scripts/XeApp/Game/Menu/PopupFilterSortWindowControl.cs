@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 					c.Fainalize();
 					if(m_setting.m_param.EnableSave)
 					{
-						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+						GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 					}
 					if (okCallBack != null)
 						okCallBack(c);
@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 					c.Fainalize();
 					if(m_settingUGUI.m_param.EnableSave)
 					{
-						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+						GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 					}
 					if (okCallBack != null)
 						okCallBack(c);

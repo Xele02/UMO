@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 				{
 					ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.GNLPMEDLIJJ/*44*/, 2, false);
 				}
-				unit.HCDGELDHFHB();
+				unit.HCDGELDHFHB_UpdateStatus();
 				ReturnScene();
 			}, null, null, () =>
 			{

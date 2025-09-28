@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 			m_episodeId = episodeId;
 			m_viewEpisodeBonus = viewEpisodeBonus;
 			m_epispdeSetting.UpdateList = OnUpdateList;
-			m_epispdeSetting.TitleText = string.Format(MessageManager.Instance.GetMessage("menu", "popup_episodebonus_platelist_title"), PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId));
+			m_epispdeSetting.TitleText = string.Format(MessageManager.Instance.GetMessage("menu", "popup_episodebonus_platelist_title"), PIGBBNDPPJC.EJOJNFDHDHN_GetName(episodeId));
 			m_epispdeSetting.ScrollItemCount = m_viewEpisodeBonus.GGHMLFOFELH(episodeId).FLJNOOPOAGI.Count;
 			m_gachaList.PopupEpisodeBonusPlateSort = this;
 			m_gachaList.GachaId = m_viewEpisodeBonus.GGHMLFOFELH(episodeId).MLLPMJFOKEC_GachaIds[0];

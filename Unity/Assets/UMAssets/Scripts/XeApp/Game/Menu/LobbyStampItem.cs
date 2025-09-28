@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		{
 			m_stampId = stampId;
 			IsLoadedTexture = false;
-			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 			{
 				//0xD21314
 				return item.PPFNGGCBJKC_id == m_stampId;

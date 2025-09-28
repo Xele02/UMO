@@ -26,7 +26,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1608560 Offset: 0x1608560 VA: 0x1608560
-	public BJPLLEBHAGO_DivaInfo GCINIJEMHFK_GetInfo(int _AHHJLDLAPAN_DivaId)
+	public BJPLLEBHAGO_DivaInfo GCINIJEMHFK_Get(int _AHHJLDLAPAN_DivaId)
     {
         if(_AHHJLDLAPAN_DivaId != 0)
 		{
@@ -85,8 +85,8 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE_mver, (int)array[i].PLALNIIBLOF_en, 0);
 				data.DOAJJALOKLI_Month = (sbyte)array[i].KLCMKLPIDDJ_Month;
 				data.PKNONBBKCCP_Day = (sbyte)array[i].BAOFEFFADPD_day;
-				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN;
-				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
+				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN_FreeMusicId;
+				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD_HomeBgId;
 
 				EPPOHFLMDBC_DivaStats data2 = new EPPOHFLMDBC_DivaStats();
 				// UMO, Restore old diva life stat (not end game 9999)
@@ -98,7 +98,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				for(int k = 0, j = 1; j <= AGNCAAFGLBE_MaxLevels; j++, k+=2)
 				{
 					data2.ANAJIAENLNB_lv = j;
-					data2.ANIJHEBLMGB_AddStat((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k+1]);
+					data2.ANIJHEBLMGB_SetValue((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK_add[k+1]);
 					data.CMCKNKKCNDK_status[j].FBGGEFFJJHB_xor = (int)val2;
 					data.CMCKNKKCNDK_status[j].ODDIHGPONFL_Copy(data2);
 					val2 = val2 * 0xb;

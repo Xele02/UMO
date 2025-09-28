@@ -52,9 +52,9 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 
 	public enum NMIGMCJHAIE
 	{
-		JFEDIMKFDNH_Prologue = 1,
+		JFEDIMKFDNH_1_Prologue = 1,
 		GBECNPANBEA_2_Sns = 2,
-		OEDCONLFLHD_Epilogue = 3,
+		OEDCONLFLHD_3_Epilogue = 3,
 		DCDEBCIMEMM_Opening = 4,
 		MOPAEGFEGCB_5_EpisodeStory = 5,
 	}

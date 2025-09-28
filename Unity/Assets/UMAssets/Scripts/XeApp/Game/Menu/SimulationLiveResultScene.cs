@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnStartEnterAnimation();
 			GameManager.Instance.SetFPS(60);
-			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId - 1];
+			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId - 1];
 			m_resultInfo.Setup(System.Convert.ToInt32(Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).bannerId), GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId));
 			m_resultInfo.Enter();
 			m_resultCmn.ChangeViewForSimulationResult();

@@ -89,14 +89,14 @@ namespace XeApp.Game.Menu
 			switch(status)
 			{
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0_None:
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3_Received:
 					SetTimeEnable(false);
 					break;
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1:
 					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event && viewData.PNFDMBHDPAJ_IsRewardOnly);
 					SetTime(viewData.BLHJBMPONHC);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved:
 					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event);
 					SetTime(viewData.PNHMDOHCBGK);
 					break;
@@ -149,10 +149,10 @@ namespace XeApp.Game.Menu
 					else
 						SwitchButton(eButtonType.Hide);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved:
 					SwitchButton(eButtonType.Receive);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3_Received:
 					SwitchButton(eButtonType.Clear);
 					break;
 				default:
@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					InitCostumeData(costumeData, m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					MenuScene.Instance.ShowCostumeDetailWindow(costumeData, 0);

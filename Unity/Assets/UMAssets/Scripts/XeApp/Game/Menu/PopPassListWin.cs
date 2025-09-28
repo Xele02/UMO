@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 			{
 				m_text_title.text = bk.GetMessageByLabel("pop_pass_sp_title");
 			}
-			else if(a_plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0)
+			else if(a_plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
 			{
 				m_text_title.text = bk.GetMessageByLabel("pop_pass_title");
 			}

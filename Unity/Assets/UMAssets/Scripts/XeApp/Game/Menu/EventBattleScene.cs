@@ -424,7 +424,7 @@ namespace XeApp.Game.Menu
 			m_eventInfo.SetBpValueLabel(bk.GetMessageByLabel("music_event_battle_bp_counting_label"));
 			m_eventInfo.SetBpValueUnitLabel(bk.GetMessageByLabel("music_event_battle_bp_unit"));
 			HAEDCCLHEMN_EventBattle btlEv = m_eventCtrl as HAEDCCLHEMN_EventBattle;
-			if(btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.OLCLJKOKJCD_7)
+			if(btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.OLCLJKOKJCD_7_End)
 			{
 				m_isMatched = true;
 				m_isClassSelected = true;
@@ -527,7 +527,7 @@ namespace XeApp.Game.Menu
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.MFFAIIDJPBL_BattleEvent.HJHBGHMNGKL_SetDifficulty(diff);
 				}
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 		}
 
@@ -649,7 +649,7 @@ namespace XeApp.Game.Menu
 		protected override void OnChangedDifficulty()
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.MFFAIIDJPBL_BattleEvent.HJHBGHMNGKL_SetDifficulty(diff);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xF123E4 Offset: 0xF123E4 VA: 0xF123E4
@@ -1104,7 +1104,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
@@ -1803,7 +1803,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			m_isLine6Mode = style == 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			this.StartCoroutineWatched(Co_ChangeLineMode(selectMusicData.GHBPLHBNMBK_FreeMusicId, selectMusicData.DACLONHOFLA.BHCIFFILAKJ_Strength, () =>
 			{
 				//0x1055F98

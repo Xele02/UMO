@@ -34,7 +34,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		public List<int> CAPAPAABKDP_FreeMusic = new List<int>(); // 0x70
 		public List<int> JHPCPNJJHLI_RankingThreshold = new List<int>(); // 0x74
 
-		public string OCDMGOGMHGE { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1021EE8 HBAAAKFHDBB 0x102138C NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1021EE8 HBAAAKFHDBB 0x102138C NHJLJOIPOFK
 		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x1021F14 NOEFEAIFHCL 0x10213C0 GJIJFGNONEL
 
 		//// RVA: 0x102041C Offset: 0x102041C VA: 0x102041C
@@ -52,7 +52,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 			POGEFBMBPCB_MonthOdd = 0;
 			AHKNMANFILO_DayGroup = 0;
 			KHIKEGLBGAF_RankingRewardScene = 0;
-			OCDMGOGMHGE = "";
+			OCDMGOGMHGE_KeyPrefix = "";
 			PJBILOFOCIC = "";
 			CAPAPAABKDP_FreeMusic.Clear();
 			OILIKPOBBGD = 0;
@@ -173,7 +173,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		OLLJFONKEKO reader = OLLJFONKEKO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		DGKKMKLCEDF(reader);
+		DGKKMKLCEDF_DeserializeSetting(reader);
 		GJEHPJJBCDE(reader);
 		CFOFJPLEDEA(reader);
 		for (int i = 0; i < reader.BHGDNGHDDAC.Length; i++)
@@ -202,7 +202,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		//UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OPFGFINHFCE_name);
 		//UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.HEDAGCNPHGD_RankingName);
 		//UnityEngine.Debug.LogError(JIKKNHIAEKG_BlockName);
-		//UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OCGFKMHNEOF_Key);
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OCGFKMHNEOF_name_for_api);
 		//UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.HBACKHIOIBG);
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
 		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
@@ -210,7 +210,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 			/*TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
 			UnityEngine.Debug.LogError("Date : \n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart).ToShortTimeString() + "\n"
-				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_End1).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_End1).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd).ToShortTimeString() + "\n"
@@ -255,7 +255,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1020994 Offset: 0x1020994 VA: 0x1020994
-	private bool DGKKMKLCEDF(OLLJFONKEKO JMHECKKKMLK)
+	private bool DGKKMKLCEDF_DeserializeSetting(OLLJFONKEKO JMHECKKKMLK)
 	{
 		NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId = (int)JMHECKKKMLK.HMBHNLCFDIH.OBGBAOLONDD_UniqueId;
 		NGHKJOEDLIP_Settings.OPFGFINHFCE_name = JMHECKKKMLK.HMBHNLCFDIH.OPFGFINHFCE_name;
@@ -276,7 +276,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP_Settings.HBACKHIOIBG = JMHECKKKMLK.HMBHNLCFDIH.AGGLDFOKCLJ;
 		NGHKJOEDLIP_Settings.BMKDEHFGHFG = JMHECKKKMLK.HMBHNLCFDIH.EODIMCFIMMP;
 		NGHKJOEDLIP_Settings.OFGDLGBFOOA = JMHECKKKMLK.HMBHNLCFDIH.GLFPABNKHHA;
-		NGHKJOEDLIP_Settings.OCDMGOGMHGE = JMHECKKKMLK.HMBHNLCFDIH.OCDMGOGMHGE;
+		NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix = JMHECKKKMLK.HMBHNLCFDIH.OCDMGOGMHGE_KeyPrefix;
 		NGHKJOEDLIP_Settings.PJBILOFOCIC = JMHECKKKMLK.HMBHNLCFDIH.PJBILOFOCIC;
 		NGHKJOEDLIP_Settings.AHKPNPNOAMO_ExtreamOpen = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.AHKPNPNOAMO_ExtreamOpen;
 		NGHKJOEDLIP_Settings.HKKNEAGCIEB_RankingSupport = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.HKKNEAGCIEB_RankingSupport;
@@ -292,7 +292,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1021590 Offset: 0x1021590 VA: 0x1021590
-	//private bool DGKKMKLCEDF(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
+	//private bool DGKKMKLCEDF_DeserializeSetting(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x10210D0 Offset: 0x10210D0 VA: 0x10210D0
 	private bool GJEHPJJBCDE(OLLJFONKEKO JMHECKKKMLK)

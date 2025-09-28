@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			{
 				m_anim_first.StartChildrenAnimGoStop(a_is_first ? "03" : "04");
 			}
-			else if (a_plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0)
+			else if (a_plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
 			{
 				m_anim_first.StartChildrenAnimGoStop(a_is_first ? "01" : "02");
 			}

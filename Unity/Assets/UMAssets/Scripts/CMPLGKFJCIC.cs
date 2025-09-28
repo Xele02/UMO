@@ -7,7 +7,7 @@ using XeSys;
 public static class BDLAFAPDOJE
 {
 	// RVA: 0xC71178 Offset: 0xC71178 VA: 0xC71178
-	public static EDOHBJAPLPF_JsonData LBDOLHGDIEB(this EDOHBJAPLPF_JsonData _DLENPPIJNPA_json, string _OPFGFINHFCE_name, EDOHBJAPLPF_JsonData PBHLLLGOGKA)
+	public static EDOHBJAPLPF_JsonData LBDOLHGDIEB_Find(this EDOHBJAPLPF_JsonData _DLENPPIJNPA_json, string _OPFGFINHFCE_name, EDOHBJAPLPF_JsonData PBHLLLGOGKA)
     {
         if(_DLENPPIJNPA_json.BBAJPINMOEP_Contains(_OPFGFINHFCE_name))
         {
@@ -105,7 +105,7 @@ public class LBICPMOLOKD
         FFBHEHAIHMA_MaxHp = (int)CDGMPGLAING.DLENPPIJNPA_json["max_hp"];
         CKFNNECHOGG_ComboCount = (int)CDGMPGLAING.DLENPPIJNPA_json["combo_count"];
         MHABJOMJCFI_AttackPlayerCount = (int)CDGMPGLAING.DLENPPIJNPA_json["attack_player_count"];
-        MBEMFKGBIEO_EncounterPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("encounter_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
+        MBEMFKGBIEO_EncounterPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB_Find("encounter_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
         {
             //0xD9953C
             return (int)_IDLHJIOMJBK_data;
@@ -161,7 +161,7 @@ public class NCMFOICNJEB<EffectInfoClass> : CMPLGKFJCIC<EffectInfoClass>
 		DLMNFENNCJG_HasAttacked = (bool)CDGMPGLAING.DLENPPIJNPA_json["has_attacked"];
 		ICCOOAAJEIN_CanReceiveReward = (bool)CDGMPGLAING.DLENPPIJNPA_json["can_receive_rewards"];
 		CAKONDPGDIL_CanRequestHelp = (bool)CDGMPGLAING.DLENPPIJNPA_json["can_request_help"];
-		CNGBMPCDFFE_RequestPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("request_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
+		CNGBMPCDFFE_RequestPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB_Find("request_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
 		{
 			//0x26C2898
 			return (int)_IDLHJIOMJBK_data;

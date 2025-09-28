@@ -196,7 +196,7 @@ namespace XeApp.Game.Menu
 				GCIJNCFDNON_SceneInfo scene = PlayerData.OPIBAPEGCLA_Scenes[i];
 				if(sceneDb.FGNJBMPDBLO_IsSceneValid(scene.BCCHOBPJJKE_SceneId))
 				{
-					if(scene.CGKAEMGLHNK_IsUnlocked(true))
+					if(scene.FJODMPGPDDD_Unlocked)
 					{
 						if(episodeId == 0)
 						{
@@ -525,8 +525,8 @@ namespace XeApp.Game.Menu
 							m_equipmentScene.UpdateContent(PlayerData, diva, IsCenterDiva(), musicId, false);
 							m_equipmentScene.SelectSlot(m_selectedEquipmentSlotIndex);
 							m_equipmentScene.ChangeIcon(PlayerData, diva, displayType, IsCenterDiva(), false);
-							diva.HCDGELDHFHB();
-							PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
+							diva.HCDGELDHFHB_UpdateStatus();
+							PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB_UpdateStatus();
 							m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
 							if(m_musicBaseData != null)
 							{
@@ -552,7 +552,7 @@ namespace XeApp.Game.Menu
 							m_equipmentScene.UpdateContent(PlayerData, diva, IsCenterDiva(), musicId, true);
 							m_equipmentScene.SelectSlot(m_selectedEquipmentSlotIndex);
 							m_equipmentScene.ChangeIcon(PlayerData, diva, displayType, IsCenterDiva(), true);
-							PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+							PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB_UpdateStatus();
 							m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
 							if(m_musicBaseData != null)
 							{
@@ -1210,7 +1210,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1386738 Offset: 0x1386738 VA: 0x1386738
-		// private uint MakeAssistAttributeBit(ILDKBCLAFPB.IJDOCJCLAIL saveData) { }
+		// private uint MakeAssistAttributeBit(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty saveData) { }
 
 		// // RVA: 0x138677C Offset: 0x138677C VA: 0x138677C
 		private void OnSelectListScene(int listIndex)

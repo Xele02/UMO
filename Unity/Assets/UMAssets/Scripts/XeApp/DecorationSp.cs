@@ -54,7 +54,7 @@ namespace XeApp
 		{
 			//0xBB4C5C
 			bool isLoadedTexture = true;
-			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/)
+			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				isLoadedTexture = false;
 				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
@@ -95,7 +95,7 @@ namespace XeApp
 		// RVA: 0xBB304C Offset: 0xBB304C VA: 0xBB304C Slot: 9
 		protected override void PostInitController()
 		{
-			if(SpType != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/)
+			if(SpType != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 				return;
 			m_decorationContoller.onBeginDrag = null;
 			m_decorationContoller.onDrag = null;
@@ -134,7 +134,7 @@ namespace XeApp
 				m_layoutDecorationItemCollection = m_decoCanvas.ItemManager.AllocCache(DecorationItemManager.LayoutCachaName.SpItemPopIcon).GetComponent<LayoutDecorationItemCollection>();
 				m_layoutDecorationItemCollection.transform.SetParent(m_object.transform, false);
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				m_layoutDecorationItemCollection = m_decoCanvas.ItemManager.AllocCache(DecorationItemManager.LayoutCachaName.SpItemPopIcon).GetComponent<LayoutDecorationItemCollection>();
 				m_layoutDecorationItemCollection.transform.SetParent(m_object.transform, false);
@@ -149,7 +149,7 @@ namespace XeApp
 		// // RVA: 0xBB3450 Offset: 0xBB3450 VA: 0xBB3450
 		protected void SettingAfterLoadLayout()
 		{
-			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_CanonFillSp/*1*/)
+			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp/*1*/)
 			{
 				m_layoutDecorationItemCollection.SetSetting(SpType, Size.y * 0.5f);
 			}
@@ -159,7 +159,7 @@ namespace XeApp
 				m_layoutDecorationItemCollection.SetMedalTexture(m_texture);
 			}
 			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/
-				|| SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/)
+				|| SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				m_layoutDecorationItemCollection.SetSetting(SpType, Size.y * 0.5f);
 				m_layoutDecorationItemCollection.SetPointTexture(m_texture);
@@ -299,7 +299,7 @@ namespace XeApp
 			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.HJNNKCMLGFL_0_None/*0*/ || 
 				SpType > NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
 			{
-				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/;
+				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/;
 			}
 			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		}

@@ -24,7 +24,7 @@ public class NKCNFFPLIAN
     }
 
 	// // RVA: 0x18AF150 Offset: 0x18AF150 VA: 0x18AF150
-	public static List<NKCNFFPLIAN> PCODDPDFLHK()
+	public static List<NKCNFFPLIAN> PCODDPDFLHK_Load()
     {
         TextAsset text = Resources.Load("cn") as TextAsset;
         byte[] data = text.bytes;

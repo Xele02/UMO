@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165A5EC Offset: 0x165A5EC VA: 0x165A5EC
 		private void ResetValkyrieData()
 		{
-			m_ValkyrieList = PNGOLKLFFLH.FKDIMODKKJD(false);
+			m_ValkyrieList = PNGOLKLFFLH.FKDIMODKKJD_GetList(false);
 			PNGOLKLFFLH valk = m_UnitData.JOKFNBLEILN_Valkyrie;
 			if(valk == null)
 			{
@@ -512,7 +512,7 @@ namespace XeApp.Game.Menu
 				return loading_count > 0;
 			});
 
-			m_EpisodeList = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(true);
+			m_EpisodeList = PIGBBNDPPJC.FKDIMODKKJD_GetList(true);
 			ResetSeriesButtonState();
 			m_SeriesTab.ChangeSelectSeries(SelectSeries + 1, ref SelectSeries, ref Select);
 			m_SeriesTab.ApplySelectSeriesButton(SelectSeries);
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 			int newValk = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
 			if(oldValk != newValk)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.EEPIDKPPLJI(oldValk, newValk);
+				ILCCJNDFFOB.HHCJCDFCLOB.EEPIDKPPLJI_Valkyrie(oldValk, newValk);
 			}
 			MenuScene.SaveRequest();
 			m_viewSceneFlag = false;

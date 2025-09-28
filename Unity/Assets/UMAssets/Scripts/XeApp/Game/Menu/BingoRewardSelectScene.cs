@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 			IsInitialize = false;
 			IsStartTransition = false;
 			m_view = new JJPEIELNEJB(id);
-			m_rewardList = m_view.NHPHOKNJNAH.FKDIMODKKJD();
+			m_rewardList = m_view.NHPHOKNJNAH.FKDIMODKKJD_GetList();
 			list_no = m_view.NHPHOKNJNAH.FOAPHMMBKDM;
 			m_layout.onScrollRepeated = OnScrollRepeated;
 			m_layout.onScrollUpdated = OnScrollUpdated;

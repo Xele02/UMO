@@ -42,7 +42,7 @@ public class CGJKNOCAPII
 		res.PGIIDPEGGPI_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.JHAOHBNPMNA_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.COAMJFMEIBF = FBFNJMKPBBA;
-		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/)
+		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/)
 		{
 			res.KINJOEIAHFK_StartTime = FBFNJMKPBBA.GLIMIGNNGGB_RankingStart;
 			res.PCCFAKEOBIC_EndTime = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd;
@@ -74,7 +74,7 @@ public class CGJKNOCAPII
 			{
 				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuestName, false, res.BCOKKAALGHC_Group);
 			}
-			PKNLMLDKCLM_AchievedQuestCount = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			PKNLMLDKCLM_AchievedQuestCount = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved);
 			if(PKNLMLDKCLM_AchievedQuestCount > 0)
 			{
 				res.BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
@@ -169,7 +169,7 @@ public class CGJKNOCAPII
 		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
-			res.PKNLMLDKCLM_AchievedQuestCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			res.PKNLMLDKCLM_AchievedQuestCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved);
 			if(res.PKNLMLDKCLM_AchievedQuestCount > 0)
 			{
 				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuestCount);

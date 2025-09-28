@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x188014C Offset: 0x188014C VA: 0x188014C
 		public void SwitchEmphasisIcon(int index, bool enable)
 		{
-			m_badgeData.FBANBDCOEJL((LayoutQuestTab.eTabType)index, true);
+			m_badgeData.FBANBDCOEJL_Update((LayoutQuestTab.eTabType)index, true);
 			Debug.Log(new object[8]
 			{
 				"tabIndex:", index, " / badgeID:", m_badgeData.BEEIIJJKDBH_BadgeConstantId, " / badgeText:", m_badgeData.BHANMJKCCBC_BadgeText, " / achievedCount:", m_badgeData.PKNLMLDKCLM_AchievedQuestCount

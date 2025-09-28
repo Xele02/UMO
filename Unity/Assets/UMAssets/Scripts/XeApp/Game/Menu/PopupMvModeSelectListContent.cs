@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
 			PopupMvModeSelectListSetting set = setting as PopupMvModeSelectListSetting;
-			m_prismData.OBKGEDCKHHE(set.MusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+			m_prismData.OBKGEDCKHHE_Init(set.MusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 			m_selectTarget = set.SelectTarget;
 			m_selectIndex = set.SelectIndex;
 			m_control = control;
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 					item.IsSet = costumeList[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.DivaIconCache.TryStateDivaUpIconInstall(divaId, item.CostumeData.DAJGPBLEEOB_ModelId, item.ColorId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, costumeId), colorId);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, costumeId), colorId);
 				}
 			}
 			else if(m_selectTarget == SelectTarget.Valkyrie)
@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_id), 0);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, l[i].PPFNGGCBJKC_id), 0);
 				}
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 					return;
 				listLayout.SetSubImage(texture);
 			});
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, listItem.CostumeData.JPIDIENBGKH_CostumeId), listItem.ColorId, (IiconTexture texture) =>
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, listItem.CostumeData.JPIDIENBGKH_CostumeId), listItem.ColorId, (IiconTexture texture) =>
 			{
 				//0x169C230
 				if (listLayout.ListIndex != listItem.ListIndex)
@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 					return;
 				listLayout.SetSubImage(texture);
 			});
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, listItem.ValkyrieData.GPPEFLKGGGJ_ValkyrieId), (IiconTexture texture) =>
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, listItem.ValkyrieData.GPPEFLKGGGJ_ValkyrieId), (IiconTexture texture) =>
 			{
 				//0x169C2E0
 				if (listLayout.ListIndex != listItem.ListIndex)

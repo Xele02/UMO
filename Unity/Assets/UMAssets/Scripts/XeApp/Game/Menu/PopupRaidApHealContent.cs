@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			transform.localPosition = Vector3.zero;
 			RaidApHealWindow window = GetComponent<RaidApHealWindow>();
 			window.Initialize(OnPushPaidButton, OnPushApItemButton, OnPushApItemSButton, Close);
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		}
 
 		// // RVA: 0x16123B4 Offset: 0x16123B4 VA: 0x16123B4

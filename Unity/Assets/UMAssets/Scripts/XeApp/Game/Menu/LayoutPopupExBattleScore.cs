@@ -70,8 +70,8 @@ namespace XeApp.Game.Menu
 			}
 
             MessageBank bk = MessageManager.Instance.GetBank("menu");
-            m_textClassRank.text = string.Format(bk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_ClassRank);
-			m_numWinBonus.SetNumber(m_view.IOOBNLAHLEJ_WinBonus, 0);
+            m_textClassRank.text = string.Format(bk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_BattleClass);
+			m_numWinBonus.SetNumber(m_view.IOOBNLAHLEJ_WinPoint, 0);
 			if(m_view.DPCFADCFMOA_Win)
 			{
 				m_textWinResult.text = bk.GetMessageByLabel("event_reward_result_win");

@@ -14,7 +14,7 @@ namespace XeApp.Game.AR
 			public long startTime; // 0x10
 			[UMOMember(ReaderMember = "AKCAHAKHIPI", Display = "Date")]
 			public long endTime; // 0x18
-			[UMOMember(ReaderMember = "LCCDKCPBJAK")]
+			[UMOMember(ReaderMember = "LCCDKCPBJAK_BannerId")]
 			public int bannerId; // 0x20
 			[UMOMember(ReaderMember = "LLAGMIDPGFP")]
 			public int imageCount; // 0x24
@@ -108,7 +108,7 @@ namespace XeApp.Game.AR
 				data.campaign.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA_EventId.ToLower();
 				data.campaign.startTime = fileData.GHGFEFIAIFC[i].KIGNIOGKEGD;
 				data.campaign.endTime = fileData.GHGFEFIAIFC[i].AKCAHAKHIPI;
-				data.campaign.bannerId = fileData.GHGFEFIAIFC[i].LCCDKCPBJAK;
+				data.campaign.bannerId = fileData.GHGFEFIAIFC[i].LCCDKCPBJAK_BannerId;
 				data.campaign.imageCount = fileData.GHGFEFIAIFC[i].LLAGMIDPGFP;
 				m_eventList.Add(data);
 			}

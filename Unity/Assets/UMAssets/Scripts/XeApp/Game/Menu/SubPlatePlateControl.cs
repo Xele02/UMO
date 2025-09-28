@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 			m_isClossFade = false;
 			m_debuffColor = ColorConvert.Convert(StatusTextColor.DebuffColor);
 			m_info = content.subPlateResult.KOGBMDOONFA_Info[m_attribute, m_status];
-			if (m_info.CDOCOLOKCJK_HasRate)
+			if (m_info.CDOCOLOKCJK_Avaiable)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				StringBuilder str = new StringBuilder(16);
@@ -144,12 +144,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A9ED78 Offset: 0x1A9ED78 VA: 0x1A9ED78
 		public void SwitchDisplay(eDisplay display)
 		{
-			if(!m_info.CDOCOLOKCJK_HasRate || m_info.DFIGPDCBAPB_IsInvalid)
+			if(!m_info.CDOCOLOKCJK_Avaiable || m_info.DFIGPDCBAPB_IsInvalid)
 			{
 				StringBuilder str = new StringBuilder(8);
 				str.SetFormat("{0:D2}", m_attribute + 1);
 				m_abs.StartChildrenAnimGoStop(str.ToString());
-				if (!m_info.CDOCOLOKCJK_HasRate)
+				if (!m_info.CDOCOLOKCJK_Avaiable)
 				{
 					m_lockIconView.enabled = true;
 					m_rateTextView.enabled = false;

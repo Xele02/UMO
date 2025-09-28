@@ -122,9 +122,9 @@ public class MBLFHJJEHLH_AnketoMgr
 	{
 		if (!PEPCJDIECJP.GIEPMFIEPJD_IsValid())
 			return;
-		ILCCJNDFFOB.HHCJCDFCLOB.MLNHHIIDJAO_SendAnketoResult(PEPCJDIECJP);
+		ILCCJNDFFOB.HHCJCDFCLOB.MLNHHIIDJAO_1_Anketo(PEPCJDIECJP);
 		GameManager.Instance.localSave.EPJOACOONAC_GetSave().LPBFPCGDOGC_Anketo.FHEJNGDFMAI_AnswerFlags.EDEDFDDIOKO_Set(PEPCJDIECJP.PPFNGGCBJKC_id - 1);
-		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 	}
 }
  

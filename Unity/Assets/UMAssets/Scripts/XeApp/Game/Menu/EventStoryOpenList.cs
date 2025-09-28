@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			int total = 0;
 			for(int i = 0; i < data.FFPCLEONGHE.Count; i++)
 			{
-				total += data.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked ? 1 : 0;
+				total += data.FFPCLEONGHE[i].CDOCOLOKCJK_Avaiable ? 1 : 0;
 			}
 			m_storyList.Clear();
 			for(int i = -unlockStoryCount; i < 0; i++)
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 				int index = total + i;
 				if(index < data.FFPCLEONGHE.Count)
 				{
-					if(data.FFPCLEONGHE[index].CDOCOLOKCJK_Unlocked)
+					if(data.FFPCLEONGHE[index].CDOCOLOKCJK_Avaiable)
 					{
 						m_storyList.Add(data.FFPCLEONGHE[index]);
 					}

@@ -195,7 +195,7 @@ namespace XeApp.Game.Menu
 				data.m_cos_model_id = f_.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;
 				data.m_cos_color = 0;
 				data.m_lv = f_.FFKMJNHFFFL_costume.GKIKAABHAAD_Level;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(a_diva_id, data.m_cos_id);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(a_diva_id, data.m_cos_id);
 				data.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 				data.m_is_have = f_.JLKPGDEKPEO_IsHave;
 				data.m_is_new = f_.MBFADDHOEOK_IsNew;
@@ -329,7 +329,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1648308 Offset: 0x1648308 VA: 0x1648308
 		public void Enter()
 		{
-			m_anim_lock.StartChildrenAnimGoStop(MOEALEGLGCH.CDOCOLOKCJK() ? "02" : "01");
+			m_anim_lock.StartChildrenAnimGoStop(MOEALEGLGCH.CDOCOLOKCJK_Avaiable() ? "02" : "01");
 			m_anim_root.StartChildrenAnimGoStop("go_in", "st_in");
 		}
 
@@ -353,7 +353,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(item.m_cos_color == 0)
 			{
-				item.m_view_diva.LEHDLBJJBNC();
+				item.m_view_diva.LEHDLBJJBNC_SetNotNew();
 			}
 			else
 			{

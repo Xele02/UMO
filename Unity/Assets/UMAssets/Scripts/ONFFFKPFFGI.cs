@@ -18,7 +18,7 @@ public class ONFFFKPFFGI
 	// RVA: 0xCAE5E0 Offset: 0xCAE5E0 VA: 0xCAE5E0
 	public void KHEKNNFCAOI_Init()
     {
-        JADNGGIOOJH.PCODDPDFLHK();
+        JADNGGIOOJH.PCODDPDFLHK_Load();
         BJLEOACLGBO();
     }
 
@@ -26,7 +26,7 @@ public class ONFFFKPFFGI
 	private void BJLEOACLGBO()
     {
         long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-        CDCKLGCKHFG = JPAICCMDGHD(time);
+        CDCKLGCKHFG = JPAICCMDGHD_GetMaxLastShowDate(time);
         LMMLAMKOAKA.Clear();
         for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA_table.Count; i++)
         {
@@ -52,7 +52,7 @@ public class ONFFFKPFFGI
     }
 
 	// // RVA: 0xCAEA18 Offset: 0xCAEA18 VA: 0xCAEA18
-	private long JPAICCMDGHD(long _JHNMKKNEENE_Time)
+	private long JPAICCMDGHD_GetMaxLastShowDate(long _JHNMKKNEENE_Time)
     {
         long t = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime;
         long t2 = Math.Max(t, JADNGGIOOJH.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime);
@@ -64,11 +64,11 @@ public class ONFFFKPFFGI
     }
 
 	// // RVA: 0xCAEBB0 Offset: 0xCAEBB0 VA: 0xCAEBB0
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
     {
-        long t = JPAICCMDGHD(CDCKLGCKHFG);
+        long t = JPAICCMDGHD_GetMaxLastShowDate(CDCKLGCKHFG);
         CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime = t;
         JADNGGIOOJH.KOGBMDOONFA_Info.NPDKEIIMCDI_LastShowtime = t;
-        JADNGGIOOJH.HJMKBCFJOOH();
+        JADNGGIOOJH.HJMKBCFJOOH_Save();
     }
 }

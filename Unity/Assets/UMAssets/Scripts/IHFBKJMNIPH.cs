@@ -74,7 +74,7 @@ public abstract class IHFBKJMNIPH<ActionClass> where ActionClass : CACGCMBKHDI_R
 	//|
 	//|-RVA: 0x26C1B5C Offset: 0x26C1B5C VA: 0x26C1B5C
 	//|-IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>.MEGIEMBDGBE_Coroutine
-	//|-IHFBKJMNIPH<LNGMNNNJBJP>.MEGIEMBDGBE_Coroutine
+	//|-IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>.MEGIEMBDGBE_Coroutine
 	//|-IHFBKJMNIPH<object>.MEGIEMBDGBE_Coroutine
 	//*/
 }

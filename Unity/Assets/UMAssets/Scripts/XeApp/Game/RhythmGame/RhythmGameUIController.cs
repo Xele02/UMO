@@ -379,7 +379,7 @@ namespace XeApp.Game.RhythmGame
 			res.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
 			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_pause_title");
 			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId);
-			int ma = m.FKDCCLPGKDK_Ma;
+			int ma = m.FKDCCLPGKDK_JacketAttr;
 			string diff = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType];
 			if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
 				diff += "+";

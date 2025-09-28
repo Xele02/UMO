@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateTotalUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate,
+				OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateRankingValue(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate,
 					() =>
 					{
 						//0x18E3138

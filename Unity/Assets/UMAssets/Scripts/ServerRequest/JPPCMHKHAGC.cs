@@ -45,7 +45,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
         public long MCKEOKFMLAH_SaveId; // 0x28
 
         // // RVA: 0x1BA93BC Offset: 0x1BA93BC VA: 0x1BA93BC
-        public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string JCJDPGMKJAJ_PlayerData)
+        public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string JCJDPGMKJAJ_PlayerData)
         {
             AHEFHIMGIBI_PlayerData = JCJDPGMKJAJ_PlayerData;
             CHDDDCCHJJH_replace = !_IDLHJIOMJBK_data.BLOCFLFHCFJ_Keep;

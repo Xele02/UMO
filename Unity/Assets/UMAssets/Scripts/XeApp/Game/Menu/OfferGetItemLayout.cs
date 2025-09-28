@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI)offerType, offerId);
 			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH_state.Length; i++)
 			{
-				if(data.NNDGIAEFMOG[from].LHMDABPNDDH_state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
+				if(data.NNDGIAEFMOG[from].LHMDABPNDDH_state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0_set_Item)
 				{
 					DisplayItemIdList.Add(data.NNDGIAEFMOG[from].LNADJDFHHAI[i]);
 				}

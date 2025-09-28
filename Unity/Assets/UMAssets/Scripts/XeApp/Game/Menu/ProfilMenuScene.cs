@@ -340,7 +340,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 				m_profil.EmblemList.Clear();
-				List<IAPDFOPPGND> embList = IAPDFOPPGND.FKDIMODKKJD(false);
+				List<IAPDFOPPGND> embList = IAPDFOPPGND.FKDIMODKKJD_GetList(false);
 				foreach(var emb in embList)
 				{
 					if(emb.EAHPLCJMPHD_PId > 0)
@@ -369,11 +369,11 @@ namespace XeApp.Game.Menu
 				});
 				for(int i = 0; i < m_profil.CostumeList.Count; i++)
 				{
-					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_profil.CostumeList[i].JPIDIENBGKH_CostumeId);
+					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, m_profil.CostumeList[i].JPIDIENBGKH_CostumeId);
 					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, 0));
 					for(int j = 0; j < m_profil.CostumeList[i].NLKGAAFBDFK(); j++)
 					{
-						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, m_profil.CostumeList[i].LLJPMOIPBAG(j)));
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, m_profil.CostumeList[i].LLJPMOIPBAG_GetColorForLevel(j)));
 					}
 				}
 			}
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_profil.ValkyrieList.Count; i++)
 				{
-					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, m_profil.ValkyrieList[i].GPPEFLKGGGJ_ValkyrieId);
+					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, m_profil.ValkyrieList[i].GPPEFLKGGGJ_ValkyrieId);
 					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, 0));
 				}
 			}

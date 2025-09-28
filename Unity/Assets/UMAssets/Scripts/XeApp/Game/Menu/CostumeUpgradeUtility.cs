@@ -211,7 +211,7 @@ namespace XeApp.Game.Menu
 					});
 					break;
 				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor/*4*/:
-					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, CKFGMNAIBNG.LLJPMOIPBAG(data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, rank), (IiconTexture texture) =>
+					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, CKFGMNAIBNG.LLJPMOIPBAG_GetColorForLevel(data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, rank), (IiconTexture texture) =>
 					{
 						//0x16FB718
 						if(validater == null || validater(data))
@@ -338,7 +338,7 @@ namespace XeApp.Game.Menu
 					//0x16FBAE8
 					buttonCallBack();
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHAECLAKMIB_UpdateDailyLv(nowDifficult);
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else

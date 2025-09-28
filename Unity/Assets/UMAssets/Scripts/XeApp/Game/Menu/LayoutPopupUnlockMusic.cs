@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17900D0 Offset: 0x17900D0 VA: 0x17900D0
 		private string GetVocalNameLF(int id)
 		{
-			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[id - 1];
+			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[id - 1];
 			return Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).vocalNameLF;
 		}
 

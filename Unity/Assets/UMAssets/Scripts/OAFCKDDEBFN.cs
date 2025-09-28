@@ -45,7 +45,7 @@ public class OAFCKDDEBFN
 	}
 
 	// RVA: 0x1CBEDF4 Offset: 0x1CBEDF4 VA: 0x1CBEDF4
-	public void PGLANLKJBLI_Init() //> GameStart >  KEHOJEJMGLJ.PAHGEEOFEPM
+	public void PGLANLKJBLI_Init() //> GameStart >  KEHOJEJMGLJ.PAHGEEOFEPM_Install
 	{
 		MGJKEJHEBPO_Blocks.Clear();
 		DOKOHKJIDBO a = DOKOHKJIDBO.HHCJCDFCLOB;

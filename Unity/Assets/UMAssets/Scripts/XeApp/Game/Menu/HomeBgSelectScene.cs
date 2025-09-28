@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 			{
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(PlayerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId))
 				{
-					if(PlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() && !PlayerData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed)
+					if(PlayerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked && !PlayerData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed)
 					{
 						if(PopupSortMenu.IsSerializeFilterOn((int)PlayerData.OPIBAPEGCLA_Scenes[i].AIHCEGFANAM_SerieAttr, seriaseFilterBit))
 						{

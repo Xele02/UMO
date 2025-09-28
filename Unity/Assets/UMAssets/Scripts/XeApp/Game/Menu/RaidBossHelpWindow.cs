@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x145BBA8 Offset: 0x145BBA8 VA: 0x145BBA8
 		public void Initialize(Action<SelectType> _onSelectType)
 		{
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			ev.NPICFLFAIJK_GetNumTicket();
 			onSelectType = _onSelectType;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");

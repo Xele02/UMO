@@ -105,7 +105,7 @@ public class DecorationMapNameController : MonoBehaviour
 		{
 			if(m_name != inputText)
 			{
-				BHLFHHBDGHO.GEJEDJNKBOF(inputText, () =>
+				BHLFHHBDGHO.GEJEDJNKBOF_Validate(inputText, () =>
 				{
 					//0x12409B8
 					MenuScene.Instance.InputEnable();

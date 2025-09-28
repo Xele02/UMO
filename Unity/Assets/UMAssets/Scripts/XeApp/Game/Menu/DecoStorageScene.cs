@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 			//0x11CD9C0
 			bool done = false;
 			bool isError = false;
-			CIOECGOMILE.HHCJCDFCLOB.OEAMJGPAIGP(CIOECGOMILE.HHCJCDFCLOB.PDKHANKAPCI, () =>
+			CIOECGOMILE.HHCJCDFCLOB.OEAMJGPAIGP(CIOECGOMILE.HHCJCDFCLOB.PDKHANKAPCI_DecoPublicSet, () =>
 			{
 				//0x11CAAD0
 				done = true;
@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 			bool b = l.Exists((DecorationItemBase x) =>
 			{
 				//0x11CA840
-				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp;
+				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp;
 			});
 			if (!m_spItemOriginalListupList.Exists(FindVisitItemFunc))
 			{
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 				}
 				foreach(var it in l)
 				{
-					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp)
+					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp)
 					{
 						m_decorationCanvas.RemoveItem(it);
 						yield break;

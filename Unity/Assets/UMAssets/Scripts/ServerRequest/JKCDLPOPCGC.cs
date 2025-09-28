@@ -10,7 +10,7 @@ public class MFKPFMCLOIB : EBHIMFFJBIJ
 	public MFKPFMCLOIB(GIINMFDIIMD CDGMPGLAING)
         : base(CDGMPGLAING)
     {
-        DAOPLDNLCBF_LastUpdatedPlayerData = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_data", null);
+        DAOPLDNLCBF_LastUpdatedPlayerData = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB_Find("last_updated_player_data", null);
     }
 }
 
@@ -38,7 +38,7 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
             {
                 MLPEHNBNOGD_PlayerId = (int)_DLENPPIJNPA_json["player_id"];
                 HALIDDHLNEG_Damage = (int)_DLENPPIJNPA_json["damage"];
-                AHEFHIMGIBI_PlayerData = _DLENPPIJNPA_json.LBDOLHGDIEB("player_data", null);
+                AHEFHIMGIBI_PlayerData = _DLENPPIJNPA_json.LBDOLHGDIEB_Find("player_data", null);
             }
         }
         
@@ -60,12 +60,12 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
                 //0x135C3CC
                 return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(_IDLHJIOMJBK_data));
             });
-            COGCGJLFDKG_FirstAttackPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
+            COGCGJLFDKG_FirstAttackPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB_Find("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {
                 //0x135C570
                 return new BJIJAEOEHBJ(CMKPEDGJJPL);
             }, null);
-            MIOBFBAJDHJ_FinishPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("finish_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
+            MIOBFBAJDHJ_FinishPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB_Find("finish_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {
                 //0x135C5E0
                 return new BJIJAEOEHBJ(CMKPEDGJJPL);

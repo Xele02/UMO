@@ -5,7 +5,7 @@ public class KKLGJPAIHJN
 	private long IENADNFJLGO; // 0x10
 	private bool PABDFDEDBNO; // 0x18
 
-	public bool DKMLDEDKPBA { get { return NILMFDDLCMM(OILKKPKKDNC); } } //0x1A0B278 PCIINKJELKK
+	public bool DKMLDEDKPBA_IsEnabled { get { return NILMFDDLCMM(OILKKPKKDNC); } } //0x1A0B278 PCIINKJELKK
 
 	// RVA: 0x1A0B140 Offset: 0x1A0B140 VA: 0x1A0B140
 	public KKLGJPAIHJN(long AGEGAHMDMPH, long MFAGANNINPN/* = 0*/)

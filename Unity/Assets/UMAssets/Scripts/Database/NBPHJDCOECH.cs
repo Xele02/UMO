@@ -67,7 +67,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		int b = _GEAANLPDJBP_FreeMusicData.CCLIOBOGFHC;
 		if (_MFJKNCACBDG_OpenEventType != 0)
 		{
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
 			if(ev != null)
 			{
             	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
@@ -77,11 +77,11 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 				}
 			}
 		}
-		return DGMNLKDEDDC(_GEAANLPDJBP_FreeMusicData.JCDKMICANJO_RareSetId, _GEAANLPDJBP_FreeMusicData.ONLFLGPMAAN_GetRareRateId(_GIKLNODJKFK_IsLine6) + EBBCGFOGKNE_Diff, b, a + EBBCGFOGKNE_Diff);
+		return DGMNLKDEDDC_GetAvaiableItems(_GEAANLPDJBP_FreeMusicData.JCDKMICANJO_RareSetId, _GEAANLPDJBP_FreeMusicData.ONLFLGPMAAN_GetRareRateId(_GIKLNODJKFK_IsLine6) + EBBCGFOGKNE_Diff, b, a + EBBCGFOGKNE_Diff);
 	}
 
 	//// RVA: 0x17C8180 Offset: 0x17C8180 VA: 0x17C8180
-	private List<DNAEGJGAKEI_DropItemInfo> DGMNLKDEDDC(int HECHAICHKAF, int PLLAIBDLKHB, int LHJGKGEOOPG, int MPEPBMCGEAI)
+	private List<DNAEGJGAKEI_DropItemInfo> DGMNLKDEDDC_GetAvaiableItems(int HECHAICHKAF, int PLLAIBDLKHB, int LHJGKGEOOPG, int MPEPBMCGEAI)
 	{
 		List<DNAEGJGAKEI_DropItemInfo> res = new List<DNAEGJGAKEI_DropItemInfo>();
 		HNJKJCDDIMG_SetInfo s = OHGDKJFDIKK_GetSet(HECHAICHKAF);
@@ -92,7 +92,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		{
 			for(int i = 0; i < 20; i++)
 			{
-				int a = s.FKNBLDPIPMC_GetItemId(i);
+				int a = s.FKNBLDPIPMC_GetItemCode(i);
 				int b = r.ADKDHKMPMHP_rate[i];
 				int c = a > 0 ? b : a;
 				if(c > 0)
@@ -113,7 +113,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		{
 			for(int i = 0; i < 20; i++)
 			{
-				int a = rs.FKNBLDPIPMC_GetItemId(i);
+				int a = rs.FKNBLDPIPMC_GetItemCode(i);
 				int b = rr.ADKDHKMPMHP_rate[i];
 				int c = a > 0 ? b : a;
 				if (c > 0)
@@ -156,7 +156,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C883C Offset: 0x17C883C VA: 0x17C883C
-	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI.FKGCBLHOOCL OKOOPFAGBKO, out int _OIPCCBHIKIA_index) { }
+	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI.FKGCBLHOOCL_Category OKOOPFAGBKO, out int _OIPCCBHIKIA_index) { }
 
 	//// RVA: 0x17C8978 Offset: 0x17C8978 VA: 0x17C8978
 	public List<DNAEGJGAKEI_DropItemInfo> JMHHEPMILHA_GetItemsToSpawn(KEODKEGFDLD_FreeMusicInfo __GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, int _HMFFHLPNMPH_count, MMBLPLOGFLG JLDAJBCHMOC_RareItemRandCb, bool _GIKLNODJKFK_IsLine6/* = false*/)

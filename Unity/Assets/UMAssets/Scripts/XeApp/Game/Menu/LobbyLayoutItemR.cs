@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 		{
 			m_subId = sudId;
 			IsLoadedTexture = false;
-			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+			NCPPAHHCCAO charaStamp = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 			{
 				//0x12965E4
 				return item.PPFNGGCBJKC_id == m_subId;

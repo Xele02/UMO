@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 			m_popupCloseEvent = popupCloseEvent;
 			IFBCGCCJBHI data = new IFBCGCCJBHI();
 			data.KHEKNNFCAOI_Init();
-			data.FBANBDCOEJL();
+			data.FBANBDCOEJL_Update();
 			MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1), (IiconTexture texture) =>
 			{
 				//0x145989C
@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 				texture.Set(m_contents[3].Image);
 			});
 			m_infoText.text = bk.GetMessageByLabel("pop_raid_ap_heal_text");
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_contents[0].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text01"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[1]);
 			m_contents[0].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text02"), ev.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), CIOECGOMILE.LIILJGHKIDL.HLAJMFGDAHP_1));
 			m_contents[0].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text03"), data.FNCPAEFEECO_CurrencyPaid);

@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_Tuto(Action act)
 		{
 			//0x15255E8
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1))
 			{
 				ButtonBase[] btns = m_layout.GetComponentsInChildren<ButtonBase>();
 				ButtonBase btn = null;

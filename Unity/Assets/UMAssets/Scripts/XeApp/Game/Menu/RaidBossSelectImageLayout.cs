@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		{
 			m_isShow = false;
 			m_layoutMain = layout.FindViewByExId("root_sel_music_raid_boss_select_cc_sw_sel_music_raid_boss_select_anim") as AbsoluteLayout;
-			m_eventId = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived).PGIIDPEGGPI_EventId;
+			m_eventId = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived).PGIIDPEGGPI_EventId;
 			Loaded();
 			return true;
 		}

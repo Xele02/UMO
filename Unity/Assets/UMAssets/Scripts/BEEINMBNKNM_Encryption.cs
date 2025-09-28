@@ -38,7 +38,7 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73BA8 Offset: 0xC73BA8 VA: 0xC73BA8
-	public void AAGCKDHEMFD_GenerateKey()
+	public void AAGCKDHEMFD_Finish()
 	{ 
 			uint i = 0;
 			while(true)
@@ -58,7 +58,7 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73C18 Offset: 0xC73C18 VA: 0xC73C18
-	private static /*extern*/ void FFPAGMCDALB(byte[] _CDENCMNHNGA_table, byte[] _DBBGALAPFGC_bytes, int NFHFALDMGGC)
+	private static /*extern*/ void FFPAGMCDALB(byte[] _CDENCMNHNGA_table, byte[] _DBBGALAPFGC_bytes, int _NFHFALDMGGC_size)
 	{
 			//TODO extract to lib file
 			// Decrypt xedec
@@ -73,7 +73,7 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73D28 Offset: 0xC73D28 VA: 0xC73D28
-	//private static extern void MFKJIGBFJEN(IntPtr _CDENCMNHNGA_table, IntPtr _DBBGALAPFGC_bytes, int NFHFALDMGGC) { }
+	//private static extern void MFKJIGBFJEN(IntPtr _CDENCMNHNGA_table, IntPtr _DBBGALAPFGC_bytes, int _NFHFALDMGGC_size) { }
 
 	// RVA: 0xC73E34 Offset: 0xC73E34 VA: 0xC73E34
 	//public void DMDLDOAOIAJ(byte[] _DBBGALAPFGC_bytes) { }
@@ -97,9 +97,9 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73FC8 Offset: 0xC73FC8 VA: 0xC73FC8
-	private static /*extern*/ uint ANMDMMBEJPB(uint _IOIMHJAOKOO_Hash, /*IntPtr */byte[] _DBBGALAPFGC_bytes, int NFHFALDMGGC)
+	private static /*extern*/ uint ANMDMMBEJPB(uint _IOIMHJAOKOO_Hash, /*IntPtr */byte[] _DBBGALAPFGC_bytes, int _NFHFALDMGGC_size)
 	{
-		// return xedec_hash(_IOIMHJAOKOO_Hash, DBBGALAPFGC_bytes, NFHFALDMGGC);
+		// return xedec_hash(_IOIMHJAOKOO_Hash, DBBGALAPFGC_bytes, NFHFALDMGGC_size);
 		TodoLogger.LogError(TodoLogger.Xedec, "BEEINMBNKNM_Encryption.ANMDMMBEJPB xedec_hash");
 		return 0;
 	}

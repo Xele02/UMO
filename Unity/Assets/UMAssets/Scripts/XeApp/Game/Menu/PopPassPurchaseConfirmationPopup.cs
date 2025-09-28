@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 					m_text_01.text = bk.GetMessageByLabel("pop_pass_popup_text03");
 					m_text_02.text = bk.GetMessageByLabel("pop_pass_popup_text02");
 				}
-				else if(plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0)
+				else if(plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
 				{
 					m_text_01.text = bk.GetMessageByLabel("pop_pass_popup_text01");
 					m_text_02.text = bk.GetMessageByLabel("pop_pass_popup_text02");

@@ -725,7 +725,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B5A03C Offset: 0x1B5A03C VA: 0x1B5A03C
 		public bool IsChangeAllNotification()
 		{
-			return ILDKBCLAFPB.JDBOPCADICO_Notification.HMMFJOEBEKJ(Notification, GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification);
+			return ILDKBCLAFPB.JDBOPCADICO_Notification.HMMFJOEBEKJ_IsNotEqual(Notification, GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification);
 		}
 
 		// // RVA: 0x1B5A120 Offset: 0x1B5A120 VA: 0x1B5A120
@@ -754,7 +754,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				NMFABEKNBKJ.HHCJCDFCLOB.FCDDHHKAGEP_AcceptFCM(() =>
+				NMFABEKNBKJ.HHCJCDFCLOB.FCDDHHKAGEP_Request(() =>
 				{
 					//0x1B5D414
 					finishWait = false;
@@ -913,7 +913,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.divaManager.SetEnableDivaWind(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect == 0, false);
 					}
 				}
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				if(b4)
 				{
 					MenuScene.Instance.InputDisable();

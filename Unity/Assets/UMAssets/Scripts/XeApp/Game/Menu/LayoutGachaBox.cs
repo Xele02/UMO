@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 				{
 					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1];
 					SetImagePlate(id, false);
-					SetImageFrame(scene.FKDCCLPGKDK_Ma, scene.EKLIPGELKCL_Rarity, 1);
+					SetImageFrame(scene.FKDCCLPGKDK_JacketAttr, scene.EKLIPGELKCL_Rarity, 1);
 					m_layoutPickup.StartChildrenAnimGoStop("01");
 				}
 				else
@@ -203,7 +203,7 @@ namespace XeApp.Game.Menu
 					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1];
 					SetImagePlate(id, false);
 					SetImagePlateSilhouette(id);
-					SetImageFrame(scene.FKDCCLPGKDK_Ma, scene.EKLIPGELKCL_Rarity, 1);
+					SetImageFrame(scene.FKDCCLPGKDK_JacketAttr, scene.EKLIPGELKCL_Rarity, 1);
 					m_layoutPickup.StartChildrenAnimGoStop("01");
 				}
 				else

@@ -8,13 +8,13 @@ public class PLLMDGNCGFL
         public long NPDKEIIMCDI_LastShowtime; // 0x8
 
         // RVA: 0xFEACCC Offset: 0xFEACCC VA: 0xFEACCC
-        // public void FPEKCEGADMG(BinaryWriter _OMLLGAKPMAN_writer) { }
+        // public void FPEKCEGADMG_Write(BinaryWriter _OMLLGAKPMAN_writer) { }
 
         // // RVA: 0xFEA74C Offset: 0xFEA74C VA: 0xFEA74C
-        // public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
+        // public void FKGBNKPHCJL_Read(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
     }
 
-	public const int JNCCCCPBDIC = 1;
+	public const int JNCCCCPBDIC_Version = 1;
 	public OGGOJFIPCEP KOGBMDOONFA_Info = new OGGOJFIPCEP(); // 0x8
 	private string ELLBAAFKDCH_Filename; // 0xC
 
@@ -28,7 +28,7 @@ public class PLLMDGNCGFL
 	// public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	// // RVA: 0xFEA284 Offset: 0xFEA284 VA: 0xFEA284
-	public void PCODDPDFLHK()
+	public void PCODDPDFLHK_Load()
     {
         if(File.Exists(ELLBAAFKDCH_Filename))
         {
@@ -43,7 +43,7 @@ public class PLLMDGNCGFL
     }
 
 	// // RVA: 0xFEA788 Offset: 0xFEA788 VA: 0xFEA788
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
     {
         string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
         if(!Directory.Exists(dir))
@@ -61,5 +61,5 @@ public class PLLMDGNCGFL
     }
 
 	// // RVA: 0xFEAD1C Offset: 0xFEAD1C VA: 0xFEAD1C
-	// public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
+	// public void JCHLONCMPAJ_Clear(bool _OGBEGDKPDGK_NeedSave) { }
 }

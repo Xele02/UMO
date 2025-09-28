@@ -142,10 +142,10 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0xCDC130 Offset: 0xCDC130 VA: 0xCDC130
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, ALIPBIMCAPN_EventBoxGacha.GLNFOMDKJJH _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string _JIKKNHIAEKG_BlockName, string MJBACHKCIHA, int _OIPCCBHIKIA_index, ALIPBIMCAPN_EventBoxGacha.GLNFOMDKJJH _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 	}
 
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const int MJFKKHOFMBO = 100;
 	public const int ICHFGGBPCBJ = 6;
 	public List<GLNFOMDKJJH> FBCJICEPLED = new List<GLNFOMDKJJH>(); // 0x24
@@ -234,15 +234,15 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 					}
 					for(int i = 0; i < cnt; i++)
 					{
-						FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
-						FBCJICEPLED[i].EGBOHDFBAPB_closed_at = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
-						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry, 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].DNJLJMKKDNA_EventId = CJAENOMGPDA_ReadInt(block[i], "event_id", 0, ref isInvalid);
-						FBCJICEPLED[i].FEFCFGNGPGC_Pickup = CJAENOMGPDA_ReadInt(block[i], "pickup", 0, ref isInvalid);
-						FBCJICEPLED[i].IMMDGJAOPCD_BoxId = CJAENOMGPDA_ReadInt(block[i], "box_id", 0, ref isInvalid);
-						FBCJICEPLED[i].NNCCGILOOIE_Num = CJAENOMGPDA_ReadInt(block[i], "box_cnt", 0, ref isInvalid);
-						FBCJICEPLED[i].IGHIADKHGHG_DrawCnt = CJAENOMGPDA_ReadInt(block[i], "draw_cnt", 0, ref isInvalid);
-						FBCJICEPLED[i].BGCOKABBHNC_GachaTicketCnt = CJAENOMGPDA_ReadInt(block[i], "gacha_ticket_cnt", 0, ref isInvalid);
+						FGCNMLBACGO_GetString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
+						FBCJICEPLED[i].EGBOHDFBAPB_closed_at = DKMPHAPBDLH_GetLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
+						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry, 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].DNJLJMKKDNA_EventId = CJAENOMGPDA_GetInt(block[i], "event_id", 0, ref isInvalid);
+						FBCJICEPLED[i].FEFCFGNGPGC_Pickup = CJAENOMGPDA_GetInt(block[i], "pickup", 0, ref isInvalid);
+						FBCJICEPLED[i].IMMDGJAOPCD_BoxId = CJAENOMGPDA_GetInt(block[i], "box_id", 0, ref isInvalid);
+						FBCJICEPLED[i].NNCCGILOOIE_Num = CJAENOMGPDA_GetInt(block[i], "box_cnt", 0, ref isInvalid);
+						FBCJICEPLED[i].IGHIADKHGHG_DrawCnt = CJAENOMGPDA_GetInt(block[i], "draw_cnt", 0, ref isInvalid);
+						FBCJICEPLED[i].BGCOKABBHNC_GachaTicketCnt = CJAENOMGPDA_GetInt(block[i], "gacha_ticket_cnt", 0, ref isInvalid);
 						if(block[i].BBAJPINMOEP_Contains("prize"))
 						{
 							EDOHBJAPLPF_JsonData data =  block[i]["prize"];
@@ -251,8 +251,8 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 								cnt2 = 100;
 							for(int j = 0; j < 100; j++)
 							{
-								FBCJICEPLED[i].PKPLOGBIDIG_Prizes[j].JBDBPCMMBIH_Id = CJAENOMGPDA_ReadInt(data[j], "id", 0, ref isInvalid);
-								FBCJICEPLED[i].PKPLOGBIDIG_Prizes[j].AGKANHNHECE_Remain = CJAENOMGPDA_ReadInt(data[j], "remain", 0, ref isInvalid);
+								FBCJICEPLED[i].PKPLOGBIDIG_Prizes[j].JBDBPCMMBIH_Id = CJAENOMGPDA_GetInt(data[j], "id", 0, ref isInvalid);
+								FBCJICEPLED[i].PKPLOGBIDIG_Prizes[j].AGKANHNHECE_Remain = CJAENOMGPDA_GetInt(data[j], "remain", 0, ref isInvalid);
 							}
 						}
 					}

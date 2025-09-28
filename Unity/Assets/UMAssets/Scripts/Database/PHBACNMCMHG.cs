@@ -49,7 +49,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		public int[] EJBGHLOOLBC_HelpIds; // 0xB4
 		public List<int> EEOGPJJCKHH_Drops = new List<int>(); // 0xB8
 
-		public string OCDMGOGMHGE_RewardPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x16CF088 HBAAAKFHDBB 0x16CD898 NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x16CF088 HBAAAKFHDBB 0x16CD898 NHJLJOIPOFK
 		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x16CF0B4 NOEFEAIFHCL 0x16CD8CC GJIJFGNONEL
 
 		//// RVA: 0x16CDA9C Offset: 0x16CDA9C VA: 0x16CDA9C
@@ -96,7 +96,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 			HEDAGCNPHGD_RankingName = null;
 			IDGAEEJLGIK = null;
 			OCGFKMHNEOF_name_for_api = null;
-			OCDMGOGMHGE_RewardPrefix = "";
+			OCDMGOGMHGE_KeyPrefix = "";
 			PJBILOFOCIC = "";
 			MPKNCMEAMLO = 0;
 			CAPAPAABKDP_FreeMusic.Clear();
@@ -192,7 +192,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		private int LGAIHLFAPDC_Crypted; // 0x10
 		public List<int> KDNMBOBEGJM_GachaIds = new List<int>(); // 0x14
 
-		public int KHPHAAMGMJP_Id { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB_xor; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x16CEEE4 ABFDDKBBPCH 0x16CEEF4 MHDOIIEMDEH
+		public int KHPHAAMGMJP_EpId { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB_xor; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x16CEEE4 ABFDDKBBPCH 0x16CEEF4 MHDOIIEMDEH
 		public int OFIAENKCJME_BaseBonus { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB_xor; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x16CEF04 KADLAKFANGA 0x16CEF14 AIDAPNCEPOB
 
 		//// RVA: 0x16CEDBC Offset: 0x16CEDBC VA: 0x16CEDBC
@@ -203,8 +203,8 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		{
 			LHPDDGIJKNB_Reset(KNEFBLHBDBG);
 			CFFKBKJMNNN data = JMHECKKKMLK.IEJLJIHIDJC[JBGJDEELLOP];
-			KHPHAAMGMJP_Id = data.KHPHAAMGMJP;
-			OFIAENKCJME_BaseBonus = data.OFIAENKCJME;
+			KHPHAAMGMJP_EpId = data.KHPHAAMGMJP_EpId;
+			OFIAENKCJME_BaseBonus = data.OFIAENKCJME_BaseBonus;
 			for(int i = 0; i < data.JMLCLHHLJHM.Length; i++)
 			{
 				KDNMBOBEGJM_GachaIds.Add(data.JMLCLHHLJHM[i]);
@@ -215,7 +215,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		public void LHPDDGIJKNB_Reset(int KNEFBLHBDBG)
 		{
 			FBGGEFFJJHB_xor = KNEFBLHBDBG;
-			KHPHAAMGMJP_Id = 0;
+			KHPHAAMGMJP_EpId = 0;
 			OFIAENKCJME_BaseBonus = 0;
 			KDNMBOBEGJM_GachaIds.Clear();
 		}
@@ -376,7 +376,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		HMNJADGBKFA data = HMNJADGBKFA.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		DGKKMKLCEDF(data);
+		DGKKMKLCEDF_DeserializeSetting(data);
 		GPEKKMGGBPF(data);
 		GJEHPJJBCDE(data);
 		CFOFJPLEDEA(data);
@@ -470,7 +470,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x16CBEF4 Offset: 0x16CBEF4 VA: 0x16CBEF4
-	private bool DGKKMKLCEDF(HMNJADGBKFA OPHJCBPIPLM)
+	private bool DGKKMKLCEDF_DeserializeSetting(HMNJADGBKFA OPHJCBPIPLM)
 	{
 		NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId = (int)OPHJCBPIPLM.HMBHNLCFDIH.OBGBAOLONDD_UniqueId;
 		NGHKJOEDLIP_Settings.OPFGFINHFCE_name = OPHJCBPIPLM.HMBHNLCFDIH.OPFGFINHFCE_name;
@@ -491,7 +491,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP_Settings.POGEFBMBPCB_MonthOdd = (sbyte)OPHJCBPIPLM.HMBHNLCFDIH.JMJDLDEIFKE;
 		NGHKJOEDLIP_Settings.AHKNMANFILO_DayGroup = (sbyte)OPHJCBPIPLM.HMBHNLCFDIH.AHKNMANFILO_DayGroup;
 		NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx = (sbyte)OPHJCBPIPLM.HMBHNLCFDIH.MOEKELIIDEO_SaveIdx;
-		NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix = OPHJCBPIPLM.HMBHNLCFDIH.OCDMGOGMHGE;
+		NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix = OPHJCBPIPLM.HMBHNLCFDIH.OCDMGOGMHGE_KeyPrefix;
 		NGHKJOEDLIP_Settings.PJBILOFOCIC = OPHJCBPIPLM.HMBHNLCFDIH.PJBILOFOCIC;
 		NGHKJOEDLIP_Settings.MJBKGOJBPAD_item_type = OPHJCBPIPLM.HMBHNLCFDIH.MJBKGOJBPAD_item_type;
 		NGHKJOEDLIP_Settings.MPKNCMEAMLO = (sbyte)OPHJCBPIPLM.HMBHNLCFDIH.MPKNCMEAMLO;
@@ -534,7 +534,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x16CD878 Offset: 0x16CD878 VA: 0x16CD878
-	//private bool DGKKMKLCEDF(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
+	//private bool DGKKMKLCEDF_DeserializeSetting(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _KAPMOPMDHJE_label) { }
 
 	//// RVA: 0x16CDB9C Offset: 0x16CDB9C VA: 0x16CDB9C
 	//private void EEEKPHDPJHG(List<int> NNDGIAEFMOG, EDOHBJAPLPF_JsonData OBHAFLMHAKG, string _OPFGFINHFCE_name, ref bool _NGJDHLGMHMH_IsInvalid) { }

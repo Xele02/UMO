@@ -18,7 +18,7 @@ public struct HPODBOHGGDH_SkillInfo
 	}
 
 	// RVA: 0x7FC2DC Offset: 0x7FC2DC VA: 0x7FC2DC
-	public void JCHLONCMPAJ_Reset()
+	public void JCHLONCMPAJ_Clear()
 	{
 		ENMAEBJGEKL_SkillId = 0;
 		CNLIAMIIJID_AbilityLevel = 0;

@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch)
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = false;
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}
 				m_tap_guard.raycastTarget = true;
 				if (a_cb_closed != null)

@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(m_content.subPlateResult.CDOCOLOKCJK())
+					if(m_content.subPlateResult.CDOCOLOKCJK_Avaiable())
 					{
 						cnt |= m_content.subPlateResult.IKEJLHJEANO(i - 1);
 						if (m_content.subPlateResult.IKEJLHJEANO(i - 1) == 1)

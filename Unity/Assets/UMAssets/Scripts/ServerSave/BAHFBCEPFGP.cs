@@ -5,7 +5,7 @@ using UnityEngine;
 public class BAHFBCEPFGP { }
 public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	private const int JDOFFDAJGBO = 300;
 	private const int DKKOEGALOPA = 38;
 	private byte[] BJFCIFJLJJI_ShowAddUnitLiveDio = new byte[38]; // 0x24
@@ -49,7 +49,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF14574 Offset: 0xF14574 VA: 0xF14574
-	public bool CGEPJMFFLLJ(int _DLAEJOBELBH_MusicId, int HPNLNIFICNI)
+	public bool CGEPJMFFLLJ_IsShowUnitLiveAdd(int _DLAEJOBELBH_MusicId, int HPNLNIFICNI)
 	{
 		int a = (_DLAEJOBELBH_MusicId - 1) >> 3;
 		if(a < 38)
@@ -143,10 +143,10 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(BJFCIFJLJJI_ShowAddUnitLiveDio, FGCNMLBACGO_ReadString(block, "show_addunitlive_dio", "", ref isInvalid));
-				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(IEGFCNMOCNE_ShowAddUnitLiveTrio, FGCNMLBACGO_ReadString(block, "show_addunitlive_trio", "", ref isInvalid));
-				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(FALFJCGGDHB_ShowAddUnitLiveQuartet, FGCNMLBACGO_ReadString(block, "show_addunitlive_quartet", "", ref isInvalid));
-				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(KKPKAMANKOH_ShowAddUnitLiveQuintet, FGCNMLBACGO_ReadString(block, "show_addunitlive_quintet", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(BJFCIFJLJJI_ShowAddUnitLiveDio, FGCNMLBACGO_GetString(block, "show_addunitlive_dio", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(IEGFCNMOCNE_ShowAddUnitLiveTrio, FGCNMLBACGO_GetString(block, "show_addunitlive_trio", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(FALFJCGGDHB_ShowAddUnitLiveQuartet, FGCNMLBACGO_GetString(block, "show_addunitlive_quartet", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(KKPKAMANKOH_ShowAddUnitLiveQuintet, FGCNMLBACGO_GetString(block, "show_addunitlive_quintet", "", ref isInvalid));
 			}
 			KFKDMBPNLJK_BlockInvalid = isInvalid;
 			return true;

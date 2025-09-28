@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 					return;
 				is_point_reward = cont.LEPALMDKEOK_IsPointReward;
 				is_rank_reward = cont.IBNKPMPFLGI_IsRankReward;
-				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6;
+				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting;
 				curr_point = (int)cont.FBGDBGKNKOD_GetCurrentPoint();
 				curr_rank = cont.CDINKAANIAA_Rank[0];
 				total_data_list = cont.PFPJHJJAGAG_Rewards;
@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 				{
 					HJNNLPIGHLM_EventCollection evColl = cont as HJNNLPIGHLM_EventCollection;
 					curr_score_rank = cont.CDINKAANIAA_Rank[1];
-					curr_score = (int)evColl.AFCIIKDOMHN_GetScore();
+					curr_score = (int)evColl.AFCIIKDOMHN_GetCurrentScore();
 					is_enable_score_ranking = true;
 					pickup_free_music_id = cont.HEACCHAKMFG_GetMusicsList()[0];
 					IBJAKJJICBC ib = new IBJAKJJICBC();
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 					pickup_free_music_id = 0;
 					is_enable_score_ranking = false;
 				}
-				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 				{
 					PKNOKJNLPOE_EventRaid contExt_ = cont as PKNOKJNLPOE_EventRaid;
 					contExt = cont;
@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						mvp_reward_list.Add(h);
-						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_First_1);
+						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_1_First);
 						h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt_.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -604,7 +604,7 @@ namespace XeApp.Game.Menu
 						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK_items.Count >> 1) * 104 + 104;
 				}
 			}
-			if(viewData.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			if(viewData.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 			{
 				f1 = 0;
 				for(int i = 0; i < viewData.disempowerment_reward_list.Count; i++)

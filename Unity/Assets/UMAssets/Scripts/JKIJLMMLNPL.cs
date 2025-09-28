@@ -53,7 +53,7 @@ public class JKIJLMMLNPL
 			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[viewscene.BCCHOBPJJKE_SceneId - 1];
 			if(dbScene.PPEGAKEIEGM_Enabled == 2)
 			{
-				if(viewscene.CGKAEMGLHNK_IsUnlocked() && !viewscene.MCCIFLKCNKO_Feed && (CJNCOELLDFC == null || !CJNCOELLDFC(viewscene.BCCHOBPJJKE_SceneId)))
+				if(viewscene.FJODMPGPDDD_Unlocked && !viewscene.MCCIFLKCNKO_Feed && (CJNCOELLDFC == null || !CJNCOELLDFC(viewscene.BCCHOBPJJKE_SceneId)))
 				{
 					GMJBEOLMJKB data = new GMJBEOLMJKB();
 					data.COIODGJDJEJ_scene = viewscene;

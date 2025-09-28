@@ -25,7 +25,7 @@ public class FPKIOKPFHHJ
 	public int PLALNIIBLOF_en { get; set; } // 0x10 DFMNDOMAPAB JPCJNLHHIPE JJFJNEJLBDG
 	public string FJGCDPLCIAK_unique_key { get; set; } // 0x14 KHICNNAGLPE ACDJMGHHDKG EEGKJLBBGAP
 	public string OPFGFINHFCE_name { get; set; } // 0x18 LGIIAPHCLPN DKJOHDGOIJE MJAMIGECMMF
-	public string KLMPFGOCBHC_description { get; set; } // 0x1C MODIAAEGMCJ BGJNIABLBDB HFBJLALGKOM
+	public string KLMPFGOCBHC_description { get; set; } // 0x1C MODIAAEGMCJ BGJNIABLBDB_get_description HFBJLALGKOM
 	public string IPFEKNMBEBI_inventory_message { get; set; } // 0x20 LJKCDMNHMNJ ILOIBIDKMOK OJHHCLKCEMH
 	public int KBFOIECIADN_opened_at { get; set; } // 0x24 JFIIKNDPADD NAIEFPFHLJM BMLJOGEMFBH
 	public int EGBOHDFBAPB_closed_at { get; set; } // 0x28 DDNBDNJHAIB MGOEKKJNOLF NHPFDCAFAFF

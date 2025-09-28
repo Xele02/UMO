@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECD9B8 Offset: 0xECD9B8 VA: 0xECD9B8
 		public MenuDivaTalk(int divaId, HomeDivaControl divaControl)
 		{
-			List<NJOOMLFFIJB> talkDataList = NJOOMLFFIJB.FKDIMODKKJD(divaId);
+			List<NJOOMLFFIJB> talkDataList = NJOOMLFFIJB.FKDIMODKKJD_GetList(divaId);
 			m_divaControl = divaControl;
 			m_autoTalkWeights = new List<int>();
 			MenuDivaVoiceTable voiceTable = divaControl.VoiceTable;
@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			NJOOMLFFIJB data = talkDataList.Find((NJOOMLFFIJB _) =>
 			{
 				//0xED07B8
-				return _.NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.DDAFHPDFFPI_Brithday;
+				return _.NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.DDAFHPDFFPI_2_Birthday;
 			});
 			m_birthdayTalkData = data;
 			m_birthdayTalkIndex = m_autoTalkWeights.Count;
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			{
 				DoAutoTalk();
 			}
-			saveManager.HJMKBCFJOOH_TrySave();
+			saveManager.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0xECEF14 Offset: 0xECEF14 VA: 0xECEF14

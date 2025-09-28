@@ -8,7 +8,7 @@ public struct CGCBEHANFJO
 	public int EACDINDLGLF_Voice; // 0x8
 
 	// RVA: 0x7FC620 Offset: 0x7FC620 VA: 0x7FC620
-	public void JCHLONCMPAJ()
+	public void JCHLONCMPAJ_Clear()
 	{
 		LDLHPACIIAB_Charm = 0;
 		MKMIEGPOKGG_Soul = 0;
@@ -48,11 +48,11 @@ public struct EDMIONMCICN
 			OBCPFDNKLMM_StatusSubScenes[i] = new StatusData();
 			FEGNMIGJMDM_CostumeSubScene[i] = new StatusData();
 		}
-		JCHLONCMPAJ_Reset();
+		JCHLONCMPAJ_Clear();
 	}
 
 	//// RVA: 0x7FC904 Offset: 0x7FC904 VA: 0x7FC904
-	public void JCHLONCMPAJ_Reset()
+	public void JCHLONCMPAJ_Clear()
 	{
 		ELFAIDEBLJB.Clear();
 		BJABFKMIJHB_StatusMainScene.Clear();
@@ -65,7 +65,7 @@ public struct EDMIONMCICN
 		}
 		for(int i = 0; i < 3; i++)
 		{
-			MCBLDOECHEK_MatchMusicAttrStatus[i].JCHLONCMPAJ();
+			MCBLDOECHEK_MatchMusicAttrStatus[i].JCHLONCMPAJ_Clear();
 		}
 		LGGLFAECCBK_BonusTypeFlag = 0;
 		NOEFMBAIAMP_MalusTypeFlag = 0;

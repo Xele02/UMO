@@ -11,9 +11,9 @@ public class HBCPJANGOLB
 	private static ELFECIBLHGM KKEFACGGKOD = new ELFECIBLHGM(); // 0x4
 
 	// // RVA: 0x173D674 Offset: 0x173D674 VA: 0x173D674
-	public void OBKGEDCKHHE()
+	public void OBKGEDCKHHE_Init()
     {
-        KKEFACGGKOD.PCODDPDFLHK();
+        KKEFACGGKOD.PCODDPDFLHK_Load();
         MNJNCKPELGE.Clear();
         long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
         long t2 = JPAICCMDGHD_GetMaxLastShowDate(time);
@@ -67,13 +67,13 @@ public class HBCPJANGOLB
     }
 
 	// // RVA: 0x173DFC4 Offset: 0x173DFC4 VA: 0x173DFC4
-	public bool HJMKBCFJOOH()
+	public bool HJMKBCFJOOH_Save()
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		long t = JPAICCMDGHD_GetMaxLastShowDate(time);
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate = t;
 		KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(t);
-		return KKEFACGGKOD.HJMKBCFJOOH_TrySaveDate(false);
+		return KKEFACGGKOD.HJMKBCFJOOH_Save(false);
 	}
 
 	// // RVA: 0x173E200 Offset: 0x173E200 VA: 0x173E200
@@ -103,11 +103,11 @@ public class HBCPJANGOLB
 	// // RVA: 0x173E7A8 Offset: 0x173E7A8 VA: 0x173E7A8
 	private static void KBNDEEFOGMO_FillEpisodeAssetsFile(List<string> PHCEFKKOECA, int _KELFCMEOPPM_EpisodeId)
     {
-        List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(_KELFCMEOPPM_EpisodeId);
+        List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetList(_KELFCMEOPPM_EpisodeId);
         LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
         for(int i = 0; i < l.Count; i++)
         {
-            if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+            if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
             {
                 if(l[i].GOOIIPFHOIG != null)
                 {

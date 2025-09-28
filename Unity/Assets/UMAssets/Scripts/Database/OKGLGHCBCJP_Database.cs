@@ -10,7 +10,7 @@ public class OKGLGHCBCJP_Database
 	public enum BEOKNKGHFFE_Section
 	{
 		LIIJEGOIKDP_Adventure = 0,
-		MLNHHIIDJAO_Anketo = 1,
+		MLNHHIIDJAO_1_Anketo = 1,
 		PICOGHJNOJA_Asset = 2,
 		DBBOBIHPDNA_Bingo = 3,
 		PEIFIFLMIIF_Board = 4,
@@ -28,7 +28,7 @@ public class OKGLGHCBCJP_Database
 		CNENKCCMEFL_Diva = 16,
 		ACGFJFNPLKB_Diva2 = 17,
 		PKDKLHJLEFA_Drop = 18,
-		PGHFPIMIOKE_Emblem = 19,
+		PGHFPIMIOKE_19_Emblem = 19,
 		CNGPLGIMJBB_Enemy = 20,
 		JBFFIPCOGEC_EnergyItem = 21,
 		BBDKHAMANCB_Episode = 22,
@@ -111,9 +111,9 @@ public class OKGLGHCBCJP_Database
 		KNMIJOPCJCH_Scene = 99,
 		ELBGPMIFOHO_Shop = 100,
 		ABANJLALLBK_Skill = 101,
-		HGOGFPOCKFA_Sns = 102,
+		HGOGFPOCKFA_102_Sns = 102,
 		LCEEHPPLHNC_SpItem = 103,
-		AOPBBHMIEPB_Story = 104,
+		AOPBBHMIEPB_104_Story = 104,
 		HGFDKEMHGHK_System = 105,
 		ACECCMLEDMO_Tips = 106,
 		HDDBEGLGIDK_TitleBanner = 107,
@@ -135,7 +135,7 @@ public class OKGLGHCBCJP_Database
 	public static BEOKNKGHFFE_Section[] GAAEFILMAED_BaseSectionList = new BEOKNKGHFFE_Section[0x47]
 	{
 		BEOKNKGHFFE_Section.LIIJEGOIKDP_Adventure,
-		BEOKNKGHFFE_Section.MLNHHIIDJAO_Anketo,
+		BEOKNKGHFFE_Section.MLNHHIIDJAO_1_Anketo,
 		BEOKNKGHFFE_Section.PICOGHJNOJA_Asset,
 		BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo,
 		BEOKNKGHFFE_Section.PEIFIFLMIIF_Board,
@@ -153,7 +153,7 @@ public class OKGLGHCBCJP_Database
 		BEOKNKGHFFE_Section.CNENKCCMEFL_Diva,
 		BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,
 		BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop,
-		BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,
+		BEOKNKGHFFE_Section.PGHFPIMIOKE_19_Emblem,
 		BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,
 		BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem,
 		BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,
@@ -190,9 +190,9 @@ public class OKGLGHCBCJP_Database
 		BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene,
 		BEOKNKGHFFE_Section.ELBGPMIFOHO_Shop,
 		BEOKNKGHFFE_Section.ABANJLALLBK_Skill,
-		BEOKNKGHFFE_Section.HGOGFPOCKFA_Sns,
+		BEOKNKGHFFE_Section.HGOGFPOCKFA_102_Sns,
 		BEOKNKGHFFE_Section.LCEEHPPLHNC_SpItem,
-		BEOKNKGHFFE_Section.AOPBBHMIEPB_Story,
+		BEOKNKGHFFE_Section.AOPBBHMIEPB_104_Story,
 		BEOKNKGHFFE_Section.HGFDKEMHGHK_System,
 		BEOKNKGHFFE_Section.ACECCMLEDMO_Tips,
 		BEOKNKGHFFE_Section.HDDBEGLGIDK_TitleBanner,
@@ -331,7 +331,7 @@ public class OKGLGHCBCJP_Database
 	private List<DIHHCBACKGG_DbSection> MGJKEJHEBPO_Blocks; // 0x130
 	private static Dictionary<int, BIFFPAKDHJJ_CreateSectionDelegate> BGEJFKHOMOC_CreateFuncs = new Dictionary<int, BIFFPAKDHJJ_CreateSectionDelegate>() {
 		{(int)BEOKNKGHFFE_Section.LIIJEGOIKDP_Adventure,() => { return new GPMHOAKFALE_Adventure(); } }, // 0x149D500				"adventure",
-		{(int)BEOKNKGHFFE_Section.MLNHHIIDJAO_Anketo,() => { return new IPJBAPLFECP_Anketo(); } }, //0x149D56C				"anketo",
+		{(int)BEOKNKGHFFE_Section.MLNHHIIDJAO_1_Anketo,() => { return new IPJBAPLFECP_Anketo(); } }, //0x149D56C				"anketo",
 		 {(int)BEOKNKGHFFE_Section.PICOGHJNOJA_Asset,() => { return new LFPJCEMANCK_Asset(); } }, //0x149D5D8				"asset",
 		{(int)BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo,() => { return new JKICPBIIHNE_Bingo(); } }, //0x149D644				"bingo",
 		{(int)BEOKNKGHFFE_Section.PEIFIFLMIIF_Board,() => { return new KOGHKIODHPA_Board(); } }, //0x149D6B0					"board",
@@ -349,7 +349,7 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.CNENKCCMEFL_Diva,() => { return new HPBPIOPPDCB_Diva(); } }, //0x149DBC0				"diva",
 		{(int)BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,() => { return new HMIJOOPHJLB_Diva2(); } }, //0x149DC2C				"diva2",
 		{(int)BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop,() => { return new NBPHJDCOECH_Drop(); } }, //0x149DC98				"drop",
-		{(int)BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK_Emblem(); } }, //0x149DD04				"emblem",
+		{(int)BEOKNKGHFFE_Section.PGHFPIMIOKE_19_Emblem,() => { return new IHGBPAJMJFK_Emblem(); } }, //0x149DD04				"emblem",
 		{(int)BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,() => { return new MHDFCLCMDKO_Enemy(); } }, //0x149DD70				"enemy",
 		{(int)BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem,() => { return new JKDKODAPGBJ_EnergyItem(); } }, //0x149DDDC				"energy_item",
 		{(int)BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,() => { return new KMOGDEOKHPG_Episode(); } }, //0x149DE48				"episode",
@@ -432,9 +432,9 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene,() => { return new MLIBEPGADJH_Scene(); } }, //0x149FEC4					"scene",
 		{(int)BEOKNKGHFFE_Section.ELBGPMIFOHO_Shop,() => { return new BKPAPCMJKHE_Shop(); } }, //0x149FF30				"shop",
 		{(int)BEOKNKGHFFE_Section.ABANJLALLBK_Skill,() => { return new JNKEEAOKNCI_Skill(); } }, //0x149FF9C				"skill",
-		{(int)BEOKNKGHFFE_Section.HGOGFPOCKFA_Sns,() => { return new BOKMNHAFJHF_Sns(); } }, //0x14A0008				"sns",
+		{(int)BEOKNKGHFFE_Section.HGOGFPOCKFA_102_Sns,() => { return new BOKMNHAFJHF_Sns(); } }, //0x14A0008				"sns",
 		{(int)BEOKNKGHFFE_Section.LCEEHPPLHNC_SpItem,() => { return new PPNFHHPJOKK_SpItem(); } }, //0x14A0074				"sp_item",
-		{(int)BEOKNKGHFFE_Section.AOPBBHMIEPB_Story,() => { return new LAEGMENIEDB_Story(); } }, //0x14A00E0				"story",
+		{(int)BEOKNKGHFFE_Section.AOPBBHMIEPB_104_Story,() => { return new LAEGMENIEDB_Story(); } }, //0x14A00E0				"story",
 		{(int)BEOKNKGHFFE_Section.HGFDKEMHGHK_System,() => { return new PEBFNABDJDI_System(); } }, //0x14A014C					"system",
 		{(int)BEOKNKGHFFE_Section.ACECCMLEDMO_Tips,() => { return new BCKMELFCKKN_Tips(); } }, //0x14A01B8				"tips",
 		{(int)BEOKNKGHFFE_Section.HDDBEGLGIDK_TitleBanner,() => { return new JOHKNBEFHHP_TitleBanner(); } }, //0x14A0224					"title_banner",
@@ -522,10 +522,10 @@ public class OKGLGHCBCJP_Database
 	public JHAAHJNEBOG_LimitedCompoItem MBAGKLJDKMH_LimitedCompoItem { get; private set; } // 0x12C HKMFFDNMOBN BDENFILNIID BHGPHONEKGL
 
 	// // RVA: 0x149049C Offset: 0x149049C VA: 0x149049C
-	// private static bool LIPIIKKIKOI(OKGLGHCBCJP_Database.BEOKNKGHFFE[] NNDGIAEFMOG, OKGLGHCBCJP_Database.BEOKNKGHFFE _PPFNGGCBJKC_id) { }
+	// private static bool LIPIIKKIKOI(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section[] NNDGIAEFMOG, OKGLGHCBCJP_Database.BEOKNKGHFFE_Section _PPFNGGCBJKC_id) { }
 
 	// // RVA: 0x1490508 Offset: 0x1490508 VA: 0x1490508
-	// private static bool LIPIIKKIKOI(List<OKGLGHCBCJP_Database.BEOKNKGHFFE> NNDGIAEFMOG, OKGLGHCBCJP_Database.BEOKNKGHFFE _PPFNGGCBJKC_id) { }
+	// private static bool LIPIIKKIKOI(List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section> NNDGIAEFMOG, OKGLGHCBCJP_Database.BEOKNKGHFFE_Section _PPFNGGCBJKC_id) { }
 
 	// // RVA: 0x14905D0 Offset: 0x14905D0 VA: 0x14905D0
 	public void LNAKMLCCEJG_AddSections(List<BEOKNKGHFFE_Section> NNDGIAEFMOG, BEOKNKGHFFE_Section[] FCCKCFEEOMN)
@@ -547,10 +547,10 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x1490734 Offset: 0x1490734 VA: 0x1490734
-	// private static string JEHFDJPOEFF(string _HKICMNAACDA_a) { }
+	// private static string JEHFDJPOEFF_str(string _HKICMNAACDA_a) { }
 
 	// // RVA: 0x1490738 Offset: 0x1490738 VA: 0x1490738
-	// private static bool FNHALBBECIM(OKGLGHCBCJP_Database.BEOKNKGHFFE _NEJBNCHLMNJ_Type) { }
+	// private static bool FNHALBBECIM(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section _NEJBNCHLMNJ_Type) { }
 
 	// RVA: 0x1490C94 Offset: 0x1490C94 VA: 0x1490C94
 	public OKGLGHCBCJP_Database()
@@ -574,7 +574,7 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x149101C Offset: 0x149101C VA: 0x149101C
-	public DIHHCBACKGG_DbSection LBDOLHGDIEB_GetDbSection(string _OPFGFINHFCE_name)
+	public DIHHCBACKGG_DbSection LBDOLHGDIEB_Find(string _OPFGFINHFCE_name)
 	{
 		return MGJKEJHEBPO_Blocks.Find((DIHHCBACKGG_DbSection PKLPKMLGFGK) => {
 			//0x14A065C
@@ -583,11 +583,11 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: -1 Offset: -1
-	// public T LBDOLHGDIEB<T>(string _OPFGFINHFCE_name) { }
+	// public T LBDOLHGDIEB_Find<T>(string _OPFGFINHFCE_name) { }
 	// /* GenericInstMethod :
 	// |
 	// |-RVA: 0x1AB61C8 Offset: 0x1AB61C8 VA: 0x1AB61C8
-	// |-OKGLGHCBCJP_Database.LBDOLHGDIEB<object>
+	// |-OKGLGHCBCJP_Database.LBDOLHGDIEB_Find<object>
 	// */
 
 	// // RVA: 0x149111C Offset: 0x149111C VA: 0x149111C
@@ -789,7 +789,7 @@ public class OKGLGHCBCJP_Database
 				switch(INBBCDGDMLC[i])
 				{
 					case BEOKNKGHFFE_Section.LIIJEGOIKDP_Adventure: EFMAIKAHFEK_Adventure = (GPMHOAKFALE_Adventure)item; break;
-					case BEOKNKGHFFE_Section.MLNHHIIDJAO_Anketo: OILKBADFBOK_Anketo = (IPJBAPLFECP_Anketo)item; break;
+					case BEOKNKGHFFE_Section.MLNHHIIDJAO_1_Anketo: OILKBADFBOK_Anketo = (IPJBAPLFECP_Anketo)item; break;
 					case BEOKNKGHFFE_Section.PICOGHJNOJA_Asset: IELDDHJMFKN_Asset = (LFPJCEMANCK_Asset)item; break;
 					case BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo: FPOIPGFFAPE_Bingo = (JKICPBIIHNE_Bingo)item; break;
 					case BEOKNKGHFFE_Section.PEIFIFLMIIF_Board: JEMMMJEJLNL_Board = (KOGHKIODHPA_Board)item; break;
@@ -807,7 +807,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.CNENKCCMEFL_Diva: MGFMPKLLGHE_Diva = (HPBPIOPPDCB_Diva)item; break;
 					case BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2: OAINIGNLJKC_Diva2 = (HMIJOOPHJLB_Diva2)item; break;
 					case BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop: HGLIIPFLMFB_Drop = (NBPHJDCOECH_Drop)item; break;
-					case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE_Emblem = (IHGBPAJMJFK_Emblem)item; break;
+					case BEOKNKGHFFE_Section.PGHFPIMIOKE_19_Emblem: LBNBNAFGMDE_Emblem = (IHGBPAJMJFK_Emblem)item; break;
 					case BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy: OPFBEAJJMJB_Enemy = (MHDFCLCMDKO_Enemy)item; break;
 					case BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem: KOPOGNLKAEN_EnergyItem = (JKDKODAPGBJ_EnergyItem)item; break;
 					case BEOKNKGHFFE_Section.BBDKHAMANCB_Episode: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
@@ -844,9 +844,9 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene: ECNHDEHADGL_Scene = (MLIBEPGADJH_Scene)item; break;
 					case BEOKNKGHFFE_Section.ELBGPMIFOHO_Shop: IFLGCDGOLOP_Shop = (BKPAPCMJKHE_Shop)item; break;
 					case BEOKNKGHFFE_Section.ABANJLALLBK_Skill: FOFADHAENKC_Skill = (JNKEEAOKNCI_Skill)item; break;
-					case BEOKNKGHFFE_Section.HGOGFPOCKFA_Sns: OMGFKMANMAB_Sns = (BOKMNHAFJHF_Sns)item; break;
+					case BEOKNKGHFFE_Section.HGOGFPOCKFA_102_Sns: OMGFKMANMAB_Sns = (BOKMNHAFJHF_Sns)item; break;
 					case BEOKNKGHFFE_Section.LCEEHPPLHNC_SpItem: OOEPHOEFBNL_SpItem = (PPNFHHPJOKK_SpItem)item; break;
-					case BEOKNKGHFFE_Section.AOPBBHMIEPB_Story: OHCIFMDPAPD_Story = (LAEGMENIEDB_Story)item; break;
+					case BEOKNKGHFFE_Section.AOPBBHMIEPB_104_Story: OHCIFMDPAPD_Story = (LAEGMENIEDB_Story)item; break;
 					case BEOKNKGHFFE_Section.HGFDKEMHGHK_System: GDEKCOOBLMA_System = (PEBFNABDJDI_System)item; break;
 					case BEOKNKGHFFE_Section.ACECCMLEDMO_Tips: KNMFNBEOGON_Tips = (BCKMELFCKKN_Tips)item; break;
 					case BEOKNKGHFFE_Section.HDDBEGLGIDK_TitleBanner: ACPALDEELCL_TitleBanner = (JOHKNBEFHHP_TitleBanner)item; break;

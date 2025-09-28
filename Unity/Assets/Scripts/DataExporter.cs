@@ -27,12 +27,12 @@ class DataExporter
 	{
 		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		string fileOutput = "";
-		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
+		for (int i = 0; i < MusicDb.EPMMNEFADAP_Music.Count; i++)
 		{
-			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_JacketId > 0)
+			if (MusicDb.EPMMNEFADAP_Music[i].JNCPEGJGHOG_JacketId > 0)
 			{
-				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Name).musicName;
-				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieAttr);
+				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Music[i].KNMGEEFGDNI_Name).musicName;
+				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Music[i].AIHCEGFANAM_SerieAttr);
 				if (Serie == "4") Serie = "Macross";
 				if (Serie == "3") Serie = "Macross 7";
 				if (Serie == "2") Serie = "Macross Frontier";
@@ -40,7 +40,7 @@ class DataExporter
 				bool divaSolo = false;
 				int numMulti = -1;
 				EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
-				song.KHEKNNFCAOI_Init(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_MusicId);
+				song.KHEKNNFCAOI_Init(MusicDb.EPMMNEFADAP_Music[i].DLAEJOBELBH_MusicId);
 
 				for (int k = 0; k < 7; k++)
 				{
@@ -53,9 +53,9 @@ class DataExporter
 					}
 				}
 				bool valid = MusicDb.GEAANLPDJBP_FreeMusicData.Find((KEODKEGFDLD_FreeMusicInfo data) => {
-					return data.DLAEJOBELBH_MusicId == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_MusicId && data.PPEGAKEIEGM_Enabled == 2;
+					return data.DLAEJOBELBH_MusicId == MusicDb.EPMMNEFADAP_Music[i].DLAEJOBELBH_MusicId && data.PPEGAKEIEGM_Enabled == 2;
 				}) != null;
-				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "|" + (valid ? "X" : "") + "\n";
+				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Music[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "|" + (valid ? "X" : "") + "\n";
 			}
 		}
 		File.WriteAllText(Application.dataPath + "../../../Data/SongList.txt", fileOutput);
@@ -125,7 +125,7 @@ class DataExporter
 
 			string songId = dirInfo.Name.Replace("_3", "").Replace("_2", "").Replace("_5", "");
 
-			var music = MusicDb.EPMMNEFADAP_Musics.Find((EONOEHOKBEB_Music data) =>
+			var music = MusicDb.EPMMNEFADAP_Music.Find((EONOEHOKBEB_Music data) =>
 			{
 				return data.KKPAHLMJKIH_WavId == Int32.Parse(songId);
 			});

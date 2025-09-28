@@ -30,7 +30,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
-	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_GetAdventure(int _PPFNGGCBJKC_id)
+	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)
 	{
 		if (_PPFNGGCBJKC_id != 0 && _PPFNGGCBJKC_id <= CDENCMNHNGA_table.Count)
 		{

@@ -20,16 +20,16 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 
 	public enum OAIBOODMLME
 	{
-		DBPDLIPKFAL = 1,
+		DBPDLIPKFAL_1_First = 1,
 		NLELBHEHKHF = 2,
-		CKPGGPDJCAL = 3,
+		CKPGGPDJCAL_3 = 3,
 	}
 
 	public enum FAGMPBPFDLD
 	{
-		DBPDLIPKFAL = 1,
+		DBPDLIPKFAL_1_First = 1,
 		NLELBHEHKHF = 2,
-		CKPGGPDJCAL = 3,
+		CKPGGPDJCAL_3 = 3,
 	}
 
 	public enum OPOEENHEJOC
@@ -161,7 +161,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 				{
 					OMAEOHMDCLI_FirstPresentId = v.DNJEJEANJGL_Value;
 				}
-				HCDGELDHFHB(false);
+				HCDGELDHFHB_UpdateStatus(false);
 			}
 		}
 	}
@@ -201,7 +201,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 				HBODCMLFDOB_result.GGAEHEIPGND = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.OOCKOCAACMD_DataByLevel[HBODCMLFDOB_result.KBHJOBKOOGC_NextLevel].IHGDLBBPKFI_Next;
 			}
 		}
-		HCDGELDHFHB(false);
+		HCDGELDHFHB_UpdateStatus(false);
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MJDMEKMGFJA_IntimacyTouchSaveTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		return true;
 	}
@@ -264,7 +264,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	}
 
 	//// RVA: 0x1353614 Offset: 0x1353614 VA: 0x1353614
-	public bool FNGFADPFKOD()
+	public bool FNGFADPFKOD_DivaIntimacy()
 	{
 		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 		{
@@ -280,7 +280,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 							HBODCMLFDOB_result.LDHOOPGDBJC_IsLevelUp = false;
 							if(HEKJGCMNJAB_CurrentLevel < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.GLHEHGGKILG_GetMaxLevel())
 							{
-								if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.IGFMNMADJPP(1, false))
+								if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.IGFMNMADJPP_Consume(1, false))
 								{
 									diva.NFDPLBOIDAB_IntimacyTouchCount++;
 									diva.NEAADNDKGLG_IntimacyTouchTotal++;
@@ -355,7 +355,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	public bool COOGHGBNEMB(BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, int _KIJAPOFAGPN_ItemId, int _HMFFHLPNMPH_count, int _CIEOBFIIPLD_Level)
 	{
 		JKNGJFOBADP data = new JKNGJFOBADP();
-		data.JCHLONCMPAJ();
+		data.JCHLONCMPAJ_Clear();
 		data.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.ACNGACBALGM/*20*/, AHHJLDLAPAN_DivaId.ToString() + ":" + 0); //?? unused r11 register instead of 0
 		data.CPIICACGNBH_AddItem(_LDEGEHAEALK_ServerData, _KIJAPOFAGPN_ItemId, _HMFFHLPNMPH_count, null, 0);
 		return false;
@@ -365,14 +365,14 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	public bool AMHBDAMIAJM(BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, int _KIJAPOFAGPN_ItemId, int _HMFFHLPNMPH_count)
 	{
 		JKNGJFOBADP j = new JKNGJFOBADP();
-		j.JCHLONCMPAJ();
+		j.JCHLONCMPAJ_Clear();
 		j.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.GHLEPCNBCNC/*19*/, "");
 		j.CPIICACGNBH_AddItem(_LDEGEHAEALK_ServerData, _KIJAPOFAGPN_ItemId, _HMFFHLPNMPH_count, null, 0);
 		return false;
 	}
 
 	//// RVA: 0x1351904 Offset: 0x1351904 VA: 0x1351904
-	public void HCDGELDHFHB(bool _FBBNPFFEJBN_Force/* = false*/)
+	public void HCDGELDHFHB_UpdateStatus(bool _FBBNPFFEJBN_Force/* = false*/)
 	{
 		if (AHHJLDLAPAN_DivaId < 0)
 			return;

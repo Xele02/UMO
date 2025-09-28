@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class CMEPJFBDNPP
 {
 	public int BFINGCJHOHI_cnt { get; set; } // 0x8 PIAHJAJPLKA LFMCLIDAPHB EDAEPDGGFJJ
-	public int LKIFDCEKDCK_exp { get; set; } // 0xC IAHMAGLCEBN GOKMANFHFPC ICJKOKGFNLI
+	public int LKIFDCEKDCK_exp { get; set; } // 0xC IAHMAGLCEBN GOKMANFHFPC_get_exp ICJKOKGFNLI
 }
 public class EJLDLIODAID
 {
@@ -14,7 +14,7 @@ public class EJLDLIODAID
 }
 public class PCFOIOGMHHL
 {
-	public uint[] FEOKKEPAIBB { get; set; } // 0x8 GIGNEBBDCBK ICBAELIDDMP NPOGDBMAGGF
+	public uint[] FEOKKEPAIBB_diff { get; set; } // 0x8 GIGNEBBDCBK ICBAELIDDMP NPOGDBMAGGF
 	public uint[] FDBOPFEOENF_diva { get; set; } // 0xC DNDMMJJOAOE MJPHCAIKKJG GHECGDMEBFF
 	public CMEPJFBDNPP[] MDFFJJKBDFC { get; set; } // 0x10 MLEEAALCDDB CGKHDMIDHGN MDIFADGJNNH
 	public uint[] BPLOEAHOPFI_stamina { get; set; } // 0x14 KKOIOMJKJJK IFLOIFCLBFJ NGMKCJOPEGH
@@ -33,7 +33,7 @@ public class PCFOIOGMHHL
 		{
 			FEOKKEPAIBB_list.Add(res_readData.GetEOKPHAFLHBG(FEOKKEPAIBB_idx));
 		}
-		res_data.FEOKKEPAIBB = FEOKKEPAIBB_list.ToArray();
+		res_data.FEOKKEPAIBB_diff = FEOKKEPAIBB_list.ToArray();
 
 		List<uint> FDBOPFEOENF_list = new List<uint>();
 		for(int FDBOPFEOENF_idx = 0; FDBOPFEOENF_idx < res_readData.FOGBEEHMDJMLength; FDBOPFEOENF_idx++)

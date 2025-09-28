@@ -55,8 +55,8 @@ namespace XeApp.Game.Menu
 				m_data = arg.data;
 				m_isBeginner = arg.isFromBeginner;
 			}
-			m_data.LEHDLBJJBNC();
-			m_data.FBANBDCOEJL();
+			m_data.LEHDLBJJBNC_SetNotNew();
+			m_data.FBANBDCOEJL_Update();
 			m_detail_window.Init(m_data);
 			m_detail_window.Enter();
 			MenuScene.Instance.StatusWindowControl.ResetHistory();

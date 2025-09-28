@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 						ButtonL.Hidden = true;
 					}
 				}
-				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
 					if(d == null)
@@ -153,8 +153,8 @@ namespace XeApp.Game.Menu
 			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type)
 			{
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2_Regular:
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3_Debut:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4_Sphere_CostumeTicket:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 					b1 = false;
 					if (view.DPBDFPPMIPH_Gacha.KACECFNECON_extra == null)
@@ -182,10 +182,10 @@ namespace XeApp.Game.Menu
 					b2 = !view.DPBDFPPMIPH_Gacha.KACECFNECON_extra.CICLLABDFFK_SaleButtonVisible;
 					if(!b2)
 					{
-						int a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
+						int a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF_GetPurchaseCurrencyId(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
 						if (a == 0)
 						{
-							a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
+							a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF_GetPurchaseCurrencyId(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
 						}
 						string s = bk.GetMessageByLabel("gacha_main_ticket_sale_period");
 						DateTime d = Utility.GetLocalDateTime(view.DPBDFPPMIPH_Gacha.HIPBEKBFNBG(a));
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 						}
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem:
 					str = bk.GetMessageByLabel("gacha_desc_03");
 					b1 = false;
 					break;
@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 				b2 = true;
 				str = "02";
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 			{
 				b2 = true;
 				b1 = true;

@@ -40,7 +40,7 @@ public class GCGNICILKLD_AssetFileInfo
     } set {
         CFKONDFCBEB_LastUpdated = BBEGLBMOBOF_xorl ^ value;
     } } //0x16AACA8 MMINNMHAJGO 0x16AACBC CBMKIPILIND
-	public uint HHPEMFKDHLK_FileHash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA
+	public uint HHPEMFKDHLK_Hash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA
 
 	// RVA: 0x16AACEC Offset: 0x16AACEC VA: 0x16AACEC
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _OIPCCBHIKIA_index)

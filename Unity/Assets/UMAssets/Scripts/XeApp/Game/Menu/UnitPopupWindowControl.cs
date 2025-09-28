@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_DivaList[i].BCEJOOCGBFG(0, false);
 				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_DivaList[i].BCEJOOCGBFG(1, false);
 			}
-			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
+			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB_UpdateStatus();
 		}
 
 		// // RVA: 0x1248ED4 Offset: 0x1248ED4 VA: 0x1248ED4
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 					f.GIGDKIHBDHB(null, j, true);
 				}
 			}
-			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB_UpdateStatus();
 		}
 
 		// // RVA: 0x124912C Offset: 0x124912C VA: 0x124912C

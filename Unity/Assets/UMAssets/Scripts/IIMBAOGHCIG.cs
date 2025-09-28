@@ -13,7 +13,7 @@ public class IIMBAOGHCIG
 	public string BHANMJKCCBC_BadgeText; // 0xC
 
 	//// RVA: 0x1204B5C Offset: 0x1204B5C VA: 0x1204B5C
-	public void FBANBDCOEJL(bool _CADENLBDAEB_IsNew)
+	public void FBANBDCOEJL_Update(bool _CADENLBDAEB_IsNew)
 	{
 		if(HNNHJGJCFIL() != BEFNGAHBLEN.JJGHKIBKFFJ/*1*/)
 		{

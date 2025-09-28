@@ -10,11 +10,11 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 {
 	public enum JJAFLOEBLDH
 	{
-		CCAPCGPIIPF_1_Support = 1,
+		CCAPCGPIIPF_1_Normal = 1, // Support
 		LPNPLGJJCPC_2 = 2,
-		OOEHFFBHCIC_3_FullPower = 3,
+		OOEHFFBHCIC_3_Full = 3, // FullPower
 		EKIGHDLEBAH_4_MacrossCanon = 4,
-		CKPGGPDJCAL = 5
+		CKPGGPDJCAL_5 = 5
 	}
 
 	public class PMJBKKNNNEM
@@ -619,10 +619,10 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 			for(int i = 0; i < FJDKDGBKGLB_BossList.Count; i++)
 			{
 				int v = FJDKDGBKGLB_BossList[i].DNJEJEANJGL_Value;
-				if(OIKJFMGEICL.FJDKDGBKGLB_BossList.Find((CEBFFLDKAEC_SecureInt JKDKBCPFFEL) =>
+				if(OIKJFMGEICL.FJDKDGBKGLB_BossList.Find((CEBFFLDKAEC_SecureInt _JKDKBCPFFEL_o) =>
 				{
 					//0x1B8D540
-					return JKDKBCPFFEL.DNJEJEANJGL_Value == v;
+					return _JKDKBCPFFEL_o.DNJEJEANJGL_Value == v;
 				}) == null)
 					return false;
 			}
@@ -632,7 +632,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x148242C Offset: 0x148242C VA: 0x148242C
-		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int _OIPCCBHIKIA_index, JLOGEHCIBEJ_EventRaid.PMJBKKNNNEM _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string _JIKKNHIAEKG_BlockName, string MJBACHKCIHA, int _OIPCCBHIKIA_index, JLOGEHCIBEJ_EventRaid.PMJBKKNNNEM _OHMCIEMIKCE_t, bool EFOEPDLNLJG) { }
 
 		// // RVA: 0x148C0CC Offset: 0x148C0CC VA: 0x148C0CC
 		public void BGOJNJLNLKE()
@@ -643,7 +643,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 		}
 	}
 
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	public const int ICHFGGBPCBJ = 4;
 	public const int BJEPEBMLKOL = 100;
 	public const long EGHFCEBIGEE = 99999999;
@@ -774,26 +774,26 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 					}
 					for(int i = 0; i < cnt; i++)
 					{
-						FBCJICEPLED[i].MPCAGEPEJJJ_Key = FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
-						FBCJICEPLED[i].EGBOHDFBAPB_closed_at = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
-						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry, 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].ABBJBPLHFHA_Spurt = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.MAFAIIHJAFG_spurt, 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].DNBFMLBNAEE_point = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.DNBFMLBNAEE_point, 0, ref isInvalid);
-						FBCJICEPLED[i].NFIOKIBPJCJ_uptime = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
-						FBCJICEPLED[i].LGADCGFMLLD_step = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.LGADCGFMLLD_step, 0, ref isInvalid);
-						FBCJICEPLED[i].HPLMECLKFID_RRcv = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv, 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].OKEJGGCMAAI_PlaRcv = CJAENOMGPDA_ReadInt(block[i], "pla_rcv", 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].CGMMMJCIDFE_EpaRcv = CJAENOMGPDA_ReadInt(block[i], "epa_rcv", 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].KILJKLIHMAE_SboRcv = CJAENOMGPDA_ReadInt(block[i], "sbo_rcv", 0, ref isInvalid) != 0;
-						FBCJICEPLED[i].INLNJOGHLJE_Show = CJAENOMGPDA_ReadInt(block[i], "show", 0, ref isInvalid);
-						FBCJICEPLED[i].MDADLCOCEBN_session_id = FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.MDADLCOCEBN_session_id, "", ref isInvalid);
-						FBCJICEPLED[i].OMCAOJJGOGG_Lb = CJAENOMGPDA_ReadInt(block[i], "lb", 0, ref isInvalid);
-						FBCJICEPLED[i].LIEKIBHAPKC_FId = CJAENOMGPDA_ReadInt(block[i], "f_id", 0, ref isInvalid);
-						FBCJICEPLED[i].MHKICPIMFEI_PlayCount = CJAENOMGPDA_ReadInt(block[i], "play_cnt", 0, ref isInvalid);
-						FBCJICEPLED[i].NOKPCBEIJHJ_ApVal = CJAENOMGPDA_ReadInt(block[i], "ap_val", 0, ref isInvalid);
-						FBCJICEPLED[i].CKLPPIIKAKD_ApSaveTime = DKMPHAPBDLH_ReadLong(block[i], "ap_save_time", 0, ref isInvalid);
-						FBCJICEPLED[i].HBHCCLGECOC_MyBossId = CJAENOMGPDA_ReadInt(block[i], "my_boss_id", 0, ref isInvalid);
-						FBCJICEPLED[i].BJBJHNJJCHL_AtkMcgBonus = CJAENOMGPDA_ReadInt(block[i], "atk_mcg_bonus", 0, ref isInvalid);
+						FBCJICEPLED[i].MPCAGEPEJJJ_Key = FGCNMLBACGO_GetString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
+						FBCJICEPLED[i].EGBOHDFBAPB_closed_at = DKMPHAPBDLH_GetLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
+						FBCJICEPLED[i].IMFBCJOIJKJ_Entry = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.CDMGDFLPPHN_entry, 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].ABBJBPLHFHA_Spurt = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.MAFAIIHJAFG_spurt, 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].DNBFMLBNAEE_point = DKMPHAPBDLH_GetLong(block[i], AFEHLCGHAEE_Strings.DNBFMLBNAEE_point, 0, ref isInvalid);
+						FBCJICEPLED[i].NFIOKIBPJCJ_uptime = DKMPHAPBDLH_GetLong(block[i], AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
+						FBCJICEPLED[i].LGADCGFMLLD_step = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.LGADCGFMLLD_step, 0, ref isInvalid);
+						FBCJICEPLED[i].HPLMECLKFID_RRcv = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv, 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].OKEJGGCMAAI_PlaRcv = CJAENOMGPDA_GetInt(block[i], "pla_rcv", 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].CGMMMJCIDFE_EpaRcv = CJAENOMGPDA_GetInt(block[i], "epa_rcv", 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].KILJKLIHMAE_SboRcv = CJAENOMGPDA_GetInt(block[i], "sbo_rcv", 0, ref isInvalid) != 0;
+						FBCJICEPLED[i].INLNJOGHLJE_Show = CJAENOMGPDA_GetInt(block[i], "show", 0, ref isInvalid);
+						FBCJICEPLED[i].MDADLCOCEBN_session_id = FGCNMLBACGO_GetString(block[i], AFEHLCGHAEE_Strings.MDADLCOCEBN_session_id, "", ref isInvalid);
+						FBCJICEPLED[i].OMCAOJJGOGG_Lb = CJAENOMGPDA_GetInt(block[i], "lb", 0, ref isInvalid);
+						FBCJICEPLED[i].LIEKIBHAPKC_FId = CJAENOMGPDA_GetInt(block[i], "f_id", 0, ref isInvalid);
+						FBCJICEPLED[i].MHKICPIMFEI_PlayCount = CJAENOMGPDA_GetInt(block[i], "play_cnt", 0, ref isInvalid);
+						FBCJICEPLED[i].NOKPCBEIJHJ_ApVal = CJAENOMGPDA_GetInt(block[i], "ap_val", 0, ref isInvalid);
+						FBCJICEPLED[i].CKLPPIIKAKD_ApSaveTime = DKMPHAPBDLH_GetLong(block[i], "ap_save_time", 0, ref isInvalid);
+						FBCJICEPLED[i].HBHCCLGECOC_MyBossId = CJAENOMGPDA_GetInt(block[i], "my_boss_id", 0, ref isInvalid);
+						FBCJICEPLED[i].BJBJHNJJCHL_AtkMcgBonus = CJAENOMGPDA_GetInt(block[i], "atk_mcg_bonus", 0, ref isInvalid);
 						if(block[i].BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests))
 						{
 							EDOHBJAPLPF_JsonData data = block[i][AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests];
@@ -802,11 +802,11 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 								cnt2 = 100;
 							for(int j = 0; j < cnt2; j++)
 							{
-								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].PPFNGGCBJKC_id = CJAENOMGPDA_ReadInt(data[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, j + 1, ref isInvalid);
-								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].EALOBDHOCHP_stat = CJAENOMGPDA_ReadInt(data[j], AFEHLCGHAEE_Strings.EALOBDHOCHP_stat, 0, ref isInvalid);
-								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].HMFFHLPNMPH_count = CJAENOMGPDA_ReadInt(data[j], AFEHLCGHAEE_Strings.HMFFHLPNMPH_count, 0, ref isInvalid);
-								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].BEBJKJKBOGH_date = DKMPHAPBDLH_ReadLong(data[j], AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0, ref isInvalid);
-								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].CADENLBDAEB_IsNew = CJAENOMGPDA_ReadInt(data[j], AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) == 1;
+								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].PPFNGGCBJKC_id = CJAENOMGPDA_GetInt(data[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, j + 1, ref isInvalid);
+								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].EALOBDHOCHP_stat = CJAENOMGPDA_GetInt(data[j], AFEHLCGHAEE_Strings.EALOBDHOCHP_stat, 0, ref isInvalid);
+								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].HMFFHLPNMPH_count = CJAENOMGPDA_GetInt(data[j], AFEHLCGHAEE_Strings.HMFFHLPNMPH_count, 0, ref isInvalid);
+								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].BEBJKJKBOGH_date = DKMPHAPBDLH_GetLong(data[j], AFEHLCGHAEE_Strings.BEBJKJKBOGH_date, 0, ref isInvalid);
+								FBCJICEPLED[i].NNMPGOAGEOL_quests[j].CADENLBDAEB_IsNew = CJAENOMGPDA_GetInt(data[j], AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) == 1;
 							}
 						}
 						if(block[i].BBAJPINMOEP_Contains("mcannon_scene"))
@@ -820,7 +820,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 								{
 									int a = int.Parse(s.Substring("_".Length));
 									byte[] bts = new byte[750];
-									CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(bts, FGCNMLBACGO_ReadString(data, s, null, ref isInvalid));
+									CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(bts, FGCNMLBACGO_GetString(data, s, null, ref isInvalid));
 									FBCJICEPLED[i].LJKCCFMDCCN(a, bts);
 								}
 							}
@@ -854,12 +854,12 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 									{
 										int a = int.Parse(s.Substring("_".Length));
 										FBCJICEPLED[i].BEDGDKOCGEE(a, 
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KLMIFEKNBLL_m_id, 1, ref isInvalid),
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KBKPCNIFLAM_PlayCount, 1, ref isInvalid),
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.GPNHBMLJHGA_AssistCount, 1, ref isInvalid),
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.PONECEJICJC_RequestCount, 1, ref isInvalid),
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.OOFCCOMCOLD_LastRequestTime, 0, ref isInvalid),
-											CJAENOMGPDA_ReadInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KJEPKLLCJOD_OverLimitHelp, 0, ref isInvalid)
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KLMIFEKNBLL_m_id, 1, ref isInvalid),
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KBKPCNIFLAM_PlayCount, 1, ref isInvalid),
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.GPNHBMLJHGA_AssistCount, 1, ref isInvalid),
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.PONECEJICJC_RequestCount, 1, ref isInvalid),
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.OOFCCOMCOLD_LastRequestTime, 0, ref isInvalid),
+											CJAENOMGPDA_GetInt(data[s], PMJBKKNNNEM.PHIONIAFEIP.KJEPKLLCJOD_OverLimitHelp, 0, ref isInvalid)
 										);
 									}
 								}

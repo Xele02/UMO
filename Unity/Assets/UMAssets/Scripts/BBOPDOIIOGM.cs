@@ -40,7 +40,7 @@ public class BBOPDOIIOGM
         if(ev != null)
         {
             long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-            LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
+            LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
             CCBMJNPFPBB_EventGoDiva.KIJJHJHLBAK saveSection = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JMPNGBGNCFO_EventGoDiva.FBCJICEPLED[dbSection.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
             FJJBHOICNPO_SetSelDiva(saveSection.AFKMGCLEPGA_SelDiva);
             KCDGGHBODKE_SetFId(saveSection.LEPHEGEHHOD_SelFId);
@@ -66,7 +66,7 @@ public class BBOPDOIIOGM
                 HDOIDHKIMNG_DivaList.Add(diva);
             }
             FONCNCLEFKA_Songs.Clear();
-            if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+            if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting)
             {
                 for(int i = 1; i < 7; i++)
                 {
@@ -291,9 +291,9 @@ public class BBOPDOIIOGM
 	// // RVA: 0xF2D5F8 Offset: 0xF2D5F8 VA: 0xF2D5F8
 	private void EKKFCEJECFK(int _EKANGPODCEP_EventId)
     {
-        if(CCFENBAOPAG_LocalSaveData.FKEJBAHCMGC_SetEventId(_EKANGPODCEP_EventId))
+        if(CCFENBAOPAG_LocalSaveData.FKEJBAHCMGC_CheckEvent(_EKANGPODCEP_EventId))
         {
-            GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+            GameManager.Instance.localSave.HJMKBCFJOOH_Save();
         }
     }
 
@@ -301,21 +301,21 @@ public class BBOPDOIIOGM
 	private void LMENKAFNADG_SetHideBonusClosePopupFlag(bool LPJJLOIFCID)
     {
         CCFENBAOPAG_LocalSaveData.LMENKAFNADG_SetHideBonusClosePopupFlag(LPJJLOIFCID);
-        GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+        GameManager.Instance.localSave.HJMKBCFJOOH_Save();
     }
 
 	// // RVA: 0xF2CA9C Offset: 0xF2CA9C VA: 0xF2CA9C
 	private void PNFDENHKMGK_SetDifficulty(Difficulty.Type _AKNELONELJK_difficulty)
     {
         CCFENBAOPAG_LocalSaveData.HJHBGHMNGKL_SetDifficulty(_AKNELONELJK_difficulty);
-        GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+        GameManager.Instance.localSave.HJMKBCFJOOH_Save();
     }
 
 	// // RVA: 0xF2E0BC Offset: 0xF2E0BC VA: 0xF2E0BC
 	public void ADPFOJMHFMH_SetFreeMusicId(FreeCategoryId.Type _DEPGBBJMFED_CategoryId, int _GHBPLHBNMBK_FreeMusicId)
     {
-        CCFENBAOPAG_LocalSaveData.ACGKEJKPFIA_SetFreeMusicId(_DEPGBBJMFED_CategoryId, _GHBPLHBNMBK_FreeMusicId);
-        GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+        CCFENBAOPAG_LocalSaveData.ACGKEJKPFIA_SetSelectedSong(_DEPGBBJMFED_CategoryId, _GHBPLHBNMBK_FreeMusicId);
+        GameManager.Instance.localSave.HJMKBCFJOOH_Save();
     }
 
 	// // RVA: 0xF2E1AC Offset: 0xF2E1AC VA: 0xF2E1AC

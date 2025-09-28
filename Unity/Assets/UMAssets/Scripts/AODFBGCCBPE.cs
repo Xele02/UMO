@@ -75,8 +75,8 @@ public class AODFBGCCBPE
 	//// RVA: 0xD57EC0 Offset: 0xD57EC0 VA: 0xD57EC0
 	public void NBJNKFPEFGC()
 	{
-		GameManager.Instance.localSave.EPJOACOONAC_GetSave().PFOMECFACLL_Shop.POAFHAHACEL(OPKDAIMPJBH_ShopId, BGDCMGOPCGE());
-		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		GameManager.Instance.localSave.EPJOACOONAC_GetSave().PFOMECFACLL_Shop.POAFHAHACEL(OPKDAIMPJBH_ShopId, BGDCMGOPCGE_GetHash());
+		GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 	}
 
 	//// RVA: 0xD58134 Offset: 0xD58134 VA: 0xD58134
@@ -125,16 +125,16 @@ public class AODFBGCCBPE
 				OCGCPJHDJEN = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, IBAKPKKEDJM_month);
 				break;
 		}
-		MHKCPJDNJKI_products = FJGOKILCBJA.FKDIMODKKJD(dbShop.OPKDAIMPJBH_ShopId, dbShop.EFNMDPKEJIM_LineupId, _JHNMKKNEENE_Time);
+		MHKCPJDNJKI_products = FJGOKILCBJA.FKDIMODKKJD_GetList(dbShop.OPKDAIMPJBH_ShopId, dbShop.EFNMDPKEJIM_LineupId, _JHNMKKNEENE_Time);
 		CADENLBDAEB_IsNew = false;
-		if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().PFOMECFACLL_Shop.BGDCMGOPCGE(_OPKDAIMPJBH_ShopId) != BGDCMGOPCGE())
+		if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().PFOMECFACLL_Shop.BGDCMGOPCGE_GetHash(_OPKDAIMPJBH_ShopId) != BGDCMGOPCGE_GetHash())
 		{
 			CADENLBDAEB_IsNew = !QuestUtility.IsBeginnerQuest();
 		}
 	}
 
 	//// RVA: 0xD58868 Offset: 0xD58868 VA: 0xD58868
-	public static List<AODFBGCCBPE> FKDIMODKKJD(bool DKLOGCOPPKJ)
+	public static List<AODFBGCCBPE> FKDIMODKKJD_GetList(bool DKLOGCOPPKJ)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		List<AODFBGCCBPE> res = new List<AODFBGCCBPE>();
@@ -171,7 +171,7 @@ public class AODFBGCCBPE
 		bool res = false;
 		if(!QuestUtility.IsBeginnerQuest())
 		{
-			List<AODFBGCCBPE> l = FKDIMODKKJD(false);
+			List<AODFBGCCBPE> l = FKDIMODKKJD_GetList(false);
 			for(int i = 0; i < l.Count; i++)
 			{
 				res |= l[i].CADENLBDAEB_IsNew;
@@ -181,7 +181,7 @@ public class AODFBGCCBPE
 	}
 
 	//// RVA: 0xD58028 Offset: 0xD58028 VA: 0xD58028
-	private long BGDCMGOPCGE()
+	private long BGDCMGOPCGE_GetHash()
 	{
 		if (MHKCPJDNJKI_products.Count < 1)
 			return 0;

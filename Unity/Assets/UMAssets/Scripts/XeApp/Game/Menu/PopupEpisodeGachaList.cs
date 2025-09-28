@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 			//0xF8AA68
 			bool isEnd = false;
 			m_isGachaTransition = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() =>
+			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
 			{
 				//0xF8AA08
 				isEnd = true;

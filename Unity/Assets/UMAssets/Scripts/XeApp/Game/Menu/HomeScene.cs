@@ -195,7 +195,7 @@ namespace XeApp.Game.Menu
 					case PLADCDJLOBE.PNLNGHNHCNI.NHANNKGPAHM/*0*/:
 						SetupBeginnerLead();
 						break;
-					case PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD/*1*/:
+					case PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD_1_Other/*1*/:
 						SetupMissionLead();
 						break;
 					case PLADCDJLOBE.PNLNGHNHCNI.PAAIHBHJJMM/*2*/:
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 					case PLADCDJLOBE.PNLNGHNHCNI.IEGNGNLGLGN/*4*/:
 						SetupStorySnsLead();
 						break;
-					case PLADCDJLOBE.PNLNGHNHCNI.CCDOBDNDPIL_5/*5*/:
+					case PLADCDJLOBE.PNLNGHNHCNI.CCDOBDNDPIL_5_Event/*5*/:
 						SetupEventHomeLead();
 						break;
 				}
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			if(!MenuScene.IsAlreadyHome)
 			{
 				m_isCheckGachaProductList = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() => {
+				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() => {
 					//0x13C7AD0
 					MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Gacha, false);
 					m_isCheckGachaProductList = true;
@@ -504,7 +504,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_saveDataDirty)
 			{
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
 			if(!m_isDivaCrossFade)
 			{
@@ -969,14 +969,14 @@ namespace XeApp.Game.Menu
 							if(m_spEventCtrl.FBLGGLDPFDF_CanShowStartAdventure())
 							{
 								v = m_spEventCtrl.HEDKLHFNLFF_GetAdvId(t);
-								adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(v);
+								adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(v);
 							}
 							SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 							if(adv != null)
 							{
 								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT, new AdvSetupParam() { eventUniqueId = m_spEventCtrl.PGIIDPEGGPI_EventId });
 								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(v);
-								ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(v, OAGBCBBHMPF.DKAMMIHBINF.FCMMKJLCFAB_5);
+								ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(v, OAGBCBBHMPF.DKAMMIHBINF.FCMMKJLCFAB_5);
 								Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 								m_spEventCtrl.FGDDBFHGCGP_SetStartAdventureShown(true, t);
 								MenuScene.Instance.GotoAdventure(true);
@@ -1100,7 +1100,7 @@ namespace XeApp.Game.Menu
 									{
 										v1 = k.CAKEOPLJDAF_EndAdventureId;
 									}
-									GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(v1);
+									GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(v1);
 									if(adv != null)
 									{
 										if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(v1))
@@ -1134,7 +1134,7 @@ namespace XeApp.Game.Menu
 											}
 											//switchD_00976c24_caseD_2
 											CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(v1);
-											ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(v1, OAGBCBBHMPF.DKAMMIHBINF.DODPGHDOFIO_2);
+											ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(v1, OAGBCBBHMPF.DKAMMIHBINF.DODPGHDOFIO_2);
 											Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 											MenuScene.Instance.GotoAdventure(true);
 											MenuScene.Instance.InputDisable();
@@ -1164,10 +1164,10 @@ namespace XeApp.Game.Menu
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
-							case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha:
+							case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha:
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT_GACHABOX, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
-							case OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign:
+							case OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign:
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGN, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
@@ -1184,11 +1184,11 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 					GotoSpPage();
 					break;
-				case JBCAHMMCOKK.ALEKHDPDOEA.DMPMKBCPHMA_17:
+				case JBCAHMMCOKK.ALEKHDPDOEA.DMPMKBCPHMA_17_PresentCampaign:
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 					GotoPresentCampaignPage();
 					break;
-				case JBCAHMMCOKK.ALEKHDPDOEA.KJBGPOMJFBE_21:
+				case JBCAHMMCOKK.ALEKHDPDOEA.KJBGPOMJFBE_21_MonthlyPass:
 					OnClickPassButton();
 					break;
 				case JBCAHMMCOKK.ALEKHDPDOEA.CIGFHJNCKPE_22:
@@ -1202,7 +1202,7 @@ namespace XeApp.Game.Menu
 						OnClickBingoView(0);
 					}
 					break;
-				case JBCAHMMCOKK.ALEKHDPDOEA.CADKONMJEDA_26:
+				case JBCAHMMCOKK.ALEKHDPDOEA.CADKONMJEDA_26_EventRaid:
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 					MenuScene.Instance.LobbyButtonControl.TransitionLobbyMain();
 					break;
@@ -1251,11 +1251,11 @@ namespace XeApp.Game.Menu
 			if(ev == null)
 				return;
 			int a1 = ev.CAKEOPLJDAF_EndAdventureId;
-			if(m_balloonLeadData.CICPBBKEBNJ == PLADCDJLOBE.OCMHGKIFNHP.JFEDIMKFDNH_1)
+			if(m_balloonLeadData.CICPBBKEBNJ == PLADCDJLOBE.OCMHGKIFNHP.JFEDIMKFDNH_1_Prologue)
 				a1 = ev.GFIBLLLHMPD_StartAdventureId;
 			AdvSetupParam param = new AdvSetupParam();
 			param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(a1);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(a1);
 			if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId=param.eventUniqueId });
@@ -1274,7 +1274,7 @@ namespace XeApp.Game.Menu
 			}
 			//LAB_009789d0
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(a1);
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(a1, OAGBCBBHMPF.DKAMMIHBINF.IFEDIOFCOBC_7);
+			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(a1, OAGBCBBHMPF.DKAMMIHBINF.IFEDIOFCOBC_7);
 			Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 			MenuScene.Instance.GotoAdventure(true);
 			MenuScene.Instance.InputDisable();
@@ -1303,7 +1303,7 @@ namespace XeApp.Game.Menu
 					{
 						id = ev.GFIBLLLHMPD_StartAdventureId;
 					}
-                    GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(id);
+                    GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(id);
 					if(adv != null)
 					{
 						switch(currentEventType)
@@ -1323,7 +1323,7 @@ namespace XeApp.Game.Menu
 								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT, new AdvSetupParam() { eventUniqueId=eventUniqueId });
 								ev.FGDDBFHGCGP_SetStartAdventureShown(true, t);
 								break;
-							case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
+							case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid:
 								{
 									NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 									if(evLobby != null)
@@ -1350,7 +1350,7 @@ namespace XeApp.Game.Menu
 								break;
 						}
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(id);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(id, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(id, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						MenuScene.Instance.GotoAdventure(true);
 						MenuScene.Instance.InputDisable();
@@ -1375,10 +1375,10 @@ namespace XeApp.Game.Menu
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha:
+				case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha:
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT_GACHABOX, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
+				case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid:
 					{
 						NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 						if(evLobby == null)
@@ -1463,12 +1463,12 @@ namespace XeApp.Game.Menu
 				if(b)
 				{
 					int v = m_spEventCtrl.HEDKLHFNLFF_GetAdvId(t);
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(v);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(v);
 					if(adv != null)
 					{
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT, new AdvSetupParam() { eventUniqueId = m_spEventCtrl.PGIIDPEGGPI_EventId });
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(v);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(v, OAGBCBBHMPF.DKAMMIHBINF.DODPGHDOFIO_2);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(v, OAGBCBBHMPF.DKAMMIHBINF.DODPGHDOFIO_2);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						m_spEventCtrl.FGDDBFHGCGP_SetStartAdventureShown(true, t);
 						MenuScene.Instance.GotoAdventure(true);
@@ -1493,11 +1493,11 @@ namespace XeApp.Game.Menu
 			{
 				if(transitionId == JBCAHMMCOKK.ALEKHDPDOEA.IDAIIJEMNMP_5)
 				{
-					GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3;
+					GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3_Debut;
 				}
 				else if(transitionId == JBCAHMMCOKK.ALEKHDPDOEA.NCBMILKEFCF_6)
 				{
-					GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4;
+					GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4_Sphere_CostumeTicket;
 				}
 			}
 			else
@@ -1505,7 +1505,7 @@ namespace XeApp.Game.Menu
 				switch(transitionId)
 				{
 					case JBCAHMMCOKK.ALEKHDPDOEA.KBAKCIJPCAL_18:
-						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3;
+						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3_Debut;
 						break;
 					case JBCAHMMCOKK.ALEKHDPDOEA.KOLKHFLCBNP_19:
 						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp;
@@ -1516,7 +1516,7 @@ namespace XeApp.Game.Menu
 					default:
 						break;
 					case JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27:
-						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha;
+						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem;
 						break;
 				}
 			}
@@ -1587,8 +1587,8 @@ namespace XeApp.Game.Menu
 					yield return null;
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(GetRareBreakAdvId());
-				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(GetRareBreakAdvId(), OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
-				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(GetRareBreakAdvId()).KKPPFAHFOJI_FileId);
+				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(GetRareBreakAdvId(), OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(GetRareBreakAdvId()).KKPPFAHFOJI_FileId);
 				MenuScene.Instance.GotoAdventure(true);
 				m_isAbortIntro = true;
 				yield break;
@@ -1601,8 +1601,8 @@ namespace XeApp.Game.Menu
 					yield return null;
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(m_eventAdvId);
-				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(m_eventAdvId, OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
-				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(m_eventAdvId).KKPPFAHFOJI_FileId);
+				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(m_eventAdvId, OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(m_eventAdvId).KKPPFAHFOJI_FileId);
 				MenuScene.Instance.GotoAdventure(true);
 				m_isAbortIntro = true;
 				yield break;
@@ -1713,7 +1713,7 @@ namespace XeApp.Game.Menu
 			//LAB_013d44f8
 			if (!doTransition && !m_isAbortIntro)
 			{
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0/*0*/))
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0/*0*/))
 				{
 					if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					{
@@ -1764,7 +1764,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_013d4804
-			if (!doTransition && !m_isAbortIntro && MOEALEGLGCH.CDOCOLOKCJK() && 
+			if (!doTransition && !m_isAbortIntro && MOEALEGLGCH.CDOCOLOKCJK_Avaiable() && 
 				!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
 				m_isStartTutorial = true;
@@ -1960,7 +1960,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.DIDJLIPNCKO_6), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.DIDJLIPNCKO_6_Bingo), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 					}
 				}
@@ -2045,10 +2045,10 @@ namespace XeApp.Game.Menu
 				int d = 0;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("decolturemode_first_adv_id", 0);
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(d);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(d);
 				if(adv == null)
 				{
-					adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(1);
+					adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(1);
 				}
 				if(adv != null)
 				{
@@ -2289,7 +2289,7 @@ namespace XeApp.Game.Menu
 			richBanner.Release();
 			Destroy(richBanner.gameObject);
 			richBanner = null;
-			m_richBannerData.HJMKBCFJOOH();
+			m_richBannerData.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x97A5E0 Offset: 0x97A5E0 VA: 0x97A5E0
@@ -2347,7 +2347,7 @@ namespace XeApp.Game.Menu
 			while(!t_end_popup)
 				yield return null;
 			saveData.GBCEALJIKFN_Home.HBGKPLDGGLF(t_master_homebg.GJFPFFBAKGK_CloseAt);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			if(!t_change)
 				yield return null;
 			saveData.CNLJNGLMMHB_Options.MHACPBAPBFE_BgMode = 0;
@@ -2455,7 +2455,7 @@ namespace XeApp.Game.Menu
 		private void SetupPickup()
 		{
 			m_pickupList.Clear();
-			m_pickupList.AddRange(JBCAHMMCOKK.FKDIMODKKJD(false));
+			m_pickupList.AddRange(JBCAHMMCOKK.FKDIMODKKJD_GetList(false));
 			m_pickupBannerList.Clear();
 			m_pickupBannerList.Capacity = m_pickupList.Count;
 			m_pickupWebViewList.Clear();
@@ -2762,7 +2762,7 @@ namespace XeApp.Game.Menu
 			m_balloonLeadData = PLADCDJLOBE.HEGEKFMJNCC();
 			if(isValidBalloonLead)
 			{
-				if(m_balloonLeadData.MMMGMNAMGDF == PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD/*1*/)
+				if(m_balloonLeadData.MMMGMNAMGDF == PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD_1_Other/*1*/)
 				{
 					SetupMissionLead();
 				}
@@ -2967,7 +2967,7 @@ namespace XeApp.Game.Menu
 						//0x13C7454
 						if(label == PopupButton.ButtonLabel.SpecialPage)
 						{
-							IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+							IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(ev2 != null ? ev2.PGIIDPEGGPI_EventId : 0, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 						is_close = true;
@@ -3297,17 +3297,17 @@ namespace XeApp.Game.Menu
 			l.Add(3);
 			for(i = 0; i < l.Count; i++)
 			{
-				List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.NDALDMHNMKI(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]));
+				List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.NDALDMHNMKI(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, l[i]));
 				if(l2.Count > 0)
 				{
 					period = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(l[i], time);
 					if (l[i] > 0 || l2[0].EABMLBFHJBH_CloseAt >= period)
 					{
-						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
+						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
 					}
 					else
 					{
-						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
+						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
 					}
 				}
 			}
@@ -3320,7 +3320,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return Co.R(m_coLimitedItemList[i].col_action);
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4164 Offset: 0x6E4164 VA: 0x6E4164
@@ -3584,7 +3584,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return Co.R(m_coCurrencyItemList[i].col_action);
 			}
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E43BC Offset: 0x6E43BC VA: 0x6E43BC
@@ -3711,7 +3711,7 @@ namespace XeApp.Game.Menu
 
 			int musicId = freemusics[freemusicNum].DLAEJOBELBH_MusicId;
 			UnityEngine.Debug.Log("Music Id : "+musicId);
-			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
+			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[musicId - 1];
 			UnityEngine.Debug.Log("Wav Id : "+musicInfo.KKPAHLMJKIH_WavId);
 
 			EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();

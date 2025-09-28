@@ -289,7 +289,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 		{
 			BOMCAJJCPME data = new BOMCAJJCPME();
 			data.FBGGEFFJJHB_xor = k;
-			data.JLENMGOCHDG_Count = array[i].KMFLNILNPJD;
+			data.JLENMGOCHDG_Count = array[i].KMFLNILNPJD_Cnt;
 			if(RuntimeSettings.CurrentSettings.RemoveShopLimit)
 				data.JLENMGOCHDG_Count = -1;
 			data.GJGNOFAPFJD = array[i].JBFLEDKDFCO_cid;
@@ -324,7 +324,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 			data.LMMCMHHAGBJ_ItemCostFullId = array[i].EENKMPGFAIC;
 			data.CMEIMAMOMPI_Price = array[i].NOMHGPEKHPF;
 			data.EJHMPCJNHBP_ItemFullId = array[i].JKHDLPJHGBK;
-			data.LBCNKLPIMHL_Count = array[i].NLIMHCILPFE;
+			data.LBCNKLPIMHL_Count = array[i].NLIMHCILPFE_AfCount;
 			HMKKLPPEOHL.Add(data);
 			k *= 0xb;
 		}
@@ -374,7 +374,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 		for (int i = 0; i < array.Length; i++)
 		{
 			IHBIOGDPJIN data = new IHBIOGDPJIN();
-			data.FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
+			data.FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
 			data.KJBGCLPMLCG_OpenedAt = array[i].PDBPFJJCADD_open_at;
 			data.GJFPFFBAKGK_CloseAt = array[i].FDBNFFNFOND_close_at;
 			//if(data.GJFPFFBAKGK_CloseAt != 0)

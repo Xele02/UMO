@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				StringBuilder str = new StringBuilder(8);
-				List<int> l = LAMCONGFONF.HHCJCDFCLOB.IFHPGJGLPPF();
+				List<int> l = LAMCONGFONF.HHCJCDFCLOB.IFHPGJGLPPF_GetRankingThreshold();
 				m_rankRangeList = new List<int>(l.Count + 1);
 				m_rankRangeList.Add(0);
 				m_rankRangeList.AddRange(l);

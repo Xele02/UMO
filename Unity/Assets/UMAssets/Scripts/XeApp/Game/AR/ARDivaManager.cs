@@ -129,7 +129,7 @@ namespace XeApp.Game.AR
             int cosId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
             assetList.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
             assetList.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
-            int pId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(markerData.divaId).FPMGHDKACOF_PersonalityId;
+            int pId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).FPMGHDKACOF_PersonalityId;
             assetList.Add(string.Format("dv/ty/{0:D3}.xab", pId));
             if(markerData.motionId == ARDivaMotionId.Talk)
             {
@@ -140,7 +140,7 @@ namespace XeApp.Game.AR
             {
                 assetList.Add("mc/cmn/bs.xab");
                 assetList.Add("dv/mk/bt/cmn.xab");
-                int bId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(markerData.divaId).IDDHKOEFJFB_BodyId;
+                int bId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).IDDHKOEFJFB_BodyId;
                 assetList.Add(string.Format("mc/{0:D4}/ar{1:D3}.xab", markerData.wavId, bId));
                 assetList.Add(string.Format("mc/{0:D4}/bt{1:D3}.xab", markerData.wavId, bId));
                 assetList.Add(string.Format("mc/{0:D4}/ft.xab", markerData.wavId));
@@ -309,7 +309,7 @@ namespace XeApp.Game.AR
             AssetBundleLoadAllAssetOperationBase op; // 0x28
 
             //0x11CE90C
-            primeId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
+            primeId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
             m_divaResource.LoadBasicResource(divaId, modelId, 0);
             if(motionId == ARDivaMotionId.Talk)
             {

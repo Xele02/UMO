@@ -78,7 +78,7 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	public override bool IIEMACPEEBJ_Deserialize(byte[] _DBBGALAPFGC_bytes)
 	{
 		CEGLELHPKBO parser = CEGLELHPKBO.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
-		DGKKMKLCEDF(parser);
+		DGKKMKLCEDF_DeserializeSetting(parser);
 		{
 			KAGMCEBLHAI[] array = parser.BHGDNGHDDAC;
 			for(int i = 0; i < array.Length; i++)
@@ -109,7 +109,7 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1BA7F78 Offset: 0x1BA7F78 VA: 0x1BA7F78
-	private bool DGKKMKLCEDF(CEGLELHPKBO JMHECKKKMLK)
+	private bool DGKKMKLCEDF_DeserializeSetting(CEGLELHPKBO JMHECKKKMLK)
 	{
 		HMNCNMGCIMM pData = JMHECKKKMLK.HMBHNLCFDIH;
 		NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId = (int)pData.OBGBAOLONDD_UniqueId;

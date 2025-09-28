@@ -11,7 +11,7 @@ public class IJNOIMLNBGN
 	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x8DAB5C DEMEPMAEJOO 0x8DAB64 HIGKAIDMOKN
 	public long PDBPFJJCADD_open_at { get { return PCLNFCNIECH_OpenAtCrypted; } set { PCLNFCNIECH_OpenAtCrypted = value; } } //0x8DAB6C FOACOMBHPAC 0x8DAB74 NBACOBCOJCA
 	public long FDBNFFNFOND_close_at { get { return HHPIJHADAOB_CloseAtCrypted; } set { HHPIJHADAOB_CloseAtCrypted = value; } } //0x8DAB84 BPJOGHJCLDJ 0x8DAB8C NLJKMCHOCBK
-	public string KLMPFGOCBHC_description { get { return PMKLGDOEFNM_Desc_; } set { PMKLGDOEFNM_Desc_ = value; } } //0x8DAB9C BGJNIABLBDB 0x8DABA4 HFBJLALGKOM
+	public string KLMPFGOCBHC_description { get { return PMKLGDOEFNM_Desc_; } set { PMKLGDOEFNM_Desc_ = value; } } //0x8DAB9C BGJNIABLBDB_get_description 0x8DABA4 HFBJLALGKOM
 
 	// // RVA: 0x8DABAC Offset: 0x8DABAC VA: 0x8DABAC
 	public static void KHEKNNFCAOI_Init(string BlockName, List<IJNOIMLNBGN> NNDGIAEFMOG, HMNJADGBKFA JMHECKKKMLK)

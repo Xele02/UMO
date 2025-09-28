@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			}
 			if(unitData != null)
 			{
-				unitData.HCDGELDHFHB();
+				unitData.HCDGELDHFHB_UpdateStatus();
 				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48/*48*/, 2, false);
 			}
 		}
@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 				MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId - 1];
 				if(dbScene.PPEGAKEIEGM_Enabled == 2)
 				{
-					if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked())
+					if(playerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked)
 					{
 						if(!playerData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed)
 						{
@@ -769,7 +769,7 @@ namespace XeApp.Game.Menu
 			data.KHEKNNFCAOI_Init(divaId);
 			if (data.AHHJLDLAPAN_DivaId == 0)
 				return null;
-			data.HCDGELDHFHB(false);
+			data.HCDGELDHFHB_UpdateStatus(false);
 			return data;
 		}
 

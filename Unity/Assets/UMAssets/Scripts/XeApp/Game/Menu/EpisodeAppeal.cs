@@ -134,15 +134,15 @@ namespace XeApp.Game.Menu
 			if(episodeId == 0 || sceneId == 0)
 				yield break;
 			IsAppeal = true;
-			List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(episodeId);
+			List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetList(episodeId);
 			for(int i = 0; i < l.Count; i++)
 			{
 				AppealType a = AppealType.None;
-				if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					a = AppealType.Diva;
 				}
-				else if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+				else if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 				{
 					a = AppealType.Valkyrie;
 				}
@@ -211,7 +211,7 @@ namespace XeApp.Game.Menu
 						//LAB_0127b510
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
 						m_episodeHeaderTextInstance.text = bk.GetMessageByLabel("episode_appeal_text_001");
-						m_episodeNameTextInstance.text = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
+						m_episodeNameTextInstance.text = PIGBBNDPPJC.EJOJNFDHDHN_GetName(episodeId);
 						m_modelInterface.SetLog(dbScene.AIHCEGFANAM_SerieAttr);
 						m_mainCamera = m_modelInterface.GetComponentInChildren<Camera>(true);
 					}
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 			overrideClipList.Add(DivaResource.MotionOverrideClipKeyResource.Set("diva_{0:D3}_appeal_loop_{1}", "diva_cmn_appeal_loop", divaId, operationDiva, m_assetName));
 			m_divaObject.OverrideAnimations(overrideClipList);
 			AssetBundleManager.UnloadAssetBundle(m_bundleName.ToString(), false);
-			m_cosNameTextInstance.text = CKFGMNAIBNG.EJOJNFDHDHN_GetCostumeName(divaId, cosId);
+			m_cosNameTextInstance.text = CKFGMNAIBNG.EJOJNFDHDHN_GetName(divaId, cosId);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D9D3C Offset: 0x6D9D3C VA: 0x6D9D3C
@@ -524,7 +524,7 @@ namespace XeApp.Game.Menu
 			}
 			while(true)
 			{
-				if(m_valkyrieObj.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num && m_valkyrieObj.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+				if(m_valkyrieObj.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num && m_valkyrieObj.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
 				{
 					SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
 					IsFormChenge = false;

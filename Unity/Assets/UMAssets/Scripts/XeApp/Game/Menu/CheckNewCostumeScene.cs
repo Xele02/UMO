@@ -180,7 +180,7 @@ namespace XeApp.Game.Menu
 			m_divaObject.Initialize(m_divaResource, divaId, false);
 			m_divaObject.setAdjuster();
 			m_divaObject.SetEnableEffect(true, true);
-			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
+			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
 			m_bundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(m_bundleName.ToString());
 			yield return operationDiva;

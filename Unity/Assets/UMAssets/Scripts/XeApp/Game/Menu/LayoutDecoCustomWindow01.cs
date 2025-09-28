@@ -452,7 +452,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19E5FF0 Offset: 0x19E5FF0 VA: 0x19E5FF0
 		public void TabCharaChenge(DecoCustomDecorator.TabType tab)
 		{
-			NCPPAHHCCAO.FKDIMODKKJD();
+			NCPPAHHCCAO.FKDIMODKKJD_GetList();
 			int idx = 0;
 			if (tab >= DecoCustomDecorator.TabType.pose1 && tab <= DecoCustomDecorator.TabType.pose3)
 				idx = (int)tab - 5;

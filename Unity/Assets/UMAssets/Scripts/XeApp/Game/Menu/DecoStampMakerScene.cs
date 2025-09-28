@@ -691,7 +691,7 @@ namespace XeApp.Game.Menu
 		private List<LayoutDecoCustomWindow01.SelectItemData> PossetionCharList()
 		{
 			List<LayoutDecoCustomWindow01.SelectItemData> res = new List<LayoutDecoCustomWindow01.SelectItemData>();
-			List<NCPPAHHCCAO> l = NCPPAHHCCAO.FKDIMODKKJD();
+			List<NCPPAHHCCAO> l = NCPPAHHCCAO.FKDIMODKKJD_GetList();
 			for(int i = 0; i < l.Count; i++)
 			{
 				if(l[i].BFINGCJHOHI_cnt > 0)
@@ -752,7 +752,7 @@ namespace XeApp.Game.Menu
 		private List<LayoutDecoCustomWindow01.SelectItemData> CreateDecoShopStampPartsList(EKLNMHFCAOI.FKGCBLHOOCL_Category category)
 		{
 			List<LayoutDecoCustomWindow01.SelectItemData> res = new List<LayoutDecoCustomWindow01.SelectItemData>();
-			List<AODFBGCCBPE> l = AODFBGCCBPE.FKDIMODKKJD(false);
+			List<AODFBGCCBPE> l = AODFBGCCBPE.FKDIMODKKJD_GetList(false);
 			AODFBGCCBPE a = l.Find((AODFBGCCBPE item) =>
 			{
 				//0x158C3E0

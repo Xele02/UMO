@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MOGAKDMDCJB_Gerwalk;
 			if(battroid.activeSelf)
 				return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_Battroid;
-			return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num;
+			return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num;
 		}
 
 		// // RVA: 0x127E5A4 Offset: 0x127E5A4 VA: 0x127E5A4

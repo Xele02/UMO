@@ -203,7 +203,7 @@ public class LFPOMKLKHPB
 		float size = 0;
 		for(int i = 0; i < _KGHAJGGMPKL_files.Count; i++)
 		{
-			int s = IJPPHABNGJH_GetCacheSize(_KGHAJGGMPKL_files[i].LBALIFCJKON_Idx, _KGHAJGGMPKL_files[i].HHPEMFKDHLK_FileHash);
+			int s = IJPPHABNGJH_GetCacheSize(_KGHAJGGMPKL_files[i].LBALIFCJKON_Idx, _KGHAJGGMPKL_files[i].HHPEMFKDHLK_Hash);
 			size += ((s + 4095) / 4096) * 4096;
 		}
 		size *= 10.0f / 1024 / 1024;
@@ -220,7 +220,7 @@ public class LFPOMKLKHPB
 			PLOOEECNHFB_IsDone = true;
 			return;
 		}
-		JHHBAFKMBDL.HHCJCDFCLOB.NKIKBOJOCNN_ShowDldSizePopup(() =>
+		JHHBAFKMBDL.HHCJCDFCLOB.NKIKBOJOCNN_ShowInstallFileSize(() =>
 		{
 			//0xD70210
 			PLOOEECNHFB_IsDone = true;

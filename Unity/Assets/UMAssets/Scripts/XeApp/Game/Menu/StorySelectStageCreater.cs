@@ -587,7 +587,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A84D6C Offset: 0x1A84D6C VA: 0x1A84D6C
 		public void Initialize()
 		{
-			m_viewDataList = LIEJFHMGNIA.FKDIMODKKJD(page, true, true, true);
+			m_viewDataList = LIEJFHMGNIA.FKDIMODKKJD_GetList(page, true, true, true);
 			LIEJFHMGNIA.DJMAJKMBJNE(m_viewDataList);
 			LIEJFHMGNIA.OCHGOAKIPPM(m_viewDataList);
 		}
@@ -1639,7 +1639,7 @@ namespace XeApp.Game.Menu
 						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						for (int i = 1; i - 1 <= 5; i++)
 						{
-							List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(i, time, true, false, false, false);
+							List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD_GetList(i, time, true, false, false, false);
 							IBJAKJJICBC i_ = l.Find((IBJAKJJICBC x) =>
 							{
 								//0x1A8A874

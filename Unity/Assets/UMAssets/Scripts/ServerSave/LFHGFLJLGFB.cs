@@ -6,7 +6,7 @@ using XeSys;
 public class LFHGFLJLGFB { }
 public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	private const int ODDKIBLJKPI = 50;
 	private int ENOBDCFHELD; // 0x24
 	private int FCEJCHGLFGN; // 0x28
@@ -143,10 +143,10 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 			return false;
 		for(int i = 0; i < FNDJLOMNECG_PlayerList.Count; i++)
 		{
-			if (other.FNDJLOMNECG_PlayerList.Find((CEBFFLDKAEC_SecureInt JKDKBCPFFEL) =>
+			if (other.FNDJLOMNECG_PlayerList.Find((CEBFFLDKAEC_SecureInt _JKDKBCPFFEL_o) =>
 			 {
 				 //0xD6C70C
-				 return JKDKBCPFFEL.DNJEJEANJGL_Value == FNDJLOMNECG_PlayerList[i].DNJEJEANJGL_Value;
+				 return _JKDKBCPFFEL_o.DNJEJEANJGL_Value == FNDJLOMNECG_PlayerList[i].DNJEJEANJGL_Value;
 			 }) == null)
 				return false;
 		}

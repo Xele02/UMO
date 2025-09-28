@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xF03078 Offset: 0xF03078 VA: 0xF03078
 		public void Enter(int episodeId)
 		{
-			m_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(episodeId);
+			m_list = LGMEPLIJLNB.FKDIMODKKJD_GetList(episodeId);
 			for(int i = 0; i < 12; i++)
 			{
 				if(i < m_list.Count)

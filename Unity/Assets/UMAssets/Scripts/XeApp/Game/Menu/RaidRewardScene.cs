@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 				raidResultCannonLayoutController.onClickOkayButton = OnClickRaidDamageResultEnd;
 				raidResultCannonLayoutController.Setup(p);
 				yield return this.StartCoroutineWatched(Co_SetBossBg(g.HPPDFBKEJCG_BgId));
-				PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				bool done = false;
 				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), 
 					ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), 
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1816464 Offset: 0x1816464 VA: 0x1816464
 		private void OnClickRaidDamageResultEnd()
 		{
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(ev.KONJMFICNJJ_RewardsInfo == null)
 			{
 				this.StartCoroutineWatched(Co_RaidBossHelp());
@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 
 			//0x1819BD4
 			MessageBank bank = MessageManager.Instance.GetBank("menu");
-			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(cont.LMIFOCDCNAI())
 			{
 				if(cont.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id)

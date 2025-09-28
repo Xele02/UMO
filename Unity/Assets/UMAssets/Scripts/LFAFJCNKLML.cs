@@ -30,7 +30,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 		// RVA: 0xD68DFC Offset: 0xD68DFC VA: 0xD68DFC
 		public FHLDDEKAJKI()
 		{
-			FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
+			FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
 			DNBFMLBNAEE_point = 0;
 			ACGLMKEBMDL_uc = 0;
 			DACOCNLBMAG_UnlockCondIdx = 0;
@@ -39,7 +39,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 
 	public enum EJOEMKJOCMH
 	{
-		CCAPCGPIIPF = 0,
+		CCAPCGPIIPF_0_Normal = 0,
 		HHJFDNIPODD_1 = 1,
 		LLCLFAACPLH = 2,
 	}
@@ -85,7 +85,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 		{
 			if(l[i].JLKPGDEKPEO_IsHave)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(_AHHJLDLAPAN_DivaId, l[i].JPIDIENBGKH_CostumeId);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(_AHHJLDLAPAN_DivaId, l[i].JPIDIENBGKH_CostumeId);
 				if (cosInfo.LLLCMHENKKN_LevelMax > 0)
 				{
 					LFAFJCNKLML data = new LFAFJCNKLML();
@@ -133,7 +133,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	}
 
 	//// RVA: 0xD68ECC Offset: 0xD68ECC VA: 0xD68ECC
-	public static List<LFAFJCNKLML> FKDIMODKKJD(List<int> _NBIGLBMHEDC_DivaList)
+	public static List<LFAFJCNKLML> FKDIMODKKJD_GetList(List<int> _NBIGLBMHEDC_DivaList)
 	{
 		List<LFAFJCNKLML> res = new List<LFAFJCNKLML>(500);
 		for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
@@ -206,7 +206,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 				}
 				_NGHKJOEDLIP_Settings.GLCLFMGPMAN_ItemId = 50000;
 				break;
-			case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.DDGNLCJGFJF_Object/*2*/:
+			case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.DDGNLCJGFJF_2_Object/*2*/:
 			case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.AJKDOLDGHOP_Object2/*3*/:
 				_NGHKJOEDLIP_Settings.GLCLFMGPMAN_ItemId = data.KJNAHLOODKD_Value[0];
 				_NGHKJOEDLIP_Settings.NANNGLGOFKH_value = data.KJNAHLOODKD_Value[1];
@@ -250,7 +250,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 				{
 					if(OJBOEMCJPHJ != EJOEMKJOCMH.HHJFDNIPODD_1/*1*/)
 					{
-						if (OJBOEMCJPHJ != EJOEMKJOCMH.CCAPCGPIIPF/*0*/)
+						if (OJBOEMCJPHJ != EJOEMKJOCMH.CCAPCGPIIPF_0_Normal/*0*/)
 							return;
 						_NGHKJOEDLIP_Settings.AKNGHELNIHO_ItemName = rewardStr;
 						_NGHKJOEDLIP_Settings.BONMCBFDMJE_ItemNum = masterBk.GetMessageByLabel(str.ToString()) + "\n" + _NGHKJOEDLIP_Settings.BONMCBFDMJE_ItemNum;
@@ -298,7 +298,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	}
 
 	//// RVA: 0xD6A224 Offset: 0xD6A224 VA: 0xD6A224
-	public bool CDOCOLOKCJK(int _ANAJIAENLNB_lv)
+	public bool CDOCOLOKCJK_Avaiable(int _ANAJIAENLNB_lv)
 	{
 		if (_ANAJIAENLNB_lv <= IBIJFBELLBH_Unlock)
 			return true;
@@ -306,9 +306,9 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	}
 
 	//// RVA: 0xD6A2E0 Offset: 0xD6A2E0 VA: 0xD6A2E0
-	public bool CDOCOLOKCJK()
+	public bool CDOCOLOKCJK_Avaiable()
 	{
-		return CDOCOLOKCJK(GKIKAABHAAD_Level);
+		return CDOCOLOKCJK_Avaiable(GKIKAABHAAD_Level);
 	}
 
 	//// RVA: 0xD6A304 Offset: 0xD6A304 VA: 0xD6A304

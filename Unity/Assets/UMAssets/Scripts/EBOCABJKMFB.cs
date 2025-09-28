@@ -69,7 +69,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 				}
 			}
 		}
-		MDEIKCBEHHC = "";
+		MDEIKCBEHHC_Kakutei = "";
 		if(data.BBAJPINMOEP_Contains("kakutei"))
 		{
 			int kakutei = (int)data["kakutei"];
@@ -81,7 +81,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 					//0x15023C8
 					return Convert.ToChar(_MABBBOEAPAA_p.Value[0] + 65248).ToString();
 				});
-				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9949, s);
+				MDEIKCBEHHC_Kakutei = string.Format(JpStringLiterals.StringLiteral_9949, s);
 			}
 			if(kakutei == 4)
 			{
@@ -91,7 +91,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 					//0x1502440
 					return Convert.ToChar(_MABBBOEAPAA_p.Value[0] + 65248).ToString();
 				});
-				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9950, s);
+				MDEIKCBEHHC_Kakutei = string.Format(JpStringLiterals.StringLiteral_9950, s);
 			}
 		}
 		MFICPBJPCCJ_GachaBgId = 0;

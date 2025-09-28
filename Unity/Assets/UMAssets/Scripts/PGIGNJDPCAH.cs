@@ -18,7 +18,7 @@ public class PGIGNJDPCAH
     public enum FELLIEJEPIJ
     {
         JBAIEADLAGH_0 = 0,
-        FFPANKMKAPD = 1,
+        FFPANKMKAPD_1_Title = 1,
         NADCOIBMMJM = 2,
         ONHOCOBCINO_3 = 3,
         ANGNLABPOIH_4 = 4,
@@ -67,8 +67,8 @@ public class PGIGNJDPCAH
 				EPDEBBDHFCH = FELLIEJEPIJ.JBAIEADLAGH_0/*0*/;
 				IPJMPBANBPP_Enabled = true;
 				break;
-			case FELLIEJEPIJ.FFPANKMKAPD/*1*/:
-				EPDEBBDHFCH = FELLIEJEPIJ.FFPANKMKAPD/*1*/;
+			case FELLIEJEPIJ.FFPANKMKAPD_1_Title/*1*/:
+				EPDEBBDHFCH = FELLIEJEPIJ.FFPANKMKAPD_1_Title/*1*/;
 				IPJMPBANBPP_Enabled = false;
 				return;
 			case FELLIEJEPIJ.NADCOIBMMJM/*2*/:

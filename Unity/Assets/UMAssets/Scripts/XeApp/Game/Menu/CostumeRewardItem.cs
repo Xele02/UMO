@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 			m_costume_id = costumeId;
 			m_costume_model_id = costumeModelId;
 			LFAFJCNKLML.GFIPDFPIKIJ a;
-			LFAFJCNKLML.HKKKKFLBFJN(data, rank, out a, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF/*0*/);
+			LFAFJCNKLML.HKKKKFLBFJN(data, rank, out a, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF_0_Normal/*0*/);
 			m_item_name.text = a.AKNGHELNIHO_ItemName;
 			m_item_num.text = a.BONMCBFDMJE_ItemNum;
 			m_rank_num.StartChildrenAnimGoStop(rank, rank);

@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 				yield return new WaitWhile(() =>
 				{
 					//0x164F14C
-					if(m_Object.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num && m_Object.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+					if(m_Object.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num && m_Object.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
 					{
 						SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
 						return false;

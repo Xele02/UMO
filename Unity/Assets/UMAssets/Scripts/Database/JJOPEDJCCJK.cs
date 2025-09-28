@@ -74,7 +74,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1355398 Offset: 0x1355398 VA: 0x1355398
-	public float ANADOECHNEO_GetLevelAndExp(float MEKJFFHMKOB, out int _CIEOBFIIPLD_Level)
+	public float ANADOECHNEO_GetLevelAndExp(float _MEKJFFHMKOB_TotalExp, out int _CIEOBFIIPLD_Level)
 	{
 		float res = 0;
 		_CIEOBFIIPLD_Level = 1;
@@ -82,11 +82,11 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 		{
 			_CIEOBFIIPLD_Level = i;
 			float v = res + (HLFGFGPCKNP_PExp[i] ^ MLMGJJAGKDL_PExpKey[i]);
-			if (MEKJFFHMKOB < v)
+			if (_MEKJFFHMKOB_TotalExp < v)
 				break;
 			res = v;
 		}
-		return MEKJFFHMKOB - res;
+		return _MEKJFFHMKOB_TotalExp - res;
 	}
 
 	// // RVA: 0x1355510 Offset: 0x1355510 VA: 0x1355510
@@ -163,7 +163,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1355B30 Offset: 0x1355B30 VA: 0x1355B30
-	public float OLJFPKPHCJD_GetDivaExpAndLevel(float MEKJFFHMKOB, out int _CIEOBFIIPLD_Level)
+	public float OLJFPKPHCJD_GetDivaExpAndLevel(float _MEKJFFHMKOB_TotalExp, out int _CIEOBFIIPLD_Level)
 	{
 		int res = 0;
 		int b = 0;
@@ -173,12 +173,12 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 			_CIEOBFIIPLD_Level = i;
 			int v = LMFNPINMOGK_Diva[i] ^ JNIHDCMHINF_DivaKey[i];
 			res = b;
-			if (MEKJFFHMKOB < v)
+			if (_MEKJFFHMKOB_TotalExp < v)
 				break;
 			b = v;
 		}
 		_CIEOBFIIPLD_Level = _CIEOBFIIPLD_Level + 1;
-		return MEKJFFHMKOB - res;
+		return _MEKJFFHMKOB_TotalExp - res;
 	}
 
 	// // RVA: 0x1355CB0 Offset: 0x1355CB0 VA: 0x1355CB0

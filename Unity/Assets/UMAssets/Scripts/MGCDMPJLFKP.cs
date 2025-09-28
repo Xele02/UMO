@@ -28,7 +28,7 @@ public class MGCDMPJLFKP
 	//public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x1316518 Offset: 0x1316518 VA: 0x1316518
-	public void PCODDPDFLHK()
+	public void PCODDPDFLHK_Load()
 	{
 		DHDCHLAIAMP.Clear();
 		if(File.Exists(ELLBAAFKDCH_Filename))
@@ -109,5 +109,5 @@ public class MGCDMPJLFKP
 	}
 
 	//// RVA: 0x13174A4 Offset: 0x13174A4 VA: 0x13174A4
-	//public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
+	//public void JCHLONCMPAJ_Clear(bool _OGBEGDKPDGK_NeedSave) { }
 }

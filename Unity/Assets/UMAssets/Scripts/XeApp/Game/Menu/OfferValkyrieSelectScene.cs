@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 			m_view.JBHBEKJHLFE(formationId, selectformationIndex, m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id);
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHMOGDDPIFL_LastVfId = m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.CPKMLLNADLJ_Serie = m_SelectSeries + 1;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			MenuScene.Instance.Mount(TransitionUniqueId.OFFERSELECT_OFFERFORMATION, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			this.StartCoroutineWatched(Co_LeaveLayout());
 		}

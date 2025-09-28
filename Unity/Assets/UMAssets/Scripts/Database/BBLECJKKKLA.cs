@@ -32,7 +32,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 		}
 
 		// // RVA: 0xF2C628 Offset: 0xF2C628 VA: 0xF2C628
-		public int NKOHMLHLJGL(int _BMBBDIAEOMP_i)
+		public int NKOHMLHLJGL_GetItemCount(int _BMBBDIAEOMP_i)
 		{
 			return OMALMJLHABC_SetContent[_BMBBDIAEOMP_i * 2 + 1] ^ FBGGEFFJJHB_xor;
 		}
@@ -86,7 +86,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 			{
 				data.OMALMJLHABC_SetContent[j] = array2[j] ^ FBGGEFFJJHB_xor;
 			}
-			data.KEJMJPHFFOJ_Max = array[i].KEJMJPHFFOJ;
+			data.KEJMJPHFFOJ_Max = array[i].KEJMJPHFFOJ_Max;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

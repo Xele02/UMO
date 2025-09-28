@@ -36,7 +36,7 @@ public class IGCPCHNCJCF
 	}
 
 	// // RVA: 0x11F2F98 Offset: 0x11F2F98 VA: 0x11F2F98
-	public KBPDNHOKEKD_ProductId LBDOLHGDIEB(int _KAPMOPMDHJE_label)
+	public KBPDNHOKEKD_ProductId LBDOLHGDIEB_Find(int _KAPMOPMDHJE_label)
     {
         return MHKCPJDNJKI_products.Find((KBPDNHOKEKD_ProductId _GHPLINIACBB_x) =>
         {

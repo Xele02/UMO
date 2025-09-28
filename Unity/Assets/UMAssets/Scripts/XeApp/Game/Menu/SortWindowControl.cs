@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 				{
 					PopupSortMenu s = control.Content as PopupSortMenu;
 					s.ApplyLocalSaveData(ref GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty);
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 					if(okCallBack != null)
 						okCallBack(s);
 				}

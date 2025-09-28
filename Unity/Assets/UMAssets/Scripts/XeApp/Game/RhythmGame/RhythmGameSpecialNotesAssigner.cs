@@ -57,7 +57,7 @@ namespace XeApp.Game.RhythmGame
 				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_rate);
 				for(int i = 0; i < itemWeightTable.Count; i++)
 				{
-					if(itemSet.FKNBLDPIPMC_GetItemId(i) == 0)
+					if(itemSet.FKNBLDPIPMC_GetItemCode(i) == 0)
 					{
 						itemWeightTable[i] = 0;
 					}
@@ -74,11 +74,11 @@ namespace XeApp.Game.RhythmGame
 			KLJCBKMHKNK.HHMPIIILOLD[] array = null;
 			if (step == 3)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA_Diva, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE_DivaFail, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL_AwakenDiva};
+				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA_2_Diva, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE_DivaFail, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL_AwakenDiva};
 			}
 			else if(step == 2)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO_Valkyrie, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN_ValkyrieFail };
+				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO_1_Valkyrie, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN_ValkyrieFail };
 			}
 			else if(step == 1)
 			{
@@ -127,7 +127,7 @@ namespace XeApp.Game.RhythmGame
 			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				numItems = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
+				numItems = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC_GetNumItems((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			}
 			List<DNAEGJGAKEI_DropItemInfo> itemsToSpawn = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.JMHHEPMILHA_GetItemsToSpawn(musicinfo, (int)Database.Instance.gameSetup.musicInfo.difficultyType, (int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, numItems, this.OnRareItemRandomLot, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 			if (itemsToSpawn == null || itemsToSpawn.Count < 1)
@@ -281,7 +281,7 @@ namespace XeApp.Game.RhythmGame
 			if(itemWeightTable != null)
 			{
 				int a = LotsItem(itemWeightTable);
-				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC_GetItemId(a), a | 0x40000000);
+				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC_GetItemCode(a), a | 0x40000000);
 				if(rateSet.DOOGFEGEKLG_max[a] != 0)
 				{
 					itemLotCountList[a]++;
@@ -333,7 +333,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA_GetNormalRateId(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
                     if (ev != null)
 					{
 						v = ev.NCHKBINKKBH_UpdateDropRateSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);
@@ -357,7 +357,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF_NormalSetId;
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
                     if (ev != null)
 					{
 						v = ev.JDFHIHPPAHN_UpdateDropItemSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);
@@ -366,7 +366,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).MGLDIOILOFF;
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).MGLDIOILOFF_NormalSetId;
 			}
 			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.NMGAAKPJPLB(v);
 		}

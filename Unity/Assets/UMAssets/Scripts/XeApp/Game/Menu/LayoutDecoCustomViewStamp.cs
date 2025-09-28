@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19E3630 Offset: 0x19E3630 VA: 0x19E3630
 		public void SetTexCharactor(int stampId)
 		{
-			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+			NCPPAHHCCAO n = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 			{
 				//0x19E3DF8
 				return stampId == item.PPFNGGCBJKC_id;

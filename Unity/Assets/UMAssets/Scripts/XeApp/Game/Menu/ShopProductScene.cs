@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC42FD4 Offset: 0xC42FD4 VA: 0xC42FD4
-		// private void OnClickTabsButton(EKLNMHFCAOI.FKGCBLHOOCL type) { }
+		// private void OnClickTabsButton(EKLNMHFCAOI.FKGCBLHOOCL_Category type) { }
 
 		// // RVA: 0xC43150 Offset: 0xC43150 VA: 0xC43150
 		private void OnBuyItem(int value, FJGOKILCBJA view)
@@ -574,7 +574,7 @@ namespace XeApp.Game.Menu
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
             int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
 			int a = 0;
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 			{
 				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem.CDENCMNHNGA_table[id - 1].EMIJNAFJFJO_expir;
 			}
@@ -718,7 +718,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC430D0 Offset: 0xC430D0 VA: 0xC430D0
-		// private void TabChengedItemCheck(EKLNMHFCAOI.FKGCBLHOOCL type) { }
+		// private void TabChengedItemCheck(EKLNMHFCAOI.FKGCBLHOOCL_Category type) { }
 
 		// // RVA: 0xC43FA8 Offset: 0xC43FA8 VA: 0xC43FA8
 		private void OnClickSortButton()
@@ -940,7 +940,7 @@ namespace XeApp.Game.Menu
 						if(m_rarityMax >= 1 && m_rarityMax > sceneData.JKGFBFPIMGA_Rarity)
 							continue;
 						GCIJNCFDNON_SceneInfo d2 = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneData.BCCHOBPJJKE_SceneId - 1];
-						if(PopupSortMenu.IsHaveFilterOn(d2.CGKAEMGLHNK_IsUnlocked(), (uint)sp.EGBPCFOGOCK_HaveFilter) && 
+						if(PopupSortMenu.IsHaveFilterOn(d2.FJODMPGPDDD_Unlocked, (uint)sp.EGBPCFOGOCK_HaveFilter) && 
 							PopupSortMenu.IsRarityFilterOn(d2.EKLIPGELKCL_Rarity, (uint)sp.ACCHOFLOOEC_RarityFilter) && 
 							PopupSortMenu.IsAttributeFilterOn(d2.JGJFIJOCPAG_SceneAttr, (uint)sp.BOFFOHHLLFG_AttributeFilter) && 
 							PopupSortMenu.IsSerializeFilterOn((int)d2.AIHCEGFANAM_SerieAttr, (uint)sp.BBIIHLNBHDE_SerieFilter) && 

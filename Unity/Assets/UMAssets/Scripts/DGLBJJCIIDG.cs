@@ -54,10 +54,10 @@ public class EMGOCNMMPHC : DGLBJJCIIDG
 	public sbyte KCLBICAILCC_Crypted = JFOFMKBJBBE_False; // 0x4E
 
 	public int KNIFCANOHOC_score { get { return NBOLDNMPJFG_scoreCrypted ^ FBGGEFFJJHB_xor; } set { NBOLDNMPJFG_scoreCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1309A50 EOJEPLIPOMJ 0x1309A64 AEEMBPAEAAI
-	public int BGJDHCEOIDB_ClassRank { get { return BBJHIKDJEJL_Crypted ^ FBGGEFFJJHB_xor; } set { BBJHIKDJEJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309A78 OCKGMLNANOK 0x1309A8C NINDNKAPBLB
-	public int IOOBNLAHLEJ_WinBonus { get { return JNLBGAKBBMH_Crypted ^ FBGGEFFJJHB_xor; } set { JNLBGAKBBMH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AA0 PILACCFMMMP 0x1309AB4 LDNPPCPAFEO
-	public int FOFJCOHAFCG_Ec { get { return CPHLLEKLFFG_Crypted ^ FBGGEFFJJHB_xor; } set { CPHLLEKLFFG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AC8 MLACLHMAMKE 0x1309ADC JIJCJGDAJOL
-	public int CLEFJPKPOGB_Ep { get { return FOKECLCJLJL_Crypted ^ FBGGEFFJJHB_xor; } set { FOKECLCJLJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AF0 PLBDHPIJHFI 0x1309B04 OENPAHPKEGE
+	public int BGJDHCEOIDB_BattleClass { get { return BBJHIKDJEJL_Crypted ^ FBGGEFFJJHB_xor; } set { BBJHIKDJEJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309A78 OCKGMLNANOK 0x1309A8C NINDNKAPBLB
+	public int IOOBNLAHLEJ_WinPoint { get { return JNLBGAKBBMH_Crypted ^ FBGGEFFJJHB_xor; } set { JNLBGAKBBMH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AA0 PILACCFMMMP 0x1309AB4 LDNPPCPAFEO
+	public int FOFJCOHAFCG_EpisodeCnt { get { return CPHLLEKLFFG_Crypted ^ FBGGEFFJJHB_xor; } set { CPHLLEKLFFG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AC8 MLACLHMAMKE 0x1309ADC JIJCJGDAJOL
+	public int CLEFJPKPOGB_EpBonusCnt { get { return FOKECLCJLJL_Crypted ^ FBGGEFFJJHB_xor; } set { FOKECLCJLJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309AF0 PLBDHPIJHFI 0x1309B04 OENPAHPKEGE
 	public int KDNCMJBDCLE_ExBattleScore { get { return NBJNFGJFANG_Crypted ^ FBGGEFFJJHB_xor; } set { NBJNFGJFANG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309B18 LAIOBMGCNAF 0x1309B2C AJJOLHOJABN
 	public int LDIODNEADGG_Hs { get { return HJBFNENMJPG_Crypted ^ FBGGEFFJJHB_xor; } set { HJBFNENMJPG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1309B40 EHCHFFLBLJA 0x1309B54 CHNBHKLHEDA
 	public bool FFHMPNGJCLK_NewRecord { get { return EJPAGBKMOOG_Crypted == CNECJGKECHK_True; } set { EJPAGBKMOOG_Crypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x1309B68 CMHNAFLEENF 0x1309B7C OEPHKBJBDPO
@@ -75,10 +75,10 @@ public class EMGOCNMMPHC : DGLBJJCIIDG
     {
         base.KHEKNNFCAOI_Init(_PPFNGGCBJKC_id, _GOIKCKHMBDL_FreeMusicId, 0, 0, 0, 0);
         KNIFCANOHOC_score = 0;
-        BGJDHCEOIDB_ClassRank = 0;
-        IOOBNLAHLEJ_WinBonus = 0;
-        FOFJCOHAFCG_Ec = 0;
-        CLEFJPKPOGB_Ep = 0;
+        BGJDHCEOIDB_BattleClass = 0;
+        IOOBNLAHLEJ_WinPoint = 0;
+        FOFJCOHAFCG_EpisodeCnt = 0;
+        CLEFJPKPOGB_EpBonusCnt = 0;
         KDNCMJBDCLE_ExBattleScore = 0;
         LDIODNEADGG_Hs = 0;
         FFHMPNGJCLK_NewRecord = false;

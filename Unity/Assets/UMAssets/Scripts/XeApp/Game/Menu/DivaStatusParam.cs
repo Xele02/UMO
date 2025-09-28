@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 			m_sceneList.Clear();
 			m_divaData = null;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.EPJPNFIMODP_DivaStatusPage = m_statusDispIndex;
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 		}
 
 		// // RVA: 0x126835C Offset: 0x126835C VA: 0x126835C

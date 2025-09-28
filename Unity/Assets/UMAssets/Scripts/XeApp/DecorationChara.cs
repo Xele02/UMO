@@ -153,7 +153,7 @@ namespace XeApp
 			}
 			viewIntimacyData = new JJOELIOGMKK_DivaIntimacyInfo();
 			viewIntimacyData.KHEKNNFCAOI_Init(Setting.viewDecoItemData.FPCGPGJOKNH_CharaId);
-			viewIntimacyData.HCDGELDHFHB(false);
+			viewIntimacyData.HCDGELDHFHB_UpdateStatus(false);
 		}
 
 		//// RVA: 0x1AC40DC Offset: 0x1AC40DC VA: 0x1AC40DC Slot: 5

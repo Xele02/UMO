@@ -37,10 +37,10 @@ namespace XeApp.Game.Menu
 			if(episodeInfoList == null)
 			{
 				m_view = new HBCPJANGOLB();
-				m_view.OBKGEDCKHHE();
+				m_view.OBKGEDCKHHE_Init();
 				m_episodeDataList = new List<HGBOODNMNFM>();
 				m_episodeDataList = m_view.DJOMLJELOLM();
-				m_view.HJMKBCFJOOH();
+				m_view.HJMKBCFJOOH_Save();
 			}
 			else
 			{

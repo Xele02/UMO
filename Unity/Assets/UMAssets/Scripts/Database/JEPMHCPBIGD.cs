@@ -73,12 +73,12 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 		{
 			MPIILICCLDD data = new MPIILICCLDD();
 			data.KIJAPOFAGPN_ItemId = (int)array[i].GLCLFMGPMAN_ItemId;
-			data.FBNCFENGOOD_PosX = array[i].FPLEBCKDCBE;
-			data.LOEJKNILJKF_PosY = array[i].MDLMHEDHPHA;
-			data.NEGMFBPNJGK_rvs = array[i].NEGMFBPNJGK == 1;
+			data.FBNCFENGOOD_PosX = array[i].FPLEBCKDCBE_pos_x;
+			data.LOEJKNILJKF_PosY = array[i].MDLMHEDHPHA_pos_y;
+			data.NEGMFBPNJGK_rvs = array[i].NEGMFBPNJGK_rvs == 1;
 			data.DAPGDCPDCNA_Prio = (int)array[i].DAPGDCPDCNA_Prio;
-			data.BEJGNPAAKNB_word = (int)array[i].BEJGNPAAKNB;
-			data.OPAHFDJPFJO_placing = array[i].OPAHFDJPFJO == 1;
+			data.BEJGNPAAKNB_word = (int)array[i].BEJGNPAAKNB_word;
+			data.OPAHFDJPFJO_placing = array[i].OPAHFDJPFJO_placing == 1;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

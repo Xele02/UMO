@@ -92,21 +92,21 @@ namespace XeApp.Game.Menu
 
 			for(int i = 0; i < m_viewFreeReward.IOCLNNCJFKA_ClearReward.Count; i++)
 			{
-				if(m_viewFreeReward.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if(m_viewFreeReward.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 				{
 					l0.Add(m_viewFreeReward.IOCLNNCJFKA_ClearReward[i]);
 				}
 			}
 			for (int i = 0; i < m_viewFreeReward.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
-				if (m_viewFreeReward.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if (m_viewFreeReward.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 				{
 					l1.Add(m_viewFreeReward.PDONJHCHBAE_ScoreReward[i]);
 				}
 			}
 			for (int i = 0; i < m_viewFreeReward.HFPMKBAANFO_ComboReward.Count; i++)
 			{
-				if (m_viewFreeReward.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if (m_viewFreeReward.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 				{
 					l2.Add(m_viewFreeReward.HFPMKBAANFO_ComboReward[i]);
 				}
@@ -258,17 +258,17 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < viewFreeRewardData.IOCLNNCJFKA_ClearReward.Count; i++)
 			{
-				if (viewFreeRewardData.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if (viewFreeRewardData.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 					return true;
 			}
 			for (int i = 0; i < viewFreeRewardData.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
-				if (viewFreeRewardData.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if (viewFreeRewardData.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 					return true;
 			}
 			for (int i = 0; i < viewFreeRewardData.HFPMKBAANFO_ComboReward.Count; i++)
 			{
-				if (viewFreeRewardData.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				if (viewFreeRewardData.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved)
 					return true;
 			}
 			return false;

@@ -95,13 +95,13 @@ namespace XeApp.Game.Menu
 		{
 			m_attackType = type;
 			m_apCostNum.SetNumber(ap, 0);
-			if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower)
+			if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full)
 			{
 				m_typeTextAnim.StartChildrenAnimGoStop("02");
 				m_descTableAnim.StartChildrenAnimGoStop("01");
 				m_textDesc.text = MessageManager.Instance.GetMessage("menu", "raid_act_fullpower_desc_text");
 			}
-			else if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support)
+			else if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal)
 			{
 				m_typeTextAnim.StartChildrenAnimGoStop("01");
 				m_descTableAnim.StartChildrenAnimGoStop("01");

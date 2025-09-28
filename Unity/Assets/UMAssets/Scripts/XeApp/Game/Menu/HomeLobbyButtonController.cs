@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 			m_IsNewMark = false;
 			m_IsNewMarkEffect = false;
 
-			PKNOKJNLPOE_EventRaid t_raid_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid t_raid_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as PKNOKJNLPOE_EventRaid;
 			if (t_raid_ctrl != null)
 			{
 				bool IsDone = false;
@@ -238,9 +238,9 @@ namespace XeApp.Game.Menu
 					}
 					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(adv))
 					{
-                        GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData advData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(adv);
+                        GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData advData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(adv);
 						if(advData == null)
-							advData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(1);
+							advData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(1);
 						if(advData != null)
 						{
 							//LAB_00967bc4

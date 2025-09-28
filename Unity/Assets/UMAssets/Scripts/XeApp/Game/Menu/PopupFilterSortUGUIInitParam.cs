@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public ShopProductParamClass ShopProductParam { get; set; } // 0x24
 
 		//// RVA: 0x1C9E810 Offset: 0x1C9E810 VA: 0x1C9E810
-		//public void SetMusicSelectParam(OHCAABOMEOF.KGOGMKMBCPP eventType, Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }
+		//public void SetMusicSelectParam(OHCAABOMEOF.KGOGMKMBCPP_EventType eventType, Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }
 
 		//// RVA: 0x1C9E8F8 Offset: 0x1C9E8F8 VA: 0x1C9E8F8
 		public void SetVerticalMusicSelectParam(MusicSelectConsts.SeriesType series, bool enableSave/* = true*/)

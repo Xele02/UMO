@@ -33,17 +33,17 @@ public class FECDBKKBAHO
 	public void KHEKNNFCAOI_Init()
 	{
 		JHJMNLMNPGO_BasePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys;
-		PCODDPDFLHK();
+		PCODDPDFLHK_Load();
 	}
 
 	// // RVA: 0xFCF7E8 Offset: 0xFCF7E8 VA: 0xFCF7E8
-	public void JCHLONCMPAJ()
+	public void JCHLONCMPAJ_Clear()
 	{
 		MLHACNBJAGM_FilesInfoByHash.Clear();
 	}
 
 	// // RVA: 0xFCF860 Offset: 0xFCF860 VA: 0xFCF860
-	public FHOPNIJCFKA_FileInfo LBDOLHGDIEB_GetFileInfo(string _CJEKGLGBIHF_path)
+	public FHOPNIJCFKA_FileInfo LBDOLHGDIEB_Find(string _CJEKGLGBIHF_path)
 	{
 		if(MLHACNBJAGM_FilesInfoByHash.ContainsKey(_CJEKGLGBIHF_path.GetHashCode()))
 		{
@@ -53,7 +53,7 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCF948 Offset: 0xFCF948 VA: 0xFCF948
-	public void OJCJPCHFPGO_DeleteFileInfo(string _CJEKGLGBIHF_path)
+	public void OJCJPCHFPGO_Delete(string _CJEKGLGBIHF_path)
 	{
 		if(!MLHACNBJAGM_FilesInfoByHash.ContainsKey(_CJEKGLGBIHF_path.GetHashCode()))
 			return;
@@ -72,7 +72,7 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCFBB8 Offset: 0xFCFBB8 VA: 0xFCFBB8
-	public FHOPNIJCFKA_FileInfo ANIJHEBLMGB(string _CJEKGLGBIHF_path, long DGGFLBJBLLN, int _KKPAHLMJKIH_WavId)
+	public FHOPNIJCFKA_FileInfo ANIJHEBLMGB_SetValue(string _CJEKGLGBIHF_path, long DGGFLBJBLLN, int _KKPAHLMJKIH_WavId)
 	{
 		if(!MLHACNBJAGM_FilesInfoByHash.ContainsKey(_CJEKGLGBIHF_path.GetHashCode()))
 		{
@@ -93,7 +93,7 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCF3E0 Offset: 0xFCF3E0 VA: 0xFCF3E0
-	public void PCODDPDFLHK()
+	public void PCODDPDFLHK_Load()
 	{
 		if(!Directory.Exists(JHJMNLMNPGO_BasePath))
 		{
@@ -132,7 +132,7 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCFEAC Offset: 0xFCFEAC VA: 0xFCFEAC
-	public void HJMKBCFJOOH()
+	public void HJMKBCFJOOH_Save()
     {
         if(!Directory.Exists(JHJMNLMNPGO_BasePath))
 		{
@@ -262,7 +262,7 @@ public class FECDBKKBAHO
 			{
 				string str = files[i].Substring(len);
 				str = str.Replace('\\','/');
-				FHOPNIJCFKA_FileInfo finfo = LBDOLHGDIEB_GetFileInfo(str);
+				FHOPNIJCFKA_FileInfo finfo = LBDOLHGDIEB_Find(str);
 				if(finfo != null && finfo.GEJJEDDEPMI)
 				{
 					if(finfo.FNALNKKMKDC_ExpireTime != 0)

@@ -16,7 +16,7 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 		public long MCKEOKFMLAH_SaveId; // 0x18
 
 		//// RVA: 0x15C9014 Offset: 0x15C9014 VA: 0x15C9014
-		public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string _JCJDPGMKJAJ_PlayerData, int _PPFNGGCBJKC_id)
+		public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, string _JCJDPGMKJAJ_PlayerData, int _PPFNGGCBJKC_id)
 		{
 			AHEFHIMGIBI_PlayerData = _JCJDPGMKJAJ_PlayerData;
 			CHDDDCCHJJH_replace = !_IDLHJIOMJBK_data.BLOCFLFHCFJ_Keep;

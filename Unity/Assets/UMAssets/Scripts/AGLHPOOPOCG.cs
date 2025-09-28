@@ -13,7 +13,7 @@ public struct KLNBIIPKNIB
 
 public class OFGCBEPEFOH
 {
-	public static string LMPCPCAIEHH { get { return "ranking_uta_rate"; } } //0x1DCD70C AJAHDNPMPHA
+	public static string LMPCPCAIEHH_EventRankingKey { get { return "ranking_uta_rate"; } } //0x1DCD70C AJAHDNPMPHA_GetEventRankingKey
 }
 
 public class AGLHPOOPOCG
@@ -34,7 +34,7 @@ public class AGLHPOOPOCG
 	public void OAGGKCHJBEO(IMCBBOAFION _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
 		BFILINGKCFK = false;
-		BJKCAKJHMPC_GetTopRank(OFGCBEPEFOH.LMPCPCAIEHH, 1, (List<KLNBIIPKNIB> NNDGIAEFMOG) =>
+		BJKCAKJHMPC_GetTopRanks(OFGCBEPEFOH.LMPCPCAIEHH_EventRankingKey, 1, (List<KLNBIIPKNIB> NNDGIAEFMOG) =>
 		{
 			//0x15C4BE8
 			LCJJHEHDKFJ(NNDGIAEFMOG);
@@ -74,7 +74,7 @@ public class AGLHPOOPOCG
 	}
 
 	//// RVA: 0x15C4428 Offset: 0x15C4428 VA: 0x15C4428
-	private void BJKCAKJHMPC_GetTopRank(string _DEPGBBJMFED_CategoryId, int _HHNFHJCAPJO_Target, MOCLMLOPBLK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
+	private void BJKCAKJHMPC_GetTopRanks(string _DEPGBBJMFED_CategoryId, int _HHNFHJCAPJO_Target, MOCLMLOPBLK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
 		PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
 		req.DEPGBBJMFED_CategoryId = _DEPGBBJMFED_CategoryId;
@@ -104,13 +104,13 @@ public class AGLHPOOPOCG
 				{
 					l.Add(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks[i].EHGBICNIBKE_player_id);
 				}
-				FGEIGGNCGGD(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks, _KLMFJJCNBIP_OnSuccess);
+				FGEIGGNCGGD_GetPlayerData(r.NFEAMMJIMPG_Result.EJDEDOJFOOK_Ranks, _KLMFJJCNBIP_OnSuccess);
 			}
 		};
 	}
 
 	//// RVA: 0x15C49C8 Offset: 0x15C49C8 VA: 0x15C49C8
-	private void FGEIGGNCGGD(List<OBGBKHKMDNF> NFMMAELFANG, MOCLMLOPBLK _KLMFJJCNBIP_OnSuccess)
+	private void FGEIGGNCGGD_GetPlayerData(List<OBGBKHKMDNF> NFMMAELFANG, MOCLMLOPBLK _KLMFJJCNBIP_OnSuccess)
 	{
 		List<KLNBIIPKNIB> l = new List<KLNBIIPKNIB>();
 		for(int i = 0; i < NFMMAELFANG.Count; i++)

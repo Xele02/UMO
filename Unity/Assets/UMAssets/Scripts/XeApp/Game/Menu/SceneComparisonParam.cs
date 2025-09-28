@@ -348,8 +348,8 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						int skillId = m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, musicInfo.FKDCCLPGKDK_Ma, musicInfo.AIHCEGFANAM_SerieAttr);
-						int skillId2 = m_sceneData.FILPDDHMKEJ_GetLiveSkillId(true, musicInfo.FKDCCLPGKDK_Ma, musicInfo.AIHCEGFANAM_SerieAttr);
+						int skillId = m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, musicInfo.FKDCCLPGKDK_JacketAttr, musicInfo.AIHCEGFANAM_SerieAttr);
+						int skillId2 = m_sceneData.FILPDDHMKEJ_GetLiveSkillId(true, musicInfo.FKDCCLPGKDK_JacketAttr, musicInfo.AIHCEGFANAM_SerieAttr);
 						if(skillId > 0)
 						{
 							int level = m_sceneData.AADFFCIDJCB_LiveSkillLevel;
@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							skillId = m_sceneData.MEOOLHNNMHL_GetCenterSkillId(false, musicInfo.FKDCCLPGKDK_Ma, musicInfo.AIHCEGFANAM_SerieAttr);
+							skillId = m_sceneData.MEOOLHNNMHL_GetCenterSkillId(false, musicInfo.FKDCCLPGKDK_JacketAttr, musicInfo.AIHCEGFANAM_SerieAttr);
 							if (skillId > 0)
 							{
 								m_isDisp2ndCenterSkill = skillId == skillId2;

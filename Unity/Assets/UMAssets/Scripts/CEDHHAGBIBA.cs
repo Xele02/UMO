@@ -8,10 +8,10 @@ public class CEDHHAGBIBA
 	private const int PMLANIPJEFO = 3;
 
 	// // RVA: 0x12B1884 Offset: 0x12B1884 VA: 0x12B1884
-	public static string KJFAGPBALNO(string BJKEOACPMHB)
+	public static string KJFAGPBALNO(string _BJKEOACPMHB_input)
 	{
 		StringBuilder str = new StringBuilder();
-		char[] chars = BJKEOACPMHB.ToCharArray();
+		char[] chars = _BJKEOACPMHB_input.ToCharArray();
 		for(int i = 0; i < chars.Length; i++)
 		{
 			if(chars[i] == '\\')
@@ -148,16 +148,16 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B258C Offset: 0x12B258C VA: 0x12B258C
-	public static void IFOLECIIDPO_StringToByteArray(byte[] IFIKNDBPOKO, string BJKEOACPMHB)
+	public static void IFOLECIIDPO_StringToByteArray(byte[] IFIKNDBPOKO, string _BJKEOACPMHB_input)
 	{
-		if(string.IsNullOrEmpty(BJKEOACPMHB))
+		if(string.IsNullOrEmpty(_BJKEOACPMHB_input))
 		{
 			for(int i = 0; i < IFIKNDBPOKO.Length; i++)
 			{
 				IFIKNDBPOKO[i] = 0;
 			}
 		}
-		byte[] data = Convert.FromBase64String(BJKEOACPMHB);
+		byte[] data = Convert.FromBase64String(_BJKEOACPMHB_input);
 		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
 		{
 			if(i < data.Length)

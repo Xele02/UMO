@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GGHPEFNADEN { }
 public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public const int ECDKBNNCHJB = 7;
 	public string LJNAKDMILMC_key = ""; // 0x24
 	public int INLNJOGHLJE_Show; // 0x28
@@ -84,15 +84,15 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 				if((int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != 2)
 					isInvalid = true;
 			}
-			LJNAKDMILMC_key = FGCNMLBACGO_ReadString(block, "key", "", ref isInvalid);
-			AJFDNKLNKDP_EntryDate_ = FGCNMLBACGO_ReadString(block, "entry_date", "", ref isInvalid);
+			LJNAKDMILMC_key = FGCNMLBACGO_GetString(block, "key", "", ref isInvalid);
+			AJFDNKLNKDP_EntryDate_ = FGCNMLBACGO_GetString(block, "entry_date", "", ref isInvalid);
 			OKKAFCJGCJL = AJFDNKLNKDP_EntryDate_.GetHashCode();
-			INLNJOGHLJE_Show = CJAENOMGPDA_ReadInt(block, "show", 0, ref isInvalid);
-			CDMGDFLPPHN_entry = CJAENOMGPDA_ReadInt(block, "entry", 0, ref isInvalid);
-			LNACKEBEMOB_Received = CJAENOMGPDA_ReadInt(block, "received", 0, ref isInvalid);
-			OGMOHJIEDEA_Result_ = FGCNMLBACGO_ReadString(block, "result", "", ref isInvalid);
+			INLNJOGHLJE_Show = CJAENOMGPDA_GetInt(block, "show", 0, ref isInvalid);
+			CDMGDFLPPHN_entry = CJAENOMGPDA_GetInt(block, "entry", 0, ref isInvalid);
+			LNACKEBEMOB_Received = CJAENOMGPDA_GetInt(block, "received", 0, ref isInvalid);
+			OGMOHJIEDEA_Result_ = FGCNMLBACGO_GetString(block, "result", "", ref isInvalid);
 			BKIIKBEACDN = OGMOHJIEDEA_Result_.GetHashCode();
-			KKJKOGHFGLB_Pending_ = FGCNMLBACGO_ReadString(block, "pending", "", ref isInvalid);
+			KKJKOGHFGLB_Pending_ = FGCNMLBACGO_GetString(block, "pending", "", ref isInvalid);
 			CBPJHNHBLNN = KKJKOGHFGLB_Pending_.GetHashCode();
 			KFKDMBPNLJK_BlockInvalid = isInvalid;
 			return true;

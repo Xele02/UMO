@@ -155,7 +155,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xEAC7AC Offset: 0xEAC7AC VA: 0xEAC7AC
 		public void SetIcon(IKDICBBFBMI_EventBase cont, long currentTime)
 		{
-			if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha)
+			if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha)
 			{
 				m_imageBannerIcon.sprite = m_tableReplace[2].sprite;
 			}

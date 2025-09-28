@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 		{
 			switch(type)
 			{
-				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1:
+				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1_Normal:
 					m_offerType.StartChildrenAnimGoStop("01");
 					break;
 				case BOPFPIHGJMD.ADMNKELOLPN.NBHIECDDJHH_2:
@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x151E264 Offset: 0x151E264 VA: 0x151E264
 		private void SetEventIcon(BOPFPIHGJMD.HDHDOOLPBEO spOfferType)
 		{
-			if(spOfferType == BOPFPIHGJMD.HDHDOOLPBEO.CCDOBDNDPIL_1)
+			if(spOfferType == BOPFPIHGJMD.HDHDOOLPBEO.CCDOBDNDPIL_1_Event)
 			{
 				m_offerEventIcon.StartAnimGoStop("01");
 			}

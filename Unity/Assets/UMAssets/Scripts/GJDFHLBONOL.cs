@@ -138,10 +138,10 @@ public class GJDFHLBONOL
 								cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem;
 								if(HAAJGNCFNJM_item_name != AFEHLCGHAEE_Strings.GJODJNIHKKF_epi_item)
 								{
-									cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie;
+									cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie;
 									if(HAAJGNCFNJM_item_name != "valkyrie")
 									{
-										cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume;
+										cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume;
 										if(HAAJGNCFNJM_item_name != "costume")
 										{
 											cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.JHGPNDLNPFA_DivaItem;
@@ -183,7 +183,7 @@ public class GJDFHLBONOL
 																							cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem;
 																							if(HAAJGNCFNJM_item_name != "rareup_item")
 																							{
-																								cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem;
+																								cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem;
 																								if(HAAJGNCFNJM_item_name != "limited_item")
 																								{
 																									cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem;

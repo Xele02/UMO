@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 			SetFriListInfo(index, isAvailable, friend);
 			if(friend.JIGONEMPPNP_Diva != null)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.JPIDIENBGKH_CostumeId);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.JPIDIENBGKH_CostumeId);
 				divaId = cos.AHHJLDLAPAN_DivaId;
 				divaCostumeId = cos.DAJGPBLEEOB_ModelId;
 				divaCostumeColorId = friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;

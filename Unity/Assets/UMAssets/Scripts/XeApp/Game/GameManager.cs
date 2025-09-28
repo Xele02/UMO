@@ -1494,7 +1494,7 @@ namespace XeApp.Game
 			directionParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>();
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
-			//master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.divaList[0].prismDivaId).IDDHKOEFJFB;
+			//master.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(ti.divaList[0].prismDivaId).IDDHKOEFJFB_BodyId;
 			int a = 0;
 			if(mi.isFreeMode)
 			{
@@ -1525,7 +1525,7 @@ namespace XeApp.Game
 			List<int> l = new List<int>();
 			for (int i = 0; i < mi.onStageDivaNum; i++)
 			{
-				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
+				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int c = GameManager.Instance.GetMultipleDanceOverridePrimeId(l);
 			int basaraPos = directionParam.basaraPositionId;
@@ -1606,7 +1606,7 @@ namespace XeApp.Game
 			yield return operation;
 			directionParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>();
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			int bodyDiva = master.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
+			int bodyDiva = master.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
 			int a;
 			if (!isFreeMode)
 			{

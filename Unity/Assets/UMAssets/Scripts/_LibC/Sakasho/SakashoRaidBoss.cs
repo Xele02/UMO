@@ -375,7 +375,7 @@ namespace ExternLib
                 int levelIdx = int.Parse(parts[2]) - 1;
                 RaidBossInfo boss = new RaidBossInfo();
                 /*PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-                BKOGPDBKFFJ_EventRaid db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as BKOGPDBKFFJ_EventRaid;*/
+                BKOGPDBKFFJ_EventRaid db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as BKOGPDBKFFJ_EventRaid;*/
                 boss.id = nextBossId;
                 nextBossId++;
                 boss.status = 1;

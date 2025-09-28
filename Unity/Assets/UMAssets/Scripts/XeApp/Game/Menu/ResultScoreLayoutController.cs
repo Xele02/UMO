@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 			popupPlaylogDetail.ShowPopup((PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xB61694
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			});
 		}
 

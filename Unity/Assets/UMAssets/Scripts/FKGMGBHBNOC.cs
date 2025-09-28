@@ -6,7 +6,7 @@ public class FKGMGBHBNOC
         MABDGNNOPCB_Fighter = 0,
         MOGAKDMDCJB_Gerwalk = 1,
         GBLPNIGCPAP_Battroid = 2,
-        AEFCOHJBLPO_Num = 3,
+        AEFCOHJBLPO_3_Num = 3,
     }
 
 	public const int PMFLGHBIBFJ = 100;

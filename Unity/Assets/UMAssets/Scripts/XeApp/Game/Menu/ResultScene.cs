@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 			{
 				FLCAECNBMML f = new FLCAECNBMML();
 				f.KHEKNNFCAOI_Init();
@@ -581,7 +581,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetFPS(60);
 			if(Database.Instance.gameSetup.EnableLiveSkip)
 			{
-				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType > 0 && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType < 3)
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType > 0 && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType < 3)
 				{
 					commonLayoutController.ChangeViewForSupportResult();
 					scoreLayoutController.ChangeViewForSupportResult();
@@ -657,7 +657,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return this.StartCoroutineWatched(Co_LoadEvent03Layout());
 			}
-			isEventRaid = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
+			isEventRaid = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid;
 			if(isEventRaid)
 			{
 				yield return this.StartCoroutineWatched(Co_LoadRaidLayout());
@@ -932,7 +932,7 @@ namespace XeApp.Game.Menu
 			isCollectionEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 			isBattleEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle;
 			isMissionEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission;
-			isRaidEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
+			isRaidEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid;
 			isGoDivaEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva;
 
 			if(!isGoDivaEventOpen && !isCollectionEventOpen && !isBattleEventOpen && 
@@ -974,8 +974,8 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-				if(evRaid.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6))
+				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				if(evRaid.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting))
 				{
 					if(evRaid.PLFBKEPLAAA.FIMNHOIJBLO)
 					{
@@ -1320,7 +1320,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52E20 Offset: 0xB52E20 VA: 0xB52E20
 		private void InitRaidPointResult()
 		{
-			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
@@ -1356,7 +1356,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator SetBossBg(Action callback)
 		{
 			//0xB5F214
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			callback();
 		}
@@ -1394,7 +1394,7 @@ namespace XeApp.Game.Menu
 		private void OnClickRaidDamageResultEnd()
 		{
 			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
-			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			raidResultDamageLayoutController.gameObject.SetActive(false);
 			if(raidController.KONJMFICNJJ_RewardsInfo == null)
 			{
@@ -1644,7 +1644,7 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.GBECNPANBEA_8_TutoMusicResult);
+					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.GBECNPANBEA_8_Sns);
 					if(Database.Instance.advSetup.IsCallResultAfterAdv)
 					{
 						MenuScene.Instance.GotoAdventure(false);
@@ -1690,7 +1690,7 @@ namespace XeApp.Game.Menu
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
-						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
+						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid:
 							MenuScene.Instance.Mount(musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:

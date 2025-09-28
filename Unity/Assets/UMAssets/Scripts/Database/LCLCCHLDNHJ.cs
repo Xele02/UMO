@@ -13,7 +13,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	{
 		HJNNKCMLGFL_0_None = 0,
 		NKKIKONDGPF_1_CostumeEffect = 1,
-		DDGNLCJGFJF_Object = 2,
+		DDGNLCJGFJF_2_Object = 2,
 		AJKDOLDGHOP_Object2 = 3,
 		CFOEMAAKOMC_4_CostumeColor = 4,
 		PJJJGFBLIAP_5_Stat = 5,
@@ -23,22 +23,22 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	public enum JHDCKPCJBCG
 	{
 		HJNNKCMLGFL_0_None = 0,
-		BICPBLMPBPH = 1,
-		GPCMMGOCPHC = 2,
-		LGOHMPBLPKA = 3,
-		ECHJOKLBHEJ = 4,
-		AHJNCHAONGN = 5,
-		ONBNGGDFAJK = 6,
-		AEFCOHJBLPO = 7,
+		BICPBLMPBPH_1_Soul = 1,
+		GPCMMGOCPHC_2_Vocal = 2,
+		LGOHMPBLPKA_3_Charm = 3,
+		ECHJOKLBHEJ_4_Life = 4,
+		AHJNCHAONGN_5_Support = 5,
+		ONBNGGDFAJK_6_Fold = 6,
+		AEFCOHJBLPO_7_Num = 7,
 	}
 
 	public enum FCJGFOHHDJE
 	{
 		HJNNKCMLGFL_0_None = 0,
-		BICPBLMPBPH = 1,
-		GPCMMGOCPHC = 2,
-		LGOHMPBLPKA = 3,
-		AEFCOHJBLPO = 4,
+		BICPBLMPBPH_1_Soul = 1,
+		GPCMMGOCPHC_2_Vocal = 2,
+		LGOHMPBLPKA_3_Charm = 3,
+		AEFCOHJBLPO_4_Num = 4,
 	}
 
 	public enum LKLGPLFNJBA_UnlockCondition
@@ -47,7 +47,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		NBEFPGIMEGA_1_OwnedCostume = 1,
 		BCJHILDCONA_2_UseItems = 2,
 		CALCHKAMIDB_3_DivaIntimacy = 3,
-		AEFCOHJBLPO = 4,
+		AEFCOHJBLPO_4_Num = 4,
 	}
 
 	[UMOClass(ReaderClass = "FGABLOBFLHC")]
@@ -143,7 +143,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         public int DOGKAEAHIMI_GetUnlockedSkillLevel(int _ANAJIAENLNB_lv)
 		{
 			int DEOBDFOPLHG_SkillLevel = 1;
-			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) => {
+			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int _FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) => {
 				//0xD9E83C
 				if(GMCEJHMOJJD_Info.INDDJNMPONH_type != 1)
 					return;
@@ -156,7 +156,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         public short[] KKLPLPGBOFD_GetAvaiableColor(int _ANAJIAENLNB_lv)
 		{
 			List<short> result = new List<short>();
-			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int FGMJJBBDOOI, LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo.FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
+			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int _FGMJJBBDOOI_Level, LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo.FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9E8A4
 				if (GMCEJHMOJJD.INDDJNMPONH_type != 4)
@@ -178,13 +178,13 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         public int MHIKGGMOPOJ(int _HEHKNMCDBJJ_ColorId)
 		{
 			int res = -1;
-			JEJCHECAEBD_ForEachLevel(LLLCMHENKKN_LevelMax, (int FGMJJBBDOOI, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
+			JEJCHECAEBD_ForEachLevel(LLLCMHENKKN_LevelMax, (int _FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9E974
 				if(GMCEJHMOJJD.INDDJNMPONH_type == 4)
 				{
 					if(GMCEJHMOJJD.PIBLLGLCJEO_Param[0] == _HEHKNMCDBJJ_ColorId)
-						res = FGMJJBBDOOI + 1;
+						res = _FGMJJBBDOOI_Level + 1;
 				}
 			});
 			return res;
@@ -197,9 +197,9 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		}
 
         // // RVA: 0xD9E5E0 Offset: 0xD9E5E0 VA: 0xD9E5E0
-        public void NNIKNCGNDHK_AddStatsAtLevel(int _ANAJIAENLNB_lv, StatusData _CMCKNKKCNDK_status)
+        public void NNIKNCGNDHK_GetStatForDiva(int _ANAJIAENLNB_lv, StatusData _CMCKNKKCNDK_status)
 		{
-			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) =>
+			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int _FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) =>
 			{
 				//0xD9EA00
 				if (GMCEJHMOJJD_Info.INDDJNMPONH_type != 5)
@@ -234,7 +234,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         // // RVA: 0xD9E6C4 Offset: 0xD9E6C4 VA: 0xD9E6C4
         public void LEFFFKJFCFH_AddNumSupportPlate(int _ANAJIAENLNB_lv, int[,] LAEAKOHKNHO)
 		{
-			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int FGMJJBBDOOI, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
+			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_lv, (int _FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9EBB4
 				if (GMCEJHMOJJD.INDDJNMPONH_type != 6)
@@ -320,7 +320,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	public int[] OLNFADCCMIG_RateBySupportPlate { get; private set; } // 0x30 AIHLNOAOMGE NBCHJDPDEIM CEENFNLIAPI
 
 	// // RVA: 0xD9AE14 Offset: 0xD9AE14 VA: 0xD9AE14
-	public ILODJKFJJDO_CostumeInfo EEOADCECNOM_GetCostumeInfo(int _PPFNGGCBJKC_id)
+	public ILODJKFJJDO_CostumeInfo EEOADCECNOM_GetCostume(int _PPFNGGCBJKC_id)
 	{
 		if(_PPFNGGCBJKC_id != 0 && _PPFNGGCBJKC_id <= CDENCMNHNGA_table.Count)
 		{
@@ -330,7 +330,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xD9AF18 Offset: 0xD9AF18 VA: 0xD9AF18
-	public ILODJKFJJDO_CostumeInfo LBDOLHGDIEB_GetUnlockedCostumeOrDefault(int _AHHJLDLAPAN_DivaId, int JPIDIENBGKH_CostumeId)
+	public ILODJKFJJDO_CostumeInfo LBDOLHGDIEB_Find(int _AHHJLDLAPAN_DivaId, int JPIDIENBGKH_CostumeId)
 	{
 		ILODJKFJJDO_CostumeInfo found = null;
 		if(JPIDIENBGKH_CostumeId > 0)
@@ -534,15 +534,15 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xD9D658 Offset: 0xD9D658 VA: 0xD9D658
-	public bool KPHOIIKOEOG_IsColorAvaiable(int PPKEBOEJAKH_ColorId, int JPIDIENBGKH_CostumeId, int _AHHJLDLAPAN_DivaId)
+	public bool KPHOIIKOEOG_IsColorAvaiable(int _PPKEBOEJAKH_ColorId, int JPIDIENBGKH_CostumeId, int _AHHJLDLAPAN_DivaId)
 	{
-		ILODJKFJJDO_CostumeInfo cos = LBDOLHGDIEB_GetUnlockedCostumeOrDefault(_AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
+		ILODJKFJJDO_CostumeInfo cos = LBDOLHGDIEB_Find(_AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
 		if(cos != null)
 		{
 			short[] data = cos.KKLPLPGBOFD_GetAvaiableColor(cos.LLLCMHENKKN_LevelMax);
 			for(int i = 0; i < data.Length; i++)
 			{
-				if (data[i] == PPKEBOEJAKH_ColorId)
+				if (data[i] == _PPKEBOEJAKH_ColorId)
 					return true;
 			}
 		}
@@ -583,7 +583,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xD9DA24 Offset: 0xD9DA24 VA: 0xD9DA24
-	public bool OOOPJNKBDIL(int NDFMGKNELHO, int KBCFCCBDDBI)
+	public bool OOOPJNKBDIL_Is6OrMoreRarity(int NDFMGKNELHO, int KBCFCCBDDBI)
 	{
 		MLIBEPGADJH_Scene.KKLDOOJBJMN d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.PLKHCPPCHJL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.NNFJBBFBIEN(NLIBHNJNJAN_GetUnlockedCostumeOrDefault(NDFMGKNELHO, KBCFCCBDDBI).JPIDIENBGKH_CostumeId));
 		if(d != null)

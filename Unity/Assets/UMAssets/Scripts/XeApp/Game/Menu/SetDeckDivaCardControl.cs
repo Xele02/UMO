@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId);
 			if(cosInfo != null)
 			{
-				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, cosInfo.JPIDIENBGKH_CostumeId), divaData.EKFONBFDAAP_ColorId, (IiconTexture icon) =>
+				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, cosInfo.JPIDIENBGKH_CostumeId), divaData.EKFONBFDAAP_ColorId, (IiconTexture icon) =>
 				{
 					//0xA6BE1C
 					icon.Set(m_costumeImage);

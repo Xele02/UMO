@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			m_serifId = serifId;
 			if(m_type == Type.Stamp)
 			{
-				NCPPAHHCCAO d = NCPPAHHCCAO.FKDIMODKKJD().Find((NCPPAHHCCAO item) =>
+				NCPPAHHCCAO d = NCPPAHHCCAO.FKDIMODKKJD_GetList().Find((NCPPAHHCCAO item) =>
 				{
 					//0x19DF188
 					return m_stampId == item.PPFNGGCBJKC_id;

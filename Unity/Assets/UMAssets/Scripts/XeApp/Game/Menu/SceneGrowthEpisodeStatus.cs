@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15AD9B8 Offset: 0x15AD9B8 VA: 0x15AD9B8
 		public void UpdateContent(PIGBBNDPPJC episodeData)
 		{
-			if(episodeData.DKMLDEDKPBA_HasEpisode)
+			if(episodeData.DKMLDEDKPBA_IsEnabled)
 			{
 				m_strBuilder.SetFormat("{0} {1}", episodeData.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, RichTextUtility.MakeSizeTagString("EP", 19));
 				m_episodeName.text = episodeData.OPFGFINHFCE_name;

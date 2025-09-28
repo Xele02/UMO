@@ -21,11 +21,11 @@ public class LPDNKHAIOLH
     }
 
 	// // RVA: 0x10CE3F4 Offset: 0x10CE3F4 VA: 0x10CE3F4
-	public static int CEIBAFOCNCA()
+	public static int CEIBAFOCNCA_Int()
 	{
 		return (int)(FBGGEFFJJHB_xor() ^ 0x7fffffff);
 	}
 
 	// // RVA: 0x10CE470 Offset: 0x10CE470 VA: 0x10CE470
-	// public static long HJBKGEBNJMP() { }
+	// public static long HJBKGEBNJMP_Long() { }
 }

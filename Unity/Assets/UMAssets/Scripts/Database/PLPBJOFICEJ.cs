@@ -9,8 +9,8 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	public enum DPNGHIDJCHA_Category
 	{
 		HJNNKCMLGFL_0_None = 0,
-		GLFGNEILACA = 1,
-		GLHANCMGNDM_2 = 2,
+		GLFGNEILACA_1 = 1,
+		GLHANCMGNDM_2_Unlock = 2,
 	}
 
 	[UMOClass(ReaderClass = "FLNGBOANAGE")]
@@ -45,7 +45,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	//public int DLLMLAENCPA { get; }
 
 	//// RVA: 0xFEB730 Offset: 0xFEB730 VA: 0xFEB730
-	public IBEMFIAFIKH_ItemInfo EEOADCECNOM_GetItemById(int _PPFNGGCBJKC_id)
+	public IBEMFIAFIKH_ItemInfo EEOADCECNOM_GetCostume(int _PPFNGGCBJKC_id)
 	{
 		return CDENCMNHNGA_table[_PPFNGGCBJKC_id - 1];
 	}
@@ -63,7 +63,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xFEB8A8 Offset: 0xFEB8A8 VA: 0xFEB8A8
-	public IBEMFIAFIKH_ItemInfo LBDOLHGDIEB_FindItem(int _MCDINKAKFGG_DivaId, DPNGHIDJCHA_Category _INDDJNMPONH_type)
+	public IBEMFIAFIKH_ItemInfo LBDOLHGDIEB_Find(int _MCDINKAKFGG_DivaId, DPNGHIDJCHA_Category _INDDJNMPONH_type)
 	{
 		return CDENCMNHNGA_table.Find((IBEMFIAFIKH_ItemInfo _KOGBMDOONFA_Info) =>
 		{

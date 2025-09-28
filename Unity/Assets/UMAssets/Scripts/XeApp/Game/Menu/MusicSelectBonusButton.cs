@@ -100,10 +100,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1669A94 Offset: 0x1669A94 VA: 0x1669A94
 		private void ApplyBonusType(KPJHLACKGJF_EventMission.HLMINENBCKO schedule)
 		{
-			m_layoutBonus.StartChildrenAnimGoStop(schedule.CIANOCNPIFF_Type == KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_MusicId ? "01" : "02");
+			m_layoutBonus.StartChildrenAnimGoStop(schedule.CIANOCNPIFF_Type == KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_Music ? "01" : "02");
 			switch(schedule.CIANOCNPIFF_Type)
 			{
-				case KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_MusicId:
+				case KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_Music:
 					m_layoutBonusIcon.StartChildrenAnimGoStop("01");
 					break;
 				case KPJHLACKGJF_EventMission.MNIIDKPECMD.LNAOAANJGDM_1_SerieAttr:

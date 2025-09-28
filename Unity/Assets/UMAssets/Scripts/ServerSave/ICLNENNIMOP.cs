@@ -6,7 +6,7 @@ using XeSys;
 public class ICLNENNIMOP { }
 public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 2;
+	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	private const long GMNKHOJAOPC = 1496070000;
 	private const long GNBEEACODKK = 1811602800;
 	public List<double> AGPLAKAFDEP_FreeMusicHighScorePrecise; // 0x24
@@ -18,13 +18,13 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x11EB4DC NFKFOODCJJB
 
 	// // RVA: 0x11E9C2C Offset: 0x11E9C2C VA: 0x11E9C2C
-	public int BDCAICINCKK_GetScoreMusic(int _GHBPLHBNMBK_FreeMusicId)
+	public int BDCAICINCKK_GetScore(int _GHBPLHBNMBK_FreeMusicId)
 	{
 		return NBOLDNMPJFG_scoreCrypted[_GHBPLHBNMBK_FreeMusicId - 1] ^ FBGGEFFJJHB_xor;
 	}
 
 	// // RVA: 0x11E9CB4 Offset: 0x11E9CB4 VA: 0x11E9CB4
-	public void ECKFCIHPHGJ_SetScoreForMusic(int _GHBPLHBNMBK_FreeMusicId, int _KNIFCANOHOC_score)
+	public void ECKFCIHPHGJ_SetScore(int _GHBPLHBNMBK_FreeMusicId, int _KNIFCANOHOC_score)
 	{
 		NBOLDNMPJFG_scoreCrypted[_GHBPLHBNMBK_FreeMusicId - 1] = _KNIFCANOHOC_score ^ FBGGEFFJJHB_xor;
 		FONGFOAMHJK_ScoreCrypted2[_GHBPLHBNMBK_FreeMusicId - 1] = _KNIFCANOHOC_score;
@@ -44,12 +44,12 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 		HHDIPKALCDG_FreeMusicHighScorePrecise2[_GHBPLHBNMBK_FreeMusicId - 1] = v;
 		// Debug
 		{
-			double f = BOAGCEOHJEO.CFLDNJANAPI_Truncate(v);
+			double f = BOAGCEOHJEO.CFLDNJANAPI_GetNum(v);
 			if (_KNIFCANOHOC_score != (int)f)
 				UnityEngine.Debug.LogError("Error, debug double / int values : " + v + " " + _GHBPLHBNMBK_FreeMusicId + " " + _KNIFCANOHOC_score + " " + _EOLFJGMAJAB_CurrentTime + " " + f);
 		}
 		// End debug
-		ECKFCIHPHGJ_SetScoreForMusic(_GHBPLHBNMBK_FreeMusicId, _KNIFCANOHOC_score);
+		ECKFCIHPHGJ_SetScore(_GHBPLHBNMBK_FreeMusicId, _KNIFCANOHOC_score);
 	}
 
 	// // RVA: 0x11E9F80 Offset: 0x11E9F80 VA: 0x11E9F80
@@ -57,8 +57,8 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	{
 		AGPLAKAFDEP_FreeMusicHighScorePrecise[_GHBPLHBNMBK_FreeMusicId - 1] = _HMLEDBJDCAF_PreciseScore;
 		HHDIPKALCDG_FreeMusicHighScorePrecise2[_GHBPLHBNMBK_FreeMusicId - 1] = _HMLEDBJDCAF_PreciseScore;
-		double f = BOAGCEOHJEO.CFLDNJANAPI_Truncate(_HMLEDBJDCAF_PreciseScore);
-		ECKFCIHPHGJ_SetScoreForMusic(_GHBPLHBNMBK_FreeMusicId, (int)f);
+		double f = BOAGCEOHJEO.CFLDNJANAPI_GetNum(_HMLEDBJDCAF_PreciseScore);
+		ECKFCIHPHGJ_SetScore(_GHBPLHBNMBK_FreeMusicId, (int)f);
 	}
 
 	// // RVA: 0x11EA084 Offset: 0x11EA084 VA: 0x11EA084
@@ -160,7 +160,7 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 		ICLNENNIMOP_FreeScoreMax f = GPBJHKLFCEP as ICLNENNIMOP_FreeScoreMax;
 		for(int i = 0; i < 2000; i++)
 		{
-			ECKFCIHPHGJ_SetScoreForMusic(i + 1, f.BDCAICINCKK_GetScoreMusic(i + 1));
+			ECKFCIHPHGJ_SetScore(i + 1, f.BDCAICINCKK_GetScore(i + 1));
 			AGPLAKAFDEP_FreeMusicHighScorePrecise[i] = f.AGPLAKAFDEP_FreeMusicHighScorePrecise[i];
 			HHDIPKALCDG_FreeMusicHighScorePrecise2[i] = f.HHDIPKALCDG_FreeMusicHighScorePrecise2[i];
 		}
@@ -187,7 +187,7 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 		}
 		for(int i = 0; i < 2000; i++)
 		{
-			if(BDCAICINCKK_GetScoreMusic(i + 1) != other.BDCAICINCKK_GetScoreMusic(i + 1) ||
+			if(BDCAICINCKK_GetScore(i + 1) != other.BDCAICINCKK_GetScore(i + 1) ||
 				AGPLAKAFDEP_FreeMusicHighScorePrecise[i] != other.AGPLAKAFDEP_FreeMusicHighScorePrecise[i])
 				return false;
 		}

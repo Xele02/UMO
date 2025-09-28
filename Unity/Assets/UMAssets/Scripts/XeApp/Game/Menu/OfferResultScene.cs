@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 			EntryAnimStart();
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete);
+			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received);
 			KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, 1);
 			KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, false);
 			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.PMMOLBAAHEM_31);
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 				yield return new WaitWhile(() =>
 				{
 					//0x1858B14
-					if(m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num || m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+					if(m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num || m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
 					{
 						return !valkyrieEnterSkip();
 					}

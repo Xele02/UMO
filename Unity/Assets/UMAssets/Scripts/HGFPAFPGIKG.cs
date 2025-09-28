@@ -105,26 +105,26 @@ public class HGFPAFPGIKG
         DFFEFGHMEOK_EventId = _EKANGPODCEP_EventId;
         if(_EKANGPODCEP_EventId == 0)
         {
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived);
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived);
             if (ev != null)
             {
                 DFFEFGHMEOK_EventId = ev.PGIIDPEGGPI_EventId;
             }
         }
-        OBKGEDCKHHE();
+        OBKGEDCKHHE_Init();
     }
 
 	// // RVA: 0x174A77C Offset: 0x174A77C VA: 0x174A77C
-	public void OBKGEDCKHHE()
+	public void OBKGEDCKHHE_Init()
     {
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
         if(ev != null)
         {
-            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
             MLAECGLBCBM_OverStopCnt = dbEv.LPJLEHAJADA_GetIntParam("over_stop_cnt", 1);
             ev.AAIAADGEDDN();
             BFDHGPNBNMP(ev);
-            HCDGELDHFHB(ev);
+            HCDGELDHFHB_UpdateStatus(ev);
         }
     }
 
@@ -167,7 +167,7 @@ public class HGFPAFPGIKG
     }
 
 	// // RVA: 0x174AE20 Offset: 0x174AE20 VA: 0x174AE20
-	public void HCDGELDHFHB(CHHECNJBMLA_EventBoxGacha _MOHDLLIJELH_cont)
+	public void HCDGELDHFHB_UpdateStatus(CHHECNJBMLA_EventBoxGacha _MOHDLLIJELH_cont)
     {
         IMDBGDNPLJA_EventBoxGacha.NEFJBPECLKJ ev = _MOHDLLIJELH_cont.DIACKBHMKEH_GetCurrentBoxInfo();
         JOFAGCFNKIO_OpenTime = ev.PDBPFJJCADD_open_at;
@@ -280,7 +280,7 @@ public class HGFPAFPGIKG
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
         if(ev != null)
         {
-            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
             return dbEv.KGDBEMPMAIJ_Boxes[_IMMDGJAOPCD_BoxId - 1].PLALNIIBLOF_en != 2 ? 1 : dbEv.KGDBEMPMAIJ_Boxes[_IMMDGJAOPCD_BoxId - 1].NDNHKMJPBCM_Cost;
         }
         return 1;
@@ -290,7 +290,7 @@ public class HGFPAFPGIKG
 	public int FBJLOOFBHAP()
     {
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
-        IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+        IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
         return dbEv.KGDBEMPMAIJ_Boxes[IMMDGJAOPCD_BoxId - 1].PLALNIIBLOF_en == 2 ? dbEv.KGDBEMPMAIJ_Boxes[IMMDGJAOPCD_BoxId - 1].IHGDLBBPKFI_Next : 1;
     }
 
@@ -300,7 +300,7 @@ public class HGFPAFPGIKG
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
         if(ev != null)
         {
-            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
             int res = 0;
             for(int i = 0; i < dbEv.PKPLOGBIDIG_Prizes.Count; i++)
             {
@@ -318,31 +318,31 @@ public class HGFPAFPGIKG
     }
 
 	// // RVA: 0x174C7E8 Offset: 0x174C7E8 VA: 0x174C7E8
-	public int EDILCJAICBE(int IOPHIHFOOEP)
+	public int EDILCJAICBE(int _IOPHIHFOOEP_idx)
     {
-        if(IOPHIHFOOEP > -1)
+        if(_IOPHIHFOOEP_idx > -1)
         {
-            if(NNCCGILOOIE_Num == IOPHIHFOOEP)
+            if(NNCCGILOOIE_Num == _IOPHIHFOOEP_idx)
                 return IMMDGJAOPCD_BoxId;
             else
             {
                 CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
                 if(ev != null)
                 {
-                    IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
-                    if(IOPHIHFOOEP < dbEv.KGDBEMPMAIJ_Boxes.Count)
+                    IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+                    if(_IOPHIHFOOEP_idx < dbEv.KGDBEMPMAIJ_Boxes.Count)
                     {
-                        return IOPHIHFOOEP + 1;
+                        return _IOPHIHFOOEP_idx + 1;
                     }
                     else
                     {
-                        int a = IOPHIHFOOEP - NNCCGILOOIE_Num;
+                        int a = _IOPHIHFOOEP_idx - NNCCGILOOIE_Num;
                         if(a < 0)
                             a = -a;
                         if(a <= MLAECGLBCBM_OverStopCnt)
                         {
                             int v = dbEv.KGDBEMPMAIJ_Boxes.Count;
-                            for(int i = dbEv.KGDBEMPMAIJ_Boxes.Count - 1; i < IOPHIHFOOEP; i++)
+                            for(int i = dbEv.KGDBEMPMAIJ_Boxes.Count - 1; i < _IOPHIHFOOEP_idx; i++)
                             {
                                 v = dbEv.KGDBEMPMAIJ_Boxes[dbEv.KGDBEMPMAIJ_Boxes.Count - 1].IHGDLBBPKFI_Next;
                                 if(v == 0)
@@ -393,7 +393,7 @@ public class HGFPAFPGIKG
 	public bool KMNNDEFMEKH()
     {
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
-        IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+        IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
         int a = 0;
         for(int i = 0; i < dbEv.KGDBEMPMAIJ_Boxes.Count; i++)
         {
@@ -439,7 +439,7 @@ public class HGFPAFPGIKG
         CHHECNJBMLA_EventBoxGacha ev = OEGDCBLNNFF();
         if(ev != null)
         {
-            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+            IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
             for(int i = 0; i < dbEv.FICLPLNOKOP.Count; i++)
             {
                 if(dbEv.FICLPLNOKOP[i].PLALNIIBLOF_en == 2)

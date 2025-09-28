@@ -263,7 +263,7 @@ namespace XeApp.Game.Tutorial
 						//0xE4C030
 						return x.CMEJFJFOIIJ_QuestId == 1;
 					});
-					if(f != null && f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+					if(f != null && f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved)
 						return true;
 				}
 			}
@@ -808,7 +808,7 @@ namespace XeApp.Game.Tutorial
 					//0xE4C07C
 					return x.CMEJFJFOIIJ_QuestId == 1;
 				});
-				if (f != null && f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+				if (f != null && f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved)
 					return true;
 			}
 			return false;
@@ -1120,7 +1120,7 @@ namespace XeApp.Game.Tutorial
 							//0xE4C3F0
 							return x.CMEJFJFOIIJ_QuestId == missionId;
 						});
-						if(q != null && q.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+						if(q != null && q.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved)
 						{
 							return true;
 						}
@@ -1271,7 +1271,7 @@ namespace XeApp.Game.Tutorial
 				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 					return true;
 			}
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 			{
 				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					return true;

@@ -371,6 +371,6 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE31158 Offset: 0xE31158 VA: 0xE31158
-		// public void AddEventHelpId(OHCAABOMEOF.KGOGMKMBCPP type, int helpId) { }
+		// public void AddEventHelpId(OHCAABOMEOF.KGOGMKMBCPP_EventType type, int helpId) { }
 	}
 }

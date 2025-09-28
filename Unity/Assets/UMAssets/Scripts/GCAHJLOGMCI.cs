@@ -4,17 +4,17 @@ public class GCAHJLOGMCI
 	public enum KNMMOMEHDON_GachaType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		CCAPCGPIIPF_1_Daily = 1,
+		CCAPCGPIIPF_1_Normal = 1, // Daily
 		PHABJLGFJNI_2_Regular = 2,
-		GENEIBGNMPH_3 = 3,
-		JGDEHOGIENP_4 = 4,
+		GENEIBGNMPH_3_Debut = 3,
+		JGDEHOGIENP_4_Sphere_CostumeTicket = 4,
 		GKDFKDLFNAJ_5_LimitedTicket1 = 5,
 		BKNHBNINDOC_6_LimitedTicket2 = 6,
 		ANFKBNLLJFN_7 = 7,
 		BCBJMKDAAKA_8_StepUp = 8,
 		OOABDNHIEFK_9 = 9,
-		DLOPEFGOAPD_10_PassGacha = 10,
-		AEFCOHJBLPO_11 = 11,
+		DLOPEFGOAPD_10_LimitedItem = 10, // PassGacha
+		AEFCOHJBLPO_11_Num = 11,
 	}
 
 	public enum NFCAJPIJFAM_SummonType
@@ -29,20 +29,20 @@ public class GCAHJLOGMCI
 		OBLEFFEJGIJ_8 = 8,
 		NGAHKKOBGPA_9 = 9,
 		BPPLDIBMPKH_10 = 10,
-		AEFCOHJBLPO_11 = 11,
+		AEFCOHJBLPO_11_Num = 11,
 	}
 
 	private const int KBAHKEAEDEJ = 1000000;
 	private const int HHOIIDMKCIG = 10;
 
 	//// RVA: 0x16A9698 Offset: 0x16A9698 VA: 0x16A9698
-	public static KNMMOMEHDON_GachaType OLMFIANJBOB_GetGachaType(int _KAPMOPMDHJE_label)
+	public static KNMMOMEHDON_GachaType OLMFIANJBOB_GetType(int _KAPMOPMDHJE_label)
 	{
 		return (KNMMOMEHDON_GachaType)((_KAPMOPMDHJE_label / 1000000) % 100);
 	}
 
 	//// RVA: 0x16A96CC Offset: 0x16A96CC VA: 0x16A96CC
-	public static int GPAJHMLOPNP_GetGachaId(int _KAPMOPMDHJE_label)
+	public static int GPAJHMLOPNP_GetSeries(int _KAPMOPMDHJE_label)
 	{
 		return (_KAPMOPMDHJE_label % 1000000) / 100;
 	}
@@ -65,9 +65,9 @@ public class GCAHJLOGMCI
 	//// RVA: 0x16A9768 Offset: 0x16A9768 VA: 0x16A9768
 	public static long PMBGPACNPIN(KNMMOMEHDON_GachaType _INDDJNMPONH_type, string _OPFGFINHFCE_name, long _KJBGCLPMLCG_OpenedAt, long NMPMNPLGIEL/* = 0*/)
 	{
-		if(_INDDJNMPONH_type != KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ && _INDDJNMPONH_type != KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
+		if(_INDDJNMPONH_type != KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Normal/*1*/ && _INDDJNMPONH_type != KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
 		{
-			if(_INDDJNMPONH_type == KNMMOMEHDON_GachaType.GENEIBGNMPH_3)
+			if(_INDDJNMPONH_type == KNMMOMEHDON_GachaType.GENEIBGNMPH_3_Debut)
 			{
 				if(_OPFGFINHFCE_name.Contains(JpStringLiterals.StringLiteral_10431_Jp))
 				{

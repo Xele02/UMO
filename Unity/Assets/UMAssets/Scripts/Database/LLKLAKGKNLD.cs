@@ -15,7 +15,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18109E0 DEMEPMAEJOO 0x180FD54 HIGKAIDMOKN
 
 		//// RVA: 0x180EC10 Offset: 0x180EC10 VA: 0x180EC10
-		public int DEACAHNLMNI(int _OIPCCBHIKIA_index)
+		public int DEACAHNLMNI_getItemId(int _OIPCCBHIKIA_index)
 		{
 			return IOKDGIGCJDA[_OIPCCBHIKIA_index] ^ FBGGEFFJJHB_xor;
 		}
@@ -115,9 +115,9 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		for(int i = 0; i < 6; i++)
 		{
 			int b = 0;
-			if(t1.DEACAHNLMNI(i) == 1)
+			if(t1.DEACAHNLMNI_getItemId(i) == 1)
 			{
-				b = t0.DEACAHNLMNI(i);
+				b = t0.DEACAHNLMNI_getItemId(i);
 			}
 			switch(i)
 			{

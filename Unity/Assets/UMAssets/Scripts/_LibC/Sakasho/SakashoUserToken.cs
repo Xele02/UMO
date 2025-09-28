@@ -242,10 +242,10 @@ namespace ExternLib
 				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
 				newData.IIEMACPEEBJ_Deserialize(blocks.Keys.ToList(), jsonRes);
 
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_name = "Friend";
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_prof = "Cool friend";
+				(newData.LBDOLHGDIEB_Find("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_name = "Friend";
+				(newData.LBDOLHGDIEB_Find("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_prof = "Cool friend";
 				{
-					JNMFKOHFAFB_PublicStatus publicBlock = newData.LBDOLHGDIEB_GetBlock("public_status") as JNMFKOHFAFB_PublicStatus;
+					JNMFKOHFAFB_PublicStatus publicBlock = newData.LBDOLHGDIEB_Find("public_status") as JNMFKOHFAFB_PublicStatus;
 					// build sceneList
 					List<GCIJNCFDNON_SceneInfo> scenes = new List<GCIJNCFDNON_SceneInfo>();
 					for (int i = 0; i < newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes.Count; i++)
@@ -266,14 +266,14 @@ namespace ExternLib
 						return res;
 					});
 
-					publicBlock.AFBMEMCHJCL_MainScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_unlock, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					publicBlock.AFBMEMCHJCL_MainScene.DOMFHDPMCCO_Init(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_unlock, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
 					for (int i = 0; i < 4; i++)
 					{
 						for (int j = 0; j < scenes.Count; j++)
 						{
 							if (scenes[j].JGJFIJOCPAG_SceneAttr == i || i == 0)
 							{
-								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_AssistScenes[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_unlock, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
+								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_AssistScenes[i].DOMFHDPMCCO_Init(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_unlock, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
 								break;
 							}
 						}

@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 		{
 			if(itemInfo != null)
 			{
-				if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					CKFGMNAIBNG data = new CKFGMNAIBNG();
 					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);

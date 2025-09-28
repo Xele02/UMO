@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		public void Initialize(PopupUnitBonusContent content)
 		{
 			m_content = content;
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_unitBonusInfo = ev.ANMBIEIFKFF_UnitBonusInfo;
 			m_descText.text = MessageManager.Instance.GetMessage("menu", "popup_episodebonus_note_01");
 			m_bonusPointText.text = string.Format(JpStringLiterals.StringLiteral_20810, m_unitBonusInfo.HOJAKNJFIFJ_EpisodeBonusPoint);

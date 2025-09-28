@@ -68,7 +68,7 @@ public class EGLOKAEIHCB_LimitedItem : DIHHCBACKGG_DbSection
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH_rar;
 			data.EILKGEADKGH_Order = (int)array[i].FPOMEEJFBIG_odr;
 			data.EMIJNAFJFJO_expir = (int)array[i].EMIJNAFJFJO_expir;
-			data.KHCBANFDKBO_Duration = (int)array[i].KHCBANFDKBO;
+			data.KHCBANFDKBO_Duration = (int)array[i].KHCBANFDKBO_Duration;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

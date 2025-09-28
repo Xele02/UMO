@@ -49,7 +49,7 @@ namespace XeApp.Game.NameEntry
 				//0xCA49FC
 				if(type == PopupButton.ButtonType.Positive)
 				{
-					BHLFHHBDGHO.GEJEDJNKBOF(name, () =>
+					BHLFHHBDGHO.GEJEDJNKBOF_Validate(name, () =>
 					{
 						//0xCA4B6C
 						if(onSuccess != null)

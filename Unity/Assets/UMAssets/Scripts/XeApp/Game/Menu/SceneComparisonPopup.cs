@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 								if(isGoDiva)
 								{
 									if(i == 0)
-										divaInfo.HCDGELDHFHB();
+										divaInfo.HCDGELDHFHB_UpdateStatus();
 									else
 										divaInfo.ELHBGKLLOIO();
 								}

@@ -15,7 +15,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111E6C8 Offset: 0x111E6C8 VA: 0x111E6C8
 	public int NNFJBBFBIEN(int _JPIDIENBGKH_CostumeId)
 	{
-		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, _JPIDIENBGKH_CostumeId);
+		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, _JPIDIENBGKH_CostumeId);
 		for(int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
 		{
 			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_ItemId == itemId)
@@ -45,7 +45,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111E9EC Offset: 0x111E9EC VA: 0x111E9EC
 	public int HFAMPKLFFEJ_FindEpisodeForReward(int _GPPEFLKGGGJ_ValkyrieId)
 	{
-		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, _GPPEFLKGGGJ_ValkyrieId);
+		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, _GPPEFLKGGGJ_ValkyrieId);
 		for (int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
 		{
 			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_ItemId == itemId)
@@ -152,7 +152,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x111F95C Offset: 0x111F95C VA: 0x111F95C
-	// private bool LEPDBLAKJCF(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	// private bool LEPDBLAKJCF_LoadStep(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 	//KODIKHBMBBJ_Steps = LGADCGFMLLD_step
 	//	IOFHEGJPHKG_StepId = BDJMFDKLHPM_s_id
 	//	JENFHJDFFAD_Pt = FOILNHKHHDF_pt
@@ -174,7 +174,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x111FDF0 Offset: 0x111FDF0 VA: 0x111FDF0
-	// private bool IHJNKFOJPKM(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
+	// private bool IHJNKFOJPKM_LoadReward(EDOHBJAPLPF_JsonData OILEIIEIBHP, int _KAPMOPMDHJE_label) { }
 	// = FAENAMBEGMD_reward
 	//	EIHOBHDKCDB_RewardId = FCEJJEPFIPH_rwid
 	//	KIJAPOFAGPN_ItemId = AIHOJKFNEEN_itm

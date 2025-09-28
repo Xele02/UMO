@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 			m_sceneIconDeccoration.Change(sceneData, DisplayType.Level);
 			m_sceneData = sceneData;
 			m_limitOverData.KHEKNNFCAOI_Init(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_luck);
-			m_sceneDetails.text = sceneData.BGJNIABLBDB_GetSceneDetail();
+			m_sceneDetails.text = sceneData.BGJNIABLBDB_get_description();
 			m_loadingFlag = 0;
 			GameManager.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) =>
 			{

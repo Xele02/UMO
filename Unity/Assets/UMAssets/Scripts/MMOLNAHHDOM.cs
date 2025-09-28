@@ -38,10 +38,10 @@ public class MMOLNAHHDOM
 	}
 
 	// // RVA: 0x1968408 Offset: 0x1968408 VA: 0x1968408
-	public bool PCODDPDFLHK_Read()
+	public bool PCODDPDFLHK_Load()
     {
 		bool res = false;
-		JCHLONCMPAJ_Reset(false);
+		JCHLONCMPAJ_Clear(false);
 		if(File.Exists(ELLBAAFKDCH_Filename))
 		{
 			FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open);
@@ -75,7 +75,7 @@ public class MMOLNAHHDOM
     }
 
 	// // RVA: 0x1968E50 Offset: 0x1968E50 VA: 0x1968E50
-	public bool HJMKBCFJOOH_Write(bool _FBBNPFFEJBN_Force/* = false*/)
+	public bool HJMKBCFJOOH_Save(bool _FBBNPFFEJBN_Force/* = false*/)
     {
 		int a = BGDCMGOPCGE_GetHash(LAIIKHJABMP_MultiDiva);
 		if(!_FBBNPFFEJBN_Force)
@@ -102,15 +102,15 @@ public class MMOLNAHHDOM
 	}
 
 	// // RVA: 0x1968CF4 Offset: 0x1968CF4 VA: 0x1968CF4
-	public void JCHLONCMPAJ_Reset(bool OGBEGDKPDGK_NeedSave)
+	public void JCHLONCMPAJ_Clear(bool _OGBEGDKPDGK_NeedSave)
 	{
 		for(int i = 0; i < LAIIKHJABMP_MultiDiva.Length; i++)
 		{
 			LAIIKHJABMP_MultiDiva[i] = 0xff;
 		}
-		if(OGBEGDKPDGK_NeedSave)
+		if(_OGBEGDKPDGK_NeedSave)
 		{
-			HJMKBCFJOOH_Write(false);
+			HJMKBCFJOOH_Save(false);
 		}
 	}
 

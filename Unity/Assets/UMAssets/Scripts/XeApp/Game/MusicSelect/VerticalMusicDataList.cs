@@ -294,7 +294,7 @@ namespace XeApp.Game.MusicSelect
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
 							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI_EventId)
 							{
-								KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP x) =>
+								KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB_GetCachedSongList().Find((KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP x) =>
 								{
 									//0xCA3DB4
 									return x.MPLGPBNJDJB_FreeMusicId == musicData.GHBPLHBNMBK_FreeMusicId;
@@ -314,7 +314,7 @@ namespace XeApp.Game.MusicSelect
 					bool isOpen = true;
 					if (musicData.DEPGBBJMFED_CategoryId != 5)
 					{
-						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsMusicOpen(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
+						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsAvailable(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
 							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
@@ -339,7 +339,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.isOpen = isOpen/* || RuntimeSettings.CurrentSettings.ForceSongUnlock*/; // 0x10	public bool isOpen; // 0x10		var13
 					initparam.isNew = musicData.LDGOHPAPBMM_IsNew; // 0x11										public bool isNew; // 0x11	local88
 					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
-					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13		musicData.EHNGOGBJMGL - uVar13 - musicData.LDGOHPAPBMM - local_88
+					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13		musicData.EHNGOGBJMGL - uVar13 - musicData.LDGOHPAPBMM_IsNew - local_88
 					initparam.isHighLevel = isHighLevel; // 0x14								public bool isHighLevel; // 0x14
 					initparam.timeType = timeType; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
 					initparam.musicType = musicType; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
@@ -576,7 +576,7 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA3778 Offset: 0xCA3778 VA: 0xCA3778
-		//public VerticalMusicDataList.MusicListData Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode, bool simulation) { }
+		//public VerticalMusicDataList.MusicListData Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA36D0 Offset: 0xCA36D0 VA: 0xCA36D0
 		public MusicListData Find(Predicate<MusicListData> match, bool line6Mode, bool simulation)

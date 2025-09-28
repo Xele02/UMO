@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 				m_imageDiff.uvRect = m_imageDiffRectList_6Line[m_view.AKNELONELJK_difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
-			m_textWinLosePoint.text = m_view.IOOBNLAHLEJ_Point2.ToString();
+			m_textWinLosePoint.text = m_view.IOOBNLAHLEJ_WinPoint.ToString();
 			m_ScorePoint.SetNumber(m_view.GCAPLLEIAAI_LastScore, 0);
 			m_ScoreBonusText.text = m_view.GBLHPHCAPLG_ScoreBonus.ToString();
 			m_textClassRank.text = string.Format(menuBk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_BattleClass);
@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 				}
 				m_textExPoint.text = "" + 100 + "/" + 100;
 				m_layoutGauge.Setup(100, 100, 0);
-				m_textExHiScore.text = m_view.IGIPKOJJIIA_ExBattleScoreTotalAfter.ToString();
+				m_textExHiScore.text = m_view.IGIPKOJJIIA_TotalScore.ToString();
 				m_textExRanking.text = m_view.EKOEECDHABK_ExRanking > 0 ? m_view.EKOEECDHABK_ExRanking.ToString() : "---";
 				m_layoutExRival.StartChildrenAnimGoStop("03");
 			}

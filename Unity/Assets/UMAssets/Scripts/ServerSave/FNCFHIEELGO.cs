@@ -6,7 +6,7 @@ using XeSys;
 public class FNCFHIEELGO { }
 public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 1;
+	private const int ECFEMKGFDCE_CurrentVersion = 1;
 	public List<NDBFKHKMMCE_DecoItem.FKIMJLOFONM> MPPKMEIEGFE_VisitList; // 0x24
 	public List<NDBFKHKMMCE_DecoItem.FKIMJLOFONM> MHPDCGNOBHH_PresentSentList; // 0x28
 	private long ENOBDCFHELD; // 0x30
@@ -111,13 +111,13 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				LIDCDBKAAFL_VisitAcquiredAt = DKMPHAPBDLH_ReadLong(block, "visit_acquired_at", 0, ref isInvalid);
-				KAIOEKJJAKH_VisitedAt = DKMPHAPBDLH_ReadLong(block, "visited_at", 0, ref isInvalid);
-				HFJADCMLFAN_VisitPrevCntFriend = CJAENOMGPDA_ReadInt(block, "visit_prev_cnt_friend", 0, ref isInvalid);
-				FBINJFGCIOI_VisitPrevCntFan = CJAENOMGPDA_ReadInt(block, "visit_prev_cnt_fan", 0, ref isInvalid);
-				IAOOCOKEECB_VisitPrevCntOther = CJAENOMGPDA_ReadInt(block, "visit_prev_cnt_other", 0, ref isInvalid);
-				EILGNIEGDOI_PresentAcquiredAt = DKMPHAPBDLH_ReadLong(block, "present_acquired_at", 0, ref isInvalid);
-				GHEBKKHAAPM_PresentPrevCnt = CJAENOMGPDA_ReadInt(block, "present_prev_cnt", 0, ref isInvalid);
+				LIDCDBKAAFL_VisitAcquiredAt = DKMPHAPBDLH_GetLong(block, "visit_acquired_at", 0, ref isInvalid);
+				KAIOEKJJAKH_VisitedAt = DKMPHAPBDLH_GetLong(block, "visited_at", 0, ref isInvalid);
+				HFJADCMLFAN_VisitPrevCntFriend = CJAENOMGPDA_GetInt(block, "visit_prev_cnt_friend", 0, ref isInvalid);
+				FBINJFGCIOI_VisitPrevCntFan = CJAENOMGPDA_GetInt(block, "visit_prev_cnt_fan", 0, ref isInvalid);
+				IAOOCOKEECB_VisitPrevCntOther = CJAENOMGPDA_GetInt(block, "visit_prev_cnt_other", 0, ref isInvalid);
+				EILGNIEGDOI_PresentAcquiredAt = DKMPHAPBDLH_GetLong(block, "present_acquired_at", 0, ref isInvalid);
+				GHEBKKHAAPM_PresentPrevCnt = CJAENOMGPDA_GetInt(block, "present_prev_cnt", 0, ref isInvalid);
 				int k = (int)Utility.GetCurrentUnixTime();
 				EDOHBJAPLPF_JsonData b = block["visit_list"];
 				for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)

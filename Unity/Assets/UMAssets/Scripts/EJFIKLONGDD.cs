@@ -12,7 +12,7 @@ public class EJFIKLONGDD
         FKADJNIGFHB_4_Scene3 = 4,
         FBKFCCCACGE_5_EpiItem = 5,
         KODIFHOOOEC_6_LimitOver = 6,
-        AEFCOHJBLPO = 7,
+        AEFCOHJBLPO_7_Num = 7,
     }
 
 	public BLLOINEKDLM PEEAGFNOFFO_UnlockType; // 0x8
@@ -110,7 +110,7 @@ public class EJFIKLONGDD
     }
 
 	// // RVA: 0x12EDEFC Offset: 0x12EDEFC VA: 0x12EDEFC
-	public static List<EJFIKLONGDD> FKDIMODKKJD(List<IHAEIOAKEMG> NNDGIAEFMOG, string _CNLJNGLMMHB_Options)
+	public static List<EJFIKLONGDD> FKDIMODKKJD_GetList(List<IHAEIOAKEMG> NNDGIAEFMOG, string _CNLJNGLMMHB_Options)
     {
         List<EJFIKLONGDD> res = new List<EJFIKLONGDD>();
         if(NNDGIAEFMOG != null)

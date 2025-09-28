@@ -416,12 +416,12 @@ namespace XeApp.Game.Menu
 			SetIcon(arrayIndex, reward.KIJAPOFAGPN_ItemId);
 			if(reward.CMCKNKKCNDK_status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
 			{
-				if(reward.CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
+				if(reward.CMCKNKKCNDK_status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved/*1*/)
 				{
 					SwitchStampAnim(arrayIndex, eStampStatus.Press);
 					return;
 				}
-				if (reward.CMCKNKKCNDK_status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
+				if (reward.CMCKNKKCNDK_status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved/*2*/)
 					return;
 				m_stampPlayList.Add(arrayIndex);
 			}

@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime());
 				}
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			};
 			m_snsCoopControl = PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DF250 Offset: 0x13DF250 VA: 0x13DF250
-		// private void SnsInheriting(HDEEBKIFLNI.DGNPPLKNCGH platform, LayoutMonthlyPassTakeover monthlylayout) { }
+		// private void SnsInheriting(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink platform, LayoutMonthlyPassTakeover monthlylayout) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E597C Offset: 0x6E597C VA: 0x6E597C
 		// // RVA: 0x13DF274 Offset: 0x13DF274 VA: 0x13DF274

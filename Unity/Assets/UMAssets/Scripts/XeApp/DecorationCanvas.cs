@@ -627,7 +627,7 @@ namespace XeApp
 		//// RVA: 0x1ABD028 Offset: 0x1ABD028 VA: 0x1ABD028
 		public void UpdateViewDecoItemList()
 		{
-			KDKFHGHGFEK.FKDIMODKKJD(ref m_viewDecoItemDataList);
+			KDKFHGHGFEK.FKDIMODKKJD_GetList(ref m_viewDecoItemDataList);
 		}
 
 		//// RVA: 0x1ABD0B0 Offset: 0x1ABD0B0 VA: 0x1ABD0B0

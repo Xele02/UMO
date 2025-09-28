@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			{
 				m_sceneIconDecoration[cnt] = new SceneIconDecoration();
 			}
-			m_statusCalculateWork.OBKGEDCKHHE();
+			m_statusCalculateWork.OBKGEDCKHHE_Init();
 			ClearLoadedCallback();
 			return true;
 		}
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_statusCalculateWork.JCHLONCMPAJ();
+				m_statusCalculateWork.JCHLONCMPAJ_Clear();
 				CMMKCEPBIHI.DIDENKKDJKI(ref m_statusCalculateWork, unitData, playerData, musicData, friendData, enemyData);
 				m_statusCalculateWork.GEEDEOHGMOM(ref m_statusResultWork);
 				m_statusCalculateWork.DDPJACNMPEJ(ref m_costumeResultWork);

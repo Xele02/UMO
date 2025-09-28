@@ -313,7 +313,7 @@ namespace XeApp.Game.Menu
 		{
 			optionMenuArgs = Args as OptionMenuArgs;
 			m_option_anim.InitializeBadge();
-			List<AODFBGCCBPE> l = AODFBGCCBPE.FKDIMODKKJD(false);
+			List<AODFBGCCBPE> l = AODFBGCCBPE.FKDIMODKKJD_GetList(false);
 			int total = 0;
 			for(int i = 0; i < l.Count; i++)
 			{
@@ -1116,7 +1116,7 @@ namespace XeApp.Game.Menu
 			bool isWait = true;
 			bool isComplete = false;
 			bool isError = false;
-			installManager.PAHGEEOFEPM(true, () =>
+			installManager.PAHGEEOFEPM_Install(true, () =>
 			{
 				//0xDDACB4
 				isComplete = true;

@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 				//0xC30694
 				return isWait;
 			});
-			if(SubPlateResult.CDOCOLOKCJK())
+			if(SubPlateResult.CDOCOLOKCJK_Avaiable())
 			{
 				MenuScene.Instance.UnitSaveWindowControl.ShowSubPlateWindow(SubPlateResult, null, m_operationMode, () =>
 				{
@@ -443,7 +443,7 @@ namespace XeApp.Game.Menu
 			AEGLGBOGDHH res;
 			CalcStatus(ref m_baseStatus, ref m_addStatus, out luck2, viewPlayerData, viewUnitData, viewMusicData, viewFriendData, enemyData, out res);
 			m_addStatus.Add(m_baseStatus);
-			if(SubPlateResult.CDOCOLOKCJK())
+			if(SubPlateResult.CDOCOLOKCJK_Avaiable())
 			{
 				SetSubPlateParam();
 				m_supportButton.Disable = false;
@@ -462,25 +462,25 @@ namespace XeApp.Game.Menu
 				m_supportButton.Disable = true;
 				return;
 			}
-			if (SubPlateResult.CDOCOLOKCJK())
+			if (SubPlateResult.CDOCOLOKCJK_Avaiable())
 			{
 				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
-				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_1_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_1_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_2_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_2_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_4_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_4_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
 			else
 			{
 				SetInvalidSubPlate();
 				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_Total), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_Total), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
-				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_1_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_1_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_2_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_2_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_4_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_4_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
-			m_status[4].Set(m_baseStatus.life, m_addStatus.life, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ECHJOKLBHEJ_Life), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ECHJOKLBHEJ_Life), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[4].Set(m_baseStatus.life, m_addStatus.life, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ECHJOKLBHEJ_8_Life), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ECHJOKLBHEJ_8_Life), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			m_status[7].Set(luck, luck + luck2, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.OHOKFCJNFDO_Luck), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.OHOKFCJNFDO_Luck), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-			m_status[5].Set(m_baseStatus.support, m_addStatus.support, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.AHJNCHAONGN_Support), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.AHJNCHAONGN_Support), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-			m_status[6].Set(m_baseStatus.fold, m_addStatus.fold, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ONBNGGDFAJK_Fold), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ONBNGGDFAJK_Fold), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[5].Set(m_baseStatus.support, m_addStatus.support, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.AHJNCHAONGN_16_Support), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.AHJNCHAONGN_16_Support), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[6].Set(m_baseStatus.fold, m_addStatus.fold, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ONBNGGDFAJK_32_Fold), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ONBNGGDFAJK_32_Fold), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			if(viewFriendData == null)
 			{
 				m_notesTexts[0].text = m_baseStatus.spNoteExpected[1].ToString();
@@ -596,7 +596,7 @@ namespace XeApp.Game.Menu
 						if(m_mainScene.FCGHOLNFDDF_HasCenterSkillCondMusicAttr(m, false))
 						{
 							m_centerSkillRegulation[2].SetActive(true);
-							if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, false))
+							if(!m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, false))
 							{
 								m_centerSkillNonActive[1].SetActive(true);
 								m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
@@ -608,24 +608,24 @@ namespace XeApp.Game.Menu
 							if(m_mainScene.ABIOBCMPEHM_SkillSwitchPatternCondition() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
 							{
 								m_centerSkillRegulation[1].SetActive(true);
-								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
+								if(m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[0].SetActive(true);
 									m_centerSkillRegulationText[0].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_n");
 								}
-								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
+								else if(!m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
 									m_centerSkillNonActive[0].SetActive(true);
 									m_centerSkillRegulationText[0].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
 								}
-								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
+								if(m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_y");
 								}
-								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
+								else if(!m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
@@ -635,7 +635,7 @@ namespace XeApp.Game.Menu
 							}
 							else
 							{
-								if (m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true))
+								if (m_mainScene.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(viewMusicData.DLAEJOBELBH_MusicId, true))
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_y");
@@ -709,8 +709,8 @@ namespace XeApp.Game.Menu
 			luck = 0;
 			baseStatus.Copy(unitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
-			result.OBKGEDCKHHE();
-			result.JCHLONCMPAJ();
+			result.OBKGEDCKHHE_Init();
+			result.JCHLONCMPAJ_Clear();
 			CMMKCEPBIHI.DIDENKKDJKI(ref result, unitData, viewPlayerData, viewMusicData, viewFriendPlayerData, viewEnemyData);
 			result.DDPJACNMPEJ(ref addStatus);
 			baseStatus.Add(addStatus);

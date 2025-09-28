@@ -46,7 +46,7 @@ public abstract class IKMBBPDBECA
 	public sbyte FBAMBAMCCHO = LFHEBMDPBAA_False; // 0x78
 	public long EEFLOOBOAGF_ViewOrder; // 0x80
 
-	public string MDEIKCBEHHC { get; protected set; } // 0x28 PNJMLBIKKNG PKENIFNAJDL BPNCHKKFDJH
+	public string MDEIKCBEHHC_Kakutei { get; protected set; } // 0x28 PNJMLBIKKNG PKENIFNAJDL BPNCHKKFDJH
 	public int MFICPBJPCCJ_GachaBgId { get { return OEDOILNHENL ^ FBGGEFFJJHB_xor; } protected set { OEDOILNHENL = value ^ FBGGEFFJJHB_xor; } } //0x8E8518 ACOMOAJACEK 0x8E852C FMANDECDPMK
 	public int HNKHCIDOKFF_PlateBgId { get { return FDLEJPAPCGM ^ FBGGEFFJJHB_xor; } protected set { FDLEJPAPCGM = value ^ FBGGEFFJJHB_xor; } } //0x8E8540 JNCJEOBIFGJ 0x8E8554 EOAOIAJNFMH
 	public int INHOGJODJFJ_GroupId { get { return HKHLEFMLIGA ^ FBGGEFFJJHB_xor; } protected set { HKHLEFMLIGA = value ^ FBGGEFFJJHB_xor; } } //0x8E8568 MIHPGFMJEED 0x8E857C NBGJAEFAENJ
@@ -66,15 +66,15 @@ public abstract class IKMBBPDBECA
 	//// RVA: 0x8E86FC Offset: 0x8E86FC VA: 0x8E86FC
 	public void EDCOECLMPGM(bool _KNMLPAAHAOF_IsStartGacha)
 	{
-		if(MDEIKCBEHHC == "")
+		if(MDEIKCBEHHC_Kakutei == "")
 		{
 			if(_KNMLPAAHAOF_IsStartGacha)
-				MDEIKCBEHHC = JpStringLiterals.StringLiteral_11115;
+				MDEIKCBEHHC_Kakutei = JpStringLiterals.StringLiteral_11115;
 			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("disable_decul_gacha_kakutei_4", 0);
 			if(disable_decul_gacha_kakutei_4 != 0)
 				return;
 			if(OriginalName.Contains(JpStringLiterals.StringLiteral_11117_Jp))
-				MDEIKCBEHHC = JpStringLiterals.StringLiteral_11118;
+				MDEIKCBEHHC_Kakutei = JpStringLiterals.StringLiteral_11118;
 		}
 	}
 

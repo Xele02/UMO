@@ -12,7 +12,7 @@ public class IFBCGCCJBHI
 	public int EGJCFJLAKMO_TotalUtaRate = -1; // 0x34
 
 	public int EPNALMONMHB_CurrentStamina { get { return BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue(); } } //0x11ED670 NCLHIDDMLCO
-	public int POKDILOKODG_MaxEnergy { get { return BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxStamina; } } //0x11ED6A4 EDFHEIAMNLE
+	public int POKDILOKODG_MaxEnergy { get { return BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount; } } //0x11ED6A4 EDFHEIAMNLE
 	public int CMCHABFEOHH_RemainTime { get { return (int)KLDBCKIJACO_StaminaTimeLeft; } } //0x11ED6D0 NFIBFCPHEPN
 	public string FPLEADMHLKN_StaminaStr { get; private set; } // 0x28 LAOBMPGBJBI KFJLNKOMGJB ENMDNIKAKEI
 	// public int MMFBIBDIAFB { get; } 0x11ED6E8 ADHCNLCKOFG
@@ -23,7 +23,7 @@ public class IFBCGCCJBHI
 	public int OIOFGIBDOPI_CurrencyNonPaid { get { return KCCLEHLLOFG_Common != null ? KCCLEHLLOFG_Common.NFHLDFJIBKI_have_uc : 0; } } //0x11ED7F8 IHIBMMDPBEC
 	public int OPBHNBECFII_CurExp { get { return KCCLEHLLOFG_Common != null ? KCCLEHLLOFG_Common.EOHDMCMHBKJ_Exp : 0; } } //0x11ED810 CFGDKOPPMAE
 	public int PBGFIOONCMB_LevelMaxExp { get { return (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp != null && KCCLEHLLOFG_Common != null && !NMCICIHMOCM_PlayerLevelLimit) ? IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp.NDFGMMKGBAA_GetExpForPlayerLevel(KCCLEHLLOFG_Common == null ? 1 : KCCLEHLLOFG_Common.KIECDDFNCAN_Level) : 0; } } //0x11ED828 EHJKNBNPNKN
-	public int DMBFOMLCGBG_ChangeLevelValue { get { return KCCLEHLLOFG_Common != null ? KCCLEHLLOFG_Common.KIECDDFNCAN_Level : 0; } } //0x11EDAE8 FEMNAJGJKJH
+	public int DMBFOMLCGBG_Level { get { return KCCLEHLLOFG_Common != null ? KCCLEHLLOFG_Common.KIECDDFNCAN_Level : 0; } } //0x11EDAE8 FEMNAJGJKJH
 	public bool NMCICIHMOCM_PlayerLevelLimit { get
 		{
 			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp == null || KCCLEHLLOFG_Common == null)
@@ -61,11 +61,11 @@ public class IFBCGCCJBHI
 		JHKAEJBNGKE_RateLeftToNext = 0;
 		HDBFOIAGPJK_UtaRank = 0;
 		DOMEGAEKENF_ItemId = 0;
-		FBANBDCOEJL();
+		FBANBDCOEJL_Update();
 	}
 
 	// // RVA: 0x11EE784 Offset: 0x11EE784 VA: 0x11EE784
-	public void FBANBDCOEJL()
+	public void FBANBDCOEJL_Update()
     {
         if(KCCLEHLLOFG_Common == null)
         {

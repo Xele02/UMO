@@ -49,13 +49,13 @@ namespace XeApp.Game.AR
 			public string markerId = ""; // 0x10
 			[UMOMember(ReaderMember = "DNJLJMKKDNA_EventId")]
 			public string eventId = ""; // 0x14
-			[UMOMember(ReaderMember = "BFGNMDGOEID")]
+			[UMOMember(ReaderMember = "BFGNMDGOEID_Pattern")]
 			public ARDivaPatternId pattern = ARDivaPatternId.None; // 0x18
 			[UMOMember(ReaderMember = "DIPKCALNIII_diva_id")]
 			public int divaId; // 0x1C
 			[UMOMember(ReaderMember = "BEEAIAAJOHD_CostumeId")]
 			public int costumeId; // 0x20
-			[UMOMember(ReaderMember = "FPLEBCKDCBE|MDLMHEDHPHA|CDKLKKKGAMB")]
+			[UMOMember(ReaderMember = "FPLEBCKDCBE_pos_x|MDLMHEDHPHA_pos_y|CDKLKKKGAMB")]
 			public Vector3 position = Vector3.zero; // 0x24
 			[UMOMember(ReaderMember = "OAPEIEHMIJD|IMGHEKMHHPC|GJEEMHGGDKD")]
 			public Vector3 rotation = Vector3.zero; // 0x30
@@ -71,7 +71,7 @@ namespace XeApp.Game.AR
 			public long markerStart; // 0x50
 			[UMOMember(ReaderMember = "JIDKMIHGOHI", Display = "Date")]
 			public long markerEnd; // 0x58
-			[UMOMember(ReaderMember = "APGKOJKNNGP")]
+			[UMOMember(ReaderMember = "APGKOJKNNGP_EmblemId")]
 			public int emblemId; // 0x60
 			[UMOMember(ReaderMember = "DCNFOHHNAEF")]
 			public int trackingType; // 0x64
@@ -135,7 +135,7 @@ namespace XeApp.Game.AR
 					CueSheetData d = new CueSheetData();
 					d.no = array[i].IKPIDCFOFEA_no;
 					d.enable = array[i].PLALNIIBLOF_en;
-					d.markerNo = array[i].HIEKBDMHKLP;
+					d.markerNo = array[i].HIEKBDMHKLP_MarkerNo;
 					d.cueSheetId = array[i].BLOIKEAGFED;
 					d.soundStart = array[i].IOCAJMALMLJ;
 					d.soundEnd = array[i].BEBCANGAMAK;
@@ -159,11 +159,11 @@ namespace XeApp.Game.AR
 					nd.enable = array[i].PLALNIIBLOF_en;
 					nd.markerId = array[i].FILGCAEHBAC;
 					nd.eventId = array[i].DNJLJMKKDNA_EventId.ToLower();
-					nd.pattern = (ARDivaPatternId)array[i].BFGNMDGOEID;
+					nd.pattern = (ARDivaPatternId)array[i].BFGNMDGOEID_Pattern;
 					nd.divaId = array[i].DIPKCALNIII_diva_id;
 					nd.costumeId = array[i].BEEAIAAJOHD_CostumeId;
-					float.TryParse(array[i].FPLEBCKDCBE, out nd.position.x);
-					float.TryParse(array[i].MDLMHEDHPHA, out nd.position.y);
+					float.TryParse(array[i].FPLEBCKDCBE_pos_x, out nd.position.x);
+					float.TryParse(array[i].MDLMHEDHPHA_pos_y, out nd.position.y);
 					float.TryParse(array[i].CDKLKKKGAMB/*pos_z*/, out nd.position.z);
 					float.TryParse(array[i].OAPEIEHMIJD, out nd.rotation.x);
 					float.TryParse(array[i].IMGHEKMHHPC, out nd.rotation.y);
@@ -181,7 +181,7 @@ namespace XeApp.Game.AR
 						nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 360000;
 					}
 					// UMO
-					nd.emblemId = array[i].APGKOJKNNGP;
+					nd.emblemId = array[i].APGKOJKNNGP_EmblemId;
 					nd.trackingType = array[i].DCNFOHHNAEF;
 					nd.motionId = (ARDivaMotionId)array[i].BEHGCAMHJIE;
 					nd.cueSheetList = l.FindAll((CueSheetData _) =>

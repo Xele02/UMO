@@ -20,19 +20,19 @@ public class NDABOOOOENC
 	public bool LHGFPPIEKPJ { get { return APEIJNFMEFG_ShowButton; } set { return; } } // PFHHNKMGPGJ 0x1ADB760 DNPOLCNDBKH 0x1ADB768
 
 	// // RVA: 0x1ADB76C Offset: 0x1ADB76C VA: 0x1ADB76C
-	public void IJBGPAENLJA_Init()
+	public void IJBGPAENLJA_OnAwake()
 	{
 		HHCJCDFCLOB = this;
 	}
 
 	// // RVA: 0x1ADB7EC Offset: 0x1ADB7EC VA: 0x1ADB7EC
-	private string DMCLJKABBCJ_FileName()
+	private string DMCLJKABBCJ_GetSavePath()
 	{
 		return Application.persistentDataPath + "/SaveData/gpgs.bin";
 	}
 
 	// // RVA: 0x1ADB854 Offset: 0x1ADB854 VA: 0x1ADB854
-	private string KJEOLHCEDJI_Directory()
+	private string KJEOLHCEDJI_GetSaveDirectory()
 	{
 		return Application.persistentDataPath + "/SaveData";
 	}
@@ -43,9 +43,9 @@ public class NDABOOOOENC
 		if (!GKDLPKNOGCK_Initialized)
 			return false;
 		APEIJNFMEFG_ShowButton = true;
-		if(File.Exists(DMCLJKABBCJ_FileName()))
+		if(File.Exists(DMCLJKABBCJ_GetSavePath()))
 		{
-			byte[] data = File.ReadAllBytes(DMCLJKABBCJ_FileName());
+			byte[] data = File.ReadAllBytes(DMCLJKABBCJ_GetSavePath());
 			FAGBLGODELF_LoginStatus = data[0];
 			if(FAGBLGODELF_LoginStatus == 2)
 			{
@@ -67,13 +67,13 @@ public class NDABOOOOENC
 	private void HJOPHGFDHAM_SetStatus(int MFBIAOAGPHB)
 	{
 		FAGBLGODELF_LoginStatus = MFBIAOAGPHB;
-		if(!Directory.Exists(KJEOLHCEDJI_Directory()))
+		if(!Directory.Exists(KJEOLHCEDJI_GetSaveDirectory()))
 		{
-			Directory.CreateDirectory(KJEOLHCEDJI_Directory());
+			Directory.CreateDirectory(KJEOLHCEDJI_GetSaveDirectory());
 		}
 		byte[] data = new byte[1];
 		data[0] = (byte)FAGBLGODELF_LoginStatus;
-		File.WriteAllBytes(DMCLJKABBCJ_FileName(), data);
+		File.WriteAllBytes(DMCLJKABBCJ_GetSavePath(), data);
 	}
 
 	// // RVA: 0x1ADBB08 Offset: 0x1ADBB08 VA: 0x1ADBB08
@@ -83,7 +83,7 @@ public class NDABOOOOENC
 		{
 			if(!AppEnv.IsCBT())
 			{
-				TodoLogger.LogError(TodoLogger.Playgames, "NDABOOOOENC.NCDLCIPGPNC (playgames)");
+				TodoLogger.LogError(TodoLogger.Playgames, "NDABOOOOENC.NCDLCIPGPNC_Login (playgames)");
 				Debug.Log("call PlayGamesPlatform.Activate");
 				GKDLPKNOGCK_Initialized = true;
 				KBCANNBANIL_ReadStatusOnSavedFile();
@@ -171,7 +171,7 @@ public class NDABOOOOENC
 	}
 
 	// // RVA: 0x1ADC3E8 Offset: 0x1ADC3E8 VA: 0x1ADC3E8
-	public void GLHANCMGNDM_UpdateAchievement(int _PPFNGGCBJKC_id, double _JBGEEPFKIGG_val/* = 100*/)
+	public void GLHANCMGNDM_Unlock(int _PPFNGGCBJKC_id, double _JBGEEPFKIGG_val/* = 100*/)
 	{
 		if(!AppEnv.IsCBT() && GKDLPKNOGCK_Initialized)
 		{
@@ -230,13 +230,13 @@ public class NDABOOOOENC
 		{
 			for(int i = 0; i < PKDKPCOOPLL.Count; i++)
 			{
-				GLHANCMGNDM_UpdateAchievement(PKDKPCOOPLL[i], 100);
+				GLHANCMGNDM_Unlock(PKDKPCOOPLL[i], 100);
 			}
 		}
 	}
 
 	// // RVA: 0x1ADCBE8 Offset: 0x1ADCBE8 VA: 0x1ADCBE8
-	public void NKFNJMEELMP_UpdateQuestAchievements()
+	public void NKFNJMEELMP_UnlockAchievements()
 	{
 		if(GKDLPKNOGCK_Initialized)
 		{
@@ -253,7 +253,7 @@ public class NDABOOOOENC
 							{
 								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC_id, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
 								{
-									GLHANCMGNDM_UpdateAchievement(dbQuest.HDBFCIOCNPA_AchievementId, 100);
+									GLHANCMGNDM_Unlock(dbQuest.HDBFCIOCNPA_AchievementId, 100);
 								}
 							}
 						}

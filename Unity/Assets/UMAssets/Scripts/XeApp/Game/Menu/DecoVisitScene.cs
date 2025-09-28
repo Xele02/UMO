@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 				player = args.friendData;
 				bool isDone = false;
 				bool isError = false;
-				if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_Guest || player.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_Guest)
+				if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_0_Normal || player.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_0_Normal)
 				{
 					//LAB_011dca68
 					CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CKJHFFHFPLH_GetFriends(() =>
@@ -126,14 +126,14 @@ namespace XeApp.Game.Menu
 					a = HNKMEOKCNBI.BEABGIOEFLG.HEEJBCDDOJJ_Friend/*0*/;
 					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
 					{
-						a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_Other/*2*/;
+						a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_2_Other/*2*/;
 						if((player.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite)
 							a = HNKMEOKCNBI.BEABGIOEFLG.HNANENNPBCO_Fan/*1*/;
 					}
 				}
 				else
 				{
-					a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_Other/*2*/;
+					a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_2_Other/*2*/;
 					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
 						a = HNKMEOKCNBI.BEABGIOEFLG.HEEJBCDDOJJ_Friend/*0*/;
 				}
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_friendPlayerData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
 					{
-						//(m_friendPlayerData.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA;
+						//(m_friendPlayerData.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite;
 						b = true;
 					}
 				}
@@ -635,7 +635,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x11D9248
 				isDone = true;
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
 				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, itemId, count, null, 0);
 				m_sentGiftPopupSetting.itemId = itemId;
 				m_sentGiftPopupSetting.count = count;

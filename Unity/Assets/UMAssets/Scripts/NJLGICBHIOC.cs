@@ -17,7 +17,7 @@ public class NJLGICBHIOC
         ILCMGKPAEOI = 11,
         DKJIAKIPEJB = 12,
         IDEEFFIEMNH = 13,
-        ANFKBNLLJFN = 14,
+        ANFKBNLLJFN_14 = 14,
         BILICHMCHIP = 15,
         PMMOLBAAHEM = 16,
         OHAGNHFOEKO = 17,

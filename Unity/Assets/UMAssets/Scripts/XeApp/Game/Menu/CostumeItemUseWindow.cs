@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1631C30 Offset: 0x1631C30 VA: 0x1631C30
 		public CostumeItemUseWindow()
 		{
-			xor = LPDNKHAIOLH.CEIBAFOCNCA();
+			xor = LPDNKHAIOLH.CEIBAFOCNCA_Int();
 			m_item_use_num = 0;
 			m_have_item = 100;
 			m_use_item_min = 0;
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 		public void Init(LFAFJCNKLML data, int item_type)
 		{
 			m_data = data;
-			item_data = NIHHKCDHLNH.FKDIMODKKJD(data.AHHJLDLAPAN_DivaId)[item_type];
+			item_data = NIHHKCDHLNH.FKDIMODKKJD_GetList(data.AHHJLDLAPAN_DivaId)[item_type];
 			m_item_use_type = item_type;
 			m_reward_list = data.OCOOHBINGBG_LevelInfo;
 			m_have_item = item_data.HMFFHLPNMPH_count;
@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 			m_item_name.text = item_data.OPFGFINHFCE_name;
 			m_item_use_num = 0;
 			LFAFJCNKLML.GFIPDFPIKIJ g;
-			LFAFJCNKLML.HKKKKFLBFJN(m_data, m_data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF);
+			LFAFJCNKLML.HKKKKFLBFJN(m_data, m_data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF_0_Normal);
 			UpdateItemValue();
 			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_value, m_reward_icon, null);
 			SetUseItemImage(item_type + 220001);

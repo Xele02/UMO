@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class FKNOCGCODBK { }
 public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 {
-	private const int ECFEMKGFDCE = 3;
+	private const int ECFEMKGFDCE_CurrentVersion = 3;
 	private List<CIFHILOJJFC> AHBBMJANGHE_Units; // 0x24
 	public CIFHILOJJFC DBMOBFCLFOB_Saved = new CIFHILOJJFC(); // 0x28
 
@@ -12,7 +12,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x1191F34 NFKFOODCJJB
 
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
-	public CIFHILOJJFC GCINIJEMHFK(int _PPFNGGCBJKC_id)
+	public CIFHILOJJFC GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)
 	{
 		return AHBBMJANGHE_Units[_PPFNGGCBJKC_id];
 	}
@@ -108,7 +108,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)
 				{
 					CIFHILOJJFC MEFHDDNABLM_unit = AHBBMJANGHE_Units[i];
-					MEFHDDNABLM_unit.FODKKJIDDKN_vf_Id = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.FODKKJIDDKN_vf_Id, 1, ref notValid);
+					MEFHDDNABLM_unit.FODKKJIDDKN_vf_Id = CJAENOMGPDA_GetInt(block[i], AFEHLCGHAEE_Strings.FODKKJIDDKN_vf_Id, 1, ref notValid);
 					if(db != null)
 					{
 						if(!db.PEOALFEGNDH_Valkyrie.PILGJJCABME_IsValkyrieAvaiable(MEFHDDNABLM_unit.FODKKJIDDKN_vf_Id))
@@ -116,17 +116,17 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 							MEFHDDNABLM_unit.FODKKJIDDKN_vf_Id = 1;
 						}
 					}
-					MEFHDDNABLM_unit.OPFGFINHFCE_name = FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.OPFGFINHFCE_name, CIFHILOJJFC.CBELJGBFLGA, ref notValid);
+					MEFHDDNABLM_unit.OPFGFINHFCE_name = FGCNMLBACGO_GetString(block[i], AFEHLCGHAEE_Strings.OPFGFINHFCE_name, CIFHILOJJFC.CBELJGBFLGA, ref notValid);
 					if(block[i].BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.FDBOPFEOENF_diva))
 					{
 						EDOHBJAPLPF_JsonData divaArray = block[i][AFEHLCGHAEE_Strings.FDBOPFEOENF_diva];
 						for(int j = 0; j < divaArray.HNBFOAJIIAL_Count; j++)
 						{
-							int divaId = CJAENOMGPDA_ReadInt(divaArray[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, ref notValid);
-							int cosId = CJAENOMGPDA_ReadInt(divaArray[j], AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref notValid);
+							int divaId = CJAENOMGPDA_GetInt(divaArray[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, ref notValid);
+							int cosId = CJAENOMGPDA_GetInt(divaArray[j], AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref notValid);
 							if(divaId == 0) 
 								cosId = 0;
-							int colId = CJAENOMGPDA_ReadInt(divaArray[j], "c_col", 0, ref notValid);
+							int colId = CJAENOMGPDA_GetInt(divaArray[j], "c_col", 0, ref notValid);
 							if(divaId == 0)
 								colId = 0;
 							if(divaId != 0 && db != null)
@@ -181,11 +181,11 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 						EDOHBJAPLPF_JsonData divaArray = block[i]["add_" + AFEHLCGHAEE_Strings.FDBOPFEOENF_diva];
 						for(int j = 0; j < divaArray.HNBFOAJIIAL_Count; j++)
 						{
-							int divaId = CJAENOMGPDA_ReadInt(divaArray[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, ref notValid);
-							int cosId = CJAENOMGPDA_ReadInt(divaArray[j], AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref notValid);
+							int divaId = CJAENOMGPDA_GetInt(divaArray[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, ref notValid);
+							int cosId = CJAENOMGPDA_GetInt(divaArray[j], AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref notValid);
 							if(divaId == 0) 
 								cosId = 0;
-							int colId = CJAENOMGPDA_ReadInt(divaArray[j], "c_col", 0, ref notValid);
+							int colId = CJAENOMGPDA_GetInt(divaArray[j], "c_col", 0, ref notValid);
 							if(divaId == 0)
 								colId = 0;
 							if(divaId != 0 && db != null)

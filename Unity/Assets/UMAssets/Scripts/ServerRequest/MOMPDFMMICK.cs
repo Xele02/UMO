@@ -87,7 +87,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	public JGCHFAKGAGA NFEAMMJIMPG_Result { get; private set; } // 0xA0 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	//// RVA: 0x17B9024 Offset: 0x17B9024 VA: 0x17B9024
-	public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP)
+	public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP)
 	{
 		AHEFHIMGIBI_PlayerData = _IDLHJIOMJBK_data.PBNINEMAOPB();
 		EFDFLLPLDKD_Keys = _JIMKNDJMCID_Keys;
@@ -98,7 +98,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	}
 
 	//// RVA: 0x17B90C0 Offset: 0x17B90C0 VA: 0x17B90C0
-	//public void DOMFHDPMCCO(BBHNACPENDM.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP, List<int> _MEGNAIJPBFF_InventoryClosedAt) { }
+	//public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP, List<int> _MEGNAIJPBFF_InventoryClosedAt) { }
 
 	//// RVA: 0x17B9184 Offset: 0x17B9184 VA: 0x17B9184
 	private bool DEJPNPMHPJD()

@@ -767,7 +767,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
@@ -1552,7 +1552,7 @@ namespace XeApp.Game.Menu
 					}
 					//LAB_013b0da8
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 				}
 				else
 				{
@@ -1597,7 +1597,7 @@ namespace XeApp.Game.Menu
 							//0x1071060
 							EventMusicSelect();
 							GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_musicSelectSupporter.isLine6Mode);
-							GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+							GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 							ApplyMusicListInfo();
 							ApplyMusicInfo();
 							DelayedApplyMusicInfo();
@@ -1794,7 +1794,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
-			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
+			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
 			int fever_ticket_rate = 0;
 			if(dbEv != null)
 				fever_ticket_rate = dbEv.LPJLEHAJADA_GetIntParam("fever_ticket_rate", 0);
@@ -2186,7 +2186,7 @@ namespace XeApp.Game.Menu
 			RandomMusicSelect(false, diff, true);
 			m_eventGoDivaData.FCHBEILHFBC_Difficulty = diff;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_musicSelectSupporter.isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			ApplyMusicListInfo();
 			ApplyMusicInfo();
 			DelayedApplyMusicInfo();
@@ -2586,7 +2586,7 @@ namespace XeApp.Game.Menu
 				m_musicSelectSupporter.isLine6Mode = false;
 			}
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_musicSelectSupporter.isLine6Mode);
-			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			this.StartCoroutineWatched(Co_ChangeLiveMode(() =>
 			{
 				//0x10713F4
@@ -2735,7 +2735,7 @@ namespace XeApp.Game.Menu
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_musicSelectSupporter.isLine6Mode);
 				m_eventGoDivaData.FCHBEILHFBC_Difficulty = diff;
 				m_eventGoDivaData.LEABGOOMOHI_FId = selectMusicData.GHBPLHBNMBK_FreeMusicId;
-				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}, () =>
 			{
 				//0x1071DCC

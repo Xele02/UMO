@@ -116,7 +116,7 @@ namespace XeApp
 			if(viewDecoItemData.NPADACLCNAN_Category >= EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster && 
 				viewDecoItemData.NPADACLCNAN_Category <= EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 				return Attribute.Type.Wall;
-			return (Attribute.Type)viewDecoItemData.FJFCNGNGIBN;
+			return (Attribute.Type)viewDecoItemData.FJFCNGNGIBN_Attribute;
 		}
 
 		//// RVA: 0x1ACCE24 Offset: 0x1ACCE24 VA: 0x1ACCE24

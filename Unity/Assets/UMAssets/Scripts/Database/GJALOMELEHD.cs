@@ -42,19 +42,19 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 		public int EIIDPKCBKEK_prm { get { return BNDKLGDMGAM_Crypted ^ FBGGEFFJJHB_xor; } set { BNDKLGDMGAM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAB33C GNOMKOGNGAD 0xAAA298 LIAJMHMKLLM
 
 		// // RVA: 0xAAB3D4 Offset: 0xAAB3D4 VA: 0xAAB3D4
-		public int ECEKNKIDING(int IOPHIHFOOEP)
+		public int ECEKNKIDING(int _IOPHIHFOOEP_idx)
 		{
-			if (DGBAEDJPAMA.Length <= IOPHIHFOOEP)
+			if (DGBAEDJPAMA.Length <= _IOPHIHFOOEP_idx)
 				return 0;
-			return DGBAEDJPAMA[IOPHIHFOOEP] ^ FBGGEFFJJHB_xor;
+			return DGBAEDJPAMA[_IOPHIHFOOEP_idx] ^ FBGGEFFJJHB_xor;
 		}
 
 		// // RVA: 0xAAA334 Offset: 0xAAA334 VA: 0xAAA334
-		public void KNAMKOLCIAC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
+		public void KNAMKOLCIAC(int _IOPHIHFOOEP_idx, int _JBGEEPFKIGG_val)
 		{
-			if (IOPHIHFOOEP >= DGBAEDJPAMA.Length)
+			if (_IOPHIHFOOEP_idx >= DGBAEDJPAMA.Length)
 				return;
-			DGBAEDJPAMA[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
+			DGBAEDJPAMA[_IOPHIHFOOEP_idx] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 		}
 
 		// // RVA: 0xAAA7F0 Offset: 0xAAA7F0 VA: 0xAAA7F0

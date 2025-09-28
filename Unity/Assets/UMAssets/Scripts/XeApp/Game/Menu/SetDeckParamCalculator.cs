@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				if(evRaid != null)
 				{
 					m_isEnableEpisodeBonus = true;
@@ -158,8 +158,8 @@ namespace XeApp.Game.Menu
 			//viewUnitData.CMCKNKKCNDK_status ??
 			baseStatus.Copy(viewUnitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
-			result.OBKGEDCKHHE();
-			result.JCHLONCMPAJ();
+			result.OBKGEDCKHHE_Init();
+			result.JCHLONCMPAJ_Clear();
 			CMMKCEPBIHI.DIDENKKDJKI(ref result, viewUnitData, viewPlayerData, viewMusicData, viewFriendPlayerData, viewEnemyData);
 			result.DDPJACNMPEJ(ref addStatus);
 			baseStatus.Add(addStatus);
@@ -263,8 +263,8 @@ namespace XeApp.Game.Menu
 			luck = 0;
 			baseStatus.Copy(viewUnitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
-			result.OBKGEDCKHHE();
-			result.JCHLONCMPAJ();
+			result.OBKGEDCKHHE_Init();
+			result.JCHLONCMPAJ_Clear();
 			CMMKCEPBIHI.DIDENKKDJKI(ref result, viewUnitData, viewPlayerData, viewMusicData, viewFriendPlayerData, null);
 			result.DDPJACNMPEJ(ref addStatus);
 			baseStatus.Add(addStatus);

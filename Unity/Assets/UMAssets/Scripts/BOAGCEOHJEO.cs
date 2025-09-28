@@ -24,7 +24,7 @@ public class BOAGCEOHJEO
 	}
 
 	//// RVA: 0x19CBD60 Offset: 0x19CBD60 VA: 0x19CBD60
-	public static double CFLDNJANAPI_Truncate(double IGFLJCNGAML)
+	public static double CFLDNJANAPI_GetNum(double IGFLJCNGAML)
 	{
 		return Math.Truncate(IGFLJCNGAML);
 	}
@@ -45,6 +45,6 @@ public class BOAGCEOHJEO
 		{
 			IGFLJCNGAML = (long)_IDLHJIOMJBK_data;
 		}
-		_DNBFMLBNAEE_point = (long)CFLDNJANAPI_Truncate(IGFLJCNGAML);
+		_DNBFMLBNAEE_point = (long)CFLDNJANAPI_GetNum(IGFLJCNGAML);
 	}
 }

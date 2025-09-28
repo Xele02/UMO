@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 			//0xC5678C
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			IsTapGuardON = true;
-			m_chatContller.OBKGEDCKHHE();
+			m_chatContller.OBKGEDCKHHE_Init();
 			bool success = false;
 			bool isDone = false;
 			bool inList = false;
@@ -460,7 +460,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xC56D80
 			IsTapGuardON = true;
-			m_chatContller.OBKGEDCKHHE();
+			m_chatContller.OBKGEDCKHHE_Init();
 			bool success = false;
 			bool isDone = false;
 			//bool error = false;
@@ -586,7 +586,7 @@ namespace XeApp.Game.Menu
 				if(m_windowUi.IsUpdatePossible())
 				{
 					int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
-					m_chatContller.FBANBDCOEJL(bbs_auto_update_op, () =>
+					m_chatContller.FBANBDCOEJL_Update(bbs_auto_update_op, () =>
 					{
 						//0xC55428
 						CommentDisplayUpdate();

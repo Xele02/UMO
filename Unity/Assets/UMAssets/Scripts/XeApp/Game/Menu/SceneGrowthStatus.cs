@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 				bool disabled = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)
 				{
-					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
+					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Avaiable)
 					{
 						disabled = false;
 						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_Id))
