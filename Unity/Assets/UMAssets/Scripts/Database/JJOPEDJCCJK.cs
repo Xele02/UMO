@@ -13,7 +13,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
         public int KFJDNFCBBBL_CoefCrypted; // 0x10
         public int MNEDFIBOJAI_Key; // 0x14
 
-        public int DHIPGHBJLIL_coef { get { return KFJDNFCBBBL_CoefCrypted ^ MNEDFIBOJAI_Key; } } //0x135620C PEIEKKODNKE
+        public int DHIPGHBJLIL_coef { get { return KFJDNFCBBBL_CoefCrypted ^ MNEDFIBOJAI_Key; } } //0x135620C PEIEKKODNKE_get_coef
     }
 
     public class GPLPAOGMPAM_Music
@@ -44,7 +44,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	private List<int> ECAODIBMEDM_GetMExpKey_2; // 0x54
 	private List<JJOPEDJCCJK_Exp.GDBAIHMLCBI_GetPExp> HBDIDGBMDIA_GetPExp; // 0x58
 
-	public List<JJOPEDJCCJK_Exp.GPLPAOGMPAM_Music> GNIPHICJAIA_Music { get; private set; } // 0x5C LLBFAHJOJMG BNEEDCLHFHL LPFFJIGGHLG
+	public List<JJOPEDJCCJK_Exp.GPLPAOGMPAM_Music> GNIPHICJAIA_Music { get; private set; } // 0x5C LLBFAHJOJMG_bgs BNEEDCLHFHL_bgs LPFFJIGGHLG_bgs
 
 	// // RVA: 0x13550F8 Offset: 0x13550F8 VA: 0x13550F8
 	// public int ODKGLFCFJHJ() { }

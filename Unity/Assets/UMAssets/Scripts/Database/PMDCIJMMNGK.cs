@@ -12,11 +12,11 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 		public int HNJHPNPFAAN_EnabledCrypted; // 0x14
 		public int LCGJKAGIFGO_MaxCrypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //DEMEPMAEJOO 0xFED710 HIGKAIDMOKN 0xFECE08
-		public int GJDNBENICPF_vcid { get { return MAOCONDFGBL_VcIdCrypted ^ FBGGEFFJJHB_xor; } set { MAOCONDFGBL_VcIdCrypted = value ^ FBGGEFFJJHB_xor; } } //AFNFOLBCEAH 0xFED114 NAFMLADMAGK 0xFECEA4
-		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //KJIMMIBDCIL 0xFED7E8 DMEGNOKIKCD 0xFECFDC
-		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //JPCJNLHHIPE 0xFED880 JJFJNEJLBDG 0xFECF40
-		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //AECMFIOFFJN 0xFED918 NGOJJDOCIDG 0xFED078
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //DEMEPMAEJOO_get_id 0xFED710 HIGKAIDMOKN_set_id 0xFECE08
+		public int GJDNBENICPF_vcid { get { return MAOCONDFGBL_VcIdCrypted ^ FBGGEFFJJHB_xor; } set { MAOCONDFGBL_VcIdCrypted = value ^ FBGGEFFJJHB_xor; } } //AFNFOLBCEAH_get_vcid 0xFED114 NAFMLADMAGK_set_vcid 0xFECEA4
+		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //KJIMMIBDCIL_get_mver 0xFED7E8 DMEGNOKIKCD_set_mver 0xFECFDC
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //JPCJNLHHIPE_get_en 0xFED880 JJFJNEJLBDG_set_en 0xFECF40
+		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //AECMFIOFFJN_get_max 0xFED918 NGOJJDOCIDG_set_max 0xFED078
 
 		// RVA: 0xFED61C Offset: 0xFED61C VA: 0xFED61C
 		//public uint CAOGDCBPBAN() { }

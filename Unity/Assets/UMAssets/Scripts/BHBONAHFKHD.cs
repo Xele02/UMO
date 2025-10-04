@@ -1,7 +1,7 @@
 
 public class BHBONAHFKHD
 {
-	public EDOHBJAPLPF_JsonData MGPEIGDOMPH { get; private set; } // 0x8 DOBHNBKICMJ DNGMMHKPCFH NFDOJJOFOJD
+	public EDOHBJAPLPF_JsonData MGPEIGDOMPH { get; private set; } // 0x8 DOBHNBKICMJ_bgs DNGMMHKPCFH_bgs NFDOJJOFOJD_bgs
 
 	// RVA: 0xC7D068 Offset: 0xC7D068 VA: 0xC7D068
 	public BHBONAHFKHD()

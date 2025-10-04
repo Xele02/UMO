@@ -23,7 +23,7 @@ public class LAMCONGFONF
 	private OJFOLGKMBIG[] CEPDOODGDEM = new OJFOLGKMBIG[10]; // 0x1C
 	private EECOJKDJIFG[] AEJCLHOIDDD = new EECOJKDJIFG[10]; // 0x20
 
-	public static LAMCONGFONF HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ OKPMHKNCNAL
+	public static LAMCONGFONF HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	//// RVA: 0xD907F8 Offset: 0xD907F8 VA: 0xD907F8
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

@@ -28,7 +28,7 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
 
 	public List<int> EAFEGCPEKDC_Ids; // 0x7C
 
-	public MNIIGPNDJOC NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public MNIIGPNDJOC NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x93E2A8 Offset: 0x93E2A8 VA: 0x93E2A8 Slot: 12
 	public override void DHLDNIEELHO()

@@ -31,7 +31,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 		}
     }
 
-	public List<CJLENGHPIDH_EnemyInfo> CKADCLJDCJK_EnemyList { get; private set; } // 0x20 LKHMPJNEEHH NOIMCFANIGL KFNHNMPHCGM
+	public List<CJLENGHPIDH_EnemyInfo> CKADCLJDCJK_EnemyList { get; private set; } // 0x20 LKHMPJNEEHH_bgs NOIMCFANIGL_bgs KFNHNMPHCGM_bgs
 
 	// // RVA: 0x132ACA4 Offset: 0x132ACA4 VA: 0x132ACA4
 	public CJLENGHPIDH_EnemyInfo INONDJKKOKG(int _EJNIMIAPJFJ_Id)

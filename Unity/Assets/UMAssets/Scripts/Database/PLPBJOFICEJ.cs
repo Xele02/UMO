@@ -23,15 +23,15 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 		public int MKENMKMJFKP_TypeCrypted; // 0x18
 
 		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", CryptedInMemory = true, Desc = "Item id")]
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC414 DEMEPMAEJOO 0xFEBDC8 HIGKAIDMOKN
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC414 DEMEPMAEJOO_get_id 0xFEBDC8 HIGKAIDMOKN_set_id
 		[UMOMember(ReaderMember = "FBFLDFMFFOH_rar", CryptedInMemory = true, Desc = "Item rarity")]
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC4AC OEEHBGECGKL 0xFEBE64 GHLMHLJJBIG
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC4AC OEEHBGECGKL_get_Rarity 0xFEBE64 GHLMHLJJBIG_set_Rarity
 		[UMOMember(ReaderMember = "JBGEEPFKIGG_val", CryptedInMemory = true, Desc = "Point applied when used to upgrade costume.")]
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC544 OLOCMINKGON 0xFEBF00 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC544 OLOCMINKGON_get_val 0xFEBF00 ABAFHIBFKCE_set_val
 		[UMOMember(ReaderMember = "FDBOPFEOENF_diva", CryptedInMemory = true, Desc = "Could be level or diva id")]
-		public int FDBOPFEOENF_diva { get { return LLEMDLLGIAH_divaCrypted ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH_divaCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG 0xFEBF9C GHECGDMEBFF
+		public int FDBOPFEOENF_diva { get { return LLEMDLLGIAH_divaCrypted ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH_divaCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC2E4 MJPHCAIKKJG_get_diva 0xFEBF9C GHECGDMEBFF_set_diva
 		[UMOMember(ReaderMember = "GBJFNGCDKPM_typ", CryptedInMemory = true, Desc = "Only cat 2 ?")]
-		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC37C GHAILOLPHPF 0xFEC038 BACGOKIGMBC
+		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xFEC37C GHAILOLPHPF_bgs 0xFEC038 BACGOKIGMBC_bgs
 
 		//// RVA: 0xFEC1C0 Offset: 0xFEC1C0 VA: 0xFEC1C0
 		//public uint CAOGDCBPBAN() { }

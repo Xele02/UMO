@@ -61,7 +61,7 @@ public class JEPBIIJDGEF_EventInfo
 														() => { return new MHAPMOLCPKM_EventQuest("event_quest_c"); },
 													} ; // 0x4
 
-	public static JEPBIIJDGEF_EventInfo HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF_EventInfo OKPMHKNCNAL
+	public static JEPBIIJDGEF_EventInfo HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs JEPBIIJDGEF_EventInfo OKPMHKNCNAL_bgs
 
 	// // RVA: 0x1C3957C Offset: 0x1C3957C VA: 0x1C3957C
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

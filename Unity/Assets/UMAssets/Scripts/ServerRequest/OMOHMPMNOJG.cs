@@ -5,7 +5,7 @@ public class OMOHMPMNOJG : CACGCMBKHDI_Request
 {
 	public bool LLMFJKNEJDD; // 0x7C
 
-	public override bool ICFMKEFJOIE { get { return true; } } //0xCAE048 HOPDAAAEBBG
+	public override bool ICFMKEFJOIE { get { return true; } } //0xCAE048 HOPDAAAEBBG_bgs
 
 	// RVA: 0xCADF5C Offset: 0xCADF5C VA: 0xCADF5C Slot: 12
 	public override void DHLDNIEELHO()

@@ -10,8 +10,8 @@ public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 	public SakashoPlayerData.SearchOrder EILKGEADKGH_Order; // 0x18
 	private int MDEGLGEMHGG_Page; // 0x1C
 
-	public SakashoPlayerCriteria IPKCADIAAPG_Criteria { get; set; } // 0xC GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
-	public bool NELEMPLILIO { get; set; } // 0x20 GDKGAPELKDD KIIKEFBAHMI PLNDPEHALHA
+	public SakashoPlayerCriteria IPKCADIAAPG_Criteria { get; set; } // 0xC GOKPJIPOKCK_bgs FLHEFBEHCKK_bgs EIDLJIDFPFG_bgs
+	public bool NELEMPLILIO { get; set; } // 0x20 GDKGAPELKDD_bgs KIIKEFBAHMI_bgs PLNDPEHALHA_bgs
 
 	//// RVA: 0xD995E0 Offset: 0xD995E0 VA: 0xD995E0 Slot: 4
 	protected override void LJDCONBNPBM_Initialize()

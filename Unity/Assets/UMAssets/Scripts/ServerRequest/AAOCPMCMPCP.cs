@@ -31,7 +31,7 @@ public class AAOCPMCMPCP_GetNormalLotItems : CACGCMBKHDI_Request
 	public int AFKAGFOFAHM_ProductId; // 0x7C
 	public int BPNPBJALGHM_quantity; // 0x80
 
-	public KMFEEFFEHAD NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public KMFEEFFEHAD NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x15AFB60 Offset: 0x15AFB60 VA: 0x15AFB60 Slot: 12
 	public override void DHLDNIEELHO()

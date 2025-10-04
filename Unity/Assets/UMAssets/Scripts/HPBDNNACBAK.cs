@@ -10,9 +10,9 @@ public class HPBDNNACBAK
 {
 	public class MBMMGKJBJGD
 	{
-		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
-		public int HNBFOAJIIAL_Count { get; set; } // 0xC MLBMGFPHPOG EEACFDLDNHD AOFFLCJEKMI
-		public long DJJENNPDPCM_ExpireAt { get; set; } // 0x10 OGIFPJBPGDE FOBEMADNEGI KBAEBIIJPCN
+		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB_bgs DEMEPMAEJOO_get_id HIGKAIDMOKN_set_id
+		public int HNBFOAJIIAL_Count { get; set; } // 0xC MLBMGFPHPOG_bgs EEACFDLDNHD_bgs AOFFLCJEKMI_bgs
+		public long DJJENNPDPCM_ExpireAt { get; set; } // 0x10 OGIFPJBPGDE_bgs FOBEMADNEGI_bgs KBAEBIIJPCN_bgs
 	}
 
 	public const int IIGEPHHOIPG = 72;
@@ -29,7 +29,7 @@ public class HPBDNNACBAK
 	private FFHFGBLNLGL JEKMEPKPADB = new FFHFGBLNLGL(); // 0x34
 	public List<MBMMGKJBJGD> GGKFCDDFHFP = new List<MBMMGKJBJGD>(); // 0x38
 
-	public List<LOBDIAABMKG> MHKCPJDNJKI_products { get; private set; } // 0x8 CPMNDNELDME DFAHGPEFPOO IOMCCGAKKCP
+	public List<LOBDIAABMKG> MHKCPJDNJKI_products { get; private set; } // 0x8 CPMNDNELDME_bgs DFAHGPEFPOO_bgs IOMCCGAKKCP_bgs
 
 	public bool Unused() { return CHCMPDJFHHE == 0; }
 

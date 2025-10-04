@@ -10,8 +10,8 @@ public class MOEALEGLGCH
 {
 	private Dictionary<int, string> KGNCCIDGGCC; // 0x10
 
-	public List<int> NBIGLBMHEDC_DivaList { get; private set; } // 0x8 ELHJMCKHBBO DGMMMDMLCJF PICPPMMJAEH
-	public List<LFAFJCNKLML> MGJKEJHEBPO_Blocks { get; private set; } // 0xC DPHOPMPKAHK BNPJIIPJJLJ HOKDNOFCDHM
+	public List<int> NBIGLBMHEDC_DivaList { get; private set; } // 0x8 ELHJMCKHBBO_bgs DGMMMDMLCJF_bgs PICPPMMJAEH_bgs
+	public List<LFAFJCNKLML> MGJKEJHEBPO_Blocks { get; private set; } // 0xC DPHOPMPKAHK_bgs BNPJIIPJJLJ_bgs HOKDNOFCDHM_bgs
 
 	//// RVA: 0x17B2DC8 Offset: 0x17B2DC8 VA: 0x17B2DC8
 	public void KHEKNNFCAOI_Init()

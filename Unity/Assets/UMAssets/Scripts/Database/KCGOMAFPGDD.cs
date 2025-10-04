@@ -34,8 +34,8 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		public List<int> CAPAPAABKDP_FreeMusic = new List<int>(); // 0x70
 		public List<int> JHPCPNJJHLI_RankingThreshold = new List<int>(); // 0x74
 
-		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1021EE8 HBAAAKFHDBB 0x102138C NHJLJOIPOFK
-		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x1021F14 NOEFEAIFHCL 0x10213C0 GJIJFGNONEL
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1021EE8 HBAAAKFHDBB_get_KeyPrefix 0x102138C NHJLJOIPOFK_set_KeyPrefix
+		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x1021F14 NOEFEAIFHCL_get_ 0x10213C0 GJIJFGNONEL_set_
 
 		//// RVA: 0x102041C Offset: 0x102041C VA: 0x102041C
 		public void LHPDDGIJKNB_Reset()
@@ -132,8 +132,8 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	public List<BMLAHOGDIAK> ADPFKHEMNBL = new List<BMLAHOGDIAK>(); // 0x34
 	public List<int> IHKIFGPICLG_HelpIds = new List<int>(); // 0x38
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x2C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x30 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x2C IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x30 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x101FE9C Offset: 0x101FE9C VA: 0x101FE9C
 	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)

@@ -36,7 +36,7 @@ public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_Request
 	public int MLPLGFLKKLI_Ipp = CMNGPGIJAKL; // 0x80
 	public const int CMNGPGIJAKL = 100;
 
-	public FOPJAKMNIJM NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public FOPJAKMNIJM NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x17C3660 Offset: 0x17C3660 VA: 0x17C3660 Slot: 12
 	public override void DHLDNIEELHO()

@@ -9,10 +9,10 @@ public class NKCNFFPLIAN
 	private CEBFFLDKAEC_SecureInt CKDHEFMLDIG_GameId = new CEBFFLDKAEC_SecureInt(); // 0x10
 	private NNJFKLBPBNK_SecureString FINCFIGKHPA_Name = new NNJFKLBPBNK_SecureString(); // 0x14
 
-	public string LJNAKDMILMC_key { get { return MLCELGHBCLK_KeyCrypted.DNJEJEANJGL_Value; } } // LIIHHICIBKM 0x18AEE50
-	public int CNDDKMJAIBG_mode { get { return PJHFOFGOPDA_Mode.DNJEJEANJGL_Value; } } // HIGNHAEJKAH 0x18AEE7C
-	public int DMJGDDEACMD_game_id { get { return CKDHEFMLDIG_GameId.DNJEJEANJGL_Value; } } // FPNFJECMBAG 0x18AEEA8
-	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name.DNJEJEANJGL_Value; } } // DKJOHDGOIJE 0x18AEED4
+	public string LJNAKDMILMC_key { get { return MLCELGHBCLK_KeyCrypted.DNJEJEANJGL_Value; } } // LIIHHICIBKM_get_key 0x18AEE50
+	public int CNDDKMJAIBG_mode { get { return PJHFOFGOPDA_Mode.DNJEJEANJGL_Value; } } // HIGNHAEJKAH_bgs 0x18AEE7C
+	public int DMJGDDEACMD_game_id { get { return CKDHEFMLDIG_GameId.DNJEJEANJGL_Value; } } // FPNFJECMBAG_bgs 0x18AEEA8
+	public string OPFGFINHFCE_name { get { return FINCFIGKHPA_Name.DNJEJEANJGL_Value; } } // DKJOHDGOIJE_get_name 0x18AEED4
  
 	// // RVA: 0x18AEF00 Offset: 0x18AEF00 VA: 0x18AEF00
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)

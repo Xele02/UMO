@@ -12,7 +12,7 @@ public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
 	public string OCGFKMHNEOF_name_for_api = ""; // 0x8C
 	public EPLAAEHPCDM NFEAMMJIMPG_Result; // 0x90
 
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x1956C00 HGPAELCGELL
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x1956C00 HGPAELCGELL_bgs
 
 	// RVA: 0x1956A40 Offset: 0x1956A40 VA: 0x1956A40 Slot: 12
 	public override void DHLDNIEELHO()

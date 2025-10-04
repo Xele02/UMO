@@ -111,7 +111,7 @@ public class KBPDNHOKEKD_ProductId
 		if(HMFDJHEEGNN_buy_limit > 0)
 			return GIEBJDKLCDH_bought_quantity == HMFDJHEEGNN_buy_limit;
 		return false;
-	 } } //0x101CE84 KNLOMFHAKEG
+	 } } //0x101CE84 KNLOMFHAKEG_bgs
 	public int JHAIOJELFHI_GetNumLot { get
 		{
 			if (CANACBAPKFK_ForcedCount > 0)
@@ -120,7 +120,7 @@ public class KBPDNHOKEKD_ProductId
 				return GJEBPJHECIK_item_set_name_for_api.Count;
 			return 0;
 		}
-	} //0x101CEAC DLEHIBPEDIK
+	} //0x101CEAC DLEHIBPEDIK_bgs
 
 	//// RVA: 0x101CF2C Offset: 0x101CF2C VA: 0x101CF2C
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)

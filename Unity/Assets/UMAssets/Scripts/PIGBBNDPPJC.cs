@@ -115,9 +115,9 @@ public class PIGBBNDPPJC
 	public long BEBJKJKBOGH_date; // 0x40
 	public LGMEPLIJLNB JBFLCHFEIGL; // 0x48
 
-	//public bool OJOLGGKILFL { get; } 0x16D0300 KKEOAGANMNA
-	public bool DKMLDEDKPBA_IsEnabled { get { return KELFCMEOPPM_EpisodeId > 0; } } //0x16D0314 PCIINKJELKK
-	public bool IIEAILCOPDB { get { return DMHDNKILKGI_MaxPoint <= LEGAKDFPPHA_AvaiablePoint; } } //0x16D0328 EMKGOLJAJBG
+	//public bool OJOLGGKILFL { get; } 0x16D0300 KKEOAGANMNA_bgs
+	public bool DKMLDEDKPBA_IsEnabled { get { return KELFCMEOPPM_EpisodeId > 0; } } //0x16D0314 PCIINKJELKK_bgs
+	public bool IIEAILCOPDB { get { return DMHDNKILKGI_MaxPoint <= LEGAKDFPPHA_AvaiablePoint; } } //0x16D0328 EMKGOLJAJBG_bgs
 
 	//// RVA: 0x16D0340 Offset: 0x16D0340 VA: 0x16D0340
 	public void LEHDLBJJBNC_SetNotNew()

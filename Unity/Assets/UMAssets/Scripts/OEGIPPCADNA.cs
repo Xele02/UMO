@@ -50,8 +50,8 @@ public class OEGIPPCADNA
 	public List<RankingListInfo> HGGPIBNLALJ = new List<RankingListInfo>(); // 0x18
 	public List<RankingListInfo> BMKBAMFBAPJ = new List<RankingListInfo>(); // 0x1C
 
-	public static OEGIPPCADNA HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	public int CDINKAANIAA_Rank { get { return MCILHNEDPBM; } set { return; } } //0x1B3C7CC AHHAOMGOPKA 0x1B3C7D4 OGJPMBDLJDA
+	public static OEGIPPCADNA HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public int CDINKAANIAA_Rank { get { return MCILHNEDPBM; } set { return; } } //0x1B3C7CC AHHAOMGOPKA_bgs 0x1B3C7D4 OGJPMBDLJDA_bgs
 
 	//// RVA: 0x1B3C7D8 Offset: 0x1B3C7D8 VA: 0x1B3C7D8
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
@@ -267,44 +267,44 @@ public class OEGIPPCADNA
 	}
 
 	//// RVA: 0x1B3DD08 Offset: 0x1B3DD08 VA: 0x1B3DD08
-	public static int BFKAHKBKBJE(int BDGDHOAJDFM, long APLJPFGAAHN)
+	public static int BFKAHKBKBJE(int _BDGDHOAJDFM__rank, long APLJPFGAAHN)
 	{
 		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 		{
-			int a = BDGDHOAJDFM;
+			int a = _BDGDHOAJDFM__rank;
 			int rangemax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.LPJLEHAJADA_GetIntParam("uta_ranking_range_max", 10000);
 			int login_elapsed = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.LPJLEHAJADA_GetIntParam("uta_ranking_login_elapsed_day", 90);
 			if (rangemax != 0)
 			{
 				a = -1;
 			}
-			if(rangemax <= BDGDHOAJDFM)
+			if(rangemax <= _BDGDHOAJDFM__rank)
 			{
-				BDGDHOAJDFM = a;
+				_BDGDHOAJDFM__rank = a;
 			}
 			long serverTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if (APLJPFGAAHN != 0 && (login_elapsed * 86400) < (serverTime - APLJPFGAAHN))
 			{
-				BDGDHOAJDFM = -2;
+				_BDGDHOAJDFM__rank = -2;
 			}
 		}
-		return BDGDHOAJDFM;
+		return _BDGDHOAJDFM__rank;
 	}
 
 	//// RVA: 0x1B3DF30 Offset: 0x1B3DF30 VA: 0x1B3DF30
-	public static string GEEFFAEGHAH(int BDGDHOAJDFM, bool DECFKDIGIJL/* = true*/)
+	public static string GEEFFAEGHAH(int _BDGDHOAJDFM__rank, bool DECFKDIGIJL/* = true*/)
 	{
 		string str = MessageManager.Instance.GetBank("menu").GetMessageByLabel("utaraterank_none");
-		if(BDGDHOAJDFM < 1)
+		if(_BDGDHOAJDFM__rank < 1)
 		{
-			if(BDGDHOAJDFM == -2)
+			if(_BDGDHOAJDFM__rank == -2)
 				str = MessageManager.Instance.GetBank("menu").GetMessageByLabel("utaraterank_over_login");
-			else if(BDGDHOAJDFM == -1)
+			else if(_BDGDHOAJDFM__rank == -1)
 				str = MessageManager.Instance.GetBank("menu").GetMessageByLabel("utaraterank_over_ranking");
 		}
 		else if(DECFKDIGIJL)
 		{
-			str = BDGDHOAJDFM.ToString() + Smart.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("event_music_ranking_unit"), BDGDHOAJDFM);
+			str = _BDGDHOAJDFM__rank.ToString() + Smart.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("event_music_ranking_unit"), _BDGDHOAJDFM__rank);
 		}
 		return str;
 	}

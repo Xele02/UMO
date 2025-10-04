@@ -9,7 +9,7 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 	public JNMFKOHFAFB_PublicStatus.ONCMONJIPCD[] LDIINNKMLLO = new JNMFKOHFAFB_PublicStatus.ONCMONJIPCD[5]; // 0x28
 	public int NBIIKNFOLLK; // 0x2C
 
-	public int HODDNKENKHD_Page { get { return NBIIKNFOLLK ^ FBGGEFFJJHB_xor; } set { NBIIKNFOLLK = value ^ FBGGEFFJJHB_xor; } } //EMLKHGADCIE 0x195AB08 LAGDPCMEBOD 0x195AB18
+	public int HODDNKENKHD_Page { get { return NBIIKNFOLLK ^ FBGGEFFJJHB_xor; } set { NBIIKNFOLLK = value ^ FBGGEFFJJHB_xor; } } //EMLKHGADCIE_bgs 0x195AB08 LAGDPCMEBOD_bgs 0x195AB18
 
 	// // RVA: 0x195AA5C Offset: 0x195AA5C VA: 0x195AA5C
 	public MKNIBACMCDO_AssistPlate()

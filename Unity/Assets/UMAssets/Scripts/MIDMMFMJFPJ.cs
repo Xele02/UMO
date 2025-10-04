@@ -11,8 +11,8 @@ public class MIDMMFMJFPJ
 	private int PKDOICIGHDM_Crypted; // 0x1C
 	private sbyte BBOONOFIBIA_Crypted; // 0x20
 
-	public int NANNGLGOFKH_value { get { return OHMGPDPKGLF_ValueCrypted ^ FBGGEFFJJHB_xor; } set { value = Mathf.Clamp(value, 0, 100000000); OHMGPDPKGLF_ValueCrypted = value ^ FBGGEFFJJHB_xor; PKDOICIGHDM_Crypted = value; } } //0x19553DC EDFAHCMGHKM 0x19553EC BKPDFNKGNHA
-	public bool CKFKFHKHOHA_RRcv { get { return BBOONOFIBIA_Crypted == 113; } set { BBOONOFIBIA_Crypted = (sbyte)(value ? 113 : 50); } } //0x1955490 EPJGLLALNMI 0x19554A4 AEOKPBOJABO
+	public int NANNGLGOFKH_value { get { return OHMGPDPKGLF_ValueCrypted ^ FBGGEFFJJHB_xor; } set { value = Mathf.Clamp(value, 0, 100000000); OHMGPDPKGLF_ValueCrypted = value ^ FBGGEFFJJHB_xor; PKDOICIGHDM_Crypted = value; } } //0x19553DC EDFAHCMGHKM_get_value 0x19553EC BKPDFNKGNHA_set_value
+	public bool CKFKFHKHOHA_RRcv { get { return BBOONOFIBIA_Crypted == 113; } set { BBOONOFIBIA_Crypted = (sbyte)(value ? 113 : 50); } } //0x1955490 EPJGLLALNMI_bgs 0x19554A4 AEOKPBOJABO_bgs
 
 	// // RVA: 0x19554D4 Offset: 0x19554D4 VA: 0x19554D4
 	public void LHPDDGIJKNB_Reset(int KNEFBLHBDBG)

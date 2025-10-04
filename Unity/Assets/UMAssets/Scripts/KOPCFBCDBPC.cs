@@ -14,8 +14,8 @@ public class KOPCFBCDBPC
 	public List<MMNNAPPLHFM> BMFEGOMNECF_steps; // 0x28
 	public IAPIDHGIEED LKHAAGIJEPG_player_status; // 0x2C
 
-	public long KBFOIECIADN_opened_at { get { return JJLCCDHHOKK_OpenAtCrypted ^ BHEHGCHGBDG; } set { JJLCCDHHOKK_OpenAtCrypted = value ^ BHEHGCHGBDG; } } //0x11323B8 NAIEFPFHLJM 0x11323D8 BMLJOGEMFBH
-	public long EGBOHDFBAPB_closed_at { get { return JLFFBIOJBAO_CloseAtCrypted ^ BHEHGCHGBDG; } set { JLFFBIOJBAO_CloseAtCrypted = value ^ BHEHGCHGBDG; } } //0x11323FC MGOEKKJNOLF 0x113241C NHPFDCAFAFF
+	public long KBFOIECIADN_opened_at { get { return JJLCCDHHOKK_OpenAtCrypted ^ BHEHGCHGBDG; } set { JJLCCDHHOKK_OpenAtCrypted = value ^ BHEHGCHGBDG; } } //0x11323B8 NAIEFPFHLJM_get_opened_at 0x11323D8 BMLJOGEMFBH_set_opened_at
+	public long EGBOHDFBAPB_closed_at { get { return JLFFBIOJBAO_CloseAtCrypted ^ BHEHGCHGBDG; } set { JLFFBIOJBAO_CloseAtCrypted = value ^ BHEHGCHGBDG; } } //0x11323FC MGOEKKJNOLF_get_closed_at 0x113241C NHPFDCAFAFF_set_closed_at
 
 	//// RVA: 0x1132440 Offset: 0x1132440 VA: 0x1132440
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)

@@ -91,8 +91,8 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	public List<LNECBHIKKHK> OIIMJFCBFFG_LobbyGuide = new List<LNECBHIKKHK>(); // 0x28
 	public List<AKIIJBEJOEP> NNMPGOAGEOL_quests = new List<AKIIJBEJOEP>(); // 0x2C
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x34 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x34 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0xD65550 Offset: 0xD65550 VA: 0xD65550
 	public HDFAGGBJGAA HMHGPIEBKPO_GetGroup(int _PPFNGGCBJKC_id)

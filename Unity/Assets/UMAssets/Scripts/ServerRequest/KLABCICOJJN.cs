@@ -8,7 +8,7 @@ public class KLABCICOJJN_SendPushNotification : CACGCMBKHDI_Request
 	public SakashoFCMPushNotificationPayload DBBNIEHJGHH; // 0x7C
 	public List<int> IFMENOJDKBF; // 0x80
 
-	public override bool BNCFONNOHFO { get { return true; } } //0x1A0B498 NPLNAJFJPEE
+	public override bool BNCFONNOHFO { get { return true; } } //0x1A0B498 NPLNAJFJPEE_bgs
 
 	// RVA: 0x1A0B4A0 Offset: 0x1A0B4A0 VA: 0x1A0B4A0
 	public static SakashoFCMPushNotificationPayload FMMLHEIOFBO()

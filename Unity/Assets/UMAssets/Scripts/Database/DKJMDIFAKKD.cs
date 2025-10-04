@@ -30,9 +30,9 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 		public int[] NNIIINKFDBG_BonusCount; // 0x4C
 		public int IHCLFMKAJND; // 0x50
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1224AA8 DEMEPMAEJOO 0x1224B40 HIGKAIDMOKN
-		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1224BDC NJOGDDPICKG 0x1224C74 NBBGMMBICNA
-		public int CPGFOBNKKBF_CurrencyId { get { return OJPMOABFGMA ^ FBGGEFFJJHB_xor; } set { OJPMOABFGMA = value ^ FBGGEFFJJHB_xor; } } //0x1224D10 AMNKHCIJHJD 0x1224DA8 INJMDACNFOL
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1224AA8 DEMEPMAEJOO_get_id 0x1224B40 HIGKAIDMOKN_set_id
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1224BDC NJOGDDPICKG_get_count 0x1224C74 NBBGMMBICNA_set_count
+		public int CPGFOBNKKBF_CurrencyId { get { return OJPMOABFGMA ^ FBGGEFFJJHB_xor; } set { OJPMOABFGMA = value ^ FBGGEFFJJHB_xor; } } //0x1224D10 AMNKHCIJHJD_get_CurrencyId 0x1224DA8 INJMDACNFOL_set_CurrencyId
 
 		//// RVA: 0x1224E44 Offset: 0x1224E44 VA: 0x1224E44
 		//public uint CAOGDCBPBAN() { }

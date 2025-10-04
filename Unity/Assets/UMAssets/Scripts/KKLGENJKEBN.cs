@@ -36,7 +36,7 @@ public class KKLGENJKEBN
 	private bool EBJDDBPFNPB; // 0x4C
 	public bool KCIDANFAFPP; // 0x4D
 
-	public static KKLGENJKEBN HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public static KKLGENJKEBN HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	public bool Unused() { return NLHAJLNAEMC == 0; }
 

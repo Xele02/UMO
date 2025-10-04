@@ -4,7 +4,7 @@ using UnityEngine;
 public class HHEIANIHCNH { }
 public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 {
-	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB x17574D0 KMKEGMGKCBA 0x17574D8
+	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs x17574D0 KMKEGMGKCBA_bgs 0x17574D8
 
 	// // RVA: 0x17574E0 Offset: 0x17574E0 VA: 0x17574E0 Slot: 12
 	public override void DHLDNIEELHO()

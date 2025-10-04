@@ -33,8 +33,8 @@ public class IDLAIOHLFDI_GetLoginBonuses : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x7C
 	public int MLPLGFLKKLI_Ipp = 30; // 0x80
 
-	public GMCAMBDHIGJ NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0x11EBD20 HGPAELCGELL
+	public GMCAMBDHIGJ NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0x11EBD20 HGPAELCGELL_bgs
 
 	// RVA: 0x11EBB6C Offset: 0x11EBB6C VA: 0x11EBB6C Slot: 12
 	public override void DHLDNIEELHO()

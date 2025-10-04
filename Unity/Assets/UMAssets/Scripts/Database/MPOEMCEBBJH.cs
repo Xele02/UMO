@@ -21,7 +21,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	}
 
 	[UMOMember(ReaderMember = "NNCNIHFAPBO", Desc = "List of pilots")]
-	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x17BC85C Offset: 0x17BC85C VA: 0x17BC85C
 	public KOAKMNKEHDE_PilotInfo GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

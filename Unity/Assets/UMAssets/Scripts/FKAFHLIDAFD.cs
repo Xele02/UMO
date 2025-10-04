@@ -3,13 +3,13 @@ public class FKAFHLIDAFD
 {
 	internal FENCAJJBLBH DCLNIAMEGLA; // 0x18
 
-	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_PlayerData { get; internal set; } // 0x8 LCHHPGMCKJD GNMGJMDJEGI LGLGNHAMNIK
-	internal BBHNACPENDM_ServerSaveData CCNKAKCBBDJ { get; set; } // 0xC MOMIOKHCMKH GHMKOMEKBFO KKOICOJPENH
-	public BBHNACPENDM_ServerSaveData FMFKHDPKLOC { get; internal set; } // 0x10 FDDDKGAMLLB AAMOPGKKGEI OBEALILDFEM
-	public bool KONHMOLMOCI_IsSaving { get; internal set; }  // 0x14 DEDJLABCBOH MDEMPMONBLE NAALAEJIEAI
-	public bool LNAHEIEIBOI_Initialized { get; internal set; }  // 0x15 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
-	public bool BLCDJDJJBHC { get; internal set; }  // 0x16 BPLABMJENOI AAIACPOJKKO DNLNBFEHCKD
-	// public bool BBIOBFPCLOO { get; } 0x1187B54 BBBBKCIJNMG
+	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_PlayerData { get; internal set; } // 0x8 LCHHPGMCKJD_bgs GNMGJMDJEGI_bgs LGLGNHAMNIK_bgs
+	internal BBHNACPENDM_ServerSaveData CCNKAKCBBDJ { get; set; } // 0xC MOMIOKHCMKH_bgs GHMKOMEKBFO_bgs KKOICOJPENH_bgs
+	public BBHNACPENDM_ServerSaveData FMFKHDPKLOC { get; internal set; } // 0x10 FDDDKGAMLLB_bgs AAMOPGKKGEI_bgs OBEALILDFEM_bgs
+	public bool KONHMOLMOCI_IsSaving { get; internal set; }  // 0x14 DEDJLABCBOH_bgs MDEMPMONBLE_bgs NAALAEJIEAI_bgs
+	public bool LNAHEIEIBOI_Initialized { get; internal set; }  // 0x15 INBPPDMFOAD_bgs FHEAKKHAAPF_bgs GOEIEJFPLOG_bgs
+	public bool BLCDJDJJBHC { get; internal set; }  // 0x16 BPLABMJENOI_bgs AAIACPOJKKO_bgs DNLNBFEHCKD_bgs
+	// public bool BBIOBFPCLOO { get; } 0x1187B54 BBBBKCIJNMG_bgs
 
 	// RVA: 0x1187B64 Offset: 0x1187B64 VA: 0x1187B64
 	public void BELHFJNAEKB()

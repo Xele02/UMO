@@ -16,19 +16,19 @@ public class EPPOHFLMDBC_DivaStats
 	public int EHDLPKCCJIA_SupportCrypted; // 0x24
 
 	[UMOMember(ReaderMember = "", ReaderDisplay = "DivaStat")] // Level
-	public int ANAJIAENLNB_lv { get { return FBGGEFFJJHB_xor ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
+	public int ANAJIAENLNB_lv { get { return FBGGEFFJJHB_xor ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14D4 MMOMNMBKHJF_get_lv 0xFC14E4 FEHNFGPFINK_set_lv
 	[UMOMember(ReaderMember = "BCCOMAODPJI_hp|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_1")]
-	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_xor ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
+	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_xor ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14F4 CMDOHPBAFCO_bgs 0xFC1504 BJBDGCMJNEO_bgs
 	[UMOMember(ReaderMember = "LJELGFAFGAB_so|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_2")]
-	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_xor ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
+	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_xor ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1514 EJPPLFNLAAO_bgs 0xFC1524 NEMMJEJENFD_bgs
 	[UMOMember(ReaderMember = "KNEDJFLCCLN_vo|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_3")]
-	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_xor ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_xor ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
+	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_xor ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_xor ^ value; } }// 0xFC1534 GCMPLDKECFM_bgs 0xFC1544 CEHKELOHIBD_bgs
 	[UMOMember(ReaderMember = "MBAMIOJNGBD_ch|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_4")]
-	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_xor ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
+	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_xor ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1554 LEHDODJMICA_bgs 0xFC1564 IKPOCJDOOGA_bgs
 	[UMOMember(ReaderMember = "ADLGKMBIPCA_fd|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_5")]
-	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_xor ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
+	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_xor ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1574 OGGOHKCANFG_bgs 0xFC1584 BKMHMPEBNPE_bgs
 	[UMOMember(ReaderMember = "PIPCIMIALOO_sp|OEOIHIIIMCK_add", ReaderDisplay = "DivaStat_6")]
-	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_xor ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
+	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_xor ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1594 GGIDKCOMCJL_bgs 0xFC15A4 LAIHOHGICJD_bgs
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
 	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_lv, int _FBGGEFFJJHB_xor, short _JKPPKAHPPKH_life, short _MKMIEGPOKGG_Soul, short _MELGGCAIONF_Vocal, short _LDLHPACIIAB_Charm, short _JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
@@ -101,19 +101,19 @@ public class BJPLLEBHAGO_DivaInfo
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_status = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	[UMOMember(ReaderMember = "JPFMJHLCMJL_sa", Name = "Attribute", Desc = "Refer to the series where the diva belongs.")]
-	public sbyte AIHCEGFANAM_SerieAttr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+	public sbyte AIHCEGFANAM_SerieAttr { get; set; } // 0x8 FJOGAAMLJMA_bgs ANEJPLENMAL_bgs HEHDOGFEIOL_bgs
 	[UMOMember(ReaderMember = "PPFNGGCBJKC_id", Name = "Diva Id", Desc = "Id of the diva, used to reference it from other data.")]
-	public sbyte AHHJLDLAPAN_DivaId { get; set; } // 0x9 AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
+	public sbyte AHHJLDLAPAN_DivaId { get; set; } // 0x9 AMALMGIALDF_bgs IPKDLMIDMHH_bgs IENNENMKEFO_bgs
 	[UMOMember(ReaderMember = "JIBNPJCIALH_body", Name = "Body Id")]
-	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ // ADCMNNJMGKO KOFCMDMLAHC 
+	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ_bgs // ADCMNNJMGKO_bgs KOFCMDMLAHC _bgs
 	[UMOMember(ReaderMember = "OKADDOIJGNB_ps", Name = "Personality Id")]
-	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD
+	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ_bgs // ALJDJOFDKDJ_bgs FPFJHHIANFD_bgs
 	[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
-	public sbyte PPEGAKEIEGM_Enabled { get; set; } // 0xC NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
+	public sbyte PPEGAKEIEGM_Enabled { get; set; } // 0xC NEKLJCCBECB_bgs KPOEEPIMMJP_bgs NCIEAFEDPBH_bgs
 	[UMOMember(ReaderMember = "LIOGKHIGJKN_FreeMusicId", Name = "Free Music Id")]
-	public ushort LIOGKHIGJKN_FreeMusicId { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
+	public ushort LIOGKHIGJKN_FreeMusicId { get; set; } // 0x10 DGLBKOGGKHO_bgs JNBPCHKDNMD_get_FreeMusicId MLPEHHGEEIB_set_FreeMusicId
 	[UMOMember(ReaderMember = "CMBCBNEODPD_HomeBgId", Name = "Home Bg Id", Desc = "Default home background for the diva")]
-	public ushort CMBCBNEODPD_HomeBgId { get; set; } // 0x12 CLHDIBCIJBB EIMFDHBOECI OJMIHHIIBPI
+	public ushort CMBCBNEODPD_HomeBgId { get; set; } // 0x12 CLHDIBCIJBB_bgs EIMFDHBOECI_get_HomeBgId OJMIHHIIBPI_set_HomeBgId
 
 	// // RVA: 0xC85E00 Offset: 0xC85E00 VA: 0xC85E00
 	// public uint CAOGDCBPBAN() { }

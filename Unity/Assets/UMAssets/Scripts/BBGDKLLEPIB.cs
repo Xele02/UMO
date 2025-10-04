@@ -58,8 +58,8 @@ public class BBGDKLLEPIB
 	private int HGOIEGFBABK = 5; // 0x38
 	public bool PBAHJENPLFM; // 0x3C
 
-	public static BBGDKLLEPIB HHCJCDFCLOB { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ 0xF1723C OKPMHKNCNAL 0xF172C8
-	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x8 PGOHBLKDJOM // ODMAEKMPAGP 0xF17358 BBPOAGDNMOJ 0xF173E4
+	public static BBGDKLLEPIB HHCJCDFCLOB { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ_bgs 0xF1723C OKPMHKNCNAL_bgs 0xF172C8
+	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x8 PGOHBLKDJOM // ODMAEKMPAGP_bgs 0xF17358 BBPOAGDNMOJ_bgs 0xF173E4
 	public static string OGCDNCDMLCA_LocalPath { get {  // MxDir
 		if(JCMJBMBMJAK_PersistentDataPath == null)
 		{
@@ -71,10 +71,10 @@ public class BBGDKLLEPIB
 			JCMJBMBMJAK_PersistentDataPath = str + "/mx";
 		}
 		return JCMJBMBMJAK_PersistentDataPath;
-	} } //  FHOCCNDOAPJ 0xF17474
-	public static string LHJNPJFNDNA_Rev { get; private set; } // 0x1C HCGGEEMOKFN // JBIPCECPFGN 0xF1762C ONAJIIACAEB 0xF176B8  // Rev?
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }  // 0x20 KPEKONPJHCL LKCDOGAFPNM 0xF17894  NPJJMDFAIII 0xF1789C // Update percent callback
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH KCLBNOKEPIG 0xF178A4 OCIMGEFKKLM 0xF178AC // Error CB
+	} } //  FHOCCNDOAPJ_bgs 0xF17474
+	public static string LHJNPJFNDNA_Rev { get; private set; } // 0x1C HCGGEEMOKFN_bgs // JBIPCECPFGN_bgs 0xF1762C ONAJIIACAEB_bgs 0xF176B8  // Rev?
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }  // 0x20 KPEKONPJHCL_bgs LKCDOGAFPNM_bgs 0xF17894  NPJJMDFAIII_bgs 0xF1789C // Update percent callback
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH_bgs KCLBNOKEPIG_bgs 0xF178A4 OCIMGEFKKLM_bgs 0xF178AC // Error CB
 
 	public bool Unused() { return NDEJCDBHPLB == 0 && HGOIEGFBABK == 0; }
 

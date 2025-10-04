@@ -9,21 +9,21 @@ public class AOJGDNFAIJL_PrismData
 {
     public class LLHDHKLACJA_SelectDivaInfo
     {
-        public int PPFNGGCBJKC_id { get; set; }// 0x8 FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
-        public bool CBLHLEKLLDE_IsSet { get; set; } // 0xC LPCLOHOCPIG DDNKFFEAFGB NIDGBLGJJJP
+        public int PPFNGGCBJKC_id { get; set; }// 0x8 FDGEMCPHJCB_bgs DEMEPMAEJOO_get_id HIGKAIDMOKN_set_id
+        public bool CBLHLEKLLDE_IsSet { get; set; } // 0xC LPCLOHOCPIG_bgs DDNKFFEAFGB_bgs NIDGBLGJJJP_bgs
     }
 	
 	public class BGCLFIILKIG_SelectCostumeInfo
 	{
-		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
-		public int DOKKMMFKLJI_Color { get; set; } // 0xC HHLLKENPACJ FGEACNKHOEB KNMBKMIELEO
-		public bool CBLHLEKLLDE_IsSet { get; set; } // 0x10 LPCLOHOCPIG DDNKFFEAFGB NIDGBLGJJJP
+		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB_bgs DEMEPMAEJOO_get_id HIGKAIDMOKN_set_id
+		public int DOKKMMFKLJI_Color { get; set; } // 0xC HHLLKENPACJ_bgs FGEACNKHOEB_get_Color KNMBKMIELEO_set_Color
+		public bool CBLHLEKLLDE_IsSet { get; set; } // 0x10 LPCLOHOCPIG_bgs DDNKFFEAFGB_bgs NIDGBLGJJJP_bgs
 	}
 	
 	public class MHOGKDIKIHE_ValkyrieInfo
 	{
-		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
-		public bool CBLHLEKLLDE_IsSet { get; set; }  // 0xC LPCLOHOCPIG DDNKFFEAFGB NIDGBLGJJJP
+		public int PPFNGGCBJKC_id { get; set; } // 0x8 FDGEMCPHJCB_bgs DEMEPMAEJOO_get_id HIGKAIDMOKN_set_id
+		public bool CBLHLEKLLDE_IsSet { get; set; }  // 0xC LPCLOHOCPIG_bgs DDNKFFEAFGB_bgs NIDGBLGJJJP_bgs
 	}
 
     public class AMIECPBIALP
@@ -47,14 +47,14 @@ public class AOJGDNFAIJL_PrismData
         private bool NAENFAFGMEP_IsMultiDiva; // 0x5C
         private int PFMHBFAKNNL_NumDiva; // 0x60
 
-        public int[] OMNDNNFANCK_PrismDivaIds { get; private set; } // 0x10 ACAKFKBJCIE PGFAAJJJPNH OKBCIFPNKIL // prismdivaids
-        public int[] DLPIKHDNIIE_PrismCostumeIds { get; private set; } // 0x14 NKHEFHPGPOO JMJHBEFHIBN LMEJNJIEDOE // prismcostumeid
-        public int[] PBHPPCPKHDL_PrismCostumeColorIds { get; private set; } // 0x18 JCMGMDGJBMF CFEGNKFHGAM CGKCELFGHCK // costume color id
-        public int FBAGIDFLHHI_PrismValkyrieId { get; private set; } // 0x1C ALNPAMMMLLO FGBBLAADIDG AFJIFKDFNDI // valkId
-        public bool FBGAKINEIPG { get; private set; } // 0x20 BNIOOBDDMJB IKPHJPLOGLD KFFLMEHHNKJ
-        public bool OHLCKPIMMFH_ValkyrieMode { get; private set; } // 0x21 NEKDPHBJJGO BLJNAHPNEPC GMFAOCGDIBP // ValkMode
-        public bool HGEKDNNJAAC_AwakenDivaMode { get; private set; } // 0x22 DPIFLIMIDPI ABKLDEHPOJH IFAFHCOMMHJ // divamode
-        public bool DNLCLAOPFPF_ShowNotes { get; private set; } // 0x23 JPEAMBLKJEF KINDNNEJNOL GOIIKFBHFLD // shownote
+        public int[] OMNDNNFANCK_PrismDivaIds { get; private set; } // 0x10 ACAKFKBJCIE_bgs PGFAAJJJPNH_bgs OKBCIFPNKIL_bgs // prismdivaids
+        public int[] DLPIKHDNIIE_PrismCostumeIds { get; private set; } // 0x14 NKHEFHPGPOO_bgs JMJHBEFHIBN_bgs LMEJNJIEDOE_bgs // prismcostumeid
+        public int[] PBHPPCPKHDL_PrismCostumeColorIds { get; private set; } // 0x18 JCMGMDGJBMF_bgs CFEGNKFHGAM_bgs CGKCELFGHCK_bgs // costume color id
+        public int FBAGIDFLHHI_PrismValkyrieId { get; private set; } // 0x1C ALNPAMMMLLO_bgs FGBBLAADIDG_bgs AFJIFKDFNDI_bgs // valkId
+        public bool FBGAKINEIPG { get; private set; } // 0x20 BNIOOBDDMJB_bgs IKPHJPLOGLD_bgs KFFLMEHHNKJ_bgs
+        public bool OHLCKPIMMFH_ValkyrieMode { get; private set; } // 0x21 NEKDPHBJJGO_bgs BLJNAHPNEPC_bgs GMFAOCGDIBP_bgs // ValkMode
+        public bool HGEKDNNJAAC_AwakenDivaMode { get; private set; } // 0x22 DPIFLIMIDPI_bgs ABKLDEHPOJH_bgs IFAFHCOMMHJ_bgs // divamode
+        public bool DNLCLAOPFPF_ShowNotes { get; private set; } // 0x23 JPEAMBLKJEF_bgs KINDNNEJNOL_bgs GOIIKFBHFLD_bgs // shownote
 
         // RVA: 0xD599FC Offset: 0xD599FC VA: 0xD599FC
 	    public AMIECPBIALP()

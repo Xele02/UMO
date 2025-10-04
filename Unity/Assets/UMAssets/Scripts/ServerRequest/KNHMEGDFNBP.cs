@@ -70,7 +70,7 @@ public class KNHMEGDFNBP_GetRankings : CACGCMBKHDI_Request
 
 	public HJANIHAJLFA NFEAMMJIMPG_Result; // 0x7C
 
-	public override bool OIDCBBGLPHL { get { return true; } } // 0x112278C GINMIBJOABO
+	public override bool OIDCBBGLPHL { get { return true; } } // 0x112278C GINMIBJOABO_bgs
 	
 	// RVA: 0x1122794 Offset: 0x1122794 VA: 0x1122794 Slot: 12
 	public override void DHLDNIEELHO()

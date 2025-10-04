@@ -89,11 +89,11 @@ public class KEPNMGHABPI
 
     public class LNCLNAOPNKF
     {
-        public int BOINIEAKFPL_ThreadId { get; private set; } // 0x8 IOHKLFBFEIH KLEKIGODFHI IOINKEKIMID
-        public string OODOEBCLCFI_ThreadGroup { get; private set; } // 0xC CLACFNHPEBC ECOAONNEHHO HAIPBFFCCBG
-        public string ECAIHFNAAOM_Title { get; private set; } // 0x10 BMBEDMGFOCA OLLOMOEMAGL INAJMAIEKDG
-        public JKHBHIGMJIC CCBEKGNDDBE { get; private set; } // 0x14 HCNCKGNGIII CNEPKBEMPPI CONDCLIAOOG
-        // public bool AKGODCLMDMF { get; } 0x19F56C4 KNCKLGPKAGF
+        public int BOINIEAKFPL_ThreadId { get; private set; } // 0x8 IOHKLFBFEIH_bgs KLEKIGODFHI_bgs IOINKEKIMID_bgs
+        public string OODOEBCLCFI_ThreadGroup { get; private set; } // 0xC CLACFNHPEBC_bgs ECOAONNEHHO_bgs HAIPBFFCCBG_bgs
+        public string ECAIHFNAAOM_Title { get; private set; } // 0x10 BMBEDMGFOCA_bgs OLLOMOEMAGL_bgs INAJMAIEKDG_bgs
+        public JKHBHIGMJIC CCBEKGNDDBE { get; private set; } // 0x14 HCNCKGNGIII_bgs CNEPKBEMPPI_bgs CONDCLIAOOG_bgs
+        // public bool AKGODCLMDMF { get; } 0x19F56C4 KNCKLGPKAGF_bgs
 
         // RVA: 0x19F92A4 Offset: 0x19F92A4 VA: 0x19F92A4
         public LNCLNAOPNKF(int _BOINIEAKFPL_ThreadId, string _OODOEBCLCFI_ThreadGroup, string _ECAIHFNAAOM_Title)
@@ -115,13 +115,13 @@ public class KEPNMGHABPI
 
     public class CAIPMAMHNJP
     {
-        public LNCLNAOPNKF MENAGBMBJFJ { get; private set; } // 0x8 AFGKFAFHPBD NCADLAEHAKK AMKFLBDACAG
-        // public int BOINIEAKFPL_ThreadId { get; } 0x19F6630 KLEKIGODFHI
-        // public string ECAIHFNAAOM_Title { get; } 0x19FC2F0 OLLOMOEMAGL
-        public int OIPCCBHIKIA_index { get; private set; } // 0xC MPFBDIIBNBG HFCGOHDOHAP FOGFPKNLADC
-        public BNAAJMBJFPG CCBEKGNDDBE { get; private set; } // 0x10 HCNCKGNGIII CNEPKBEMPPI CONDCLIAOOG
-        // public bool ODIJEJPAJOG { get; } 0x19FC32C BDLBNABIFEC
-        // public bool NEDCNFBIKBH { get; } 0x19FC35C BEPMIMNOMJP
+        public LNCLNAOPNKF MENAGBMBJFJ { get; private set; } // 0x8 AFGKFAFHPBD_bgs NCADLAEHAKK_bgs AMKFLBDACAG_bgs
+        // public int BOINIEAKFPL_ThreadId { get; } 0x19F6630 KLEKIGODFHI_bgs
+        // public string ECAIHFNAAOM_Title { get; } 0x19FC2F0 OLLOMOEMAGL_bgs
+        public int OIPCCBHIKIA_index { get; private set; } // 0xC MPFBDIIBNBG_bgs HFCGOHDOHAP_bgs FOGFPKNLADC_bgs
+        public BNAAJMBJFPG CCBEKGNDDBE { get; private set; } // 0x10 HCNCKGNGIII_bgs CNEPKBEMPPI_bgs CONDCLIAOOG_bgs
+        // public bool ODIJEJPAJOG { get; } 0x19FC32C BDLBNABIFEC_bgs
+        // public bool NEDCNFBIKBH { get; } 0x19FC35C BEPMIMNOMJP_bgs
 
         // // RVA: 0x19FC3C0 Offset: 0x19FC3C0 VA: 0x19FC3C0
         private CAIPMAMHNJP(LNCLNAOPNKF MENAGBMBJFJ, int _OIPCCBHIKIA_index)
@@ -224,7 +224,7 @@ public class KEPNMGHABPI
         public int KIHNBLOPLNC; // 0x18
         public CAIPMAMHNJP OIMHHIFNGOI; // 0x1C
 
-        // public bool DNJEMPANDNN { get; } 0x19F5CA4 EEHKLMFOEFK
+        // public bool DNJEMPANDNN { get; } 0x19F5CA4 EEHKLMFOEFK_bgs
 
         // // RVA: 0x19F5DAC Offset: 0x19F5DAC VA: 0x19F5DAC
         public void IPBDPLOKLLP()
@@ -255,9 +255,9 @@ public class KEPNMGHABPI
         if(GHPCOLKAAFF == null)
             GHPCOLKAAFF = new FKGOOHONBGI();
         return GHPCOLKAAFF;
-    } } //0x19F3BC8 IHHPMAEAFLJ
-	public string OODOEBCLCFI_ThreadGroup { get; private set; } // 0x10 CLACFNHPEBC ECOAONNEHHO HAIPBFFCCBG
-	private PJKLMCGEJMK CPHFEPHDJIB_ServerRequester { get { return NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester; } } //0x19F3D04 JPEBBKJAMCK
+    } } //0x19F3BC8 IHHPMAEAFLJ_bgs
+	public string OODOEBCLCFI_ThreadGroup { get; private set; } // 0x10 CLACFNHPEBC_bgs ECOAONNEHHO_bgs HAIPBFFCCBG_bgs
+	private PJKLMCGEJMK CPHFEPHDJIB_ServerRequester { get { return NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester; } } //0x19F3D04 JPEBBKJAMCK_bgs
 
 	// // RVA: 0x19F3DA0 Offset: 0x19F3DA0 VA: 0x19F3DA0
 	internal KEPNMGHABPI(BNJJHPEGNAI.HCAJEKFFNBM MENAGBMBJFJ)

@@ -7,31 +7,31 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class CLGGEONAHPL_TeamSelectionSetting
 	{
-		public int PPFNGGCBJKC_id { get; set; } // 0x8  FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
-		public int OCAMDLMPBGA_dv { get; set; } // 0xC  JKDMAFHPKDJ DHOGDENEIOI DBDFNFLGDFN divaid
-		public int PGCEGEJOOON_cs { get; set; } // 0x10 LBLNPAKCIHN BJKANAJCKJJ IMCNLEMAKCL costumeid
-		public int IAFIKNONLJF_SelectedCostumeColorSoloId { get; set; } // 0x14 NPOJFHOFBPH EHNBEEJHDLA PAEBFDHCHAN
-		public int EPDPAHNLMKH_vf { get; set; } // 0x18 HJLOLGLNLCA BFFLALNNIKK CNNFHPDGEPE
-		public int PLALNIIBLOF_en { get; set; } // 0x1C DFMNDOMAPAB JPCJNLHHIPE JJFJNEJLBDG
-		public int MKKGKKHABEK_vm { get; set; } // 0x20 GKMEIOCLJFA IDKGINELPLK JDLJNLOADHG ValkyrieMode
-		public int JPBJOGBGKGA_dm { get; set; } // 0x24 LPBDPIKDEDC AIMDOKAFGKM PGMKINKKNIF DivaMode
-		public int NLFMKOJHAHJ_nt { get; set; } // 0x28 NKBLDLKFDLA HDDMCLEAEHN IMGNMJHPPKP ShowNotes
-		public int AIPJAKIFMPN_dv1 { get; set; } // 0x2C FHAKLKNIAFC PDFFGBBKILE HLEPFOEMEJK
-		public int JMAGFEENOED_dv2 { get; set; } // 0x30 GLKLOAGDFDK GDPLEDJGNJO GGLKCLOJNBP
- 		public int LFHILMNKGCB_dv3 { get; set; } // 0x34 ANOAMMHNHCC LOJMJIOKDNE ICPOICEMPCC
-		public int OLKOJOACIBD_dv4 { get; set; } // 0x38 FNKNIHBMPAG JDFCLDKKJPE JFAHGDELEGL
-		public int INBGAKAAJPB_dv5 { get; set; } // 0x3C GIIMBPCNIJK CEHMGMABOCK PEIEKMLPAPP
-		public int FHFONPEHLMN_cs1 { get; set; } // 0x40 FNEOMJMPGIE FAPNEFPMOHH LNIDPBADCKC
-		public int HPPOFOIJJMB_cs2 { get; set; } // 0x44 FKPCGPBNEJG AFOFDIDKFIP OPELHGPPFMH
-		public int NBPNNNBCGFG_cs3 { get; set; } // 0x48 HIKEKGBELIJ NOELAAJGMPC ALIFKLDBPOK
-		public int LLKEMHHHLEN_cs4 { get; set; } // 0x4C NOOLEOPFOEL CBKBHPCNOEO GCHEHHMPAMM
-		public int DGDLPGFKCFA_cs5 { get; set; } // 0x50 OODLJLEKEAC ELNEKAKEBCA JNHKBCKBJKP
-		public int ADLOGNCDIFG_SelectedCostumeColor0Id { get; set; } // 0x54 LODCCPIGBDM MFBJJBPLDIE BIHGOABBDCM
-		public int DFHNEEBKEIC_SelectedCostumeColor1Id { get; set; } // 0x58 MPDOHPENCIN DHEJFLFAIGJ KNIBDIFNCBK
-		public int BFMDCDFAJKE_SelectedCostumeColor2Id { get; set; } // 0x5C OMDJFDAAEGM PNKONHJPADN AKPFBBDBEKI
-		public int OHCNKIKIGHM_SelectedCostumeColor3Id { get; set; } // 0x60 EOLBKCFOCAB FMBGIOHLENJ GIELMDLGBIM
-		public int HDKHGAACNFG_SelectedCostumeColor4Id { get; set; } // 0x64 MNNBEKJIAPN HKOOFEICKBG NPOFHAKEPDO
-		public int PIJEEAOMMGA_vf1 { get; set; } // 0x68 MOPHNDHDLNC MNNMJGCFHKD ELNIKMIIGIP
+		public int PPFNGGCBJKC_id { get; set; } // 0x8  FDGEMCPHJCB_bgs DEMEPMAEJOO_get_id HIGKAIDMOKN_set_id
+		public int OCAMDLMPBGA_dv { get; set; } // 0xC  JKDMAFHPKDJ_bgs DHOGDENEIOI_get_dv DBDFNFLGDFN_set_dv divaid
+		public int PGCEGEJOOON_cs { get; set; } // 0x10 LBLNPAKCIHN_bgs BJKANAJCKJJ_bgs IMCNLEMAKCL_bgs costumeid
+		public int IAFIKNONLJF_SelectedCostumeColorSoloId { get; set; } // 0x14 NPOJFHOFBPH_bgs EHNBEEJHDLA_bgs PAEBFDHCHAN_bgs
+		public int EPDPAHNLMKH_vf { get; set; } // 0x18 HJLOLGLNLCA_bgs BFFLALNNIKK_bgs CNNFHPDGEPE_bgs
+		public int PLALNIIBLOF_en { get; set; } // 0x1C DFMNDOMAPAB_bgs JPCJNLHHIPE_get_en JJFJNEJLBDG_set_en
+		public int MKKGKKHABEK_vm { get; set; } // 0x20 GKMEIOCLJFA_bgs IDKGINELPLK_bgs JDLJNLOADHG_bgs ValkyrieMode
+		public int JPBJOGBGKGA_dm { get; set; } // 0x24 LPBDPIKDEDC_bgs AIMDOKAFGKM_bgs PGMKINKKNIF_bgs DivaMode
+		public int NLFMKOJHAHJ_nt { get; set; } // 0x28 NKBLDLKFDLA_bgs HDDMCLEAEHN_bgs IMGNMJHPPKP_bgs ShowNotes
+		public int AIPJAKIFMPN_dv1 { get; set; } // 0x2C FHAKLKNIAFC_bgs PDFFGBBKILE_bgs HLEPFOEMEJK_bgs
+		public int JMAGFEENOED_dv2 { get; set; } // 0x30 GLKLOAGDFDK_bgs GDPLEDJGNJO_get_dv2 GGLKCLOJNBP_set_dv2
+ 		public int LFHILMNKGCB_dv3 { get; set; } // 0x34 ANOAMMHNHCC_bgs LOJMJIOKDNE_bgs ICPOICEMPCC_bgs
+		public int OLKOJOACIBD_dv4 { get; set; } // 0x38 FNKNIHBMPAG_bgs JDFCLDKKJPE_bgs JFAHGDELEGL_bgs
+		public int INBGAKAAJPB_dv5 { get; set; } // 0x3C GIIMBPCNIJK_bgs CEHMGMABOCK_bgs PEIEKMLPAPP_bgs
+		public int FHFONPEHLMN_cs1 { get; set; } // 0x40 FNEOMJMPGIE_bgs FAPNEFPMOHH_bgs LNIDPBADCKC_bgs
+		public int HPPOFOIJJMB_cs2 { get; set; } // 0x44 FKPCGPBNEJG_bgs AFOFDIDKFIP_bgs OPELHGPPFMH_bgs
+		public int NBPNNNBCGFG_cs3 { get; set; } // 0x48 HIKEKGBELIJ_bgs NOELAAJGMPC_bgs ALIFKLDBPOK_bgs
+		public int LLKEMHHHLEN_cs4 { get; set; } // 0x4C NOOLEOPFOEL_bgs CBKBHPCNOEO_bgs GCHEHHMPAMM_bgs
+		public int DGDLPGFKCFA_cs5 { get; set; } // 0x50 OODLJLEKEAC_bgs ELNEKAKEBCA_bgs JNHKBCKBJKP_bgs
+		public int ADLOGNCDIFG_SelectedCostumeColor0Id { get; set; } // 0x54 LODCCPIGBDM_bgs MFBJJBPLDIE_bgs BIHGOABBDCM_bgs
+		public int DFHNEEBKEIC_SelectedCostumeColor1Id { get; set; } // 0x58 MPDOHPENCIN_bgs DHEJFLFAIGJ_bgs KNIBDIFNCBK_bgs
+		public int BFMDCDFAJKE_SelectedCostumeColor2Id { get; set; } // 0x5C OMDJFDAAEGM_bgs PNKONHJPADN_bgs AKPFBBDBEKI_bgs
+		public int OHCNKIKIGHM_SelectedCostumeColor3Id { get; set; } // 0x60 EOLBKCFOCAB_bgs FMBGIOHLENJ_bgs GIELMDLGBIM_bgs
+		public int HDKHGAACNFG_SelectedCostumeColor4Id { get; set; } // 0x64 MNNBEKJIAPN_bgs HKOOFEICKBG_bgs NPOFHAKEPDO_bgs
+		public int PIJEEAOMMGA_vf1 { get; set; } // 0x68 MOPHNDHDLNC_bgs MNNMJGCFHKD_bgs ELNIKMIIGIP_bgs
 
 		// // RVA: 0x1CBE168 Offset: 0x1CBE168 VA: 0x1CBE168
 		// public bool CHFOOMPEABN() { }
@@ -105,8 +105,8 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE_CurrentVersion = 3;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
-	public List<CLGGEONAHPL_TeamSelectionSetting> AHBBMJANGHE_Units { get; private set; } // 0x24 DLDLMEDGOBA MELKCNPOKKB CEGODGDEJGN
-	public override bool DMICHEJIAJL { get { return true; } } // 0x1CBE0EC NFKFOODCJJB
+	public List<CLGGEONAHPL_TeamSelectionSetting> AHBBMJANGHE_Units { get; private set; } // 0x24 DLDLMEDGOBA_bgs MELKCNPOKKB_bgs CEGODGDEJGN_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1CBE0EC NFKFOODCJJB_bgs
 
 	// // RVA: 0x1CB6740 Offset: 0x1CB6740 VA: 0x1CB6740
 	public CLGGEONAHPL_TeamSelectionSetting GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

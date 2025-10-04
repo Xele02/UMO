@@ -93,7 +93,7 @@ public class HNJKJCDDIMG_SetInfo
 	private int KDICDKHJJDD_SIdCrypted; // 0x8
 	private List<int> PNFIBNJIOAN_Items = new List<int>(20); // 0xC
 
-	public int LIHEBNPAIFI_SId { get { return KDICDKHJJDD_SIdCrypted ^ FBGGEFFJJHB_xor; } set { KDICDKHJJDD_SIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15FBED0 GHOJKNLICON 0x15FBF68 EGONAJNHBEL
+	public int LIHEBNPAIFI_SId { get { return KDICDKHJJDD_SIdCrypted ^ FBGGEFFJJHB_xor; } set { KDICDKHJJDD_SIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15FBED0 GHOJKNLICON_bgs 0x15FBF68 EGONAJNHBEL_bgs
 
 	// RVA: 0x15FC004 Offset: 0x15FC004 VA: 0x15FC004
 	public HNJKJCDDIMG_SetInfo()

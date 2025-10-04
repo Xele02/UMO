@@ -17,8 +17,8 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		public string CIOJJBOHEEJ; // 0x28
 		public List<List<int>> BEPAMEEBPGI_SongIdByWeekday = new List<List<int>>(); // 0x2C
 
-		public int ELEPHBOKIGK_Limit { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
-		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
+		public int ELEPHBOKIGK_Limit { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL_bgs 0x198E160 LHNFGPIGCNE_bgs
+		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF_bgs 0x198E174 NPDLLBHCIJP_bgs
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
 		public List<int> OPCBHOLFCHO_GetSongsForWeekDay(int IAPNPKAGEGH)

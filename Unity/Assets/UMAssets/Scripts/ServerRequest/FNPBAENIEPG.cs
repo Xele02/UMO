@@ -40,9 +40,9 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	public string AHEFHIMGIBI_PlayerData; // 0xA0
 	public bool CHDDDCCHJJH_replace = true; // 0xA4
 
-	public override bool BNCFONNOHFO { get { return !CLBFPFLNGKF; } } //0x13E7E90 NPLNAJFJPEE
-	public override bool ICFMKEFJOIE { get { return !CLBFPFLNGKF; } } //0x13E7EA4 HOPDAAAEBBG
-	public PKNFMLJNKHA NFEAMMJIMPG_Result { get; set; } // 0xA8 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool BNCFONNOHFO { get { return !CLBFPFLNGKF; } } //0x13E7E90 NPLNAJFJPEE_bgs
+	public override bool ICFMKEFJOIE { get { return !CLBFPFLNGKF; } } //0x13E7EA4 HOPDAAAEBBG_bgs
+	public PKNFMLJNKHA NFEAMMJIMPG_Result { get; set; } // 0xA8 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	//// RVA: 0x13E7EB8 Offset: 0x13E7EB8 VA: 0x13E7EB8
 	public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, int _AFKAGFOFAHM_ProductId, int _BPNPBJALGHM_quantity, int _APHNELOFGAK_CurrencyId)

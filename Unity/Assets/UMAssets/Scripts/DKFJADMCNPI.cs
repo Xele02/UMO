@@ -11,7 +11,7 @@ public class DKFJADMCNPI
 		IMPOKJGGPNO = 5,
 		FDEKNOCEFNM = 6,
 		LLCBPJBBAIM = 7,
-		GEJGMBBCFEE_8_Max = 8,
+		GEJGMBBCFEE_8__max = 8,
 	}
 
 	public enum NLKCMNHOBAI

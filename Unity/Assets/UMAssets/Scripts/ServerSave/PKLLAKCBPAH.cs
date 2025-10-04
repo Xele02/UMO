@@ -11,9 +11,9 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	 private sbyte MLLAPPOGDJO; // 0x2C
 	 private string LAJDGNJCMEH_SetName; // 0x30
 
-	 public bool DGNMOIBJBBJ_HasEnabled { get { return MLLAPPOGDJO == 0x41; } set { MLLAPPOGDJO = (sbyte)(value ? 0x41 : 0x53); } } //GOOBCPPNKNF 0x93EF3C NBBIKPFKHME 0x93EF50
-	 public string PCBDMADAIEO_SetName { get { return LAJDGNJCMEH_SetName; } set { LAJDGNJCMEH_SetName = value; } } //KBGEHDFKHJC 0x93EF80 KNBPHPFBGMI 0x93EF88
-	public override bool DMICHEJIAJL { get { return true; } } // 0x93F2CC NFKFOODCJJB
+	 public bool DGNMOIBJBBJ_HasEnabled { get { return MLLAPPOGDJO == 0x41; } set { MLLAPPOGDJO = (sbyte)(value ? 0x41 : 0x53); } } //GOOBCPPNKNF_bgs 0x93EF3C NBBIKPFKHME_bgs 0x93EF50
+	 public string PCBDMADAIEO_SetName { get { return LAJDGNJCMEH_SetName; } set { LAJDGNJCMEH_SetName = value; } } //KBGEHDFKHJC_bgs 0x93EF80 KNBPHPFBGMI_bgs 0x93EF88
+	public override bool DMICHEJIAJL { get { return true; } } // 0x93F2CC NFKFOODCJJB_bgs
 
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
 	public PKLLAKCBPAH_DecoPublicInfo()

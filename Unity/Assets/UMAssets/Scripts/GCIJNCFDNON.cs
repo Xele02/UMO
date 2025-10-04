@@ -82,7 +82,7 @@ public class GCIJNCFDNON_SceneInfo
 	public int ILABPFOMEAG_Va; // 0xE0
 
 	// public string KLMPFGOCBHC_description { get; }
-	public StatusData CMCKNKKCNDK_status { get; private set; } = new StatusData(); // 0x98 CLCJNFNMNBH CNKGOPKANGF CHJGGLFGALP_set_status
+	public StatusData CMCKNKKCNDK_status { get; private set; } = new StatusData(); // 0x98 CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status
 	// public bool OGHIOHAACIB_IsKira { get; }
 	public bool FJODMPGPDDD_Unlocked { get { return NPHOIEOPIJO_Date != 0; }} // 0x16AB6C8 CGKAEMGLHNK_get_Unlocked
 
@@ -919,19 +919,19 @@ public class GCIJNCFDNON_SceneInfo
 	}
 
 	// // RVA: 0x16ABF40 Offset: 0x16ABF40 VA: 0x16ABF40
-	public int MEOOLHNNMHL_GetCenterSkillId(bool GAMJCMKKHBM, int DEIHLMHACCH/* = 0*/, int LMLNKHMPOIG/* = 0*/)
+	public int MEOOLHNNMHL_GetCenterSkillId(bool GAMJCMKKHBM, int _DEIHLMHACCH__Attribute/* = 0*/, int _LMLNKHMPOIG__Serie/* = 0*/)
 	{
 		if (HCHBCMGPMNC_CenterSkillId < 1)
 			return 0;
 		BMMNKCJOHOM a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BNAPNENIMBO[HCHBCMGPMNC_CenterSkillId - 1];
 		bool b = false;
 		if (a.CHOFDPDFPDC_ConfigValue == 2)
-			b = (int)AIHCEGFANAM_SerieAttr == LMLNKHMPOIG;
+			b = (int)AIHCEGFANAM_SerieAttr == _LMLNKHMPOIG__Serie;
 		else
 		{
 			if(a.CHOFDPDFPDC_ConfigValue == 1)
 			{
-				b = JGJFIJOCPAG_SceneAttr == DEIHLMHACCH;
+				b = JGJFIJOCPAG_SceneAttr == _DEIHLMHACCH__Attribute;
 			}
 		}
 		if(b || GAMJCMKKHBM)
@@ -1005,7 +1005,7 @@ public class GCIJNCFDNON_SceneInfo
 	}
 
 	// // RVA: 0x16AC6DC Offset: 0x16AC6DC VA: 0x16AC6DC
-	public int FILPDDHMKEJ_GetLiveSkillId(bool GAMJCMKKHBM, int DEIHLMHACCH/* = 0*/, int LMLNKHMPOIG/* = 0*/)
+	public int FILPDDHMKEJ_GetLiveSkillId(bool GAMJCMKKHBM, int _DEIHLMHACCH__Attribute/* = 0*/, int _LMLNKHMPOIG__Serie/* = 0*/)
 	{
 		if (PLDALOJIFBE_LiveSkillId < 1)
 			return 0;
@@ -1013,12 +1013,12 @@ public class GCIJNCFDNON_SceneInfo
 		bool b = false;
 		if(a.CHOFDPDFPDC_ConfigValue == 2)
 		{
-			b = (int)AIHCEGFANAM_SerieAttr == LMLNKHMPOIG;
+			b = (int)AIHCEGFANAM_SerieAttr == _LMLNKHMPOIG__Serie;
 		}
 		else
 		{
 			if (a.CHOFDPDFPDC_ConfigValue == 1)
-				b = JGJFIJOCPAG_SceneAttr == DEIHLMHACCH;
+				b = JGJFIJOCPAG_SceneAttr == _DEIHLMHACCH__Attribute;
 		}
 		if(b || GAMJCMKKHBM)
 		{

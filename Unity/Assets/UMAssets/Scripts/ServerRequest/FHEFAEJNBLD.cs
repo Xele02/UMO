@@ -21,7 +21,7 @@ public class FHEFAEJNBLD : CACGCMBKHDI_Request
 
 	public int HPFDEEDLBOA; // 0x7C
 
-	public CIBLBLJDJCE NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public CIBLBLJDJCE NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x14E7B18 Offset: 0x14E7B18 VA: 0x14E7B18 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)

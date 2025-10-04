@@ -31,7 +31,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	public bool KIBBLLADDPO; // 0xF0
 	public GFLKMKOPNED EELENPNCGLM = new GFLKMKOPNED(); // 0xF4
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection; } } //0x183A61C DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection; } } //0x183A61C DKHCGLCNKCD_bgs  Slot: 4
 
 	// // RVA: 0x183A624 Offset: 0x183A624 VA: 0x183A624 Slot: 32
 	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO)

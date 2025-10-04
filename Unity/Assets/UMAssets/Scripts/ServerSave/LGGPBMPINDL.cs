@@ -12,7 +12,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	public long NFIOKIBPJCJ_uptime; // 0x30
 	public int KDMPHHFADMC_ClusterId; // 0x38
 
-	public override bool DMICHEJIAJL { get { return false; } } // 0xD74474 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0xD74474 NFKFOODCJJB_bgs
 
 	// // RVA: 0xD73940 Offset: 0xD73940 VA: 0xD73940
 	public void KHEKNNFCAOI_Init(int GPLGIGCNNAD)

@@ -12,8 +12,8 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		public int IILDKHILHGA_Crypted; // 0xC
 		public int LIEACBPCMBC_Crypted; // 0x10
 
-		public int JBDBPCMMBIH_Id { get { return IILDKHILHGA_Crypted ^ ENOBDCFHELD; } set { IILDKHILHGA_Crypted = value ^ ENOBDCFHELD; } } //0xCDDC40 OMNPGGNMPAJ 0xCDB324 GMJGOPKKIEC
-		public int AGKANHNHECE_Remain { get { return LIEACBPCMBC_Crypted ^ ENOBDCFHELD; } set { LIEACBPCMBC_Crypted = value ^ ENOBDCFHELD; } } //0xCDDC50 MKKGOKMADFP 0xCDB334 BPGBPFPDJLF
+		public int JBDBPCMMBIH_Id { get { return IILDKHILHGA_Crypted ^ ENOBDCFHELD; } set { IILDKHILHGA_Crypted = value ^ ENOBDCFHELD; } } //0xCDDC40 OMNPGGNMPAJ_bgs 0xCDB324 GMJGOPKKIEC_bgs
+		public int AGKANHNHECE_Remain { get { return LIEACBPCMBC_Crypted ^ ENOBDCFHELD; } set { LIEACBPCMBC_Crypted = value ^ ENOBDCFHELD; } } //0xCDDC50 MKKGOKMADFP_bgs 0xCDB334 BPGBPFPDJLF_bgs
 
 		// // RVA: 0xCDDC60 Offset: 0xCDDC60 VA: 0xCDDC60
 		public void LHPDDGIJKNB_Reset(int KNEFBLHBDBG)
@@ -70,13 +70,13 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		public long EGBOHDFBAPB_closed_at; // 0x48
 		public bool IMFBCJOIJKJ_Entry; // 0x50
 
-		public int DNJLJMKKDNA_EventId { get { return KGAHLMDIFIE_Crypted ^ ENOBDCFHELD; } set { KGAHLMDIFIE_Crypted = value ^ ENOBDCFHELD; JHPJAPKMCML_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA78 DONEINFNFCP 0xCDB2AC EPEBGHFNMKP
-		public int FEFCFGNGPGC_Pickup { get { return KEMHBBFKOPG_Crypted ^ ENOBDCFHELD; } set { KEMHBBFKOPG_Crypted = value ^ ENOBDCFHELD; MGFKOBJNOMH_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA88 PPDMEDMOJIM 0xCDB2C0 COPALOPLHOC
-		public int IMMDGJAOPCD_BoxId { get { return CNOKFGJGEJI_Crypted ^ ENOBDCFHELD; } set { CNOKFGJGEJI_Crypted = value ^ ENOBDCFHELD; FJEOGBHLFLN_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA98 KADOBOBABJG 0xCDB2D4 BLLCKEDEKHH
+		public int DNJLJMKKDNA_EventId { get { return KGAHLMDIFIE_Crypted ^ ENOBDCFHELD; } set { KGAHLMDIFIE_Crypted = value ^ ENOBDCFHELD; JHPJAPKMCML_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA78 DONEINFNFCP_get_EventId 0xCDB2AC EPEBGHFNMKP_set_EventId
+		public int FEFCFGNGPGC_Pickup { get { return KEMHBBFKOPG_Crypted ^ ENOBDCFHELD; } set { KEMHBBFKOPG_Crypted = value ^ ENOBDCFHELD; MGFKOBJNOMH_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA88 PPDMEDMOJIM_bgs 0xCDB2C0 COPALOPLHOC_bgs
+		public int IMMDGJAOPCD_BoxId { get { return CNOKFGJGEJI_Crypted ^ ENOBDCFHELD; } set { CNOKFGJGEJI_Crypted = value ^ ENOBDCFHELD; FJEOGBHLFLN_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAA98 KADOBOBABJG_get_BoxId 0xCDB2D4 BLLCKEDEKHH_set_BoxId
 		// BoxCnt
-		public int NNCCGILOOIE_Num { get { return EHBPLFINKDK_Crypted ^ ENOBDCFHELD; } set { EHBPLFINKDK_Crypted = value ^ ENOBDCFHELD; HLOOHJBOGKI_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAA8 IEPNLGLLFBN 0xCDB2E8 JKBPEBDAPDF
-		public int IGHIADKHGHG_DrawCnt { get { return BBLGDHOFIAI_Crypted ^ ENOBDCFHELD; } set { BBLGDHOFIAI_Crypted = value ^ ENOBDCFHELD; GPIJJMHOJNE_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAB8 DPDEKAMDOFF 0xCDB2FC KPBIELPFDEP
-		public int BGCOKABBHNC_GachaTicketCnt { get { return NNAOOLFLCAE_Crypted ^ ENOBDCFHELD; } set { NNAOOLFLCAE_Crypted = value ^ ENOBDCFHELD; OGBIPMPCBEF_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAC8 MNAHDPJGFOP 0xCDB310 DFEOLBNOMJE
+		public int NNCCGILOOIE_Num { get { return EHBPLFINKDK_Crypted ^ ENOBDCFHELD; } set { EHBPLFINKDK_Crypted = value ^ ENOBDCFHELD; HLOOHJBOGKI_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAA8 IEPNLGLLFBN_bgs 0xCDB2E8 JKBPEBDAPDF_bgs
+		public int IGHIADKHGHG_DrawCnt { get { return BBLGDHOFIAI_Crypted ^ ENOBDCFHELD; } set { BBLGDHOFIAI_Crypted = value ^ ENOBDCFHELD; GPIJJMHOJNE_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAB8 DPDEKAMDOFF_bgs 0xCDB2FC KPBIELPFDEP_bgs
+		public int BGCOKABBHNC_GachaTicketCnt { get { return NNAOOLFLCAE_Crypted ^ ENOBDCFHELD; } set { NNAOOLFLCAE_Crypted = value ^ ENOBDCFHELD; OGBIPMPCBEF_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAC8 MNAHDPJGFOP_bgs 0xCDB310 DFEOLBNOMJE_bgs
 
 		// // RVA: 0xCDA114 Offset: 0xCDA114 VA: 0xCDA114
 		public void LHPDDGIJKNB_Reset(bool IJKLOFCMKCK/* = false*/)
@@ -150,7 +150,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 	public const int ICHFGGBPCBJ = 6;
 	public List<GLNFOMDKJJH> FBCJICEPLED = new List<GLNFOMDKJJH>(); // 0x24
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0xCDDC38 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0xCDDC38 NFKFOODCJJB_bgs
 
 	// // RVA: 0xCD9EFC Offset: 0xCD9EFC VA: 0xCD9EFC
 	public ALIPBIMCAPN_EventBoxGacha()

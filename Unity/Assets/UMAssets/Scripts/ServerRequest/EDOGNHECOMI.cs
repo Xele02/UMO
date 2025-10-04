@@ -11,8 +11,8 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	public string MMEBLOIJBKE_UniqueKey; // 0x84
 	private bool ENDFGMBBBEE; // 0x88
 
-	public JBHCLFDBPKP NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0x1509F00 HGPAELCGELL
+	public JBHCLFDBPKP NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0x1509F00 HGPAELCGELL_bgs
 
 	// RVA: 0x1509CAC Offset: 0x1509CAC VA: 0x1509CAC Slot: 12
 	public override void DHLDNIEELHO()

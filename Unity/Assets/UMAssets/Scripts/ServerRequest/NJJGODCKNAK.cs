@@ -50,8 +50,8 @@ public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
 
 	public List<int> EAFEGCPEKDC_Ids; // 0x7C
 
-	public OLNONCJIHBA NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x18AB8B8 HGPAELCGELL
+	public OLNONCJIHBA NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x18AB8B8 HGPAELCGELL_bgs
 
 	// RVA: 0x18AB6EC Offset: 0x18AB6EC VA: 0x18AB6EC Slot: 12
 	public override void DHLDNIEELHO()

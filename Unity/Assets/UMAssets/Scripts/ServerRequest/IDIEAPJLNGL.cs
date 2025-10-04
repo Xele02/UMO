@@ -20,7 +20,7 @@ public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
 
 	public int APOOBGPBNDG_FriendLimit; // 0x7C
 
-	public HEHEEIFJAKM NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HEHEEIFJAKM NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x11EB7D8 Offset: 0x11EB7D8 VA: 0x11EB7D8 Slot: 12
 	public override void DHLDNIEELHO()

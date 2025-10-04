@@ -55,8 +55,8 @@ public class NEAPMMJKOKA_GetProducts : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x80
 	public int MLPLGFLKKLI_Ipp = 30; // 0x84
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x1AE4BE0 GINMIBJOABO
-	public OAAJHKBHBDG NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } //0x1AE4BE0 GINMIBJOABO_bgs
+	public OAAJHKBHBDG NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x1AE4BF8 Offset: 0x1AE4BF8 VA: 0x1AE4BF8 Slot: 12
 	public override void DHLDNIEELHO()

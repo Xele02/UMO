@@ -4,7 +4,7 @@ using UnityEngine;
 public class PKNOGNLPHAE { }
 public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_Request
 {
-	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	public int AccountType;
 

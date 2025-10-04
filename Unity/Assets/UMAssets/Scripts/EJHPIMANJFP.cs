@@ -8,8 +8,8 @@ public class EJHPIMANJFP
 	private bool OCNNKKPBDLL; // 0xC
 	public long ECFNAOCFKKN_LastDate; // 0x10
 
-	public static EJHPIMANJFP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	public List<LGDNAJACFHI> MHKCPJDNJKI_products { get; private set; } // 0x8 CPMNDNELDME DFAHGPEFPOO IOMCCGAKKCP
+	public static EJHPIMANJFP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public List<LGDNAJACFHI> MHKCPJDNJKI_products { get; private set; } // 0x8 CPMNDNELDME_bgs DFAHGPEFPOO_bgs IOMCCGAKKCP_bgs
 
 	// // RVA: 0x12EFA68 Offset: 0x12EFA68 VA: 0x12EFA68
 	public EJHPIMANJFP()

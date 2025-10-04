@@ -12,5 +12,5 @@ public class BPADANIKFHP
 	public string MMOJHIPAAIK_probability; // 0xC
 	public List<KFKCGKGKBJL> HBHMAKNGKFK_items; // 0x10
 
-	public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18EE244 OEEHBGECGKL 0x18EE258 GHLMHLJJBIG
+	public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18EE244 OEEHBGECGKL_get_Rarity 0x18EE258 GHLMHLJJBIG_set_Rarity
 }

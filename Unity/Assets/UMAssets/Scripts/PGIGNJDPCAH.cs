@@ -43,7 +43,7 @@ public class PGIGNJDPCAH
 			LMGGIBJPGLE = value;
 		}
 	} 
-	private static int HIJBIPLMNEA { get { return OANIGHDIKJH ^ 0x3f587e47; } set { OANIGHDIKJH = value ^ 0x3f587e47; } } // IDLMAHADDKO 0x16CA0EC  PPDOPFGBPAM 0x16CA184
+	private static int HIJBIPLMNEA { get { return OANIGHDIKJH ^ 0x3f587e47; } set { OANIGHDIKJH = value ^ 0x3f587e47; } } // IDLMAHADDKO_bgs 0x16CA0EC  PPDOPFGBPAM_bgs 0x16CA184
 
 	// // RVA: 0x16C998C Offset: 0x16C998C VA: 0x16C998C
 	public static void MLPMNKKNFCJ()

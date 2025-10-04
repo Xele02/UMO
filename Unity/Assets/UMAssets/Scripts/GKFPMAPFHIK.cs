@@ -14,17 +14,17 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	private const sbyte CNECJGKECHK_True = 87;
 	private sbyte ALPDMEILILP_IsClearCrypted; // 0x8
 
-	public bool BCGLDMKODLC_IsClear { get { return ALPDMEILILP_IsClearCrypted == CNECJGKECHK_True; } set { PNBAPMLNDLN_SetClear(value); } } //0xAB254C NNGALFPBDNA 0xAB2560 JJBMOHCMALD
+	public bool BCGLDMKODLC_IsClear { get { return ALPDMEILILP_IsClearCrypted == CNECJGKECHK_True; } set { PNBAPMLNDLN_SetClear(value); } } //0xAB254C NNGALFPBDNA_bgs 0xAB2560 JJBMOHCMALD_bgs
 	public int LGDLEHHOIEL_HighScore { get { return OOBJBHJCLON_LocalSaveShooting.LJKLECGFIEN_GetHighScore(); } set
 		{
 			BIEBAEDGDIA_SetHighScore(value);
 		}
-	} //0xAB26C0 OMFCCEBAODD 0xAB27D8 JGIJCMFGKEP
+	} //0xAB26C0 OMFCCEBAODD_bgs 0xAB27D8 JGIJCMFGKEP_bgs
 	private ILDKBCLAFPB.AKKDKBOBKGH_AprilFool.OEAIOIHGMIH OOBJBHJCLON_LocalSaveShooting { get
 		{
 			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().ICFDECCGKIL_AprilFool.MNKOCOODFKH_MiniGameShooting;
 		}
-	} //0xAB26F0 EFCMMCPAPOH
+	} //0xAB26F0 EFCMMCPAPOH_bgs
 
 	//// RVA: 0xAB28C4 Offset: 0xAB28C4 VA: 0xAB28C4
 	public bool KHEKNNFCAOI_Init()

@@ -24,23 +24,23 @@ public class GCGNICILKLD_AssetFileInfo
         if(PGDPCHNHMKI_LocalFileName != null)
             return PGDPCHNHMKI_LocalFileName.DNJEJEANJGL_Value;
         return null;
-    } } // 0x16AAC60 DOKAICDKCCN
+    } } // 0x16AAC60 DOKAICDKCCN_bgs
 	public string MFBMBPJAADA_FileName { get {
         if(ELLCDOJOGKL_FileName != null)
             return ELLCDOJOGKL_FileName.DNJEJEANJGL_Value;
         return null;
-    } } //0x16AAC78 NJDFIHBJDOG
+    } } //0x16AAC78 NJDFIHBJDOG_bgs
 	public string POEGMFKLFJG_hash_value { get { // md5
         if(NKLIKAENLNC_Hash != null)
             return NKLIKAENLNC_Hash.DNJEJEANJGL_Value;
         return null;
-    } } //0x16AAC90 NCFJKJMKANL
+    } } //0x16AAC90 NCFJKJMKANL_bgs
 	public long CALJIGKCAAH_last_updated_at { get { // last update
         return BBEGLBMOBOF_xorl ^ CFKONDFCBEB_LastUpdated;
     } set {
         CFKONDFCBEB_LastUpdated = BBEGLBMOBOF_xorl ^ value;
-    } } //0x16AACA8 MMINNMHAJGO 0x16AACBC CBMKIPILIND
-	public uint HHPEMFKDHLK_Hash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA
+    } } //0x16AACA8 MMINNMHAJGO_bgs 0x16AACBC CBMKIPILIND_bgs
+	public uint HHPEMFKDHLK_Hash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA_bgs
 
 	// RVA: 0x16AACEC Offset: 0x16AACEC VA: 0x16AACEC
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, int _OIPCCBHIKIA_index)

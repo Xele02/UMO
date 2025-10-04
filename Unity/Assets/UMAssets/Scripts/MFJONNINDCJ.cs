@@ -6,11 +6,11 @@ public class MFJONNINDCJ
 
 	public int JBGEEPFKIGG_val { 
 		get {
-			// OLOCMINKGON 0x1315110
+			// OLOCMINKGON_get_val 0x1315110
 			return ICKOHEDLEFP_ValueCrypted ^ 0x164d06bb;
 		}
 		set {
-			//ABAFHIBFKCE 0x1315124
+			//ABAFHIBFKCE_set_val 0x1315124
 			ICKOHEDLEFP_ValueCrypted = value ^ 0x164d06bb;
 		}
 	}

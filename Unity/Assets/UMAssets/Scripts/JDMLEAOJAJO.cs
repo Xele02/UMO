@@ -35,8 +35,8 @@ public class CDDODEHEKGB : JDMLEAOJAJO
         public long PCLNFCNIECH_OpenAtCrypted = FBGGEFFJJHB_xor; // 0x10
         public long HHPIJHADAOB_CloseAtCrypted = FBGGEFFJJHB_xor; // 0x18
 
-        public long PDBPFJJCADD_open_at { get { return PCLNFCNIECH_OpenAtCrypted ^ FBGGEFFJJHB_xor; } set { PCLNFCNIECH_OpenAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x12AFA0C FOACOMBHPAC 0x12AFA24 NBACOBCOJCA
-        public long FDBNFFNFOND_close_at { get { return HHPIJHADAOB_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { HHPIJHADAOB_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x12AFA40 BPJOGHJCLDJ 0x12AFA58 NLJKMCHOCBK
+        public long PDBPFJJCADD_open_at { get { return PCLNFCNIECH_OpenAtCrypted ^ FBGGEFFJJHB_xor; } set { PCLNFCNIECH_OpenAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x12AFA0C FOACOMBHPAC_get_open_at 0x12AFA24 NBACOBCOJCA_set_open_at
+        public long FDBNFFNFOND_close_at { get { return HHPIJHADAOB_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { HHPIJHADAOB_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x12AFA40 BPJOGHJCLDJ_get_close_at 0x12AFA58 NLJKMCHOCBK_set_close_at
 
         // RVA: 0x12AF7E0 Offset: 0x12AF7E0 VA: 0x12AF7E0
         public BIPCCMDIHKF()
@@ -165,8 +165,8 @@ public class DCAKKIJODME : JDMLEAOJAJO
 	public int GEOGJLLKONC_Crypted = FBGGEFFJJHB_xor; // 0xC
 	public int PEKBNIPCGJB_Crypted = FBGGEFFJJHB_xor; // 0x10
 
-	public int IGIPKOJJIIA_TotalScore { get { return GEOGJLLKONC_Crypted ^ FBGGEFFJJHB_xor; } set { GEOGJLLKONC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x176EE50 NMEEMHPEIFG 0x176EE64 DOJPMEDBMGB
-	public int FHBAEDLKEEN_Rank { get { return PEKBNIPCGJB_Crypted ^ FBGGEFFJJHB_xor; } set { PEKBNIPCGJB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x176EE78 GMMJFPPANLA 0x176EE8C EJCOLGLELOL
+	public int IGIPKOJJIIA_TotalScore { get { return GEOGJLLKONC_Crypted ^ FBGGEFFJJHB_xor; } set { GEOGJLLKONC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x176EE50 NMEEMHPEIFG_bgs 0x176EE64 DOJPMEDBMGB_bgs
+	public int FHBAEDLKEEN_Rank { get { return PEKBNIPCGJB_Crypted ^ FBGGEFFJJHB_xor; } set { PEKBNIPCGJB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x176EE78 GMMJFPPANLA_bgs 0x176EE8C EJCOLGLELOL_bgs
 
 	// // RVA: 0x176EEA0 Offset: 0x176EEA0 VA: 0x176EEA0
 	public void KHEKNNFCAOI_Init(bool PDEFINMIIDE/* = false*/)

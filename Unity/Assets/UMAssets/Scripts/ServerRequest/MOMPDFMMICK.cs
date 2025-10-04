@@ -83,8 +83,8 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	public bool ODMNMFNGBGD; // 0x98
 	public List<int> MEGNAIJPBFF_InventoryClosedAt; // 0x9C
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x17B901C GINMIBJOABO  Slot: 7
-	public JGCHFAKGAGA NFEAMMJIMPG_Result { get; private set; } // 0xA0 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } //0x17B901C GINMIBJOABO_bgs  Slot: 7
+	public JGCHFAKGAGA NFEAMMJIMPG_Result { get; private set; } // 0xA0 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	//// RVA: 0x17B9024 Offset: 0x17B9024 VA: 0x17B9024
 	public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, List<string> _JIMKNDJMCID_Keys, bool GAAFOCCFAJP)

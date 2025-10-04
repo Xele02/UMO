@@ -13,11 +13,11 @@ public class GJAEGCMKMEK_MvTicket : DIHHCBACKGG_DbSection
 		public int GNGNIKNNCNH_MVerCrypted; // 0x14
 		public int EAJCFBCHIFB_RarityCrypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8994 DEMEPMAEJOO 0xAA84E8 HIGKAIDMOKN
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8A2C OLOCMINKGON 0xAA8584 ABAFHIBFKCE
-		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8AC4 JPCJNLHHIPE 0xAA8620 JJFJNEJLBDG
-		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8B5C KJIMMIBDCIL 0xAA86BC DMEGNOKIKCD
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8BF4 OEEHBGECGKL 0xAA8758 GHLMHLJJBIG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8994 DEMEPMAEJOO_get_id 0xAA84E8 HIGKAIDMOKN_set_id
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8A2C OLOCMINKGON_get_val 0xAA8584 ABAFHIBFKCE_set_val
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8AC4 JPCJNLHHIPE_get_en 0xAA8620 JJFJNEJLBDG_set_en
+		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8B5C KJIMMIBDCIL_get_mver 0xAA86BC DMEGNOKIKCD_set_mver
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xAA8BF4 OEEHBGECGKL_get_Rarity 0xAA8758 GHLMHLJJBIG_set_Rarity
 
 		//// RVA: 0xAA88E0 Offset: 0xAA88E0 VA: 0xAA88E0
 		//public uint CAOGDCBPBAN() { }

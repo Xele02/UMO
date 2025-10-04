@@ -7,7 +7,7 @@ public class EFLBHNFNFHA
 {
 	private int CCNCPGJGNDP_SagashoGameId; // 0xC
 
-	public bool CILPABJCBPH_AgreeTos { get; private set; } // 0x8 AKNCKHDGMNK PBGPIOGGCIP DILNDDFKGLK
+	public bool CILPABJCBPH_AgreeTos { get; private set; } // 0x8 AKNCKHDGMNK_bgs PBGPIOGGCIP_bgs DILNDDFKGLK_bgs
 
 	//// RVA: 0x1C4C680 Offset: 0x1C4C680 VA: 0x1C4C680
 	private string HIOMFHINAAH_GetFileName(int _CCNCPGJGNDP_SagashoGameId)

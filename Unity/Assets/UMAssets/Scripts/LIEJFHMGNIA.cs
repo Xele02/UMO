@@ -45,8 +45,8 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	public int NDFOAINJPIN_pos; // 0x74
 	private int GJIIGKLIGLA; // 0x78
 
-	public bool MMEGDFPNONJ_HasDivaId { get { return AHHJLDLAPAN_DivaId != 0; } } //0x17F754C LCEFNOMFGCC
-	public bool HHBJAEOIGIH_IsLocked { get { return DDNCFHEKBAF_LockCondition != 0; } } //0x17F755C EEGJFFAIOPD
+	public bool MMEGDFPNONJ_HasDivaId { get { return AHHJLDLAPAN_DivaId != 0; } } //0x17F754C LCEFNOMFGCC_bgs
+	public bool HHBJAEOIGIH_IsLocked { get { return DDNCFHEKBAF_LockCondition != 0; } } //0x17F755C EEGJFFAIOPD_bgs
 	public bool PCFICCCLBNP_IsLastStoryAndCompleted { get
 		{
 			if(BCGLDMKODLC_IsClear)
@@ -54,8 +54,8 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 				return JJFMMNBEABA_IsStoryEnd;
 			}
 			return false;
-		} } //0x17F756C NNCIIIFBKEG
-	//public bool GOELFAECHGI { get; } 0x17F758C AAFHNPBKGCH
+		} } //0x17F756C NNCIIIFBKEG_bgs
+	//public bool GOELFAECHGI { get; } 0x17F758C AAFHNPBKGCH_bgs
 
 	//// RVA: 0x17F76D8 Offset: 0x17F76D8 VA: 0x17F76D8
 	public new void KHEKNNFCAOI_Init(int _LFLLLOPAKCO_StoryId)

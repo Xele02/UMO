@@ -11,7 +11,7 @@ public class IHKOJFIFPKB_RequestInquiryResponsesNumber : CACGCMBKHDI_Request
     
 	public string ELBFGEBOPLI; // 0x7C
 
-	public HBFOPNJHBCK NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HBFOPNJHBCK NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x12028C4 Offset: 0x12028C4 VA: 0x12028C4 Slot: 12
 	public override void DHLDNIEELHO()

@@ -8,7 +8,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	private const int GHJHJDIDCFA = 3;
 	private EECOJKDJIFG KBACNOCOANM_Ranking; // 0xE8
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore; } } //0x15EAAEC DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore; } } //0x15EAAEC DKHCGLCNKCD_bgs  Slot: 4
 
 	// // RVA: 0x15EAAF4 Offset: 0x15EAAF4 VA: 0x15EAAF4 Slot: 32
 	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)

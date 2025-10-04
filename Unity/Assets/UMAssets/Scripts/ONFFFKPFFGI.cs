@@ -6,14 +6,14 @@ public class ONFFFKPFFGI
 {
     public class ABBFICCGNOG
     {
-        public int DCHDFOIHMJL { get; set; } // 0x8 JCFBBPFEJCM KEKOIPNPPFP DJDJGHIJDDK
+        public int DCHDFOIHMJL { get; set; } // 0x8 JCFBBPFEJCM_bgs KEKOIPNPPFP_bgs DJDJGHIJDDK_bgs
     }
 
 	private PLLMDGNCGFL JADNGGIOOJH = new PLLMDGNCGFL(); // 0x8
 	private List<ABBFICCGNOG> LMMLAMKOAKA = new List<ABBFICCGNOG>(); // 0xC
 	private long CDCKLGCKHFG; // 0x10
 
-	public List<ABBFICCGNOG> FPCLGFKEEFE { get { return LMMLAMKOAKA; } } //0xCAE5D8 FPNPEAAPJCL
+	public List<ABBFICCGNOG> FPCLGFKEEFE { get { return LMMLAMKOAKA; } } //0xCAE5D8 FPNPEAAPJCL_bgs
 
 	// RVA: 0xCAE5E0 Offset: 0xCAE5E0 VA: 0xCAE5E0
 	public void KHEKNNFCAOI_Init()

@@ -32,8 +32,8 @@ public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_Reques
 	public int PJFKNNNDMIA_to; // 0x88
 	public Nullable<int> MLPEHNBNOGD_PlayerId; // 0x8C
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x15FAFC8 GINMIBJOABO
-	public PIKEPLLPNNH NFEAMMJIMPG_Result { get; private set; } // 0x94 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } //0x15FAFC8 GINMIBJOABO_bgs
+	public PIKEPLLPNNH NFEAMMJIMPG_Result { get; private set; } // 0x94 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x15FAFE0 Offset: 0x15FAFE0 VA: 0x15FAFE0 Slot: 12
 	public override void DHLDNIEELHO()

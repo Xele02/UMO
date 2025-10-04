@@ -25,7 +25,7 @@ public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
     
 	public List<int> CGCFENMHJIM_Ids; // 0x7C
 
-	public LDADODICMLG_ResultData NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public LDADODICMLG_ResultData NFEAMMJIMPG_Result { get; private set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x1233364 Offset: 0x1233364 VA: 0x1233364 Slot: 12
 	public override void DHLDNIEELHO()

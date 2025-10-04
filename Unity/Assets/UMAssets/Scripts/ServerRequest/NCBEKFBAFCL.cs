@@ -16,7 +16,7 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 		}
 	}
 
-	public EOOEOFIDGFC NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public EOOEOFIDGFC NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x17CBEE8 Offset: 0x17CBEE8 VA: 0x17CBEE8 Slot: 12
 	public override void DHLDNIEELHO()

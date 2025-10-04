@@ -1,5 +1,6 @@
 import re
 import json
+import os
 
 endclass_pattern = re.compile(r"^}", re.MULTILINE)
 property_pattern = re.compile(r"public (?P<type>[a-zA-Z\[\]0-9]+) (?P<name>[A-Z]+) { get; set; }")
@@ -10,6 +11,35 @@ setter_pattern = re.compile(r"\[CompilerGeneratedAttribute\][^\n]*[^/]*// RVA: (
 
 with open("viewer_data.json","r") as f:
 	fb_json_data = json.load(f)
+
+with open("../namelist.json", "r") as f:
+	rename_list = json.load(f)
+
+def rename_name(name):
+	if name in rename_list:
+		return name+"_"+rename_list[name]
+	return name
+
+def rename_get(name, var):
+	if var in rename_list:
+		return name+"_get_"+rename_list[var]
+	return name+"_get_"
+
+def rename_set(name, var):
+	if var in rename_list:
+		return name+"_set_"+rename_list[var]
+	return name+"_set_"
+
+def rename_inner(name, var):
+	#if var in rename_list:
+	#	return name+"_"+rename_list[var]+"_"
+	#return name+"__"
+	return name
+
+def rename_name_fb(name, var):
+	if var in rename_list:
+		return name+"/*_"+rename_list[var]+"*/"
+	return name
 
 def get_class_info(className, file_data):
 	class_pattern = re.compile(r"public class "+className+" //")
@@ -97,9 +127,9 @@ def print_class(class_info):
 	output += "public class "+class_info["name"]+"\n"
 	output += "{\n"
 	for prop in class_info["properties"]:
-		output += "	public "+prop["type"]+" "+prop["name"]+" { get; set; } // "
-		output += prop["backfield"].group("addr")+" "+prop["backfield"].group("name")+" "
-		output += prop["getter"].group("name")+" "+prop["setter"].group("name")+"\n";
+		output += "	public "+prop["type"]+" "+rename_name(prop["name"])+" { get; set; } // "
+		output += prop["backfield"].group("addr")+" "+rename_inner(prop["backfield"].group("name"), prop["name"])+" "
+		output += rename_get(prop["getter"].group("name"), prop["name"])+" "+rename_set(prop["setter"].group("name"), prop["name"])+"\n";
 	for func in class_info["functions"]:
 		output += "	"+("public " if "public" in func and func["public"] else "private");
 		if "static" in func and func["static"]:
@@ -122,13 +152,13 @@ def generate_class_copy(prefix, class_info, self_var):
 	fb_info = fb_json_data[class_info["FB_class"]]
 
 	output = ""
-	output += prefix+class_info["name"]+" "+self_var+"_data = new "+class_info["name"]+"();\n"
+	output += prefix+class_info["name"]+" "+self_var+"_data_ = new "+class_info["name"]+"();\n"
 	output += "\n"
 
 	cnt = 0
 	for prop in class_info["properties"]:
 		fb_prop = fb_info["vars"][cnt]
-		output += generate_prop_copy(prefix, prop, self_var+"_readData", self_var+"_data", fb_prop)
+		output += generate_prop_copy(prefix, prop, self_var+"_readData_", self_var+"_data_", fb_prop)
 		cnt = cnt + 1
 	return output
 
@@ -136,22 +166,22 @@ def generate_prop_copy(prefix, prop_info, fb_var, self_var, fb_prop_info):
 	output = ""
 	if "[]" in prop_info["type"]: # array
 		realType = prop_info["type"].replace("[]","")
-		output += prefix+"List<"+realType+"> "+prop_info["name"]+"_list = new List<"+realType+">();\n"
-		index_name = prop_info["name"]+"_idx"
+		output += prefix+"List<"+realType+"> "+prop_info["name"]+"_list_ = new List<"+realType+">();\n"
+		index_name = prop_info["name"]+"_idx_"
 		output += prefix+"for(int "+index_name+" = 0; "+index_name+" < "+fb_var+"."+fb_prop_info["name"]+"Length; "+index_name+"++)\n"
 		output += prefix+"{\n"
 		if realType == "uint" or realType == "int" or realType == "string":
-			output += prefix+"	"+prop_info["name"]+"_list.Add("+fb_var+".Get"+fb_prop_info["name"]+"("+index_name+"));\n"
+			output += prefix+"	"+prop_info["name"]+"_list_.Add("+fb_var+".Get"+fb_prop_info["name"]+"("+index_name+"));\n"
 		else:
 			prop_info["class_info"]["FB_class"] = fb_prop_info["inner_type"]
-			output += prefix+"	"+fb_prop_info["inner_type"]+" "+prop_info["name"]+"_readData = "+fb_var+".Get"+fb_prop_info["name"]+"("+index_name+");\n"
+			output += prefix+"	"+fb_prop_info["inner_type"]+" "+prop_info["name"]+"_readData_ = "+fb_var+".Get"+fb_prop_info["name"]+"("+index_name+");\n"
 			output += generate_class_copy(prefix+"	", prop_info["class_info"], prop_info["name"])
-			output += prefix+"	"+prop_info["name"]+"_list.Add("+prop_info["name"]+"_data);\n"
+			output += prefix+"	"+prop_info["name"]+"_list_.Add("+prop_info["name"]+"_data_);\n"
 		output += prefix+"}\n"
-		output += prefix+self_var+"."+prop_info["name"]+" = "+prop_info["name"]+"_list.ToArray();\n"
+		output += prefix+self_var+"."+rename_name(prop_info["name"])+" = "+prop_info["name"]+"_list_.ToArray();\n"
 		output += "\n"
 	elif prop_info["type"] == "uint" or prop_info["type"] == "int" or prop_info["type"] == "string":
-		output += prefix+self_var+"."+prop_info["name"]+" = "+fb_var+"."+fb_prop_info["name"]+";\n"
+		output += prefix+self_var+"."+rename_name(prop_info["name"])+" = "+fb_var+"."+rename_name_fb(fb_prop_info["name"], prop_info["name"])+";\n"
 	else:
 		#print(prop_info)
 		#print(fb_var)
@@ -159,9 +189,9 @@ def generate_prop_copy(prefix, prop_info, fb_var, self_var, fb_prop_info):
 		#assert False, "impl type "+prop_info["type"]
 		#output += "//TODO "+prop_info["type"]+"\n"
 		prop_info["class_info"]["FB_class"] = fb_prop_info["type"]
-		output += prefix+fb_prop_info["type"]+" "+prop_info["name"]+"_readData = "+fb_var+"."+fb_prop_info["name"]+";\n"
+		output += prefix+fb_prop_info["type"]+" "+prop_info["name"]+"_readData_ = "+fb_var+"."+fb_prop_info["name"]+";\n"
 		output += generate_class_copy(prefix, prop_info["class_info"], prop_info["name"])
-		output += prefix+self_var+"."+prop_info["name"]+" = "+prop_info["name"]+"_data;\n"
+		output += prefix+self_var+"."+prop_info["name"]+" = "+prop_info["name"]+"_data_;\n"
 	return output
 
 class_to_generate = {
@@ -274,11 +304,11 @@ for k in class_to_generate:
 
 	loadfunc_content = ""
 	loadfunc_content += "		ByteBuffer buffer = new ByteBuffer(NIODCJLINJN);\n"
-	loadfunc_content += "		"+class_info["FB_class"]+" res_readData = "+class_info["FB_class"]+".GetRootAs"+class_info["FB_class"]+"(buffer);\n"
+	loadfunc_content += "		"+class_info["FB_class"]+" res_readData_ = "+class_info["FB_class"]+".GetRootAs"+class_info["FB_class"]+"(buffer);\n"
 
 	loadfunc_content += generate_class_copy("		", class_info, "res")
 
-	loadfunc_content += "		return res_data;\n"
+	loadfunc_content += "		return res_data_;\n"
 	loadfunc["content"] = loadfunc_content
 	class_info["functions"].append(loadfunc)
 

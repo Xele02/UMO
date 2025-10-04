@@ -9,11 +9,11 @@ public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 	{
 		public int FBGGEFFJJHB_xor = 0xa93169d; // 0x8
 
-		public int HEJIMPBBFEP_EmIdCrypted { get; set; } // 0xC IBDDDEPKAKK KMPECCNMHAG CNNONBKOMNB
-		public int GJOCKDBHEIM_EmCntCrypted { get; set; } // 0x10 EAOGMOMIMED GLEEHIGEGND FKNAHDCMFHE
-		public int ABLOIBMGLFD_em_id { get { return HEJIMPBBFEP_EmIdCrypted ^ FBGGEFFJJHB_xor; } set { HEJIMPBBFEP_EmIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB16DEC PEFEEOLHFGE 0xB16744 LBMNIKJOIIF
-		public int FHCAFLCLGAA_em_cnt { get { return GJOCKDBHEIM_EmCntCrypted ^ FBGGEFFJJHB_xor; } set { GJOCKDBHEIM_EmCntCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB16DF8 EMLMAIJNCKP 0xB16754 OKLACIGBMAM
-		public long BEBJKJKBOGH_date { get; set; } // 0x18 MCIJNMKFMDB DIAPHCJBPFD_get_date IHAIKPNEEJE
+		public int HEJIMPBBFEP_EmIdCrypted { get; set; } // 0xC IBDDDEPKAKK_bgs KMPECCNMHAG_bgs CNNONBKOMNB_bgs
+		public int GJOCKDBHEIM_EmCntCrypted { get; set; } // 0x10 EAOGMOMIMED_bgs GLEEHIGEGND_bgs FKNAHDCMFHE_bgs
+		public int ABLOIBMGLFD_em_id { get { return HEJIMPBBFEP_EmIdCrypted ^ FBGGEFFJJHB_xor; } set { HEJIMPBBFEP_EmIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB16DEC PEFEEOLHFGE_bgs 0xB16744 LBMNIKJOIIF_bgs
+		public int FHCAFLCLGAA_em_cnt { get { return GJOCKDBHEIM_EmCntCrypted ^ FBGGEFFJJHB_xor; } set { GJOCKDBHEIM_EmCntCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB16DF8 EMLMAIJNCKP_bgs 0xB16754 OKLACIGBMAM_bgs
+		public long BEBJKJKBOGH_date { get; set; } // 0x18 MCIJNMKFMDB_bgs DIAPHCJBPFD_get_date IHAIKPNEEJE_set_date
 		public bool FJODMPGPDDD_Unlocked { get { return BEBJKJKBOGH_date != 0; } } //0xB173EC CGKAEMGLHNK_get_Unlocked
 
 		//// RVA: 0xB175CC Offset: 0xB175CC VA: 0xB175CC
@@ -41,8 +41,8 @@ public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
-	public List<AAHAAJEJNLJ> MDKOHOCONKE { get; private set; } // 0x24 JOMEBEGPPNI GIEDMHKMCEN DJKFGOKGNBF
-	public override bool DMICHEJIAJL { get { return true; } } // 0xB18A1C NFKFOODCJJB
+	public List<AAHAAJEJNLJ> MDKOHOCONKE { get; private set; } // 0x24 JOMEBEGPPNI_bgs GIEDMHKMCEN_bgs DJKFGOKGNBF_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0xB18A1C NFKFOODCJJB_bgs
 
 	// // RVA: 0xB16538 Offset: 0xB16538 VA: 0xB16538
 	public JGGLDGNKELI_Emblem()

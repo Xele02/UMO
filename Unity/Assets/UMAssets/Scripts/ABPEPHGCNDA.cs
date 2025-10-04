@@ -11,8 +11,8 @@ public class ABPEPHGCNDA
 	public List<BPADANIKFHP> OJGPPOKENLG_Groups; // 0x10 ProbabilityPerGroupKey
 	public List<IJPECOFPOCH> DDGPEFEEKFP_Items; // 0x14
 
-	public bool EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted == CNECJGKECHK_True; } set { EAJCFBCHIFB_RarityCrypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x15B1454 OEEHBGECGKL 0x15B1468 GHLMHLJJBIG
-	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B1498 NJOGDDPICKG 0x15B14AC NBBGMMBICNA
+	public bool EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted == CNECJGKECHK_True; } set { EAJCFBCHIFB_RarityCrypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x15B1454 OEEHBGECGKL_get_Rarity 0x15B1468 GHLMHLJJBIG_set_Rarity
+	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B1498 NJOGDDPICKG_get_count 0x15B14AC NBBGMMBICNA_set_count
 
 	// // RVA: 0x15B14C0 Offset: 0x15B14C0 VA: 0x15B14C0
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, IKMBBPDBECA _KACECFNECON_extra)

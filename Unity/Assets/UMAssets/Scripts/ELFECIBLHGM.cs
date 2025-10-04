@@ -11,7 +11,7 @@ public class ELFECIBLHGM
 
         public bool Unused() { return FBGGEFFJJHB_xor == 0; }
 
-        public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ BHEHGCHGBDG; } set { AKHADFNHCBJ_LastShowDateCrypted = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
+        public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ BHEHGCHGBDG; } set { AKHADFNHCBJ_LastShowDateCrypted = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM_bgs 0x1304EB4 DKHPNKJALPP_bgs
 
         // RVA: 0x1304EA8 Offset: 0x1304EA8 VA: 0x1304EA8
         // public void KHEKNNFCAOI_Init() { }

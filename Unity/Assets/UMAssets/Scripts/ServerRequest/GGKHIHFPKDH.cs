@@ -43,8 +43,8 @@ public class GGKHIHFPKDH_SavePlayerData : CACGCMBKHDI_Request, CJIKLGPIPBA
 	public bool CHDDDCCHJJH_replace; // 0x90
 	public List<long> AMOMNBEAHBF_InventoryIds; // 0x94
 
-	public override bool OIDCBBGLPHL { get { return true; } } // 0xAA2A74 GINMIBJOABO
-	public HCEPENBDPDP NFEAMMJIMPG_Result { get; set; } // 0x98 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } // 0xAA2A74 GINMIBJOABO_bgs
+	public HCEPENBDPDP NFEAMMJIMPG_Result { get; set; } // 0x98 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	//// RVA: 0xAA2A7C Offset: 0xAA2A7C VA: 0xAA2A7C
 	public void DOMFHDPMCCO_Init(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE _IDLHJIOMJBK_data, List<long> _AMOMNBEAHBF_InventoryIds)

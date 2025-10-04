@@ -49,8 +49,8 @@ public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 	public List<int> MEGNAIJPBFF_InventoryClosedAt; // 0x80
 	public List<string> MIDAMHNABAJ_Keys; // 0x84
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x1197F0C GINMIBJOABO
-	public BGKCFBHGNDI NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } //0x1197F0C GINMIBJOABO_bgs
+	public BGKCFBHGNDI NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x1197F24 Offset: 0x1197F24 VA: 0x1197F24
 	private bool DEJPNPMHPJD()

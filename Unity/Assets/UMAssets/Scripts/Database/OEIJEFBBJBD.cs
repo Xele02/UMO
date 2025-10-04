@@ -34,8 +34,8 @@ public class OEIJEFBBJBD_EventSp : DIHHCBACKGG_DbSection
 		public int HIOOGLEJBKM_StartAdventureId; // 0x80
 		public int FJCADCDNPMP_EndAdventureId; // 0x84
 
-		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1B468D8 HBAAAKFHDBB 0x1B45C44 NHJLJOIPOFK
-		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x1B46904 NOEFEAIFHCL 0x1B45C78 GJIJFGNONEL
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1B468D8 HBAAAKFHDBB_get_KeyPrefix 0x1B45C44 NHJLJOIPOFK_set_KeyPrefix
+		public string PJBILOFOCIC { get { return NJKIMJAFCPC.DNJEJEANJGL_Value; } set { NJKIMJAFCPC.DNJEJEANJGL_Value = value; } } //0x1B46904 NOEFEAIFHCL_get_ 0x1B45C78 GJIJFGNONEL_set_
 
 		//// RVA: 0x1B42628 Offset: 0x1B42628 VA: 0x1B42628
 		public void LHPDDGIJKNB_Reset()
@@ -437,8 +437,8 @@ public class OEIJEFBBJBD_EventSp : DIHHCBACKGG_DbSection
 	public List<CKHKIMCMLAH> PBBAKFCFGKN = new List<CKHKIMCMLAH>(); // 0x64
 	public List<GFKDEIKPFNF> MEEIEAMCKFB = new List<GFKDEIKPFNF>(); // 0x68
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x6C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x70 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x6C IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x70 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x1B40E54 Offset: 0x1B40E54 VA: 0x1B40E54
 	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)

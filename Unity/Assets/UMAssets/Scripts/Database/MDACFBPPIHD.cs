@@ -13,11 +13,11 @@ public class MDACFBPPIHD_PresentItem : DIHHCBACKGG_DbSection
 		public int GNGNIKNNCNH_MVerCrypted; // 0x14
 		public int EAJCFBCHIFB_RarityCrypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E3A0 DEMEPMAEJOO 0x130DEF4 HIGKAIDMOKN
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E438 OLOCMINKGON 0x130DF90 ABAFHIBFKCE
-		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E4D0 JPCJNLHHIPE 0x130E02C JJFJNEJLBDG
-		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E568 KJIMMIBDCIL 0x130E0C8 DMEGNOKIKCD
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E600 OEEHBGECGKL 0x130E164 GHLMHLJJBIG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E3A0 DEMEPMAEJOO_get_id 0x130DEF4 HIGKAIDMOKN_set_id
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E438 OLOCMINKGON_get_val 0x130DF90 ABAFHIBFKCE_set_val
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E4D0 JPCJNLHHIPE_get_en 0x130E02C JJFJNEJLBDG_set_en
+		public int IJEKNCDIIAE_mver { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E568 KJIMMIBDCIL_get_mver 0x130E0C8 DMEGNOKIKCD_set_mver
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x130E600 OEEHBGECGKL_get_Rarity 0x130E164 GHLMHLJJBIG_set_Rarity
 
 		//// RVA: 0x130E2EC Offset: 0x130E2EC VA: 0x130E2EC
 		//public uint CAOGDCBPBAN() { }

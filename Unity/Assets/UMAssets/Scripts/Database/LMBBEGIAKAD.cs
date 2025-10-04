@@ -42,7 +42,7 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 		public List<int> EEOGPJJCKHH_Drops = new List<int>(); // 0x98
 		public List<int> HEABAENHIDE = new List<int>(); // 0x9C
 
-		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x10BB8BC HBAAAKFHDBB 0x10BA320 NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x10BB8BC HBAAAKFHDBB_get_KeyPrefix 0x10BA320 NHJLJOIPOFK_set_KeyPrefix
 
 		//// RVA: 0x10B883C Offset: 0x10B883C VA: 0x10B883C
 		public void LHPDDGIJKNB_Reset() 
@@ -96,10 +96,10 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 		private int MDKGAAMBJDJ_Crypted; // 0x14
 		private int GGEBNMPPEID_Crypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA20 DEMEPMAEJOO 0x10BBA30 HIGKAIDMOKN
-		public int CNKFPJCGNFE_SceneId { get { return FMDDJNKEBBB_Crypted ^ FBGGEFFJJHB_xor; } set { FMDDJNKEBBB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA40 GJBOGOFHGNP 0x10BBA50 GJDGIDCMJMH
-		public int GNFBMCGMCFO_BonusBefore { get { return MDKGAAMBJDJ_Crypted ^ FBGGEFFJJHB_xor; } set { MDKGAAMBJDJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA60 NCIMMDJLPLJ 0x10BBA70 HNAJAFBHOLM
-		public int BFFGFAMJAIG_BonusAfter { get { return GGEBNMPPEID_Crypted ^ FBGGEFFJJHB_xor; } set { GGEBNMPPEID_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA80 PKMNOMELPMN 0x10BBA90 IABBJBAHKCE
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA20 DEMEPMAEJOO_get_id 0x10BBA30 HIGKAIDMOKN_set_id
+		public int CNKFPJCGNFE_SceneId { get { return FMDDJNKEBBB_Crypted ^ FBGGEFFJJHB_xor; } set { FMDDJNKEBBB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA40 GJBOGOFHGNP_get_SceneId 0x10BBA50 GJDGIDCMJMH_set_SceneId
+		public int GNFBMCGMCFO_BonusBefore { get { return MDKGAAMBJDJ_Crypted ^ FBGGEFFJJHB_xor; } set { MDKGAAMBJDJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA60 NCIMMDJLPLJ_get_BonusBefore 0x10BBA70 HNAJAFBHOLM_set_BonusBefore
+		public int BFFGFAMJAIG_BonusAfter { get { return GGEBNMPPEID_Crypted ^ FBGGEFFJJHB_xor; } set { GGEBNMPPEID_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BBA80 PKMNOMELPMN_get_BonusAfter 0x10BBA90 IABBJBAHKCE_set_BonusAfter
 
 		//// RVA: 0x10BB794 Offset: 0x10BB794 VA: 0x10BB794
 		//public uint CAOGDCBPBAN() { }
@@ -118,9 +118,9 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 		private int MDKGAAMBJDJ_Crypted; // 0x10
 		private int GGEBNMPPEID_Crypted; // 0x14
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9B0 DEMEPMAEJOO 0x10BB9C0 HIGKAIDMOKN
-		public int GNFBMCGMCFO_BonusBefore { get { return MDKGAAMBJDJ_Crypted ^ FBGGEFFJJHB_xor; } set { MDKGAAMBJDJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9D0 NCIMMDJLPLJ 0x10BB9E0 HNAJAFBHOLM
-		public int BFFGFAMJAIG_BonusAfter { get { return GGEBNMPPEID_Crypted ^ FBGGEFFJJHB_xor; } set { GGEBNMPPEID_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9F0 PKMNOMELPMN 0x10BBA00 IABBJBAHKCE
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9B0 DEMEPMAEJOO_get_id 0x10BB9C0 HIGKAIDMOKN_set_id
+		public int GNFBMCGMCFO_BonusBefore { get { return MDKGAAMBJDJ_Crypted ^ FBGGEFFJJHB_xor; } set { MDKGAAMBJDJ_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9D0 NCIMMDJLPLJ_get_BonusBefore 0x10BB9E0 HNAJAFBHOLM_set_BonusBefore
+		public int BFFGFAMJAIG_BonusAfter { get { return GGEBNMPPEID_Crypted ^ FBGGEFFJJHB_xor; } set { GGEBNMPPEID_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB9F0 PKMNOMELPMN_get_BonusAfter 0x10BBA00 IABBJBAHKCE_set_BonusAfter
 
 		//// RVA: 0x10BB7C0 Offset: 0x10BB7C0 VA: 0x10BB7C0
 		//public uint CAOGDCBPBAN() { }
@@ -139,8 +139,8 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 		private int LGAIHLFAPDC_Crypted; // 0x10
 		public List<int> KDNMBOBEGJM_GachaIds = new List<int>(); // 0x14
 
-		public int KHPHAAMGMJP_EpId { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB_xor; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB8E8 ABFDDKBBPCH 0x10BB8F8 MHDOIIEMDEH
-		public int OFIAENKCJME_BaseBonus { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB_xor; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB908 KADLAKFANGA 0x10BB918 AIDAPNCEPOB
+		public int KHPHAAMGMJP_EpId { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB_xor; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB8E8 ABFDDKBBPCH_get_EpId 0x10BB8F8 MHDOIIEMDEH_set_EpId
+		public int OFIAENKCJME_BaseBonus { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB_xor; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x10BB908 KADLAKFANGA_get_BaseBonus 0x10BB918 AIDAPNCEPOB_set_BaseBonus
 
 		//// RVA: 0x10BB7E4 Offset: 0x10BB7E4 VA: 0x10BB7E4
 		//public uint CAOGDCBPBAN() { }
@@ -180,8 +180,8 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 	public List<HIIIHLEJEGI> ADPFKHEMNBL = new List<HIIIHLEJEGI>(); // 0x44
 	public List<AIGOEAPJGEB> MBHDIJJEOFL = new List<AIGOEAPJGEB>(); // 0x48
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x3C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x40 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x3C IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x40 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x10B7EB4 Offset: 0x10B7EB4 VA: 0x10B7EB4
 	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)

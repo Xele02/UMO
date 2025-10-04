@@ -13,7 +13,7 @@ public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_Request
 	public int LHMIIJEALCA_Type; // 0x90
 	public bool JJHCNJKPAOK; // 0x94
 
-	public BEAOCBFAHKF NFEAMMJIMPG_Result { get; set; } // 0x98 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public BEAOCBFAHKF NFEAMMJIMPG_Result { get; set; } // 0x98 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x18F88A0 Offset: 0x18F88A0 VA: 0x18F88A0 Slot: 12
 	public override void DHLDNIEELHO()

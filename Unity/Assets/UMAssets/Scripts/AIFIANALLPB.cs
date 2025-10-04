@@ -25,9 +25,9 @@ public class AIFIANALLPB
 	public long ECFNAOCFKKN_LastDate; // 0x30
 	public static bool HELFIJPHKJM; // 0x0
 
-	public List<GJDFHLBONOL> GIPGAICOGGL { get { return GNDBGCIECCN; } } //0xCCBFB0 LNLOKDIGNEL
-	public List<GJDFHLBONOL> LPCFCLLLAMI { get { return DBMLAGIIJNI; } } //0xCCBFB8 CPDLFJBFDBK
-	public bool PLOOEECNHFB_IsDone { get; private set; }  // 0x38 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
+	public List<GJDFHLBONOL> GIPGAICOGGL { get { return GNDBGCIECCN; } } //0xCCBFB0 LNLOKDIGNEL_bgs
+	public List<GJDFHLBONOL> LPCFCLLLAMI { get { return DBMLAGIIJNI; } } //0xCCBFB8 CPDLFJBFDBK_bgs
+	public bool PLOOEECNHFB_IsDone { get; private set; }  // 0x38 MGFBAEDOIDD_bgs JFOKBBLFMLD_bgs EDBGNGILAKA_bgs
 
 	// // RVA: 0xCCBFD0 Offset: 0xCCBFD0 VA: 0xCCBFD0
 	public void MHMOFLCJDPH_FirstPresent(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)

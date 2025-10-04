@@ -27,20 +27,20 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public int BFFGMECIOIA_Crypted; // 0x20
 
 		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", Desc = "Valkyrie id", CryptedInMemory = true)]
-		public short GPPEFLKGGGJ_ValkyrieId { get { return (short)(IFGMKBKBFJI_ValkyrieIdCrypted ^ FBGGEFFJJHB_xor); } set { IFGMKBKBFJI_ValkyrieIdCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA72D8 PCDKIHHDCHI 0x1BA6D54 LANEIFNCIAA
+		public short GPPEFLKGGGJ_ValkyrieId { get { return (short)(IFGMKBKBFJI_ValkyrieIdCrypted ^ FBGGEFFJJHB_xor); } set { IFGMKBKBFJI_ValkyrieIdCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA72D8 PCDKIHHDCHI_bgs 0x1BA6D54 LANEIFNCIAA_bgs
 		[UMOMember(ReaderMember = "HDEBAGHEIKD_plt", Desc = "Pilot id", CryptedInMemory = true)]
-		public short PFGJJLGLPAC_PilotId { get { return (short)(IMGMAKOGIFP_CryptedPilotId ^ FBGGEFFJJHB_xor); } set { IMGMAKOGIFP_CryptedPilotId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7530 PODJOBBGCNC 0x1BA7178 AMDGADPHLEF
+		public short PFGJJLGLPAC_PilotId { get { return (short)(IMGMAKOGIFP_CryptedPilotId ^ FBGGEFFJJHB_xor); } set { IMGMAKOGIFP_CryptedPilotId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7530 PODJOBBGCNC_bgs 0x1BA7178 AMDGADPHLEF_bgs
 		[UMOMember(ReaderMember = "FLNJLKKAFPB_mdl", Desc = "Model id", CryptedInMemory = true)]
-		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB_xor); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7544 LHPKEPPBKPF 0x1BA6D64 OIOEEEDODJA
+		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB_xor); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7544 LHPKEPPBKPF_bgs 0x1BA6D64 OIOEEEDODJA_bgs
 		[UMOMember(ReaderMember = "FCBJFKGDINH_atk", Desc = "Battle attack stat", CryptedInMemory = true)]
-		public short KINFGHHNFCF_Atk { get { return (short)(KIDNEIEHOMN_AtkCrypted ^ FBGGEFFJJHB_xor); } set { KIDNEIEHOMN_AtkCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
+		public short KINFGHHNFCF_Atk { get { return (short)(KIDNEIEHOMN_AtkCrypted ^ FBGGEFFJJHB_xor); } set { KIDNEIEHOMN_AtkCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA7558 BNLKPIIJCDF_bgs 0x1BA756C PKEDNGJNJNC_bgs
 		[UMOMember(ReaderMember = "NONBCCLGBAO_hit", Desc = "Battle hit stat", CryptedInMemory = true)]
-		public short NONBCCLGBAO_hit { get { return (short)(CDDLNKAPCFB_HitCrypted ^ FBGGEFFJJHB_xor); } set { CDDLNKAPCFB_HitCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
+		public short NONBCCLGBAO_hit { get { return (short)(CDDLNKAPCFB_HitCrypted ^ FBGGEFFJJHB_xor); } set { CDDLNKAPCFB_HitCrypted = (short)(value ^ FBGGEFFJJHB_xor); } } //0x1BA757C AEJBEGKBPCO_get_hit 0x1BA7590 JPIBPFANBNG_set_hit
 		[UMOMember(ReaderMember = "BMIJDLBGFNP_skill", Desc = "Battle skill id", CryptedInMemory = true)]
-		public short BMIJDLBGFNP_skill { get { return (short)(AENGKBBMPGM_SkillIdCrypted ^ FBGGEFFJJHB_xor); } } //0x1BA75A0 NIHGHMNFOAO
+		public short BMIJDLBGFNP_skill { get { return (short)(AENGKBBMPGM_SkillIdCrypted ^ FBGGEFFJJHB_xor); } } //0x1BA75A0 NIHGHMNFOAO_get_skill
 		[UMOMember(ReaderMember = "BFCBGDOICCO", Desc = "Version when enabled in deco room", CryptedInMemory = true)]
-		public int MIHAHCEANII { get { return BFFGMECIOIA_Crypted ^ FBGGEFFJJHB_xor; } set { BFFGMECIOIA_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
-		public bool IPJMPBANBPP_Enabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB
+		public int MIHAHCEANII { get { return BFFGMECIOIA_Crypted ^ FBGGEFFJJHB_xor; } set { BFFGMECIOIA_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1BA7434 FOKDFFJIDDI_bgs 0x1BA7188 KMILCNKADIO_bgs
+		public bool IPJMPBANBPP_Enabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB_bgs
 
 		//// RVA: 0x1BA75C8 Offset: 0x1BA75C8 VA: 0x1BA75C8
 		public bool ENIGAEMEAOP(int KNDKMLNLPJO)
@@ -65,7 +65,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	}
 
 	[UMOMember(ReaderMember = "PIEGAMCFGGL")]
-	public List<KJPIDJOMODA_ValkyrieInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<KJPIDJOMODA_ValkyrieInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x1BA6998 Offset: 0x1BA6998 VA: 0x1BA6998
 	public KJPIDJOMODA_ValkyrieInfo GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

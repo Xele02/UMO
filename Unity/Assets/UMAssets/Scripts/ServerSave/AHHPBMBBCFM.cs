@@ -14,7 +14,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	private int ENOBDCFHELD; // 0x28
 	private int FCEJCHGLFGN; // 0x2C
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0x15C8378 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x15C8378 NFKFOODCJJB_bgs
 
 	// // RVA: 0x15C6EF8 Offset: 0x15C6EF8 VA: 0x15C6EF8
 	public AHHPBMBBCFM_DecoPrivateSet()

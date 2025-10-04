@@ -25,11 +25,11 @@ public class BKKMNPEEILG
 	public bool JIBFGLODGHN_EnableLiveSkip; // 0x51
 	public int BBHFIIKMFJE_IdxCrypted; // 0x54
 
-	public int IPPNCOHEEOD_ScoreAverage { get { return EOPEEENMHEN_Crypted ^ 0x7414887f; } set { EOPEEENMHEN_Crypted = value ^ 0x7414887f; } } //0xC8750C BNFNPCNAGAF 0xC87520 GEMDEGDPJPK
-	public int BDLNMOIOMHK_total { get { return JKJDDGGNEAB_TotalCrypted ^ 0x693d0821; } set { JKJDDGGNEAB_TotalCrypted = value ^ 0x693d0821; } } //0xC87534 MKMAKAEDMBG 0xC87548 GIJPLHEDIKD
-	public int KNIFCANOHOC_score { get { return NBOLDNMPJFG_scoreCrypted ^ 0x731b1935; } set { NBOLDNMPJFG_scoreCrypted = value ^ 0x731b1935; } } //0xC8755C EOJEPLIPOMJ 0xC87570 AEEMBPAEAAI
-	public int EACPIDGGPPO_ExcellentScore { get { return EFPOCKLJDIE_Crypted ^ 0x731b1935; } set { EFPOCKLJDIE_Crypted = value ^ 0x731b1935; } } //0xC87584 HBEKIAGHOCA 0xC87598 EOMBKKAIFEI
-	public int OIPCCBHIKIA_index { get { return BBHFIIKMFJE_IdxCrypted ^ 0x5a35a835; } set { BBHFIIKMFJE_IdxCrypted = value ^ 0x5a35a835; } } //0xC875AC HFCGOHDOHAP 0xC875C0 FOGFPKNLADC
+	public int IPPNCOHEEOD_ScoreAverage { get { return EOPEEENMHEN_Crypted ^ 0x7414887f; } set { EOPEEENMHEN_Crypted = value ^ 0x7414887f; } } //0xC8750C BNFNPCNAGAF_get_ScoreAverage 0xC87520 GEMDEGDPJPK_set_ScoreAverage
+	public int BDLNMOIOMHK_total { get { return JKJDDGGNEAB_TotalCrypted ^ 0x693d0821; } set { JKJDDGGNEAB_TotalCrypted = value ^ 0x693d0821; } } //0xC87534 MKMAKAEDMBG_get_total 0xC87548 GIJPLHEDIKD_set_total
+	public int KNIFCANOHOC_score { get { return NBOLDNMPJFG_scoreCrypted ^ 0x731b1935; } set { NBOLDNMPJFG_scoreCrypted = value ^ 0x731b1935; } } //0xC8755C EOJEPLIPOMJ_get_score 0xC87570 AEEMBPAEAAI_set_score
+	public int EACPIDGGPPO_ExcellentScore { get { return EFPOCKLJDIE_Crypted ^ 0x731b1935; } set { EFPOCKLJDIE_Crypted = value ^ 0x731b1935; } } //0xC87584 HBEKIAGHOCA_bgs 0xC87598 EOMBKKAIFEI_bgs
+	public int OIPCCBHIKIA_index { get { return BBHFIIKMFJE_IdxCrypted ^ 0x5a35a835; } set { BBHFIIKMFJE_IdxCrypted = value ^ 0x5a35a835; } } //0xC875AC HFCGOHDOHAP_bgs 0xC875C0 FOGFPKNLADC_bgs
 
 	//// RVA: 0xC875D4 Offset: 0xC875D4 VA: 0xC875D4
 	public void KHEKNNFCAOI_Init(HAEDCCLHEMN_EventBattle _MOHDLLIJELH_cont, int ODHFJJCJHDD)

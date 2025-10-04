@@ -25,8 +25,8 @@ public class BBIIHPDBEHP : CACGCMBKHDI_Request
 
 	public int EMPNJPMAKBF_Id; // 0x7C
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0xF2AF04 GINMIBJOABO
-	public OKMIPDIHKGO NFEAMMJIMPG_Result { get; set; } //OHEIOONIIKB 0xF2AF0C LFOJDJCNOHB 0xF2AF14 KMKEGMGKCBA  // 0x80
+	public override bool OIDCBBGLPHL { get { return true; } } //0xF2AF04 GINMIBJOABO_bgs
+	public OKMIPDIHKGO NFEAMMJIMPG_Result { get; set; } //OHEIOONIIKB_bgs 0xF2AF0C LFOJDJCNOHB_bgs 0xF2AF14 KMKEGMGKCBA_bgs  // 0x80
 
 	// RVA: 0xF2AE38 Offset: 0xF2AE38 VA: 0xF2AE38
 	public BBIIHPDBEHP(bool KCOEDBOCPIK/* = False*/)

@@ -26,7 +26,7 @@ public class ILCCJNDFFOB
                                                             "enemy_info_5",
                                                             "enemy_info_6"}; // 0x8
 
-	public static ILCCJNDFFOB HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ 0x8F3D90 OKPMHKNCNAL 0x8F3E1C
+	public static ILCCJNDFFOB HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs 0x8F3D90 OKPMHKNCNAL_bgs 0x8F3E1C
 
 	// // RVA: 0x8F3EAC Offset: 0x8F3EAC VA: 0x8F3EAC
 	public void IJBGPAENLJA_OnAwake()

@@ -10,9 +10,9 @@ public class FFHFGBLNLGL
 		private int HLMAFFLCCKD_CountCrypted; // 0xC
 		private int MPBBPNKICGA; // 0x10
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x14DDA18 DEMEPMAEJOO 0x14DD31C HIGKAIDMOKN
-		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value; } } //0x14DDA20 NJOGDDPICKG 0x14DD324 NBBGMMBICNA
-		public int MBACHPLELHF { get { return MPBBPNKICGA; } set { MPBBPNKICGA = value; } } //0x14DDA28 GBEOFPAFPEL 0x14DD32C GEBBPCBLJLG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x14DDA18 DEMEPMAEJOO_get_id 0x14DD31C HIGKAIDMOKN_set_id
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value; } } //0x14DDA20 NJOGDDPICKG_get_count 0x14DD324 NBBGMMBICNA_set_count
+		public int MBACHPLELHF { get { return MPBBPNKICGA; } set { MPBBPNKICGA = value; } } //0x14DDA28 GBEOFPAFPEL_bgs 0x14DD32C GEBBPCBLJLG_bgs
 	}
 
 	private const int JNCCCCPBDIC_Version = 1;

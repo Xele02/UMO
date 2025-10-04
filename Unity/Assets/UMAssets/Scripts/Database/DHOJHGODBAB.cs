@@ -6,9 +6,9 @@ using XeSys;
 public class DHOJHGODBAB { }
 public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 {
-	public List<CNLPPCFJEID_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x20 FGGBICBDOEN DEBOJOHHPPB CFINEIEEJGN
-	public List<CNLPPCFJEID_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x24 LKPJIEOOENM HDOHKBOJCDK CDNIDJPOHDJ
-	public List<LCKMNLOLDPD> LFAAEPAAEMB_Rewards { get; private set; } // 0x28 LGPNBHKGMEA CBMPDJKIIOF EFCJGLJJBNA
+	public List<CNLPPCFJEID_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x20 FGGBICBDOEN_bgs DEBOJOHHPPB_bgs CFINEIEEJGN_bgs
+	public List<CNLPPCFJEID_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x24 LKPJIEOOENM_bgs HDOHKBOJCDK_bgs CDNIDJPOHDJ_bgs
+	public List<LCKMNLOLDPD> LFAAEPAAEMB_Rewards { get; private set; } // 0x28 LGPNBHKGMEA_bgs CBMPDJKIIOF_bgs EFCJGLJJBNA_bgs
 
 	// RVA: 0x1988E24 Offset: 0x1988E24 VA: 0x1988E24
 	public DHOJHGODBAB_Quest()
@@ -171,20 +171,20 @@ public class CNLPPCFJEID_QuestInfo
 	public bool OAPCHMHAJID; // 0x4C
 	public int HDBFCIOCNPA_AchievementId; // 0x50
 
-	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CD9C DEMEPMAEJOO 0x175CCD4 HIGKAIDMOKN
-	public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDA8 GHAILOLPHPF 0x175CCE4 BACGOKIGMBC
-	public int CHOFDPDFPDC_ConfigValue { get { return ICLBAMBDKNI ^ FBGGEFFJJHB_xor; } set { ICLBAMBDKNI = value ^ FBGGEFFJJHB_xor; } } //0x175CDB8 IBCDKHDLOKG 0x175CCF4 ICHJGBKDCGM
-	public int FCDKJAKLGMB_TargetValue { get { return NILLPINGIIP ^ FBGGEFFJJHB_xor; } set { NILLPINGIIP = value ^ FBGGEFFJJHB_xor; } } //0x175CDC8 IJPJEEOLPIG 0x175CDD8 EDECEGOKICK
-	public int HHIBBHFHENH_LinkQuestId { get { return IOAGHJGBNLC_LinkQuestIdCrypted ^ FBGGEFFJJHB_xor; } set { IOAGHJGBNLC_LinkQuestIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDE8 MEHBABCCHOO 0x175CD14 FBCMDNCLBDC
-	public int DEPGBBJMFED_CategoryId { get { return HNEHIJCAOJM_CategoryIdCrypted ^ FBGGEFFJJHB_xor; } set { HNEHIJCAOJM_CategoryIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDF8 FNMFOBJIIIC 0x175CD6C OBEDPJLBBEG
+	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CD9C DEMEPMAEJOO_get_id 0x175CCD4 HIGKAIDMOKN_set_id
+	public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDA8 GHAILOLPHPF_bgs 0x175CCE4 BACGOKIGMBC_bgs
+	public int CHOFDPDFPDC_ConfigValue { get { return ICLBAMBDKNI ^ FBGGEFFJJHB_xor; } set { ICLBAMBDKNI = value ^ FBGGEFFJJHB_xor; } } //0x175CDB8 IBCDKHDLOKG_bgs 0x175CCF4 ICHJGBKDCGM_bgs
+	public int FCDKJAKLGMB_TargetValue { get { return NILLPINGIIP ^ FBGGEFFJJHB_xor; } set { NILLPINGIIP = value ^ FBGGEFFJJHB_xor; } } //0x175CDC8 IJPJEEOLPIG_bgs 0x175CDD8 EDECEGOKICK_bgs
+	public int HHIBBHFHENH_LinkQuestId { get { return IOAGHJGBNLC_LinkQuestIdCrypted ^ FBGGEFFJJHB_xor; } set { IOAGHJGBNLC_LinkQuestIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDE8 MEHBABCCHOO_bgs 0x175CD14 FBCMDNCLBDC_bgs
+	public int DEPGBBJMFED_CategoryId { get { return HNEHIJCAOJM_CategoryIdCrypted ^ FBGGEFFJJHB_xor; } set { HNEHIJCAOJM_CategoryIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CDF8 FNMFOBJIIIC_bgs 0x175CD6C OBEDPJLBBEG_bgs
 	// DayOfWeek
-	public int AKBHPFBDDOL_Val { get { return APJGMOJDPAK ^ FBGGEFFJJHB_xor; } set { APJGMOJDPAK = value ^ FBGGEFFJJHB_xor; } } //0x175CE08 ANBHKALCHDJ 0x175CD24 GDANPNDMDCC
-	public int EIHOBHDKCDB_RewardId { get { return FKKHMCINELD ^ FBGGEFFJJHB_xor; } set { FKKHMCINELD = value ^ FBGGEFFJJHB_xor; } } //0x175CE18 EALKEGPNHGK 0x175CD04 LNFEIPOKKNG
-	public int EILKGEADKGH_Order { get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE28 NPDDACIHBKD 0x175CD34 BJJMCKHBPNH
-	public int LMPPENOILPF { get { return ELFADCBHPCD ^ FBGGEFFJJHB_xor; } set { ELFADCBHPCD = value ^ FBGGEFFJJHB_xor; } } //0x175CE38 JAOMCMFJPDJ 0x175CD7C LINHGODPPMB
-	public long KJBGCLPMLCG_OpenedAt { get { return IBCNABKLHHH_StartCrypted ^ FBGGEFFJJHB_xor; } set { IBCNABKLHHH_StartCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE48 IDLJOCDJJOC 0x175CD44 ODIEKGPKOAC
-	public long GJFPFFBAKGK_CloseAt { get { return MABPKDKBJAG_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { MABPKDKBJAG_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE60 KPBMCJKFEGN 0x175CD58 IEFCDGKGICA
-	public int EKANGPODCEP_EventId { get { return EGCMPELNLKP_EventIdCrypted ^ FBGGEFFJJHB_xor; } set { EGCMPELNLKP_EventIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE78 EBLAFEMDFGD 0x175CD8C AHEFELNFBDM
+	public int AKBHPFBDDOL_Val { get { return APJGMOJDPAK ^ FBGGEFFJJHB_xor; } set { APJGMOJDPAK = value ^ FBGGEFFJJHB_xor; } } //0x175CE08 ANBHKALCHDJ_get_Val 0x175CD24 GDANPNDMDCC_set_Val
+	public int EIHOBHDKCDB_RewardId { get { return FKKHMCINELD ^ FBGGEFFJJHB_xor; } set { FKKHMCINELD = value ^ FBGGEFFJJHB_xor; } } //0x175CE18 EALKEGPNHGK_bgs 0x175CD04 LNFEIPOKKNG_bgs
+	public int EILKGEADKGH_Order { get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE28 NPDDACIHBKD_get_Order 0x175CD34 BJJMCKHBPNH_set_Order
+	public int LMPPENOILPF { get { return ELFADCBHPCD ^ FBGGEFFJJHB_xor; } set { ELFADCBHPCD = value ^ FBGGEFFJJHB_xor; } } //0x175CE38 JAOMCMFJPDJ_bgs 0x175CD7C LINHGODPPMB_bgs
+	public long KJBGCLPMLCG_OpenedAt { get { return IBCNABKLHHH_StartCrypted ^ FBGGEFFJJHB_xor; } set { IBCNABKLHHH_StartCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE48 IDLJOCDJJOC_bgs 0x175CD44 ODIEKGPKOAC_bgs
+	public long GJFPFFBAKGK_CloseAt { get { return MABPKDKBJAG_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { MABPKDKBJAG_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE60 KPBMCJKFEGN_bgs 0x175CD58 IEFCDGKGICA_bgs
+	public int EKANGPODCEP_EventId { get { return EGCMPELNLKP_EventIdCrypted ^ FBGGEFFJJHB_xor; } set { EGCMPELNLKP_EventIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x175CE78 EBLAFEMDFGD_bgs 0x175CD8C AHEFELNFBDM_bgs
 
 	//// RVA: 0x175CC78 Offset: 0x175CC78 VA: 0x175CC78
 	public void LHPDDGIJKNB_Reset(int _PPFNGGCBJKC_id, int KNEFBLHBDBG)
@@ -218,11 +218,11 @@ public class LCKMNLOLDPD
 	public int IPFBMBMNAGL_Crypted; // 0x18
 	public int OHDDANALELB_Crypted; // 0x1C
 
-	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A97C DEMEPMAEJOO 0xD9A98C HIGKAIDMOKN
-	public int GLCLFMGPMAN_ItemId { get { return AHGCGHAAHOO_ItemIdCrypted ^ FBGGEFFJJHB_xor; } set { AHGCGHAAHOO_ItemIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A99C LNJAENEGDEL 0xD9A9AC JHIDBGCHOKL
-	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9BC NJOGDDPICKG 0xD9A9CC NBBGMMBICNA
-	public int BGFPPGPJONG_QuestKeyId { get { return IPFBMBMNAGL_Crypted ^ FBGGEFFJJHB_xor; } set { IPFBMBMNAGL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9DC LBMNPGFFCJN 0xD9A9EC NDNCLLKIJHA
-	public int APNMKLJMPMD_Type { get { return OHDDANALELB_Crypted ^ FBGGEFFJJHB_xor; } set { OHDDANALELB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9FC ICCFOKKODOH 0xD9AA0C CBPDLNBEJAE
+	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A97C DEMEPMAEJOO_get_id 0xD9A98C HIGKAIDMOKN_set_id
+	public int GLCLFMGPMAN_ItemId { get { return AHGCGHAAHOO_ItemIdCrypted ^ FBGGEFFJJHB_xor; } set { AHGCGHAAHOO_ItemIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A99C LNJAENEGDEL_get_ItemId 0xD9A9AC JHIDBGCHOKL_set_ItemId
+	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9BC NJOGDDPICKG_get_count 0xD9A9CC NBBGMMBICNA_set_count
+	public int BGFPPGPJONG_QuestKeyId { get { return IPFBMBMNAGL_Crypted ^ FBGGEFFJJHB_xor; } set { IPFBMBMNAGL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9DC LBMNPGFFCJN_bgs 0xD9A9EC NDNCLLKIJHA_bgs
+	public int APNMKLJMPMD_Type { get { return OHDDANALELB_Crypted ^ FBGGEFFJJHB_xor; } set { OHDDANALELB_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD9A9FC ICCFOKKODOH_bgs 0xD9AA0C CBPDLNBEJAE_bgs
 
 	//// RVA: 0xD9AA1C Offset: 0xD9AA1C VA: 0xD9AA1C
 	//public uint CAOGDCBPBAN() { }

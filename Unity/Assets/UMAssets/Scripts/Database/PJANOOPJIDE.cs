@@ -19,7 +19,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		public int IODLCIBCONC; // 0x2C
 	}
 
-	public List<HNHHGJCPMEA> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<HNHHGJCPMEA> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x92FFCC Offset: 0x92FFCC VA: 0x92FFCC
 	public HNHHGJCPMEA LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)

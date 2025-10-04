@@ -9,7 +9,7 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	private List<MPBEHHIAGOI> GFPFBJDPHLJ_UnitsByDiva; // 0x24
 	public List<CIFHILOJJFC> PKMMBKHODDM_Saved = new List<CIFHILOJJFC>(); // 0x28
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0x12B4DD8 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x12B4DD8 NFKFOODCJJB_bgs
 
 	// // RVA: 0x12B2A3C Offset: 0x12B2A3C VA: 0x12B2A3C
 	public CIFHILOJJFC ALDOJAEAMCJ(int _AHHJLDLAPAN_DivaId, int _PPFNGGCBJKC_id)
@@ -208,7 +208,7 @@ public class MPBEHHIAGOI
 	public int AHHJLDLAPAN_DivaId; // 0x8
 	private List<CIFHILOJJFC> AHBBMJANGHE_Units = new List<CIFHILOJJFC>(6); // 0xC
 
-	public CIFHILOJJFC JKNGLJNEEPO_MainUnit { get { return AHBBMJANGHE_Units[0]; } } //0x17BB12C FJDDNKGHPHN
+	public CIFHILOJJFC JKNGLJNEEPO_MainUnit { get { return AHBBMJANGHE_Units[0]; } } //0x17BB12C FJDDNKGHPHN_bgs
 
 	//// RVA: 0x17BB0AC Offset: 0x17BB0AC VA: 0x17BB0AC
 	public CIFHILOJJFC GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

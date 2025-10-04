@@ -34,8 +34,8 @@ public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x84
 	public int MLPLGFLKKLI_Ipp = 10; // 0x88
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x16C1C90 GINMIBJOABO
-	public NOEPOENCKJJ NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public override bool OIDCBBGLPHL { get { return true; } } //0x16C1C90 GINMIBJOABO_bgs
+	public NOEPOENCKJJ NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x16C1CA8 Offset: 0x16C1CA8 VA: 0x16C1CA8 Slot: 12
 	public override void DHLDNIEELHO()

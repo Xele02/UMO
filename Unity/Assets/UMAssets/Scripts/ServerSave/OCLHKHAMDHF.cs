@@ -27,7 +27,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 		public List<int> PHJFOJLMFGK; // 0x2C
 		public bool LHMOAJAIJCO_is_new; // 0x30
 
-		public int HPLMMKHBKIG_Id { get { return GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor; } set { GDIKAELAKBN_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B2D9F4 CABAPDMNCDN 0x1B2E04C BIEKAEDMACK
+		public int HPLMMKHBKIG_Id { get { return GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor; } set { GDIKAELAKBN_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B2D9F4 CABAPDMNCDN_bgs 0x1B2E04C BIEKAEDMACK_bgs
 		public int OGDBKJKIGAJ_CurrentPoint { get {
 				int res = EFLHPLDPEHJ_ValCrypted ^ FBGGEFFJJHB_xor;
 				if (BMNPNDCOGOJ_ValCheck != res)
@@ -38,9 +38,9 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 				EFLHPLDPEHJ_ValCrypted = value ^ FBGGEFFJJHB_xor;
 				BMNPNDCOGOJ_ValCheck = value;
 			}
-		} //0x1B2DA00 KPOKGLEGCON 0x1B2E05C CJKKCALKIKL
-		public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG_DateCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B2D9DC DIAPHCJBPFD_get_date 0x1B2E084 IHAIKPNEEJE
-		public int EBIIIAELNAA_Step { get { return EEEHAJPKFLP_StepCrypted ^ FBGGEFFJJHB_xor; } set { EEEHAJPKFLP_StepCrypted = value ^ FBGGEFFJJHB_xor; FKEOAJOIILO_StepCheck = value; } } //0x1B2C830 DNHBBMADHBB 0x1B2E070 KHFOJPIEFKJ
+		} //0x1B2DA00 KPOKGLEGCON_bgs 0x1B2E05C CJKKCALKIKL_bgs
+		public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG_DateCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B2D9DC DIAPHCJBPFD_get_date 0x1B2E084 IHAIKPNEEJE_set_date
+		public int EBIIIAELNAA_Step { get { return EEEHAJPKFLP_StepCrypted ^ FBGGEFFJJHB_xor; } set { EEEHAJPKFLP_StepCrypted = value ^ FBGGEFFJJHB_xor; FKEOAJOIILO_StepCheck = value; } } //0x1B2C830 DNHBBMADHBB_bgs 0x1B2E070 KHFOJPIEFKJ_bgs
 
 		//// RVA: 0x1B30860 Offset: 0x1B30860 VA: 0x1B30860
 		public void BDPOOJDJKAA_SetRewardReceived(int _OIPCCBHIKIA_index, bool _LNACKEBEMOB_Received)
@@ -207,8 +207,8 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE_CurrentVersion = 2;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
-	public List<JEHNEEBBDBO_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } // 0x24 LOGMEMCACAC NNNEPHIJAKK HIAFHIDDPEJ
-	public override bool DMICHEJIAJL { get { return true; } } // 0x1B304DC NFKFOODCJJB
+	public List<JEHNEEBBDBO_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } // 0x24 LOGMEMCACAC_bgs NNNEPHIJAKK_bgs HIAFHIDDPEJ_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1B304DC NFKFOODCJJB_bgs
 
 	// // RVA: 0x1B2C690 Offset: 0x1B2C690 VA: 0x1B2C690
 	public int GGKOLJCPNKO(KMOGDEOKHPG_Episode _MOLEPBNJAGE_Episode)

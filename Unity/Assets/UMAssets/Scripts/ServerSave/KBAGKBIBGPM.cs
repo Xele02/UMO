@@ -26,12 +26,12 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 		public long EGBOHDFBAPB_closed_at; // 0x40
 		public string MDADLCOCEBN_session_id = ""; // 0x48
 
-		public int LGADCGFMLLD_step { get { return AFGHJEJKDHN_StepCrypted ^ ENOBDCFHELD; } set { AFGHJEJKDHN_StepCrypted = value ^ ENOBDCFHELD; FBDJBMDEENG_StepCrypted2 = value ^ FCEJCHGLFGN; } } //0x1014918 MAFBDLKFHGJ 0x10153DC EPEFBOIALDI
-		public int OMCAOJJGOGG_Lb { get { return HFIHMDILNFD_LbCrypted ^ ENOBDCFHELD; } set { HFIHMDILNFD_LbCrypted = value ^ ENOBDCFHELD; IGMFFIKLEHP_LbCrypted2 = value ^ FCEJCHGLFGN; } } //0x1014928 PBEMPHPDDDB 0x10153F0 MCADMIEOCCF
-		public int KMMJMDGLIFA_FrCns { get { return GEIHLKKJNDG_Crypted ^ ENOBDCFHELD; } set { GEIHLKKJNDG_Crypted = value ^ ENOBDCFHELD; BIOAGBAPPJA_Crypted = value ^ FCEJCHGLFGN; } } //0x1014938 ODELLHEMAAK 0x1015404 DNGGAOCFLAB
-		public int GNICDMGKMEP_Qu { get { return BHFAGDDEOKC_Crypted ^ ENOBDCFHELD; } set { BHFAGDDEOKC_Crypted = value ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = value ^ FCEJCHGLFGN; } } //0x1014948 CHJKNNCKKJP 0x1015418 FCPDMGEHNCK
-		public bool BOKPBNGHOGM { get { return (((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) << 1) >> 31) != 0; } set { if(value) BHFAGDDEOKC_Crypted = ((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) | 0x40000000) ^ ENOBDCFHELD; else BHFAGDDEOKC_Crypted = (int)((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0xbfffffff) ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = BHFAGDDEOKC_Crypted ^ ENOBDCFHELD ^ FCEJCHGLFGN; } } //0x10183B4 MAMKCDMOCEG 0x10183C8 CHCMNLGGHBH
-		public int LAGLPDDLMCK { get { return (BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0x3fffffff; } set { BHFAGDDEOKC_Crypted = ((int)((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0xc0000000) | value) ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = BHFAGDDEOKC_Crypted ^ ENOBDCFHELD ^ FCEJCHGLFGN; } } //0x10183FC CAJJKOMKCEI 0x1018410 CIOPEIBIKNP
+		public int LGADCGFMLLD_step { get { return AFGHJEJKDHN_StepCrypted ^ ENOBDCFHELD; } set { AFGHJEJKDHN_StepCrypted = value ^ ENOBDCFHELD; FBDJBMDEENG_StepCrypted2 = value ^ FCEJCHGLFGN; } } //0x1014918 MAFBDLKFHGJ_get_step 0x10153DC EPEFBOIALDI_set_step
+		public int OMCAOJJGOGG_Lb { get { return HFIHMDILNFD_LbCrypted ^ ENOBDCFHELD; } set { HFIHMDILNFD_LbCrypted = value ^ ENOBDCFHELD; IGMFFIKLEHP_LbCrypted2 = value ^ FCEJCHGLFGN; } } //0x1014928 PBEMPHPDDDB_get_Lb 0x10153F0 MCADMIEOCCF_set_Lb
+		public int KMMJMDGLIFA_FrCns { get { return GEIHLKKJNDG_Crypted ^ ENOBDCFHELD; } set { GEIHLKKJNDG_Crypted = value ^ ENOBDCFHELD; BIOAGBAPPJA_Crypted = value ^ FCEJCHGLFGN; } } //0x1014938 ODELLHEMAAK_bgs 0x1015404 DNGGAOCFLAB_bgs
+		public int GNICDMGKMEP_Qu { get { return BHFAGDDEOKC_Crypted ^ ENOBDCFHELD; } set { BHFAGDDEOKC_Crypted = value ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = value ^ FCEJCHGLFGN; } } //0x1014948 CHJKNNCKKJP_bgs 0x1015418 FCPDMGEHNCK_bgs
+		public bool BOKPBNGHOGM { get { return (((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) << 1) >> 31) != 0; } set { if(value) BHFAGDDEOKC_Crypted = ((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) | 0x40000000) ^ ENOBDCFHELD; else BHFAGDDEOKC_Crypted = (int)((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0xbfffffff) ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = BHFAGDDEOKC_Crypted ^ ENOBDCFHELD ^ FCEJCHGLFGN; } } //0x10183B4 MAMKCDMOCEG_bgs 0x10183C8 CHCMNLGGHBH_bgs
+		public int LAGLPDDLMCK { get { return (BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0x3fffffff; } set { BHFAGDDEOKC_Crypted = ((int)((BHFAGDDEOKC_Crypted ^ ENOBDCFHELD) & 0xc0000000) | value) ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = BHFAGDDEOKC_Crypted ^ ENOBDCFHELD ^ FCEJCHGLFGN; } } //0x10183FC CAJJKOMKCEI_bgs 0x1018410 CIOPEIBIKNP_bgs
 
 		// // RVA: 0x101817C Offset: 0x101817C VA: 0x101817C
 		// public bool MILHIALDDLG() { }
@@ -151,7 +151,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 	public const int NEJCHBPCHOP = 1073741823;
 	public List<JAIFDODKMIA> FBCJICEPLED = new List<JAIFDODKMIA>(4); // 0x24
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0x10182CC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x10182CC NFKFOODCJJB_bgs
 
 	// // RVA: 0x1013AA8 Offset: 0x1013AA8 VA: 0x1013AA8
 	public KBAGKBIBGPM_EventRaidLobby()

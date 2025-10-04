@@ -34,10 +34,10 @@ public class NMFABEKNBKJ
 	private int EAABKFGHKBG_TryCount; // 0x14
 	private List<NMFABEKNBKJ.CIDEHGHGPIO> NDPMMJINHNA_TokenList = new List<NMFABEKNBKJ.CIDEHGHGPIO>(); // 0x18
 
-	public static NMFABEKNBKJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	public int HBAFMHEBNDP { get; private set; } // 0xC DJEKENHJEOE DAJMGNFAEEG PPFBDNBNDDB
-	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x10 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
-	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM ODAMFOMFIPC ELGNDAPOEPK
+	public static NMFABEKNBKJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public int HBAFMHEBNDP { get; private set; } // 0xC DJEKENHJEOE_bgs DAJMGNFAEEG_bgs PPFBDNBNDDB_bgs
+	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x10 MGFBAEDOIDD_bgs JFOKBBLFMLD_bgs EDBGNGILAKA_bgs
+	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM_bgs ODAMFOMFIPC_bgs ELGNDAPOEPK_bgs
 
 	// // RVA: 0x1CAB7E0 Offset: 0x1CAB7E0 VA: 0x1CAB7E0
 	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg = "") { }

@@ -26,7 +26,7 @@ public class PPFGOOFFNMB_GetTopRanks : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page; // 0x84
 	public int MLPLGFLKKLI_Ipp; // 0x88
 
-	public NJAPFHHAOHE NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public NJAPFHHAOHE NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0xDF691C Offset: 0xDF691C VA: 0xDF691C
 	public PPFGOOFFNMB_GetTopRanks(bool KCOEDBOCPIK/* = false*/)

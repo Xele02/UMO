@@ -14,7 +14,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 		public int[] CJPMCKIOCGI; // 0x18
 	}
 
-	public List<AFBMNDPOALE> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<AFBMNDPOALE> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x9F61C8 Offset: 0x9F61C8 VA: 0x9F61C8
 	public AFBMNDPOALE LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)

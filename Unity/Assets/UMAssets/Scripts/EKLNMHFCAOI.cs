@@ -211,12 +211,12 @@ public class EKLNMHFCAOI
 	}
 
 	// // RVA: 0x12F57D0 Offset: 0x12F57D0 VA: 0x12F57D0
-	// public static int BGIBJJAFOBC(EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_type, int DKMLEDJJFOI) { }
+	// public static int BGIBJJAFOBC(EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_type, int _DKMLEDJJFOI__CurrencyId) { }
 
 	// // RVA: 0x12F57F8 Offset: 0x12F57F8 VA: 0x12F57F8
-	public static int ADGMGNKCIGA(int DKMLEDJJFOI)
+	public static int ADGMGNKCIGA(int _DKMLEDJJFOI__CurrencyId)
 	{
-		return DKMLEDJJFOI % 1000;
+		return _DKMLEDJJFOI__CurrencyId % 1000;
 	}
 
 	// // RVA: 0x12F5818 Offset: 0x12F5818 VA: 0x12F5818

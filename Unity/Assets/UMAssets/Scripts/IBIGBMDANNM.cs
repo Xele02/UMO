@@ -19,15 +19,15 @@ public class IBIGBMDANNM
 	public long KNIFCANOHOC_score; // 0x38
 	public double HMLEDBJDCAF_PreciseScore; // 0x40
 
-	public int MLPEHNBNOGD_PlayerId { get; set; } // 0x8 OCNCGDJNBIH LJALJLIIODH MKBAMFJNCDK
-	public int ADFIHAPELAN_PLevel { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_Level; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_Level = value; } } //0x121255C NBALCMLLJGJ 0x12125A8 CPMNIMFDFAM
-	public string LBODHBDOMGK_PlayerName { get { return AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name; } set { AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = value; } }// 0x12125FC JLFIGDAGIEB 0x1212648 KMHENDLDBEA
-	public string LFKJNMFFCLH_LastLoginString { get; set; } // 0x20 JDLEEBJKOIL LMGFMDMOCIC KKODLMIGNIG
-	public int PDJEMLMOEPF_CenterDivaId { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id = value; } } //0x12126AC OICEHMGFBOG 0x12126F8 GIAENPIECFL
-	public int FCKJJGIMPPI_Level { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv = value; } } //0x121274C KHAEBKHHDDH 0x1212798 FODBHLHKHFI
-	public int NOEAJIJIIHK_McPower { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = value; } } //0x12127EC IKHEOMAMDGP 0x1212838 MMLGLIOAOBA
-	//public bool CADENLBDAEB_IsNew { get; } 0x121288C KJGFPPLHLAB
-	public int NEILEPPJKIN_favorite { get; set; } // 0x24 MBBNGAAAJKL 0x12128A0 CPCOJHKJPAG 0x12128A8 JOPFPEAKGOH
+	public int MLPEHNBNOGD_PlayerId { get; set; } // 0x8 OCNCGDJNBIH_bgs LJALJLIIODH_bgs MKBAMFJNCDK_bgs
+	public int ADFIHAPELAN_PLevel { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_Level; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_Level = value; } } //0x121255C NBALCMLLJGJ_bgs 0x12125A8 CPMNIMFDFAM_bgs
+	public string LBODHBDOMGK_PlayerName { get { return AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name; } set { AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = value; } }// 0x12125FC JLFIGDAGIEB_bgs 0x1212648 KMHENDLDBEA_bgs
+	public string LFKJNMFFCLH_LastLoginString { get; set; } // 0x20 JDLEEBJKOIL_bgs LMGFMDMOCIC_bgs KKODLMIGNIG_bgs
+	public int PDJEMLMOEPF_CenterDivaId { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_diva_id = value; } } //0x12126AC OICEHMGFBOG_bgs 0x12126F8 GIAENPIECFL_bgs
+	public int FCKJJGIMPPI_Level { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_lv = value; } } //0x121274C KHAEBKHHDDH_bgs 0x1212798 FODBHLHKHFI_bgs
+	public int NOEAJIJIIHK_McPower { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = value; } } //0x12127EC IKHEOMAMDGP_bgs 0x1212838 MMLGLIOAOBA_bgs
+	//public bool CADENLBDAEB_IsNew { get; } 0x121288C KJGFPPLHLAB_bgs
+	public int NEILEPPJKIN_favorite { get; set; } // 0x24 MBBNGAAAJKL_bgs 0x12128A0 CPCOJHKJPAG_bgs 0x12128A8 JOPFPEAKGOH_bgs
 
 	//// RVA: 0x12128B0 Offset: 0x12128B0 VA: 0x12128B0
 	//public string LDBPEIMINJB() { }

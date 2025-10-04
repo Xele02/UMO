@@ -89,13 +89,13 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	}
 
 	[UMOMember(ReaderMember = "IPCJPOGBHGP")]
-	public List<KEIGMAOCJHK_Talk> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<KEIGMAOCJHK_Talk> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 	[UMOMember(ReaderMember = "BHFAMKAPFNJ")]
-	public List<LEBAGJNJJNG_Room> NPKPBDIDBBG_Room { get; private set; } // 0x24 APIEOMBDJJM OJBJIECLMKI KHEKLHLKDIJ
+	public List<LEBAGJNJJNG_Room> NPKPBDIDBBG_Room { get; private set; } // 0x24 APIEOMBDJJM_bgs OJBJIECLMKI_bgs KHEKLHLKDIJ_bgs
 	[UMOMember(ReaderMember = "CEPBAOMAHNH")]
-	public List<JFMDDEBLCAA_CharaInfo> KHCACDIKJLG_Characters { get; private set; } // 0x28 BMCJBCFBOJG ICPBCJDBBAI HHKFEJDAHNA
+	public List<JFMDDEBLCAA_CharaInfo> KHCACDIKJLG_Characters { get; private set; } // 0x28 BMCJBCFBOJG_bgs ICPBCJDBBAI_bgs HHKFEJDAHNA_bgs
 	[UMOMember(ReaderMember = "ABIKKECOBIJ")]
-	public List<EIJGEDBGBBI_ColorInfo> LOCEHOMKJEI_ColorConfigs { get; private set; } // 0x2C GJFNINODHJK LLFHHFNLOPC CGEAKFHLBNF
+	public List<EIJGEDBGBBI_ColorInfo> LOCEHOMKJEI_ColorConfigs { get; private set; } // 0x2C GJFNINODHJK_bgs LLFHHFNLOPC_bgs CGEAKFHLBNF_bgs
 
 	//// RVA: 0x19CD998 Offset: 0x19CD998 VA: 0x19CD998
 	//public BOKMNHAFJHF_Sns.KEIGMAOCJHK GCINIJEMHFK_Get(int _PPFNGGCBJKC_id) { }

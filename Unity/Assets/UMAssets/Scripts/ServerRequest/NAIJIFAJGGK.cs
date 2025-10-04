@@ -18,12 +18,12 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
         public bool PLEAGPCJICK; // 0x1D
     }
 
-	public List<string> HHIHCJKLJFF_Names { get; set; } // 0x7C OHINHCAEFDJ AOELBKNHIMG HGAICKPMCCB
-	public LDDPADICHHB IJMPLDBGMHC_OnDataReceived { get; set; } // 0x80 LKIBOJLDBHM DCNBDAGBCPB LGLGACHHDGK
-	public PHAKFFBNNEI_PlayerDataResult NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public List<string> HHIHCJKLJFF_Names { get; set; } // 0x7C OHINHCAEFDJ_bgs AOELBKNHIMG_bgs HGAICKPMCCB_bgs
+	public LDDPADICHHB IJMPLDBGMHC_OnDataReceived { get; set; } // 0x80 LKIBOJLDBHM_bgs DCNBDAGBCPB_bgs LGLGACHHDGK_bgs
+	public PHAKFFBNNEI_PlayerDataResult NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 	public override bool EBPLLJGPFDA_HasResult { get {
         return NFEAMMJIMPG_Result != null;
-        } } // 0x17C031C HGPAELCGELL
+        } } // 0x17C031C HGPAELCGELL_bgs
 
 	// // RVA: 0x17C0084 Offset: 0x17C0084 VA: 0x17C0084
 	public NAIJIFAJGGK_RequestLoadPlayerData()

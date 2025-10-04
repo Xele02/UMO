@@ -15,11 +15,11 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 		private int HHPFFPINGAA_OrderCrypted; // 0x18
 		private int LCGJKAGIFGO_MaxCrypted; // 0x1C
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBB8 DEMEPMAEJOO 0x18AE658 HIGKAIDMOKN
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBC8 OEEHBGECGKL 0x18AE668 GHLMHLJJBIG
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBD8 OLOCMINKGON 0x18AE678 ABAFHIBFKCE
-		public int EILKGEADKGH_Order{ get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBE8 NPDDACIHBKD 0x18AE688 BJJMCKHBPNH
-		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBF8 AECMFIOFFJN 0x18AE698 NGOJJDOCIDG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBB8 DEMEPMAEJOO_get_id 0x18AE658 HIGKAIDMOKN_set_id
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBC8 OEEHBGECGKL_get_Rarity 0x18AE668 GHLMHLJJBIG_set_Rarity
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBD8 OLOCMINKGON_get_val 0x18AE678 ABAFHIBFKCE_set_val
+		public int EILKGEADKGH_Order{ get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBE8 NPDDACIHBKD_get_Order 0x18AE688 BJJMCKHBPNH_set_Order
+		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18AEBF8 AECMFIOFFJN_get_max 0x18AE698 NGOJJDOCIDG_set_max
 
 		//// RVA: 0x18AEB70 Offset: 0x18AEB70 VA: 0x18AEB70
 		//public uint CAOGDCBPBAN() { }

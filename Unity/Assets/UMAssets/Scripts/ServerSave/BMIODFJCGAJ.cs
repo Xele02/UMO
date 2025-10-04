@@ -28,16 +28,16 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public List<int> PEIFEBNCMOM_Hist = new List<int>(); // 0x5C
 	public int EGPMLMCCOLH; // 0x60
 
-	public int IPPNCOHEEOD_ScoreAverage { get { return EOPEEENMHEN_Crypted ^ FBGGEFFJJHB_xor; } set { EOPEEENMHEN_Crypted = value ^ FBGGEFFJJHB_xor; } } // BNFNPCNAGAF 0x19C80E0 GEMDEGDPJPK 0x19C80F0
-	public int OBGBAOLONDD_UniqueId { get { return JAFHGKBENFP_Crypted ^ FBGGEFFJJHB_xor; } set { JAFHGKBENFP_Crypted = value ^ FBGGEFFJJHB_xor; } } // OLHPPFCEIIK 0x19C8100 EIHCOIFCELN 0x19C8110
-	public int NCAEFIHINAP_Cnt { get { return LDEOJKDPFFI_Crypted ^ FBGGEFFJJHB_xor; } set { LDEOJKDPFFI_Crypted = value ^ FBGGEFFJJHB_xor; } } // NBKJHKBBPHP 0x19C8120 KLNDBOMAJHF 0x19C8130
-	public int EEAPIKNJNDB_ConsecutiveWin { get { return DPOOAOPAAGC_Crypted ^ FBGGEFFJJHB_xor; } set { DPOOAOPAAGC_Crypted = value ^ FBGGEFFJJHB_xor; } } //  KNLJPLHJMHI 0x19C8140  IMHAJFDFGJL 0x19C8150
-	public int KEFMAJJPAKM_CWinMax { get { return BAHBNDPEMJP_Crypted ^ FBGGEFFJJHB_xor; } set { BAHBNDPEMJP_Crypted = value ^ FBGGEFFJJHB_xor; } } // JPBMCILHBLO 0x19C8160 PNCBJOMBOEJ 0x19C8170
-	public int FGEIOMGBGLI_Twin { get { return PGPDMJICNLO_Crypted ^ FBGGEFFJJHB_xor; } set { PGPDMJICNLO_Crypted = value ^ FBGGEFFJJHB_xor; } } // HOPMOAGHMHO 0x19C8180 IOCOHNGCFKJ 0x19C8190
-	public int DIPKCALNIII_diva_id { get { return AOFGNAJLLPD_DivaIdCrypted ^ FBGGEFFJJHB_xor; } set { AOFGNAJLLPD_DivaIdCrypted = value ^ FBGGEFFJJHB_xor; } } // EOGPBFIDAPF 0x19C81A0 JDNCGPBAFMB 0x19C81B0
-	public int GOIKCKHMBDL_FreeMusicId { get { return CJAOMKLHFJL_Crypted ^ FBGGEFFJJHB_xor; } set { CJAOMKLHFJL_Crypted = value ^ FBGGEFFJJHB_xor; } } // BPGCGEDHBEH 0x19C81C0 ICPMFBIDFFO 0x19C81D0
-	public int JKAMFMNGEBB_high_score { get { return JBFANBKCHMG_Crypted ^ FBGGEFFJJHB_xor; } set { JBFANBKCHMG_Crypted = value ^ FBGGEFFJJHB_xor; } } // EAOCMNMBDEG 0x19C81E0 ILFAFLEFJCF 0x19C81F0
-	public override bool DMICHEJIAJL { get { return false; } } // 0x19CA08C NFKFOODCJJB
+	public int IPPNCOHEEOD_ScoreAverage { get { return EOPEEENMHEN_Crypted ^ FBGGEFFJJHB_xor; } set { EOPEEENMHEN_Crypted = value ^ FBGGEFFJJHB_xor; } } // BNFNPCNAGAF_get_ScoreAverage 0x19C80E0 GEMDEGDPJPK_set_ScoreAverage 0x19C80F0
+	public int OBGBAOLONDD_UniqueId { get { return JAFHGKBENFP_Crypted ^ FBGGEFFJJHB_xor; } set { JAFHGKBENFP_Crypted = value ^ FBGGEFFJJHB_xor; } } // OLHPPFCEIIK_get_UniqueId 0x19C8100 EIHCOIFCELN_set_UniqueId 0x19C8110
+	public int NCAEFIHINAP_Cnt { get { return LDEOJKDPFFI_Crypted ^ FBGGEFFJJHB_xor; } set { LDEOJKDPFFI_Crypted = value ^ FBGGEFFJJHB_xor; } } // NBKJHKBBPHP_bgs 0x19C8120 KLNDBOMAJHF_bgs 0x19C8130
+	public int EEAPIKNJNDB_ConsecutiveWin { get { return DPOOAOPAAGC_Crypted ^ FBGGEFFJJHB_xor; } set { DPOOAOPAAGC_Crypted = value ^ FBGGEFFJJHB_xor; } } //  KNLJPLHJMHI_get_ConsecutiveWin 0x19C8140  IMHAJFDFGJL_set_ConsecutiveWin 0x19C8150
+	public int KEFMAJJPAKM_CWinMax { get { return BAHBNDPEMJP_Crypted ^ FBGGEFFJJHB_xor; } set { BAHBNDPEMJP_Crypted = value ^ FBGGEFFJJHB_xor; } } // JPBMCILHBLO_bgs 0x19C8160 PNCBJOMBOEJ_bgs 0x19C8170
+	public int FGEIOMGBGLI_Twin { get { return PGPDMJICNLO_Crypted ^ FBGGEFFJJHB_xor; } set { PGPDMJICNLO_Crypted = value ^ FBGGEFFJJHB_xor; } } // HOPMOAGHMHO_bgs 0x19C8180 IOCOHNGCFKJ_bgs 0x19C8190
+	public int DIPKCALNIII_diva_id { get { return AOFGNAJLLPD_DivaIdCrypted ^ FBGGEFFJJHB_xor; } set { AOFGNAJLLPD_DivaIdCrypted = value ^ FBGGEFFJJHB_xor; } } // EOGPBFIDAPF_get_diva_id 0x19C81A0 JDNCGPBAFMB_set_diva_id 0x19C81B0
+	public int GOIKCKHMBDL_FreeMusicId { get { return CJAOMKLHFJL_Crypted ^ FBGGEFFJJHB_xor; } set { CJAOMKLHFJL_Crypted = value ^ FBGGEFFJJHB_xor; } } // BPGCGEDHBEH_get_FreeMusicId 0x19C81C0 ICPMFBIDFFO_set_FreeMusicId 0x19C81D0
+	public int JKAMFMNGEBB_high_score { get { return JBFANBKCHMG_Crypted ^ FBGGEFFJJHB_xor; } set { JBFANBKCHMG_Crypted = value ^ FBGGEFFJJHB_xor; } } // EAOCMNMBDEG_bgs 0x19C81E0 ILFAFLEFJCF_bgs 0x19C81F0
+	public override bool DMICHEJIAJL { get { return false; } } // 0x19CA08C NFKFOODCJJB_bgs
 
 	// // RVA: 0x19C8200 Offset: 0x19C8200 VA: 0x19C8200
 	public void KHEKNNFCAOI_Init(int GPLGIGCNNAD, string _LJNAKDMILMC_key, string _OPFGFINHFCE_name)

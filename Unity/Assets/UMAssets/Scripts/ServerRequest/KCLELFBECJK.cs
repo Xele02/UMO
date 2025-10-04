@@ -64,7 +64,7 @@ public class KCLELFBECJK_GetSentFriendRequests : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x7C
 	public int MLPLGFLKKLI_Ipp = 30; // 0x80
 
-	public LHNDNPMGKDJ NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public LHNDNPMGKDJ NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x1022190 Offset: 0x1022190 VA: 0x1022190 Slot: 12
 	public override void DHLDNIEELHO()

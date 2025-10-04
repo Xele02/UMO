@@ -20,7 +20,7 @@ public class OPKDHAODJOA
 	private int BLKIMNAILKK = 2; // 0x14
 	private int NNODMPKKCJH_RequestId; // 0x18
 
-	public KJOKAECJKLE CMCKNKKCNDK_status { get; private set; } // 0x1C CLCJNFNMNBH CNKGOPKANGF CHJGGLFGALP_set_status
+	public KJOKAECJKLE CMCKNKKCNDK_status { get; private set; } // 0x1C CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status
 
 	//// RVA: -1 Offset: -1
 	public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action) where T : CACGCMBKHDI_Request

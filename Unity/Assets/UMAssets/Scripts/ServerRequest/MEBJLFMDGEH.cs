@@ -27,7 +27,7 @@ public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Reque
 
 	public List<long> AMOMNBEAHBF_InventoryIds; // 0x7C
 
-	public NPBEINILKFE NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public NPBEINILKFE NFEAMMJIMPG_Result { get; set; } // 0x80 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x131095C Offset: 0x131095C VA: 0x131095C Slot: 12
 	public override void DHLDNIEELHO()

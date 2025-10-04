@@ -13,9 +13,9 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		private int COLOLEGLONK = 0; // 0x10
 		private int OHMGPDPKGLF_ValueCrypted = 0; // 0x14
 
-		public int BCGKLONODHO { get { return OAKFKBJFHBJ ^ FBGGEFFJJHB_xor; } set { OAKFKBJFHBJ = value ^ FBGGEFFJJHB_xor; } } //0x1AE6688 KAINPELLHFF 0x1AE628C EJPIFOFOINA
-		public int KPBJHHHMOJE_Time { get { return COLOLEGLONK ^ FBGGEFFJJHB_xor; } set { COLOLEGLONK = value ^ FBGGEFFJJHB_xor; } } //0x1AE6698 NNBONJFLKFM 0x1AE629C FIOMMOICJLL
-		public int NANNGLGOFKH_value { get { return OHMGPDPKGLF_ValueCrypted ^ FBGGEFFJJHB_xor; } set { OHMGPDPKGLF_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66A8 EDFAHCMGHKM 0x1AE62AC BKPDFNKGNHA
+		public int BCGKLONODHO { get { return OAKFKBJFHBJ ^ FBGGEFFJJHB_xor; } set { OAKFKBJFHBJ = value ^ FBGGEFFJJHB_xor; } } //0x1AE6688 KAINPELLHFF_get_ 0x1AE628C EJPIFOFOINA_set_
+		public int KPBJHHHMOJE_Time { get { return COLOLEGLONK ^ FBGGEFFJJHB_xor; } set { COLOLEGLONK = value ^ FBGGEFFJJHB_xor; } } //0x1AE6698 NNBONJFLKFM_get_Time 0x1AE629C FIOMMOICJLL_set_Time
+		public int NANNGLGOFKH_value { get { return OHMGPDPKGLF_ValueCrypted ^ FBGGEFFJJHB_xor; } set { OHMGPDPKGLF_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66A8 EDFAHCMGHKM_get_value 0x1AE62AC BKPDFNKGNHA_set_value
 		
 		// RVA: 0x1AE6264 Offset: 0x1AE6264 VA: 0x1AE6264
 		public DAGLEHBMBLF(int _FBGGEFFJJHB_xor)
@@ -36,8 +36,8 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		private int HAPFMIDIMCH; // 0xC
 		private int HLMAFFLCCKD_CountCrypted; // 0x10
 
-		public int JPMAHJJMMIA { get { return HAPFMIDIMCH ^ FBGGEFFJJHB_xor; } set { HAPFMIDIMCH = value ^ FBGGEFFJJHB_xor; } } //0x1AE66B8 EEIHPMNJMKG 0x1AE62E4 MGAEEIHCOAL
-		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66C8 NJOGDDPICKG 0x1AE62F4 NBBGMMBICNA
+		public int JPMAHJJMMIA { get { return HAPFMIDIMCH ^ FBGGEFFJJHB_xor; } set { HAPFMIDIMCH = value ^ FBGGEFFJJHB_xor; } } //0x1AE66B8 EEIHPMNJMKG_get_ 0x1AE62E4 MGAEEIHCOAL_set_
+		public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AE66C8 NJOGDDPICKG_get_count 0x1AE62F4 NBBGMMBICNA_set_count
 
 		// RVA: 0x1AE62BC Offset: 0x1AE62BC VA: 0x1AE62BC
 		public NDONMEAEGFF(int _FBGGEFFJJHB_xor)

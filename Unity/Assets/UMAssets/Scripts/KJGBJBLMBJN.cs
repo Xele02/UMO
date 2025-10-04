@@ -6,7 +6,7 @@ public class KJGBJBLMBJN
 	public int BHCIFFILAKJ_Strength; // 0x10
 	public int PCPKGJIMLGO_Crypted; // 0x14
 
-	public int PBJLLAOJMAK_PId { get { return PCPKGJIMLGO_Crypted ^ 0x749f717e; } set { PCPKGJIMLGO_Crypted = value ^ 0x749f717e; } } //0x1A02F00 FOAOPKGHJGM 0x1A02F14 JGEILGLALBP
+	public int PBJLLAOJMAK_PId { get { return PCPKGJIMLGO_Crypted ^ 0x749f717e; } set { PCPKGJIMLGO_Crypted = value ^ 0x749f717e; } } //0x1A02F00 FOAOPKGHJGM_bgs 0x1A02F14 JGEILGLALBP_bgs
 
 	// RVA: 0x1A02F28 Offset: 0x1A02F28 VA: 0x1A02F28
 	public void LHPDDGIJKNB_Reset()

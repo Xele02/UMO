@@ -70,7 +70,7 @@ public class FIDDMIAEFEA_GetRankingRecordsByKeys : CACGCMBKHDI_Request
 	public List<string> JIMKNDJMCID_Keys; // 0x7C
 	public HHAPIDPPJJK NFEAMMJIMPG_Result; // 0x80
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x14E8960 GINMIBJOABO
+	public override bool OIDCBBGLPHL { get { return true; } } //0x14E8960 GINMIBJOABO_bgs
 
 	// RVA: 0x14E8968 Offset: 0x14E8968 VA: 0x14E8968 Slot: 12
 	public override void DHLDNIEELHO()

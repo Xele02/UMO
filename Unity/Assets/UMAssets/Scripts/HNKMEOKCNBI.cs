@@ -39,10 +39,10 @@ public class HNKMEOKCNBI
 	private const string FBHNEMIGJPJ = "deco_visit_fan_counter_key";
 	private const string OAECMCCBLNE = "deco_visit_other_counter_key";
 
-	private NKGJPJPHLIF ANHPHBEOBMD { get { return NKGJPJPHLIF.HHCJCDFCLOB; } } //0x15FC5B4 JCOICINMOCH
-	private PJKLMCGEJMK CPHFEPHDJIB_ServerRequester { get { return ANHPHBEOBMD.IBLPICFDGOF_ServerRequester; } } //0x15FC630 JPEBBKJAMCK
-	private long EOLFJGMAJAB_CurrentTime { get { return CPHFEPHDJIB_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(); } } //0x15FC660 JBGEFOKAIGN
-	private FNCFHIEELGO_DecoVisit BAGELDNHJJJ_SaveDecoVisit { get { return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AJOFHCPLLLC_DecoVisit; } } //0x15FC6B0 HIOBFIMHPFO
+	private NKGJPJPHLIF ANHPHBEOBMD { get { return NKGJPJPHLIF.HHCJCDFCLOB; } } //0x15FC5B4 JCOICINMOCH_bgs
+	private PJKLMCGEJMK CPHFEPHDJIB_ServerRequester { get { return ANHPHBEOBMD.IBLPICFDGOF_ServerRequester; } } //0x15FC630 JPEBBKJAMCK_bgs
+	private long EOLFJGMAJAB_CurrentTime { get { return CPHFEPHDJIB_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(); } } //0x15FC660 JBGEFOKAIGN_bgs
+	private FNCFHIEELGO_DecoVisit BAGELDNHJJJ_SaveDecoVisit { get { return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AJOFHCPLLLC_DecoVisit; } } //0x15FC6B0 HIOBFIMHPFO_bgs
 
 	// // RVA: 0x15FC76C Offset: 0x15FC76C VA: 0x15FC76C
 	// public void GFBPMOJOPHD(List<int> _CGCFENMHJIM_Ids, Action<List<HNKMEOKCNBI.BNJBDAEKDJC>> _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail) { }

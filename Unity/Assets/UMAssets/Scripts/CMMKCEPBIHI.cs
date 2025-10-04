@@ -80,8 +80,8 @@ public static class CMMKCEPBIHI
 	private static int AFBHKBGLMHG = 245; // 0x34
 	private static List<int> DNJCAKPKNDP_ScoreRatioByDifficulty = new List<int>(); // 0x38
 
-	public static ResultScoreRank.Type KHCOOPDAGOE_ScoreRank { get; private set; } // 0x3C MHJDBFONNKN CKNLMMGELDF GEENHBHNFIC
-	public static float FDLECNKJCGG_GaugeRatio { get; private set; } // 0x40 DCBOMKOHHEP IGEHABMEOHD FOLIPOFKIJA
+	public static ResultScoreRank.Type KHCOOPDAGOE_ScoreRank { get; private set; } // 0x3C MHJDBFONNKN_bgs CKNLMMGELDF_bgs GEENHBHNFIC_bgs
+	public static float FDLECNKJCGG_GaugeRatio { get; private set; } // 0x40 DCBOMKOHHEP_bgs IGEHABMEOHD_bgs FOLIPOFKIJA_bgs
 
 	// // RVA: 0x1085914 Offset: 0x1085914 VA: 0x1085914
 	public static void DIDENKKDJKI(ref AEGLGBOGDHH _HBODCMLFDOB_result, JLKEOGLJNOD_TeamInfo _MLAFAACKKBG_Unit, DFKGGBMFFGB_PlayerInfo _AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData _KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo _PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI)

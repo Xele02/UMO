@@ -11,7 +11,7 @@ public class IGJHFKELHKJ
         public uint AAFDKMODECB; // 0x18
         public bool CPBPOIMHIML; // 0x1C
 
-        public uint IOIMHJAOKOO_Hash { get { return FBGGEFFJJHB_xor ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB_xor; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
+        public uint IOIMHJAOKOO_Hash { get { return FBGGEFFJJHB_xor ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB_xor; } } //0x11F5288 HJMJGBCJBIN_get_Hash 0x11F60B8 OLGHLLNJPKD_set_Hash
     }
     
 	private const int BIAOPOMKMJE = 0x28747411;

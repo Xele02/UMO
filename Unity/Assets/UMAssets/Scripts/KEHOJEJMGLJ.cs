@@ -91,13 +91,13 @@ public class KEHOJEJMGLJ
 	private bool DLAEPJPPEKI; // 0x64
 	public bool PBAHJENPLFM; // 0x65
 
-	public static KEHOJEJMGLJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	// public static bool ONMPNMJCAAD { get; } // KFHIFNBPANF 0xE87C94
-	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x10 PGOHBLKDJOM ODMAEKMPAGP BBPOAGDNMOJ
-	public static string JNGKCPJBMBA_ServerPlatformUrl { get; set; } // 0x14 BMIJOIFPCCE KEOJOEFBBJE FMEBBKPCEPK
-	public string FPCIBJLJOFI_Type { get; set; } // 0x18 LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
+	public static KEHOJEJMGLJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	// public static bool ONMPNMJCAAD { get; } // KFHIFNBPANF_bgs 0xE87C94
+	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x10 PGOHBLKDJOM_bgs ODMAEKMPAGP_bgs BBPOAGDNMOJ_bgs
+	public static string JNGKCPJBMBA_ServerPlatformUrl { get; set; } // 0x14 BMIJOIFPCCE_bgs KEOJOEFBBJE_bgs FMEBBKPCEPK_bgs
+	public string FPCIBJLJOFI_Type { get; set; } // 0x18 LCFILOOJABA_bgs NOJDHDJNPAL_bgs IHJLOEIKMDI_bgs
 	public static string LBEPLOJBFCM_PlatformPrefix { 
-		get { // KHCOOFHPKGE 0xE7E984
+		get { // KHCOOFHPKGE_bgs 0xE7E984
 			if(IMABJMPEPGE_PlatformPrefix == null)
 			{
 				IMABJMPEPGE_PlatformPrefix = "android";
@@ -106,7 +106,7 @@ public class KEHOJEJMGLJ
 		}
 	} 
 	public static string OGCDNCDMLCA_LocalPath { get {
-		// FHOCCNDOAPJ 0xE7EB1C
+		// FHOCCNDOAPJ_bgs 0xE7EB1C
 		if(JCMJBMBMJAK_PersistentDataPath == null)
 		{
 			string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath;
@@ -117,7 +117,7 @@ public class KEHOJEJMGLJ
         return JCMJBMBMJAK_PersistentDataPath;
 	}}
 	public static string CGAHFOBGHIM_PersistentPlatformDataPath { 
-		get { // AMBIPPMFFCJ 0xE7DF14
+		get { // AMBIPPMFFCJ_bgs 0xE7DF14
 			if(PMHFLOLDHAO_PersistentPlatformDataPath == null)
 			{
 				PMHFLOLDHAO_PersistentPlatformDataPath = OGCDNCDMLCA_LocalPath + "/" + LBEPLOJBFCM_PlatformPrefix;
@@ -125,9 +125,9 @@ public class KEHOJEJMGLJ
 			return PMHFLOLDHAO_PersistentPlatformDataPath;
 		}
 	}
-	public static string LHJNPJFNDNA_Rev { get; private set; } // 0x24 HCGGEEMOKFN JBIPCECPFGN ONAJIIACAEB
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
+	public static string LHJNPJFNDNA_Rev { get; private set; } // 0x24 HCGGEEMOKFN_bgs JBIPCECPFGN_bgs ONAJIIACAEB_bgs
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL_bgs LKCDOGAFPNM_bgs NPJJMDFAIII_bgs
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH_bgs KCLBNOKEPIG_bgs OCIMGEFKKLM_bgs
 
 	public bool Unused() { return NDEJCDBHPLB == 0; }
 

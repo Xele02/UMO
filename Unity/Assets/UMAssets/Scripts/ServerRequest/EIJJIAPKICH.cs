@@ -5,7 +5,7 @@ using UnityEngine;
 public class EIJJIAPKICH { } 
 public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 {
-	public override bool OIDCBBGLPHL { get { return true; } } // 0x12EB988 GINMIBJOABO
+	public override bool OIDCBBGLPHL { get { return true; } } // 0x12EB988 GINMIBJOABO_bgs
 
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
 	public override void DHLDNIEELHO()

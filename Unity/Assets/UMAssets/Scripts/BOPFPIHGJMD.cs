@@ -8,7 +8,7 @@ public class BOPFPIHGJMD
 		NBHIECDDJHH_2 = 2,
 		HFPIACELNLL_3 = 3,
 		HIIPBAMPCEM_4 = 4,
-		GEJGMBBCFEE_5_Max = 5,
+		GEJGMBBCFEE_5__max = 5,
 	}
 
     public enum JFHCHOILMEL
@@ -81,7 +81,7 @@ public class BOPFPIHGJMD
         HJNNKCMLGFL_0_None = 0,
         NBDBAFGEEGA_1 = 1,
         GLFGNEILACA_2 = 2,
-        GEJGMBBCFEE_3_Max = 3,
+        GEJGMBBCFEE_3__max = 3,
     }
 	
 	public enum LBGOHNCBMDG
@@ -114,7 +114,7 @@ public class BOPFPIHGJMD
 		FDOOAJLGFAE_2_Week = 2,
 		FMLPIOFBCMA_3_Diva = 3,
 		GENEIBGNMPH_4_Debut = 4,
-		GEJGMBBCFEE_5_Max = 5,
+		GEJGMBBCFEE_5__max = 5,
 	}
 	public enum PDLKAKEABDP
 	{
@@ -137,7 +137,7 @@ public class BOPFPIHGJMD
 		LGOIJAPMEBG_2_Progress = 2,
 		FJGFAPKLLCL_3_Achieved = 3,
 		CADDNFIKDLG_4_Received = 4,
-		GEJGMBBCFEE_5_Max = 5,
+		GEJGMBBCFEE_5__max = 5,
 	}
 	
 	public enum FPKMKLDDCNL

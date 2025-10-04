@@ -7,8 +7,8 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class KGFJLMLOFED
 	{
-		public int HIEKBDMHKLP_MarkerNo { get; set; } // 0x8 MICLNMBOAJD FEDEEOKEBBH AJEOEBDGIEJ
-		public long BEBJKJKBOGH_date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD_get_date IHAIKPNEEJE
+		public int HIEKBDMHKLP_MarkerNo { get; set; } // 0x8 MICLNMBOAJD_bgs FEDEEOKEBBH_get_MarkerNo AJEOEBDGIEJ_set_MarkerNo
+		public long BEBJKJKBOGH_date { get; set; } // 0x10 MCIJNMKFMDB_bgs DIAPHCJBPFD_get_date IHAIKPNEEJE_set_date
 		//public bool FJODMPGPDDD_Unlocked { get; } 0xE7D534 CGKAEMGLHNK_get_Unlocked
 
 		//// RVA: 0xE7D51C Offset: 0xE7D51C VA: 0xE7D51C
@@ -38,8 +38,8 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 	private const int KDNHEMPAGIE = 100;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
-	public List<KGFJLMLOFED> DNKNFFPLGNM { get; private set; } // 0x24 PKCJOFJIEEA MJGPHKECNEO KGHIIDAKJOI
-	public override bool DMICHEJIAJL { get { return true; } } // 0xE7D4A0 NFKFOODCJJB
+	public List<KGFJLMLOFED> DNKNFFPLGNM { get; private set; } // 0x24 PKCJOFJIEEA_bgs MJGPHKECNEO_bgs KGHIIDAKJOI_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0xE7D4A0 NFKFOODCJJB_bgs
 
 	// // RVA: 0xE7B884 Offset: 0xE7B884 VA: 0xE7B884
 	public KDLBHAKPLPH_ArMarker()

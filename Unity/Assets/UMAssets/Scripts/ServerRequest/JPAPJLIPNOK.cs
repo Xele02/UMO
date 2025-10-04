@@ -7,9 +7,9 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 {
 	private bool CHEGCAOBBEA; // 0x80
 
-	public string FPCIBJLJOFI_Type { get; set; } // 0x7C LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
-	public IKAHKDKIGNA NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return CHEGCAOBBEA; } } //0x1BA51CC HGPAELCGELL
+	public string FPCIBJLJOFI_Type { get; set; } // 0x7C LCFILOOJABA_bgs NOJDHDJNPAL_bgs IHJLOEIKMDI_bgs
+	public IKAHKDKIGNA NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return CHEGCAOBBEA; } } //0x1BA51CC HGPAELCGELL_bgs
 
 	// RVA: 0x1BA5024 Offset: 0x1BA5024 VA: 0x1BA5024 Slot: 12
 	public override void DHLDNIEELHO() 

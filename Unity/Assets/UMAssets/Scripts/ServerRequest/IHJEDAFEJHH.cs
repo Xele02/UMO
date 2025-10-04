@@ -83,8 +83,8 @@ public class IHJEDAFEJHH_StepUpLotPurchase : CACGCMBKHDI_Request
 	public int APHNELOFGAK_CurrencyId; // 0x84
 	public int LGEKLPJFJEI_TotalCurrency; // 0x88
 
-	public JAMDHMMODCG NFEAMMJIMPG_Result { get; set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x11FC7B4 HGPAELCGELL
+	public JAMDHMMODCG NFEAMMJIMPG_Result { get; set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x11FC7B4 HGPAELCGELL_bgs
 
 	// RVA: 0x11FC600 Offset: 0x11FC600 VA: 0x11FC600 Slot: 12
 	public override void DHLDNIEELHO()

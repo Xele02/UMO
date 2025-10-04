@@ -15,11 +15,11 @@ public class EOHDAOAJOHH
 	private static string[] OBAFHIJBOJP = new string[3] {JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10310}; // 0xC
 	private const long KMBNMDMFDMB = 5;
 
-	// public static int OOLEIEJLHGJ { get; } // KCGOAPBNDPP 0xFB756C
-	public static EOHDAOAJOHH HHCJCDFCLOB { get; private set; } // 0x8 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	public bool BOCLJJMAHHB { get; private set; } // 0xC DMHGANHPELM  BNHJHGPMIBC MOPEPMIODKP
-	public bool NCAJHMNKJJD_EnableStaminaNotif { get; private set; } // 0xD HBEKEPBPKAD MABKOJMFDCI NCMHNDFLDOC
-	public bool MOEDFPOIJDM { get; private set; } // 0xE KNECAFLJOBG GNMEIHEKNDI KNFPFPAKEJB
+	// public static int OOLEIEJLHGJ { get; } // KCGOAPBNDPP_bgs 0xFB756C
+	public static EOHDAOAJOHH HHCJCDFCLOB { get; private set; } // 0x8 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL_bgs
+	public bool BOCLJJMAHHB { get; private set; } // 0xC DMHGANHPELM_bgs  BNHJHGPMIBC_bgs MOPEPMIODKP_bgs
+	public bool NCAJHMNKJJD_EnableStaminaNotif { get; private set; } // 0xD HBEKEPBPKAD_bgs MABKOJMFDCI_bgs NCMHNDFLDOC_bgs
+	public bool MOEDFPOIJDM { get; private set; } // 0xE KNECAFLJOBG_bgs GNMEIHEKNDI_bgs KNFPFPAKEJB_bgs
 
 	// // RVA: 0xFB76C4 Offset: 0xFB76C4 VA: 0xFB76C4
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

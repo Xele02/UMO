@@ -12,9 +12,9 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 		public int IPINEGKBNLK; // 0x14
 		public int FBGGEFFJJHB_xor; // 0x18
 
-		public int DJJGPACGEMM_product_id { get { return IBLOAFJJBOA ^ FBGGEFFJJHB_xor; } set { IBLOAFJJBOA = value ^ FBGGEFFJJHB_xor; } } //0x1402898 LNKIAOKJIPL 0x1402C38 EOEFCENJMJG
-		public int KMFLNILNPJD_Cnt { get { return IPINEGKBNLK ^ FBGGEFFJJHB_xor; } set { IPINEGKBNLK = value ^ FBGGEFFJJHB_xor; } } //0x14028A8 EJNACGPGJAI 0x1401DC8 PGAECLKCFEL
-		public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG_DateCrypted = value ^ FBGGEFFJJHB_xor; } } //0x140200C DIAPHCJBPFD_get_date 0x1401DB4 IHAIKPNEEJE
+		public int DJJGPACGEMM_product_id { get { return IBLOAFJJBOA ^ FBGGEFFJJHB_xor; } set { IBLOAFJJBOA = value ^ FBGGEFFJJHB_xor; } } //0x1402898 LNKIAOKJIPL_bgs 0x1402C38 EOEFCENJMJG_bgs
+		public int KMFLNILNPJD_Cnt { get { return IPINEGKBNLK ^ FBGGEFFJJHB_xor; } set { IPINEGKBNLK = value ^ FBGGEFFJJHB_xor; } } //0x14028A8 EJNACGPGJAI_get_Cnt 0x1401DC8 PGAECLKCFEL_set_Cnt
+		public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG_DateCrypted = value ^ FBGGEFFJJHB_xor; } } //0x140200C DIAPHCJBPFD_get_date 0x1401DB4 IHAIKPNEEJE_set_date
 
 		//// RVA: 0x14021D8 Offset: 0x14021D8 VA: 0x14021D8
 		//public void LHPDDGIJKNB_Reset() { }
@@ -45,8 +45,8 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 	public const int EPAOCPMNLNC = 6000;
 	public static string POFDDFCGEGP_Underscore = "_"; // 0x0
 
-	public List<DPGGLKKBNBJ> ECMLOMPGMLC { get; private set; } // 0x24 ICOECAFDDGE OCJOHJOFLJH IGPAHLBHIMN
-	public override bool DMICHEJIAJL { get { return true; } } // 0x1404394 NFKFOODCJJB
+	public List<DPGGLKKBNBJ> ECMLOMPGMLC { get; private set; } // 0x24 ICOECAFDDGE_bgs OCJOHJOFLJH_bgs IGPAHLBHIMN_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1404394 NFKFOODCJJB_bgs
 
 	// // RVA: 0x1401CB0 Offset: 0x1401CB0 VA: 0x1401CB0
 	// public void HJDIPJKGCID() { }

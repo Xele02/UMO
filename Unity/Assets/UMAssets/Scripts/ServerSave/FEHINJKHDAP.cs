@@ -43,10 +43,10 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 		public int INLNJOGHLJE_Show; // 0x9C
 		public int EHDDADDKMFI_f_id; // 0xA0
 
-		public int ECLDABOLHLM_ExcellentScore { get { return JDFAEOFJLAD_ExcellentScoreCrypted ^ ENOBDCFHELD; } set {  JDFAEOFJLAD_ExcellentScoreCrypted = value ^ ENOBDCFHELD; } } //0x14CCB58 HPPGLGDLIMM 0x14CCB68 ELFABLKMCMK
-		public bool HPLMECLKFID_RRcv { get { return MLLPMIHMMFL_Crypted == 113; } set { MLLPMIHMMFL_Crypted = (sbyte)(value ? 113: 50); } } //0x14CCB78 DCHHABKOMFP 0x14CCB8C EGGIBMLGCOJ
-		public long DNBFMLBNAEE_point { get { return AADPAJOLEEF_PointCrypted ^ ENOBDCFHELD; } set { value = value >= 100000000 ? 99999999: value; AADPAJOLEEF_PointCrypted = value ^ ENOBDCFHELD; IOJOBGHPLIE_PointCrypted = value ^ FCEJCHGLFGN; } } //0x14CCBBC JKHIIAEMMDE 0x14CCBD4 PFFKLBLEPKB
-		public long NFIOKIBPJCJ_uptime { get { return DLEEMCAPOBP_Crypted ^ ENOBDCFHELD; } set { DLEEMCAPOBP_Crypted = value ^ ENOBDCFHELD; JPNMMOEPAEM_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCC58 NGIDBCKCAMO 0x14CCC70 AEHIIPBDNGE
+		public int ECLDABOLHLM_ExcellentScore { get { return JDFAEOFJLAD_ExcellentScoreCrypted ^ ENOBDCFHELD; } set {  JDFAEOFJLAD_ExcellentScoreCrypted = value ^ ENOBDCFHELD; } } //0x14CCB58 HPPGLGDLIMM_bgs 0x14CCB68 ELFABLKMCMK_bgs
+		public bool HPLMECLKFID_RRcv { get { return MLLPMIHMMFL_Crypted == 113; } set { MLLPMIHMMFL_Crypted = (sbyte)(value ? 113: 50); } } //0x14CCB78 DCHHABKOMFP_bgs 0x14CCB8C EGGIBMLGCOJ_bgs
+		public long DNBFMLBNAEE_point { get { return AADPAJOLEEF_PointCrypted ^ ENOBDCFHELD; } set { value = value >= 100000000 ? 99999999: value; AADPAJOLEEF_PointCrypted = value ^ ENOBDCFHELD; IOJOBGHPLIE_PointCrypted = value ^ FCEJCHGLFGN; } } //0x14CCBBC JKHIIAEMMDE_bgs 0x14CCBD4 PFFKLBLEPKB_bgs
+		public long NFIOKIBPJCJ_uptime { get { return DLEEMCAPOBP_Crypted ^ ENOBDCFHELD; } set { DLEEMCAPOBP_Crypted = value ^ ENOBDCFHELD; JPNMMOEPAEM_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCC58 NGIDBCKCAMO_bgs 0x14CCC70 AEHIIPBDNGE_bgs
 
 		//// RVA: 0x14CCC98 Offset: 0x14CCC98 VA: 0x14CCC98
 		public void LHPDDGIJKNB_Reset()
@@ -272,7 +272,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 	public const long EGHFCEBIGEE = 99999999;
 	public List<ALGDNCMJHGN> FBCJICEPLED = new List<ALGDNCMJHGN>(6); // 0x24
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0xFD6278 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0xFD6278 NFKFOODCJJB_bgs
 
 	// // RVA: 0xFD2E00 Offset: 0xFD2E00 VA: 0xFD2E00
 	public FEHINJKHDAP_EventScore()

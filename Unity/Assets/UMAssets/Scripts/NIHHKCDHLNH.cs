@@ -15,11 +15,11 @@ public class NIHHKCDHLNH
 	public int IKNHMPPGMNJ_IdCrypted; // 0x24
 	public int PNPLHCKGKIL_ItemFullIdCrypted; // 0x28
 
-	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0634 NJOGDDPICKG 0x18A0644 NBBGMMBICNA
-	public int GLBEAENLHKC_Count { get { return BOJAGEIAMMA ^ FBGGEFFJJHB_xor; } set { BOJAGEIAMMA = value ^ FBGGEFFJJHB_xor; } } //0x18A0654 NOAKFOIOJBH 0x18A0664 PBGBHOBHBMG
-	public int IILKAJBHLMJ_Value { get { return OKPOKEIGAPH ^ FBGGEFFJJHB_xor; } set { OKPOKEIGAPH = value ^ FBGGEFFJJHB_xor; } } //0x18A0674 LIHGICFGMBF 0x18A0684 ECBDNGPJMOD
-	public int PBPOLELIPJI_Id { get { return IKNHMPPGMNJ_IdCrypted ^ FBGGEFFJJHB_xor; } set { IKNHMPPGMNJ_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0694 AJNJOPJNMHL 0x18A06A4 NHLEGIJDHAF
-	public int INFIBMLIHLO_ItemId { get { return PNPLHCKGKIL_ItemFullIdCrypted ^ FBGGEFFJJHB_xor; } set { PNPLHCKGKIL_ItemFullIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A06B4 CFPCGHEIEBE 0x18A06C4 OGJHBBKDFBL
+	public int HMFFHLPNMPH_count { get { return HLMAFFLCCKD_CountCrypted ^ FBGGEFFJJHB_xor; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0634 NJOGDDPICKG_get_count 0x18A0644 NBBGMMBICNA_set_count
+	public int GLBEAENLHKC_Count { get { return BOJAGEIAMMA ^ FBGGEFFJJHB_xor; } set { BOJAGEIAMMA = value ^ FBGGEFFJJHB_xor; } } //0x18A0654 NOAKFOIOJBH_bgs 0x18A0664 PBGBHOBHBMG_bgs
+	public int IILKAJBHLMJ_Value { get { return OKPOKEIGAPH ^ FBGGEFFJJHB_xor; } set { OKPOKEIGAPH = value ^ FBGGEFFJJHB_xor; } } //0x18A0674 LIHGICFGMBF_bgs 0x18A0684 ECBDNGPJMOD_bgs
+	public int PBPOLELIPJI_Id { get { return IKNHMPPGMNJ_IdCrypted ^ FBGGEFFJJHB_xor; } set { IKNHMPPGMNJ_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A0694 AJNJOPJNMHL_bgs 0x18A06A4 NHLEGIJDHAF_bgs
+	public int INFIBMLIHLO_ItemId { get { return PNPLHCKGKIL_ItemFullIdCrypted ^ FBGGEFFJJHB_xor; } set { PNPLHCKGKIL_ItemFullIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18A06B4 CFPCGHEIEBE_bgs 0x18A06C4 OGJHBBKDFBL_bgs
 
 	// RVA: 0x18A06D4 Offset: 0x18A06D4 VA: 0x18A06D4
 	public NIHHKCDHLNH()

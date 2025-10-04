@@ -28,7 +28,7 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 		public List<int> CAPAPAABKDP_FreeMusic = new List<int>(); // 0x58
 		public List<int> JHPCPNJJHLI_RankingThreshold = new List<int>(); // 0x5C
 
-		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x18373A0 HBAAAKFHDBB 0x1836DF4 NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x18373A0 HBAAAKFHDBB_get_KeyPrefix 0x1836DF4 NHJLJOIPOFK_set_KeyPrefix
 
 		//// RVA: 0x1835DA8 Offset: 0x1835DA8 VA: 0x1835DA8
 		public void LHPDDGIJKNB_Reset()
@@ -65,8 +65,8 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 	public DKGDLFPELAB NGHKJOEDLIP_Settings = new DKGDLFPELAB(); // 0x20
 	public List<AAAPPIKNOKB> ADPFKHEMNBL = new List<AAAPPIKNOKB>(); // 0x2C
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x18358DC Offset: 0x18358DC VA: 0x18358DC
 	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)

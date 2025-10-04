@@ -15,7 +15,7 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	private List<int> NBOLDNMPJFG_scoreCrypted; // 0x30
 	private List<int> FONGFOAMHJK_ScoreCrypted2; // 0x34
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0x11EB4DC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x11EB4DC NFKFOODCJJB_bgs
 
 	// // RVA: 0x11E9C2C Offset: 0x11E9C2C VA: 0x11E9C2C
 	public int BDCAICINCKK_GetScore(int _GHBPLHBNMBK_FreeMusicId)

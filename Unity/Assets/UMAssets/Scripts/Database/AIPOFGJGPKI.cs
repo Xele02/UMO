@@ -24,7 +24,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		}
 	}
 
-	public List<KBLBMGDILAI> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<KBLBMGDILAI> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0xCD1D54 Offset: 0xCD1D54 VA: 0xCD1D54
 	public KBLBMGDILAI MDKOCDHIDMA(long PACNICEIIDI)

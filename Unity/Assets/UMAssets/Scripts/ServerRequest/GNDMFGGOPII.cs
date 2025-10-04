@@ -26,7 +26,7 @@ public class GNDMFGGOPII_GetInventoryRecords : CACGCMBKHDI_Request
 
 	public List<long> AMOMNBEAHBF_InventoryIds; // 0x7C
 
-	public MOPKBHCNLLJ NFEAMMJIMPG_Result { get; private set; } // 0x80 LFOJDJCNOHB KMKEGMGKCBA
+	public MOPKBHCNLLJ NFEAMMJIMPG_Result { get; private set; } // 0x80 LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0xAB8748 Offset: 0xAB8748 VA: 0xAB8748 Slot: 12
 	public override void DHLDNIEELHO()

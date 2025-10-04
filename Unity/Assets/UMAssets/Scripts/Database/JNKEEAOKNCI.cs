@@ -22,27 +22,27 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	private const int DLJDONNFDGI = 999;
 	private const int AFNICLNNOBF = 999;
 
-	public List<HBDCPGLAPHH> COLCPGFABLP_CenterSkills { get; private set; } // 0x20 IEOCIJKANCB ONEGOEKILNK CHHJNKOCCKE
-	public List<KFCIIMBBNCD> PEPLECGHBFA_SceneEffectInfo { get; private set; } // 0x24 AOMPIDGKJGA HBMHINNFLHK MMLJKFOBKJG
-	public List<CDNKOFIELMK> PABCHCAAEAA_ActiveSkills { get; private set; } // 0x28 OOOLDFIEODH OAFKMOPEEIP AHMCPCEIAFI
-	public List<PPGHMBNIAEC> PNJMFKFGIML_LiveSkills { get; private set; } // 0x2C FGDCFKENKPF MCMKNIPBADD FCOEOGELHLJ
-	public List<BMMNKCJOHOM> BNAPNENIMBO { get; private set; } // 0x30 GOHHIHGILLH FJFMOFEOEAP PCCILLOLLEL
-	public List<EDPDCLMMBPL> KGKICLDOOKG { get; private set; } // 0x34 DGFABBAMAFP JHBCOBJNGKC AALPMJGALDK
-	public List<HBDCPGLAPHH> FFCFHFOIKGB_CenterSkillEnemy { get; private set; } // 0x38 NPFBNINCGMG FDEAPPEHCEF MAFNLFMCEMI
-	public List<KFCIIMBBNCD> PHPGICHCBPM_EnemyEffectInfo { get; private set; } // 0x3C KOFOCBFCJDK PFKGHJNIJBL JCHPLEIJLPN
-	public List<PPGHMBNIAEC> JNKGMICHPFC_EnemySkills { get; private set; } // 0x40 ENJODFBILBK CNIBLEEMDMC ODGMLPGNGHK
-	public List<HBDCPGLAPHH> BIOEJKBCIKD_CenterSkillCostume { get; private set; } // 0x44 JLGHNNCIFMI AOBILEDJONM IDLNDLKEBPK
-	public List<KFCIIMBBNCD> EBKAAEDMIBI_CostumeEffectInfo { get; private set; } // 0x48 LKEHMGJFDAF EELGPNPHCOK NONOJPGGMHM
-	public List<PKLNDFNKINB> BGDOCIBFLBM_EnemyBuffs { get; private set; } // 0x4C PNLLBMNKEHH IDIHBACLADO BGBMJGMCEIP
-	public List<BNHOEENHMDF> NHGMDOIBNDE { get; private set; } // 0x50 EDPGKOPMJBF MOMMJGHEMFK PPDOHIJLHFM
-	public List<HCDIOPEOGEE> OEELDELPIIP { get; private set; } // 0x54 GFNGDLPDFEE GLMEKLEENIL HLLJKHHBDLN
-	public List<DNIDPGDJCOG> GAGNFDHGJGC { get; private set; } // 0x58 BNOPAKDJBGC FFHLDPAEAKD KKDPEBICCEM
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x5C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x60 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
-	public List<FOKHDKJJOFB_EffectByNumDiva> CHOMLDBLPLC_EffectValue { get; private set; } // 0x64 IDGKDCFDJAF CKJPKNALGLC MIOHFAAGKAG
-	public List<EHGAHMIBPIB> CNKKCMLOAGN { get; private set; } // 0x68 HCDOIAIENDD DNFHHCNJLIF LALMDIOEJDI
+	public List<HBDCPGLAPHH> COLCPGFABLP_CenterSkills { get; private set; } // 0x20 IEOCIJKANCB_bgs ONEGOEKILNK_bgs CHHJNKOCCKE_bgs
+	public List<KFCIIMBBNCD> PEPLECGHBFA_SceneEffectInfo { get; private set; } // 0x24 AOMPIDGKJGA_bgs HBMHINNFLHK_bgs MMLJKFOBKJG_bgs
+	public List<CDNKOFIELMK> PABCHCAAEAA_ActiveSkills { get; private set; } // 0x28 OOOLDFIEODH_bgs OAFKMOPEEIP_bgs AHMCPCEIAFI_bgs
+	public List<PPGHMBNIAEC> PNJMFKFGIML_LiveSkills { get; private set; } // 0x2C FGDCFKENKPF_bgs MCMKNIPBADD_bgs FCOEOGELHLJ_bgs
+	public List<BMMNKCJOHOM> BNAPNENIMBO { get; private set; } // 0x30 GOHHIHGILLH_bgs FJFMOFEOEAP_bgs PCCILLOLLEL_bgs
+	public List<EDPDCLMMBPL> KGKICLDOOKG { get; private set; } // 0x34 DGFABBAMAFP_bgs JHBCOBJNGKC_bgs AALPMJGALDK_bgs
+	public List<HBDCPGLAPHH> FFCFHFOIKGB_CenterSkillEnemy { get; private set; } // 0x38 NPFBNINCGMG_bgs FDEAPPEHCEF_bgs MAFNLFMCEMI_bgs
+	public List<KFCIIMBBNCD> PHPGICHCBPM_EnemyEffectInfo { get; private set; } // 0x3C KOFOCBFCJDK_bgs PFKGHJNIJBL_bgs JCHPLEIJLPN_bgs
+	public List<PPGHMBNIAEC> JNKGMICHPFC_EnemySkills { get; private set; } // 0x40 ENJODFBILBK_bgs CNIBLEEMDMC_bgs ODGMLPGNGHK_bgs
+	public List<HBDCPGLAPHH> BIOEJKBCIKD_CenterSkillCostume { get; private set; } // 0x44 JLGHNNCIFMI_bgs AOBILEDJONM_bgs IDLNDLKEBPK_bgs
+	public List<KFCIIMBBNCD> EBKAAEDMIBI_CostumeEffectInfo { get; private set; } // 0x48 LKEHMGJFDAF_bgs EELGPNPHCOK_bgs NONOJPGGMHM_bgs
+	public List<PKLNDFNKINB> BGDOCIBFLBM_EnemyBuffs { get; private set; } // 0x4C PNLLBMNKEHH_bgs IDIHBACLADO_bgs BGBMJGMCEIP_bgs
+	public List<BNHOEENHMDF> NHGMDOIBNDE { get; private set; } // 0x50 EDPGKOPMJBF_bgs MOMMJGHEMFK_bgs PPDOHIJLHFM_bgs
+	public List<HCDIOPEOGEE> OEELDELPIIP { get; private set; } // 0x54 GFNGDLPDFEE_bgs GLMEKLEENIL_bgs HLLJKHHBDLN_bgs
+	public List<DNIDPGDJCOG> GAGNFDHGJGC { get; private set; } // 0x58 BNOPAKDJBGC_bgs FFHLDPAEAKD_bgs KKDPEBICCEM_bgs
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x5C IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x60 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
+	public List<FOKHDKJJOFB_EffectByNumDiva> CHOMLDBLPLC_EffectValue { get; private set; } // 0x64 IDGKDCFDJAF_bgs CKJPKNALGLC_bgs MIOHFAAGKAG_bgs
+	public List<EHGAHMIBPIB> CNKKCMLOAGN { get; private set; } // 0x68 HCDOIAIENDD_bgs DNFHHCNJLIF_bgs LALMDIOEJDI_bgs
 	// TargetSkillEffects
-	public List<ALECCMCNIBG> KGICDMIJGDF_Group { get; private set; } // 0x6C LHIOCOLMMNP ENACPBCEBLF KPCDPMGBPAG
+	public List<ALECCMCNIBG> KGICDMIJGDF_Group { get; private set; } // 0x6C LHIOCOLMMNP_bgs ENACPBCEBLF_get_Group KPCDPMGBPAGP_bgs
 
 	//// RVA: 0x1B904EC Offset: 0x1B904EC VA: 0x1B904EC
 	public bool JBGPIPLAAIA(int GPBNFOMEDCG, int LFAFFMFOFEG)
@@ -1045,7 +1045,7 @@ public class BNHOEENHMDF
 				return 0;
 		}
 		return 2;
-	} } //0x19CABD8 JPCJNLHHIPE
+	} } //0x19CABD8 JPCJNLHHIPE_get_en
 
 	//// RVA: 0x19CACF0 Offset: 0x19CACF0 VA: 0x19CACF0
 	//public uint CAOGDCBPBAN() { }
@@ -1080,7 +1080,7 @@ public class HCDIOPEOGEE // TypeDefIndex: 10027
 				return 0;
 		}
 		return 2;
-	} } //0x173F688 JPCJNLHHIPE
+	} } //0x173F688 JPCJNLHHIPE_get_en
 
 	//// RVA: 0x173F7A0 Offset: 0x173F7A0 VA: 0x173F7A0
 	//public uint CAOGDCBPBAN() { }
@@ -1113,7 +1113,7 @@ public class DNIDPGDJCOG
 				return 0;
 		}
 		return 2;
-	} } //0x1231D14 JPCJNLHHIPE
+	} } //0x1231D14 JPCJNLHHIPE_get_en
 
 	//// RVA: 0x1231E2C Offset: 0x1231E2C VA: 0x1231E2C
 	//public uint CAOGDCBPBAN() { }

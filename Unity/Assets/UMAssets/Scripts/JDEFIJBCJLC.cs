@@ -12,9 +12,9 @@ public class JDEFIJBCJLC_EncryptedString
 				return FFGBKEEIBNL.HKICMNAACDA_a(DLHDPLPLCAC);
 			}
 			return null;
-			//JADLONAJDAK 0x1C32C68
+			//JADLONAJDAK_bgs 0x1C32C68
 		} set {
-			//JFNEHIGOBHH 0x1C32C8C	
+			//JFNEHIGOBHH_bgs 0x1C32C8C	
 			if(value == null)
 				DLHDPLPLCAC = null;
 			else

@@ -9,7 +9,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	public CIFHILOJJFC DBMOBFCLFOB_Saved = new CIFHILOJJFC(); // 0x28
 
 	// public CIFHILOJJFC JKNGLJNEEPO { get; }
-	public override bool DMICHEJIAJL { get { return true; } } // 0x1191F34 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1191F34 NFKFOODCJJB_bgs
 
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
 	public CIFHILOJJFC GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

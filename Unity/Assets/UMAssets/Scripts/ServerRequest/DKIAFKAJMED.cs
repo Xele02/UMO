@@ -16,7 +16,7 @@ public class DKIAFKAJMED_GetTwitterLinkageStatus : CACGCMBKHDI_Request
 		}
 	}
 
-	public BLECILEFEEE NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public BLECILEFEEE NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x198F788 Offset: 0x198F788 VA: 0x198F788 Slot: 12
 	public override void DHLDNIEELHO()

@@ -26,8 +26,8 @@ public class HBFCGCGDINM
 public class BHDAFKEKPEB { }
 public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 {
-	public HBFCGCGDINM NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0xC7EF48 HGPAELCGELL
+	public HBFCGCGDINM NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0xC7EF48 HGPAELCGELL_bgs
 
 	// RVA: 0xC7EDB0 Offset: 0xC7EDB0 VA: 0xC7EDB0 Slot: 12
 	public override void DHLDNIEELHO()

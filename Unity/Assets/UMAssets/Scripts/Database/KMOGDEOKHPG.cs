@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class KMOGDEOKHPG {}
 public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 {
-	public List<HMGPODKEFBA_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } = new List<HMGPODKEFBA_EpisodeInfo>(500); // 0x20 LOGMEMCACAC NNNEPHIJAKK HIAFHIDDPEJ
-	public List<FMLIFJBPFNA_Step> KODIKHBMBBJ_Steps { get; private set; } = new List<FMLIFJBPFNA_Step>(4); // 0x24 CAPCHAEJOGJ HKIODMBDNKN EIMDIFHLBKK
-	public List<JNIKPOIKFAC_Reward> LFAAEPAAEMB_Rewards { get; private set; } = new List<JNIKPOIKFAC_Reward>(1000); // 0x28 LGPNBHKGMEA CBMPDJKIIOF EFCJGLJJBNA
+	public List<HMGPODKEFBA_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } = new List<HMGPODKEFBA_EpisodeInfo>(500); // 0x20 LOGMEMCACAC_bgs NNNEPHIJAKK_bgs HIAFHIDDPEJ_bgs
+	public List<FMLIFJBPFNA_Step> KODIKHBMBBJ_Steps { get; private set; } = new List<FMLIFJBPFNA_Step>(4); // 0x24 CAPCHAEJOGJ_bgs HKIODMBDNKN_bgs EIMDIFHLBKK_bgs
+	public List<JNIKPOIKFAC_Reward> LFAAEPAAEMB_Rewards { get; private set; } = new List<JNIKPOIKFAC_Reward>(1000); // 0x28 LGPNBHKGMEA_bgs CBMPDJKIIOF_bgs EFCJGLJJBNA_bgs
 
 	// // RVA: 0x111E600 Offset: 0x111E600 VA: 0x111E600
 	// public HMGPODKEFBA_EpisodeInfo KIJAHKCDLAF(int _PPFNGGCBJKC_id) { }
@@ -200,7 +200,7 @@ public class HMGPODKEFBA_EpisodeInfo
 	public sbyte FGOGPCMHPIN_Count; // 0xF
 	public List<short> HHJGBJCIFON_Rewards = new List<short>(10); // 0x10
 
-	//public bool IPJMPBANBPP_Enabled { get; } //0x15F4CC4
+	//public bool IPJMPBANBPP_Enabled { get; } //0x15F4CC4_bgs
 
 	// // RVA: 0x15F4B5C Offset: 0x15F4B5C VA: 0x15F4B5C
 	// public int JCFLMEICEII(int _OIPCCBHIKIA_index) { }

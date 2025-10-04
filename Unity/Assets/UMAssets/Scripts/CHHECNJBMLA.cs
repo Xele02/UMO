@@ -52,7 +52,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	private uint PMBEODGMMBB_y = 0x15ab17a1; // 0x10C
 	private StringBuilder OGNKHBFKHIP; // 0x110
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha; } } //0x12BF064 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha; } } //0x12BF064 DKHCGLCNKCD_bgs  Slot: 4
 
 	// // RVA: 0x12BF06C Offset: 0x12BF06C VA: 0x12BF06C Slot: 32
 	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)

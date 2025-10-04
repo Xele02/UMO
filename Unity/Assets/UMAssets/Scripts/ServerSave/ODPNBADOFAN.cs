@@ -13,9 +13,9 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	private const int FOBFLHIIJOM = 1700;
 	public long FANICHGKOML_init_date; // 0x28
 
-	public List<NFPHOINMHKN_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x30 FGGBICBDOEN DEBOJOHHPPB CFINEIEEJGN
-	public List<NFPHOINMHKN_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x34 LKPJIEOOENM HDOHKBOJCDK CDNIDJPOHDJ
-	public override bool DMICHEJIAJL { get { return false; } } // 0x1B3C0BC NFKFOODCJJB
+	public List<NFPHOINMHKN_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x30 FGGBICBDOEN_bgs DEBOJOHHPPB_bgs CFINEIEEJGN_bgs
+	public List<NFPHOINMHKN_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x34 LKPJIEOOENM_bgs HDOHKBOJCDK_bgs CDNIDJPOHDJ_bgs
+	public override bool DMICHEJIAJL { get { return false; } } // 0x1B3C0BC NFKFOODCJJB_bgs
 
 	// // RVA: 0x1B39620 Offset: 0x1B39620 VA: 0x1B39620
 	public long DFFFCPCHBBE_EndDate()
@@ -221,9 +221,9 @@ public class NFPHOINMHKN_QuestInfo
 	public int BJMDLOCLCEN_Crypted; // 0x1C
 	public long BEBJKJKBOGH_date; // 0x20
 
-	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AF3DF0 DEMEPMAEJOO 0x1AF3E00 HIGKAIDMOKN
-	public int EALOBDHOCHP_stat { get { return INNAAKJONMJ_StatCrypted ^ FBGGEFFJJHB_xor; } set { INNAAKJONMJ_StatCrypted = value ^ FBGGEFFJJHB_xor; EOONNJAMAMJ_StatCrypted2 = value ^ FBGGEFFJJHB_xor; } } //0x1AF3E10 KLDFNIEJBFE 0x1AF3E1C GJLLJFLGMCN
-	public int JIOMCDGKIAF { get { return BJMDLOCLCEN_Crypted ^ FBGGEFFJJHB_xor; } set { BJMDLOCLCEN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1AF3E30 DJHPCCHENCM 0x1AF3E40 CJEGJOKIJPO
+	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1AF3DF0 DEMEPMAEJOO_get_id 0x1AF3E00 HIGKAIDMOKN_set_id
+	public int EALOBDHOCHP_stat { get { return INNAAKJONMJ_StatCrypted ^ FBGGEFFJJHB_xor; } set { INNAAKJONMJ_StatCrypted = value ^ FBGGEFFJJHB_xor; EOONNJAMAMJ_StatCrypted2 = value ^ FBGGEFFJJHB_xor; } } //0x1AF3E10 KLDFNIEJBFE_bgs 0x1AF3E1C GJLLJFLGMCN_bgs
+	public int JIOMCDGKIAF { get { return BJMDLOCLCEN_Crypted ^ FBGGEFFJJHB_xor; } set { BJMDLOCLCEN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1AF3E30 DJHPCCHENCM_bgs 0x1AF3E40 CJEGJOKIJPO_bgs
 
 	//// RVA: 0x1AF3E50 Offset: 0x1AF3E50 VA: 0x1AF3E50
 	public bool AGBOGBEOFME(NFPHOINMHKN_QuestInfo OIKJFMGEICL)

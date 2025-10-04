@@ -8,6 +8,6 @@ public class IJPECOFPOCH
 	public int MMDCPHPKBKD = FBGGEFFJJHB_xor; // 0xC
 	public List<KFKCGKGKBJL> HBHMAKNGKFK_items; // 0x10
 
-	public int GDEJFKCMNAC_EpisodeId { get { return JHOMMHBDHHK_EpisodeIdCrypted ^ FBGGEFFJJHB_xor; } set { JHOMMHBDHHK_EpisodeIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x8DB5A8 AKLFLGKLABO 0x8DB5BC KGFEHJHIGHC
-	public int MGJBGEFMPIL { get { return MMDCPHPKBKD ^ FBGGEFFJJHB_xor; } set { MMDCPHPKBKD = value ^ FBGGEFFJJHB_xor; } } //0x8DB5D0 CNDLBNDIADG 0x8DB5E4 AKDGDBONDGL
+	public int GDEJFKCMNAC_EpisodeId { get { return JHOMMHBDHHK_EpisodeIdCrypted ^ FBGGEFFJJHB_xor; } set { JHOMMHBDHHK_EpisodeIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x8DB5A8 AKLFLGKLABO_bgs 0x8DB5BC KGFEHJHIGHC_bgs
+	public int MGJBGEFMPIL { get { return MMDCPHPKBKD ^ FBGGEFFJJHB_xor; } set { MMDCPHPKBKD = value ^ FBGGEFFJJHB_xor; } } //0x8DB5D0 CNDLBNDIADG_bgs 0x8DB5E4 AKDGDBONDGL_bgs
 }

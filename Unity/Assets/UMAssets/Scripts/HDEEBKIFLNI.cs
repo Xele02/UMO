@@ -15,7 +15,7 @@ public class HDEEBKIFLNI
 	private bool[] AMBCBJHFIDD_LinkByPlatform = new bool[3]; // 0x8
 	private bool[] GJOFCDFLCGA_VersionValidByPlatform = new bool[3]; // 0xC
 
-	public static HDEEBKIFLNI HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public static HDEEBKIFLNI HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	// RVA: 0x1740C5C Offset: 0x1740C5C VA: 0x1740C5C
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

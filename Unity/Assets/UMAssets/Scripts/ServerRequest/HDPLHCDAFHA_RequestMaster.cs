@@ -10,8 +10,8 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 	public List<string> DFDLAIGFDAH; // 0x7C
 	private bool OGLMMENAJFL_onSuccess; // 0x84
 
-	public FAPJEIOBPDG MKGLJLCMGIB { get; set; } // JJMNHPMPMEN 0x80 //  CJEOCNPHGNM // MGABGLAGKCL
-	public override bool EBPLLJGPFDA_HasResult { get { return OGLMMENAJFL_onSuccess; } } // HGPAELCGELL 0x1743458
+	public FAPJEIOBPDG MKGLJLCMGIB { get; set; } // JJMNHPMPMEN_bgs 0x80 //  CJEOCNPHGNM_bgs // MGABGLAGKCL_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return OGLMMENAJFL_onSuccess; } } // HGPAELCGELL_bgs 0x1743458
 
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
 	public override void DHLDNIEELHO()

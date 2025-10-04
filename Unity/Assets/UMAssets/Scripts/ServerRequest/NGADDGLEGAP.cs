@@ -17,7 +17,7 @@ public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
 		}
 	}
 
-	public MJAEAHLDEHE NFEAMMJIMPG_Result { get; set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public MJAEAHLDEHE NFEAMMJIMPG_Result { get; set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x1AF54B0 Offset: 0x1AF54B0 VA: 0x1AF54B0 Slot: 12
 	public override void DHLDNIEELHO()

@@ -9,14 +9,14 @@ public class GHLGEECLCMH
 	private NGJOPPIGCPM_ResultData.DFJMELLLNLH HBLFKGAKHHN_RankState; // 0x30
 	private int MIIAIBIGKOD_RankNum; // 0x34
 
-	public HighScoreRatingRank.Type LLNHMMBFPMA_ScoreRatingRanking { get; private set; } // 0x10 EFILGAFDFOD FBMPLMNOLFC KBAOHMCAJIO
-	public HighScoreRatingRank.Type KIPEPDKGCCG_PrevScoreRatingRanking { get; private set; } // 0x14 BIPJDKCFNDG DJGIJDDLPHF DCFMFAIALPI
-	public int[] HFEFAGMKPKH_UtaRateAttr { get; private set; } // 0x18 EHFBONAPFCH PMNEAFIPGHP DJJFKLLPCKN
-	public int[] OJFCIAJEJCI_PrevUtaRateAttr { get; private set; } // 0x1C BAFGCPMCDKK JLOGGGCCJCF LPFALOBBHNB
-	public int ADKDHKMPMHP_rate { get; private set; } // 0x20 HIELAPGGNEJ KCLKBHDMAFH GOLECEILPOI
-	public int KNLMOBHBPII_PrevUtaRate { get; private set; } // 0x24 JCAMCJFIIJC PPLCLFCEPOE EBKLGFBLBIM
-	public int ECMFBEHEGEH_UtaRateTotal { get; private set; } // 0x28 KJPIHNEFHEI AGKBCAKNDHM MLODJGBOBHB
-	public int DEMOACDDPHM_PrevUtaRateTotal { get; private set; } // 0x2C KANPJCGBDMA LKNGGMNKPHD CEJAPKKCLEA
+	public HighScoreRatingRank.Type LLNHMMBFPMA_ScoreRatingRanking { get; private set; } // 0x10 EFILGAFDFOD_bgs FBMPLMNOLFC_bgs KBAOHMCAJIO_bgs
+	public HighScoreRatingRank.Type KIPEPDKGCCG_PrevScoreRatingRanking { get; private set; } // 0x14 BIPJDKCFNDG_bgs DJGIJDDLPHF_bgs DCFMFAIALPI_bgs
+	public int[] HFEFAGMKPKH_UtaRateAttr { get; private set; } // 0x18 EHFBONAPFCH_bgs PMNEAFIPGHP_bgs DJJFKLLPCKN_bgs
+	public int[] OJFCIAJEJCI_PrevUtaRateAttr { get; private set; } // 0x1C BAFGCPMCDKK_bgs JLOGGGCCJCF_bgs LPFALOBBHNB_bgs
+	public int ADKDHKMPMHP_rate { get; private set; } // 0x20 HIELAPGGNEJ_bgs KCLKBHDMAFH_get_rate GOLECEILPOI_set_rate
+	public int KNLMOBHBPII_PrevUtaRate { get; private set; } // 0x24 JCAMCJFIIJC_bgs PPLCLFCEPOE_bgs EBKLGFBLBIM_bgs
+	public int ECMFBEHEGEH_UtaRateTotal { get; private set; } // 0x28 KJPIHNEFHEI_bgs AGKBCAKNDHM_bgs MLODJGBOBHB_bgs
+	public int DEMOACDDPHM_PrevUtaRateTotal { get; private set; } // 0x2C KANPJCGBDMA_bgs LKNGGMNKPHD_bgs CEJAPKKCLEA_bgs
 
 	//// RVA: 0xAA5D24 Offset: 0xAA5D24 VA: 0xAA5D24
 	public void KHEKNNFCAOI_Init(IBIGBMDANNM _NIMOGBDCMLJ_ServerSave)

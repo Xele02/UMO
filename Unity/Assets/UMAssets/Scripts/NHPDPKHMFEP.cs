@@ -80,7 +80,7 @@ public class NHPDPKHMFEP
 	public List<GJDFHLBONOL> LKNKNKAALJO = new List<GJDFHLBONOL>(); // 0x28
 	public int DMFNALAGLHH; // 0x2C
 
-	public static NHPDPKHMFEP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public static NHPDPKHMFEP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public bool DLGMLAJMLOP { 
 		get
 		{//JOMOJIMDBDO 0x18977BC

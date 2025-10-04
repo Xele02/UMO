@@ -13,10 +13,10 @@ public class CEBFFLDKAEC_SecureInt
 
 	[UMOMember()]
 	public int DNJEJEANJGL_Value { get{
-		// JADLONAJDAK 0x12B124C
+		// JADLONAJDAK_bgs 0x12B124C
         return ENOBDCFHELD ^ DLHDPLPLCAC;
 	} set {
-		// JFNEHIGOBHH 0x12B125C
+		// JFNEHIGOBHH_bgs 0x12B125C
         KPOCKNCJBPN_CheckSecure();
 		DLHDPLPLCAC = ENOBDCFHELD ^ value;
 		IPKONDLIDHC = FCEJCHGLFGN ^ value;

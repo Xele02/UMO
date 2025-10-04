@@ -11,8 +11,8 @@ public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_Request
 	public int LLPOINKCHEJ = 1; // 0x84
 	public IKMBBPDBECA KACECFNECON_extra; // 0x88
 
-	public HIMAFGJCECK NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x19C1A6C HGPAELCGELL
+	public HIMAFGJCECK NFEAMMJIMPG_Result { get; private set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x19C1A6C HGPAELCGELL_bgs
 
 	// RVA: 0x19C18B4 Offset: 0x19C18B4 VA: 0x19C18B4 Slot: 12
 	public override void DHLDNIEELHO()

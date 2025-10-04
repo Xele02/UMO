@@ -19,8 +19,8 @@ public class EJKBKMBJMGL_EnemyData
 	public int DCOALMMJDJK_OverrideCenterSkill; // 0x34
 	public int KKPLDFNDFDE_OverrideLiveSkill; // 0x38
 
-	public int LMJFFFOEPLE_LiveSkillId { get { return KKPLDFNDFDE_OverrideLiveSkill < 1 ? JMEGLFEKEBD_LiveSkill : KKPLDFNDFDE_OverrideLiveSkill; } } //0x12F3790 CGIJHCKFOKG
-	public int PDHCABLLJPB_CenterSkillId { get { return DCOALMMJDJK_OverrideCenterSkill < 1 ? MOMCFBMJJKB_CenterSkill : DCOALMMJDJK_OverrideCenterSkill; } } //0x12F37A4 LJKILMHFCCK
+	public int LMJFFFOEPLE_LiveSkillId { get { return KKPLDFNDFDE_OverrideLiveSkill < 1 ? JMEGLFEKEBD_LiveSkill : KKPLDFNDFDE_OverrideLiveSkill; } } //0x12F3790 CGIJHCKFOKG_bgs
+	public int PDHCABLLJPB_CenterSkillId { get { return DCOALMMJDJK_OverrideCenterSkill < 1 ? MOMCFBMJJKB_CenterSkill : DCOALMMJDJK_OverrideCenterSkill; } } //0x12F37A4 LJKILMHFCCK_bgs
 	public bool CDEFLIHHNAB_HasSkills { get {
 			int i = KKPLDFNDFDE_OverrideLiveSkill;
 			if (i < 1)
@@ -30,7 +30,7 @@ public class EJKBKMBJMGL_EnemyData
 			if (i < 1)
 				i = MOMCFBMJJKB_CenterSkill;
 			return i > 0;
-		} } //0x12F37B8 NKOCPFCGNOG
+		} } //0x12F37B8 NKOCPFCGNOG_bgs
 
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
 	public void KHEKNNFCAOI_Init(int _EJNIMIAPJFJ_Id, int IHKNHNKMGAD)

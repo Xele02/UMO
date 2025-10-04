@@ -6,11 +6,11 @@ public abstract class DIHHCBACKGG_DbSection
 	public static int IEFOPDOOLOK_MasterVersion = 1; // 0x0
 	public int LMHMIIKCGPE; // 0xC
 
-	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM  Slot: 4 / 5
-	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN  Slot: 6 / 7
-	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF
-	public string HDIDJNCGICK_LoadError { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
-	public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO // ACELOLOGDLM // MNDHNBBFJIB
+	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI_bgs  // KLGJBKFAOGN_bgs // FEENLLLIMHM_bgs  Slot: 4 / 5
+	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF_bgs // FPNGGOKOJHF_bgs // PMJJHGPMLBN_bgs  Slot: 6 / 7
+	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI_bgs  // // JCGFCHCLKAH_bgs // HNHIPLGADIF_bgs
+	public string HDIDJNCGICK_LoadError { get; set; } // 0x18 AEDHAENECGN_bgs // BILFANLLKPJ_bgs // CELPMALCAHG_bgs
+	public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO_bgs // ACELOLOGDLM_bgs // MNDHNBBFJIB_bgs
 
 	// // RVA: 0x1984404 Offset: 0x1984404 VA: 0x1984404
 	public DIHHCBACKGG_DbSection()

@@ -26,8 +26,8 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	public const int GLOLJBMGDNP = 50;
 	public MEIEDGPOMOO PINPBOCDKLI_OnPlayerCb; // 0x84
 
-	public JFNMOPPICNP NFEAMMJIMPG_Result { get; set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x18ABEC8 HGPAELCGELL
+	public JFNMOPPICNP NFEAMMJIMPG_Result { get; set; } // 0x88 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x18ABEC8 HGPAELCGELL_bgs
 
 	// RVA: 0x18ABC90 Offset: 0x18ABC90 VA: 0x18ABC90 Slot: 12
 	public override void DHLDNIEELHO()

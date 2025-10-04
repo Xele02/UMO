@@ -31,7 +31,7 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 		public int FJCADCDNPMP_EndAdventureId; // 0x64
 		public int[] EJBGHLOOLBC_HelpIds; // 0x68
 
-		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1835640 HBAAAKFHDBB 0x1834888 NHJLJOIPOFK
+		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x1835640 HBAAAKFHDBB_get_KeyPrefix 0x1834888 NHJLJOIPOFK_set_KeyPrefix
 
 		//// RVA: 0x1833DE4 Offset: 0x1833DE4 VA: 0x1833DE4
 		public void LHPDDGIJKNB_Reset()
@@ -148,8 +148,8 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 	public List<DFPGOAOKPBI> EENHCEEKBBD = new List<DFPGOAOKPBI>(); // 0x24
 	public List<KEOBDBGPGPC> OBPOHDENMHH = new List<KEOBDBGPGPC>(); // 0x28
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x2C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x30 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x2C IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x30 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x18338D8 Offset: 0x18338D8 VA: 0x18338D8
 	public string EFEGBHACJAL_GetStringParam(string _LJNAKDMILMC_key, string _KKMJBMKHGNH_noval)

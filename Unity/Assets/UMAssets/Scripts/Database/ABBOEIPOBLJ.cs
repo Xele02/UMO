@@ -14,10 +14,10 @@ public class ABBOEIPOBLJ_EventTicket : DIHHCBACKGG_DbSection
 		public int ICKOHEDLEFP_ValueCrypted; // 0x14
 		public int MKENMKMJFKP_TypeCrypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B094C DEMEPMAEJOO 0x15B0464 HIGKAIDMOKN
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B095C OEEHBGECGKL 0x15B0474 GHLMHLJJBIG
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B096C OLOCMINKGON 0x15B0484 ABAFHIBFKCE
-		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B097C GHAILOLPHPF 0x15B0494 BACGOKIGMBC
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B094C DEMEPMAEJOO_get_id 0x15B0464 HIGKAIDMOKN_set_id
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B095C OEEHBGECGKL_get_Rarity 0x15B0474 GHLMHLJJBIG_set_Rarity
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B096C OLOCMINKGON_get_val 0x15B0484 ABAFHIBFKCE_set_val
+		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15B097C GHAILOLPHPF_bgs 0x15B0494 BACGOKIGMBC_bgs
 
 		//// RVA: 0x15B0920 Offset: 0x15B0920 VA: 0x15B0920
 		//public uint CAOGDCBPBAN() { }

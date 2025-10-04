@@ -20,7 +20,7 @@ public class DKKPBBBDKMJ
 	private List<int> AIAPGDMLIIE = new List<int>(); // 0x10
 	private GCIJNCFDNON_SceneInfo HOMGKHBHDME = new GCIJNCFDNON_SceneInfo(); // 0x14
 
-	public bool MHCPOIEDLJF { get; private set; } // 0x18 IPOIPOGEPKC GIOHLDELCNF DBKAOCENIHJ
+	public bool MHCPOIEDLJF { get; private set; } // 0x18 IPOIPOGEPKC_bgs GIOHLDELCNF_bgs DBKAOCENIHJ_bgs
 
 	//// RVA: 0x1224E7C Offset: 0x1224E7C VA: 0x1224E7C
 	public int KPEBMCLONHK()

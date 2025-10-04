@@ -23,7 +23,7 @@ public class LNBLBFPAKPP_GetLineLinkageStatus : CACGCMBKHDI_Request
 	public static bool JKHDMLDDJLG = false; // 0x0
 	public static int FOLMJCMKDFM = -1; // 0x4
 
-	public GKGOHBEFKEE NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public GKGOHBEFKEE NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x10BC37C Offset: 0x10BC37C VA: 0x10BC37C Slot: 12
 	public override void DHLDNIEELHO()

@@ -30,7 +30,7 @@ public class BABKNDMOIJA : CACGCMBKHDI_Request
 	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
 	public int NEILEPPJKIN_favorite = 1; // 0x80
 
-	public FCIINFAOJPO NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public FCIINFAOJPO NFEAMMJIMPG_Result { get; private set; } // 0x84 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0xF13C5C Offset: 0xF13C5C VA: 0xF13C5C Slot: 12
 	public override void DHLDNIEELHO()

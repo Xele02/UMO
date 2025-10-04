@@ -12,8 +12,8 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	private long KLAPHOKNEDG_DateCrypted; // 0x28
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_DateCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD_get_date 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
-	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
+	public long BEBJKJKBOGH_date { get { return KLAPHOKNEDG_DateCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_DateCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD_get_date 0x14E4B88 IHAIKPNEEJE_set_date 0x14E4BA0
+	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB_bgs
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
 	public static string CAOGDCBPBAN(string _MDADLCOCEBN_session_id, int _EHDDADDKMFI_f_id, int _FEOKKEPAIBB_diff)

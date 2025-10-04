@@ -22,10 +22,10 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 		public int NLPDDGADNFP_DivaRId; // 0x38
 		public int ILPJHHKLOEN_Situation; // 0x3C
 
-		//public int BNHOEFJAAKK_prio { get; } 0xC700A4 NNDJHLOPFJB
+		//public int BNHOEFJAAKK_prio { get; } 0xC700A4 NNDJHLOPFJB_bgs
 	}
 
-	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0xC6F9D8 Offset: 0xC6F9D8 VA: 0xC6F9D8
 	public ALLFFCNKFBG LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id)

@@ -30,7 +30,7 @@ public class ANPBHCNJIDI
 		public int AILEOFKIELL_UtaRateRank; // 0x34
 		public int KIFEGLJLEDC_TotalUtaRate; // 0x38
 
-		public bool JOIOJMONLFL_IsWritterSelf { get { return MLPEHNBNOGD_PlayerId == NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId; } } //0xD57020 OBJPIBFEIFM
+		public bool JOIOJMONLFL_IsWritterSelf { get { return MLPEHNBNOGD_PlayerId == NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId; } } //0xD57020 OBJPIBFEIFM_bgs
 
 		// RVA: 0xD553C8 Offset: 0xD553C8 VA: 0xD553C8
 		public NNPGLGHDBKN()
@@ -200,7 +200,7 @@ public class ANPBHCNJIDI
 		public string PHGNPFJIBLF_Name; // 0x44
 		public bool CKIIGKKHDMP_Auto; // 0x48
 
-		//public bool MCINBHIPLML { get; } 0xD573D0 EGCEBDCDLDM
+		//public bool MCINBHIPLML { get; } 0xD573D0 EGCEBDCDLDM_bgs
 
 		// RVA: 0xD566B0 Offset: 0xD566B0 VA: 0xD566B0
 		public PHICILDLHJP()
@@ -348,7 +348,7 @@ public class ANPBHCNJIDI
 		public int AKNELONELJK_difficulty; // 0x58
 		public bool GIKLNODJKFK_IsLine6; // 0x5C
 
-		public bool IGNJCGMLBDA_Defeat { get { return HALIDDHLNEG_Damage > 0; } } //0xD56184 BFHLAKNJFDH
+		public bool IGNJCGMLBDA_Defeat { get { return HALIDDHLNEG_Damage > 0; } } //0xD56184 BFHLAKNJFDH_bgs
 
 		// RVA: 0xD54938 Offset: 0xD54938 VA: 0xD54938
 		public JLHGKKIEALB()

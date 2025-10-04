@@ -23,7 +23,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	public long[] NJIDHLPGBFO_t_tap = new long[5]; // 0x3C
 	public long PCBJHBCNNGD_t_clr; // 0x40
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0x11A3920 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x11A3920 NFKFOODCJJB_bgs
 
 	// // RVA: 0x119E81C Offset: 0x119E81C VA: 0x119E81C
 	public void BEJONIOEGCI(int _DLAEJOBELBH_MusicId, int _AKNELONELJK_difficulty, bool _BCGLDMKODLC_IsClear, bool _NANEGCHBEDN_IsFullCombo, List<int> _PGPBALKFBNK_Notes, bool _PMCGHPOGLGM_IsSkip, bool _GIKLNODJKFK_IsLine6/* = false*/)
@@ -466,7 +466,7 @@ public class OHDCBNFDHLA
 		{
 			DateTime date = Utility.GetLocalDateTime(BEBJKJKBOGH_date);
 			return Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 23, 59, 59);
-		} } //0x1DE0750 KMKOHJDPKGL
+		} } //0x1DE0750 KMKOHJDPKGL_bgs
 
 	//// RVA: 0x1DE0894 Offset: 0x1DE0894 VA: 0x1DE0894
 	public void FHPENOLOPKI_CheckEndOfDay(long _JHNMKKNEENE_Time, bool _FBBNPFFEJBN_Force)

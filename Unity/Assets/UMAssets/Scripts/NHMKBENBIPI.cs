@@ -19,11 +19,11 @@ public class NHMKBENBIPI
 	private string JCMJBMBMJAK_PersistentDataPath; // 0x20
 	private static List<GCGNICILKLD_AssetFileInfo> ICCMKHKNAMJ_ToDldList; // 0x0
 
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x8 KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0xC EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
-	public bool HIGBANIDIFK { get; set; } // 0x1E JOPAIHDCPFD POGACHHNMMA AHHDPJJKAJA
-	//private static string FPCIBJLJOFI_Type { get; } 0x1891348 NOJDHDJNPAL
-	//private static string LBEPLOJBFCM_PlatformPrefix { get; } 0x18913A4 KHCOOFHPKGE
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x8 KPEKONPJHCL_bgs LKCDOGAFPNM_bgs NPJJMDFAIII_bgs
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0xC EAIFOAGPGGH_bgs KCLBNOKEPIG_bgs OCIMGEFKKLM_bgs
+	public bool HIGBANIDIFK { get; set; } // 0x1E JOPAIHDCPFD_bgs POGACHHNMMA_bgs AHHDPJJKAJA_bgs
+	//private static string FPCIBJLJOFI_Type { get; } 0x1891348 NOJDHDJNPAL_bgs
+	//private static string LBEPLOJBFCM_PlatformPrefix { get; } 0x18913A4 KHCOOFHPKGE_bgs
 
 	// RVA: 0x1891400 Offset: 0x1891400 VA: 0x1891400 Slot: 1
 	~NHMKBENBIPI()

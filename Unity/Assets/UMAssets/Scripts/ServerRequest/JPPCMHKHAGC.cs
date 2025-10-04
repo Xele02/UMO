@@ -95,7 +95,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
 	public PGAOPHPLLOG BIHCCEHLAOD = new PGAOPHPLLOG(); // 0x7C
 	public ODNJNIICCLB NFEAMMJIMPG_Result; // 0x80
 
-	public override bool BNCFONNOHFO { get { return true; } } //0x1BA8A9C NPLNAJFJPEE
+	public override bool BNCFONNOHFO { get { return true; } } //0x1BA8A9C NPLNAJFJPEE_bgs
 
 	// RVA: 0x1BA8AA4 Offset: 0x1BA8AA4 VA: 0x1BA8AA4
 	public JPPCMHKHAGC_AttackRaidbossAndSave(bool NFHDKELECKO/* = False*/)

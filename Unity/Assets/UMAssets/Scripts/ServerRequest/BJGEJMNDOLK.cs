@@ -8,8 +8,8 @@ public class CLHMBMLOAOE
 	private long OILIPGICBIK; // 0x8
 	private long NJKMDELFJGE; // 0x10
 
-	public long FDFGEMODIIF_StartedAt { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
-	public long NKMNFPMMJND_expired_at { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
+	public long FDFGEMODIIF_StartedAt { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB_bgs 0x1083E60 OPBOAMBLLDF_bgs
+	public long NKMNFPMMJND_expired_at { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA_bgs 0x1083E94 FDMBGEAJNPK_bgs
 
 	//// RVA: 0x1083EB0 Offset: 0x1083EB0 VA: 0x1083EB0
 	//public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) { }
@@ -50,7 +50,7 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 		}
 	}
 	
-	public FNFDLMDKONP NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public FNFDLMDKONP NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0xC857C8 Offset: 0xC857C8 VA: 0xC857C8 Slot: 12
 	public override void DHLDNIEELHO()

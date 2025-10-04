@@ -100,20 +100,20 @@ public class PIGBKEIAMPE_FriendManager
 	}; // 0x14
 	public static bool DDNKBFMAHIB = false; // 0x18
 
-	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x8 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
-	public int AIIOKIHEPDP_FriendCount { get; private set; } // 0xC MOFMDCNBIMC EDJKOFKFJFB MPDLGJHEFEI
-	public int JPEIBHJIHPI_FriendLimit { get; private set; } // 0x10 BHDIHHLPFME FLLNLLNBOEM LFDFIALJEDB
-	public int LIEOOJCODFH_NumFriendRequest { get; private set; } // 0x14 ALMMJEIPEEG DFGOBOKMBPK HAEIMBPACOO
-	public int JCOBBOMCENL_NumNewRequests { get; private set; } // 0x18 PAKABOCDKJD DJHDCPBHPFB AFHCLIDDBOK
-	public bool BKEOKNIEHII_HasMoreReceivedRequest { get; private set; } // 0x1C PCBJHOFEIPH GAOJGOFBFOJ OCLIONPHBJE
-	public int PPCNLKHHMFK_NumSentRequest { get; private set; } // 0x28 ELCPJCPGLBE IBNLBJALAGM BNEBLCHLJGI
-	public bool EMBDPGBMCBF_HasMoreSentRequest { get; private set; } // 0x2C PLBPKJKHLIK CKILJINALAK PPKHDDFFMMJ
-	public int NMOJPDCBGMK_NumFriendNoFav { get; private set; } // 0x44 DINIENCLHLC HLHCEMNIPAA KJBCNOAFKPF
-	public BEKLBBDMAIJ EMJFHKHLHDB { get; private set; } // 0x48 DBCICDKJFAG AIAPBFFGEGM LMDJCGGLPKB
-	public List<IBIGBMDANNM> BFDEHIANFOG { get; private set; } // 0x4C OJLMPOEKAGH BPLEGOEMMNC CHJHFOMDIMP
-	public List<int> AONMOEOHFGP_TargetPlayerIds { get; private set; } // 0x50 HAGFPDKGCEO FFDGLAPBKPI BGAMDNPFHFE
-	public List<int> JFDPPPBMCBK_BlacklistedUsersId { get; private set; } // 0x54 NGJJFKKFHEE PBEFGAEJEBH PCFHMNADHFD
-	public List<CDDNFEDGCGG> KAMNNDELNHG { get; private set; } // 0x60 EGDOIJNLCLC OOAJNNIHLPH LGBIBHJJEKL
+	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x8 MGFBAEDOIDD_bgs JFOKBBLFMLD_bgs EDBGNGILAKA_bgs
+	public int AIIOKIHEPDP_FriendCount { get; private set; } // 0xC MOFMDCNBIMC_bgs EDJKOFKFJFB_bgs MPDLGJHEFEI_bgs
+	public int JPEIBHJIHPI_FriendLimit { get; private set; } // 0x10 BHDIHHLPFME_bgs FLLNLLNBOEM_bgs LFDFIALJEDB_bgs
+	public int LIEOOJCODFH_NumFriendRequest { get; private set; } // 0x14 ALMMJEIPEEG_bgs DFGOBOKMBPK_bgs HAEIMBPACOO_bgs
+	public int JCOBBOMCENL_NumNewRequests { get; private set; } // 0x18 PAKABOCDKJD_bgs DJHDCPBHPFB_bgs AFHCLIDDBOK_bgs
+	public bool BKEOKNIEHII_HasMoreReceivedRequest { get; private set; } // 0x1C PCBJHOFEIPH_bgs GAOJGOFBFOJ_bgs OCLIONPHBJE_bgs
+	public int PPCNLKHHMFK_NumSentRequest { get; private set; } // 0x28 ELCPJCPGLBE_bgs IBNLBJALAGM_bgs BNEBLCHLJGI_bgs
+	public bool EMBDPGBMCBF_HasMoreSentRequest { get; private set; } // 0x2C PLBPKJKHLIK_bgs CKILJINALAK_bgs PPKHDDFFMMJ_bgs
+	public int NMOJPDCBGMK_NumFriendNoFav { get; private set; } // 0x44 DINIENCLHLC_bgs HLHCEMNIPAA_bgs KJBCNOAFKPF_bgs
+	public BEKLBBDMAIJ EMJFHKHLHDB { get; private set; } // 0x48 DBCICDKJFAG_bgs AIAPBFFGEGM_bgs LMDJCGGLPKB_bgs
+	public List<IBIGBMDANNM> BFDEHIANFOG { get; private set; } // 0x4C OJLMPOEKAGH_bgs BPLEGOEMMNC_bgs CHJHFOMDIMP_bgs
+	public List<int> AONMOEOHFGP_TargetPlayerIds { get; private set; } // 0x50 HAGFPDKGCEO_bgs FFDGLAPBKPI_bgs BGAMDNPFHFE_bgs
+	public List<int> JFDPPPBMCBK_BlacklistedUsersId { get; private set; } // 0x54 NGJJFKKFHEE_bgs PBEFGAEJEBH_bgs PCFHMNADHFD_bgs
+	public List<CDDNFEDGCGG> KAMNNDELNHG { get; private set; } // 0x60 EGDOIJNLCLC_bgs OOAJNNIHLPH_bgs LGBIBHJJEKL_bgs
 	// public int LMCNBGMCOCI { get; } ??
 
 	// // RVA: 0x16D39A4 Offset: 0x16D39A4 VA: 0x16D39A4

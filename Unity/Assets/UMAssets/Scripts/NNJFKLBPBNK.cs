@@ -11,12 +11,12 @@ public class NNJFKLBPBNK_SecureString
 
     [UMOMember()]
 	public string DNJEJEANJGL_Value { get {
-        //JADLONAJDAK 0x1CAED94
+        //JADLONAJDAK_bgs 0x1CAED94
         if(DLHDPLPLCAC != null)
             return FFGBKEEIBNL.HKICMNAACDA_a(DLHDPLPLCAC);
         return null;
     } set {
-        //JFNEHIGOBHH 0x1CAEDB8
+        //JFNEHIGOBHH_bgs 0x1CAEDB8
         if(value == null)
         {
             DLHDPLPLCAC = null;

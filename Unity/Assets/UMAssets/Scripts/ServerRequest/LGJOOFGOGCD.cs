@@ -33,8 +33,8 @@ public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page; // 0x7C
 	public int MLPLGFLKKLI_Ipp; // 0x80
 
-	public virtual SakashoInventoryCriteria IPKCADIAAPG_Criteria { get; set; } // 0x84 GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
-	public GIAIPIKNBBB NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public virtual SakashoInventoryCriteria IPKCADIAAPG_Criteria { get; set; } // 0x84 GOKPJIPOKCK_bgs FLHEFBEHCKK_bgs EIDLJIDFPFG_bgs
+	public GIAIPIKNBBB NFEAMMJIMPG_Result { get; private set; } // 0x88 OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x17F4230 Offset: 0x17F4230 VA: 0x17F4230 Slot: 12
 	public override void DHLDNIEELHO()

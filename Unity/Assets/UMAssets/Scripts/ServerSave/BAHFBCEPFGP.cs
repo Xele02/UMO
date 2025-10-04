@@ -13,7 +13,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	private byte[] FALFJCGGDHB_ShowAddUnitLiveQuartet = new byte[38]; // 0x2C
 	private byte[] KKPKAMANKOH_ShowAddUnitLiveQuintet = new byte[38]; // 0x30
 
-	public override bool DMICHEJIAJL { get { return true; } } // 0xF15DE4 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0xF15DE4 NFKFOODCJJB_bgs
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
 	public void DDCBGCODHHN(int _DLAEJOBELBH_MusicId, int HPNLNIFICNI)

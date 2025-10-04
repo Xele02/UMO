@@ -19,12 +19,12 @@ public class FFHPBEPOMAK_DivaInfo
 		private int LMFEACDAOBG; // 0x18
 		private int KCHNHFLJIDD; // 0x1C
 
-		public int KAMIJDBFGDB_EvSoLevel { get { return IJNIDKLFABD ^ FBGGEFFJJHB_xor; } set { IJNIDKLFABD = value ^ FBGGEFFJJHB_xor; } } //0x14E4A68 JKMGKELCKFE 0x14E4A7C BPLJELMBGNK
-		public int BPEFIIEPJBM_EvVoLevel { get { return JHKNDAGGOMG ^ FBGGEFFJJHB_xor; } set { JHKNDAGGOMG = value ^ FBGGEFFJJHB_xor; } } //0x14E4A90 NLKDKJCIFDF 0x14E4AA4 LEIHBEEKPMI
-		public int DNFEEOODOBF_EvChLevel { get { return KLDFJGOKIKC ^ FBGGEFFJJHB_xor; } set { KLDFJGOKIKC = value ^ FBGGEFFJJHB_xor; } } //0x14E4AB8 DPKJFEPHFHK 0x14E4ACC MEEEIOFKEMI
-		public int EMGLOGKKGKJ { get { return CNKBEJHMHCP ^ FBGGEFFJJHB_xor; } set { CNKBEJHMHCP = value ^ FBGGEFFJJHB_xor; } } //0x14E4AE0 JAPHNPMIGML 0x14E4AF4 FABNIFGNNEO
-		public int FKHKMNEHBOJ { get { return LMFEACDAOBG ^ FBGGEFFJJHB_xor; } set { LMFEACDAOBG = value ^ FBGGEFFJJHB_xor; } } //0x14E4B08 JKCKDECEFIK 0x14E4B1C ILACLIAGFCH
-		public int PHOFGCKGIIA { get { return KCHNHFLJIDD ^ FBGGEFFJJHB_xor; } set { KCHNHFLJIDD = value ^ FBGGEFFJJHB_xor; } } //0x14E4B30 OELCFAELPOH 0x14E4B44 INNCIFMHNGJ
+		public int KAMIJDBFGDB_EvSoLevel { get { return IJNIDKLFABD ^ FBGGEFFJJHB_xor; } set { IJNIDKLFABD = value ^ FBGGEFFJJHB_xor; } } //0x14E4A68 JKMGKELCKFE_bgs 0x14E4A7C BPLJELMBGNK_bgs
+		public int BPEFIIEPJBM_EvVoLevel { get { return JHKNDAGGOMG ^ FBGGEFFJJHB_xor; } set { JHKNDAGGOMG = value ^ FBGGEFFJJHB_xor; } } //0x14E4A90 NLKDKJCIFDF_bgs 0x14E4AA4 LEIHBEEKPMI_bgs
+		public int DNFEEOODOBF_EvChLevel { get { return KLDFJGOKIKC ^ FBGGEFFJJHB_xor; } set { KLDFJGOKIKC = value ^ FBGGEFFJJHB_xor; } } //0x14E4AB8 DPKJFEPHFHK_bgs 0x14E4ACC MEEEIOFKEMI_bgs
+		public int EMGLOGKKGKJ { get { return CNKBEJHMHCP ^ FBGGEFFJJHB_xor; } set { CNKBEJHMHCP = value ^ FBGGEFFJJHB_xor; } } //0x14E4AE0 JAPHNPMIGML_bgs 0x14E4AF4 FABNIFGNNEO_bgs
+		public int FKHKMNEHBOJ { get { return LMFEACDAOBG ^ FBGGEFFJJHB_xor; } set { LMFEACDAOBG = value ^ FBGGEFFJJHB_xor; } } //0x14E4B08 JKCKDECEFIK_bgs 0x14E4B1C ILACLIAGFCH_bgs
+		public int PHOFGCKGIIA { get { return KCHNHFLJIDD ^ FBGGEFFJJHB_xor; } set { KCHNHFLJIDD = value ^ FBGGEFFJJHB_xor; } } //0x14E4B30 OELCFAELPOH_bgs 0x14E4B44 INNCIFMHNGJ_bgs
 
 		// // RVA: 0x14DF200 Offset: 0x14DF200 VA: 0x14DF200
 		public void KHEKNNFCAOI_Init(int _AHHJLDLAPAN_DivaId)
@@ -87,19 +87,19 @@ public class FFHPBEPOMAK_DivaInfo
 		DisplayType.Support, 
 		DisplayType.Fold }; // 0x0
 
-	public StatusData JLJGCBOHJID_Status { get; private set; } = new StatusData(); // 0x1C MHGEJIKLJOP CKAOBJJCOFO MKFJBBFNFPD
-	public StatusData CMCKNKKCNDK_status { get; private set; } = new StatusData(); // 0x20 CLCJNFNMNBH CNKGOPKANGF CHJGGLFGALP_set_status EquippedStatus
-	public List<int> DJICAKGOGFO_SubSceneIds { get; private set; } // 0x24 GIOHLILFNGF HFNMIBKHCPA OOEOBODDEBH
-	public int FGFIBOBAPIA_SceneId { get; private set; } // 0x44 HIFDNPNIAAH DEDCNFGKGEH JINCEPHFFBN
-	public int JPIDIENBGKH_CostumeId { get; private set; } // 0x48 CPCGNLOMIJL PHLLMIGCPCB BLBNMENMCIF
-	public int EKFONBFDAAP_ColorId { get; private set; } // 0x4C GDOPIDINPAJ EIIGMAIDCAG BLGOCKHBMIG
-	public int KIIMFCFMMDN_HomeCostumeId { get; private set; } // 0x50 NBEBILCKAIH GBBCNBOMGIH GAAGDLPJGKN
-	public int JFFLFIMIMOI_HomeColorId { get; private set; } // 0x54 BENJFMIAAIP EPDJMLMLHIG FJBIDEJJHOD
-	public int KELFCMEOPPM_EpisodeId { get; private set; } // 0x64 LOEOGJLMNME AHJNJHDELBE PJLFKEOLFMK
-	public List<int> PKLPGBKKFOL_DivaLevels { get; private set; } // 0x68 IOKGPGPGGPL ODHMENNBBML JLIFOJJIDIG
-	public List<int> HMBECPGHPOE_DivaExps { get; private set; } // 0x6C BAMGHOCFIIG HDJMNMAPPAJ GBMDLJBJILK
-	public List<int> FOHEIOLPAOG_DivaUnlocks { get; private set; } // 0x70 IEPHLHPLBGB BEFACAKCODI HMAHEFFHNIO
-	public FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO IHANGGCHPAL { get; private set; } = new FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO(); // 0x74 DCLILLHDINA NIBJBLCDIHD MBAKEDKIJDG
+	public StatusData JLJGCBOHJID_Status { get; private set; } = new StatusData(); // 0x1C MHGEJIKLJOP_bgs CKAOBJJCOFO_bgs MKFJBBFNFPD_bgs
+	public StatusData CMCKNKKCNDK_status { get; private set; } = new StatusData(); // 0x20 CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status EquippedStatus
+	public List<int> DJICAKGOGFO_SubSceneIds { get; private set; } // 0x24 GIOHLILFNGF_bgs HFNMIBKHCPA_bgs OOEOBODDEBH_bgs
+	public int FGFIBOBAPIA_SceneId { get; private set; } // 0x44 HIFDNPNIAAH_bgs DEDCNFGKGEH_bgs JINCEPHFFBN_bgs
+	public int JPIDIENBGKH_CostumeId { get; private set; } // 0x48 CPCGNLOMIJL_bgs PHLLMIGCPCB_bgs BLBNMENMCIF_bgs
+	public int EKFONBFDAAP_ColorId { get; private set; } // 0x4C GDOPIDINPAJ_bgs EIIGMAIDCAG_bgs BLGOCKHBMIG_bgs
+	public int KIIMFCFMMDN_HomeCostumeId { get; private set; } // 0x50 NBEBILCKAIH_bgs GBBCNBOMGIH_bgs GAAGDLPJGKN_bgs
+	public int JFFLFIMIMOI_HomeColorId { get; private set; } // 0x54 BENJFMIAAIP_bgs EPDJMLMLHIG_bgs FJBIDEJJHOD_bgs
+	public int KELFCMEOPPM_EpisodeId { get; private set; } // 0x64 LOEOGJLMNME_bgs AHJNJHDELBE_bgs PJLFKEOLFMK_bgs
+	public List<int> PKLPGBKKFOL_DivaLevels { get; private set; } // 0x68 IOKGPGPGGPL_bgs ODHMENNBBML_bgs JLIFOJJIDIG_bgs
+	public List<int> HMBECPGHPOE_DivaExps { get; private set; } // 0x6C BAMGHOCFIIG_bgs HDJMNMAPPAJ_bgs GBMDLJBJILK_bgs
+	public List<int> FOHEIOLPAOG_DivaUnlocks { get; private set; } // 0x70 IEPHLHPLBGB_bgs BEFACAKCODI_bgs HMAHEFFHNIO_bgs
+	public FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO IHANGGCHPAL { get; private set; } = new FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO(); // 0x74 DCLILLHDINA_bgs NIBJBLCDIHD_bgs MBAKEDKIJDG_bgs
 
 	// RVA: 0x14DE1BC Offset: 0x14DE1BC VA: 0x14DE1BC
 	public void LEHDLBJJBNC_SetNotNew()

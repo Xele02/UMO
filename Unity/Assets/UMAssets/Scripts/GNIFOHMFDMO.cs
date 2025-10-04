@@ -36,12 +36,12 @@ public class GNIFOHMFDMO_DivaResultData
 	public int BMGKGDPKJFA_Point; // 0x18
 	public int CBCIFACJGHI_Exp; // 0x1C
 	public int DLAEJOBELBH_MusicId; // 0x20
-	private int DHJAFJKALCA_ForcedMusicId; // 0x24
+	private int DHJAFJKALCA__ForcedMusicId; // 0x24
 	public bool LFGNLKKFOCD_IsLine6; // 0x28
 	public int HGHMMDOEGEF_ExpBonus; // 0x2C
 	public List<IKODHMDOMMP> NAIHIJAJPNK_Divas; // 0x30
 
-	//public int IOPCBBNHJIP_ForcedMusicId { get; set; } 0x1E56110 PJKILEHFBHA 0x1E56124 BOBNBADBNGG
+	//public int IOPCBBNHJIP_ForcedMusicId { get; set; } 0x1E56110 PJKILEHFBHA_bgs 0x1E56124 BOBNBADBNGG_bgs
 
 	//// RVA: 0x1E5612C Offset: 0x1E5612C VA: 0x1E5612C
 	public KDOMGMCGHDC.HJNMIKNAMFH LNHIFELKOJF_GetPrevInfo(int AAIKJJHPEEL_DivaIdx, int _BAKLKJLPLOJ_MusicLevel)
@@ -66,7 +66,7 @@ public class GNIFOHMFDMO_DivaResultData
 			return GEAANLPDJBP_FreeMusicData.BLDDNEJDFON_ForcePrismId == _GHPLINIACBB_x.NMNDNFFJHPJ_Id;
 		});
 		if (forcedSetting != null)
-			DHJAFJKALCA_ForcedMusicId = forcedSetting.IOPCBBNHJIP_ForcedMusicId;
+			DHJAFJKALCA__ForcedMusicId = forcedSetting.IOPCBBNHJIP_ForcedMusicId;
 		AKNELONELJK_difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
 		OGFBKCGGPBC_DiffPoint = JGEOBNENMAH.HHCJCDFCLOB.NGDDIIDJFNG;
 		GCAPLLEIAAI_LastScore = JGEOBNENMAH.HHCJCDFCLOB.GCAPLLEIAAI_LastScore;

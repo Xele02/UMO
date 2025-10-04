@@ -21,7 +21,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 		public int LLNDMKBBNIJ_ver; // 0x34
 	}
 
-	public List<MDOMAACPHCN> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<MDOMAACPHCN> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x1410178 Offset: 0x1410178 VA: 0x1410178
 	//public MDOMAACPHCN LBDOLHGDIEB_Find(int _PPFNGGCBJKC_id) { }

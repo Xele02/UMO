@@ -82,9 +82,9 @@ public class KDLPEDBKMID
 	private static readonly string[] ILINMFJBKAL = new string[3] {"vl/{0:D4}.xab", "ct/vl/01/{0:D2}_01.xab", "ct/vl/02/{0:D2}_01.xab"}; // 0x30
 	private static readonly string[] KPBAICAFLPC = new string[3] {"snd/vo/pilot/cs_pilot_{0:D3}.acb", "snd/vo/pilot/cs_pilot_{0:D3}.awb", "ct/pl/{0:D3}.xab"}; // 0x34
 
-	public static KDLPEDBKMID HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x10 KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x14 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
+	public static KDLPEDBKMID HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x10 KPEKONPJHCL_bgs LKCDOGAFPNM_bgs NPJJMDFAIII_bgs
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x14 EAIFOAGPGGH_bgs KCLBNOKEPIG_bgs OCIMGEFKKLM_bgs
 	public bool LNHFLJBGGJB_IsRunning { 
 		get { // KOIPHFOBLOD 0xE7D688
 			if(KOIGPANFBKP)
@@ -92,7 +92,7 @@ public class KDLPEDBKMID
 			return JFEKDMEMKHE_FileToInstall.Count > 0;
 		} 
 	}
-	public KDLPEDBKMID.PHKOILLPHGG CNDDKMJAIBG_mode { get; set; } // 0x30 HMCLOEGDNBA HIGNHAEJKAH DFJLAMPMCMP
+	public KDLPEDBKMID.PHKOILLPHGG CNDDKMJAIBG_mode { get; set; } // 0x30 HMCLOEGDNBA_bgs HIGNHAEJKAH_bgs DFJLAMPMCMP_bgs
 
 	// // RVA: 0xE7D730 Offset: 0xE7D730 VA: 0xE7D730
 	public void OIKLOJMPBGA_SetInstallAutoWait(int _COGJONKKALB_ms)

@@ -27,7 +27,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 		public bool ICCJMCCJCBG; // 0x28
 		public bool HCENOJKNCMK; // 0x29
 
-		public bool HALOKFOJMLA_IsCompleted { get { return EALOBDHOCHP_stat > 3; } } //0x1AE98B8 LKOICFDJNDD
+		public bool HALOKFOJMLA_IsCompleted { get { return EALOBDHOCHP_stat > 3; } } //0x1AE98B8 LKOICFDJNDD_bgs
 
 		// RVA: 0x1AE6C08 Offset: 0x1AE6C08 VA: 0x1AE6C08
 		public HKDNILFKCFC()
@@ -80,9 +80,9 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 	private const int GKIDNIKODDK = 52143548; // 0x31ba5bc
 	private int AKLLPNDJFCN_Complete_Crypted; // 0x24
 
-	public bool EOHHFADHHBL_Complete { get { return AKLLPNDJFCN_Complete_Crypted == GCAHAAADBEH; } set { AKLLPNDJFCN_Complete_Crypted = value ? GCAHAAADBEH : GKIDNIKODDK; } } //FPOHKGALENL 0x1AE66D8  HCFHGHNGPJK 0x1AE66F4
-	public List<HKDNILFKCFC> MMKAJBFBKNH { get; private set; } // 0x28 JAKKBNNDGOM BLJEKMOEHCM FJAHCOJOEJO
-	public override bool DMICHEJIAJL { get { return true; } } // 0x1AE9734 NFKFOODCJJB
+	public bool EOHHFADHHBL_Complete { get { return AKLLPNDJFCN_Complete_Crypted == GCAHAAADBEH; } set { AKLLPNDJFCN_Complete_Crypted = value ? GCAHAAADBEH : GKIDNIKODDK; } } //FPOHKGALENL_bgs 0x1AE66D8  HCFHGHNGPJK_bgs 0x1AE66F4
+	public List<HKDNILFKCFC> MMKAJBFBKNH { get; private set; } // 0x28 JAKKBNNDGOM_bgs BLJEKMOEHCM_bgs FJAHCOJOEJO_bgs
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1AE9734 NFKFOODCJJB_bgs
 
 	// // RVA: 0x1AE6720 Offset: 0x1AE6720 VA: 0x1AE6720
 	public int FKJMJELHGGG()

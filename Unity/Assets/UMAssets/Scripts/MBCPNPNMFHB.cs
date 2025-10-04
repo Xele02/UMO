@@ -18,10 +18,10 @@ public class MBCPNPNMFHB
 	public BODAGDPODNB OIPOPJCPDPC_DisplayUrlCb; // 0x10
 	private bool GAJMFACKAGL; // 0x18
 
-	public static MBCPNPNMFHB HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public static MBCPNPNMFHB HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public object Method { get; private set; }
 
-	public LLKBLEFEGOO LKKNBHCGFBG { private get; set; } // 0x14 JGFDEEKLBGJ DPNHBBOHIIE NNHHILCHAEF
+	public LLKBLEFEGOO LKKNBHCGFBG { private get; set; } // 0x14 JGFDEEKLBGJ_bgs DPNHBBOHIIE_bgs NNHHILCHAEF_bgs
 
 	//// RVA: 0xA2D7CC Offset: 0xA2D7CC VA: 0xA2D7CC
 	public void IJBGPAENLJA_OnAwake()

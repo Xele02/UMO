@@ -14,8 +14,8 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		public int[] AHGCGHAAHOO_ItemIdCrypted; // 0x14
 		public int EAJCFBCHIFB_RarityCrypted; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337DC DEMEPMAEJOO 0x1833654 HIGKAIDMOKN
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337DC DEMEPMAEJOO_get_id 0x1833654 HIGKAIDMOKN_set_id
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337EC OEEHBGECGKL_get_Rarity 0x1833664 GHLMHLJJBIG_set_Rarity
 
 		//// RVA: 0x18337FC Offset: 0x18337FC VA: 0x18337FC
 		public int JCJGGHGIKIJ()

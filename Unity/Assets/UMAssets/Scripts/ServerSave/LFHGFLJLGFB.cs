@@ -13,7 +13,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	private List<CEBFFLDKAEC_SecureInt> FNDJLOMNECG_PlayerList; // 0x2C
 
 	//public int KPEBMCLONHK { get; } ??
-	public override bool DMICHEJIAJL { get { return false; } } // 0xD6C5FC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0xD6C5FC NFKFOODCJJB_bgs
 
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
 	public LFHGFLJLGFB_FavoritePlayer()

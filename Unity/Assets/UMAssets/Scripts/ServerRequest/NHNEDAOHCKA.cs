@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NHNEDAOHCKA : CACGCMBKHDI_Request
 {
-	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x189743C Offset: 0x189743C VA: 0x189743C Slot: 12
 	public override void DHLDNIEELHO()

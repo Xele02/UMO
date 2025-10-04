@@ -10,7 +10,7 @@ public class EJGJAFBLHHM
 
 	public bool Unused() { return AMIFBFDPOGL_base == ""; }
 
-	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	//// RVA: 0x12EE308 Offset: 0x12EE308 VA: 0x12EE308
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

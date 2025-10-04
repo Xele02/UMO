@@ -31,10 +31,10 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x90
 	public int MLPLGFLKKLI_Ipp = 15; // 0x94
 
-	public override bool OIDCBBGLPHL { get { return true; } } //0x10C387C GINMIBJOABO
-	public SakashoPlayerCriteria IPKCADIAAPG_Criteria { get; set; } // 0x7C GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
-	public FKNFPJEGMOO NFEAMMJIMPG_Result { get; set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x10C3AC8 HGPAELCGELL
+	public override bool OIDCBBGLPHL { get { return true; } } //0x10C387C GINMIBJOABO_bgs
+	public SakashoPlayerCriteria IPKCADIAAPG_Criteria { get; set; } // 0x7C GOKPJIPOKCK_bgs FLHEFBEHCKK_bgs EIDLJIDFPFG_bgs
+	public FKNFPJEGMOO NFEAMMJIMPG_Result { get; set; } // 0x8C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } //0x10C3AC8 HGPAELCGELL_bgs
 
 	// RVA: 0x10C38A4 Offset: 0x10C38A4 VA: 0x10C38A4 Slot: 12
 	public override void DHLDNIEELHO()

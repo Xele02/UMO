@@ -13,11 +13,11 @@ public class CKDOOBKOJBB_RareUpItem : DIHHCBACKGG_DbSection
 		public int EAJCFBCHIFB_RarityCrypted; // 0x14
 		public int HBLLFAILJKH; // 0x18
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DB94 DEMEPMAEJOO 0x107D6E8 HIGKAIDMOKN
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DC2C OLOCMINKGON 0x107D784 ABAFHIBFKCE
-		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DCC4 JPCJNLHHIPE 0x107D820 JJFJNEJLBDG
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DD5C OEEHBGECGKL 0x107D8BC GHLMHLJJBIG
-		public int EIGNPDFHIJA { get { return HBLLFAILJKH ^ FBGGEFFJJHB_xor; } set { HBLLFAILJKH = value ^ FBGGEFFJJHB_xor; } } //0x107DDF4 COAODPNEELA 0x107D958 OHOPAKFBOGL
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DB94 DEMEPMAEJOO_get_id 0x107D6E8 HIGKAIDMOKN_set_id
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DC2C OLOCMINKGON_get_val 0x107D784 ABAFHIBFKCE_set_val
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DCC4 JPCJNLHHIPE_get_en 0x107D820 JJFJNEJLBDG_set_en
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x107DD5C OEEHBGECGKL_get_Rarity 0x107D8BC GHLMHLJJBIG_set_Rarity
+		public int EIGNPDFHIJA { get { return HBLLFAILJKH ^ FBGGEFFJJHB_xor; } set { HBLLFAILJKH = value ^ FBGGEFFJJHB_xor; } } //0x107DDF4 COAODPNEELA_get_ 0x107D958 OHOPAKFBOGL_set_
 
 		//// RVA: 0x107DAE0 Offset: 0x107DAE0 VA: 0x107DAE0
 		//public uint CAOGDCBPBAN() { }

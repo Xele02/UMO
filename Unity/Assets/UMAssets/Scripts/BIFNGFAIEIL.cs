@@ -12,7 +12,7 @@ public class BIFNGFAIEIL
 	private string BOFPFGNHBAJ_SavePath; // 0x10
 	private int MLJGJMGNNPP; // 0x14
 
-	public static BIFNGFAIEIL HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ OKPMHKNCNAL
+	public static BIFNGFAIEIL HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	//// RVA: 0xC7FF90 Offset: 0xC7FF90 VA: 0xC7FF90
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)

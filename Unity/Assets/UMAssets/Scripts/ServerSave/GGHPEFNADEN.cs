@@ -18,10 +18,10 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	public int BKIIKBEACDN; // 0x44
 	public int OKKAFCJGCJL; // 0x48
 
-	public string EBAMGNMELPO_EntryDate { get { return AJFDNKLNKDP_EntryDate_; } set { AJFDNKLNKDP_EntryDate_ = value; OKKAFCJGCJL = value.GetHashCode(); } } //NLLPAPKGDJM 0xAA1300 GDOPHGNBAGO 0xAA1308
-	public string HBODCMLFDOB_result { get { return OGMOHJIEDEA_Result_; } set { OGMOHJIEDEA_Result_ = value; BKIIKBEACDN = value.GetHashCode(); } } //MDOIHMLLDEC 0xAA1348 DNGOCLOHDPE 0xAA1350
-	public string OEDIICBDNKG_Pending { get { return KKJKOGHFGLB_Pending_; } set { KKJKOGHFGLB_Pending_ = value; CBPJHNHBLNN = value.GetHashCode(); } } //GNOMCGBDNDA 0xAA1390 MFIEGCGDLFH 0xAA1398
-	public override bool DMICHEJIAJL { get { return false; } } // 0xAA2A6C NFKFOODCJJB
+	public string EBAMGNMELPO_EntryDate { get { return AJFDNKLNKDP_EntryDate_; } set { AJFDNKLNKDP_EntryDate_ = value; OKKAFCJGCJL = value.GetHashCode(); } } //NLLPAPKGDJM_bgs 0xAA1300 GDOPHGNBAGO_bgs 0xAA1308
+	public string HBODCMLFDOB_result { get { return OGMOHJIEDEA_Result_; } set { OGMOHJIEDEA_Result_ = value; BKIIKBEACDN = value.GetHashCode(); } } //MDOIHMLLDEC_bgs 0xAA1348 DNGOCLOHDPE_bgs 0xAA1350
+	public string OEDIICBDNKG_Pending { get { return KKJKOGHFGLB_Pending_; } set { KKJKOGHFGLB_Pending_ = value; CBPJHNHBLNN = value.GetHashCode(); } } //GNOMCGBDNDA_bgs 0xAA1390 MFIEGCGDLFH_bgs 0xAA1398
+	public override bool DMICHEJIAJL { get { return false; } } // 0xAA2A6C NFKFOODCJJB_bgs
 
 	// // RVA: 0xAA13D8 Offset: 0xAA13D8 VA: 0xAA13D8
 	public List<string> HOFACDIBDLM()

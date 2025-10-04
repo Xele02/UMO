@@ -16,18 +16,18 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		public int INAKHLKLFOK_FileIdCrypted; // 0x14
 
 		[UMOMember(ReaderMember = "PPFNGGCBJKC_id", CryptedInMemory = true, Desc = "Adventure id")]
-		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB_xor; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB_xor; } } //0x1E5F810 OPOKKOIDCLG 0x1E5F6B8 CKNHCODBIAG
+		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB_xor; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB_xor; } } //0x1E5F810 OPOKKOIDCLG_bgs 0x1E5F6B8 CKNHCODBIAG_bgs
 		[UMOMember(ReaderMember = "CEHGGKDLAFA", CryptedInMemory = true, Desc = "Id of the file to read for the adv setup (/adv/xxx.dat)")]
-		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK_FileIdCrypted ^ FBGGEFFJJHB_xor; } set { INAKHLKLFOK_FileIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
+		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK_FileIdCrypted ^ FBGGEFFJJHB_xor; } set { INAKHLKLFOK_FileIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F820 JHDAICCKIOG_bgs 0x1E5F6D8 MCCPIGOELKB_bgs
 		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2", CryptedInMemory = true)]
-		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F830 KPOEEPIMMJP 0x1E5F6C8 NCIEAFEDPBH
+		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F830 KPOEEPIMMJP_bgs 0x1E5F6C8 NCIEAFEDPBH_bgs
 
 		// RVA: 0x1E5F7EC Offset: 0x1E5F7EC VA: 0x1E5F7EC
 		//public uint CAOGDCBPBAN() { }
 	}
 
 	[UMOMember(ReaderMember = "CEEPNGEADMG", Desc = "List of the adventures")]
-	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
 	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_Get(int _PPFNGGCBJKC_id)

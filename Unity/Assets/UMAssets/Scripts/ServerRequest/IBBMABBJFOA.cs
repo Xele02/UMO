@@ -66,7 +66,7 @@ public class IBBMABBJFOA_PaymentRecover : CACGCMBKHDI_Request
 		}
 	}
 
-	public MKNBKIFFDKK NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public MKNBKIFFDKK NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 
 	// RVA: 0x12108BC Offset: 0x12108BC VA: 0x12108BC
 	public IBBMABBJFOA_PaymentRecover()

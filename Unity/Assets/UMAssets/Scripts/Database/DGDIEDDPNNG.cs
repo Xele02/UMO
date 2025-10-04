@@ -11,9 +11,9 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 		public int EAJCFBCHIFB_RarityCrypted; // 0xC
 		public int ICKOHEDLEFP_ValueCrypted; // 0x10
 
-		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1984F74 DEMEPMAEJOO 0x198472C HIGKAIDMOKN
-		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x198500C OEEHBGECGKL 0x19847C8 GHLMHLJJBIG
-		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19850A4 OLOCMINKGON 0x1984864 ABAFHIBFKCE
+		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1984F74 DEMEPMAEJOO_get_id 0x198472C HIGKAIDMOKN_set_id
+		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x198500C OEEHBGECGKL_get_Rarity 0x19847C8 GHLMHLJJBIG_set_Rarity
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19850A4 OLOCMINKGON_get_val 0x1984864 ABAFHIBFKCE_set_val
 
 		//// RVA: 0x1984ED8 Offset: 0x1984ED8 VA: 0x1984ED8
 		//public uint CAOGDCBPBAN() { }
