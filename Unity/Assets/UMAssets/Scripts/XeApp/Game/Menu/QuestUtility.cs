@@ -392,35 +392,35 @@ namespace XeApp.Game.Menu
 		{
 			switch (view.NNHHNFFLCFO)
 			{
-				case BKANGIKIEML.NODKLJHEAJB.DOEHLCLBCNN_1_Gacha:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.DOEHLCLBCNN_1_Gacha:
 					MenuScene.Instance.Mount(TransitionUniqueId.GACHA2, new GachaArgs(10001, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.DJPFJGKGOOF_2_Setting:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.DJPFJGKGOOF_2_Setting:
 					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.PAAIHBHJJMM_3:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.PAAIHBHJJMM_3_Story:
 					MenuScene.Instance.Mount(TransitionUniqueId.STORYSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.EKHDECEEFFJ_4:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.EKHDECEEFFJ_4_EpisodeSeect:
 					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT, new EpisodeSelectSceneArgs(view.OAPCHMHAJID), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.MGJDKBFHDML_5:
-				case BKANGIKIEML.NODKLJHEAJB.LINKBPIPHAK_17:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.MGJDKBFHDML_5_MusicSelect:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.LINKBPIPHAK_17_GotoFreeMusic:
 					MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.HBIPNFMLLBF_6:
-				case BKANGIKIEML.NODKLJHEAJB.OEFNIAKHGKD_7:
-				case BKANGIKIEML.NODKLJHEAJB.MLINGAKKDEP_8:
-				case BKANGIKIEML.NODKLJHEAJB.GONENLHJLCJ_9:
-				case BKANGIKIEML.NODKLJHEAJB.AGCMIOFBFMG_10:
-				case BKANGIKIEML.NODKLJHEAJB.BBAEIHMIFFI_11:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.HBIPNFMLLBF_6_MusicSelectMacross:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.OEFNIAKHGKD_7_MusicSelectSeven:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.MLINGAKKDEP_8_MusiSelectFrontia:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.GONENLHJLCJ_9_MusicSelectDelta:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.AGCMIOFBFMG_10_MusicSelectEvent:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.BBAEIHMIFFI_11_MusicSelectOther:
 					{
 						MusicSelectArgs arg = new MusicSelectArgs();
 						arg.SetSelection((FreeCategoryId.Type)view.NNHHNFFLCFO - 5);
 						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.OBDLOMGHHED_12:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.OBDLOMGHHED_12_MusicSelectWeekly:
 					{
 						MusicSelectArgs arg = null;
 						List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD_GetList(5, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), true, false, false, false);
@@ -444,7 +444,7 @@ namespace XeApp.Game.Menu
 					break;
 				default:
 					return;
-				case BKANGIKIEML.NODKLJHEAJB.JHEBCLKNOHC_14:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.JHEBCLKNOHC_14_GotoToEventMusic:
 					{
 						int a = 0;
 						if (view.COAMJFMEIBF != null)
@@ -456,7 +456,7 @@ namespace XeApp.Game.Menu
 						GoToFreeMusic(a);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.FNILHIFGOCE_15:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.FNILHIFGOCE_15_GotoToEventMusicCond:
 					{
 						int a = 0;
 						if(view.COAMJFMEIBF != null)
@@ -496,7 +496,7 @@ namespace XeApp.Game.Menu
 						GoToFreeMusic(a);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.GAPJLFLINME_16:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.GAPJLFLINME_16_GotoToAprilFoolMusic:
 					{
 						int a = 0;
 						if(view.COAMJFMEIBF != null && view.COAMJFMEIBF.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 						GoToFreeMusic(a);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.ANBJBLLMHMB_18:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.ANBJBLLMHMB_18_GotoFreeMusicSerieAttr:
 					{
 						MusicSelectArgs arg = null;
 						if(view.COAMJFMEIBF != null)
@@ -559,7 +559,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.GFLALMCKGAH_19:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.GFLALMCKGAH_19_GotoMinigame:
 					{
 						MusicSelectArgs arg = new MusicSelectArgs();
 						if(view.COAMJFMEIBF != null && view.COAMJFMEIBF is AMLGMLNGMFB_EventAprilFool)
@@ -573,7 +573,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.OBBOJKJAHIE_20:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.OBBOJKJAHIE_20_TeamEdit:
 					{
 						TeamEditSceneArgs arg = new TeamEditSceneArgs();
 						arg.IsFromBeginner = view.OAPCHMHAJID;
@@ -581,7 +581,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_TEAMEDIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.ADNIADMMBPM_21:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.ADNIADMMBPM_21_SceneAbilityRelease:
 					{
 						SceneListArgs arg = new SceneListArgs();
 						arg.IsFromBiginner = view.OAPCHMHAJID;
@@ -590,55 +590,55 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_SCENEABILITYRELEASELIST, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.GFCAMHABJIC_22:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.GFCAMHABJIC_22_Profil:
 					MenuScene.Instance.Mount(TransitionUniqueId.OPTIONMENU_PROFIL, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.ICAPJDDJIEA_23:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.ICAPJDDJIEA_23_Present:
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_PRESENTLIST, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.PHKLLDPCDBO_24:
-				case BKANGIKIEML.NODKLJHEAJB.KIBGKANOLLP_25:
-				case BKANGIKIEML.NODKLJHEAJB.DFDKJPOHGAD_26:
-				case BKANGIKIEML.NODKLJHEAJB.JBMMAOHHEJH_27:
-				case BKANGIKIEML.NODKLJHEAJB.CJCABIKGFGG_28:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.PHKLLDPCDBO_24_CurrentEvent:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.KIBGKANOLLP_25_CurrentEvent2:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.DFDKJPOHGAD_26_CurrentEvent3:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.JBMMAOHHEJH_27_CurrentEvent4:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.CJCABIKGFGG_28_CurrentEvent5:
 					GotoCurrentEventScene(view);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.IJMFEGLNDFI_30:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.IJMFEGLNDFI_30_Option:
 					{
 						OptionMenuScene.OptionMenuArgs arg = new OptionMenuScene.OptionMenuArgs();
 						arg.openSnsLink = true;
 						MenuScene.Instance.Mount(TransitionUniqueId.OPTIONMENU, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.HGOGFPOCKFA_31_Sns:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.HGOGFPOCKFA_31_Sns:
 					ShowSNS();
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.DFEBFNNJMBM_32:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.DFEBFNNJMBM_32_Gacha2:
 					MenuScene.Instance.Mount(TransitionUniqueId.GACHA2, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.KBHGPMNGALJ_33_Costume:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.KBHGPMNGALJ_33_Costume:
 					{
 						CostumeChangeDivaArgs arg = new CostumeChangeDivaArgs();
 						arg.DivaId = 1;
 						MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_TEAMEDIT_COSTUMESELECT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.LJILBHPMPOG_34:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.LJILBHPMPOG_34_Shop:
 					MenuScene.Instance.Mount(TransitionUniqueId.OPTIONMENU_SHOP, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.NHIOLMNADIO_35:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.NHIOLMNADIO_35_Home:
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.OCNIBCBBLAA_36:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.OCNIBCBBLAA_36_Offer:
 					MenuScene.Instance.Mount(KDHGBOOECKC.HHCJCDFCLOB == null ? TransitionUniqueId.HOME : KDHGBOOECKC.HHCJCDFCLOB.OOFNEPBLPEA(), null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.LEHHJINPFHA_37:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.LEHHJINPFHA_37_CostumeUpgrade:
 					if(!MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
 						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					else
 						MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_COSTUMEUPGRADE, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.PKHEABDDHKB_40:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.PKHEABDDHKB_40_Deco:
 					{
 						int a;
 						bool b;
@@ -649,7 +649,7 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.DECO, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}
 					break;
-				case BKANGIKIEML.NODKLJHEAJB.JDCENDOKKIE_41:
+				case BKANGIKIEML.NODKLJHEAJB_ChallengeType.JDCENDOKKIE_41_ValkyrieTuneUp:
 					if(!SettingMenuPanel.IsValkyrieTuneUpUnlock())
 						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					else
@@ -857,7 +857,7 @@ namespace XeApp.Game.Menu
 			//0x9E88BC
 			bool isWait = true;
 			bool isSuccess = false;
-			view.KKFFEJEKFEG(() =>
+			view.KKFFEJEKFEG_OpenQuestURL(() =>
 			{
 				//0x9E7E6C
 				isWait = false;
@@ -904,7 +904,7 @@ namespace XeApp.Game.Menu
 					int advId = dbAdv.KKPPFAHFOJI_FileId;
 					AdvSetupParam param = new AdvSetupParam();
 					param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
-					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 					{
 						if (ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 						{
@@ -951,7 +951,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 			}
-			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{

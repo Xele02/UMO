@@ -7,7 +7,7 @@ using XeSys;
 
 public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 {
-	public enum AAADDDFCKLF
+	public enum AAADDDFCKLF_MultiDivaType
 	{
 		ALNCPFNNBLH_0 = 0,
 		IANFNICOEFE_1 = 1,
@@ -313,13 +313,12 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1214824 Offset: 0x1214824 VA: 0x1214824
-	public bool PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF IKENKJKOGNN)
+	public bool PNKKJEABNFF(AAADDDFCKLF_MultiDivaType IKENKJKOGNN)
 	{
-		// Will need to check tests
 		bool res = DBIGDCOHOIC_IsMultiDanceUnlocked();
 		if(HAMPEDFMIAD_HasOnlyMultiDivaMode())
 		{
-			if(((int)IKENKJKOGNN - 1) > 1)
+			if(IKENKJKOGNN == AAADDDFCKLF_MultiDivaType.ALNCPFNNBLH_0)
 			{
 				if (IKENKJKOGNN != 0)
 					return false;
@@ -331,7 +330,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			if (KLOGLLFOAPL_HasMultiDivaMode())
 			{
 				res = true;
-				if (((int)IKENKJKOGNN - 1) > 1)
+				if(IKENKJKOGNN == AAADDDFCKLF_MultiDivaType.ALNCPFNNBLH_0)
 				{
 					if (IKENKJKOGNN != 0)
 						return false;
@@ -1132,7 +1131,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		for(int i = 0; i < evts.Count; i++)
 		{
 			evts[i].HCDGELDHFHB_UpdateStatus(_JHNMKKNEENE_Time);
-			if (evts[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1 && evts[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
+			if (evts[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted && evts[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 				res.Add(evts[i]);
 		}
 		return res;
@@ -1493,7 +1492,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		if(_DEPGBBJMFED_CategoryId == 5)
 		{
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(_OAFJONPIFGM_EventId);
-			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{

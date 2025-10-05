@@ -750,7 +750,7 @@ namespace XeApp.Game.Menu
 			while(m_chatContller.OKNCPELPJJO)
 				yield return null;
 			preCommentCount = m_chatContller.NJMOALFKKIK_GetCommentCount();
-			m_chatContller.HDHACKFJKGM(optionBits, () =>
+			m_chatContller.HDHACKFJKGM_Next(optionBits, () =>
 			{
 				//0xC5631C
 				IsDone = true;

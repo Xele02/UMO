@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 				m_rankingMax = m_eventCtrl.NGIHFKHOJOK_GetRankingMax(false);
 				m_eventId = m_eventCtrl.PGIIDPEGGPI_EventId;
 				m_currentRankingIndex = Arg.CurrentRankingIndex;
-				if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+				if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 				{
 					m_ranking_types[0] = EnRankingType.Score;
 				}

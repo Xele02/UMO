@@ -143,11 +143,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E1ADC Offset: 0x18E1ADC VA: 0x18E1ADC
-		private void SetRankingUV(NGJOPPIGCPM_ResultData.DFJMELLLNLH rankState)
+		private void SetRankingUV(NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState rankState)
 		{
-			if (rankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL_0_None)
+			if (rankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.HJNNKCMLGFL_0_None)
 			{
-				TexUVData data = m_uvMan.GetUVData(rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH ? "g_r_rankin_bg" : "g_r_rankin_bg02");
+				TexUVData data = m_uvMan.GetUVData(rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.HHLBGKEDNGH_1_Bg2 ? "g_r_rankin_bg" : "g_r_rankin_bg02");
 				for (int i = 0; i < imageSingRankBg.Length; i++)
 				{
 					imageSingRankBg[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalUp());
 				yield return coRank;
 				yield return coRankTotal;
-				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL_0_None)
+				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.HJNNKCMLGFL_0_None)
 				{
 					if(!isSkiped)
 					{

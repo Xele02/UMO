@@ -196,7 +196,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 				EJABAIAPFLK data = new EJABAIAPFLK();
 				data.HAMJMEHKOKL_Id = (int)array[i].PPFNGGCBJKC_id;
 				data.LJNAKDMILMC_key = array[i].LJNAKDMILMC_key;
-				data.DLGMPHGKDKD_Ofs = (EJABAIAPFLK.GHEPCFJHEEA)array[i].IKNALLJDAFH_ofs;
+				data.DLGMPHGKDKD_Ofs = (EJABAIAPFLK.GHEPCFJHEEA_OfsType)array[i].IKNALLJDAFH_ofs;
 				data.NHPCKCOPKAM_from = array[i].NHPCKCOPKAM_from;
 				data.PJFKNNNDMIA_to = array[i].PJFKNNNDMIA_to;
 				data.DBMKMAPNCCK_OnlyFriends = array[i].PLGFGIAHDHJ_fr != 0;
@@ -504,17 +504,17 @@ public class OGNALGCHKED
 
 public class EJABAIAPFLK
 {
-	public enum GHEPCFJHEEA
+	public enum GHEPCFJHEEA_OfsType
 	{
 		HJNNKCMLGFL_0_None = -1,
 		MCIACFOAHID = 0,
 		MECKFENAEPJ = 1,
-		NDGMFGMHCJM = 2,
+		NDGMFGMHCJM_2_Level = 2,
 	}
 
 	public int HAMJMEHKOKL_Id; // 0x8
 	public string LJNAKDMILMC_key; // 0xC
-	public EJABAIAPFLK.GHEPCFJHEEA DLGMPHGKDKD_Ofs; // 0x10
+	public GHEPCFJHEEA_OfsType DLGMPHGKDKD_Ofs; // 0x10
 	public Nullable<int> NHPCKCOPKAM_from; // 0x14
 	public Nullable<int> PJFKNNNDMIA_to; // 0x1C
 	public bool DBMKMAPNCCK_OnlyFriends; // 0x24
@@ -532,21 +532,21 @@ public class EJABAIAPFLK
 		int? to = null;
 		switch(DLGMPHGKDKD_Ofs)
 		{
-			case GHEPCFJHEEA.MCIACFOAHID:
+			case GHEPCFJHEEA_OfsType.MCIACFOAHID:
 				to = PJFKNNNDMIA_to;
 				from = NHPCKCOPKAM_from;
 				break;
-			case GHEPCFJHEEA.MECKFENAEPJ:
+			case GHEPCFJHEEA_OfsType.MECKFENAEPJ:
 				from = NHPCKCOPKAM_from;
 				to = PJFKNNNDMIA_to + 1;
 				break;
-			case GHEPCFJHEEA.NDGMFGMHCJM:
+			case GHEPCFJHEEA_OfsType.NDGMFGMHCJM_2_Level:
 				from = NHPCKCOPKAM_from + _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				if (from < 2)
 					from = 1;
 				to = PJFKNNNDMIA_to + _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				break;
-			case GHEPCFJHEEA.HJNNKCMLGFL_0_None:
+			case GHEPCFJHEEA_OfsType.HJNNKCMLGFL_0_None:
 				from = NHPCKCOPKAM_from;
 				to = PJFKNNNDMIA_to;
 				break;

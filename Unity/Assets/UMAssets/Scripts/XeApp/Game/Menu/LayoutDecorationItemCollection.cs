@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_itemAnim; // 0x34
 		private AbsoluteLayout m_pointAnim; // 0x38
 		private AbsoluteLayout m_voiceAnim; // 0x3C
-		private NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC m_type; // 0x40
+		private NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType m_type; // 0x40
 		private int m_num; // 0x44
 		private bool IsEnter; // 0x48
 		private Vector2 m_position; // 0x4C
@@ -65,46 +65,46 @@ namespace XeApp.Game.Menu
 			if(IsEnter)
 				return;
 			int start = 0;
-			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
+			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/)
 			{
-				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp/*1*/)
+				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FIHMIDDLAKH_1_CanonFillSp/*1*/)
 					start = 0;
 				else
 				{
 					start = 1;
-					if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/)
+					if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal/*2*/)
 					{
 						start = 5;
-						if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FKEDBMECLJG_12/*12*/)
+						if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FKEDBMECLJG_12/*12*/)
 							start = 4;
 					}
 				}
 			}
-			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/ ||
-				m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
+			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/ ||
+				m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				start = 0;
 			}
 			else
 			{
 				start = 5;
-				if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FKEDBMECLJG_12/*12*/)
+				if(m_type != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FKEDBMECLJG_12/*12*/)
 					start = 4;
 			}
 			m_base.StartChildrenAnimGoStop(start, start);
 			switch(m_type)
 			{
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp/*1*/:
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/:
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FIHMIDDLAKH_1_CanonFillSp/*1*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/:
 					m_exclamationAnim.StartChildrenAnimLoop("logo_on", "loen_on");
 					break;
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal/*2*/:
 					m_medalAnim.StartChildrenAnimLoop("logo_on", "loen_on");
 					break;
 				default:
 					break;
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FKEDBMECLJG_12/*12*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FKEDBMECLJG_12/*12*/:
 					m_voiceAnim.StartChildrenAnimGoStop("go_in", "st_in");
 					break;
 			}
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Leave()
 		{
 			//0x19F2298
-			if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FKEDBMECLJG_12)
+			if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FKEDBMECLJG_12)
 			{
 				AbsoluteLayout playingLayout = m_voiceAnim;
 				m_voiceAnim.StartChildrenAnimGoStop("go_out", "st_out");
@@ -170,21 +170,21 @@ namespace XeApp.Game.Menu
 		public void Receive(int value, IiconTexture texture)
 		{
 			BaseFrame frame = BaseFrame.None;
-			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3)
+			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present)
 			{
-				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp)
+				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FIHMIDDLAKH_1_CanonFillSp)
 				{
 					IsPlayingReceiveAnime = false;
 					Off();
 					return;
 				}
-				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2)
+				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal)
 				{
 					m_pointNum.SetNumber(value, 0);
 					frame = BaseFrame.Point;
 				}
 			}
-			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3 || m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp)
+			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present || m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp)
 			{
 				m_itemNum.SetNumber(value, 0);
 				frame = BaseFrame.Item;
@@ -202,7 +202,7 @@ namespace XeApp.Game.Menu
 			IsPlayingReceiveAnime = true;
 			m_base.StartChildrenAnimGoStop((int)frame, (int)frame);
 			currentLayout = null;
-			if(m_type >= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp && m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3)
+			if(m_type >= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FIHMIDDLAKH_1_CanonFillSp && m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present)
 			{
 				m_pointAnim.StartChildrenAnimGoStop("st_wait", "st_out");
 				currentLayout = m_pointAnim;
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x19F1EEC Offset: 0x19F1EEC VA: 0x19F1EEC
-		public void SetSetting(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC type, float offsetY)
+		public void SetSetting(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType type, float offsetY)
 		{
 			m_type = type;
 			transform.localPosition = new Vector2(0, offsetY);

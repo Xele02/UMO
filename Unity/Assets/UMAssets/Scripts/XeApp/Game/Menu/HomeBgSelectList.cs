@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 		{
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			ILCCJNDFFOB.HHCJCDFCLOB.BBIBBNHCPPJ(JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva() ? 1 : 0, m_showDiva ? 1 : 0, JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() != 0 ? 1 : 0, SelectEvolveId != 0 ? 1 : 0, CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark() ? 0 : 1, m_isBgDark ? 0 : 1, SelectEvolveId == 0 ? SelectSceneId : 0, SelectEvolveId != 0 ? SelectSceneId : 0, SelectEvolveId == 2 ? 1 : 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.BBIBBNHCPPJ_HomeModify(JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva() ? 1 : 0, m_showDiva ? 1 : 0, JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() != 0 ? 1 : 0, SelectEvolveId != 0 ? 1 : 0, CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark() ? 0 : 1, m_isBgDark ? 0 : 1, SelectEvolveId == 0 ? SelectSceneId : 0, SelectEvolveId != 0 ? SelectSceneId : 0, SelectEvolveId == 2 ? 1 : 0);
 			JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(SelectSceneId, SelectEvolveId);
 			JKHEOEEPBMJ.MLPMCLHGDFG_SetShowHomeDiva(m_showDiva);
 			CGFNKMNBNBN.LLAMCBGJNOG_SetHomeBgDark(m_isBgDark);

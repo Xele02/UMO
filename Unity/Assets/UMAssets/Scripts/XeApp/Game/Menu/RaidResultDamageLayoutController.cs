@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		private RaidResultDamageLayout m_damageLayout; // 0x14
 		private RaidResultCannonLayout m_cannonLayout; // 0x18
 		public Action onClickOkayButton; // 0x1C
-		private JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH m_attackType; // 0x20
+		private JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType m_attackType; // 0x20
 		private bool m_isStarted; // 0x24
 		private bool m_isSkiped; // 0x25
 

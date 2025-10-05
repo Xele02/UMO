@@ -7,7 +7,7 @@ public class OHCAABOMEOF
         AOPKACCDKPA_EventCollection = 1,
         MKKOHBGHADL_EventQuest_2 = 2,
         PFKOKHODEGL_EventBattle = 3,
-        KEILBOLBDHN_EventScore = 4,
+        KEILBOLBDHN_4_Score = 4,
         ENMHPBGOOII_Week = 5,
         NKDOEBONGNI_EventMission = 6,
         ENPJADLIFAB_EventSp = 7,

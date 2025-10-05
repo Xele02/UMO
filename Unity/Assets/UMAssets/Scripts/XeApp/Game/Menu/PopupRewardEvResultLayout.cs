@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 				case PopupRewardEvResult.Type.Rankings:
 					m_numTexts[1].text = view.Rank.ToString();
 					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
-					if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+					if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 					{
 						m_numTexts[3].text = view.CurrentPoint.ToString();
 						m_unitTexts[3].text = "";
@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 				case PopupRewardEvResult.Type.Rankings:
 					m_PopupTypeAnim.StartChildrenAnimGoStop("02");
 					m_leftTitleAnim.StartChildrenAnimGoStop("01");
-					if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+					if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 					{
 						m_rightTitleAnim.StartChildrenAnimGoStop("05");
 					}

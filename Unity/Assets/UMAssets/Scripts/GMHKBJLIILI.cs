@@ -9,7 +9,7 @@ public class GMHKBJLIILI
 	public List<GJDFHLBONOL> PJJFEAHIPGL_inventories; // 0x14
 	public int HMFFHLPNMPH_count; // 0x18
 	public string OPFGFINHFCE_name; // 0x1C
-	public ANPGILOLNFK.CDOGFBNLIPG CKHOBDIKJFN_Type; // 0x20
+	public ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType CKHOBDIKJFN_Type; // 0x20
 
 	//// RVA: 0xAB6980 Offset: 0xAB6980 VA: 0xAB6980
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)

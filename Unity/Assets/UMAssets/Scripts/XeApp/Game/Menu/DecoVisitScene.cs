@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 				player = args.friendData;
 				bool isDone = false;
 				bool isError = false;
-				if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_0_Normal || player.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_0_Normal)
+				if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal || player.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal)
 				{
 					//LAB_011dca68
 					CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CKJHFFHFPLH_GetFriends(() =>
@@ -115,27 +115,27 @@ namespace XeApp.Game.Menu
 					}
 					if(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId))
 					{
-						player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
-						player.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+						player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
+						player.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 					}
 				}
 				//LAB_011dc774
-				HNKMEOKCNBI.BEABGIOEFLG a = HNKMEOKCNBI.BEABGIOEFLG.HEEJBCDDOJJ_Friend/*0*/;
+				HNKMEOKCNBI.BEABGIOEFLG_PlayerType a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.HEEJBCDDOJJ_0_Friend/*0*/;
 				if(player.PCEGKKLKFNO_FriendData is IFICNCAHIGI)
 				{
-					a = HNKMEOKCNBI.BEABGIOEFLG.HEEJBCDDOJJ_Friend/*0*/;
-					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
+					a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.HEEJBCDDOJJ_0_Friend/*0*/;
+					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
 					{
-						a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_2_Other/*2*/;
+						a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.KJHABBHBFPD_2_Other/*2*/;
 						if((player.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite)
-							a = HNKMEOKCNBI.BEABGIOEFLG.HNANENNPBCO_Fan/*1*/;
+							a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.HNANENNPBCO_1_Fan/*1*/;
 					}
 				}
 				else
 				{
-					a = HNKMEOKCNBI.BEABGIOEFLG.KJHABBHBFPD_2_Other/*2*/;
-					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
-						a = HNKMEOKCNBI.BEABGIOEFLG.HEEJBCDDOJJ_Friend/*0*/;
+					a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.KJHABBHBFPD_2_Other/*2*/;
+					if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
+						a = HNKMEOKCNBI.BEABGIOEFLG_PlayerType.HEEJBCDDOJJ_0_Friend/*0*/;
 				}
 				m_friendPlayerData = args.friendData;
 				this.StartCoroutineWatched(Co_InitializeDecoData(args.friendData, a));
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 				bool b = false;
 				if(m_friendPlayerData.PCEGKKLKFNO_FriendData is IFICNCAHIGI)
 				{
-					if(m_friendPlayerData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
+					if(m_friendPlayerData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
 					{
 						//(m_friendPlayerData.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite;
 						b = true;
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					b = true;
-					if(m_friendPlayerData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
+					if(m_friendPlayerData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
 						b = false;
 				}
 				if(m_visitControl.MHGJGAPLMFO(m_friendPlayerData.MLPEHNBNOGD_PlayerId))
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x11D6C5C Offset: 0x11D6C5C VA: 0x11D6C5C
 		private void OnPushDecoRoomButton()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15553, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15553, 0);
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			MenuScene.Instance.Mount(TransitionUniqueId.DECO, null,true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			m_isTranstion = true;
@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x11D6DFC Offset: 0x11D6DFC VA: 0x11D6DFC
 		private void OnPushLobbyButton()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15554, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15554, 0);
 			m_isHideDecorationCanvas = true;
 			EventLobbyArgs arg = new EventLobbyArgs();
 			arg.IsMyLobby = true;
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_friendPlayerData != null)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK("StringLiteral_15476", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
+				ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_15476", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
 			}
 			m_decorationCanvas.WaitingChara(true);
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 					arg.playerId = m_friendPlayerData.MLPEHNBNOGD_PlayerId;
 					if(m_friendPlayerData != null)
 					{
-						ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK("StringLiteral_15555", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
+						ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_15555", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
 					}
 					MenuScene.Instance.Call(TransitionList.Type.DECO_CHAT, arg, true);
 					m_isTranstion = true;
@@ -513,7 +513,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6D5A44 Offset: 0x6D5A44 VA: 0x6D5A44
 		// // RVA: 0x11D7B88 Offset: 0x11D7B88 VA: 0x11D7B88
-		private IEnumerator Co_InitializeDecoData(EAJCBFGKKFA_FriendInfo friendPlayerData, HNKMEOKCNBI.BEABGIOEFLG visitType)
+		private IEnumerator Co_InitializeDecoData(EAJCBFGKKFA_FriendInfo friendPlayerData, HNKMEOKCNBI.BEABGIOEFLG_PlayerType visitType)
 		{
 			int playerId;
 
@@ -561,7 +561,7 @@ namespace XeApp.Game.Menu
 				GotoTitle();
 				yield break;
 			}
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.CHIIAHIJFCB/*33*/);
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.CHIIAHIJFCB_33_Deco/*33*/);
 			isDone = false;
 			isError = false;
 			PBJPACKDIIB.NPIJAIOCACL(() =>

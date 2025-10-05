@@ -922,13 +922,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12A3390 Offset: 0x12A3390 VA: 0x12A3390
 		private void UpdateChatComment()
 		{
-			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect);
+			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect);
 			Debug.Log("StringLiteral_18392 "+m_raidSelect.ToString());
 			Debug.Log("StringLiteral_18393 "+m_commentCount);
 			m_windowUi.ResetItem();
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
-				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
+				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect, i);
 				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
@@ -938,11 +938,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12A35D8 Offset: 0x12A35D8 VA: 0x12A35D8
 		private void CommentDisplayUpdate()
 		{
-			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect);
+			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType)m_raidSelect);
 			m_windowUi.ResetItem();
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
-				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
+				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect, i);
 				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
@@ -954,11 +954,11 @@ namespace XeApp.Game.Menu
 		{
 			MenuScene.Instance.InputDisable();
 			m_windowUi.LockScroll();
-			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect);
+			m_commentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType)m_raidSelect);
 			m_windowUi.ResetItem();
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
-                ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, i);
+                ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType)m_raidSelect, i);
 				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i,IsMemberLobby);
             }
 			m_windowUi.AddScrollItem();
@@ -1101,7 +1101,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.FooterMenu.NotSelectButtonAll();
 			MenuScene.Instance.FooterMenu.SelectedButton(MenuButtonAnim.ButtonType.HOME);
 			MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-			ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP(2);
+			ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP_LobbyVisit(2);
 			IsGotoNotDeco = true;
 		}
 
@@ -1278,7 +1278,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12A5304 Offset: 0x12A5304 VA: 0x12A5304
 		private bool IsInMyBlockList(int index)
 		{
-			ANPBHCNJIDI.PHICILDLHJP d = m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP;
+			ANPBHCNJIDI.PHICILDLHJP d = m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP;
 			return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.DIGEHCDEAON_IsBlacklisted(d.MLPEHNBNOGD_PlayerId);
 		}
 
@@ -1295,7 +1295,7 @@ namespace XeApp.Game.Menu
 			bool success = false;
 			bool wait = false;
 			bool error = false;
-			m_RaidLobbyController.CBOFAFKMIBE_CopyBbsBattleLogCommentToMain(m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP, () =>
+			m_RaidLobbyController.CBOFAFKMIBE_CopyBbsBattleLogCommentToMain(m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP, () =>
 			{
 				//0xD08BD0
 				success = true;
@@ -1357,7 +1357,7 @@ namespace XeApp.Game.Menu
 					if(m_windowUi.IsUpdatePossible())
 					{
 						int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
-						m_RaidLobbyController.MICOCAOLCEJ(bbs_auto_update_op, (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, (List<NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE> blist) =>
+						m_RaidLobbyController.MICOCAOLCEJ(bbs_auto_update_op, (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect, (List<NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType> blist) =>
 						{
 							//0x12A81A4
 							if(IsDestroy)
@@ -1385,7 +1385,7 @@ namespace XeApp.Game.Menu
 			m_IsUpdateError = false;
 			if(m_RaidLobbyController == null)
 				yield break;
-			m_RaidLobbyController.MMMBGDHMJKC(0, (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, () =>
+			m_RaidLobbyController.MMMBGDHMJKC(0, (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType)m_raidSelect, () =>
 			{
 				//0xD08BF0
 				wait = true;
@@ -1419,7 +1419,7 @@ namespace XeApp.Game.Menu
 			a.EBBJPBGHJOL_text = m_messgeText;
 			a.LBODBHCBAMD_Vwt = isViewing;
 			a.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
-			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, a, () =>
+			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect, a, () =>
 			{
 				//0xD08D40
 				wait = true;
@@ -1461,7 +1461,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			m_windowUi.LockScroll();
 			int viewing_another_lobby_check_num = m_RaidLobbyController.FJLIDJJAGOM().LPJLEHAJADA_GetIntParam("viewing_another_lobby_check_num", 10);
-			m_RaidLobbyController.NKLFDHJKIII(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.GGCIMLDFDOC_0, m_PlayerId, viewing_another_lobby_check_num, (bool flg) =>
+			m_RaidLobbyController.NKLFDHJKIII(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType.GGCIMLDFDOC_0, m_PlayerId, viewing_another_lobby_check_num, (bool flg) =>
 			{
 				//0xD08F3C
 				isPost = flg;
@@ -1507,7 +1507,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12A5C40 Offset: 0x12A5C40 VA: 0x12A5C40
 		private void GetNextCommentList()
 		{
-			if(m_RaidLobbyController.MIKMNNCEFBH( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect) && !IsRequestNextList)
+			if(m_RaidLobbyController.MIKMNNCEFBH( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect) && !IsRequestNextList)
 			{
 				IsRequestNextList = true;
 				this.StartCoroutineWatched(Co_GetNextCommentList());
@@ -1518,7 +1518,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12A5E60 Offset: 0x12A5E60 VA: 0x12A5E60
 		private IEnumerator Co_GetNextCommentList()
 		{
-			NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE bbsType; // 0x18
+			NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType bbsType; // 0x18
 			int preCommentCount; // 0x1C
 
 			//0xD0C69C
@@ -1530,7 +1530,7 @@ namespace XeApp.Game.Menu
 			yield return null;
 			while(m_RaidLobbyController.JHBLAGLBIAD() || m_RaidLobbyController.FJHLAKJBNFA)
 				yield return null;
-			bbsType = (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect;
+			bbsType = (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect;
 			preCommentCount = m_RaidLobbyController.JIDLPGHJOIE_GetCommentsCount(bbsType);
 			yield return null;
 			m_RaidLobbyController.DJEEPILBAIH(bbsType, () =>
@@ -1617,7 +1617,7 @@ namespace XeApp.Game.Menu
 			d.EKAMPLIAENM_SerifId = serifId;
 			d.GKEKNMJMMPK_CannonLogId = m_mcannonLogId;
 			d.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
-			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, d, () =>
+			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType)m_raidSelect, d, () =>
 			{
 				//0xD08F84
 				// success = true;
@@ -1659,7 +1659,7 @@ namespace XeApp.Game.Menu
 			m.EKAMPLIAENM_SerifId = serifId;
 			m.GKEKNMJMMPK_CannonLogId = m_mcannonLogId;
 			m.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
-			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, m, () =>
+			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType) m_raidSelect, m, () =>
 			{
 				//0xD091BC
 				success = true;

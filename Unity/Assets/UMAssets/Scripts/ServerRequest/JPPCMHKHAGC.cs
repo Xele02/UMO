@@ -12,7 +12,7 @@ public class SakashoRaidbossEffectData
 
 public class LMJHOAHBDKN : CMPLGKFJCIC<MFKPFMCLOIB> // TypeDefIndex: 10435
 {
-	public NHCDBBBMFFG CMCKNKKCNDK_status; // 0x3C
+	public NHCDBBBMFFG_BossStatus CMCKNKKCNDK_status; // 0x3C
 	public int OKIEOLAAJNM_LastAttackPlayerId; // 0x40
 
 	// RVA: 0x10BBAB4 Offset: 0x10BBAB4 VA: 0x10BBAB4
@@ -23,7 +23,7 @@ public class LMJHOAHBDKN : CMPLGKFJCIC<MFKPFMCLOIB> // TypeDefIndex: 10435
             return new MFKPFMCLOIB(_IDLHJIOMJBK_data);
         })
     {
-        CMCKNKKCNDK_status = (NHCDBBBMFFG)(int)CDGMPGLAING.DLENPPIJNPA_json["status"];
+        CMCKNKKCNDK_status = (NHCDBBBMFFG_BossStatus)(int)CDGMPGLAING.DLENPPIJNPA_json["status"];
         OKIEOLAAJNM_LastAttackPlayerId = (int)CDGMPGLAING.DLENPPIJNPA_json["last_attack_player_id"];
     }
 }

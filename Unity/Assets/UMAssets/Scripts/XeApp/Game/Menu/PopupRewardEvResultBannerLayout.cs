@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 			}
-			if(data.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+			if(data.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 			{
 				SetJacketImage(data.CoverId);
 				m_changeLayout.StartChildrenAnimGoStop("02");

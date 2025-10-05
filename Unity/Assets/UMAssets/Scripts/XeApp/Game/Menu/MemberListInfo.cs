@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 			funCount = m_lobbyData.AGDBNNEAIIC_FanNum;
 			isFavorite = m_lobbyData.BBNAEPGAMMA_IsFavorite;
 			isDivaLoad = false;
-			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 		}
 
 		// // RVA: 0xEC1C6C Offset: 0xEC1C6C VA: 0xEC1C6C

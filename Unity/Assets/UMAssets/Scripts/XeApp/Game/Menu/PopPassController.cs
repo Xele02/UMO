@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 		
 		public Result m_result; // 0xC
 		public bool m_open_window; // 0x10
-		public NHPDPKHMFEP.GGNEBJEIFCP m_plan; // 0x14
+		public NHPDPKHMFEP.GGNEBJEIFCP_Plan m_plan; // 0x14
 		public PopPassListWin m_layout_window; // 0x18
 		public PopPassPurchaseConfirmationPopup m_layout_popup; // 0x1C
 		private List<ActionButton> m_list_btn = new List<ActionButton>(); // 0x20
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				t_setting.OnClickNormal = () =>
 				{
 					//0xDE8940
-					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal;
+					m_plan = NHPDPKHMFEP.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal;
 					t_cont.Close(() =>
 					{
 						//0xDE8A2C
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				t_setting.OnClickSpecial = () =>
 				{
 					//0xDE8A38
-					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.AJAHGGBMOJE_1;
+					m_plan = NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp;
 					t_cont.Close(() =>
 					{
 						//0xDE8B24

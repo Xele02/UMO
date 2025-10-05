@@ -7,7 +7,7 @@ public class OCANCOENHML
 	public uint PLALNIIBLOF_en { get; set; } // 0xC DFMNDOMAPAB JPCJNLHHIPE_get_en JJFJNEJLBDG_set_en
 	public uint GBJFNGCDKPM_typ { get; set; } // 0x10 GHLFADHILNN CEJJMKODOGK_get_typ HOHCEBMMACI_set_typ
 	public uint JBFLEDKDFCO_cid { get; set; } // 0x14 JOECCKJHICK LIJMKJLDHGP_get_cid NFNCLFPPADP_set_cid
-	public uint CHOIMHCMAHG { get; set; } // 0x18 ALCEBFJAGJB APOIMEHLPBD_get_ HJFDHIEGGBH_set_
+	public uint CHOIMHCMAHG_TypeId { get; set; } // 0x18 ALCEBFJAGJB APOIMEHLPBD_get_TypeId HJFDHIEGGBH_set_TypeId
 	public uint PDBPFJJCADD_open_at { get; set; } // 0x1C PMJMBGBCIGO FOACOMBHPAC_get_open_at NBACOBCOJCA_set_open_at
 	public uint FDBNFFNFOND_close_at { get; set; } // 0x20 INOJHLHGKMI BPJOGHJCLDJ_get_close_at NLJKMCHOCBK_set_close_at
 	public int IJEKNCDIIAE_mver { get; set; } // 0x24 FAHNCMHNFCG KJIMMIBDCIL_get_mver DMEGNOKIKCD_set_mver
@@ -31,7 +31,7 @@ public class PCKMEHLNOFO
 			EKDAACJJAPP_data_.PLALNIIBLOF_en = EKDAACJJAPP_readData_.CFLMCGOJJJD/*_en*/;
 			EKDAACJJAPP_data_.GBJFNGCDKPM_typ = EKDAACJJAPP_readData_.LPJPOOHJKAE/*_typ*/;
 			EKDAACJJAPP_data_.JBFLEDKDFCO_cid = EKDAACJJAPP_readData_.HOENDPOGFIO/*_cid*/;
-			EKDAACJJAPP_data_.CHOIMHCMAHG = EKDAACJJAPP_readData_.DNIDLBOLLGH;
+			EKDAACJJAPP_data_.CHOIMHCMAHG_TypeId = EKDAACJJAPP_readData_.DNIDLBOLLGH;
 			EKDAACJJAPP_data_.PDBPFJJCADD_open_at = EKDAACJJAPP_readData_.NJLJEKDBPCH/*_open_at*/;
 			EKDAACJJAPP_data_.FDBNFFNFOND_close_at = EKDAACJJAPP_readData_.MAOAGDBDBIB/*_close_at*/;
 			EKDAACJJAPP_data_.IJEKNCDIIAE_mver = EKDAACJJAPP_readData_.OFMGALJGDAO/*_mver*/;

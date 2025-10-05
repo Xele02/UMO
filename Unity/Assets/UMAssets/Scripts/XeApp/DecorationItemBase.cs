@@ -154,7 +154,7 @@ namespace XeApp
 		public DecorationItemManager.PostType PostType { get; set; } // 0x6C
 		public bool IsMoved { get; set; } // 0x70
 		protected bool UseFlipTexture { get { return m_useFlipAsset; } } //0x1AD09E8 
-		public bool IsKiraPoster { get { return IsStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN.HGJCDIEALPL_IsKira); } set { SetStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN.HGJCDIEALPL_IsKira, value); } } //0x1AD0A34 0x1AD0A40
+		public bool IsKiraPoster { get { return IsStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag.HGJCDIEALPL_IsKira); } set { SetStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag.HGJCDIEALPL_IsKira, value); } } //0x1AD0A34 0x1AD0A40
 		//public string Name { get; } 0x1AD2D30 
 		public virtual Vector2 Position { get { return m_object.transform.localPosition; } set { m_object.transform.localPosition = value; } } //0x1AD2D5C 0x1AC5E34
 		public virtual int SortingOrder { get { return m_spriteRenderer.sortingOrder; } set { m_spriteRenderer.sortingOrder = value; } } //0x1AC61A4 0x1AC616C
@@ -214,13 +214,13 @@ namespace XeApp
 		}
 		
 		//// RVA: 0x1AD09F0 Offset: 0x1AD09F0 VA: 0x1AD09F0
-		private bool IsStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN status)
+		private bool IsStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag status)
 		{
 			return (m_statusFlag & (1 << (int)status)) != 0;
 		}
 
 		//// RVA: 0x1AD0A0C Offset: 0x1AD0A0C VA: 0x1AD0A0C
-		private void SetStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN status, bool on)
+		private void SetStatusFlag(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag status, bool on)
 		{
 			m_statusFlag &= ~(1 << (int)status);
 			if(on)

@@ -14,24 +14,24 @@ public class DKFJADMCNPI
 		GEJGMBBCFEE_8__max = 8,
 	}
 
-	public enum NLKCMNHOBAI
+	public enum NLKCMNHOBAI_BingoMissionType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		CLJMJHDGPOC_1 = 1,
-		IBGNFEOLKDP = 2,
-		KENMCJCIGIB_3 = 3,
-		LFLMBPJJEEG_4 = 4,
-		BCMLFJPLKAM_5 = 5,
-		EGFEFGJLKLA_6 = 6,
+		CLJMJHDGPOC_1_Shop = 1,
+		IBGNFEOLKDP_2_Login = 2,
+		KENMCJCIGIB_3_VaklOp = 3,
+		LFLMBPJJEEG_4_DivaOp = 4,
+		BCMLFJPLKAM_5_DivaOpOccur = 5,
+		EGFEFGJLKLA_6_DivaOpPowerup = 6,
 		HOOJOFACOEK_7_SetCostume = 7,
-		DAOKJMHHKGP_8 = 8,
-		NGDJIJOIPIB = 9,
-		EHEDFAMGLDP_10 = 10,
+		DAOKJMHHKGP_8_Gift = 8,
+		NGDJIJOIPIB_9_GetScene = 9,
+		EHEDFAMGLDP_10_Medal = 10,
 		KJAFDMGNBPO_11_DailyMission = 11,
-		CLJHDIKFECG_12 = 12,
-		OBNEIGIFMFD_13 = 13,
+		CLJHDIKFECG_12_Mission = 12,
+		OBNEIGIFMFD_13_MedalShopConsume = 13,
 		DOEHLCLBCNN_14_Gacha = 14,
-		GJPEANBALKF = 15,
+		GJPEANBALKF_15_EventPlay = 15,
 	}
 
 	public const int ELIOGKCBPHB = 8;

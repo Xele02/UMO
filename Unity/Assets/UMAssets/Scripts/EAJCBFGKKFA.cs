@@ -12,7 +12,7 @@ public class EAJCBFGKKFA_FriendInfo
 	public List<GCIJNCFDNON_SceneInfo> HDJOHAJPGBA_SubScene; // 0x14
 	public IBIGBMDANNM PCEGKKLKFNO_FriendData; // 0x18
 	public IAPDFOPPGND NDOLELKAJNL_Degree; // 0x1C
-	public IBIGBMDANNM.LJJOIIAEICI PDIPANKOKOL_FriendStat; // 0x20
+	public IBIGBMDANNM.LJJOIIAEICI_FriendStatus PDIPANKOKOL_FriendStat; // 0x20
 	public string LBODHBDOMGK_PlayerName; // 0x24
 	public string FGMPKKOOGCM_Comment; // 0x28
 	public string FAABJIHJKEM_DcNm; // 0x2C

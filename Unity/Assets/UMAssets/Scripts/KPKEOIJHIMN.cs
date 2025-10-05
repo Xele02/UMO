@@ -1,11 +1,11 @@
 
 public class KPKEOIJHIMN
 {
-    public enum GIDACIOHFNN
+    public enum GIDACIOHFNN_UpdateState
     {
-        NHHHCIINJKO = 0,
-        OGKLAGIPCEE = 1,
-        GJCDHOAEIHP = 2,
+        NHHHCIINJKO_0_UpToDate = 0,
+        OGKLAGIPCEE_1_NewData = 1,
+        GJCDHOAEIHP_2_NewDownloadData = 2,
         DNKAABNOOBF = 3,
     }
 
@@ -39,14 +39,14 @@ public class KPKEOIJHIMN
     }
 
 	// // RVA: 0xD8E9D0 Offset: 0xD8E9D0 VA: 0xD8E9D0
-	public GIDACIOHFNN PGBOFGNOBLD()
+	public GIDACIOHFNN_UpdateState PGBOFGNOBLD()
     {
         if(CINGFPEPPED.AJBPBEALBOB_SakashoCurrentAssetRevision == null)
-            return GIDACIOHFNN.NHHHCIINJKO;
+            return GIDACIOHFNN_UpdateState.NHHHCIINJKO_0_UpToDate;
 
         if(IBLKLEMGCCG.AJBPBEALBOB_SakashoCurrentAssetRevision != CINGFPEPPED.AJBPBEALBOB_SakashoCurrentAssetRevision)
-            return GIDACIOHFNN.GJCDHOAEIHP;
+            return GIDACIOHFNN_UpdateState.GJCDHOAEIHP_2_NewDownloadData;
             
-		return GIDACIOHFNN.NHHHCIINJKO;
+		return GIDACIOHFNN_UpdateState.NHHHCIINJKO_0_UpToDate;
     }
 }

@@ -383,7 +383,7 @@ namespace XeApp.Game.Menu
 			ApplyCommonInfo();
 			OnChangeFilter();
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore, 0, () =>
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score, 0, () =>
 			{
 				//0xBF0888
 				m_isEndMyRankRequest = true;
@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 				if (!MenuScene.Instance.DirtyChangeScene)
 				{
 					if (KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() &&
-						!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0/*0*/))
+						!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease/*0*/))
 					{
 						yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP),
 							() =>
@@ -1273,7 +1273,7 @@ namespace XeApp.Game.Menu
 				m_eventId = m_eventCtrl.PGIIDPEGGPI_EventId;
 				m_currentEventType = m_eventCtrl.HIDHLFCBIDE_EventType;
 				m_eventStatus = m_eventCtrl.NGOFCFJHOMI_Status;
-				m_isEventTimeLimit = m_eventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5;
+				m_isEventTimeLimit = m_eventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod;
 				if(m_eventCtrl.MNDFBBMNJGN_IsUsingTicket)
 				{
 					m_eventTicketId = m_eventCtrl.JKIADEKHGLC_TicketItemId;
@@ -1341,7 +1341,7 @@ namespace XeApp.Game.Menu
 			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting);
 			if(m_scoreEventCtrl != null)
 			{
-				m_isScoreEventTimeLimit = m_scoreEventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5;
+				m_isScoreEventTimeLimit = m_scoreEventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod;
 				m_eventStatus = m_scoreEventCtrl.NGOFCFJHOMI_Status;
 			}
 		}

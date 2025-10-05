@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			return true;
 		 } } //0xF57DAC
 		public bool IsEventCounting { get { return eventStatus == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting; } } //0xF58044
-		public bool IsEventEndChallengePeriod { get { return eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5; } } //0xF585C0
+		public bool IsEventEndChallengePeriod { get { return eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod; } } //0xF585C0
 
 		// // RVA: 0xF53A68 Offset: 0xF53A68 VA: 0xF53A68
 		public void Setup(MusicSelectMusicInfo musicInfo, MusicSelectCDSelect cdSelect, MusicSelectCDArrow cdArrow, PlayButtonWrapper playButtonUI, IKDICBBFBMI_EventBase eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, Action<IBJAKJJICBC> OnApplyMusicInfoBasic, IMCBBOAFION OnWebViewClose, DJBHIFLHJLK OnNetErrorToTitle, Action LeaveForScrollStart, Action EnterForScrollEnd, Action DelayedApplyMusicInfo)
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(boostSelectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.CNAMHABEOPF_1)
+					if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(boostSelectIndex) != MKIKFJKPEHK.IMIDFBNGHCG_EventMusicPlayCheck.CNAMHABEOPF_1_NeedStamina)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -795,7 +795,7 @@ namespace XeApp.Game.Menu
 				}
 				m_musicInfo.SetMusicAttr((GameAttribute.Type)musicData.FKDCCLPGKDK_JacketAttr);
 				m_cdSelect.ApplyCursorAttr((GameAttribute.Type)musicData.FKDCCLPGKDK_JacketAttr);
-				if(eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
+				if(eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 				{
 					MenuScene.Instance.BgControl.ChangeAttribute(GameAttribute.Type.None);
 				}

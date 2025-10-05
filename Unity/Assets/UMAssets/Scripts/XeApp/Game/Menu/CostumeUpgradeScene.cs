@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x16F8D48
 			MenuScene.Instance.InputDisable();
-			yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO.LEHHJINPFHA, null, BasicTutorialMessageId.Id_CostumeUpgradeSelect, InputLimitButton.None, TutorialPointer.Direction.Normal));
+			yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO_TutoUpgradeType.LEHHJINPFHA_2_CostumeUpgrade, null, BasicTutorialMessageId.Id_CostumeUpgradeSelect, InputLimitButton.None, TutorialPointer.Direction.Normal));
 			yield return TutorialManager.ShowTutorial(50, null);
 			bool isWait = true;
 			MenuScene.Save(() =>

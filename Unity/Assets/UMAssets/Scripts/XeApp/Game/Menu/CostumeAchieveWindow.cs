@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			}
 			m_rewardType.StartChildrenAnimGoStop(start, start);
 			LFAFJCNKLML.GFIPDFPIKIJ g;
-			LFAFJCNKLML.HKKKKFLBFJN(m_data, data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH.HHJFDNIPODD_1);
+			LFAFJCNKLML.HKKKKFLBFJN(m_data, data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH_DisplayType.HHJFDNIPODD_1_Achieved);
 			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_value, m_rewardIcon, null);
 			m_rewardText.text = g.AKNGHELNIHO_ItemName + g.BONMCBFDMJE_ItemNum;
 			voicePlayer.PlayVoiceRandom(CostumeUpgradeVoiceDataTable.VoiceSetting(array2[(int)m_data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType], 1), -1);

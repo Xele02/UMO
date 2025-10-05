@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 					ex_raidboss_info_list = new List<FDPJBEAKPMA>();
 					for(int i = 0; i < contExt_.KNNHGJFJAEN_GetNumBosses(); i++)
 					{
-						List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.DPAGNOHCPPH> l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.FGPLEPGICPO_Mvp_2);
+						List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.DPAGNOHCPPH> l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP_WinType.FGPLEPGICPO_Mvp_2);
 						HOOEJMGLGFO h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt_.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						mvp_reward_list.Add(h);
-						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_1_First);
+						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP_WinType.DBPDLIPKFAL_1_First);
 						h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt_.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 							h.ADKDHKMPMHP_rate.Add(l[j].ADKDHKMPMHP_rate);
 						}
 						attack1st_reward_list.Add(h);
-						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_Defeat_0);
+						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP_WinType.NIHKBNNICFB_Defeat_0);
 						h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt_.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)

@@ -238,11 +238,11 @@ public class CGFNKMNBNBN
 
 	// [IteratorStateMachineAttribute] // RVA: 0x740FEC Offset: 0x740FEC VA: 0x740FEC
 	// // RVA: 0x12BB8F0 Offset: 0x12BB8F0 VA: 0x12BB8F0
-	// public static IEnumerator HIIJHIKDJCP(Action<Texture2D> KBCBGIGOLHP) { }
+	// public static IEnumerator HIIJHIKDJCP_SetLimitBgTexture(Action<Texture2D> KBCBGIGOLHP) { }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x741064 Offset: 0x741064 VA: 0x741064
 	// // RVA: 0x12BB99C Offset: 0x12BB99C VA: 0x12BB99C
-	// public static IEnumerator PKMMMMFMCBE(int _KEFGPJBKAOD_BgId, Action<Texture2D> KBCBGIGOLHP) { }
+	// public static IEnumerator PKMMMMFMCBE_SetBgTexture(int _KEFGPJBKAOD_BgId, Action<Texture2D> KBCBGIGOLHP) { }
 
 	// // RVA: 0x12BBA64 Offset: 0x12BBA64 VA: 0x12BBA64
 	public static bool DGCIHGPOMCI_CheckHomeBgExpire(long _JHNMKKNEENE_Time)

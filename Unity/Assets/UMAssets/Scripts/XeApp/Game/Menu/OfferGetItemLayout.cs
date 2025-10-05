@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		{
 			ChengeValkyrieForm(from);
 			KDHGBOOECKC.JNHGHDKLDEM data = new KDHGBOOECKC.JNHGHDKLDEM();
-			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI)offerType, offerId);
+			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI_OfferType)offerType, offerId);
 			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH_state.Length; i++)
 			{
 				if(data.NNDGIAEFMOG[from].LHMDABPNDDH_state[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0_set_Item)

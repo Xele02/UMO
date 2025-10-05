@@ -81,7 +81,7 @@ namespace XeApp.Game.Title
 			}
 			bool isWait = true;
 			//bool isGotoTitle = false;
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract/*8*/, () => {
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract/*8*/, () => {
 				//0x1BB52E0
 				isWait = false;
 			}, () => {

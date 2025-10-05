@@ -60,7 +60,7 @@ public class BIFNGFAIEIL
 								SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(snsData.AJIDLAGFPGM_TalkId);
 								if(header != null)
 								{
-									if(HLMJIADBPIJ.IBHJAMDGGMC((NJLGICBHIOC.EOFJDIACFEC)snsData.JKNGNIMLDDJ_UnlockType, snsData.DPIBHFNDJII_UnlockCond1, snsData.EKPBOLNFGJB_UnlockCond2, serverSave, db, time))
+									if(HLMJIADBPIJ.IBHJAMDGGMC((NJLGICBHIOC.EOFJDIACFEC_UnlockType)snsData.JKNGNIMLDDJ_UnlockType, snsData.DPIBHFNDJII_UnlockCond1, snsData.EKPBOLNFGJB_UnlockCond2, serverSave, db, time))
 									{
 										long i6468 = time + i78;
 										long l3 = time + i78;
@@ -95,7 +95,7 @@ public class BIFNGFAIEIL
 												{
 													if(!b)
 													{
-														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(snsData.MALFHCHNEFN_RoomId, snsData.AIPLIEMLHGC_SnsId, snsData.AJIDLAGFPGM_TalkId, 0);
+														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP_OpenSns(snsData.MALFHCHNEFN_RoomId, snsData.AIPLIEMLHGC_SnsId, snsData.AJIDLAGFPGM_TalkId, 0);
 														SNSRoomTextData.TalkData tData = Database.Instance.roomText.textData.FindData(j + header.startIndex);
 														BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[tData.charaId - 1];
 														string msg = Database.Instance.roomText.textData.FindMessage(tData.messageIndex);
@@ -134,7 +134,7 @@ public class BIFNGFAIEIL
 												{
 													if(!b)
 													{
-														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(snsData.MALFHCHNEFN_RoomId, snsData.AIPLIEMLHGC_SnsId, snsData.AJIDLAGFPGM_TalkId, 0);
+														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP_OpenSns(snsData.MALFHCHNEFN_RoomId, snsData.AIPLIEMLHGC_SnsId, snsData.AJIDLAGFPGM_TalkId, 0);
 														SNSRoomTextData.TalkData tData = Database.Instance.roomText.textData.FindData(j + header.startIndex);
 														BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[tData.charaId - 1];
 														string msg = charaInfo.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_9630;

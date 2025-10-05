@@ -33,10 +33,10 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "BCKCEEMNKCH")]
 		public int OAFJONPIFGM_EventId; // 0x10
 		[UMOMember(ReaderMember = "PIDAAPMCAML")]
-		public NMIGMCJHAIE JDJNNJEJDAJ_Type; // 0x14
+		public NMIGMCJHAIE_StoryPartType JDJNNJEJDAJ_Type; // 0x14
 		[UMOMember(ReaderMember = "OIAAFFHGBBD_AdvId")]
 		public int LOHMKCPKBON_AdvId; // 0x18
-		[UMOMember(ReaderMember = "ODNOJKHHEOP_c_id")]
+		[UMOMember(ReaderMember = "ODNOJKHHEOP_c_id")] // Perhaps CHMHPDHPDCD enum?
 		public int CHOFDPDFPDC_ConfigValue; // 0x1C
 		[UMOMember(ReaderMember = "DFMOIKJOCGH")] // UnlockSpCost
 		public int PFGAKEDKOPD_UnlockCost; // 0x20
@@ -50,12 +50,14 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		public int BPNKGDGBBFG; // 0x14
 	}
 
-	public enum NMIGMCJHAIE
+	[System.Obsolete("Use NMIGMCJHAIE_StoryPartType")]
+	public enum NMIGMCJHAIE {}
+	public enum NMIGMCJHAIE_StoryPartType
 	{
 		JFEDIMKFDNH_1_Prologue = 1,
 		GBECNPANBEA_2_Sns = 2,
 		OEDCONLFLHD_3_Epilogue = 3,
-		DCDEBCIMEMM_Opening = 4,
+		DCDEBCIMEMM_4_Opening = 4,
 		MOPAEGFEGCB_5_EpisodeStory = 5,
 	}
 
@@ -117,7 +119,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 				data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC_id;
 				data.PPEGAKEIEGM_Enabled = array[i].PLALNIIBLOF_en;
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
-				data.JDJNNJEJDAJ_Type = (NMIGMCJHAIE)array[i].PIDAAPMCAML;
+				data.JDJNNJEJDAJ_Type = (NMIGMCJHAIE_StoryPartType)array[i].PIDAAPMCAML;
 				data.LOHMKCPKBON_AdvId = array[i].OIAAFFHGBBD_AdvId;
 				data.CHOFDPDFPDC_ConfigValue = array[i].ODNOJKHHEOP_c_id;
 				data.PFGAKEDKOPD_UnlockCost = array[i].DFMOIKJOCGH;
@@ -146,7 +148,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		ENDMMNNOAIL_StoryPartInfo e = JPIGOBGOMON_StoryPartsList.Find((ENDMMNNOAIL_StoryPartInfo _GHPLINIACBB_x) =>
 		{
 			//0xFC7200
-			if(_GHPLINIACBB_x.PPEGAKEIEGM_Enabled == 2 && _GHPLINIACBB_x.JDJNNJEJDAJ_Type == NMIGMCJHAIE.GBECNPANBEA_2_Sns)
+			if(_GHPLINIACBB_x.PPEGAKEIEGM_Enabled == 2 && _GHPLINIACBB_x.JDJNNJEJDAJ_Type == NMIGMCJHAIE_StoryPartType.GBECNPANBEA_2_Sns)
 				return _GHPLINIACBB_x.LOHMKCPKBON_AdvId == _AIPLIEMLHGC_SnsId;
 			return false;
 		});

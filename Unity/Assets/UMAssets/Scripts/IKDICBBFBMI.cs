@@ -16,9 +16,9 @@ public class NHGEHCMPDAI
 
 public class LBNLAENLPNK
 {
-	public enum JEKODBEDOMM
+	public enum JEKODBEDOMM_DetailType
 	{
-		GBABFPJHPAG_0 = 0,
+		GBABFPJHPAG_0_Rule = 0,
 	}
 }
 
@@ -328,7 +328,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DE4E0 Offset: 0x8DE4E0 VA: 0x8DE4E0 Slot: 19
-	public virtual void HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH _HDAMBOOCIAA_ClearType)
+	public virtual void HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType _HDAMBOOCIAA_ClearType)
     {
         if(AGLILDLEFDK_Missions != null && OLDFFDMPEBM_Quests != null && NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/)
 		{
@@ -349,7 +349,7 @@ public abstract class IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x8DE830 Offset: 0x8DE830 VA: 0x8DE830 Slot: 20
-	public virtual void EBHPADDEJKH(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, GBNDFCEDNMG.CJDGJFINBFH _HDAMBOOCIAA_ClearType)
+	public virtual void EBHPADDEJKH(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, GBNDFCEDNMG.CJDGJFINBFH_ClearType _HDAMBOOCIAA_ClearType)
 	{
 		if(AGLILDLEFDK_Missions != null && OLDFFDMPEBM_Quests != null && OMNOFMEBLAD != null)
 		{
@@ -1259,7 +1259,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E233C Offset: 0x8E233C VA: 0x8E233C Slot: 69
-	public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM_DetailType _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		_BHFHGFKBOHH_OnSuccess();
 	}
@@ -1390,7 +1390,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8E2644 Offset: 0x8E2644 VA: 0x8E2644
 	public bool HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL)
 	{
-		return NGOFCFJHOMI_Status <= BELFNAHNMDL && BELFNAHNMDL > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/;
+		return NGOFCFJHOMI_Status <= BELFNAHNMDL && BELFNAHNMDL > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted/*1*/;
 	}
 
 	// // RVA: 0x8E2668 Offset: 0x8E2668 VA: 0x8E2668 Slot: 80

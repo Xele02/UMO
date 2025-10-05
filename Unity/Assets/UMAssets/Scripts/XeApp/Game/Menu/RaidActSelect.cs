@@ -92,10 +92,10 @@ namespace XeApp.Game.Menu
 			IBJAKJJICBC ib = m_eventMusicData.Get(m_isLine6Mode ? m_currentSelectIndex6 : m_currentSelectIndex, m_isLine6Mode, false);
 			SetViewMusicData(ib.GHBPLHBNMBK_FreeMusicId);
 			m_bossInfoLayout.InitLayout(raidController.JIBMOEHKMGB_SelectedBoss, raidController.AGEJGHGEGFF_GetBossName(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), raidController.MCBGNPBECCI_SupportBonusMax());
-			m_rootPanel.Left.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
-			m_rootPanel.Right.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
-			m_rootPanel.Left.SetBonusNum(raidController.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
-			m_rootPanel.Right.SetBonusNum(raidController.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
+			m_rootPanel.Left.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full));
+			m_rootPanel.Left.SetBonusNum(raidController.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetBonusNum(raidController.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full));
 			UpdatePanelOkButton();
 			m_musicInfo.MakeCache();
 			CrateQuestList();
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9EC644 Offset: 0x9EC644 VA: 0x9EC644
-		public void OnClickPlayButton(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH attackType)
+		public void OnClickPlayButton(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType attackType)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			CheckBossAlive(() =>
@@ -327,7 +327,7 @@ namespace XeApp.Game.Menu
 						return;
 					}
 					raidController.FDNIODNLDAI(attackType);
-					if(attackType >= JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal && attackType < JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full)
+					if(attackType >= JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal && attackType < JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full)
 					{
 						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowRaidAssistHelp))
 						{
@@ -566,8 +566,8 @@ namespace XeApp.Game.Menu
 				if(m_selectMusicData.MGJKEJHEBPO_Blocks[i].POOMOBGPCNE_IsLocked && diff >= (Difficulty.Type)i)
 					diff = (Difficulty.Type)(i - 1);
 			}
-			m_rootPanel.Left.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal));
-			m_rootPanel.Right.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full));
+			m_rootPanel.Left.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal));
+			m_rootPanel.Right.SetNeedAp(raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full));
 			m_buttonSet.SetEnemyHasSkill(m_selectMusicData.MGJKEJHEBPO_Blocks[(int)diff].HPBPDHPIBGN_enemy.CDEFLIHHNAB_HasSkills);
 			m_buttonSet.SetBadge(RaidActSelectOptionButton.OptionType.EvMission, IsReceiveMission());
 			m_musicInfo.ChangeSelectedDiff(diff);
@@ -739,18 +739,18 @@ namespace XeApp.Game.Menu
 			}
 			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
-			lw.OJOLFJGNEMO(0, musicId);
+			lw.OJOLFJGNEMO_MusicDownload(0, musicId);
 			pre = 0;
 			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_BgId, a, GetDanceDivaCount());
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50 && KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
 				{
-					lw.OJOLFJGNEMO(1, musicId);
+					lw.OJOLFJGNEMO_MusicDownload(1, musicId);
 				}
 				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
 			}
-			lw.OJOLFJGNEMO(2, musicId);
+			lw.OJOLFJGNEMO_MusicDownload(2, musicId);
 			m_eventMusicData.UpdateDownloadState(musicData.DLAEJOBELBH_MusicId);
 			UpdatePanelOkButton();
 			fader.Fade(0.5f, 0);
@@ -949,7 +949,7 @@ namespace XeApp.Game.Menu
 				raidController.GKCEHODEPMJ_GetBosses_WithOptionalPlayersNames(false, () =>
 				{
 					//0x144612C
-					if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+					if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 					{
 						PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 						{
@@ -957,7 +957,7 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Return(true);
 						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
-					else if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+					else if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status != NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 					{
 						endCallback();
 						return;
@@ -1141,7 +1141,7 @@ namespace XeApp.Game.Menu
 		private bool IsEndRaidEvent()
 		{
 			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-			if(raidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
+			if(raidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 			{
 				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
 				{

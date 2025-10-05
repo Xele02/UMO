@@ -19,10 +19,10 @@ public class HNKMEOKCNBI
 
     public delegate void EOOKLDPPIDJ(int _KIJAPOFAGPN_ItemId, int _HMFFHLPNMPH_count);
 
-    public enum BEABGIOEFLG
+    public enum BEABGIOEFLG_PlayerType
     {
-        HEEJBCDDOJJ_Friend = 0,
-        HNANENNPBCO_Fan = 1,
+        HEEJBCDDOJJ_0_Friend = 0,
+        HNANENNPBCO_1_Fan = 1,
         KJHABBHBFPD_2_Other = 2,
     }
 
@@ -106,7 +106,7 @@ public class HNKMEOKCNBI
 	}
 
 	// // RVA: 0x15FD448 Offset: 0x15FD448 VA: 0x15FD448
-	public void MFMIENLDJIL(int _PPFNGGCBJKC_id, BEABGIOEFLG _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
+	public void MFMIENLDJIL(int _PPFNGGCBJKC_id, BEABGIOEFLG_PlayerType _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
 		if(HAGBEKAHFFM(_PPFNGGCBJKC_id))
 		{
@@ -117,17 +117,17 @@ public class HNKMEOKCNBI
 		string str = "";
 		string str1 = "";
 		string str2 = "";
-		if(_INDDJNMPONH_type == BEABGIOEFLG.KJHABBHBFPD_2_Other)
+		if(_INDDJNMPONH_type == BEABGIOEFLG_PlayerType.KJHABBHBFPD_2_Other)
 		{
 			str1 = "deco_visit_count_other";
 			str2 = "deco_visit_other_counter_key";
 		}
-		else if(_INDDJNMPONH_type == BEABGIOEFLG.HNANENNPBCO_Fan)
+		else if(_INDDJNMPONH_type == BEABGIOEFLG_PlayerType.HNANENNPBCO_1_Fan)
 		{
 			str1 = "deco_visit_count_fan";
 			str2 = "deco_visit_fan_counter_key";
 		}
-		else if(_INDDJNMPONH_type == BEABGIOEFLG.HEEJBCDDOJJ_Friend)
+		else if(_INDDJNMPONH_type == BEABGIOEFLG_PlayerType.HEEJBCDDOJJ_0_Friend)
 		{
 			str1 = "deco_visit_count_friend";
 			str2 = "deco_visit_friend_counter_key";

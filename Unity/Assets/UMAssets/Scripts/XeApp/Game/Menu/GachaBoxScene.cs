@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		public class GachaBoxArgs : TransitionArgs
 		{
 			public int gachaBoxEventId { get; private set; } // 0x8
-			public HGFPAFPGIKG.KAFHMMOGLKO seasonType { get; set; } // 0xC
+			public HGFPAFPGIKG.KAFHMMOGLKO_GachaType seasonType { get; set; } // 0xC
 			public int halfTimeId { get; set; } // 0x10
 
 			// RVA: 0xEE0870 Offset: 0xEE0870 VA: 0xEE0870
@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		protected LayoutGachaBox m_layoutMain; // 0x48
 		protected LayoutGachaBoxResult m_layoutResult; // 0x4C
 		private ModelGachaBox m_boxObject; // 0x50
-		private HGFPAFPGIKG.KAFHMMOGLKO m_seasonType; // 0x54
+		private HGFPAFPGIKG.KAFHMMOGLKO_GachaType m_seasonType; // 0x54
 		private int m_halfTimeId; // 0x58
 		protected int m_eventId; // 0x5C
 		protected HGFPAFPGIKG m_view; // 0x60

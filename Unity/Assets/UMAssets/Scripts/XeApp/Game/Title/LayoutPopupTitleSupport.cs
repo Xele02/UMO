@@ -47,7 +47,7 @@ namespace XeApp.Game.Title
 				//0xE34BBC
 				if (popupControl != null)
 					popupControl.InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry, () =>
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.CCFMGBNHMNN_Inquiry, () =>
 				{
 					//0xE34D40
 					if (popupControl != null)
@@ -120,7 +120,7 @@ namespace XeApp.Game.Title
 			if(popupControl != null)
 			{
 				popupControl.InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information, () =>
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GCCBFIFJHII_Information, () =>
 				{
 					//0xE34FA0
 					if (popupControl != null)

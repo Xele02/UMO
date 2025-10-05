@@ -204,9 +204,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1852C24 Offset: 0x1852C24 VA: 0x1852C24
-		private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
+		private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH_Serie seriesIcon)
 		{
-			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0_None && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH_Serie.HJNNKCMLGFL_0_None && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH_Serie.LCBPJOKNKPL_7)
 			{
 				if (m_LogoTextureUvNameTable[(int)seriesIcon - 1] == null)
 					m_SeriesLog.enabled = false;

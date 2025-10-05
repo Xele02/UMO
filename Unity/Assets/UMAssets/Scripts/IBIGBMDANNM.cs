@@ -2,17 +2,17 @@ using System.Collections.Generic;
 
 public class IBIGBMDANNM
 {
-	public enum LJJOIIAEICI
+	public enum LJJOIIAEICI_FriendStatus
 	{
 		CCAPCGPIIPF_0_Normal = 0, // Guest
-		HEEJBCDDOJJ_Friend = 1,
-		BGHNFBANAMN_2 = 2,
+		HEEJBCDDOJJ_1_Friend = 1,
+		BGHNFBANAMN_2_Requested = 2,
 		FCDDHHKAGEP_3_Request = 3, // ??
 	}
 	
 	public long AJECHDLMKOE_LastLogin; // 0x10
 	public long DHIFKMEFABP; // 0x18
-	public LJJOIIAEICI LHMDABPNDDH_state; // 0x28
+	public LJJOIIAEICI_FriendStatus LHMDABPNDDH_state; // 0x28
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_PlayerData; // 0x2C
 	public bool ONAFFLLLBHE_IsSelf; // 0x30
 	public int FJOLNJLLJEJ_rank; // 0x34
@@ -49,7 +49,7 @@ public class IBIGBMDANNM
 			MLPEHNBNOGD_PlayerId = _PPFNGGCBJKC_id;
 			this.AHEFHIMGIBI_PlayerData = _AHEFHIMGIBI_PlayerData;
 			LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(_IFNLEKOILPM_updated_at, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-			LHMDABPNDDH_state = _MLEHCBKPNGK_IsFriend ? LJJOIIAEICI.HEEJBCDDOJJ_Friend : LJJOIIAEICI.CCAPCGPIIPF_0_Normal;
+			LHMDABPNDDH_state = _MLEHCBKPNGK_IsFriend ? LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend : LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal;
 			return true;
 		}
 		return false;
@@ -81,6 +81,6 @@ public class IBIGBMDANNM
 		MLPEHNBNOGD_PlayerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
 		AJECHDLMKOE_LastLogin = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(AJECHDLMKOE_LastLogin, AJECHDLMKOE_LastLogin);
-		LHMDABPNDDH_state = LJJOIIAEICI.CCAPCGPIIPF_0_Normal;
+		LHMDABPNDDH_state = LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal;
 	}
 }

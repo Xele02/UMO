@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		private BoxTexture[] m_textures; // 0x2C
 
 		// RVA: 0x1045784 Offset: 0x1045784 VA: 0x1045784
-		public void Setup(HGFPAFPGIKG.KAFHMMOGLKO type, int halfTimeId)
+		public void Setup(HGFPAFPGIKG.KAFHMMOGLKO_GachaType type, int halfTimeId)
 		{
 			for(int i = 0; i < m_meshes.Length; i++)
 			{

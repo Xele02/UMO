@@ -120,39 +120,39 @@ namespace XeApp.Game.Menu
 			episodeList = new List<int>();
 			if(RecordPlateUtility.IsResultConfirm)
 			{
-				if (!viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4, ref highList, ref infoList, ref episodeList))
+				if (!viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard, ref highList, ref infoList, ref episodeList))
 					yield break;
 				yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 			}
 			else
 			{
-				if(sceneType != RecordPlateUtility.eSceneType.Gacha && viewData.JDKOAKDLHMG(/*1*/GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL, ref highList, ref infoList, ref episodeList))
+				if(sceneType != RecordPlateUtility.eSceneType.Gacha && viewData.JDKOAKDLHMG(/*1*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.GBIDBHKEPGL_1, ref highList, ref infoList, ref episodeList))
 				{
 					yield return Co.R(m_prpController.NewGetPhase(infoList, null));
 				}
-				if(viewData.JDKOAKDLHMG(/*2*/GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, ref highList, ref infoList, ref episodeList))
+				if(viewData.JDKOAKDLHMG(/*2*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode, ref highList, ref infoList, ref episodeList))
 				{
-					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2/*2*/, episodeList, null));
+					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode/*2*/, episodeList, null));
 				}
-				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3/*3*/, ref highList, ref infoList, ref episodeList))
+				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp/*3*/, ref highList, ref infoList, ref episodeList))
 				{
 					yield return Co.R(m_prpController.RarityUpPhase(highList, null));
 					yield return Co.R(m_prpController.SkillEvolutionPhase(highList, null));
 				}
 				if(sceneType != RecordPlateUtility.eSceneType.RarityUp)
 				{
-					if (viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4, ref highList, ref infoList, ref episodeList))
+					if (viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard, ref highList, ref infoList, ref episodeList))
 					{
 						yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 					}
 				}
-				if (viewData.JDKOAKDLHMG(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7, ref highList, ref infoList, ref episodeList))
+				if (viewData.JDKOAKDLHMG(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.BKHAAGAAIHJ_7_Episode, ref highList, ref infoList, ref episodeList))
 				{
-					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7, episodeList, null));
+					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.BKHAAGAAIHJ_7_Episode, episodeList, null));
 				}
 				if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 				{
-					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8, ref highList, ref infoList, ref episodeList))
+					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster, ref highList, ref infoList, ref episodeList))
 					{
 						yield return Co.R(m_prpController.GetPosterPhase(infoList, null));
 					}

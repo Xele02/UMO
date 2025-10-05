@@ -137,7 +137,7 @@ public class OLLAFCBLMIJ
                                 CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
                                 {
                                     //0xCAAF88
-                                    ILCCJNDFFOB.HHCJCDFCLOB.CDNFJBAJAMM(ev, _ECDKPAIEFFA_DayId);
+                                    ILCCJNDFFOB.HHCJCDFCLOB.CDNFJBAJAMM_PresentCampaignEntry(ev, _ECDKPAIEFFA_DayId);
                                     CFHALLLJAOP();
                                 }, _AOCANKOMKFG_OnError, null);
                             }

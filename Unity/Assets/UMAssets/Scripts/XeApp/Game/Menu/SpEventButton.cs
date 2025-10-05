@@ -67,37 +67,37 @@ namespace XeApp.Game.Menu
 			m_newMarkIcon.SetActive(viewData.LHMOAJAIJCO_is_new);
 			switch(viewData.PNDEAHGLJIC_BtnType)
 			{
-				case OHKECKAPJJL.GPNHNIGPGCL.PDCBCIGDPHL_1_Gacha1:
-				case OHKECKAPJJL.GPNHNIGPGCL.ILBPPODCPPP_9_Gacha2:
-				case OHKECKAPJJL.GPNHNIGPGCL.LAJAJEMJBFC_12_Gacha3:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.PDCBCIGDPHL_1_Gacha1:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.ILBPPODCPPP_9_Gacha2:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.LAJAJEMJBFC_12_Gacha3:
 					ApplyGachaButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.DLNKBNOECAG_2_Mission1:
-				case OHKECKAPJJL.GPNHNIGPGCL.MLDKHMADOAD_13_Mission2:
-				case OHKECKAPJJL.GPNHNIGPGCL.OCHMPNOEELL_14_Mission3:
-				case OHKECKAPJJL.GPNHNIGPGCL.NKCLBKDFOCM_15_Mission4:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.DLNKBNOECAG_2_Mission1:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.MLDKHMADOAD_13_Mission2:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.OCHMPNOEELL_14_Mission3:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.NKCLBKDFOCM_15_Mission4:
 					ApplyMissionButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.NOBPFBOJLJD_3_Campaign:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.NOBPFBOJLJD_3_Campaign:
 					ApplyCampaignButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.LKPNOOKDFHH_4_StoneSale:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.LKPNOOKDFHH_4_StoneSale:
 					ApplyStoneSaleButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.PEEBEIHMLIO_5_NyanCuzi:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.PEEBEIHMLIO_5_NyanCuzi:
 					ApplyNyanCuziButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.GLLGHGMHCKF_6_Event1:
-				case OHKECKAPJJL.GPNHNIGPGCL.CKPLJKICBKB_7_Event2:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.GLLGHGMHCKF_6_Event1:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.CKPLJKICBKB_7_Event2:
 					ApplyEventButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.ODPGFIPCFEF_8_DailyAdv:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.ODPGFIPCFEF_8_DailyAdv:
 					ApplyDailyAdv(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.NNJBAJMNBCM_10_Offer:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.NNJBAJMNBCM_10_Offer:
 					ApplyOfferButton(viewData);
 					break;
-				case OHKECKAPJJL.GPNHNIGPGCL.DIDJLIPNCKO_18_Bingo:
+				case OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.DIDJLIPNCKO_18_Bingo:
 					ApplyBingoButton(viewData);
 					break;
 			}
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 		private void ApplyLimitDate(OHKECKAPJJL viewData)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutLimit.StartChildrenAnimGoStop("01");
 				DateTime dt = Utility.GetLocalDateTime(viewData.PDBPFJJCADD_open_at);
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(viewData.OAAKAAFFFLE >= OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End && viewData.OAAKAAFFFLE < OHKECKAPJJL.ONKLMFNGCHJ.IOPLLOIHMJC_7)
+				if(viewData.OAAKAAFFFLE >= OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End && viewData.OAAKAAFFFLE < OHKECKAPJJL.ONKLMFNGCHJ_SpStep.IOPLLOIHMJC_7_Last)
 					m_layoutLimit.StartChildrenAnimGoStop("00");
 				else
 					m_layoutLimit.StartChildrenAnimGoStop("02");
@@ -153,9 +153,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DE3A0 Offset: 0x12DE3A0 VA: 0x12DE3A0
 		private void ApplyGachaButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.FBFBGLONIME_6_AfterGacha)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.FBFBGLONIME_6_AfterGacha)
 			{
-				if(viewData.PNDEAHGLJIC_BtnType == OHKECKAPJJL.GPNHNIGPGCL.LAJAJEMJBFC_12_Gacha3)
+				if(viewData.PNDEAHGLJIC_BtnType == OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.LAJAJEMJBFC_12_Gacha3)
 				{
 					m_layoutDisable.StartChildrenAnimGoStop("03");
 					m_layoutLimit.StartChildrenAnimGoStop("02");
@@ -172,11 +172,11 @@ namespace XeApp.Game.Menu
 					m_layoutLimit.StartChildrenAnimGoStop("00");
 				}
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 			}
@@ -188,18 +188,18 @@ namespace XeApp.Game.Menu
 		private void ApplyMissionButton(OHKECKAPJJL viewData)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(viewData.MMJHAMFEHCH == OHKECKAPJJL.NBADGBJMBMM.IIBKMHIDNPM_1)
+			if(viewData.MMJHAMFEHCH == OHKECKAPJJL.NBADGBJMBMM_MissionStatus.IIBKMHIDNPM_1_Reward)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("02");
 				m_textMessage.text = bk.GetMessageByLabel("event_sp_reward");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -209,12 +209,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DEBBC Offset: 0x12DEBBC VA: 0x12DEBBC
 		private void ApplyCampaignButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -228,12 +228,12 @@ namespace XeApp.Game.Menu
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("02");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -243,12 +243,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DEE74 Offset: 0x12DEE74 VA: 0x12DEE74
 		private void ApplyNyanCuziButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -259,18 +259,18 @@ namespace XeApp.Game.Menu
 		private void ApplyEventButton(OHKECKAPJJL viewData)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.FKHAJADPBJK_4_Epilogue)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.FKHAJADPBJK_4_Epilogue)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("02");
 				m_textMessage.text = bk.GetMessageByLabel("event_sp_epilogue");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.EMAMLLFAOJI_3_Counting)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.EMAMLLFAOJI_3_Counting)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("01");
@@ -286,11 +286,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DF268 Offset: 0x12DF268 VA: 0x12DF268
 		private void ApplyDailyAdv(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 			}
-			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			else if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 			}
@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DF4B0 Offset: 0x12DF4B0 VA: 0x12DF4B0
 		private void ApplyOfferButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 					Disable = true;
 				}
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
@@ -329,12 +329,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12DF6D4 Offset: 0x12DF6D4 VA: 0x12DF6D4
 		private void ApplyBingoButton(OHKECKAPJJL viewData)
 		{
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.NHICGIPPMBD_1_NotStarted)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.NHICGIPPMBD_1_NotStarted)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_End)
+			if(viewData.OAAKAAFFFLE == OHKECKAPJJL.ONKLMFNGCHJ_SpStep.OLCLJKOKJCD_5_End)
 			{
 				m_layoutDisable.StartChildrenAnimGoStop("04");
 				m_layoutMessage.StartChildrenAnimGoStop("00");

@@ -18,13 +18,13 @@ public class BOPFPIHGJMD
         GNHENCIPDFK_2 = 2,
     }
 	
-	public enum CMBJEEGFODD
+	public enum CMBJEEGFODD_OfferFlag
 	{
 		HJNNKCMLGFL_0_None = 0,
-		DPNBNKOOJHI_1 = 1,
+		DPNBNKOOJHI_1_Event = 1,
 		ELCJGBEKIKD_2 = 2,
-		PIICPBCIHKN_4 = 4,
-		CDFJPMPHNJM_8 = 8,
+		PIICPBCIHKN_4_Bonus = 4,
+		CDFJPMPHNJM_8_GreatSuccess = 8,
 		JPFLFLFFEDD_16 = 16,
 		HIJBHIFABFC_32 = 32,
 	}
@@ -41,29 +41,29 @@ public class BOPFPIHGJMD
 		NAGPNFFEBOF = 7,
 		AIGCGFJOEGK = 8,
 		KGEDHOOIJOI = 9,
-		LKFPALJBJFM_10 = 10,
-		KMCGPEACGEE_11 = 11,
+		LKFPALJBJFM_10_Atk = 10,
+		KMCGPEACGEE_11_Hit = 11,
 	}
 	
-	public enum AHIOHONIGDH
+	public enum AHIOHONIGDH_SeriesFlag
 	{
 		HJNNKCMLGFL_0_None = 0,
-		HOOPCKAOMGG_1 = 1,
-		GLICCOKGLPF_2 = 2,
-		IHCCBHDNHPC_4 = 4,
+		HOOPCKAOMGG_1_Delta = 1,
+		GLICCOKGLPF_2_Frontia = 2,
+		IHCCBHDNHPC_4_Seven = 4,
 		DBPDLIPKFAL_8_First = 8,
-		GDEJFFFHFGP_16 = 16,
+		GDEJFFFHFGP_16_Plus = 16,
 	}
 	
-	public enum LGEIPIHHNPH
+	public enum LGEIPIHHNPH_Serie
 	{
 		HJNNKCMLGFL_0_None = 0,
-		HOOPCKAOMGG_1 = 1,
-		GLICCOKGLPF_2 = 2,
-		IHCCBHDNHPC_3 = 3,
+		HOOPCKAOMGG_1_Delta = 1,
+		GLICCOKGLPF_2_Frontia = 2,
+		IHCCBHDNHPC_3_Seven = 3,
 		DBPDLIPKFAL_4_First = 4,
 		CFBJGAGBJEN_5 = 5,
-		GDEJFFFHFGP_6 = 6,
+		GDEJFFFHFGP_6_Plus = 6,
 		LCBPJOKNKPL_7 = 7,
 		AEFCOHJBLPO_8_Num = 8,
 	}
@@ -79,8 +79,8 @@ public class BOPFPIHGJMD
     public enum LEIPFJHOFPC
     {
         HJNNKCMLGFL_0_None = 0,
-        NBDBAFGEEGA_1 = 1,
-        GLFGNEILACA_2 = 2,
+        NBDBAFGEEGA_1_Occur = 1,
+        GLFGNEILACA_2_PowerUp = 2,
         GEJGMBBCFEE_3__max = 3,
     }
 	
@@ -91,23 +91,23 @@ public class BOPFPIHGJMD
 		GIFEEFPDPBD = 2,
 	}
 	
-	public enum AGGLEGJDLGF
+	public enum AGGLEGJDLGF_CompletionPayType
 	{
 		HJNNKCMLGFL_0_None = 0,
 		JPAODAPCJGG_1_Program = 1,
 		NLGNJNJBLEJ_2_Stone = 2,
 	}
 	
-	public enum GNGGLPCONLM
+	public enum GNGGLPCONLM_OperationsStatusFlag
 	{
 		HJNNKCMLGFL_0_None = 0,
-		OCKIDPJNNBP_1 = 1,
-		HHPBNBIEGHK_2 = 2,
-		BCMLFJPLKAM_4 = 4,
-		MGPHIBLKNMO_8 = 8,
+		OCKIDPJNNBP_1_OpUpdated = 1,
+		HHPBNBIEGHK_2_OpDone = 2,
+		BCMLFJPLKAM_4_DivaOpOccur = 4,
+		MGPHIBLKNMO_8_DivaOpPowerUp = 8,
 	}
 
-	public enum MLBMHDCCGHI
+	public enum MLBMHDCCGHI_OfferType
 	{
 		HJNNKCMLGFL_0_None = 0,
 		HEFPAOLDHCK_1_Daily = 1,
@@ -116,23 +116,23 @@ public class BOPFPIHGJMD
 		GENEIBGNMPH_4_Debut = 4,
 		GEJGMBBCFEE_5__max = 5,
 	}
-	public enum PDLKAKEABDP
+	public enum PDLKAKEABDP_Tuto
 	{
-		EILIAPKFCEO_0 = 0,
-		HFKNIAGOFKC_1 = 1,
-		LGJIPMIHAKC_2 = 2,
-		GHGLPOGHBBL_3 = 3,
+		EILIAPKFCEO_0_OfferRelease = 0,
+		HFKNIAGOFKC_1_OfferSend = 1,
+		LGJIPMIHAKC_2_DivaOffer = 2,
+		GHGLPOGHBBL_3_OfferDetail = 3,
 	}
 	
 	public enum FDDGIANLNAD
 	{
-		BCMLFJPLKAM_1 = 1,
+		BCMLFJPLKAM_1_DivaOpOccur = 1,
 		DMHGLBIOLLL_2 = 2,
 	}
 
-	public enum IGHPDAGKIKO
+	public enum IGHPDAGKIKO_OfferStatus
 	{
-		FLFIICJKPKF_0 = 0,
+		FLFIICJKPKF_0_None = 0,
 		EBAPFCDNMGD_1_Order = 1,
 		LGOIJAPMEBG_2_Progress = 2,
 		FJGFAPKLLCL_3_Achieved = 3,
@@ -140,12 +140,12 @@ public class BOPFPIHGJMD
 		GEJGMBBCFEE_5__max = 5,
 	}
 	
-	public enum FPKMKLDDCNL
+	public enum FPKMKLDDCNL_OfferTime
 	{
 		HJNNKCMLGFL_0_None = 0,
 		HNOJIKHAPHA_1_Morning = 1,
 		HCBFMFONIOE_2_Afternoon = 2,
-		KHLPAOENONH_3_Evening = 3,
+		KHLPAOENONH_3_Night = 3,
 	}
 	
 	public enum DLDOEOEFJKA

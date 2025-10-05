@@ -405,7 +405,7 @@ namespace XeApp.Game.AR
                                             mgr = null;
                                         }
                                         //LAB_013b86a0
-                                        ILCCJNDFFOB.HHCJCDFCLOB.ILLBGAFIBDE(GameManager.Instance.ar_session_id, data.no, data.eventId, data.markerId, !isHitDiva);
+                                        ILCCJNDFFOB.HHCJCDFCLOB.ILLBGAFIBDE_ArMarker(GameManager.Instance.ar_session_id, data.no, data.eventId, data.markerId, !isHitDiva);
                                         summonCnt++;
                                         m_arObject.SetDivaAndShow(data, summonCnt);
                                         m_arObject.transform.SetParent(m_currTrackingObj.transform);

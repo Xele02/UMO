@@ -589,7 +589,7 @@ namespace ExternLib
             Out :
                 damage => int
                 raidboss => LMJHOAHBDKN/CMPLGKFJCIC<EBHIMFFJBIJ>/LBICPMOLOKD
-                    status => (int)NHCDBBBMFFG
+                    status => (int)NHCDBBBMFFG_BossStatus
                     last_attack_player_id => int
                     id => int
                     unique_key => string
@@ -692,7 +692,7 @@ namespace ExternLib
                     encounter_player_id => int
                     created_at => long
                     escaped_at => long
-                    status => int(NHCDBBBMFFG)
+                    status => int(NHCDBBBMFFG_BossStatus)
                     [last_attack_player_id] => int
                     has_attacked => bool
                     can_receive_rewards => bool
@@ -758,7 +758,7 @@ namespace ExternLib
                     encounter_player_id => int
                     created_at => long
                     escaped_at => long
-                    status => int(NHCDBBBMFFG)
+                    status => int(NHCDBBBMFFG_BossStatus)
                     [last_attack_player_id] => int
                     has_attacked => bool
                     can_receive_rewards => bool

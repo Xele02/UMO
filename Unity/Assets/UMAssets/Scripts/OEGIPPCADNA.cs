@@ -512,7 +512,7 @@ public class OEGIPPCADNA
 		JKNGJFOBADP j = new JKNGJFOBADP();
 		for (int i = 0; i < PFEGHILDOGF.Count; i++)
 		{
-			j.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MDPHOJAPCCC, PFEGHILDOGF[i].LLNHMMBFPMA_ScoreRatingRanking.ToString());
+			j.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.MDPHOJAPCCC_44_UtaRankReward, PFEGHILDOGF[i].LLNHMMBFPMA_ScoreRatingRanking.ToString());
 			for(int k = 0; k < PFEGHILDOGF[i].LJNPPPOBHFK_ItemIds.Count; k++)
 			{
 				int id = PFEGHILDOGF[i].LJNPPPOBHFK_ItemIds[k];

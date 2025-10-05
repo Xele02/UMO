@@ -52,7 +52,7 @@ namespace XeApp.Game.Tutorial
 						});
 						if(f != null)
 						{
-							return f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1;
+							return f.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available;
 						}
 					}
 				}
@@ -120,7 +120,7 @@ namespace XeApp.Game.Tutorial
 				}, null);
 				while(isWait)
 					yield return null;
-				ILLPDLODANB.IHKAKFFAGPC(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48);
+				ILLPDLODANB.IHKAKFFAGPC(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit);
 				isWait = true;
 				mrg.SetInputLimit(InputLimitButton.Delegate, () =>
 				{
@@ -386,7 +386,7 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF88 Offset: 0x6AEF88 VA: 0x6AEF88
 		//// RVA: 0xE4A6AC Offset: 0xE4A6AC VA: 0xE4A6AC
-		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton/* = InputLimitButton.None*/, TutorialPointer.Direction direction/* = TutorialPointer.Direction.Normal*/)
+		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO_TutoUpgradeType type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton/* = InputLimitButton.None*/, TutorialPointer.Direction direction/* = TutorialPointer.Direction.Normal*/)
 		{
 			EBFLJMOCLNA_Costume pd; // 0x28
 			BasicTutorialManager mrg; // 0x2C
@@ -979,7 +979,7 @@ namespace XeApp.Game.Tutorial
 							//0xE4C350
 							return x.CMEJFJFOIIJ_QuestId == missionId;
 						});
-						if(q != null && q.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
+						if(q != null && q.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available)
 						{
 							return true;
 						}
@@ -1193,7 +1193,7 @@ namespace XeApp.Game.Tutorial
 					});
 					if (f != null)
 					{
-						if(f.CMCKNKKCNDK_status != FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
+						if(f.CMCKNKKCNDK_status != FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available)
 							return false;
 						return true;
 					}
@@ -1271,7 +1271,7 @@ namespace XeApp.Game.Tutorial
 				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 					return true;
 			}
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
 			{
 				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					return true;

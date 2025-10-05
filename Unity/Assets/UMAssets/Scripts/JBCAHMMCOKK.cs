@@ -7,57 +7,57 @@ using XeSys;
 
 public class JBCAHMMCOKK
 {
-    public enum ALEKHDPDOEA
+    public enum ALEKHDPDOEA_Type
     {
         HJNNKCMLGFL_0_None = 0,
         NIGFMKCDCNP = 1,
-        HMGJAOOGHMM_2 = 2,
-        CNCMFECBJHP_3 = 3,
-        BPCPDNGLNGO_4 = 4,
-        IDAIIJEMNMP_5 = 5,
-        NCBMILKEFCF_6 = 6,
-        OLJOBADEFGB_7 = 7,
-        NHANNKGPAHM_8 = 8,
-        KAEBCNOCLPJ_9 = 9,
-        FKGINHFBLJE_10 = 10,
-        AHJNOIGCCFC_11 = 11,
+        HMGJAOOGHMM_2_CustomUrl = 2,
+        CNCMFECBJHP_3_TemplateUrl = 3,
+        BPCPDNGLNGO_4_EventHome = 4,
+        IDAIIJEMNMP_5_Gacha = 5,
+        NCBMILKEFCF_6_SphereCostumeTicketGacha = 6,
+        OLJOBADEFGB_7_GachaUnknown = 7,
+        NHANNKGPAHM_8_Beginner = 8,
+        KAEBCNOCLPJ_9_RankingEvent = 9,
+        FKGINHFBLJE_10_WeeklyEvent = 10,
+        AHJNOIGCCFC_11_Event = 11,
         OJBBCGGNCKM = 12,
         CPKDCDBLDDG = 13,
         GNLFMDOELFC = 14,
-        MGJDKBFHDML_15 = 15,
-        GINEDIDMAAO_16 = 16,
+        MGJDKBFHDML_15_MusicSelect = 15,
+        GINEDIDMAAO_16_NewYear = 16,
         DMPMKBCPHMA_17_PresentCampaign = 17,
-        KBAKCIJPCAL_18 = 18,
-        KOLKHFLCBNP_19 = 19,
-        JNFDONGNAGP_20 = 20,
+        KBAKCIJPCAL_18_DebutGacha = 18,
+        KOLKHFLCBNP_19_StepUpGacha = 19,
+        JNFDONGNAGP_20_Gacha = 20,
         KJBGPOMJFBE_21_MonthlyPass = 21,
-        CIGFHJNCKPE_22 = 22,
-        BMHJMLDAPCE_23 = 23,
+        CIGFHJNCKPE_22_UnlimintedBingo = 22,
+        BMHJMLDAPCE_23_LimitedBingo = 23,
         GFFIILLPAMN = 24,
         OJEHIGOLJAL = 25,
         CADKONMJEDA_26_EventRaid = 26,
-        KCOEIKAMLBD_27 = 27,
+        KCOEIKAMLBD_27_GachaLimited = 27,
     }
 
-    public enum CFBANNFILFK
+    public enum CFBANNFILFK_URLType
     {
         HJNNKCMLGFL_0_None = 0,
-        GFGNICKOBBD_1 = 1,
-        GBAFHOOEKEA_2 = 2,
-        KKFFEJEKFEG = 3,
+        GFGNICKOBBD_1_TemplateURL = 1,
+        GBAFHOOEKEA_2_InfoDetailURL = 2,
+        KKFFEJEKFEG_3_OpenQuestURL = 3,
     }
 
     public enum JPLHJHGBMON
     {
         HJNNKCMLGFL_0_None = 0,
         CJFFCDKMFFL = 1,
-        HDHACKFJKGM_2 = 2,
+        HDHACKFJKGM_2_Next = 2,
         NFCADIPMKHK = 3,
         NEKOJOCFHKP_4 = 4,
     }
 
 	public int JLPLLECHHLG; // 0x8
-	public ALEKHDPDOEA NNHHNFFLCFO; // 0xC
+	public ALEKHDPDOEA_Type NNHHNFFLCFO; // 0xC
 	public string PIBLLGLCJEO_Param; // 0x10
 	public string FEMMDNIELFC_Desc; // 0x14
 	public long KJBGCLPMLCG_OpenedAt; // 0x18
@@ -68,7 +68,7 @@ public class JBCAHMMCOKK
 	public bool LDLFAKLAMFG; // 0x31
 	public bool AKGKKPGAJEM; // 0x32
 	public bool OACANKMEKPB; // 0x33
-	public CFBANNFILFK ICKKKEIFKJP; // 0x34
+	public CFBANNFILFK_URLType ICKKKEIFKJP; // 0x34
 	public string PEDBFNIOCEN; // 0x38
 	public string IAMFPLLOHFO; // 0x3C
 	public int KGICDMIJGDF_Group; // 0x40
@@ -143,7 +143,7 @@ public class JBCAHMMCOKK
 	{
 		JJCJKALEIAC_HomePickup.COBEFDFGLKA dbPickup = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NFDHMGGLEPN_HomePickup.CDENCMNHNGA_table[DMBENBAGDON - 1];
 		JLPLLECHHLG = dbPickup.PPFNGGCBJKC_id;
-		NNHHNFFLCFO = (ALEKHDPDOEA)dbPickup.GMELAKNFKMG;
+		NNHHNFFLCFO = (ALEKHDPDOEA_Type)dbPickup.GMELAKNFKMG;
 		PIBLLGLCJEO_Param = dbPickup.PIBLLGLCJEO_Param;
 		FEMMDNIELFC_Desc = dbPickup.FEMMDNIELFC_Desc;
 		KJBGCLPMLCG_OpenedAt = dbPickup.PDBPFJJCADD_open_at;
@@ -166,18 +166,18 @@ public class JBCAHMMCOKK
 		if(!AKGKKPGAJEM)
 		{
 			if (dbPickup.ADHCKHFANAL == 1)
-				ICKKKEIFKJP = CFBANNFILFK.GFGNICKOBBD_1/*1*/;
+				ICKKKEIFKJP = CFBANNFILFK_URLType.GFGNICKOBBD_1_TemplateURL/*1*/;
 			else if(dbPickup.ADHCKHFANAL == 2)
-				ICKKKEIFKJP = CFBANNFILFK.GBAFHOOEKEA_2/*2*/;
+				ICKKKEIFKJP = CFBANNFILFK_URLType.GBAFHOOEKEA_2_InfoDetailURL/*2*/;
 			else if (dbPickup.ADHCKHFANAL == 3)
-				ICKKKEIFKJP = CFBANNFILFK.KKFFEJEKFEG/*3*/;
+				ICKKKEIFKJP = CFBANNFILFK_URLType.KKFFEJEKFEG_3_OpenQuestURL/*3*/;
 		}
 		else
 		{
 			if(dbPickup.ODOAFNMJIMA == 1)
-				ICKKKEIFKJP = CFBANNFILFK.GFGNICKOBBD_1/*1*/;
+				ICKKKEIFKJP = CFBANNFILFK_URLType.GFGNICKOBBD_1_TemplateURL/*1*/;
 			else if (dbPickup.ODOAFNMJIMA == 2)
-				ICKKKEIFKJP = CFBANNFILFK.GBAFHOOEKEA_2/*2*/;
+				ICKKKEIFKJP = CFBANNFILFK_URLType.GBAFHOOEKEA_2_InfoDetailURL/*2*/;
 		}
 	}
 
@@ -564,7 +564,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD_ShowPopup = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA_Type.HMGJAOOGHMM_2_CustomUrl/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -576,7 +576,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD_ShowPopup = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA_Type.HMGJAOOGHMM_2_CustomUrl/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -588,7 +588,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD_ShowPopup = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA_Type.HMGJAOOGHMM_2_CustomUrl/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -857,7 +857,7 @@ public class JBCAHMMCOKK
 						data.EAHPLCJMPHD_PId = pickup.KNHOMNONOEB_AssetId;
 						if (!b)
 							data.BJIMIONBKDD_ShowPopup = false;
-						data.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
+						data.NNHHNFFLCFO = ALEKHDPDOEA_Type.HMGJAOOGHMM_2_CustomUrl/*2*/;
 						NNDGIAEFMOG.Add(data);
 					}
 				}
@@ -878,7 +878,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD_ShowPopup = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2;
+					j.NNHHNFFLCFO = ALEKHDPDOEA_Type.HMGJAOOGHMM_2_CustomUrl;
 					NNDGIAEFMOG.Add(j);
 				}
 				break;
@@ -1098,7 +1098,7 @@ public class JBCAHMMCOKK
 								long a6 = br.ReadInt64();
 								for(int j = 0; j < NNDGIAEFMOG.Count; j++)
 								{
-									if(NNDGIAEFMOG[j].HCAIOHFNCPE == JPLHJHGBMON.HDHACKFJKGM_2 || NNDGIAEFMOG[j].HCAIOHFNCPE == JPLHJHGBMON.NEKOJOCFHKP_4)
+									if(NNDGIAEFMOG[j].HCAIOHFNCPE == JPLHJHGBMON.HDHACKFJKGM_2_Next || NNDGIAEFMOG[j].HCAIOHFNCPE == JPLHJHGBMON.NEKOJOCFHKP_4)
 									{
 										if(NNDGIAEFMOG[j].JLPLLECHHLG == a3)
 										{

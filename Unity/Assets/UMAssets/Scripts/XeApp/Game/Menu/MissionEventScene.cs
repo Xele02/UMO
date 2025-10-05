@@ -242,12 +242,12 @@ namespace XeApp.Game.Menu
 						{
 							if(m_cambackRankingStep == Step.None)
 							{
-								if(ev.KCHMKLPHOEB_GetStep() >= DJDJHGJHAJA.IOPLHHNPLGM.EHPECKJANLI_2 && ev.KCHMKLPHOEB_GetStep() < DJDJHGJHAJA.IOPLHHNPLGM.NCDPEOOJEKL_5)
+								if(ev.KCHMKLPHOEB_GetStep() >= DJDJHGJHAJA.IOPLHHNPLGM_Step.EHPECKJANLI_2 && ev.KCHMKLPHOEB_GetStep() < DJDJHGJHAJA.IOPLHHNPLGM_Step.NCDPEOOJEKL_5)
 								{
 									m_showingStep = Step.MissionSelect;
 									fmId = ev.LLCOKGMCNAF();
 								}
-								else if(ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.NCDPEOOJEKL_5)
+								else if(ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.NCDPEOOJEKL_5)
 								{
 									m_showingStep = Step.MissionConfirm;
 									fmId = ev.IGBPFGPPJOE();
@@ -731,7 +731,7 @@ namespace XeApp.Game.Menu
 			if(filterBit != 0)
 			{
 				bool res = false;
-				bool b = musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF.ALNCPFNNBLH_0);
+				bool b = musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.ALNCPFNNBLH_0);
 				if((filterBit & 1) != 0)
 				{
 					res |= musicData.BENDFLDLIAG_IsAvaiableForNumDiva(1);
@@ -921,7 +921,7 @@ namespace XeApp.Game.Menu
 				s.List = ev.AFOIGLCEBAE.FindAll((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
 				{
 					//0x10382CC
-					return _.CIANOCNPIFF_Type != KPJHLACKGJF_EventMission.MNIIDKPECMD.HIFIGCJNJDO_0_Music;
+					return _.CIANOCNPIFF_Type != KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.HIFIGCJNJDO_0_Music;
 				});
 				s.Buttons = new ButtonInfo[1]
 				{
@@ -1029,20 +1029,20 @@ namespace XeApp.Game.Menu
 			KPJHLACKGJF_EventMission ev = m_eventCtrl as KPJHLACKGJF_EventMission;
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			GameManager.Instance.CloseSnsNotice();
-			if(ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.EHPECKJANLI_2
-				|| ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.NHGCLAGKEOO_3)
+			if(ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.EHPECKJANLI_2
+				|| ev.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.NHGCLAGKEOO_3)
 			{
 				//LAB_00b464d0
 				m_selectedCardIndex = index;
 				ev.NAJMELNNCAN_SetSelectedCardIdx(index);
-				ev.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM.NCDPEOOJEKL_5);
+				ev.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM_Step.NCDPEOOJEKL_5);
 				ev.ACJFIFPCJDP();
 			}
 			else
 			{
 				m_selectedCardIndex = index;
 				ev.NAJMELNNCAN_SetSelectedCardIdx(index);
-				ev.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM.NCDPEOOJEKL_5);
+				ev.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM_Step.NCDPEOOJEKL_5);
 			}
 			categoryId = FindCategoryId(ev.IGBPFGPPJOE(), m_isLine6Mode);
 			if(categoryId < 1)
@@ -1073,7 +1073,7 @@ namespace XeApp.Game.Menu
 			this.StartCoroutineWatched(Co_WaitButtonAnime(() =>
 			{
 				//0xB490CC
-				(m_eventCtrl as KPJHLACKGJF_EventMission).PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM.EBEFOHNCAJD_4);
+				(m_eventCtrl as KPJHLACKGJF_EventMission).PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM_Step.EBEFOHNCAJD_4);
 				this.StartCoroutineWatched(Co_ChangeMode(Step.MissionSelect));
 			}));
 		}
@@ -1414,7 +1414,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!MenuScene.Instance.DirtyChangeScene)
 				{
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					{
 						yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
 						{
@@ -1569,12 +1569,12 @@ namespace XeApp.Game.Menu
 					m_LayoutMissonSelect.gameObject.SetActive(true);
 					m_LayoutEventSettingBtn.gameObject.SetActive(true);
 					m_LayoutMissonSelect.SetGahcaItemCount(missionEventCtrl.KFGOHDKANAC_GetDecoItemCount());
-					if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.EHPECKJANLI_2)
+					if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.EHPECKJANLI_2)
 					{
 						m_LayoutMissonSelect.Enter();
-						missionEventCtrl.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM.NHGCLAGKEOO_3);
+						missionEventCtrl.PNKKJJFBBIH_SetStep(DJDJHGJHAJA.IOPLHHNPLGM_Step.NHGCLAGKEOO_3);
 					}
-					else if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.NHGCLAGKEOO_3 || missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.EBEFOHNCAJD_4)
+					else if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.NHGCLAGKEOO_3 || missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.EBEFOHNCAJD_4)
 					{
 						m_LayoutMissonSelect.EnterMission();
 					}
@@ -1615,7 +1615,7 @@ namespace XeApp.Game.Menu
 					m_bonusButton.Enter();
 					m_buttonSet.SetOptionStyle(MusicSelectButtonSet.OptionStyle.QuestEventInfo, !selectMusicData.BJANNALFGGA_HasRanking, false, false, !IsEventMissionSupport());
 					m_overrideButtonStyle = MusicSelectButtonSet.OptionStyle.QuestEventInfo;
-					if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM.NCDPEOOJEKL_5)
+					if(missionEventCtrl.KCHMKLPHOEB_GetStep() == DJDJHGJHAJA.IOPLHHNPLGM_Step.NCDPEOOJEKL_5)
 					{
 						m_LayoutMissonSelect.EnterNormal(m_selectedCardIndex);
 					}

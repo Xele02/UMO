@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 			SetSeriesLogo(offerInfo.DFMOGBOPLEF_Series);
 			SetSeriesIcon(offerInfo.DFMOGBOPLEF_Series);
 			SetLevelIcon(offerInfo.CIEOBFIIPLD_Level, offerInfo.NBLBJCLIDNN_MaxLevel, offerInfo.NBHEBLNHOJO_IsMaxLevel);
-			if (offerInfo.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+			if (offerInfo.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva)
 				SetDivaOffer(offerInfo);
 			int loadCount = 0;
 			for (int i = 0; i < vfInfoList.Count; i++)
@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 		private void SetAbilityAnim(int valId, int index)
 		{
 			NHDJHOPLMDE n = new NHDJHOPLMDE(valId, 0);
-			if(n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.FJFMLFPJKNB_2, index == 0 ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12 : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11))
+			if(n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.FJFMLFPJKNB_2_ValkPosition, index == 0 ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12_Leader : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11_NonLeader))
 			{
 				m_valkyrieLayout[index].StartAllAnimLoop("logo_abi", "loen_abi");
 			}
@@ -208,12 +208,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x151E32C Offset: 0x151E32C VA: 0x151E32C
-		private void SetSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
+		private void SetSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH_Serie seriesIcon)
 		{
-			if(((int)seriesIcon | 2) != 7 && seriesIcon > 0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(((int)seriesIcon | 2) != 7 && seriesIcon > 0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH_Serie.LCBPJOKNKPL_7)
 			{
-				if (seriesIcon == BOPFPIHGJMD.LGEIPIHHNPH.GDEJFFFHFGP_6)
-					seriesIcon = BOPFPIHGJMD.LGEIPIHHNPH.CFBJGAGBJEN_5;
+				if (seriesIcon == BOPFPIHGJMD.LGEIPIHHNPH_Serie.GDEJFFFHFGP_6_Plus)
+					seriesIcon = BOPFPIHGJMD.LGEIPIHHNPH_Serie.CFBJGAGBJEN_5;
 				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_LogoTextureUvName, (int)seriesIcon));
 				if(data != null)
 				{
@@ -223,9 +223,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x151E474 Offset: 0x151E474 VA: 0x151E474
-		private void SetSeriesIcon(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
+		private void SetSeriesIcon(BOPFPIHGJMD.LGEIPIHHNPH_Serie seriesIcon)
 		{
-			if(seriesIcon > 0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			if(seriesIcon > 0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH_Serie.LCBPJOKNKPL_7)
 			{
 				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_IconTextureUvName, (int)seriesIcon));
 				if(data != null)

@@ -462,7 +462,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.FKLMPGJPDLL_2)
+				if(viewBoostData.EFFBJDMGIGO_GetBuyPossible(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG_EventMusicPlayCheck.FKLMPGJPDLL_2_NeedTicket)
 				{
 					//LAB_013b2f10
 					return base.CurrentMusicDecisionCheck(cancelCallback, viewBoostData, selectIndex);
@@ -822,7 +822,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease) && KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 				{
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
 					{

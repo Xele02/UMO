@@ -1100,16 +1100,16 @@ public class EGLJKICMCPG
 
 public class KLJCBKMHKNK
 {
-	public enum HHMPIIILOLD
+	public enum HHMPIIILOLD_ModeType
 	{
 		CCAPCGPIIPF_0_Normal = 0,
 		PFIOMNHDHCO_1_Valkyrie = 1,
 		FMLPIOFBCMA_2_Diva = 2,
-		CBHCEDGAGHL_AwakenDiva = 3,
-		EOMCAODFBCN_ValkyrieFail = 4,
-		FDBLOGGAKOE_DivaFail = 5,
-		MFOJOJCAJOP_AllItems = 6,
-		JKAPLHFHGKL = 6,
+		CBHCEDGAGHL_3_AwakenDiva = 3,
+		EOMCAODFBCN_4_ValkyrieFail = 4,
+		FDBLOGGAKOE_5_DivaFail = 5,
+		MFOJOJCAJOP_6_AllItems = 6,
+		JKAPLHFHGKL_6_ = 6,
 		AEFCOHJBLPO_7_Num = 7,
 	}
 
@@ -1117,7 +1117,7 @@ public class KLJCBKMHKNK
 	public int PPFNGGCBJKC_id; // 0xC
 
 	// RVA: 0x111C678 Offset: 0x111C678 VA: 0x111C678
-	public EGLJKICMCPG GCINIJEMHFK_Get(HHMPIIILOLD _CNDDKMJAIBG_mode)
+	public EGLJKICMCPG GCINIJEMHFK_Get(HHMPIIILOLD_ModeType _CNDDKMJAIBG_mode)
 	{
 		return CDENCMNHNGA_table[(int)_CNDDKMJAIBG_mode];
 	}

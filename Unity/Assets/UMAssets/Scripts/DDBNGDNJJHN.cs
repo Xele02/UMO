@@ -10,7 +10,7 @@ public class DDBNGDNJJHN_SecureFloat
 	private byte[] DLHDPLPLCAC = new byte[4]; // 0x10
 	private byte[] CKHLHOFMIPC_WorkBuffer = new byte[4]; // 0x14
 	private int ENOBDCFHELD; // 0x18
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x1C
+	public FENCAJJBLBH.EIAPDOGALDK_SecureGroup KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK_SecureGroup.PNLBHBFOECC_4_SecureValue/*4*/; // 0x1C
 	public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0x20
 
 	public float DNJEJEANJGL_Value

@@ -46,9 +46,9 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_descTableAnim; // 0x40
 		private bool m_isShow; // 0x44
 		private bool m_isOpen; // 0x45
-		private JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH m_attackType; // 0x48
+		private JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType m_attackType; // 0x48
 		public UnityAction OnClickPanelListner; // 0x4C
-		public UnityAction<JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH> OnClickPlayButtonListner; // 0x50
+		public UnityAction<JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType> OnClickPlayButtonListner; // 0x50
 
 		public bool IsOpen { get { return m_isOpen; } } //0x1454628
 
@@ -91,17 +91,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1449738 Offset: 0x1449738 VA: 0x1449738
-		public void SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH type, int ap)
+		public void SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType type, int ap)
 		{
 			m_attackType = type;
 			m_apCostNum.SetNumber(ap, 0);
-			if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full)
+			if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full)
 			{
 				m_typeTextAnim.StartChildrenAnimGoStop("02");
 				m_descTableAnim.StartChildrenAnimGoStop("01");
 				m_textDesc.text = MessageManager.Instance.GetMessage("menu", "raid_act_fullpower_desc_text");
 			}
-			else if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal)
+			else if(type == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal)
 			{
 				m_typeTextAnim.StartChildrenAnimGoStop("01");
 				m_descTableAnim.StartChildrenAnimGoStop("01");

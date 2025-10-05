@@ -467,7 +467,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			sm_Control.InputDisable();
 			m_MainLayout.ScrollDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0xF7DE5C
 				sm_Control.InputEnable();
@@ -486,7 +486,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			sm_Control.InputEnable();
 			m_MainLayout.ScrollDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_Settlement, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
 			{
 				//0xF7DF28
 				sm_Control.InputEnable();

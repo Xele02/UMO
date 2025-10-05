@@ -588,7 +588,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10F21C4 Offset: 0x10F21C4 VA: 0x10F21C4
-		public void PlayUpArrowAnimation(IDMPGHMNLHD.NPIEEGNKDEG kind)
+		public void PlayUpArrowAnimation(IDMPGHMNLHD.NPIEEGNKDEG_StatType kind)
 		{
 			if(m_growStatusTbl[(int)kind] == GrowthStatus.None)
 				return;

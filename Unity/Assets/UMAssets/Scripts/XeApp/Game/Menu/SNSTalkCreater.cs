@@ -910,7 +910,7 @@ namespace XeApp.Game.Menu
 					{
 						if(MenuScene.Instance.GetCurrentScene().name != TransitionList.Type.QUEST)
 						{
-							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.OMNJOCHOGDG_3), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG_TabType.OMNJOCHOGDG_3_SnsMission), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							yield return null;
 							if(MenuScene.Instance.DirtyChangeScene)
 							{

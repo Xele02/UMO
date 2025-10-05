@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1709EF8 Offset: 0x1709EF8 VA: 0x1709EF8
 		private void Start()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ(JpStringLiterals.StringLiteral_18923);
+			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18923);
 		}
 
 		// RVA: 0x1709FA4 Offset: 0x1709FA4 VA: 0x1709FA4
@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_HOME_000);
 							m_divaController.DivaPlayTouchReaction();
 							AloneCounter = 0;
-							ILCCJNDFFOB.HHCJCDFCLOB.FJBCAHAFLNO();
+							ILCCJNDFFOB.HHCJCDFCLOB.FJBCAHAFLNO_VopDivaTouch();
 						}
 					}
 				}
@@ -351,9 +351,9 @@ namespace XeApp.Game.Menu
 			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			if (pd != null)
 			{
-				if (!pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+				if (!pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
 				{
-					pd.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0, true);
+					pd.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease, true);
 				}
 			}
 			IsSaveing = true;
@@ -387,8 +387,8 @@ namespace XeApp.Game.Menu
 			KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.LHPDDGIJKNB_Reset();
 			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
 			yield return null;
-			IsFirstOrder = !pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1);
-			IsValkyrieHelp = !pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.GHGLPOGHBBL_3);
+			IsFirstOrder = !pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend);
+			IsValkyrieHelp = !pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.GHGLPOGHBBL_3_OfferDetail);
 			m_controller.ItemCheck.ButtonDisable();
 			if(IsFirstOrder)
 			{
@@ -414,9 +414,9 @@ namespace XeApp.Game.Menu
 			if(IsValkyrieHelp && !IsFirstOrder)
 			{
 				IsTutorial = true;
-				if(pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1))
+				if(pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend))
 				{
-					pd.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP.GHGLPOGHBBL_3, true);
+					pd.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP_Tuto.GHGLPOGHBBL_3_OfferDetail, true);
 					yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_OfferDetail));
 
 				}
@@ -491,14 +491,14 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_DivaOfferHelp()
 		{
 			//0x170CB7C
-			if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2))
+			if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.LGJIPMIHAKC_2_DivaOffer))
 			{
 				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(i + 1, KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(i + 1));
 				}
 				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP_Tuto.LGJIPMIHAKC_2_DivaOffer, true);
 				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_OpenDivaOffer));
 			}
 		}
@@ -517,7 +517,7 @@ namespace XeApp.Game.Menu
 				{
 					MenuScene.Instance.InputEnable();
 				}
-				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO.NHIOLMNADIO_0, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_CostumeUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down));
+				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO_TutoUpgradeType.NHIOLMNADIO_0_Home, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_CostumeUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down));
 				m_controller.ItemCheck.ButtonEnable();
 				IsEnterCorutineEnd = true;
 				IsTutorial = false;

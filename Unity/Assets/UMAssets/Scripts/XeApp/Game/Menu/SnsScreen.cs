@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 			UnityEngine.Debug.LogError("EntranceDefault");
 			if(m_sceneType == eSceneType.Menu)
 			{
-				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.PEPILDAEIEL/*45*/, 2, false);
+				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.PEPILDAEIEL_45_DebutMission5Sns/*45*/, 2, false);
 			}
 			yield return Co.R(layoutController.LoadLayout(SNSController.eType.Entrance, transform.parent, null, isBootAnimIn, m_orderType));
 			layoutController.LayoutSetup(SNSController.eType.Entrance, m_orderType);
@@ -311,7 +311,7 @@ namespace XeApp.Game.Menu
 			//0x12D659C
 			if(m_sceneType == eSceneType.Menu)
 			{
-				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.PEPILDAEIEL/*45*/, 2, false);
+				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.PEPILDAEIEL_45_DebutMission5Sns/*45*/, 2, false);
 			}
 			ILCCJNDFFOB.HHCJCDFCLOB.HGOGFPOCKFA_Sns(roomId, 0, 0);
 			if(!isBootAnimIn)

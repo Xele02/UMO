@@ -146,7 +146,7 @@ namespace XeApp.Game.Gacha
 		// RVA: 0x987E10 Offset: 0x987E10 VA: 0x987E10
 		public void SetTelopType(GCAHJLOGMCI.KNMMOMEHDON_GachaType selectMode, KBPDNHOKEKD_ProductId productData, string msg)
 		{
-            KBPDNHOKEKD_ProductId.KNEKLJHNHAK a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None;
+            KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None;
 			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 			{
 				m_textTelop.text = "";
@@ -157,20 +157,20 @@ namespace XeApp.Game.Gacha
 				m_textTelop.text = msg;
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4)
+			if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree)
 			{
 				m_symbolButton.StartAnim("free");
 				m_layoutTelop.StartChildrenAnimGoStop("01");
 				m_textTelop.text = bk.GetMessageByLabel("gacha_telop_05");
 			}
-			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3)
+			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.DKIKNLEDDBK_3_NextFree)
 			{
 				m_symbolButton.StartAnim("normal");
 				m_retryButton.SetConsume(productData.NPPGKNGIFGK_price);
 				m_layoutTelop.StartChildrenAnimGoStop("01");
 				m_textTelop.text = string.Format(bk.GetMessageByLabel("gacha_telop_04"), productData.HCMGHDNNJOM());
 			}
-			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None)
+			else if(a == KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None)
 			{
 				m_layoutTelop.StartChildrenAnimGoStop("02");
 			}

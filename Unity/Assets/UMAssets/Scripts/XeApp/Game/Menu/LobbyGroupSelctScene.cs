@@ -494,7 +494,7 @@ namespace XeApp.Game.Menu
 					EventLobbyArgs arg = new EventLobbyArgs();
 					arg.IsMyLobby = true;
 					arg.playerId = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId();
-					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP(1);
+					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP_LobbyVisit(1);
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_LOBBYMAIN, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}
 				else

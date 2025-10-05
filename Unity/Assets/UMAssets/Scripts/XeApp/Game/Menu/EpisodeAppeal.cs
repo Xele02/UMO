@@ -513,7 +513,7 @@ namespace XeApp.Game.Menu
 			IsFormChenge = true;
 			while(true)
 			{
-				if(m_valkyrieObj.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+				if(m_valkyrieObj.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter)
 					IsFormChenge = false;
 				yield return null;
 				if(!IsFormChenge)
@@ -524,7 +524,7 @@ namespace XeApp.Game.Menu
 			}
 			while(true)
 			{
-				if(m_valkyrieObj.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num && m_valkyrieObj.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+				if(m_valkyrieObj.GetCurrentForm() != FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num && m_valkyrieObj.GetCurrentForm() > FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter)
 				{
 					SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
 					IsFormChenge = false;

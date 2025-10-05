@@ -181,11 +181,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF9300 Offset: 0xCF9300 VA: 0xCF9300
-		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG showType, bool isMulti/* = false*/)
+		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType showType, bool isMulti/* = false*/)
 		{
 			int a = (int)showType - 3;
-			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/)
-				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG.HJNNKCMLGFL_0_None/*0*/;
+			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.GBIDBHKEPGL_1/*1*/)
+				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.HJNNKCMLGFL_0_None/*0*/;
 			return GameMessageManager.GetSceneCardName(cardId, ((int)showType | (a < 2 ? 1 : 0)) & (isMulti ? 1 : 0), "");
 		}
 	}

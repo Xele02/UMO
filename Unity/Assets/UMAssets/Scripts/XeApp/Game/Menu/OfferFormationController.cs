@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		//public void initializeTexture() { }
 
 		// RVA: 0x152322C Offset: 0x152322C VA: 0x152322C
-		public void platoonSetting(List<HEFCLPGPMLK.ANKPCIEKPAH> list, string attack, string hit, BOPFPIHGJMD.LGEIPIHHNPH OfferSeries, bool IsLackPower)
+		public void platoonSetting(List<HEFCLPGPMLK.ANKPCIEKPAH> list, string attack, string hit, BOPFPIHGJMD.LGEIPIHHNPH_Serie OfferSeries, bool IsLackPower)
 		{
 			m_layout.SetPlatoonName(m_view.NPMKEEANPBE(selectFormation + 1));
 			bool b1 = true;
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_Tuto(Action act)
 		{
 			//0x15255E8
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.HFKNIAGOFKC_1))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend))
 			{
 				ButtonBase[] btns = m_layout.GetComponentsInChildren<ButtonBase>();
 				ButtonBase btn = null;

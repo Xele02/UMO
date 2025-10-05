@@ -5,7 +5,7 @@ using XeSys;
 public class HHJHIFJIKAC { }
 public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 {
-    public enum IJFKAIHFJLF
+    public enum IJFKAIHFJLF_BonusType
     {
         HJNNKCMLGFL_0_None = 0,
         JGDEHOGIENP_1_Sphere_CostumeTicket = 1,
@@ -77,11 +77,11 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	// public HHJHIFJIKAC_BonusVc.MNGJPJBCMBH GOLBDLHCBCA(long _EOLFJGMAJAB_CurrentTime) { }
 
 	// // RVA: 0x1831284 Offset: 0x1831284 VA: 0x1831284
-	public MNGJPJBCMBH EKENMIDOHPL_GetActiveBonus(long _EOLFJGMAJAB_CurrentTime, IJFKAIHFJLF CHOIMHCMAHG/* = IJFKAIHFJLF.JEPMLKCJCPK_2_Bonus_4001_4002*/)
+	public MNGJPJBCMBH EKENMIDOHPL_GetActiveBonus(long _EOLFJGMAJAB_CurrentTime, IJFKAIHFJLF_BonusType _CHOIMHCMAHG_TypeId/* = IJFKAIHFJLF_BonusType.JEPMLKCJCPK_2_Bonus_4001_4002*/)
 	{
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
-			if(CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_type == (int)CHOIMHCMAHG)
+			if(CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_type == (int)_CHOIMHCMAHG_TypeId)
 			{
 				if (CDENCMNHNGA_table[i].PDBPFJJCADD_open_at <= _EOLFJGMAJAB_CurrentTime && CDENCMNHNGA_table[i].EGBOHDFBAPB_closed_at >= _EOLFJGMAJAB_CurrentTime)
 				{

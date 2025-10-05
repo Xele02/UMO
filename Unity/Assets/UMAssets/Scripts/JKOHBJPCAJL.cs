@@ -1,7 +1,7 @@
 
 public class JKOHBJPCAJL
 { 
-    public enum CNNCBDKIPGE
+    public enum CNNCBDKIPGE_Step
     {
         HJNNKCMLGFL_0_None = 0,
         OKBECHJJKND = 1,

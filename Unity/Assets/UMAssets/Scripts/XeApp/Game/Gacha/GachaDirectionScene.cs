@@ -658,7 +658,7 @@ namespace XeApp.Game.Gacha
 		private void OnClickLegalDescButton(Action endAction)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0x98AA90
 				if (endAction != null)
@@ -808,14 +808,14 @@ namespace XeApp.Game.Gacha
 				m_resultButtonUi.HideLegalDesc();
 			}
 			GONMPHKGKHI_RewardView view = RecordPlateUtility.ViewInitialize(RecordPlateUtility.eSceneType.Gacha, false);
-			if(view.LBHPMGDNPHK_IsAvailable(GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4))
+			if(view.LBHPMGDNPHK_IsAvailable(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard))
 			{
 				m_resultButtonUi.ShowConfirm();
 			}
 			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Gacha, null, false));
 			if(GameManager.Instance.IsTutorial)
 			{
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.KIBFDMGJFMO_22);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.KIBFDMGJFMO_22_GachaResult);
 				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GachaResult, () =>
 				{
 					//0x98A924

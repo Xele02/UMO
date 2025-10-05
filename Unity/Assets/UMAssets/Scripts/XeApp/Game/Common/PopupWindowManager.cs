@@ -348,7 +348,7 @@ namespace XeApp.Game.Common
 				MenuScene.Save(() =>
 				{
 					//0x1BC7EE8
-					ILCCJNDFFOB.HHCJCDFCLOB.PLEKHHPMELF(freeMusicId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3), recovery);
+					ILCCJNDFFOB.HHCJCDFCLOB.PLEKHHPMELF_HealItemConsume(freeMusicId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3), recovery);
 					OpenWeekRecoveryCompletionWindow(recovery, () =>
 					{
 						//0x1BC806C

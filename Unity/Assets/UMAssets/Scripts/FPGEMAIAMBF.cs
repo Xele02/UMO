@@ -8,15 +8,15 @@ public class FPGEMAIAMBF_RewardData
 {
 	public class LOIJICNJMKA
 	{
-		public enum KPGOMKPPJEE
+		public enum KPGOMKPPJEE_Status
 		{
-			PCNKFALHCDA = 0,
+			PCNKFALHCDA_0_None = 0,
 			FJGFAPKLLCL_1_Achieved = 1,
 			JMAFBDCPBJD_2_NewAchieved = 2,
 		}
 
 		public int FCDKJAKLGMB_TargetValue; // 0x8
-		public KPGOMKPPJEE CMCKNKKCNDK_status; // 0xC
+		public KPGOMKPPJEE_Status CMCKNKKCNDK_status; // 0xC
 		public string JDMIKEEIJFP = ""; // 0x10
 		public int KIJAPOFAGPN_ItemId = 0; // 0x14
 		public short MHFBCINOJEE_Num; // 0x18 ItemId
@@ -76,7 +76,7 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = otherInfo2.KNIFCANOHOC_score[i];
-			lo.CMCKNKKCNDK_status = i < rewardScoreList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_status = i < rewardScoreList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			lo.GONNICAJNLK(i+4, rewardInfo);
 			PDONJHCHBAE_ScoreReward.Add(lo);
 		}
@@ -85,7 +85,7 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = otherInfo2.NLKEBAOBJCM_combo[i];
-			lo.CMCKNKKCNDK_status = i < rewardComboList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_status = i < rewardComboList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			lo.GONNICAJNLK(i + 8, rewardInfo);
 			HFPMKBAANFO_ComboReward.Add(lo);
 		}
@@ -94,7 +94,7 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = rewardInfo.GPBKAAMLIBF(i);
-			lo.CMCKNKKCNDK_status = i < rewardClearList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_status = i < rewardClearList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			lo.GONNICAJNLK(i, rewardInfo);
 			IOCLNNCJFKA_ClearReward.Add(lo);
 		}
@@ -137,12 +137,12 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = data.KNIFCANOHOC_score[i];
-			data2.CMCKNKKCNDK_status = i < prevRewardScore[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			data2.CMCKNKKCNDK_status = i < prevRewardScore[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			if(prevRewardScore[AKNELONELJK_difficulty] <= i)
 			{
 				if(i < rewardScore[AKNELONELJK_difficulty])
 				{
-					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved;
+					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE_Status.JMAFBDCPBJD_2_NewAchieved;
 				}
 			}
 			data2.GONNICAJNLK(i + 4, rewardInfo);
@@ -155,12 +155,12 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = data.NLKEBAOBJCM_combo[i];
-			data2.CMCKNKKCNDK_status = i < prevRewardCombo[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			data2.CMCKNKKCNDK_status = i < prevRewardCombo[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			if (prevRewardCombo[AKNELONELJK_difficulty] <= i)
 			{
 				if (i < rewardCombo[AKNELONELJK_difficulty])
 				{
-					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved;
+					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE_Status.JMAFBDCPBJD_2_NewAchieved;
 				}
 			}
 			data2.GONNICAJNLK(i + 8, rewardInfo);
@@ -173,12 +173,12 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = rewardInfo.GPBKAAMLIBF(i);
-			data2.CMCKNKKCNDK_status = i < prevRewardClear[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			data2.CMCKNKKCNDK_status = i < prevRewardClear[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE_Status.FJGFAPKLLCL_1_Achieved : LOIJICNJMKA.KPGOMKPPJEE_Status.PCNKFALHCDA_0_None;
 			if (prevRewardClear[AKNELONELJK_difficulty] <= i)
 			{
 				if (i < rewardClear[AKNELONELJK_difficulty])
 				{
-					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_2_NewAchieved;
+					data2.CMCKNKKCNDK_status = LOIJICNJMKA.KPGOMKPPJEE_Status.JMAFBDCPBJD_2_NewAchieved;
 				}
 			}
 			data2.GONNICAJNLK(i, rewardInfo);

@@ -126,7 +126,7 @@ public class OKGLGHCBCJP_Database
 		LJKEOODGGJF_VcItem = 114,
 		NPOPGPFPLOL_HighscoreRating = 115,
 		AHKEJPLNAJK_LimitedCompoItem = 116,
-		CGKOFIKBMMI = 117,
+		CGKOFIKBMMI_117_Last = 117,
 
 	}
 

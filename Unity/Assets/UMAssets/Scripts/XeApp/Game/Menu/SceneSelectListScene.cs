@@ -535,9 +535,9 @@ namespace XeApp.Game.Menu
 							m_sceneSelectList.UpdateScore(m_musicBaseData);
 							if(!GameManager.Instance.IsTutorial)
 							{
-								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48, 2, false);
+								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit, 2, false);
 							}
-							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
+							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 						}
 						else
 						{
@@ -561,9 +561,9 @@ namespace XeApp.Game.Menu
 							m_sceneSelectList.UpdateScore(m_musicBaseData);
 							if(!GameManager.Instance.IsTutorial)
 							{
-								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48, 2, false);
+								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit, 2, false);
 							}
-							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, true, diva.AHHJLDLAPAN_DivaId);
+							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, true, diva.AHHJLDLAPAN_DivaId);
 						}
 					}
 					else
@@ -985,7 +985,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1385A84 Offset: 0x1385A84 VA: 0x1385A84 Slot: 25
 		protected override void OnTutorial()
 		{
-			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.BNLDNJNMFMC_6)
+			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.BNLDNJNMFMC_6_TeamSelect)
 			{
 				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Scene, null, null, TutorialPointer.Direction.Normal);
 			}

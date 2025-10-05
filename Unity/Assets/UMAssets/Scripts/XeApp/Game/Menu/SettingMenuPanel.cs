@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3C92C Offset: 0xC3C92C VA: 0xC3C92C Slot: 25
 		protected override void OnTutorial()
 		{
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JKGGACIFBOM_23);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.JKGGACIFBOM_23_StartUnitSetup);
 			BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DJPFJGKGOOF_5_Setting);
 			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_Setting, () =>
 			{
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 			//0xC3CC8C
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK_Avaiable() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
-				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO.CAPLNONHNCO/*1*/, m_menuButtons[4], BasicTutorialMessageId.Id_CostumeUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal));
+				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO_TutoUpgradeType.CAPLNONHNCO_1_SettingMenu/*1*/, m_menuButtons[4], BasicTutorialMessageId.Id_CostumeUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal));
 			}
 			else
 			{

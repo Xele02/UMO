@@ -1,11 +1,11 @@
 
 public class EPIFHEDDJAE
 {
-	public enum NGEDJNHECKN
+	public enum NGEDJNHECKN_AbilityType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		MGJDKBFHDML = 1,
-		FJFMLFPJKNB_2 = 2,
+		MGJDKBFHDML_1_MusicSelect = 1,
+		FJFMLFPJKNB_2_ValkPosition = 2,
 	}
 
 	public enum JAOBCBKBKJJ
@@ -13,7 +13,7 @@ public class EPIFHEDDJAE
 		HJNNKCMLGFL_0_None = 0,
 		FMHLGHDKJBC_1_Atk = 1,
 		JIOPJDJBLFK_2_Hit = 2,
-		FIFJJFPHOEM = 3,
+		FIFJJFPHOEM_3_GreatSuccessRatio = 3,
 	}
 
 	public enum JFEIHHBGFPF_AbilityCondition
@@ -24,8 +24,8 @@ public class EPIFHEDDJAE
 		KNMIMAAFAEB = 3,
 		CIFHKBNKGKJ = 4,
 		FANOODOOCFP = 5,
-		PPNNBADDNKB_11 = 11,
-		FHBJEIEPABF_12 = 12,
+		PPNNBADDNKB_11_NonLeader = 11,
+		FHBJEIEPABF_12_Leader = 12,
 	}
 
 	public const int IOGIPEHCGLF = 4;

@@ -75,13 +75,13 @@ public class PFIJNPCEOIL
 public class KBPDNHOKEKD { }
 public class KBPDNHOKEKD_ProductId
 {
-	public enum KNEKLJHNHAK
+	public enum KNEKLJHNHAK_FreeType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		LCLLMJGIMHC_1 = 1,
-		PBEMIDKNPNH_2 = 2,
-		DKIKNLEDDBK_3 = 3,
-		AAPLMEGMNJA_4 = 4,
+		LCLLMJGIMHC_1_OneFreePerDay = 1,
+		PBEMIDKNPNH_2_FirstTimeFree = 2,
+		DKIKNLEDDBK_3_NextFree = 3,
+		AAPLMEGMNJA_4_ThisTimeFree = 4,
 	}
 
 	public int PPFNGGCBJKC_id; // 0x8
@@ -223,31 +223,31 @@ public class KBPDNHOKEKD_ProductId
 	//public bool NIHLEOHPAFC() { }
 
 	//// RVA: 0x101D8E0 Offset: 0x101D8E0 VA: 0x101D8E0
-	public KNEKLJHNHAK FJICMLBOJCH()
+	public KNEKLJHNHAK_FreeType FJICMLBOJCH()
 	{
 		if(JENBPPBNAHP_PlayerNormalLotFreeState == null)
 		{
 			if(KHEGONOKLPN_NormalLotFreeSetting == null)
-				return KNEKLJHNHAK.HJNNKCMLGFL_0_None;
+				return KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None;
 		}
 		else
 		{
 			if(KHEGONOKLPN_NormalLotFreeSetting == null)
-				return KNEKLJHNHAK.HJNNKCMLGFL_0_None;
+				return KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None;
 			if(JENBPPBNAHP_PlayerNormalLotFreeState.LDBPAJKIPKD_IsNextFree && KHEGONOKLPN_NormalLotFreeSetting.EDHFIFDAJPA_IsFirstTime && KHEGONOKLPN_NormalLotFreeSetting.CDHKHOLCGAC_DurationDays < 0)
-				return KNEKLJHNHAK.PBEMIDKNPNH_2;
+				return KNEKLJHNHAK_FreeType.PBEMIDKNPNH_2_FirstTimeFree;
 			if(JENBPPBNAHP_PlayerNormalLotFreeState.LDBPAJKIPKD_IsNextFree && KHEGONOKLPN_NormalLotFreeSetting.CDHKHOLCGAC_DurationDays > 0)
-				return KNEKLJHNHAK.LCLLMJGIMHC_1;
+				return KNEKLJHNHAK_FreeType.LCLLMJGIMHC_1_OneFreePerDay;
 		}
 		if(KHEGONOKLPN_NormalLotFreeSetting.ACGICAHHCIG_ResetCount < 1)
-			return KNEKLJHNHAK.HJNNKCMLGFL_0_None;
+			return KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None;
 		else
 		{
 			if(JENBPPBNAHP_PlayerNormalLotFreeState == null)
-				return KNEKLJHNHAK.AAPLMEGMNJA_4;
+				return KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree;
 			if(JENBPPBNAHP_PlayerNormalLotFreeState.LJPIOGBFEKA_RemainsCount > 0)
-				return KNEKLJHNHAK.DKIKNLEDDBK_3;
-			return KNEKLJHNHAK.AAPLMEGMNJA_4;
+				return KNEKLJHNHAK_FreeType.DKIKNLEDDBK_3_NextFree;
+			return KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree;
 		}
 	}
 }

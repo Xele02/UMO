@@ -8,7 +8,7 @@ public class CEBFFLDKAEC_SecureInt
 	private int ENOBDCFHELD; // 0xC
 	private int DLHDPLPLCAC; // 0x10
 	private int FCEJCHGLFGN; // 0x14
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x18
+	public FENCAJJBLBH.EIAPDOGALDK_SecureGroup KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK_SecureGroup.PNLBHBFOECC_4_SecureValue/*4*/; // 0x18
 	public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0x1C
 
 	[UMOMember()]

@@ -268,7 +268,7 @@ namespace ExternLib
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_stat = 0;
 				}
 				CNLPPCFJEID_QuestInfo MABBBOEAPAA_p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
-				if(ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_p.INDDJNMPONH_type))
+				if(ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL_ValueType)MABBBOEAPAA_p.INDDJNMPONH_type))
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_stat = 3;
 			}
 			{
@@ -308,7 +308,7 @@ namespace ExternLib
 				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList.Count; j++)
 				{
 					FBIOJHECAHB_EventStory.ENDMMNNOAIL_StoryPartInfo storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList[j];
-					if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
+					if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE_StoryPartType.MOPAEGFEGCB_5_EpisodeStory)
 					{
 						if(storyEvent2.LOHMKCPKBON_AdvId > 0)
 						{

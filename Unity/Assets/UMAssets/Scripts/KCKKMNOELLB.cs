@@ -7,7 +7,7 @@ public class KCKKMNOELLB_SecureLong
 	private int ENOBDCFHELD; // 0x10
 	private long DLHDPLPLCAC; // 0x18
 	private int FCEJCHGLFGN; // 0x20
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4; // 0x24
+	public FENCAJJBLBH.EIAPDOGALDK_SecureGroup KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK_SecureGroup.PNLBHBFOECC_4_SecureValue; // 0x24
 	public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0x28
 
 	public long DNJEJEANJGL_Value { get { return DLHDPLPLCAC ^ ENOBDCFHELD; } set

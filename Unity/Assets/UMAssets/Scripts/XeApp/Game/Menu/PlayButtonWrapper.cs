@@ -39,11 +39,11 @@ namespace XeApp.Game.Menu
 			else
 			{
 				baseUI.SetupUnitLive(musicData, saveData);
-				if(!musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF.IANFNICOEFE_1))
+				if(!musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.IANFNICOEFE_1))
 				{
 					SetDisable(true);
 				}
-				if(!musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF.OGGMDNKPFEB_2))
+				if(!musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.OGGMDNKPFEB_2))
 				{
 					int lvl = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 					baseUI.ApplyEventEndMessage(string.Format(MessageManager.Instance.GetMessage("menu", "unit_multi_dance_lock_text"), lvl));

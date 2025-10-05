@@ -438,7 +438,7 @@ namespace XeApp.Game.Gacha
 			{
 				//LAB_009988d8
 				int v1 = 1;
-				KBPDNHOKEKD_ProductId.KNEKLJHNHAK v2 = 0;
+				KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType v2 = 0;
 				int v3 = 0;
 				if(d1 != null)
 				{
@@ -453,7 +453,7 @@ namespace XeApp.Game.Gacha
 					v4 = d2.CMHHHCAKPCD();
 					v5 = d2.ILFAHJEJCMH_GetPrice();
 				}
-				if(v2 > KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4 || ((1 << (int)v2) & 0x16U) == 0) // 0001 0110
+				if(v2 > KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree || ((1 << (int)v2) & 0x16U) == 0) // 0001 0110
 				{
 					if(v3 >= v1 || v4 >= v5)
 					{
@@ -1174,7 +1174,7 @@ namespace XeApp.Game.Gacha
 			if (h.PFLJNIANOHE)
 				return BadgeConstant.ID.Gacha_Update;
 			string s = "";
-			KBPDNHOKEKD_ProductId.KNEKLJHNHAK v = h.FJICMLBOJCH(out s);
+			KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType v = h.FJICMLBOJCH(out s);
 			if (v == 0)
 			{
 				if (!h.CPGNMGCIIKI())
@@ -1190,15 +1190,15 @@ namespace XeApp.Game.Gacha
 			{
 				switch(v)
 				{
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC_1/*1*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.LCLLMJGIMHC_1_OneFreePerDay/*1*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_oneday");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.PBEMIDKNPNH_2/*2*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.PBEMIDKNPNH_2_FirstTimeFree/*2*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_firsttime");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3/*3*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.DKIKNLEDDBK_3_NextFree/*3*/:
 						return 0;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4/*4*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree/*4*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_thistime");
 						break;
 				}

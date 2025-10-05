@@ -7,11 +7,11 @@ public class OPKDHAODJOA
 {
 	public delegate void NNDKLLAIINK();
 
-	public enum KJOKAECJKLE
+	public enum KJOKAECJKLE_Status
 	{
 		NFFGMBBNNPH_0_None = 0,
 		HIHKPNBDNJC_1_Running = 1,
-		OGBMKAILHMF = 2,
+		OGBMKAILHMF_2_Error = 2,
 	}
 
 	private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x8
@@ -20,7 +20,7 @@ public class OPKDHAODJOA
 	private int BLKIMNAILKK = 2; // 0x14
 	private int NNODMPKKCJH_RequestId; // 0x18
 
-	public KJOKAECJKLE CMCKNKKCNDK_status { get; private set; } // 0x1C CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status
+	public KJOKAECJKLE_Status CMCKNKKCNDK_status { get; private set; } // 0x1C CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status
 
 	//// RVA: -1 Offset: -1
 	public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action) where T : CACGCMBKHDI_Request
@@ -48,7 +48,7 @@ public class OPKDHAODJOA
 	//// RVA: 0xCB7550 Offset: 0xCB7550 VA: 0xCB7550
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		CMCKNKKCNDK_status = KJOKAECJKLE.NFFGMBBNNPH_0_None;
+		CMCKNKKCNDK_status = KJOKAECJKLE_Status.NFFGMBBNNPH_0_None;
 		LCIGLIDJILJ_Updater = LFKLIOKFGLP_Execute;
 		FCICFIAOLAM_RequestList.Clear();
 	}
@@ -64,7 +64,7 @@ public class OPKDHAODJOA
 	{
 		if (FCICFIAOLAM_RequestList.Count < 1)
 			return;
-		CMCKNKKCNDK_status = KJOKAECJKLE.HIHKPNBDNJC_1_Running;
+		CMCKNKKCNDK_status = KJOKAECJKLE_Status.HIHKPNBDNJC_1_Running;
 		N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
 		LCIGLIDJILJ_Updater = JADLLIFCGLG_CheckRequest;
 	}
@@ -85,7 +85,7 @@ public class OPKDHAODJOA
 				return;
 			}
 		}
-		CMCKNKKCNDK_status = KJOKAECJKLE.NFFGMBBNNPH_0_None;
+		CMCKNKKCNDK_status = KJOKAECJKLE_Status.NFFGMBBNNPH_0_None;
 		LCIGLIDJILJ_Updater = LFKLIOKFGLP_Execute;
 	}
 

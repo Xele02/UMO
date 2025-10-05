@@ -49,7 +49,7 @@ namespace XeApp.Game.Adv
 			{
 				JGEOBNENMAH.EDHCNKBMLGI a = SetupGame(advResult.FreeMusicId);
 				bool isSuccess = false;
-				JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND(a, () =>
+				JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(a, () =>
 				{
 					//0xE577D4
 					isSuccess = true;
@@ -102,7 +102,7 @@ namespace XeApp.Game.Adv
 			if(musicId < 0)
 			{
 				Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.NBFHAMJNMMG_25/*25*/);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.NBFHAMJNMMG_25_2ndLive/*25*/);
 			}
 			else
 			{

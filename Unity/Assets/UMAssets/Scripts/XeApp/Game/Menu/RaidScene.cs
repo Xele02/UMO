@@ -461,12 +461,12 @@ namespace XeApp.Game.Menu
 					yield return null;
 				m_bossInfoList.Clear();
 				m_deadBossList.Clear();
-				if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+				if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 				{
 					//LAB_00cec080
 					RaidController.PMIIMELDPAJ_GetMyBoss().LHPDDGIJKNB_Reset();
 				}
-				else if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+				else if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 				{
 					if(!RaidController.PMIIMELDPAJ_GetMyBoss().ICCOOAAJEIN_CanReceiveReward)
 					{
@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 						m_deadBossList.Add(RaidController.PMIIMELDPAJ_GetMyBoss());
 					}
 				}
-				else if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG.MBFHILFLPJL_1_Alive)
+				else if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.MBFHILFLPJL_1_Alive)
 				{
 					m_bossInfoList.Add(RaidController.PMIIMELDPAJ_GetMyBoss());
 				}
@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			m_bossInfoList.Clear();
 			m_deadBossList.Clear();
-			if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead && RaidController.PMIIMELDPAJ_GetMyBoss().ICCOOAAJEIN_CanReceiveReward)
+			if(RaidController.PMIIMELDPAJ_GetMyBoss().CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead && RaidController.PMIIMELDPAJ_GetMyBoss().ICCOOAAJEIN_CanReceiveReward)
 			{
 				m_deadBossList.Add(RaidController.PMIIMELDPAJ_GetMyBoss());
 			}
@@ -949,7 +949,7 @@ namespace XeApp.Game.Menu
 								}
 								else
 								{
-									RaidController.FDNIODNLDAI(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.EKIGHDLEBAH_4_MacrossCanon);
+									RaidController.FDNIODNLDAI(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.EKIGHDLEBAH_4_MacrossCanon);
 									RaidController.JDGCABLBFLH(() =>
 									{
 										//0x1824C4C
@@ -963,7 +963,7 @@ namespace XeApp.Game.Menu
 									{
 										//0x1824D6C
 										MenuScene.Instance.RaycastEnable();
-										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 										{
 											PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 											{
@@ -971,7 +971,7 @@ namespace XeApp.Game.Menu
 												this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
 											}, null, null, null, true, true, false, null, null, null, null, null);
 										}
-										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 										{
 											PopupWindowManager.Show(m_popRaidEscapedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 											{
@@ -1409,7 +1409,7 @@ namespace XeApp.Game.Menu
 				//0x18252AC
 				if(!IsEndRaidEvent())
 				{
-					if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+					if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 					{
 						PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 						{
@@ -1417,7 +1417,7 @@ namespace XeApp.Game.Menu
 							this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
 						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
-					else if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+					else if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status != NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 					{
 						isCallActSelect = true;
 						TransitionUniqueId t = TransitionUniqueId.HOME_LOBBYMAIN_RAID;
@@ -1603,7 +1603,7 @@ namespace XeApp.Game.Menu
 				AODFBGCCBPE data = AODFBGCCBPE.FKDIMODKKJD_GetList(false).Find((AODFBGCCBPE _) =>
 				{
 					//0x1825CD8
-					return _.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.FNJAOJBICJD_6_SuperGalaxyMedal;
+					return _.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNJAOJBICJD_6_SuperGalaxyMedal;
 				});
 				if(data != null)
 				{
@@ -1946,7 +1946,7 @@ namespace XeApp.Game.Menu
 					yield break;
 				}
 				MenuScene.Instance.InputEnable();
-				if(m_eventCtrl == null || m_eventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
+				if(m_eventCtrl == null || m_eventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 				{
 					//LAB_0182cfb8
 				}
@@ -2020,7 +2020,7 @@ namespace XeApp.Game.Menu
 				int num = Mathf.Clamp(addCount + RaidController.NPICFLFAIJK_GetNumTicket(), 0, d.DOOGFEGEKLG_max);
 				ev.NCBELAFIPDN_SetItemCount(RaidItemConstants.Type.FoldRadar, num, null);
 				m_bottomButtonLayout.SetItemNum(RaidController.NPICFLFAIJK_GetNumTicket());
-				ILCCJNDFFOB.HHCJCDFCLOB.JAHALBMOANH(RaidItemConstants.MakeItemId(RaidItemConstants.Type.FoldRadar), OAGBCBBHMPF.COIIJOEKBDH.PJPBCFKEGBC_38, ev.PGIIDPEGGPI_EventId.ToString(), addCount, num, 1);
+				ILCCJNDFFOB.HHCJCDFCLOB.JAHALBMOANH_GetItem(RaidItemConstants.MakeItemId(RaidItemConstants.Type.FoldRadar), OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.PJPBCFKEGBC_38_RaidTutorial, ev.PGIIDPEGGPI_EventId.ToString(), addCount, num, 1);
 			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x18263A4
@@ -2351,7 +2351,7 @@ namespace XeApp.Game.Menu
 		private bool IsEndRaidEvent()
 		{
 			RaidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-			if(RaidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
+			if(RaidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 			{
 				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
 				{

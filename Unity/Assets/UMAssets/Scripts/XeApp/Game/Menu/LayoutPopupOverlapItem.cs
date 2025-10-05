@@ -30,20 +30,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x173B070 Offset: 0x173B070 VA: 0x173B070
-		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, bool _isKira/* = false*/)
+		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, bool _isKira/* = false*/)
 		{
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster)
 			{
 				GONMPHKGKHI_RewardView.GCHFDJMNCAF d = info as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
 				SetDecoNum(d.GBALGEMKJKD_PrevBoard, d.HMGDINKEPHJ_NextBoard);
 				SetDecoImage(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(d.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef, d.BCCHOBPJJKE_SceneId));
 				return;
 			}
-			if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4)
+			if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard)
 			{
 				SetSubboardNum(info.LBGGNGCKOJE_PrevNumBoard, info.FICKICOHCAD_NextNumBoard);
 			}
-			else if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3)
+			else if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp)
 			{
 				SetRarity(info.MPGNHFDGOBO_PrevRarity, info.HNNAODKJGPD_NextRarity);
 			}

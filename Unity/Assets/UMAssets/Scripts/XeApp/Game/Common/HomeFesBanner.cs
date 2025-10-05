@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 			if(cont != null)
 			{
 				long start = 0;
-				if(cont.NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11)
+				if(cont.NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11_Ended)
 				{
 					if(((int)cont.NGOFCFJHOMI_Status & 0xfe) == 0) // 1 to 7
 					{

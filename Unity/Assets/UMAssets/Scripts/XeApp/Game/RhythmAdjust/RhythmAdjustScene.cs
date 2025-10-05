@@ -363,7 +363,7 @@ namespace XeApp.Game.RhythmAdjust
 			}
 			else
 			{
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JHMCNBGOOJF_14/*14*/);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.JHMCNBGOOJF_14_TimingCheck/*14*/);
 				this.StartCoroutineWatched(Co_TutorialIntroFlow());
 			}
 		}
@@ -471,7 +471,7 @@ namespace XeApp.Game.RhythmAdjust
 			adjustSlider.enabled = true;
 			ChangeAdjustTask(ShowConfirmPopup);
 			BasicTutorialManager.Instance.ShowCursor(CursorPosition.RhythmAdjust);
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.EKEBEGIELBJ_15);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.EKEBEGIELBJ_15_TimingCheckRetry);
 			m_character.gameObject.SetActive(false);
 			SwitchMode(false);
 			layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.ADJUST);
@@ -914,7 +914,7 @@ namespace XeApp.Game.RhythmAdjust
 		private void GotoTutorialGame()
 		{
 			JGEOBNENMAH.EDHCNKBMLGI setup = BasicTutorialManager.Instance.SetupTutorialGame(TutorialGameMode.Type.TutorialOne);
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HIAAKPMJJGD_16);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.HIAAKPMJJGD_16_1stLive);
 			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
 			GameManager.Instance.ChangePopupPriority(true);
 			this.StartCoroutineWatched(GotoTutorialGameCoroutine(setup));
@@ -926,7 +926,7 @@ namespace XeApp.Game.RhythmAdjust
 		{
 			//0xF67358
 			bool isSuccess = false;
-			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND(setup, () =>
+			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(setup, () =>
 			{
 				//0xF648EC
 				isSuccess = true;

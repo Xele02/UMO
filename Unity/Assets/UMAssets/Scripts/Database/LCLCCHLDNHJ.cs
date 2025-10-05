@@ -14,13 +14,13 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		HJNNKCMLGFL_0_None = 0,
 		NKKIKONDGPF_1_CostumeEffect = 1,
 		DDGNLCJGFJF_2_Object = 2,
-		AJKDOLDGHOP_Object2 = 3,
+		AJKDOLDGHOP_3_Object2 = 3,
 		CFOEMAAKOMC_4_CostumeColor = 4,
 		PJJJGFBLIAP_5_Stat = 5,
 		JDPFMDOMMJE_6_Support = 6,	//plaque support : 2 / 3 = amour/charme ou +3%. 1/1 = Star/Ame, 3%
 	}
 
-	public enum JHDCKPCJBCG
+	public enum JHDCKPCJBCG_ParamType
 	{
 		HJNNKCMLGFL_0_None = 0,
 		BICPBLMPBPH_1_Soul = 1,
@@ -279,7 +279,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			}
 		}
 
-		[UMOMember(ReaderMember = "CHOIMHCMAHG")]
+		[UMOMember(ReaderMember = "CHOIMHCMAHG_TypeId")]
 		public int PPFNGGCBJKC_id; // 0x8
 		[UMOMember(ReaderDisplay = "PropagateReader", Desc = "List of unlock conditions")]
 		public PGGEBICEDGH[] NKNBKLHCAFD_UnlocksConditions; // 0xC
@@ -314,7 +314,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	public Dictionary<int, int[]> MBLNIECELNK_UnlockPoints { get; private set; } // 0x24 GHJIJLGHBLA_bgs EHAONDMIOFL_bgs CAJNIOACOCP_bgs
 	[UMOMember(ReaderMember = "HJPKLNPDDHN/[IDX]/PGPGPJNBIOH_uid|HJPKLNPDDHN/[IDX]/GNKAPBFMIDE", Desc = "List of Uc cost for each points")]
 	public Dictionary<int, int[]> AKKDOIJNMBH_UcCostByPoint { get; private set; } // 0x28 MJPHOOLJKJE_bgs HJMAIPELMAH_bgs JJOIDPBEEOH_bgs
-	[UMOMember(ReaderMember = "MMCDFGKCEPO/[IDX]/CHOIMHCMAHG|MMCDFGKCEPO/[IDX]", Desc = "List of unlocks conditions")]
+	[UMOMember(ReaderMember = "MMCDFGKCEPO/[IDX]/CHOIMHCMAHG_TypeId|MMCDFGKCEPO/[IDX]", Desc = "List of unlocks conditions")]
 	public Dictionary<int, JMEHNBGDEBD> FDNBEPCEHBH_UnlocksConditions { get; private set; } // 0x2C AMDEGDEHAAL_bgs HJLBICBIFAP_bgs FIOPFDLGEAE_bgs
 	[UMOMember(ReaderMember = "ODKFBJEOCGB/[IDX]/HFIFHDCJFPM", Desc = "Rate by number of support plate")]
 	public int[] OLNFADCCMIG_RateBySupportPlate { get; private set; } // 0x30 AIHLNOAOMGE_bgs NBCHJDPDEIM_bgs CEENFNLIAPI_bgs
@@ -486,7 +486,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array4.Length; i++)
 			{
 				JMEHNBGDEBD data = new JMEHNBGDEBD();
-				data.PPFNGGCBJKC_id = array4[i].CHOIMHCMAHG;
+				data.PPFNGGCBJKC_id = array4[i].CHOIMHCMAHG_TypeId;
 				data.NKNBKLHCAFD_UnlocksConditions = new JMEHNBGDEBD.PGGEBICEDGH[array4[i].IKKKOBGCPGN.Length];
 				int val = array4[i].CHIFFONJIAD.Length / array4[i].IKKKOBGCPGN.Length;
 				for(int j = 0; j < array4[i].IKKKOBGCPGN.Length; j++)
@@ -500,7 +500,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 					}
 					data.NKNBKLHCAFD_UnlocksConditions[j] = data2;
 				}
-				FDNBEPCEHBH_UnlocksConditions.Add(array4[i].CHOIMHCMAHG, data);
+				FDNBEPCEHBH_UnlocksConditions.Add(array4[i].CHOIMHCMAHG_TypeId, data);
 			}
 			JAELFHFCDDH[] array5 = BGMLCPNJPMD.ODKFBJEOCGB;
 			OLNFADCCMIG_RateBySupportPlate = new int[array5.Length];

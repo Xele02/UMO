@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xAF7764 Offset: 0xAF7764 VA: 0xAF7764
-		public void Initialize(NHPDPKHMFEP.GGNEBJEIFCP plan, Action callback)
+		public void Initialize(NHPDPKHMFEP.GGNEBJEIFCP_Plan plan, Action callback)
 		{
 			m_text.text = NHPDPKHMFEP.HHCJCDFCLOB.EAHHCPGNCMF(plan);
 			GameManager.Instance.StartCoroutineWatched(LateInitialize(callback));
@@ -53,7 +53,7 @@ namespace XeApp.Game.Common
 				//0xAF7E78
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy, () =>
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
 				{
 					//0xAF808C
 					InputEnable();
@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 				//0xAF8090
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract, () =>
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
 				{
 					//0xAF82A4
 					InputEnable();

@@ -327,7 +327,7 @@ public class CNNIKANJMNG
 				return _PMBEODGMMBB_y.NMICBJDPLOH_player.PPFNGGCBJKC_id == PPFNGGCBJKC_id;
 			});
 			if (c != null)
-				a.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend/*1*/;
+				a.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend/*1*/;
 			if(!EBJDDBPFNPB)
 			{
 				IODPMHILFDI.Add(a);
@@ -425,7 +425,7 @@ public class CNNIKANJMNG
 		res.ONAFFLLLBHE_IsSelf = true;
 		res.KNIFCANOHOC_score = IKJBJNJLMKH(res.AHEFHIMGIBI_PlayerData, _DEPGBBJMFED_CategoryId, _HHNFHJCAPJO_Target);
 		res.HMLEDBJDCAF_PreciseScore = LEIMLIFCHCD(res.AHEFHIMGIBI_PlayerData, _DEPGBBJMFED_CategoryId, _HHNFHJCAPJO_Target);
-		res.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI.CCAPCGPIIPF_0_Normal;
+		res.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal;
 		return res;
 	}
 

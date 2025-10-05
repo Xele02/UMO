@@ -819,15 +819,15 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x1605D84 Offset: 0x1605D84 VA: 0x1605D84
-	public KBPDNHOKEKD_ProductId.KNEKLJHNHAK FJICMLBOJCH(out string APLHNNCBLIJ)
+	public KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType FJICMLBOJCH(out string APLHNNCBLIJ)
 	{
 		APLHNNCBLIJ = "";
 		int found = -1;
-		KBPDNHOKEKD_ProductId.KNEKLJHNHAK res = 0;
+		KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType res = 0;
 		for(int i = 0; i < MHKCPJDNJKI_products.Count; i++)
 		{
-			KBPDNHOKEKD_ProductId.KNEKLJHNHAK r = MHKCPJDNJKI_products[i].FJICMLBOJCH();
-			if(r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None/*0*/ && r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3/*3*/)
+			KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType r = MHKCPJDNJKI_products[i].FJICMLBOJCH();
+			if(r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None/*0*/ && r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.DKIKNLEDDBK_3_NextFree/*3*/)
 			{
 				if(res == 0 || res > r)
 				{
@@ -844,7 +844,7 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x1605F14 Offset: 0x1605F14 VA: 0x1605F14
-	// private bool MFGDDLPKFGF(KBPDNHOKEKD_ProductId.KNEKLJHNHAK _LJPMEHDDBGP_UnlockError) { }
+	// private bool MFGDDLPKFGF(KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType _LJPMEHDDBGP_UnlockError) { }
 
 	// // RVA: 0x1605F2C Offset: 0x1605F2C VA: 0x1605F2C
 	public bool GGBCCADCPNP()

@@ -9,11 +9,11 @@ using XeSys;
 
 public class BEPHBEGDFFK
 {
-	public enum ABBPGMEDDHD
+	public enum ABBPGMEDDHD_DayPeriod
 	{
 		HNOJIKHAPHA_0_Morning = 0,
 		HCBFMFONIOE_1_Afternoon = 1,
-		KHLPAOENONH_2_Evening = 2,
+		KHLPAOENONH_2_Night = 2,
 	}
 
 	public class DMBKENKBIJD
@@ -40,7 +40,7 @@ public class BEPHBEGDFFK
 					PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(APHNELOFGAK_CurrencyId);
 					if(tkt == null)
 					{
-						if(MEANCEOIMGE_Summon.FJICMLBOJCH() <= KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4 && ((1 << (int)MEANCEOIMGE_Summon.FJICMLBOJCH()) & 0x16U) != 0) // 0001 0110
+						if(MEANCEOIMGE_Summon.FJICMLBOJCH() <= KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree && ((1 << (int)MEANCEOIMGE_Summon.FJICMLBOJCH()) & 0x16U) != 0) // 0001 0110
 						{
 							return 0;
 						}
@@ -372,23 +372,23 @@ public class BEPHBEGDFFK
 	}
 
 	//// RVA: 0xC782F8 Offset: 0xC782F8 VA: 0xC782F8
-	public ABBPGMEDDHD MFMBCIKGCFC()
+	public ABBPGMEDDHD_DayPeriod MFMBCIKGCFC()
 	{
 		DateTime t = Utility.GetLocalDateTime(JHNMKKNEENE_Time);
 		if(t.Hour >= 0 && t.Hour < BGMDABJBHDM_Hour_Morning_4)
-			return ABBPGMEDDHD.KHLPAOENONH_2_Evening;
+			return ABBPGMEDDHD_DayPeriod.KHLPAOENONH_2_Night;
 		if(t.Hour >= BGMDABJBHDM_Hour_Morning_4 && t.Hour < NDNHABFJNDB_Hour2_Noon_12)
-			return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
+			return ABBPGMEDDHD_DayPeriod.HNOJIKHAPHA_0_Morning;
 		if(t.Hour >= NDNHABFJNDB_Hour2_Noon_12 && t.Hour < ACDBBJBNLLG_Hour3_Evening_20)
-			return ABBPGMEDDHD.HCBFMFONIOE_1_Afternoon;
+			return ABBPGMEDDHD_DayPeriod.HCBFMFONIOE_1_Afternoon;
 		if(t.Hour >= ACDBBJBNLLG_Hour3_Evening_20)
 		{
 			if(t.Hour >= IDADEHNGHPO_Hour4_NextMorning_4)
-				return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
+				return ABBPGMEDDHD_DayPeriod.HNOJIKHAPHA_0_Morning;
 			else
-				return ABBPGMEDDHD.KHLPAOENONH_2_Evening;
+				return ABBPGMEDDHD_DayPeriod.KHLPAOENONH_2_Night;
 		}
-		return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
+		return ABBPGMEDDHD_DayPeriod.HNOJIKHAPHA_0_Morning;
 	}
 
 	//// RVA: 0xC78420 Offset: 0xC78420 VA: 0xC78420

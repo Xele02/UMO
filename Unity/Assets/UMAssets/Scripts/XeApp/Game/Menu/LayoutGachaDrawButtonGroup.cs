@@ -383,22 +383,22 @@ namespace XeApp.Game.Menu
 				}
 				switch (view.DPBDFPPMIPH_Gacha.FJICMLBOJCH())
 				{
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0_None:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.HJNNKCMLGFL_0_None:
 						m_layoutTelop.StartChildrenAnimGoStop("02");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC_1:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.LCLLMJGIMHC_1_OneFreePerDay:
 						m_layoutTelop.StartChildrenAnimGoStop("01");
 						m_textTelop.text = bk.GetMessageByLabel("gacha_telop_06");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.PBEMIDKNPNH_2:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.PBEMIDKNPNH_2_FirstTimeFree:
 						m_layoutTelop.StartChildrenAnimGoStop("01");
 						m_textTelop.text = bk.GetMessageByLabel("gacha_telop_03");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.DKIKNLEDDBK_3_NextFree:
 						m_layoutTelop.StartChildrenAnimGoStop("01");
 						m_textTelop.text = string.Format(bk.GetMessageByLabel("gacha_telop_04"), d.MEANCEOIMGE_Summon.HCMGHDNNJOM());
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK_FreeType.AAPLMEGMNJA_4_ThisTimeFree:
 						m_layoutTelop.StartChildrenAnimGoStop("01");
 						m_textTelop.text = bk.GetMessageByLabel("gacha_telop_05");
 						break;

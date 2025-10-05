@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 			if(unitData != null)
 			{
 				unitData.HCDGELDHFHB_UpdateStatus();
-				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48/*48*/, 2, false);
+				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit/*48*/, 2, false);
 			}
 		}
 

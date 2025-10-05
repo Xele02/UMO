@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 	public class PopupSceneGrowthSetting : PopupSetting
 	{
 		public MNDAMOGGJBJ ViewGrowItemData { get; set; } // 0x34
-		public MNDAMOGGJBJ.MNDGNJLBANB Reason { get; set; } // 0x38
+		public MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason Reason { get; set; } // 0x38
 		public bool IsValidate { get; set; } // 0x3C
 		public override string PrefabPath { get { return ""; } } //0x1147700
 		public override string BundleName { get { return "ly/019.xab"; } } //0x114775C

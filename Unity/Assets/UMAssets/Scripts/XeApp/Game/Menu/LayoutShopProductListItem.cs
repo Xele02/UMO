@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1942F18 Offset: 0x1942F18 VA: 0x1942F18
-		public void SetStatus(AODFBGCCBPE.NJMPLEENNPO type, FJGOKILCBJA view)
+		public void SetStatus(AODFBGCCBPE.NJMPLEENNPO_ShopType type, FJGOKILCBJA view)
 		{
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.JPJMHLNOIAJ_ItemCostFullId);
 			id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.JPJMHLNOIAJ_ItemCostFullId);
 			string s = EKLNMHFCAOI.NDBLEADIDLA(cat, id);
-			if(type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3)
+			if(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3)
 			{
 				m_textCost.text = name;
 				m_textCost2.text = string.Format(bk.GetMessageByLabel("item_popup_shop_text_02") + "{0, 4}" + s + " / " + bk.GetMessageByLabel("item_popup_shop_text_01") + "{1, 4}" + s, view.DKEPCPPCIKA_Price, view.DPFOJKHBBEH_GetNumCostItem());
@@ -177,18 +177,18 @@ namespace XeApp.Game.Menu
 			m_button.Disable = remain == 0 || view.CMOPCCPOEBA() == 0 || view.EMLHKJAPACA_IsAddOverflow(1);
 			if(view.EMLHKJAPACA_IsAddOverflow(1))
 			{
-				m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "04" : "02");
+				m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
 				m_textWarning.text = bk.GetMessageByLabel("item_shop_caution_max");
 			}
 			else
 			{
 				if(view.CMOPCCPOEBA() != 0)
 				{
-					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "03" : "01");
+					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "03" : "01");
 				}
 				else
 				{
-					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "04" : "02");
+					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
 					m_textWarning.text = bk.GetMessageByLabel("item_shop_caution");
 				}
 			}

@@ -796,7 +796,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_ShowBeginnerTutorial()
 		{
 			//0x9E05F0
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HDMADAHNLDN_49_Missions);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.HDMADAHNLDN_49_Missions);
 			GameManager.PushBackButtonHandler backButtonDummy = () =>
 			{
 				//0x9DE3BC

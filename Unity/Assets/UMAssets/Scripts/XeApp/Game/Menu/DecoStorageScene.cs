@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 			if(!isCancel)
 			{
 				m_netDecoSetControl.INBANHBGIFC_ResetSet(setting.m_id);
-				ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG(JpStringLiterals.StringLiteral_11225, setting.m_id, UnusedStorageName());
+				ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG_DecoLayoutSet(JpStringLiterals.StringLiteral_11225, setting.m_id, UnusedStorageName());
 				bool succeeded = false;
 				yield return this.StartCoroutineWatched(Co_SavePrivateStorageData(new LayoutDecorationStorageList.StorageSetting() { m_id = setting.m_id, m_name = UnusedStorageName(), m_isUse = false }, (bool _result) =>
 				{
@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 			bool b = l.Exists((DecorationItemBase x) =>
 			{
 				//0x11CA840
-				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp;
+				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp;
 			});
 			if (!m_spItemOriginalListupList.Exists(FindVisitItemFunc))
 			{
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 				}
 				foreach(var it in l)
 				{
-					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp)
+					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp)
 					{
 						m_decorationCanvas.RemoveItem(it);
 						yield break;
@@ -538,7 +538,7 @@ namespace XeApp.Game.Menu
 					yield break;
 				}
 			}
-			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG(JpStringLiterals.StringLiteral_15528, 0, m_decoPublicSetData.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName);
+			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG_DecoLayoutSet(JpStringLiterals.StringLiteral_15528, 0, m_decoPublicSetData.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName);
 			bool succeeded = false;
 			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
 				yield return this.StartCoroutineWatched(DecoScene.Co_UpdateDirtyTime());
@@ -599,7 +599,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_netDecoSetControl.DKHCCBIOBPH_SaveToSlot(setting.m_id);
-			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG(JpStringLiterals.StringLiteral_15538, setting.m_id, m_decoPublicSetData.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName);
+			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG_DecoLayoutSet(JpStringLiterals.StringLiteral_15538, setting.m_id, m_decoPublicSetData.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName);
 			bool succeeded = false;
 			yield return this.StartCoroutineWatched(Co_SavePrivateStorageData(new LayoutDecorationStorageList.StorageSetting() { m_id = setting.m_id, m_name = m_decoPublicSetData.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName, m_isUse = true }, (bool _result) =>
 			{
@@ -643,7 +643,7 @@ namespace XeApp.Game.Menu
 			//0x11CF3D0
 			MenuScene.Instance.InputDisable();
 			m_netDecoSetControl.APOIDBODGGB_RenameSlot(m_setting.m_id, mapName);
-			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG(JpStringLiterals.StringLiteral_15542, m_setting.m_id, mapName);
+			ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG_DecoLayoutSet(JpStringLiterals.StringLiteral_15542, m_setting.m_id, mapName);
 			bool succeeded = false;
 			yield return this.StartCoroutineWatched(Co_SavePrivateStorageData(new LayoutDecorationStorageList.StorageSetting() { m_id = m_setting.m_id, m_isUse = m_setting.m_isUse, m_name = mapName }, (bool _result) =>
 			{

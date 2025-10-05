@@ -160,13 +160,13 @@ namespace XeApp.Game.Tutorial
 			GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress != 0)
 				return;
-			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0_Start);
+			Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.FKPEAGGKNLC_0_Start);
 		}
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
-		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step)
+		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep step)
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.ALABPEPENHH(step, GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime);
+			ILCCJNDFFOB.HHCJCDFCLOB.ALABPEPENHH_Tutorial(step, GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime);
 		}
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
@@ -176,7 +176,7 @@ namespace XeApp.Game.Tutorial
 			{
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 					return;
-				Log(OAGBCBBHMPF.OGBCFNIKAFI.CFHINEFGHPC_47);
+				Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.CFHINEFGHPC_47_LoginBonus);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 1;
 				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}
@@ -191,7 +191,7 @@ namespace XeApp.Game.Tutorial
 				{
 					return;
 				}
-				Log(OAGBCBBHMPF.OGBCFNIKAFI.LGFGBNKFPGH_48);
+				Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.LGFGBNKFPGH_48_Home);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 2;
 				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			}

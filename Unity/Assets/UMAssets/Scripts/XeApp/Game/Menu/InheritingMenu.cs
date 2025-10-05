@@ -275,11 +275,11 @@ namespace XeApp.Game.Menu
 				//0x13E0C20
 				if(status)
 				{
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime() + 2592000); // ??0x8d00  0x27
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM_Type.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime() + 2592000); // ??0x8d00  0x27
 				}
 				else
 				{
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime());
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM_Type.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime());
 				}
 				GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 			};

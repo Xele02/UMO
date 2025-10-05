@@ -6,7 +6,7 @@ public class GHLGEECLCMH
 {
 	private HighScoreRating JPJHBJAHPFP_HsRating; // 0x8
 	private HighScoreRating HOHNHJEFCBF_PrevHsRating; // 0xC
-	private NGJOPPIGCPM_ResultData.DFJMELLLNLH HBLFKGAKHHN_RankState; // 0x30
+	private NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState HBLFKGAKHHN_RankState; // 0x30
 	private int MIIAIBIGKOD_RankNum; // 0x34
 
 	public HighScoreRatingRank.Type LLNHMMBFPMA_ScoreRatingRanking { get; private set; } // 0x10 EFILGAFDFOD_bgs FBMPLMNOLFC_bgs KBAOHMCAJIO_bgs
@@ -78,7 +78,7 @@ public class GHLGEECLCMH
 	}
 
 	//// RVA: 0xAA63B8 Offset: 0xAA63B8 VA: 0xAA63B8
-	public NGJOPPIGCPM_ResultData.DFJMELLLNLH AGKAOEEFAAH_GetRankState()
+	public NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState AGKAOEEFAAH_GetRankState()
 	{
 		return HBLFKGAKHHN_RankState;
 	}
@@ -147,7 +147,7 @@ public class GHLGEECLCMH
 			}
 		}
 		bool f = false;
-		NGJOPPIGCPM_ResultData.DFJMELLLNLH val = NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL_0_None;
+		NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState val = NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.HJNNKCMLGFL_0_None;
 		for(int i = 0; i < HOHNHJEFCBF_PrevHsRating.hsRatingMusicData.Length; i++)
 		{
 			if (HOHNHJEFCBF_PrevHsRating.hsRatingMusicData[i, _FJFCNGNGIBN_Attribute].FreeMusicId == KIMIHIBGONK_FreeMusicId)
@@ -155,14 +155,14 @@ public class GHLGEECLCMH
 				f = true;
 				if (JPJHBJAHPFP_HsRating.hsRatingMusicData[idx, _FJFCNGNGIBN_Attribute].RankNum < HOHNHJEFCBF_PrevHsRating.hsRatingMusicData[i, _FJFCNGNGIBN_Attribute].RankNum)
 				{
-					val = NGJOPPIGCPM_ResultData.DFJMELLLNLH.COHKBMDEMMN;
+					val = NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.COHKBMDEMMN_2_Bg;
 				}
 			}
 		}
 		if(!f)
 		{
 			if (JPJHBJAHPFP_HsRating.hsRatingMusicData[9, _FJFCNGNGIBN_Attribute].Score < ADKDHKMPMHP_rate)
-				val = NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH;
+				val = NGJOPPIGCPM_ResultData.DFJMELLLNLH_RankState.HHLBGKEDNGH_1_Bg2;
 		}
 		HBLFKGAKHHN_RankState = val;
 		MIIAIBIGKOD_RankNum = JPJHBJAHPFP_HsRating.hsRatingMusicData[idx, _FJFCNGNGIBN_Attribute].RankNum;

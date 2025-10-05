@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 			{
 				bool isFriend = false;
 				bool isFav = false;
-				isFriend = friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+				isFriend = friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 				if (friendPlayerData.PCEGKKLKFNO_FriendData == null || !(friendPlayerData.PCEGKKLKFNO_FriendData is IFICNCAHIGI) || !(friendPlayerData.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite)
 				{
 					isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendPlayerData.MLPEHNBNOGD_PlayerId);
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_divaFriendIconDecrationBehaviour != null)
 			{
-				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend, isFavorite);
+				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend, isFavorite);
 				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
 				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_Degree.HMFFHLPNMPH_count);
 			}

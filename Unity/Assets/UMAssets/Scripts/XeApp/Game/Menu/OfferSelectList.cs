@@ -95,17 +95,17 @@ namespace XeApp.Game.Menu
 		public void settingTab()
 		{
 			SelectTab = OfferSelectTab.DebutTab;
-			if (KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM() != BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut && !IsBeginner)
+			if (KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM() != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut && !IsBeginner)
 			{
-				BOPFPIHGJMD.MLBMHDCCGHI a = KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM();
+				BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM();
 				SelectTab = (OfferSelectTab)(a - 1);
-				if (a != BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week)
+				if (a != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week)
 				{
 					SelectTab = OfferSelectTab.DivaTab;
-					if(a != BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+					if(a != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva)
 					{
 						SelectTab = (OfferSelectTab)(a - 1);
-						if (a != BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut)
+						if (a != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut)
 							SelectTab = OfferSelectTab.DaylyTab;
 					}
 				}
@@ -133,8 +133,8 @@ namespace XeApp.Game.Menu
 		{
 			if (KDHGBOOECKC.HHCJCDFCLOB != null)
 			{
-				SetDaylyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily));
-				SetWeeklyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week));
+				SetDaylyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily));
+				SetWeeklyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week));
 			}
 		}
 
@@ -213,7 +213,7 @@ namespace XeApp.Game.Menu
 		public void BeginnerOfferProgress()
 		{
 			int a1 = KDHGBOOECKC.HHCJCDFCLOB.ECBHIIOABCK();
-			int a2 = KDHGBOOECKC.HHCJCDFCLOB.PDGOLEJBNMM(BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received, true);
+			int a2 = KDHGBOOECKC.HHCJCDFCLOB.PDGOLEJBNMM(BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.CADDNFIKDLG_4_Received, true);
 			m_MaxDebutNum.SetNumber(a1, 0);
 			m_ClearDebutNum.SetNumber(a2, 0);
 			debutClearIconChenge(a1 == a2);
@@ -524,9 +524,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1708148 Offset: 0x1708148 VA: 0x1708148
 		public void SetSelectTab()
 		{
-			BOPFPIHGJMD.MLBMHDCCGHI a = BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0_None;
+			BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HJNNKCMLGFL_0_None;
 			if (SelectTab < OfferSelectTab.MAX)
-				a = new BOPFPIHGJMD.MLBMHDCCGHI[4] { BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut }[(int)SelectTab];
+				a = new BOPFPIHGJMD.MLBMHDCCGHI_OfferType[4] { BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut }[(int)SelectTab];
 			KDHGBOOECKC.HHCJCDFCLOB.HJOLFCDAIGE(a);
 		}
 
@@ -554,11 +554,11 @@ namespace XeApp.Game.Menu
 		{
 			if(!KDHGBOOECKC.HHCJCDFCLOB.OHILPCDFKCH())
 			{
-				BOPFPIHGJMD.MLBMHDCCGHI a = BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily;
+				BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily;
 				if (index < 4)
-					a = new BOPFPIHGJMD.MLBMHDCCGHI[4] { BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut }[index];
+					a = new BOPFPIHGJMD.MLBMHDCCGHI_OfferType[4] { BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut }[index];
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				int a2 = KDHGBOOECKC.HHCJCDFCLOB.LJMOMAGLEGL(a, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved, false);
+				int a2 = KDHGBOOECKC.HHCJCDFCLOB.LJMOMAGLEGL(a, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved, false);
 				string str = string.Format(bk.GetMessageByLabel("offer_operation_badge_text"), a2);
 				m_badgeIcons[index].Set(a2 > 0 ? BadgeConstant.ID.Label : BadgeConstant.ID.None, str);
 				if(index == 0 && a2 < 1)
@@ -572,16 +572,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x170819C Offset: 0x170819C VA: 0x170819C
-		//private BOPFPIHGJMD.MLBMHDCCGHI TabConverter(OfferSelectList.OfferSelectTab tab) { }
+		//private BOPFPIHGJMD.MLBMHDCCGHI_OfferType TabConverter(OfferSelectList.OfferSelectTab tab) { }
 
 		//// RVA: 0x1705E00 Offset: 0x1705E00 VA: 0x1705E00
-		//private OfferSelectList.OfferSelectTab TabConverter(BOPFPIHGJMD.MLBMHDCCGHI tab) { }
+		//private OfferSelectList.OfferSelectTab TabConverter(BOPFPIHGJMD.MLBMHDCCGHI_OfferType tab) { }
 
 		//// RVA: 0x17084EC Offset: 0x17084EC VA: 0x17084EC
-		//private OfferSelectList.OfferSelectTab TypeConverter(BOPFPIHGJMD.MLBMHDCCGHI _type) { }
+		//private OfferSelectList.OfferSelectTab TypeConverter(BOPFPIHGJMD.MLBMHDCCGHI_OfferType _type) { }
 
 		//// RVA: 0x17084D0 Offset: 0x17084D0 VA: 0x17084D0
-		//private BOPFPIHGJMD.MLBMHDCCGHI TypeConverter(OfferSelectList.OfferSelectTab _type) { }
+		//private BOPFPIHGJMD.MLBMHDCCGHI_OfferType TypeConverter(OfferSelectList.OfferSelectTab _type) { }
 
 		// RVA: 0x1708510 Offset: 0x1708510 VA: 0x1708510 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

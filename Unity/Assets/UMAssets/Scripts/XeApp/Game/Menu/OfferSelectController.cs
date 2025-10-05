@@ -272,17 +272,17 @@ namespace XeApp.Game.Menu
 			res.AddRange(viewOfferData.CAGIOJAAGGP.FindAll((HEFCLPGPMLK.AAOPGOGGMID x) =>
 			{
 				//0x186B08C
-				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
+				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved;
 			}));
 			res.AddRange(viewOfferData.KPMDLOBOEEM.FindAll((HEFCLPGPMLK.AAOPGOGGMID x) =>
 			{
 				//0x186B0BC
-				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
+				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved;
 			}));
 			res.AddRange(viewOfferData.NLKBPLNCPGG.FindAll((HEFCLPGPMLK.AAOPGOGGMID x) =>
 			{
 				//0x186B0EC
-				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
+				return x.CMCKNKKCNDK_status == BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved;
 			}));
 			return res;
 		}
@@ -353,20 +353,20 @@ namespace XeApp.Game.Menu
 			HEFCLPGPMLK.AAOPGOGGMID data = viewList[index];
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string k;
-			if (data.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+			if (data.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva)
 			{
 				if (data.LOAEGNGKFNF_Expr != NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime())
 				{
 					return true;
 				}
-				KDHGBOOECKC.HHCJCDFCLOB.EGNCJPMPMDC_ClearFlag(BOPFPIHGJMD.GNGGLPCONLM.MGPHIBLKNMO_8 | BOPFPIHGJMD.GNGGLPCONLM.BCMLFJPLKAM_4); // 12
+				KDHGBOOECKC.HHCJCDFCLOB.EGNCJPMPMDC_ClearFlag(BOPFPIHGJMD.GNGGLPCONLM_OperationsStatusFlag.MGPHIBLKNMO_8_DivaOpPowerUp | BOPFPIHGJMD.GNGGLPCONLM_OperationsStatusFlag.BCMLFJPLKAM_4_DivaOpOccur); // 12
 				k = "offer_select_operation_ended_pop_text";
 			}
-			else if (data.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily)
+			else if (data.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily)
 			{
 				if (!KDHGBOOECKC.HHCJCDFCLOB.DJMICICGLLG())
 					return true;
-				KDHGBOOECKC.HHCJCDFCLOB.JLKENFELMPM_SetFlag(BOPFPIHGJMD.GNGGLPCONLM.OCKIDPJNNBP_1);
+				KDHGBOOECKC.HHCJCDFCLOB.JLKENFELMPM_SetFlag(BOPFPIHGJMD.GNGGLPCONLM_OperationsStatusFlag.OCKIDPJNNBP_1_OpUpdated);
 				k = "popup_update_operation_text";
 			}
 			else return true;
@@ -448,7 +448,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18677E4 Offset: 0x18677E4 VA: 0x18677E4
 		private ButtonInfo[] buttonInfo(int index)
 		{
-			if (viewList[index].FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+			if (viewList[index].FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva)
 			{
 				return new ButtonInfo[2]
 				{
@@ -497,12 +497,12 @@ namespace XeApp.Game.Menu
 						HEFCLPGPMLK.AAOPGOGGMID viewData = viewList[index];
 						if (KDHGBOOECKC.HHCJCDFCLOB.NEGHCLNLFEM(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id))
 						{
-							ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, 0);
+							ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP_VopResults(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, 0);
 							MenuScene.Instance.RaycastDisable();
 							this.StartCoroutineWatched(Co_Save(() =>
 							{
 								//0x186C0FC
-								viewData.CMCKNKKCNDK_status = BOPFPIHGJMD.IGHPDAGKIKO.EBAPFCDNMGD_1_Order;
+								viewData.CMCKNKKCNDK_status = BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.EBAPFCDNMGD_1_Order;
 								m_orderListLayout.StartListUpdate();
 								MenuScene.Instance.RaycastEnable();
 							}, () =>
@@ -530,8 +530,8 @@ namespace XeApp.Game.Menu
 			string popText = "";
 			bool IsStones = false;
 			HEFCLPGPMLK.AAOPGOGGMID viewData = viewList[index];
-			KDHGBOOECKC.LKBMNFAOOII d1_StoneCost = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, BOPFPIHGJMD.AGGLEGJDLGF.NLGNJNJBLEJ_2_Stone, -1);
-			KDHGBOOECKC.LKBMNFAOOII d2_ProgramCost = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program, -1);
+			KDHGBOOECKC.LKBMNFAOOII d1_StoneCost = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, BOPFPIHGJMD.AGGLEGJDLGF_CompletionPayType.NLGNJNJBLEJ_2_Stone, -1);
+			KDHGBOOECKC.LKBMNFAOOII d2_ProgramCost = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewData.FGHGMHPNEMG_Type, viewData.PPFNGGCBJKC_id, BOPFPIHGJMD.AGGLEGJDLGF_CompletionPayType.JPAODAPCJGG_1_Program, -1);
 			int useCount = 0;
 			int haveCount = 0;
 			int a2_DiffFastProgram = KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumItems() - d2_ProgramCost.ADPPAIPFHML_num;
@@ -587,7 +587,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x186C200
 				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-				fastCompleteItemData = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewList[index].PCCFAKEOBIC_EndTime - t, IsStones ? BOPFPIHGJMD.AGGLEGJDLGF.NLGNJNJBLEJ_2_Stone : BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program);
+				fastCompleteItemData = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewList[index].PCCFAKEOBIC_EndTime - t, IsStones ? BOPFPIHGJMD.AGGLEGJDLGF_CompletionPayType.NLGNJNJBLEJ_2_Stone : BOPFPIHGJMD.AGGLEGJDLGF_CompletionPayType.JPAODAPCJGG_1_Program);
 				if(useCount != fastCompleteItemData.ADPPAIPFHML_num)
 				{
 					popText = Smart.Format(text, fastCompleteItemData.ADPPAIPFHML_num, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_num);
@@ -620,9 +620,9 @@ namespace XeApp.Game.Menu
 						IsSaveSuccess = false;
 						HEFCLPGPMLK.AAOPGOGGMID target = viewList[index];
 						long rest_time = target.PCCFAKEOBIC_EndTime - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-						if(KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
+						if(KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id) == BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.LGOIJAPMEBG_2_Progress)
 						{
-							KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved);
+							KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved);
 						}
 						if(!IsStones)
 						{
@@ -630,7 +630,7 @@ namespace XeApp.Game.Menu
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x186D0AC
-								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, 210002, fastCompleteItemData.ADPPAIPFHML_num, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumItems(), (int)rest_time);
+								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI_VopFastComplete(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, 210002, fastCompleteItemData.ADPPAIPFHML_num, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumItems(), (int)rest_time);
 								KDHGBOOECKC.HHCJCDFCLOB.BCJNPJKGNHF(1);
 								IsSaveSuccess = true;
 							}, () =>
@@ -645,7 +645,7 @@ namespace XeApp.Game.Menu
 							CIOECGOMILE.HHCJCDFCLOB.ELGMEAEDOHI_OfferFastCompleteByPaidVC(() =>
 							{
 								//0x186D2CC
-								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, 10001, itemNum * 5, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), (int)rest_time);
+								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI_VopFastComplete(target.FGHGMHPNEMG_Type, target.PPFNGGCBJKC_id, 10001, itemNum * 5, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), (int)rest_time);
 								KDHGBOOECKC.HHCJCDFCLOB.BCJNPJKGNHF(1);
 								IsSaveSuccess = true;
 							}, null, () =>
@@ -657,7 +657,7 @@ namespace XeApp.Game.Menu
 						this.StartCoroutineWatched(Co_WaitSave(() =>
 						{
 							//0x186D2A4
-							target.CMCKNKKCNDK_status = BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved;
+							target.CMCKNKKCNDK_status = BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved;
 						}));
 						return;
 					}
@@ -839,12 +839,12 @@ namespace XeApp.Game.Menu
 			for(i = 0; i < allOfferData.Count; i++)
 			{
 				bool b = false;
-				KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received);
+				KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.CADDNFIKDLG_4_Received);
 				KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, 1);
 				KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil, allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, ref b);
 				if (b)
 					isLimit = true;
-				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.PMMOLBAAHEM_31);
+				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.PMMOLBAAHEM_31_Vop);
 				ViewOfferCompensation item = ViewOfferCompensation.CreateList(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id);
 				if(allOfferData[i].OHOGIHMFEIJ)
 				{
@@ -859,7 +859,7 @@ namespace XeApp.Game.Menu
 				}
 				compensationList.Add(item);
 				contentLayoutList[i].SetSuccessIcon(item.IsGreatSuccess);
-				ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, item.IsGreatSuccess ? 2 : 1);
+				ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP_VopResults(allOfferData[i].FGHGMHPNEMG_Type, allOfferData[i].PPFNGGCBJKC_id, item.IsGreatSuccess ? 2 : 1);
 			}
 			OfferAllRecvItemPopup.SetLastCompensationList(compensationList);
 			MenuScene.SaveWithAchievement(0x1000000000, () =>
@@ -1160,27 +1160,27 @@ namespace XeApp.Game.Menu
 			switch(tab)
 			{
 				case OfferSelectList.OfferSelectTab.DivaTab:
-					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
+					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
 					if (KDHGBOOECKC.HHCJCDFCLOB != null)
-						KDHGBOOECKC.HHCJCDFCLOB.BFJFAIIAMMO(BOPFPIHGJMD.FDDGIANLNAD.BCMLFJPLKAM_1, true);
-					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+						KDHGBOOECKC.HHCJCDFCLOB.BFJFAIIAMMO(BOPFPIHGJMD.FDDGIANLNAD.BCMLFJPLKAM_1_DivaOpOccur, true);
+					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva)
 						break;
 					m_timeWatcherFirstCompOffer.WatchStart(d.PCCFAKEOBIC_EndTime, false);
 					break;
 				case OfferSelectList.OfferSelectTab.WeeklyTab:
-					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
-					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FDOOAJLGFAE_2_Week)
+					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
+					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week)
 						break;
 					m_timeWatcherFirstCompOffer.WatchStart(d.PCCFAKEOBIC_EndTime, false);
 					break;
 				case OfferSelectList.OfferSelectTab.DaylyTab:
-					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
-					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.HEFPAOLDHCK_1_Daily)
+					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
+					if (d == null || d.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily)
 						break;
 					m_timeWatcherFirstCompOffer.WatchStart(d.PCCFAKEOBIC_EndTime, false);
 					break;
 				case OfferSelectList.OfferSelectTab.DebutTab:
-					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
+					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
 					break;
 			}
 			m_orderListLayout.SetView(viewList, viewOfferData);

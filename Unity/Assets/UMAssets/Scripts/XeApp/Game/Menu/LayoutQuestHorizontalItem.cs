@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 							}
 							else
 							{
-								if(itemParam.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38)
+								if(itemParam.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB_ChallengeType.BPNDHDHHKGE_38_Bingo)
 								{
 									if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 										return;
@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 						}));
 						return;
 					}
-					if(itemParam.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38)
+					if(itemParam.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB_ChallengeType.BPNDHDHHKGE_38_Bingo)
 					{
 						if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 							return;
@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 			SwitchEmphasisIcon(param.questData.BEEIIJJKDBH_BadgeConstantId, param.questData.BHANMJKCCBC_BadgeText);
 			SwitchReceiptIcon(param.questData.PNFDMBHDPAJ_IsRewardOnly);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(param.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38)
+			if(param.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB_ChallengeType.BPNDHDHHKGE_38_Bingo)
 			{
 				if(GNGMCIAIKMA.HHCJCDFCLOB == null)
 				{

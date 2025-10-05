@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 					m_style = Style.Solo;
 				m_imageDisable.uvRect = m_imageRectList[(int)m_number, 2];
 				m_imageOnOff.uvRect = m_imageRectList[(int)m_number, (int)m_style];
-				Hidden = !musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF.ALNCPFNNBLH_0);
+				Hidden = !musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.ALNCPFNNBLH_0);
 			}
 			m_onUpdateStyle = onUpdateStyle;
 			if(onUpdateStyle != null)

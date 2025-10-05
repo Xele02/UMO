@@ -33,7 +33,7 @@ public class GPBHHNACMOP
 }
 public class OJHOANCOJIK
 {
-	public int CHOIMHCMAHG { get; set; } // 0x8 ALCEBFJAGJB APOIMEHLPBD_get_ HJFDHIEGGBH_set_
+	public int CHOIMHCMAHG_TypeId { get; set; } // 0x8 ALCEBFJAGJB APOIMEHLPBD_get_TypeId HJFDHIEGGBH_set_TypeId
 	public int[] IKKKOBGCPGN { get; set; } // 0xC HMKFJELDLHP HDKGHOPLJOP_get_ MCAGPNNLIJH_set_
 	public int[] CHIFFONJIAD { get; set; } // 0x10 HLHDPIMMEPG MOKENIJJDAL_get_ AKJPOFAINEK_set_
 }
@@ -142,7 +142,7 @@ public class IBCDCBLBJKE
 			POLDFBLCDFN MMCDFGKCEPO_readData_ = res_readData_.GetDABMEKCEBEP(MMCDFGKCEPO_idx_);
 			OJHOANCOJIK MMCDFGKCEPO_data_ = new OJHOANCOJIK();
 
-			MMCDFGKCEPO_data_.CHOIMHCMAHG = MMCDFGKCEPO_readData_.DNIDLBOLLGH;
+			MMCDFGKCEPO_data_.CHOIMHCMAHG_TypeId = MMCDFGKCEPO_readData_.DNIDLBOLLGH;
 			List<int> IKKKOBGCPGN_list_ = new List<int>();
 			for(int IKKKOBGCPGN_idx_ = 0; IKKKOBGCPGN_idx_ < MMCDFGKCEPO_readData_.KMKKKKNNFGBLength; IKKKOBGCPGN_idx_++)
 			{

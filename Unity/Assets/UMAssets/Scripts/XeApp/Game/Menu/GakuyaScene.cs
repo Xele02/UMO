@@ -1291,14 +1291,14 @@ namespace XeApp.Game.Menu
 				}
 				if(oldCos != newCos || oldCol != newCol || m_divaId != prevDiva)
 				{
-					ILCCJNDFFOB.HHCJCDFCLOB.NBCACPPAAMC(prevDiva, m_divaId, oldCos, newCos, oldCol, newCol);
+					ILCCJNDFFOB.HHCJCDFCLOB.NBCACPPAAMC_HomeDivaModify(prevDiva, m_divaId, oldCos, newCos, oldCol, newCol);
 				}
 			}
 			if(l.Count > 0 && GNGMCIAIKMA.HHCJCDFCLOB != null)
 			{
 				foreach(var a in l)
 				{
-					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK_7_SetCostume/*7*/, a, 1, null);
+					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI_BingoMissionType.HOOJOFACOEK_7_SetCostume/*7*/, a, 1, null);
 				}
 				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
 			}

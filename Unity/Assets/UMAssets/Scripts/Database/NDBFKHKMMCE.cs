@@ -7,23 +7,23 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 {
 	public class ANMODBDBNPK
 	{
-		public enum DBAMIACJODJ
+		public enum DBAMIACJODJ_ItemCat
 		{
 			HJNNKCMLGFL_0_None = 0,
-			PMJFENNOEJD_Bg = 1,
-			JKMLKAMHJIF_Obj = 2,
-			MIIELMELDBO_Char = 3,
+			PMJFENNOEJD_1_Bg = 1,
+			JKMLKAMHJIF_2_Obj = 2,
+			MIIELMELDBO_3_Char = 3,
 			BKLKNLDCJIO_4_Stamp = 4,
-			AAAOOKJAMGE_Sp = 5,
+			AAAOOKJAMGE_5_Sp = 5,
 			CAMKIILHPDE_6 = 6,
 		}
 
-		public enum BIKFCCKCHHC
+		public enum BIKFCCKCHHC_SpType
 		{
 			HJNNKCMLGFL_0_None = 0,
 			FIHMIDDLAKH_1_CanonFillSp = 1,
-			IOEGFJMNDBM_2 = 2,
-			JJNIMNEJPOF_3 = 3,
+			IOEGFJMNDBM_2_Medal = 2,
+			JJNIMNEJPOF_3_Present = 3,
 			AEKNIFPOLOK = 4,
 			PKAOEMNODGC = 5,
 			BEEKDIOOCPB = 6,

@@ -34,8 +34,8 @@ namespace XeApp.Game.Menu
 		{
 			//0x1160C00
 			_result = UseItemResult.None;
-			MNDAMOGGJBJ.MNDGNJLBANB reason = itemData.HDHNAIIAJCP();
-			if(reason == MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/)
+			MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason reason = itemData.HDHNAIIAJCP();
+			if(reason == MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason.HJNNKCMLGFL_0_None/*0*/)
 			{
 				useItemSeting.Buttons = new ButtonInfo[2]
 				{

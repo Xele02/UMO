@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 				limitOverCount = g.MKHFCGPJPFI_LimitOverCount;
 			}
 			isDivaLoad = false;
-			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+			Friend = fri.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 		}
 
 		//// RVA: 0xE28CD8 Offset: 0xE28CD8 VA: 0xE28CD8

@@ -79,15 +79,15 @@ namespace XeApp.Game.Menu
 			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Num, 0);
 			m_numMaxPlate.SetNumber(it.BFGKGMOLAFL_Max, 0);
 			m_textBoxNum.text = view.JALHJAPAFLK_BoxCurrent.ToString() + "/" + view.DMPELKEMCCJ_BoxTotal.ToString();
-			if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO.FAFCPLEAFCP_0_Summer)
+			if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO_GachaType.FAFCPLEAFCP_0_Summer)
 			{
 				m_layoutChara.StartChildrenAnimGoStop("01");
 			}
-			else if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO.DALFBOFBJJL_1_NewYear)
+			else if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO_GachaType.DALFBOFBJJL_1_NewYear)
 			{
 				m_layoutChara.StartChildrenAnimGoStop("02");
 			}
-			else if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO.AIMPCCIHKAJ_2)
+			else if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO_GachaType.AIMPCCIHKAJ_2)
 			{
 				m_layoutChara.StartChildrenAnimGoStop("03");
 			}
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x199EB60 Offset: 0x199EB60 VA: 0x199EB60
-		public void SetCostIcon(HGFPAFPGIKG.KAFHMMOGLKO type, int halfTimeId)
+		public void SetCostIcon(HGFPAFPGIKG.KAFHMMOGLKO_GachaType type, int halfTimeId)
 		{
 			if(m_uvMan != null && m_imageCostItem != null)
 			{

@@ -7,13 +7,13 @@ using XeApp.Game;
 public class BBHNACPENDM { }
 public class BBHNACPENDM_ServerSaveData
 {
-	public enum BDADJONBIBO
+	public enum BDADJONBIBO_DataType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		FKNGHCNOEHO_1 = 1,
+		FKNGHCNOEHO_1_Local = 1,
 		GGEELFGJAMP_2 = 2,
 		AFGALHECDIJ_3 = 3,
-		LPKPFMHEKEM = 4
+		LPKPFMHEKEM_4_PreviousLocal = 4
 	}
 	 
 	public class EMHDCKMFCGE
@@ -57,7 +57,7 @@ public class BBHNACPENDM_ServerSaveData
 	private delegate KLFDBFMNLBL_ServerSaveBlock FFECIIHJDJA_CreateBlockDelegate();
 	
 	public static bool BDMPBPLHALI = false; // 0x0
-	public BBHNACPENDM_ServerSaveData.BDADJONBIBO HFCOIIHIENB; // 0x8
+	public BDADJONBIBO_DataType HFCOIIHIENB; // 0x8
 	public const int PKPABMAPHGE = 100;
 	public const int CFDJGBNJMIM_Base = 0;
 	public const int IGCDFADKKML_Common = 1;

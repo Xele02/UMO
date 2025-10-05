@@ -63,23 +63,23 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1102568 Offset: 0x1102568 VA: 0x1102568
-		public void SetTextLevelUpBonus(int divaId, string name, JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK type, int param)
+		public void SetTextLevelUpBonus(int divaId, string name, JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType type, int param)
 		{
 			m_systemWindow.SetTelopColor(m_colorTable[divaId - 1]);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
 			switch (type)
 			{
-				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.POBNHLKGMPF_1:
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.POBNHLKGMPF_1_Voice:
 					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_001");
 					break;
-				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.EHJDMAOKHHP_2:
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.EHJDMAOKHHP_2_Reaction:
 					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_002");
 					break;
-				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.JFEKIMDCKIH_3:
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.JFEKIMDCKIH_3_AffectionBonus:
 					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_003");
 					break;
-				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.GBINCMPKLOF_4:
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.GBINCMPKLOF_4_Title:
 					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_004");
 					break;
 				default:

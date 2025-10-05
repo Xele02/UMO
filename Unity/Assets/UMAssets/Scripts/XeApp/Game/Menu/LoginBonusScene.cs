@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 				if(m_loginBonusMasters.Count < 1)
 					break;
 				EPLAAEHPCDM data = m_loginBonusMasters[0];
-				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular || data.CKHOBDIKJFN_Type > ANPGILOLNFK.CDOGFBNLIPG.CEIJKIOOIPE_4_Comback2)
+				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.PHABJLGFJNI_1_Regular || data.CKHOBDIKJFN_Type > ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.CEIJKIOOIPE_4_Comback2)
 				{
 					isEnd = true;
 					break;
@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 					//0xEB583C
 					if(m_loginBonusMasters.Count > 0)
 					{
-						if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular || data.CKHOBDIKJFN_Type <= ANPGILOLNFK.CDOGFBNLIPG.CEIJKIOOIPE_4_Comback2)
+						if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.PHABJLGFJNI_1_Regular || data.CKHOBDIKJFN_Type <= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.CEIJKIOOIPE_4_Comback2)
 						{
 							m_divaControl.RequestLoginAnimLoopBreak();
 						}
@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 				if(m_loginBonusMasters.Count < 1)
 					break;
 				data = m_loginBonusMasters[0];
-				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start || data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7_Total)
+				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start || data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.MKADAMIGMPO_7_Total)
 				{
 					isEnd = true;
 					break;
@@ -390,11 +390,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEB3F6C Offset: 0xEB3F6C VA: 0xEB3F6C
-		private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG type)
+		private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType type)
 		{
 			m_layoutDivaSerifWindow.SetTitle(MenuScene.Instance.divaManager.GetFullName());
 			m_layoutDivaSerifWindow.Enter();
-			if(type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3_Comback1 && type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start)
+			if(type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.DHGCJEOPEIE_3_Comback1 && type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start)
 			{
 				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
 				{
@@ -647,7 +647,7 @@ namespace XeApp.Game.Menu
 				EPLAAEHPCDM data = m_loginBonusMasters.Find((EPLAAEHPCDM _) =>
 				{
 					//0xEB5C38
-					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1_Regular && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start;
+					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.PHABJLGFJNI_1_Regular && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start;
 				});
 				return data != null;
 			}
@@ -662,7 +662,7 @@ namespace XeApp.Game.Menu
 				EPLAAEHPCDM data = m_loginBonusMasters.Find((EPLAAEHPCDM _) =>
 				{
 					//0xEB5C6C
-					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5_Start && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7_Total;
+					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.MKADAMIGMPO_7_Total;
 				});
 				return data != null;
 			}

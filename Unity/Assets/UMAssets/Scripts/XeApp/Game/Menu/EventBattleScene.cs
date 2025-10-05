@@ -431,7 +431,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_isMatched = btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.CNLOFIHPBMP_4 && btlEv.KKMFHMGIIKN_GetCls() > 0;
+				m_isMatched = btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.CNLOFIHPBMP_4_Matched && btlEv.KKMFHMGIIKN_GetCls() > 0;
 				m_isClassSelected = btlEv.KKMFHMGIIKN_GetCls() > 0;
 			}
 			if(IsEventEndChallengePeriod)
@@ -1104,7 +1104,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>

@@ -660,13 +660,13 @@ namespace XeApp.Game.Menu
 				{
 					if(KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
 					{
-						lw.OJOLFJGNEMO(1, musicId);
+						lw.OJOLFJGNEMO_MusicDownload(1, musicId);
 					}
 				}
 				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
 				yield return null;
 			}
-			lw.OJOLFJGNEMO(2, musicId);
+			lw.OJOLFJGNEMO_MusicDownload(2, musicId);
 			for(int i = 0; i < musicListCount; i++)
 			{
 				GetMusicList(i).UpdateDownloadState(musicId);
@@ -1020,7 +1020,7 @@ namespace XeApp.Game.Menu
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.IDINJDEBPKP_6_EventBanner);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId = eventId });
 						MenuScene.Instance.GotoAdventure(false);
@@ -1049,7 +1049,7 @@ namespace XeApp.Game.Menu
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.IDINJDEBPKP_6_EventBanner);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTQUEST, new AdvSetupParam() { eventUniqueId = eventId });
 						MenuScene.Instance.GotoAdventure(false);
@@ -1072,7 +1072,7 @@ namespace XeApp.Game.Menu
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.IDINJDEBPKP_6_EventBanner);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId = eventId });
 						MenuScene.Instance.GotoAdventure(false);
@@ -1109,7 +1109,7 @@ namespace XeApp.Game.Menu
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.IDINJDEBPKP_6_EventBanner);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.MUSICSELECT_RAID, new AdvSetupParam() { eventUniqueId = eventId });
 						MenuScene.Instance.GotoAdventure(false);
@@ -1132,7 +1132,7 @@ namespace XeApp.Game.Menu
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.IDINJDEBPKP_6_EventBanner);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTGODIVA, new AdvSetupParam() { eventUniqueId = eventId });
 						MenuScene.Instance.GotoAdventure(false);
@@ -1184,9 +1184,9 @@ namespace XeApp.Game.Menu
 			}
 			if(musicData != null)
 			{
-				return MenuScene.Instance.CheckEventLimit(musicData, true, true, eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5 : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, eventId);
+				return MenuScene.Instance.CheckEventLimit(musicData, true, true, eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, eventId);
 			}
-			return MenuScene.Instance.CheckEventLimit(eventType, true, true, eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5 : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, eventId);
+			return MenuScene.Instance.CheckEventLimit(eventType, true, true, eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, eventId);
 		}
 
 		// // RVA: 0x13BCC8C Offset: 0x13BCC8C VA: 0x13BCC8C

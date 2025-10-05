@@ -318,7 +318,7 @@ namespace XeApp.Game.Menu
 			float time; // 0x34
 			int offerMaxDifficult; // 0x38
 			Coroutine saveCoroutine; // 0x3C
-			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x40
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType> typeList; // 0x40
 			List<int> paramList; // 0x44
 			bool levelUpBonus; // 0x48
 			int prev; // 0x4C
@@ -997,7 +997,7 @@ namespace XeApp.Game.Menu
 			float touchTime; // 0x34
 			int offerMaxDifficult; // 0x38
 			Coroutine saveCoroutine; // 0x3C
-			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x40
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType> typeList; // 0x40
 			List<int> paramList; // 0x44
 			bool levelUpBonus; // 0x48
 			int prev; // 0x4C
@@ -1334,7 +1334,7 @@ namespace XeApp.Game.Menu
 			int offerMaxDifficult; // 0x30
 			Coroutine saveCoroutine; // 0x34
 			float time; // 0x38
-			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x3C
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType> typeList; // 0x3C
 			List<int> paramList; // 0x40
 			int i; // 0x44
 

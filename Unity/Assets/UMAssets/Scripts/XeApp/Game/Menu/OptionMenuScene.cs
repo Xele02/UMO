@@ -845,7 +845,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < evList.Count; i++)
 				{
-					if (evList[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+					if (evList[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 						scoreCtrl = evList[i];
 					else
 						eventCtrl = evList[i];
@@ -954,7 +954,7 @@ namespace XeApp.Game.Menu
 			//0xDDF6BC
 			bool isDone = false;
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.CCFMGBNHMNN_Inquiry, () =>
 			{
 				//0xDDA624
 				isDone = true;
@@ -990,7 +990,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDADB8
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_Balance, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCNNIHGFBMP_Balance, () =>
 			{
 				//0xDD9F50
 				MenuScene.Instance.RaycastEnable();
@@ -1009,7 +1009,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDFD5C
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_Opinion, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.FFIDPICMNKN_Opinion, () =>
 			{
 				//0xDDA0B0
 				MenuScene.Instance.RaycastEnable();

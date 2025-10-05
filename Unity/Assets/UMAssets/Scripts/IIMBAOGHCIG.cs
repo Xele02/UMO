@@ -3,10 +3,10 @@ using XeApp.Game.Common;
 
 public class IIMBAOGHCIG
 {
-	public enum BEFNGAHBLEN
+	public enum BEFNGAHBLEN_BadgeType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		JJGHKIBKFFJ = 1,
+		JJGHKIBKFFJ_1_Offer = 1,
 	}
 
 	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x8
@@ -15,7 +15,7 @@ public class IIMBAOGHCIG
 	//// RVA: 0x1204B5C Offset: 0x1204B5C VA: 0x1204B5C
 	public void FBANBDCOEJL_Update(bool _CADENLBDAEB_IsNew)
 	{
-		if(HNNHJGJCFIL() != BEFNGAHBLEN.JJGHKIBKFFJ/*1*/)
+		if(HNNHJGJCFIL() != BEFNGAHBLEN_BadgeType.JJGHKIBKFFJ_1_Offer/*1*/)
 		{
 			BEEIIJJKDBH_BadgeConstantId = _CADENLBDAEB_IsNew ? BadgeConstant.ID.New : BadgeConstant.ID.None;
 			return;
@@ -25,16 +25,16 @@ public class IIMBAOGHCIG
 	}
 
 	//// RVA: 0x1204BC0 Offset: 0x1204BC0 VA: 0x1204BC0
-	private BEFNGAHBLEN HNNHJGJCFIL()
+	private BEFNGAHBLEN_BadgeType HNNHJGJCFIL()
 	{
 		if(!KDHGBOOECKC.HHCJCDFCLOB.CCPNBHCKNDC())
 		{
 			if(!KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 			{
-				return BEFNGAHBLEN.JJGHKIBKFFJ/*1*/;
+				return BEFNGAHBLEN_BadgeType.JJGHKIBKFFJ_1_Offer/*1*/;
 			}
-			return BEFNGAHBLEN.HJNNKCMLGFL_0_None/*0*/;
+			return BEFNGAHBLEN_BadgeType.HJNNKCMLGFL_0_None/*0*/;
 		}
-		return BEFNGAHBLEN.JJGHKIBKFFJ/*1*/;
+		return BEFNGAHBLEN_BadgeType.JJGHKIBKFFJ_1_Offer/*1*/;
 	}
 }

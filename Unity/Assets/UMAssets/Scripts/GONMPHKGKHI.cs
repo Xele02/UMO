@@ -6,24 +6,24 @@ using UnityEngine;
 public class GONMPHKGKHI { }
 public class GONMPHKGKHI_RewardView
 {
-	public enum CECMLGBLHHG
+	public enum CECMLGBLHHG_PopupType
 	{
 		HJNNKCMLGFL_0_None = 0,
-		GBIDBHKEPGL = 1,
-		AGLFBCCGHJM_2 = 2,
-		NNEOHGFGLKM_3 = 3,
-		INJNLJHGGKB_4 = 4,
+		GBIDBHKEPGL_1 = 1,
+		AGLFBCCGHJM_2_NewEpisode = 2,
+		NNEOHGFGLKM_3_RareUp = 3,
+		INJNLJHGGKB_4_NextBoard = 4,
 		CEFPGLBAGAC = 5,
 		MNGOJCFMBPP = 6,
-		BKHAAGAAIHJ_7 = 7,
-		JCGKGFLCKCP_8 = 8,
+		BKHAAGAAIHJ_7_Episode = 7,
+		JCGKGFLCKCP_8_Poster = 8,
 		AEFCOHJBLPO_9_Num = 9,
 	}
 
 	public class LCMJJMNMIKG_RewardInfo
 	{
 		public int BCCHOBPJJKE_SceneId; // 0x8
-		public CECMLGBLHHG IPMJIODJGBC; // 0xC
+		public CECMLGBLHHG_PopupType IPMJIODJGBC; // 0xC
 		public int JKGFBFPIMGA_Rarity; // 0x10
 		public int MPGNHFDGOBO_PrevRarity; // 0x14
 		public int HNNAODKJGPD_NextRarity; // 0x18
@@ -71,7 +71,7 @@ public class GONMPHKGKHI_RewardView
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -96,7 +96,7 @@ public class GONMPHKGKHI_RewardView
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -114,7 +114,7 @@ public class GONMPHKGKHI_RewardView
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 					rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 					rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 					rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 					rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -127,7 +127,7 @@ public class GONMPHKGKHI_RewardView
 			{
 				LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 				rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-				rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+				rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 				rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 				rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 				rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -160,7 +160,7 @@ public class GONMPHKGKHI_RewardView
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -232,7 +232,7 @@ public class GONMPHKGKHI_RewardView
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 					rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
+					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG_PopupType)FKHPGALPAIC.INDDJNMPONH_type;
 					rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 					rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 					rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -303,7 +303,7 @@ public class GONMPHKGKHI_RewardView
 		{
 			for (int i = 0; i < NJCMJLPPIGK.Count; i++)
 			{
-				if (NJCMJLPPIGK[i].IPMJIODJGBC == CECMLGBLHHG.GBIDBHKEPGL/*1*/)
+				if (NJCMJLPPIGK[i].IPMJIODJGBC == CECMLGBLHHG_PopupType.GBIDBHKEPGL_1/*1*/)
 				{
 					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[NJCMJLPPIGK[i].BCCHOBPJJKE_SceneId - 1];
 					for (int j = 0; j < l.Count; j++)
@@ -319,7 +319,7 @@ public class GONMPHKGKHI_RewardView
 			}
 			for (int i = 0; i < JPMPIFCKEHH_RewardsInfo.Count; i++)
 			{
-				if (JPMPIFCKEHH_RewardsInfo[i].IPMJIODJGBC == CECMLGBLHHG.GBIDBHKEPGL/*1*/)
+				if (JPMPIFCKEHH_RewardsInfo[i].IPMJIODJGBC == CECMLGBLHHG_PopupType.GBIDBHKEPGL_1/*1*/)
 				{
 					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[JPMPIFCKEHH_RewardsInfo[i].BCCHOBPJJKE_SceneId - 1];
 					for (int j = 0; j < l.Count; j++)
@@ -375,7 +375,7 @@ public class GONMPHKGKHI_RewardView
 	//public void NFOHOGAJGHB(List<int> _CGCFENMHJIM_Ids, List<int> PIHPOPCPAHL, bool IMBGFAJLPEK) { }
 
 	//// RVA: 0x1E5C984 Offset: 0x1E5C984 VA: 0x1E5C984
-	public bool LBHPMGDNPHK_IsAvailable(CECMLGBLHHG _INDDJNMPONH_type)
+	public bool LBHPMGDNPHK_IsAvailable(CECMLGBLHHG_PopupType _INDDJNMPONH_type)
 	{
 		List<LCMJJMNMIKG_RewardInfo> l1 = new List<LCMJJMNMIKG_RewardInfo>();
 		List<LCMJJMNMIKG_RewardInfo> l2 = new List<LCMJJMNMIKG_RewardInfo>();
@@ -384,7 +384,7 @@ public class GONMPHKGKHI_RewardView
 	}
 
 	//// RVA: 0x1E5CA78 Offset: 0x1E5CA78 VA: 0x1E5CA78
-	public bool JDKOAKDLHMG(CECMLGBLHHG _INDDJNMPONH_type, ref List<LCMJJMNMIKG_RewardInfo> PJFOENCFNEK, ref List<LCMJJMNMIKG_RewardInfo> MPCJGPEBCCD, ref List<int> _BBAJKJPKOHD_EpisodeList)
+	public bool JDKOAKDLHMG(CECMLGBLHHG_PopupType _INDDJNMPONH_type, ref List<LCMJJMNMIKG_RewardInfo> PJFOENCFNEK, ref List<LCMJJMNMIKG_RewardInfo> MPCJGPEBCCD, ref List<int> _BBAJKJPKOHD_EpisodeList)
 	{
 		PJFOENCFNEK.Clear();
 		MPCJGPEBCCD.Clear();
@@ -399,27 +399,27 @@ public class GONMPHKGKHI_RewardView
 			//0x1E5D644
 			return JPAEDJJFFOI.IPMJIODJGBC == _INDDJNMPONH_type;
 		});
-		if(_INDDJNMPONH_type == CECMLGBLHHG.INJNLJHGGKB_4/*4*/)
+		if(_INDDJNMPONH_type == CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard/*4*/)
 		{
 			List<LCMJJMNMIKG_RewardInfo> rewards3 = NJCMJLPPIGK.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 			{
 				//0x1E5D5AC
-				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM_3/*3*/;
+				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp/*3*/;
 			});
 			rewards.InsertRange(0, rewards3);
 			rewards3 = JPMPIFCKEHH_RewardsInfo.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 			{
 				//0x1E5D5DC
-				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM_3/*3*/;
+				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp/*3*/;
 			});
 			rewards2.InsertRange(0, rewards3);
 		}
 		switch(_INDDJNMPONH_type)
 		{
-			case CECMLGBLHHG.AGLFBCCGHJM_2/*2*/:
+			case CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode/*2*/:
 				_BBAJKJPKOHD_EpisodeList.AddRange(DKJLFPMHDJC);
 				break;
-			case CECMLGBLHHG.NNEOHGFGLKM_3/*3*/:
+			case CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp/*3*/:
 				PJFOENCFNEK.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards2);
@@ -428,10 +428,10 @@ public class GONMPHKGKHI_RewardView
 				MPCJGPEBCCD.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards2);
 				break;
-			case CECMLGBLHHG.BKHAAGAAIHJ_7/*7*/:
+			case CECMLGBLHHG_PopupType.BKHAAGAAIHJ_7_Episode/*7*/:
 				_BBAJKJPKOHD_EpisodeList.AddRange(NPOFCCEBOGC);
 				break;
-			case CECMLGBLHHG.JCGKGFLCKCP_8/*8*/:
+			case CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster/*8*/:
 				MPCJGPEBCCD.AddRange(COLIEKINOPB_ItemsPoster);
 				break;
 		}

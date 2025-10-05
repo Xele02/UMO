@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 			}
 			int fId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(advId).KKPPFAHFOJI_FileId;
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(advId, OAGBCBBHMPF.DKAMMIHBINF.KDDHGLNCFMF_8);
+			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(advId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.KDDHGLNCFMF_8_SpecialEventHome);
 			Database.Instance.advSetup.Setup(fId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
@@ -412,7 +412,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1517878 Offset: 0x1517878 VA: 0x1517878
 		private void ShowCampaignPopup()
 		{
-			OHKECKAPJJL btnInfo = m_viewDataSpPage.IMOGBABIDFF(OHKECKAPJJL.GPNHNIGPGCL.NOBPFBOJLJD_3_Campaign);
+			OHKECKAPJJL btnInfo = m_viewDataSpPage.IMOGBABIDFF(OHKECKAPJJL.GPNHNIGPGCL_SpBtnType.NOBPFBOJLJD_3_Campaign);
 			if(btnInfo.LPDLBACJKIB_TransId == 0)
 			{
 				m_popupEvent.Buttons = new ButtonInfo[1]

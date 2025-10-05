@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 			bool done = false;
 			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha)
 			{
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.PHOGGPBMGAE_20);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.PHOGGPBMGAE_20_GachaList);
 				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DOEHLCLBCNN_3_Gacha);
 				done = false;
 				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GachaMain, () =>
@@ -917,7 +917,7 @@ namespace XeApp.Game.Menu
 		private void OnClickLegalDesc(Action callback)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0xEEDE64
 				if(callback != null)
@@ -1046,7 +1046,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.GotoGachaDirection();
 			if(GameManager.Instance.IsTutorial)
 			{
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.ECLDDCCEJJG_21);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.ECLDDCCEJJG_21_GachaStart);
 				BasicTutorialManager.Instance.UpdateLocalPlayerData();
 				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha);
 				Database.Instance.tutorialPaidVC = 0;

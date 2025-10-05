@@ -276,7 +276,7 @@ namespace XeApp.Game.DownLoad
 			GameObject g = Instantiate(op.GetAsset<GameObject>());
 			g.transform.SetParent(m_Layout.transform.parent, false);
 			_unlockManager = g.GetComponent<UnlockDivaManager>();
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.FFFHCFBMHDD_34);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.FFFHCFBMHDD_34_DivaStart);
 			int serie = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[divaId - 1].AIHCEGFANAM_SerieAttr;
 			UnlockFadeManager.Create();
 			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(serie));

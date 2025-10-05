@@ -632,8 +632,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = m_guestInfoList[elemIndex].friend;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_PlayerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(arg.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 			DecoVisitScene.transitionType = DecoVisitScene.TransitionType.None;
 			MenuScene.Instance.Mount(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}

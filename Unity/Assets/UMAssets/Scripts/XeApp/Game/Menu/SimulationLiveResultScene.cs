@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(openUrl)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA(musicId, musicInfo.musicName);
+				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA_View(musicId, musicInfo.musicName);
 				OtherUtility.OpenURL(musicInfo.buyURL, () =>
 				{
 					//0x12C99B8
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 			if(openUrl)
 			{
 				EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
-				ILCCJNDFFOB.HHCJCDFCLOB.GADJDBJLIGC(musicId, SimulationLiveResultInfo.GetAnimName(music.AIHCEGFANAM_SerieAttr - 1), musicInfo.dAnmStoreURL);
+				ILCCJNDFFOB.HHCJCDFCLOB.GADJDBJLIGC_ViewMovie(musicId, SimulationLiveResultInfo.GetAnimName(music.AIHCEGFANAM_SerieAttr - 1), musicInfo.dAnmStoreURL);
 				OtherUtility.OpenURL(musicInfo.dAnmStoreURL, () =>
 				{
 					//0x12C99BC

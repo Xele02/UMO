@@ -12,14 +12,14 @@ namespace XeApp.Game.Menu
 		// public bool IsLoading() { }
 
 		// RVA: 0x173ADEC Offset: 0x173ADEC VA: 0x173ADEC
-		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type)
+		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4)
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard)
 			{
 				m_root.StartChildrenAnimGoStop("02");
 			}
-			else if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3)
+			else if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp)
 			{
 				m_root.StartChildrenAnimGoStop("01");
 			}

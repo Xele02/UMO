@@ -10,7 +10,7 @@ namespace XeApp.Game.Menu
 {
 	public class GachaBoxSceneMission : GachaBoxScene
 	{
-		private HGFPAFPGIKG.FHOKKDKGGJI m_reactionTiming; // 0x6C
+		private HGFPAFPGIKG.FHOKKDKGGJI_ReactionTiming m_reactionTiming; // 0x6C
 		private List<HGFPAFPGIKG.LBEPCOMCHNE> m_reactionList = new List<HGFPAFPGIKG.LBEPCOMCHNE>(); // 0x70
 		private bool m_isBoxFull; // 0x74
 		private int m_prevBoxId; // 0x78
@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 				this.StartCoroutineWatched(Co_ConfirmNextBox());
 			};
-			m_reactionTiming = HGFPAFPGIKG.FHOKKDKGGJI.KENKGHLELHP_1;
+			m_reactionTiming = HGFPAFPGIKG.FHOKKDKGGJI_ReactionTiming.KENKGHLELHP_1_Start;
 			UpdateLayout(null);
 			UpdateReaction();
 		}
@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 			m_crntPickup = FindPickup(m_view);
 			if(m_crntPickup != null)
 			{
-				m_reactionList = m_view.MHCOADJDLLF(m_reactionTiming, HGFPAFPGIKG.FBGKMBHEOBC.HJNNKCMLGFL_0_None, HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0_None).FindAll(CheckReaction);
+				m_reactionList = m_view.MHCOADJDLLF(m_reactionTiming, HGFPAFPGIKG.FBGKMBHEOBC_Type.HJNNKCMLGFL_0_None, HGFPAFPGIKG.GDEJHABHLFH_Condition.HJNNKCMLGFL_0_None).FindAll(CheckReaction);
 				m_isBoxFull = m_view.JALHJAPAFLK_BoxCurrent == m_view.DMPELKEMCCJ_BoxTotal;
 			}
 		}
@@ -143,13 +143,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEE1754 Offset: 0xEE1754 VA: 0xEE1754
 		private bool CheckReaction(HGFPAFPGIKG.LBEPCOMCHNE reaction)
 		{
-			if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0_None || reaction.FKDOMKHHOCD_CenterSkillCondition > HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5)
+			if(reaction.FKDOMKHHOCD_Condition == HGFPAFPGIKG.GDEJHABHLFH_Condition.HJNNKCMLGFL_0_None || reaction.FKDOMKHHOCD_Condition > HGFPAFPGIKG.GDEJHABHLFH_Condition.EOAFEBEENLI_5_FirstBox)
 				return false;
-			switch(reaction.FKDOMKHHOCD_CenterSkillCondition)
+			switch(reaction.FKDOMKHHOCD_Condition)
 			{
-				case HGFPAFPGIKG.GDEJHABHLFH.HPFFBANMJOD_1:
+				case HGFPAFPGIKG.GDEJHABHLFH_Condition.HPFFBANMJOD_1_Default:
 					break;
-				case HGFPAFPGIKG.GDEJHABHLFH.CPLKGJJFJKA_2:
+				case HGFPAFPGIKG.GDEJHABHLFH_Condition.CPLKGJJFJKA_2_AllDone:
 					return (m_crntPickup.NNCCGILOOIE_Num - m_crntPickup.BFGKGMOLAFL_Max) < 0;
 				default:
 					if(m_prevBoxId != m_crntBoxId)
@@ -158,16 +158,16 @@ namespace XeApp.Game.Menu
 						return false;
 					if(m_prevPickup.NNCCGILOOIE_Num <= m_crntPickup.NNCCGILOOIE_Num)
 						return false;
-					if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3)
+					if(reaction.FKDOMKHHOCD_Condition == HGFPAFPGIKG.GDEJHABHLFH_Condition.DAFJKGJDAND_3_PickupBoxFull)
 					{
 						if(!m_isBoxFull)
 							return false;
 						return true;
 					}
-					if(reaction.FKDOMKHHOCD_CenterSkillCondition != HGFPAFPGIKG.GDEJHABHLFH.BEJJEGKLGMP_4)
+					if(reaction.FKDOMKHHOCD_Condition != HGFPAFPGIKG.GDEJHABHLFH_Condition.BEJJEGKLGMP_4_PickupBoxNotFull)
 						return false;
 					return !m_isBoxFull;
-				case HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5:
+				case HGFPAFPGIKG.GDEJHABHLFH_Condition.EOAFEBEENLI_5_FirstBox:
 					return m_view.JALHJAPAFLK_BoxCurrent - 1 < 0;
 			}
 			return true;
@@ -262,12 +262,12 @@ namespace XeApp.Game.Menu
 			});
 			if(!cancel)
 			{
-				m_reactionTiming = HGFPAFPGIKG.FHOKKDKGGJI.PDEGHEGBDBE_2;
+				m_reactionTiming = HGFPAFPGIKG.FHOKKDKGGJI_ReactionTiming.PDEGHEGBDBE_2_Draw;
 				yield return Co.R(Co_DrawBox(num));
 				HGFPAFPGIKG.LBEPCOMCHNE d = m_reactionList.Find((HGFPAFPGIKG.LBEPCOMCHNE x) =>
 				{
 					//0xEE1F58
-					return x.FKDOMKHHOCD_CenterSkillCondition >= HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3 && x.FKDOMKHHOCD_CenterSkillCondition < HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5;
+					return x.FKDOMKHHOCD_Condition >= HGFPAFPGIKG.GDEJHABHLFH_Condition.DAFJKGJDAND_3_PickupBoxFull && x.FKDOMKHHOCD_Condition < HGFPAFPGIKG.GDEJHABHLFH_Condition.EOAFEBEENLI_5_FirstBox;
 				});
 				if(d != null)
 				{

@@ -87,11 +87,11 @@ namespace XeApp.Game.Menu
 		public FKGMGBHBNOC.HPJOCKGKNCC_Form GetCurrentForm()
 		{
 			if(fighter.activeSelf)
-				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter;
+				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter;
 			if(gerwalk.activeSelf)
-				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MOGAKDMDCJB_Gerwalk;
+				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MOGAKDMDCJB_1_Gerwalk;
 			if(battroid.activeSelf)
-				return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_Battroid;
+				return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_2_Battroid;
 			return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num;
 		}
 

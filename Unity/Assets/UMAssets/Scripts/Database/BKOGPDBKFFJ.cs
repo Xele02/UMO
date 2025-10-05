@@ -318,12 +318,14 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 
 	public class KHPDKADKOCP
 	{
-		public enum GMHNAPBHMMA
+		[System.Obsolete]
+		public enum GMHNAPBHMMA {}
+		public enum GMHNAPBHMMA_BonusType
 		{
 			KBHGPMNGALJ_1_Costume = 1,
 			PFIOMNHDHCO_2_Valkyrie = 2,
-			EKHDECEEFFJ = 3,
-			LMIDAHNABGK = 11,
+			EKHDECEEFFJ_3_EpisodeSeect = 3,
+			LMIDAHNABGK_11_Costume2 = 11,
 			ALMFFEOGPDN = 12,
 			AHKGJELHFKN = 13,
 		}

@@ -389,7 +389,7 @@ namespace XeApp.Game.Menu
 		public void SettingAbilityAnim(int _valId, int _select)
 		{
 			NHDJHOPLMDE n = new NHDJHOPLMDE(_valId, 0);
-			if(n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.FJFMLFPJKNB_2, _select == 0 ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12 : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11))
+			if(n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.FJFMLFPJKNB_2_ValkPosition, _select == 0 ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12_Leader : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11_NonLeader))
 			{
 				m_AbilityIconList[_select].StartChildrenAnimGoStop("go_abi_in");
 				m_AbilityEffectList01[_select].StartChildrenAnimLoop("logo_abi");

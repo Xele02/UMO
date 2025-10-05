@@ -27,11 +27,11 @@ public class INTERNAL_SEVER_ERROR_EXCEPTION : Exception
 
 public class PJKLMCGEJMK
 {
-    public enum AHADNLCOPOL
+    public enum AHADNLCOPOL_RequestStatus
     {
         NFFGMBBNNPH_0_None = 0,
         HIHKPNBDNJC_1_Running = 1,
-        OGBMKAILHMF = 2,
+        OGBMKAILHMF_2_Error = 2,
     }
 
     public delegate void FPHHIOBKMFD_Updater();
@@ -71,19 +71,19 @@ public class PJKLMCGEJMK
 
     // private bool IGIIAEPHNCC { get; set; } // BLJMGAEEDAC_bgs 0x930B9C NNFLLPLMHBG_bgs 0x930C78
     // private int JMEKPMDNKEO { get; set; }  // MMACOJFDCJC_bgs 0x930D48 MLFFBGAHKJI_bgs 0x930E1C 
-    // private KPKEOIJHIMN.GIDACIOHFNN DLDIKFJIGBE { get; set; } //  BEPAHJLMMOG_bgs 0x930EEC PFABEFOBEMC_bgs 0x930FC0
+    // private KPKEOIJHIMN.GIDACIOHFNN_UpdateState DLDIKFJIGBE { get; set; } //  BEPAHJLMMOG_bgs 0x930EEC PFABEFOBEMC_bgs 0x930FC0
     public WorkerThreadQueue BNJPAKLNOPA_WorkerThreadQueue { get; set; } // 0x28 // EGCCKJEDANG_bgs IMDNDFIKMHN_bgs ODBGIMFJOHN_bgs
     public KPKEOIJHIMN DAOHAKABAFG { get { return OPFEFKOOMED; } } // JACGBOGNFKM_bgs 0x9310A0
     // public OBOKMHHMOIL_ServerInfo OAKOMPBPGLD { get; } // MFLBDBHHKMP_bgs 0x9310A8
     public bool MBOIDKCMCDL { get { return NAJENHKNJLN; } set { NAJENHKNJLN = value; } } // NPCNCBJAJNO_bgs 0x9310B0 GOFGBIANJGF_bgs 0x9310B8
     public IIDJLAEDMPI FJDBNGEPKHL_Time { get { return HFMOEKIBNKA; } } // FIIMIGEKDCM_bgs 0x925074
     public LGNBLDHKLJK LOMEEJGIAHO { get { return DNMDKBFINPG; } } // LEFKJNJCAPO_bgs 0x9310C0
-    public AHADNLCOPOL CMCKNKKCNDK_status { get; set; } // 0x70 CLCJNFNMNBH_bgs CNKGOPKANGF_bgs 0x9310C8 CHJGGLFGALP_set_status 0x9310D0 
+    public AHADNLCOPOL_RequestStatus CMCKNKKCNDK_status { get; set; } // 0x70 CLCJNFNMNBH_bgs CNKGOPKANGF_bgs 0x9310C8 CHJGGLFGALP_set_status 0x9310D0 
 
     // // RVA: 0x9310D8 Offset: 0x9310D8 VA: 0x9310D8
     public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_0_None;
+        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
         LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
         HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(Utility.GetCurrentUnixTime());
         DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI_GetServerTime());
@@ -113,7 +113,7 @@ public class PJKLMCGEJMK
         if(FCICFIAOLAM_RequestList.Count < 1)
             return;
 
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_1_Running;
+        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
         N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
         LCIGLIDJILJ_Updater = this.JADLLIFCGLG_CheckRequest;
     }
@@ -123,15 +123,15 @@ public class PJKLMCGEJMK
     {
         if(FCICFIAOLAM_RequestList.Count == 0)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_0_None;
+            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
             LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
             DMGPJMPINFJ = false;
             return;
         }
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_1_Running;
+        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
         if(DMGPJMPINFJ)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.OGBMKAILHMF;
+            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
         }
         CACGCMBKHDI_Request request = FCICFIAOLAM_RequestList[0];
         if(!request.PLOOEECNHFB_IsDone)
@@ -142,7 +142,7 @@ public class PJKLMCGEJMK
         }
         if(FCICFIAOLAM_RequestList.Count < 1)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_0_None;
+            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
             LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
         }
         else
@@ -387,10 +387,10 @@ public class PJKLMCGEJMK
                 }
                 if(!KADMOOOMMJF)
                 {
-                    KPKEOIJHIMN.GIDACIOHFNN val = OPFEFKOOMED.PGBOFGNOBLD();
-                    if(val != KPKEOIJHIMN.GIDACIOHFNN.NHHHCIINJKO && (val == KPKEOIJHIMN.GIDACIOHFNN.DNKAABNOOBF || NAJENHKNJLN))
+                    KPKEOIJHIMN.GIDACIOHFNN_UpdateState val = OPFEFKOOMED.PGBOFGNOBLD();
+                    if(val != KPKEOIJHIMN.GIDACIOHFNN_UpdateState.NHHHCIINJKO_0_UpToDate && (val == KPKEOIJHIMN.GIDACIOHFNN_UpdateState.DNKAABNOOBF || NAJENHKNJLN))
                     {
-                        CMCKNKKCNDK_status = /*2*/PJKLMCGEJMK.AHADNLCOPOL.OGBMKAILHMF;
+                        CMCKNKKCNDK_status = /*2*/PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
                         yield return N.a.StartCoroutineWatched(AOMMJNJGFEL_Coroutine_VersionError(_ADKIDBJCAJA_action, val));
                         // To 8
                         KADMOOOMMJF = true;
@@ -698,7 +698,7 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3668 Offset: 0x6C3668 VA: 0x6C3668
     // // RVA: 0x932064 Offset: 0x932064 VA: 0x932064
-    private IEnumerator AOMMJNJGFEL_Coroutine_VersionError(CACGCMBKHDI_Request _ADKIDBJCAJA_action, KPKEOIJHIMN.GIDACIOHFNN _CMCKNKKCNDK_status)
+    private IEnumerator AOMMJNJGFEL_Coroutine_VersionError(CACGCMBKHDI_Request _ADKIDBJCAJA_action, KPKEOIJHIMN.GIDACIOHFNN_UpdateState _CMCKNKKCNDK_status)
     {
         //0x937760
         yield return null;
@@ -718,11 +718,11 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x9316EC Offset: 0x9316EC VA: 0x9316EC
-    private void DDBHLHBJEGP(PJKLMCGEJMK.AHADNLCOPOL HOENAFAJMGI)
+    private void DDBHLHBJEGP(PJKLMCGEJMK.AHADNLCOPOL_RequestStatus HOENAFAJMGI)
     {
         if(DMPHNPAFHEG == null || CMCKNKKCNDK_status == HOENAFAJMGI)
             return;
-        if(HOENAFAJMGI != PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_1_Running)
+        if(HOENAFAJMGI != PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
         {
             DMPHNPAFHEG(false);
             return;

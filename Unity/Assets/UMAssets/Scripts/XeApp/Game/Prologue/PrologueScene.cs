@@ -313,7 +313,7 @@ namespace XeApp.Game.Prologue
 		private IEnumerator Co_PlayPrologue()
 		{
 			//0xCA9764
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BABBMOJCMDM_1);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.BABBMOJCMDM_1_PrologueStart);
 			SoundManager.Instance.bgmPlayer.Play(BgmConstant.Name.Prologue1, 1);
 			GameManager.Instance.fullscreenFader.Fade(1, 0);
 			m_control.Play();

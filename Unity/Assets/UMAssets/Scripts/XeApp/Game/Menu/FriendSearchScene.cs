@@ -129,11 +129,11 @@ namespace XeApp.Game.Menu
 			arg.friendData = info.friend;
 			if(friendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId))
 			{
-				arg.friendData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
-				arg.friendData.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+				arg.friendData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
+				arg.friendData.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 			}
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_16095, info.playerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(arg.friendData.MLPEHNBNOGD_PlayerId, friendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_16095, info.playerId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, friendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 			MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 					{
 						if(friendManager.PDEACDHIJJJ_IsFriend(info.playerId))
 						{
-							info.friend.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+							info.friend.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 						}
 					}
 				}

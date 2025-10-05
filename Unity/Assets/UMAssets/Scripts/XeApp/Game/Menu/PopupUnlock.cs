@@ -142,25 +142,25 @@ namespace XeApp.Game.Menu
 				UnlockParam param = new UnlockParam();
 				switch(viewData[i].DEPGBBJMFED_CategoryId)
 				{
-					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN_Stage/*1*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.KDGLIKDMGCN_1_Stage/*1*/:
 						param.unlockType = eUnlockType.Stage;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA_Music/*2*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.CELONIBHMBA_2_Music/*2*/:
 						param.unlockType = eUnlockType.Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO_Diva/*3*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.EOBDILOCCHO_3_Diva/*3*/:
 						param.unlockType = eUnlockType.DivaNotify;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG_Difficulty/*4*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.FCHMGAHKMLG_4_Difficulty/*4*/:
 						param.unlockType = eUnlockType.DifficultyUnlock;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
@@ -178,13 +178,13 @@ namespace XeApp.Game.Menu
 						param.isLine6 = viewData[i].GIKLNODJKFK_IsLine6;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM_MultDivaMusic/*5*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.OPPDJDDHHFM_5_MultDivaMusic/*5*/:
 						param.unlockType = eUnlockType.MultiDivaMusic;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH_Live6Music/*6*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.AJPJOJNIHKH_6_Live6Music/*6*/:
 						param.unlockType = eUnlockType.Line6Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;
@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 						//LAB_01159728;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI_LiveSkip/*7*/:
+					case FAGCLBOACEE.BEFPBAIONFK_UnlockType.KHBEKPMMALI_7_LiveSkip/*7*/:
 						param.unlockType = eUnlockType.LiveSkip;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC_id;

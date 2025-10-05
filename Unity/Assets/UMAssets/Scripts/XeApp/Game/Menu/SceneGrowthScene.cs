@@ -110,27 +110,27 @@ namespace XeApp.Game.Menu
 		private bool m_isAddtiveSubBoard; // 0x165
 		private bool m_isAddtiveFirstSubBoard; // 0x166
 		private bool m_isFirstInfinityPanelOpen; // 0x167
-		private static readonly List<IDMPGHMNLHD.NPIEEGNKDEG>[] m_pageStatusTbl = new List<IDMPGHMNLHD.NPIEEGNKDEG>[3]
+		private static readonly List<IDMPGHMNLHD.NPIEEGNKDEG_StatType>[] m_pageStatusTbl = new List<IDMPGHMNLHD.NPIEEGNKDEG_StatType>[3]
 			{
-				new List<IDMPGHMNLHD.NPIEEGNKDEG>()
+				new List<IDMPGHMNLHD.NPIEEGNKDEG_StatType>()
 				{
-					IDMPGHMNLHD.NPIEEGNKDEG.KLJAMOGANCA_Life,
-					IDMPGHMNLHD.NPIEEGNKDEG.IDFLLFIBKGK_Soul,
-					IDMPGHMNLHD.NPIEEGNKDEG.JMLMELKOJND_Vocal,
-					IDMPGHMNLHD.NPIEEGNKDEG.MJEJOPJKFNK_Charm,
-					IDMPGHMNLHD.NPIEEGNKDEG.HLDDCDBLFGJ,
-					IDMPGHMNLHD.NPIEEGNKDEG.NBAPLFKEJBL_Support,
-					IDMPGHMNLHD.NPIEEGNKDEG.AFCFOLIHPDB_Fold
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.KLJAMOGANCA_1_Life,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.IDFLLFIBKGK_2_Soul,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.JMLMELKOJND_3_Vocal,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.MJEJOPJKFNK_4_Charm,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.HLDDCDBLFGJ_19_LUCK,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.NBAPLFKEJBL_8_Support,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.AFCFOLIHPDB_9_Fold
 				},
-				new List<IDMPGHMNLHD.NPIEEGNKDEG>()
+				new List<IDMPGHMNLHD.NPIEEGNKDEG_StatType>()
 				{
-					IDMPGHMNLHD.NPIEEGNKDEG.GMKEEAPLKHC_SkillLevel,
-					IDMPGHMNLHD.NPIEEGNKDEG.DEKFNLBLKEH_ActiveSkillLevel,
-					IDMPGHMNLHD.NPIEEGNKDEG.AJKGPEGCJBH_LiveSkillLevel
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.GMKEEAPLKHC_5_SkillLevel,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.DEKFNLBLKEH_6_ActiveSkillLevel,
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.AJKGPEGCJBH_7_LiveSkillLevel
 				},
-				new List<IDMPGHMNLHD.NPIEEGNKDEG>()
+				new List<IDMPGHMNLHD.NPIEEGNKDEG_StatType>()
 				{
-					IDMPGHMNLHD.NPIEEGNKDEG.KDNCKIMIGOE
+					IDMPGHMNLHD.NPIEEGNKDEG_StatType.KDNCKIMIGOE_18_Episode
 				}
 			}; // 0x0
 		private StringBuilder m_strBuilder = new StringBuilder(); // 0x168
@@ -633,10 +633,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DFD40 Offset: 0x10DFD40 VA: 0x10DFD40
-		private bool GetInfinityMinUnlockMaxCount(SceneGrowthBoard board, List<byte> unlockIndexList, MNDAMOGGJBJ exclusionItemData, out int max, out MNDAMOGGJBJ.MNDGNJLBANB reason)
+		private bool GetInfinityMinUnlockMaxCount(SceneGrowthBoard board, List<byte> unlockIndexList, MNDAMOGGJBJ exclusionItemData, out int max, out MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason reason)
 		{
 			max = 0;
-			reason = MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None;
+			reason = MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason.HJNNKCMLGFL_0_None;
 			AFIFDLOAKGI aa = null;
 			int c = 0;
 			for(int i = 0; i < unlockIndexList.Count; i++)
@@ -812,7 +812,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			m_viewSceneData.JPIPENJGGDD_NumBoard++;
 			JKNGJFOBADP d = new JKNGJFOBADP();
-			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MIDINHNHGNP_43, "");
+			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.MIDINHNHGNP_43_SecretBoardUpgrade, "");
 			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
 			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("secret_board_item_id", 70027);
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
@@ -826,7 +826,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Save(() =>
 			{
 				//0x10E7F2C
-				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_Level, m_viewSceneData.CIEOBFIIPLD_Level, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM_Enhance(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_Level, m_viewSceneData.CIEOBFIIPLD_Level, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
 				isWaitSave = false;
 			}, null);
 			while (isWaitSave)
@@ -1042,7 +1042,7 @@ namespace XeApp.Game.Menu
 			m_viewSceneData.JPIPENJGGDD_NumBoard = 1;
 			m_viewSceneData.IELENGDJPHF_Ulk = 0;
 			JKNGJFOBADP d = new JKNGJFOBADP();
-			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.CDJJNKKIBJN, "");
+			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.CDJJNKKIBJN_42_RareUpStarUse, "");
 			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
 			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("rarity_up_item_id", 230001);
 			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), null);
@@ -1077,7 +1077,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Save(() =>
 			{
 				//0x10E6944
-				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId,
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM_Enhance(m_viewSceneData.BCCHOBPJJKE_SceneId,
 					m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_Level,
 					m_viewSceneData.CIEOBFIIPLD_Level, new List<int>() { typeItemId }, new List<int>() { 1 }, 0, new List<int>());
 				m_isWaitSave = false;
@@ -1883,8 +1883,8 @@ namespace XeApp.Game.Menu
 			//0x10F8D34
 			m_viewGrowItemData.MDHKGJJBLNL();
 			MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, 1);
-			MNDAMOGGJBJ.MNDGNJLBANB reason = m_viewGrowItemData.HDHNAIIAJCP();
-			if (reason != MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/)
+			MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason reason = m_viewGrowItemData.HDHNAIIAJCP();
+			if (reason != MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason.HJNNKCMLGFL_0_None/*0*/)
 			{
 				yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(m_viewGrowItemData, unlock));
 			}
@@ -1994,7 +1994,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7259AC Offset: 0x7259AC VA: 0x7259AC
 		//// RVA: 0x10E44E4 Offset: 0x10E44E4 VA: 0x10E44E4
-		private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB reason, UnityAction<PopupButton.ButtonType, int> callBack)
+		private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason reason, UnityAction<PopupButton.ButtonType, int> callBack)
 		{
 			//0x10F4B8C
 			bool isWait = true;
@@ -2044,7 +2044,7 @@ namespace XeApp.Game.Menu
 					bool b = false;
 					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
 					{
-						m_viewSceneData.EFLDHMMGALP(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						m_viewSceneData.EFLDHMMGALP(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2_Unlock);
 						AFIFDLOAKGI af = m_viewSceneData.LDGCIDPEMPG(m_unLockTargetPanelIndex[i]);
 						if(af != null)
 						{
@@ -2068,7 +2068,7 @@ namespace XeApp.Game.Menu
 					bool b = false;
 					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
 					{
-						m_viewSceneData.GIAPABMCNOC(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						m_viewSceneData.GIAPABMCNOC(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2_Unlock);
 						AFIFDLOAKGI af = m_viewSceneData.CDDHNNLPOLG(m_unLockTargetPanelIndex[i], m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
 						if(af != null)
 						{

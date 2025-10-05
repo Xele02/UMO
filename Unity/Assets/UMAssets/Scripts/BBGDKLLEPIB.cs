@@ -98,7 +98,7 @@ public class BBGDKLLEPIB
     }
 
 	// // RVA: 0xF17934 Offset: 0xF17934 VA: 0xF17934
-	private void FCPBCDOKOPD(BBGDKLLEPIB.GPPPPOFHAJC _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg)
+	private void FCPBCDOKOPD(GPPPPOFHAJC _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg)
 	{
 		return;
 	}
@@ -106,7 +106,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF17938 Offset: 0xF17938 VA: 0xF17938
 	public void PAHGEEOFEPM_Install(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
     {
-		BBGDKLLEPIB.LHJNPJFNDNA_Rev = "";
+		LHJNPJFNDNA_Rev = "";
 		JCMJBMBMJAK_PersistentDataPath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/mx";
 		N.a.StartCoroutineWatched(EOFJPNPFGDM_Coroutine_Install(_BHFHGFKBOHH_OnSuccess, _MOBEEPPKFLG_OnFail));
     }

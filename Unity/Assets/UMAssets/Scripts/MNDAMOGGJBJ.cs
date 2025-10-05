@@ -17,11 +17,11 @@ public class MNDAMOGGJBJ
 		}
 	}
 
-	public enum MNDGNJLBANB
+	public enum MNDGNJLBANB_GrowthReason
 	{
 		HJNNKCMLGFL_0_None = 0,
-		EDBCFDJBFID_LackUC = 1,
-		LNMPDFICAOM_LackItem = 2,
+		EDBCFDJBFID_1_LackUC = 1,
+		LNMPDFICAOM_2_LackItem = 2,
 	}
 
 	private EGOLBAPFHHD_Common KCCLEHLLOFG_Common; // 0x8
@@ -147,19 +147,19 @@ public class MNDAMOGGJBJ
 	}
 
 	//// RVA: 0x17B0BCC Offset: 0x17B0BCC VA: 0x17B0BCC
-	public MNDGNJLBANB HDHNAIIAJCP()
+	public MNDGNJLBANB_GrowthReason HDHNAIIAJCP()
 	{
 		int haveUC = 0;
 		if (KCCLEHLLOFG_Common != null)
 			haveUC = KCCLEHLLOFG_Common.NFHLDFJIBKI_have_uc;
-		MNDGNJLBANB res = haveUC < CMBGGPOFBOO_UcCost ? MNDGNJLBANB.EDBCFDJBFID_LackUC/*1*/ : MNDGNJLBANB.HJNNKCMLGFL_0_None/*0*/;
+		MNDGNJLBANB_GrowthReason res = haveUC < CMBGGPOFBOO_UcCost ? MNDGNJLBANB_GrowthReason.EDBCFDJBFID_1_LackUC/*1*/ : MNDGNJLBANB_GrowthReason.HJNNKCMLGFL_0_None/*0*/;
 		for(int i = 0; i < INLBMFMOHCI_CostItems.Count; i++)
 		{
 			if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count > 0)
 			{
 				if(INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_count > JBMLCIPKFDF_GetNumItemInInventory(i + 1))
 				{
-					return (MNDGNJLBANB)((int)res | 2);
+					return (MNDGNJLBANB_GrowthReason)((int)res | 2);
 				}
 			}
 		}

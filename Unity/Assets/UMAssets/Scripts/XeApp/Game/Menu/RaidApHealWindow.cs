@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private Content[] m_contents = new Content[4]; // 0x18
 		private Action m_popupCloseEvent; // 0x1C
-		private Action<Action, CIOECGOMILE.LIILJGHKIDL> m_onPushPaidButton; // 0x20
+		private Action<Action, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType> m_onPushPaidButton; // 0x20
 		private Action<Action> m_onPushApItemLButton; // 0x24
 		private Action<Action> m_onPushApItemSButton; // 0x28
 
@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1457CE0 Offset: 0x1457CE0 VA: 0x1457CE0
-		public void Initialize(Action<Action, CIOECGOMILE.LIILJGHKIDL> onPushPaidButton, Action<Action> onPushApItemLButton, Action<Action> onPushApItemSButton, Action popupCloseEvent)
+		public void Initialize(Action<Action, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType> onPushPaidButton, Action<Action> onPushApItemLButton, Action<Action> onPushApItemSButton, Action popupCloseEvent)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_popupCloseEvent = popupCloseEvent;
@@ -67,17 +67,17 @@ namespace XeApp.Game.Menu
 			m_infoText.text = bk.GetMessageByLabel("pop_raid_ap_heal_text");
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			m_contents[0].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text01"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[1]);
-			m_contents[0].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text02"), ev.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), CIOECGOMILE.LIILJGHKIDL.HLAJMFGDAHP_1));
+			m_contents[0].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text02"), ev.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HLAJMFGDAHP_1_PaidS));
 			m_contents[0].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text03"), data.FNCPAEFEECO_CurrencyPaid);
 			m_contents[1].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text01"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[2]);
-			m_contents[1].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text02"), ev.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), CIOECGOMILE.LIILJGHKIDL.FPNFLAAECMK_2));
+			m_contents[1].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text02"), ev.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.FPNFLAAECMK_2_PaidL));
 			m_contents[1].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text03"), data.FNCPAEFEECO_CurrencyPaid);
 			m_contents[2].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text01"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealS)));
-			m_contents[2].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealS), CIOECGOMILE.LIILJGHKIDL.HLAJMFGDAHP_1));
+			m_contents[2].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealS), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HLAJMFGDAHP_1_PaidS));
 			int numAp1 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 2, null);
 			m_contents[2].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text03"), numAp1);
 			m_contents[3].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text01"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealL)));
-			m_contents[3].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealL), CIOECGOMILE.LIILJGHKIDL.FPNFLAAECMK_2));
+			m_contents[3].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealL), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.FPNFLAAECMK_2_PaidL));
 			int numAp2 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 3, null);
 			m_contents[3].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text03"), numAp2);
 			m_contents[0].Num.SetNumber(CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[1], 0);
@@ -119,14 +119,14 @@ namespace XeApp.Game.Menu
 		private void OnPushPaidSButton()
 		{
 			if(m_onPushPaidButton != null)
-				m_onPushPaidButton(m_popupCloseEvent, CIOECGOMILE.LIILJGHKIDL.HLAJMFGDAHP_1);
+				m_onPushPaidButton(m_popupCloseEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HLAJMFGDAHP_1_PaidS);
 		}
 
 		// // RVA: 0x145961C Offset: 0x145961C VA: 0x145961C
 		private void OnPushPaidLButton()
 		{
 			if(m_onPushPaidButton != null)
-				m_onPushPaidButton(m_popupCloseEvent, CIOECGOMILE.LIILJGHKIDL.FPNFLAAECMK_2);
+				m_onPushPaidButton(m_popupCloseEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.FPNFLAAECMK_2_PaidL);
 		}
 
 		// // RVA: 0x1459690 Offset: 0x1459690 VA: 0x1459690

@@ -349,7 +349,7 @@ namespace XeApp.Game.Common
 			m_itemList.Clear();
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
-			if(ev != null && ev.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE.DBJIHJMNPAM_5)
+			if(ev != null && ev.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE_Step.DBJIHJMNPAM_5)
 			{
                 NKBOMKGFGIO_EventRaidItem dbRaidItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem;
                 List<ItemOrder> l = new List<ItemOrder>();

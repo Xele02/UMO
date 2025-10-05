@@ -11,7 +11,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class MMLACIFMNBN
 	{
-		public enum FDEMAPBAFGN
+		public enum FDEMAPBAFGN_Flag
 		{
 			HGJCDIEALPL_IsKira = 0,
 		}
@@ -64,10 +64,10 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 			public bool IEDNAKOJNDE_IsValid { get { return HAJKNHNAIKL_rsc > 0; } } //0x176D7F8 JCIMBGHEMOK_bgs
 
 			// RVA: 0x176D930 Offset: 0x176D930 VA: 0x176D930
-			//public bool ELECOLNGHDP(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN _CMCKNKKCNDK_status) { }
+			//public bool ELECOLNGHDP(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag _CMCKNKKCNDK_status) { }
 
 			//// RVA: 0x176D954 Offset: 0x176D954 VA: 0x176D954
-			//public void LFFJMAMIOLM(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN _CMCKNKKCNDK_status, bool _JKDJCFEBDHC_Enabled) { }
+			//public void LFFJMAMIOLM(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.FDEMAPBAFGN_Flag _CMCKNKKCNDK_status, bool _JKDJCFEBDHC_Enabled) { }
 
 			// RVA: 0x176BFB8 Offset: 0x176BFB8 VA: 0x176BFB8
 			public MHODOAJPNHD()

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 public class MKIKFJKPEHK
 {
-	public enum IMIDFBNGHCG
+	public enum IMIDFBNGHCG_EventMusicPlayCheck
 	{
-		DCFJEBLEELJ_0 = 0,
-		CNAMHABEOPF_1 = 1,
-		FKLMPGJPDLL_2 = 2,
-		JCOBDONNJIP_3 = 3,
+		DCFJEBLEELJ_0_Ok = 0,
+		CNAMHABEOPF_1_NeedStamina = 1,
+		FKLMPGJPDLL_2_NeedTicket = 2,
+		JCOBDONNJIP_3_NoEvent = 3,
 	}
 
 	public bool NMKDLINPAFM_UseTicket; // 0x8
@@ -69,7 +69,7 @@ public class MKIKFJKPEHK
 	}
 
 	// // RVA: 0x1959FB8 Offset: 0x1959FB8 VA: 0x1959FB8
-	public IMIDFBNGHCG EFFBJDMGIGO_GetBuyPossible(int OIACNLKAIFO)
+	public IMIDFBNGHCG_EventMusicPlayCheck EFFBJDMGIGO_GetBuyPossible(int OIACNLKAIFO)
 	{
 		IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
 		if(ev != null)
@@ -79,15 +79,15 @@ public class MKIKFJKPEHK
 			{
 				if(!NMKDLINPAFM_UseTicket)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG.CNAMHABEOPF_1 : IMIDFBNGHCG.DCFJEBLEELJ_0;
+					return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG_EventMusicPlayCheck.CNAMHABEOPF_1_NeedStamina : IMIDFBNGHCG_EventMusicPlayCheck.DCFJEBLEELJ_0_Ok;
 				}
 				else
 				{
-					return ev.AELBIEDNPGB_GetTicketCount(null) < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG.FKLMPGJPDLL_2 : IMIDFBNGHCG.DCFJEBLEELJ_0;
+					return ev.AELBIEDNPGB_GetTicketCount(null) < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG_EventMusicPlayCheck.FKLMPGJPDLL_2_NeedTicket : IMIDFBNGHCG_EventMusicPlayCheck.DCFJEBLEELJ_0_Ok;
 				}
 			}
 		}
-		return IMIDFBNGHCG.JCOBDONNJIP_3;
+		return IMIDFBNGHCG_EventMusicPlayCheck.JCOBDONNJIP_3_NoEvent;
 	}
 
 	// // RVA: 0x195A240 Offset: 0x195A240 VA: 0x195A240

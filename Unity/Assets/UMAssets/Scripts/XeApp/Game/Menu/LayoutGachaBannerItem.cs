@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		public Action<LayoutGachaBannerItem> OnClickButton { private get; set; } // 0x3C
 
 		// RVA: 0x1996E54 Offset: 0x1996E54 VA: 0x1996E54
-		public void Setup(LOBDIAABMKG product, HomeBannerTextureCache bannerTexCache, BEPHBEGDFFK.ABBPGMEDDHD timeZone, long currentTime)
+		public void Setup(LOBDIAABMKG product, HomeBannerTextureCache bannerTexCache, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod timeZone, long currentTime)
 		{
 			GachaProduct = product;
 			int v = product.FDEBLMKEMLF_TypeAndSeriesId;

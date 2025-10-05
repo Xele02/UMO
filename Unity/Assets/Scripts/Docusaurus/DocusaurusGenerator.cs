@@ -64,7 +64,7 @@ public class DocusaurusGenerator
         dataA.IJBGPAENLJA_OnAwake(null);
         Database = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
         List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section> sections = new List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section>();
-        for(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section i = 0; i < OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CGKOFIKBMMI; i++)
+        for(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section i = 0; i < OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CGKOFIKBMMI_117_Last; i++)
         {
             sections.Add(i);
         }

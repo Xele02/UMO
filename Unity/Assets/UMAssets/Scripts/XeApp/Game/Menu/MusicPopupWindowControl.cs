@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(openUrl)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA(musicId, musicInfo.musicName);
+				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA_View(musicId, musicInfo.musicName);
 				PopupWindowManager.SetInputState(false);
 				OtherUtility.OpenURL(musicInfo.buyURL, () =>
 				{

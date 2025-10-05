@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 		public int tabType; // 0x8
 
 		// RVA: 0x9D6D6C Offset: 0x9D6D6C VA: 0x9D6D6C
-		public QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG tabType)
+		public QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG_TabType tabType)
 		{
 			this.tabType = (int)tabType;
 		}

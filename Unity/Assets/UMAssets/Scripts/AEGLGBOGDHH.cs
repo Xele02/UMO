@@ -1,7 +1,7 @@
 
 using XeApp.Game.Common;
 
-public enum MKHCIKICBOI
+public enum MKHCIKICBOI_ParamFlag
 {
 	BICPBLMPBPH_1_Soul = 1,
 	GPCMMGOCPHC_2_Vocal = 2,
@@ -9,8 +9,8 @@ public enum MKHCIKICBOI
 	ECHJOKLBHEJ_8_Life = 8,
 	AHJNCHAONGN_16_Support = 16,
 	ONBNGGDFAJK_32_Fold = 32,
-	OHOKFCJNFDO_Luck = 64,
-	MKADAMIGMPO_Total = 7,
+	OHOKFCJNFDO_64_Luck = 64,
+	MKADAMIGMPO_7_Total = 7,
 }
 
 public struct AEGLGBOGDHH
@@ -129,7 +129,7 @@ public struct AEGLGBOGDHH
 	//public int ABEDECHGFAG(JLKEOGLJNOD_TeamInfo _HEDKFICAPIJ_Team) { }
 
 	//// RVA: 0x7FD01C Offset: 0x7FD01C VA: 0x7FD01C
-	public bool IJACIMIPBBK_IsBufftarget(MKHCIKICBOI _ICPDDMIBEIL_Bf)
+	public bool IJACIMIPBBK_IsBufftarget(MKHCIKICBOI_ParamFlag _ICPDDMIBEIL_Bf)
 	{
 		for (int i = 0; i < GJLJJDIDODK.Length; i++)
 		{
@@ -140,7 +140,7 @@ public struct AEGLGBOGDHH
 	}
 
 	//// RVA: 0x7FD024 Offset: 0x7FD024 VA: 0x7FD024
-	public bool ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI _ICPDDMIBEIL_Bf)
+	public bool ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI_ParamFlag _ICPDDMIBEIL_Bf)
 	{
 		for(int i = 0; i < GJLJJDIDODK.Length; i++)
 		{

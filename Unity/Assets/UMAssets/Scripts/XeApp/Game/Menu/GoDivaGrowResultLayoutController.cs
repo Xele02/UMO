@@ -137,15 +137,15 @@ namespace XeApp.Game.Menu
 				if(viewEventData.FMMNAEJEIFF_BeforeLevel[paramType] == viewEventResultData.OMOLFAKIDIC_LevelCap)
 				{
 					m_layoutParamMaxIcon[paramType].StartAllAnimGoStop("02");
-					SetExpGauge((JLCHNKIHGHK.GDJKDOMAAPG)paramType, 1, 1);
-					SetAddExpGauge((JLCHNKIHGHK.GDJKDOMAAPG)paramType, 1, 1);
+					SetExpGauge((JLCHNKIHGHK.GDJKDOMAAPG_Type)paramType, 1, 1);
+					SetAddExpGauge((JLCHNKIHGHK.GDJKDOMAAPG_Type)paramType, 1, 1);
 				}
 				else
 				{
 					int currentExp = viewEventData.IADKEFDENEG_PrevExp[paramType];
-					int needExp = GetNextExp(viewEventData.MKOIJCGNGGI_StartLevel[paramType], (JLCHNKIHGHK.GDJKDOMAAPG)paramType);
-					SetExpGauge((JLCHNKIHGHK.GDJKDOMAAPG)paramType, currentExp, needExp);
-					SetAddExpGauge((JLCHNKIHGHK.GDJKDOMAAPG)paramType, currentExp, needExp);
+					int needExp = GetNextExp(viewEventData.MKOIJCGNGGI_StartLevel[paramType], (JLCHNKIHGHK.GDJKDOMAAPG_Type)paramType);
+					SetExpGauge((JLCHNKIHGHK.GDJKDOMAAPG_Type)paramType, currentExp, needExp);
+					SetAddExpGauge((JLCHNKIHGHK.GDJKDOMAAPG_Type)paramType, currentExp, needExp);
 					m_textGauge[paramType].text = currentExp + "/" + needExp;
 					m_layoutParamMaxIcon[paramType].StartAllAnimGoStop("01");
 				}
@@ -294,7 +294,7 @@ namespace XeApp.Game.Menu
 			int finishCount = 0;
 			for(int i = 0; i < 3; i++)
 			{
-				this.StartCoroutineWatched(Co_CountUpExpGauge((JLCHNKIHGHK.GDJKDOMAAPG) i, () =>
+				this.StartCoroutineWatched(Co_CountUpExpGauge((JLCHNKIHGHK.GDJKDOMAAPG_Type) i, () =>
 				{
 					//0xE17DA8
 					finishCount++;
@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x716154 Offset: 0x716154 VA: 0x716154
 		// // RVA: 0xE15E34 Offset: 0xE15E34 VA: 0xE15E34
-		private IEnumerator Co_CountUpExpGauge(JLCHNKIHGHK.GDJKDOMAAPG divaParamType, Action onFinishCallback)
+		private IEnumerator Co_CountUpExpGauge(JLCHNKIHGHK.GDJKDOMAAPG_Type divaParamType, Action onFinishCallback)
 		{
 			float currentTime; // 0x1C
 			float timeLength; // 0x20
@@ -594,13 +594,13 @@ namespace XeApp.Game.Menu
 		// private void CheckSkipStep() { }
 
 		// // RVA: 0xE16150 Offset: 0xE16150 VA: 0xE16150
-		private int GetNextExp(int level, JLCHNKIHGHK.GDJKDOMAAPG paramType)
+		private int GetNextExp(int level, JLCHNKIHGHK.GDJKDOMAAPG_Type paramType)
 		{
 			return viewEventResultData.HKKJBILCDLA_ExpByLevel[(int)paramType][Mathf.Clamp(level + 1, 1, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA() + 1)];
 		}
 
 		// // RVA: 0xE16300 Offset: 0xE16300 VA: 0xE16300
-		private void SetExpGauge(JLCHNKIHGHK.GDJKDOMAAPG divaParamType, int currentExp, int needExp)
+		private void SetExpGauge(JLCHNKIHGHK.GDJKDOMAAPG_Type divaParamType, int currentExp, int needExp)
 		{
 			foreach(var l in m_beforeGaugeLayout[(int)divaParamType].layout)
 			{
@@ -610,7 +610,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE1652C Offset: 0xE1652C VA: 0xE1652C
-		private void SetAddExpGauge(JLCHNKIHGHK.GDJKDOMAAPG divaParamType, int currentExp, int needExp)
+		private void SetAddExpGauge(JLCHNKIHGHK.GDJKDOMAAPG_Type divaParamType, int currentExp, int needExp)
 		{
 			if(needExp < currentExp)
 				currentExp = needExp;
@@ -636,7 +636,7 @@ namespace XeApp.Game.Menu
 					PopupGoDivaLevelupSetting s = new PopupGoDivaLevelupSetting();
 					s.TitleText = "";
 					s.IsCaption = false;
-					s.initParam.divaParamType = (JLCHNKIHGHK.GDJKDOMAAPG) i;
+					s.initParam.divaParamType = (JLCHNKIHGHK.GDJKDOMAAPG_Type) i;
 					s.initParam.beforeLevel = viewEventResultData.FMMNAEJEIFF_BeforeLevel[i];
 					s.initParam.afterLevel = viewEventResultData.HGMAAIJFPOI_AfterLevel[i];
 					s.initParam.beforeValue = viewEventResultData.DFNNLEMDIPI_BeforeValue[i];

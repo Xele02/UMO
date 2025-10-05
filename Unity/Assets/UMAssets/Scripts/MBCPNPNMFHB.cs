@@ -55,9 +55,9 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2D92C Offset: 0xA2D92C VA: 0xA2D92C
-	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_type, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
+	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType _INDDJNMPONH_type, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
-		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA_index = _INDDJNMPONH_type;
+		MHOILBOJFHL.KCAEDEHGAFO_WebUrlType OIPCCBHIKIA_index = _INDDJNMPONH_type;
 		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(_INDDJNMPONH_type);
 		if(l != null)
 		{
@@ -148,34 +148,34 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2DB5C Offset: 0xA2DB5C VA: 0xA2DB5C
-	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_type)
+	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType _INDDJNMPONH_type)
 	{
 		switch(_INDDJNMPONH_type)
 		{
-			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GCCBFIFJHII_Information:
 				return new KNOINKGFINE_GetInformationURL();
-			case MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.CCFMGBNHMNN_Inquiry:
 				return new IHCPIPBJCJL_GetInquiryURL();
-			case MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_Opinion:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.FFIDPICMNKN_Opinion:
 				return new OIMLBEGNFNN_GetOpinionURL();
-			case MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_Balance:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCNNIHGFBMP_Balance:
 				{
 					KAEOJLJDOBI_GetRemainingForCurrencyIdsURL res = new KAEOJLJDOBI_GetRemainingForCurrencyIdsURL();
 					res.JHPMKDEEJGM = new List<int>();
 					res.JHPMKDEEJGM.Add(1001);
 					return res;
 				}
-			case MHOILBOJFHL.KCAEDEHGAFO.EHDHJCGOGGN_Copyright:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EHDHJCGOGGN_Copyright:
 				return new DDCHNOGMOHK_GetCommonTemplateURL("use_of_legend_sub");
-			case MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_Settlement:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement:
 				return new DDCHNOGMOHK_GetCommonTemplateURL("shikin_kessai_ho_sub");
-			case MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals:
 				return new DDCHNOGMOHK_GetCommonTemplateURL("tokusho_ho_android");
-			case MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy:
 				return new DDCHNOGMOHK_GetCommonTemplateURL("android_privacypolicy");
-			case MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract:
 				return new DDCHNOGMOHK_GetCommonTemplateURL(AppEnv.IsCBT() ? "riyou_kiyaku_sub" : "riyou_kiyaku");
-			case MHOILBOJFHL.KCAEDEHGAFO.JMIDCMFKPOE_Credit:
+			case MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.JMIDCMFKPOE_Credit:
 				{
 					AMFBEGANJGC_GetOriginalTemplateURL res = new AMFBEGANJGC_GetOriginalTemplateURL();
 					res.COHBIBEAMAF = "credit";

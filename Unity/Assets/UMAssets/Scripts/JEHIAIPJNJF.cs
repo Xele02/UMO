@@ -31,7 +31,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
         FEJIMBDPMKI_2_Success = 2,
         LLGCBKEOHNP_3_Error = 3,
         LPLEIJIFOKN_4_AllError = 4,
-        DNCJBLFALPA = 5,
+        DNCJBLFALPA_5_Stopped = 5,
     }
 
 
@@ -280,7 +280,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				info.ICKGJODOCBB = null;
 			}
 		}
-		CMCKNKKCNDK_status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA/*5*/;
+		CMCKNKKCNDK_status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA_5_Stopped/*5*/;
 		EMAEFFGBFIB = 0;
 	}
 
@@ -297,7 +297,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 		}
 		if(CMCKNKKCNDK_status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI_1_Running/*1*/)
 		{
-			if(CMCKNKKCNDK_status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA/*5*/)
+			if(CMCKNKKCNDK_status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA_5_Stopped/*5*/)
 			{
 				CriFsWebInstaller.ExecuteMain();
 				PKDGOJNCLBK_Update();

@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			m_layoutValSelect.SetHitArrowEnable(false);
 			string strAtk = m_SeriesValkyrieList[m_SelectSeries][m_Select].KINFGHHNFCF_Atk.ToString();
 			string strHit = m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_hit.ToString();
-			if (n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.FJFMLFPJKNB_2, IsLeader ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12 : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11))
+			if (n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.FJFMLFPJKNB_2_ValkPosition, IsLeader ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12_Leader : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11_NonLeader))
 			{
 				if(n.KINFGHHNFCF_Atk > 0)
 				{
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 		private void SortieIconUpdate()
 		{
 			m_layoutSortie.AllHide();
-			bool b = KDHGBOOECKC.HHCJCDFCLOB.CKBDHFNLLJE((BOPFPIHGJMD.LGEIPIHHNPH)offerSeries, (SeriesAttr.Type)m_SelectSeries + 1);
+			bool b = KDHGBOOECKC.HHCJCDFCLOB.CKBDHFNLLJE((BOPFPIHGJMD.LGEIPIHHNPH_Serie)offerSeries, (SeriesAttr.Type)m_SelectSeries + 1);
 			if(m_SeriesValkyrieList[m_SelectSeries].Count < 2)
 			{
 				m_layoutSortie.IconSetting(0, m_view.JHBMCGABHMD(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id), b, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId > 0, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId);

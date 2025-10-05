@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class EJFIKLONGDD
 {
-    public enum BLLOINEKDLM
+    public enum BLLOINEKDLM_UnlockType
     {
         HJNNKCMLGFL_0_None = 0,
         JLHALLNOHBA_1_Vc = 1,
@@ -15,12 +15,12 @@ public class EJFIKLONGDD
         AEFCOHJBLPO_7_Num = 7,
     }
 
-	public BLLOINEKDLM PEEAGFNOFFO_UnlockType; // 0x8
+	public BLLOINEKDLM_UnlockType PEEAGFNOFFO_UnlockType; // 0x8
 	public int LIOEOPGDBJK_Received; // 0xC
 	public int MCJBEJBMJMF_Total; // 0x10
 
 	// // RVA: 0x12EC23C Offset: 0x12EC23C VA: 0x12EC23C
-	public void KHEKNNFCAOI_Init(List<IHAEIOAKEMG> NNDGIAEFMOG, BLLOINEKDLM _INDDJNMPONH_type)
+	public void KHEKNNFCAOI_Init(List<IHAEIOAKEMG> NNDGIAEFMOG, BLLOINEKDLM_UnlockType _INDDJNMPONH_type)
     {
         PEEAGFNOFFO_UnlockType = _INDDJNMPONH_type;
         LIOEOPGDBJK_Received = 0;
@@ -33,7 +33,7 @@ public class EJFIKLONGDD
                 {
                     case EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC:
                     {
-                        if(_INDDJNMPONH_type == BLLOINEKDLM.JLHALLNOHBA_1_Vc)
+                        if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.JLHALLNOHBA_1_Vc)
                         {
                             if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                             {
@@ -45,7 +45,7 @@ public class EJFIKLONGDD
                     break;
                     case EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
                     {
-                        if(_INDDJNMPONH_type == BLLOINEKDLM.FKADJNIGFHB_4_Scene3)
+                        if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.FKADJNIGFHB_4_Scene3)
                         {
                             if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 3)
                             {
@@ -56,7 +56,7 @@ public class EJFIKLONGDD
                                 MCJBEJBMJMF_Total += NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].MBJIFDBEDAC_item_count;
                             }
                         }
-                        else if(_INDDJNMPONH_type == BLLOINEKDLM.AFPDIEJNMIB_3_Scene4)
+                        else if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.AFPDIEJNMIB_3_Scene4)
                         {
                             if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 4)
                             {
@@ -67,7 +67,7 @@ public class EJFIKLONGDD
                                 MCJBEJBMJMF_Total += NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].MBJIFDBEDAC_item_count;
                             }
                         }
-                        else if(_INDDJNMPONH_type == BLLOINEKDLM.CIGDJNPNJAM_2_Scene5)
+                        else if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.CIGDJNPNJAM_2_Scene5)
                         {
                             if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 5)
                             {
@@ -82,7 +82,7 @@ public class EJFIKLONGDD
                     break;
                     case EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem:
                     {
-                        if(_INDDJNMPONH_type == BLLOINEKDLM.KODIFHOOOEC_6_LimitOver && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 25)
+                        if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.KODIFHOOOEC_6_LimitOver && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 25)
                         {
                             if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                             {
@@ -94,7 +94,7 @@ public class EJFIKLONGDD
                     break;
                     case EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
                     {
-                        if(_INDDJNMPONH_type == BLLOINEKDLM.FBKFCCCACGE_5_EpiItem && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 2)
+                        if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.FBKFCCCACGE_5_EpiItem && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 2)
                         {
                             if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                             {
@@ -121,37 +121,37 @@ public class EJFIKLONGDD
                 if(strs[i] == "vc")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.JLHALLNOHBA_1_Vc);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.JLHALLNOHBA_1_Vc);
                     res.Add(data);
                 }
                 else if(strs[i] == "scene_5")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.CIGDJNPNJAM_2_Scene5);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.CIGDJNPNJAM_2_Scene5);
                     res.Add(data);
                 }
                 else if(strs[i] == "scene_4")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.AFPDIEJNMIB_3_Scene4);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.AFPDIEJNMIB_3_Scene4);
                     res.Add(data);
                 }
                 else if(strs[i] == "scene_3")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.FKADJNIGFHB_4_Scene3);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.FKADJNIGFHB_4_Scene3);
                     res.Add(data);
                 }
                 else if(strs[i] == "epi_item")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.FBKFCCCACGE_5_EpiItem);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.FBKFCCCACGE_5_EpiItem);
                     res.Add(data);
                 }
                 else if(strs[i] == "limitover")
                 {
                     EJFIKLONGDD data = new EJFIKLONGDD();
-                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM.KODIFHOOOEC_6_LimitOver);
+                    data.KHEKNNFCAOI_Init(NNDGIAEFMOG, BLLOINEKDLM_UnlockType.KODIFHOOOEC_6_LimitOver);
                     res.Add(data);
                 }
             }

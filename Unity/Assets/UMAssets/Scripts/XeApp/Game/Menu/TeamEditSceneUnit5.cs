@@ -1357,7 +1357,7 @@ namespace XeApp.Game.Menu
 		private void LoadUnitSetForCurrentUnit(int unitSetIndex)
 		{
 			PlayerData.LCCKKHFEIGH(unitSetIndex);
-			ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, false, 1);
+			ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, false, 1);
 		}
 
 		//// RVA: 0xFA5134 Offset: 0xFA5134 VA: 0xFA5134

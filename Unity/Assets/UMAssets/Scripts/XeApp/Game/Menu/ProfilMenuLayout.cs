@@ -1132,7 +1132,7 @@ namespace XeApp.Game.Menu
 			//0x9CDA64
 			bool isError = false;
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_prof = inputComment;
-			ILLPDLODANB.HECOAKHIAKP(ILLPDLODANB.LOEGALDKHPL.HDJGNKOIMOH/*26*/, 2, false);
+			ILLPDLODANB.HECOAKHIAKP(ILLPDLODANB.LOEGALDKHPL_ValueType.HDJGNKOIMOH_26_MissionChangeProfilComment/*26*/, 2, false);
 			MenuScene.Save(null, () =>
 			{
 				//0x117CF40
@@ -1957,8 +1957,8 @@ namespace XeApp.Game.Menu
 						}
 						if(args.friendData != null)
 						{
-							ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_19704, args.friendData.MLPEHNBNOGD_PlayerId);
-							ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(args.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(args.friendData.MLPEHNBNOGD_PlayerId), true, 0);
+							ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_19704, args.friendData.MLPEHNBNOGD_PlayerId);
+							ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(args.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(args.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 						}
 						MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					}

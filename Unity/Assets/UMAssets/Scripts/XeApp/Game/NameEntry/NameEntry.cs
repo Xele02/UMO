@@ -23,7 +23,7 @@ namespace XeApp.Game.NameEntry
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.KAEEOAPBOCI_31);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.KAEEOAPBOCI_31_NameEnter);
 			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xCA48DC
@@ -54,7 +54,7 @@ namespace XeApp.Game.NameEntry
 						//0xCA4B6C
 						if(onSuccess != null)
 							onSuccess(name);
-						BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BKFDCMALJBF_32);
+						BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.BKFDCMALJBF_32_NameEnterEnd);
 					}, () =>
 					{
 						//0xCA4BE8

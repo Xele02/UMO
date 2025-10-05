@@ -111,11 +111,11 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 				return null;
 			if((EFLHPLDPEHJ_ValCrypted ^ FBGGEFFJJHB_xor) != BMNPNDCOGOJ_ValCheck)
 			{
-				return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK.AIEOCNLGLEE, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.ep_val");
+				return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK_SecureGroup.AIEOCNLGLEE_3_Episode, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.ep_val");
 			}
 			if ((EEEHAJPKFLP_StepCrypted ^ FBGGEFFJJHB_xor) != FKEOAJOIILO_StepCheck)
 			{
-				return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK.AIEOCNLGLEE, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.ep_step");
+				return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK_SecureGroup.AIEOCNLGLEE_3_Episode, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.ep_step");
 			}
 			for (int i = 0; i < 8; i++)
 			{
@@ -123,7 +123,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 				{
 					if(GDLLDIJEGCB_RewardReceivedCrypted[i] != ((FBGGEFFJJHB_xor * (i + 1) & 0xf) ^ 0xf))
 					{
-						return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK.AIEOCNLGLEE, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.reward_received");
+						return new FENCAJJBLBH(FENCAJJBLBH.EIAPDOGALDK_SecureGroup.AIEOCNLGLEE_3_Episode, 0x16, GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB_xor, "pd.episode.reward_received");
 					}
 				}
 			}

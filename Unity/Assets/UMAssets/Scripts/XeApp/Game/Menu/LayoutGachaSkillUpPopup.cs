@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 		private bool IsNextImage; // 0x49
 
 		// RVA: 0x1D4DAB8 Offset: 0x1D4DAB8 VA: 0x1D4DAB8
-		public void Setup(int _sceneId, GCIJNCFDNON_SceneInfo.DLAMEBMGKDO type)
+		public void Setup(int _sceneId, GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType type)
 		{
 			GCIJNCFDNON_SceneInfo s1 = new GCIJNCFDNON_SceneInfo();
 			GCIJNCFDNON_SceneInfo s2 = new GCIJNCFDNON_SceneInfo();
@@ -66,11 +66,11 @@ namespace XeApp.Game.Menu
 			PrePlateText.verticalOverflow = VerticalWrapMode.Overflow;
 			NextPlateText.horizontalOverflow = HorizontalWrapMode.Wrap;
 			NextPlateText.verticalOverflow = VerticalWrapMode.Overflow;
-			if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.OONCLCEAICE)
+			if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.OONCLCEAICE_Live)
 				SetLiveSkill(s1, s2);
-			else if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DFAPCDGNNPN)
+			else if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.DFAPCDGNNPN_Center)
 				SetCenterSkill(s1, s2);
-			else if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DJECFFENCND)
+			else if(type == GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.DJECFFENCND_Active)
 				SetActiveSkill(s1, s2);
 		}
 

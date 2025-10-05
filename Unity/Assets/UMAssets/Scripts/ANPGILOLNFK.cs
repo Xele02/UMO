@@ -1,7 +1,7 @@
 
 public class ANPGILOLNFK
 {
-	public enum CDOGFBNLIPG
+	public enum CDOGFBNLIPG_LoginBonusType
 	{
 		HJNNKCMLGFL_0_None = 0,
 		PHABJLGFJNI_1_Regular = 1,
@@ -22,14 +22,14 @@ public class ANPGILOLNFK
 	}; // 0x4
 
 	//// RVA: 0xD573E0 Offset: 0xD573E0 VA: 0xD573E0
-	public static CDOGFBNLIPG OLMFIANJBOB_GetType(string _BPEAIOBHMFD_name_for_apis)
+	public static CDOGFBNLIPG_LoginBonusType OLMFIANJBOB_GetType(string _BPEAIOBHMFD_name_for_apis)
 	{
 		for(int i = 1; i < POFDDFCGEGP_Underscore.Length; i++)
 		{
 			if(_BPEAIOBHMFD_name_for_apis.Contains(POFDDFCGEGP_Underscore[i]))
-				return (CDOGFBNLIPG)(i);
+				return (CDOGFBNLIPG_LoginBonusType)(i);
 		}
-		return CDOGFBNLIPG.HJNNKCMLGFL_0_None;
+		return CDOGFBNLIPG_LoginBonusType.HJNNKCMLGFL_0_None;
 	}
 
 	//// RVA: 0xD57550 Offset: 0xD57550 VA: 0xD57550

@@ -156,12 +156,12 @@ namespace XeApp.Game.Menu
 				param2.viewEventExRivalResultData = data3;
 				param2.layoutOkayButton = null;
 				event03PointLayoutInitParam = param2;
-				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false) as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod, false) as HAEDCCLHEMN_EventBattle;
 				if(ev != null)
 				{
 					if(eventType == ev.HIDHLFCBIDE_EventType)
 					{
-						if(ev.CKEDJHEFJCJ != OLLEELKFCMM.NDBAPDFEPAF.HJNNKCMLGFL_0_None)
+						if(ev.CKEDJHEFJCJ != OLLEELKFCMM.NDBAPDFEPAF_BattleFailReason.HJNNKCMLGFL_0_None)
 						{
 							TipsControl.SetSituationValue((TipsControl.SituationId)(ev.CKEDJHEFJCJ + 2), 1);
 						}
@@ -1321,7 +1321,7 @@ namespace XeApp.Game.Menu
 		private void InitRaidPointResult()
 		{
 			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
 			}
@@ -1679,7 +1679,7 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 							break;
-						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
+						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score:
 							yield return null;
 							{
 								MusicSelectArgs args = new MusicSelectArgs();

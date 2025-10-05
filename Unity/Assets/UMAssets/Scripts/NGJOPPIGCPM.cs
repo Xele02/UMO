@@ -5,11 +5,11 @@ using XeApp.Game.Common;
 public class NGJOPPIGCPM { }
 public class NGJOPPIGCPM_ResultData
 {
-    public enum DFJMELLLNLH
+    public enum DFJMELLLNLH_RankState
     {
         HJNNKCMLGFL_0_None = 0,
-        HHLBGKEDNGH = 1,
-        COHKBMDEMMN = 2,
+        HHLBGKEDNGH_1_Bg2 = 1,
+        COHKBMDEMMN_2_Bg = 2,
     }
 
 	private const int FBGGEFFJJHB_xor = 0x7daf3c5a;
@@ -42,7 +42,7 @@ public class NGJOPPIGCPM_ResultData
 	public int IBKLLMPJNKB_ScoreRatingRankingCrypted = FBGGEFFJJHB_xor; // 0x64
 	public sbyte HACHMIKKJJK_IsBetterUtarateTotalCrypted = JFOFMKBJBBE_False; // 0x68
 	public sbyte GMECEJEFMGE_IsBetterScoreRatingRankingCrypted = JFOFMKBJBBE_False; // 0x69
-	public DFJMELLLNLH JLBJIIBGCOE_RankState; // 0x6C
+	public DFJMELLLNLH_RankState JLBJIIBGCOE_RankState; // 0x6C
 	public int LLLMAGFLKCK_RankNumCrypted = FBGGEFFJJHB_xor; // 0x70
 	public int KEFEHDKEKGN_CategoryIdCrypted = FBGGEFFJJHB_xor; // 0x74
 	private int BGDMOPHKPOJ_OtherMusicIdCrypted = FBGGEFFJJHB_xor; // 0x78

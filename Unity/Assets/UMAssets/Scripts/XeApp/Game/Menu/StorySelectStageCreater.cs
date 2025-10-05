@@ -1860,7 +1860,7 @@ namespace XeApp.Game.Menu
 			}
 			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
-			lw.OJOLFJGNEMO(0, musicId);
+			lw.OJOLFJGNEMO_MusicDownload(0, musicId);
 			pre = 0;
 			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicId, a1, videoQuality, 1);
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
@@ -1869,13 +1869,13 @@ namespace XeApp.Game.Menu
 				{
 					if(KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
 					{
-						lw.OJOLFJGNEMO(1, musicId);
+						lw.OJOLFJGNEMO_MusicDownload(1, musicId);
 					}
 				}
 				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
 				yield return null;
 			}
-			lw.OJOLFJGNEMO(2, musicId);
+			lw.OJOLFJGNEMO_MusicDownload(2, musicId);
 			stageData.OBGKIMDIAJF_CheckIsDlded();
 			fader.Fade(0.5f, 0);
 			tipsCtrl.Close();

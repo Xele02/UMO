@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		public bool IsGreatSuccess; // 0x24
 
 		// RVA: 0x1CE5BD0 Offset: 0x1CE5BD0 VA: 0x1CE5BD0
-		public static ViewOfferCompensation CreateList(BOPFPIHGJMD.MLBMHDCCGHI offerType, int offerId)
+		public static ViewOfferCompensation CreateList(BOPFPIHGJMD.MLBMHDCCGHI_OfferType offerType, int offerId)
 		{
 			ViewOfferCompensation res = new ViewOfferCompensation();
 			KDHGBOOECKC.CBJJINJDFDC d = KDHGBOOECKC.HHCJCDFCLOB.IKENGGJIJJO();

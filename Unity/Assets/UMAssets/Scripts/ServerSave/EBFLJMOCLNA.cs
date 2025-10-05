@@ -231,11 +231,11 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	
-	public enum NDOPBOCEPJO
+	public enum NDOPBOCEPJO_TutoUpgradeType
 	{
-		NHIOLMNADIO_0 = 0,
-		CAPLNONHNCO = 1,
-		LEHHJINPFHA = 2,
+		NHIOLMNADIO_0_Home = 0,
+		CAPLNONHNCO_1_SettingMenu = 1,
+		LEHHJINPFHA_2_CostumeUpgrade = 2,
 	}
 
 	private class NMAPBJMLMPM

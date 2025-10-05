@@ -1059,7 +1059,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBBD00 Offset: 0xDBBD00 VA: 0xDBBD00
-		private void OnModeAttrAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, RhythmGameConsts.SpecialNoteType noteType)
+		private void OnModeAttrAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD_ModeType mode, RhythmGameConsts.SpecialNoteType noteType)
 		{
 			rNoteList[noteIndex].SetModeAttr(mode, noteType);
 			if (noteType == RhythmGameConsts.SpecialNoteType.CenterLiveSkill)
@@ -1067,7 +1067,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBBDBC Offset: 0xDBBDBC VA: 0xDBBDBC
-		private void OnModeItemInfoAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, int itemId, int itemIndex)
+		private void OnModeItemInfoAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD_ModeType mode, int itemId, int itemIndex)
 		{
 			rNoteList[noteIndex].SetModeItemInfo(mode, itemId, itemIndex);
 		}

@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 		private int m_raidSelect; // 0x74
 		private int m_lobbySelect; // 0x78
 		private CommentType m_ChatType; // 0x7C
-		private ANPBHCNJIDI.NOJONDLAMOC m_BbsChatType; // 0x80
+		private ANPBHCNJIDI.NOJONDLAMOC_PostType m_BbsChatType; // 0x80
 		private AbsoluteLayout m_eff_anim; // 0x84
 		private int m_commentCount; // 0x88
 		private bool m_isBbsAutoUpdate = true; // 0x8C
@@ -353,16 +353,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1B514 Offset: 0xD1B514 VA: 0xD1B514
-		public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC m_bbsType, int _playerId, int _index, bool _isMember)
+		public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC_PostType m_bbsType, int _playerId, int _index, bool _isMember)
 		{
-			if(m_bbsType <= ANPBHCNJIDI.NOJONDLAMOC.HJNNKCMLGFL_0_None || m_bbsType > ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo)
+			if(m_bbsType <= ANPBHCNJIDI.NOJONDLAMOC_PostType.HJNNKCMLGFL_0_None || m_bbsType > ANPBHCNJIDI.NOJONDLAMOC_PostType.JPOGBMJKPIJ_5_FullCombo)
 			{
 				Debug.LogError("StringLiteral_18442");
 				return;
 			}
 			switch(m_bbsType)
 			{
-				case ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Normal:
+				case ANPBHCNJIDI.NOJONDLAMOC_PostType.CCAPCGPIIPF_1_Normal:
 				{
 					Debug.Log("StringLiteral_18437");
 					ANPBHCNJIDI.AIFBLOAGFOP data = _cm as ANPBHCNJIDI.AIFBLOAGFOP;
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 					m_list.Add(it);
 				}
 				break;
-				case ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp:
+				case ANPBHCNJIDI.NOJONDLAMOC_PostType.DDPLFFAOAEB_2_Stamp:
 				{
 					Debug.Log("StringLiteral_18438");
 					ANPBHCNJIDI.BNEIDPGIAFM data = _cm as ANPBHCNJIDI.BNEIDPGIAFM;
@@ -412,7 +412,7 @@ namespace XeApp.Game.Menu
 					m_list.Add(it);
 				}
 				break;
-				case ANPBHCNJIDI.NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss:
+				case ANPBHCNJIDI.NOJONDLAMOC_PostType.CGEPNIOPFHF_3_DefeatBoss:
 				{
 					Debug.Log("StringLiteral_18439");
 					ANPBHCNJIDI.KNGOGLLMKDL data = _cm as ANPBHCNJIDI.KNGOGLLMKDL;
@@ -438,7 +438,7 @@ namespace XeApp.Game.Menu
 					m_list.Add(it);
 				}
 				break;
-				case ANPBHCNJIDI.NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon:
+				case ANPBHCNJIDI.NOJONDLAMOC_PostType.JDGLJOFPHLK_4_MaccrossCannon:
 				{
 					Debug.Log("StringLiteral_18440");
 					ANPBHCNJIDI.NBHIMCACDHM data = _cm as ANPBHCNJIDI.NBHIMCACDHM;
@@ -470,7 +470,7 @@ namespace XeApp.Game.Menu
 					m_list.Add(it);
 				}
 				break;
-				case ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo:
+				case ANPBHCNJIDI.NOJONDLAMOC_PostType.JPOGBMJKPIJ_5_FullCombo:
 				{
 					Debug.Log("StringLiteral_18440");
 					ANPBHCNJIDI.JLHGKKIEALB data = _cm as ANPBHCNJIDI.JLHGKKIEALB;
@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetChatPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Normal, m.Messge, m.Time);
+						l.SetChatPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC_PostType.CCAPCGPIIPF_1_Normal, m.Messge, m.Time);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
@@ -542,7 +542,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetStampPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp, m.DivaStampId, m.MiniId, m.CommentId, m.Time);
+						l.SetStampPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC_PostType.DDPLFFAOAEB_2_Stamp, m.DivaStampId, m.MiniId, m.CommentId, m.Time);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
@@ -562,7 +562,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetDefeatBossInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss, m.Time, m.Messge);
+						l.SetDefeatBossInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC_PostType.CGEPNIOPFHF_3_DefeatBoss, m.Time, m.Messge);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
@@ -582,7 +582,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetMacrossCannonPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon, m.Time, m.Messge);
+						l.SetMacrossCannonPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC_PostType.JDGLJOFPHLK_4_MaccrossCannon, m.Time, m.Messge);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
@@ -605,7 +605,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetFullComboPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo, m.Time, m.Messge);
+						l.SetFullComboPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC_PostType.JPOGBMJKPIJ_5_FullCombo, m.Time, m.Messge);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);

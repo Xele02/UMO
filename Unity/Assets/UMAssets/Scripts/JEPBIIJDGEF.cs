@@ -77,7 +77,7 @@ public class JEPBIIJDGEF_EventInfo
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
-			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == _INDDJNMPONH_type && MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && MPEOOINCGEN[i].NGOFCFJHOMI_Status < BELFNAHNMDL)
+			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == _INDDJNMPONH_type && MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted/*1*/ && MPEOOINCGEN[i].NGOFCFJHOMI_Status < BELFNAHNMDL)
 			{
 				if(res == null || res.DPJCPDKALGI_RankingEnd < MPEOOINCGEN[i].DPJCPDKALGI_RankingEnd)
 				{
@@ -106,7 +106,7 @@ public class JEPBIIJDGEF_EventInfo
 				)
 				&&
 				(
-					MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/
+					MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted/*1*/
 				)
 				&& 
 				(
@@ -136,10 +136,10 @@ public class JEPBIIJDGEF_EventInfo
 		IKDICBBFBMI_EventBase res = null;
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 			{
 				MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
-				if(MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1 && MPEOOINCGEN[i].NGOFCFJHOMI_Status <= BELFNAHNMDL && 
+				if(MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted && MPEOOINCGEN[i].NGOFCFJHOMI_Status <= BELFNAHNMDL && 
 					(res == null || res.DPJCPDKALGI_RankingEnd < MPEOOINCGEN[i].DPJCPDKALGI_RankingEnd))
 				{
 					res = MPEOOINCGEN[i];
@@ -335,14 +335,14 @@ public class JEPBIIJDGEF_EventInfo
 	// // RVA: 0x1C3AC54 Offset: 0x1C3AC54 VA: 0x1C3AC54
 	public IKDICBBFBMI_EventBase HGHDAFJKEKO_GetEventForType(OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
-		if(_INDDJNMPONH_type != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
+		if(_INDDJNMPONH_type != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score/*4*/)
 		{
-			IKDICBBFBMI_EventBase evt = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/, false);
+			IKDICBBFBMI_EventBase evt = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod/*5*/, false);
 			if (evt != null && evt.HIDHLFCBIDE_EventType == _INDDJNMPONH_type)
 				return evt;
 			return null;
 		}
-		return AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/);
+		return AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod/*5*/);
 	}
 
 	// // RVA: 0x1C3ACB8 Offset: 0x1C3ACB8 VA: 0x1C3ACB8
@@ -355,7 +355,7 @@ public class JEPBIIJDGEF_EventInfo
 			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign && MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
 				MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(t);
-				if(MPEOOINCGEN[i].IBNKPMPFLGI_IsRankReward && MPEOOINCGEN[i].DAKMIKNKHMF_GetRankingInfoForIndex(0) != null && MPEOOINCGEN[i].NGOFCFJHOMI_Status >= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EIFKDKFAHPH_7 && MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11)
+				if(MPEOOINCGEN[i].IBNKPMPFLGI_IsRankReward && MPEOOINCGEN[i].DAKMIKNKHMF_GetRankingInfoForIndex(0) != null && MPEOOINCGEN[i].NGOFCFJHOMI_Status >= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EIFKDKFAHPH_7 && MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11_Ended)
 				{
 					res.Add(MPEOOINCGEN[i]);
 				}
@@ -375,7 +375,7 @@ public class JEPBIIJDGEF_EventInfo
 		if(ev != null)
 		{
 			ev.HCDGELDHFHB_UpdateStatus(time);
-			if(ev.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
+			if(ev.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score/*4*/)
 			{
 				return ((int)ev.NGOFCFJHOMI_Status & 0xfffffffeU) == 8;
 			}
@@ -540,7 +540,7 @@ public class JEPBIIJDGEF_EventInfo
 			MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
 			if(MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/)
 			{
-				if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
+				if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score/*4*/)
 				{
 					int idx = HODOGPOKOOJ.BFHLPPDKOPC_Event1.FindIndex((int _GHPLINIACBB_x) =>
 					{
@@ -580,7 +580,7 @@ public class JEPBIIJDGEF_EventInfo
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 			{
 				List<string> str = MPEOOINCGEN[i].IJCPBPFEGDM_GetResourcesFilePathList(time);
 				if (str != null)
@@ -679,15 +679,15 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C3D1CC Offset: 0x1C3D1CC VA: 0x1C3D1CC
-	public void HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH _HDAMBOOCIAA_ClearType)
+	public void HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType _HDAMBOOCIAA_ClearType)
 	{
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			if(MPEOOINCGEN[i].AGLILDLEFDK_Missions != null)
 			{
 				MPEOOINCGEN[i].HEFIKPAHCIA_UpdateMission(_HDAMBOOCIAA_ClearType);
-				MPEOOINCGEN[i].HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.DCFBLGLFJDO_20/*20*/);
-				MPEOOINCGEN[i].HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.ADCDEIPMKJI_19/*19*/);
+				MPEOOINCGEN[i].HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.DCFBLGLFJDO_20_DailyMissionCompleted/*20*/);
+				MPEOOINCGEN[i].HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.ADCDEIPMKJI_19_NumEventMission/*19*/);
 			}
 		}
 	}

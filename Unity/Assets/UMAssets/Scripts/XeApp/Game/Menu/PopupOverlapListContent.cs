@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(setup.BundleName));
 			RectTransform rect = setup.Content.transform as RectTransform;
 			rect.anchoredPosition = Vector2.zero;
-			isGetPoster = setup.Type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8;
+			isGetPoster = setup.Type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster;
 			if(setup.List != null && setup.List.Count > 1)
 			{
 				scrollView = new FlexibleItemScrollView();
@@ -204,7 +204,7 @@ namespace XeApp.Game.Menu
 		{
 			m_list.Clear();
 			List<List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo>> l = new List<List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo>>();
-			if(setup.Type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
+			if(setup.Type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster)
 			{
 				l.Add(list.FindAll((GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo _) =>
 				{
@@ -222,18 +222,18 @@ namespace XeApp.Game.Menu
 				l.Add(list.FindAll((GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo _) =>
 				{
 					//0x16A1204
-					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3;
+					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.NNEOHGFGLKM_3_RareUp;
 				}));
 				l.Add(list.FindAll((GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo _) =>
 				{
 					//0x16A1234
-					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4;
+					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard;
 				}));
 			}
 			float f = 0;
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(setup.Type != GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
+				if(setup.Type != GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster)
 				{
 					if(l[i].Count > 0)
 					{
@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 						if(l2 != null)
 						{
 							l2.SetStatus(setup.Type, ol.Info, ol.IsKira);
-							if(setup.Type != GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
+							if(setup.Type != GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster)
 							{
 								l2.OnClickButton = () =>
 								{

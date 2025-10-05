@@ -22,8 +22,8 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		private AssignInfo m_assign_info = new AssignInfo(); // 0x8
-		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback; // 0xC
-		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback; // 0x10
+		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD_ModeType, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback; // 0xC
+		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD_ModeType, int, int> onModeItemInfoAssignCallback; // 0x10
 		private int notesCount; // 0x14
 		private List<int>[] modeNotesIndices; // 0x18
 		private HNJKJCDDIMG_SetInfo itemSet; // 0x1C
@@ -33,7 +33,7 @@ namespace XeApp.Game.RhythmGame
 		private int[] itemLotCountList; // 0x2C
 
 		// // RVA: 0xC08F90 Offset: 0xC08F90 VA: 0xC08F90
-		public void Initialize(MusicData musicData, AssignInfo a_assign_info, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback)
+		public void Initialize(MusicData musicData, AssignInfo a_assign_info, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD_ModeType, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD_ModeType, int, int> onModeItemInfoAssignCallback)
 		{
 			this.onModeItemInfoAssignCallback = onModeItemInfoAssignCallback;
 			this.onModeAttrAssignCallback = onModeAttrAssignCallback;
@@ -71,18 +71,18 @@ namespace XeApp.Game.RhythmGame
 		{
 			int step = Random.Range(1, 4);
 			int idx = Random.Range(0, a_temp_note_list[step].Count);
-			KLJCBKMHKNK.HHMPIIILOLD[] array = null;
+			KLJCBKMHKNK.HHMPIIILOLD_ModeType[] array = null;
 			if (step == 3)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA_2_Diva, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE_DivaFail, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL_AwakenDiva};
+				array = new KLJCBKMHKNK.HHMPIIILOLD_ModeType[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD_ModeType.FMLPIOFBCMA_2_Diva, /*5*/KLJCBKMHKNK.HHMPIIILOLD_ModeType.FDBLOGGAKOE_5_DivaFail, /*3*/ KLJCBKMHKNK.HHMPIIILOLD_ModeType.CBHCEDGAGHL_3_AwakenDiva};
 			}
 			else if(step == 2)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO_1_Valkyrie, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN_ValkyrieFail };
+				array = new KLJCBKMHKNK.HHMPIIILOLD_ModeType[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD_ModeType.PFIOMNHDHCO_1_Valkyrie, /*4*/KLJCBKMHKNK.HHMPIIILOLD_ModeType.EOMCAODFBCN_4_ValkyrieFail };
 			}
 			else if(step == 1)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[1];
+				array = new KLJCBKMHKNK.HHMPIIILOLD_ModeType[1];
 			}
 			if(array != null)
 			{
@@ -221,8 +221,8 @@ namespace XeApp.Game.RhythmGame
 					for (int j = 0; j < numItemsByMode[(int)nt[i]]; j++)
 					{
 						int v = Random.Range(0, l3.Count);
-						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
+						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i, RhythmGameConsts.SpecialNoteType.RareItem);
+						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
 						l3.RemoveAt(v);
 					}
 				}
@@ -230,8 +230,8 @@ namespace XeApp.Game.RhythmGame
 				{
 					for (int j = 0; j < assignedRareItemsByMode[(int)nt[i]].Count; j++)
 					{
-						onModeAttrAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
+						onModeAttrAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i, RhythmGameConsts.SpecialNoteType.RareItem);
+						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_index);
 						l3.RemoveAt(assignedRareItemsByMode[(int)nt[i]][j].noteListIndex);
 					}
 				}
@@ -246,9 +246,9 @@ namespace XeApp.Game.RhythmGame
 					for(int j = 0; j < li3[s ,i]; j++)
 					{
 						int t = Random.Range(0, l3.Count);
-						onModeAttrAssignCallback(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i, specialNoteType[s]);
+						onModeAttrAssignCallback(l3[t], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i, specialNoteType[s]);
 						if (s == 3)
-							AllotItemNotes(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i);
+							AllotItemNotes(l3[t], (KLJCBKMHKNK.HHMPIIILOLD_ModeType)i);
 						l3.RemoveAt(t);
 					}
 				}
@@ -257,8 +257,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				for(int i = 1; i < notesCount; i++)
 				{
-					onModeAttrAssignCallback(i, KLJCBKMHKNK.HHMPIIILOLD.JKAPLHFHGKL/*6*/, RhythmGameConsts.SpecialNoteType.NormalItem);
-					AllotItemNotes(i, /*6*/KLJCBKMHKNK.HHMPIIILOLD.JKAPLHFHGKL);
+					onModeAttrAssignCallback(i, KLJCBKMHKNK.HHMPIIILOLD_ModeType.MFOJOJCAJOP_6_AllItems/*6*/, RhythmGameConsts.SpecialNoteType.NormalItem);
+					AllotItemNotes(i, /*6*/KLJCBKMHKNK.HHMPIIILOLD_ModeType.MFOJOJCAJOP_6_AllItems);
 				}
 			}
 		}
@@ -276,7 +276,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0BD90 Offset: 0xC0BD90 VA: 0xC0BD90
-		private void AllotItemNotes(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode)
+		private void AllotItemNotes(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD_ModeType mode)
 		{
 			if(itemWeightTable != null)
 			{

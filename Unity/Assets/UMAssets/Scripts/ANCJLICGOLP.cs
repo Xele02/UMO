@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public class ANCJLICGOLP
 {
 
-    private enum CPJMLNDMMHJ
+    private enum CPJMLNDMMHJ_BlockType
     {
-        IKAHLMCKDDF = 0,
-        HKFLDNJGGBB = 1,
-        HDEONBGNOIO = 2
+        IKAHLMCKDDF_0_s_ak = 0,
+        HKFLDNJGGBB_1_s_sys_int = 1,
+        HDEONBGNOIO_2_s_sys_str = 2
     }
 
 	private Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam; // 0x8
@@ -71,7 +71,7 @@ public class ANCJLICGOLP
 					});
 					if(-1 < idx)
 					{
-						if(MILGMGJNOJI((ANCJLICGOLP.CPJMLNDMMHJ)idx, a))
+						if(MILGMGJNOJI((ANCJLICGOLP.CPJMLNDMMHJ_BlockType)idx, a))
 							cnt2++;
 					}    
 				}
@@ -81,19 +81,19 @@ public class ANCJLICGOLP
 	}
 
 	// RVA: 0xD53558 Offset: 0xD53558 VA: 0xD53558
-	private bool MILGMGJNOJI(ANCJLICGOLP.CPJMLNDMMHJ LKJJEMDAFBB, EDOHBJAPLPF_JsonData IMKIBKOICBF)
+	private bool MILGMGJNOJI(ANCJLICGOLP.CPJMLNDMMHJ_BlockType LKJJEMDAFBB, EDOHBJAPLPF_JsonData IMKIBKOICBF)
 	{
-		if(LKJJEMDAFBB == ANCJLICGOLP.CPJMLNDMMHJ.HDEONBGNOIO)
+		if(LKJJEMDAFBB == ANCJLICGOLP.CPJMLNDMMHJ_BlockType.HDEONBGNOIO_2_s_sys_str)
 		{
 			AHOHBHIPIHA(IMKIBKOICBF);
 		}
-		else if(LKJJEMDAFBB == ANCJLICGOLP.CPJMLNDMMHJ.HKFLDNJGGBB)
+		else if(LKJJEMDAFBB == ANCJLICGOLP.CPJMLNDMMHJ_BlockType.HKFLDNJGGBB_1_s_sys_int)
 		{
 			NEFHLEAEKLG(IMKIBKOICBF);
 		}
 		else
 		{
-			if(LKJJEMDAFBB != ANCJLICGOLP.CPJMLNDMMHJ.IKAHLMCKDDF)
+			if(LKJJEMDAFBB != ANCJLICGOLP.CPJMLNDMMHJ_BlockType.IKAHLMCKDDF_0_s_ak)
 				return false;
 			IDOLIOLEKID(IMKIBKOICBF);
 		}

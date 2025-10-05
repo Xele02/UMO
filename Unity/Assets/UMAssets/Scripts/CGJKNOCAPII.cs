@@ -18,7 +18,7 @@ public class CGJKNOCAPII
 	public string BHANMJKCCBC_BadgeText; // 0x3C
 	public int PKNLMLDKCLM_AchievedQuestCount; // 0x40
 	public IKDICBBFBMI_EventBase COAMJFMEIBF; // 0x44
-	public BKANGIKIEML.NODKLJHEAJB NNHHNFFLCFO; // 0x48
+	public BKANGIKIEML.NODKLJHEAJB_ChallengeType NNHHNFFLCFO; // 0x48
 	public long BALFPCLMOGJ; // 0x50
 
 	//// RVA: 0x12BC47C Offset: 0x12BC47C VA: 0x12BC47C
@@ -52,7 +52,7 @@ public class CGJKNOCAPII
 			res.KINJOEIAHFK_StartTime = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd + 1;
 			res.PCCFAKEOBIC_EndTime = FBFNJMKPBBA.LJOHLEGGGMC_RewardEnd;
 		}
-		res.PNFDMBHDPAJ_IsRewardOnly = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/;
+		res.PNFDMBHDPAJ_IsRewardOnly = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod/*5*/;
 		res.BCOKKAALGHC_Group = 0;
 		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
 		{
@@ -109,8 +109,8 @@ public class CGJKNOCAPII
 						//0x12BD8F4
 						return JPAEDJJFFOI.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby;
 					}) as NKOBMDPHNGP_EventRaidLobby;
-					if(evLobby != null && evLobby.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE.EGIOFFACHCP_4 && 
-						evLobby.ILCPALOKKHC_GetStep() != JKOHBJPCAJL.CNNCBDKIPGE.ECKNIOGBKJO_2)
+					if(evLobby != null && evLobby.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE_Step.EGIOFFACHCP_4 && 
+						evLobby.ILCPALOKKHC_GetStep() != JKOHBJPCAJL.CNNCBDKIPGE_Step.ECKNIOGBKJO_2)
 						continue;
 				}
 				for(int j = 0; j < ev.AGLILDLEFDK_Missions.Count; j++)
@@ -162,7 +162,7 @@ public class CGJKNOCAPII
 		res.COAMJFMEIBF = null;
 		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(_APFDNBGMMMM_BingoId);
 		res.KINJOEIAHFK_StartTime = bingo.PDBPFJJCADD_open_at;
-		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38/*38*/;
+		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB_ChallengeType.BPNDHDHHKGE_38_Bingo/*38*/;
 		res.BEEIIJJKDBH_BadgeConstantId = 0;
 		res.PCCFAKEOBIC_EndTime = bingo.FDBNFFNFOND_close_at;
 		res.PNFDMBHDPAJ_IsRewardOnly = false;

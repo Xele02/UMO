@@ -646,7 +646,7 @@ namespace XeApp.Game.Menu
 			m_style = saveData.NMBAHHJLGPP_IsMultiDiva(musicData.GHBPLHBNMBK_FreeMusicId) ? Style.Unit : Style.Solo;
 			if(!musicData.KLOGLLFOAPL_HasMultiDivaMode())
 				m_style = Style.Solo;
-			m_notUnitLive = !musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF.ALNCPFNNBLH_0);
+			m_notUnitLive = !musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.ALNCPFNNBLH_0);
 			m_imageDisable.uvRect = m_imageRectList[(int)m_number, 2];
 			m_imageOnOff.uvRect = m_imageRectList[(int)m_number, (int)m_style];
 			if(!m_unitOnly)

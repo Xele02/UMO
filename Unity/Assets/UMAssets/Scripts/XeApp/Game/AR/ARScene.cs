@@ -197,7 +197,7 @@ namespace XeApp.Game.AR
             yield return null;
             if(!string.IsNullOrEmpty(m_vuforiaMan.InitializeErrorMessage))
             {
-                ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                 if(m_vuforiaMan.IsNeedMessageWindow())
                 {
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
@@ -282,7 +282,7 @@ namespace XeApp.Game.AR
                 }
                 else
                 {
-                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
                     yield return null;
                     while(ARMenuManager.Instance.IsDisplayMessageWindow(null))
@@ -291,7 +291,7 @@ namespace XeApp.Game.AR
                     yield break;
                 }
             }
-            ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA(GameManager.Instance.ar_session_id, 1, "");
+            ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 1, "");
             m_isSetup = true;
             this.StartCoroutineWatched(Co_CheckError());
             GameManager.Instance.AddPushBackButtonHandler(OnShutdown);
@@ -312,7 +312,7 @@ namespace XeApp.Game.AR
                 if(m_vuforiaMan.CheckError())
                 {
                     Debug.LogWarning("----!! ERROR!! " + m_vuforiaMan.InitializeErrorMessage);
-                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
                     while(ARMenuManager.Instance.IsDisplayMessageWindow(null))
                         yield return null;

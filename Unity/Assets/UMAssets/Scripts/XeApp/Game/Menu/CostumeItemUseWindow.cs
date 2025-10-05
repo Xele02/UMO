@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 			m_item_name.text = item_data.OPFGFINHFCE_name;
 			m_item_use_num = 0;
 			LFAFJCNKLML.GFIPDFPIKIJ g;
-			LFAFJCNKLML.HKKKKFLBFJN(m_data, m_data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH.CCAPCGPIIPF_0_Normal);
+			LFAFJCNKLML.HKKKKFLBFJN(m_data, m_data.GKIKAABHAAD_Level, out g, LFAFJCNKLML.EJOEMKJOCMH_DisplayType.CCAPCGPIIPF_0_Normal);
 			UpdateItemValue();
 			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_value, m_reward_icon, null);
 			SetUseItemImage(item_type + 220001);

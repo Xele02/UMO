@@ -23,7 +23,7 @@ namespace XeApp
 		private LevelupIconStatus m_levelupIconStatus; // 0xB8
 
 		public override bool IsLoaded { get { return base.IsLoaded && IsLoadedSpResource; } } //0xBB2E5C
-		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC)ViewData.GBJFNGCDKPM_typ; } } //0xBB2E90
+		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType)ViewData.GBJFNGCDKPM_typ; } } //0xBB2E90
 
 		// RVA: 0xBB2EC4 Offset: 0xBB2EC4 VA: 0xBB2EC4 Slot: 6
 		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
@@ -54,7 +54,7 @@ namespace XeApp
 		{
 			//0xBB4C5C
 			bool isLoadedTexture = true;
-			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
+			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				isLoadedTexture = false;
 				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
@@ -64,7 +64,7 @@ namespace XeApp
 					isLoadedTexture = true;
 				});
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/)
 			{
 				isLoadedTexture = false;
 				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
@@ -74,7 +74,7 @@ namespace XeApp
 					isLoadedTexture = true;
 				});
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal/*2*/)
 			{
 				isLoadedTexture = false;
 				MenuScene.Instance.ItemTextureCache.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.DNEKJCKEOHL_GetMonthlyItemFullId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()), (IiconTexture texture) =>
@@ -95,7 +95,7 @@ namespace XeApp
 		// RVA: 0xBB304C Offset: 0xBB304C VA: 0xBB304C Slot: 9
 		protected override void PostInitController()
 		{
-			if(SpType != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
+			if(SpType != NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 				return;
 			m_decorationContoller.onBeginDrag = null;
 			m_decorationContoller.onDrag = null;
@@ -127,14 +127,14 @@ namespace XeApp
 		public IEnumerator Co_LoadLayout()
 		{
 			//0xBB44D0
-			if(SpType > 0 && SpType <= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
+			if(SpType > 0 && SpType <= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/)
 			{
 				m_levelUpObject = m_decoCanvas.ItemManager.AllocCache(DecorationItemManager.LayoutCachaName.SpItemLeveupIcon).GetComponent<LayoutUGUIRuntime>();
 				m_levelUpObject.transform.SetParent(m_object.transform, false);
 				m_layoutDecorationItemCollection = m_decoCanvas.ItemManager.AllocCache(DecorationItemManager.LayoutCachaName.SpItemPopIcon).GetComponent<LayoutDecorationItemCollection>();
 				m_layoutDecorationItemCollection.transform.SetParent(m_object.transform, false);
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				m_layoutDecorationItemCollection = m_decoCanvas.ItemManager.AllocCache(DecorationItemManager.LayoutCachaName.SpItemPopIcon).GetComponent<LayoutDecorationItemCollection>();
 				m_layoutDecorationItemCollection.transform.SetParent(m_object.transform, false);
@@ -149,17 +149,17 @@ namespace XeApp
 		// // RVA: 0xBB3450 Offset: 0xBB3450 VA: 0xBB3450
 		protected void SettingAfterLoadLayout()
 		{
-			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1_CanonFillSp/*1*/)
+			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.FIHMIDDLAKH_1_CanonFillSp/*1*/)
 			{
 				m_layoutDecorationItemCollection.SetSetting(SpType, Size.y * 0.5f);
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal/*2*/)
 			{
 				m_layoutDecorationItemCollection.SetSetting(SpType, Size.y * 0.5f);
 				m_layoutDecorationItemCollection.SetMedalTexture(m_texture);
 			}
-			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/
-				|| SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
+			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/
+				|| SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				m_layoutDecorationItemCollection.SetSetting(SpType, Size.y * 0.5f);
 				m_layoutDecorationItemCollection.SetPointTexture(m_texture);
@@ -296,10 +296,10 @@ namespace XeApp
 		// // RVA: 0xBB419C Offset: 0xBB419C VA: 0xBB419C
 		public bool IsReceivableSpItem()
 		{
-			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.HJNNKCMLGFL_0_None/*0*/ || 
-				SpType > NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
+			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.HJNNKCMLGFL_0_None/*0*/ || 
+				SpType > NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/)
 			{
-				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11_VisitItemSp/*11*/;
+				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/;
 			}
 			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		}

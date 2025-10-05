@@ -1,7 +1,7 @@
 
 public class AKIIJBEJOEP
 {
-	public enum FABBEOMGNGL
+	public enum FABBEOMGNGL_MissionType //?
 	{
 		HJNNKCMLGFL_0_None = 0,
 		CCAPCGPIIPF_1_Normal = 1,

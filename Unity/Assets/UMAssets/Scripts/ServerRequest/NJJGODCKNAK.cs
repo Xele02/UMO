@@ -10,7 +10,7 @@ public class KJKDAGGGJCO
 	public bool ILLPEMPBDJG_can_receive_next; // 0x10
 	public int HMFFHLPNMPH_count; // 0x14
 	public long HLMLHOFHIOK_last_received_at; // 0x18
-	public ANPGILOLNFK.CDOGFBNLIPG CKHOBDIKJFN_Type; // 0x20
+	public ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType CKHOBDIKJFN_Type; // 0x20
 
 	// RVA: 0x1A033B8 Offset: 0x1A033B8 VA: 0x1A033B8
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data)

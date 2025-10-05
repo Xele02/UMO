@@ -30,7 +30,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	public bool KHEKNNFCAOI_Init()
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3/*3*/);
+		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3_Ranking/*3*/);
 		if(ev != null)
 		{
 			PNBAPMLNDLN_SetClear(ev.NDNDIAFEBFJ().KBAHNBKMFDL_is_minigame_clear);
@@ -51,7 +51,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 		for (int i = 0; i < l.Count; i++)
 		{
 			l[i].HCDGELDHFHB_UpdateStatus(_JHNMKKNEENE_Time);
-			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
+			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 			{
 				if((l[i] as AMLGMLNGMFB_EventAprilFool).NDIILFIFCDL_GetMinigameId() == 1)
 					return l[i] as AMLGMLNGMFB_EventAprilFool;

@@ -59,7 +59,7 @@ public class BHBONAHFKHD
 	//public void ODDIHGPONFL_Copy(string _JIKKNHIAEKG_BlockName, string _NHPCKCOPKAM_from, string _ALGBKNAAEKO_Path) { }
 
 	//// RVA: 0xC7E5E8 Offset: 0xC7E5E8 VA: 0xC7E5E8
-	//public void KCCCOEMPPEA(string _JIKKNHIAEKG_BlockName, string _ALGBKNAAEKO_Path, EDOHBJAPLPF_JsonData _JBGEEPFKIGG_val) { }
+	//public void KCCCOEMPPEA_Test(string _JIKKNHIAEKG_BlockName, string _ALGBKNAAEKO_Path, EDOHBJAPLPF_JsonData _JBGEEPFKIGG_val) { }
 	// BEPIOAIFCEC_op = DDGFCOPPBBN_test
 	// _ALGBKNAAEKO_Path = CJEKGLGBIHF_path
 	// _JBGEEPFKIGG_val = NANNGLGOFKH_value

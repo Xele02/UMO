@@ -124,13 +124,13 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF77C00 Offset: 0xF77C00 VA: 0xF77C00
-		public void SetModeAttr(KLJCBKMHKNK.HHMPIIILOLD modeType, RhythmGameConsts.SpecialNoteType spType)
+		public void SetModeAttr(KLJCBKMHKNK.HHMPIIILOLD_ModeType modeType, RhythmGameConsts.SpecialNoteType spType)
 		{
 			modeInfo[(int)modeType].specialNoteType = spType;
 		}
 
 		//// RVA: 0xF77C60 Offset: 0xF77C60 VA: 0xF77C60
-		public void SetModeItemInfo(KLJCBKMHKNK.HHMPIIILOLD modeType, int itemId, int itemIndex)
+		public void SetModeItemInfo(KLJCBKMHKNK.HHMPIIILOLD_ModeType modeType, int itemId, int itemIndex)
 		{
 			modeInfo[(int)modeType].itemID = itemId;
 			modeInfo[(int)modeType].itemIndex = itemIndex;

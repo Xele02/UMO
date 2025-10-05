@@ -230,7 +230,7 @@ public class PMFBBLGPLLJ
     {
         JKNGJFOBADP data = new JKNGJFOBADP();
         data.JCHLONCMPAJ_Clear();
-        data.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.IOBDJDHJJFK_22, "class : "+_BGJDHCEOIDB_BattleClass);
+        data.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.IOBDJDHJJFK_22_BalleEventClassReward, "class : "+_BGJDHCEOIDB_BattleClass);
         data.CPIICACGNBH_AddItem(_LDEGEHAEALK_ServerData, _KIJAPOFAGPN_ItemId, _HMFFHLPNMPH_count, null, 0);
         return false;
     }

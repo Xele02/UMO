@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 				EventId = eventController.PGIIDPEGGPI_EventId;
 				EventName = eventController.DGCOMDILAKM_EventName;
 				EventType = eventController.HIDHLFCBIDE_EventType;
-				if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+				if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 				{
 					IBJAKJJICBC ib = new IBJAKJJICBC();
 					ib.PMKBMGNAJIL(eventController as HLEBAINCOME_EventScore, false);
@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 				HeaderItem it = new HeaderItem();
 				it.Top = new Vector2(0, 0);
 				it.ResourceType = 1;
-				it.Height = m_setting.GetViewData.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore ? 135 : 93;
+				it.Height = m_setting.GetViewData.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score ? 135 : 93;
 				it.Data = m_setting.GetViewData;
 				m_scrollItemList.Add(it);
 				f = it.Height;
@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 					else if(m_scrollItemList[i] is HeaderItem)
 					{
 						HeaderItem h = m_scrollItemList[i] as HeaderItem;
-						if(h.Data.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+						if(h.Data.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 						{
 							KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(h.Data.CoverId));
 						}

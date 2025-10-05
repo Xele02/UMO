@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			m_limitedTalkIndex.Clear();
 			for(int i = 0; i < talkDataList.Count; i++)
 			{
-				if(talkDataList[i].NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.AJGKPBOPIJI_Limited)
+				if(talkDataList[i].NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK_Type.AJGKPBOPIJI_1_Limited)
 				{
 					m_limitedTalkData.Add(talkDataList[i]);
 					m_limitedTalkIndex.Add(m_autoTalkWeights.Count);
@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			NJOOMLFFIJB data = talkDataList.Find((NJOOMLFFIJB _) =>
 			{
 				//0xED07B8
-				return _.NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.DDAFHPDFFPI_2_Birthday;
+				return _.NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK_Type.DDAFHPDFFPI_2_Birthday;
 			});
 			m_birthdayTalkData = data;
 			m_birthdayTalkIndex = m_autoTalkWeights.Count;
@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction().Count; i++)
 			{
-				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.EHJDMAOKHHP_2, i + 1))
+				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.EHJDMAOKHHP_2_Reaction, i + 1))
 				{
 					if (m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction()[i] < l.Count)
 						l[m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction()[i]] = 0;
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 				l[m_prevAutoTalkIndex] = 0;
 			for(int i = 0; i < m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk().Count; i++)
 			{
-				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.POBNHLKGMPF_1, i + 1))
+				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK_UnlockType.POBNHLKGMPF_1_Voice, i + 1))
 				{
 					if(m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk()[i] < l.Count)
 						l[m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk()[i]] = 0;

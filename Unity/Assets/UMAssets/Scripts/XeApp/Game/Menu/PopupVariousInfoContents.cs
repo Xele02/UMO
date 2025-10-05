@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
 					{
 						//0x1163978
 						CallbackSupportSiteClose();
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 					{
 						//0x1163B90
 						CallbackSupportSiteClose();
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
 					{
 						//0x1163DA8
 						CallbackSupportSiteClose();
@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_Settlement, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
 					{
 						//0x1163FC0
 						CallbackSupportSiteClose();
@@ -132,7 +132,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EHDHJCGOGGN_Copyright, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EHDHJCGOGGN_Copyright, () =>
 					{
 						//0x11641D8
 						CallbackSupportSiteClose();
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.JMIDCMFKPOE_Credit, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.JMIDCMFKPOE_Credit, () =>
 					{
 						//0x11647F8
 						CallbackSupportSiteClose();

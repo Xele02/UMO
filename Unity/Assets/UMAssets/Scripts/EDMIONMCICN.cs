@@ -30,8 +30,8 @@ public struct EDMIONMCICN
 	public StatusData IMLGBMGIACC; // 0x10
 	public StatusData AJINBLGCBMM_StatusCostumeMainScene; // 0x14
 	public StatusData[] FEGNMIGJMDM_CostumeSubScene; // 0x18
-	public MKHCIKICBOI LGGLFAECCBK_BonusTypeFlag; // 0x1C
-	public MKHCIKICBOI NOEFMBAIAMP_MalusTypeFlag; // 0x20
+	public MKHCIKICBOI_ParamFlag LGGLFAECCBK_BonusTypeFlag; // 0x1C
+	public MKHCIKICBOI_ParamFlag NOEFMBAIAMP_MalusTypeFlag; // 0x20
 
 	// RVA: 0x7FC8FC Offset: 0x7FC8FC VA: 0x7FC8FC
 	public void OBKGEDCKHHE_Init()

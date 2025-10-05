@@ -79,11 +79,11 @@ public class NHMKBENBIPI
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6BAD8C Offset: 0x6BAD8C VA: 0x6BAD8C
 	//// RVA: 0x18916E4 Offset: 0x18916E4 VA: 0x18916E4
-	//private IEnumerator FCIDKNPDBIN(Action AGPNLAKFKCN, Action NIMPEHIECJH, Action _MOBEEPPKFLG_OnFail) { }
+	//private IEnumerator FCIDKNPDBIN_Co_ConfirmationInstall(Action AGPNLAKFKCN, Action NIMPEHIECJH, Action _MOBEEPPKFLG_OnFail) { }
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6BAE04 Offset: 0x6BAE04 VA: 0x6BAE04
 	//// RVA: 0x18918D8 Offset: 0x18918D8 VA: 0x18918D8
-	//private IEnumerator FENMAPOLNOC(bool HGEJBINBHIC, Action OHBJNCLNKMG, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _MOBEEPPKFLG_OnFail) { }
+	//private IEnumerator FENMAPOLNOC_Co_InstallSimple(bool HGEJBINBHIC, Action OHBJNCLNKMG, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _MOBEEPPKFLG_OnFail) { }
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6BAE7C Offset: 0x6BAE7C VA: 0x6BAE7C
 	//// RVA: 0x1891B04 Offset: 0x1891B04 VA: 0x1891B04

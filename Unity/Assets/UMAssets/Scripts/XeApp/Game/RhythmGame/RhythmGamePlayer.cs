@@ -2927,9 +2927,9 @@ namespace XeApp.Game.RhythmGame
 		private void GotoTutorialSkip()
 		{
 			if (Database.Instance.gameSetup.musicInfo.isTutorialOne)
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BMIDACPCELO_17);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.BMIDACPCELO_17_1stLievSkip);
 			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JAPPCJMLAMJ_26);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.JAPPCJMLAMJ_26_2ndLiveSkip);
 			TutorialClearEndRhythmGame();
 		}
 

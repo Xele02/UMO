@@ -81,9 +81,9 @@ namespace XeApp.Game.Menu
 			m_viewData = viewData;
 			SetDaily(viewData.EFJDHILLIEK_IsDaily);
 			FKMOKDCJFEN.ADCPCCNCOMD_Status status = viewData.CMCKNKKCNDK_status;
-			if (viewData.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
+			if (viewData.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available)
 			{
-				status = !viewData.PNFDMBHDPAJ_IsRewardOnly && viewData.NNHHNFFLCFO != 0 ? FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1 : FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0_None;
+				status = !viewData.PNFDMBHDPAJ_IsRewardOnly && viewData.NNHHNFFLCFO != 0 ? FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available : FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0_None;
 			}
 			SetButton(status, viewData.PNFDMBHDPAJ_IsRewardOnly);
 			switch(status)
@@ -92,12 +92,12 @@ namespace XeApp.Game.Menu
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3_Received:
 					SetTimeEnable(false);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1:
-					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event && viewData.PNFDMBHDPAJ_IsRewardOnly);
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available:
+					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH_Category.CCDOBDNDPIL_2_Event && viewData.PNFDMBHDPAJ_IsRewardOnly);
 					SetTime(viewData.BLHJBMPONHC);
 					break;
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved:
-					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event);
+					SetTimeEnable(viewData.JONPKLHMOBL_Category == FKMOKDCJFEN.MEDJADCKPKH_Category.CCDOBDNDPIL_2_Event);
 					SetTime(viewData.PNHMDOHCBGK);
 					break;
 				default:
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0_None:
 					SwitchButton(eButtonType.Hide);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1_Available:
 					if(!isRewardOnly)
 						SwitchButton(eButtonType.Challenge);
 					else
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18821A8 Offset: 0x18821A8 VA: 0x18821A8
 		private void OnClickChallenge()
 		{
-			if(m_viewData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.KKFFEJEKFEG)
+			if(m_viewData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB_ChallengeType.KKFFEJEKFEG_29_OpenQuestURL)
 			{
 				QuestUtility.OpenURL(m_viewData, () =>
 				{

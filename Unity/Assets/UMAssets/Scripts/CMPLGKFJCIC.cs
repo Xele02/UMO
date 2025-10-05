@@ -139,7 +139,7 @@ public class CMPLGKFJCIC<EffectInfoClass> : LBICPMOLOKD
 
 public class NCMFOICNJEB<EffectInfoClass> : CMPLGKFJCIC<EffectInfoClass>
 {
-	public NHCDBBBMFFG CMCKNKKCNDK_status; // 0x3c
+	public NHCDBBBMFFG_BossStatus CMCKNKKCNDK_status; // 0x3c
 	public int OKIEOLAAJNM_LastAttackPlayerId; // 0x40
 	public bool DLMNFENNCJG_HasAttacked; // 0x44
 	public bool ICCOOAAJEIN_CanReceiveReward; // 0x45
@@ -152,7 +152,7 @@ public class NCMFOICNJEB<EffectInfoClass> : CMPLGKFJCIC<EffectInfoClass>
 	public NCMFOICNJEB(GIINMFDIIMD CDGMPGLAING, Func<GIINMFDIIMD, EffectInfoClass> KACGHAKGAGH)
 		: base(CDGMPGLAING, KACGHAKGAGH)
 	{
-		CMCKNKKCNDK_status = (NHCDBBBMFFG) (int)CDGMPGLAING.DLENPPIJNPA_json["status"];
+		CMCKNKKCNDK_status = (NHCDBBBMFFG_BossStatus) (int)CDGMPGLAING.DLENPPIJNPA_json["status"];
 		OKIEOLAAJNM_LastAttackPlayerId = CDGMPGLAING.DLENPPIJNPA_json["last_attack_player_id"].DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data) =>
 		{
 			//0x26C2814

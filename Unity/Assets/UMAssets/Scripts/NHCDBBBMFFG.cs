@@ -1,5 +1,5 @@
 
-public enum NHCDBBBMFFG
+public enum NHCDBBBMFFG_BossStatus
 {
 	HJNNKCMLGFL_0_None = 0,
 	MBFHILFLPJL_1_Alive = 1,

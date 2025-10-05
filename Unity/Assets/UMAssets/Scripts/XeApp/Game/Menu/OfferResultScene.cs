@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1856628 Offset: 0x1856628 VA: 0x1856628
 		private void Start()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ(JpStringLiterals.StringLiteral_18843);
+			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18843);
 		}
 
 		// RVA: 0x18566D4 Offset: 0x18566D4 VA: 0x18566D4
@@ -231,13 +231,13 @@ namespace XeApp.Game.Menu
 			EntryAnimStart();
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Received);
+			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.CADDNFIKDLG_4_Received);
 			KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, 1);
 			KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, false);
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.PMMOLBAAHEM_31);
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.PMMOLBAAHEM_31_Vop);
 			m_viewCompItem = ViewOfferCompensation.CreateList(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id);
 			IsGreatSuccessState = m_viewCompItem.IsGreatSuccess;
-			ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, IsGreatSuccessState ? 2 : 1);
+			ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP_VopResults(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC_id, IsGreatSuccessState ? 2 : 1);
 			yield return null;
 			this.StartCoroutineWatched(AllAssetLoad());
 			yield return new WaitUntil(() =>
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 				yield return new WaitWhile(() =>
 				{
 					//0x1858B14
-					if(m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num || m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter)
+					if(m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num || m_Object.GetCurrentForm() == FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter)
 					{
 						return !valkyrieEnterSkip();
 					}

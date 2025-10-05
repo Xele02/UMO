@@ -60,8 +60,8 @@ public class FLCAECNBMML
 			IHIJGIHNOAL_CannonGaugeAdd = o.IHIJGIHNOAL_CannonGaugeAdd;
 			LFOPOHHEODG_ChargeBonus = o.LFOPOHHEODG_ChargeBonus;
 			GGLJDBHDAJN_MissionCompleted = o.PAACIPCHDDE_MissionCompleted;
-			GGPIKGAAKFP_SingleBonusNum = ev.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_Full);
-			GKJNCAEIKHE_SupportBonusNum = ev.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal);
+			GGPIKGAAKFP_SingleBonusNum = ev.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.OOEHFFBHCIC_3_Full);
+			GKJNCAEIKHE_SupportBonusNum = ev.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal);
 			NFOOOBMJINC_MissionBonusNum = m.NFOOOBMJINC_MissionBonusNum;
 			BLFHMNHMDHF_Mission = m.BLFHMNHMDHF_Mission;
 			KOOPHLLHEFM_IsSupBonusMax = ev.MCBGNPBECCI_SupportBonusMax() <= JNPLLCCIPNC_SupportBonus;

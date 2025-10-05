@@ -250,11 +250,11 @@ namespace XeApp.Game.Menu
 				//0x1264CAC
 				if (type == PopupButton.ButtonType.Negative)
 					return;
-				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
+				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 				SwapDiva(unit, beforeDiva, afterDiva, slot);
 				if(afterDiva != null)
 				{
-					ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.GNLPMEDLIJJ/*44*/, 2, false);
+					ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.GNLPMEDLIJJ_44_DebutMission4TeamEdit/*44*/, 2, false);
 				}
 				unit.HCDGELDHFHB_UpdateStatus();
 				ReturnScene();

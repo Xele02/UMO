@@ -100,10 +100,10 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 		HIADOIECMFP_EventPresentCampaign evDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(JOPOPMLFINI_QuestName) as HIADOIECMFP_EventPresentCampaign;
 		if(evDb != null)
 		{
-			st = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1;
+			st = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted;
 			if(_JHNMKKNEENE_Time >= evDb.NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart)
 			{
-				st = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.NCJFJLPJMLI_2;
+				st = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.NCJFJLPJMLI_2_CanEntry;
 				if(evDb.NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd < _JHNMKKNEENE_Time)
 				{
 					st = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting;
@@ -358,7 +358,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x18F6274
-								ILCCJNDFFOB.HHCJCDFCLOB.BLDDKDNOCFA(this, NHLBKJCPLBL.EBAMGNMELPO_EntryDate, NHLBKJCPLBL.HBODCMLFDOB_result);
+								ILCCJNDFFOB.HHCJCDFCLOB.BLDDKDNOCFA_PresentCampaignResult(this, NHLBKJCPLBL.EBAMGNMELPO_EntryDate, NHLBKJCPLBL.HBODCMLFDOB_result);
 								DFPIPMPJOEB();
 							}, _AOCANKOMKFG_OnError, null);
 							yield break;

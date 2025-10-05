@@ -9,7 +9,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	public enum DPNGHIDJCHA_Category
 	{
 		HJNNKCMLGFL_0_None = 0,
-		GLFGNEILACA_1 = 1,
+		GLFGNEILACA_1_PowerUp = 1,//?
 		GLHANCMGNDM_2_Unlock = 2,
 	}
 

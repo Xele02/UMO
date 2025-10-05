@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16123B4 Offset: 0x16123B4 VA: 0x16123B4
-		private void OnPushPaidButton(Action closeEvent, CIOECGOMILE.LIILJGHKIDL _apHealSubType)
+		private void OnPushPaidButton(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			if(CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() < CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType])
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71466C Offset: 0x71466C VA: 0x71466C
 		// // RVA: 0x16125A8 Offset: 0x16125A8 VA: 0x16125A8
-		private IEnumerator Co_PurchaseVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL _apHealSubType)
+		private IEnumerator Co_PurchaseVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			//0x1615D84
 			MenuScene.Instance.InputDisable();
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7146E4 Offset: 0x7146E4 VA: 0x7146E4
 		// // RVA: 0x1612668 Offset: 0x1612668 VA: 0x1612668
-		private IEnumerator Co_PaidVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL _apHealSubType)
+		private IEnumerator Co_PaidVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			//0x16159B8
 			MenuScene.Instance.InputDisable();
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(t_exec)
 			{
-				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0_None));
+				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None));
 				closeEvent();
 			}
 			MenuScene.Instance.InputEnable();
@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7147D4 Offset: 0x7147D4 VA: 0x7147D4
 		// // RVA: 0x1612A98 Offset: 0x1612A98 VA: 0x1612A98
-		private IEnumerator Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category a_type, RaidItemConstants.Type a_item_id/* = 4*/, CIOECGOMILE.LIILJGHKIDL _apHealSubType/* = 0*/)
+		private IEnumerator Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category a_type, RaidItemConstants.Type a_item_id/* = 4*/, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType/* = 0*/)
 		{
 			MessageBank msgBank; // 0x24
 
@@ -289,14 +289,14 @@ namespace XeApp.Game.Menu
 			{
 				EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id),
 				1, 
-				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE.LIILJGHKIDL.HJNNKCMLGFL_0_None),
+				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None),
 				a, a - 1
 			});
 			return s;
 		}
 
 		// // RVA: 0x1613200 Offset: 0x1613200 VA: 0x1613200
-		private PopupSetting MakePopupSettingRaidApRecoveryStoneUse(CIOECGOMILE.LIILJGHKIDL _apHealSubType)
+		private PopupSetting MakePopupSettingRaidApRecoveryStoneUse(CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GachaLotPopupSetting res = new GachaLotPopupSetting();
@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16139E4 Offset: 0x16139E4 VA: 0x16139E4
-		private PopupSetting MakePopupSettingRaidApRecoveryStoneNone(CIOECGOMILE.LIILJGHKIDL _apHealSubType)
+		private PopupSetting MakePopupSettingRaidApRecoveryStoneNone(CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GachaLotFewPopupSetting res = new GachaLotFewPopupSetting();
@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 		private void OnClickLegalDesc(Action endAction)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0x16146E0
 				if(endAction != null)

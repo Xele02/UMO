@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294188 Offset: 0x1294188 VA: 0x1294188
-		public void SetChatPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC _type, string mes, long updateAt)
+		public void SetChatPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC_PostType _type, string mes, long updateAt)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			m_index = index;
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294688 Offset: 0x1294688 VA: 0x1294688
-		public void SetStampPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC _type, int _divaId, int _miniId, int _commentId, long _time)
+		public void SetStampPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC_PostType _type, int _divaId, int _miniId, int _commentId, long _time)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			userName = name;
@@ -331,7 +331,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294E68 Offset: 0x1294E68 VA: 0x1294E68
-		public void SetDefeatBossInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC _type, long _time, string _messge)
+		public void SetDefeatBossInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC_PostType _type, long _time, string _messge)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			userName = name;
@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1295018 Offset: 0x1295018 VA: 0x1295018
-		public void SetMacrossCannonPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC _type, long _time, string _messge)
+		public void SetMacrossCannonPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC_PostType _type, long _time, string _messge)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			userName = name;
@@ -354,7 +354,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12951D4 Offset: 0x12951D4 VA: 0x12951D4
-		public void SetFullComboPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC _type, long _time, string _messge)
+		public void SetFullComboPostInfo(int index, string name, ANPBHCNJIDI.NOJONDLAMOC_PostType _type, long _time, string _messge)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			userName = name;
@@ -404,15 +404,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294344 Offset: 0x1294344 VA: 0x1294344
-		private void SetMessgeText(ANPBHCNJIDI.NOJONDLAMOC _type, string _messge)
+		private void SetMessgeText(ANPBHCNJIDI.NOJONDLAMOC_PostType _type, string _messge)
 		{
 			if(m_textMessge != null)
 			{
 				for(int i = 0; i < m_textMessge.Length; i++)
 				{
 					m_textMessge[i].text = _messge;
-					m_textMessge[i].horizontalOverflow = _type == ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp ? HorizontalWrapMode.Overflow : HorizontalWrapMode.Wrap;
-					m_textMessge[i].verticalOverflow = _type == ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp ? VerticalWrapMode.Overflow : VerticalWrapMode.Truncate;
+					m_textMessge[i].horizontalOverflow = _type == ANPBHCNJIDI.NOJONDLAMOC_PostType.DDPLFFAOAEB_2_Stamp ? HorizontalWrapMode.Overflow : HorizontalWrapMode.Wrap;
+					m_textMessge[i].verticalOverflow = _type == ANPBHCNJIDI.NOJONDLAMOC_PostType.DDPLFFAOAEB_2_Stamp ? VerticalWrapMode.Overflow : VerticalWrapMode.Truncate;
 				}
 			}
 			if(m_textSizeChange != null)

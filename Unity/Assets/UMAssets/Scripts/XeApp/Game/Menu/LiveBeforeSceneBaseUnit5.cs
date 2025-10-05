@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			MenuScene.Instance.InputDisable();
-			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND(h, () =>
+			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(h, () =>
 			{
 				//0x154A614
 				if(isSkip)
@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 					{
 						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
-						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Normal || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
+						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.LPNPLGJJCPC_2_Support))
 						{
 							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
 						}
@@ -230,13 +230,13 @@ namespace XeApp.Game.Menu
 				//0x154A518
 				MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 				MenuScene.Instance.InputEnable();
-			}, (NHCDBBBMFFG status) =>
+			}, (NHCDBBBMFFG_BossStatus status) =>
 			{
 				//0x154ACB4
 				TextPopupSetting s = new TextPopupSetting();
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				UnityEngine.Debug.LogWarning("StringLiteral_18271" + status.ToString());
-				if(status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+				if(status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 				{
 					s.SetParent(transform);
 					s.WindowSize = SizeType.Small;
@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputEnable();
 					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
-				else if(status != NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+				else if(status != NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 				{
 					MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					MenuScene.Instance.InputEnable();
@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
 		{
 			m_prismLogDiffData.OBKGEDCKHHE_Init(musicId, musicInfo.onStageDivaNum > 1);
-			ILCCJNDFFOB.HHCJCDFCLOB.CBKENDJIBDM(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
+			ILCCJNDFFOB.HHCJCDFCLOB.CBKENDJIBDM_MvChange(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
 				m_prismData.FBGAKINEIPG ? 1 : 0, m_prismData.OMNDNNFANCK_PrismDivaIds, m_prismData.DLPIKHDNIIE_PrismCostumeIds, 
 				m_prismData.FBAGIDFLHHI_PrismValkyrieId, m_prismLogDiffData.FBGAKINEIPG ? 1 : 0, m_prismLogDiffData.OMNDNNFANCK_PrismDivaIds, 
 				m_prismLogDiffData.DLPIKHDNIIE_PrismCostumeIds, m_prismLogDiffData.FBAGIDFLHHI_PrismValkyrieId);

@@ -621,14 +621,14 @@ namespace XeApp.Game.Adv
 					case AdvScriptCommand.Label.SendLog:
 						{
 							int param0 = scriptData.GetCommandParam(messageIndex, commandIndex, 0);
-							OAGBCBBHMPF.OGBCFNIKAFI a = OAGBCBBHMPF.OGBCFNIKAFI.FFPMNJAMFCP_13/*13*/;
+							OAGBCBBHMPF.OGBCFNIKAFI_LoadStep a = OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.FFPMNJAMFCP_13_Adventure1/*13*/;
 							if (param0 > 0 && param0 < 6)
-								a = new OAGBCBBHMPF.OGBCFNIKAFI[5] {
-									OAGBCBBHMPF.OGBCFNIKAFI.FEEJKNDAHFE_19/*19*/,
-									OAGBCBBHMPF.OGBCFNIKAFI.CAMJGCCMANN_28/*28*/,
-									OAGBCBBHMPF.OGBCFNIKAFI.KLPNOJFFNGL_29/*29*/,
-									OAGBCBBHMPF.OGBCFNIKAFI.KBMDDIHNCFI_30/*30*/,
-									OAGBCBBHMPF.OGBCFNIKAFI.GFLDEDJAONB_35/*35*/
+								a = new OAGBCBBHMPF.OGBCFNIKAFI_LoadStep[5] {
+									OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.FEEJKNDAHFE_19_Adventure2/*19*/,
+									OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.CAMJGCCMANN_28_Adventure3/*28*/,
+									OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.KLPNOJFFNGL_29_SNSStart/*29*/,
+									OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.KBMDDIHNCFI_30_SNSEnd/*30*/,
+									OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.GFLDEDJAONB_35_ValkyrieStart/*35*/
 								}[param0 - 1];
 							BasicTutorialManager.Log(a);
 						}
@@ -1541,7 +1541,7 @@ namespace XeApp.Game.Adv
 		}
 
 		//// RVA: 0xBC8294 Offset: 0xBC8294 VA: 0xBC8294
-		//private OAGBCBBHMPF.OGBCFNIKAFI ConverTutorialLogStep(int value) { }
+		//private OAGBCBBHMPF.OGBCFNIKAFI_LoadStep ConverTutorialLogStep(int value) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742F54 Offset: 0x742F54 VA: 0x742F54
 		//// RVA: 0xBC7640 Offset: 0xBC7640 VA: 0xBC7640

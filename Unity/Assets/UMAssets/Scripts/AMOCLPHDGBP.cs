@@ -17,15 +17,15 @@ public class AMOCLPHDGBP
 {
     private enum EMAGIFONJLD
     {
-        LCNHAHPGDEA = 0,
+        LCNHAHPGDEA_0 = 0,
         PLBEBIPLODF = 1,
-        HLEGCGNPMAB = 0,
+        HLEGCGNPMAB_2 = 0,
     }
 
     private enum FINNDKJENCG
     {
         FKPEAGGKNLC_0_Start = 0,
-        EBABINMPENN = 1,
+        EBABINMPENN_1 = 1,
         NALKNDBAEHD = 2,
         CPJMCILHPKO_3 = 3,
         ACJKDEHJGFI = 4,
@@ -136,7 +136,7 @@ public class AMOCLPHDGBP
 				HFCNOINEPLB.LILDGEPCPPG_GetProductList(() =>
 				{
 					//0xD458E8
-					FCPBCDOKOPD(FINNDKJENCG.EBABINMPENN/*1*/, "");
+					FCPBCDOKOPD(FINNDKJENCG.EBABINMPENN_1/*1*/, "");
 					LHFOAFAOPLC.JIABJFIJACN();
 					MKDKKDNBEEK(this, JLNBMEMFGPH, () =>
 					{
@@ -278,7 +278,7 @@ public class AMOCLPHDGBP
 				//LAB_00d4bd6c
 				_MEANCEOIMGE_Summon.NLEKIOBIIIK();
 				JCLIKCHGEBH(_MEANCEOIMGE_Summon);
-				ILCCJNDFFOB.HHCJCDFCLOB.JONAMONAHOB(a1, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), _MEANCEOIMGE_Summon);
+				ILCCJNDFFOB.HHCJCDFCLOB.JONAMONAHOB_Paid(a1, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), _MEANCEOIMGE_Summon);
 				FCPBCDOKOPD(FINNDKJENCG.GCBEOFGKJPF_5, "");
 				EKDFAFLIGKA = NKGJPJPHLIF.HHCJCDFCLOB.HECNGABHNDJ;
 				//LAB_00d4d140
@@ -414,7 +414,7 @@ public class AMOCLPHDGBP
 		bool BEKAMBBOLBO_Done = false;
 		PBCJCAOLLKI = false;
 		NHOAJCLAEJD = false;
-		if(GDGBDFEGLKK == EMAGIFONJLD.HLEGCGNPMAB/*0*/)
+		if(GDGBDFEGLKK == EMAGIFONJLD.LCNHAHPGDEA_0/*0*/)
 		{
 			JNBNLCNBILD_PaymentRecover = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new IBBMABBJFOA_PaymentRecover());
 			JNBNLCNBILD_PaymentRecover.NBFDEFGFLPJ = DDGIEBFGGDF_CheckIsError;
@@ -897,7 +897,7 @@ public class AMOCLPHDGBP
 			if(_PPFNGGCBJKC_id != SakashoErrorId.IAB_APP_PUBLIC_KEY_NOT_FOUND
 				&& _PPFNGGCBJKC_id != SakashoErrorId.BAD_REQUEST)
 			{
-				return (_PPFNGGCBJKC_id ^ SakashoErrorId.STORE_SERVER_ERROR) == 0 || GDGBDFEGLKK == EMAGIFONJLD.HLEGCGNPMAB;
+				return (_PPFNGGCBJKC_id ^ SakashoErrorId.STORE_SERVER_ERROR) == 0 || GDGBDFEGLKK == EMAGIFONJLD.HLEGCGNPMAB_2;
 			}
 		}
 		return true;
@@ -1178,7 +1178,7 @@ public class AMOCLPHDGBP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B93E8 Offset: 0x6B93E8 VA: 0x6B93E8
 	// // RVA: 0xCEA468 Offset: 0xCEA468 VA: 0xCEA468
-	// public IEnumerator KCCCOEMPPEA(SakashoErrorId MFDOKGNKNJJ, bool JBADCKAEMLI) { }
+	// public IEnumerator KCCCOEMPPEA_Test(SakashoErrorId MFDOKGNKNJJ, bool JBADCKAEMLI) { }
 
 	// // RVA: 0xCEA524 Offset: 0xCEA524 VA: 0xCEA524
 	// private void FOKFHDAFODE() { }

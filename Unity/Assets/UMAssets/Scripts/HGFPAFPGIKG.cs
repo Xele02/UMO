@@ -6,31 +6,31 @@ using XeSys;
 
 public class HGFPAFPGIKG
 {
-    public enum FHOKKDKGGJI
+    public enum FHOKKDKGGJI_ReactionTiming
     {
         HJNNKCMLGFL_0_None = 0,
-        KENKGHLELHP_1 = 1,
-        PDEGHEGBDBE_2 = 2,
+        KENKGHLELHP_1_Start = 1,
+        PDEGHEGBDBE_2_Draw = 2,
     }
 
-    public enum GDEJHABHLFH
+    public enum GDEJHABHLFH_Condition
     {
         HJNNKCMLGFL_0_None = 0,
-        HPFFBANMJOD_1 = 1,
-        CPLKGJJFJKA_2 = 2,
-        DAFJKGJDAND_3 = 3,
-        BEJJEGKLGMP_4 = 4,
-        EOAFEBEENLI_5 = 5,
+        HPFFBANMJOD_1_Default = 1,
+        CPLKGJJFJKA_2_AllDone = 2,
+        DAFJKGJDAND_3_PickupBoxFull = 3,
+        BEJJEGKLGMP_4_PickupBoxNotFull = 4,
+        EOAFEBEENLI_5_FirstBox = 5,
     }
 
-    public enum FBGKMBHEOBC
+    public enum FBGKMBHEOBC_Type
     {
         HJNNKCMLGFL_0_None = 0,
         JIFGIDIGBMA = 1,
         HCOLMJNKMEG = 2,
     }
 
-    public enum KAFHMMOGLKO
+    public enum KAFHMMOGLKO_GachaType
     {
         FAFCPLEAFCP_0_Summer = 0,
         DALFBOFBJJL_1_NewYear = 1,
@@ -57,9 +57,9 @@ public class HGFPAFPGIKG
     public class LBEPCOMCHNE
     {
         public int PPFNGGCBJKC_id; // 0x8
-        public FHOKKDKGGJI IIKIOIKEGMM; // 0xC
-        public GDEJHABHLFH FKDOMKHHOCD_CenterSkillCondition; // 0x10
-        public FBGKMBHEOBC INDDJNMPONH_type; // 0x14
+        public FHOKKDKGGJI_ReactionTiming ReactionTiming; // 0xC
+        public GDEJHABHLFH_Condition FKDOMKHHOCD_Condition; // 0x10 ??
+        public FBGKMBHEOBC_Type INDDJNMPONH_type; // 0x14
         public int EILKGEADKGH_Order; // 0x18
         public string EIGFHDMDECG_CharaText; // 0x1C
         public int BKCIPBIHKJG_CharaId; // 0x20
@@ -68,8 +68,8 @@ public class HGFPAFPGIKG
         public void ODDIHGPONFL_Copy(LBEPCOMCHNE IJAOGPFKDBP)
         {
             PPFNGGCBJKC_id = IJAOGPFKDBP.PPFNGGCBJKC_id;
-            IIKIOIKEGMM = IJAOGPFKDBP.IIKIOIKEGMM;
-            FKDOMKHHOCD_CenterSkillCondition = IJAOGPFKDBP.FKDOMKHHOCD_CenterSkillCondition;
+            ReactionTiming = IJAOGPFKDBP.ReactionTiming;
+            FKDOMKHHOCD_Condition = IJAOGPFKDBP.FKDOMKHHOCD_Condition;
             INDDJNMPONH_type = IJAOGPFKDBP.INDDJNMPONH_type;
             EILKGEADKGH_Order = IJAOGPFKDBP.EILKGEADKGH_Order;
             EIGFHDMDECG_CharaText = IJAOGPFKDBP.EIGFHDMDECG_CharaText;
@@ -97,7 +97,7 @@ public class HGFPAFPGIKG
 	private List<LBEPCOMCHNE> LHBBFEHAPGI; // 0x50
 	private int DFFEFGHMEOK_EventId; // 0x54
 	public JKNGJFOBADP JANMJPOKLFL_InventoryUtil = new JKNGJFOBADP(); // 0x58
-	public KAFHMMOGLKO ENJLGHMEKEL_Type = KAFHMMOGLKO.AIMPCCIHKAJ_2; // 0x5C
+	public KAFHMMOGLKO_GachaType ENJLGHMEKEL_Type = KAFHMMOGLKO_GachaType.AIMPCCIHKAJ_2; // 0x5C
 
 	// RVA: 0x174A67C Offset: 0x174A67C VA: 0x174A67C
 	public HGFPAFPGIKG(int _EKANGPODCEP_EventId)
@@ -217,13 +217,13 @@ public class HGFPAFPGIKG
                 JJAKKNHDABO[i].BFGKGMOLAFL_Max = _MOHDLLIJELH_cont.CKFCGDIJKKC[JJAKKNHDABO[i].OIPCCBHIKIA_index].GCEANEOEGMD_Num;
                 JJAKKNHDABO[i].JOPPFEHKNFO_Pickup = _MOHDLLIJELH_cont.CKFCGDIJKKC[JJAKKNHDABO[i].OIPCCBHIKIA_index].AEDMJLGNDHN_IsSp;
             }
-            ENJLGHMEKEL_Type = KAFHMMOGLKO.FAFCPLEAFCP_0_Summer;
+            ENJLGHMEKEL_Type = KAFHMMOGLKO_GachaType.FAFCPLEAFCP_0_Summer;
             DateTime t = Utility.GetLocalDateTime(JOFAGCFNKIO_OpenTime);
             if(t.Month != 7 && t.Month != 8)
             {
-                ENJLGHMEKEL_Type = KAFHMMOGLKO.DALFBOFBJJL_1_NewYear;
+                ENJLGHMEKEL_Type = KAFHMMOGLKO_GachaType.DALFBOFBJJL_1_NewYear;
                 if(t.Month != 12 && t.Month != 1)
-                    ENJLGHMEKEL_Type = KAFHMMOGLKO.AIMPCCIHKAJ_2;
+                    ENJLGHMEKEL_Type = KAFHMMOGLKO_GachaType.AIMPCCIHKAJ_2;
             }
         }
     }
@@ -446,9 +446,9 @@ public class HGFPAFPGIKG
                 {
                     LBEPCOMCHNE d = new LBEPCOMCHNE();
                     d.PPFNGGCBJKC_id = dbEv.FICLPLNOKOP[i].PPFNGGCBJKC_id;
-                    d.IIKIOIKEGMM = (FHOKKDKGGJI)dbEv.FICLPLNOKOP[i].GPJKJCBPBIP_Tim;
-                    d.FKDOMKHHOCD_CenterSkillCondition = (GDEJHABHLFH)dbEv.FICLPLNOKOP[i].OAFPGJLCNFM_cond;
-                    d.INDDJNMPONH_type = (FBGKMBHEOBC)dbEv.FICLPLNOKOP[i].GBJFNGCDKPM_typ;
+                    d.ReactionTiming = (FHOKKDKGGJI_ReactionTiming)dbEv.FICLPLNOKOP[i].GPJKJCBPBIP_Tim;
+                    d.FKDOMKHHOCD_Condition = (GDEJHABHLFH_Condition)dbEv.FICLPLNOKOP[i].OAFPGJLCNFM_cond;
+                    d.INDDJNMPONH_type = (FBGKMBHEOBC_Type)dbEv.FICLPLNOKOP[i].GBJFNGCDKPM_typ;
                     d.EILKGEADKGH_Order = dbEv.FICLPLNOKOP[i].FPOMEEJFBIG_odr;
                     d.EIGFHDMDECG_CharaText = HODCEOAPAIA(dbEv.FICLPLNOKOP[i].PPFNGGCBJKC_id);
                     d.BKCIPBIHKJG_CharaId = dbEv.FICLPLNOKOP[i].NKNAECHNACI_GroupId;
@@ -458,7 +458,7 @@ public class HGFPAFPGIKG
             LHBBFEHAPGI.Sort((LBEPCOMCHNE _HKICMNAACDA_a, LBEPCOMCHNE _BNKHBCBJBKI_b) =>
             {
                 //0x174D640
-                if(_HKICMNAACDA_a.IIKIOIKEGMM == _BNKHBCBJBKI_b.IIKIOIKEGMM)
+                if(_HKICMNAACDA_a.ReactionTiming == _BNKHBCBJBKI_b.ReactionTiming)
                 {
                     if(_HKICMNAACDA_a.EILKGEADKGH_Order == _BNKHBCBJBKI_b.EILKGEADKGH_Order)
                     {
@@ -470,7 +470,7 @@ public class HGFPAFPGIKG
                     }
                     return _BNKHBCBJBKI_b.EILKGEADKGH_Order.CompareTo(_HKICMNAACDA_a.EILKGEADKGH_Order);
                 }
-                return _HKICMNAACDA_a.IIKIOIKEGMM.CompareTo(_BNKHBCBJBKI_b.IIKIOIKEGMM);
+                return _HKICMNAACDA_a.ReactionTiming.CompareTo(_BNKHBCBJBKI_b.ReactionTiming);
             });
         }
     }
@@ -479,22 +479,22 @@ public class HGFPAFPGIKG
 	// public List<HGFPAFPGIKG.LBEPCOMCHNE> MHCOADJDLLF() { }
 
 	// // RVA: 0x174D1FC Offset: 0x174D1FC VA: 0x174D1FC
-	public List<LBEPCOMCHNE> MHCOADJDLLF(FHOKKDKGGJI IIKIOIKEGMM, FBGKMBHEOBC _INDDJNMPONH_type/* = 0*/, GDEJHABHLFH _FKDOMKHHOCD_CenterSkillCondition/* = 0*/)
+	public List<LBEPCOMCHNE> MHCOADJDLLF(FHOKKDKGGJI_ReactionTiming _ReactionTiming, FBGKMBHEOBC_Type _INDDJNMPONH_type/* = 0*/, GDEJHABHLFH_Condition _FKDOMKHHOCD_Condition/* = 0*/)
     {
         List<LBEPCOMCHNE> res = new List<LBEPCOMCHNE>();
         res.Clear();
         for(int i = 0; i < LHBBFEHAPGI.Count; i++)
         {
-            if(LHBBFEHAPGI[i].IIKIOIKEGMM == IIKIOIKEGMM)
+            if(LHBBFEHAPGI[i].ReactionTiming == _ReactionTiming)
             {
                 if(_INDDJNMPONH_type != 0)
                 {
                     if(LHBBFEHAPGI[i].INDDJNMPONH_type != _INDDJNMPONH_type)
                         continue;
                 }
-                if(_FKDOMKHHOCD_CenterSkillCondition != 0)
+                if(_FKDOMKHHOCD_Condition != 0)
                 {
-                    if(LHBBFEHAPGI[i].FKDOMKHHOCD_CenterSkillCondition != _FKDOMKHHOCD_CenterSkillCondition)
+                    if(LHBBFEHAPGI[i].FKDOMKHHOCD_Condition != _FKDOMKHHOCD_Condition)
                         continue;
                 }
                 LBEPCOMCHNE d = new LBEPCOMCHNE();

@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 			SetupList(m_productList.Count, resetScroll);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textTitle.text = view.NEMKDKDIIDK_ShopName;
-			m_button.Disable = view.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.HJNNKCMLGFL_0_None || view.INDDJNMPONH_type > AODFBGCCBPE.NJMPLEENNPO.BDMFENCIPEB_2_Medal;
+			m_button.Disable = view.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO_ShopType.HJNNKCMLGFL_0_None || view.INDDJNMPONH_type > AODFBGCCBPE.NJMPLEENNPO_ShopType.BDMFENCIPEB_2_Medal;
 			m_layoutWarning.StartChildrenAnimGoStop("cau_off");
 			if(products.Count < 1)
 			{
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			{
 				m_layoutInvalidOnOff.StartChildrenAnimGoStop("02");
 			}
-			m_layoutMedal.StartChildrenAnimGoStop(view.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "coin_off" : "coin_on");
+			m_layoutMedal.StartChildrenAnimGoStop(view.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "coin_off" : "coin_on");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
                 EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PId);
@@ -163,9 +163,9 @@ namespace XeApp.Game.Menu
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				if(m_view.INDDJNMPONH_type != AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
+				if(m_view.INDDJNMPONH_type != AODFBGCCBPE.NJMPLEENNPO_ShopType.MGEGNNJLJII_7_EpisodePlate1_4)
 				{
-					if(m_view.INDDJNMPONH_type != AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
+					if(m_view.INDDJNMPONH_type != AODFBGCCBPE.NJMPLEENNPO_ShopType.ACFEDNPIJKM_8_EpisodePlate5_6)
 					{
 						GCIJNCFDNON_SceneInfo sceneData = new GCIJNCFDNON_SceneInfo();
 						sceneData.KHEKNNFCAOI_Init(id, null, null, 0, 0, 0, false, 0, 0);

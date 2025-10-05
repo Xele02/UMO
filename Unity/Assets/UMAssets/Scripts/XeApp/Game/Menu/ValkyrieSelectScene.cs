@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 			m_layoutValSelect.SetHitArrowEnable(false);
 			string atkText = valk.KINFGHHNFCF_Atk.ToString();
 			string hitText = valk.NONBCCLGBAO_hit.ToString();
-			if (data.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML/*1*/, GetAbilityCondition()))
+			if (data.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.MGJDKBFHDML_1_MusicSelect/*1*/, GetAbilityCondition()))
 			{
 				if(data.KINFGHHNFCF_Atk > 0)
 				{
@@ -817,9 +817,9 @@ namespace XeApp.Game.Menu
 						m_PopupSetting.before_data = m_UnitData.JOKFNBLEILN_Valkyrie;
 						m_PopupSetting.after_data = m_SeriesValkyrieList[SelectSeries][Select];
 						NHDJHOPLMDE n = new NHDJHOPLMDE(m_PopupSetting.before_data.GPPEFLKGGGJ_ValkyrieId, 0);
-						m_PopupSetting.before_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML, GetAbilityCondition()) ? n : null;
+						m_PopupSetting.before_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.MGJDKBFHDML_1_MusicSelect, GetAbilityCondition()) ? n : null;
 						n = new NHDJHOPLMDE(m_PopupSetting.after_data.GPPEFLKGGGJ_ValkyrieId, 0);
-						m_PopupSetting.after_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML, GetAbilityCondition()) ? n : null;
+						m_PopupSetting.after_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN_AbilityType.MGJDKBFHDML_1_MusicSelect, GetAbilityCondition()) ? n : null;
 						SoundManager.Instance.voPilot.RequestChangeCueSheet(m_PopupSetting.after_data.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, () => {
 							//0x165FD34
 							return;

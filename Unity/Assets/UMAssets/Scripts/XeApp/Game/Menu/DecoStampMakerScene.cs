@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		private void Awake()
 		{
 			base.Awake();
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15509, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15509, 0);
 			m_EditStampSetting = new DecoCreateStampPopupSetting();
 			m_EditStampSetting.WindowSize = Common.SizeType.Middle;
 			m_EditStampSetting.SetParent(transform);
@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!IsAnimationPlaying())
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15510, 0);
+				ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15510, 0);
 				Color c = m_panel.color;
 				c.a = 0.4f;
 				m_panel.color = c;
@@ -242,13 +242,13 @@ namespace XeApp.Game.Menu
 			{
 				number = targetStamp.number;
 				m_customStampWindow.UpdateStamp(targetStamp, targetStamp.number);
-				ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH(number, JpStringLiterals.StringLiteral_15524, targetStamp.stampId, targetStamp.serifId);
+				ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH_DecoStampSave(number, JpStringLiterals.StringLiteral_15524, targetStamp.stampId, targetStamp.serifId);
 			}
 			else
 			{
 				number = m_customStampWindow.GetStampCount();
 				m_customStampWindow.AddStamp(m_decorator.TargetStampId, m_decorator.TargetSerifId);
-				ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH(number, JpStringLiterals.StringLiteral_15525, m_decorator.TargetStampId, m_decorator.TargetSerifId);
+				ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH_DecoStampSave(number, JpStringLiterals.StringLiteral_15525, m_decorator.TargetStampId, m_decorator.TargetSerifId);
 			}
 			while (!m_customStampWindow.IsSaveSucces)
 				yield return null;
@@ -558,7 +558,7 @@ namespace XeApp.Game.Menu
 				}
 				else if(t == PopupButton.ButtonType.Positive)
 				{
-					ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH(data.number, JpStringLiterals.StringLiteral_11225, data.stampId, data.serifId);
+					ILCCJNDFFOB.HHCJCDFCLOB.OMLMHKGCJPH_DecoStampSave(data.number, JpStringLiterals.StringLiteral_11225, data.stampId, data.serifId);
 					MenuScene.Instance.InputDisable();
 					m_customStampWindow.DeleteStamp(data.number, () =>
 					{
@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 			AODFBGCCBPE a = l.Find((AODFBGCCBPE item) =>
 			{
 				//0x158C3E0
-				return item.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
+				return item.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO_ShopType.BJNAMAANNMB_5_Deco;
 			});
 			if(a == null)
 			{

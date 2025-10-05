@@ -11,8 +11,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 {
 	public class AGDCEJNCPDE
 	{
-		// Fields
-		public const int JIKCABGFIEG = 0;
+		public const int JIKCABGFIEG_0_Unlock = 0;
 		public const int IPJKMCONMEB = 1;
 		public const int EFFOOAJNBKC = 2;
 		public const int DDBPGOCNAGL = 4;
@@ -362,14 +361,14 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 			KNKDBNFMAKF_EventSp ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as KNKDBNFMAKF_EventSp;
 			if(ev != null)
 			{
-				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.KNPBBPNJNEM_18);
-				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.DCFBLGLFJDO_20);
-				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH.ADCDEIPMKJI_19);
+				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.KNPBBPNJNEM_18_NumDiva);
+				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.DCFBLGLFJDO_20_DailyMissionCompleted);
+				ev.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.ADCDEIPMKJI_19_NumEventMission);
 				QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Event);
 				QuestUtility.FooterMenuBadge();
 			}
 			GameManager.Instance.ResetViewPlayerData();
-			ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.FMOCAEEMHFJ/*43*/, 2, false);
+			ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.FMOCAEEMHFJ_43_DebutMission3Story/*43*/, 2, false);
 		}
 		HCDGELDHFHB_UpdateStatus();
 	}

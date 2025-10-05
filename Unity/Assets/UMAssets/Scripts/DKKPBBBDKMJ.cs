@@ -53,7 +53,7 @@ public class DKKPBBBDKMJ
 					FBIOJHECAHB_EventStory.ENDMMNNOAIL_StoryPartInfo storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList[j];
 					if(storyEvent.OAFJONPIFGM_EventId == storyEvent2.OAFJONPIFGM_EventId)
 					{
-						if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
+						if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE_StoryPartType.MOPAEGFEGCB_5_EpisodeStory)
 						{
 							if(storyEvent2.CHOFDPDFPDC_ConfigValue == 4)
 							{

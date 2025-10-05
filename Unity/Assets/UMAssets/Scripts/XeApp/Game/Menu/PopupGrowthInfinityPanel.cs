@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		private Text[] m_texts; // 0x14
 		private short m_value; // 0x18
 		private short m_maxUnlockCount; // 0x1A
-		private MNDAMOGGJBJ.MNDGNJLBANB m_reason; // 0x1C
+		private MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason m_reason; // 0x1C
 		private short m_episodeUnit; // 0x20
 		private short m_stockCount; // 0x22
 		private TextPopupSetting m_textPopupSetting = new TextPopupSetting(); // 0x24
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 				{
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					m_textPopupSetting.TitleText = bk.GetMessageByLabel("growth_popup_title_text06");
-					if(m_reason == MNDAMOGGJBJ.MNDGNJLBANB.EDBCFDJBFID_LackUC)
+					if(m_reason == MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason.EDBCFDJBFID_1_LackUC)
 					{
 						m_textPopupSetting.Text = bk.GetMessageByLabel("growth_popup_text17");
 					}
@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 					{
 						m_textPopupSetting.Text = bk.GetMessageByLabel("growth_popup_text18");
 					}
-					else if(m_reason == MNDAMOGGJBJ.MNDGNJLBANB.LNMPDFICAOM_LackItem)
+					else if(m_reason == MNDAMOGGJBJ.MNDGNJLBANB_GrowthReason.LNMPDFICAOM_2_LackItem)
 					{
 						m_textPopupSetting.Text = bk.GetMessageByLabel("growth_popup_text16");
 					}

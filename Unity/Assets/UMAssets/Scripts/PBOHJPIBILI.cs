@@ -92,7 +92,7 @@ public class PBOHJPIBILI
                 PGAGKCDGOIN_AddMcGauge(a);
                 JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
                 JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-                ILCCJNDFFOB.HHCJCDFCLOB.MINOEGPNBIH(a, JMJOBHFFBGC_GetMcGauge(), _KIJAPOFAGPN_ItemId, newNum, "StringLiteral_13052", "");
+                ILCCJNDFFOB.HHCJCDFCLOB.MINOEGPNBIH_McCharge(a, JMJOBHFFBGC_GetMcGauge(), _KIJAPOFAGPN_ItemId, newNum, "StringLiteral_13052", "");
             }
             MenuScene.SaveWithAchievement(0, () =>
             {

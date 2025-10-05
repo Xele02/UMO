@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		public UnityAction m_cb_buy; // 0x44
 		public UnityAction m_cb_cancel; // 0x48
 		public Result m_result; // 0x50
-		public NHPDPKHMFEP.GGNEBJEIFCP m_plan; // 0x54
+		public NHPDPKHMFEP.GGNEBJEIFCP_Plan m_plan; // 0x54
 		private LayoutUGUIRuntime m_runtime; // 0x58
 
 		public Transform Parent { get; private set; } // 0x4C
@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xDEC40C Offset: 0xDEC40C VA: 0xDEC40C
-		public void Initialize(NHPDPKHMFEP.GGNEBJEIFCP plan)
+		public void Initialize(NHPDPKHMFEP.GGNEBJEIFCP_Plan plan)
 		{
 			m_btn_check.SetOff();
 			m_btn_buy.Disable = true;
@@ -84,12 +84,12 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(plan == NHPDPKHMFEP.GGNEBJEIFCP.AJAHGGBMOJE_1)
+				if(plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp)
 				{
 					m_text_01.text = bk.GetMessageByLabel("pop_pass_popup_text03");
 					m_text_02.text = bk.GetMessageByLabel("pop_pass_popup_text02");
 				}
-				else if(plan == NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0_Normal)
+				else if(plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal)
 				{
 					m_text_01.text = bk.GetMessageByLabel("pop_pass_popup_text01");
 					m_text_02.text = bk.GetMessageByLabel("pop_pass_popup_text02");

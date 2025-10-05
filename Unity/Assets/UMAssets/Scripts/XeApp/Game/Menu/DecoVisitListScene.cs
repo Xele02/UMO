@@ -361,8 +361,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = player;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_PlayerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(player.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(player.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId), true, 0);
 			MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
@@ -429,7 +429,7 @@ namespace XeApp.Game.Menu
 				m_netDecoVisitControl.KCKOFIIHDBJ_SendGift(playerId, (int itemId, int count) =>
 				{
 					//0x11D2ED0
-					ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM(playerId, fm.PDEACDHIJJJ_IsFriend(playerId), false, itemId);
+					ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(playerId, fm.PDEACDHIJJJ_IsFriend(playerId), false, itemId);
 					isDone = true;
 					_itemId = itemId;
 					_itemCount += count;

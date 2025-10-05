@@ -4,12 +4,12 @@ using XeSys;
 
 public static class AHAENNIFOAF
 {
-    public enum IAOPMEAIHLH
+    public enum IAOPMEAIHLH_BbsType
     {
-        IDGJGMNNJEF_0 = 0,
-        JBMJEOBODHH_1 = 1,
-        ANLJMCJAMFJ_2 = 2,
-        BJNAMAANNMB_3 = 3,
+        IDGJGMNNJEF_0_Main = 0,
+        JBMJEOBODHH_1_BattleLog = 1,
+        ANLJMCJAMFJ_2_Memo = 2,
+        BJNAMAANNMB_3_Deco = 3,
         AEFCOHJBLPO_4_Num = 4,
         HJNNKCMLGFL_M1_None = -1,
     }
@@ -23,7 +23,7 @@ public static class AHAENNIFOAF
     }; // 0x0
 
 	// // RVA: 0x15C510C Offset: 0x15C510C VA: 0x15C510C
-	public static void PAMKDBAMMIE(StringBuilder _KOHNLDKIKPC_sb, int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE KLMCILEDMEL)
+	public static void PAMKDBAMMIE(StringBuilder _KOHNLDKIKPC_sb, int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE_ChatType KLMCILEDMEL)
 	{
 		_KOHNLDKIKPC_sb.SetFormat(AMEJJEEKKLD[(int)KLMCILEDMEL], _EKANGPODCEP_EventId, _AIBFGKBACCB_LobbyId);
 	}

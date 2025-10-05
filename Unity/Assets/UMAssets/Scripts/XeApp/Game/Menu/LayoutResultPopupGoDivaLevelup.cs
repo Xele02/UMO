@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 	{
 		public struct InitParam
 		{
-			public JLCHNKIHGHK.GDJKDOMAAPG divaParamType; // 0x0
+			public JLCHNKIHGHK.GDJKDOMAAPG_Type divaParamType; // 0x0
 			public int beforeLevel; // 0x4
 			public int afterLevel; // 0x8
 			public int beforeValue; // 0xC
@@ -64,15 +64,15 @@ namespace XeApp.Game.Menu
 			m_textAfterLevel.text = initParam.afterLevel.ToString();
 			m_textBeforeValue.text = initParam.beforeValue.ToString();
 			m_textAfterValue.text = initParam.afterValue.ToString();
-			if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG.LGOHMPBLPKA_2_Charm)
+			if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG_Type.LGOHMPBLPKA_2_Charm)
 			{
 				m_layoutRoot.StartAllAnimGoStop("03");
 			}
-			else if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG.GPCMMGOCPHC_1_Vocal)
+			else if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG_Type.GPCMMGOCPHC_1_Vocal)
 			{
 				m_layoutRoot.StartAllAnimGoStop("02");
 			}
-			else if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG.BICPBLMPBPH_0_Soul)
+			else if(initParam.divaParamType == JLCHNKIHGHK.GDJKDOMAAPG_Type.BICPBLMPBPH_0_Soul)
 			{
 				m_layoutRoot.StartAllAnimGoStop("01");
 			}

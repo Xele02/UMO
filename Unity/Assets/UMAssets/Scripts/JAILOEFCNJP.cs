@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class JAILOEFCNJP
 {
-	public enum BEBLECKOAPK
+	public enum BEBLECKOAPK_SubscriptionStatus
 	{
 		HJNNKCMLGFL_0_None = 0,
 		GIDILNEPILF_1 = 1,
@@ -14,10 +14,10 @@ public class JAILOEFCNJP
 	public const int MBCILHCMGIO = 0;
 
 	// RVA: 0x141479C Offset: 0x141479C VA: 0x141479C
-	public static bool GEOMLGKCCNI(LGIDLHLBFFJ_MonthlyPass _HMMNDKHKEBC_MonthlyPass, List<BCEHKBJAEDM> IDOLJENFBPM, long _JHNMKKNEENE_Time, out string HACIJHPHFHH, out BEBLECKOAPK MKBOKLLDCFI)
+	public static bool GEOMLGKCCNI(LGIDLHLBFFJ_MonthlyPass _HMMNDKHKEBC_MonthlyPass, List<BCEHKBJAEDM> IDOLJENFBPM, long _JHNMKKNEENE_Time, out string HACIJHPHFHH, out BEBLECKOAPK_SubscriptionStatus MKBOKLLDCFI)
 	{
 		HACIJHPHFHH = _HMMNDKHKEBC_MonthlyPass.POGHKGLHHFL();
-		MKBOKLLDCFI = BEBLECKOAPK.GIDILNEPILF_1/*1*/;
+		MKBOKLLDCFI = BEBLECKOAPK_SubscriptionStatus.GIDILNEPILF_1/*1*/;
 		long t = 0;
 		long t2 = 0;
 		CLHMBMLOAOE c = null;
@@ -82,7 +82,7 @@ public class JAILOEFCNJP
 				{
 					t3 = c2.NKMNFPMMJND_expired_at;
 					HACIJHPHFHH = _HMMNDKHKEBC_MonthlyPass.KIHJLOGLAGI();
-					MKBOKLLDCFI = BEBLECKOAPK.KNBIMNIGANP_2;
+					MKBOKLLDCFI = BEBLECKOAPK_SubscriptionStatus.KNBIMNIGANP_2;
 				}
 			}
 		}
@@ -93,7 +93,7 @@ public class JAILOEFCNJP
 				t3 = c2.NKMNFPMMJND_expired_at;
 				t4 = c2.FDFGEMODIIF_StartedAt;
 				HACIJHPHFHH = _HMMNDKHKEBC_MonthlyPass.KIHJLOGLAGI();
-				MKBOKLLDCFI = BEBLECKOAPK.KNBIMNIGANP_2;
+				MKBOKLLDCFI = BEBLECKOAPK_SubscriptionStatus.KNBIMNIGANP_2;
 			}
 		}
 		b = false;

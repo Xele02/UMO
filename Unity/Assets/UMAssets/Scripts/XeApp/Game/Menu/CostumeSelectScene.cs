@@ -814,19 +814,19 @@ namespace XeApp.Game.Menu
 			bool b = false;
 			if(oldCostumeId != newCostumeId || oldColorId != newColorId)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.DBIDGHMFLIC(divaId, oldCostumeId, newCostumeId, oldColorId, newColorId);
+				ILCCJNDFFOB.HHCJCDFCLOB.DBIDGHMFLIC_Clothes(divaId, oldCostumeId, newCostumeId, oldColorId, newColorId);
 				b = true;
 			}
 			if(oldHomeCostumeId != newHomeCostumeId || oldHomeColorId != newHomeColorId)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.CJCJNKOPIKB(divaId, oldHomeCostumeId, newHomeCostumeId, oldHomeColorId, newHomeColorId);
+				ILCCJNDFFOB.HHCJCDFCLOB.CJCJNKOPIKB_HomeCloths(divaId, oldHomeCostumeId, newHomeCostumeId, oldHomeColorId, newHomeColorId);
 				b = true;
 			}
 			if (b)
 			{
 				if (GNGMCIAIKMA.HHCJCDFCLOB != null)
 				{
-					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK_7_SetCostume/*7*/, divaId, 1, null);
+					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI_BingoMissionType.HOOJOFACOEK_7_SetCostume/*7*/, divaId, 1, null);
 					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
 				}
 			}

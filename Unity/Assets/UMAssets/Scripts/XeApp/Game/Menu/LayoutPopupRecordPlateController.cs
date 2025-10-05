@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				//0x177D0F8
 				if (callback != null)
 					callback();
-			}, null, null, null, info.IPMJIODJGBC != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/, true, false, null, null, null, null, null);
+			}, null, null, null, info.IPMJIODJGBC != GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.GBIDBHKEPGL_1/*1*/, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x177A664 Offset: 0x177A664 VA: 0x177A664
@@ -128,9 +128,9 @@ namespace XeApp.Game.Menu
 			else
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				GONMPHKGKHI_RewardView.CECMLGBLHHG type = GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4;
+				GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type = GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard;
 				if(list[0] is GONMPHKGKHI_RewardView.GCHFDJMNCAF)
-					type = GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8;
+					type = GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.JCGKGFLCKCP_8_Poster;
 				m_overlapListSetting.TitleText = bk.GetMessageByLabel("popup_record_plate_008");
 				m_overlapListSetting.WindowSize = list.Count == 1 ? SizeType.Small : SizeType.Large;
 				m_overlapListSetting.Type = type;
@@ -168,11 +168,11 @@ namespace XeApp.Game.Menu
 				List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> reward = infoList.FindAll((GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo _) =>
 				{
 					//0x177D0C8
-					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2;
+					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode;
 				});
 				if(reward.Count > 0)
 				{
-					yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+					yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode, null));
 				}
 			}
 			GameManager.Instance.NowLoading.Hide();
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 			if(view1.HGONFBDIBPM_ActiveSkillId == view2.HGONFBDIBPM_ActiveSkillId)
 				yield break;
 			bool isWait = true;
-			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DJECFFENCND;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.DJECFFENCND_Active;
 			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x177D33C
@@ -313,7 +313,7 @@ namespace XeApp.Game.Menu
 			if(view1.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) == view2.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0))
 				yield break;
 			bool isWait = true;
-			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DFAPCDGNNPN;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.DFAPCDGNNPN_Center;
 			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x177D350
@@ -331,7 +331,7 @@ namespace XeApp.Game.Menu
 			if(view1.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == view2.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0))
 				yield break;
 			bool isWait = true;
-			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.OONCLCEAICE;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO_SkillType.OONCLCEAICE_Live;
 			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x177D364
@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C0EC Offset: 0x70C0EC VA: 0x70C0EC
 		//// RVA: 0x177B7E8 Offset: 0x177B7E8 VA: 0x177B7E8
-		public IEnumerator EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG type, List<int> episodeList, Action callback)
+		public IEnumerator EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type, List<int> episodeList, Action callback)
 		{
 			LayoutPopupAddEpisode.Type layoutType; // 0x28
 			int i; // 0x2C
@@ -444,14 +444,14 @@ namespace XeApp.Game.Menu
 			//0x177D690
 			if(episodeList.Count > 0)
 			{
-				yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+				yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode, null));
 			}
 			if(episodeList.Count > 0)
 			{
-				yield return Co.R(LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+				yield return Co.R(LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode, null));
 			}
-			layoutType = type == GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7 ? LayoutPopupAddEpisode.Type.AvailableEpisode : LayoutPopupAddEpisode.Type.AddEpisode;
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2)
+			layoutType = type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.BKHAAGAAIHJ_7_Episode ? LayoutPopupAddEpisode.Type.AvailableEpisode : LayoutPopupAddEpisode.Type.AddEpisode;
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode)
 			{
 				if(episodeList.Count > 1)
 				{
@@ -517,10 +517,10 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C1DC Offset: 0x70C1DC VA: 0x70C1DC
 		//// RVA: 0x177BC20 Offset: 0x177BC20 VA: 0x177BC20
-		private IEnumerator LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG type, Action callback)
+		private IEnumerator LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type, Action callback)
 		{
 			//0x177FB04
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2/*2*/)
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode/*2*/)
 			{
 				bool isLoading = false;
 				GameManager.Instance.NowLoading.Show();
@@ -540,10 +540,10 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C254 Offset: 0x70C254 VA: 0x70C254
 		//// RVA: 0x177BD00 Offset: 0x177BD00 VA: 0x177BD00
-		private IEnumerator LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG type, Action callback)
+		private IEnumerator LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType type, Action callback)
 		{
 			//0x177F7B0
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2)
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.AGLFBCCGHJM_2_NewEpisode)
 			{
 				bool isLoading = false;
 				GameManager.Instance.NowLoading.Show();

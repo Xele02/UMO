@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x969340
 					IsDone = true;
-					if(t_raid_ctrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
+					if(t_raid_ctrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 						return;
 					m_IsNewMark |= _newBossNum > 0;
 				}, () =>
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 					EventLobbyArgs arg = new EventLobbyArgs();
 					arg.IsMyLobby = true;
 					arg.playerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
-					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP(1);
+					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP_LobbyVisit(1);
 					//LAB_00967a24
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_LOBBYMAIN, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					return;
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 					EventLobbyArgs arg = new EventLobbyArgs();
 					arg.IsMyLobby = true;
 					arg.playerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
-					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP(1);
+					ILCCJNDFFOB.HHCJCDFCLOB.LHCHBHPHLCP_LobbyVisit(1);
 					//LAB_00967a24
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_LOBBYMAIN, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					return;

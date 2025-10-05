@@ -3,9 +3,9 @@ public class FKGMGBHBNOC
 {
     public enum HPJOCKGKNCC_Form
     {
-        MABDGNNOPCB_Fighter = 0,
-        MOGAKDMDCJB_Gerwalk = 1,
-        GBLPNIGCPAP_Battroid = 2,
+        MABDGNNOPCB_0_Fighter = 0,
+        MOGAKDMDCJB_1_Gerwalk = 1,
+        GBLPNIGCPAP_2_Battroid = 2,
         AEFCOHJBLPO_3_Num = 3,
     }
 

@@ -8,10 +8,10 @@ using XeSys;
 public class JLOGEHCIBEJ { }
 public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 {
-	public enum JJAFLOEBLDH
+	public enum JJAFLOEBLDH_AttackType
 	{
 		CCAPCGPIIPF_1_Normal = 1, // Support
-		LPNPLGJJCPC_2 = 2,
+		LPNPLGJJCPC_2_Support = 2,
 		OOEHFFBHCIC_3_Full = 3, // FullPower
 		EKIGHDLEBAH_4_MacrossCanon = 4,
 		CKPGGPDJCAL_5 = 5
@@ -185,13 +185,13 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 		// public bool DOBNKAKAGGP() { }
 
 		// // RVA: 0x147D8EC Offset: 0x147D8EC VA: 0x147D8EC
-		public int KAHKFBKIMBE_GetMyBossAttackCount(JJAFLOEBLDH _INDDJNMPONH_type)
+		public int KAHKFBKIMBE_GetMyBossAttackCount(JJAFLOEBLDH_AttackType _INDDJNMPONH_type)
 		{
 			return JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_type - 1].DNJEJEANJGL_Value;
 		}
 
 		// // RVA: 0x14899EC Offset: 0x14899EC VA: 0x14899EC
-		public void GNDJFKNNMHD(JJAFLOEBLDH _INDDJNMPONH_type, int _HMFFHLPNMPH_count)
+		public void GNDJFKNNMHD(JJAFLOEBLDH_AttackType _INDDJNMPONH_type, int _HMFFHLPNMPH_count)
 		{
 			JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_type - 1].DNJEJEANJGL_Value = _HMFFHLPNMPH_count;
 		}
@@ -699,7 +699,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 			data4.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int j = 0; j < 4; j++)
 			{
-				data4.Add(FBCJICEPLED[i].KAHKFBKIMBE_GetMyBossAttackCount((JJAFLOEBLDH)(j + 1)));
+				data4.Add(FBCJICEPLED[i].KAHKFBKIMBE_GetMyBossAttackCount((JJAFLOEBLDH_AttackType)(j + 1)));
 			}
 			EDOHBJAPLPF_JsonData data6 = new EDOHBJAPLPF_JsonData();
 			data6[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = FBCJICEPLED[i].MPCAGEPEJJJ_Key;
@@ -828,7 +828,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 						IBCGPBOGOGP_ReadIntArray(block[i], "my_boss_atk_count", 0, 4, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14899B4
-							FBCJICEPLED[i].GNDJFKNNMHD((JJAFLOEBLDH)_OIPCCBHIKIA_index + 1, _JBGEEPFKIGG_val);
+							FBCJICEPLED[i].GNDJFKNNMHD((JJAFLOEBLDH_AttackType)_OIPCCBHIKIA_index + 1, _JBGEEPFKIGG_val);
 						}, ref isInvalid);
 						FBCJICEPLED[i].BADLOIKHGLK();
 						if(block[i].BBAJPINMOEP_Contains("o_boss_list"))

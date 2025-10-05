@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 				int a = 0;
 				if(id == VeiwOptionHelpContentData.ConditionId.VopClearCount)
 				{
-					a = KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI.HJNNKCMLGFL_0_None/*0*/);
+					a = KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HJNNKCMLGFL_0_None/*0*/);
 				}
 				else if(id == VeiwOptionHelpContentData.ConditionId.HighScoreRate)
 				{

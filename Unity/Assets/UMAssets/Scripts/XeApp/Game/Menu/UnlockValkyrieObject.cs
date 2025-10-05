@@ -156,11 +156,11 @@ namespace XeApp.Game.Menu
 				{
 					if (!m_ValkyrieObject.battroid.activeSelf)
 						return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_3_Num;
-					return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_Battroid;
+					return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_2_Battroid;
 				}
-				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MOGAKDMDCJB_Gerwalk;
+				return FKGMGBHBNOC.HPJOCKGKNCC_Form.MOGAKDMDCJB_1_Gerwalk;
 			}
-			return FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_Fighter;
+			return FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter;
 		}
 
 		// RVA: 0x16500D0 Offset: 0x16500D0 VA: 0x16500D0

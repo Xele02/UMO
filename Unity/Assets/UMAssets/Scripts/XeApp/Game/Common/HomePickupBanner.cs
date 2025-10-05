@@ -431,7 +431,7 @@ namespace XeApp.Game.Common
 			bool b = false;
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
+				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA_Type.KCOEIKAMLBD_27_GachaLimited)
 				{
 					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_PId);
 				}
@@ -480,7 +480,7 @@ namespace XeApp.Game.Common
 				//0xEAF490
 				return x.EAHPLCJMPHD_PId == pictId;
 			});
-			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
+			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA_Type.KCOEIKAMLBD_27_GachaLimited)
 			{
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x4030e10U) != 0)
 				{

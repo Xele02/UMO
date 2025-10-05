@@ -4,7 +4,7 @@ using XeApp.Game.Common;
 
 public class JLCHNKIHGHK
 {
-    public enum GDJKDOMAAPG
+    public enum GDJKDOMAAPG_Type
     {
         BICPBLMPBPH_0_Soul = 0,
         GPCMMGOCPHC_1_Vocal = 1,

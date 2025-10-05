@@ -1,7 +1,7 @@
 
 public class MHOILBOJFHL
 {
-	public enum KCAEDEHGAFO
+	public enum KCAEDEHGAFO_WebUrlType
 	{
 		GCCBFIFJHII_Information = 0,
 		CCFMGBNHMNN_Inquiry = 1,

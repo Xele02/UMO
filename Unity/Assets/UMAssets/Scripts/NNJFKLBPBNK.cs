@@ -6,7 +6,7 @@ public class NNJFKLBPBNK_SecureString
 {
 	private byte[] DLHDPLPLCAC; // 0x8
 	private byte[] IPKONDLIDHC; // 0xC
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x10
+	public FENCAJJBLBH.EIAPDOGALDK_SecureGroup KGICDMIJGDF_Group = FENCAJJBLBH.EIAPDOGALDK_SecureGroup.PNLBHBFOECC_4_SecureValue/*4*/; // 0x10
 	public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0x14
 
     [UMOMember()]

@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 			SetText(eText.Desc2, bank.GetMessageByLabel("popup_inh_sns_001"));
 			SetText(eText.Desc3, bank.GetMessageByLabel("popup_inh_sns_002"));
 			SetText(eText.Desc4, bank.GetMessageByLabel("popup_inh_sns_003"));
-			SetCheckBoxEnable(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.MDBINDIACKP_CanShowPopup(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup));
+			SetCheckBoxEnable(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.MDBINDIACKP_CanShowPopup(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM_Type.HLFFEADNEHB_AccountBindPopup));
 			if (IsTitle)
 				return;
 			SetText(eText.Desc3, "");

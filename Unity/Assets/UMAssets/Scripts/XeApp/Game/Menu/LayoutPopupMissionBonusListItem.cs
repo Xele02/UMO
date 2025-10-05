@@ -29,13 +29,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x173301C Offset: 0x173301C VA: 0x173301C
-		private void SetIconImage(KPJHLACKGJF_EventMission.MNIIDKPECMD type, int value)
+		private void SetIconImage(KPJHLACKGJF_EventMission.MNIIDKPECMD_Type type, int value)
 		{
-			if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD.CEPMMEKKNGC_3_All)
+			if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.CEPMMEKKNGC_3_All)
 			{
 				m_layout.StartChildrenAnimGoStop("05");
 			}
-			else if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD.OLFDHLDEPKO_2_MusicAttr)
+			else if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.OLFDHLDEPKO_2_MusicAttr)
 			{
 				switch(value)
 				{
@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 						break;
 				}
 			}
-			else if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD.LNAOAANJGDM_1_SerieAttr)
+			else if(type == KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.LNAOAANJGDM_1_SerieAttr)
 			{
 				m_imageLogo.enabled = false;
                 SeriesLogoId.Type logoId = SeriesLogoId.ConvertFromAttr((SeriesAttr.Type)value);

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		public int LotCount { get; private set; } // 0xB8
 
 		// RVA: 0x19AB854 Offset: 0x19AB854 VA: 0x19AB854
-		public void Setup(BEPHBEGDFFK.DMBKENKBIJD info, BEPHBEGDFFK.ABBPGMEDDHD zone/* = 0*/)
+		public void Setup(BEPHBEGDFFK.DMBKENKBIJD info, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone/* = 0*/)
 		{
 			int ticketCount = info.CMHHHCAKPCD();
 			if(info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.NGAHKKOBGPA_9 || info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.BPPLDIBMPKH_10)
@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19ABA40 Offset: 0x19ABA40 VA: 0x19ABA40
-		public void Setup(LOBDIAABMKG gachaProduct, int currencyId, int lotCount, int price, string kakutei/* = ""*/, bool isFirstSale/* = false*/, int ticketCount/* = 0*/, BEPHBEGDFFK.ABBPGMEDDHD zone/* = 0*/, long currentTime/* = 0*/)
+		public void Setup(LOBDIAABMKG gachaProduct, int currencyId, int lotCount, int price, string kakutei/* = ""*/, bool isFirstSale/* = false*/, int ticketCount/* = 0*/, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone/* = 0*/, long currentTime/* = 0*/)
 		{
 			SetCurrencyType(gachaProduct, currencyId, price, zone);
 			LotCount = lotCount;
@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19ABFC0 Offset: 0x19ABFC0 VA: 0x19ABFC0
-		public void SetCurrencyType(LOBDIAABMKG gachaProduct, int currencyId, int price, BEPHBEGDFFK.ABBPGMEDDHD zone)
+		public void SetCurrencyType(LOBDIAABMKG gachaProduct, int currencyId, int price, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
@@ -102,15 +102,15 @@ namespace XeApp.Game.Menu
 				case 0:
 					m_layoutCostIcon.StartChildrenAnimGoStop("02");
 					m_layoutLotCost.StartChildrenAnimGoStop("03");
-					if(zone == BEPHBEGDFFK.ABBPGMEDDHD.KHLPAOENONH_2_Evening)
+					if(zone == BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod.KHLPAOENONH_2_Night)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_05");
 					}
-					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HCBFMFONIOE_1_Afternoon)
+					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod.HCBFMFONIOE_1_Afternoon)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_04");
 					}
-					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HNOJIKHAPHA_0_Morning)
+					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod.HNOJIKHAPHA_0_Morning)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_03");
 					}

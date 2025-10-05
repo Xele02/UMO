@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class PopupOverlapListSetting : PopupSetting
 	{
-		public GONMPHKGKHI_RewardView.CECMLGBLHHG Type { get; set; } // 0x34
+		public GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType Type { get; set; } // 0x34
 		public List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> List { get; set; } // 0x38
 		public override string PrefabPath { get { return ""; } } //0x1609E1C
 		public override string BundleName { get { return "ly/074.xab"; } } //0x1609E78

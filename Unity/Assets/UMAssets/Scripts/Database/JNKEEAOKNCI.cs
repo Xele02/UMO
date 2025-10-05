@@ -8,8 +8,8 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 {
 	public enum MKGJHBAKMBD_SkillType
 	{
-		MHKFDBLMOGF_Scene = 0,
-		AIFGINAKBMA_EnemySkill = 1,
+		MHKFDBLMOGF_0_Scene = 0,
+		AIFGINAKBMA_1_EnemySkill = 1,
 		KBHGPMNGALJ_2_Costume = 2,
 	}
 	private const int LKIDINCKEIO = 999;
@@ -150,19 +150,19 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 		bool res = false;
 		FLHKDAGGLNK parser = FLHKDAGGLNK.HEGEKFMJNCC(_DBBGALAPFGC_bytes);
 		BKIPCJEJGGF(parser);
-		MMINKHFAOJJ(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene);
-		DFGFFILCCEI(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene);
+		MMINKHFAOJJ(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene);
+		DFGFFILCCEI(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene);
 		ELDPNELNCOH(parser);
 		ANPNMONLBNA(parser);
-		if(INLJKKMEENJ(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene))
+		if(INLJKKMEENJ(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene))
 		{
 			FOMPOPFNLME(parser);
 			DBINMPHFJEA(parser);
-			JAHNPCHIDIA(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene);
-			if(INLJKKMEENJ(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill))
+			JAHNPCHIDIA(parser, MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene);
+			if(INLJKKMEENJ(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill))
 			{
-				MMINKHFAOJJ(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill);
-				DFGFFILCCEI(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill);
+				MMINKHFAOJJ(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill);
+				DFGFFILCCEI(parser, MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill);
 				MMINKHFAOJJ(parser, MKGJHBAKMBD_SkillType.KBHGPMNGALJ_2_Costume);
 				DFGFFILCCEI(parser, MKGJHBAKMBD_SkillType.KBHGPMNGALJ_2_Costume);
 				IEKMLIKFMIJ(parser);
@@ -290,7 +290,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				BIOEJKBCIKD_CenterSkillCostume.Add(data);
 			}
 		}
-		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill)
+		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill)
 		{
 			OPNDNFJFFIO[] array = GGIHPBILDIG.FMMKFANHGMJ;
 			for (int i = 0; i < array.Length; i++)
@@ -303,7 +303,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				FFCFHFOIKGB_CenterSkillEnemy.Add(data);
 			}
 		}
-		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
+		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene)
 		{
 			DJJLEDFBIBI[] array = GGIHPBILDIG.CAIFABNNKJB;
 			for (int i = 0; i < array.Length; i++)
@@ -398,7 +398,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B92258 Offset: 0x1B92258 VA: 0x1B92258
 	private bool DFGFFILCCEI(FLHKDAGGLNK GGIHPBILDIG, MKGJHBAKMBD_SkillType _GJLFANGDGCL_Target)
 	{
-		if(_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
+		if(_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene)
 		{
 			OEBKKEFIOEB[] array = GGIHPBILDIG.BHJHBOKODBH;
 			for(int i = 0; i < array.Length; i++)
@@ -419,7 +419,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				PEPLECGHBFA_SceneEffectInfo.Add(data);
 			}
 		}
-		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill)
+		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill)
 		{
 			DLMMECOIPDO[] array = GGIHPBILDIG.JNJPNLDJJMI;
 			for (int i = 0; i < array.Length; i++)
@@ -496,7 +496,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B92E50 Offset: 0x1B92E50 VA: 0x1B92E50
 	private bool INLJKKMEENJ(FLHKDAGGLNK GGIHPBILDIG, MKGJHBAKMBD_SkillType _GJLFANGDGCL_Target)
 	{
-		if(_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
+		if(_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene)
 		{
 			GNDJHFAGJKB[] array = GGIHPBILDIG.GBOHIMFKPPI;
 			for(int i = 0; i < array.Length; i++)
@@ -562,7 +562,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				PNJMFKFGIML_LiveSkills.Add(data);
 			}
 		}
-		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill)
+		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill)
 		{
 			LIAMFMKIPFD[] array = GGIHPBILDIG.CLELJNJEGID;
 			for (int i = 0; i < array.Length; i++)
@@ -625,11 +625,11 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	{
 		FAGNHJMBNCI[] array = GGIHPBILDIG.NIIDELOIGDB;
 		List<PPGHMBNIAEC> array2 = null;
-		if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_Scene)
+		if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.MHKFDBLMOGF_0_Scene)
 		{
 			array2 = PNJMFKFGIML_LiveSkills;
 		}
-		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill)
+		else if (_GJLFANGDGCL_Target == MKGJHBAKMBD_SkillType.AIFGINAKBMA_1_EnemySkill)
 		{
 			array2 = JNKGMICHPFC_EnemySkills;
 		}
