@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public delegate void FEFLFHNKFCN(BEAOCBFAHKF _NFEAMMJIMPG_Result, int _KAPMOPMDHJE_label, int _BPNPBJALGHM_quantity, int _CPGFOBNKKBF_CurrencyId);
 
@@ -21,7 +22,14 @@ public class IGCPCHNCJCF_NetShopManager
 		this.APHNELOFGAK_CurrencyId = _APHNELOFGAK_CurrencyId;
 		NEAPMMJKOKA_GetProducts req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
 		req.IPKCADIAAPG_Criteria = LCKOLEDFDAL.BAKNLGCIHAN(_APHNELOFGAK_CurrencyId);
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
+		CACGCMBKHDI_NetBaseAction.HDHIKGLMOGF successCb = null;
+		CACGCMBKHDI_NetBaseAction.HDHIKGLMOGF failCb = null;
+		failCb = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
+		{
+			//0x11F3540
+			_AOCANKOMKFG_OnError();
+		};
+		successCb = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x11F32C8
 			NEAPMMJKOKA_GetProducts r = JIPCHHHLOMM as NEAPMMJKOKA_GetProducts;
@@ -29,13 +37,19 @@ public class IGCPCHNCJCF_NetShopManager
 			{
 				MHKCPJDNJKI_products.Add(r.NFEAMMJIMPG_Result.MHKCPJDNJKI_products[i]);
 			}
-			_BHFHGFKBOHH_OnSuccess();
+			if(r.NFEAMMJIMPG_Result.MDIBIIHAAPN_next_page > 0)
+			{
+				NEAPMMJKOKA_GetProducts req2 = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
+				req2.IGNIIEBMFIN_Page = r.NFEAMMJIMPG_Result.MDIBIIHAAPN_next_page;
+				req2.IPKCADIAAPG_Criteria = r.IPKCADIAAPG_Criteria;
+				req2.BHFHGFKBOHH_OnSuccess = successCb;
+				req2.MOBEEPPKFLG_OnFail = failCb;
+			}
+			else
+				_BHFHGFKBOHH_OnSuccess();
 		};
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
-		{
-			//0x11F3540
-			_AOCANKOMKFG_OnError();
-		};
+		req.BHFHGFKBOHH_OnSuccess = successCb;
+		req.MOBEEPPKFLG_OnFail = failCb;
 	}
 
 	// // RVA: 0x11F2F98 Offset: 0x11F2F98 VA: 0x11F2F98
