@@ -630,7 +630,7 @@ namespace XeApp.Game.Menu
 			else if(argR != null)
 			{
 				m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(argR.EventUniqueId);
-				m_isLine6Mode = arg.isLine6Mode;
+				m_isLine6Mode = argR.isLine6Mode;
 			}
 			else
 			{
