@@ -628,9 +628,11 @@ namespace XeApp.Game.RhythmGame
 						{
 							for (int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
 							{
+								if( refRNoteOwner.GetNote(idx).result != RhythmGameConsts.NoteResult.None )
+									continue;
 								if (refRNoteOwner.GetNote(idx).GetLineNo() == line)
 								{
-									if (refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None && refRNoteOwner.GetNote(idx).noteInfo.flick == MusicScoreData.FlickType.None)
+									if (refRNoteOwner.GetNote(idx).noteInfo.flick == MusicScoreData.FlickType.None)
 									{
 										flick = -1;
 									}
