@@ -400,7 +400,9 @@ namespace XeSys
 
 			public new int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset/* = true*/)
 			{
-				return -2;
+				if(currentInfo.state == TouchState.MOVED)
+					return -2;
+				return 0;
 			}
 
 		}
