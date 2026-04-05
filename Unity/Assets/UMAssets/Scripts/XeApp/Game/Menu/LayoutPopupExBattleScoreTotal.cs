@@ -255,13 +255,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1726E78 Offset: 0x1726E78 VA: 0x1726E78
 		private IEnumerator Co_OpenWindow(Action scheduleCallBack, Action<EMGOCNMMPHC> searchCallback, int playMusicIndex)
 		{
-			KDLPEDBKMID install; // 0x20
+			KDLPEDBKMID_NetDelayInstaller install; // 0x20
 			bool InstallCheck; // 0x24
 
 			//0x1727F8C
 			MenuScene.Instance.RaycastDisable();
 			m_isShow = true;
-			install = KDLPEDBKMID.HHCJCDFCLOB;
+			install = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance;
 			InstallCheck = false;
 			for(int i = 3; i != 0; i--)
 			{

@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use LKFOCCGOINN_GetURL", true)]
 public class LKFOCCGOINN {}
-public class LKFOCCGOINN_GetURL : CACGCMBKHDI_Request
+public class LKFOCCGOINN_GetURL : CACGCMBKHDI_NetBaseAction
 {
 	public class FLFKLJCAJPG_ResData
 	{

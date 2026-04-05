@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnStartEnterAnimation();
 			GameManager.Instance.SetFPS(60);
-			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId - 1];
+			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId - 1];
 			m_resultInfo.Setup(System.Convert.ToInt32(Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).bannerId), GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId));
 			m_resultInfo.Enter();
 			m_resultCmn.ChangeViewForSimulationResult();
@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC50454 Offset: 0xC50454 VA: 0xC50454 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !m_resultInfo.IsPlaying();
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && !m_resultInfo.IsPlaying();
 		}
 
 		// RVA: 0xC50524 Offset: 0xC50524 VA: 0xC50524 Slot: 12
@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 				args.isSimulation = true;
 				args.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 				MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-				PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.NADCOIBMMJM/*2*/);
+				PGIGNJDPCAH_UpdateChecker.HIHIEBACIHJ(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.NADCOIBMMJM/*2*/);
 				SoundManager.Instance.bgmPlayer.Stop();
 				Database.Instance.gameResult.Reset();
 			});
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC4FB88 Offset: 0xC4FB88 VA: 0xC4FB88
 		private MusicTextDatabase.TextInfo GetMusicTextInfo(int musicId)
 		{
-			return Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Name);
+			return Database.Instance.musicText.Get(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId).KNMGEEFGDNI_Name);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727004 Offset: 0x727004 VA: 0x727004
@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(openUrl)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA_View(musicId, musicInfo.musicName);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.EAEHILOBHDA_View(musicId, musicInfo.musicName);
 				OtherUtility.OpenURL(musicInfo.buyURL, () =>
 				{
 					//0x12C99B8
@@ -301,8 +301,8 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(openUrl)
 			{
-				EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
-				ILCCJNDFFOB.HHCJCDFCLOB.GADJDBJLIGC_ViewMovie(musicId, SimulationLiveResultInfo.GetAnimName(music.AIHCEGFANAM_SerieAttr - 1), musicInfo.dAnmStoreURL);
+				EONOEHOKBEB_Music music = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.GADJDBJLIGC_ViewMovie(musicId, SimulationLiveResultInfo.GetAnimName(music.AIHCEGFANAM_SerieAttr - 1), musicInfo.dAnmStoreURL);
 				OtherUtility.OpenURL(musicInfo.dAnmStoreURL, () =>
 				{
 					//0x12C99BC

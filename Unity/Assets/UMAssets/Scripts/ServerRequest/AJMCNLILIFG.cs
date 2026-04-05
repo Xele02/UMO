@@ -39,7 +39,7 @@ public class KMHEIPCJHOB
 
 [System.Obsolete("Use AJMCNLILIFG_UpdatePlayerCounters", true)]
 public class AJMCNLILIFG {}
-public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_Request
+public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_NetBaseAction
 {
     public class BAKPFHFBOND
     {

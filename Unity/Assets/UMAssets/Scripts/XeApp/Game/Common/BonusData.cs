@@ -4,9 +4,9 @@ namespace XeApp.Game.Common
 {
 	public class BonusData
 	{
-		private List<IKDICBBFBMI_EventBase.GNPOABJANKO> effectiveEpisodeBonus = new List<IKDICBBFBMI_EventBase.GNPOABJANKO>(); // 0x8
+		private List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> effectiveEpisodeBonus = new List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO>(); // 0x8
 
-		public List<IKDICBBFBMI_EventBase.GNPOABJANKO> EffectiveEpisodeBonus { get { return effectiveEpisodeBonus; } } //0xE636F8
+		public List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> EffectiveEpisodeBonus { get { return effectiveEpisodeBonus; } } //0xE636F8
 
 		// // RVA: 0xE63700 Offset: 0xE63700 VA: 0xE63700
 		public void ClearEpisodeBonus()
@@ -15,12 +15,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE63778 Offset: 0xE63778 VA: 0xE63778
-		public void SetEpisodeBonus(List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusEpisodeList)
+		public void SetEpisodeBonus(List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> bonusEpisodeList)
 		{
 			effectiveEpisodeBonus.Clear();
 			for(int i = 0; i < bonusEpisodeList.Count; i++)
 			{
-				IKDICBBFBMI_EventBase.GNPOABJANKO d = new IKDICBBFBMI_EventBase.GNPOABJANKO();
+				IKDICBBFBMI_NetEventBaseController.GNPOABJANKO d = new IKDICBBFBMI_NetEventBaseController.GNPOABJANKO();
 				d.JKDJCFEBDHC_Enabled = bonusEpisodeList[i].JKDJCFEBDHC_Enabled;
 				d.KELFCMEOPPM_EpisodeId = bonusEpisodeList[i].KELFCMEOPPM_EpisodeId;
 				d.HEDODOBGPPM_BonusValue = bonusEpisodeList[i].HEDODOBGPPM_BonusValue;

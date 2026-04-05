@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 		private bool m_isEnableEpisodeBonus; // 0x5C
 		private int m_episodeBonusPoint; // 0x60
 		private CFHDKAFLNEP m_subPlate; // 0x64
-		private JGEOBNENMAH.NEDILFPPCJF m_logParams = new JGEOBNENMAH.NEDILFPPCJF(); // 0x6C
+		private JGEOBNENMAH_NetGameManager.NEDILFPPCJF m_logParams = new JGEOBNENMAH_NetGameManager.NEDILFPPCJF(); // 0x6C
 
 		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasNoDivaSet; } } //0xA6FF7C
 		public AEGLGBOGDHH SkillCalcResult { get {
@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		public StatusData AddStatus { get { return m_addStatus; } } //0xA6FFBC
 		public LimitOverStatusData LimitOverStatus { get { return m_limitOverStatus; } } //0xA6FFC4
 		public NHDJHOPLMDE ValkyrieAbilityData { get { return m_viewValkyrieAbilityData; } } //0xA6FFCC
-		public JGEOBNENMAH.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
+		public JGEOBNENMAH_NetGameManager.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
 		public CFHDKAFLNEP SubPlateResult { get { return m_subPlate; } } //0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
 		public bool IsEnableEpisodeBonus { get { return m_isEnableEpisodeBonus; } } //0xA7002C
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		//public void Reset() { }
 
 		//// RVA: 0xA7015C Offset: 0xA7015C VA: 0xA7015C
-		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusList, bool isRaid/* = false*/)
+		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> bonusList, bool isRaid/* = false*/)
 		{
 			m_addLuck = 0;
 			m_baseLuck = 0;
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				PKNOKJNLPOE_NetEventRaidController evRaid = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 				if(evRaid != null)
 				{
 					m_isEnableEpisodeBonus = true;
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA706B8 Offset: 0xA706B8 VA: 0xA706B8
-		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD_TeamInfo viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
+		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD_TeamInfo viewUnitData, ref JGEOBNENMAH_NetGameManager.NEDILFPPCJF logParams)
 		{
 			FFHPBEPOMAK_DivaInfo f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			baseStatus.Clear();
@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
 						GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
-						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
+						IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
 							GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
-							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
+							IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_luck, g.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 							limitOverStatus.Add(m_tmpLimitOverStatus);
 						}
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 			}
 			if (friendData == null || friendData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
-			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
+			IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
 			AdjustOverLimit(m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene(), musicData);
 			limitOverStatus.Add(m_tmpLimitOverStatus);
 		}
@@ -316,7 +316,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA728D4 Offset: 0xA728D4 VA: 0xA728D4
 		private static void CalcLimitBrakeForUnitEdit(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData)
 		{
-			LLKLAKGKNLD_LimitOver l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver;
+			LLKLAKGKNLD_LimitOver l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver;
 			limitOverStatus.Clear();
 			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA71FAC Offset: 0xA71FAC VA: 0xA71FAC
-		private static bool CanBonusEpisode(List<IKDICBBFBMI_EventBase.GNPOABJANKO> list, out int bonusPoint)
+		private static bool CanBonusEpisode(List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> list, out int bonusPoint)
 		{
 			bonusPoint = 0;
 			if (list != null && list.Count > 0)

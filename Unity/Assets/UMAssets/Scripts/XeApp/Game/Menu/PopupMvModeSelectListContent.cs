@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 					item.IsSet = costumeList[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.DivaIconCache.TryStateDivaUpIconInstall(divaId, item.CostumeData.DAJGPBLEEOB_ModelId, item.ColorId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, costumeId), colorId);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, costumeId), colorId);
 				}
 			}
 			else if(m_selectTarget == SelectTarget.Valkyrie)
@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, l[i].PPFNGGCBJKC_id), 0);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, l[i].PPFNGGCBJKC_id), 0);
 				}
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 					return;
 				listLayout.SetSubImage(texture);
 			});
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, listItem.CostumeData.JPIDIENBGKH_CostumeId), listItem.ColorId, (IiconTexture texture) =>
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, listItem.CostumeData.JPIDIENBGKH_CostumeId), listItem.ColorId, (IiconTexture texture) =>
 			{
 				//0x169C230
 				if (listLayout.ListIndex != listItem.ListIndex)
@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 					return;
 				listLayout.SetSubImage(texture);
 			});
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, listItem.ValkyrieData.GPPEFLKGGGJ_ValkyrieId), (IiconTexture texture) =>
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, listItem.ValkyrieData.GPPEFLKGGGJ_ValkyrieId), (IiconTexture texture) =>
 			{
 				//0x169C2E0
 				if (listLayout.ListIndex != listItem.ListIndex)
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x169BAB4 Offset: 0x169BAB4 VA: 0x169BAB4 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// // RVA: 0x169BB54 Offset: 0x169BB54 VA: 0x169BB54 Slot: 22

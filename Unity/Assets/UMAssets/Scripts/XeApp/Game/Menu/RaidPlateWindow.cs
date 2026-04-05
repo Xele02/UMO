@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1BD6EA0 Offset: 0x1BD6EA0 VA: 0x1BD6EA0
 		public void Initialize()
 		{
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.GGDBEANLCPC.HALIDDHLNEG_Damage);
 			m_text01.text = "";

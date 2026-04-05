@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 			login = JpStringLiterals.StringLiteral_16059 + fri.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString;
 			if(requestDate != 0)
 			{
-				request = JpStringLiterals.StringLiteral_16060 + PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(requestDate, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+				request = JpStringLiterals.StringLiteral_16060 + PIGBKEIAMPE_NetFriendManager.MKILKPFAOIC_GetLastLoginString(requestDate, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			}
 			else
 			{

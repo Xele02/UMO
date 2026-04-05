@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 			motionNameList = animSetting.animNameList;
 			if(motionNameList[0].StartsWith("type"))
 			{
-				m_bundleName.SetFormat("dv/ty/{0:D3}.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId);
+				m_bundleName.SetFormat("dv/ty/{0:D3}.xab", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId);
 				operationDiva = AssetBundleManager.LoadAllAssetAsync(m_bundleName.ToString());
 				yield return operationDiva;
 			}

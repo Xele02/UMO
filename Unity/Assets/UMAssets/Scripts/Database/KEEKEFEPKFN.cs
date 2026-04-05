@@ -4,18 +4,24 @@ using XeSys;
 
 [System.Obsolete("Use KEEKEFEPKFN_GrowItem", true)]
 public class KEEKEFEPKFN { }
+[UMOClass()]
 public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class MDFGLOIGAFE_GrowItemData
 	{
 		public int EHOIENNDEDH_IdCrypted; // 0x8
 		public int EAJCFBCHIFB_RarityCrypted; // 0xC
 		public int MKENMKMJFKP_TypeCrypted; // 0x10
 		public int FBGGEFFJJHB_xor = 0x5f40224; // 0x14
+		[UMOMember()]
 		public int PPEGAKEIEGM_Enabled; // 0x18
 
+		[UMOMember()]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BD4 DEMEPMAEJOO_get_id 0xE87740 HIGKAIDMOKN_set_id
+		[UMOMember()]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BE4 OEEHBGECGKL_get_Rarity 0xE87A90 GHLMHLJJBIG_set_Rarity
+		[UMOMember()]
 		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BF4 GHAILOLPHPF_bgs 0xE87AA0 BACGOKIGMBC_bgs
 
 		// RVA: 0xE87BB0 Offset: 0xE87BB0 VA: 0xE87BB0
@@ -23,6 +29,7 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 	}
 
 	public const int HAKIPFMCMGD = 27;
+	[UMOMember()]
 	public List<MDFGLOIGAFE_GrowItemData> CDENCMNHNGA_table = new List<MDFGLOIGAFE_GrowItemData>(27); // 0x20
 
 	// RVA: 0xE874D0 Offset: 0xE874D0 VA: 0xE874D0

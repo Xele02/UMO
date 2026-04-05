@@ -408,7 +408,7 @@ namespace XeApp.Game.AR
             {
                 ARCollectionMenu arcm = obj.GetComponentInChildren<ARCollectionMenu>();
                 ARHelpMenu arhm = obj.GetComponentInChildren<ARHelpMenu>();
-                string ar_mode_safearea_offsets = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("ar_mode_safearea_offsets", "20.0,0.0");
+                string ar_mode_safearea_offsets = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("ar_mode_safearea_offsets", "20.0,0.0");
                 string[] strs = ar_mode_safearea_offsets.Split(new char[] { ',' });
                 float f1 = 0;
                 float f2 = 0;

@@ -510,7 +510,7 @@ namespace XeApp.Game.Menu
 					m_skillDetailIconImages[3].enabled = false;
 				}
 				hasLiveSkill = true;
-				PPGHMBNIAEC liveSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+				PPGHMBNIAEC liveSkill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 				if(liveSkill.AOPELJFAMCL_LiveSkillType != 0)
 				{
 					m_liveSkillTypeLayout[0].StartChildrenAnimGoStop("02");
@@ -536,7 +536,7 @@ namespace XeApp.Game.Menu
 						m_skillDetailIconImages[4].enabled = false;
 					}
 					m_skillLayout.StartAnimLoop("logo_act");
-					PPGHMBNIAEC liveSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill2 - 1];
+					PPGHMBNIAEC liveSkill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill2 - 1];
 					if (liveSkill.AOPELJFAMCL_LiveSkillType != 0)
 					{
 						m_liveSkillTypeLayout[1].StartChildrenAnimGoStop("02");
@@ -927,9 +927,9 @@ namespace XeApp.Game.Menu
 			m_windowControl.InputDisable();
 			if(itemData.KMIFDLLCBEL() != 1)
 				yield break;
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+			if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
 			}
 			bool done = false;
 			bool err = false;
@@ -951,7 +951,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[m_sceneData.BCCHOBPJJKE_SceneId - 1];
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[m_sceneData.BCCHOBPJJKE_SceneId - 1];
 				m_sceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
 				m_limitOverData.KHEKNNFCAOI_Init(m_sceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_sceneData.MJBODMOLOBC_luck);
 				done = false;

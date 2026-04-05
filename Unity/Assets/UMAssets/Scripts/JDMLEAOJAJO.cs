@@ -5,19 +5,19 @@ using System.Collections.Generic;
 public class JDMLEAOJAJO
 {
 	// // RVA: 0x1C332C8 Offset: 0x1C332C8 VA: 0x1C332C8
-	public HAEDCCLHEMN_EventBattle GGBDCHMDCFA()
+	public HAEDCCLHEMN_NetEventBattleController GGBDCHMDCFA()
     {
-        if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
+        if(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance != null)
         {
-            return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HAEDCCLHEMN_EventBattle;
+            return JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HAEDCCLHEMN_NetEventBattleController;
         }
         return null;
     }
 
 	// // RVA: 0x1C336AC Offset: 0x1C336AC VA: 0x1C336AC
-	public ICFLJACCIKF_EventBattle FFMBHIBHPBA(HAEDCCLHEMN_EventBattle _MOHDLLIJELH_cont)
+	public ICFLJACCIKF_EventBattle FFMBHIBHPBA(HAEDCCLHEMN_NetEventBattleController _MOHDLLIJELH_cont)
     {
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(_MOHDLLIJELH_cont.JOPOPMLFINI_QuestName);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(_MOHDLLIJELH_cont.JOPOPMLFINI_QuestName);
 		if(db != null)
 		{
 			return db as ICFLJACCIKF_EventBattle;
@@ -82,10 +82,10 @@ public class CDDODEHEKGB : JDMLEAOJAJO
 	// // RVA: 0x12AEE80 Offset: 0x12AEE80 VA: 0x12AEE80
 	public void PJHMKEGKMGH()
     {
-        HAEDCCLHEMN_EventBattle data = GGBDCHMDCFA();
+        HAEDCCLHEMN_NetEventBattleController data = GGBDCHMDCFA();
         if(data != null)
         {
-            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.JOPOPMLFINI_QuestName);
+            DIHHCBACKGG_DbSection db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.JOPOPMLFINI_QuestName);
             if(db != null)
             {
                 ICFLJACCIKF_EventBattle dbSection = db as ICFLJACCIKF_EventBattle;
@@ -98,7 +98,7 @@ public class CDDODEHEKGB : JDMLEAOJAJO
                     ICFLJACCIKF_EventBattle.KGHHHPHBGGM d2 = dbSection.GCFOLMHPDBG[i];
                     EMGOCNMMPHC d3 = new EMGOCNMMPHC();
                     ICFLJACCIKF_EventBattle.OABJKIKLDKP song = dbSection.IJJHFGOIDOK_EventMusic[d2.KOJMEPJBOJM_EvMusicId - 1];
-                    KEODKEGFDLD_FreeMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(song.MPLGPBNJDJB_FreeMusicId);
+                    KEODKEGFDLD_FreeMusicInfo info = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(song.MPLGPBNJDJB_FreeMusicId);
                     if(info.PPEGAKEIEGM_Enabled == 2)
                     {
                         if(song.PLALNIIBLOF_en == 2)
@@ -181,7 +181,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
     {
         List<int> res = new List<int>();
         res.Clear();
-        HAEDCCLHEMN_EventBattle ev = GGBDCHMDCFA();
+        HAEDCCLHEMN_NetEventBattleController ev = GGBDCHMDCFA();
         if(ev != null)
         {
             ICFLJACCIKF_EventBattle dbEvent = FFMBHIBHPBA(ev);
@@ -211,13 +211,13 @@ public class DCAKKIJODME : JDMLEAOJAJO
 	public void PJHMKEGKMGH(bool MCBICECCNGO/* = false*/)
     {
         MPALKPJIDPA.Clear();
-        HAEDCCLHEMN_EventBattle ev = GGBDCHMDCFA();
+        HAEDCCLHEMN_NetEventBattleController ev = GGBDCHMDCFA();
         if(ev != null)
         {
             ICFLJACCIKF_EventBattle dbEvent = FFMBHIBHPBA(ev);
             if(dbEvent != null)
             {
-                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbEvent.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
+                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbEvent.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
                 List<int> l = BIJJHHFMODA();
                 int min = Math.Min(l.Count, saveEv.PCNOCBANFOO_ExResult.Count);
                 for(int i = 0; i < min; i++)
@@ -262,14 +262,14 @@ public class DCAKKIJODME : JDMLEAOJAJO
 	// // RVA: 0x176FB5C Offset: 0x176FB5C VA: 0x176FB5C
 	public bool FNHNJNEJFLF(int GOBMOGJNEFA, bool _DPCFADCFMOA_Win)
     {
-        HAEDCCLHEMN_EventBattle ev = GGBDCHMDCFA();
+        HAEDCCLHEMN_NetEventBattleController ev = GGBDCHMDCFA();
         if(ev != null)
         {
             ICFLJACCIKF_EventBattle dbSection = FFMBHIBHPBA(ev);
             if(dbSection != null)
             {
                 bool res = false;
-                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
+                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
                 if(saveEv.PCNOCBANFOO_ExResult[GOBMOGJNEFA].JKAMFMNGEBB_high_score < ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore)
                 {
                     saveEv.PCNOCBANFOO_ExResult[GOBMOGJNEFA].JKAMFMNGEBB_high_score = ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore;

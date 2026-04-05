@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 				}
 				else if(label == PopupButton.ButtonLabel.Ok)
 				{
-					ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_20864, 0, true, m_unitAutoSettingSetting.IsGoDviva, m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(m_unitAutoSettingSetting.IsGoDviva).PDJEMLMOEPF_CenterDivaId);
+					ILCCJNDFFOB.HHCJCDFCLOB_Instance.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_20864, 0, true, m_unitAutoSettingSetting.IsGoDviva, m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(m_unitAutoSettingSetting.IsGoDviva).PDJEMLMOEPF_CenterDivaId);
 					m_unitAutoSettingSetting.OkCallBack.Invoke(control.Content as PopupAutoSettingContent);
 				}
 				m_unitAutoSettingSetting.PlayerData = null;

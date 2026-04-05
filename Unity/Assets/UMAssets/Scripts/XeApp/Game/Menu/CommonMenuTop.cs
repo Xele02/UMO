@@ -308,11 +308,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B4EE2C Offset: 0x1B4EE2C VA: 0x1B4EE2C
 		public void ChangeUtaRateValue(HighScoreRatingRank.Type grade, int ranking)
 		{
-			int a = OEGIPPCADNA.BFKAHKBKBJE(ranking, 0);
+			int a = OEGIPPCADNA_NetEventUtarateManager.BFKAHKBKBJE(ranking, 0);
 			if (m_utaRateRanking != a)
 			{
 				m_utaRateRanking = a;
-				m_textUtaRate.text = OEGIPPCADNA.GEEFFAEGHAH(a, true);
+				m_textUtaRate.text = OEGIPPCADNA_NetEventUtarateManager.GEEFFAEGHAH(a, true);
 			}
 			if (m_utaGrade == grade)
 				return;

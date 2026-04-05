@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 		// public void SetRaidButtonEnable() { }
 
 		// // RVA: 0x1285E7C Offset: 0x1285E7C VA: 0x1285E7C
-		public void FooterPhaseInit(NKOBMDPHNGP_EventRaidLobby evCont)
+		public void FooterPhaseInit(NKOBMDPHNGP_NetEventRaidLobbyController evCont)
 		{
 			SetRaidBossSwitchButtonAnimation(evCont.CHDNDNMHJHI_GetPhase());
 		}
@@ -109,9 +109,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1285EB8 Offset: 0x1285EB8 VA: 0x1285EB8
-		public void SetRaidBossSwitchButtonAnimation(NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase _type)
+		public void SetRaidBossSwitchButtonAnimation(NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase _type)
 		{
-			if(_type == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+			if(_type == NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 			{
 				m_preRaidButton.Hidden = true;
 				m_RaidButton.Hidden = true;
@@ -120,12 +120,12 @@ namespace XeApp.Game.Menu
 				m_footerRaidBtnAnim.StartChildrenAnimGoStop("02");
 				m_foldRadarAnim.StartChildrenAnimGoStop("02");
 			}
-			else if(_type == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
+			else if(_type == NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 			{
 				m_footerRaidBtnAnim.StartChildrenAnimGoStop("02");
 				m_raidBtnLoopAnim.StartChildrenAnimLoop("lo_");
 			}
-			else if(_type == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.KJNKFFJBPIH_1_Before)
+			else if(_type == NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase.KJNKFFJBPIH_1_Before)
 			{
 				m_footerRaidBtnAnim.StartChildrenAnimGoStop("01");
 			}

@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 		{
 			if (m_view.itemType < ViewOfferGetItem.ItemType.NUM)
 				m_itemTypeNum = new int[4] { 0, 1, 1, 2 }[(int)m_view.itemType];
-			imageRarityFrame[m_itemTypeNum].uvRect = uvRectRarityFrame[EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(m_view.itemId) - 1];
+			imageRarityFrame[m_itemTypeNum].uvRect = uvRectRarityFrame[EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(m_view.itemId) - 1];
 			MenuScene.Instance.ItemTextureCache.Load(m_view.itemId, (IiconTexture image) =>
 			{
 				//0x152DCA0
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x152D038 Offset: 0x152D038 VA: 0x152D038
 		public bool IsSceneCardItem()
 		{
-			return m_view != null && EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_view.itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+			return m_view != null && EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(m_view.itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
 		}
 
 		// RVA: 0x152D0E4 Offset: 0x152D0E4 VA: 0x152D0E4 Slot: 5

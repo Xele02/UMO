@@ -118,12 +118,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D2AD8 Offset: 0x12D2AD8 VA: 0x12D2AD8
 		private void SettingOfferNotifi()
 		{
-            KDHGBOOECKC.GBAGPIKOGAN_DivaOfferInfo offerinfo = KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE;
+            KDHGBOOECKC_NetOfferManager.GBAGPIKOGAN_DivaOfferInfo offerinfo = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IOCBOGFFHFE;
             m_divaNameChange.StartChildrenAnimGoStop(offerinfo.AHHJLDLAPAN_DivaId == 9 ? "02" : "01");
 			m_releaseLevel.StartChildrenAnimGoStop(offerinfo.CIEOBFIIPLD_Level.ToString("D2"));
 			m_maxIconLayout.StartChildrenAnimGoStop(offerinfo.NBHEBLNHOJO_IsMaxLevel ? "01" : "02");
 			offerinfo.LHPDDGIJKNB_Reset();
-			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
+			KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CPDBAIILNPL(true);
 		}
 
 		//// RVA: 0x12D2D0C Offset: 0x12D2D0C VA: 0x12D2D0C

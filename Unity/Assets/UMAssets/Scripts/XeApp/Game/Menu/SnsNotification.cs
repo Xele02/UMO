@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D14E4 Offset: 0x12D14E4 VA: 0x12D14E4
 		public void ShowOffer(UnityAction pushAction, bool isButtonEnable/* = true*/)
 		{
-			Show(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.AHHJLDLAPAN_DivaId, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PGOGHFDBIBA_OfferName, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PNOBKANLFHA_OfferText, pushAction, isButtonEnable, true);
+			Show(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IOCBOGFFHFE.AHHJLDLAPAN_DivaId, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IOCBOGFFHFE.PGOGHFDBIBA_OfferName, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IOCBOGFFHFE.PNOBKANLFHA_OfferText, pushAction, isButtonEnable, true);
 			m_dirtyClose = false;
 		}
 

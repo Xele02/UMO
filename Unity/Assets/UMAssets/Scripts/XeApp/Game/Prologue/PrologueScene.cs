@@ -64,7 +64,7 @@ namespace XeApp.Game.Prologue
 		public void OnDestroy()
 		{
 			AssetBundleManager.UnloadAssetBundle("handmade/shader.xab", true);
-			KEHOJEJMGLJ.HHCJCDFCLOB.OEPPEGHGNNO = null;
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.OEPPEGHGNNO = null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B0BA8 Offset: 0x6B0BA8 VA: 0x6B0BA8
@@ -73,7 +73,7 @@ namespace XeApp.Game.Prologue
 		{
 			//0xF59DC4
 			bool isNetInstallManagerInitialized = false;
-			KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM_Install(KEHOJEJMGLJ.ACGGHEIMPHC.DEKNOKPEIHO_2, () =>
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.PAHGEEOFEPM_Install(KEHOJEJMGLJ_NetInstallManager.ACGGHEIMPHC.DEKNOKPEIHO_2, () =>
 			{
 				//0xCA8D7C
 				isNetInstallManagerInitialized = true;
@@ -86,16 +86,16 @@ namespace XeApp.Game.Prologue
 				yield return null;
 			BasicTutorialManager.Initialize();
 			GameManager.Instance.IsTutorial = true;
-			/*if (KDLPEDBKMID.HHCJCDFCLOB.HFMOAJDHDHJ_Coroutine(38))
+			/*if (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.HFMOAJDHDHJ_Coroutine(38))
 			{
-				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 					yield return null;
 			}*/
 			bool needDld = false;
-			yield return Co.R(KDLPEDBKMID.HHCJCDFCLOB.HFMOAJDHDHJ_Coroutine(38, (bool r) => { needDld = r; }));
+			yield return Co.R(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.HFMOAJDHDHJ_Coroutine(38, (bool r) => { needDld = r; }));
 			if(needDld)
 			{
-				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 					yield return null;
 			}
 			BasicTutorialManager.SetupFirstTutorialLog();
@@ -144,16 +144,16 @@ namespace XeApp.Game.Prologue
 				m_loadingAnime.Layout.StartAllAnimGoStop("st_wait");
 			m_isDownLoaded = false;
 			m_isExecution = false;
-			KEHOJEJMGLJ.HHCJCDFCLOB.OEPPEGHGNNO = InstallGuiEvent;
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.OEPPEGHGNNO = InstallGuiEvent;
 			option = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
 			yield return Co.R(GameManager.Instance.ListupRhythmGameResourceFileList(1, 1, 1, 0, 38, 0, 0, m_downLoadList, 1));
 			if (option.DDHCLNFPNGK_RenderQuality == 0)
 				m_downLoadList.Add("gm/if/hi.xab");
 			else
 				m_downLoadList.Add("gm/if/lo.xab");
-			int fixed_scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("fixed_scene", 3);
+			int fixed_scene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("fixed_scene", 3);
 			m_downLoadList.AddRange(ListupSceneAssetPath(fixed_scene));
-			KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM_Install(KEHOJEJMGLJ.ACGGHEIMPHC.ANFKBNLLJFN_0, () =>
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.PAHGEEOFEPM_Install(KEHOJEJMGLJ_NetInstallManager.ACGGHEIMPHC.ANFKBNLLJFN_0, () =>
 			{
 				//0xCA8D9C
 				if(m_skipButton != null)
@@ -330,7 +330,7 @@ namespace XeApp.Game.Prologue
 			int progress = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_progress;
 			if(progress > 0)
 			{
-				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData);
 			}
 			switch(progress)
 			{
@@ -346,7 +346,7 @@ namespace XeApp.Game.Prologue
 					break;
 				case 7:
 					Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MFNPKIACGLM(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, Database.Instance.gameSetup, Database.Instance.gameResult);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MFNPKIACGLM(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, Database.Instance.gameSetup, Database.Instance.gameResult);
 					Database.Instance.advSetup.Setup(4);
 					NextScene("Menu");
 					break;
@@ -362,18 +362,18 @@ namespace XeApp.Game.Prologue
 					NextScene("DivaSelect");
 					break;
 				default:
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_have = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].DIPKCALNIII_diva_id = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].BEEAIAAJOHD_CostumeId = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].AFNIOJHODAG_CostumeColorId = 0;
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_have = 1;
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].DIPKCALNIII_diva_id = 1;
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].BEEAIAAJOHD_CostumeId = 1;
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_diva[0].AFNIOJHODAG_CostumeColorId = 0;
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData);
 					Database.Instance.advSetup.Setup(1);
 					Database.Instance.advResult.Setup("RhythmAdjust");
 					NextScene("Adv");
 					break;
 			}
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NELPFCBCJAO();
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.NELPFCBCJAO();
 			GameManager.Instance.CreateViewPlayerData();
 		}
 
@@ -387,11 +387,11 @@ namespace XeApp.Game.Prologue
 		private void LoadResource()
 		{
 			List<int> l = new List<int>();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 				{
-					BJPLLEBHAGO_DivaInfo dInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
+					BJPLLEBHAGO_DivaInfo dInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 					if(dInfo.PPEGAKEIEGM_Enabled == 2)
 					{
 						l.Add(dInfo.AHHJLDLAPAN_DivaId);
@@ -444,13 +444,13 @@ namespace XeApp.Game.Prologue
 		private List<string> ListupSceneAssetPath(int sceneId)
 		{
 			List<string> res = new List<string>();
-			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
 			res.Add(string.Format("ct/sc/me/01/{0:D6}_01.xab", sceneId));
 			res.Add(string.Format("ct/sc/me/01/{0:D6}_02.xab", sceneId));
 			res.Add(string.Format("ct/sc/me/02/{0:D6}_01.xab", sceneId));
 			if(scene.PBEPKDEEBBK_AS > 0)
 			{
-				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.PBEPKDEEBBK_AS - 1];
+				CDNKOFIELMK skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.PBEPKDEEBBK_AS - 1];
 				for(int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
 					if(skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
@@ -461,7 +461,7 @@ namespace XeApp.Game.Prologue
 			}
 			if (scene.ECKJJCGPOPN_AS2 > 0)
 			{
-				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.ECKJJCGPOPN_AS2 - 1];
+				CDNKOFIELMK skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.ECKJJCGPOPN_AS2 - 1];
 				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
 					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
@@ -474,7 +474,7 @@ namespace XeApp.Game.Prologue
 			sceneInfo.KHEKNNFCAOI_Init(sceneId, null, null, 0, 0, 0, false, 0, 0);
 			if(scene.KPIIIEGGPIB_LS > 0)
 			{
-				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1];
+				PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1];
 				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
 					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
@@ -485,7 +485,7 @@ namespace XeApp.Game.Prologue
 			}
 			if (scene.PJKJFIOKBGJ_LS2 > 0)
 			{
-				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0) - 1];
+				PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0) - 1];
 				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
 					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)

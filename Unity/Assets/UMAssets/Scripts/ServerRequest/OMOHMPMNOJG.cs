@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class OMOHMPMNOJG : CACGCMBKHDI_Request
+public class OMOHMPMNOJG : CACGCMBKHDI_NetBaseAction
 {
 	public bool LLMFJKNEJDD; // 0x7C
 

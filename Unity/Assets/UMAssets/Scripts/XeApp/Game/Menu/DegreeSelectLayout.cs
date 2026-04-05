@@ -180,7 +180,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_degree_list[i].MDPKLNFFDBO_EmblemId != 1)
 				{
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeEmblemIconTexturePath(m_degree_list[i].MDPKLNFFDBO_EmblemId));
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeEmblemIconTexturePath(m_degree_list[i].MDPKLNFFDBO_EmblemId));
 				}
 			}
 		}
@@ -453,10 +453,10 @@ namespace XeApp.Game.Menu
 			InitSetDegree(m_select_btn_index);
 			InitSelectDegree(m_select_btn_index);
 			UpdateDegreeBtn();
-			JDDGPJDKHNE.HHCJCDFCLOB.BGDOBGFECOB();
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.BGDOBGFECOB();
 			int oldEmblem = GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
 			GameManager.Instance.ViewPlayerData.HPLIKGGILHF(m_degree_list[m_select_btn_index].MDPKLNFFDBO_EmblemId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PGHFPIMIOKE_Emblem(oldEmblem, GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.PGHFPIMIOKE_Emblem(oldEmblem, GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
 			MenuScene.Save(null, null);
 		}
 

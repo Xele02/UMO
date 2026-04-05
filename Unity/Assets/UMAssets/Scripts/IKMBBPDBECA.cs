@@ -33,7 +33,7 @@ public abstract class IKMBBPDBECA
 	public string NEBCAAGLDHA_FreeSingle; // 0x40
 	public string MKJPDIHLGBF_FreeMulti; // 0x44
 	public string FHHKLJCJNNC_FreeBadgeMess; // 0x48
-	public long BOBIDKJJEIM = BHEHGCHGBDG; // 0x50
+	public long BOBIDKJJEIM_OpenTimeCrypted = BHEHGCHGBDG; // 0x50
 	public List<HGBOODNMNFM> NNDMIOEKKMM_NewEpisode = new List<HGBOODNMNFM>(); // 0x58
 	public int OPKCNBFBBKP_BannerId; // 0x5C
 	public bool IMCNDJMDNJE_DisableCarousel; // 0x60
@@ -52,7 +52,7 @@ public abstract class IKMBBPDBECA
 	public int INHOGJODJFJ_GroupId { get { return HKHLEFMLIGA ^ FBGGEFFJJHB_xor; } protected set { HKHLEFMLIGA = value ^ FBGGEFFJJHB_xor; } } //0x8E8568 MIHPGFMJEED_bgs 0x8E857C NBGJAEFAENJ_bgs
 	public int MJNOAMAFNHA_CostItemId { get { return FPAHOFHHCIG ^ FBGGEFFJJHB_xor; } protected set { FPAHOFHHCIG = value ^ FBGGEFFJJHB_xor; } } //0x8E8590 HKFPBECOHBP_bgs 0x8E85A4 KEDCLDDFNMG_bgs
 	//public string ANCAKEJMKMK { get; } 0x8E85B8 KEBAJKGAKDB_bgs
-	public long JOFAGCFNKIO_OpenTime { get { return BOBIDKJJEIM ^ BHEHGCHGBDG; } protected set { BOBIDKJJEIM = value ^ BHEHGCHGBDG; } } //0x8E85E0 JDJIHKNFDLG_get_OpenTime 0x8E8600 JNKGBAPAGOB_set_OpenTime
+	public long JOFAGCFNKIO_OpenTime { get { return BOBIDKJJEIM_OpenTimeCrypted ^ BHEHGCHGBDG; } protected set { BOBIDKJJEIM_OpenTimeCrypted = value ^ BHEHGCHGBDG; } } //0x8E85E0 JDJIHKNFDLG_get_OpenTime 0x8E8600 JNKGBAPAGOB_set_OpenTime
 	public bool LEJAMOFMMPA_HasOneDay { get { return GIPPFDBNGOJ == GEKLEIAHMFN_True; } set { GIPPFDBNGOJ = value ? GEKLEIAHMFN_True : LFHEBMDPBAA_False; } } //0x8E8624 LIHLFGLEPJM_bgs 0x8E8638 LHJLHEANJIA_bgs
 	public int ABNMIDCBENB_OneDay { get { return PIDONBBGKKJ ^ FBGGEFFJJHB_xor; } protected set { PIDONBBGKKJ = value ^ FBGGEFFJJHB_xor; } } //0x8E864C MHBOOOEPFON_bgs 0x8E8660 KLIBCPBGEOF_bgs
 	public int FPFECIDDNFA_LinkId { get { return MNECDLPNFDG ^ FBGGEFFJJHB_xor; } protected set { MNECDLPNFDG = value ^ FBGGEFFJJHB_xor; } } //0x8E8674 INAEBMAMKCJ_bgs 0x8E8688 GLIEOKAGELF_bgs
@@ -70,7 +70,7 @@ public abstract class IKMBBPDBECA
 		{
 			if(_KNMLPAAHAOF_IsStartGacha)
 				MDEIKCBEHHC_Kakutei = JpStringLiterals.StringLiteral_11115;
-			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("disable_decul_gacha_kakutei_4", 0);
+			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("disable_decul_gacha_kakutei_4", 0);
 			if(disable_decul_gacha_kakutei_4 != 0)
 				return;
 			if(OriginalName.Contains(JpStringLiterals.StringLiteral_11117_Jp))
@@ -83,7 +83,7 @@ public abstract class IKMBBPDBECA
 	{
 		for (int i = 0; i < FLADABCFDFA_Pickup.Count; i++)
 		{
-			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[FLADABCFDFA_Pickup[i].DNJEJEANJGL_Value - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[FLADABCFDFA_Pickup[i].DNJEJEANJGL_Value - 1];
 			if(_KELFCMEOPPM_EpisodeId == dbScene.KELFCMEOPPM_EpisodeId)
 			{
 				int idx = IOKIFFAFPDI_Episode.FindIndex((CEBFFLDKAEC_SecureInt _GHPLINIACBB_x) =>

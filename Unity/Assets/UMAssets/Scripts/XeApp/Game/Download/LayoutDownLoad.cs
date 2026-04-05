@@ -74,7 +74,7 @@ namespace XeApp.Game.DownLoad
 			{
 				if(m_VoicePlayCounters[i] > 0)
 				{
-					ILCCJNDFFOB.HHCJCDFCLOB.CMBKHLDBIEC_Voice(i + 1, MessageManager.Instance.GetMessage("master", "diva_s_"+(i + 1).ToString("D2")), m_VoicePlayCounters[i]);
+					ILCCJNDFFOB.HHCJCDFCLOB_Instance.CMBKHLDBIEC_Voice(i + 1, MessageManager.Instance.GetMessage("master", "diva_s_"+(i + 1).ToString("D2")), m_VoicePlayCounters[i]);
 				}
 			}
 			DownLoadDivaTextureCache.Release();

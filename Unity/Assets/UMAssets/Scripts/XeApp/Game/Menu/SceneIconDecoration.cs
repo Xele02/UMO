@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x136A8A0 Offset: 0x136A8A0 VA: 0x136A8A0
 		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return sceneData.CIEOBFIIPLD_Level > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
+			return sceneData.CIEOBFIIPLD_Level > IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
 		}
 
 		//// RVA: 0x136A9DC Offset: 0x136A9DC VA: 0x136A9DC
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_ico[0];
+							icon = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_ico[0];
 							icon2 = 0;
 						}
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
@@ -162,8 +162,8 @@ namespace XeApp.Game.Menu
 							icon2 = 0;
 							isActive = false;
 						}
-						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[0];
-						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[1];
+						icon = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[0];
+						icon2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL_ThumbId[1];
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
 						isVisible = false;
 						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);

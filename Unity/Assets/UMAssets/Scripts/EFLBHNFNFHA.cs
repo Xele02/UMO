@@ -20,13 +20,13 @@ public class EFLBHNFNFHA
 	{
 		CCNCPGJGNDP_SagashoGameId = 0;
 		CILPABJCBPH_AgreeTos = false;
-		if(int.TryParse(NKGJPJPHLIF.HHCJCDFCLOB.MLKOPOKGHHH_SakashoGameId, out CCNCPGJGNDP_SagashoGameId))
+		if(int.TryParse(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MLKOPOKGHHH_SakashoGameId, out CCNCPGJGNDP_SagashoGameId))
 		{
-			if(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId != 0)
+			if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId != 0)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.PBEKKMOPENN_agree_tos_ver != 0)
+					if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.PBEKKMOPENN_agree_tos_ver != 0)
 					{
 						CILPABJCBPH_AgreeTos = true;
 						return;
@@ -40,7 +40,7 @@ public class EFLBHNFNFHA
 					{
 						if (data.Length != 4)
 							return;
-						CILPABJCBPH_AgreeTos = BitConverter.ToInt32(data, 0) == NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+						CILPABJCBPH_AgreeTos = BitConverter.ToInt32(data, 0) == NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 					}
 				}
 			}
@@ -52,16 +52,16 @@ public class EFLBHNFNFHA
 	{
 		if (CCNCPGJGNDP_SagashoGameId == 0)
 			return;
-		int pId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+		int pId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 		string path = HIOMFHINAAH_GetFileName(CCNCPGJGNDP_SagashoGameId);
 		byte[] data = BitConverter.GetBytes(pId);
 		string pathName = Path.GetDirectoryName(path);
 		if (!Directory.Exists(pathName))
 			Directory.CreateDirectory(pathName);
 		File.WriteAllBytes(path, data);
-		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+		if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 		{
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.PBEKKMOPENN_agree_tos_ver = 1;
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.PBEKKMOPENN_agree_tos_ver = 1;
 		}
 		CILPABJCBPH_AgreeTos = true;
 	}

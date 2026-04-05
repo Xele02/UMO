@@ -29,7 +29,7 @@ public class EBHIMFFJBIJ
 
 [System.Obsolete("Use KDMINIMGGLI_EncounterRaidboss", true)]
 public class KDMINIMGGLI {}
-public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
+public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_NetBaseAction
 {
     public class MNOBFFCNDLL
     {

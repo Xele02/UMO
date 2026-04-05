@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 				item.Top = new Vector2(0, y);
 				item.Height = 110;
 				m_scrollItem.Add(item);
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.itemId, 0));
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.itemId, 0));
 				y -= 110;
 			}
 			Parent = s.m_parent;
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF7A030 Offset: 0xF7A030 VA: 0xF7A030 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xF7A0D0 Offset: 0xF7A0D0 VA: 0xF7A0D0 Slot: 22

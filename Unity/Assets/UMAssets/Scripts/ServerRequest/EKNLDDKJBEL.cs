@@ -1,7 +1,7 @@
 
 [System.Obsolete("Use EKNLDDKJBEL_UpdateThreadComment", true)]
 public class EKNLDDKJBEL {}
-public class EKNLDDKJBEL_UpdateThreadComment : CACGCMBKHDI_Request
+public class EKNLDDKJBEL_UpdateThreadComment : CACGCMBKHDI_NetBaseAction
 {
 	public int BOINIEAKFPL_ThreadId; // 0x7C
 	public int OJBGACKBOCA_CommentIdx; // 0x80

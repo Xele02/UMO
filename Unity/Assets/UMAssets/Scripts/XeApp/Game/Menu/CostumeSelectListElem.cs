@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1644754 Offset: 0x1644754 VA: 0x1644754
 		private void SetTexture(int a_diva_id, CostumeSelectListWin.ItemInfo a_item)
 		{
-			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, a_item.m_cos_id);
+			int itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, a_item.m_cos_id);
 			m_costume_id = a_item.m_cos_id;
 			m_diva_id = a_diva_id;
 			m_costume_model_id = a_item.m_view_diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId;

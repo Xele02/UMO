@@ -107,11 +107,11 @@ namespace XeApp.Game.Menu
 				{
 					//0xBA6224
 					t_result = 1;
-				}, (CACGCMBKHDI_Request error) =>
+				}, (CACGCMBKHDI_NetBaseAction error) =>
 				{
 					//0xBA6230
 					t_result = 2;
-				}, (CACGCMBKHDI_Request error) =>
+				}, (CACGCMBKHDI_NetBaseAction error) =>
 				{
 					//0xBA623C
 					t_result = 3;
@@ -171,12 +171,12 @@ namespace XeApp.Game.Menu
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xBA6090
 				ConnectEnd();
 				MenuScene.Instance.RaycastEnable();
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xBA6140
 				ConnectEnd();
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 				m_friendInfoAllList.Add(info);
 				info.TryInstall();
 			}
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			m_now = friends.Count;
 			SortFriendList();

@@ -7,7 +7,7 @@ public delegate bool LDDPADICHHB(List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_Js
 
 [System.Obsolete("Use NAIJIFAJGGK_RequestLoadPlayerData", true)]
 public class NAIJIFAJGGK { }
-public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
+public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_NetBaseAction
 {
     public class PHAKFFBNNEI_PlayerDataResult
     {

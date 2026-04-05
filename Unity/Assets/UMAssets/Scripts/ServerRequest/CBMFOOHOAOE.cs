@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use CBMFOOHOAOE_Purchase", true)]
 public class CBMFOOHOAOE {}
-public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_Request
+public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_NetBaseAction
 {
 	public int AFKAGFOFAHM_ProductId; // 0x7C
 	public int BPNPBJALGHM_quantity; // 0x80

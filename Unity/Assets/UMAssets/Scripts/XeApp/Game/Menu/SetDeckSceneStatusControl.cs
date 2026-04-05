@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 				Color col = IconColorOff;
 				if(sceneData.HGONFBDIBPM_ActiveSkillId >= 1)
 				{
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_ico[0];
+					a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_ico[0];
 					col = IconColorOn;
 				}
 				m_activeIconImage.enabled = true;
@@ -250,8 +250,8 @@ namespace XeApp.Game.Menu
 				int iconId = 0;
 				if (sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 				{
-					iconId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL_ThumbId[0];
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL_ThumbId[1];
+					iconId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL_ThumbId[0];
+					a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL_ThumbId[1];
 				}
 				Color col = IconColorOn;
 				if(!CheckMatchLiveSkill(sceneData, divaId, musicId))
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_episodeNameBackImage.sprite = Database.Instance.bonusData.EffectiveEpisodeBonus.FindIndex((IKDICBBFBMI_EventBase.GNPOABJANKO x) =>
+					m_episodeNameBackImage.sprite = Database.Instance.bonusData.EffectiveEpisodeBonus.FindIndex((IKDICBBFBMI_NetEventBaseController.GNPOABJANKO x) =>
 					{
 						//0xA76438
 						return x.KELFCMEOPPM_EpisodeId == episodeId;
@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA74F9C Offset: 0xA74F9C VA: 0xA74F9C
 		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_Level;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_Level;
 		}
 
 		// // RVA: 0xA76218 Offset: 0xA76218 VA: 0xA76218

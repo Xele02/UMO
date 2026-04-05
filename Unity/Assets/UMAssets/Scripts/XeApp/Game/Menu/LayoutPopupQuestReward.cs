@@ -21,20 +21,20 @@ namespace XeApp.Game.Menu
 			SetIcon(itemInfo.JJBGOIMEIPF_ItemId);
 			ChangeHeader(itemInfo.NPPNDDMPFJJ_ItemCategory);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
+			if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 			{
-				SetItemText(itemInfo.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), 0));
+				SetItemText(itemInfo.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), 0));
 			}
 			else
 			{
-				SetItemText(EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemInfo.JJBGOIMEIPF_ItemId) + JpStringLiterals.StringLiteral_12037 + itemInfo.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId)));
+				SetItemText(EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemInfo.JJBGOIMEIPF_ItemId) + JpStringLiterals.StringLiteral_12037 + itemInfo.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId)));
 			}
 		}
 
 		// RVA: 0x17786C4 Offset: 0x17786C4 VA: 0x17786C4
 		public bool IsLoading()
 		{
-			return m_isLoadingIcon || KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return m_isLoadingIcon || KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x1778770 Offset: 0x1778770 VA: 0x1778770
@@ -86,9 +86,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1778568 Offset: 0x1778568 VA: 0x1778568
-		public void ChangeHeader(EKLNMHFCAOI.FKGCBLHOOCL_Category itemType)
+		public void ChangeHeader(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemType)
 		{
-			m_changeHeader.StartChildrenAnimGoStop(itemType > EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None && itemType <= EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket ? "02" : "01");
+			m_changeHeader.StartChildrenAnimGoStop(itemType > EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None && itemType <= EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket ? "02" : "01");
 		}
 
 		// RVA: 0x1778874 Offset: 0x1778874 VA: 0x1778874 Slot: 5

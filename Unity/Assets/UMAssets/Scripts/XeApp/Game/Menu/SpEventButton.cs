@@ -309,11 +309,11 @@ namespace XeApp.Game.Menu
 				m_layoutDisable.StartChildrenAnimGoStop("06");
 				m_layoutMessage.StartChildrenAnimGoStop("00");
 			}
-			if(KDHGBOOECKC.HHCJCDFCLOB != null)
+			if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance != null)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+				if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LOCAIBNPKDL_IsPlayerLevelOk())
 				{
-					m_numberUnlock.SetNumber(KDHGBOOECKC.HHCJCDFCLOB.EJBPEBIIMPG_GetVfoPlayerLevelUnlock(), 0);
+					m_numberUnlock.SetNumber(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.EJBPEBIIMPG_GetVfoPlayerLevelUnlock(), 0);
 					m_layoutDisable.StartChildrenAnimGoStop("05");
 					m_newMarkIcon.SetActive(false);
 					Disable = true;

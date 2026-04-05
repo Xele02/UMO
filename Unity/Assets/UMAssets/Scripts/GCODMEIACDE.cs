@@ -33,7 +33,7 @@ public class GCODMEIACDE
 	// RVA: 0x16B4404 Offset: 0x16B4404 VA: 0x16B4404
 	public void KHEKNNFCAOI_Init()
     {
-        HJNNLPIGHLM_EventCollection ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as HJNNLPIGHLM_EventCollection;
+        HJNNLPIGHLM_NetEventCollectionController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JKEPHFPCKMD_EventId) as HJNNLPIGHLM_NetEventCollectionController;
         if(ev == null)
         {
             OKBEOCOKGEI = 1;
@@ -44,8 +44,8 @@ public class GCODMEIACDE
         ODCLHPGHDHA_EpisodeBonus = ev.EELENPNCGLM.ODCLHPGHDHA_EpisodeBonus;
         PHPANNCGOKC_GetPoint = ev.EELENPNCGLM.PIIEGNPOPJI_GetPoint;
         OKBEOCOKGEI = ev.EELENPNCGLM.FCLGIPFPIPH_DashBonus;
-        HNNAJJNMCKE_PrevPoint = JGEOBNENMAH.HHCJCDFCLOB.FFDBCEDKMGN_PrevPoint;
-        AHOKAPCGJMA_TotalPoint = JGEOBNENMAH.HHCJCDFCLOB.MMLPAMGJEOD_NewPoint;
+        HNNAJJNMCKE_PrevPoint = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.FFDBCEDKMGN_PrevPoint;
+        AHOKAPCGJMA_TotalPoint = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.MMLPAMGJEOD_NewPoint;
         OENBOLPDBAB_FreeMusicId = ev.EELENPNCGLM.OENBOLPDBAB_FreeMusicId;
         KHHPEIBPDAB = ev.EELENPNCGLM.GCAPLLEIAAI_LastScore;
         BFPBEAIBEDJ = ev.EELENPNCGLM.IDCFOMMKGIK;
@@ -53,19 +53,19 @@ public class GCODMEIACDE
         GIIKOMPJOHA_IsHiScore = ev.EELENPNCGLM.GIIKOMPJOHA_IsHiScore;
         if(BKKPKIGLMCN_Ranks == null)
             BKKPKIGLMCN_Ranks = new int[2];
-        BKKPKIGLMCN_Ranks[0] = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[0];
-        BKKPKIGLMCN_Ranks[1] = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[1];
+        BKKPKIGLMCN_Ranks[0] = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NEFFKLNAAJI_ScoreRankByDiva[0];
+        BKKPKIGLMCN_Ranks[1] = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NEFFKLNAAJI_ScoreRankByDiva[1];
         PLKMAOGKFPP = 0;
         HBHMAKNGKFK_items.Clear();
         for(int i = 0; i < 3; i++)
         {
-            if(JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] != 0)
+            if(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JCDPLILNKDG[i] != 0)
             {
-                HGLPLKKBBOL_EventItem.JMCDEDCMCJE it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DHOFNBMPBAG_EventItem.CDENCMNHNGA_table[JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] - 1];
+                HGLPLKKBBOL_EventItem.JMCDEDCMCJE it = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DHOFNBMPBAG_EventItem.CDENCMNHNGA_table[JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JCDPLILNKDG[i] - 1];
                 PKJINGDIFNG d = new PKJINGDIFNG();
-                d.KIJAPOFAGPN_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem, JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i]);
+                d.KIJAPOFAGPN_ItemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem, JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JCDPLILNKDG[i]);
                 d.DNBFMLBNAEE_point = it.JBGEEPFKIGG_val;
-                d.HMFFHLPNMPH_count = JGEOBNENMAH.HHCJCDFCLOB.CMCDIOOEHMI[i];
+                d.HMFFHLPNMPH_count = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.CMCDIOOEHMI[i];
                 d.AHOKAPCGJMA_TotalPoint = d.DNBFMLBNAEE_point * d.HMFFHLPNMPH_count;
                 Debug.Log(string.Concat(new object[8]
                 {
@@ -82,8 +82,8 @@ public class GCODMEIACDE
                 PLKMAOGKFPP += d.HMFFHLPNMPH_count;
             }
         }
-        BEOKMNIPFBA_MedalItemId = JGEOBNENMAH.HHCJCDFCLOB.BEOKMNIPFBA_MedalItemId;
-        ODOOKDGCKMF_MedalNum = OKBEOCOKGEI * JGEOBNENMAH.HHCJCDFCLOB.ODOOKDGCKMF_MedalNum;
+        BEOKMNIPFBA_MedalItemId = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.BEOKMNIPFBA_MedalItemId;
+        ODOOKDGCKMF_MedalNum = OKBEOCOKGEI * JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.ODOOKDGCKMF_MedalNum;
     }
 
 	// // RVA: 0x16B4F58 Offset: 0x16B4F58 VA: 0x16B4F58

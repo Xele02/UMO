@@ -12,7 +12,7 @@ public class CNGFKOJANNP
 	private int FBGGEFFJJHB_xor; // 0x18
 	public PJADOKMABLA IBJEFPCNMAL; // 0x1C
 
-	public static CNGFKOJANNP HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF_bgs // NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static CNGFKOJANNP HHCJCDFCLOB_Instance { get; set; } // 0x0 LGMPACEDIJF_bgs // NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public bool MGALHAHPADF_CanAutoCheck { get { return IKBKLPNADJM.DNJEJEANJGL_Value != 0; } set { IKBKLPNADJM.DNJEJEANJGL_Value = value ? 1 : 0; } } // AOMLLAKLDEO_bgs 0x175B694 AMKHFLKAEGG_bgs 0x175B61C
 	public bool AKPCMLEPPGC_IsInvalid { get { return OCCEOHOFGNE.DNJEJEANJGL_Value != 0; } set { OCCEOHOFGNE.DNJEJEANJGL_Value = value ? 1 : 0; } } // HJLOFLKLELJ_bgs 0x175B6C8 EGALFIJGJOH_bgs 0x175B658
 
@@ -26,7 +26,7 @@ public class CNGFKOJANNP
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		FBGGEFFJJHB_xor = (int)(Utility.GetCurrentUnixTime() * 0x1d7);
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 		IKBKLPNADJM = new CEBFFLDKAEC_SecureInt();
 		IKBKLPNADJM.DNJEJEANJGL_Value = 0;
 		OCCEOHOFGNE = new LINJMMGGDKL_SecureInt2();

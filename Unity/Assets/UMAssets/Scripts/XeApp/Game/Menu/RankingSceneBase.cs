@@ -213,8 +213,8 @@ namespace XeApp.Game.Menu
 				if(ParentTransition == TransitionList.Type.RAID)
 				{
 					arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
-					arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(info.friend.MLPEHNBNOGD_PlayerId);
-					arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == info.friend.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
+					arg.isFavorite = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(info.friend.MLPEHNBNOGD_PlayerId);
+					arg.btnType = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CAFHLEFMMGD_GetPlayerId() == info.friend.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
 				}
 				MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 			}
@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 			//0xCF7A50
 			waitForFrame.Reset(3);
 			yield return waitForFrame;
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			MenuScene.Instance.RaycastEnable();
 			m_scrollList.SetEnableScrollBar(true);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use ONIGGMCFHAL_IsBlacklisted", true)]
 public class ONIGGMCFHAL {}
-public class ONIGGMCFHAL_IsBlacklisted : CACGCMBKHDI_Request
+public class ONIGGMCFHAL_IsBlacklisted : CACGCMBKHDI_NetBaseAction
 {
 	public int MLPEHNBNOGD_PlayerId; // 0x7C
 	public bool ELCCCJDLLAJ_Blacklisted; // 0x80

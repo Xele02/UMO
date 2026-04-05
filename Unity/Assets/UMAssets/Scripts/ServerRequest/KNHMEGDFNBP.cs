@@ -48,7 +48,7 @@ public class PGCGJPPBOOA
 
 [System.Obsolete("Use KNHMEGDFNBP_GetRankings", true)]
 public class KNHMEGDFNBP {}
-public class KNHMEGDFNBP_GetRankings : CACGCMBKHDI_Request
+public class KNHMEGDFNBP_GetRankings : CACGCMBKHDI_NetBaseAction
 {
     public class HJANIHAJLFA
     {

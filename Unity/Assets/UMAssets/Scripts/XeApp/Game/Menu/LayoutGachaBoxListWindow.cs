@@ -75,11 +75,11 @@ namespace XeApp.Game.Menu
 			LayoutGachaBoxListItem l = content as LayoutGachaBoxListItem;
 			if(l != null)
 			{
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				bool b = false;
 				if(time < m_view.JOFAGCFNKIO_OpenTime)
 				{
-					b = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_list[index].GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && m_list[index].JOPPFEHKNFO_Pickup;
+					b = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(m_list[index].GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && m_list[index].JOPPFEHKNFO_Pickup;
 				}
 				l.SetStatus(m_list[index], b);
 			}

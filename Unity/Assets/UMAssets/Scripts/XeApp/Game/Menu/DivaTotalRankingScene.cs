@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				StringBuilder str = new StringBuilder(8);
-				List<int> l = LAMCONGFONF.HHCJCDFCLOB.IFHPGJGLPPF_GetRankingThreshold();
+				List<int> l = LAMCONGFONF.HHCJCDFCLOB_Instance.IFHPGJGLPPF_GetRankingThreshold();
 				m_rankRangeList = new List<int>(l.Count + 1);
 				m_rankRangeList.Add(0);
 				m_rankRangeList.AddRange(l);
@@ -85,10 +85,10 @@ namespace XeApp.Game.Menu
 		protected override void GetRankingList(int baseRank, int rankingIdx)
 		{
 			m_windowUi.SetMessageVisible(false);
-			LAMCONGFONF.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(m_select_diva_id - 1, isFriendList, baseRank, () =>
+			LAMCONGFONF.HHCJCDFCLOB_Instance.FAMFKPBPIAA_GetRankingPlayerList(m_select_diva_id - 1, isFriendList, baseRank, () =>
 			{
 				//0x1272B6C
-				OnReceivedRankingList(LAMCONGFONF.HHCJCDFCLOB.HGGPIBNLALJ);
+				OnReceivedRankingList(LAMCONGFONF.HHCJCDFCLOB_Instance.HGGPIBNLALJ);
 			}, OnRankingError, OnNetError);
 		}
 
@@ -98,10 +98,10 @@ namespace XeApp.Game.Menu
 			int a = 1;
 			if (isUpper)
 				a = -1;
-			LAMCONGFONF.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), a, GetCurrentBaseRank(), () =>
+			LAMCONGFONF.HHCJCDFCLOB_Instance.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), a, GetCurrentBaseRank(), () =>
 			{
 				//0x1272EF8
-				OnReceivedRankingListAdditive(a, LAMCONGFONF.HHCJCDFCLOB.BMKBAMFBAPJ);
+				OnReceivedRankingListAdditive(a, LAMCONGFONF.HHCJCDFCLOB_Instance.BMKBAMFBAPJ);
 			}, OnRankingError, OnNetError);
 		}
 

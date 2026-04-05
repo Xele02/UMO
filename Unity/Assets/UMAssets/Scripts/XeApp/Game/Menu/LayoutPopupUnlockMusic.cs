@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17906A0 Offset: 0x17906A0 VA: 0x17906A0
 		public bool IsLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket || m_isLoadingLogo;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket || m_isLoadingLogo;
 		}
 
 		//// RVA: 0x1790268 Offset: 0x1790268 VA: 0x1790268
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17900D0 Offset: 0x17900D0 VA: 0x17900D0
 		private string GetVocalNameLF(int id)
 		{
-			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[id - 1];
+			EONOEHOKBEB_Music mData = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[id - 1];
 			return Database.Instance.musicText.Get(mData.KNMGEEFGDNI_Name).vocalNameLF;
 		}
 

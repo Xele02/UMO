@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class DPDMNBGAONP : IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>
+public class DPDMNBGAONP : IHFBKJMNIPH_NetBaseLoopAction<DKFCEGODKFJ_GetPlayerCounters>
 {
 	public DKFCEGODKFJ_GetPlayerCounters.ENKJGMFOJDI BIHCCEHLAOD = new DKFCEGODKFJ_GetPlayerCounters.ENKJGMFOJDI(); // 0xC
 	public DKFCEGODKFJ_GetPlayerCounters.HJKLBEOACCA NFEAMMJIMPG_Result = new DKFCEGODKFJ_GetPlayerCounters.HJKLBEOACCA(); // 0x10
@@ -15,7 +15,7 @@ public class DPDMNBGAONP : IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>
 	}
 
 	//// RVA: 0x1233DC4 Offset: 0x1233DC4 VA: 0x1233DC4 Slot: 5
-	protected override DKFCEGODKFJ_GetPlayerCounters JIJACMIFOMB_OnStartAction(PJKLMCGEJMK _CPHFEPHDJIB_ServerRequester)
+	protected override DKFCEGODKFJ_GetPlayerCounters JIJACMIFOMB_OnStartAction(PJKLMCGEJMK_NetActionManager _CPHFEPHDJIB_ServerRequester)
 	{
 		DKFCEGODKFJ_GetPlayerCounters res = _CPHFEPHDJIB_ServerRequester.IFFNCAFNEAG_AddRequest(new DKFCEGODKFJ_GetPlayerCounters());
 		if(BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count < 101)
@@ -36,7 +36,7 @@ public class DPDMNBGAONP : IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>
 			HMFFHLPNMPH_count += 100;
 			res.BIHCCEHLAOD = data;
 		}
-		res.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
+		res.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction _HKICMNAACDA_a) =>
 		{
 			//0x123428C
 			DKFCEGODKFJ_GetPlayerCounters req = _HKICMNAACDA_a as DKFCEGODKFJ_GetPlayerCounters;

@@ -9,18 +9,18 @@ namespace XeApp.Game.Menu
 {
 	public class PopupEpisodeBonusListSetting : PopupSetting
 	{
-		private List<IKDICBBFBMI_EventBase.GNPOABJANKO> episodeList = new List<IKDICBBFBMI_EventBase.GNPOABJANKO>(); // 0x34
+		private List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> episodeList = new List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO>(); // 0x34
 
 		public override string PrefabPath { get { return ""; } } //0xF86398
 		public override string AssetName { get { return "root_pop_ep_eve_layout_root"; } } //0xF863F4
 		public override string BundleName { get { return "ly/015.xab"; } } //0xF86450
 		public override bool IsAssetBundle { get { return true; } } //0xF864AC
 		public override bool IsPreload { get { return true; } } //0xF864B4
-		public List<IKDICBBFBMI_EventBase.GNPOABJANKO> EpisodeList { get { return episodeList; } } //0xF85C50
+		public List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> EpisodeList { get { return episodeList; } } //0xF85C50
 		public CIKHPBBNEIM ViewEpisodeBonus { get; set; } // 0x38
 
 		//// RVA: 0xF864C4 Offset: 0xF864C4 VA: 0xF864C4
-		public void Setup(List<IKDICBBFBMI_EventBase.GNPOABJANKO> episodeList, CIKHPBBNEIM viewEpisodeBonus)
+		public void Setup(List<IKDICBBFBMI_NetEventBaseController.GNPOABJANKO> episodeList, CIKHPBBNEIM viewEpisodeBonus)
 		{
 			this.episodeList.Clear();
 			this.episodeList.AddRange(episodeList);

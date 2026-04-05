@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		private EnRankingType[] m_ranking_types = new EnRankingType[10]; // 0x7C
 		private int m_currentRankingIndex; // 0x80
 		private int m_rankingMax = 1; // 0x84
-		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x88
+		private IKDICBBFBMI_NetEventBaseController m_eventCtrl; // 0x88
 		private bool m_isPast; // 0x8C
 		private string[] m_nameForApi = new string[10]; // 0x90
 		private int m_eventId = 1; // 0x94
@@ -108,8 +108,8 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(m_current_ranking_type == EnRankingType.Score)
 			{
-				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
-				EONOEHOKBEB_Music mi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[fmi.DLAEJOBELBH_MusicId - 1];
+				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
+				EONOEHOKBEB_Music mi = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[fmi.DLAEJOBELBH_MusicId - 1];
 				m_windowUi.ChangePreset(GeneralListWindow.Preset.ScoreEventRanking, false);
 				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_JacketAttr - 1]);
 				m_windowUi.SetMusicAttr((GameAttribute.Type) mi.FKDCCLPGKDK_JacketAttr);
@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_current_ranking_type >= EnRankingType.GoDivaScore_01 && m_current_ranking_type <= EnRankingType.GoDivaScore_10)
 			{
-				MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
+				MANPIONIGNO_NetEventGoDivaController ev = m_eventCtrl as MANPIONIGNO_NetEventGoDivaController;
 				if(ev != null)
 				{
 					m_windowUi.SetMessageVisible(false);
@@ -259,9 +259,9 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
+				//NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester
 				m_windowUi.SetMessageVisible(false);
-				KKLGENJKEBN.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(m_nameForApi[m_currentRankingIndex], isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError, false);
+				KKLGENJKEBN_NetEventRankingManager.HHCJCDFCLOB_Instance.FAMFKPBPIAA_GetRankingPlayerList(m_nameForApi[m_currentRankingIndex], isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError, false);
 			}
 		}
 
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_current_ranking_type >= EnRankingType.GoDivaScore_01 && m_current_ranking_type <= EnRankingType.GoDivaScore_10)
 			{
-				MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
+				MANPIONIGNO_NetEventGoDivaController ev = m_eventCtrl as MANPIONIGNO_NetEventGoDivaController;
 				if(ev != null)
 				{
 					ev.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				KKLGENJKEBN.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError, false);
+				KKLGENJKEBN_NetEventRankingManager.HHCJCDFCLOB_Instance.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError, false);
 			}
 		}
 

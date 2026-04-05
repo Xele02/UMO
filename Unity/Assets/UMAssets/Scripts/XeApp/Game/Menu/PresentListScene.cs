@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 		private PresentListType ListType; // 0x60
 		private int m_selectListIndex = -1; // 0x64
 		private int m_connectingCount; // 0x68
-		private AMOCLPHDGBP paidVCPurchase; // 0x6C
+		private AMOCLPHDGBP_NetPaidVCPurchase paidVCPurchase; // 0x6C
 		private PresentPopWindowType windowType = PresentPopWindowType.NONE; // 0x70
 
 		//private bool isConnecting { get; } 0x11661F8
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			int bgmId = BgmPlayer.MENU_BGM_ID_BASE;
 			if(MenuScene.Instance.BgControl.limitedHomeBg.m_music_id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 			{
-				string home_bgm_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
+				string home_bgm_id = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 				string[] strs = home_bgm_id.Split(new char[] { ',' });
 				if(strs.Length == 3)
 				{
@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 		private void RequestVCRecover()
 		{
 			m_connectingCount++;
-			paidVCPurchase = new AMOCLPHDGBP();
+			paidVCPurchase = new AMOCLPHDGBP_NetPaidVCPurchase();
 			paidVCPurchase.CLFGEAPFFMA = true;
 			paidVCPurchase.OLNDKPDNPCM_Auto_Recover(() =>
 			{
@@ -287,7 +287,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1166EDC Offset: 0x1166EDC VA: 0x1166EDC
 		private void GetPresentList()
 		{
-			AIFIANALLPB im = CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN;
+			AIFIANALLPB_NetInventoryManager im = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.KPFKKDDOHCN;
 			m_presentInfoList.Clear();
 			MenuScene.Instance.RaycastDisable();
 			m_connectingCount++;
@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 				ListType = PresentListType.Present;
 				SortPresentList(m_presentInfoList);
 				GetHistoryList();
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0x1169B14
 				m_connectingCount--;
@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x116867C Offset: 0x116867C VA: 0x116867C
 		private void GetHistoryList()
 		{
-			AIFIANALLPB im = CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN;
+			AIFIANALLPB_NetInventoryManager im = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.KPFKKDDOHCN;
 			m_historyInfoList.Clear();
 			MenuScene.Instance.RaycastDisable();
 			m_connectingCount++;
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 				MenuScene.Instance.RaycastEnable();
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0x1169F54
 				m_connectingCount--;
@@ -392,7 +392,7 @@ namespace XeApp.Game.Menu
 				case PresentPopWindowType.POSS_LIMIT:
 				case PresentPopWindowType.LUMP_POSS_LIMIT:
 				case PresentPopWindowType.LUMP_FAILURE:
-					s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(strs[(int)type]), SizeType.Small, CIOECGOMILE.HHCJCDFCLOB.PDLEOKCJDAK(), new ButtonInfo[1]
+					s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(strs[(int)type]), SizeType.Small, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PDLEOKCJDAK(), new ButtonInfo[1]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 					}, false, true);
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 				case PresentPopWindowType.SYNTHESIS_LUCK:
 				case PresentPopWindowType.SYNTHESIS_ITEM:
 				case PresentPopWindowType.LUMP_RECEIPT:
-					s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(strs[(int)type]), SizeType.Small, CIOECGOMILE.HHCJCDFCLOB.PDLEOKCJDAK(), new ButtonInfo[1]
+					s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(strs[(int)type]), SizeType.Small, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PDLEOKCJDAK(), new ButtonInfo[1]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 					}, false, true);
@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 			windowType = PresentPopWindowType.NONE;
 			if(wt < PresentPopWindowType.LUMP_FAILURE)
 			{
-				AIFIANALLPB inv = CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN;
+				AIFIANALLPB_NetInventoryManager inv = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.KPFKKDDOHCN;
 				if(((1 << (int)wt) & 0xc4U) != 0) // 1100 0100  2(RECEIPT) 6(LUMP_POSS_LIMIT) 7(LUMP_RECEIPT)
 				{
 					GameManager.Instance.ResetViewPlayerData();
@@ -449,14 +449,14 @@ namespace XeApp.Game.Menu
 					{
 						Step = PresentUpdateStep.Step_Lump_Check;
 						MenuScene.Instance.RaycastDisable();
-						CIOECGOMILE.HHCJCDFCLOB.PKKCKFCLACK(inv.GIPGAICOGGL, UpdateLumpCheck, UpdateItemReceptLimit2, UpdateError, false);
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PKKCKFCLACK(inv.GIPGAICOGGL, UpdateLumpCheck, UpdateItemReceptLimit2, UpdateError, false);
 						return;
 					}
 					if(wt == PresentPopWindowType.RECEIPT_CONF)
 					{
 						Step = PresentUpdateStep.Step_Item_check;
 						MenuScene.Instance.RaycastDisable();
-						CIOECGOMILE.HHCJCDFCLOB.PKKCKFCLACK(inv.GIPGAICOGGL[m_selectListIndex], UpdateItemReceipt, UpdateItemReceptLimit, UpdateError);
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PKKCKFCLACK(inv.GIPGAICOGGL[m_selectListIndex], UpdateItemReceipt, UpdateItemReceptLimit, UpdateError);
 						return;
 					}
 				}
@@ -468,7 +468,7 @@ namespace XeApp.Game.Menu
 		private void UpdateItemReceipt()
 		{
 			MenuScene.Instance.RaycastEnable();
-			if (CIOECGOMILE.HHCJCDFCLOB.HFCOBGMDOGG())
+			if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.HFCOBGMDOGG())
 				SetPrePopWindow(PresentPopWindowType.LUMP_POSS_LIMIT);
 			else
 				SetPrePopWindow(PresentPopWindowType.RECEIPT);
@@ -503,7 +503,7 @@ namespace XeApp.Game.Menu
 		private void UpdateLumpCheck()
 		{
 			MenuScene.Instance.RaycastEnable();
-			if (CIOECGOMILE.HHCJCDFCLOB.HFCOBGMDOGG())
+			if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.HFCOBGMDOGG())
 				SetPrePopWindow(PresentPopWindowType.LUMP_POSS_LIMIT);
 			else
 				SetPrePopWindow(PresentPopWindowType.LUMP_RECEIPT);

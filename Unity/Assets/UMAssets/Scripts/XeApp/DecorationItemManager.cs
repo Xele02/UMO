@@ -103,8 +103,8 @@ namespace XeApp
 		//// RVA: 0x1AD6348 Offset: 0x1AD6348 VA: 0x1AD6348
 		private void InitOrderOffset()
 		{
-			int object_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("object_set_max", 50);
-			int chara_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("chara_set_max", 5);
+			int object_set_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("object_set_max", 50);
+			int chara_set_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("chara_set_max", 5);
 			int c = object_set_max + chara_set_max;
 			for(int i = 0; i < m_priorityOffset.Length; i++)
 			{
@@ -164,7 +164,7 @@ namespace XeApp
 		public IEnumerator Co_LoadItem(DecorationItemBase item, int resourceId, Transform parent, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			//0xBB085C
-			item.LoadResource(m_spriteBase, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(resourceId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(resourceId), setting, args);
+			item.LoadResource(m_spriteBase, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(resourceId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(resourceId), setting, args);
 			yield return new WaitUntil(() =>
 			{
 				//0xBAF948
@@ -209,8 +209,8 @@ namespace XeApp
 			m_decorationCanvas.GetBgCenterLine(item.Setting.AttributeType, ref vs);
 			float f = m_decorationCanvas.GetVisibilityRect().width;
 			Vector2 v1 = new Vector2(0, (vs[0].y + vs[1].y) * 0.5f);
-			int tap_set_interval_rate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_rate", 50);
-			int tap_set_interval_loop_y = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_loop_y", 64);
+			int tap_set_interval_rate = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_rate", 50);
+			int tap_set_interval_loop_y = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("tap_set_interval_loop_y", 64);
 			item.Position = v1;
 			int d = 0;
 			float f2 = 0;
@@ -381,7 +381,7 @@ namespace XeApp
 		//// RVA: 0x1AD791C Offset: 0x1AD791C VA: 0x1AD791C
 		private void AddItem(DecorationItemBase item)
 		{
-			if(item.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
+			if(item.DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 				return;
 			m_decorationItemList.Add(item);
 		}
@@ -501,25 +501,25 @@ namespace XeApp
 		//// RVA: 0x1AD67BC Offset: 0x1AD67BC VA: 0x1AD67BC
 		private DecorationItemBase CreateDecorationItem(int id)
 		{
-			switch(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id))
+			switch(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(id))
 			{
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationChara>();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationSerif>();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationSp>();
 				default:
 					return null;
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationPoster>();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
 			}
 		}
@@ -681,7 +681,7 @@ namespace XeApp
 			int k = 0;
 			foreach(int c in l)
 			{
-				if (m_decorationItemList[c].DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				if (m_decorationItemList[c].DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 					k++;
 				m_decorationItemList[c].SortingOrder = k + m_priorityOffset[2];
 				k++;
@@ -747,7 +747,7 @@ namespace XeApp
 			int order = 1;
 			foreach(var a in l)
 			{
-				if(m_decorationItemList[a].DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				if(m_decorationItemList[a].DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 					order++;
 				m_decorationItemList[a].SortingOrder = order + m_priorityOffset[(int)type];
 				order++;
@@ -766,7 +766,7 @@ namespace XeApp
 						c.EnableController(DecorationItemBase.ControlType.All);
 						break;
 					case EnableControlType.Unique:
-						if(c.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara && c.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+						if(c.DecorationItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara && c.DecorationItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 						{
 							c.EnableController(false);
 						}
@@ -776,7 +776,7 @@ namespace XeApp
 						}
 						break;
 					case EnableControlType.ScreenShot:
-						if(c.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+						if(c.DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 						{
 							c.EnableController(DecorationItemBase.ControlType.Drag | DecorationItemBase.ControlType.Tap);
 						}
@@ -842,7 +842,7 @@ namespace XeApp
 			int res = 0;
 			foreach(var k in m_decorationItemList)
 			{
-				if (k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				if (k.DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 					res++;
 			}
 			return res;
@@ -854,7 +854,7 @@ namespace XeApp
 			int res = 0;
 			foreach(var k in m_decorationItemList)
 			{
-				if(k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				if(k.DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 				{
 					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_typ == 1)
 						res++;
@@ -1070,12 +1070,12 @@ namespace XeApp
 					DecorationChara chara = c as DecorationChara;
 					if(chara.Setting.InitWord != 0)
 					{
-						foreach(var s in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif)
+						foreach(var s in IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif)
 						{
 							if(s.PPFNGGCBJKC_id == chara.Setting.InitWord)
 							{
 								DecorationItemBaseSetting setting = new DecorationItemBaseSetting();
-								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_typ, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC_id), s.LDLGLHBGOKE_FontSize, chara));
+								LoadItem(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_typ, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC_id), s.LDLGLHBGOKE_FontSize, chara));
 								break;
 							}
 						}
@@ -1176,9 +1176,9 @@ namespace XeApp
 		//// RVA: 0x1AD9AA0 Offset: 0x1AD9AA0 VA: 0x1AD9AA0
 		private bool CategoryCheckThinkness(DecorationItemBase item1, DecorationItemBase item2)
 		{
-			if(item1.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+			if(item1.DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 			{
-				if(item2.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				if(item2.DecorationItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 				{
 					return DecorationConstants.IsRug(item2);
 				}

@@ -150,7 +150,7 @@ namespace XeApp.Game.Common
 			//0xD2C5C0
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valkInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valkInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
 			modelId = valkInfo.DAJGPBLEEOB_ModelId;
 			subId_Intro = 0;
 			subId_Battle = 0;
@@ -276,7 +276,7 @@ namespace XeApp.Game.Common
 			//0xD2E2AC
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
 			modelId = valk.DAJGPBLEEOB_ModelId;
 			bundleName.SetFormat("vl/{0:D4}.xab", modelId);
 			assetName.SetFormat("val_{0:D4}_prefab", modelId);
@@ -334,7 +334,7 @@ namespace XeApp.Game.Common
 			//0xD2D9F4
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
 			modelId = dbValk.DAJGPBLEEOB_ModelId;
 			bundleName.SetFormat("vl/{0:D4}.xab", modelId);
 			assetName.SetFormat("val_{0:D4}_prefab", modelId);

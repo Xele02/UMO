@@ -596,7 +596,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE16150 Offset: 0xE16150 VA: 0xE16150
 		private int GetNextExp(int level, JLCHNKIHGHK.GDJKDOMAAPG_Type paramType)
 		{
-			return viewEventResultData.HKKJBILCDLA_ExpByLevel[(int)paramType][Mathf.Clamp(level + 1, 1, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA() + 1)];
+			return viewEventResultData.HKKJBILCDLA_ExpByLevel[(int)paramType][Mathf.Clamp(level + 1, 1, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA() + 1)];
 		}
 
 		// // RVA: 0xE16300 Offset: 0xE16300 VA: 0xE16300

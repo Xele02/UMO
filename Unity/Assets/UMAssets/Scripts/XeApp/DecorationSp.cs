@@ -26,7 +26,7 @@ namespace XeApp
 		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType)ViewData.GBJFNGCDKPM_typ; } } //0xBB2E90
 
 		// RVA: 0xBB2EC4 Offset: 0xBB2EC4 VA: 0xBB2EC4 Slot: 6
-		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			IsLoadedSpResource = false;
 			this.StartCoroutineWatched(Co_LoadSpResource());
@@ -57,7 +57,7 @@ namespace XeApp
 			if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/)
 			{
 				isLoadedTexture = false;
-				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
 				{
 					//0xBB4490
 					m_texture = texture;
@@ -67,7 +67,7 @@ namespace XeApp
 			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JJNIMNEJPOF_3_Present/*3*/)
 			{
 				isLoadedTexture = false;
-				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 8), (IiconTexture texture) =>
 				{
 					//0xBB445C
 					m_texture = texture;
@@ -77,7 +77,7 @@ namespace XeApp
 			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.IOEGFJMNDBM_2_Medal/*2*/)
 			{
 				isLoadedTexture = false;
-				MenuScene.Instance.ItemTextureCache.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.DNEKJCKEOHL_GetMonthlyItemFullId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()), (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.DNEKJCKEOHL_GetMonthlyItemFullId(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()), (IiconTexture texture) =>
 				{
 					//0xBB4428
 					m_texture = texture;
@@ -301,7 +301,7 @@ namespace XeApp
 			{
 				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC_SpType.JPPOGMHJKKJ_11_VisitItemSp/*11*/;
 			}
-			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		}
 
 		// // RVA: 0xBB4328 Offset: 0xBB4328 VA: 0xBB4328

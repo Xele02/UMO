@@ -13,25 +13,25 @@ internal class KNHHNMFCJEN
 	// // RVA: 0x11213B0 Offset: 0x11213B0 VA: 0x11213B0
 	private static bool EALAEJFNMGK()
     {
-        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
-        if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep == 0)
+        int ver = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
+        if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep == 0)
         {
-            int review_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_player_level", 8);
-            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < review_player_level)
+            int review_player_level = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_player_level", 8);
+            if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < review_player_level)
                 return false;
         }
         else
         {
-            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep == ver)
+            if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep == ver)
                 return false;
-            if(CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level == CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+            if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.MNJHBCIIHED_PrevServerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level == CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                 return false;
         }
-        int review_combo_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_combo_rank", 1);
-        int review_score_rank = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_score_rank", 3);
-        if(JGEOBNENMAH.HHCJCDFCLOB.CODDMAKLBDO_LastComboRank < review_combo_rank)
+        int review_combo_rank = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_combo_rank", 1);
+        int review_score_rank = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_score_rank", 3);
+        if(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.CODDMAKLBDO_LastComboRank < review_combo_rank)
         {
-            if(review_score_rank <= JGEOBNENMAH.HHCJCDFCLOB.PENICOGGNLF_ScoreRank)
+            if(review_score_rank <= JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.PENICOGGNLF_ScoreRank)
                 return true;
             return false;
         }
@@ -45,12 +45,12 @@ internal class KNHHNMFCJEN
         {
             if(!AppEnv.IsCBT())
             {
-                if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 0)
+                if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end != 0)
                 {
-                    if((IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_show", 0) & 1) != 0)
+                    if((IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_show", 0) & 1) != 0)
                     {
-                        int ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
-                        if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep != ver)
+                        int ver = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("review_ver", 1);
+                        if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JOKHEHFGDOP_RvStep != ver)
                         {
                             return EALAEJFNMGK();
                         }

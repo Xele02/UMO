@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE283CC Offset: 0xE283CC VA: 0xE283CC
 		public void SetMusicRateRank(IBIGBMDANNM a_friend_data)
 		{
-			m_musicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(a_friend_data.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_friend_data.AJECHDLMKOE_LastLogin), true);
+			m_musicRateRankText.text = OEGIPPCADNA_NetEventUtarateManager.GEEFFAEGHAH(OEGIPPCADNA_NetEventUtarateManager.BFKAHKBKBJE(a_friend_data.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_friend_data.AJECHDLMKOE_LastLogin), true);
 		}
 
 		//// RVA: 0xE284A8 Offset: 0xE284A8 VA: 0xE284A8

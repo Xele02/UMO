@@ -46,7 +46,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x17550EC Offset: 0x17550EC VA: 0x17550EC
 	public void GFANLIOMMNA_SetReleased(int BPNKGDGBBFG)
 	{
-		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_date = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 	}
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
@@ -119,7 +119,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
+				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
 				for(int i = 0; i < advDb.CDENCMNHNGA_table.Count; i++)
 				{
 					string str = POFDDFCGEGP_Underscore + (i + 1).ToString();

@@ -52,23 +52,27 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO_cid;
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD_open_at;
 			data.FDBNFFNFOND_close_at = array[i].FDBNFFNFOND_close_at;
-			// UMO : Update all talk to work in current year
-			long prevStart = data.PDBPFJJCADD_open_at;
-			if(data.PDBPFJJCADD_open_at != 0)
+
+			if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 			{
-				DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at);
-				data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
-			}
-			if(data.FDBNFFNFOND_close_at != 0)
-			{
-				if(prevStart == 0)
+				// UMO : Update all talk to work in current year
+				long prevStart = data.PDBPFJJCADD_open_at;
+				if(data.PDBPFJJCADD_open_at != 0)
 				{
-					DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_close_at);
-					data.FDBNFFNFOND_close_at = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
+					DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at);
+					data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
 				}
-				else
+				if(data.FDBNFFNFOND_close_at != 0)
 				{
-					data.FDBNFFNFOND_close_at = data.PDBPFJJCADD_open_at + (data.FDBNFFNFOND_close_at - prevStart);
+					if(prevStart == 0)
+					{
+						DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_close_at);
+						data.FDBNFFNFOND_close_at = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
+					}
+					else
+					{
+						data.FDBNFFNFOND_close_at = data.PDBPFJJCADD_open_at + (data.FDBNFFNFOND_close_at - prevStart);
+					}
 				}
 			}
 			CDENCMNHNGA_table.Add(data);

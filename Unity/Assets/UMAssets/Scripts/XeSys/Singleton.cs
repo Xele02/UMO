@@ -12,7 +12,7 @@ namespace XeSys
 		/* GenericInstMethod :
 		|
 		|-RVA: 0x30A834C Offset: 0x30A834C VA: 0x30A834C
-		|-Singleton<PBJPACKDIIB>.get_Instance
+		|-Singleton<PBJPACKDIIB_NetCoopQuestManager>.get_Instance
 		|-Singleton<object>.get_Instance
 		|-Singleton<MessageLoader>.get_Instance
 		|-Singleton<DebugParam>.get_Instance
@@ -33,7 +33,7 @@ namespace XeSys
 		/* GenericInstMethod :
 		|
 		|-RVA: 0x30A8394 Offset: 0x30A8394 VA: 0x30A8394
-		|-Singleton<PBJPACKDIIB>.Create
+		|-Singleton<PBJPACKDIIB_NetCoopQuestManager>.Create
 		|-Singleton<object>.Create
 		|-Singleton<MessageLoader>.Create
 		|-Singleton<ConfigManager>.Create

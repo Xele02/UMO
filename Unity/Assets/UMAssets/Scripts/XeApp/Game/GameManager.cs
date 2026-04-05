@@ -484,7 +484,7 @@ namespace XeApp.Game
 		private void OnBootInitialize()
 		{
 			SoundManager.Instance.Initialize();
-			NKGJPJPHLIF.HHCJCDFCLOB.ODLGKIJCHGH(null);
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.ODLGKIJCHGH(null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADB28 Offset: 0x6ADB28 VA: 0x6ADB28
@@ -506,11 +506,11 @@ namespace XeApp.Game
 			MessageLoader.Instance.Request(MessageLoader.eSheet.menu, 0);
 			yield return MessageLoader.Instance.WaitForDone(this);
 			
-			while(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
+			while(!NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CGMMHFHHLID)
 				yield return null;
 
-			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
-			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC_Login();
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.OEPPEGHGNNO = this.InstallEvent;
+			NDABOOOOENC.HHCJCDFCLOB_Instance.NCDLCIPGPNC_Login();
 			IsSystemInitialized = true;
 		}
 
@@ -825,7 +825,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
 		private void SetupAssetBundleBasePath()
 		{
-			string k = KEHOJEJMGLJ.OGCDNCDMLCA_LocalPath;
+			string k = KEHOJEJMGLJ_NetInstallManager.OGCDNCDMLCA_LocalPath;
 			string platform = AssetBundleManager.GetPlatformName();
 			string path = Path.Combine(k, platform);
 			AssetBundleManager.BaseAssetBundleInstallPath = path;
@@ -1426,7 +1426,7 @@ namespace XeApp.Game
 				Instance.GameUIIntro.onAnimationEndCallback = null;
 			};
 			isWait = true;
-			Instance.GameUIIntro.Enter(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name, Database.Instance.gameSetup.musicInfo.musicLoadText);
+			Instance.GameUIIntro.Enter(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name, Database.Instance.gameSetup.musicInfo.musicLoadText);
 			while (isWait)
 				yield return null;
 		}
@@ -1477,7 +1477,7 @@ namespace XeApp.Game
 			setupData = gameSetupData;
 			ti = setupData.teamInfo;
 			mi = setupData.musicInfo;
-			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			master = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 			musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mi.prismMusicId);
 			wavId = musicBase.KKPAHLMJKIH_WavId;
 			bundleName = new StringBuilder();
@@ -1554,8 +1554,8 @@ namespace XeApp.Game
 				}
 			}
 			List<int>[] res = directionParam.GetSpecialDirectionResourceId(settingList);
-			KDLPEDBKMID.HHCJCDFCLOB.KEILLGAJEPF_AddRhythmResources(wavId, c, a, res[1], res[2], res[4], res[0], res[3], res[8], vidQuality, res[9], mi.onStageDivaNum);
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.KEILLGAJEPF_AddRhythmResources(wavId, c, a, res[1], res[2], res[4], res[0], res[3], res[8], vidQuality, res[9], mi.onStageDivaNum);
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 		}
 
@@ -1574,7 +1574,7 @@ namespace XeApp.Game
 			MusicDirectionParamBase directionParam; // 0x54
 
 			//0x1425060
-			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			master = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 			enemyInfo = null;
 			isFreeMode = freeMusicId > 0;
 			if(freeMusicId < 1)
@@ -1643,7 +1643,7 @@ namespace XeApp.Game
 			list.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
 			list.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
 			list.Add(string.Format("ct/dv/ps/{0:D2}_{1:D2}.xab", divaId, divaModelId));
-			KDLPEDBKMID.HHCJCDFCLOB.IDCJNAFJLAA(wavId, bodyDiva, a, l[1], l[2], l[4], l[0], l[3], l[8], videoQuality, l[9], list, stageDivaNum);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.IDCJNAFJLAA(wavId, bodyDiva, a, l[1], l[2], l[4], l[0], l[3], l[8], videoQuality, l[9], list, stageDivaNum);
 		}
 
 		// // RVA: 0x9A165C Offset: 0x9A165C VA: 0x9A165C

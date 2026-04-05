@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 			private Vector2 m_ItemSize = Vector2.zero; // 0x50
 			private List<LGDNAJACFHI> m_paidVcProductDataList = new List<LGDNAJACFHI>(); // 0x58
 
-			public AMOCLPHDGBP NetPaidVCPurchase { get; set; } // 0x34
+			public AMOCLPHDGBP_NetPaidVCPurchase NetPaidVCPurchase { get; set; } // 0x34
 			public ELBOJBBIBFM OnPurchase { get; set; } // 0x38
 			public JFDNPFFOACP OnCancel { get; set; } // 0x3C
 			public OnDenomChangeDate OnChangeDate { get; set; } // 0x40
@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 				m_ItemSize = inst.GetComponent<RectTransform>().sizeDelta;
 				yield return null;
 				ReleaseScrollObj();
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				LayoutUGUIRuntime runtime = inst.GetComponent<LayoutUGUIRuntime>();
 				ApplyProductFilter(m_paidVcProductDataList, NetPaidVCPurchase);
 				for(int i = 0; i < m_paidVcProductDataList.Count; i++)
@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D7FB4 Offset: 0x6D7FB4 VA: 0x6D7FB4
 		//// RVA: 0xF7B788 Offset: 0xF7B788 VA: 0xF7B788
-		public static IEnumerator Co_ShowPopup(Transform parent, AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter)
+		public static IEnumerator Co_ShowPopup(Transform parent, AMOCLPHDGBP_NetPaidVCPurchase p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter)
 		{
 			//0xF7F110
 			if(sm_Setting == null)
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 			sm_Setting.OnCancel = onCancel;
 			sm_Setting.OnChangeDate = onChangeDate;
 			sm_Setting.Filter = filter;
-			sm_Setting.HavePaidVC = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency();
+			sm_Setting.HavePaidVC = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency();
 			sm_Setting.SetParent(parent);
 			yield return Co.R(sm_Setting.Co_LoadPopupResource());
 			sm_Control = PopupWindowManager.Show(sm_Setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xF7CE00 Offset: 0xF7CE00 VA: 0xF7CE00
-		private static void ApplyProductFilter(List<LGDNAJACFHI> list, AMOCLPHDGBP paidVcPurchase)
+		private static void ApplyProductFilter(List<LGDNAJACFHI> list, AMOCLPHDGBP_NetPaidVCPurchase paidVcPurchase)
 		{
 			list.Clear();
 			for(int i = 0; i < paidVcPurchase.HFCNOINEPLB.MHKCPJDNJKI_products.Count; i++)
@@ -399,7 +399,7 @@ namespace XeApp.Game.Menu
 			sm_Control.InputDisable();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			ApplyProductFilter(m_paidVcProductDataList, sm_Setting.NetPaidVCPurchase);
-			MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(m_paidVcProductDataList[index].JKKNIEHJBAP, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.FLLLPBIECCP(m_paidVcProductDataList[index].JKKNIEHJBAP, () =>
 			{
 				//0xF7E070
 				sm_Control.InputEnable();
@@ -439,7 +439,7 @@ namespace XeApp.Game.Menu
 
 			//0xF7E5E4
 			TransitionList.Type result = TransitionList.Type.UNDEFINED;
-			isChangeDate = PGIGNJDPCAH.MNANNMDBHMP(() =>
+			isChangeDate = PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 			{
 				//0xF7E5B4
 				result = TransitionList.Type.LOGIN_BONUS;
@@ -467,7 +467,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			sm_Control.InputDisable();
 			m_MainLayout.ScrollDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0xF7DE5C
 				sm_Control.InputEnable();
@@ -486,7 +486,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			sm_Control.InputEnable();
 			m_MainLayout.ScrollDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
 			{
 				//0xF7DF28
 				sm_Control.InputEnable();

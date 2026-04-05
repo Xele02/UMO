@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use BLHOHLGCJHI_GetItemSetRecord", true)]
 public class BLHOHLGCJHI { }
-public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_Request
+public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_NetBaseAction
 {
 	// Fields
 	public string DKBGNOMDCMK_ItemSetName; // 0x7C

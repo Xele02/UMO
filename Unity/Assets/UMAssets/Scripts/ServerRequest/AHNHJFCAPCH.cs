@@ -5,7 +5,7 @@ using XeSys;
 
 [System.Obsolete("Use AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave", true)]
 public class AHNHJFCAPCH {}
-public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request, CJIKLGPIPBA
+public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_NetBaseAction, CJIKLGPIPBA
 {
 	public class EIJBGBDMLKK
 	{
@@ -54,7 +54,7 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 	// RVA: 0x15C8CBC Offset: 0x15C8CBC VA: 0x15C8CBC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		PJKLMCGEJMK.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH_SaveId;
+		PJKLMCGEJMK_NetActionManager.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH_SaveId;
 		NFEAMMJIMPG_Result = new LKFHBFHOLBG(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 

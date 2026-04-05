@@ -554,13 +554,13 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPopupGetDecoCostumeTorso()
 		{
 			//0x125D5D4
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_diva_id, m_after_costume.id);
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.JAHFLLONDCN(cos.JPIDIENBGKH_CostumeId, m_after_costume.color_id) && 
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_diva_id, m_after_costume.id);
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.JAHFLLONDCN(cos.JPIDIENBGKH_CostumeId, m_after_costume.color_id) && 
 				HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() &&
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
 				MenuScene.Instance.InputDisable();
-				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso, cos.JPIDIENBGKH_CostumeId)));
+				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso, cos.JPIDIENBGKH_CostumeId)));
 				MenuScene.Instance.InputEnable();
 			}
         }

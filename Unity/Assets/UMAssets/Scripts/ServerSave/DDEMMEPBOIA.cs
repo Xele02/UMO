@@ -111,7 +111,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
+				BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
 				for(int i = 0; i < snsDb.CDENCMNHNGA_table.Count; i++)
 				{
 					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk item = snsDb.CDENCMNHNGA_table[i];

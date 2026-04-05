@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use LNGMNNNJBJP_SearchForPlayer", true)]
 public abstract class LNGMNNNJBJP { }
-public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
+public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_NetBaseAction
 {
 	public class JNHAEJLAPDC_PlayerInfo
 	{

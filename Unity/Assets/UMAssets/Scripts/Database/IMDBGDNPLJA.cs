@@ -238,36 +238,39 @@ public class IMDBGDNPLJA_EventBoxGacha : DIHHCBACKGG_DbSection
 		
 		UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OPFGFINHFCE_name+" "+NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId);
 
-		// Update dates
-		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
+		if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 		{
-			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-			long rDate = /*NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start > NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart ? NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start : */NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-			System.DateTime date2 = Utility.GetLocalDateTime(rDate);
-			date = date.AddDays(-1);
-			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - rDate;
-			if (NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart != 0) NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart += offset;
-			if (NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd != 0) NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd += offset;
-			if (NGHKJOEDLIP_Settings.FCNKIKOOFKE != 0) NGHKJOEDLIP_Settings.FCNKIKOOFKE += offset;
-			if (NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 != 0) NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 += offset;
-			if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
-			if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
-			if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
-			if (NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start != 0) NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start += offset;
-			if (NGHKJOEDLIP_Settings.PHKLJGNMFBL_End != 0) NGHKJOEDLIP_Settings.PHKLJGNMFBL_End += offset;
-			/*UnityEngine.Debug.LogError(Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart).ToLongDateString()+" "+
-				Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd).ToLongDateString()+" "+
-				Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start).ToLongDateString()+" "+
-				Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.PHKLJGNMFBL_End).ToLongDateString());*/
-			// Tmp, move NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start & NGHKJOEDLIP_Settings.PHKLJGNMFBL_End to start & end
-			NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-			NGHKJOEDLIP_Settings.PHKLJGNMFBL_End = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
-
-			for(int i = 0; i < KGDBEMPMAIJ_Boxes.Count; i++)
+			// Update dates
+			UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+			if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 			{
-				if (KGDBEMPMAIJ_Boxes[i].PDBPFJJCADD_open_at != 0) KGDBEMPMAIJ_Boxes[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-				if (KGDBEMPMAIJ_Boxes[i].FDBNFFNFOND_close_at != 0) KGDBEMPMAIJ_Boxes[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+				long rDate = /*NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start > NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart ? NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start : */NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+				System.DateTime date2 = Utility.GetLocalDateTime(rDate);
+				date = date.AddDays(-1);
+				long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - rDate;
+				if (NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart != 0) NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart += offset;
+				if (NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd != 0) NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd += offset;
+				if (NGHKJOEDLIP_Settings.FCNKIKOOFKE != 0) NGHKJOEDLIP_Settings.FCNKIKOOFKE += offset;
+				if (NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 != 0) NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 += offset;
+				if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
+				if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
+				if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
+				if (NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start != 0) NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start += offset;
+				if (NGHKJOEDLIP_Settings.PHKLJGNMFBL_End != 0) NGHKJOEDLIP_Settings.PHKLJGNMFBL_End += offset;
+				/*UnityEngine.Debug.LogError(Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart).ToLongDateString()+" "+
+					Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd).ToLongDateString()+" "+
+					Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start).ToLongDateString()+" "+
+					Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.PHKLJGNMFBL_End).ToLongDateString());*/
+				// Tmp, move NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start & NGHKJOEDLIP_Settings.PHKLJGNMFBL_End to start & end
+				NGHKJOEDLIP_Settings.OHGDNJLFDFF_Start = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+				NGHKJOEDLIP_Settings.PHKLJGNMFBL_End = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+
+				for(int i = 0; i < KGDBEMPMAIJ_Boxes.Count; i++)
+				{
+					if (KGDBEMPMAIJ_Boxes[i].PDBPFJJCADD_open_at != 0) KGDBEMPMAIJ_Boxes[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+					if (KGDBEMPMAIJ_Boxes[i].FDBNFFNFOND_close_at != 0) KGDBEMPMAIJ_Boxes[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				}
 			}
 		}
 		return true;

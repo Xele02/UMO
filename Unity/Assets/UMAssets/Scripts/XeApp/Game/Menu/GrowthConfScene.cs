@@ -114,9 +114,9 @@ namespace XeApp.Game.Menu
 			m_seriesType = series.First;
 			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[arg.DivaId - 1];
 			m_growsList.Clear();
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music.Count; i++)
+			for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music.Count; i++)
 			{
-				EONOEHOKBEB_Music e = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[i];
+				EONOEHOKBEB_Music e = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[i];
 				List<ListData> list;
 				if (!m_growsList.TryGetValue(e.AIHCEGFANAM_SerieAttr, out list))
 				{
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				}
 				if(IsAnyDivaMusicExp(GameManager.Instance.ViewPlayerData, e.DLAEJOBELBH_MusicId))
 				{
-					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_MusicId, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_MusicId - 1]);
+					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_MusicId, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_MusicId - 1]);
 					if(data != null)
 					{
 						int a = data.PBGFIOONCMB_LevelMaxExp - data.PMBFNFOCNAJ_CurLevelMusicExp;
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			{
 				if(viewPlayerData.NBIGLBMHEDC_DivaList[i].IPJMPBANBPP_Enabled)
 				{
-					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, viewPlayerData.NBIGLBMHEDC_DivaList[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
+					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_DivaList[i].AHHJLDLAPAN_DivaId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, viewPlayerData.NBIGLBMHEDC_DivaList[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
 					if (viewPlayerData.NBIGLBMHEDC_DivaList[i].HMBECPGHPOE_DivaExps[musicId - 1] > 0)
 						return true;
 				}

@@ -209,7 +209,7 @@ namespace XeApp.Game.RhythmGame
 			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_Is2DHighQuality();
 			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode;
 			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
-			int pilotId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[team.prismValkyrieId - 1].PFGJJLGLPAC_PilotId;
+			int pilotId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[team.prismValkyrieId - 1].PFGJJLGLPAC_PilotId;
 			m_canvas = GetComponentInParent<Canvas>();
 			m_cameraRectTransform = m_canvas.GetComponent<RectTransform>();
 			m_uiCamera = m_canvas.worldCamera;
@@ -1075,7 +1075,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId < 1)
 						return;
-					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG_SkillBuffEffect[0]);
+					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG_SkillBuffEffect[0]);
 				}
 			}
 		}

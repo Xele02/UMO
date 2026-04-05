@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		private HomeBgSelectList m_homeBgSelectList; // 0x54
 		private ListSortButtonGroup m_sortButtonGroup; // 0x58
 		private List<SceneInfo> m_sceneIndexList = new List<SceneInfo>(); // 0x5C
-		private List<CGFNKMNBNBN> m_bgDataList = new List<CGFNKMNBNBN>(); // 0x60
+		private List<CGFNKMNBNBN_ViewHomeBgData> m_bgDataList = new List<CGFNKMNBNBN_ViewHomeBgData>(); // 0x60
 		private bool isPreview; // 0x64
 		
 		private DFKGGBMFFGB_PlayerInfo PlayerData { get { return GameManager.Instance.ViewPlayerData; } } //0x95CA9C
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 			List<int> l = new List<int>();
 			for(int i = 0; i < PlayerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(PlayerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId))
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(PlayerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId))
 				{
 					if(PlayerData.OPIBAPEGCLA_Scenes[i].FJODMPGPDDD_Unlocked && !PlayerData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed)
 					{
@@ -219,11 +219,11 @@ namespace XeApp.Game.Menu
 			int setEvolveId = JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId();
 			if (!value)
 			{
-				m_bgDataList = CGFNKMNBNBN.ABOLOPHFADL();
+				m_bgDataList = CGFNKMNBNBN_ViewHomeBgData.ABOLOPHFADL();
 				if (setEvolveId == 0)
 				{
-					CGFNKMNBNBN item = CGFNKMNBNBN.ELKDCEEPLKB(setBgId);
-					m_bgDataList.RemoveAll((CGFNKMNBNBN x) =>
+					CGFNKMNBNBN_ViewHomeBgData item = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(setBgId);
+					m_bgDataList.RemoveAll((CGFNKMNBNBN_ViewHomeBgData x) =>
 					{
 						//0x95EDE4
 						return x.PPFNGGCBJKC_id == setBgId;
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x95E170 Offset: 0x95E170 VA: 0x95E170 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			if (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			if (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				return false;
 			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
 			m_homeBgSelectList.Setup();

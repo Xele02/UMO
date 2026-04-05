@@ -47,12 +47,12 @@ namespace XeApp.Game.AR
                     assetList.Add(k.Value[i]);
                 }
             }
-            for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
+            for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
             {
-                BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
+                BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
                 if (d != null)
                 {
-                    if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(d.AHHJLDLAPAN_DivaId))
+                    if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(d.AHHJLDLAPAN_DivaId))
                     {
                         assetList.Add(string.Format("ct/ar/dv/ic/{0:D2}.xab", d.AHHJLDLAPAN_DivaId));
                     }
@@ -185,7 +185,7 @@ namespace XeApp.Game.AR
             while(!ARMenuManager.Instance.IsReady())
                 yield return null;
             GameManager.Instance.UpdateInputArea(true);
-            KDLPEDBKMID.HHCJCDFCLOB.MAIHLKPEHJN = ARMenuManager.Instance.ShowInstallRetryMessage;
+            KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.MAIHLKPEHJN = ARMenuManager.Instance.ShowInstallRetryMessage;
             SoundManager.Instance.bgmPlayer.FadeOut(0.3f, null);
             GameManager.Instance.SetTouchEffectVisible(false);
             GameManager.Instance.SetSystemCanvasResolution(new Vector2(GameManager.Instance.ResolutionWidth, GameManager.Instance.ResolutionHeight));
@@ -197,7 +197,7 @@ namespace XeApp.Game.AR
             yield return null;
             if(!string.IsNullOrEmpty(m_vuforiaMan.InitializeErrorMessage))
             {
-                ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                ILCCJNDFFOB.HHCJCDFCLOB_Instance.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                 if(m_vuforiaMan.IsNeedMessageWindow())
                 {
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
@@ -282,7 +282,7 @@ namespace XeApp.Game.AR
                 }
                 else
                 {
-                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                    ILCCJNDFFOB.HHCJCDFCLOB_Instance.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
                     yield return null;
                     while(ARMenuManager.Instance.IsDisplayMessageWindow(null))
@@ -291,7 +291,7 @@ namespace XeApp.Game.AR
                     yield break;
                 }
             }
-            ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 1, "");
+            ILCCJNDFFOB.HHCJCDFCLOB_Instance.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 1, "");
             m_isSetup = true;
             this.StartCoroutineWatched(Co_CheckError());
             GameManager.Instance.AddPushBackButtonHandler(OnShutdown);
@@ -312,7 +312,7 @@ namespace XeApp.Game.AR
                 if(m_vuforiaMan.CheckError())
                 {
                     Debug.LogWarning("----!! ERROR!! " + m_vuforiaMan.InitializeErrorMessage);
-                    ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
+                    ILCCJNDFFOB.HHCJCDFCLOB_Instance.BGJDJBOCLEA_ArSceneStart(GameManager.Instance.ar_session_id, 0, m_vuforiaMan.InitializeErrorMessage);
                     ARMenuManager.Instance.SetMessageWindow(m_vuforiaMan.InitializeErrorMessage);
                     while(ARMenuManager.Instance.IsDisplayMessageWindow(null))
                         yield return null;
@@ -356,7 +356,7 @@ namespace XeApp.Game.AR
             for(int i = 1; true; i++)
             {
                 string str = string.Format("ct/ar/hp/{0:D3}.xab", i);
-                if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(str))
+                if(!KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(str))
                     break;
                 l.Add(str);
             }
@@ -370,7 +370,7 @@ namespace XeApp.Game.AR
                     for(int j = 1; true; j++)
                     {
                         string str = string.Format("ct/ar/hp/{0}{1:D3}.xab", eventList[i].eventId, j);
-                        if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(str))
+                        if(!KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(str))
                             break;
                         l2.Add(str);
                     }
@@ -382,14 +382,14 @@ namespace XeApp.Game.AR
             ListupFileList(assetList, cueSheetlist);
             for(int i = 0; i < assetList.Count; i++)
             {
-                KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(assetList[i]);
+                KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(assetList[i]);
             }
             for(int i = 0; i < cueSheetlist.Count; i++)
             {
                 SoundResource.InstallCueSheet(cueSheetlist[i]);
             }
             yield return null;
-            while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+            while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
                 yield return null;
             GameManager.Instance.InitializeUnionData();
             while(!GameManager.Instance.IsUnionDataInitialized)

@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
     public class PopupShopItemSetting : PopupSetting
     {
-        public FJGOKILCBJA View { get; set; } // 0x34
+        public FJGOKILCBJA_ViewShopProductData View { get; set; } // 0x34
         public bool IsBuy { get; set; } // 0x38
         public Action<int> OnChangeCallback { get; set; } // 0x3C
         public override string PrefabPath { get { return ""; } } //0x114865C
@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
         {
             //0x114886C
             yield return Co.R(base.LoadAssetBundlePrefab(parent));
-            if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(View.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
+            if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(View.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
                 yield break;
             yield return Co.R(m_content.GetComponent<LayoutPopupShop>().Co_LoadScrollItemContent());
         }

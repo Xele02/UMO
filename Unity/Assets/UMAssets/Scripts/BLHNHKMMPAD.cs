@@ -56,7 +56,7 @@ public class BLHNHKMMPAD
 	// // RVA: 0x19BF768 Offset: 0x19BF768 VA: 0x19BF768 Slot: 4
 	public virtual void LHPDDGIJKNB_Reset()
     {
-        FBGGEFFJJHB_xor = (int)NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() * 0x1d32 + 13;
+        FBGGEFFJJHB_xor = (int)NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() * 0x1d32 + 13;
         BEBJKJKBOGH_date = 0;
         OFJHABJNGOD_ExcellentScore = 0;
         NLKEBAOBJCM_combo = 0;

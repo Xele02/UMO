@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19ABA40 Offset: 0x19ABA40 VA: 0x19ABA40
-		public void Setup(LOBDIAABMKG gachaProduct, int currencyId, int lotCount, int price, string kakutei/* = ""*/, bool isFirstSale/* = false*/, int ticketCount/* = 0*/, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone/* = 0*/, long currentTime/* = 0*/)
+		public void Setup(LOBDIAABMKG_GachaProductData gachaProduct, int currencyId, int lotCount, int price, string kakutei/* = ""*/, bool isFirstSale/* = false*/, int ticketCount/* = 0*/, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone/* = 0*/, long currentTime/* = 0*/)
 		{
 			SetCurrencyType(gachaProduct, currencyId, price, zone);
 			LotCount = lotCount;
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 			m_numberLotCost.SetNumber(price, 0);
 			SetKakuteiType(kakutei);
 			m_layoutFirstSale.StartChildrenAnimGoStop(isFirstSale ? "01" : "02");
-			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
+			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			SetButtonColor(isFirstSale, tkt != null);
 			if (gachaProduct.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Normal)
 			{
@@ -89,11 +89,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19ABFC0 Offset: 0x19ABFC0 VA: 0x19ABFC0
-		public void SetCurrencyType(LOBDIAABMKG gachaProduct, int currencyId, int price, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone)
+		public void SetCurrencyType(LOBDIAABMKG_GachaProductData gachaProduct, int currencyId, int price, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod zone)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
-			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
+			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			int a = 4;
 			if (tkt == null)
 				a = (int)gachaProduct.INDDJNMPONH_type - 1;
@@ -131,14 +131,14 @@ namespace XeApp.Game.Menu
 					{
 						m_layoutCostIcon.StartChildrenAnimGoStop("01");
 						m_layoutLotCost.StartChildrenAnimGoStop("01");
-						str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0) + bk.GetMessageByLabel("gacha_cost_01");
+						str = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0) + bk.GetMessageByLabel("gacha_cost_01");
 					}
 					break;
 				case 4:
 				case 5:
 					m_layoutCostIcon.StartChildrenAnimGoStop("01");
 					m_layoutLotCost.StartChildrenAnimGoStop("01");
-					str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tkt.PPFNGGCBJKC_id) + bk.GetMessageByLabel("gacha_cost_01");
+					str = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tkt.PPFNGGCBJKC_id) + bk.GetMessageByLabel("gacha_cost_01");
 					break;
 				case 8:
 					m_layoutCostIcon.StartChildrenAnimGoStop("01");
@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 				case 9:
 					m_layoutCostIcon.StartChildrenAnimGoStop("01");
 					m_layoutLotCost.StartChildrenAnimGoStop("01");
-					str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1) + bk.GetMessageByLabel("gacha_cost_01");
+					str = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1) + bk.GetMessageByLabel("gacha_cost_01");
 					break;
 				default:
 					break;

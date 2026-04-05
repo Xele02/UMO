@@ -161,26 +161,29 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 
 		UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OPFGFINHFCE_name+" "+NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId);
 
-		// Update dates
-		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
+		if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 		{
-			UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP_Settings.COIHIAKHFNF_End+" "+NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP_Settings.KCBGBFMGHPA_End);
-			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart);
-			date = date.AddDays(-1);
-			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart;
-			if (NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart != 0) NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart += offset;
-			if (NGHKJOEDLIP_Settings.COIHIAKHFNF_End != 0) NGHKJOEDLIP_Settings.COIHIAKHFNF_End += offset;
-			if (NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart != 0) NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart += offset;
-			if (NGHKJOEDLIP_Settings.KCBGBFMGHPA_End != 0) NGHKJOEDLIP_Settings.KCBGBFMGHPA_End += offset;
-
-			for(int i = 0; i < NNMPGOAGEOL_quests.Count; i++)
+			// Update dates
+			UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+			if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 			{
-				if( NNMPGOAGEOL_quests[i].PPEGAKEIEGM_Enabled == 2)
+				UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP_Settings.COIHIAKHFNF_End+" "+NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP_Settings.KCBGBFMGHPA_End);
+				System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+				System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart);
+				date = date.AddDays(-1);
+				long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart;
+				if (NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart != 0) NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart += offset;
+				if (NGHKJOEDLIP_Settings.COIHIAKHFNF_End != 0) NGHKJOEDLIP_Settings.COIHIAKHFNF_End += offset;
+				if (NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart != 0) NGHKJOEDLIP_Settings.NIMLIMFPNJP_RaidStart += offset;
+				if (NGHKJOEDLIP_Settings.KCBGBFMGHPA_End != 0) NGHKJOEDLIP_Settings.KCBGBFMGHPA_End += offset;
+
+				for(int i = 0; i < NNMPGOAGEOL_quests.Count; i++)
 				{
-					if (NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt != 0) NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt = NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart;
-					if (NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt != 0) NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt = NGHKJOEDLIP_Settings.COIHIAKHFNF_End;
+					if( NNMPGOAGEOL_quests[i].PPEGAKEIEGM_Enabled == 2)
+					{
+						if (NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt != 0) NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt = NGHKJOEDLIP_Settings.CJPMLAIFCDL_LobbyStart;
+						if (NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt != 0) NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt = NGHKJOEDLIP_Settings.COIHIAKHFNF_End;
+					}
 				}
 			}
 		}

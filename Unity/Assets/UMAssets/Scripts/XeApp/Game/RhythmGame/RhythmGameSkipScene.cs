@@ -61,8 +61,8 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC05C0C Offset: 0xC05C0C VA: 0xC05C0C
 		public void GotoMenuScene()
 		{
-			if (CNGFKOJANNP.HHCJCDFCLOB != null)
-				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
+			if (CNGFKOJANNP.HHCJCDFCLOB_Instance != null)
+				CNGFKOJANNP.HHCJCDFCLOB_Instance.KANPNADDJBK_EnableAutoCheck();
 			if (onChangeScene != null)
 				onChangeScene();
 			NextScene("Menu");
@@ -71,8 +71,8 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC0606C Offset: 0xC0606C VA: 0xC0606C
 		public void GotoTitleScene()
 		{
-			if(CNGFKOJANNP.HHCJCDFCLOB != null)
-				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
+			if(CNGFKOJANNP.HHCJCDFCLOB_Instance != null)
+				CNGFKOJANNP.HHCJCDFCLOB_Instance.KANPNADDJBK_EnableAutoCheck();
 			if(onChangeScene != null)
 				onChangeScene();
 			PopupWindowManager.Close(null, null);

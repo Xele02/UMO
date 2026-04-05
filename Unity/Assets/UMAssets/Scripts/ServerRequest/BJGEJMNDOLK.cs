@@ -33,7 +33,7 @@ public class BCEHKBJAEDM
 
 [System.Obsolete("Use BJGEJMNDOLK_GetSubscriptionStatuses", true)]
 public class BJGEJMNDOLK { }
-public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
+public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_NetBaseAction
 {
 	public class FNFDLMDKONP
 	{

@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private LayoutUGUIScrollSupport m_scrollSupport; // 0x1C
 		private UnitBonusContent m_contentLayout; // 0x20
-		private PKNOKJNLPOE_EventRaid.MOAICCAOMCP m_unitBonusInfo; // 0x24
+		private PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP m_unitBonusInfo; // 0x24
 		private PopupUnitBonusContent m_content; // 0x28
 
 		// RVA: 0xA4C3BC Offset: 0xA4C3BC VA: 0xA4C3BC Slot: 5
@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		public void Initialize(PopupUnitBonusContent content)
 		{
 			m_content = content;
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			m_unitBonusInfo = ev.ANMBIEIFKFF_UnitBonusInfo;
 			m_descText.text = MessageManager.Instance.GetMessage("menu", "popup_episodebonus_note_01");
 			m_bonusPointText.text = string.Format(JpStringLiterals.StringLiteral_20810, m_unitBonusInfo.HOJAKNJFIFJ_EpisodeBonusPoint);

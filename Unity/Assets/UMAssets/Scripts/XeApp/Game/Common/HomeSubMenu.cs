@@ -35,29 +35,29 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEB1B5C Offset: 0xEB1B5C VA: 0xEB1B5C
 		public void ApplyNewIcons()
 		{
-			m_buttons[0].SetBadgeActive(CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.GIPGAICOGGL.Count > 0);
+			m_buttons[0].SetBadgeActive(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.KPFKKDDOHCN.GIPGAICOGGL.Count > 0);
 			m_buttons[1].SetBadgeActive(false);
 			UpdateMonthlyPass();
-			m_buttons[3].SetBadgeActive(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NMOJPDCBGMK_NumFriendNoFav + CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.JCOBBOMCENL_NumNewRequests > 0);
-			m_buttons[4].SetBadgeActive(BIFNGFAIEIL.HHCJCDFCLOB.FMHMCMIAOAC());
+			m_buttons[3].SetBadgeActive(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.NMOJPDCBGMK_NumFriendNoFav + CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.JCOBBOMCENL_NumNewRequests > 0);
+			m_buttons[4].SetBadgeActive(BIFNGFAIEIL.HHCJCDFCLOB_Instance.FMHMCMIAOAC());
 		}
 
 		//// RVA: 0xEB1F58 Offset: 0xEB1F58 VA: 0xEB1F58
 		public void UpdateMonthlyPass()
 		{
 			HomeSubMenuPassButton b = m_buttons[2] as HomeSubMenuPassButton;
-			int a = NHPDPKHMFEP.HHCJCDFCLOB.OEFMFNICHHH();
-			int c = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, 1);
-			if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() == 0)
+			int a = NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.OEFMFNICHHH();
+			int c = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, 1);
+			if(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MENKMJPCELJ() == 0)
 			{
 				b.SetBadgeActive(true);
 				b.Setup(c, a);
 				b.SetBadgeActive(a < 1 ? HomeSubMenuPassButton.Type.Purchase : HomeSubMenuPassButton.Type.Switch);
 				return;
 			}
-			if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() < 1)
+			if(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MENKMJPCELJ() < 1)
 			{
-				if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != -3)
+				if(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MENKMJPCELJ() != -3)
 				{
 					b.SetActive(false);
 					return;

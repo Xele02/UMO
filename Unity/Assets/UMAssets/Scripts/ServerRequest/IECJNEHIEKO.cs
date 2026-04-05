@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IECJNEHIEKO_CreateBbsComment", true)]
 public class IECJNEHIEKO { }
-public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
+public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_NetBaseAction
 {
 	public class KFECPHAOCMN
 	{
@@ -37,6 +37,6 @@ public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
 		KFECPHAOCMN d = new KFECPHAOCMN();
 		d.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 		NFEAMMJIMPG_Result = d;
-		ILCCJNDFFOB.HHCJCDFCLOB.CHMEOKEKABD_Chat(this);
+		ILCCJNDFFOB.HHCJCDFCLOB_Instance.CHMEOKEKABD_Chat(this);
 	}
 }

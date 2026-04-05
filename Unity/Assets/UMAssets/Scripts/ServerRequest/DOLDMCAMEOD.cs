@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use DOLDMCAMEOD_RequestRemainingForCurrencyIds", true)]
 public class DOLDMCAMEOD { }
-public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
+public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_NetBaseAction
 {
     public class LDADODICMLG_ResultData
     {

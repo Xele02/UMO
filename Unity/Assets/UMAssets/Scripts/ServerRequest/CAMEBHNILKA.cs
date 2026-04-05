@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use CAMEBHNILKA_AddToBlacklist", true)]
 public class CAMEBHNILKA {}
-public class CAMEBHNILKA_AddToBlacklist : CACGCMBKHDI_Request
+public class CAMEBHNILKA_AddToBlacklist : CACGCMBKHDI_NetBaseAction
 {
 	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
 

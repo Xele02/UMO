@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 				if (ParentTransition == TransitionList.Type.DECO)
 					this.StartCoroutineWatched(Co_ReceiveFriendPlayerIdList());
 			}
-			m_myId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+			m_myId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 		}
 
 		// RVA: 0xED9234 Offset: 0xED9234 VA: 0xED9234 Slot: 17
@@ -82,12 +82,12 @@ namespace XeApp.Game.Menu
 			{
 				//0xEDAB70
 				isDone = true;
-			}, (CACGCMBKHDI_Request action) =>
+			}, (CACGCMBKHDI_NetBaseAction action) =>
 			{
 				//0xEDAB7C
 				isDone = true;
 				isError = true;
-			}, (CACGCMBKHDI_Request action) =>
+			}, (CACGCMBKHDI_NetBaseAction action) =>
 			{
 				//0xEDAB88
 				isDone = true;
@@ -132,8 +132,8 @@ namespace XeApp.Game.Menu
 				arg.friendData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 				arg.friendData.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 			}
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_16095, info.playerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, friendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_16095, info.playerId);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, friendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 			MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
@@ -200,13 +200,13 @@ namespace XeApp.Game.Menu
 					friends.Add(data);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xEDA99C
 				ConnectEnd();
 				OnFailedSearchFriend();
 				MenuScene.Instance.InputEnable();
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xEDAA50
 				ConnectEnd();
@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 				info.TryInstall();
 			}
 			yield return null;
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			SortFriendList();
 			m_searchId = -1;

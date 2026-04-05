@@ -152,8 +152,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1665414 Offset: 0x1665414 VA: 0x1665414
 		private void SetItemSetting(List<ALEKLHIANJN.HJBLCFPOFPO> list)
 		{
-            OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
-            BBHNACPENDM_ServerSaveData save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+            OKGLGHCBCJP_Database db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
+            BBHNACPENDM_ServerSaveData save = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
             StringBuilder str = new StringBuilder();
 			string[] strs = new string[2];
 			for(int i = 0; i < list.Count; i++)
@@ -164,10 +164,10 @@ namespace XeApp.Game.Menu
 					//0x1666584
 					texture.Set(m_itemTex[num]);
 				});
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(list[i].PPFNGGCBJKC_id);
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(list[i].PPFNGGCBJKC_id);
-				strs[i] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(list[i].PPFNGGCBJKC_id);
-				int haveCurrent = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(db, save, cat, id, null);
+                EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(list[i].PPFNGGCBJKC_id);
+				int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(list[i].PPFNGGCBJKC_id);
+				strs[i] = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(list[i].PPFNGGCBJKC_id);
+				int haveCurrent = EKLNMHFCAOI_ItemManager.DLNFNHMPGLI_GetNumClamped(db, save, cat, id, null);
 				m_detailNeedItemButton[i].ClearOnClickCallback();
 				m_detailNeedItemButton[i].AddOnClickCallback(() =>
 				{

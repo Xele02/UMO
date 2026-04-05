@@ -87,34 +87,34 @@ namespace XeApp
 				int a = 3;
 				switch(ViewData.NPADACLCNAN_Category)
 				{
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
 						a = 4;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
 						a = 5;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
 						a = 6;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.LEIMPDPCGNC_Reserve32:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.FEHJOHIMAIH_Reserve37:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.LEIMPDPCGNC_Reserve32:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FEHJOHIMAIH_Reserve37:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem:
 						a = 7;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
 						a = 8;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 						a = 9;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
 						a = 10;
 						break;
-					case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+					case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 						a = 11;
 						break;
 				}
@@ -124,10 +124,10 @@ namespace XeApp
 					return LayoutDecorationWindow01.SelectItemType.Object;
 				return LayoutDecorationWindow01.SelectItemType.Chara;
 			} } //0x1AD0668
-		public EKLNMHFCAOI.FKGCBLHOOCL_Category DecorationItemCategory { get { return ViewData.NPADACLCNAN_Category; } } //0x1ACCEA0
-		public int ResourceId { get { return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(DecorationItemCategory, Id); } } //0x1AD074C
+		public EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category DecorationItemCategory { get { return ViewData.NPADACLCNAN_Category; } } //0x1ACCEA0
+		public int ResourceId { get { return EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(DecorationItemCategory, Id); } } //0x1AD074C
 		public bool CanEdit { get {
-				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
 					return ViewData.GBJFNGCDKPM_typ != 11;
 				}
@@ -228,7 +228,7 @@ namespace XeApp
 		}
 		
 		//// RVA: 0x1AD0A58 Offset: 0x1AD0A58 VA: 0x1AD0A58
-		public void LoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		public void LoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			Id = id;
 			m_isLoaded = false;
@@ -237,14 +237,14 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC41EC Offset: 0x1AC41EC VA: 0x1AC41EC Slot: 5
-		protected virtual Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		protected virtual Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			m_viewDecoItemData.KHEKNNFCAOI_Init(id, itemCategory);
 			return null;
 		}
 
 		//// RVA: -1 Offset: -1 Slot: 6
-		protected abstract void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args);
+		protected abstract void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args);
 
 		//// RVA: 0x1AD0AFC Offset: 0x1AD0AFC VA: 0x1AD0AFC
 		//protected void LoadResource(GameObject spriteBase, int id, DecorationItemBaseSetting setting, Action endCallBack, DecorationItemArgsBase args) { }
@@ -262,8 +262,8 @@ namespace XeApp
 				assetBundlePath = BundlePath;
 				op = AssetBundleManager.LoadDecorationItemAssetAsync(assetBundlePath);
 				yield return op;
-				if(DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft ||
-					DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
+				if(DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft ||
+					DecorationItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
 				{
 					//LAB_01ad44a8
 					if(ViewData.FLJPIHEEKOJ > 5)

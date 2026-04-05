@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_text01.text = string.Format(bk.GetMessageByLabel("result_drop_foldradar_text"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA());
+			m_text01.text = string.Format(bk.GetMessageByLabel("result_drop_foldradar_text"), NKOBMDPHNGP_NetEventRaidLobbyController.GPNELLFNPLA());
 			m_okButton.AddOnClickCallback(() =>
 			{
 				//0x1D8DED4

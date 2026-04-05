@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		private LayoutGachaBannerFrame[] m_bannerFrame; // 0x18
 		private RawImageEx m_imageTopArrow; // 0x1C
 		private RawImageEx m_imageBtmArrow; // 0x20
-		private List<LOBDIAABMKG> m_productList; // 0x24
+		private List<LOBDIAABMKG_GachaProductData> m_productList; // 0x24
 		private LayoutGachaBannerItem m_selectLayout; // 0x28
 
 		public Action<int> OnSelectGacha { private get; set; } // 0x2C
@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x199805C Offset: 0x199805C VA: 0x199805C
-		public void Setup(BEPHBEGDFFK view, List<LOBDIAABMKG> productList, int selectIndex)
+		public void Setup(BEPHBEGDFFK view, List<LOBDIAABMKG_GachaProductData> productList, int selectIndex)
 		{
 			m_productList = productList;
 			m_scrollList.SetItemCount(productList.Count);
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			}
 			if(m_selectLayout == null)
 			{
-				LOBDIAABMKG p = m_productList[selectIndex];
+				LOBDIAABMKG_GachaProductData p = m_productList[selectIndex];
 				LayoutGachaBannerItem s = m_scrollList.scrollObjects.Find((SelectScrollViewContent x) =>
 				{
 					//0x1998FCC
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 					m_selectLayout.SetFocus(true);
 					if (OnSelectGacha != null)
 					{ 
-						OnSelectGacha(m_productList.FindIndex((LOBDIAABMKG x) =>
+						OnSelectGacha(m_productList.FindIndex((LOBDIAABMKG_GachaProductData x) =>
 						{
 							//0x1998DF0
 							return m_selectLayout.GachaProduct.FDEBLMKEMLF_TypeAndSeriesId == x.FDEBLMKEMLF_TypeAndSeriesId;

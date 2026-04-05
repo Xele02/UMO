@@ -5,7 +5,7 @@ using XeSys;
 
 [System.Obsolete("Use FPFPJKJNOFK_UpdateRankingScore", true)]
 public class FPFPJKJNOFK { }
-public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_Request
+public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_NetBaseAction
 {
 	public class PIFKFGCKNPN
 	{

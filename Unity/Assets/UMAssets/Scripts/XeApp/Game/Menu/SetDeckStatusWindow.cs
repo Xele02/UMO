@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 					if (viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
 						GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
-						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
+						IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
 							scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
 						m_limitOverStatus.Add(m_tmpLimitOverStatus);
@@ -288,7 +288,7 @@ namespace XeApp.Game.Menu
 						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] != 0)
 						{
 							GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
-							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
+							IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
 								scene.MJBODMOLOBC_luck, scene.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
 							m_limitOverStatus.Add(m_tmpLimitOverStatus);
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 			if (friendData == null || friendData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
 			GCIJNCFDNON_SceneInfo fscene = friendData.KHGKPKDBMOH_GetAssistScene();
-			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus,
+			IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus,
 				fscene.JKGFBFPIMGA_Rarity, fscene.MJBODMOLOBC_luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
 			AdjustOverLimit(m_tmpLimitOverStatus, fscene, musicData);
 			m_limitOverStatus.Add(m_tmpLimitOverStatus);
@@ -569,7 +569,7 @@ namespace XeApp.Game.Menu
 					g = a;
 					if (a > 0)
 					{
-						EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(viewMusicData.DLAEJOBELBH_MusicId);
+						EONOEHOKBEB_Music m = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(viewMusicData.DLAEJOBELBH_MusicId);
 						if (m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(m, false))
 						{
 							m_centerSkillRegulation[1].SetActive(true);

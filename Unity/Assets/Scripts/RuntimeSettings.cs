@@ -206,6 +206,8 @@ class RuntimeSettings : ScriptableObject
 	public int MinLogError = 1;
 	public int MinLogWarning = 1;
 	public int MinLogInfo = 1;
+
+	public bool LoadRawDatabase = false;
 	public bool EnableProfileSaveCheck = false;
 	public bool EnableLocalSaveCheck = false;
 	public bool EnableDebugStopCoroutine = false;

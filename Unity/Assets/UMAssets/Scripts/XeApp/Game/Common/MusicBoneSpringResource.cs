@@ -59,7 +59,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("mc/cmn/bs.xab", Array.Empty<object>());
 
-			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
+			if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 				yield return Co.R(operation);
@@ -86,7 +86,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/bs/{1:D3}.xab", stageDivaNum, primeId, -1, false);
 			bundleName.SetFormat("mc/{0}/bs/{1:D3}.xab", wavName, primeId);
-			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
+			if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 				yield return Co.R(operation);

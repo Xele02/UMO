@@ -30,12 +30,12 @@ namespace XeApp.Game.Menu
 		private ActionButton m_buttonItem; // 0x40
 		private AbsoluteLayout m_layoutCost; // 0x44
 		private List<AbsoluteLayout> m_list_layout = new List<AbsoluteLayout>(); // 0x48
-		private FJGOKILCBJA m_view; // 0x4C
+		private FJGOKILCBJA_ViewShopProductData m_view; // 0x4C
 		private int[] m_itemIdList = new int[2]; // 0x54
 
-		public FJGOKILCBJA View { get { return m_view; } } //0x1946514
+		public FJGOKILCBJA_ViewShopProductData View { get { return m_view; } } //0x1946514
 		protected override ButtonBase selectButton { get { return m_button; } } //0x194651C
-		public Action<FJGOKILCBJA> OnClickDetailButton { get; set; } // 0x50
+		public Action<FJGOKILCBJA_ViewShopProductData> OnClickDetailButton { get; set; } // 0x50
 
 		// // RVA: 0x1946534 Offset: 0x1946534 VA: 0x1946534
 		public new bool IsLoaded()
@@ -49,20 +49,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x19465DC Offset: 0x19465DC VA: 0x19465DC
-		public void SetStatus(AODFBGCCBPE.NJMPLEENNPO_ShopType type, FJGOKILCBJA view)
+		public void SetStatus(AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType type, FJGOKILCBJA_ViewShopProductData view)
 		{
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
+			string name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 			{
 				name += "(" + NCPPAHHCCAO.EFNHFKLKNHJ(id) + ")";
 			}
-			m_textName.text = name + " " + view.JDLJPNMLFID_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
-			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
+			m_textName.text = name + " " + view.JDLJPNMLFID_ItemCount.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id);
+			int num = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, cat, id, null);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 			{
 				m_textOwn.text = "";
 			}
@@ -75,18 +75,18 @@ namespace XeApp.Game.Menu
 				m_textRemain.text = "";
 			else
 				m_textRemain.text = string.Format(bk.GetMessageByLabel("item_popup_shop_text_04"), remain != 0 ? remain.ToString() : "<color=#8E0529FF>0</color>");
-            cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.JPJMHLNOIAJ_ItemCostFullId);
-			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.JPJMHLNOIAJ_ItemCostFullId);
-			id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.JPJMHLNOIAJ_ItemCostFullId);
-			string s = EKLNMHFCAOI.NDBLEADIDLA(cat, id);
-			if(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3)
+            cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(view.JPJMHLNOIAJ_ItemCostFullId);
+			name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(view.JPJMHLNOIAJ_ItemCostFullId);
+			id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.JPJMHLNOIAJ_ItemCostFullId);
+			string s = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id);
+			if(type == AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType.FNLODOLMLML_3)
 			{
 				m_textCost.text = name;
 				m_textCost2.text = string.Format(bk.GetMessageByLabel("item_popup_shop_text_02") + "{0, 4}" + s + " / " + bk.GetMessageByLabel("item_popup_shop_text_01") + "{1, 4}" + s, view.DKEPCPPCIKA_Price, view.DPFOJKHBBEH_GetNumCostItem());
 			}
 			else
 			{
-				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
+				if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 				{
 					m_textCost.text = view.DKEPCPPCIKA_Price + s;
 				}
@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 			}
 			m_itemIdList[1] = view.KIJAPOFAGPN_ItemId;
 			m_imageItem[1].enabled = false;
-			GameManager.Instance.SceneIconCache.Load(EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId), 1, (IiconTexture image) =>
+			GameManager.Instance.SceneIconCache.Load(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId), 1, (IiconTexture image) =>
 			{
 				//0x1947C6C
 				if(m_itemIdList[1] != view.KIJAPOFAGPN_ItemId)
@@ -121,18 +121,18 @@ namespace XeApp.Game.Menu
 			m_button.Disable = remain == 0 || view.CMOPCCPOEBA() == 0 || view.EMLHKJAPACA_IsAddOverflow(1);
 			if(view.EMLHKJAPACA_IsAddOverflow(1))
 			{
-				m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
+				m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
 				m_textWarning.text = bk.GetMessageByLabel("item_shop_caution_max");
 			}
 			else
 			{
 				if(view.CMOPCCPOEBA() != 0)
 				{
-					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "03" : "01");
+					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "03" : "01");
 				}
 				else
 				{
-					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
+					m_layoutCost.StartChildrenAnimGoStop(type == AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType.FNLODOLMLML_3 ? "04" : "02");
 					m_textWarning.text = bk.GetMessageByLabel("item_shop_caution");
 				}
 			}

@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 			m_plate_max = 0;
 			m_plate_upgrade = 0;
 			m_plate_premium = 0;
-			MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+			MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
 			MMPBPOIFDAF_Scene saveScenes = a_player_data.PNLOINMCCKH_Scene;
 			for(int i = 0; i < dbScenes.CDENCMNHNGA_table.Count; i++)
 			{
@@ -118,9 +118,9 @@ namespace XeApp.Game.Menu
 							if(saveScene.BEBJKJKBOGH_date != 0)
 							{
 								m_plate_now++;
-								if (dbScenes.ELKHCOEMNOJ_IsKira(dbScene.BCCHOBPJJKE_SceneId, saveScene.DMNIMMGGJJJ_Leaf, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver) == 1)
+								if (dbScenes.ELKHCOEMNOJ_IsKira(dbScene.BCCHOBPJJKE_SceneId, saveScene.DMNIMMGGJJJ_Leaf, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver) == 1)
 									m_plate_premium++;
-								if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) <=
+								if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) <=
 									saveScene.ANAJIAENLNB_lv)
 									m_plate_upgrade++;
 							}
@@ -139,10 +139,10 @@ namespace XeApp.Game.Menu
 			m_valkyrie_upgrade_now = 0;
 			for(int i = 0; i < 100; i++)
 			{
-				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[i];
+				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[i];
 				if(dbValk.IPJMPBANBPP_Enabled)
 				{
-					GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbValk.BMIJDLBGFNP_skill);
+					GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(dbValk.BMIJDLBGFNP_skill);
 					if (valkSkill != null && valkSkill.DOOGFEGEKLG_max > 0)
 						m_valkyrie_upgrade_max++;
 					m_valkyrie_max++;
@@ -170,9 +170,9 @@ namespace XeApp.Game.Menu
 		{
 			m_deco_bg_now = 0;
 			m_deco_bg_max = 0;
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg.Count; i++)
+			for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg.Count; i++)
 			{
-				NDBFKHKMMCE_DecoItem.EHLEEEBJLAM_BgItem dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg[i];
+				NDBFKHKMMCE_DecoItem.EHLEEEBJLAM_BgItem dbItem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg[i];
 				if(dbItem.PLALNIIBLOF_en == 2)
 				{
 					m_deco_bg_max++;
@@ -185,9 +185,9 @@ namespace XeApp.Game.Menu
 			}
 			m_deco_interia_now = 0;
 			m_deco_interia_max = 0;
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj.Count; i++)
 			{
-				NDBFKHKMMCE_DecoItem.NIBEBIGPKLA_ObjItem dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj[i];
+				NDBFKHKMMCE_DecoItem.NIBEBIGPKLA_ObjItem dbItem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj[i];
 				if (dbItem.PLALNIIBLOF_en == 2)
 				{
 					m_deco_interia_max++;
@@ -200,9 +200,9 @@ namespace XeApp.Game.Menu
 			}
 			m_deco_mascot_now = 0;
 			m_deco_mascot_max = 0;
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
 			{
-				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
+				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
 				if (dbItem.PLALNIIBLOF_en == 2 && dbItem.GBJFNGCDKPM_typ == 12)
 				{
 					m_deco_mascot_max++;
@@ -215,9 +215,9 @@ namespace XeApp.Game.Menu
 			}
 			m_deco_phrase_now = 0;
 			m_deco_phrase_max = 0;
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count; i++)
 			{
-				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[i];
+				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbItem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[i];
 				if (dbItem.PLALNIIBLOF_en == 2)
 				{
 					m_deco_phrase_max++;
@@ -237,9 +237,9 @@ namespace XeApp.Game.Menu
 		{
 			m_achievement_max = 0;
 			m_achievement = 0;
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table.Count; i++)
+			for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table.Count; i++)
 			{
-				IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table[i];
+				IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo dbEmblem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table[i];
 				if (dbEmblem.PLALNIIBLOF_en == 2 && dbEmblem.EKLIPGELKCL_Rarity > 0)
 				{
 					m_achievement_max++;

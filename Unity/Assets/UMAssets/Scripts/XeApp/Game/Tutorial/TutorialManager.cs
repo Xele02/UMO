@@ -52,9 +52,9 @@ namespace XeApp.Game.Tutorial
 			int index; // 0x24
 
 			//0xE47C64
-			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
+			master = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
 			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial;
-			playerRank = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			playerRank = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 			saveBitIndex = 0;
 			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
 			bool hasShown = false;
@@ -107,7 +107,7 @@ namespace XeApp.Game.Tutorial
 		public static IEnumerator ShowTutorial(int id, UnityAction endAction)
 		{
 			//0xE474F4
-			PJANOOPJIDE_TutorialPict.HNHHGJCPMEA h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.LBDOLHGDIEB_Find(id);
+			PJANOOPJIDE_TutorialPict.HNHHGJCPMEA h = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.LBDOLHGDIEB_Find(id);
 			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
 			if(h != null && h.PPEGAKEIEGM_Enabled == 2)
 			{
@@ -128,9 +128,9 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE4657C Offset: 0xE4657C VA: 0xE4657C
 		public static bool IsAlreadyTutorial(TutorialConditionId conditionId)
 		{
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table.Count; i++)
 			{
-				PJANOOPJIDE_TutorialPict.HNHHGJCPMEA pic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table[i];
+				PJANOOPJIDE_TutorialPict.HNHHGJCPMEA pic = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table[i];
 				int id = pic.PPFNGGCBJKC_id;
 				if (pic.IODLCIBCONC > 0)
 					id = pic.IODLCIBCONC;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AHOBHNDOEBO : CACGCMBKHDI_Request
+public class AHOBHNDOEBO : CACGCMBKHDI_NetBaseAction
 {
 	public class LLIAJIBOCBB
 	{

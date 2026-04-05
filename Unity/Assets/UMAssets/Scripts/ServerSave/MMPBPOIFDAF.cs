@@ -383,10 +383,10 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		if(_ECNHDEHADGL_Scene.FDIOFBGJKNO(_PPFNGGCBJKC_id))
 		{
 			int maxPoster = 50;
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
-				IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null &&
+				IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem != null)
 			{
-				maxPoster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("poster_have_max", 50);
+				maxPoster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("poster_have_max", 50);
 			}
 			PMKOFEIONEG saveData = OPIBAPEGCLA_Scenes[_PPFNGGCBJKC_id - 1];
 			MLIBEPGADJH_Scene.KKLDOOJBJMN dbData = _ECNHDEHADGL_Scene.CDENCMNHNGA_table[_PPFNGGCBJKC_id - 1];
@@ -528,7 +528,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x196B4C0 Offset: 0x196B4C0 VA: 0x196B4C0
 	public bool GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(int _DPKCMAHGHNI__diva_id)
     {
-		OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+		OKGLGHCBCJP_Database db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 		if (db != null)
 		{
 			MLIBEPGADJH_Scene dbScenes = db.ECNHDEHADGL_Scene;
@@ -543,9 +543,9 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 					for(int j = 0; j < ep.HHJGBJCIFON_Rewards.Count; j++)
 					{
 						JNIKPOIKFAC_Reward reward = dbEps.LFAAEPAAEMB_Rewards[ep.HHJGBJCIFON_Rewards[j]];
-						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+						if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 						{
-							int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId);
+							int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId);
 							if(itemId > 0)
 							{
 								LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = dbCos.CDENCMNHNGA_table[itemId - 1];
@@ -634,9 +634,9 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		if(blockMissing)
 			return false;
 		OKGLGHCBCJP_Database db = null;
-		if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 		{
-			db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 		}
 		if(block != null)
 		{

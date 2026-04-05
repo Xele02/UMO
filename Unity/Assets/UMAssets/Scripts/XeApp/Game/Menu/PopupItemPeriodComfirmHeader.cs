@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textPeriod.text = bk.GetMessageByLabel("item_use_period_text_1");
-			m_textNum.text = string.Format(bk.GetMessageByLabel("item_use_period_text_2"), EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
+			m_textNum.text = string.Format(bk.GetMessageByLabel("item_use_period_text_2"), EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId)));
 		}
 
 		// RVA: 0x17ACFBC Offset: 0x17ACFBC VA: 0x17ACFBC Slot: 5

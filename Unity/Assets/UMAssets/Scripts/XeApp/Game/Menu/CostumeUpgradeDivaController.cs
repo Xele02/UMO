@@ -278,24 +278,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16F2D1C Offset: 0x16F2D1C VA: 0x16F2D1C
 		public void TryInstall(int divaId, int modelId)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(DownLoadCmnDivaAssetPath);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(DownLoadCmnDivaAssetPath);
 			for(int i = 0; i < DownLoadDivaAssetPath.Length; i++)
 			{
 				m_strBuilder.SetFormat(DownLoadDivaAssetPath[i], divaId, modelId);
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 			}
 			if(cosInfo.GLEEPAFMPLO_HasTextureBundle)
 			{
 				m_strBuilder.SetFormat(DownLoadCsDivaTexAssetPath, divaId, modelId, 0);
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 			}
 			if(!SoundResource.IsInstalledCueSheet("cs_cosupg"))
 			{
 				SoundResource.InstallCueSheet("cs_cosupg");
 			}
 			m_strBuilder.SetFormat(DownLoadBsDivaAssetPath, divaId, modelId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 	}
 }

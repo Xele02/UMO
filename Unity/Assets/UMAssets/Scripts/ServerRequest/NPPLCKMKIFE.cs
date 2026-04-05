@@ -1,5 +1,5 @@
 
-public class NPPLCKMKIFE : CACGCMBKHDI_Request
+public class NPPLCKMKIFE : CACGCMBKHDI_NetBaseAction
 {
 	public bool LLMFJKNEJDD; // 0x7C
 

@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			bool done = false;
 			bool cancel = false;
 			bool error = false;
-			HDEEBKIFLNI.HHCJCDFCLOB.NLCBOJBAJFB_GetLinkageStatuses(() =>
+			HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.NLCBOJBAJFB_GetLinkageStatuses(() =>
 			{
 				//0x13E0EE0
 				done = true;
@@ -147,17 +147,17 @@ namespace XeApp.Game.Menu
 			s.ButtonCallbackTwitter = () =>
 			{
 				//0x13E0F38
-				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter, monthlylayout));
+				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter, monthlylayout));
 			};
 			s.ButtonCallbackFacebook = () =>
 			{
 				//0x13E0F7C
-				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook, monthlylayout));
+				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook, monthlylayout));
 			};
 			s.ButtonCallbackLine = () =>
 			{
 				//0x13E0FC0
-				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line, monthlylayout));
+				this.StartCoroutineWatched(SnsInheritingConfirmInner(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line, monthlylayout));
 			};
 			s.ButtonCallbackCaution = () =>
 			{
@@ -194,9 +194,9 @@ namespace XeApp.Game.Menu
 		private void PopupShowPreparationMenu(bool isTitle/* = false*/, Action callback/* = null*/, Action errorToTitle/* = null*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("common");
-			bool isTwitter = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
-			bool isFacebook = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
-			bool isLine = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
+			bool isTwitter = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
+			bool isFacebook = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
+			bool isLine = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
 			bool isApple = false;
 			PopupSnsInheritingSetting s = new PopupSnsInheritingSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_inh_pre_title");
@@ -292,18 +292,18 @@ namespace XeApp.Game.Menu
 			{
 				//0x13E17A8
 				m_snsContent = m_snsCoopControl.Content as PopupSnsContent;
-				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Twitter, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
-				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
-				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Twitter, HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 			}, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13DF250 Offset: 0x13DF250 VA: 0x13DF250
-		// private void SnsInheriting(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink platform, LayoutMonthlyPassTakeover monthlylayout) { }
+		// private void SnsInheriting(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink platform, LayoutMonthlyPassTakeover monthlylayout) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E597C Offset: 0x6E597C VA: 0x6E597C
 		// // RVA: 0x13DF274 Offset: 0x13DF274 VA: 0x13DF274
-		private IEnumerator SnsInheritingConfirmInner(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink platform, LayoutMonthlyPassTakeover monthlylayout)
+		private IEnumerator SnsInheritingConfirmInner(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink platform, LayoutMonthlyPassTakeover monthlylayout)
 		{
 			MessageBank msgBank; // 0x24
 			bool isTwitter; // 0x28
@@ -315,9 +315,9 @@ namespace XeApp.Game.Menu
 			msgBank = MessageManager.Instance.GetBank("common");
 			bool done = true;
 			bool cancel = false;
-			isTwitter = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
-			isFacebook = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
-			isLine = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
+			isTwitter = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
+			isFacebook = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
+			isLine = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
 			isApple = false;
 			if(AREventMasterData.Instance != null && AREventMasterData.Instance.GetIntParam("master_sw", 0) == 1)
 			{
@@ -438,14 +438,14 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5A6C Offset: 0x6E5A6C VA: 0x6E5A6C
 		// // RVA: 0x13DF804 Offset: 0x13DF804 VA: 0x13DF804
-		private IEnumerator SnsInheritingInner(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink platform)
+		private IEnumerator SnsInheritingInner(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink platform)
 		{
 			//0x13E3D98
 			m_snsCoopControl.InputDisable();
 			bool done = false;
 			bool error = false;
 			bool cancel = false;
-			HDEEBKIFLNI.HHCJCDFCLOB.AFOLPGDADKI(platform, () =>
+			HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.AFOLPGDADKI(platform, () =>
 			{
 				//0x13E1B74
 				done = true;
@@ -582,14 +582,14 @@ namespace XeApp.Game.Menu
 		{
 			//0x14AF638
 			menu.GetSnsCoopWindowControl().InputDisable();
-			HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[] l = new HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[3];
-			l[0] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook;
-			l[1] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter;
-			l[2] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line;
+			HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[] l = new HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[3];
+			l[0] = HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook;
+			l[1] = HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter;
+			l[2] = HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line;
 			bool done = false;
 			bool cancel = false;
 			bool error = false;
-			HDEEBKIFLNI.HHCJCDFCLOB.IEIDONOJCOB(l[(int)snsType], () =>
+			HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.IEIDONOJCOB(l[(int)snsType], () =>
 			{
 				//0x13E1BA4
 				done = true;
@@ -630,15 +630,15 @@ namespace XeApp.Game.Menu
 		{
 			if(snsType == eSnsType.Facebook)
 			{
-				return HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
+				return HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook);
 			}
 			else if(snsType == eSnsType.Line)
 			{
-				return HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
+				return HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line);
 			}
 			else if(snsType == eSnsType.Twitter)
 			{
-				return HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
+				return HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
 			}
 			return false;
 		}
@@ -651,11 +651,11 @@ namespace XeApp.Game.Menu
 
 			//0x13E2404
 			menu.m_snsCoopControl.InputDisable();
-			HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[] platform = new HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[3]
+			HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[] platform = new HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[3]
 			{
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook,
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line,
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook,
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line,
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter
 			};
 			bool done = false;
 			bool cancel = false;
@@ -679,7 +679,7 @@ namespace XeApp.Game.Menu
 					}
 					else if(label == PopupButton.ButtonLabel.Ok)
 					{
-						HDEEBKIFLNI.HHCJCDFCLOB.LEDGNMBOGJN(platform[(int)snsType], () =>
+						HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.LEDGNMBOGJN(platform[(int)snsType], () =>
 						{
 							//0x13E1BFC
 							done = true;
@@ -702,7 +702,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				HDEEBKIFLNI.HHCJCDFCLOB.IEIDONOJCOB(platform[(int)snsType], () =>
+				HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.IEIDONOJCOB(platform[(int)snsType], () =>
 				{
 					//0x13E1BD4
 					done = true;
@@ -746,7 +746,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13E05B0 Offset: 0x13E05B0 VA: 0x13E05B0
-		private PopupSetting LinkRelesePopup(eSnsType snsType, HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[] platform)
+		private PopupSetting LinkRelesePopup(eSnsType snsType, HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[] platform)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("common");
 			switch(snsType)

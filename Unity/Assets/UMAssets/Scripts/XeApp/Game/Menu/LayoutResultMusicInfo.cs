@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateRankingValue(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate,
+				OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.FGMOMBKGCNF_UpdateRankingValue(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate,
 					() =>
 					{
 						//0x18E3138
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetRanks(0, false, () =>
+				OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.MJFKJHJJLMN_GetRanks(0, false, () =>
 				{
 					//0x18E3164
 					_isDone = true;

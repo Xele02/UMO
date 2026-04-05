@@ -40,10 +40,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1D4F9E4 Offset: 0x1D4F9E4 VA: 0x1D4F9E4
 		public void SetUp(int itemId, int bingoCount, int getItemCount)
 		{
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
-			string itemName = EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id);
-			string itemStr = EKLNMHFCAOI.NDBLEADIDLA(cat, 0);
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId);
+            int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId);
+			string itemName = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(cat, id);
+			string itemStr = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, 0);
 			ItemName.text = itemName + " " + getItemCount.ToString() + itemStr;
 			SettingLayout(bingoCount, itemId);
 		}
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1D4FFDC Offset: 0x1D4FFDC VA: 0x1D4FFDC
 		private bool IsScene(int _itemId)
 		{
-			return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+			return EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
 		}
 
 		// RVA: 0x1D50070 Offset: 0x1D50070 VA: 0x1D50070
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		public void SetIconButton(int itemId)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				ShowSceneCardItem(itemId);
 			}

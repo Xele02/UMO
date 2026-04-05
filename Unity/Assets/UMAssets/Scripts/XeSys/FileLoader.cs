@@ -53,7 +53,7 @@ namespace XeSys
 			if(!isLoading)
 				return;
 			
-			isLoading = CriFileRequestManager.HHCJCDFCLOB.NFABHMNAODN == CriFileRequestManager.IFDILJEGCLD.IADCGKMLFFE_Execute;
+			isLoading = CriFileRequestManager.HHCJCDFCLOB_Instance.NFABHMNAODN == CriFileRequestManager.IFDILJEGCLD.IADCGKMLFFE_Execute;
 		}
 
 		// // RVA: 0x203ADA0 Offset: 0x203ADA0 VA: 0x203ADA0
@@ -109,7 +109,7 @@ namespace XeSys
 				}
 			}
 			LBHFILLFAGA request = CreateFileRequest(path, withoutPlarformPath, args, argValue, item, loadedDispose);
-			CriFileRequestManager.HHCJCDFCLOB.ELFMKCOKNHK_AddRequest(request);
+			CriFileRequestManager.HHCJCDFCLOB_Instance.ELFMKCOKNHK_AddRequest(request);
 			if(item == null)
 			{
 				item = new FileLoadInfo(path, succeeded, failed, request);
@@ -122,7 +122,7 @@ namespace XeSys
 		public void Load()
 		{
 			isLoading = true;
-			CriFileRequestManager.HHCJCDFCLOB.LFBFKKKCMNM_TryExecute();
+			CriFileRequestManager.HHCJCDFCLOB_Instance.LFBFKKKCMNM_TryExecute();
 		}
 
 		// // RVA: 0x203B980 Offset: 0x203B980 VA: 0x203B980

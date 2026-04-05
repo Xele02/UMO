@@ -16,7 +16,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 		public int BJJLBHBCENG; // 0x28
 		public int MMJEPJKPHHE; // 0x2C
 		public int OIFAFKDMEEJ_EnabledCrypted; // 0x30
-		public int MKHGNAKFPBE; // 0x34
+		public int MKHGNAKFPBE_monthCrypted; // 0x34
 		public int FBGGEFFJJHB_xor; // 0x38
 		public int OMMLFMMBOFC; // 0x3C
 		public int HHPFFPINGAA_OrderCrypted; // 0x40
@@ -28,7 +28,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19B3B64 KPOEEPIMMJP_bgs 0x19B5574 NCIEAFEDPBH_bgs
 		public int EAHPLCJMPHD_PId { get { return JMLCKCMIKII ^ FBGGEFFJJHB_xor; } set { JMLCKCMIKII = value ^ FBGGEFFJJHB_xor; } } //0x19B5C90 NMDECGCDKNM_bgs 0x19B5534 PGNAAAGJOBO_bgs PayItemId
 		public int HCCEFDMGPEA { get { return MMJEPJKPHHE ^ FBGGEFFJJHB_xor; } set { MMJEPJKPHHE = value ^ FBGGEFFJJHB_xor; } } //0x19B3B74 MAEOBCEBMDC_bgs 0x19B5554 BFFBMOIGFBI_bgs
-		public int IBAKPKKEDJM_month { get { return MKHGNAKFPBE ^ FBGGEFFJJHB_xor; } set { MKHGNAKFPBE = value ^ FBGGEFFJJHB_xor; } } //0x19B3B84 IJHAHFOOJKH_get_month 0x19B54EC LNKIOJGIKMB_set_month
+		public int IBAKPKKEDJM_month { get { return MKHGNAKFPBE_monthCrypted ^ FBGGEFFJJHB_xor; } set { MKHGNAKFPBE_monthCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19B3B84 IJHAHFOOJKH_get_month 0x19B54EC LNKIOJGIKMB_set_month
 		public int FPJBMCDMAMO { get { return OMMLFMMBOFC ^ FBGGEFFJJHB_xor; } set { OMMLFMMBOFC = value ^ FBGGEFFJJHB_xor; } } //0x19B5CA0 JBJCDOHLLKK_bgs 0x19B5584 JEFGPFMEONF_bgs
 		public int EFNMDPKEJIM_LineupId { get { return BJJLBHBCENG ^ FBGGEFFJJHB_xor; } set { BJJLBHBCENG = value ^ FBGGEFFJJHB_xor; } } //0x19B5CAC GDECNFAFAMM_bgs 0x19B54DC MMJDPGLLFNI_bgs
 		public int EILKGEADKGH_Order { get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19B5CBC NPDDACIHBKD_get_Order 0x19B5524 BJJMCKHBPNH_set_Order

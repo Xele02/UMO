@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private Action endCallback; // 0x14
 
 		// RVA: 0x145D608 Offset: 0x145D608 VA: 0x145D608
-		public void StartAnim(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, Action _callback)
+		public void StartAnim(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, Action _callback)
 		{
 			endCallback = _callback;
 			this.StartCoroutineWatched(Co_StartAnim(bossInfo, bossInfo.IKICLMGFFPB_IsSpecial ? m_spBossPopLayout : m_bossPopLayout));
@@ -35,13 +35,13 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x711CAC Offset: 0x711CAC VA: 0x711CAC
 		// // RVA: 0x145D660 Offset: 0x145D660 VA: 0x145D660
-		private IEnumerator Co_StartAnim(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, RaidBossPopLayout layout)
+		private IEnumerator Co_StartAnim(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, RaidBossPopLayout layout)
 		{
-			PKNOKJNLPOE_EventRaid raidEventCtl;
+			PKNOKJNLPOE_NetEventRaidController raidEventCtl;
 
 			//0x145D93C
 			MenuScene.Instance.InputDisable();
-			raidEventCtl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidEventCtl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			layout.Hide();
 			while(layout.IsPlaying())
 				yield return null;

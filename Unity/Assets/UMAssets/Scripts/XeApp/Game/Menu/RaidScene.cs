@@ -36,14 +36,14 @@ namespace XeApp.Game.Menu
 		private RaidEventBanner m_eventBanner; // 0x98
 		private RaidBossButtonsLayout m_buttonsLayout; // 0x9C
 		private bool m_isEventTimeLimit; // 0xA0
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> m_bossInfoList = new List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ>(); // 0xA4
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> m_bossInfoViewList = new List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ>(); // 0xA8
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> m_deadBossList = new List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ>(); // 0xAC
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> m_bossInfoList = new List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ>(); // 0xA4
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> m_bossInfoViewList = new List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ>(); // 0xA8
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> m_deadBossList = new List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ>(); // 0xAC
 		private bool m_showitemReceivePopup; // 0xB0
 		private bool m_showTicketGainedPopup; // 0xB1
 		private bool m_loadingTicketGainedPopup; // 0xB2
 		private TicketGainedPopupSetting m_ticketGainedPopupSetting; // 0xB4
-		private IKDICBBFBMI_EventBase m_eventCtrl; // 0xB8
+		private IKDICBBFBMI_NetEventBaseController m_eventCtrl; // 0xB8
 		private bool m_isEventChecked; // 0xBC
 		private bool m_isEndActivateScene; // 0xBD
 		private KGCNCBOKCBA.GNENJEHKMHD_EventStatus m_eventStatus; // 0xC0
@@ -54,17 +54,17 @@ namespace XeApp.Game.Menu
 		private List<FKMOKDCJFEN> m_questList; // 0xD0
 		private bool isCallActSelect; // 0xD4
 		private EventMusicSelectSceneArgs m_eventMusicSelectArgs; // 0xD8
-		private PKNOKJNLPOE_EventRaid m_raidController; // 0xDC
+		private PKNOKJNLPOE_NetEventRaidController m_raidController; // 0xDC
 		private bool m_isOpenEndUseFoldRadar; // 0xE0
 		private int m_isRaidBossEncount; // 0xE4
 		private List<Action> NoticeActionList = new List<Action>(); // 0xE8
 
 		private bool IsBossNotExist { get { return m_bossInfoList.Count == 0; } } //0x181B590
 		// public bool IsEventEndChallengePeriod { get; } 0x181B618
-		private PKNOKJNLPOE_EventRaid RaidController { get
+		private PKNOKJNLPOE_NetEventRaidController RaidController { get
 		{
 			if(m_raidController == null)
-				m_raidController = m_eventCtrl as PKNOKJNLPOE_EventRaid;
+				m_raidController = m_eventCtrl as PKNOKJNLPOE_NetEventRaidController;
 			return m_raidController;
 		} } //0x181B62C
 
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 			{
 				done = false;
 				err = false;
-				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, 0, () =>
+				JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, 0, () =>
 				{
 					//0x18264B0
 					done = true;
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 				{
 					done = false;
 					err = false;
-					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 					{
 						//0x18264C8
 						done = true;
@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 							m_bossSortLayout.DisableUpdateButton(true);
 							m_buttonsLayout.DisableRankingButton(true);
 							m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.EventEnd);
-							m_bottomButtonLayout.SetItemImage(NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId());
+							m_bottomButtonLayout.SetItemImage(NKOBMDPHNGP_NetEventRaidLobbyController.ADPMLOEOAFD_GetTicketId());
 							m_bottomButtonLayout.SetItemNum(RaidController.NPICFLFAIJK_GetNumTicket());
 							yield return this.StartCoroutineWatched(Co_GetDeadBossList());
 							if(m_deadBossList.Count == 0)
@@ -529,15 +529,15 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ> l = RaidController.DIFIHMCHDJF();
+					List<PKNOKJNLPOE_NetEventRaidController.KMFKFGEDPGJ> l = RaidController.DIFIHMCHDJF();
 					if(l.Count != 0)
 					{
 						int helpCount = 0;
-						List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ> l5 = new List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ>();
-						List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ> l6 = new List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ>();
+						List<PKNOKJNLPOE_NetEventRaidController.KMFKFGEDPGJ> l5 = new List<PKNOKJNLPOE_NetEventRaidController.KMFKFGEDPGJ>();
+						List<PKNOKJNLPOE_NetEventRaidController.KMFKFGEDPGJ> l6 = new List<PKNOKJNLPOE_NetEventRaidController.KMFKFGEDPGJ>();
 						for(int i = 0; i < l.Count; i++)
 						{
-							if(l[i].INDDJNMPONH_type == PKNOKJNLPOE_EventRaid.BKKPEJEABJN.AOFLHCJEDOA_0)
+							if(l[i].INDDJNMPONH_type == PKNOKJNLPOE_NetEventRaidController.BKKPEJEABJN.AOFLHCJEDOA_0)
 							{
 								l5.Add(l[i]);
 							}
@@ -740,9 +740,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x181C380 Offset: 0x181C380 VA: 0x181C380
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> FilterBossInfoList(List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> bossInfoList)
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> FilterBossInfoList(List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> bossInfoList)
 		{
-			List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> res = new List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ>();
+			List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> res = new List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ>();
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.PFONKAHHKJK_Raid raidSave = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid;
 			for(int i = 0; i < bossInfoList.Count; i++)
 			{
@@ -761,11 +761,11 @@ namespace XeApp.Game.Menu
         }
 
 		// // RVA: 0x181C990 Offset: 0x181C990 VA: 0x181C990
-		private void SortBossInfoList(ref List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> bossInfoList)
+		private void SortBossInfoList(ref List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> bossInfoList)
 		{
             int sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.LHPDCGNKPHD_SortItem;
             int order = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.EILKGEADKGH_Order;
-			bossInfoList.Sort((PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+			bossInfoList.Sort((PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 			{
 				//0x1825830
 				return a.PPFNGGCBJKC_id - b.PPFNGGCBJKC_id;
@@ -773,35 +773,35 @@ namespace XeApp.Game.Menu
 			switch(sort)
 			{
 				case 0:
-					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 					{
 						//0x1825870
 						return a.FJOLNJLLJEJ_rank - b.FJOLNJLLJEJ_rank;
 					});
 					break;
 				case 1:
-					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 					{
 						//0x18258B0
 						return (int)((a.BCCOMAODPJI_hp * 1.0f / a.PIKKHCGNGNN_HpMax - b.BCCOMAODPJI_hp * 1.0f / b.PIKKHCGNGNN_HpMax) * 1000000);
 					});
 					break;
 				case 2:
-					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 					{
 						//0x1825958
 						return a.BCCOMAODPJI_hp - b.BCCOMAODPJI_hp;
 					});
 					break;
 				case 3:
-					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 					{
 						//0x1825998
 						return (int)(a.OCFJGNPMJBA_GetTime() - b.OCFJGNPMJBA_GetTime());
 					});
 					break;
 				case 4:
-					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ a, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ b) =>
+					Algorithms.InsertSort(bossInfoList, (PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ a, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ b) =>
 					{
 						//0x18259EC
 						return a.MHABJOMJCFI_AttackPlayerCount - b.MHABJOMJCFI_AttackPlayerCount;
@@ -834,7 +834,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x181C768 Offset: 0x181C768 VA: 0x181C768
-		private bool CheckBossFilter(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, uint bit)
+		private bool CheckBossFilter(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, uint bit)
 		{
 			if(bit != 0)
 			{
@@ -854,7 +854,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x181C7DC Offset: 0x181C7DC VA: 0x181C7DC
-		private bool CheckRankFilter(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, uint bit)
+		private bool CheckRankFilter(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, uint bit)
 		{
 			if(bit != 0)
 			{
@@ -902,7 +902,7 @@ namespace XeApp.Game.Menu
 		// public bool IsRange(int a, int from, int to) { }
 
 		// // RVA: 0x181C91C Offset: 0x181C91C VA: 0x181C91C
-		private bool CheckJoinFilter(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, uint bit)
+		private bool CheckJoinFilter(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, uint bit)
 		{
 			if(bit != 0)
 			{
@@ -1045,7 +1045,7 @@ namespace XeApp.Game.Menu
 			if(idx < 0)
 				idx = 0;
 			SetBossHelpButtonType(idx);
-			m_bottomButtonLayout.SetItemImage(NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId());
+			m_bottomButtonLayout.SetItemImage(NKOBMDPHNGP_NetEventRaidLobbyController.ADPMLOEOAFD_GetTicketId());
 			m_bottomButtonLayout.SetItemNum(RaidController.NPICFLFAIJK_GetNumTicket());
 			if(m_bossInfoList.Count == 0)
 			{
@@ -1252,7 +1252,7 @@ namespace XeApp.Game.Menu
 				{
 					bool done = false;
 					bool isResetList = false;
-					RaidController.MCKDAPPELKJ_RequestBossHelp(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+					RaidController.MCKDAPPELKJ_RequestBossHelp(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helper) =>
 					{
 						//0x18267F4
 						done = true;
@@ -1389,7 +1389,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x181F864 Offset: 0x181F864 VA: 0x181F864
 		private void OnPushEncountItemButton()
 		{
-			MenuScene.Instance.ShowItemDetail(NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId(), 0, null);
+			MenuScene.Instance.ShowItemDetail(NKOBMDPHNGP_NetEventRaidLobbyController.ADPMLOEOAFD_GetTicketId(), 0, null);
 		}
 
 		// // RVA: 0x181F950 Offset: 0x181F950 VA: 0x181F950
@@ -1457,8 +1457,8 @@ namespace XeApp.Game.Menu
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
-			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
+			arg.isFavorite = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
+			arg.btnType = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 
@@ -1484,7 +1484,7 @@ namespace XeApp.Game.Menu
 					{
 						MenuScene.Instance.InputDisable();
 						MenuScene.Instance.LobbyButtonControl.Hide(false);
-						PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+						PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 						ev.KECLCFBKMOA_EncounterBoss(() =>
 						{
 							//0x1828928
@@ -1600,10 +1600,10 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				AODFBGCCBPE data = AODFBGCCBPE.FKDIMODKKJD_GetList(false).Find((AODFBGCCBPE _) =>
+				AODFBGCCBPE_ViewShopData data = AODFBGCCBPE_ViewShopData.FKDIMODKKJD_GetList(false).Find((AODFBGCCBPE_ViewShopData _) =>
 				{
 					//0x1825CD8
-					return _.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO_ShopType.FNJAOJBICJD_6_SuperGalaxyMedal;
+					return _.INDDJNMPONH_type == AODFBGCCBPE_ViewShopData.NJMPLEENNPO_ShopType.FNJAOJBICJD_6_SuperGalaxyMedal;
 				});
 				if(data != null)
 				{
@@ -1659,11 +1659,11 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SelectedGuestData = null;
 			m_bossSelectListLayout.InitializeDecoration();
 			base.OnPreSetCanvas();
-			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			if(evLobby != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer != null)
+			NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
+			if(evLobby != null && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer != null)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1));
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_NetEventRaidLobbyController.FAKHCOJIOBD(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1));
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
 			}
 			this.StartCoroutineWatched(Co_OnPresetCanvas());
 		}
@@ -1673,7 +1673,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OnPresetCanvas()
 		{
 			//0x182DAD0
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			m_eventMusicSelectArgs = Args as EventMusicSelectSceneArgs;
 			if(m_eventMusicSelectArgs == null)
 				m_eventMusicSelectArgs = ArgsReturn as EventMusicSelectSceneArgs;
@@ -1684,7 +1684,7 @@ namespace XeApp.Game.Menu
 			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0_None;
 			if(m_eventCtrl != null)
 			{
-				m_eventCtrl.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+				m_eventCtrl.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 				m_eventStatus = m_eventCtrl.NGOFCFJHOMI_Status;
 			}
 			if(!MenuScene.Instance.CheckEventLimit(m_eventCtrl, false, true))
@@ -1952,7 +1952,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
+					if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
 					{
 						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsValid)
 						{
@@ -1992,16 +1992,16 @@ namespace XeApp.Game.Menu
 			//0xCEB234
 			int addCount = 1;
 			int itemId = RaidItemConstants.MakeItemId(RaidItemConstants.Type.FoldRadar);
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId);
+            int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId);
 			m_ticketGainedPopupSetting.title = string.Concat(new object[4]
 			{
-				EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId),
+				EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId),
 				JpStringLiterals.StringLiteral_367,
 				addCount,
-				EKLNMHFCAOI.NDBLEADIDLA(cat, id, addCount)
+				EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id, addCount)
 			});
-			m_ticketGainedPopupSetting.label01 = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, id);
+			m_ticketGainedPopupSetting.label01 = EKLNMHFCAOI_ItemManager.ILKGBGOCLAO_GetItemDesc(cat, id);
 			m_ticketGainedPopupSetting.layoutType = 2;
 			m_ticketGainedPopupSetting.TitleText = "";
 			m_ticketGainedPopupSetting.IsCaption = false;
@@ -2015,12 +2015,12 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(m_ticketGainedPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1825FF4
-				NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-				NKBOMKGFGIO_EventRaidItem.PDPBHLDICEJ d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem.CDENCMNHNGA_table[0];
+				NKOBMDPHNGP_NetEventRaidLobbyController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
+				NKBOMKGFGIO_EventRaidItem.PDPBHLDICEJ d = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem.CDENCMNHNGA_table[0];
 				int num = Mathf.Clamp(addCount + RaidController.NPICFLFAIJK_GetNumTicket(), 0, d.DOOGFEGEKLG_max);
 				ev.NCBELAFIPDN_SetItemCount(RaidItemConstants.Type.FoldRadar, num, null);
 				m_bottomButtonLayout.SetItemNum(RaidController.NPICFLFAIJK_GetNumTicket());
-				ILCCJNDFFOB.HHCJCDFCLOB.JAHALBMOANH_GetItem(RaidItemConstants.MakeItemId(RaidItemConstants.Type.FoldRadar), OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.PJPBCFKEGBC_38_RaidTutorial, ev.PGIIDPEGGPI_EventId.ToString(), addCount, num, 1);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.JAHALBMOANH_GetItem(RaidItemConstants.MakeItemId(RaidItemConstants.Type.FoldRadar), OAGBCBBHMPF.COIIJOEKBDH_InventoryAddType.PJPBCFKEGBC_38_RaidTutorial, ev.PGIIDPEGGPI_EventId.ToString(), addCount, num, 1);
 			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x18263A4
@@ -2032,7 +2032,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x712B9C Offset: 0x712B9C VA: 0x712B9C
 		// // RVA: 0x182221C Offset: 0x182221C VA: 0x182221C
-		private IEnumerator Co_Initialize_LoginBonusPopup(IKDICBBFBMI_EventBase a_controller)
+		private IEnumerator Co_Initialize_LoginBonusPopup(IKDICBBFBMI_NetEventBaseController a_controller)
 		{
 			int itemId; // 0x1C
 			int itemCount; // 0x20
@@ -2040,7 +2040,7 @@ namespace XeApp.Game.Menu
 			//0x182A818
 			if(m_ticketGainedPopupSetting == null || a_controller == null)
 				yield break;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_showTicketGainedPopup = false;
 			itemId = 0;
 			itemCount = 0;
@@ -2050,7 +2050,7 @@ namespace XeApp.Game.Menu
 				itemId = a_controller.BHABCGJCGNO.JJBGOIMEIPF_ItemId;
 				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_item_count;
 				bool done = false;
-				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 				{
 					//0x18263B8
 					done = true;
@@ -2066,14 +2066,14 @@ namespace XeApp.Game.Menu
 			if(m_showTicketGainedPopup)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem)
+				if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem)
 				{
 					m_ticketGainedPopupSetting.title = string.Format(bk.GetMessageByLabel("popup_event_login_item01_title_msg"), itemCount);
 					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item01_label00_msg");
 					m_ticketGainedPopupSetting.label02 = bk.GetMessageByLabel("popup_event_login_item01_label01_msg");
 					m_ticketGainedPopupSetting.layoutType = 0;
 				}
-				else if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
+				else if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
 				{
 					m_ticketGainedPopupSetting.title = string.Format(bk.GetMessageByLabel("popup_event_login_item00_title_msg"), itemCount);
 					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item00_label00_msg");
@@ -2245,19 +2245,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18228AC Offset: 0x18228AC VA: 0x18228AC
 		private void CheckSnsNotice()
 		{
-			if(!BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
+			if(!BIFNGFAIEIL.HHCJCDFCLOB_Instance.DNFPMBFNDCA())
 				return;
-			int snsId = BIFNGFAIEIL.HHCJCDFCLOB.FGGDEKAJCIF();
+			int snsId = BIFNGFAIEIL.HHCJCDFCLOB_Instance.FGGDEKAJCIF();
 			if(snsId == 0)
 				return;
 			MenuScene.Instance.ShowSnsNotice(snsId, null);
-			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
+			BIFNGFAIEIL.HHCJCDFCLOB_Instance.ALIANOFCAEI();
 		}
 
 		// // RVA: 0x18229F4 Offset: 0x18229F4 VA: 0x18229F4
 		private void CheckOfferNotice()
 		{
-			if(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_cond == 0)
+			if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IOCBOGFFHFE.OAFPGJLCNFM_cond == 0)
 				return;
 			MenuScene.Instance.ShowOfferNotice(null);
 		}
@@ -2350,10 +2350,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x181D8BC Offset: 0x181D8BC VA: 0x181D8BC
 		private bool IsEndRaidEvent()
 		{
-			RaidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			RaidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(RaidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 			{
-				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+				JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.DNABPEOICIJ(() =>
 				{
 					//0x1825E7C
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);

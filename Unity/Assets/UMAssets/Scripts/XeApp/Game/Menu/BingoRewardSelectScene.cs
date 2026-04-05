@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			m_layout.onScrollStarted = OnScrollStarted;
 			m_layout.onSelectionChanged = OnSelectionChanged;
 			m_layout.onClickFlowButton = OnClickFlowButton;
-			m_layout.LayoutSetting(list_no, m_rewardList.Count, GNGMCIAIKMA.HHCJCDFCLOB.EHFLAKIFPOO(id), () =>
+			m_layout.LayoutSetting(list_no, m_rewardList.Count, GNGMCIAIKMA.HHCJCDFCLOB_Instance.EHFLAKIFPOO(id), () =>
 			{
 				//0x10A2E48
 				if (!IsStartTransition)
@@ -91,9 +91,9 @@ namespace XeApp.Game.Menu
 						}
 						else if(label == PopupButton.ButtonLabel.Ok)
 						{
-							if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+							if(GNGMCIAIKMA.HHCJCDFCLOB_Instance != null)
 							{
-								NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = GNGMCIAIKMA.HHCJCDFCLOB.MENDFPNPAAO_GetSaveBingo(bingoId);
+								NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = GNGMCIAIKMA.HHCJCDFCLOB_Instance.MENDFPNPAAO_GetSaveBingo(bingoId);
 								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RewardId = reward.PPFNGGCBJKC_id;
 								bingo.AHCFGOGCJKI_St.AHHJLDLAPAN_DivaId = reward.AHHJLDLAPAN_DivaId;
 								bingo.AHCFGOGCJKI_St.DAJGPBLEEOB_ModelId = reward.DAJGPBLEEOB_ModelId;
@@ -116,11 +116,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10A1ED8 Offset: 0x10A1ED8 VA: 0x10A1ED8
 		private IEnumerator DivaIconDownload()
 		{
-			KDLPEDBKMID install;
+			KDLPEDBKMID_NetDelayInstaller install;
 			bool InstallCheck;
 
 			//0x10A43DC
-			install = KDLPEDBKMID.HHCJCDFCLOB;
+			install = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance;
 			InstallCheck = false;
 			for (int i = 0; i < m_rewardList.Count; i++)
 			{
@@ -142,11 +142,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10A1F84 Offset: 0x10A1F84 VA: 0x10A1F84
 		private IEnumerator SceneCardDownload()
 		{
-			KDLPEDBKMID install;
+			KDLPEDBKMID_NetDelayInstaller install;
 			bool InstallCheck;
 
 			//0x10A482C
-			install = KDLPEDBKMID.HHCJCDFCLOB;
+			install = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance;
 			InstallCheck = false;
 			SceneIconTextureCache t = new SceneIconTextureCache();
 			for (int i = 0; i < m_rewardList.Count; i++)
@@ -171,8 +171,8 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			base.OnPreSetCanvas();
-			if (GNGMCIAIKMA.HHCJCDFCLOB != null)
-				bingoId = GNGMCIAIKMA.HHCJCDFCLOB.MGAHOPFMKHB_GetBingoId();
+			if (GNGMCIAIKMA.HHCJCDFCLOB_Instance != null)
+				bingoId = GNGMCIAIKMA.HHCJCDFCLOB_Instance.MGAHOPFMKHB_GetBingoId();
 			this.StartCoroutineWatched(AssetLoad());
 		}
 
@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10A21D4 Offset: 0x10A21D4 VA: 0x10A21D4
 		private bool IsBingoMissionHelp()
 		{
-			return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoReward);
+			return !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoReward);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA7F4 Offset: 0x6CA7F4 VA: 0x6CA7F4
@@ -264,8 +264,8 @@ namespace XeApp.Game.Menu
 			while (m_layout.RootLayoutIsPlaying())
 				yield return null;
 			bool isWait = true;
-			yield return Co.R(TutorialManager.ShowTutorial(GNGMCIAIKMA.HHCJCDFCLOB.FIAHJAMFNPD_GetTutorialId(), null));
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoReward, true);
+			yield return Co.R(TutorialManager.ShowTutorial(GNGMCIAIKMA.HHCJCDFCLOB_Instance.FIAHJAMFNPD_GetTutorialId(), null));
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoReward, true);
 			MenuScene.Save(() =>
 			{
 				//0x10A3898

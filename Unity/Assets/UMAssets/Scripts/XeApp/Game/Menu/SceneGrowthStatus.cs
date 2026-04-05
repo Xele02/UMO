@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Avaiable)
 					{
 						disabled = false;
-						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_Id))
+						if (!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_Id))
 						{
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
 						}
@@ -322,12 +322,12 @@ namespace XeApp.Game.Menu
 				if(skillId != 0)
 				{
 					string skillComment = "";
-					HBDCPGLAPHH skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
+					HBDCPGLAPHH skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
 					DisableSkillCrossFade();
 					List<string> l = new List<string>();
 					if(skill.HEKHODDJHAO_P1 != 0)
 					{
-                        KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.HEKHODDJHAO_P1 - 1];
+                        KFCIIMBBNCD effect = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.HEKHODDJHAO_P1 - 1];
 						if(effect.KCOHMHFBDKF_Value1[before - 1] != effect.KCOHMHFBDKF_Value1[after - 1])
 						{
 							l.Add("[v1]");
@@ -335,7 +335,7 @@ namespace XeApp.Game.Menu
                     }
 					if(skill.AKGNPLBDKLN_P2 != 0)
 					{
-                        KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.AKGNPLBDKLN_P2 - 1];
+                        KFCIIMBBNCD effect = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.AKGNPLBDKLN_P2 - 1];
 						if(effect.KCOHMHFBDKF_Value1[before - 1] != effect.KCOHMHFBDKF_Value1[after - 1])
 						{
 							l.Add("[v2]");
@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 				if(sceneData.HGONFBDIBPM_ActiveSkillId != 0)
 				{
 					string skillComment = "";
-					CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1];
+					CDNKOFIELMK skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1];
 					List<string> l = new List<string>();
 					DisableSkillCrossFade();
 					for(int i = 0; i < 2; i++)
@@ -400,7 +400,7 @@ namespace XeApp.Game.Menu
 				if(skillId != 0)
 				{
 					string skillComment = "";
-					PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
+					PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
 					List<string> l = new List<string>();
 					DisableSkillCrossFade();
 					for(int i = 0; i < 2; i++)

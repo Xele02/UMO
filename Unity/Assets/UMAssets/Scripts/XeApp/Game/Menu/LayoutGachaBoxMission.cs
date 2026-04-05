@@ -46,9 +46,9 @@ namespace XeApp.Game.Menu
 				d1.Year, d1.Month, d1.Day, d1.Hour, d1.Minute,
 				d2.Year, d2.Month, d2.Day, d2.Hour, d2.Minute
 			});
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(it.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(it.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				SetImagePlate(EKLNMHFCAOI.DEACAHNLMNI_getItemId(it.GLCLFMGPMAN_ItemId), false);
+				SetImagePlate(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(it.GLCLFMGPMAN_ItemId), false);
 				m_layoutPickup.StartChildrenAnimGoStop("02");
 			}
 			else

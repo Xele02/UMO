@@ -162,7 +162,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 				data.LHPDDGIJKNB_Reset();
 				HBHMAKNGKFK_items.Add(data);
 			}
-			KAENAEHCLMP_DecoRoomName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
+			KAENAEHCLMP_DecoRoomName = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
 			DJCJMCHMIMA_WallLId = 0;
 			KCMEAABOIOA_WallRId = 0;
 			KIDHLCNFCKN_FloorId = 0;
@@ -199,16 +199,16 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 		//// RVA: 0x176A560 Offset: 0x176A560 VA: 0x176A560
 		public bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_data, Func<EDOHBJAPLPF_JsonData, string, int, int> PBBOFACBCCL, Func<EDOHBJAPLPF_JsonData, string, string, string> GAFBJENPDJH)
 		{
-			KAENAEHCLMP_DecoRoomName = GAFBJENPDJH(_IDLHJIOMJBK_data, "name", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829));
+			KAENAEHCLMP_DecoRoomName = GAFBJENPDJH(_IDLHJIOMJBK_data, "name", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829));
 			DJCJMCHMIMA_WallLId = PBBOFACBCCL(_IDLHJIOMJBK_data, "l_w_rsc", 0);
 			KCMEAABOIOA_WallRId = PBBOFACBCCL(_IDLHJIOMJBK_data, "r_w_rsc", 0);
 			KIDHLCNFCKN_FloorId = PBBOFACBCCL(_IDLHJIOMJBK_data, "f_rsc", 0);
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(DJCJMCHMIMA_WallLId))
-				DJCJMCHMIMA_WallLId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(KCMEAABOIOA_WallRId))
-				KCMEAABOIOA_WallRId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(KIDHLCNFCKN_FloorId))
-				KIDHLCNFCKN_FloorId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(DJCJMCHMIMA_WallLId))
+				DJCJMCHMIMA_WallLId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(KCMEAABOIOA_WallRId))
+				KCMEAABOIOA_WallRId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KOPLBMLHKCD_IsValidBgItem(KIDHLCNFCKN_FloorId))
+				KIDHLCNFCKN_FloorId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg, 1);
 			int cnt = _IDLHJIOMJBK_data["itmes"].HNBFOAJIIAL_Count;
 			if(cnt > 100)
 				cnt = 100;
@@ -217,7 +217,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 				EDOHBJAPLPF_JsonData data = _IDLHJIOMJBK_data["itmes"][i];
 				int id = PBBOFACBCCL(data, "rsc", 0);
 				MHODOAJPNHD item = HBHMAKNGKFK_items[i];
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.FMGPOKFKPIJ_IsValidItem(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, id))
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.FMGPOKFKPIJ_IsValidItem(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, id))
 				{
 					item.GJNKFOGMIMI_PosXSerialize = PBBOFACBCCL(data, "x", 0);
 					item.HAJKNHNAIKL_rsc = id;

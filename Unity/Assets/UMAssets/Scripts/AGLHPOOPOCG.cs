@@ -18,16 +18,16 @@ public class OFGCBEPEFOH
 
 public class AGLHPOOPOCG
 {
-	public static AGLHPOOPOCG HHCJCDFCLOB; // 0x0
+	public static AGLHPOOPOCG HHCJCDFCLOB_Instance; // 0x0
 	public bool BFILINGKCFK; // 0x8
 	private int OAKDPFFGCLJ_TopPlayerScore; // 0xC
 
 	// RVA: 0x15C41EC Offset: 0x15C41EC VA: 0x15C41EC
 	public AGLHPOOPOCG()
 	{
-		if (HHCJCDFCLOB != null)
+		if (HHCJCDFCLOB_Instance != null)
 			return;
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 	}
 
 	//// RVA: 0x15C42C4 Offset: 0x15C42C4 VA: 0x15C42C4
@@ -61,7 +61,7 @@ public class AGLHPOOPOCG
 	private void HKMNKGFJLEA()
 	{
 		BFILINGKCFK = true;
-		OAKDPFFGCLJ_TopPlayerScore = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate;
+		OAKDPFFGCLJ_TopPlayerScore = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate;
 	}
 
 	//// RVA: 0x15C48CC Offset: 0x15C48CC VA: 0x15C48CC
@@ -76,12 +76,12 @@ public class AGLHPOOPOCG
 	//// RVA: 0x15C4428 Offset: 0x15C4428 VA: 0x15C4428
 	private void BJKCAKJHMPC_GetTopRanks(string _DEPGBBJMFED_CategoryId, int _HHNFHJCAPJO_Target, MOCLMLOPBLK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
-		PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
+		PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
 		req.DEPGBBJMFED_CategoryId = _DEPGBBJMFED_CategoryId;
 		req.HHNFHJCAPJO_Target = _HHNFHJCAPJO_Target.ToString();
 		req.NBFDEFGFLPJ = JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError;
 		req.CJMFJOMECKI_ErrorId = SakashoErrorId.RANKING_NOT_GENERATED;
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			//0x15C4C88
 			if (JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError(NHECPMNKEFK.CJMFJOMECKI_ErrorId))
@@ -89,7 +89,7 @@ public class AGLHPOOPOCG
 			else
 				_JGKOLBLPMPG_OnFail();
 		};
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			//0x15C4D58
 			PFDPLFOGMNF_GetRegularRankingTopRank r = NHECPMNKEFK as PFDPLFOGMNF_GetRegularRankingTopRank;

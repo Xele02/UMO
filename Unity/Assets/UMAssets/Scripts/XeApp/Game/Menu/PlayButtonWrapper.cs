@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 				}
 				if(!musicData.PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF_MultiDivaType.OGGMDNKPFEB_2))
 				{
-					int lvl = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
+					int lvl = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3);
 					baseUI.ApplyEventEndMessage(string.Format(MessageManager.Instance.GetMessage("menu", "unit_multi_dance_lock_text"), lvl));
 					baseUI.ApplyCursorEventStyle(MusicSelectCDSelect.EventStyle.Disable, false);
 				}

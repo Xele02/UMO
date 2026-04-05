@@ -235,7 +235,7 @@ public class JLKEOGLJNOD_TeamInfo
 	{
 		if(_AHEFHIMGIBI_PlayerData == null)
 		{
-			LDEGEHAEALK_ServerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			LDEGEHAEALK_ServerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 		}
 		else
 		{
@@ -374,7 +374,7 @@ public class JLKEOGLJNOD_TeamInfo
 		NCCJGHMGJLL_IsUnitGoDiva = true;
 		if(_AHEFHIMGIBI_PlayerData == null)
 		{
-			_AHEFHIMGIBI_PlayerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			_AHEFHIMGIBI_PlayerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 		}
 		LDEGEHAEALK_ServerData = _AHEFHIMGIBI_PlayerData;
 		NGHKJOEDLIP_Settings = _AHEFHIMGIBI_PlayerData.KMBJGAHCBDI_UnitGoDiva.ALDOJAEAMCJ(_CGIGOFKGCII_CryptedDivaId, JBKOEGJGKMC);
@@ -403,7 +403,7 @@ public class JLKEOGLJNOD_TeamInfo
 		NCCJGHMGJLL_IsUnitGoDiva = true;
 		if(_AHEFHIMGIBI_PlayerData == null)
 		{
-			_AHEFHIMGIBI_PlayerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			_AHEFHIMGIBI_PlayerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 		}
 		LDEGEHAEALK_ServerData = _AHEFHIMGIBI_PlayerData;
 		NGHKJOEDLIP_Settings = _AHEFHIMGIBI_PlayerData.KMBJGAHCBDI_UnitGoDiva.ALDOJAEAMCJ(_CGIGOFKGCII_CryptedDivaId, JBKOEGJGKMC);

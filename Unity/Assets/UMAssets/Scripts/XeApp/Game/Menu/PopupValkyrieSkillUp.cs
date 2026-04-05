@@ -32,15 +32,15 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < list.Count; i++)
 			{
 				int id = list[i].PPFNGGCBJKC_id;
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
+                EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(id);
 				int cnt = 0;
-				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem)
+				if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem)
 				{
-					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MJAIFKFOPPI_ValItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_cnt;
+					cnt = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MJAIFKFOPPI_ValItem[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_cnt;
 				}
-				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
+				else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 				{
-					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_grow_item[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_cnt;
+					cnt = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_grow_item[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_cnt;
 				}
 				if(cnt < list[i].NANNGLGOFKH_value)
 					return true;

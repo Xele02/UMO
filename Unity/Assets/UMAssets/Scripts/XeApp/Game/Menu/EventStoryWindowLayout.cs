@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB9BBD4 Offset: 0xB9BBD4 VA: 0xB9BBD4
 		private IEnumerator Co_ChangeTab(bool isUpdateTabLayout)
 		{
-			KDLPEDBKMID install; // 0x18
+			KDLPEDBKMID_NetDelayInstaller install; // 0x18
 			bool InstallCheck; // 0x1C
 
 			//0xB9C3E8
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 				ChangeTablistener(m_selectSeries);
 			}
 			SetSeriesData((int)m_selectSeries);
-			install = KDLPEDBKMID.HHCJCDFCLOB;
+			install = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance;
 			InstallCheck = false;
 			for(int i = 0; i < m_seriesDataList.Count; i++)
 			{

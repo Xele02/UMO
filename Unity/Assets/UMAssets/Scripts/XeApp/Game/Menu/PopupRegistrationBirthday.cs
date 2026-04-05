@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			sm_window.InputDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
 			{
 				//0x161C598
 				sm_window.InputEnable();
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 				{
 					if(isCheckChangeDate)
 					{
-						if(PGIGNJDPCAH.MNANNMDBHMP(() =>
+						if(PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 						{
 							//0x161C9DC
 							PopupDenomination.ChangeDate(TransitionList.Type.LOGIN_BONUS);

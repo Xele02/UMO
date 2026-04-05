@@ -410,7 +410,7 @@ namespace XeApp.Game.Menu
 		{
 			if (!m_setting.ISLoaded())
 				return false;
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x1C98E54 Offset: 0x1C98E54 VA: 0x1C98E54 Slot: 22
@@ -424,8 +424,8 @@ namespace XeApp.Game.Menu
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.FPMABHADHBB_EventGoDiva saveGoDiva = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.IMEBBACHPAN_EventGoDiva;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetGoDivaMusicSelectFilter);
 			(m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_difficulty_title_h2"));
@@ -480,8 +480,8 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
         	ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.KLIBOIEIMBA_EventMission save = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BPFEOJEAEGK_EventMission;
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetMissionMusicSelectFilter);
 			(m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_difficulty_title_h2"));
@@ -538,8 +538,8 @@ namespace XeApp.Game.Menu
 		private void InitializeMusicSelect()
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
 			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetMusicSelectFilter);
 			(m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_difficulty_title_h2"));

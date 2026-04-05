@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15A267C Offset: 0x15A267C VA: 0x15A267C Slot: 6
 		protected override void UpdateSkillText(int pos, int index)
 		{
-			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(m_musicId);
+			EONOEHOKBEB_Music musicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(m_musicId);
 			SetSkillCrossFade(pos, false);
 			bool needResetDisplay = false;
 			if(index == 2)

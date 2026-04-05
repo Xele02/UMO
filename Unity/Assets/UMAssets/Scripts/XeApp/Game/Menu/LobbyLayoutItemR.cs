@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			SetUserNameAndMusicRate(name, m_musicRank);
 			SetUpdateAtTime(_time);
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-			k.KHEKNNFCAOI_Init(_commentId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
+			k.KHEKNNFCAOI_Init(_commentId, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
 			SetMessgeText(_type, k.DOIGLOBENMG_StampName);
 			m_textTypeChange.StartChildrenAnimGoStop(k.DBGAJBIBODC_FontType.ToString("D2"));
 			LoadIconTexture(_miniId);
@@ -309,7 +309,7 @@ namespace XeApp.Game.Menu
 		{
 			m_subId = sudId;
 			IsLoadedTexture = false;
-			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
+			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x1296868
 				return item.PPFNGGCBJKC_id == m_subId;
@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 					IsShowEmblem = true;
 				m_emblemNum.SetNumber(emblemCount, 0);
 				iconImageId = emblemId;
-				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, emblemId), (IiconTexture icon) =>
+				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, emblemId), (IiconTexture icon) =>
 				{
 					//0x1296C40
 					if(m_divaIconImage == null)
@@ -524,7 +524,7 @@ namespace XeApp.Game.Menu
 			m_musicrate_rank_text.text = a_name;
 			if(!m_disp_musicraterank)
 				return;
-			m_musicrate_rank_text.text += JpStringLiterals.StringLiteral_12037 + OEGIPPCADNA.GEEFFAEGHAH(a_ranking, true);
+			m_musicrate_rank_text.text += JpStringLiterals.StringLiteral_12037 + OEGIPPCADNA_NetEventUtarateManager.GEEFFAEGHAH(a_ranking, true);
 		}
 
 		//// RVA: 0x12961D0 Offset: 0x12961D0 VA: 0x12961D0

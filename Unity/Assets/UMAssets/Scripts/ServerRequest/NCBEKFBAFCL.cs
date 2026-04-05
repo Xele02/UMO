@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use NCBEKFBAFCL_GetFacebookLinkageStatus", true)]
 public class NCBEKFBAFCL { }
-public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
+public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_NetBaseAction
 {
 	public class EOOEOFIDGFC
 	{

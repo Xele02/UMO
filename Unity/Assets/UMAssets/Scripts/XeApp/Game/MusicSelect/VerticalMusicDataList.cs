@@ -86,7 +86,7 @@ namespace XeApp.Game.MusicSelect
 		private List<MusicListData> m_viewSimulation6LineList = new List<MusicListData>(); // 0x14
 
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
-		public static List<MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_EventBase eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
+		public static List<MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_NetEventBaseController eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
 			string musicTimeFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_music_time");
 			List<MusicListData> res = new List<MusicListData>();
@@ -199,8 +199,8 @@ namespace XeApp.Game.MusicSelect
 				}
 				else
 				{
-					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[musicData.GHBPLHBNMBK_FreeMusicId - 1];
-					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
+					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[musicData.GHBPLHBNMBK_FreeMusicId - 1];
+					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
 					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName;
 					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).vocalName;
 					string musicName_2 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Name).musicName_2;
@@ -288,10 +288,10 @@ namespace XeApp.Game.MusicSelect
 					else
 					{
 						isHighLevel = false;
-						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG);
+						List<IKDICBBFBMI_NetEventBaseController> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG);
 						for (int j = 0; j < list.Count; j++)
 						{
-							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
+							AMLGMLNGMFB_NetEventAprilFoolController eventApril = list[j] as AMLGMLNGMFB_NetEventAprilFoolController;
 							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI_EventId)
 							{
 								KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB_GetCachedSongList().Find((KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP x) =>
@@ -317,7 +317,7 @@ namespace XeApp.Game.MusicSelect
 						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsAvailable(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
-							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+							isOpen &= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("multi_dance_player_level", 3) <= CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 						}
 					}
 					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF_ViewOrder % 10);
@@ -360,10 +360,10 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
-		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD_EventStatus term/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
+		private static List<IKDICBBFBMI_NetEventBaseController> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD_EventStatus term/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
 		{
-			List<IKDICBBFBMI_EventBase> res = new List<IKDICBBFBMI_EventBase>();
-			List<IKDICBBFBMI_EventBase> list = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase _) =>
+			List<IKDICBBFBMI_NetEventBaseController> res = new List<IKDICBBFBMI_NetEventBaseController>();
+			List<IKDICBBFBMI_NetEventBaseController> list = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.FindAll((IKDICBBFBMI_NetEventBaseController _) =>
 			{
 				//0xCA3E0C
 				return _.HIDHLFCBIDE_EventType == type;

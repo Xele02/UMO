@@ -309,17 +309,17 @@ namespace XeApp.Game.Menu
 			if(m_viewData != null && m_viewData.GOOIIPFHOIG != null)
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+				EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
+				if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					InitCostumeData(costumeData, m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					MenuScene.Instance.ShowCostumeDetailWindow(costumeData, 0);
 				}
-				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					if (sceneData == null)
 						sceneData = new GCIJNCFDNON_SceneInfo();
-					sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+					sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 				}
 				else
@@ -332,8 +332,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1882870 Offset: 0x1882870 VA: 0x1882870
 		private void InitCostumeData(CKFGMNAIBNG costumeData, int appItemId)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId) - 1];
-			costumeData.KHEKNNFCAOI_Init(cos.AHHJLDLAPAN_DivaId, EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId), 0, false);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(appItemId) - 1];
+			costumeData.KHEKNNFCAOI_Init(cos.AHHJLDLAPAN_DivaId, EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(appItemId), 0, false);
 		}
 
 		// RVA: 0x1882A1C Offset: 0x1882A1C VA: 0x1882A1C Slot: 5

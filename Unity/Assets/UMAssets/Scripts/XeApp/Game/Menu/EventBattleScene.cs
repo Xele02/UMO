@@ -324,7 +324,7 @@ namespace XeApp.Game.Menu
 			}
 			done = false;
 			err = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, 0, () =>
+			JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, 0, () =>
 			{
 				//0x1056074
 				done = true;
@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 			}
 			done = false;
 			err = false;
-			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 			{
 				//0x105608C
 				done = true;
@@ -423,7 +423,7 @@ namespace XeApp.Game.Menu
 			}
 			m_eventInfo.SetBpValueLabel(bk.GetMessageByLabel("music_event_battle_bp_counting_label"));
 			m_eventInfo.SetBpValueUnitLabel(bk.GetMessageByLabel("music_event_battle_bp_unit"));
-			HAEDCCLHEMN_EventBattle btlEv = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController btlEv = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 			if(btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.OLCLJKOKJCD_7_End)
 			{
 				m_isMatched = true;
@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 			}
 			if(IsEventEndChallengePeriod)
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				m_overrideButtonStyle = MusicSelectButtonSet.OptionStyle.EndEventHome;
 				m_musicList = new MusicDataList(IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, false), IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, true));
 				list_no = 0;
@@ -447,7 +447,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_isMatched)
 				{
-					long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+					long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                     List<IBJAKJJICBC> l = IBJAKJJICBC.EHNABCEGAHO(t, false, false);
                     m_musicList = new MusicDataList(l, IBJAKJJICBC.EHNABCEGAHO(t, false, true));
 					OverrideEnemySkill();
@@ -491,12 +491,12 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF10300 Offset: 0xF10300 VA: 0xF10300 Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			NKOBMDPHNGP_EventRaidLobby raidEv = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_NetEventRaidLobbyController raidEv = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			if(raidEv != null)
 			{
 				if(!raidEv.AKNOOLKMEGJ())
 					return;
-				m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
+				m_eventTicketId = NKOBMDPHNGP_NetEventRaidLobbyController.ADPMLOEOAFD_GetTicketId();
 			}
 		}
 
@@ -600,7 +600,7 @@ namespace XeApp.Game.Menu
 						m_eventInfo.SetRankUnitLabel(Smart.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_rank_unit"), m_eventCtrl.CDINKAANIAA_Rank[1]), 1);
 				}
 				m_eventInfo.SetCurrentValue(m_eventCtrl.FBGDBGKNKOD_GetCurrentPoint().ToString());
-				HAEDCCLHEMN_EventBattle btl = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController btl = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 				m_eventInfo.SetBpValue(btl.GFNODPDPNMJ_GetSumExHighScore().ToString());
 				if(m_eventCtrl.ILICNKILFKJ_GetNextReward() == null || IsEventEndChallengePeriod)
 				{
@@ -689,7 +689,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF108D8 Offset: 0xF108D8 VA: 0xF108D8
 		private void ApplyBattleInfo(IBJAKJJICBC musicData)
 		{
-			HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 			{
 				bool isKira = false;
 				int sceneId = 0;
@@ -702,7 +702,7 @@ namespace XeApp.Game.Menu
 					rank = scene.CGIELKDLHGE_GetEvolveId();
 					isKira = scene.MBMFJILMOBP_IsKira();
 				}
-				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name);
+				m_battleInfo.ApplySelfTitle(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name);
 				GameManager.Instance.DivaIconCache.Load(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId, m_battleInfo.ApplySelfDivaIcon);
@@ -767,20 +767,20 @@ namespace XeApp.Game.Menu
 			EventMusicSelectSceneArgs EventArgsReturn = ArgsReturn as EventMusicSelectSceneArgs;
 			m_isEventTimeLimit = false;
 			m_isEventChecked = false;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = null;
 			if(EventArg == null)
 			{
 				if(EventArgsReturn != null)
 				{
-					m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(EventArgsReturn.EventUniqueId);
+					m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(EventArgsReturn.EventUniqueId);
 					m_isLine6Mode = EventArgsReturn.isLine6Mode;
 				}
-				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventId);
+				m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(m_eventId);
 			}
 			else
 			{
-				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(EventArg.EventUniqueId);
+				m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(EventArg.EventUniqueId);
 				m_isLine6Mode = EventArg.isFromRhythmGame && EventArg.isLine6Mode;
 			}
 			if(m_eventCtrl != null)
@@ -796,7 +796,7 @@ namespace XeApp.Game.Menu
 				{
 					this.StartCoroutineWatched(Co_ChangeBg(BgType.MusicEvent, m_eventId));
 				}
-				HAEDCCLHEMN_EventBattle evBtl = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController evBtl = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 				if(evBtl != null)
 				{
 					for(int i = 0; i < evBtl.CJOBENJJCLD_GetLastAvailableClassId(); i++)
@@ -807,7 +807,7 @@ namespace XeApp.Game.Menu
 							GameManager.Instance.ItemTextureCache.TryInstallEmblem(embl);
 						}
 					}
-					while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+					while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 						yield return null;
 				}
 				//LAB_01060444
@@ -1104,7 +1104,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
+				if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
@@ -1119,7 +1119,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(Common.GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(Common.GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_ValkyrieUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down, m_cdSelect, null));
@@ -1195,7 +1195,7 @@ namespace XeApp.Game.Menu
 				PopupItemGetSetting s = new PopupItemGetSetting();
 				s.TitleText = msgBank.GetMessageByLabel("popup_ar_marker_emblem_title");
 				s.WindowSize = Common.SizeType.Middle;
-				s.ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, list[1].MDPKLNFFDBO_EmblemId);
+				s.ItemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, list[1].MDPKLNFFDBO_EmblemId);
 				s.ItemContent = RichTextUtility.MakeColorTagString(string.Format(s2, list[1].GIDPPGJPOJA_Id), SystemTextColor.NormalColor);
 				s.IsPresentBox = false;
 				s.Buttons = new ButtonInfo[1]
@@ -1227,7 +1227,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(Co_Save());
 			}
 			bool isChallengeNewClass = false;
-			HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 			if(list.Count > 0)
 			{
 				if(list[0].GIDPPGJPOJA_Id != ev.KKMFHMGIIKN_GetCls())
@@ -1341,7 +1341,7 @@ namespace XeApp.Game.Menu
 				//0x105733C
 				if(MenuScene.CheckDatelineAndAssetUpdate())
 					isUpdate = true;
-				HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 				ev.HGCIBMLAAMI_SetClsAndResetExPoint(viewClassData.AIMCAJDBNOI_ClassId);
 				isClosed = true;
 			};
@@ -1435,7 +1435,7 @@ namespace XeApp.Game.Menu
 					break;
 				}
 			}
-			HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 			ev.HGCIBMLAAMI_SetClsAndResetExPoint(v);
 			m_isMatched = false;
 			yield return Co.R(Co_Matching());
@@ -1483,7 +1483,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.FooterMenu.Leave(false);
 			bool done = false;
 			bool err = false;
-			(m_eventCtrl as HAEDCCLHEMN_EventBattle).MPPGMNOOGIL_Matching(() =>
+			(m_eventCtrl as HAEDCCLHEMN_NetEventBattleController).MPPGMNOOGIL_Matching(() =>
 			{
 				//0x105756C
 				done = true;
@@ -1508,7 +1508,7 @@ namespace XeApp.Game.Menu
 			m_battleMatch.Leave();
 			while(m_battleMatch.IsPlaying())
 				yield return null;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<IBJAKJJICBC> l = IBJAKJJICBC.EHNABCEGAHO(t, false, false);
 			m_musicList = new MusicDataList(l, IBJAKJJICBC.EHNABCEGAHO(t, false, true));
 			OverrideEnemySkill();
@@ -1534,7 +1534,7 @@ namespace XeApp.Game.Menu
 			ApplyMusicInfo();
 			DelayedApplyMusicInfo();
 			ApplyBattleInfo(selectMusicData);
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			m_musicInfo.TryEnter();
 			m_eventInfo.TryEnter();
@@ -1715,7 +1715,7 @@ namespace XeApp.Game.Menu
 					onEnd(false);
 				yield break;
 			}
-			(m_eventCtrl as HAEDCCLHEMN_EventBattle).PIKBPBCNIOD();
+			(m_eventCtrl as HAEDCCLHEMN_NetEventBattleController).PIKBPBCNIOD();
 			yield return Co.R(Co_Save());
 			if(onEnd != null)
 				onEnd(true);
@@ -1728,7 +1728,7 @@ namespace XeApp.Game.Menu
 			//0x10634C0
 			if(CheckExRivalHelpFunc())
 			{
-				HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 				if(ev != null && ev.GCNAICGAEPF_GetExRivalHelpId() != 0)
 				{
 					MenuScene.Instance.RaycastDisable();
@@ -1747,7 +1747,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF12F50 Offset: 0xF12F50 VA: 0xF12F50
 		private bool CheckExRivalHelpFunc()
 		{
-			HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController ev = m_eventCtrl as HAEDCCLHEMN_NetEventBattleController;
 			if(ev != null)
 			{
 				if(!ev.LDIMNGFBKHL_GetExRivalTutoShown())
@@ -1781,7 +1781,7 @@ namespace XeApp.Game.Menu
 					GameManager.Instance.SceneIconCache.TryInstall(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.BCCHOBPJJKE_SceneId, 
 						musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId());
 				}
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(musicList[i].JNCPEGJGHOG_JacketId));
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(musicList[i].JNCPEGJGHOG_JacketId));
 			}
 			GameManager.Instance.DivaIconCache.TryInstall(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId,
 				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId,
@@ -1793,7 +1793,7 @@ namespace XeApp.Game.Menu
 					GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1].CGIELKDLHGE_GetEvolveId());
 			}
 			yield return null;
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
         }
 

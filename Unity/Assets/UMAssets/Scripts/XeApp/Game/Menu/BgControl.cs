@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 			public GameObject m_fade; // 0x1C
 			public Image m_darkImage; // 0x20
 			public bool m_enable; // 0x24
-			public CGFNKMNBNBN m_master; // 0x28
+			public CGFNKMNBNBN_ViewHomeBgData m_master; // 0x28
 		}
 
 		private GameObject m_bgRoot; // 0x8
@@ -223,7 +223,7 @@ namespace XeApp.Game.Menu
 			m_bgInstance.transform.SetParent(m_bgRoot.transform, false);
 			m_bgBehaviour.ResetBgImageRectSize(false);
 			prefab = null;
-			m_bgBehaviour.SetHome(CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark());
+			m_bgBehaviour.SetHome(CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark());
 			m_bgBehaviour.ChangeAttribute(m_attr);
 			if(action != null)
 				action();
@@ -247,21 +247,21 @@ namespace XeApp.Game.Menu
 			m_limitedHomeBg.m_enable = false;
 			if(bgType == BgType.Home)
 			{
-				if(!CGFNKMNBNBN.CEJADGLBCPA())
+				if(!CGFNKMNBNBN_ViewHomeBgData.CEJADGLBCPA())
 				{
 					int defaultBgId = GetDefaultHomeBg();
 					JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(defaultBgId, 0);
-					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-					CGFNKMNBNBN.DPMCLJMIBDK(defaultBgId, time);
-					CGFNKMNBNBN.HHGLKFFKFAB(-1);
+					long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+					CGFNKMNBNBN_ViewHomeBgData.DPMCLJMIBDK(defaultBgId, time);
+					CGFNKMNBNBN_ViewHomeBgData.HHGLKFFKFAB(-1);
 				}
 				if(bgType == BgType.Home)
 				{
 					if(JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() == 0)
 					{
-						List<int> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.NIJNOFHBKEB_GetAvaiableBgs();
+						List<int> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.NIJNOFHBKEB_GetAvaiableBgs();
 						int homeSceneId = JKHEOEEPBMJ.AGHGOOBIGDI_GetHomeSceneId();
-						if (!CGFNKMNBNBN.JBNMNPMCIBM_HaveBg(homeSceneId))
+						if (!CGFNKMNBNBN_ViewHomeBgData.JBNMNPMCIBM_HaveBg(homeSceneId))
 						{
 							if(!l.Contains(homeSceneId))
 							{
@@ -306,11 +306,11 @@ namespace XeApp.Game.Menu
 						if(JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() == 0)
 						{
 							int homeSceneId = JKHEOEEPBMJ.AGHGOOBIGDI_GetHomeSceneId();
-							m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(homeSceneId);
+							m_limitedHomeBg.m_master = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(homeSceneId);
 							if (m_limitedHomeBg.m_master == null)
 							{
 								homeSceneId = GetDefaultHomeBg();
-								m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(homeSceneId);
+								m_limitedHomeBg.m_master = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(homeSceneId);
 								JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(homeSceneId, 0);
 							}
 							m_limitedHomeBg.m_enable = true;
@@ -353,10 +353,10 @@ namespace XeApp.Game.Menu
 					long time = MenuScene.Instance.EnterToHomeTime;
 					if(time == 0)
 					{
-						time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+						time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 					}
-					CGFNKMNBNBN c;
-					if(CGFNKMNBNBN.DELFEMBCFCO_GetFirstAvaiableMusicBg(time, out c))
+					CGFNKMNBNBN_ViewHomeBgData c;
+					if(CGFNKMNBNBN_ViewHomeBgData.DELFEMBCFCO_GetFirstAvaiableMusicBg(time, out c))
 					{
 						m_limitedHomeBg.m_music_id = c.KLMAMIOBDHP_MusicId;
 					}
@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 					//2
 				}
 				//LAB_0143f6e4
-				m_limitedHomeBg.m_darkImage.enabled = CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark();
+				m_limitedHomeBg.m_darkImage.enabled = CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark();
 				if (m_limitedHomeBg.m_master.GJFPFFBAKGK_CloseAt != 0)
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().GBCEALJIKFN_Home.HBGKPLDGGLF(m_limitedHomeBg.m_master.GJFPFFBAKGK_CloseAt);
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 					case BgType.Home:
 						if(!IsSceneBg(BgType.Home))
 						{
-							m_bgBehaviour.SetHome(CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark());
+							m_bgBehaviour.SetHome(CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark());
 							if(id == 3)
 							{
 								m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.HomeNight);
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							m_bgBehaviour.SetHomeScene(CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark());
+							m_bgBehaviour.SetHomeScene(CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark());
 						}
 						StoryBgHide();
 						break;
@@ -570,10 +570,10 @@ namespace XeApp.Game.Menu
 			m_limitedHomeBg.m_enable = false;
 			if(bgType == BgType.Home && evolveId == 0)
 			{
-				m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(baseId);
+				m_limitedHomeBg.m_master = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(baseId);
 				if(m_limitedHomeBg.m_master == null)
 				{
-					m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(GetDefaultHomeBg());
+					m_limitedHomeBg.m_master = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(GetDefaultHomeBg());
 				}
 				m_limitedHomeBg.m_enable = true;
 				m_textureType = textureType;
@@ -588,8 +588,8 @@ namespace XeApp.Game.Menu
 			m_limitedHomeBg.m_music_id = LimitedHomeBg.INVALID_MUSIC_ID;
 			if (bgType >= BgType.Home && bgType < BgType.Music)
 			{
-				CGFNKMNBNBN bgInfo;
-				if (CGFNKMNBNBN.DELFEMBCFCO_GetFirstAvaiableMusicBg(MenuScene.Instance.EnterToHomeTime, out bgInfo))
+				CGFNKMNBNBN_ViewHomeBgData bgInfo;
+				if (CGFNKMNBNBN_ViewHomeBgData.DELFEMBCFCO_GetFirstAvaiableMusicBg(MenuScene.Instance.EnterToHomeTime, out bgInfo))
 				{
 					m_limitedHomeBg.m_music_id = bgInfo.KLMAMIOBDHP_MusicId;
 				}
@@ -762,7 +762,7 @@ namespace XeApp.Game.Menu
 			{
 				idx = d.AHHJLDLAPAN_DivaId - 1;
 			}
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[idx].CMBCBNEODPD_HomeBgId;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[idx].CMBCBNEODPD_HomeBgId;
 		}
 
 		// // RVA: 0x143DBCC Offset: 0x143DBCC VA: 0x143DBCC
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 					int itemId = m_id / 1000000;
 					m_strBuilder.SetFormat("{0:D6}_{1:D2}", m_id % 1000000, itemId);
 					assetId = m_strBuilder.ToString();
-					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
+					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 					if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LENJLNLNPEO_IsPlateAnimationHome == 0 
 						&& itemId > 0 
 						&& scenesList.Count >= itemId
@@ -1094,7 +1094,7 @@ namespace XeApp.Game.Menu
 						textureType = (BgTextureType)bgType;
 						break;
 					case BgType.LoginBonus:
-						id = GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+						id = GetHomeBgId(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 						textureType = BgTextureType.Normal;
 						break;
 					case BgType.UnlockValkyrie:

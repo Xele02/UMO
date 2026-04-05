@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		protected AbsoluteLayout m_rootLayout; // 0x30
 		private AbsoluteLayout m_newIcon; // 0x34
 		private AbsoluteLayout m_exchangeText; // 0x38
-		private FJGOKILCBJA shopProduct; // 0x48
+		private FJGOKILCBJA_ViewShopProductData shopProduct; // 0x48
 		private bool isShopProducts; // 0x4C
 		private bool IsLayoutInitialize; // 0x4D
 
@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		public LayoutDecoCustomWindow01.SelectItemType Type { get; protected set; } // 0x40
 		public bool IsLoadedTexture { get; protected set; } // 0x44
 		public bool IsNew { get; protected set; } // 0x45
-		public FJGOKILCBJA ShopProduct { get { return shopProduct; } } //0x19DD1C8
+		public FJGOKILCBJA_ViewShopProductData ShopProduct { get { return shopProduct; } } //0x19DD1C8
 		public RawImageEx m_ItemImage { get { return m_itemImage; } } //0x19DCE20
 		public bool IsShopProducts { get { return isShopProducts; } set { isShopProducts = value; SetExchangeText(value); } } //0x19DD1D0 0x19DD268
 
@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19DD2A0 Offset: 0x19DD2A0 VA: 0x19DD2A0
-		public void SetData(int id, LayoutDecoCustomWindow01.SelectItemType type, bool isNew/* = false*/, bool isProducts/* = false*/, FJGOKILCBJA product/* = null*/)
+		public void SetData(int id, LayoutDecoCustomWindow01.SelectItemType type, bool isNew/* = false*/, bool isProducts/* = false*/, FJGOKILCBJA_ViewShopProductData product/* = null*/)
 		{
 			Id = id;
 			Type = type;
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19DD2E0 Offset: 0x19DD2E0 VA: 0x19DD2E0 Slot: 6
 		public virtual void LoadTexture()
 		{
-			MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj, Id), (IiconTexture texture) =>
+			MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj, Id), (IiconTexture texture) =>
 			{
 				//0x19DD650
 				SetImage(texture);

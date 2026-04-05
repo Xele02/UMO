@@ -75,7 +75,7 @@ namespace XeApp.Game.Common
 			isLoadedCommonData = false;
 			isLoadedParam = false;
 
-			musicBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+			musicBase = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
 			yield return this.StartCoroutineWatched(LoadScoreTarFile(musicId));
 
@@ -139,7 +139,7 @@ namespace XeApp.Game.Common
 			str2.Clear();
 			if(!AssetBundleManager.isTutorialNow)
 			{
-				str2.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+				str2.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 				str2.Append("/");
 			}
 			else
@@ -194,7 +194,7 @@ namespace XeApp.Game.Common
 
 			MusicScoreData res = null;
 
-			int score_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CHBLIEKBOLL_GetScoreId(wavId, variationId, difficultyType, is6Line);
+			int score_id = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CHBLIEKBOLL_GetScoreId(wavId, variationId, difficultyType, is6Line);
 			StringBuilder str = new StringBuilder();
 			str.SetFormat("{0}{1:D8}", strPrefix, score_id);
 			if(tarFile != null)

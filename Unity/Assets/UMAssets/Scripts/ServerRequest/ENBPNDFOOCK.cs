@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use ENBPNDFOOCK_RequestRaidbossHelp", true)]
 public class ENBPNDFOOCK {}
-public class ENBPNDFOOCK_RequestRaidbossHelp : CACGCMBKHDI_Request
+public class ENBPNDFOOCK_RequestRaidbossHelp : CACGCMBKHDI_NetBaseAction
 {
     public class GDGEBGHDHBE
     {

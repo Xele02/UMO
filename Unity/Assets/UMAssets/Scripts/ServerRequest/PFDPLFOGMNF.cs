@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use PFDPLFOGMNF_GetRegularRankingTopRank", true)]
 public class PFDPLFOGMNF { }
-public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_Request
+public class PFDPLFOGMNF_GetRegularRankingTopRank : CACGCMBKHDI_NetBaseAction
 {
 	public class NOEPOENCKJJ : NJNCENEFCEI
 	{

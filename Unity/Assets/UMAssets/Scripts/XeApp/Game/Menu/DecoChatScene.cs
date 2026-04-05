@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		private LobbyStampMakerButton m_stampMakerButton; // 0x50
 		private LobbyStampWindow m_stampWindow; // 0x54
 		private Action m_updater; // 0x58
-		private OKLFOAPMJAA m_chatContller; // 0x5C
+		private OKLFOAPMJAA_BbsData m_chatContller; // 0x5C
 		private int m_ChatPlayerId; // 0x60
 		private int m_myPlayerId; // 0x64
 		private bool IsInitilaized; // 0x68
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 			{
 				m_ChatPlayerId = (Args as DecoChatArgs).playerId;
 			}
-			m_myPlayerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+			m_myPlayerId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 			m_chatContller = EBNNKJCEEFN.LIFAAGMJFEB(m_ChatPlayerId);
 			IsInitilaized = false;
 			IsRequestGotoTitle = false;
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			bool inList = false;
 			//bool error = false;
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
 			{
 				//0xC55980
 				success = true;
@@ -305,12 +305,12 @@ namespace XeApp.Game.Menu
 				//0xC5598C
 				isDone = true;
 				inList = true;
-			}, (CACGCMBKHDI_Request act) =>
+			}, (CACGCMBKHDI_NetBaseAction act) =>
 			{
 				//0xC55998
 				isDone = true;
 				//error = true;
-			}, (CACGCMBKHDI_Request act) =>
+			}, (CACGCMBKHDI_NetBaseAction act) =>
 			{
 				//0xC559A8
 				isDone = true;
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			bool IsError = false;
 			EAJCBFGKKFA_FriendInfo friends = new EAJCBFGKKFA_FriendInfo();
-			PIGBKEIAMPE_FriendManager fm = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			PIGBKEIAMPE_NetFriendManager fm = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager;
 			fm.LJMOBJNEHPM(_playerId, () =>
 			{
 				//0xC55A74
@@ -428,12 +428,12 @@ namespace XeApp.Game.Menu
 
 				}
 				isDone = true;
-			}, (CACGCMBKHDI_Request err) =>
+			}, (CACGCMBKHDI_NetBaseAction err) =>
 			{
 				//0xC55BD4
 				IsError = true;
 				IsTryProfile = false;
-			}, (CACGCMBKHDI_Request err) =>
+			}, (CACGCMBKHDI_NetBaseAction err) =>
 			{
 				//0xC55C04
 				IsTryProfile = false;
@@ -465,7 +465,7 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			//bool error = false;
 			bool inList = false;
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
 			{
 				//0xC55CE4
 				success = true;
@@ -475,12 +475,12 @@ namespace XeApp.Game.Menu
 				//0xC55CF0
 				isDone = true;
 				inList = true;
-			}, (CACGCMBKHDI_Request act) =>
+			}, (CACGCMBKHDI_NetBaseAction act) =>
 			{
 				//0xC55CFC
 				isDone = true;
 				//error = true;
-			}, (CACGCMBKHDI_Request act) =>
+			}, (CACGCMBKHDI_NetBaseAction act) =>
 			{
 				//0xC55D0C
 				isDone = true;
@@ -585,7 +585,7 @@ namespace XeApp.Game.Menu
 				StringBuilder str = new StringBuilder(1024);
 				if(m_windowUi.IsUpdatePossible())
 				{
-					int bbs_auto_update_op = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
+					int bbs_auto_update_op = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_op", 1);
 					m_chatContller.FBANBDCOEJL_Update(bbs_auto_update_op, () =>
 					{
 						//0xC55428
@@ -696,7 +696,7 @@ namespace XeApp.Game.Menu
 			ANPBHCNJIDI.AIFBLOAGFOP data = new ANPBHCNJIDI.AIFBLOAGFOP();
 			data.AHHJLDLAPAN_DivaId = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
 			data.EBBJPBGHJOL_text = m_messgeText;
-			data.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
+			data.PCEHLFNFIDA(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData);
 			m_chatContller.NPIBJOGODKG(0, data, () =>
 			{
 				//0xC56120

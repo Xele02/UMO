@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1D6018C Offset: 0x1D6018C VA: 0x1D6018C
-		public void SetStatus(EPLAAEHPCDM data, IKIIAFKHDFP manager, ItemPackImageTextureCache textureCache)
+		public void SetStatus(EPLAAEHPCDM data, IKIIAFKHDFP_LoginBonusManager manager, ItemPackImageTextureCache textureCache)
 		{
 			m_rewardData = data;
 			m_itemPackTextureCache = textureCache;
@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 						if(d.HBHMAKNGKFK_items.Count < 2)
 						{
 							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
-							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
 							SetNumItem(arrayIdx, d.HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count);
 						}
 						else
@@ -257,7 +257,7 @@ namespace XeApp.Game.Menu
 							if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.DHGCJEOPEIE_3_Comback1 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start)
 							{
 								int val;
-								int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
+								int.TryParse(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
 								SetItemPackIcon(arrayIdx, (ItemPackImageTextureCache.Type)val);
 							}
 							else

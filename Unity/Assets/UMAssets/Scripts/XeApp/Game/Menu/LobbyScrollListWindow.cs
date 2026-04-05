@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 				SoundResource.InstallCueSheet("cs_loby");
 			}
 			yield return null;
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			bool isEndChangeCueSheet = false;
 			m_voicePlayer.RequestChangeCueSheet("cs_loby", () =>
@@ -784,7 +784,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD12F18 Offset: 0xD12F18 VA: 0xD12F18
-		public void GuideCharaInitialize(NKOBMDPHNGP_EventRaidLobby _cont)
+		public void GuideCharaInitialize(NKOBMDPHNGP_NetEventRaidLobbyController _cont)
 		{
 			m_GuideTextAnim.StartChildrenAnimGoStop("st_wait");
 			if(_cont == null)
@@ -793,7 +793,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				NKOBMDPHNGP_EventRaidLobby.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_EventRaidLobby.NGHEKBHLBAN.CFBJGAGBJEN_0);
+				NKOBMDPHNGP_NetEventRaidLobbyController.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_NetEventRaidLobbyController.NGHEKBHLBAN.CFBJGAGBJEN_0);
 				SetGuideCharaData(d.FDBOPFEOENF_diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_message);
 			}
 		}
@@ -862,7 +862,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD09DBC Offset: 0xD09DBC VA: 0xD09DBC
-		public void OnClickGuideChara(NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase)
+		public void OnClickGuideChara(NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase phase)
 		{
 			if(m_isGuideTextAnim)
 				return;
@@ -895,7 +895,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1011C Offset: 0xD1011C VA: 0xD1011C
-		public void NaviCharaVoicePlay(NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase)
+		public void NaviCharaVoicePlay(NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase phase)
 		{
 			LobbyNavigationCharaVoiceDataTable.VoiceType[] v = new LobbyNavigationCharaVoiceDataTable.VoiceType[4] { LobbyNavigationCharaVoiceDataTable.VoiceType.Num, LobbyNavigationCharaVoiceDataTable.VoiceType.Start, LobbyNavigationCharaVoiceDataTable.VoiceType.Emergence, LobbyNavigationCharaVoiceDataTable.VoiceType.End };
 			m_voicePlayer.PlayVoice(LobbyNavigationCharaVoiceDataTable.VoiceSetting(v[(int)phase], m_id), m_id);

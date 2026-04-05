@@ -16,7 +16,7 @@ public class MFKPFMCLOIB : EBHIMFFJBIJ
 
 [System.Obsolete("Use JKCDLPOPCGC_GetRaidboss", true)]
 public class JKCDLPOPCGC {}
-public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
+public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_NetBaseAction
 {
     public class GDMIBMKBLDJ
     {

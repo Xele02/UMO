@@ -74,7 +74,7 @@ public class MBLFHJJEHLH_AnketoMgr
 	// RVA: 0xA2F5A8 Offset: 0xA2F5A8 VA: 0xA2F5A8
 	public bool KHEKNNFCAOI_Init(int _GJLFANGDGCL_Target, bool _FBBNPFFEJBN_Force/* = false*/)
 	{
-		IPJBAPLFECP_Anketo dbAnketo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
+		IPJBAPLFECP_Anketo dbAnketo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
 		KICOACCACII_QData.Clear();
 		ILDKBCLAFPB.BKLCILHFCGB_Flags flags = GameManager.Instance.localSave.EPJOACOONAC_GetSave().LPBFPCGDOGC_Anketo.FHEJNGDFMAI_AnswerFlags;
 		MCJBEJBMJMF_Total = 0;
@@ -122,7 +122,7 @@ public class MBLFHJJEHLH_AnketoMgr
 	{
 		if (!PEPCJDIECJP.GIEPMFIEPJD_IsValid())
 			return;
-		ILCCJNDFFOB.HHCJCDFCLOB.MLNHHIIDJAO_1_Anketo(PEPCJDIECJP);
+		ILCCJNDFFOB.HHCJCDFCLOB_Instance.MLNHHIIDJAO_1_Anketo(PEPCJDIECJP);
 		GameManager.Instance.localSave.EPJOACOONAC_GetSave().LPBFPCGDOGC_Anketo.FHEJNGDFMAI_AnswerFlags.EDEDFDDIOKO_Set(PEPCJDIECJP.PPFNGGCBJKC_id - 1);
 		GameManager.Instance.localSave.HJMKBCFJOOH_Save();
 	}

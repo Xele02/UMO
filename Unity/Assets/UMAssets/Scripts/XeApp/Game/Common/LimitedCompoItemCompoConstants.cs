@@ -6,7 +6,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1109D78 Offset: 0x1109D78 VA: 0x1109D78
 		public static int MakeItemId(LimitedCompoContentsId itemId)
 		{
-			return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem, (int)itemId);
+			return EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem, (int)itemId);
 		}
 	}
 

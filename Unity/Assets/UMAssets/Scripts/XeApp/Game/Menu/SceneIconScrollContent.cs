@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 			int sceneId = m_sceneId;
 			m_evolveId = (short)sceneData.CGIELKDLHGE_GetEvolveId();
 			int evolveId = m_evolveId;
-			KMOGDEOKHPG_Episode epDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode;
+			KMOGDEOKHPG_Episode epDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode;
 			GameManager.Instance.SceneIconCache.SetLoadingTexture(m_sceneIconImage);
 			GameManager.Instance.SceneIconCache.Load(m_sceneId, m_evolveId, (IiconTexture texture) => {
 				//0x136F358

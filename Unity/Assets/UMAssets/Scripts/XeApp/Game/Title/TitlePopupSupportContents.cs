@@ -101,7 +101,7 @@ namespace XeApp.Game.Title
 			}
 			bool done = false;
 			bool error = false;
-			AMOCLPHDGBP d = new AMOCLPHDGBP();
+			AMOCLPHDGBP_NetPaidVCPurchase d = new AMOCLPHDGBP_NetPaidVCPurchase();
 			m_control.InputDisable();
 			d.CGPFMPHAAJK(() =>
 			{

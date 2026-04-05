@@ -2,7 +2,7 @@ using UnityEngine;
 
 [System.Obsolete("Use PKNOGNLPHAE_CreatePlayer", true)]
 public class PKNOGNLPHAE { }
-public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_Request
+public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_NetBaseAction
 {
 	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 

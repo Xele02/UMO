@@ -372,10 +372,10 @@ namespace XeApp.Game.Menu
 				return x == MenuButtonAnim.ButtonType.VOP;
 			});
 			m_buttons[idx].enabled = false;
-			if (KDHGBOOECKC.HHCJCDFCLOB != null)
+			if (KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance != null)
 			{
-				KDHGBOOECKC.HHCJCDFCLOB.EJBPEBIIMPG_GetVfoPlayerLevelUnlock();
-				m_buttons[idx].enabled = KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk();
+				KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.EJBPEBIIMPG_GetVfoPlayerLevelUnlock();
+				m_buttons[idx].enabled = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LOCAIBNPKDL_IsPlayerLevelOk();
 			}
 			m_actionButtons[idx].Disable = !m_buttons[idx].enabled;
 		}

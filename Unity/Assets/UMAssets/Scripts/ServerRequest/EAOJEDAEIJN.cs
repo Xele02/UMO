@@ -32,7 +32,7 @@ public static class EFMIBOEJBCD // TypeDefIndex: 10557
 
 [System.Obsolete("Use EAOJEDAEIJN_GetMyRaidbosses", true)]
 public class EAOJEDAEIJN {}
-public class EAOJEDAEIJN_GetMyRaidbosses : CACGCMBKHDI_Request
+public class EAOJEDAEIJN_GetMyRaidbosses : CACGCMBKHDI_NetBaseAction
 {
     public class AGCEDCMMMHH
     {

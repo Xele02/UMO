@@ -96,7 +96,7 @@ namespace XeApp
 		//// RVA: 0x1ACA820 Offset: 0x1ACA820 VA: 0x1ACA820
 		private int GetInt(string key, int defaultValue)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam(key, defaultValue);
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam(key, defaultValue);
 		}
 
 		// RVA: 0x1ACA9B4 Offset: 0x1ACA9B4 VA: 0x1ACA9B4

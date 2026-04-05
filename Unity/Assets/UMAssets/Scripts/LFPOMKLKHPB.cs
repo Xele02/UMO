@@ -6,7 +6,10 @@ using System.Text;
 using UnityEngine;
 using XeApp.Game.Common;
 
-public class LFPOMKLKHPB
+// namespace XeApp.Game.Net.Install
+[System.Obsolete()]
+public class LFPOMKLKHPB {}
+public class LFPOMKLKHPB_InstallFileSize
 {
 	private const int BIAOPOMKMJE = 325392159;
 	private const int CEMEIPNMAAD_Version = 1;
@@ -22,22 +25,22 @@ public class LFPOMKLKHPB
 	// // RVA: 0xD6F134 Offset: 0xD6F134 VA: 0xD6F134
 	public void LKLCOEJLBGG()
     {
-        CDMPNFPDBOO_DlSizeTimeout = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("dlsize_timeout", 60);
+        CDMPNFPDBOO_DlSizeTimeout = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("dlsize_timeout", 60);
 		PLOOEECNHFB_IsDone = false;
 		AAAOKDDILCP_IsError = false;
 		StringBuilder str = new StringBuilder();
 		str.Append('/');
-		str.Append(KEHOJEJMGLJ.LBEPLOJBFCM_PlatformPrefix);
+		str.Append(KEHOJEJMGLJ_NetInstallManager.LBEPLOJBFCM_PlatformPrefix);
 		str.Append("/sz.dat");
 		string fullPath = str.ToString();
 		string dir = Path.GetDirectoryName(fullPath);
 		dir = dir.Replace('\\','/');
 		string file = Path.GetFileNameWithoutExtension(fullPath);
 		string ext = Path.GetExtension(fullPath);
-		int keyPath = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.KBNGOBEAHIC_key_path;
+		int keyPath = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.KBNGOBEAHIC_key_path;
 		uint v = BEEINMBNKNM_Encryption.DIKDKNIKPNJ((uint)keyPath, fullPath);
 		str.Length = 0;
-		str.Append(KEHOJEJMGLJ.FLHOFIEOKDH_BaseUrl);
+		str.Append(KEHOJEJMGLJ_NetInstallManager.FLHOFIEOKDH_BaseUrl);
 		str.Append(dir);
 		str.Append('/');
 		str.Append(file);
@@ -60,7 +63,7 @@ public class LFPOMKLKHPB
 		//0xD70240
 		do
 		{
-			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(true);
+			JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.NIGGABHIFEE_ShowTransmissionIcon(true);
 			string url;
 #if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 			if(!FileSystemProxy.FileExists(HJLDBEJOMIO))
@@ -104,7 +107,7 @@ public class LFPOMKLKHPB
 					break;
 				}
 			}
-			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(false);
+			JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.NIGGABHIFEE_ShowTransmissionIcon(false);
 			if(JMNNBKPAAKF.error == null)
 			{
 				if(!OLEKCNABLNH)
@@ -120,7 +123,7 @@ public class LFPOMKLKHPB
 				OLEKCNABLNH = true;
 			}
 			bool BEKAMBBOLBO_Done = false;
-			JHHBAFKMBDL.HHCJCDFCLOB.AINKKHHAKLK_ShowDldSizeErrorPopup(() => {
+			JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.AINKKHHAKLK_ShowDldSizeErrorPopup(() => {
 				//0xD70230
 				BEKAMBBOLBO_Done = true;
 			});
@@ -220,7 +223,7 @@ public class LFPOMKLKHPB
 			PLOOEECNHFB_IsDone = true;
 			return;
 		}
-		JHHBAFKMBDL.HHCJCDFCLOB.NKIKBOJOCNN_ShowInstallFileSize(() =>
+		JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.NKIKBOJOCNN_ShowInstallFileSize(() =>
 		{
 			//0xD70210
 			PLOOEECNHFB_IsDone = true;

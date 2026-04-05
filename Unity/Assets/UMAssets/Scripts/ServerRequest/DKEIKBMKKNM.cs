@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use DKEIKBMKKNM_GetReceivedFriendRequests", true)]
 public class DKEIKBMKKNM { }
-public class DKEIKBMKKNM_GetReceivedFriendRequests : CACGCMBKHDI_Request
+public class DKEIKBMKKNM_GetReceivedFriendRequests : CACGCMBKHDI_NetBaseAction
 {
 	public class ENMCJFCLBPO_PlayerInfo
 	{

@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator InitializeLayoutCoroutine()
 		{
 			//0xC3D044
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled())
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled())
 			{
 				yield return Co.R(LayoutObjectCacheUtility.InitializeLayoutUnitSetting(this));
 			}
@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B5B4 Offset: 0xC3B5B4 VA: 0xC3B5B4
 		private void CallBackCostumeUpgrade()
 		{
-			if (MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
+			if (MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable())
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, null, true);
@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 			{
 				StringBuilder str = new StringBuilder(64);
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+				str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH_ViewCostumeUpgrade.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
 				TextPopupSetting s = new TextPopupSetting();
 				s.Text = str.ToString();
 				s.WindowSize = SizeType.Small;
@@ -119,22 +119,22 @@ namespace XeApp.Game.Menu
 			if(IsValkyrieTuneUpUnlock())
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					int valkyrietuneup_first_adv_id = 0;
-					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 					{
-						valkyrietuneup_first_adv_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_first_adv_id", 89);
+						valkyrietuneup_first_adv_id = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_first_adv_id", 89);
 					}
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(valkyrietuneup_first_adv_id);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(valkyrietuneup_first_adv_id);
 					if(dbAdv == null)
 					{
-						dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(1);
+						dbAdv = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(1);
 						if(dbAdv == null)
 							return;
 					}
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.SETTINGMENU_VALKYRIETUNEUP, new AdvSetupParam());
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(valkyrietuneup_first_adv_id);
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(valkyrietuneup_first_adv_id);
 					Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					MenuScene.Instance.InputDisable();
@@ -201,17 +201,17 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3C6E4 Offset: 0xC3C6E4 VA: 0xC3C6E4
 		private void SettingCostumeUpgradeBotton()
 		{
-			m_costumeUpgradeLock.StartChildrenAnimGoStop(MOEALEGLGCH.CDOCOLOKCJK_Avaiable() ? 1 : 0, MOEALEGLGCH.CDOCOLOKCJK_Avaiable() ? 1 : 0);
+			m_costumeUpgradeLock.StartChildrenAnimGoStop(MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable() ? 1 : 0, MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable() ? 1 : 0);
 		}
 
 		// RVA: 0xC3C260 Offset: 0xC3C260 VA: 0xC3C260
 		public static bool IsValkyrieTuneUpUnlock()
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_player_level", 0) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+					return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("valkyrietuneup_player_level", 0) <= CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				}
 			}
 			return false;
@@ -258,13 +258,13 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OnTutorial()
 		{
 			//0xC3CC8C
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK_Avaiable() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+			if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable() && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
 				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO_TutoUpgradeType.CAPLNONHNCO_1_SettingMenu/*1*/, m_menuButtons[4], BasicTutorialMessageId.Id_CostumeUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal));
 			}
 			else
 			{
-				if(IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(IsValkyrieTuneUpUnlock() && !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(m_menuButtons[5], BasicTutorialMessageId.Id_ValkyrieUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal, null, null));
 				}

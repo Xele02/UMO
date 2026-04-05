@@ -12,8 +12,8 @@ namespace XeApp.Game.Menu
 		private LayoutNewYearEvent m_layoutMain; // 0x48
 		private PopupNewYearEventSettingWindow m_popupEvent = new PopupNewYearEventSettingWindow(); // 0x4C
 		private LayoutPopupNewYearEvent m_popupLayout; // 0x50
-		private KNKDBNFMAKF_EventSp m_eventCtrl; // 0x54
-		private List<IKDICBBFBMI_EventBase> m_spChildEventControllers = new List<IKDICBBFBMI_EventBase>(); // 0x58
+		private KNKDBNFMAKF_NetEventSpController m_eventCtrl; // 0x54
+		private List<IKDICBBFBMI_NetEventBaseController> m_spChildEventControllers = new List<IKDICBBFBMI_NetEventBaseController>(); // 0x58
 		private List<int> m_eventHelpId = new List<int>(); // 0x5C
 		private bool m_isWaitPresetCanvas; // 0x60
 		private bool m_isEventTimeLimit; // 0x61
@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1516944 Offset: 0x1516944 VA: 0x1516944
 		private void GotoEventGame(OHKECKAPJJL pageInfo)
 		{
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(pageInfo.GGHDEDJFFOM);
+            IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(pageInfo.GGHDEDJFFOM);
 			//pageInfo.PNDEAHGLJIC_BtnType
 			if(ev != null)
 			{
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(ev.CAKEOPLJDAF_EndAdventureId))
+					if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(ev.CAKEOPLJDAF_EndAdventureId))
 					{
 						m_viewDataSpPage.GEOGJOBNKHG(pageInfo);
 						return;
@@ -120,9 +120,9 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT);
 			}
-			int fId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(advId).KKPPFAHFOJI_FileId;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
-			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP_Adventure(advId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.KDDHGLNCFMF_8_SpecialEventHome);
+			int fId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_Get(advId).KKPPFAHFOJI_FileId;
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.LIIJEGOIKDP_Adventure(advId, OAGBCBBHMPF.DKAMMIHBINF_AdventureSource.KDDHGLNCFMF_8_SpecialEventHome);
 			Database.Instance.advSetup.Setup(fId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
@@ -212,9 +212,9 @@ namespace XeApp.Game.Menu
 		{
 			//0x1519BD8
 			m_isEventTimeLimit = false;
-			m_currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			m_currentTime = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_isEventChecked = false;
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_EventSp;
+			m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_NetEventSpController;
 			if(!MenuScene.Instance.CheckEventLimit(m_eventCtrl, false, true))
 			{
 				this.StartCoroutineWatched(Co_ChangeBg());
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 			{
 				done = false;
 				err = false;
-				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, 0, () =>
+				JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, 0, () =>
 				{
 					//0x1518948
 					done = true;
@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 				{
 					done = false;
 					err = false;
-					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 					{
 						//0x1518960
 						done = true;
@@ -296,10 +296,10 @@ namespace XeApp.Game.Menu
 						m_spChildEventControllers.Clear();
 						for(int i = 0; i < m_eventCtrl.BAEEGPJJHKD_GetNumSubSp(); i++)
 						{
-							m_spChildEventControllers.Add(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventCtrl.NBLGLKGOKOD_GetSubSpId(i)));
+							m_spChildEventControllers.Add(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(m_eventCtrl.NBLGLKGOKOD_GetSubSpId(i)));
 						}
 						yield return Co.R(Co_GetGachaProductList());
-						m_viewDataSpPage.KHEKNNFCAOI_Init(NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_products);
+						m_viewDataSpPage.KHEKNNFCAOI_Init(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.MHKCPJDNJKI_products);
 						m_layoutMain.Apply(m_viewDataSpPage, m_currentTime);
 						while(!m_layoutMain.IsDownloaded)
 							yield return null;
@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1518C68
 			bool isEnd = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
 			{
 				//0x1518980
 				isEnd = true;
@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 				{
 					m_eventHelpId.AddRange(l);
 				}
-				m_eventCtrl.FJHIHFCAHMH(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+				m_eventCtrl.FJHIHFCAHMH(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			}
 			m_isShowFirstHelp = m_eventCtrl.CMPEJEHCOEI;
 			m_eventCtrl.CMPEJEHCOEI = false;

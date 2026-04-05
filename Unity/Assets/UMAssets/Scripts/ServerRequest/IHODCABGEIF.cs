@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IHODCABGEIF_UpdatePlayerCounter", true)]
 public class IHODCABGEIF {}
-public class IHODCABGEIF_UpdatePlayerCounter : CACGCMBKHDI_Request
+public class IHODCABGEIF_UpdatePlayerCounter : CACGCMBKHDI_NetBaseAction
 {
     public class JLNPNIIEKOJ
     {

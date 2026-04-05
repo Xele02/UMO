@@ -16,7 +16,7 @@ namespace XeApp.Game.Title
 		public void SetStatus()
 		{
 			SetTextVersion(string.Format("ver {0}", AppInfo.appVersion));
-			SetTextID(string.Format("ID {0}", NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId));
+			SetTextID(string.Format("ID {0}", NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId));
 		}
 
 		// // RVA: 0xE3B150 Offset: 0xE3B150 VA: 0xE3B150

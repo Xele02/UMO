@@ -47,7 +47,7 @@ namespace XeApp
 
 			//0x1D7F99C
 			KDKFHGHGFEK data = new KDKFHGHGFEK();
-			data.KHEKNNFCAOI_Init(m_id, EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg);
+			data.KHEKNNFCAOI_Init(m_id, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg);
 			bundle = DecorationConstants.GetItemBundleName(data, false, m_setting.AttributeType);
 			op = AssetBundleManager.LoadAllAssetAsync(bundle);
 			yield return op;

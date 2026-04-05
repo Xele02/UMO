@@ -3,10 +3,14 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use KMOGDEOKHPG_Episode", true)]
 public class KMOGDEOKHPG {}
+[UMOClass()]
 public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 {
+	[UMOMember()]
 	public List<HMGPODKEFBA_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } = new List<HMGPODKEFBA_EpisodeInfo>(500); // 0x20 LOGMEMCACAC_bgs NNNEPHIJAKK_bgs HIAFHIDDPEJ_bgs
+	[UMOMember()]
 	public List<FMLIFJBPFNA_Step> KODIKHBMBBJ_Steps { get; private set; } = new List<FMLIFJBPFNA_Step>(4); // 0x24 CAPCHAEJOGJ_bgs HKIODMBDNKN_bgs EIMDIFHLBKK_bgs
+	[UMOMember()]
 	public List<JNIKPOIKFAC_Reward> LFAAEPAAEMB_Rewards { get; private set; } = new List<JNIKPOIKFAC_Reward>(1000); // 0x28 LGPNBHKGMEA_bgs CBMPDJKIIOF_bgs EFCJGLJJBNA_bgs
 
 	// // RVA: 0x111E600 Offset: 0x111E600 VA: 0x111E600
@@ -15,7 +19,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111E6C8 Offset: 0x111E6C8 VA: 0x111E6C8
 	public int NNFJBBFBIEN(int _JPIDIENBGKH_CostumeId)
 	{
-		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, _JPIDIENBGKH_CostumeId);
+		int itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, _JPIDIENBGKH_CostumeId);
 		for(int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
 		{
 			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_ItemId == itemId)
@@ -45,7 +49,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111E9EC Offset: 0x111E9EC VA: 0x111E9EC
 	public int HFAMPKLFFEJ_FindEpisodeForReward(int _GPPEFLKGGGJ_ValkyrieId)
 	{
-		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, _GPPEFLKGGGJ_ValkyrieId);
+		int itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, _GPPEFLKGGGJ_ValkyrieId);
 		for (int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
 		{
 			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_ItemId == itemId)
@@ -191,13 +195,20 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 
 [System.Obsolete("Use HMGPODKEFBA_EpisodeInfo", true)]
 public class HMGPODKEFBA { }
+[UMOClass()]
 public class HMGPODKEFBA_EpisodeInfo
 {
+	[UMOMember()]
 	public short KELFCMEOPPM_EpisodeId; // 0x8
+	[UMOMember()]
 	public short IOFHEGJPHKG_StepId; // 0xA
+	[UMOMember()]
 	public short EILKGEADKGH_Order; // 0xC
+	[UMOMember()]
 	public sbyte PPEGAKEIEGM_Enabled; // 0xE
+	[UMOMember()]
 	public sbyte FGOGPCMHPIN_Count; // 0xF
+	[UMOMember()]
 	public List<short> HHJGBJCIFON_Rewards = new List<short>(10); // 0x10
 
 	//public bool IPJMPBANBPP_Enabled { get; } //0x15F4CC4_bgs
@@ -211,10 +222,14 @@ public class HMGPODKEFBA_EpisodeInfo
 
 [System.Obsolete("Use FMLIFJBPFNA_Step", true)]
 public class FMLIFJBPFNA { }
+[UMOClass()]
 public class FMLIFJBPFNA_Step
 {
+	[UMOMember()]
 	public short IOFHEGJPHKG_StepId; // 0x8
+	[UMOMember()]
 	public sbyte FGOGPCMHPIN_Count; // 0xA
+	[UMOMember()]
 	public List<int> JENFHJDFFAD_Pt = new List<int>(10); // 0xC
 
 	// // RVA: 0x119E674 Offset: 0x119E674 VA: 0x119E674
@@ -223,11 +238,16 @@ public class FMLIFJBPFNA_Step
 
 [System.Obsolete("Use JNIKPOIKFAC_Reward", true)]
 public class JNIKPOIKFAC { }
+[UMOClass()]
 public class JNIKPOIKFAC_Reward
 {
+	[UMOMember()]
 	public short EIHOBHDKCDB_RewardId; // 0x8
+	[UMOMember()]
 	public bool MFKJAOLIPMA_IsVc; // 0xA
+	[UMOMember()]
 	public int JDLJPNMLFID_ItemCount; // 0xC
+	[UMOMember()]
 	public int KIJAPOFAGPN_ItemId; // 0x10
 
 	// // RVA: 0x1B8FCFC Offset: 0x1B8FCFC VA: 0x1B8FCFC

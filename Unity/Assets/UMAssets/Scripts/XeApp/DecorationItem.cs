@@ -6,7 +6,7 @@ namespace XeApp
 	{
 
 		// RVA: 0x1AD02A4 Offset: 0x1AD02A4 VA: 0x1AD02A4 Slot: 6
-		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			return;
 		}

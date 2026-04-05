@@ -20,12 +20,12 @@ class DataExporter
 	[MenuItem("UMO/Export Song List", validate = true)]
 	static bool ExportSongListAvaiable()
 	{
-		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized;
+		return Application.isPlaying && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized;
 	}
 	[MenuItem("UMO/Export Song List")]
 	static void ExportSongList()
 	{
-		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		string fileOutput = "";
 		for (int i = 0; i < MusicDb.EPMMNEFADAP_Music.Count; i++)
 		{
@@ -64,13 +64,13 @@ class DataExporter
 	[MenuItem("UMO/Export Costume List", validate = true)]
 	static bool ExportCostumeListAvaiable()
 	{
-		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized;
+		return Application.isPlaying && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized;
 	}
 	[MenuItem("UMO/Export Costume List")]
 	static void ExportCostumeList()
 	{
 		Directory.CreateDirectory(Application.dataPath + "../../../Data/CostumeImg/");
-		LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+		LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 		string fileOutput = "";
 		for(int diva = 1; diva <= 10; diva++)
 		{
@@ -100,7 +100,7 @@ class DataExporter
 	[MenuItem("UMO/Export Song Effect Enabler List", validate = true)]
 	static bool ExportSongEffectEnablerListAvaiable()
 	{
-		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized;
+		return Application.isPlaying && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized;
 	}
 	[MenuItem("UMO/Export Song Effect Enabler List")]
 	static void ExportSongEffectEnablerList()
@@ -110,7 +110,7 @@ class DataExporter
 
 	static public IEnumerator ExtractEffectList()
 	{
-		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 
 		StreamWriter writer = new StreamWriter(Application.dataPath + "../../../Data/SongEffectlist.txt", false);
 		string path = FileSystemProxy.ConvertPath(UnityEngine.Application.persistentDataPath + "/data/android/mc/0001/sc.xab");
@@ -160,8 +160,8 @@ class DataExporter
 	[MenuItem("UMO/Copy Song setup for bug report", validate = true)]
 	static bool CopySongSetupAvaiable()
 	{
-		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && 
-			IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized && 
+		return Application.isPlaying && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && 
+			IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized && 
 			SceneManager.GetActiveScene().name.Contains("Rhythm");
 	}
 	[MenuItem("UMO/Copy Song setup for bug report")]
@@ -169,7 +169,7 @@ class DataExporter
 	{
 		string txt = "";
 		int songId = Database.Instance.gameSetup.musicInfo.prismMusicId;
-		var music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(songId);
+		var music = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(songId);
 		string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Name).musicName : "";
 		txt += "Song : "+songId+" "+Title+"\n";
 		txt += "Num diva : "+Database.Instance.gameSetup.musicInfo.onStageDivaNum+"\n";

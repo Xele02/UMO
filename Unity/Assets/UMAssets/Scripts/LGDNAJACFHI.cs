@@ -63,7 +63,7 @@ public class LGDNAJACFHI
 		NGIKLCDKAMB_FormatedPrice = _MEANCEOIMGE_Summon.NGIKLCDKAMB_FormatedPrice;
 		OJIMENABACH_price_amount_micros = _MEANCEOIMGE_Summon.OJIMENABACH_price_amount_micros;
 		JMEMGIPGGIK_currency_code = _MEANCEOIMGE_Summon.JMEMGIPGGIK_currency_code;
-        DKJMDIFAKKD_VcItem.EBGPAPPHBAH vcItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.ICGHMMOCJBA(PGODOPKCHBD_PlatformProductId, OPFGFINHFCE_name, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), KAPMOPMDHJE_label);
+        DKJMDIFAKKD_VcItem.EBGPAPPHBAH vcItem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.ICGHMMOCJBA(PGODOPKCHBD_PlatformProductId, OPFGFINHFCE_name, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), KAPMOPMDHJE_label);
         LHENLPLKGLP_StuffId = vcItem.PPFNGGCBJKC_id;
 		EAHPLCJMPHD_PId = vcItem.HEOLEHDFLJO_ico;
 		JLGHMCBLENL_IsBeginner = vcItem.HPGNBPIBAOM_IsBeginner;
@@ -77,7 +77,7 @@ public class LGDNAJACFHI
 		CHPMJNAFPMA_HasMonthlyPassBonus = false;
 		for(int i = 0; i < BIOHCFLJDCH_BonusItemId.Length; i++)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.IIEKKOHBNLA_HasMonthlyPassBonus(BIOHCFLJDCH_BonusItemId[i]))
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.IIEKKOHBNLA_HasMonthlyPassBonus(BIOHCFLJDCH_BonusItemId[i]))
 			{
 				CHPMJNAFPMA_HasMonthlyPassBonus = true;
 				break;
@@ -100,7 +100,7 @@ public class LGDNAJACFHI
 	{
 		if(!PBELOKPKJKN)
 		{
-			CBMFOOHOAOE_Purchase res = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
+			CBMFOOHOAOE_Purchase res = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
 			res.ICDEFIIADDO_Timeout = 8640000;
 			res.AFKAGFOFAHM_ProductId = PPFNGGCBJKC_id;
 			res.BPNPBJALGHM_quantity = 1;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use AAOCPMCMPCP_GetNormalLotItems", true)]
 public class AAOCPMCMPCP { }
-public class AAOCPMCMPCP_GetNormalLotItems : CACGCMBKHDI_Request
+public class AAOCPMCMPCP_GetNormalLotItems : CACGCMBKHDI_NetBaseAction
 {
 	public class KMFEEFFEHAD
 	{

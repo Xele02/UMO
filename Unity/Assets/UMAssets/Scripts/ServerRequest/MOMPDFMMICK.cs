@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use MOMPDFMMICK_ClaimAchievementPrizesAndSave", true)]
 public class MOMPDFMMICK { }
-public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
+public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_NetBaseAction
 {
 	public class KMHBJPCCDJJ
 	{
@@ -137,7 +137,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	// RVA: 0x17B9624 Offset: 0x17B9624 VA: 0x17B9624 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		PJKLMCGEJMK.DALFMJFKCGJ = MCKEOKFMLAH_SaveId;
+		PJKLMCGEJMK_NetActionManager.DALFMJFKCGJ = MCKEOKFMLAH_SaveId;
 		NFEAMMJIMPG_Result = new JGCHFAKGAGA();
 		NFEAMMJIMPG_Result.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}

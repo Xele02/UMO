@@ -5,7 +5,7 @@ public delegate bool FAPJEIOBPDG(List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_Js
 
 [System.Obsolete("Use HDPLHCDAFHA_RequestMaster", true)]
 public class HDPLHCDAFHA{}
-public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
+public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_NetBaseAction
 {
 	public List<string> DFDLAIGFDAH; // 0x7C
 	private bool OGLMMENAJFL_onSuccess; // 0x84

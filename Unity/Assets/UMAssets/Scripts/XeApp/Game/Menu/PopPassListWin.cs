@@ -101,18 +101,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xDEB844 Offset: 0xDEB844 VA: 0xDEB844
-		public void Initialize(bool a_is_first, NHPDPKHMFEP.GGNEBJEIFCP_Plan a_plan)
+		public void Initialize(bool a_is_first, NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan a_plan)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(a_plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp)
+			if(a_plan == NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp)
 			{
 				m_text_title.text = bk.GetMessageByLabel("pop_pass_sp_title");
 			}
-			else if(a_plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal)
+			else if(a_plan == NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal)
 			{
 				m_text_title.text = bk.GetMessageByLabel("pop_pass_title");
 			}
-			m_text_money.text = NHPDPKHMFEP.HHCJCDFCLOB.MNAMCPDKFGI_GetPassPriceString(a_plan);
+			m_text_money.text = NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MNAMCPDKFGI_GetPassPriceString(a_plan);
 			m_layout_content.Initialize(a_is_first, a_plan);
 			m_layout_about.Initialize(a_plan, () =>
 			{

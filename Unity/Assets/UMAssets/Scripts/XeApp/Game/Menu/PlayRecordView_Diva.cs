@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 				if (KDOMGMCGHDC.BKEMLLBKELP(saveDiva.ANAJIAENLNB_lv[i]))
 					m_music_lv_max++;
 			}
-			int maxLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
+			int maxLevel = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_max_level", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
 			m_diva_event_soul = saveDiva.MMCEMJILMJI_EvSoLevel;
 			m_diva_event_soul_max = maxLevel;
 			m_diva_event_voice = saveDiva.HDPANGMKKCP_EvVoLevel;
@@ -60,10 +60,10 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("master");
 			m_sns_cnt = 0;
 			m_sns = new List<SNS>();
-			BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(a_diva_id);
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table.Count; i++)
+			BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(a_diva_id);
+			for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table.Count; i++)
 			{
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[i];
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[i];
 				if(dbSns.PPEGAKEIEGM_Enabled == 2)
 				{
 					if(dbSns.MALFHCHNEFN_RoomId == 3 && dbSns.JKNGNIMLDDJ_UnlockType == 10)

@@ -714,7 +714,7 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 							}
 							for(int j = 0; j < cnt2; j++)
 							{
-								FBCJICEPLED[i].CCKMLNLMLFC_Rivals[j].HBODCMLFDOB_result.IIEMACPEEBJ_Deserialize(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, data[j], ref isInvalid);
+								FBCJICEPLED[i].CCKMLNLMLFC_Rivals[j].HBODCMLFDOB_result.IIEMACPEEBJ_Deserialize(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, data[j], ref isInvalid);
 								FBCJICEPLED[i].CCKMLNLMLFC_Rivals[j].OPFGFINHFCE_name = FGCNMLBACGO_GetString(data[j], AFEHLCGHAEE_Strings.OPFGFINHFCE_name, "", ref isInvalid);
 								FBCJICEPLED[i].CCKMLNLMLFC_Rivals[j].PBJLLAOJMAK_PId = CJAENOMGPDA_GetInt(data[j], "pid", 0, ref isInvalid);
 								FBCJICEPLED[i].CCKMLNLMLFC_Rivals[j].BHCIFFILAKJ_Strength = CJAENOMGPDA_GetInt(data[j], "strg", 0, ref isInvalid);

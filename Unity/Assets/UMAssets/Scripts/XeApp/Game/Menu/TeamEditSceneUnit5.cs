@@ -1222,7 +1222,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 		}
 
@@ -1357,7 +1357,7 @@ namespace XeApp.Game.Menu
 		private void LoadUnitSetForCurrentUnit(int unitSetIndex)
 		{
 			PlayerData.LCCKKHFEIGH(unitSetIndex);
-			ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, false, 1);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, false, 1);
 		}
 
 		//// RVA: 0xFA5134 Offset: 0xFA5134 VA: 0xFA5134

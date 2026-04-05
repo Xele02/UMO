@@ -201,10 +201,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1721A30 Offset: 0x1721A30 VA: 0x1721A30
 		public void UpdateScroll()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			float f = 0;
 			float f2 = 0;
-			AIPOFGJGPKI_CampaignDiva.KBLBMGDILAI a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NGCCGLLLDIB_CampaignDiva.MDKOCDHIDMA(time);
+			AIPOFGJGPKI_CampaignDiva.KBLBMGDILAI a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.NGCCGLLLDIB_CampaignDiva.MDKOCDHIDMA(time);
 			CalcScrollVisibleRange(m_scrollSupport, out f, out f2);
 			for(int i = 0; i < m_paramList.Count; i++)
 			{

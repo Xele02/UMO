@@ -394,7 +394,7 @@ namespace XeApp.Game.Common
 			if (!b3)
 				yield break;
 			Debug.Log("install start");
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			Debug.Log("install end");
 		}
@@ -402,14 +402,14 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1C1F3C8 Offset: 0x1C1F3C8 VA: 0x1C1F3C8
 		private bool TryInstall(StringBuilder bundleName)
 		{
-			if(!KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(bundleName.ToString()))
+			if(!KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.EGIFDIFALKK(bundleName.ToString()))
 			{
 				Debug.Log("install cancelled : " + bundleName.ToString());
 				return false;
 			}
 			else
 			{
-				if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString()))
+				if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString()))
 				{
 					Debug.Log("install request : " + bundleName.ToString());
 					return true;
@@ -456,7 +456,7 @@ namespace XeApp.Game.Common
 				{
 					bundleName.SetFormat("gc/{0:D6}.xab", cardInfo.spAnimId);
 					useCommonRareSet = false;
-					if(KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(bundleName.ToString()))
+					if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.EGIFDIFALKK(bundleName.ToString()))
 					{
 						operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 						yield return operation;

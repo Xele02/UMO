@@ -3,7 +3,10 @@ using UnityEngine;
 using System.Collections;
 using XeApp.Game;
 
-public class NMFABEKNBKJ
+// namespace XeApp.Game.Net.Notifications
+[System.Obsolete()]
+public class NMFABEKNBKJ {}
+public class NMFABEKNBKJ_NetPushNotificationManager
 {
     public class CIDEHGHGPIO
     {
@@ -32,20 +35,20 @@ public class NMFABEKNBKJ
 	private const int LHHNAPNICPD = 345600;
 	public bool OAKCAEHGPFA; // 0x8
 	private int EAABKFGHKBG_TryCount; // 0x14
-	private List<NMFABEKNBKJ.CIDEHGHGPIO> NDPMMJINHNA_TokenList = new List<NMFABEKNBKJ.CIDEHGHGPIO>(); // 0x18
+	private List<NMFABEKNBKJ_NetPushNotificationManager.CIDEHGHGPIO> NDPMMJINHNA_TokenList = new List<NMFABEKNBKJ_NetPushNotificationManager.CIDEHGHGPIO>(); // 0x18
 
-	public static NMFABEKNBKJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static NMFABEKNBKJ_NetPushNotificationManager HHCJCDFCLOB_Instance { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public int HBAFMHEBNDP { get; private set; } // 0xC DJEKENHJEOE_bgs DAJMGNFAEEG_bgs PPFBDNBNDDB_bgs
 	public bool PLOOEECNHFB_IsDone { get; private set; } // 0x10 MGFBAEDOIDD_bgs JFOKBBLFMLD_bgs EDBGNGILAKA_bgs
 	public bool ECCHBMAGKLF { get; private set; } // 0x11 EGAIOJDAHFM_bgs ODAMFOMFIPC_bgs ELGNDAPOEPK_bgs
 
 	// // RVA: 0x1CAB7E0 Offset: 0x1CAB7E0 VA: 0x1CAB7E0
-	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg = "") { }
+	// private void FCPBCDOKOPD(NMFABEKNBKJ_NetPushNotificationManager.LOICDBFAAJL _PPFNGGCBJKC_id, string _IPBHCLIHAPG_Msg = "") { }
 
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
     {
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 		HBAFMHEBNDP = -1;
 		PLOOEECNHFB_IsDone = false;
 		ECCHBMAGKLF = false;

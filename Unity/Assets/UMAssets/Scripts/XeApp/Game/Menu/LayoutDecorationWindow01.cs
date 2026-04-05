@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		public Action OnUpdateTab; // 0x80
 		public bool IsEnter; // 0x85
 		private List<KDKFHGHGFEK> m_viewDecoItemDataList = new List<KDKFHGHGFEK>(); // 0x88
-		private List<FJGOKILCBJA> m_viewShopProductList = new List<FJGOKILCBJA>(); // 0x8C
+		private List<FJGOKILCBJA_ViewShopProductData> m_viewShopProductList = new List<FJGOKILCBJA_ViewShopProductData>(); // 0x8C
 		private SelectItemType m_type; // 0x90
 		private DecorationDecorator.TabType m_tab; // 0x94
 		private int m_selectTabIndex; // 0x98
@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		private Dictionary<int, List<LayoutDecorationSelectItemBase>> m_scrollContentCache = new Dictionary<int, List<LayoutDecorationSelectItemBase>>(); // 0xA4
 		private bool m_isPower; // 0xA8
 		private bool m_isPause; // 0xA9
-		private CKPOGHOIBEP buyer = new CKPOGHOIBEP(); // 0xAC
+		private CKPOGHOIBEP_ShopProductBuyer buyer = new CKPOGHOIBEP_ShopProductBuyer(); // 0xAC
 		private int m_scrollPosition; // 0xB0
 		private bool m_isEnableFamousPhrase4; // 0xB4
 		private int m_tabNum; // 0xB8
@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 			m_isReShow = false;
 			m_isResetItem = false;
 			m_speakChara = null;
-			m_isEnableFamousPhrase4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA_GetIntParam("is_enable_famous_phrase_4", 0) == 1;
+			m_isEnableFamousPhrase4 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.LPJLEHAJADA_GetIntParam("is_enable_famous_phrase_4", 0) == 1;
 			GameManager.Instance.MenuResidentTextureCache.LoadLogo(4, (IiconTexture texture) =>
 			{
 				//0x18C6630
@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18C4500 Offset: 0x18C4500 VA: 0x18C4500
-		public void ChangeTab(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList)
+		public void ChangeTab(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA_ViewShopProductData> productList)
 		{
 			SetSelectItemDataList(tabType, selectItemDataList, productList);
 			m_tab = tabType;
@@ -576,7 +576,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18C452C Offset: 0x18C452C VA: 0x18C452C
-		private void SetSelectItemDataList(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList)
+		private void SetSelectItemDataList(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA_ViewShopProductData> productList)
 		{
 			ResetTab();
 			if(tabType == DecorationDecorator.TabType.Have && m_type == SelectItemType.Serif)
@@ -684,7 +684,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				FJGOKILCBJA item = m_viewShopProductList[index - m_viewDecoItemDataList.Count];
+				FJGOKILCBJA_ViewShopProductData item = m_viewShopProductList[index - m_viewDecoItemDataList.Count];
 				c.SettingExchange(item, m_tab, m_type, this);
 				c.DecideItemCallback = (LayoutDecorationSelectItemBase _, bool isTapSelect) =>
 				{
@@ -726,33 +726,33 @@ namespace XeApp.Game.Menu
 		{
 			m_strBuilder.Clear();
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-            k.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), cat);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId);
+            k.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), cat);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
 			{
 				string str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgFloor);
 				if(str != "")
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str);
 				str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgWallL);
 				if(str != "")
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str);
 				str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgWallR);
 				if(str != "")
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str);
 			}
 			else
 			{
 				string str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.None);
 				if(str != "")
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str);
 				if(k.OHAMGNMKOII())
 				{
 					str = DecorationConstants.GetItemBundleName(k, true, DecorationConstants.Attribute.Type.None);
 					if(str != "")
-						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+						KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str);
 				}
 			}
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D705C Offset: 0x6D705C VA: 0x6D705C
@@ -760,7 +760,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_AssetDownLoadPoling()
 		{
 			//0x18C7514
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			if(OnEndDownLoad != null)
 				OnEndDownLoad();
@@ -771,7 +771,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18C4F50 Offset: 0x18C4F50 VA: 0x18C4F50
 		private int GetPostNum(int id)
 		{
-			int _id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(id);
+			int _id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(id);
 			if(m_type == SelectItemType.Bg)
 			{
 				if(m_tab >= DecorationDecorator.TabType.BgSet && m_tab <= DecorationDecorator.TabType.BgFloor)

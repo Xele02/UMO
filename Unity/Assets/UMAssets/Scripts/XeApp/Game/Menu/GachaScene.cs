@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 		private List<GachaRateInfo> m_episodeInfoList; // 0x7C
 
 		public static int SelectIndex { get; private set; } // 0x0
-		public static List<LOBDIAABMKG> GachaProductList { get; private set; } // 0x4
+		public static List<LOBDIAABMKG_GachaProductData> GachaProductList { get; private set; } // 0x4
 		public static BEPHBEGDFFK.DMBKENKBIJD SelectProductInfo { get; set; } // 0x8
 
 		// RVA: 0xEE6830 Offset: 0xEE6830 VA: 0xEE6830 Slot: 4
@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		{
 			bool isGetGachaProduct; // 0x24
 			DOLDMCAMEOD_RequestRemainingForCurrencyIds req; // 0x28
-			HPBDNNACBAK gpm; // 0x2C
+			HPBDNNACBAK_NetGachaProductManager gpm; // 0x2C
 
 			//0xEEF650
 			m_isEndOnPreSetCanvas = false;
@@ -162,16 +162,16 @@ namespace XeApp.Game.Menu
 					isGetGachaProduct = arg.UpdateGachaProduct;
 				}
 			}
-			req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
-			req.CGCFENMHJIM_Ids = new List<int>(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH);
+			req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
+			req.CGCFENMHJIM_Ids = new List<int>(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH_vcIdsList);
 			bool done = false;
 			bool err = false;
-			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request ba) =>
+			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction ba) =>
 			{
 				//0xEEDD50
 				done = true;
 			};
-			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request ba) =>
+			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction ba) =>
 			{
 				//0xEEDD5C
 				done = true;
@@ -181,11 +181,11 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(!err)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
 				req = null;
 				done = false;
 				err = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.OMPBFINJHDF_RequestVirtualCurrencyBalancesWithExpiredAt(() =>
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.OMPBFINJHDF_RequestVirtualCurrencyBalancesWithExpiredAt(() =>
 				{
 					//0xEEDD70
 					done = true;
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 				{
 					if(isGetGachaProduct)
 					{
-						gpm = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI;
+						gpm = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI;
 						done = false;
 						err = false;
 						gpm.LILDGEPCPPG_GetProductList(() =>
@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 						m_view = new BEPHBEGDFFK();
 						m_view.KHEKNNFCAOI_Init();
 					}
-					SelectIndex = GachaProductList.FindIndex((LOBDIAABMKG x) =>
+					SelectIndex = GachaProductList.FindIndex((LOBDIAABMKG_GachaProductData x) =>
 					{
 						//0xEED948
 						GCAHJLOGMCI.KNMMOMEHDON_GachaType a = GCAHJLOGMCI.OLMFIANJBOB_GetType(defaultGahcaId * 100);
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 					});
 					if (SelectIndex < 0)
 						SelectIndex = 0;
-					LOBDIAABMKG l = GachaProductList[SelectIndex];
+					LOBDIAABMKG_GachaProductData l = GachaProductList[SelectIndex];
 					if(GameManager.Instance.IsTutorial)
 					{
 						if(BasicTutorialManager.Instance.GetRecoveryPoint() < ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha)
@@ -463,23 +463,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xEE7324 Offset: 0xEE7324 VA: 0xEE7324
-		private void ChangeGacha(LOBDIAABMKG product, bool isFade, Action endCallback)
+		private void ChangeGacha(LOBDIAABMKG_GachaProductData product, bool isFade, Action endCallback)
 		{
 			this.StartCoroutineWatched(Co_ChangeGacha(product, isFade, endCallback));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DCEFC Offset: 0x6DCEFC VA: 0x6DCEFC
 		//// RVA: 0xEE7350 Offset: 0xEE7350 VA: 0xEE7350
-		private IEnumerator Co_ChangeGacha(LOBDIAABMKG product, bool isFade, Action endCallback)
+		private IEnumerator Co_ChangeGacha(LOBDIAABMKG_GachaProductData product, bool isFade, Action endCallback)
 		{
 			//0xEEE2D8
 			m_appearLot = null;
 			m_rateInfoList.Clear();
 			m_episodeInfoList.Clear();
 			product.CADENLBDAEB_IsNew = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.DKHDHGAFPGC();
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.ANGMDEPOBEE();
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.DKHDHGAFPGC();
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.ANGMDEPOBEE();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GachaUtility.typeAndSeriesId = product.FDEBLMKEMLF_TypeAndSeriesId;
 			GachaUtility.selectCategory = product.INDDJNMPONH_type;
 			GachaUtility.UpdateGachaProductCategory();
@@ -550,7 +550,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE74D0 Offset: 0xEE74D0 VA: 0xEE74D0
 		private int FindRelatedEpisodeId(int cardId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].KELFCMEOPPM_EpisodeId;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].KELFCMEOPPM_EpisodeId;
 		}
 
 		//// RVA: 0xEE7600 Offset: 0xEE7600 VA: 0xEE7600
@@ -584,7 +584,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				JHHBAFKMBDL.HHCJCDFCLOB.HMIHFLGLHBA(OnGachaNetError);
+				JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.HMIHFLGLHBA(OnGachaNetError);
 			}
 		}
 
@@ -603,19 +603,19 @@ namespace XeApp.Game.Menu
 			PIGBBNDPPJC p = new PIGBBNDPPJC();
 			p.KHEKNNFCAOI_Init(id);
 			int fullItemId = data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullItemId);
-            int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullItemId);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(fullItemId);
+            int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(fullItemId);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
-				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[itemId - 1];
+				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[itemId - 1];
 				CheckNewValkyrieArgs arg = new CheckNewValkyrieArgs();
 				arg.pilot_id = valk.PFGJJLGLPAC_PilotId;
 				arg.val_id = valk.GPPEFLKGGGJ_ValkyrieId;
 				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_VALKYRIE, arg, true);
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1];
 				CheckNewCostumeArgs arg = new CheckNewCostumeArgs();
 				arg.cos_id = cos.DAJGPBLEEOB_ModelId;
 				arg.diva_id = cos.AHHJLDLAPAN_DivaId;
@@ -792,7 +792,7 @@ namespace XeApp.Game.Menu
 			{
 				MenuScene.Instance.InputDisable();
 				string s = GachaUtility.GetGachaDetailWebViewTemplate();
-				MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(s, () =>
+				MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.FLLLPBIECCP(s, () =>
 				{
 					//0xEED2F4
 					MenuScene.Instance.InputEnable();
@@ -881,15 +881,15 @@ namespace XeApp.Game.Menu
 			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 			{
 				v3 = m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId;
-				s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
+				s = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(v3);
 			}
 			else
 			{
-				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(v2);
+				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(v2);
 				if (tkt != null)
 				{
 					v3 = tkt.PPFNGGCBJKC_id;
-					s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
+					s = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(v3);
 				}
 			}
 			PopupItemPeriodComfirmListSetting setting = new PopupItemPeriodComfirmListSetting();
@@ -917,7 +917,7 @@ namespace XeApp.Game.Menu
 		private void OnClickLegalDesc(Action callback)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0xEEDE64
 				if(callback != null)
@@ -1076,7 +1076,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				MenuScene.Instance.RaycastDisable();
-				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.CAILKLPCFHK(m_view.DPBDFPPMIPH_Gacha, () =>
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.CAILKLPCFHK(m_view.DPBDFPPMIPH_Gacha, () =>
 				{
 					//0xEEDF2C
 					MenuScene.Instance.RaycastEnable();
@@ -1105,7 +1105,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEEA36C Offset: 0xEEA36C VA: 0xEEA36C
 		private void MakeAppearRateForBasic()
 		{
-			LOBDIAABMKG product = GachaUtility.netGachaProductData;
+			LOBDIAABMKG_GachaProductData product = GachaUtility.netGachaProductData;
 			HIMAFGJCECK limitedLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, true);
 			HIMAFGJCECK basicLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, false);
 			if(product.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
@@ -1141,7 +1141,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEEA1AC Offset: 0xEEA1AC VA: 0xEEA1AC
 		private void MakeAppearRateForStepUp(int stepIndex/* = -1*/)
 		{
-			LOBDIAABMKG product = GachaUtility.netGachaProductData;
+			LOBDIAABMKG_GachaProductData product = GachaUtility.netGachaProductData;
 			if (stepIndex < 0)
 			{
 				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_player_status.DBNAGGGJDAB_current_step_index;
@@ -1343,8 +1343,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEEBB74 Offset: 0xEEBB74 VA: 0xEEBB74
 		private static GameAttribute.Type GetCardAttributeType(int app_item_id)
 		{
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id);
-			return (GameAttribute.Type)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1].FKDCCLPGKDK_JacketAttr;
+			int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id);
+			return (GameAttribute.Type)IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1].FKDCCLPGKDK_JacketAttr;
 		}
 
 		//// RVA: 0xEEBCE4 Offset: 0xEEBCE4 VA: 0xEEBCE4

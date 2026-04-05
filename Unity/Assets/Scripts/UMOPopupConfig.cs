@@ -161,10 +161,10 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {
-            return KEHOJEJMGLJ.FJDOHLADGFI;
+            return KEHOJEJMGLJ_NetInstallManager.FJDOHLADGFI;
         }, (bool b) =>
         {
-            KEHOJEJMGLJ.FJDOHLADGFI = b;
+            KEHOJEJMGLJ_NetInstallManager.FJDOHLADGFI = b;
         });
         
         AddToggleButton(ref y, "Debug : Display item id in name", () =>

@@ -27,7 +27,7 @@ namespace XeApp
 		} } //0xBB2CF4 0xBB2D3C
 
 		// RVA: 0xBB2458 Offset: 0xBB2458 VA: 0xBB2458 Slot: 5
-		protected override Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		protected override Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			DecorationSerifArgs arg = args as DecorationSerifArgs;
 			m_viewDecoItemData.KHEKNNFCAOI_Init(id, itemCategory);
@@ -38,7 +38,7 @@ namespace XeApp
 		}
 
 		// RVA: 0xBB2614 Offset: 0xBB2614 VA: 0xBB2614 Slot: 6
-		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
 		{
 			return;
 		}

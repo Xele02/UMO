@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use LGJOOFGOGCD_RequestInventories", true)]
 public class LGJOOFGOGCD { }
-public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
+public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_NetBaseAction
 {
 	public class GIAIPIKNBBB
 	{

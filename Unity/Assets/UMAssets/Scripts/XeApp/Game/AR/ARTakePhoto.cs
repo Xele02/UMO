@@ -316,11 +316,11 @@ namespace XeApp.Game.AR
                 ARMenuManager.Instance.SetEnableOperate(true);
                 if(m_currData == null)
                 {
-                    ILCCJNDFFOB.HHCJCDFCLOB.KIFPDEFNEPB_ArPhoto(GameManager.Instance.ar_session_id, 0, null, null);
+                    ILCCJNDFFOB.HHCJCDFCLOB_Instance.KIFPDEFNEPB_ArPhoto(GameManager.Instance.ar_session_id, 0, null, null);
                 }
                 else
                 {
-                    ILCCJNDFFOB.HHCJCDFCLOB.KIFPDEFNEPB_ArPhoto(GameManager.Instance.ar_session_id, m_currData.no, m_currData.eventId, m_currData.markerId);
+                    ILCCJNDFFOB.HHCJCDFCLOB_Instance.KIFPDEFNEPB_ArPhoto(GameManager.Instance.ar_session_id, m_currData.no, m_currData.eventId, m_currData.markerId);
                 }
                 while(photoMenu.IsOpen)
                     yield return null;
@@ -357,11 +357,11 @@ namespace XeApp.Game.AR
                 {
                     if(m_currData == null)
                     {
-                        ILCCJNDFFOB.HHCJCDFCLOB.PHLHLIDCNNN_ArShare(GameManager.Instance.ar_session_id, 0, null, null);
+                        ILCCJNDFFOB.HHCJCDFCLOB_Instance.PHLHLIDCNNN_ArShare(GameManager.Instance.ar_session_id, 0, null, null);
                     }
                     else
                     {
-                        ILCCJNDFFOB.HHCJCDFCLOB.PHLHLIDCNNN_ArShare(GameManager.Instance.ar_session_id, m_currData.no, m_currData.eventId, m_currData.markerId);
+                        ILCCJNDFFOB.HHCJCDFCLOB_Instance.PHLHLIDCNNN_ArShare(GameManager.Instance.ar_session_id, m_currData.no, m_currData.eventId, m_currData.markerId);
                     }
                     AndroidUtils.OnShare(m_imageSavedPath, GetSnsMessageOnEvent(0), JpStringLiterals.StringLiteral_13083_3_1_0);
                 }

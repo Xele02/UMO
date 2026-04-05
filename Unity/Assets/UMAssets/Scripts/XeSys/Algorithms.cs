@@ -34,7 +34,7 @@ namespace XeSys
 		|
 		|-RVA: 0x1AB4F60 Offset: 0x1AB4F60 VA: 0x1AB4F60
 		|-Algorithms.InsertSort<JBCAHMMCOKK>
-		|-Algorithms.InsertSort<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ>
+		|-Algorithms.InsertSort<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ>
 		|-Algorithms.InsertSort<object>
 		*/
 	}

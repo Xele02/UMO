@@ -87,10 +87,13 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 			data.AIHCEGFANAM_SerieAttr = (SeriesAttr.Type)array[i].JPFMJHLCMJL_sa;
 			data.OPFGFINHFCE_name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE_name);
 
-			if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)
+			if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 			{
-				data.FDBNFFNFOND_close_at = 0;
-				data.PDBPFJJCADD_open_at = 0;
+				if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)
+				{
+					data.FDBNFFNFOND_close_at = 0;
+					data.PDBPFJJCADD_open_at = 0;
+				}
 			}
 
 			CDENCMNHNGA_table.Add(data);
@@ -141,7 +144,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	private bool OFKCGMNFGKB_IsTimeValid(long _KJBGCLPMLCG_OpenedAt, long _GJFPFFBAKGK_CloseAt, long _JHNMKKNEENE_Time/* = -1*/)
 	{
 		if(_JHNMKKNEENE_Time < 0)
-			_JHNMKKNEENE_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			_JHNMKKNEENE_Time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		return _JHNMKKNEENE_Time >= _KJBGCLPMLCG_OpenedAt && _GJFPFFBAKGK_CloseAt >= _JHNMKKNEENE_Time;
 	}
 
@@ -150,7 +153,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	{
 		List<int> res = new List<int>();
 		res.Clear();
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
 			if(CDENCMNHNGA_table[i].PDBPFJJCADD_open_at != 0)

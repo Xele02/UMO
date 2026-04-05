@@ -94,9 +94,9 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 				if (block.HNBFOAJIIAL_Count != 6)
 					notValid = true;
 				OKGLGHCBCJP_Database db = null;
-				if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+					db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 				}
 				PKMMBKHODDM_Saved.Clear();
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)

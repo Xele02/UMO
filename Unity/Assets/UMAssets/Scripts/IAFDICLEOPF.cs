@@ -19,7 +19,7 @@ public class IAFDICLEOPF
 	public List<HBCHKPLFHHF> GAAHOOBMDEE_Mission; // 0xC
 
 	// // RVA: 0x120D67C Offset: 0x120D67C VA: 0x120D67C
-	public void KHEKNNFCAOI_Init(KPJHLACKGJF_EventMission _MOHDLLIJELH_cont)
+	public void KHEKNNFCAOI_Init(KPJHLACKGJF_NetEventMissionController _MOHDLLIJELH_cont)
     {
         GAAHOOBMDEE_Mission = new List<HBCHKPLFHHF>();
         if(_MOHDLLIJELH_cont == null)
@@ -30,7 +30,7 @@ public class IAFDICLEOPF
     }
 
 	// // RVA: 0x120D738 Offset: 0x120D738 VA: 0x120D738
-	private void IJKAHGOJHGI(KPJHLACKGJF_EventMission _MOHDLLIJELH_cont, int _CIEOBFIIPLD_Level)
+	private void IJKAHGOJHGI(KPJHLACKGJF_NetEventMissionController _MOHDLLIJELH_cont, int _CIEOBFIIPLD_Level)
     {
         HBCHKPLFHHF d = new HBCHKPLFHHF();
         ACBAHDMEFFL_EventMission.ONECEEIOJCP dd;

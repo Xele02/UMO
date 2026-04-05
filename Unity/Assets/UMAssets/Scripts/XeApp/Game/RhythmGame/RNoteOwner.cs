@@ -92,7 +92,7 @@ namespace XeApp.Game.RhythmGame
 			SetJudgePointTransform();
 			pausingInputData = new PausingInputData[RhythmGameConsts.LineNum];
 			evaluationOffsetMillisec = new int[RhythmGameConsts.LineNum];
-			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			RNoteResultJudge j1 = new RNoteResultJudge(gameDb.BFDLLHNGICE_TapSt, gameDb.ICNFEDCCODF_TapEd);
 			RNoteResultJudge j2 = new RNoteResultJudge(gameDb.EKONPEGLAND_PrsSt, gameDb.ILIEHCECHOA_PrsEd);
 			RNoteResultJudge j3 = new RNoteResultJudge(gameDb.NPNCNFKCIAE_RelSt, gameDb.HODKHINFHGH_RelEd);
@@ -102,8 +102,8 @@ namespace XeApp.Game.RhythmGame
 			RNoteResultJudge j7 = new RNoteResultJudge(gameDb.KDGGKFOAGAE_SlFlkSt, gameDb.FBKOFEHDENI_SlFlkEd);
 			RNoteResultJudge j8 = new RNoteResultJudge(gameDb.KBOIDPDGCLA_PasSt, gameDb.GGAMKBLHGGI_PasEd);
 
-			limitNoteJudgeScaleUp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_up", 0);
-			limitNoteJudgeScaleDown = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_down", 0);
+			limitNoteJudgeScaleUp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_up", 0);
+			limitNoteJudgeScaleDown = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_down", 0);
 
 			for(int i = 0; i < pausingInputData.Length; i++)
 			{

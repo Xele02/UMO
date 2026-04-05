@@ -23,7 +23,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 		public long KNLGKBBIBOH_RewardEnd2; // 0x50
 		public long JBFDHOIKAIK_InventoryEndDate; // 0x58
 		public int KHIKEGLBGAF_RankingRewardScene; // 0x60
-		public int DPJCFLKFEPN; // 0x64
+		public int DPJCFLKFEPN_RankingRewardScene2; // 0x64
 		public int MJBKGOJBPAD_item_type; // 0x68
 		public sbyte POGEFBMBPCB_MonthOdd; // 0x6C
 		public sbyte AHKNMANFILO_DayGroup; // 0x6D
@@ -32,7 +32,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 		public int EKJFNHHKBPL; // 0x74
 		private NNJFKLBPBNK_SecureString EBGIDCIIGDO_KeyPrefix = new NNJFKLBPBNK_SecureString(); // 0x78
 		private NNJFKLBPBNK_SecureString NJKIMJAFCPC = new NNJFKLBPBNK_SecureString(); // 0x7C
-		public sbyte MPKNCMEAMLO; // 0x80
+		public sbyte MPKNCMEAMLO_UsingTicketEnabled; // 0x80
 		public sbyte AHKPNPNOAMO_ExtreamOpen; // 0x81
 		public sbyte HKKNEAGCIEB_RankingSupport; // 0x82
 		public List<string> MPCAGEPEJJJ_Key = new List<string>(); // 0x84
@@ -59,7 +59,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 			IDDBFFBPNGI_RewardEnd = 0;
 			JBFDHOIKAIK_InventoryEndDate = 0;
 			KHIKEGLBGAF_RankingRewardScene = 0;
-			DPJCFLKFEPN = 0;
+			DPJCFLKFEPN_RankingRewardScene2 = 0;
 			MJBKGOJBPAD_item_type = 0;
 			BONDDBOFBND_RankingStart = 0;
 			EHHFFKAFOMC = 0;
@@ -75,7 +75,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 			OCDMGOGMHGE_KeyPrefix = "";
 			PJBILOFOCIC = "";
 			HKKNEAGCIEB_RankingSupport = 0;
-			MPKNCMEAMLO = 0;
+			MPKNCMEAMLO_UsingTicketEnabled = 0;
 			MPCAGEPEJJJ_Key.Clear();
 			JHPCPNJJHLI_RankingThreshold.Clear();
 			OMCAOJJGOGG_Lb = "";
@@ -567,45 +567,48 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 
 		UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OPFGFINHFCE_name+" "+NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId);
 
-		// Update dates
-		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
+		if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 		{
-			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart);
-			date = date.AddDays(-1);
-			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-			if (NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart != 0) NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart += offset;
-			if (NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd != 0) NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd += offset;
-			if (NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 != 0) NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 += offset;
-			if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
-			if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
-			if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
-			if (NGHKJOEDLIP_Settings.JBFDHOIKAIK_InventoryEndDate != 0) NGHKJOEDLIP_Settings.JBFDHOIKAIK_InventoryEndDate += offset;
+			// Update dates
+			UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+			if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
+			{
+				System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+				System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart);
+				date = date.AddDays(-1);
+				long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+				if (NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart != 0) NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart += offset;
+				if (NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd != 0) NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd += offset;
+				if (NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 != 0) NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 += offset;
+				if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
+				if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
+				if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
+				if (NGHKJOEDLIP_Settings.JBFDHOIKAIK_InventoryEndDate != 0) NGHKJOEDLIP_Settings.JBFDHOIKAIK_InventoryEndDate += offset;
 
-			for(int i = 0; i < EAPOKGEIFKA.Count; i++)
-			{
-				if (EAPOKGEIFKA[i].PDBPFJJCADD_open_at != 0) EAPOKGEIFKA[i].PDBPFJJCADD_open_at = (int)NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-				if (EAPOKGEIFKA[i].FDBNFFNFOND_close_at != 0) EAPOKGEIFKA[i].FDBNFFNFOND_close_at = (int)NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
-			}
-			for(int i = 0; i < BGHBALGJNFF.Count; i++)
-			{
-				if (BGHBALGJNFF[i].BEBJKJKBOGH_date != 0) BGHBALGJNFF[i].BEBJKJKBOGH_date += (int)offset;
-			}
-			for(int i = 0; i < IJJHFGOIDOK_EventMusic.Count; i++)
-			{
-				if (IJJHFGOIDOK_EventMusic[i].PDBPFJJCADD_open_at != 0) IJJHFGOIDOK_EventMusic[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-				if (IJJHFGOIDOK_EventMusic[i].FDBNFFNFOND_close_at != 0) IJJHFGOIDOK_EventMusic[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
-			}
-			for(int i = 0; i < NNMPGOAGEOL_quests.Count; i++)
-			{
-				if (NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt != 0) NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-				if (NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt != 0) NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
-			}
-			for(int i = 0; i < LLCLJBEJOPM_BannerInfo.Count; i++)
-			{
-				if (LLCLJBEJOPM_BannerInfo[i].PDBPFJJCADD_open_at != 0) LLCLJBEJOPM_BannerInfo[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
-				if (LLCLJBEJOPM_BannerInfo[i].FDBNFFNFOND_close_at != 0) LLCLJBEJOPM_BannerInfo[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				for(int i = 0; i < EAPOKGEIFKA.Count; i++)
+				{
+					if (EAPOKGEIFKA[i].PDBPFJJCADD_open_at != 0) EAPOKGEIFKA[i].PDBPFJJCADD_open_at = (int)NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+					if (EAPOKGEIFKA[i].FDBNFFNFOND_close_at != 0) EAPOKGEIFKA[i].FDBNFFNFOND_close_at = (int)NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				}
+				for(int i = 0; i < BGHBALGJNFF.Count; i++)
+				{
+					if (BGHBALGJNFF[i].BEBJKJKBOGH_date != 0) BGHBALGJNFF[i].BEBJKJKBOGH_date += (int)offset;
+				}
+				for(int i = 0; i < IJJHFGOIDOK_EventMusic.Count; i++)
+				{
+					if (IJJHFGOIDOK_EventMusic[i].PDBPFJJCADD_open_at != 0) IJJHFGOIDOK_EventMusic[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+					if (IJJHFGOIDOK_EventMusic[i].FDBNFFNFOND_close_at != 0) IJJHFGOIDOK_EventMusic[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				}
+				for(int i = 0; i < NNMPGOAGEOL_quests.Count; i++)
+				{
+					if (NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt != 0) NNMPGOAGEOL_quests[i].KJBGCLPMLCG_OpenedAt = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+					if (NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt != 0) NNMPGOAGEOL_quests[i].GJFPFFBAKGK_CloseAt = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				}
+				for(int i = 0; i < LLCLJBEJOPM_BannerInfo.Count; i++)
+				{
+					if (LLCLJBEJOPM_BannerInfo[i].PDBPFJJCADD_open_at != 0) LLCLJBEJOPM_BannerInfo[i].PDBPFJJCADD_open_at = NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart;
+					if (LLCLJBEJOPM_BannerInfo[i].FDBNFFNFOND_close_at != 0) LLCLJBEJOPM_BannerInfo[i].FDBNFFNFOND_close_at = NGHKJOEDLIP_Settings.HPNOGLIFJOP_RankingEnd;
+				}
 			}
 		}
 		return true;
@@ -634,14 +637,14 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 = JMHECKKKMLK.HMBHNLCFDIH.KNLGKBBIBOH_RewardEnd2;
 		NGHKJOEDLIP_Settings.JBFDHOIKAIK_InventoryEndDate = JMHECKKKMLK.HMBHNLCFDIH.JBFDHOIKAIK_InventoryEndDate;
 		NGHKJOEDLIP_Settings.KHIKEGLBGAF_RankingRewardScene = (int)JMHECKKKMLK.HMBHNLCFDIH.KHIKEGLBGAF_RankingRewardScene;
-		NGHKJOEDLIP_Settings.DPJCFLKFEPN = (int)JMHECKKKMLK.HMBHNLCFDIH.DPJCFLKFEPN;
+		NGHKJOEDLIP_Settings.DPJCFLKFEPN_RankingRewardScene2 = (int)JMHECKKKMLK.HMBHNLCFDIH.DPJCFLKFEPN_RankingRewardScene2;
 		NGHKJOEDLIP_Settings.POGEFBMBPCB_MonthOdd = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.JMJDLDEIFKE;
 		NGHKJOEDLIP_Settings.AHKNMANFILO_DayGroup = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.AHKNMANFILO_DayGroup;
 		NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.MOEKELIIDEO_SaveIdx;
 		NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix = JMHECKKKMLK.HMBHNLCFDIH.OCDMGOGMHGE_KeyPrefix;
 		NGHKJOEDLIP_Settings.PJBILOFOCIC = JMHECKKKMLK.HMBHNLCFDIH.PJBILOFOCIC;
 		NGHKJOEDLIP_Settings.MJBKGOJBPAD_item_type = JMHECKKKMLK.HMBHNLCFDIH.MJBKGOJBPAD_item_type;
-		NGHKJOEDLIP_Settings.MPKNCMEAMLO = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.MPKNCMEAMLO;
+		NGHKJOEDLIP_Settings.MPKNCMEAMLO_UsingTicketEnabled = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.MPKNCMEAMLO_UsingTicketEnabled;
 		NGHKJOEDLIP_Settings.AHKPNPNOAMO_ExtreamOpen = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.AHKPNPNOAMO_ExtreamOpen;
 		NGHKJOEDLIP_Settings.FEMMDNIELFC_Desc = JMHECKKKMLK.HMBHNLCFDIH.FEMMDNIELFC_Desc;
 		NGHKJOEDLIP_Settings.HKKNEAGCIEB_RankingSupport = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.HKKNEAGCIEB_RankingSupport;

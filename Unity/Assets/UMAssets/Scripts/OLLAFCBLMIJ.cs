@@ -36,11 +36,11 @@ public class OLLAFCBLMIJ
 	// RVA: 0x14AE2D8 Offset: 0x14AE2D8 VA: 0x14AE2D8
 	public void KHEKNNFCAOI_Init()
     {
-        CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
+        CANAFALMGLI_NetEventPresentCampaignController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController _GHPLINIACBB_x) =>
         {
             //0xCAAECC
             return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
-        }) as CANAFALMGLI_EventPresentCampaign;
+        }) as CANAFALMGLI_NetEventPresentCampaignController;
         CKPIHCGOEDP.Clear();
         KGEKPADNGDM_CurrentDay = 0;
         if(ev == null)
@@ -88,7 +88,7 @@ public class OLLAFCBLMIJ
             KHNIJBEPHPL_End1 = Utility.GetLocalDateTime(ev.DPJCPDKALGI_RankingEnd);
             KOHDMPJHOBB = Utility.GetLocalDateTime(ev.JDDFILGNGFH_RewardStart);
             IHPPGMJOJIE = Utility.GetLocalDateTime(ev.LJOHLEGGGMC_RewardEnd);
-            long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+            long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
             NDAMKMGINBM_CanEntryToday = false;
             if(t >= ev.GLIMIGNNGGB_RankingStart && ev.DPJCPDKALGI_RankingEnd >= t && KGEKPADNGDM_CurrentDay != 0)
             {
@@ -117,11 +117,11 @@ public class OLLAFCBLMIJ
             {
                 if(CKPIHCGOEDP[_ECDKPAIEFFA_DayId - 1].OJDNGPNOMDE())
                 {
-                    CANAFALMGLI_EventPresentCampaign ev/*MOHDLLIJELH_cont*/ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
+                    CANAFALMGLI_NetEventPresentCampaignController ev/*MOHDLLIJELH_cont*/ = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController _GHPLINIACBB_x) =>
                     {
                         //0xCAAF34
                         return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
-                    }) as CANAFALMGLI_EventPresentCampaign;
+                    }) as CANAFALMGLI_NetEventPresentCampaignController;
                     if(ev != null)
                     {
                         if((ev.PLDDGDNLCAA(_ECDKPAIEFFA_DayId) & 4) == 0)
@@ -134,10 +134,10 @@ public class OLLAFCBLMIJ
                             {
                                 ev.KJLFPCHDFAD(_ECDKPAIEFFA_DayId);
                                 CKPIHCGOEDP[_ECDKPAIEFFA_DayId - 1].CDMGDFLPPHN_entry = true;
-                                CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+                                CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
                                 {
                                     //0xCAAF88
-                                    ILCCJNDFFOB.HHCJCDFCLOB.CDNFJBAJAMM_PresentCampaignEntry(ev, _ECDKPAIEFFA_DayId);
+                                    ILCCJNDFFOB.HHCJCDFCLOB_Instance.CDNFJBAJAMM_PresentCampaignEntry(ev, _ECDKPAIEFFA_DayId);
                                     CFHALLLJAOP();
                                 }, _AOCANKOMKFG_OnError, null);
                             }

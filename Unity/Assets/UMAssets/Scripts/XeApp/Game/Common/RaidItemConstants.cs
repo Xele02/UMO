@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x138A438 Offset: 0x138A438 VA: 0x138A438
 		public static int MakeItemId(Type type)
 		{
-			return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)type);
+			return EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)type);
 		}
 	}
 }

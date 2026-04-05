@@ -24,7 +24,7 @@ public class HBFCGCGDINM
 
 [System.Obsolete("Use BHDAFKEKPEB_GetStepUpLotRecords", true)]
 public class BHDAFKEKPEB { }
-public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
+public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_NetBaseAction
 {
 	public HBFCGCGDINM NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_Result != null; } } // 0xC7EF48 HGPAELCGELL_bgs

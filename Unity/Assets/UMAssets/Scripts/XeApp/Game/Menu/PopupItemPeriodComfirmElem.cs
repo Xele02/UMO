@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 			{
 				date.Year, date.Month, date.Day, date.Hour, date.Minute
 			});
-			m_textNum.text = num + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId));
+			m_textNum.text = num + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId));
 		}
 
 		// RVA: 0x17ACD40 Offset: 0x17ACD40 VA: 0x17ACD40 Slot: 5

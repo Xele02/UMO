@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				AllRelease();
 			});
-			m_masterData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			m_masterData = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 			MessageBank bkMaster = MessageManager.Instance.GetBank("master");
 			if(skillType == 2)
 			{

@@ -2,7 +2,7 @@ using UnityEngine;
 
 [System.Obsolete("Use HHEIANIHCNH_RequestPlayerStatus", true)]
 public class HHEIANIHCNH { }
-public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
+public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_NetBaseAction
 {
 	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs x17574D0 KMKEGMGKCBA_bgs 0x17574D8
 

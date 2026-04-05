@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17E39C0 Offset: 0x17E39C0 VA: 0x17E39C0
 		public void LoadLobbyIcon(int cosId, int colorId, Action<IiconTexture> callBack)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
 			Load(GetIconPath(IconType.SSize, cos.AHHJLDLAPAN_DivaId, cos.DAJGPBLEEOB_ModelId, colorId), callBack);
 		}
 
@@ -232,21 +232,21 @@ namespace XeApp.Game.Menu
 		public void TryInstall(int divaId, int modelId, int colorId)
 		{
 			m_strBuilder.Set(GetIconPath(IconType.SSize, divaId, modelId, colorId));
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E4504 Offset: 0x17E4504 VA: 0x17E4504
 		public void TryStateDivaIconInstall(int divaId, int modelId, int colorId)
 		{
 			m_strBuilder.Set(GetIconPath(IconType.MSize, divaId, modelId, colorId));
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E463C Offset: 0x17E463C VA: 0x17E463C
 		public void TryStateDivaUpIconInstall(int divaId, int modelId, int colorId)
 		{
 			m_strBuilder.Set(GetIconPath(IconType.PS, divaId, modelId, colorId));
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E4774 Offset: 0x17E4774 VA: 0x17E4774
@@ -259,14 +259,14 @@ namespace XeApp.Game.Menu
 		public void TryLoadDivaSmallBustupIcon(int divaId, int modelId)
 		{
 			m_strBuilder.SetFormat(DivaSmallBustupPath, divaId, modelId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28
 		public void TryLoadEventGoDivaIcon(int divaId)
 		{
 			m_strBuilder.SetFormat(DivaEventGoDivaIconPath, divaId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 	}
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IHKOJFIFPKB_RequestInquiryResponsesNumber", true)]
 public class IHKOJFIFPKB { }
-public class IHKOJFIFPKB_RequestInquiryResponsesNumber : CACGCMBKHDI_Request
+public class IHKOJFIFPKB_RequestInquiryResponsesNumber : CACGCMBKHDI_NetBaseAction
 {
     public class HBFOPNJHBCK
     {

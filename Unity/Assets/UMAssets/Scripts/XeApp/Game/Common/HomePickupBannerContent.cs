@@ -51,6 +51,9 @@ namespace XeApp.Game.Common
 				text = view.DMILLPJMDJI;
 			}
 			if((int)view.NNHHNFFLCFO < 28 && (1 << ((int)view.NNHHNFFLCFO) & 0x81c0060U) != 0)
+			// 5, 6, 18, 19, 20, 27
+			// IDAIIJEMNMP_5_Gacha, NCBMILKEFCF_6_SphereCostumeTicketGacha, KBAKCIJPCAL_18_DebutGacha,
+			// KOLKHFLCBNP_19_StepUpGacha, JNFDONGNAGP_20_Gacha, KCOEIKAMLBD_27_GachaLimited
 			{
 				SetGachaTexture(view.EAHPLCJMPHD_PId, loadBannerTexture, () =>
 				{

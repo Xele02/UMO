@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 								skillRank = sceneList[0].ELNJADBILOM_LiveSkillRank2;
 								skillName = sceneList[0].LNLECENGMKK_LiveSkillName2;
 								skillDesc = sceneList[0].KDGACEJPGFG_GetLiveSkillDesc(true);
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[0].StartChildrenAnimGoStop("02");
@@ -488,7 +488,7 @@ namespace XeApp.Game.Menu
 							else
 							{
 								//LAB_0126b0f8
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[0].StartChildrenAnimGoStop("02");
@@ -545,7 +545,7 @@ namespace XeApp.Game.Menu
 								});
 							}
 							m_skillDetailIconImages[LiveSkillDispPartsTypes[0]].enabled = b;
-							PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+							PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 							if(p.AOPELJFAMCL_LiveSkillType != 0)
 							{
 								m_liveSkillTypeTbl[0].StartChildrenAnimGoStop("02");
@@ -573,7 +573,7 @@ namespace XeApp.Game.Menu
 								}
 								m_skillDetailIconImages[LiveSkillDispPartsTypes[0] + 1].enabled = b;
 								m_liveSkillCrossFade[0].StartAllAnimLoop("logo_act");
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[1].StartChildrenAnimGoStop("02");
@@ -652,7 +652,7 @@ namespace XeApp.Game.Menu
 								});
 							}
 							m_skillDetailIconImages[slot].enabled = b;
-							PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+							PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 							if(p.AOPELJFAMCL_LiveSkillType != 0)
 							{
 								m_liveSkillTypeTbl[i * 2 + 2].StartChildrenAnimGoStop("02");
@@ -680,7 +680,7 @@ namespace XeApp.Game.Menu
 								}
 								m_skillDetailIconImages[slot + 1].enabled = b;
 								m_liveSkillCrossFade[i + 1].StartAllAnimLoop("logo_act");
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill2 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill2 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[i * 2 + 3].StartChildrenAnimGoStop("02");
@@ -722,7 +722,7 @@ namespace XeApp.Game.Menu
 								skillRank = sceneData.ELNJADBILOM_LiveSkillRank2;
 								skillName = sceneData.LNLECENGMKK_LiveSkillName2;
 								skillDesc = sceneData.KDGACEJPGFG_GetLiveSkillDesc(true);
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[i * 2 + 3].StartChildrenAnimGoStop("02");
@@ -733,7 +733,7 @@ namespace XeApp.Game.Menu
 							else
 							{
 								//LAB_0126d360
-								PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+								PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
 								if(p.AOPELJFAMCL_LiveSkillType != 0)
 								{
 									m_liveSkillTypeTbl[i * 2 + 2].StartChildrenAnimGoStop("02");

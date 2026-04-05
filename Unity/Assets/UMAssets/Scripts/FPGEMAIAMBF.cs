@@ -30,10 +30,10 @@ public class FPGEMAIAMBF_RewardData
 		public void GONNICAJNLK(int EIBBIJNFMDJ, HDNKOFNBCEO_RewardInfo LIFCHFOPHDH)
 		{
 			KIJAPOFAGPN_ItemId = LIFCHFOPHDH.FKNBLDPIPMC_GetItemCode(EIBBIJNFMDJ);
-			MHFBCINOJEE_Num = (short)EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN_ItemId);
-			HHACNFODNEF_ItemCategory = (byte)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN_ItemId);
+			MHFBCINOJEE_Num = (short)EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(KIJAPOFAGPN_ItemId);
+			HHACNFODNEF_ItemCategory = (byte)EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN_ItemId);
 			JDLJPNMLFID_ItemCount = LIFCHFOPHDH.KAINPNMMAEK_GetItemCount(EIBBIJNFMDJ);
-			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI.FKMCHHDOAAB(KIJAPOFAGPN_ItemId));
+			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI_ItemManager.FKMCHHDOAAB(KIJAPOFAGPN_ItemId));
 		}
 	}
 
@@ -50,23 +50,23 @@ public class FPGEMAIAMBF_RewardData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo;
 		if (_MNNHHJBBICA_GameEventType == 4)
 		{
-			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) == null)
+			if(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) == null)
 			{
 				musicInfo = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
 			}
 			else
 			{
-				HLEBAINCOME_EventScore eventData = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) as HLEBAINCOME_EventScore;
+				HLEBAINCOME_EventScore eventData = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) as HLEBAINCOME_EventScore;
 				musicInfo = eventData.JIPPHOKGLIH_GetMusicSaveData(false).KJAFPNIFPGP();
 			}
 		}
 		else
 		{
-			musicInfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[_GHBPLHBNMBK_FreeMusicId - 1];
+			musicInfo = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[_GHBPLHBNMBK_FreeMusicId - 1];
 		}
-		KEODKEGFDLD_FreeMusicInfo freemusicData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(_GHBPLHBNMBK_FreeMusicId);
+		KEODKEGFDLD_FreeMusicInfo freemusicData = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(_GHBPLHBNMBK_FreeMusicId);
 		int musicId = freemusicData.DLAEJOBELBH_MusicId;
-		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_difficulty, _LFGNLKKFOCD_IsLine6);
+		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_difficulty, _LFGNLKKFOCD_IsLine6);
 		List<byte> rewardScoreList = _LFGNLKKFOCD_IsLine6 ? musicInfo.DKIIINIEKHP_RewardScoreL6 : musicInfo.JDIDBMEMKBC_RewardScore;
 		List<byte> rewardComboList = _LFGNLKKFOCD_IsLine6 ? musicInfo.JNNIOJIDNKM_RewardComboL6 : musicInfo.AGGFHNMMGMN_RewardCombo;
 		List<byte> rewardClearList = _LFGNLKKFOCD_IsLine6 ? musicInfo.LGBKKDOLOFP_RewardClearL6 : musicInfo.HNDPLCDMOJF_RewardClear;
@@ -103,13 +103,13 @@ public class FPGEMAIAMBF_RewardData
 	//// RVA: 0x13FB01C Offset: 0x13FB01C VA: 0x13FB01C
 	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_difficulty, bool LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
 	{
-		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
-		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData;
+		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
+		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.MNJHBCIIHED_PrevServerData;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo = null;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;
 		if (_MNNHHJBBICA_GameEventType == 4)
 		{
-			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) as HLEBAINCOME_EventScore;
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting) as HLEBAINCOME_EventScore;
 			if(ev != null)
 			{
 				musicInfo = ev.JIPPHOKGLIH_GetMusicSaveData(false).KJAFPNIFPGP();
@@ -126,9 +126,9 @@ public class FPGEMAIAMBF_RewardData
 			musicInfo = serverData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 			prevMusicInfo = prevServerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		}
-		KEODKEGFDLD_FreeMusicInfo freeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
-		EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(freeMusic.DLAEJOBELBH_MusicId);
-		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freeMusic, AKNELONELJK_difficulty, LFGNLKKFOCD_IsLine6);
+		KEODKEGFDLD_FreeMusicInfo freeMusic = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
+		EONOEHOKBEB_Music music = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(freeMusic.DLAEJOBELBH_MusicId);
+		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freeMusic, AKNELONELJK_difficulty, LFGNLKKFOCD_IsLine6);
 		ADDHLABEFKH data = freeMusic.EMJCHPDJHEI(LFGNLKKFOCD_IsLine6, AKNELONELJK_difficulty);
 		List<byte> rewardScore = !LFGNLKKFOCD_IsLine6 ? musicInfo.JDIDBMEMKBC_RewardScore : musicInfo.DKIIINIEKHP_RewardScoreL6;
 		List<byte> prevRewardScore = !LFGNLKKFOCD_IsLine6 ? prevMusicInfo.JDIDBMEMKBC_RewardScore : prevMusicInfo.DKIIINIEKHP_RewardScoreL6;

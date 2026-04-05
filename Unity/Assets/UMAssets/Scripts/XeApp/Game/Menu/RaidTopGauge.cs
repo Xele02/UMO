@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_sphereAnim; // 0x4C
 		private AbsoluteLayout m_balloonAnim; // 0x50
 		private bool m_isShow; // 0x54
-		private PKNOKJNLPOE_EventRaid raidController; // 0x58
+		private PKNOKJNLPOE_NetEventRaidController raidController; // 0x58
 		private PopupRaidApHealContentSetting m_apHealSetting; // 0x5C
 		private IFBCGCCJBHI m_viewPlayerStatus; // 0x60
 		private long healTime; // 0x68
@@ -73,10 +73,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0xCEE648 Offset: 0xCEE648 VA: 0xCEE648 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			m_isShow = false;
 			currentGaugeType = GaugeType.None;
-			healTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("raid_event_ap_second", 1200);
+			healTime = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("raid_event_ap_second", 1200);
 			m_viewPlayerStatus = new IFBCGCCJBHI();
 			m_viewPlayerStatus.KHEKNNFCAOI_Init();
 			m_raidBarAnim = layout.FindViewByExId("sw_raid_bar_anim_01_sw_raid_bar_01") as AbsoluteLayout;
@@ -265,10 +265,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCEF6A0 Offset: 0xCEF6A0 VA: 0xCEF6A0
 		private bool IsEndRaidEvent()
 		{
-			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(raidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod)
 			{
-				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+				JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.DNABPEOICIJ(() =>
 				{
 					//0xCF05E4
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -346,11 +346,11 @@ namespace XeApp.Game.Menu
 
 			//0xCF10F4
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 6);
+			itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 6);
 			int stock, gauge;
 			bool isMax;
 			PBOHJPIBILI.GLEPHGKFFLL(out stock, out gauge, out isMax);
-			string str = EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId);
+			string str = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId);
 			ButtonInfo[] btns;
 			if(!isMax)
 			{
@@ -405,7 +405,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputEnable();
 			if(cancel)
 				yield break;
-			if(PGIGNJDPCAH.MNANNMDBHMP(() =>
+			if(PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 			{
 				//0xCF09CC
 				MenuScene.Instance.GotoLoginBonus();

@@ -431,33 +431,41 @@ namespace XeApp.Game.Common
 			bool b = false;
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA_Type.KCOEIKAMLBD_27_GachaLimited)
+				if(list[i].NNHHNFFLCFO > JBCAHMMCOKK.ALEKHDPDOEA_Type.KCOEIKAMLBD_27_GachaLimited)
 				{
 					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_PId);
 				}
 				else if(((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x4030e10U) != 0)
+					// 4, 9, 10, 11, 16, 17, 26
+					// BPCPDNGLNGO_4_EventHome, KAEBCNOCLPJ_9_RankingEvent, FKGINHFBLJE_10_WeeklyEvent
+					// AHJNOIGCCFC_11_Event, GINEDIDMAAO_16_NewYear, DMPMKBCPHMA_17_PresentCampaign, CADKONMJEDA_26_EventRaid
 				{
 					str.SetFormat("ct/ev/hm/{0:D4}.xab", list[i].EAHPLCJMPHD_PId);
 				}
 				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x81c0060U) != 0)
+					// 5, 6, 18, 19, 20, 27
+					// IDAIIJEMNMP_5_Gacha, NCBMILKEFCF_6_SphereCostumeTicketGacha, KBAKCIJPCAL_18_DebutGacha,
+					// KOLKHFLCBNP_19_StepUpGacha, JNFDONGNAGP_20_Gacha, KCOEIKAMLBD_27_GachaLimited
 				{
 					str.SetFormat("ct/gc/hm/{0:D5}.xab", list[i].EAHPLCJMPHD_PId);
 				}
 				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0xc00000U) != 0)
-				{
-					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_PId);
-				}
-				else
+					// 22, 23
+					// CIGFHJNCKPE_22_UnlimintedBingo, BMHJMLDAPCE_23_LimitedBingo
 				{
 					str.SetFormat("ct/bn/hm/{0:D5}.xab", list[i].EAHPLCJMPHD_PId);
 				}
-				if(!KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(str.ToString()))
+				else
+				{
+					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_PId);
+				}
+				if(!KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.EGIFDIFALKK(str.ToString()))
 				{
 					Debug.Log("install cancelled : " + str.ToString());
 				}
 				else
 				{
-					if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str.ToString()))
+					if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str.ToString()))
 					{
 						Debug.Log("install request : " + str.ToString());
 						b = true;
@@ -467,7 +475,7 @@ namespace XeApp.Game.Common
 			if(!b)
 				yield break;
 			Debug.Log("install start");
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			Debug.Log("install end");
 		}
@@ -483,16 +491,24 @@ namespace XeApp.Game.Common
 			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA_Type.KCOEIKAMLBD_27_GachaLimited)
 			{
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x4030e10U) != 0)
+				// 4, 9, 10, 11, 16, 17, 26
+				// BPCPDNGLNGO_4_EventHome, KAEBCNOCLPJ_9_RankingEvent, FKGINHFBLJE_10_WeeklyEvent
+				// AHJNOIGCCFC_11_Event, GINEDIDMAAO_16_NewYear, DMPMKBCPHMA_17_PresentCampaign, CADKONMJEDA_26_EventRaid
 				{
 					m_bannerTexCache.LoadForEvent(v.EAHPLCJMPHD_PId, onLoaded);
 					return;
 				}
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x81c0060U) != 0)
+				// 5, 6, 18, 19, 20, 27
+				// IDAIIJEMNMP_5_Gacha, NCBMILKEFCF_6_SphereCostumeTicketGacha, KBAKCIJPCAL_18_DebutGacha,
+				// KOLKHFLCBNP_19_StepUpGacha, JNFDONGNAGP_20_Gacha, KCOEIKAMLBD_27_GachaLimited
 				{
 					m_bannerTexCache.LoadForGacha(v.EAHPLCJMPHD_PId, onLoaded);
 					return;
 				}
 				if(((1 << (int)v.NNHHNFFLCFO) & 0xc00000U) != 0)
+				// 22, 23
+				// CIGFHJNCKPE_22_UnlimintedBingo, BMHJMLDAPCE_23_LimitedBingo
 				{
 					m_bannerTexCache.LoadForBingo(v.EAHPLCJMPHD_PId, onLoaded);
 					return;

@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			//0x1151DB8
 			if(m_popupControl != null)
 				m_popupControl.InputDisable();
-			yield return this.StartCoroutineWatched(MBCPNPNMFHB.HHCJCDFCLOB.EBIENHFDNNL_Coroutine_OpenRiyoukiyakuDirect());
+			yield return this.StartCoroutineWatched(MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.EBIENHFDNNL_Coroutine_OpenRiyoukiyakuDirect());
 			if(m_popupControl != null)
 				m_popupControl.InputEnable();
 		}

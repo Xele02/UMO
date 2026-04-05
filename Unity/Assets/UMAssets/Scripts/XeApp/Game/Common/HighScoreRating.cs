@@ -84,10 +84,10 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA2F84 Offset: 0xEA2F84 VA: 0xEA2F84
 		public void CalcUtaRate(JDDGGJCGOPA_RecordMusic rec, bool pubUpd/* = false*/)
 		{
-			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 			if (rec == null)
 				rec = serverData.LCKMBHDMPIP_RecordMusic;
-			int rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
+			int rating_coef = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
 			List<HSRatingData>[] l = new List<HSRatingData>[1];
 			l[0] = new List<HSRatingData>();
 			l[0].Clear();
@@ -95,7 +95,7 @@ namespace XeApp.Game.Common
 			rateTotal = 0;
 			for(int i = 0; i < rec.FAMANJGJANN_FreeMusicInfo.Count; i++)
 			{
-				KEODKEGFDLD_FreeMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_record_music_id);
+				KEODKEGFDLD_FreeMusicInfo info = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_record_music_id);
 				if(info != null && info.PPEGAKEIEGM_Enabled == 2 && info.DEPGBBJMFED_CategoryId != 5)
 				{
 					if(rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore > 0)
@@ -154,15 +154,15 @@ namespace XeApp.Game.Common
 		public void CalcUtaRateForLog(JDDGGJCGOPA_RecordMusic rec, int freeMusicId, int lastDifficulty, int lastRatingScore)
 		{
 			if (rec == null)
-				rec = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
-			int score_rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
+				rec = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
+			int score_rating_coef = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
 			List<HSRatingData>[] data = new List<HSRatingData>[1] { new List<HSRatingData>() };
 			data[0].Clear();
 			rateAttr[0] = 0;
 			rateTotal = 0;
 			for(int i = 0; i < rec.FAMANJGJANN_FreeMusicInfo.Count; i++)
 			{
-				KEODKEGFDLD_FreeMusicInfo fdata = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_record_music_id);
+				KEODKEGFDLD_FreeMusicInfo fdata = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_record_music_id);
 				if(fdata != null && fdata.PPEGAKEIEGM_Enabled == 2 && fdata.DEPGBBJMFED_CategoryId != 5)
 				{
 					int score = rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore;
@@ -224,7 +224,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5310 Offset: 0xEA5310 VA: 0xEA5310
 		public void CalcUtaRate(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatings)
 		{
-			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
+			int coef = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
 			rateAttr[0] = 0;
 			rateTotal = 0;
 			if(hsRatings.Count > 0)
@@ -262,7 +262,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA3F80 Offset: 0xEA3F80 VA: 0xEA3F80
 		private void UpdatePublicStatus()
 		{
-			JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF rating = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AEIADFODLMC_HsRating[0];
+			JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF rating = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AEIADFODLMC_HsRating[0];
 			rating.KMBPACJNEOF_Reset();
 			for(int i = 0; i < 10; i++)
 			{
@@ -281,7 +281,7 @@ namespace XeApp.Game.Common
 				//0xEA7684
 				return free_music_id == x.FDMENECIKEL_record_music_id;
 			});
-			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
+			int coef = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
 			int val = info.IFNDLIGGGHP_HighScoreScore;
 			if (val > 0)
 				return val / coef;
@@ -291,13 +291,13 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5D28 Offset: 0xEA5D28 VA: 0xEA5D28
 		public static int CalcUtaRate(int rating_score)
 		{
-			return rating_score / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
+			return rating_score / IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK_m_intParam["score_rating_coef"];
 		}
 
 		//// RVA: 0xEA5E50 Offset: 0xEA5E50 VA: 0xEA5E50
 		public static int GetUtaRate(int free_music_id)
 		{
-			return GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic, free_music_id);
+			return GetUtaRate(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic, free_music_id);
 		}
 
 		//// RVA: 0xEA5F18 Offset: 0xEA5F18 VA: 0xEA5F18
@@ -314,7 +314,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA606C Offset: 0xEA606C VA: 0xEA606C
 		public int GetUtaRateTotal()
 		{
-			int ratelimit = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.LPJLEHAJADA_GetIntParam("uta_rate_total_limit", 99999);
+			int ratelimit = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.LPJLEHAJADA_GetIntParam("uta_rate_total_limit", 99999);
 			if (rateTotal <= ratelimit)
 				return rateTotal;
 			return ratelimit;
@@ -323,9 +323,9 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA6180 Offset: 0xEA6180 VA: 0xEA6180
 		public static HighScoreRatingRank.Type GetUtaGrade(int total)
 		{
-			for(int i = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count - 1; i >= 0;  i--)
+			for(int i = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count - 1; i >= 0;  i--)
 			{
-				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO[i].ADKDHKMPMHP_rate <= total)
+				if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO[i].ADKDHKMPMHP_rate <= total)
 					return (HighScoreRatingRank.Type)(i + 1);
 			}
 			return HighScoreRatingRank.Type.Be;
@@ -343,16 +343,16 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA6414 Offset: 0xEA6414 VA: 0xEA6414
 		public static bool IsNotReceivedRewardUtaGrade()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra !=
-				(int)GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate);
+			return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra !=
+				(int)GetUtaGrade(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_total_uta_rate);
 		}
 
 		//// RVA: 0xEA6544 Offset: 0xEA6544 VA: 0xEA6544
 		public static int GetNextUtaGradeNum(int rateTotal)
 		{
-			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
 				for (int i = 0; i < l.Count; i++)
 				{
 					if(l[i].ADKDHKMPMHP_rate <= rateTotal)
@@ -368,9 +368,9 @@ namespace XeApp.Game.Common
 		public UtaGradeData GetNextUtaGradeInfo(int rateTotal)
 		{
 			UtaGradeData res = new UtaGradeData();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
 				List<MFDJIFIIPJD> lm = new List<MFDJIFIIPJD>();
 				res.Init(l.Count, 0, 0, lm, false);
 				for(int i = 1; i - 1 < l.Count; i++)
@@ -414,10 +414,10 @@ namespace XeApp.Game.Common
 		public List<UtaGradeData> GetUtaGradeList(HighScoreRatingRank.Type nowGrade)
 		{
 			List<UtaGradeData> res = new List<UtaGradeData>();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
-				int a = AGLHPOOPOCG.HHCJCDFCLOB.EIFNIBPAGFF_GetTopPlayerUtaGrade();
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				int a = AGLHPOOPOCG.HHCJCDFCLOB_Instance.EIFNIBPAGFF_GetTopPlayerUtaGrade();
 				int b = a;
 				if (a < (int)nowGrade)
 					b = (int)nowGrade;

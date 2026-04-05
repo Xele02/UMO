@@ -542,7 +542,7 @@ namespace XeApp.Game.Menu
 					});
 					while (!done)
 						yield return null;
-					BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(true);
+					BIFNGFAIEIL.HHCJCDFCLOB_Instance.DNKCCHCEPBH(true);
 					if (finishCb != null)
 						finishCb(butLabel);
 				}
@@ -660,7 +660,7 @@ namespace XeApp.Game.Menu
 						repopCallback(true);
 					yield break;
 				}
-				KEHOJEJMGLJ.HHCJCDFCLOB.KLIJFOBEKBE.IKOFAKDLDJE_CleanupVideo();
+				KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.KLIJFOBEKBE.IKOFAKDLDJE_CleanupVideo();
 				isWait = true;
 				ConfigUtility.PopupShowVideoDelete(() =>
 				{

@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EJHPIMANJFP
+// namespace XeApp.Game.Net
+[System.Obsolete()]
+public class EJHPIMANJFP {}
+public class EJHPIMANJFP_NetPaidVCProdcutManager
 {
 	private const int NKDJBEMDJHB = 259200;
 	private bool OCNNKKPBDLL; // 0xC
 	public long ECFNAOCFKKN_LastDate; // 0x10
 
-	public static EJHPIMANJFP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static EJHPIMANJFP_NetPaidVCProdcutManager HHCJCDFCLOB_Instance { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public List<LGDNAJACFHI> MHKCPJDNJKI_products { get; private set; } // 0x8 CPMNDNELDME_bgs DFAHGPEFPOO_bgs IOMCCGAKKCP_bgs
 
 	// // RVA: 0x12EFA68 Offset: 0x12EFA68 VA: 0x12EFA68
-	public EJHPIMANJFP()
+	public EJHPIMANJFP_NetPaidVCProdcutManager()
 	{
 		MHKCPJDNJKI_products = new List<LGDNAJACFHI>();
 	}
@@ -20,7 +23,7 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFAF4 Offset: 0x12EFAF4 VA: 0x12EFAF4
 	public void IJBGPAENLJA_OnAwake()
 	{
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 	}
 
 	// // RVA: 0x12EFB58 Offset: 0x12EFB58 VA: 0x12EFB58
@@ -36,7 +39,7 @@ public class EJHPIMANJFP
 	{
 		if(!_FBBNPFFEJBN_Force)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if ((time - ECFNAOCFKKN_LastDate) < 3600)
 				_BHFHGFKBOHH_OnSuccess();
 		}
@@ -56,10 +59,10 @@ public class EJHPIMANJFP
 		NEAPMMJKOKA_GetProducts DCNALBIJJGP; // 0x3C
 
 		//0x12F06CC
-		IBCGNDADAEE_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		IBCGNDADAEE_Time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		Debug.Log("call NetGetProductsAction");
-		JFKGICMBEBO = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.JOBKIDDLCPL_schedules;
-		//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
+		JFKGICMBEBO = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.JOBKIDDLCPL_schedules;
+		//NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester
 		INIJHKEKFJI_i = 0;
 		NDHIMOJGAPH = new List<KBPDNHOKEKD_ProductId>();
 		for(; INIJHKEKFJI_i < JFKGICMBEBO.Count; INIJHKEKFJI_i++)
@@ -98,7 +101,7 @@ public class EJHPIMANJFP
 						JFKGICMBEBO[INIJHKEKFJI_i].EGBOHDFBAPB_closed_at
 					};
 					Debug.Log(string.Concat(obj));
-					DCNALBIJJGP = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
+					DCNALBIJJGP = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
 					DCNALBIJJGP.NBFDEFGFLPJ = AIJFDCIDDLO;
 					DCNALBIJJGP.IPKCADIAAPG_Criteria = LCKOLEDFDAL.CMNCOOIKDIH_GetCriteriaForLabel(JFKGICMBEBO[INIJHKEKFJI_i].KAPMOPMDHJE_label);
 					while (!DCNALBIJJGP.PLOOEECNHFB_IsDone)
@@ -109,7 +112,7 @@ public class EJHPIMANJFP
 						if((DCNALBIJJGP.CJMFJOMECKI_ErrorId >= SakashoErrorId.STORE_SERVER_ERROR && DCNALBIJJGP.CJMFJOMECKI_ErrorId < SakashoErrorId.PRODUCT_TRANSACTION_EXISTS) ||
 							DCNALBIJJGP.CJMFJOMECKI_ErrorId == SakashoErrorId.UNSUPPORTED_API_CALLED)
 						{
-							ECFNAOCFKKN_LastDate = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+							ECFNAOCFKKN_LastDate = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 							if(!OCNNKKPBDLL)
 							{
 								IMCBBOAFION KDFFGLHBDLO = () =>
@@ -117,7 +120,7 @@ public class EJHPIMANJFP
 									//0x12F05BC
 									NIMPEHIECJH();
 								};
-								JHHBAFKMBDL.HHCJCDFCLOB.AJIJCMKMAMA(DCNALBIJJGP.CJMFJOMECKI_ErrorId, DCNALBIJJGP, 0, KDFFGLHBDLO);
+								JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.AJIJCMKMAMA(DCNALBIJJGP.CJMFJOMECKI_ErrorId, DCNALBIJJGP, 0, KDFFGLHBDLO);
 								// go LAB_012f1000
 								DCNALBIJJGP = null;
 								yield break;
@@ -125,7 +128,7 @@ public class EJHPIMANJFP
 						}
 						else
 						{
-							if(!AMOCLPHDGBP.ELDMAINJHJI(DCNALBIJJGP.CJMFJOMECKI_ErrorId))
+							if(!AMOCLPHDGBP_NetPaidVCPurchase.ELDMAINJHJI(DCNALBIJJGP.CJMFJOMECKI_ErrorId))
 							{
 								_MOBEEPPKFLG_OnFail();
 								// go LAB_012f1000
@@ -178,7 +181,7 @@ public class EJHPIMANJFP
 			}
 		}
 		ALBOGEHBBAH(NDHIMOJGAPH);
-		ECFNAOCFKKN_LastDate = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		ECFNAOCFKKN_LastDate = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(MHKCPJDNJKI_products.Count != 0)
 		{
 			_BHFHGFKBOHH_OnSuccess();
@@ -192,16 +195,16 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFE30 Offset: 0x12EFE30 VA: 0x12EFE30
 	private bool ALBOGEHBBAH(List<KBPDNHOKEKD_ProductId> BBKDLIPKADG)
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		long staminaCheckTime = 0;
-		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+		if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 		{
-			staminaCheckTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_sta_lot_time;
+			staminaCheckTime = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_sta_lot_time;
 		}
 		long nextCheck = staminaCheckTime + 259200;
 		for (int i = 0; i < BBKDLIPKADG.Count; i++)
 		{
-			DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.ICGHMMOCJBA(BBKDLIPKADG[i].GLHKICCPGKJ_platform_product_id, BBKDLIPKADG[i].OPFGFINHFCE_name, time, BBKDLIPKADG[i].KAPMOPMDHJE_label);
+			DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.ICGHMMOCJBA(BBKDLIPKADG[i].GLHKICCPGKJ_platform_product_id, BBKDLIPKADG[i].OPFGFINHFCE_name, time, BBKDLIPKADG[i].KAPMOPMDHJE_label);
 			if(item != null)
 			{
 				LGDNAJACFHI data = new LGDNAJACFHI();

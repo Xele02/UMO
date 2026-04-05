@@ -217,7 +217,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	{
 		int a = HKABHJKHFKL_RareGetCnt == 0 ? 30 : 90;
 		string str = HKABHJKHFKL_RareGetCnt == 0 ? "rareup_1st_day" : "rareup_2nd_day";
-		int b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam(str, a);
+		int b = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam(str, a);
 		int c = FCPHDFKFDCK_LoginCnt;
 		if(b - c > 0)
 			return b - c;
@@ -227,7 +227,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD84F68 Offset: 0xD84F68 VA: 0xD84F68
 	public int HEOIMMMJKIP()
 	{
-		int rareup_2nd_day = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam("rareup_2nd_day", 90);
+		int rareup_2nd_day = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam("rareup_2nd_day", 90);
 		if(rareup_2nd_day <= HKABHJKHFKL_RareGetCnt)
 		{
 			return (HKABHJKHFKL_RareGetCnt - 1) * rareup_2nd_day + FCPHDFKFDCK_LoginCnt;
@@ -241,7 +241,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD8528C Offset: 0xD8528C VA: 0xD8528C
 	public void AFGLHGNKOFC()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		DateTime date = Utility.GetLocalDateTime(time + 86400);
 		BKONHFNBHKL_Aextm = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 	}
@@ -266,7 +266,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD855BC Offset: 0xD855BC VA: 0xD855BC
 	public bool HMAHFMHPBBC()
 	{
-		int stamp_hosei_ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam("stamp_hosei_ver", 1);
+		int stamp_hosei_ver = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetIntParam("stamp_hosei_ver", 1);
 		if (stamp_hosei_ver == MPLPHLAHJOC_StampHosei)
 			return false;
 		int a = HEOIMMMJKIP();
@@ -279,15 +279,15 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD85708 Offset: 0xD85708 VA: 0xD85708
 	public KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL BGANHMCJIIC()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		ODHIHCNALDL savePass = EOHPPNNLBNH_Stamp[FLBJKACKNOI_CurStamp - 1];
 		if(savePass.JJPDPNJFBHN_TableId == 0)
 		{
-			savePass.JJPDPNJFBHN_TableId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.IPAOPMEFJKD_StartTableId;
+			savePass.JJPDPNJFBHN_TableId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.IPAOPMEFJKD_StartTableId;
 			savePass.DOMFHDPMCCO_Init(savePass.JJPDPNJFBHN_TableId, time);
 		}
 		int a = savePass.KNIOACKGGHI();
-		KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL res = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.DHBEKJNJOMC(savePass.JJPDPNJFBHN_TableId, a + 1);
+		KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL res = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.DHBEKJNJOMC(savePass.JJPDPNJFBHN_TableId, a + 1);
 		if(a < 19)
 		{
 			savePass.ACCIBAABEPN(a, time);
@@ -298,7 +298,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 			FLBJKACKNOI_CurStamp = FLBJKACKNOI_CurStamp + 1;
 			if (EOHPPNNLBNH_Stamp.Count < FLBJKACKNOI_CurStamp)
 				FLBJKACKNOI_CurStamp = 1;
-			EOHPPNNLBNH_Stamp[FLBJKACKNOI_CurStamp - 1].DOMFHDPMCCO_Init(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.MAOBENAPFNI(savePass.JJPDPNJFBHN_TableId), time);
+			EOHPPNNLBNH_Stamp[FLBJKACKNOI_CurStamp - 1].DOMFHDPMCCO_Init(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.MAOBENAPFNI(savePass.JJPDPNJFBHN_TableId), time);
 		}
 		return res;
 	}

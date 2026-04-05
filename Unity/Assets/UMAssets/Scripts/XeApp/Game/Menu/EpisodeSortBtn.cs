@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 		private void OnButtonSort()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.ShowSortWindow(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.CDOOMPPEINP() ? PopupFilterSort.Scene.EpisodeSelect2 : PopupFilterSort.Scene.EpisodeSelect, (PopupFilterSort content) =>
+			MenuScene.Instance.ShowSortWindow(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.CDOOMPPEINP() ? PopupFilterSort.Scene.EpisodeSelect2 : PopupFilterSort.Scene.EpisodeSelect, (PopupFilterSort content) =>
 			{
 				//0xF08F3C
 				if(m_delegate_sort != null)

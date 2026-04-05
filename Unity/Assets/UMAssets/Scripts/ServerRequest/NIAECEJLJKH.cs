@@ -1,5 +1,5 @@
 
-public class NIAECEJLJKH : CACGCMBKHDI_Request
+public class NIAECEJLJKH : CACGCMBKHDI_NetBaseAction
 {
 	public override bool ICFMKEFJOIE { get { return true; } } //0x18A05A8
 

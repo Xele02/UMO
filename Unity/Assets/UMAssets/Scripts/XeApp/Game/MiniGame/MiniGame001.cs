@@ -193,13 +193,13 @@ namespace XeApp.Game.MiniGame
 		//// RVA: 0x1CEB368 Offset: 0x1CEB368 VA: 0x1CEB368
 		private IEnumerator EventSetUpIn()
 		{
-			AMLGMLNGMFB_EventAprilFool controller;
+			AMLGMLNGMFB_NetEventAprilFoolController controller;
 
 			//0x1CEDA28
 			ShootingButtonDisable();
 			bool done = false;
 			bool err = false;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			controller = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			if(controller != null)
 			{
@@ -223,7 +223,7 @@ namespace XeApp.Game.MiniGame
 			}
 			done = false;
 			err = false;
-			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 			{
 				//0x1CED058
 				done = true;
@@ -276,7 +276,7 @@ namespace XeApp.Game.MiniGame
 			m_soundManager.InstallCueSheet();
 			while (!m_soundManager.IsReady())
 				yield return null;
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			GameManager.FadeIn(0.4f);
 			while (GameManager.IsFading())
@@ -575,15 +575,15 @@ namespace XeApp.Game.MiniGame
 			}
 			m_resultLayout.PlayerEnter();
 			yield return Co.R(Fade(0));
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			AMLGMLNGMFB_EventAprilFool af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			AMLGMLNGMFB_NetEventAprilFoolController af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			score = m_resultData.Score;
 			highScore = m_viewShootingData.LGDLEHHOIEL_HighScore;
 			isUseCommandScore = false;
 			isUseCommandHighScore = false;
 			if(af != null)
 			{
-				AMLGMLNGMFB_EventAprilFool.JPGMKBANFGF data = new AMLGMLNGMFB_EventAprilFool.JPGMKBANFGF();
+				AMLGMLNGMFB_NetEventAprilFoolController.JPGMKBANFGF data = new AMLGMLNGMFB_NetEventAprilFoolController.JPGMKBANFGF();
 				data.BCGLDMKODLC_IsClear = m_isClear;
 				data.KNIFCANOHOC_score = score;
 				data.CHPIFIEEEEC_IsSecretCommand = m_secretCommand.IsSecretCommand;
@@ -594,7 +594,7 @@ namespace XeApp.Game.MiniGame
 				isUseCommandHighScore = af.MMICFFPMHIC.LNDLJBINJDE_IsUseCommandHighScore;
 			}
 			bool isSave = true;
-			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 			{
 				//0x1CED08C
 				isSave = false;
@@ -660,8 +660,8 @@ namespace XeApp.Game.MiniGame
 		public void HelpButton()
 		{
 			m_soundManager.SystemSePlay(3);
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			AMLGMLNGMFB_EventAprilFool af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			AMLGMLNGMFB_NetEventAprilFoolController af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			if(af != null)
 			{
 				int id = af.HLOGNJNGDJO_GetHelpId(0);

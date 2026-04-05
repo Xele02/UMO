@@ -33,8 +33,8 @@ namespace XeApp.Game.Menu
 		public void SetItem(LGMEPLIJLNB data, bool is_roop_reward)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_item_name.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
-			m_item_num.text = data.GOOIIPFHOIG.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(data.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory, data.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
+			m_item_name.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
+			m_item_num.text = data.GOOIIPFHOIG.MBJIFDBEDAC_item_count.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(data.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory, data.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
 			if(is_roop_reward)
 			{
 				m_work_sb.SetFormat(bk.GetMessageByLabel("episode_reward_text002"), data.DNBFMLBNAEE_point - data.CCDPNBJMKDI_StartPoint, RichTextUtility.MakeSizeTagString(bk.GetMessageByLabel("episode_reward_text003"), 22));

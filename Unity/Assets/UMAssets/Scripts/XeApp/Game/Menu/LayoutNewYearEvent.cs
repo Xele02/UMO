@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 					m_layoutButton.StartChildrenAnimGoStop("05");
 					break;
 			}
-			KNKDBNFMAKF_EventSp ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_EventSp;
+			KNKDBNFMAKF_NetEventSpController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_NetEventSpController;
 			m_texCacheTitle.Load(ev.PGIIDPEGGPI_EventId, viewData.HCGPNCJNKED(currentTime), (IiconTexture texture) =>
 			{
 				//0x15CF15C

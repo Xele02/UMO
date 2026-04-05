@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class FHEFAEJNBLD : CACGCMBKHDI_Request
+public class FHEFAEJNBLD : CACGCMBKHDI_NetBaseAction
 {
 	public class CIBLBLJDJCE
 	{

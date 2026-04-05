@@ -1,6 +1,9 @@
 using System.Collections;
 
-public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
+// namespace XeApp.Game.Net.Security
+[System.Obsolete()]
+public class IIEDOGCMCIE {}
+public class IIEDOGCMCIE_SecureTarFile : CBBJHPBGBAJ_Archive
 {
 	private const int NNBHLPECAHJ = 1;
 	public bool BIOFMLDLNKD; // 0xC
@@ -20,7 +23,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 	public IEnumerator ODDEPBIJHOE_Coroutine_Load(string _CJEKGLGBIHF_path)
     {
         // 	public string CJEKGLGBIHF_path; // 0x10
-        // 	public IIEDOGCMCIE KIGBLACMODG; // 0x14
+        // 	public IIEDOGCMCIE_SecureTarFile KIGBLACMODG; // 0x14
         // 	private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 		// 0x12044AC
 
@@ -46,7 +49,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
             bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
             if(!r)
             {
-                ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM;
                 int val1 = a.LPJLEHAJADA_GetIntParam("m_0", 0);
                 int val2 = a.LPJLEHAJADA_GetIntParam("m_1", 0);
                 int val3 = a.LPJLEHAJADA_GetIntParam("m_2", 0);

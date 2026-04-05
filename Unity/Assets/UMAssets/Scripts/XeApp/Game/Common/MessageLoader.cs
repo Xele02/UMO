@@ -76,13 +76,13 @@ namespace XeApp.Game.Common
 			{
 				if(defaultInstallSource == InstallSource.LocalStorage)
 				{
-					string str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
+					string str = BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + BBGDKLLEPIB_NetInstallMaster.HHCJCDFCLOB_Instance.OCOGBOHOGGE_DbFileName;
 					Dictionary<string,string> dic = new Dictionary<string, string>(1);
 					dic.Add("sheet", ((int)sheet).ToString());
 					dic.Add("bankName", sheet.ToString());
 					dic.Add("ver", version.ToString());
 					m_isLoading = true;
-					IIEDOGCMCIE data = new IIEDOGCMCIE();
+					IIEDOGCMCIE_SecureTarFile data = new IIEDOGCMCIE_SecureTarFile();
 					data.MCDJJPAKBLH(str);
 					N.a.StartCoroutineWatched(Coroutine_SecureFileLoad(data, sheet, version));
 				}
@@ -105,7 +105,7 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739A3C Offset: 0x739A3C VA: 0x739A3C
 		// // RVA: 0x1116178 Offset: 0x1116178 VA: 0x1116178
-		private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version)
+		private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE_SecureTarFile tar, MessageLoader.eSheet sheet, int version)
 		{
 			//0x11179A4
 			while(!tar.PLOOEECNHFB_IsDone)

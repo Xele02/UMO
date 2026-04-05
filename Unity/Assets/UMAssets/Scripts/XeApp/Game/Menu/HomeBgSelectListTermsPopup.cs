@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(setting.WindowSize, setting.IsCaption);
 			m_text.text = m_setting.m_text;
 			MenuScene.Instance.SceneIconCache.SetLoadingTexture(m_image);
-			int bg_id = CGFNKMNBNBN.ELKDCEEPLKB(m_setting.m_bg_id).KEFGPJBKAOD_BgId;
+			int bg_id = CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(m_setting.m_bg_id).KEFGPJBKAOD_BgId;
 			MenuScene.Instance.HomeBgIconTextureCache.Load(bg_id, (IiconTexture texture) =>
 			{
 				//0x95C890

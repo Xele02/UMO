@@ -81,16 +81,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA9718 Offset: 0xEA9718 VA: 0xEA9718
-		public void Setup(IKDICBBFBMI_EventBase cont, long currentTime)
+		public void Setup(IKDICBBFBMI_NetEventBaseController cont, long currentTime)
 		{
-			List<IKDICBBFBMI_EventBase> l = new List<IKDICBBFBMI_EventBase>();
+			List<IKDICBBFBMI_NetEventBaseController> l = new List<IKDICBBFBMI_NetEventBaseController>();
 			if(cont != null)
 				l.Add(cont);
 			Setup(l, currentTime);
 		}
 
 		// // RVA: 0xEA97F0 Offset: 0xEA97F0 VA: 0xEA97F0
-		public void Setup(List<IKDICBBFBMI_EventBase> list, long currentTime)
+		public void Setup(List<IKDICBBFBMI_NetEventBaseController> list, long currentTime)
 		{
 			ClearBanner();
 			int cnt = 0;
@@ -130,28 +130,28 @@ namespace XeApp.Game.Common
 						l2 = 0;
 						str = "";
 					}
-					PKNOKJNLPOE_EventRaid evRaid = list[i] as PKNOKJNLPOE_EventRaid;
+					PKNOKJNLPOE_NetEventRaidController evRaid = list[i] as PKNOKJNLPOE_NetEventRaidController;
 					if(evRaid != null)
 					{
-						NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase x) =>
+						NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController x) =>
 						{
 							//0xEABC58
-							return x is NKOBMDPHNGP_EventRaidLobby;
-						}) as NKOBMDPHNGP_EventRaidLobby;
+							return x is NKOBMDPHNGP_NetEventRaidLobbyController;
+						}) as NKOBMDPHNGP_NetEventRaidLobbyController;
 						if(evLobby != null)
 						{
-							NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = evLobby.KINIOEOOCAA_GetPhase(currentTime);
-							if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+							NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase phase = evLobby.KINIOEOOCAA_GetPhase(currentTime);
+							if(phase == NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 							{
 								str = bk.GetMessageByLabel("home_event_counting");
 							}
-							else if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.KJNKFFJBPIH_1_Before)
+							else if(phase == NKOBMDPHNGP_NetEventRaidLobbyController.FIPGKDJHKCH_Phase.KJNKFFJBPIH_1_Before)
 							{
 								str = bk.GetMessageByLabel("home_banner_raid_lobby_open");
 							}
 						}
 					}
-					MANPIONIGNO_EventGoDiva evGoDiva = list[i] as MANPIONIGNO_EventGoDiva;
+					MANPIONIGNO_NetEventGoDivaController evGoDiva = list[i] as MANPIONIGNO_NetEventGoDivaController;
 					if(evGoDiva != null && evGoDiva.KBKGHDFBHAP_GetBonusEndTime(currentTime) != 0)
 					{
 						str = bk.GetMessageByLabel("banner_godiva_fevertime");

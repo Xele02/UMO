@@ -120,7 +120,7 @@ namespace XeApp.Game.DownLoad
 			int i; // 0x1C
 
 			//0x980BD0
-			adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB_Find(miniAdvId);
+			adv = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB_Find(miniAdvId);
 			if (adv == null)
 				yield break;
 			m_messageTouchArea.gameObject.SetActive(true);

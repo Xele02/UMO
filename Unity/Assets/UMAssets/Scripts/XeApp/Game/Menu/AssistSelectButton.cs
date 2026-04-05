@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 				if (OnClickButtonLisner != null)
 					OnClickButtonLisner();
 			});
-			gameObject.SetActive(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled());
+			gameObject.SetActive(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled());
 		}
 
 		//// RVA: 0x1434BE0 Offset: 0x1434BE0 VA: 0x1434BE0

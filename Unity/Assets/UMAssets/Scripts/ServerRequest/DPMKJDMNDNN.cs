@@ -12,7 +12,7 @@ public class IBBBOJEGGLE
 
 [System.Obsolete("Use DPMKJDMNDNN_GetBlackList", true)]
 public class DPMKJDMNDNN { }
-public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
+public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_NetBaseAction
 {
 	public class NOFBHALLIMD
 	{

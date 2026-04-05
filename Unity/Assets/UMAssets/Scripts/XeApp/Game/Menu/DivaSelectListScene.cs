@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 				//0x1264CAC
 				if (type == PopupButton.ButtonType.Negative)
 					return;
-				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 				SwapDiva(unit, beforeDiva, afterDiva, slot);
 				if(afterDiva != null)
 				{
@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0060 Offset: 0x17F0060 VA: 0x17F0060 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && base.IsEndPreSetCanvas();
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && base.IsEndPreSetCanvas();
 		}
 
 		// RVA: 0x17F0118 Offset: 0x17F0118 VA: 0x17F0118 Slot: 23

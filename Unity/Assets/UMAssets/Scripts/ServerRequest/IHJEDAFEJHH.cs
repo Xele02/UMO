@@ -76,7 +76,7 @@ public class JAMDHMMODCG
 
 [System.Obsolete("Use IHJEDAFEJHH_StepUpLotPurchase", true)]
 public class IHJEDAFEJHH { }
-public class IHJEDAFEJHH_StepUpLotPurchase : CACGCMBKHDI_Request
+public class IHJEDAFEJHH_StepUpLotPurchase : CACGCMBKHDI_NetBaseAction
 {
 	public string MMEBLOIJBKE_UniqueKey; // 0x7C
 	public string NNEGBDKOAHN_Hash; // 0x80

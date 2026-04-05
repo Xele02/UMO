@@ -655,7 +655,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(liveSkills[j] != 0)
 						{
-							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkills[j] - 1];
+							masterSkill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkills[j] - 1];
 							for(k = 0; k < masterSkill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 							{
 								if(masterSkill.EGLDFPILJLG_SkillBuffEffect[k] != 0)
@@ -710,12 +710,12 @@ namespace XeApp.Game.RhythmGame
 			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
 			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
 
-			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			int off = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
 			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
-			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
+			md = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
 			for (i = 0; i < 1; i++)
 			{
 				effectType = md.EGLDFPILJLG_SkillBuffEffect[i];
@@ -869,7 +869,7 @@ namespace XeApp.Game.RhythmGame
 			gameSetup = Database.Instance.gameSetup;
 			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
 
-			yield return this.StartCoroutineWatched(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
+			yield return this.StartCoroutineWatched(m_pilotTexture.Load(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
 			yield return this.StartCoroutineWatched(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
 			yield return this.StartCoroutineWatched(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_PId));
 			if (musicVoiceChangerResource == null)

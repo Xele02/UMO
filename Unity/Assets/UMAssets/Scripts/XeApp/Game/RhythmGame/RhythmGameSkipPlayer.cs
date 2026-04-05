@@ -256,7 +256,7 @@ namespace XeApp.Game.RhythmGame
 				musicData = resource.musicData,
 				teamScoreValue = gs.teamInfo.teamStatus.soul + gs.teamInfo.teamStatus.vocal + gs.teamInfo.teamStatus.charm,
 				teamEnergyValue = gs.teamInfo.teamStatus.fold,
-				supportRate = gs.teamInfo.teamStatus.support * 1.0f / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1,
+				supportRate = gs.teamInfo.teamStatus.support * 1.0f / IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1,
 				valkyrieId = gs.teamInfo.valkyrieId,
 				maxLife = gs.teamInfo.teamStatus.life,
 				isLiveSkip = m_skip.m_enable
@@ -268,7 +268,7 @@ namespace XeApp.Game.RhythmGame
 			m_NoteResultParam_Excellent.m_note_judge_rate = gs.teamInfo.excellentRate / 100.0f;
 			m_NoteResultParam_Excellent.m_score_rate = gs.teamInfo.excellentScoreAdd / 100.0f;
 			m_NoteParam_CLiveSkill.m_assign_rate = gs.teamInfo.centerLiveSkillRate / 100.0f;
-			m_NoteParam_EventItem.m_enable = JGEOBNENMAH.HHCJCDFCLOB.HIGJBGFJMMO;
+			m_NoteParam_EventItem.m_enable = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.HIGJBGFJMMO;
 			m_NoteAssingInfo.m_center_live_skill = UnityEngine.Random.Range(0, 100000) <= m_NoteParam_CLiveSkill.m_assign_rate * 100000.0f;
 			m_NoteAssingInfo.m_center_live_skill_index = m_NoteParam_CLiveSkill.m_assign_index;
 			m_NoteAssingInfo.m_event_item = m_NoteParam_EventItem.m_enable;
@@ -544,9 +544,9 @@ namespace XeApp.Game.RhythmGame
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				int sceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null)
 				{
-					//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[sceneId - 1].JPIPENJGGDD_NumBoard;
+					//CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[sceneId - 1].JPIPENJGGDD_NumBoard;
 				}
 			}
 			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
@@ -731,17 +731,17 @@ namespace XeApp.Game.RhythmGame
 			rNoteOwner.SetupNoteResultData(ref noteResultCount, logger);
 			noteResultCount_Excellent = 0;
 			noteResultCount_Excellent = rNoteOwner.GetExcellentResultNoteCount();
-			JGEOBNENMAH.HAJIFNABIFF data;
+			JGEOBNENMAH_NetGameManager.HAJIFNABIFF data;
 			MakeClearSetupData(out data, noteResultCount, noteResultCount_Excellent, touchedEventItem ? 1 : 0);
 			int t_next = 0;
 			if(!isClear)
 			{
-				JGEOBNENMAH.HHCJCDFCLOB.EFHMAKNEGEA(data);
+				JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.EFHMAKNEGEA(data);
 				t_next = 3;
 			}
 			else
 			{
-				JGEOBNENMAH.HHCJCDFCLOB.EFHPJGACNLK(data, () =>
+				JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.EFHPJGACNLK(data, () =>
 				{
 					//0xC0805C
 					t_next = 2;
@@ -764,11 +764,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xC04988 Offset: 0xC04988 VA: 0xC04988
-		private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
+		private void MakeClearSetupData(out JGEOBNENMAH_NetGameManager.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
 		{
 			CalcComboRank();
 			status.combo.Reset();
-			clearSetup = new JGEOBNENMAH.HAJIFNABIFF();
+			clearSetup = new JGEOBNENMAH_NetGameManager.HAJIFNABIFF();
 			clearSetup.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
 			clearSetup.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
 			clearSetup.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
@@ -821,7 +821,7 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.FEGLNPOFDJC_ExcellentCount = noteResultCount_Excellent;
 			clearSetup.OOPEJLMNIAH_EventItemCount = noteResultCount_EventItem;
 			clearSetup.JPJMALBLKDI_Tutorial = (int)Database.Instance.gameSetup.musicInfo.tutorial;
-			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH.HHCJCDFCLOB.GJIICCJMDIF_GetServerTime();
+			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.GJIICCJMDIF_GetServerTime();
 			clearSetup.PMCGHPOGLGM_IsSkip = Database.Instance.gameSetup.EnableLiveSkip;
 			clearSetup.KAIPAEILJHO_TicketCount = Database.Instance.gameSetup.LiveSkipTicketCount;
 			clearSetup.CEPCBJHNMJA_IsNotUpdateProfile = Database.Instance.gameSetup.IsNotUpdateProfile;

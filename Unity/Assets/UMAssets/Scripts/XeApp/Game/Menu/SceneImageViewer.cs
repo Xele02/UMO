@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				m_sceneImage.texture = null;
 				m_sceneImage.material = tex.Material;
 				m_sceneImage.MaterialMul = tex.Material;
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
 				{
 					material.EnableKeyword("FIXEDBIAS");
 				}

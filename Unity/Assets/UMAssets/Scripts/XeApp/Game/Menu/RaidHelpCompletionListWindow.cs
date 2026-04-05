@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1BCFE18 Offset: 0x1BCFE18 VA: 0x1BCFE18
-		public void Initialize(List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helperList)
+		public void Initialize(List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helperList)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_text01.text = bk.GetMessageByLabel("pop_raid_helprequest_completion_text");
@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1BCFF20 Offset: 0x1BCFF20 VA: 0x1BCFF20
-		public void UpdateContent(List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helperList)
+		public void UpdateContent(List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helperList)
 		{
 			m_scrollList.SetItemCount(helperList.Count);
 			m_scrollList.OnUpdateItem.RemoveAllListeners();

@@ -62,7 +62,7 @@ namespace XeApp.Game.Common
 			if(string.IsNullOrEmpty(s.OverrideName))
 			{
 				m_layoutRoot.StartChildrenAnimGoStop("01");
-				m_itemNameText.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(s.ItemId);
+				m_itemNameText.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(s.ItemId);
 			}
 			else
 			{
@@ -80,7 +80,7 @@ namespace XeApp.Game.Common
 			}
 			if(string.IsNullOrEmpty(s.OverrideText))
 			{
-				m_itemDescriptionText.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(s.ItemId));
+				m_itemDescriptionText.text = EKLNMHFCAOI_ItemManager.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(s.ItemId));
 			}
 			else
 			{
@@ -93,7 +93,7 @@ namespace XeApp.Game.Common
 			else
 			{
 				m_decoSetCautionText.text = bk.GetMessageByLabel("deco_set_buy_warn_text");
-				m_layoutCautionText.StartChildrenAnimGoStop(EKLNMHFCAOI.PJMJIKKJAAM_GetDecoItemSet(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(s.ItemId)) == 0 ? "01" : "02");
+				m_layoutCautionText.StartChildrenAnimGoStop(EKLNMHFCAOI_ItemManager.PJMJIKKJAAM_GetDecoItemSet(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(s.ItemId)) == 0 ? "01" : "02");
 			}
 		}
 

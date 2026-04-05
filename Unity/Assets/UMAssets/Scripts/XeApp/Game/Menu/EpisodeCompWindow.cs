@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 			return;
 		}; // 0xF8
 
-		public EKLNMHFCAOI.FKGCBLHOOCL_Category ItemType { get; private set; } // 0xA8
+		public EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category ItemType { get; private set; } // 0xA8
 		public int ItemId { get; private set; } // 0xAC
 
 		public bool Unused() { return m_is_line_update && m_is_comp; }
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 				m_available_episodepoint.StartChildrenAnimGoStop("st_out");
 			}
 			ItemId = 0;
-			ItemType = EKLNMHFCAOI.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None;
+			ItemType = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HJNNKCMLGFL_0_None;
 			m_is_line_update = false;
 			m_showReciveItemIndex = 0;
 			UpdateEpisodeGauge(m_currentPoint, m_episodeData.CCBKMCLDGAD_HasReward);
@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 				//0x12831D0
 				isComp = x;
 			}));
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			if(isComp)
 			{
@@ -325,8 +325,8 @@ namespace XeApp.Game.Menu
 					UpdateText(currentPoint, m_reward_index);
 					if (currentReward.DNBFMLBNAEE_point <= currentPoint)
 					{
-						if ((currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory < EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume || currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory > EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie) &&
-							currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+						if ((currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory < EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume || currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory > EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie) &&
+							currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 						{
 							SoundManager.Instance.sePlayerMenu.Stop();
 							m_showReciveItemIndex++;
@@ -412,7 +412,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1281798 Offset: 0x1281798 VA: 0x1281798
 		private void ShowOfferPlatoonReleasePopup()
 		{
-			if(KDHGBOOECKC.HHCJCDFCLOB.OOOMMBCDOBO())
+			if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.OOOMMBCDOBO())
 			{
 				PopupOfferUnclokPlattonSetting s = new PopupOfferUnclokPlattonSetting();
 				s.Buttons = new ButtonInfo[1]
@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
 				s.WindowSize = SizeType.Small;
-				s.nextPlatoonNum = KDHGBOOECKC.HHCJCDFCLOB.JGFHJPGJJHP();
+				s.nextPlatoonNum = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.JGFHJPGJJHP();
 				PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
 					//0x12831D8

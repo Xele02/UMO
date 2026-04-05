@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use PPJGPCKAMDC_PlatformPaymentRecover", true)]
 public class PPJGPCKAMDC { }
-public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_Request
+public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_NetBaseAction
 {
 	public class DEGAKGMBJDF
 	{

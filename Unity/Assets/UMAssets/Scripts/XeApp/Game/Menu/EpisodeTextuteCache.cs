@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 			if(colorId < 1)
 			{
 				m_strBuilder.SetFormat(DivaBustupTexturePath, divaId, modelId);
-				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(m_strBuilder.ToString()))
+				if(!KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(m_strBuilder.ToString()))
 				{
 					int id = FindEpisodeIdFromModelId(divaId, modelId);
 					if(id == 0)
@@ -95,16 +95,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF09B6C Offset: 0xF09B6C VA: 0xF09B6C
 		private int FindEpisodeIdFromModelId(int divaId, int modelId)
 		{
-			foreach(var episode in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList)
+			foreach(var episode in IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList)
 			{
 				foreach(var a in episode.HHJGBJCIFON_Rewards)
 				{
 					if(a != 0)
 					{
-						JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
-						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+						JNIKPOIKFAC_Reward reward = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
+						if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 						{
-							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
+							if (EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_ItemId) == IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
 							{
 								return episode.KELFCMEOPPM_EpisodeId;
 							}
@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 		public void TryInstallIcon(int episodeId)
 		{
 			m_strBuilder.SetFormat(EpisodeIconTexturePath, episodeId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0xF07014 Offset: 0xF07014 VA: 0xF07014

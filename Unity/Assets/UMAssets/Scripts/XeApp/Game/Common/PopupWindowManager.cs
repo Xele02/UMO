@@ -242,11 +242,11 @@ namespace XeApp.Game.Common
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3);
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId);
-			int a1 = JGEOBNENMAH.HHCJCDFCLOB.BHOAOPKAPGD(freeMusicId);
+			int itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3);
+			string name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId);
+			int a1 = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.BHOAOPKAPGD(freeMusicId);
 			TextPopupSetting s;
-			int a2 = JGEOBNENMAH.HHCJCDFCLOB.MFMPOFABICK();
+			int a2 = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.MFMPOFABICK();
 			if(a2 < 1)
 			{
 				s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_week_recovery_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_week_recovery_02"), name), new ButtonInfo[1]
@@ -268,7 +268,7 @@ namespace XeApp.Game.Common
 			PopupWindowManager.Show(s,(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1BC79A4
-				if(!PGIGNJDPCAH.MNANNMDBHMP(() =>
+				if(!PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 				{
 					//0x1BC7C30
 					changeDateCallBack(TransitionList.Type.LOGIN_BONUS);
@@ -280,7 +280,7 @@ namespace XeApp.Game.Common
 				{
 					if(type == PopupButton.ButtonType.Positive)
 					{
-						if(JGEOBNENMAH.HHCJCDFCLOB.KKKHEOCDFAL(freeMusicId))
+						if(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.KKKHEOCDFAL(freeMusicId))
 						{
 							OpenWeekRecoveryConfirmWindow(() =>
 							{
@@ -306,8 +306,8 @@ namespace XeApp.Game.Common
 		public static void OpenWeekRecoveryConfirmWindow(Action okCallBack, JFDNPFFOACP cancelCallBack, OnDenomChangeDate changeDateCallBack)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3);
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId);
+			int itemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3);
+			string name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId);
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(string.Format(bk.GetMessageByLabel("popup_title_week_recovery_02"), name), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_week_recovery_04"), name), new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -315,7 +315,7 @@ namespace XeApp.Game.Common
 			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1BC7D24
-				if(!PGIGNJDPCAH.MNANNMDBHMP(() =>
+				if(!PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 				{
 					//0x1BC7E88
 					changeDateCallBack(TransitionList.Type.LOGIN_BONUS);
@@ -342,13 +342,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC272C Offset: 0x1BC272C VA: 0x1BC272C
 		public static void ApplyWeekRecovery(int freeMusicId, Action<int> recoveryCallBack, DJBHIFLHJLK errorCallBack)
 		{
-			int recovery = JGEOBNENMAH.HHCJCDFCLOB.BHOAOPKAPGD(freeMusicId);
-			if(JGEOBNENMAH.HHCJCDFCLOB.IGJJIDDOOJO(freeMusicId))
+			int recovery = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.BHOAOPKAPGD(freeMusicId);
+			if(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.IGJJIDDOOJO(freeMusicId))
 			{
 				MenuScene.Save(() =>
 				{
 					//0x1BC7EE8
-					ILCCJNDFFOB.HHCJCDFCLOB.PLEKHHPMELF_HealItemConsume(freeMusicId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3), recovery);
+					ILCCJNDFFOB.HHCJCDFCLOB_Instance.PLEKHHPMELF_HealItemConsume(freeMusicId, EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 3), recovery);
 					OpenWeekRecoveryCompletionWindow(recovery, () =>
 					{
 						//0x1BC806C
@@ -382,7 +382,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC2BC8 Offset: 0x1BC2BC8 VA: 0x1BC2BC8
 		private static bool IsStaminaMax()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue(); 
+			return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount <= CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue(); 
 		}
 
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
@@ -405,7 +405,7 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.FDFDGEMMKKJ())
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.FDFDGEMMKKJ())
 				{
 					OpenStaminaWindowHaveStone(recoveryCallBack, cancelCallBack, errorCallBack);
 				}
@@ -442,7 +442,7 @@ namespace XeApp.Game.Common
 			int v = item.healValue;
 			if(item.healValue == 0)
 			{
-				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount;
+				v = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount;
 			}
 			string s = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
 			{
@@ -473,7 +473,7 @@ namespace XeApp.Game.Common
 					}
 					else
 					{
-						if(!PGIGNJDPCAH.MNANNMDBHMP(() =>
+						if(!PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 						{
 							//0x1BC8404
 							changeDateCallBack(TransitionList.Type.LOGIN_BONUS);
@@ -483,7 +483,7 @@ namespace XeApp.Game.Common
 							changeDateCallBack(TransitionList.Type.TITLE);
 						}))
 						{
-							CIOECGOMILE.HHCJCDFCLOB.GNNHEDHCJAE(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, item.id, () =>
+							CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.GNNHEDHCJAE(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, item.id, () =>
 							{
 								//0x1BC8464
 								OpenStaminaCompletionWindow(recoveryCallBack);
@@ -503,10 +503,10 @@ namespace XeApp.Game.Common
 			s.WindowSize = SizeType.Small;
 			s.Text = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_01"), new object[4]
 			{
-				CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(),
-				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount,
-				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(),
-				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH()
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CIPHAHDGGPH(),
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount,
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency(),
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CIPHAHDGGPH()
 			});
 			s.Buttons = new ButtonInfo[2]
 			{
@@ -535,7 +535,7 @@ namespace XeApp.Game.Common
 					}
 					else
 					{
-						CIOECGOMILE.HHCJCDFCLOB.GNNHEDHCJAE(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0, () =>
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.GNNHEDHCJAE(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0, () =>
 						{
 							//0x1BC8710
 							OpenStaminaCompletionWindow(recoveryCallBack);
@@ -552,7 +552,7 @@ namespace XeApp.Game.Common
 			TextPopupSetting s = new TextPopupSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
 			s.WindowSize = SizeType.Small;
-			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount);
+			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CIPHAHDGGPH(), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount);
 			s.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -581,7 +581,7 @@ namespace XeApp.Game.Common
 
 			//0x1389C14
 			TransitionList.Type result = TransitionList.Type.UNDEFINED;
-			isChangeDate = PGIGNJDPCAH.MNANNMDBHMP(() =>
+			isChangeDate = PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 			{
 				//0x1BC8898
 				result = TransitionList.Type.LOGIN_BONUS;
@@ -632,7 +632,7 @@ namespace XeApp.Game.Common
 		public static void OpenStaminaCompletionWindow(Action recoveryCallBack)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_stamina_03"), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue()), new ButtonInfo[1]
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_stamina_03"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue()), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -680,7 +680,7 @@ namespace XeApp.Game.Common
 				SoundManager.Instance.voSeasonEvent.RemoveCueSheet();
 			}
 			//LAB_01388a60
-			KEHOJEJMGLJ.HHCJCDFCLOB.OANLHPBJIND();
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.OANLHPBJIND();
 			GameManager.Instance.StartCoroutineWatched(CacheClearPopupShow(callback));
 		}
 

@@ -11,7 +11,7 @@ namespace XeApp.Game.Common
 {
 	public class PopupMissionBonusListSetting : PopupSetting
 	{
-		public List<KPJHLACKGJF_EventMission.HLMINENBCKO> List { get; set; } // 0x34
+		public List<KPJHLACKGJF_NetEventMissionController.HLMINENBCKO> List { get; set; } // 0x34
 		public override bool IsPreload { get { return true; } } //0x1BB0E14
 		public override bool IsAssetBundle { get { return true; } } //0x1BB0E1C
 		public override string PrefabPath { get { return ""; } } //0x1BB0E24
@@ -126,7 +126,7 @@ namespace XeApp.Game.Common
 		{
 			gameObject.SetActive(true);
 			int a = Mathf.Max(0, m_setting.List.Count - 3);
-			int idx = m_setting.List.FindIndex((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
+			int idx = m_setting.List.FindIndex((KPJHLACKGJF_NetEventMissionController.HLMINENBCKO _) =>
 			{
 				//0x1BB04EC
 				return _.IPJMPBANBPP_Enabled;

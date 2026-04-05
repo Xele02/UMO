@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use EDOGNHECOMI_GetStepUpLotDetail", true)]
 public class EDOGNHECOMI { }
-public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
+public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_NetBaseAction
 {
 	public int KHDLOLOPCOK = 3; // 0x7C
 	public int LLPOINKCHEJ = 1; // 0x80

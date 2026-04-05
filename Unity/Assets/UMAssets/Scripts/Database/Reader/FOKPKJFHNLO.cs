@@ -19,14 +19,14 @@ public class LJBDGKFPGHH
 	public uint KNLGKBBIBOH_RewardEnd2 { get; set; } // 0x3C HLFNONCONAP IOMNJKGAOOD_get_RewardEnd2 CDGMGKOIMBP_set_RewardEnd2
 	public uint JBFDHOIKAIK_InventoryEndDate { get; set; } // 0x40 HKLAIJDEMID GBNKCHLEGPH_get_InventoryEndDate AAKNFOAHCCI_set_InventoryEndDate
 	public uint KHIKEGLBGAF_RankingRewardScene { get; set; } // 0x44 OAPPFIGOMHO FAHFDEFDLMH_get_RankingRewardScene OJJMIBDFGBG_set_RankingRewardScene
-	public uint DPJCFLKFEPN { get; set; } // 0x48 IPODKLGLHPC MEAAAGCCAPI_get_ GNMJKJHPIOG_set_
+	public uint DPJCFLKFEPN_RankingRewardScene2 { get; set; } // 0x48 IPODKLGLHPC MEAAAGCCAPI_get_ GNMJKJHPIOG_set_
 	public uint[] EEOGPJJCKHH_Drops { get; set; } // 0x4C CPNKKFMLHFL BBBPKCMKJEF_get_Drops CDMJOOGMGNP_set_Drops
 	public uint JMJDLDEIFKE { get; set; } // 0x50 OAGMMIOODOF OIHKCLCPBJI_get_ PKPGPELDIBH_set_
 	public uint AHKNMANFILO_DayGroup { get; set; } // 0x54 IFFLMDALMBO PEGLCODNPHG_get_DayGroup PAGEFLIKEIE_set_DayGroup
 	public string OCDMGOGMHGE_KeyPrefix { get; set; } // 0x58 AEEOIOIDHEE HBAAAKFHDBB_get_KeyPrefix NHJLJOIPOFK_set_KeyPrefix
 	public string PJBILOFOCIC { get; set; } // 0x5C HAJIFCIAOBI NOEFEAIFHCL_get_ GJIJFGNONEL_set_
 	public int MJBKGOJBPAD_item_type { get; set; } // 0x60 DINOHEJLBOA COFMKKJBELJ_get_item_type KHOHIGFNIIF_set_item_type
-	public uint MPKNCMEAMLO { get; set; } // 0x64 PCGLIOIAEPM JDFHGPLACGI_get_ NEFEJGOEIMM_set_
+	public uint MPKNCMEAMLO_UsingTicketEnabled { get; set; } // 0x64 PCGLIOIAEPM JDFHGPLACGI_get_ NEFEJGOEIMM_set_
 	public uint AHKPNPNOAMO_ExtreamOpen { get; set; } // 0x68 AFNKJBHLGEM GFGFHFAENCE_get_ExtreamOpen BLDNJLKJEDC_set_ExtreamOpen
 	public string FEMMDNIELFC_Desc { get; set; } // 0x6C GDKPKLJELJK JDHDMBHNKJD_get_Desc FNAJEJLLJOE_set_Desc
 	public uint HKKNEAGCIEB_RankingSupport { get; set; } // 0x70 DLECBCICIJB KCBPJPCEPHH_get_RankingSupport KBACNJPKDOD_set_RankingSupport
@@ -217,7 +217,7 @@ public class FOKPKJFHNLO
 		HMBHNLCFDIH_data_.KNLGKBBIBOH_RewardEnd2 = HMBHNLCFDIH_readData_.AEOKLKJAKHB/*_RewardEnd2*/;
 		HMBHNLCFDIH_data_.JBFDHOIKAIK_InventoryEndDate = HMBHNLCFDIH_readData_.IDMMPIIIPLL/*_InventoryEndDate*/;
 		HMBHNLCFDIH_data_.KHIKEGLBGAF_RankingRewardScene = HMBHNLCFDIH_readData_.HKPPDACCCOH/*_RankingRewardScene*/;
-		HMBHNLCFDIH_data_.DPJCFLKFEPN = HMBHNLCFDIH_readData_.NAMFJMCKFIF;
+		HMBHNLCFDIH_data_.DPJCFLKFEPN_RankingRewardScene2 = HMBHNLCFDIH_readData_.NAMFJMCKFIF;
 		List<uint> EEOGPJJCKHH_list_ = new List<uint>();
 		for(int EEOGPJJCKHH_idx_ = 0; EEOGPJJCKHH_idx_ < HMBHNLCFDIH_readData_.EBFEIMNOLHPLength; EEOGPJJCKHH_idx_++)
 		{
@@ -230,7 +230,7 @@ public class FOKPKJFHNLO
 		HMBHNLCFDIH_data_.OCDMGOGMHGE_KeyPrefix = HMBHNLCFDIH_readData_.HAEMDABJFJF/*_KeyPrefix*/;
 		HMBHNLCFDIH_data_.PJBILOFOCIC = HMBHNLCFDIH_readData_.PPCOEAIPHKA;
 		HMBHNLCFDIH_data_.MJBKGOJBPAD_item_type = HMBHNLCFDIH_readData_.BNOHOIBDHLP/*_item_type*/;
-		HMBHNLCFDIH_data_.MPKNCMEAMLO = HMBHNLCFDIH_readData_.ALNLBALBCJK;
+		HMBHNLCFDIH_data_.MPKNCMEAMLO_UsingTicketEnabled = HMBHNLCFDIH_readData_.ALNLBALBCJK;
 		HMBHNLCFDIH_data_.AHKPNPNOAMO_ExtreamOpen = HMBHNLCFDIH_readData_.KPCNGKDBMHA/*_ExtreamOpen*/;
 		HMBHNLCFDIH_data_.FEMMDNIELFC_Desc = HMBHNLCFDIH_readData_.NNKLANONDOM/*_Desc*/;
 		HMBHNLCFDIH_data_.HKKNEAGCIEB_RankingSupport = HMBHNLCFDIH_readData_.LENBJLOPKLE/*_RankingSupport*/;

@@ -463,9 +463,9 @@ namespace XeApp.Game.Menu
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costumeMaster;
 
 			//0xD07BF4
-			costumeMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(rivalDiva.AHHJLDLAPAN_DivaId, rivalDiva.JPIDIENBGKH_CostumeId);
-			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(rivalDiva.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_ModelId, false);
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			costumeMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(rivalDiva.AHHJLDLAPAN_DivaId, rivalDiva.JPIDIENBGKH_CostumeId);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.NMFCNFFFMAC_InstallDivaCostume(rivalDiva.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_ModelId, false);
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			rivalDivaManager = MenuScene.Instance.GetComponentInChildren<RivalDivaManager>(true);
 			rivalDivaManager.gameObject.SetActive(true);

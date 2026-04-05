@@ -22,7 +22,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xEA798C Offset: 0xEA798C VA: 0xEA798C
 		public static int GetRankIDMax()
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count;
 		}
 	}
 }

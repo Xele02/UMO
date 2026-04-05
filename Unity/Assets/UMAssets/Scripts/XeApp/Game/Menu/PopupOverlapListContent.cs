@@ -181,11 +181,11 @@ namespace XeApp.Game.Menu
 			{
 				m_root.StartChildrenAnimGoStop("02");
                 GONMPHKGKHI_RewardView.GCHFDJMNCAF a = setup.List[0] as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = a.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef;
-                SetStatusDeco(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD_PrevBoard, a.HMGDINKEPHJ_NextBoard, control.m_titleText);
+                EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = a.DMJCACIDEBM ? EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef;
+                SetStatusDeco(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD_PrevBoard, a.HMGDINKEPHJ_NextBoard, control.m_titleText);
 				for(int i = 0; i < setup.List.Count; i++)
 				{
-					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), 0, (IiconTexture texture) =>
+					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), 0, (IiconTexture texture) =>
 					{
 						//0x16A112C
 						return;
@@ -273,25 +273,25 @@ namespace XeApp.Game.Menu
 		private void SetStatusDeco(int typeAndId, int prevNum, int nextNum, Text titleText)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeAndId);
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeAndId);
 			string str = "";
-            if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+            if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 			{
 				str = "deco_name_poster";
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure)
 			{
 				str = "deco_name_figure";
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso)
 			{
 				str = "deco_name_torso";
 			}
 			titleText.text = string.Format(bk.GetMessageByLabel("pop_deco_get_title"), bk.GetMessageByLabel(str));
 			m_textDesc.text = string.Format(bk.GetMessageByLabel("pop_deco_get_desc"), bk.GetMessageByLabel(str));
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 			{
-				m_textLimit.text = string.Format(bk.GetMessageByLabel("pop_deco_get_limit"), bk.GetMessageByLabel(str), EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, 1, null));
+				m_textLimit.text = string.Format(bk.GetMessageByLabel("pop_deco_get_limit"), bk.GetMessageByLabel(str), EKLNMHFCAOI_ItemManager.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, cat, 1, null));
 			}
 			else
 			{
@@ -408,7 +408,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16A0F0C Offset: 0x16A0F0C VA: 0x16A0F0C Slot: 10
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && (layoutSingle != null || fxScrollView != null) && m_loading == null;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && (layoutSingle != null || fxScrollView != null) && m_loading == null;
 		}
 
 		// RVA: 0x16A1020 Offset: 0x16A1020 VA: 0x16A1020 Slot: 11

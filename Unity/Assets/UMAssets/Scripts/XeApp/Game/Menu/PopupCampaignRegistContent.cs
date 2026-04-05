@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			transform.GetComponent<RectTransform>().sizeDelta = size;
 			transform.localPosition = Vector3.zero;
 			layout = setup.Content.GetComponent<LayoutPopupCampaignRegist>();
-			layout.Setup(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId, setup.View);
+			layout.Setup(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId, setup.View);
 			layout.OnClickButtonIDCopy = OnClickIDCopy;
 		}
 
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		private void OnClickIDCopy()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
-			ClipboardSupport.CopyText(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId.ToString());
+			ClipboardSupport.CopyText(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId.ToString());
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", "popup_myid_copy_msg"), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }

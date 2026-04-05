@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D1F80 Offset: 0x9D1F80 VA: 0x9D1F80
 		public void SetCostumeIcon(CKFGMNAIBNG a_data, int a_color)
 		{
-			m_item_id = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, a_data.JPIDIENBGKH_CostumeId);
+			m_item_id = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, a_data.JPIDIENBGKH_CostumeId);
 			int t_itemId = m_item_id;
 			m_color = a_color;
 			m_view_data_cos = a_data;
@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D2174 Offset: 0x9D2174 VA: 0x9D2174
 		public void SetVarkiryIcon(PNGOLKLFFLH a_data)
 		{
-			m_item_id = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, a_data.GPPEFLKGGGJ_ValkyrieId);
+			m_item_id = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie, a_data.GPPEFLKGGGJ_ValkyrieId);
 			int t_item_id = m_item_id;
 			m_view_data_val = a_data;
 			m_image_icon.enabled = false;
@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D2344 Offset: 0x9D2344 VA: 0x9D2344
 		public void SetEmblemIcon(IAPDFOPPGND a_data)
 		{
-			m_item_id = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, a_data.MDPKLNFFDBO_EmblemId);
+			m_item_id = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, a_data.MDPKLNFFDBO_EmblemId);
 			int t_item_id = m_item_id;
 			m_view_data_emblem = a_data;
 			m_image_icon.enabled = false;
@@ -103,18 +103,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D2514 Offset: 0x9D2514 VA: 0x9D2514
 		private void CallbackClickButton()
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_item_id);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem)
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(m_item_id);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem)
 			{
 				if (m_cb_click_emblem != null)
 					m_cb_click_emblem(m_view_data_emblem);
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
 				if (m_cb_click_val != null)
 					m_cb_click_val(m_view_data_val);
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
 				if (m_cb_click_cos != null)
 					m_cb_click_cos(m_view_data_cos, m_color);

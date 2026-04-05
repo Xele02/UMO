@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
     public class CostumeRankUpUnlockPopupSetting : PopupSetting
     {
         public LFAFJCNKLML m_data; // 0x34
-        public MOEALEGLGCH m_upgrade; // 0x38
+        public MOEALEGLGCH_ViewCostumeUpgrade m_upgrade; // 0x38
 
         public override string PrefabPath { get { return ""; } } //0x16347D8
         public override string BundleName { get { return "ly/128.xab"; } } //0x1634834

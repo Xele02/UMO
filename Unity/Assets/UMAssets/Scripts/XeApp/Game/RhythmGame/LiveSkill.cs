@@ -5,7 +5,7 @@ namespace XeApp.Game.RhythmGame
 {
 	public class LiveSkill : LiveSkillBase
 	{
-		protected override List<PPGHMBNIAEC> masterSkillList { get { return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills; } set { return; } } //0xF76944 0xF76A20
+		protected override List<PPGHMBNIAEC> masterSkillList { get { return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills; } set { return; } } //0xF76944 0xF76A20
 		public int ownerDivaPlaceIndex { get { return parameter.ownerDivaIndex; } private set { return; } } //0xF76A24 0xF76A2C
 		public int ownerSlotPlaceIndex { get { return parameter.ownerSlotIndex; } private set { return; } } //0xF76A30 0xF76A38
 
@@ -46,7 +46,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(targetSkillEffectId != 0)
 			{
-				List<ALECCMCNIBG> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.KGICDMIJGDF_Group;
+				List<ALECCMCNIBG> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.KGICDMIJGDF_Group;
 				for(int i = 0; i < l.Count; i++)
 				{
 					if(l[i].PPFNGGCBJKC_id == targetSkillEffectId)

@@ -158,11 +158,11 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPopupGetDecoCostumeTorso()
 		{
 			//0x126198C
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(_divaId, 1);
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.JAHFLLONDCN(cos.JPIDIENBGKH_CostumeId, 0) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(_divaId, 1);
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.JAHFLLONDCN(cos.JPIDIENBGKH_CostumeId, 0) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
 				MenuScene.Instance.InputDisable();
-				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso, cos.JPIDIENBGKH_CostumeId)));
+				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso, cos.JPIDIENBGKH_CostumeId)));
 				MenuScene.Instance.InputEnable();
 			}
 		}
@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1260C70 Offset: 0x1260C70 VA: 0x1260C70
 		private int GetDivaDefaultModelId(int divaId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(divaId, 1).DAJGPBLEEOB_ModelId;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(divaId, 1).DAJGPBLEEOB_ModelId;
 		}
 
 		// // RVA: 0x1260D78 Offset: 0x1260D78 VA: 0x1260D78

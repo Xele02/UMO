@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1BD537C Offset: 0x1BD537C VA: 0x1BD537C
-		public void UpdateContent(int index, PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ.CALIFIMGGMD playerData)
+		public void UpdateContent(int index, PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ.CALIFIMGGMD playerData)
 		{
 			m_index = index;
 			SetPlayerName(playerData.LBODHBDOMGK_PlayerName);

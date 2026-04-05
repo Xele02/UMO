@@ -93,20 +93,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1C8AF2C Offset: 0x1C8AF2C VA: 0x1C8AF2C
 		public static uint CreateBit(PIGBBNDPPJC a_view)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
 			int a = 0;
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 			{
-				a = (int)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.GCINIJEMHFK_Get(id).AIHCEGFANAM_SerieAttr;
+				a = (int)IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.GCINIJEMHFK_Get(id).AIHCEGFANAM_SerieAttr;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK_Get(id).AIHCEGFANAM_SerieAttr;
+				a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK_Get(id).AIHCEGFANAM_SerieAttr;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostume(id).AHHJLDLAPAN_DivaId).AIHCEGFANAM_SerieAttr;
+				a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostume(id).AHHJLDLAPAN_DivaId).AIHCEGFANAM_SerieAttr;
 			}
 			uint res = 16;
 			if (a > 0 && a < 5)

@@ -38,7 +38,7 @@ namespace XeApp.Game.AR
             ARSaveData.Instance.Load();
             arPlayerData = new BBHNACPENDM_ServerSaveData();
             arPlayerData.GGBOGLKKKDM();
-            timeoutTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("ar_net_timeout", 10);
+            timeoutTime = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("ar_net_timeout", 10);
             N.a.StartCoroutineWatched(Co_Load(onSuccess, onErrorToTitle));
         }
 
@@ -49,7 +49,7 @@ namespace XeApp.Game.AR
             //0x11DC22C
             NAIJIFAJGGK_RequestLoadPlayerData req;
 
-            req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
+            req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
             req.HHIHCJKLJFF_Names = arPlayerData.KPIDBPEKMFD_GetNames();
             req.IJMPLDBGMHC_OnDataReceived = arPlayerData.IIEMACPEEBJ_Deserialize;
             while(!req.PLOOEECNHFB_IsDone)
@@ -76,7 +76,7 @@ namespace XeApp.Game.AR
             KIJECNFNNDB_JsonWriter w = new KIJECNFNNDB_JsonWriter();
             json.EJCOJCGIBNG_ToJson(w);
             string str = w.ToString();
-            GGKHIHFPKDH_SavePlayerData r = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
+            GGKHIHFPKDH_SavePlayerData r = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
             List<string> l = new List<string>();
             l.Add("ar_marker");
             r.HHIHCJKLJFF_Names = l;
@@ -97,7 +97,7 @@ namespace XeApp.Game.AR
             {
                 if(marker_no <= arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM.Count)
                 {
-                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_date = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 }
             }
             if(isExistPlayerData)

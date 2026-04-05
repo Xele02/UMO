@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 		private void StartNextEventRareItemAnim()
 		{
             LayoutResultDropItem item = itemList[currentItemIndex];
-            if (item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+            if (item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				RecordPlateUtility.CheckPlateId(viewDrop.HBHMAKNGKFK_items[currentItemIndex]);
 			}
@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		private void StartNextRareItemAnim()
 		{
 			LayoutResultDropItem item = itemList[currentItemIndex];
-			if(item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(item.itemInfo != null && item.itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				RecordPlateUtility.CheckPlateId(item.itemInfo);
 			}
@@ -801,7 +801,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < itemList.Count; i++)
 			{
-				if (itemList[i].itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
+				if (itemList[i].itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
 					return true;
 			}
 			return false;

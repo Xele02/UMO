@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_lowPowerLayout; // 0x4C
 		private AbsoluteLayout m_lackPowerAnim; // 0x50
 		private bool[] IsLodingList = new bool[6]; // 0x54
-		private KDHGBOOECKC.JNHGHDKLDEM m_data; // 0x58
+		private KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM m_data; // 0x58
 		private HEFCLPGPMLK.AAOPGOGGMID m_info; // 0x5C
 
 		// RVA: 0x1712234 Offset: 0x1712234 VA: 0x1712234
@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x171223C Offset: 0x171223C VA: 0x171223C
-		public void initialize(KDHGBOOECKC.JNHGHDKLDEM _data, HEFCLPGPMLK.AAOPGOGGMID info, int platoonId)
+		public void initialize(KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM _data, HEFCLPGPMLK.AAOPGOGGMID info, int platoonId)
 		{
 			m_data = _data;
 			m_info = info;
@@ -58,9 +58,9 @@ namespace XeApp.Game.Menu
 			{
 				IsLodingList[i] = false;
 			}
-			BOPFPIHGJMD.ADMNKELOLPN a2 = KDHGBOOECKC.HHCJCDFCLOB.KJGAJBOBIHK(info.FGHGMHPNEMG_Type, info.PPFNGGCBJKC_id);
-			SettingText((KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) * KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk)) / 100, 
-						(KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) * KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit)) / 100);
+			BOPFPIHGJMD.ADMNKELOLPN a2 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KJGAJBOBIHK(info.FGHGMHPNEMG_Type, info.PPFNGGCBJKC_id);
+			SettingText((KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) * KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk)) / 100, 
+						(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) * KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KGLLKKCFDEL(FKGMGBHBNOC.HPJOCKGKNCC_Form.MABDGNNOPCB_0_Fighter, a2, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit)) / 100);
 			bool b = SetRateState(m_data.NNDGIAEFMOG[0].LHMDABPNDDH_state, m_fighterUpState);
 			m_fighterFontAnim.StartChildrenAnimLoop(b ? "lo_" : "st_wait");
 			b = SetRateState(m_data.NNDGIAEFMOG[1].LHMDABPNDDH_state, m_garwalkUpState);
@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1712CA8 Offset: 0x1712CA8 VA: 0x1712CA8
-		private void SetItemTexture(RawImageEx[] images, KDHGBOOECKC.BOBLBPGKIOH state, Action<int> loaded)
+		private void SetItemTexture(RawImageEx[] images, KDHGBOOECKC_NetOfferManager.BOBLBPGKIOH state, Action<int> loaded)
 		{
 			for(int i = 0; i < 2; i++)
 			{
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17132EC Offset: 0x17132EC VA: 0x17132EC
 		public void LowPowerIconEnable(int platoonId, int form)
 		{
-			if (m_info.JGAMLEMMJCJ_ClearTime < KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Type, m_info.PPFNGGCBJKC_id, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
+			if (m_info.JGAMLEMMJCJ_ClearTime < KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Type, m_info.PPFNGGCBJKC_id, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
 			{
 				m_lowPowerLayout.StartChildrenAnimGoStop("01");
 				m_lackPowerAnim.StartChildrenAnimLoop("lo_");

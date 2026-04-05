@@ -53,7 +53,7 @@ public class BNAAJMBJFPG
 
 [System.Obsolete("Use NFIMGIABIOI_GetBbsThreadComments", true)]
 public abstract class NFIMGIABIOI { }
-public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_Request
+public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_NetBaseAction
 {
 	public class CIIDLDOOKBB
 	{

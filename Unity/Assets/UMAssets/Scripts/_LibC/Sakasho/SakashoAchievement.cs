@@ -31,7 +31,7 @@ namespace ExternLib
 				if(keys[i].StartsWith("rating_reward_receive_key_"))
 				{
 					string id = keys[i].Replace("rating_reward_receive_key_", "");
-					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
 					{
 						return _.ICGAKKCCFOG == id;
 					});
@@ -40,7 +40,7 @@ namespace ExternLib
 						EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
 						dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
 						dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Rating reward";
-						dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
+						dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 						EDOHBJAPLPF_JsonData item = new EDOHBJAPLPF_JsonData();
@@ -53,7 +53,7 @@ namespace ExternLib
 					}
 					else
 					{
-						dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+						dbrating = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
 						{
 							return _.BGFPPGPJONG_QuestKeyId.ToString() == id;
 						});
@@ -62,14 +62,14 @@ namespace ExternLib
 							EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
 							dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
 							dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Rating reward";
-							dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
+							dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
 							dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
 							dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 							for(int j = 0; j < dbrating.AJMDFJFCIML_GetCount(); j++)
 							{
 								EDOHBJAPLPF_JsonData item = new EDOHBJAPLPF_JsonData();
 								dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(item);
-								item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemCode(j));
+								item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemCode(j));
 								item[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = dbrating.FKNBLDPIPMC_GetItemCode(j);
 								item[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbrating.NKOHMLHLJGL_GetItemCount(j);
 								item[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0;
@@ -85,10 +85,10 @@ namespace ExternLib
 				else
 				{
 					bool found = false;
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
+					IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
 					if(ev != null)
 					{
-						PHBACNMCMHG_EventCollection NDFIEMPPMLF_master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
+						PHBACNMCMHG_EventCollection NDFIEMPPMLF_master = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
 						if(NDFIEMPPMLF_master != null)
 						{
 							if(keys[i].StartsWith(NDFIEMPPMLF_master.NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix))
@@ -115,7 +115,7 @@ namespace ExternLib
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(it);
 										MFDJIFIIPJD data = new MFDJIFIIPJD();
 										data.KHEKNNFCAOI_Init(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_count);
-										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
+										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
 										it[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId;
 										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_count;
 										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_item_type;
@@ -127,7 +127,7 @@ namespace ExternLib
 								found = itemFound;
 							}
 						}
-						ACBAHDMEFFL_EventMission evMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
+						ACBAHDMEFFL_EventMission evMission = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
 						if(evMission != null)
 						{
 							if(keys[i].StartsWith(evMission.NGHKJOEDLIP_Settings.OCDMGOGMHGE_KeyPrefix))
@@ -154,7 +154,7 @@ namespace ExternLib
 										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(it);
 										MFDJIFIIPJD data = new MFDJIFIIPJD();
 										data.KHEKNNFCAOI_Init(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_count);
-										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
+										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
 										it[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId;
 										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_count;
 										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_item_type;
@@ -263,11 +263,11 @@ namespace ExternLib
 				if(key.StartsWith("normal_quest_key_"))
 				{
 					int id = int.Parse(key.Replace("normal_quest_key_", ""));
-					LCKMNLOLDPD reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB_Rewards.Find((LCKMNLOLDPD _) =>
+					LCKMNLOLDPD reward = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB_Rewards.Find((LCKMNLOLDPD _) =>
 					{
 						return _.BGFPPGPJONG_QuestKeyId == id && _.APNMKLJMPMD_Type == 1;
 					});
-                    CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _) =>
+                    CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
 						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC_id;
 					});
@@ -277,7 +277,7 @@ namespace ExternLib
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = reward.HMFFHLPNMPH_count,
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
+						item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
@@ -290,11 +290,11 @@ namespace ExternLib
 				else if(key.StartsWith("daily_quest_"))
 				{
 					int id = int.Parse(key.Replace("daily_quest_", ""));
-					LCKMNLOLDPD reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB_Rewards.Find((LCKMNLOLDPD _) =>
+					LCKMNLOLDPD reward = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB_Rewards.Find((LCKMNLOLDPD _) =>
 					{
 						return _.BGFPPGPJONG_QuestKeyId == id && _.APNMKLJMPMD_Type == 2;
 					});
-                    CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Find((CNLPPCFJEID_QuestInfo _) =>
+                    CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
 						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC_id;
 					});
@@ -304,7 +304,7 @@ namespace ExternLib
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = reward.HMFFHLPNMPH_count,
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
+						item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(reward.GLCLFMGPMAN_ItemId),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
@@ -322,19 +322,19 @@ namespace ExternLib
 					int musicId = int.Parse(vals[0]);
 					int diff = int.Parse(vals[1]);
 					int reward = int.Parse(vals[2]);
-					KEODKEGFDLD_FreeMusicInfo mdata = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicId);
-					HDNKOFNBCEO_RewardInfo rinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(mdata, diff, isLine6);
+					KEODKEGFDLD_FreeMusicInfo mdata = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicId);
+					HDNKOFNBCEO_RewardInfo rinfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(mdata, diff, isLine6);
 					UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = rinfo.KAINPNMMAEK_GetItemCount(reward),
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(rinfo.FKNBLDPIPMC_GetItemCode(reward)),
+						item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(rinfo.FKNBLDPIPMC_GetItemCode(reward)),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_freemusic,
 						closed_at = closeAt
 					}, playerAccount.playerData);
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rinfo.FKNBLDPIPMC_GetItemCode(reward)) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
+					if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(rinfo.FKNBLDPIPMC_GetItemCode(reward)) != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + rinfo.FKNBLDPIPMC_GetItemCode(reward));
 					addedItem.AddInInventoryResult(d);
 				}
@@ -344,19 +344,19 @@ namespace ExternLib
 					string[] vals = k2.Split(new char[] { '_' });
 					int epId = int.Parse(vals[0]);
 					int rewardId = int.Parse(vals[1]);
-					HMGPODKEFBA_EpisodeInfo dbEp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[epId - 1];
-					JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[dbEp.HHJGBJCIFON_Rewards[rewardId - 1]];
+					HMGPODKEFBA_EpisodeInfo dbEp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[epId - 1];
+					JNIKPOIKFAC_Reward reward = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[dbEp.HHJGBJCIFON_Rewards[rewardId - 1]];
 					UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = reward.JDLJPNMLFID_ItemCount,
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(reward.KIJAPOFAGPN_ItemId),
+						item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(reward.KIJAPOFAGPN_ItemId),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_episode,
 						closed_at = closeAt
 					}, playerAccount.playerData);
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
+					if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_ItemId) != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.KIJAPOFAGPN_ItemId);
 					addedItem.AddInInventoryResult(d);
 				}
@@ -364,19 +364,19 @@ namespace ExternLib
 				{
 					string k2 = key.Replace("new_offer_clear_key_", "");
 					int ofId = int.Parse(k2);
-					LGHIPHEDCNC_Offer.NONCDAINJLD of1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.HOJPJAFDIAD.Find((LGHIPHEDCNC_Offer.LHDLCLNBPLB _) =>
+					LGHIPHEDCNC_Offer.NONCDAINJLD of1 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.HOJPJAFDIAD.Find((LGHIPHEDCNC_Offer.LHDLCLNBPLB _) =>
 					{
 						return _.LJNAKDMILMC_key == ofId;
 					});
-					LGHIPHEDCNC_Offer.NONCDAINJLD of2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.FFKIBJKEBNP.Find((LGHIPHEDCNC_Offer.BFEIHCJHHAJ _) =>
+					LGHIPHEDCNC_Offer.NONCDAINJLD of2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.FFKIBJKEBNP.Find((LGHIPHEDCNC_Offer.BFEIHCJHHAJ _) =>
 					{
 						return _.LJNAKDMILMC_key == ofId;
 					});
-					LGHIPHEDCNC_Offer.NONCDAINJLD of3 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.PMCDKBBHCJK.Find((LGHIPHEDCNC_Offer.PDLENIHAMBC _) =>
+					LGHIPHEDCNC_Offer.NONCDAINJLD of3 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.PMCDKBBHCJK.Find((LGHIPHEDCNC_Offer.PDLENIHAMBC _) =>
 					{
 						return _.LJNAKDMILMC_key == ofId;
 					});
-					LGHIPHEDCNC_Offer.NONCDAINJLD of4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.OICGEEKOLOG.Find((LGHIPHEDCNC_Offer.FCOBCHHKMOA _) =>
+					LGHIPHEDCNC_Offer.NONCDAINJLD of4 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.OICGEEKOLOG.Find((LGHIPHEDCNC_Offer.FCOBCHHKMOA _) =>
 					{
 						return _.LJNAKDMILMC_key == ofId;
 					});
@@ -407,7 +407,7 @@ namespace ExternLib
 						UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 						{
 							item_count = 5,
-							item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1)),
+							item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1)),
 							item_type = 1,
 							item_value = 1001,
 							type = 109,
@@ -423,11 +423,11 @@ namespace ExternLib
 					string[] vals = k2.Split(new char[] { '_' });
 					int cosId = int.Parse(vals[0]);
 					int levelId = int.Parse(vals[1]);
-					int costume_upgrade_vc_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("costume_upgrade_vc_count", 5);
+					int costume_upgrade_vc_count = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("costume_upgrade_vc_count", 5);
 					UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = costume_upgrade_vc_count,
-						item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1)),
+						item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1)),
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
@@ -439,7 +439,7 @@ namespace ExternLib
 				else if(key.StartsWith("rating_reward_receive_key_"))
 				{
 					string id = key.Replace("rating_reward_receive_key_", "");
-					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
 					{
 						return _.ICGAKKCCFOG == id;
 					});
@@ -458,7 +458,7 @@ namespace ExternLib
 					}
 					else
 					{
-						dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+						dbrating = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
 						{
 							return _.BGFPPGPJONG_QuestKeyId.ToString() == id;
 						});
@@ -469,7 +469,7 @@ namespace ExternLib
 								UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 								{
 									item_count = dbrating.NKOHMLHLJGL_GetItemCount(j),
-									item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemCode(j)),
+									item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemCode(j)),
 									item_type = 0,
 									item_value = dbrating.FKNBLDPIPMC_GetItemCode(j),
 									message = "Rating reward",
@@ -486,12 +486,12 @@ namespace ExternLib
 				}
 				else if(key.StartsWith("event_"))
 				{
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
+					IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
 					if(ev != null)
 					{
 						bool blockFound = false;
 						{
-							ICFLJACCIKF_EventBattle dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ICFLJACCIKF_EventBattle;
+							ICFLJACCIKF_EventBattle dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ICFLJACCIKF_EventBattle;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -511,7 +511,7 @@ namespace ExternLib
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
 														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_rewards[j].HMFFHLPNMPH_count,
-														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+														item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 														item_type = data.MJBKGOJBPAD_item_type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
@@ -550,7 +550,7 @@ namespace ExternLib
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
@@ -574,7 +574,7 @@ namespace ExternLib
 							}
 						}
 						{
-							LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
+							LNELCMNJPIC_EventGoDiva dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -594,7 +594,7 @@ namespace ExternLib
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
 														item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_rewards[j].HMFFHLPNMPH_count,
-														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+														item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 														item_type = data.MJBKGOJBPAD_item_type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
@@ -633,7 +633,7 @@ namespace ExternLib
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
@@ -657,7 +657,7 @@ namespace ExternLib
 							}
 						}
 						{
-							BKOGPDBKFFJ_EventRaid dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as BKOGPDBKFFJ_EventRaid;
+							BKOGPDBKFFJ_EventRaid dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as BKOGPDBKFFJ_EventRaid;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -690,7 +690,7 @@ namespace ExternLib
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
@@ -714,7 +714,7 @@ namespace ExternLib
 							}
 						}
 						{
-							PHBACNMCMHG_EventCollection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
+							PHBACNMCMHG_EventCollection dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as PHBACNMCMHG_EventCollection;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -747,7 +747,7 @@ namespace ExternLib
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
@@ -774,7 +774,7 @@ namespace ExternLib
 														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 														{
 															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_rewards[j].HMFFHLPNMPH_count,
-															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+															item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 															item_type = data.MJBKGOJBPAD_item_type,
 															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 															message = "Event reward "+ev.DGCOMDILAKM_EventName,
@@ -800,7 +800,7 @@ namespace ExternLib
 							}
 						}
 						{
-							ACBAHDMEFFL_EventMission dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
+							ACBAHDMEFFL_EventMission dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as ACBAHDMEFFL_EventMission;
 							if(dbSection != null)
 							{
 								blockFound = true;
@@ -833,7 +833,7 @@ namespace ExternLib
 												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 												{
 													item_count = mission.JDLJPNMLFID_ItemCount,
-													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 													item_type = data.MJBKGOJBPAD_item_type,
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
@@ -860,7 +860,7 @@ namespace ExternLib
 														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 														{
 															item_count = dbSection.FCIPEDFHFEM_TotalRewards[k].AHJNPEAMCCH_rewards[j].HMFFHLPNMPH_count,
-															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+															item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 															item_type = data.MJBKGOJBPAD_item_type,
 															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 															message = "Event reward "+ev.DGCOMDILAKM_EventName,
@@ -897,13 +897,13 @@ namespace ExternLib
 				}
 				else if(key.StartsWith("pc_vc_") || key.StartsWith("pc_item_"))
 				{
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _) =>
+					IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController _) =>
 					{
 						return _.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
 					});
 					if(ev != null)
 					{
-						HIADOIECMFP_EventPresentCampaign dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as HIADOIECMFP_EventPresentCampaign;
+						HIADOIECMFP_EventPresentCampaign dbSection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as HIADOIECMFP_EventPresentCampaign;
 						if(dbSection != null)
 						{
 							for(int j = 0; j < dbSection.OBPOHDENMHH.Count; j++)
@@ -921,7 +921,7 @@ namespace ExternLib
 											UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 											{
 												item_count = dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_item_count[k],
-												item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+												item_name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 												item_type = data.MJBKGOJBPAD_item_type,
 												item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 												message = dbSection.OBPOHDENMHH[j].FEMMDNIELFC_Desc,

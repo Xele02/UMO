@@ -616,7 +616,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	{
 		List<int> l = new List<int>();
 		l.Clear();
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		int t = CPNEKIDCAMF * 3600;
 		for(int i = 0; i < MHKJEBNOPIM_Medal.Count; i++)
 		{
@@ -644,9 +644,9 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C5261C Offset: 0x1C5261C VA: 0x1C5261C
 	private PPNFHHPJOKK_SpItem.JBBIPIAABOJ FOECFMNNNMP_GetEnabledSpItem(int _PPFNGGCBJKC_id)
 	{
-		if(IMMAOANGPNK.HHCJCDFCLOB != null)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null)
 		{
-			PPNFHHPJOKK_SpItem spDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OOEPHOEFBNL_SpItem;
+			PPNFHHPJOKK_SpItem spDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OOEPHOEFBNL_SpItem;
 			if(_PPFNGGCBJKC_id > 0 && spDb != null)
 			{
 				if(_PPFNGGCBJKC_id <= spDb.CDENCMNHNGA_table.Count)
@@ -701,8 +701,8 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C52BA4 Offset: 0x1C52BA4 VA: 0x1C52BA4
 	public int LCDLKPOLHHJ_GetAddRegularMusicVer()
 	{
-		if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer != 0)
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer;
+		if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer != 0)
+			return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer;
 		return DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 	}
 

@@ -3,28 +3,45 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use BCKMELFCKKN_Tips", true)]
 public class BCKMELFCKKN { }
+[UMOClass(ReaderClass = "DGLENODDACE")]
 public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 {
+	[UMOClass(ReaderClass = "JBFGONALAMG")]
 	public class ALLFFCNKFBG
 	{
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id")]
 		public short PPFNGGCBJKC_id; // 0x8
+		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en")]
 		public sbyte PPEGAKEIEGM_Enabled; // 0xA
+		[UMOMember(ReaderMember = "CBDOEDKIOJK_ev")]
 		public sbyte NCGNCEOOBGP_EventType; // 0xB
+		[UMOMember(ReaderMember = "KPECMLFDLOI_pri")]
 		public int[] HFLGGIBMEOL; // 0xC
+		[UMOMember(ReaderMember = "MGPEOHKLOEP")]
 		public long KJBGCLPMLCG_OpenedAt; // 0x10
+		[UMOMember(ReaderMember = "LFAFFICDFMJ_Done")]
 		public long GJFPFFBAKGK_CloseAt; // 0x18
+		[UMOMember(ReaderMember = "ADCMNODJBGJ_title")]
 		public string ADCMNODJBGJ_title; // 0x20
+		[UMOMember(ReaderMember = "IPBHCLIHAPG_Msg")]
 		public string JONNCMDGMKA_Message; // 0x24
+		[UMOMember(ReaderMember = "HANMDEBPBHG_pic")]
 		public int EAHPLCJMPHD_PId; // 0x28 ImageId
+		[UMOMember(ReaderMember = "HBDKKPIOFND")]
 		public int LKDJHPLBKAI_GraffitiId; // 0x2C
+		[UMOMember(ReaderMember = "NHBLDIPBHNF_pg")]
 		public int MHPAFEEPBNJ; // 0x30
+		[UMOMember(ReaderMember = "GENGOHFLGLG")]
 		public int GGHHHIIENAF_DivaLId; // 0x34
+		[UMOMember(ReaderMember = "OAAMGLOGJNN")]
 		public int NLPDDGADNFP_DivaRId; // 0x38
+		[UMOMember(ReaderMember = "PDMJBLLHICB")]
 		public int ILPJHHKLOEN_Situation; // 0x3C
 
 		//public int BNHOEFJAAKK_prio { get; } 0xC700A4 NNDJHLOPFJB_bgs
 	}
 
+	[UMOMember(ReaderMember = "KCCHMPEPAII")]
 	public List<ALLFFCNKFBG> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF_get_table ILHOADLEJPB_set_table
 
 	//// RVA: 0xC6F9D8 Offset: 0xC6F9D8 VA: 0xC6F9D8

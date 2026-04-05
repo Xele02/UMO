@@ -117,7 +117,7 @@ namespace ExternLib
 		public static void CheckAccountUpdate(int accountId)
 		{
 			PlayerData p = playerAccount.players[accountId];
-			if(!IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 			{
 				p.needUpdateAfter = true;
 				return;
@@ -251,7 +251,7 @@ namespace ExternLib
 					for (int i = 0; i < newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes.Count; i++)
 					{
 						GCIJNCFDNON_SceneInfo IFGEJDMMAHE_Info = new GCIJNCFDNON_SceneInfo();
-						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2)
+						if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2)
 						{
 							MMPBPOIFDAF_Scene.PMKOFEIONEG scene = newData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[i];
 							IFGEJDMMAHE_Info.KHEKNNFCAOI_Init(scene.PPFNGGCBJKC_id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_NumBoard, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_luck, scene.LHMOAJAIJCO_is_new, scene.BEBJKJKBOGH_date, scene.DMNIMMGGJJJ_Leaf);

@@ -107,7 +107,7 @@ namespace XeApp.Game.Common
 				textInfo.dAnmStoreURL = "";
 				if(str != "0" && str != "")
 				{
-					textInfo.dAnmStoreURL = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[str];
+					textInfo.dAnmStoreURL = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[str];
 				}
 				textInfo.storyDesc = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryDesc, i, (string)text[(int)info[story]]);
 				textInfo.storyTitle = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryTitle, i, (string)text[(int)info[s_title]]);

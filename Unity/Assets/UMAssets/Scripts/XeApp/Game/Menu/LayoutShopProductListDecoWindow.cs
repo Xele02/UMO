@@ -14,13 +14,13 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutShopProductListDecoWindow : LayoutShopListBase
 	{
-		private static readonly EKLNMHFCAOI.FKGCBLHOOCL_Category[] s_DecoItemTypeIndex = new EKLNMHFCAOI.FKGCBLHOOCL_Category[5]
+		private static readonly EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category[] s_DecoItemTypeIndex = new EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category[5]
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara,
-			EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif,
-			EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj,
-			EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem,
-			EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara,
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif,
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj,
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem,
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp
 		}; // 0x0
 		[SerializeField]
 		private Text m_textTitle; // 0x1C
@@ -51,10 +51,10 @@ namespace XeApp.Game.Menu
 		private List<ActionButton> m_DecoTypeButtons = new List<ActionButton>(); // 0x5C
 		[SerializeField] // RVA: 0x67DA6C Offset: 0x67DA6C VA: 0x67DA6C
 		private ActionButton m_extraTabButton; // 0x60
-		private AODFBGCCBPE m_view; // 0x64
+		private AODFBGCCBPE_ViewShopData m_view; // 0x64
 
 		protected override AbsoluteLayout layoutRoot { get { return m_layoutRoot; } } //0x1941480
-		public Action<int, FJGOKILCBJA> OnChangeEvent { get; set; } // 0x68
+		public Action<int, FJGOKILCBJA_ViewShopProductData> OnChangeEvent { get; set; } // 0x68
 		public Action OnClickPopupEvent { get; set; } // 0x6C
 
 		// RVA: 0x19414A8 Offset: 0x19414A8 VA: 0x19414A8
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19417F8 Offset: 0x19417F8 VA: 0x19417F8
-		public void SetStatus(AODFBGCCBPE view, bool resetScroll/* = true*/)
+		public void SetStatus(AODFBGCCBPE_ViewShopData view, bool resetScroll/* = true*/)
 		{
 			m_view = view;
 			SetupList(view.MHKCPJDNJKI_products.Count, resetScroll);
@@ -107,9 +107,9 @@ namespace XeApp.Game.Menu
 			m_layoutKyrr.StartChildrenAnimGoStop("01", "01");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PId);
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PId);
-				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
+                EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PId);
+				int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PId);
+				if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
 				{
 					if(id == 7)
 					{
@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1941D28 Offset: 0x1941D28 VA: 0x1941D28
-		public void SetTabsButtonCallBack(Action<EKLNMHFCAOI.FKGCBLHOOCL_Category> action)
+		public void SetTabsButtonCallBack(Action<EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category> action)
 		{
 			for(int i = 0; i < m_DecoTypeButtons.Count; i++)
 			{
@@ -217,27 +217,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1942390 Offset: 0x1942390 VA: 0x1942390
-		private void OnClickDetailButton(FJGOKILCBJA view)
+		private void OnClickDetailButton(FJGOKILCBJA_ViewShopProductData view)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 			{
 				OpenPopupListItem(view, false);
 				return;
 			}
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo data = new GCIJNCFDNON_SceneInfo();
-				data.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId), null, null, 0, 0, 0, false, 0, 0);
+				data.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(data, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 				return;
 			}
-			MenuScene.Instance.ShowItemDetail(view.KIJAPOFAGPN_ItemId, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId)), true);
+			MenuScene.Instance.ShowItemDetail(view.KIJAPOFAGPN_ItemId, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI_ItemManager.ILKGBGOCLAO_GetItemDesc(cat, EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId)), true);
         }
 
 		// // RVA: 0x19427C8 Offset: 0x19427C8 VA: 0x19427C8
-		private void OpenPopupListItem(FJGOKILCBJA view, bool isBuy)
+		private void OpenPopupListItem(FJGOKILCBJA_ViewShopProductData view, bool isBuy)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			ButtonInfo[] btns;

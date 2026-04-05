@@ -118,10 +118,10 @@ namespace XeApp.Game.Menu
 			dropLayoutInitParam = new ResultDropLayoutController.InitParam()
 			{
 				viewDropResultData = dropData,
-				viewFriendPlayerData = JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendData,
+				viewFriendPlayerData = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NHPGGBCKLHC_FriendData,
 				layoutOkayButton = null
 			};
-			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
+			eventType = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				GCODMEIACDE data = new GCODMEIACDE();
@@ -132,9 +132,9 @@ namespace XeApp.Game.Menu
 			}
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
-				KPJHLACKGJF_EventMission ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as KPJHLACKGJF_EventMission;
+				KPJHLACKGJF_NetEventMissionController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JKEPHFPCKMD_EventId) as KPJHLACKGJF_NetEventMissionController;
 				event02LayoutInitParam = new MissonResultLayoutController.InitParam();
-				event02LayoutInitParam.viewEventResultData = ev != null ? ev.FHPEAPEANAI : new KPJHLACKGJF_EventMission.OPFEKMKHEIF();
+				event02LayoutInitParam.viewEventResultData = ev != null ? ev.FHPEAPEANAI : new KPJHLACKGJF_NetEventMissionController.OPFEKMKHEIF();
 				event02LayoutInitParam.layoutOkayButton = null;
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 				param2.viewEventExRivalResultData = data3;
 				param2.layoutOkayButton = null;
 				event03PointLayoutInitParam = param2;
-				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod, false) as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod, false) as HAEDCCLHEMN_NetEventBattleController;
 				if(ev != null)
 				{
 					if(eventType == ev.HIDHLFCBIDE_EventType)
@@ -867,7 +867,7 @@ namespace XeApp.Game.Menu
 			Destroy(divaLayoutController.gameObject);
 			InitDropResult();
 			yield return null;
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			StartDropResultAnim();
 			MenuScene.Instance.InputEnable();
@@ -974,7 +974,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				PKNOKJNLPOE_NetEventRaidController evRaid = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 				if(evRaid.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting))
 				{
 					if(evRaid.PLFBKEPLAAA.FIMNHOIJBLO)
@@ -1042,7 +1042,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB51A4C Offset: 0xB51A4C VA: 0xB51A4C
 		private void ShowFriendRequestPopup()
 		{
-			//CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager
+			//CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_request_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_request_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName), new ButtonInfo[2]
 			{
@@ -1060,17 +1060,17 @@ namespace XeApp.Game.Menu
 		private void DoFriendRequest()
 		{
 			MenuScene.Instance.InputDisable();
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.AOHLMBKILED(dropLayoutInitParam.viewFriendPlayerData.MLPEHNBNOGD_PlayerId, dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName, dropLayoutInitParam.viewFriendPlayerData.ILOJAJNCPEC_Rank, OnSuccessFriendRequest, OnErrorFriendRequest, OnErrorToTitleFriendRequest);
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.AOHLMBKILED(dropLayoutInitParam.viewFriendPlayerData.MLPEHNBNOGD_PlayerId, dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_PlayerName, dropLayoutInitParam.viewFriendPlayerData.ILOJAJNCPEC_Rank, OnSuccessFriendRequest, OnErrorFriendRequest, OnErrorToTitleFriendRequest);
 		}
 
 		// // RVA: 0xB522E8 Offset: 0xB522E8 VA: 0xB522E8
-		private void OnErrorFriendRequest(CACGCMBKHDI_Request action)
+		private void OnErrorFriendRequest(CACGCMBKHDI_NetBaseAction action)
 		{
 			MenuScene.Instance.InputEnable();
 		}
 
 		// // RVA: 0xB52384 Offset: 0xB52384 VA: 0xB52384
-		private void OnErrorToTitleFriendRequest(CACGCMBKHDI_Request action)
+		private void OnErrorToTitleFriendRequest(CACGCMBKHDI_NetBaseAction action)
 		{
 			this.StartCoroutineWatched(Co_MountMenuScene(true));
 		}
@@ -1320,7 +1320,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52E20 Offset: 0xB52E20 VA: 0xB52E20
 		private void InitRaidPointResult()
 		{
-			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController evRaid = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
@@ -1356,7 +1356,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator SetBossBg(Action callback)
 		{
 			//0xB5F214
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			callback();
 		}
@@ -1394,7 +1394,7 @@ namespace XeApp.Game.Menu
 		private void OnClickRaidDamageResultEnd()
 		{
 			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
-			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController raidController = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			raidResultDamageLayoutController.gameObject.SetActive(false);
 			if(raidController.KONJMFICNJJ_RewardsInfo == null)
 			{
@@ -1447,7 +1447,7 @@ namespace XeApp.Game.Menu
 										IsFriend = true;
 									}
 								}
-								raidController.MCKDAPPELKJ_RequestBossHelp(IsLobby, IsFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+								raidController.MCKDAPPELKJ_RequestBossHelp(IsLobby, IsFriend, (List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helper) =>
 								{
 									//0xB571D8
 									if(helper.Count < 0)
@@ -1659,7 +1659,7 @@ namespace XeApp.Game.Menu
 					});
 					while(isChangedCueSheet)
 						yield return null;
-					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.NADCOIBMMJM);
+					PGIGNJDPCAH_UpdateChecker.HIHIEBACIHJ(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.NADCOIBMMJM);
 					musicInfo = Database.Instance.gameSetup.musicInfo; 
 					switch(musicInfo.gameEventType)
 					{

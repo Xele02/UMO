@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class ELNKLCNHDEE
+//namespace XeApp.Game.Net
+[System.Obsolete()]
+public class ELNKLCNHDEE {}
+public class ELNKLCNHDEE_NetEventLotResultData
 {
 	private const int OBHOPEGFNGN = 16;
 	private const int JJGAPCGLIFL = 16;
@@ -43,7 +46,7 @@ public class ELNKLCNHDEE
         int p = 1;
         while(true)
         {
-            BPOJOBICBAC = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new LGJOOFGOGCD_RequestInventories());
+            BPOJOBICBAC = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new LGJOOFGOGCD_RequestInventories());
             BPOJOBICBAC.IGNIIEBMFIN_Page = p;
             BPOJOBICBAC.MLPLGFLKKLI_Ipp = 30;
             BPOJOBICBAC.IPKCADIAAPG_Criteria = GHDBABPAHKN;

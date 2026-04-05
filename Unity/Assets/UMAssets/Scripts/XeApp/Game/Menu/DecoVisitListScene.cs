@@ -54,13 +54,13 @@ namespace XeApp.Game.Menu
 		protected override void Awake()
 		{
 			base.Awake();
-			string deco_visit_search_key = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_visit_search_key", "");
+			string deco_visit_search_key = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_visit_search_key", "");
 			int v;
 			int? deco_visit_search_from_value = null;
-			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMKNPOJDIPP("deco_visit_search_from_value", out v))
+			if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMKNPOJDIPP("deco_visit_search_from_value", out v))
 				deco_visit_search_from_value = v;
 			int? deco_visit_search_to_value = null;
-			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMKNPOJDIPP("deco_visit_search_to_value", out v))
+			if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMKNPOJDIPP("deco_visit_search_to_value", out v))
 				deco_visit_search_to_value = v;
 			m_listupFriendAndFavoriteCriteria = SakashoPlayerCriteria.NewCriteriaFromTo(deco_visit_search_key, deco_visit_search_from_value, deco_visit_search_to_value);
 			m_showPlayerCriteria = SakashoPlayerCriteria.NewCriteriaFromTo(deco_visit_search_key, deco_visit_search_from_value, deco_visit_search_to_value);
@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_monitorReloadCoolingTime && m_type == LayoutDecorationVisitWindow.VisitTabType.Other)
 			{
-				m_layoutDecorationVisitButtons.SetReloadButtonLock(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CDOBDJFJLPG_GetRecheckTime() > 0);
+				m_layoutDecorationVisitButtons.SetReloadButtonLock(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.CDOBDJFJLPG_GetRecheckTime() > 0);
 			}
 			if (m_decorationUpdater != null)
 				m_decorationUpdater();
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11D04AC Offset: 0x11D04AC VA: 0x11D04AC
 		private void UpdateGiftCount()
 		{
-			int present_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("present_max", 1);
+			int present_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("present_max", 1);
 			m_layoutDecorationVisitWindow.SettingGiftNum(m_netDecoVisitControl.OIONBFLLDIB_GetPresentCountLeftToSend(), present_max);
 			m_layoutDecorationVisitWindow.UpdateScrollList();
 		}
@@ -361,8 +361,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = player;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_PlayerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(player.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15546, player.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.PFBIHCIFFKM_DecoVisit(player.MLPEHNBNOGD_PlayerId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId), true, 0);
 			MenuScene.Instance.MountWithFade(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
@@ -378,7 +378,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x11D3308
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			int present_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("present_max", 1);
+			int present_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("present_max", 1);
 			m_presentSentPlayerIdList.Clear();
 			for(int i = 0; i < present_max && i < m_friendPlayerData.Count; i++)
 			{
@@ -404,15 +404,15 @@ namespace XeApp.Game.Menu
 			int i; // 0x24
 
 			//0x11D3658
-			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+			if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK)
 			{
 				yield return this.StartCoroutineWatched(DecoScene.Co_UpdateDirtyTime());
 			}
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				yield break;
-			PIGBKEIAMPE_FriendManager fm = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			PIGBKEIAMPE_NetFriendManager fm = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager;
 			MenuScene.Instance.InputDisable();
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			pd = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
@@ -429,7 +429,7 @@ namespace XeApp.Game.Menu
 				m_netDecoVisitControl.KCKOFIIHDBJ_SendGift(playerId, (int itemId, int count) =>
 				{
 					//0x11D2ED0
-					ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(playerId, fm.PDEACDHIJJJ_IsFriend(playerId), false, itemId);
+					ILCCJNDFFOB.HHCJCDFCLOB_Instance.PFBIHCIFFKM_DecoVisit(playerId, fm.PDEACDHIJJJ_IsFriend(playerId), false, itemId);
 					isDone = true;
 					_itemId = itemId;
 					_itemCount += count;
@@ -473,8 +473,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
 				m_sentGiftPopupSetting.itemId = _itemId;
 				m_sentGiftPopupSetting.count = _itemCount;
 				m_sentGiftPopupSetting.sentCount = _sentCount;
@@ -536,7 +536,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11D18A8 Offset: 0x11D18A8 VA: 0x11D18A8
 		private void GenerateOtherRandomList()
 		{
-			int deco_visit_search_random_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_search_random_count", 2);
+			int deco_visit_search_random_count = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_search_random_count", 2);
 			m_friendPlayerData_OtherRandomList.Clear();
 			List<int> l = new List<int>();
 			for (int i = 0; i < m_cashFriendPlayerData_Other.Count && i < deco_visit_search_random_count; i++)
@@ -565,11 +565,11 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_type == LayoutDecorationVisitWindow.VisitTabType.Fan)
 			{
-				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, PIGBKEIAMPE_FriendManager.DJHFILDBOFG_GetMaxFanPossible());
+				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, PIGBKEIAMPE_NetFriendManager.DJHFILDBOFG_GetMaxFanPossible());
 			}
 			else if(m_type == LayoutDecorationVisitWindow.VisitTabType.Friend)
 			{
-				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.JPEIBHJIHPI_FriendLimit);
+				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.JPEIBHJIHPI_FriendLimit);
 			}
 		}
 
@@ -593,11 +593,11 @@ namespace XeApp.Game.Menu
 			random = false;
 			if(m_type < LayoutDecorationVisitWindow.VisitTabType.Other)
 			{
-				return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.BFDEHIANFOG;
+				return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.BFDEHIANFOG;
 			}
 			else
 			{
-				max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_list_count", 1);
+				max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_list_count", 1);
 				return m_friendPlayerData_OtherRandomList;
 			}
 		}
@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x11D519C
 			bool isConnected = false;
-			PIGBKEIAMPE_FriendManager.KIELKOCLIGG k = new PIGBKEIAMPE_FriendManager.KIELKOCLIGG();
+			PIGBKEIAMPE_NetFriendManager.KIELKOCLIGG k = new PIGBKEIAMPE_NetFriendManager.KIELKOCLIGG();
 			k.IPKCADIAAPG_Criteria = m_listupFriendAndFavoriteCriteria;
 			k.BBCOJEPJNMO = (IBIGBMDANNM player) =>
 			{
@@ -647,7 +647,7 @@ namespace XeApp.Game.Menu
 				return (a_filter & SearchPlayerFilter.Favorite) != 0;
 			};
 			bool isError = false;
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.EGLFECJOPPP_SearchFriendAndFavoritePlayer(k, () =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.EGLFECJOPPP_SearchFriendAndFavoritePlayer(k, () =>
 			{
 				//0x11D316C
 				isConnected = true;
@@ -676,13 +676,13 @@ namespace XeApp.Game.Menu
 			{
 				bool isConnected = false;
 				bool isError = false;
-				int deco_visit_search_random_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_search_random_count", 1);
-				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CPEHDILBIJA_SearchPlayerWithoutFriendAndFavorite(deco_visit_search_random_count, m_showPlayerCriteria, () =>
+				int deco_visit_search_random_count = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("deco_visit_search_random_count", 1);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.CPEHDILBIJA_SearchPlayerWithoutFriendAndFavorite(deco_visit_search_random_count, m_showPlayerCriteria, () =>
 				{
 					//0x11D3194
 					isConnected = true;
 					m_cashFriendPlayerData_Other = new List<IBIGBMDANNM>();
-					m_cashFriendPlayerData_Other.AddRange(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.BFDEHIANFOG);
+					m_cashFriendPlayerData_Other.AddRange(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.BFDEHIANFOG);
 				}, () =>
 				{
 					//0x11D32EC
@@ -708,7 +708,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_cashFriendPlayerData_Other.Count; i++)
 				{
 					IFICNCAHIGI it = m_cashFriendPlayerData_Other[i] as IFICNCAHIGI;
-					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_PlayerId);
+					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_PlayerId);
 				}
 			}
 		}

@@ -354,12 +354,12 @@ namespace XeApp.Game.Menu
 							{
 								break;
 							}
-							offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+							offerMaxDifficult = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 							MenuScene.Instance.RaycastDisable();
-							if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+							if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK)
 							{
 								bool isDone_UpdateServerTime = false;
-								NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
+								NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CADNBFCHAKM_GetToken(() =>
 								{
 									//0x14B4354
 									isDone_UpdateServerTime = true;
@@ -374,8 +374,8 @@ namespace XeApp.Game.Menu
 							}
 							//LAB_014b52dc
 							MenuScene.Instance.RaycastEnable();
-							CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-							if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC_GetCurrentValue(true) < 1)
+							CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+							if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC_GetCurrentValue(true) < 1)
 							{
 								m_effectObject.TouchCancel();
 								m_loopSE.Stop();
@@ -403,11 +403,11 @@ namespace XeApp.Game.Menu
 								MenuScene.Instance.RaycastDisable();
 							}
 							prev = offerMaxDifficult;
-							int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+							int next = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 							IsDivaOfferLvUp = false;
 							if (prev < next)
 							{
-								IsDivaOfferLvUp = KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ();
+								IsDivaOfferLvUp = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.MGHPDFMDFCJ();
 							}
 							if(IsDivaOfferLvUp)
 							{
@@ -891,7 +891,7 @@ namespace XeApp.Game.Menu
 			if(!m_isDisableIntimacyDeco && CheckUnlock())
 			{
 				FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
-				data.KHEKNNFCAOI_Init(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
+				data.KHEKNNFCAOI_Init(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, false);
 				if(data.FJODMPGPDDD_Unlocked && data.IPJMPBANBPP_Enabled)
 				{
 					if(viewIntimacyData.GMIEFBELJJH() > 0)
@@ -921,10 +921,10 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_TapLockedChara(JJOELIOGMKK_DivaIntimacyInfo v)
 		{
 			//0x14B880C
-			m_layoutMessageDeco.SetTextLock(v.AHHJLDLAPAN_DivaId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam(GameMessageManager.CheckBasara(v.AHHJLDLAPAN_DivaId) ? "diva_intimacy_lock_basara" : "diva_intimacy_lock", JpStringLiterals.StringLiteral_16496));
+			m_layoutMessageDeco.SetTextLock(v.AHHJLDLAPAN_DivaId, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam(GameMessageManager.CheckBasara(v.AHHJLDLAPAN_DivaId) ? "diva_intimacy_lock_basara" : "diva_intimacy_lock", JpStringLiterals.StringLiteral_16496));
 			MenuScene.Instance.InputDisable();
 			m_layoutMessageDeco.Enter();
-			int intimacy_lock_msg_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_lock_msg_milli", 2000);
+			int intimacy_lock_msg_milli = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_lock_msg_milli", 2000);
 			yield return new WaitForSeconds(intimacy_lock_msg_milli / 1000.0f);
 			m_layoutMessageDeco.Leave();
 			yield return new WaitWhile(() =>
@@ -943,7 +943,7 @@ namespace XeApp.Game.Menu
 			m_layoutInfoDeco.Setup(v, chara, chara.cam);
 			MenuScene.Instance.InputDisable();
 			m_layoutInfoDeco.Enter();
-			int m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_show_info_milli", 2000);
+			int m = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA_GetIntParam("intimacy_show_info_milli", 2000);
 			yield return new WaitForSeconds(m / 1000.0f);
 			m_layoutInfoDeco.Leave();
 			yield return new WaitUntil(() =>
@@ -1043,12 +1043,12 @@ namespace XeApp.Game.Menu
 									m_coroutine = null;
 									yield break;
 								}
-								offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+								offerMaxDifficult = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 								MenuScene.Instance.RaycastDisable();
-								if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+								if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK)
 								{
 									bool isDone_UpdateServerTime = false;
-									NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
+									NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CADNBFCHAKM_GetToken(() =>
 									{
 										//0x14B47AC
 										isDone_UpdateServerTime = true;
@@ -1062,8 +1062,8 @@ namespace XeApp.Game.Menu
 								}
 								//LAB_014ba248
 								MenuScene.Instance.RaycastEnable();
-								CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-								if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC_GetCurrentValue(true) > 0)
+								CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+								if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC_GetCurrentValue(true) > 0)
 								{
 									saveCoroutine = null;
 									if(m_viewIntimacyData.FNGFADPFKOD_DivaIntimacy())
@@ -1104,11 +1104,11 @@ namespace XeApp.Game.Menu
 										MenuScene.Instance.RaycastDisable();
 									}
 									prev = offerMaxDifficult;
-									int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+									int next = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 									IsDivaOfferLvUp = false;
 									if(prev < next)
 									{
-										IsDivaOfferLvUp = KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ();
+										IsDivaOfferLvUp = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.MGHPDFMDFCJ();
 									}
 									if(IsDivaOfferLvUp)
 									{
@@ -1348,7 +1348,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.voDiva.Stop();
 			while(!m_divaTalk.IsEnableReaction())
 				yield return null;
-			offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+			offerMaxDifficult = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 			saveCoroutine = null;
 			if(m_viewIntimacyData.HNMJKLEJLPC(itemId, useitemCount))
 			{
@@ -1398,10 +1398,10 @@ namespace XeApp.Game.Menu
 					return m_systemMessage.IsPlaying();
 				});
 			}
-			int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+			int next = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
 			if(offerMaxDifficult < next)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ())
+				if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.MGHPDFMDFCJ())
 				{
 					bool isLoad = false;
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -1469,7 +1469,7 @@ namespace XeApp.Game.Menu
 			if (!itemCountCheck())
 			{
 				m_lsitType = ListType.LEVEL_LIMIT;
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled() || m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled() || m_viewIntimacyData.HBODCMLFDOB_result.PFIILLOIDIL)
 				{
 					m_lsitType = ListType.COUNT_NONE;
 					if (m_viewIntimacyData.NCNAPMHEINJ())
@@ -1513,7 +1513,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_viewIntimacyData.AHHJLDLAPAN_DivaId < 1)
 				return;
-			m_gakuyaPresentLimit.SetPresentLimit(CIOECGOMILE.HHCJCDFCLOB.PAAMLFNPJGJ_IntimacyDivaPresentLeft[m_viewIntimacyData.AHHJLDLAPAN_DivaId - 1]);
+			m_gakuyaPresentLimit.SetPresentLimit(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PAAMLFNPJGJ_IntimacyDivaPresentLeft[m_viewIntimacyData.AHHJLDLAPAN_DivaId - 1]);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6E54 Offset: 0x6E6E54 VA: 0x6E6E54
@@ -1564,7 +1564,7 @@ namespace XeApp.Game.Menu
 		public void GakuyaInfoEnter()
 		{
 			m_layoutInfo.TryEnter();
-			if (!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled())
+			if (!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled())
 				return;
 			m_gakuyaPresentLimit.gameObject.SetActive(true);
 		}

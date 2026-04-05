@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IDLAIOHLFDI_GetLoginBonuses", true)]
 public class IDLAIOHLFDI { }
-public class IDLAIOHLFDI_GetLoginBonuses : CACGCMBKHDI_Request
+public class IDLAIOHLFDI_GetLoginBonuses : CACGCMBKHDI_NetBaseAction
 {
 	public class GMCAMBDHIGJ
 	{

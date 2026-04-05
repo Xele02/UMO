@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_layoutItem; // 0x50
 		private AbsoluteLayout m_layoutDigit; // 0x54
 		private AbsoluteLayout m_layoutWarning; // 0x58
-		private FJGOKILCBJA m_view; // 0x5C
+		private FJGOKILCBJA_ViewShopProductData m_view; // 0x5C
 		private int m_count = 1; // 0x60
 		private int m_ownItemNum; // 0x64
 		private int m_ownNeedItemNum; // 0x68
@@ -75,18 +75,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1728F2C Offset: 0x1728F2C VA: 0x1728F2C
-		public void SetStatus(FJGOKILCBJA view)
+		public void SetStatus(FJGOKILCBJA_ViewShopProductData view)
 		{
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
-            m_textName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId) + " " + view.JDLJPNMLFID_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
-			m_ownItemNum = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemId);
+            m_textName.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemId) + " " + view.JDLJPNMLFID_ItemCount.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id);
+			m_ownItemNum = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, cat, id, null);
 			m_textOwn4d[1].text = m_ownItemNum.ToString();
 			m_textOwn8d[1].text = m_ownItemNum.ToString();
-			m_textContent.text = string.Format(bk.GetMessageByLabel("pop_exchange_need_item"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.JPJMHLNOIAJ_ItemCostFullId));
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			m_textContent.text = string.Format(bk.GetMessageByLabel("pop_exchange_need_item"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(view.JPJMHLNOIAJ_ItemCostFullId));
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
 				scene.KHEKNNFCAOI_Init(id, null, null, 0, 0, 0, false, 0, 0);
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 				//0x172AB64
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-				scene.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_view.KIJAPOFAGPN_ItemId), null, null, 0, 0, 0, false, 0, 0);
+				scene.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(m_view.KIJAPOFAGPN_ItemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 			});
 			m_initialized = true;
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 			m_textOwn8d[2].text = m_textOwn4d[2].text;
 			m_layoutDigit.StartChildrenAnimGoStop(cnt < 10000 ? "4digits" : "8digits");
 			m_textCostCoinNum.text = m_view.DKEPCPPCIKA_Price.ToString();
-			m_ownNeedItemNum = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_view.JPJMHLNOIAJ_ItemCostFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_view.JPJMHLNOIAJ_ItemCostFullId), null);
+			m_ownNeedItemNum = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(m_view.JPJMHLNOIAJ_ItemCostFullId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(m_view.JPJMHLNOIAJ_ItemCostFullId), null);
 			m_layoutWarning.enabled = false;
 			m_textOwnCoinNum.text = m_ownNeedItemNum.ToString();
 			if(OnChangeCallback != null)

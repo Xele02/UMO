@@ -713,7 +713,7 @@ namespace XeApp.Game.RhythmGame
 			initData.musicData = resource.musicData;
 			initData.teamScoreValue = s.soul + s.vocal + s.charm;
 			initData.teamEnergyValue = s.fold;
-			initData.supportRate = s.support * 1.0f / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2) + 1;
+			initData.supportRate = s.support * 1.0f / (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2) + 1;
 			initData.valkyrieId = t.valkyrieId;
 			initData.maxLife = s.life;
 			initData.isLiveSkip = false;
@@ -732,14 +732,14 @@ namespace XeApp.Game.RhythmGame
 				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();
 				a.OBKGEDCKHHE_Init(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
-				float diff = difficulties[(int)Database.Instance.gameSetup.musicInfo.difficultyType] * 1.0f / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1;
+				float diff = difficulties[(int)Database.Instance.gameSetup.musicInfo.difficultyType] * 1.0f / IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1;
 				status.enemy.SetFixDamageParamter(diff * a.FGCCCMAFCNH_GetMvValkAtk(), diff * a.GPGPOBJCMFB_GetMvValkAccuracy());
 				status.life.isInvincibleModeMV = true;
 			}
 			m_NoteResultParam_Excellent.m_note_judge_rate = t.excellentRate / 100.0f;
 			m_NoteResultParam_Excellent.m_score_rate = t.excellentScoreAdd / 100.0f;
 			m_NoteParam_CLiveSkill.m_assign_rate = t.centerLiveSkillRate / 100.0f;
-			m_NoteParam_EventItem.m_enable = JGEOBNENMAH.HHCJCDFCLOB.HIGJBGFJMMO;
+			m_NoteParam_EventItem.m_enable = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.HIGJBGFJMMO;
 			m_NoteAssingInfo.m_center_live_skill = UnityEngine.Random.Range(0, 100000) <= m_NoteParam_CLiveSkill.m_assign_rate * 100000.0f;
 			m_NoteAssingInfo.m_center_live_skill_index = m_NoteParam_CLiveSkill.m_assign_index;
 			m_NoteAssingInfo.m_event_item = m_NoteParam_EventItem.m_enable;
@@ -886,7 +886,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			RhythmGameInputPerformer r = gamePerformer.GetComponent<RhythmGameInputPerformer>();
 			r.InitializeGame(this, rNoteOwner, uiController.Hud, GameManager.Instance.GetSystemCanvasCamera());
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("cs_support_check_touch_fingerid", 0) > 0)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("cs_support_check_touch_fingerid", 0) > 0)
 			{
 				r.delegateCheckInput = this.CheckInputCallback;
 			}
@@ -919,7 +919,7 @@ namespace XeApp.Game.RhythmGame
 				//L1814
 				uiController.Hud.SetPlayerDivaId(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 				uiController.Hud.SetRivalDivaId(UnityEngine.Random.Range(1, 11));
-				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_NetEventBattleController;
 				if(ev != null)
 				{
 					uiController.Hud.SetRivalDivaId(ev.LCAGAFPFHJP_GetCurrentRivalDivaId());
@@ -1257,13 +1257,13 @@ namespace XeApp.Game.RhythmGame
 				if(resource.musicData.valkyrieModeJudgeMillisec > -1)
 				{
 					battleEventResult01.onFireEvent = ShowBattleResult01;
-					battleEventResult01.millisec = resource.musicData.valkyrieModeJudgeMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_valkyrie_result_offset", 0);
+					battleEventResult01.millisec = resource.musicData.valkyrieModeJudgeMillisec + IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_valkyrie_result_offset", 0);
 				}
 				battleEventResult02 = new RhythmGameScoreEvent();
 				if(resource.musicData.divaModeStartMillisec > -1)
 				{
 					battleEventResult02.onFireEvent = ShowBattleResult02;
-					battleEventResult02.millisec = resource.musicData.divaModeStartMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_diva_result_offset", 0);
+					battleEventResult02.millisec = resource.musicData.divaModeStartMillisec + IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("battle_event_diva_result_offset", 0);
 				}
 			}
 			if(setting.m_enable_cutin)
@@ -1967,9 +1967,9 @@ namespace XeApp.Game.RhythmGame
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				int a = 0;
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null)
 				{
-					a = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_NumBoard;
+					a = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_NumBoard;
 				}
 				uiController.Hud.ShowActiveSkillCutin(GameMessageManager.GetSceneCardName(Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0], a, ""), resource.uiTextureResources);
 			}
@@ -2020,7 +2020,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitTime;
 					activeSkillRestartTimer.m_msec_st = a_notes_msec;
-					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("activeskill_cool_time", 0);
+					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("activeskill_cool_time", 0);
 					return;
 				}
 			}
@@ -2097,7 +2097,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_NetEventBattleController;
 				if(ev != null)
 				{
 					ev.IJGLLGDMDKK_SetScoreForStep(idx, score);
@@ -2337,7 +2337,7 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						CIOECGOMILE.HHCJCDFCLOB.OKGLDKFLGGK(OnSuccessInGameContinueByPaidVC, null, OnErrorInGameContinueByPaidVC, Database.Instance.gameSetup.musicInfo.freeMusicId, (int)Database.Instance.gameSetup.musicInfo.difficultyType);
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.OKGLDKFLGGK(OnSuccessInGameContinueByPaidVC, null, OnErrorInGameContinueByPaidVC, Database.Instance.gameSetup.musicInfo.freeMusicId, (int)Database.Instance.gameSetup.musicInfo.difficultyType);
 					}
 				}
 			}
@@ -2765,17 +2765,17 @@ namespace XeApp.Game.RhythmGame
 			noteResultCount = new int[5];
 			rNoteOwner.SetupNoteResultData(ref noteResultCount, logger);
 			noteResultCount_Excellent = rNoteOwner.GetExcellentResultNoteCount();
-			JGEOBNENMAH.HAJIFNABIFF data;
+			JGEOBNENMAH_NetGameManager.HAJIFNABIFF data;
 			MakeClearSetupData(out data, noteResultCount, noteResultCount_Excellent, touchedEventItem ? 1 : 0);
 			int t_next = 0;
 			if (!isClear)
 			{
-				JGEOBNENMAH.HHCJCDFCLOB.EFHMAKNEGEA(data);
+				JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.EFHMAKNEGEA(data);
 				t_next = 3;
 			}
 			else
 			{
-				JGEOBNENMAH.HHCJCDFCLOB.EFHPJGACNLK(data, () =>
+				JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.EFHPJGACNLK(data, () =>
 				{
 					//0xBF1ADC
 					t_next = 2;
@@ -2817,10 +2817,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
-		private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
+		private void MakeClearSetupData(out JGEOBNENMAH_NetGameManager.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
 		{
 			RhythmGameConsts.ResultComboType comboRank = CalcComboRank();
-			clearSetup = new JGEOBNENMAH.HAJIFNABIFF();
+			clearSetup = new JGEOBNENMAH_NetGameManager.HAJIFNABIFF();
 			clearSetup.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
 			clearSetup.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
 			clearSetup.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
@@ -2873,7 +2873,7 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.FEGLNPOFDJC_ExcellentCount = noteResultCount_Excellent;
 			clearSetup.OOPEJLMNIAH_EventItemCount = noteResultCount_EventItem;
 			clearSetup.JPJMALBLKDI_Tutorial = (int)Database.Instance.gameSetup.musicInfo.tutorial;
-			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH.HHCJCDFCLOB.GJIICCJMDIF_GetServerTime();
+			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.GJIICCJMDIF_GetServerTime();
 			clearSetup.PMCGHPOGLGM_IsSkip = false;
 			clearSetup.KAIPAEILJHO_TicketCount = 0;
 			if(status.score.CheckFalisification() != null)

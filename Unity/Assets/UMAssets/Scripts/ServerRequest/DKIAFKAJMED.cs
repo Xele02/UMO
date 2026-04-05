@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use DKIAFKAJMED_GetTwitterLinkageStatus", true)]
 public class DKIAFKAJMED { }
-public class DKIAFKAJMED_GetTwitterLinkageStatus : CACGCMBKHDI_Request
+public class DKIAFKAJMED_GetTwitterLinkageStatus : CACGCMBKHDI_NetBaseAction
 {
 	public class BLECILEFEEE
 	{

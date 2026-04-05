@@ -399,9 +399,9 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 				{
 					List<NDBFKHKMMCE_DecoItem.NIBEBIGPKLA_ObjItem> items = null;
 					int cnt = 5;
-					if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 					{
-						NDBFKHKMMCE_DecoItem decoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem;
+						NDBFKHKMMCE_DecoItem decoDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem;
 						items = decoDb.GHOLIPLDMPJ_ItemsObj;
 						cnt = decoDb.LPJLEHAJADA_GetIntParam("obj_have_max", 5);
 					}
@@ -474,9 +474,9 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 				{ 
 					List<NDBFKHKMMCE_DecoItem.IEOEMNPLANK_PosterItem> items = null;
 					int cnt = 50;
-					if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 					{
-						NDBFKHKMMCE_DecoItem decoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem;
+						NDBFKHKMMCE_DecoItem decoDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem;
 						items = decoDb.COLIEKINOPB_ItemsPoster;
 						cnt = decoDb.LPJLEHAJADA_GetIntParam("poster_have_max", 50);
 					}

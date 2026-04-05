@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 			});
 			m_IsReward = is_reward;
 			EEDKAACNBBG_MusicData md = Database.Instance.selectedMusic.GetSelectedMusicData();
-			KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_ResultData.OENBOLPDBAB_FreeMusicId);
+			KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_ResultData.OENBOLPDBAB_FreeMusicId);
  			if(data.BKKPKIGLMCN_Ranks[1] < 1)
 				m_EnableEventHiScore = false;
 			else

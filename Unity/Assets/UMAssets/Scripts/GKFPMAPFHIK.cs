@@ -29,8 +29,8 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	//// RVA: 0xAB28C4 Offset: 0xAB28C4 VA: 0xAB28C4
 	public bool KHEKNNFCAOI_Init()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3_Ranking/*3*/);
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		AMLGMLNGMFB_NetEventAprilFoolController ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3_Ranking/*3*/);
 		if(ev != null)
 		{
 			PNBAPMLNDLN_SetClear(ev.NDNDIAFEBFJ().KBAHNBKMFDL_is_minigame_clear);
@@ -41,9 +41,9 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	}
 
 	//// RVA: 0xAB2A18 Offset: 0xAB2A18 VA: 0xAB2A18
-	public AMLGMLNGMFB_EventAprilFool OEGDCBLNNFF(long _JHNMKKNEENE_Time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
+	public AMLGMLNGMFB_NetEventAprilFoolController OEGDCBLNNFF(long _JHNMKKNEENE_Time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
 	{
-		List<IKDICBBFBMI_EventBase>  l = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
+		List<IKDICBBFBMI_NetEventBaseController>  l = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.FindAll((IKDICBBFBMI_NetEventBaseController JPAEDJJFFOI) =>
 		{
 			//0xAB2E5C
 			return JPAEDJJFFOI.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool;
@@ -53,8 +53,8 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 			l[i].HCDGELDHFHB_UpdateStatus(_JHNMKKNEENE_Time);
 			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1_NotStarted/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 			{
-				if((l[i] as AMLGMLNGMFB_EventAprilFool).NDIILFIFCDL_GetMinigameId() == 1)
-					return l[i] as AMLGMLNGMFB_EventAprilFool;
+				if((l[i] as AMLGMLNGMFB_NetEventAprilFoolController).NDIILFIFCDL_GetMinigameId() == 1)
+					return l[i] as AMLGMLNGMFB_NetEventAprilFoolController;
 			}
 		}
 		return null;
@@ -63,8 +63,8 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	//// RVA: 0xAB2564 Offset: 0xAB2564 VA: 0xAB2564
 	private void PNBAPMLNDLN_SetClear(bool _BCGLDMKODLC_IsClear)
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		AMLGMLNGMFB_NetEventAprilFoolController ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 		if (ev == null)
 			return;
 		BCGLDMKODLC_IsClear = _BCGLDMKODLC_IsClear;

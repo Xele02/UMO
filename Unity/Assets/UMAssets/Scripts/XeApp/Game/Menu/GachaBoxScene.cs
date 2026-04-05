@@ -60,10 +60,10 @@ namespace XeApp.Game.Menu
 		{
 			//0xEDF57C
 			base.OnPreSetCanvas();
-			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+			if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK)
 			{
 				bool isDone_UpdateServerTime = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CADNBFCHAKM_GetToken(() =>
 				{
 					//0xEDE730
 					isDone_UpdateServerTime = true;
@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEDBB0C Offset: 0xEDBB0C VA: 0xEDBB0C Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && m_isInitialize;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && m_isInitialize;
 		}
 
 		// RVA: 0xEDBBB8 Offset: 0xEDBBB8 VA: 0xEDBBB8 Slot: 9
@@ -182,10 +182,10 @@ namespace XeApp.Game.Menu
 		protected void OnResultItemDetail(int itemId)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				//EKLNMHFCAOI.ALHCGDMEMID_GetNumItems();
-				MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
+				//EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems();
+				MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 			}
 			else
 			{
@@ -213,13 +213,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDCAA0 Offset: 0xEDCAA0 VA: 0xEDCAA0
 		protected void OnItemDetail(Transform parent, int itemId)
 		{
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo[] scenes = new GCIJNCFDNON_SceneInfo[2];
 				scenes[0] = new GCIJNCFDNON_SceneInfo();
 				scenes[1] = new GCIJNCFDNON_SceneInfo();
-				scenes[0].KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
-				scenes[1].KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 1, 0, 0, false, 0, 0);
+				scenes[0].KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				scenes[1].KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), null, null, 1, 0, 0, false, 0, 0);
 				PopupRewardEv2DetailSetting s = new PopupRewardEv2DetailSetting();
 				s.TitleText = scenes[0].OPFGFINHFCE_name;
 				s.Scene = scenes;
@@ -249,8 +249,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDD1B0 Offset: 0xEDD1B0 VA: 0xEDD1B0
 		protected void OnSelectItem(Transform parent, HGFPAFPGIKG.CMEDMHFOFAH item)
 		{
-			if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_OpenTime && 
-				EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && item.JOPPFEHKNFO_Pickup)
+			if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_OpenTime && 
+				EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(item.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && item.JOPPFEHKNFO_Pickup)
 			{
 				OnItemSecret(parent, m_view.JOFAGCFNKIO_OpenTime);
 			}
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDD858 Offset: 0xEDD858 VA: 0xEDD858
 		protected bool CloseTimeCheck(string endLabel)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_view.EBCHFBIINDP_End < time)
 			{
 				PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", endLabel), new ButtonInfo[1]
@@ -466,7 +466,7 @@ namespace XeApp.Game.Menu
 						HGFPAFPGIKG.JAKMCKNADCE it = drawList.Find((HGFPAFPGIKG.JAKMCKNADCE x) =>
 						{
 							//0xEDE67C
-							return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(x.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+							return EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(x.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
 						});
 						if(it != null)
 						{

@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		public bool Init(long currentTime)
 		{
 			localSaveData.PCODDPDFLHK_Load();
-			List<NDBFKHKMMCE_DecoItem.NNCIBDMDEFE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.JDMCHNFAOFO;
+			List<NDBFKHKMMCE_DecoItem.NNCIBDMDEFE> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.JDMCHNFAOFO;
 			for(int i = 0; i < l.Count; i++)
 			{
 				if(l[i].PPEGAKEIEGM_Enabled == 2)

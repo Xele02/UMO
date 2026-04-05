@@ -92,23 +92,23 @@ namespace XeApp.Game.Menu
 					m_ItemImage.enabled = true;
 				}
 			});
-			if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_platetitle"),  EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(info.JJBGOIMEIPF_ItemId), EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_platetitle"),  EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(info.JJBGOIMEIPF_ItemId), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
-			else if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem)
+			else if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_emblemtitle"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_emblemtitle"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
-			else if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
+			else if(info.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_sns_itemtitle"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_sns_itemtitle"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
 			else
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_ItemNameText, EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId), 1, JpStringLiterals.StringLiteral_12038);
 			}
-			string s = EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId);
+			string s = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId);
 			string s2 = "";
 			if(!string.IsNullOrEmpty(s))
 			{

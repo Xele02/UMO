@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A5AB4 Offset: 0x10A5AB4 VA: 0x10A5AB4 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && m_loadCoroutine == null;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && m_loadCoroutine == null;
 		}
 
 		// RVA: 0x10A5B78 Offset: 0x10A5B78 VA: 0x10A5B78 Slot: 20
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 						GameManager.Instance.RemovePushBackButtonHandler(backButton);
 					};
 					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Campaign, 0);
-					while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+					while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 						yield return null;
 					m_layoutPopup1st.Enter();
 					yield return new WaitWhile(() =>

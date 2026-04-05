@@ -265,9 +265,9 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		EDOHBJAPLPF_JsonData block = LGPBAKLCFHI_FindAndCheckBlock(OILEIIEIBHP, ref blockMissing, ref isInvalid, 3);
 		if (!blockMissing)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database == null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database == null)
 				return false;
-			IHFIAFDLAAK_DecoStamp dbStamp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp;
+			IHFIAFDLAAK_DecoStamp dbStamp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp;
 			if (block == null)
 			{
 				isInvalid = true;

@@ -11,7 +11,7 @@ namespace XeApp.Game.Menu
 		public int List_index; // 0x10
 		public long s64bit_List_ID; // 0x18
 		public int item_ID; // 0x20
-		public EKLNMHFCAOI.FKGCBLHOOCL_Category item_TYPE; // 0x24
+		public EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category item_TYPE; // 0x24
 		public int item_Value; // 0x28
 		public bool IsAvailable; // 0x2C
 		public string name = ""; // 0x30
@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 					date.Year, string.Format("{0:D2}", date.Month), string.Format("{0:D2}", date.Day), 
 					string.Format("{0:D2}", date.Hour), string.Format("{0:D2}", date.Minute)
 				});
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				limit = JpStringLiterals.StringLiteral_19639;
 				if (!data.JLFHLOCONEE())
 				{

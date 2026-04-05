@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1BAE5E8 Offset: 0x1BAE5E8 VA: 0x1BAE5E8 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x1BAE688 Offset: 0x1BAE688 VA: 0x1BAE688 Slot: 22

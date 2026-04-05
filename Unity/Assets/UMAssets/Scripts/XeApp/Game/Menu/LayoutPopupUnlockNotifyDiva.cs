@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1792474 Offset: 0x1792474 VA: 0x1792474
 		public bool IsLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingDivaImage;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning || m_isLoadingDivaImage;
 		}
 
 		// // RVA: 0x17921F8 Offset: 0x17921F8 VA: 0x17921F8

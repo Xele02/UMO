@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x16696AC Offset: 0x16696AC VA: 0x16696AC
-		public void SetBonusButton(List<KPJHLACKGJF_EventMission.HLMINENBCKO> scheduleList)
+		public void SetBonusButton(List<KPJHLACKGJF_NetEventMissionController.HLMINENBCKO> scheduleList)
 		{
 			if(scheduleList == null || scheduleList.Count == 0)
 			{
@@ -68,12 +68,12 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				List<KPJHLACKGJF_EventMission.HLMINENBCKO> l = scheduleList.FindAll((KPJHLACKGJF_EventMission.HLMINENBCKO _) =>
+				List<KPJHLACKGJF_NetEventMissionController.HLMINENBCKO> l = scheduleList.FindAll((KPJHLACKGJF_NetEventMissionController.HLMINENBCKO _) =>
 				{
 					//0x1669FC4
 					return _.IPJMPBANBPP_Enabled;
 				});
-				l.Sort((KPJHLACKGJF_EventMission.HLMINENBCKO a, KPJHLACKGJF_EventMission.HLMINENBCKO b) =>
+				l.Sort((KPJHLACKGJF_NetEventMissionController.HLMINENBCKO a, KPJHLACKGJF_NetEventMissionController.HLMINENBCKO b) =>
 				{
 					//0x1669FD4
 					return a.AAMJNIDEAHC.CompareTo(b.AAMJNIDEAHC);
@@ -98,15 +98,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1669A94 Offset: 0x1669A94 VA: 0x1669A94
-		private void ApplyBonusType(KPJHLACKGJF_EventMission.HLMINENBCKO schedule)
+		private void ApplyBonusType(KPJHLACKGJF_NetEventMissionController.HLMINENBCKO schedule)
 		{
-			m_layoutBonus.StartChildrenAnimGoStop(schedule.CIANOCNPIFF_Type == KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.HIFIGCJNJDO_0_Music ? "01" : "02");
+			m_layoutBonus.StartChildrenAnimGoStop(schedule.CIANOCNPIFF_Type == KPJHLACKGJF_NetEventMissionController.MNIIDKPECMD_Type.HIFIGCJNJDO_0_Music ? "01" : "02");
 			switch(schedule.CIANOCNPIFF_Type)
 			{
-				case KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.HIFIGCJNJDO_0_Music:
+				case KPJHLACKGJF_NetEventMissionController.MNIIDKPECMD_Type.HIFIGCJNJDO_0_Music:
 					m_layoutBonusIcon.StartChildrenAnimGoStop("01");
 					break;
-				case KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.LNAOAANJGDM_1_SerieAttr:
+				case KPJHLACKGJF_NetEventMissionController.MNIIDKPECMD_Type.LNAOAANJGDM_1_SerieAttr:
 					switch(schedule.IIAAIPNHJFJ_Value)
 					{
 						case 1:
@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 							break;
 					}
 					break;
-				case KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.OLFDHLDEPKO_2_MusicAttr:
+				case KPJHLACKGJF_NetEventMissionController.MNIIDKPECMD_Type.OLFDHLDEPKO_2_MusicAttr:
 					switch(schedule.IIAAIPNHJFJ_Value)
 					{
 						case 1:
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 							break;
 					}
 					break;
-				case KPJHLACKGJF_EventMission.MNIIDKPECMD_Type.CEPMMEKKNGC_3_All:
+				case KPJHLACKGJF_NetEventMissionController.MNIIDKPECMD_Type.CEPMMEKKNGC_3_All:
 					m_layoutBonusIcon.StartChildrenAnimGoStop("06");
 					break;
 			}

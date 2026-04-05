@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15264F0 Offset: 0x15264F0 VA: 0x15264F0
 		private void Start()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18797);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18797);
 		}
 
 		//// RVA: 0x152659C Offset: 0x152659C VA: 0x152659C
@@ -451,7 +451,7 @@ namespace XeApp.Game.Menu
 		{
 			m_offerFormationController.selectFormation = _SelectFormation;
 			m_InfoLayout.StartChengeEnemyPower(m_offerFormationController.selectFormation + 1, false, 0, false);
-			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF_Atk, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO_hit, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit)), m_offerViewInfoData.DFMOGBOPLEF_Series, m_InfoLayout.IsLackPower);
+			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF_Atk, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO_hit, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit)), m_offerViewInfoData.DFMOGBOPLEF_Series, m_InfoLayout.IsLackPower);
 		}
 
 		//// RVA: 0x1527EEC Offset: 0x1527EEC VA: 0x1527EEC
@@ -538,30 +538,30 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true);
-			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+            PopupWindowManager.Show(s, (Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel>)((PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1528EC4
 				if(type == PopupButton.ButtonType.Positive)
 				{
 					for(int i = 0; i < FormationList[m_offerFormationController.selectFormation].Count; i++)
 					{
-						m_view.JBHBEKJHLFE(m_offerFormationController.selectFormation + 1, i, 0);
+                        m_view.JBHBEKJHLFE(m_offerFormationController.selectFormation + 1, i, 0);
 					}
-					TapGuardON();
-					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+                    TapGuardON();
+                    CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData((IMCBBOAFION)(() =>
 					{
-						//0x15290D4
-						TapGuardOFF();
-						ResetValkyrieData();
-						OnClickFormationChenge(m_offerFormationController.selectFormation);
-					}, () =>
+                        //0x15290D4
+                        TapGuardOFF();
+                        ResetValkyrieData();
+                        OnClickFormationChenge(m_offerFormationController.selectFormation);
+					}), (DJBHIFLHJLK)(() =>
 					{
-						//0x1529110
-						TapGuardOFF();
-						MenuScene.Instance.GotoTitle();
-					}, null);
+                        //0x1529110
+                        TapGuardOFF();
+                        MenuScene.Instance.GotoTitle();
+					}), (List<long>)null);
 				}
-			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			}), (IPopupContent content, PopupTabButton.ButtonLabel label) =>
 			{
 				//0x1529240
 				return;

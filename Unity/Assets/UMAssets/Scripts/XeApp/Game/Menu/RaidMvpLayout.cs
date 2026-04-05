@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1BD3D84 Offset: 0x1BD3D84 VA: 0x1BD3D84
-		public void UpdateContent(List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ.CALIFIMGGMD> rankingList)
+		public void UpdateContent(List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ.CALIFIMGGMD> rankingList)
 		{
 			if(rankingList.Count == 0)
 			{

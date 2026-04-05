@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1096A60 Offset: 0x1096A60 VA: 0x1096A60
-		public void UpdateContent(CGFNKMNBNBN bgData, bool isSelect, bool isLock/* = false*/, int episodeId/* = 0*/)
+		public void UpdateContent(CGFNKMNBNBN_ViewHomeBgData bgData, bool isSelect, bool isLock/* = false*/, int episodeId/* = 0*/)
 		{
 			m_outline.enabled = true;
 			m_episodeId = episodeId;

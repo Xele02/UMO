@@ -95,9 +95,9 @@ namespace XeApp.Game.Menu
 		public void settingTab()
 		{
 			SelectTab = OfferSelectTab.DebutTab;
-			if (KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM() != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut && !IsBeginner)
+			if (KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.NPIJHJNCBGM() != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut && !IsBeginner)
 			{
-				BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = KDHGBOOECKC.HHCJCDFCLOB.NPIJHJNCBGM();
+				BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.NPIJHJNCBGM();
 				SelectTab = (OfferSelectTab)(a - 1);
 				if (a != BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week)
 				{
@@ -117,24 +117,24 @@ namespace XeApp.Game.Menu
 		{
 			InitializeBadge();
 			IsExitBefore = false;
-			IsGetNewValkyrie = !KDHGBOOECKC.HHCJCDFCLOB.AHKAIKMNKJL();
+			IsGetNewValkyrie = !KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.AHKAIKMNKJL();
 			IsBeginner = m_view.OHILPCDFKCH();
 			if (!IsBeginner)
 				IsBeginner = IsGetNewValkyrie;
-			IsUnlockDivaOffer = KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ();
+			IsUnlockDivaOffer = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.MGHPDFMDFCJ();
 			InitializeList();
 			initializeTime();
 			initializeTab();
-			probailtyAnimEnable(KDHGBOOECKC.HHCJCDFCLOB.JAMKJBMGAGI());
+			probailtyAnimEnable(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.JAMKJBMGAGI());
 		}
 
 		//// RVA: 0x170607C Offset: 0x170607C VA: 0x170607C
 		public void initializeTime()
 		{
-			if (KDHGBOOECKC.HHCJCDFCLOB != null)
+			if (KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance != null)
 			{
-				SetDaylyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily));
-				SetWeeklyTime(KDHGBOOECKC.HHCJCDFCLOB.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week));
+				SetDaylyTime(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily));
+				SetWeeklyTime(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IILNIBNFOLG(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week));
 			}
 		}
 
@@ -212,8 +212,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1706640 Offset: 0x1706640 VA: 0x1706640
 		public void BeginnerOfferProgress()
 		{
-			int a1 = KDHGBOOECKC.HHCJCDFCLOB.ECBHIIOABCK();
-			int a2 = KDHGBOOECKC.HHCJCDFCLOB.PDGOLEJBNMM(BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.CADDNFIKDLG_4_Received, true);
+			int a1 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.ECBHIIOABCK();
+			int a2 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.PDGOLEJBNMM(BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.CADDNFIKDLG_4_Received, true);
 			m_MaxDebutNum.SetNumber(a1, 0);
 			m_ClearDebutNum.SetNumber(a2, 0);
 			debutClearIconChenge(a1 == a2);
@@ -527,7 +527,7 @@ namespace XeApp.Game.Menu
 			BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HJNNKCMLGFL_0_None;
 			if (SelectTab < OfferSelectTab.MAX)
 				a = new BOPFPIHGJMD.MLBMHDCCGHI_OfferType[4] { BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut }[(int)SelectTab];
-			KDHGBOOECKC.HHCJCDFCLOB.HJOLFCDAIGE(a);
+			KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.HJOLFCDAIGE(a);
 		}
 
 		// RVA: 0x1701884 Offset: 0x1701884 VA: 0x1701884
@@ -552,18 +552,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17081B8 Offset: 0x17081B8 VA: 0x17081B8
 		public void SwitchEmphasisIcon(int index)
 		{
-			if(!KDHGBOOECKC.HHCJCDFCLOB.OHILPCDFKCH())
+			if(!KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.OHILPCDFKCH())
 			{
 				BOPFPIHGJMD.MLBMHDCCGHI_OfferType a = BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily;
 				if (index < 4)
 					a = new BOPFPIHGJMD.MLBMHDCCGHI_OfferType[4] { BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FMLPIOFBCMA_3_Diva, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.FDOOAJLGFAE_2_Week, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HEFPAOLDHCK_1_Daily, BOPFPIHGJMD.MLBMHDCCGHI_OfferType.GENEIBGNMPH_4_Debut }[index];
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				int a2 = KDHGBOOECKC.HHCJCDFCLOB.LJMOMAGLEGL(a, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved, false);
+				int a2 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LJMOMAGLEGL(a, BOPFPIHGJMD.IGHPDAGKIKO_OfferStatus.FJGFAPKLLCL_3_Achieved, false);
 				string str = string.Format(bk.GetMessageByLabel("offer_operation_badge_text"), a2);
 				m_badgeIcons[index].Set(a2 > 0 ? BadgeConstant.ID.Label : BadgeConstant.ID.None, str);
 				if(index == 0 && a2 < 1)
 				{
-					if(KDHGBOOECKC.HHCJCDFCLOB.NLDDHJGHHOD())
+					if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.NLDDHJGHHOD())
 					{
 						m_badgeIcons[0].Set(BadgeConstant.ID.New, str);
 					}

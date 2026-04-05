@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use GNDMFGGOPII_GetInventoryRecords", true)]
 public class GNDMFGGOPII {}
-public class GNDMFGGOPII_GetInventoryRecords : CACGCMBKHDI_Request
+public class GNDMFGGOPII_GetInventoryRecords : CACGCMBKHDI_NetBaseAction
 {
     public class MOPKBHCNLLJ
     {

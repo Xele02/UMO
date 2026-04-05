@@ -197,20 +197,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1C88760 Offset: 0x1C88760 VA: 0x1C88760
 		public static uint CreateBit(PIGBBNDPPJC a_view)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_ItemId);
+			int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_ItemId);
 			int a = 0;
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 			{
 				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 2;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 			{
 				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count + 1;
 			}
-			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+			else if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostume(id).AHHJLDLAPAN_DivaId;
+				a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostume(id).AHHJLDLAPAN_DivaId;
 			}
 			return (uint)(1 << a);
 		}

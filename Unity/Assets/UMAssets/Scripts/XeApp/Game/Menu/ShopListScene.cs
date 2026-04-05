@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 	public class ShopListScene : TransitionRoot
 	{
 		private LayoutShopListWindow m_listShop; // 0x48
-		private List<AODFBGCCBPE> m_list; // 0x4C
+		private List<AODFBGCCBPE_ViewShopData> m_list; // 0x4C
 		private bool m_updateShopList; // 0x50
 
 		// RVA: 0xC3D914 Offset: 0xC3D914 VA: 0xC3D914 Slot: 4
@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3DB34 Offset: 0xC3DB34 VA: 0xC3DB34 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && m_updateShopList;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && m_updateShopList;
 		}
 
 		// RVA: 0xC3DBE0 Offset: 0xC3DBE0 VA: 0xC3DBE0 Slot: 9
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC3DC9C Offset: 0xC3DC9C VA: 0xC3DC9C
-		private void OnShopProduct(AODFBGCCBPE view)
+		private void OnShopProduct(AODFBGCCBPE_ViewShopData view)
 		{
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
@@ -98,9 +98,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3D988 Offset: 0xC3D988 VA: 0xC3D988
 		private void UpdateShopList()
 		{
-			m_list = AODFBGCCBPE.FKDIMODKKJD_GetList(false);
+			m_list = AODFBGCCBPE_ViewShopData.FKDIMODKKJD_GetList(false);
 			m_updateShopList = false;
-			this.StartCoroutineWatched(AODFBGCCBPE.OMBGMOFMCLD_Coroutine_UpdateViewShopList(m_list, () =>
+			this.StartCoroutineWatched(AODFBGCCBPE_ViewShopData.OMBGMOFMCLD_Coroutine_UpdateViewShopList(m_list, () =>
 			{
 				//0xC3DF50
 				m_updateShopList = true;

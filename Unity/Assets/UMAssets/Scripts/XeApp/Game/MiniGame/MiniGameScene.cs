@@ -75,7 +75,7 @@ namespace XeApp.Game.MiniGame
 		//// RVA: 0x1CF0908 Offset: 0x1CF0908 VA: 0x1CF0908
 		public bool CheckDateLineAndAssetUpdate()
 		{
-			return PGIGNJDPCAH.MNANNMDBHMP(() =>
+			return PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 			{
 				//0x1CF1090
 				this.StartCoroutineWatched(Co_GotoLoginBonus());
@@ -112,7 +112,7 @@ namespace XeApp.Game.MiniGame
 				yield return null;
 			PopupWindowManager.Close(null, null);
 			SoundManager.Instance.bgmPlayer.Stop();
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
 			MenuScene.ComebackByRestart = true;
 			NextScene("Menu");
 			yield return null;
@@ -135,7 +135,7 @@ namespace XeApp.Game.MiniGame
 				yield return null;
 			PopupWindowManager.Close(null, null);
 			SoundManager.Instance.bgmPlayer.Stop();
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
 			NextScene("Title");
 			yield return null;
 		}

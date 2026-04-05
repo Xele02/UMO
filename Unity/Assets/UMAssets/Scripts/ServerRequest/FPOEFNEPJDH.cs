@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use FPOEFNEPJDH_CreateBbsThread", true)]
 public abstract class FPOEFNEPJDH { }
-public class FPOEFNEPJDH_CreateBbsThread : CACGCMBKHDI_Request
+public class FPOEFNEPJDH_CreateBbsThread : CACGCMBKHDI_NetBaseAction
 {
 	public class OIPIPIHBJFM
 	{

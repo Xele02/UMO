@@ -120,13 +120,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED62A4 Offset: 0xED62A4 VA: 0xED62A4
-		private void OnNetRequestError(CACGCMBKHDI_Request error)
+		private void OnNetRequestError(CACGCMBKHDI_NetBaseAction error)
 		{
 			return;
 		}
 
 		// // RVA: 0xED62A8 Offset: 0xED62A8 VA: 0xED62A8
-		private void OnNetRequestErrorToTitle(CACGCMBKHDI_Request error)
+		private void OnNetRequestErrorToTitle(CACGCMBKHDI_NetBaseAction error)
 		{
 			if(MenuScene.Instance.IsTransition())
 				GotoTitle();
@@ -171,14 +171,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xED5E18 Offset: 0xED5E18 VA: 0xED5E18
 		private IEnumerator Co_SearchFriend()
 		{
-			PIGBKEIAMPE_FriendManager friendManager;
+			PIGBKEIAMPE_NetFriendManager friendManager;
 
 			//0xED6AF4
 			MenuScene.Instance.InputDisable();
 			m_menuUi.SetupFriendList("", "", true, "");
 			m_menuUi.SetupRequestList("");
 			m_menuUi.SetupAcceptlList("", true, "");
-			friendManager = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			friendManager = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager;
 			friendManager.POEDEMPINCH(null, OnNetRequestError, OnNetRequestErrorToTitle);
 			yield return this.StartCoroutineWatched(Co_WaitForConnection(null));
 			friendManager.HHDGOABFEPC_GetFriendLimit(null, OnNetRequestErrorToTitle, false);
@@ -215,10 +215,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xED64A0 Offset: 0xED64A0 VA: 0xED64A0
 		private IEnumerator Co_WaitForConnection(Action onEnd)
 		{
-			PIGBKEIAMPE_FriendManager friendManager;
+			PIGBKEIAMPE_NetFriendManager friendManager;
 
 			//0xED74E4
-			friendManager = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			friendManager = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager;
 			while(!friendManager.PLOOEECNHFB_IsDone)
 				yield return null;
 			if(onEnd != null)

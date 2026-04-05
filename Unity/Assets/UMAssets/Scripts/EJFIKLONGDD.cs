@@ -31,7 +31,7 @@ public class EJFIKLONGDD
             {
                 switch(NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory)
                 {
-                    case EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC:
+                    case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC:
                     {
                         if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.JLHALLNOHBA_1_Vc)
                         {
@@ -43,11 +43,11 @@ public class EJFIKLONGDD
                         }
                     }
                     break;
-                    case EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
+                    case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
                     {
                         if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.FKADJNIGFHB_4_Scene3)
                         {
-                            if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 3)
+                            if(EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 3)
                             {
                                 if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                                 {
@@ -58,7 +58,7 @@ public class EJFIKLONGDD
                         }
                         else if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.AFPDIEJNMIB_3_Scene4)
                         {
-                            if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 4)
+                            if(EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 4)
                             {
                                 if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                                 {
@@ -69,7 +69,7 @@ public class EJFIKLONGDD
                         }
                         else if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.CIGDJNPNJAM_2_Scene5)
                         {
-                            if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 5)
+                            if(EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId) == 5)
                             {
                                 if(NNDGIAEFMOG[i].HMEOAKCLKJE_IsReceived)
                                 {
@@ -80,7 +80,7 @@ public class EJFIKLONGDD
                         }
                     }
                     break;
-                    case EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem:
+                    case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem:
                     {
                         if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.KODIFHOOOEC_6_LimitOver && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 25)
                         {
@@ -92,7 +92,7 @@ public class EJFIKLONGDD
                         }
                     }
                     break;
-                    case EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
+                    case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
                     {
                         if(_INDDJNMPONH_type == BLLOINEKDLM_UnlockType.FBKFCCCACGE_5_EpiItem && NNDGIAEFMOG[i].HBHMAKNGKFK_items[j].NNFNGLJOKKF_ItemId == 2)
                         {

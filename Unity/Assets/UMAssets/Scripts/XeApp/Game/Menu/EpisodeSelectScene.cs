@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF06974 Offset: 0xF06974 VA: 0xF06974 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xF06A14 Offset: 0xF06A14 VA: 0xF06A14 Slot: 23
@@ -241,17 +241,17 @@ namespace XeApp.Game.Menu
 			}
 			else if(a_item == SortItem.DivaAndValkyrie || a_item == SortItem.DivaValkyrieHomeBG)
 			{
-				LCLCCHLDNHJ_Costume t_master_cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
-				JPIANKEOOMB_Valkyrie t_master_valkyrie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
-				ALJHJDHNFFB_HomeBg t_master_home_bg = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
+				LCLCCHLDNHJ_Costume t_master_cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+				JPIANKEOOMB_Valkyrie t_master_valkyrie = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
+				ALJHJDHNFFB_HomeBg t_master_home_bg = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
 				m_list_filter.Sort((PIGBBNDPPJC a, PIGBBNDPPJC b) =>
 				{
 					//0xF075B4
-					EKLNMHFCAOI.FKGCBLHOOCL_Category cat1 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a.KIJAPOFAGPN_ItemId);
-					EKLNMHFCAOI.FKGCBLHOOCL_Category cat2 = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(b.KIJAPOFAGPN_ItemId);
-					int itemId1 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a.KIJAPOFAGPN_ItemId);
-					int itemId2 = EKLNMHFCAOI.DEACAHNLMNI_getItemId(b.KIJAPOFAGPN_ItemId);
-					if (cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+					EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat1 = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(a.KIJAPOFAGPN_ItemId);
+					EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat2 = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(b.KIJAPOFAGPN_ItemId);
+					int itemId1 = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(a.KIJAPOFAGPN_ItemId);
+					int itemId2 = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(b.KIJAPOFAGPN_ItemId);
+					if (cat1 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume && cat2 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 					{
 						LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos1 = t_master_cos.EEOADCECNOM_GetCostume(itemId1);
 						LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos2 = t_master_cos.EEOADCECNOM_GetCostume(itemId2);
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 							return res;
 						return cos2.JPIDIENBGKH_CostumeId - cos1.JPIDIENBGKH_CostumeId;
 					}
-					else if(cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+					else if(cat1 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie && cat2 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 					{
 						JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk1 = t_master_valkyrie.GCINIJEMHFK_Get(itemId1);
 						JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk2 = t_master_valkyrie.GCINIJEMHFK_Get(itemId2);
@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 						}
 						return valk2.IFGMKBKBFJI_ValkyrieIdCrypted - valk1.IFGMKBKBFJI_ValkyrieIdCrypted;
 					}
-					else if(cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+					else if(cat1 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg && cat2 == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{
 						ALJHJDHNFFB_HomeBg.ADLLAFIDFAM homeBg1 = t_master_home_bg.GCINIJEMHFK_Get(itemId1);
 						ALJHJDHNFFB_HomeBg.ADLLAFIDFAM homeBg2 = t_master_home_bg.GCINIJEMHFK_Get(itemId2);

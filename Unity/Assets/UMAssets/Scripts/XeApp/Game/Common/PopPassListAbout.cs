@@ -32,16 +32,16 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xAF7764 Offset: 0xAF7764 VA: 0xAF7764
-		public void Initialize(NHPDPKHMFEP.GGNEBJEIFCP_Plan plan, Action callback)
+		public void Initialize(NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan plan, Action callback)
 		{
-			m_text.text = NHPDPKHMFEP.HHCJCDFCLOB.EAHHCPGNCMF(plan);
+			m_text.text = NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.EAHHCPGNCMF(plan);
 			GameManager.Instance.StartCoroutineWatched(LateInitialize(callback));
 			m_buttonDetail.ClearOnClickCallback();
 			m_buttonDetail.AddOnClickCallback(() =>
 			{
 				//0xAF7CB8
 				InputDisable();
-				NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["utapass_site"], () =>
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["utapass_site"], () =>
 				{
 					//0xAF7E74
 					InputEnable();
@@ -53,7 +53,7 @@ namespace XeApp.Game.Common
 				//0xAF7E78
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
+				MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
 				{
 					//0xAF808C
 					InputEnable();
@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 				//0xAF8090
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				InputDisable();
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
+				MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
 				{
 					//0xAF82A4
 					InputEnable();

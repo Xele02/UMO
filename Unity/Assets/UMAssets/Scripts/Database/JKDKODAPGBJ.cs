@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use JKDKODAPGBJ_EnergyItem", true)]
 public class JKDKODAPGBJ { }
+[UMOClass()]
 public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class GFGCCICHBHK
 	{
 		public int EHOIENNDEDH_IdCrypted; // 0x8
@@ -15,13 +17,20 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 		public int JDIJODDBCPK_OderCrypted; // 0x1C
 		public int EAJCFBCHIFB_RarityCrypted; // 0x20
 
+		[UMOMember()]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D158 DEMEPMAEJOO_get_id 0x135CBF8 HIGKAIDMOKN_set_id
+		[UMOMember()]
 		public int PPEGAKEIEGM_Enabled { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D1F0 KPOEEPIMMJP_bgs 0x135CB5C NCIEAFEDPBH_bgs
+		[UMOMember()]
 		public int HJAFPEBIBOP_Limit { get { return JEDNBJLMBKE ^ FBGGEFFJJHB_xor; } set { JEDNBJLMBKE = value ^ FBGGEFFJJHB_xor; } } //0x135D288 GNDLHNBPMHN_get_Limit 0x135CD30 HPFNBOKBEDD_set_Limit
+		[UMOMember()]
 		public int DOOGFEGEKLG_max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D320 AECMFIOFFJN_get_max 0x135CDCC NGOJJDOCIDG_set_max
+		[UMOMember()]
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D3B8 OLOCMINKGON_get_val 0x135CC94 ABAFHIBFKCE_set_val
+		[UMOMember()]
 		// Order
 		public int FPOMEEJFBIG_odr { get { return JDIJODDBCPK_OderCrypted ^ FBGGEFFJJHB_xor; } set { JDIJODDBCPK_OderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D450 OEEBAHNAPEC_get_odr 0x135CE68 BEHAPLPPLNE_set_odr
+		[UMOMember()]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D4E8 OEEHBGECGKL_get_Rarity 0x135CF04 GHLMHLJJBIG_set_Rarity
 
 		// RVA: 0x135D08C Offset: 0x135D08C VA: 0x135D08C
@@ -30,6 +39,7 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 
 	public const int LFHKGBGHEEM = 5;
 	public static int FBGGEFFJJHB_xor = 0xb516d; // 0x0
+	[UMOMember()]
 	public List<GFGCCICHBHK> CDENCMNHNGA_table = new List<GFGCCICHBHK>(); // 0x20
 
 	// RVA: 0x135C650 Offset: 0x135C650 VA: 0x135C650

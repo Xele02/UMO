@@ -612,7 +612,7 @@ public class OKGLGHCBCJP_Database
 			IIILDINMAKI_SectionNames[i] = IJBLEJOKEFH_Name[i];
 			GJFPFFBAKGK_CloseAt[i] = 0;
 			bool valid = true;
-			//if(false) // Disable when exporting localization
+			if(!RuntimeSettings.CurrentSettings.LoadRawDatabase) // Disable when exporting localization
 			{
 				switch((BEOKNKGHFFE_Section)i)
 				{

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF7942C Offset: 0xF7942C VA: 0xF7942C Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xF794CC Offset: 0xF794CC VA: 0xF794CC Slot: 22

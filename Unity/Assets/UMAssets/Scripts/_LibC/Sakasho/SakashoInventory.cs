@@ -234,7 +234,7 @@ namespace ExternLib
 						(string)playerAccount.playerData.serverData["ticket"]["pending"] == "" && 
 						(string)playerAccount.playerData.serverData["ticket"]["entry_date"] != "")
 					{
-						HIADOIECMFP_EventPresentCampaign db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find("event_present_campaign_a") as HIADOIECMFP_EventPresentCampaign;
+						HIADOIECMFP_EventPresentCampaign db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find("event_present_campaign_a") as HIADOIECMFP_EventPresentCampaign;
 						if(db != null)
 						{
 							for(int i = 0; i < 10; i++)
@@ -302,7 +302,7 @@ namespace ExternLib
 			data["item_count"] = 100000;
 			data["item_name"] = AFEHLCGHAEE_Strings.PJPGBPACBFA_uc_item;
 			data["item_type"] = 0;
-			data["item_value"] = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit, 1);
+			data["item_value"] = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit, 1);
 			data["message"] = "msg";
 			data["received_at"] = 0;
 			data["closed_at"] = Utility.GetCurrentUnixTime() + 24 * 3600;

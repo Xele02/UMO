@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xD03878 Offset: 0xD03878 VA: 0xD03878
 		public void Setup(InitParam initParam, LayoutResultEventHiScoreWindow a_window)
 		{
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
+            IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
             isReward = ev != null && ev.JOFBHHHLBBN_Rewards.Count > 0;
 			layoutOkayButton = initParam.layoutOkayButton;
 			layoutOkayButton.SetupCallback(null, OnClickOkayButton);

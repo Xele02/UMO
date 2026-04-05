@@ -92,7 +92,7 @@ public class HLMJIADBPIJ
 				}
 			case NJLGICBHIOC.EOFJDIACFEC_UnlockType.DKJIAKIPEJB_12_EventEntry/*12*/:
 				{
-					return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GPKMEOKPDIP((int)_DPIBHFNDJII_UnlockCond1);
+					return JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.GPKMEOKPDIP((int)_DPIBHFNDJII_UnlockCond1);
 				}
 			case NJLGICBHIOC.EOFJDIACFEC_UnlockType.BILICHMCHIP_15_SnsItem/*15*/:
 				return _AHEFHIMGIBI_PlayerData.FLHMJHBOBEA_Sns.HAJEJPFGILG[(int)_DPIBHFNDJII_UnlockCond1 - 1].PMKJFKJFDOC_Itm != 0;
@@ -126,7 +126,7 @@ public class HLMJIADBPIJ
 					return _AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[(int)_DPIBHFNDJII_UnlockCond1 - 1].DMANHOPOBMP_IsShowUnlock;
 				}
 			case NJLGICBHIOC.EOFJDIACFEC_UnlockType.OLAENAJCBIP_20_MinigameClear/*20*/:
-				return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GJFBNJLOOPD((int)_DPIBHFNDJII_UnlockCond1);
+				return JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.GJFBNJLOOPD((int)_DPIBHFNDJII_UnlockCond1);
 		}
 		return false;
     }

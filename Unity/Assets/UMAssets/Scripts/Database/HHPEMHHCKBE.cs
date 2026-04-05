@@ -4,8 +4,10 @@ using XeSys;
 
 [System.Obsolete("Use HHPEMHHCKBE_Compo", true)]
 public class HHPEMHHCKBE { }
+[UMOClass()]
 public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class MLMDKHBFOJM
 	{
 		public int FBGGEFFJJHB_xor = 0x3fb377; // 0x8
@@ -14,8 +16,26 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		public int[] AHGCGHAAHOO_ItemIdCrypted; // 0x14
 		public int EAJCFBCHIFB_RarityCrypted; // 0x18
 
+		[UMOMember()]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337DC DEMEPMAEJOO_get_id 0x1833654 HIGKAIDMOKN_set_id
+		[UMOMember()]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x18337EC OEEHBGECGKL_get_Rarity 0x1833664 GHLMHLJJBIG_set_Rarity
+
+		// For doc
+		[UMOMember()]
+		public int[] ItemIds { get { 
+			int[] Res = new int[AHGCGHAAHOO_ItemIdCrypted.Length];
+			for(int i = 0; i < AHGCGHAAHOO_ItemIdCrypted.Length; i++)
+				Res[i] = CBLLFCGEJAI(i);
+			return Res;
+		} }
+		[UMOMember()]
+		public int[] ItemCount { get { 
+			int[] Res = new int[OGEBLOHMGAM_Crypted.Length];
+			for(int i = 0; i < OGEBLOHMGAM_Crypted.Length; i++)
+				Res[i] = HBJMCLGKLBA(i);
+			return Res;
+		} }
 
 		//// RVA: 0x18337FC Offset: 0x18337FC VA: 0x18337FC
 		public int JCJGGHGIKIJ()
@@ -41,6 +61,7 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		//public uint CAOGDCBPBAN() { }
 	}
 
+	[UMOMember()]
 	public List<MLMDKHBFOJM> CDENCMNHNGA_table = new List<MLMDKHBFOJM>(); // 0x20
 
 	// RVA: 0x18330C0 Offset: 0x18330C0 VA: 0x18330C0

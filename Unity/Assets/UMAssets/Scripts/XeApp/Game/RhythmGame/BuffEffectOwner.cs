@@ -39,7 +39,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF69A80 Offset: 0xF69A80 VA: 0xF69A80
 		public void Initialize()
 		{
-			m_master_data.m_skill_combo_value_0 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("skill_combo_bonus_value0", 0);
+			m_master_data.m_skill_combo_value_0 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("skill_combo_bonus_value0", 0);
 		}
 
 		//// RVA: 0xF69B78 Offset: 0xF69B78 VA: 0xF69B78

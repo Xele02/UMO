@@ -33,9 +33,9 @@ public class DFKGGBMFFGB_PlayerInfo
 	{
 		BNFDBPPOAOE = true;
 		if(NIMOGBDCMLJ_ServerSave == null)
-			NIMOGBDCMLJ_ServerSave = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+			NIMOGBDCMLJ_ServerSave = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 		LDEGEHAEALK_ServerData = NIMOGBDCMLJ_ServerSave;
-		LKMHPJKIFDN_md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+		LKMHPJKIFDN_md = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 		NBIGLBMHEDC_DivaList.Clear();
 		OPIBAPEGCLA_Scenes.Clear();
 		if(LDEGEHAEALK_ServerData.PNLOINMCCKH_Scene != null)
@@ -118,7 +118,7 @@ public class DFKGGBMFFGB_PlayerInfo
 			int centerDivaId = NPFCMHCCDDH.PDJEMLMOEPF_CenterDivaId;
 			if (centerDivaId == 0)
 				centerDivaId = 1;
-			MANPIONIGNO_EventGoDiva evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as MANPIONIGNO_EventGoDiva;
+			MANPIONIGNO_NetEventGoDivaController evt = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as MANPIONIGNO_NetEventGoDivaController;
 			if (evt != null)
 			{
 				if(evt.CLELOGKMNCE_GetEventSaveData().AFKMGCLEPGA_SelDiva > 0)
@@ -257,8 +257,8 @@ public class DFKGGBMFFGB_PlayerInfo
 	{
 		JBCIDDKDJMM = false;
 		PIGBBNDPPJC p = new PIGBBNDPPJC();
-		List<HMGPODKEFBA_EpisodeInfo> epsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList;
-		List<OCLHKHAMDHF_Episode.JEHNEEBBDBO_EpisodeInfo> epsSave = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList;
+		List<HMGPODKEFBA_EpisodeInfo> epsDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList;
+		List<OCLHKHAMDHF_Episode.JEHNEEBBDBO_EpisodeInfo> epsSave = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList;
 		for(int i = 0; i < epsDb.Count; i++)
 		{
 			if (epsDb[i].PPEGAKEIEGM_Enabled == 2)

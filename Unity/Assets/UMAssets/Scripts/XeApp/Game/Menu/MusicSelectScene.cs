@@ -67,9 +67,9 @@ namespace XeApp.Game.Menu
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnPreSetCanvas !SelectUnitDanceFocus");
 			}
 			SetupViewMusicData();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 0)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 0)
 			{
-				NKGJPJPHLIF.DPCCNOCAHGC = false;
+				NKGJPJPHLIF_SakashoManager.DPCCNOCAHGC = false;
 			}
 			this.StartCoroutineWatched(Co_SetupBg());
 			//bool changeUi = true;
@@ -200,9 +200,9 @@ namespace XeApp.Game.Menu
 		{
 			//0xF3526C
 			m_isInitialized = false;
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 1)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("server_time_auto_update", 0) > 1)
 			{
-				NKGJPJPHLIF.DPCCNOCAHGC = true;
+				NKGJPJPHLIF_SakashoManager.DPCCNOCAHGC = true;
 			}
 			bool isError = false;
 			yield return Co.R(MenuScene.Instance.LobbyButtonControl.Co_CheckNewMark(() => {
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 			while(!m_isEndRaidLobbyRequest)
 				yield return null;
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score/*4*/, 0, () => {
+			JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score/*4*/, 0, () => {
 				//0x1685C50
 				m_isEndMyRankRequest = true;
 			}, () => {
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			m_musicInfo.MakeCache();
 			m_cdSelect.MakeCache();
 			m_sliveButton.SetOptionStyle(m_isSimulationLive ? MusicSelectSLiveButton.Style.SimulationLive : MusicSelectSLiveButton.Style.BasicLive);
-			m_sliveButton.SetUnlockRank(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5));
+			m_sliveButton.SetUnlockRank(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5));
 			MessageBank menuBank = MessageManager.Instance.GetBank("menu");
 			m_musicInfo.SetNoInfoMessage(menuBank.GetMessageByLabel("music_not_exist_text_00"), menuBank.GetMessageByLabel("music_not_exist_line6_text_00"));
 			ApplyBasicInfo();
@@ -281,11 +281,11 @@ namespace XeApp.Game.Menu
 			ApplyMusicInfo();
 			ApplyEventInfo();
 			m_sliveItem.ItemIconHide();
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.IGIFMNJADEC_MvTicket/*16*/,1), (IiconTexture image) => {
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.IGIFMNJADEC_MvTicket/*16*/,1), (IiconTexture image) => {
 				//0x1685CE0
 				m_sliveItem.SetIcon(image);
 			});
-			m_sliveItem.SetCount(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
+			m_sliveItem.SetCount(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
 			MenuScene.Instance.FooterMenu.NotSelectButtonAll();
 			MenuScene.Instance.FooterMenu.SelectedButton(MenuButtonAnim.ButtonType.LIVE);
 			Database.Instance.bonusData.ClearEpisodeBonus();
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 		protected override void SetupViewMusicData()
 		{
 			m_originalMusicDataList.Clear();
-			long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long val = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 1; i < 7; i++)
 			{
 				List<IBJAKJJICBC> viewList = IBJAKJJICBC.FKDIMODKKJD_GetList(i, val, false, false, false, false);
@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 			m_eventId = 0;
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
-			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby/*13*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_NetEventRaidLobbyController d = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby/*13*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			//bool b = false; used in one todologger later
 			if(d == null)
 			{
@@ -372,10 +372,10 @@ namespace XeApp.Game.Menu
 				//b = true;
 				if(d.AKNOOLKMEGJ())
 				{
-					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
+					m_eventTicketId = NKOBMDPHNGP_NetEventRaidLobbyController.ADPMLOEOAFD_GetTicketId();
 				}
 			}
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
+			m_eventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
 			if(m_eventCtrl == null)
 			{
 				if(m_eventBanner != null)
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/);
+			m_scoreEventCtrl = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/);
 			if(m_scoreEventCtrl != null)
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "init score event music");

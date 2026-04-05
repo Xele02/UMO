@@ -746,7 +746,7 @@ namespace XeApp.Game.Menu
 			bool finishWait = true;
 			if(!enable)
 			{
-				NMFABEKNBKJ.HHCJCDFCLOB.MDJNLBOLPNJ_BlockFCM(() =>
+				NMFABEKNBKJ_NetPushNotificationManager.HHCJCDFCLOB_Instance.MDJNLBOLPNJ_BlockFCM(() =>
 				{
 					//0x1B5D420
 					finishWait = false;
@@ -754,7 +754,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				NMFABEKNBKJ.HHCJCDFCLOB.FCDDHHKAGEP_Request(() =>
+				NMFABEKNBKJ_NetPushNotificationManager.HHCJCDFCLOB_Instance.FCDDHHKAGEP_Request(() =>
 				{
 					//0x1B5D414
 					finishWait = false;
@@ -773,7 +773,7 @@ namespace XeApp.Game.Menu
 		{
 			if (Notification.PIPOIELPKBP_DecoReceive == 1)
 				return;
-			EOHDAOAJOHH.HHCJCDFCLOB.NINPDKEKNEG();
+			EOHDAOAJOHH.HHCJCDFCLOB_Instance.NINPDKEKNEG();
 		}
 
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C

@@ -17,18 +17,18 @@ public class CGJKNOCAPII
 	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x38
 	public string BHANMJKCCBC_BadgeText; // 0x3C
 	public int PKNLMLDKCLM_AchievedQuestCount; // 0x40
-	public IKDICBBFBMI_EventBase COAMJFMEIBF; // 0x44
+	public IKDICBBFBMI_NetEventBaseController COAMJFMEIBF; // 0x44
 	public BKANGIKIEML.NODKLJHEAJB_ChallengeType NNHHNFFLCFO; // 0x48
 	public long BALFPCLMOGJ; // 0x50
 
 	//// RVA: 0x12BC47C Offset: 0x12BC47C VA: 0x12BC47C
 	public int KJILFMNCDLC()
 	{
-		return (int)(PCCFAKEOBIC_EndTime - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+		return (int)(PCCFAKEOBIC_EndTime - NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 	}
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
-	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_EventBase FBFNJMKPBBA, bool PNGKOHDEPFE/* = true*/)
+	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_NetEventBaseController FBFNJMKPBBA, bool PNGKOHDEPFE/* = true*/)
 	{
 		long l1 = 0;
 		long l2 = 0;
@@ -54,9 +54,9 @@ public class CGJKNOCAPII
 		}
 		res.PNFDMBHDPAJ_IsRewardOnly = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod/*5*/;
 		res.BCOKKAALGHC_Group = 0;
-		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
+		if(FBFNJMKPBBA is KNKDBNFMAKF_NetEventSpController)
 		{
-			KNKDBNFMAKF_EventSp ev = FBFNJMKPBBA as KNKDBNFMAKF_EventSp;
+			KNKDBNFMAKF_NetEventSpController ev = FBFNJMKPBBA as KNKDBNFMAKF_NetEventSpController;
 			res.BCOKKAALGHC_Group = ev.MEDEJHKNAFG_GetCurrentMissionGroup(out l1, out l2, out l3, out l4, out b1);
 			res.JHAOHBNPMNA_EventId = ev.CBEACDJOIBO_GetIconTextureId(BCOKKAALGHC_Group);
 			res.LFCOJABLOEN_EventId = ev.JLLGJIIHFJO_GetTitleTextureId(BCOKKAALGHC_Group);
@@ -90,10 +90,10 @@ public class CGJKNOCAPII
 	{
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
 		List<CGJKNOCAPII> l2 = new List<CGJKNOCAPII>();
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		for(int i = 0; i < JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Count; i++)
 		{
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+			IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN[i];
 			ev.HCDGELDHFHB_UpdateStatus(time);
 			if(ev.KKFEDJNIAAG(time) && ev.AGLILDLEFDK_Missions != null)
 			{
@@ -102,13 +102,13 @@ public class CGJKNOCAPII
 					if(time < ev.AGLILDLEFDK_Missions[0].KJBGCLPMLCG_OpenedAt)
 						continue;
 				}
-				if(ev is PKNOKJNLPOE_EventRaid)
+				if(ev is PKNOKJNLPOE_NetEventRaidController)
 				{
-					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
+					NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController JPAEDJJFFOI) =>
 					{
 						//0x12BD8F4
 						return JPAEDJJFFOI.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby;
-					}) as NKOBMDPHNGP_EventRaidLobby;
+					}) as NKOBMDPHNGP_NetEventRaidLobbyController;
 					if(evLobby != null && evLobby.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE_Step.EGIOFFACHCP_4 && 
 						evLobby.ILCPALOKKHC_GetStep() != JKOHBJPCAJL.CNNCBDKIPGE_Step.ECKNIOGBKJO_2)
 						continue;
@@ -157,10 +157,10 @@ public class CGJKNOCAPII
 		res.JOPOPMLFINI_QuestName = "";
 		res.DGCOMDILAKM_EventName = "";
 		res.PGIIDPEGGPI_EventId = _APFDNBGMMMM_BingoId;
-		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
-		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
+		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB_Instance.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
+		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB_Instance.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
 		res.COAMJFMEIBF = null;
-		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(_APFDNBGMMMM_BingoId);
+		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB_Instance.EBEDAPJFHCE_GetBingo(_APFDNBGMMMM_BingoId);
 		res.KINJOEIAHFK_StartTime = bingo.PDBPFJJCADD_open_at;
 		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB_ChallengeType.BPNDHDHHKGE_38_Bingo/*38*/;
 		res.BEEIIJJKDBH_BadgeConstantId = 0;
@@ -169,18 +169,18 @@ public class CGJKNOCAPII
 		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
-			res.PKNLMLDKCLM_AchievedQuestCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved);
+			res.PKNLMLDKCLM_AchievedQuestCount = GNGMCIAIKMA.HHCJCDFCLOB_Instance.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved);
 			if(res.PKNLMLDKCLM_AchievedQuestCount > 0)
 			{
 				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuestCount);
 			}
 		}
 		res.BALFPCLMOGJ = 0;
-		if(!GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(_APFDNBGMMMM_BingoId))
+		if(!GNGMCIAIKMA.HHCJCDFCLOB_Instance.DOEGBMNNFKH(_APFDNBGMMMM_BingoId))
 		{
-			if(!GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(_APFDNBGMMMM_BingoId))
+			if(!GNGMCIAIKMA.HHCJCDFCLOB_Instance.DHPLHALIDHH(_APFDNBGMMMM_BingoId))
 			{
-				res.BALFPCLMOGJ = GNGMCIAIKMA.HHCJCDFCLOB.GKDBBGIEPLC(_APFDNBGMMMM_BingoId);
+				res.BALFPCLMOGJ = GNGMCIAIKMA.HHCJCDFCLOB_Instance.GKDBBGIEPLC(_APFDNBGMMMM_BingoId);
 			}
 		}
 		return res;
@@ -190,11 +190,11 @@ public class CGJKNOCAPII
 	public static List<CGJKNOCAPII> GOGBAODOOAO(bool PNGKOHDEPFE/* = true*/)
 	{
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
-		if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+		if(GNGMCIAIKMA.HHCJCDFCLOB_Instance != null)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			GNGMCIAIKMA.HHCJCDFCLOB.KIAAOBFJCHP(time);
-			List<int> bingos = GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos(time);
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			GNGMCIAIKMA.HHCJCDFCLOB_Instance.KIAAOBFJCHP(time);
+			List<int> bingos = GNGMCIAIKMA.HHCJCDFCLOB_Instance.CNADOFDDNLO_GetActiveBingos(time);
 			for(int i = 0; i < bingos.Count; i++)
 			{
 				CGJKNOCAPII data = new CGJKNOCAPII();

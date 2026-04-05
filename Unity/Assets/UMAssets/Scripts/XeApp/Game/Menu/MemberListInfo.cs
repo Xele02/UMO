@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private IiconTexture SceneIconTexture; // 0x1C
 		private bool isDivaLoad; // 0x20
 		private bool isSceneLoad; // 0x21
-		private NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO m_lobbyData; // 0x24
+		private NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO m_lobbyData; // 0x24
 		public int playerId; // 0x28
 		public int playerRank; // 0x2C
 		public long lastLogin; // 0x30
@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 
 		// public IiconTexture DivaTexture { get; } 0xEC1598
 		// public IiconTexture SceneTexture { get; } 0xEC15A0
-		public NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO LobbyData { get { return m_lobbyData; } private set { m_lobbyData = value; } } //0xEC15A8 0xEC15B0
+		public NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO LobbyData { get { return m_lobbyData; } private set { m_lobbyData = value; } } //0xEC15A8 0xEC15B0
 
 		// RVA: 0xEC15B8 Offset: 0xEC15B8 VA: 0xEC15B8
 		public MemberListInfo(short titleIndex, bool isAvailable, EAJCBFGKKFA_FriendInfo fri)
@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 			lastLogin = fri.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin;
 			musicRatio = fri.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
-			m_lobbyData = fri.PCEGKKLKFNO_FriendData as NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO;
+			m_lobbyData = fri.PCEGKKLKFNO_FriendData as NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO;
 			if(fri.JIGONEMPPNP_Diva != null)
 			{
 				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC1F6C Offset: 0xEC1F6C VA: 0xEC1F6C
 		public string GetBelongsGroupName()
 		{
-			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_NetEventRaidLobbyController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			int a, b;
 			ev.LHIIGAMEABL_GetGroupAndRoomIds(m_lobbyData, out a, out b);

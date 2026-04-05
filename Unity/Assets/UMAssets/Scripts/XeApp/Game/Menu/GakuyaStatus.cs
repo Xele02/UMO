@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 		public void UpdateDivaRanking(FFHPBEPOMAK_DivaInfo divaData, Action<LAMCONGFONF.OJFOLGKMBIG> success, Action error)
 		{
 			SetDivaRankingInvalid();
-			LAMCONGFONF rankingManager = LAMCONGFONF.HHCJCDFCLOB;
+			LAMCONGFONF rankingManager = LAMCONGFONF.HHCJCDFCLOB_Instance;
 			rankingManager.HDAMBNOFGAN(divaData.AHHJLDLAPAN_DivaId - 1, false);
 			rankingManager.HEOKADCEAGL_GetRanks(divaData.AHHJLDLAPAN_DivaId - 1, false, () =>
 			{
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB83A74 Offset: 0xB83A74 VA: 0xB83A74
 		private int GetDivaBaseTotalStatus(FFHPBEPOMAK_DivaInfo divaData)
 		{
-			BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[divaData.AHHJLDLAPAN_DivaId - 1];
+			BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[divaData.AHHJLDLAPAN_DivaId - 1];
 			EPPOHFLMDBC_DivaStats s = d.CMCKNKKCNDK_status[divaData.CIEOBFIIPLD_Level];
 			return s.PFJCOCPKABN_Soul + s.JFJDLEMNKFE_Vocal + s.GDOLPGBLMEA_Charm;
 		}
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			foreach(var k in l)
 			{
 				total++;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_costume.JPIDIENBGKH_CostumeId);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cinfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_Find(k.AHHJLDLAPAN_DivaId, k.FFKMJNHFFFL_costume.JPIDIENBGKH_CostumeId);
 				if (k.JLKPGDEKPEO_IsHave)
 					cnt++;
 				short[] tcols = cinfo.CHDBGFLFPNC_GetAllAvaiableColors();

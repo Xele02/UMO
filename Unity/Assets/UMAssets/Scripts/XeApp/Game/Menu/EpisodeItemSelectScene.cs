@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputEnable();
 						m_data.AFGOBPPKFBF();
 						m_item_select.Init(m_data);
-						m_reward_get_window.Show(ref m_data, point, CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE, (PopupButton.ButtonLabel label) =>
+						m_reward_get_window.Show(ref m_data, point, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.EBEGGFECPOE, (PopupButton.ButtonLabel label) =>
 						{
 							//0xEF88BC
 							m_item_select.Init(m_data);

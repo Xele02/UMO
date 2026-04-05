@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_serifId != 0)
 			{
-				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[m_serifId - 1];
+				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP it = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[m_serifId - 1];
 				if(it == null)
 					return;
 				m_fontSizeId = it.LDLGLHBGOKE_FontSize;

@@ -19,9 +19,9 @@ namespace XeApp.Game.Menu
 		public void SetStatus(int itemId, bool isPresentBox, int count/* = 0*/, string content/* = null*/)
 		{
 			if(count == 0)
-				m_ItemName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId);
+				m_ItemName.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId);
 			else
-				m_ItemName.text = string.Format(JpStringLiterals.StringLiteral_15697, EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId), count, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId)));
+				m_ItemName.text = string.Format(JpStringLiterals.StringLiteral_15697, EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId), count, EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId)));
 			m_ItemContent.text = content;
 			m_layoutTable.StartChildrenAnimGoStop(content == null ? "01" : "02");
 			m_queGetFnt.StartChildrenAnimGoStop(isPresentBox ? "02" : "01");

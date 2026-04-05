@@ -139,7 +139,7 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				BKPAPCMJKHE_Shop shopDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
+				BKPAPCMJKHE_Shop shopDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
 				for(int i = 0; i < shopDb.MHKCPJDNJKI_products.Count; i++)
 				{
 					string str = POFDDFCGEGP_Underscore + (i + 1).ToString();

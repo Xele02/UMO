@@ -285,7 +285,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if (index > -1)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 				if(index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if(index >= 0)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 				if (index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;
@@ -373,7 +373,7 @@ namespace XeApp.Game.Menu
 					isFeed = scenes[index].MCCIFLKCNKO_Feed;
 				}
 			}
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeBundlePath(m_strBuilder, sceneId, evolveId, baseRare, version, isFeed).ToString());
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(MakeBundlePath(m_strBuilder, sceneId, evolveId, baseRare, version, isFeed).ToString());
 		}
 
 		// // RVA: 0x13715E0 Offset: 0x13715E0 VA: 0x13715E0

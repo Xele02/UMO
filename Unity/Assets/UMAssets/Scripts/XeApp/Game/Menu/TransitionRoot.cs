@@ -635,7 +635,7 @@ namespace XeApp.Game.Menu
 			private void SetupPrefabSwitchTable()
 			{
 				prefabSwitchTable.Clear();
-				PEBFNABDJDI_System p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System;
+				PEBFNABDJDI_System p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System;
 				for(int i = 0; i < assetBundleNames.Length; i++)
 				{
 					if(p.LMBIOEDHNHB_SceneSwitch.ContainsKey(assetBundleNames[i].prefabName))
@@ -770,13 +770,13 @@ namespace XeApp.Game.Menu
 				bool isSaveError = false;
 				if(m_isRequestSave)
 				{
-					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() => {
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() => {
 						//0xA3D568
-						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+						JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 					}, () => {
 						//0xA3D7AC
-						JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
-						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+						JDDGPJDKHNE.HHCJCDFCLOB_Instance.FOKEGEOKGDG();
+						JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 						MenuScene.Instance.GotoTitle();
 						isSaveError = true;
 					}, null);
@@ -905,7 +905,7 @@ namespace XeApp.Game.Menu
 					_.Release();
 				});
 				m_newMarkIconList.Clear();
-				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
+				while(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.KONHMOLMOCI_IsSaving)
 					yield return null;
 				if(isSaveError)
 				{
@@ -1222,25 +1222,25 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.LiveMode, b);
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Gacha, false);
 				bool isNew = false;
-				if(NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies == 0 || !c)
+				if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.AFJEOKGBCNA_NumReplies == 0 || !c)
 				{
 					isNew = true;
-					if(!AODFBGCCBPE.PLKKMHBFDCJ())
+					if(!AODFBGCCBPE_ViewShopData.PLKKMHBFDCJ())
 					{
 						isNew = DKKPBBBDKMJ.CADENLBDAEB_IsNew();
 					}
 				}
 				else
 				{
-					isNew = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 || !c;
+					isNew = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.AFJEOKGBCNA_NumReplies > 0 || !c;
 				}
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Home, false);
 				if (nextTransition == TransitionList.Type.OFFER_RESULT || prevTransition == TransitionList.Type.OFFER_SELECT)
 					return;
-				bool d = KDHGBOOECKC.HHCJCDFCLOB.PPPLNJCFAID();
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-				KDHGBOOECKC.HHCJCDFCLOB.JPNPPIHOJFC(time);
+				bool d = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.PPPLNJCFAID();
+				long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.JPNPPIHOJFC(time);
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.VOP, nextTransition != TransitionList.Type.OFFER_SELECT && d);
 				MenuScene.Instance.FooterMenu.SetOfferUnlockRank();
 			}
@@ -1997,7 +1997,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition35:
 					if(m_transitionName == TransitionList.Type.TEAM_SELECT || m_transitionName == TransitionList.Type.TEAM_EDIT)
 					{
-						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
+						if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
 						{
 							return !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.ODKIHPBEOEC_IsTrue(2);
 						}
@@ -2021,7 +2021,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition38:
 					return m_transitionName == TransitionList.Type.SCENE_GROWTH;
 				case TutorialConditionId.Condition40:
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
+					if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
 						return false;
 					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
 				case TutorialConditionId.Condition42:
@@ -2032,7 +2032,7 @@ namespace XeApp.Game.Menu
 							if ((m_args as TeamEditSceneArgs).IsFromBeginner)
 								return false;
 						}
-						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_stat < 2)
+						if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_stat < 2)
 						{
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList.Count; i++)
@@ -2055,9 +2055,9 @@ namespace XeApp.Game.Menu
 						{
 
 							AEKDNMPPOJN data = new AEKDNMPPOJN();
-							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
+							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
 							data.KHEKNNFCAOI_Init(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
-								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
+								scene.PKNGPIFNIGN(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
 							if (data.LJHOOPJACPI_LeafMax > 0)
 								return true;
 						}
@@ -2066,7 +2066,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition48:
 					if(m_transitionName == TransitionList.Type.MUSIC_SELECT)
 					{
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+						return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("mv_player_level", 5) <= CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 					}
 					break;
 				case TutorialConditionId.Condition49:
@@ -2087,7 +2087,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition65:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
 					{
-						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
+						return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
 					}
 					break;
 				}

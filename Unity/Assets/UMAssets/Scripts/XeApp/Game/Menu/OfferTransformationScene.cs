@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private bool IsAssetLoaded; // 0x84
 		private bool m_IsSortie; // 0x85
 		private int platoonId; // 0x88
-		private KDHGBOOECKC.JNHGHDKLDEM m_transFormationData; // 0x8C
+		private KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM m_transFormationData; // 0x8C
 		private OfferSortCamAnimController cameraAnim; // 0x90
 		private bool m_IsTutorial; // 0x94
 		private int form; // 0x98
@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1714278 Offset: 0x1714278 VA: 0x1714278
 		private void Start()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18944);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18944);
 		}
 
 		// RVA: 0x1714324 Offset: 0x1714324 VA: 0x1714324
@@ -205,9 +205,9 @@ namespace XeApp.Game.Menu
 							if (form > 2)
 								form -= 3;
 							m_InfoLayout.StartChengeEnemyPower(platoonId, false, form, true);
-							BOPFPIHGJMD.ADMNKELOLPN a1 = KDHGBOOECKC.HHCJCDFCLOB.KJGAJBOBIHK(m_offerInfo.FGHGMHPNEMG_Type, m_offerInfo.PPFNGGCBJKC_id);
-							m_layout.SettingText(KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL((FKGMGBHBNOC.HPJOCKGKNCC_Form)form, a1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) * KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) / 100,
-								KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL((FKGMGBHBNOC.HPJOCKGKNCC_Form)form, a1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) * KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) / 100);
+							BOPFPIHGJMD.ADMNKELOLPN a1 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KJGAJBOBIHK(m_offerInfo.FGHGMHPNEMG_Type, m_offerInfo.PPFNGGCBJKC_id);
+							m_layout.SettingText(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KGLLKKCFDEL((FKGMGBHBNOC.HPJOCKGKNCC_Form)form, a1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) * KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk) / 100,
+								KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.KGLLKKCFDEL((FKGMGBHBNOC.HPJOCKGKNCC_Form)form, a1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) * KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit) / 100);
 							m_layout.SetTransformation(form);
 							m_layout.LowPowerIconEnable(platoonId, form);
 							m_viewValkyrie.ChangeFormType(form, true);
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17152A4 Offset: 0x17152A4 VA: 0x17152A4
 		private void AnimationStart()
 		{
-			if (PGIGNJDPCAH.MNANNMDBHMP(() =>
+			if (PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 			{
 				//0x1716E30
 				MenuScene.Instance.GotoLoginBonus();
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			MenuScene.Instance.InputDisable();
-			PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5);
+			PGIGNJDPCAH_UpdateChecker.NNOBACMJHDM(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.LPBDIINNFEE_5);
 			m_InfoLayout.Leave();
 			m_layout.Leave();
 			m_touchLeadLayout.Leave();
@@ -250,15 +250,15 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.HeaderMenu.MenuStack.LeaveBackButton(false);
 			MenuScene.Instance.HeaderMenu.MenuStack.LeaveLabel(false);
 			MenuScene.Instance.HelpButton.TryHide(TransitionList.Type.OFFER_SELECT);
-			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			if(KDHGBOOECKC.HHCJCDFCLOB != null)
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.NFNLGGHMEAM();
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = true;
+			if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance != null)
 			{
-				KDHGBOOECKC.HHCJCDFCLOB.NKHGLFOBOJD(KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ().FGHGMHPNEMG_Type, KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ().MLDPDLPHJPM_OfferId, platoonId, form);
-				ILCCJNDFFOB.HHCJCDFCLOB.OEGCKACJMPM_VopOrders(KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ().FGHGMHPNEMG_Type, KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ().MLDPDLPHJPM_OfferId);
+				KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.NKHGLFOBOJD(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CNNICINEKBJ().FGHGMHPNEMG_Type, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CNNICINEKBJ().MLDPDLPHJPM_OfferId, platoonId, form);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.OEGCKACJMPM_VopOrders(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CNNICINEKBJ().FGHGMHPNEMG_Type, KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CNNICINEKBJ().MLDPDLPHJPM_OfferId);
 			}
-			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer != null)
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend, true);
+			if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer != null)
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.ILMPHFPFLJE_SetTutoStatus(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend, true);
 			this.StartCoroutineWatched(Animation());
 		}
 
@@ -268,16 +268,16 @@ namespace XeApp.Game.Menu
 		{
 			//0x1718074
 			bool IsSaveing = true;
-			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 			{
 				//0x171713C
-				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 				IsSaveing = false;
 			}, () =>
 			{
 				//0x1716F68
-				JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
-				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				JDDGPJDKHNE.HHCJCDFCLOB_Instance.FOKEGEOKGDG();
+				JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 				SoundManager.Instance.sePlayerMenu.Stop();
 				MenuScene.Instance.GotoTitle();
 			}, null);
@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 		{
 			string bundleName; // 0x18
 			XeSys.FontInfo systemFont; // 0x1C
-			KDLPEDBKMID install; // 0x20
+			KDLPEDBKMID_NetDelayInstaller install; // 0x20
 			bool InstallCheck; // 0x24
 
 			//0x17172AC
@@ -357,11 +357,11 @@ namespace XeApp.Game.Menu
 				yield return null;
 			while (!m_pilotCutIn.IsLoaded())
 				yield return null;
-			KDHGBOOECKC.NKMCJCAJIGD d1 = KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ();
-			KDHGBOOECKC.JNHGHDKLDEM d = new KDHGBOOECKC.JNHGHDKLDEM();
+			KDHGBOOECKC_NetOfferManager.NKMCJCAJIGD d1 = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CNNICINEKBJ();
+			KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM d = new KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM();
 			m_transFormationData = d.JGJOAFJPIIH(d1.FGHGMHPNEMG_Type, d1.MLDPDLPHJPM_OfferId);
-			m_transFormationData.FMHLGHDKJBC_Atk = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk);
-			m_transFormationData.JIOPJDJBLFK_Hit = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit);
+			m_transFormationData.FMHLGHDKJBC_Atk = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0_Atk);
+			m_transFormationData.JIOPJDJBLFK_Hit = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1_Hit);
 			m_layout.initialize(m_transFormationData, m_offerInfo, platoonId);
 			m_layout.SetSortieCallback(() =>
 			{
@@ -380,7 +380,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			while (!m_IsLoadEffect)
 				yield return null;
-			install = KDLPEDBKMID.HHCJCDFCLOB;
+			install = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance;
 			InstallCheck = false;
 			InstallCheck = install.BDOFDNICMLC_StartInstallIfNeeded(AssetPath);
 			install.OFLDICKPNFD(true, () =>
@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_Tuto()
 		{
 			//0x17199BC
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend))
+			if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.HFKNIAGOFKC_1_OfferSend))
 			{
 				m_IsTutorial = true;
 				yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.Delegate, null, () =>

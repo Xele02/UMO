@@ -196,10 +196,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18B4644 Offset: 0x18B4644 VA: 0x18B4644
-		public void SettingExchange(FJGOKILCBJA item, DecorationDecorator.TabType tab, LayoutDecorationWindow01.SelectItemType type, LayoutDecorationWindow01 window)
+		public void SettingExchange(FJGOKILCBJA_ViewShopProductData item, DecorationDecorator.TabType tab, LayoutDecorationWindow01.SelectItemType type, LayoutDecorationWindow01 window)
 		{
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-			k.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemId));
+			k.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemId), EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemId));
 			Setting(k, 0, false, tab, type, window);
 			IsNew = false;
 			if(m_newIcon != null)
@@ -210,15 +210,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18B43F0 Offset: 0x18B43F0 VA: 0x18B43F0
 		private int MakeSubid(KDKFHGHGFEK item, DecorationDecorator.TabType tab, LayoutDecorationWindow01.SelectItemType type)
 		{
-			if(item.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg && tab >= DecorationDecorator.TabType.BgSet && tab <= DecorationDecorator.TabType.BgFloor)
+			if(item.NPADACLCNAN_Category == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg && tab >= DecorationDecorator.TabType.BgSet && tab <= DecorationDecorator.TabType.BgFloor)
 			{
 				return new int[4] { 0, 2, 3, 1 } [(int)tab - 15];
 			}
-			if(item.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster)
+			if(item.NPADACLCNAN_Category != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster)
 			{
-				if(item.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
+				if(item.NPADACLCNAN_Category != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
 				{
-					if(item.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+					if(item.NPADACLCNAN_Category == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 						return 2;
 					return 0;
 				}
@@ -732,23 +732,23 @@ namespace XeApp.Game.Menu
 		{
 			switch(Data.NPADACLCNAN_Category)
 			{
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
 					return new SelectBgTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
 					return new SelectItemTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
 					return new SelectCharaTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
 					return new SelectSerifTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
 					return new SelectSpTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 					return new SelectPosterTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
 					return new SelectVFFigureTextureLoader();
-				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+				case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 					return new SelectCostumeTorsoTextureLoader();
 			}
 			return null;

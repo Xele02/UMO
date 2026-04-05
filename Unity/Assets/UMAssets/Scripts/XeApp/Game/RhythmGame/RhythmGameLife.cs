@@ -31,10 +31,10 @@ namespace XeApp.Game.RhythmGame
 			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId;
 			Difficulty.Type diff = Database.Instance.gameSetup.musicInfo.difficultyType;
 			bool isLine6 = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
-			KLBKPANJCPL_Score score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, isLine6, true);
-			badDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GOLHPPFLJNF(score.ANAJIAENLNB_lv, isLine6);
-			missDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AOGJFPLIOGB(score.ANAJIAENLNB_lv, isLine6);
-			healNotesValue = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AFDONIMNHEJ(score.ANAJIAENLNB_lv, isLine6);
+			KLBKPANJCPL_Score score = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, isLine6, true);
+			badDamage = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.GOLHPPFLJNF(score.ANAJIAENLNB_lv, isLine6);
+			missDamage = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.AOGJFPLIOGB(score.ANAJIAENLNB_lv, isLine6);
+			healNotesValue = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.AFDONIMNHEJ(score.ANAJIAENLNB_lv, isLine6);
 			isInvincibleModeMV = false;
 			this.max = max;
 			isLiveSkip = a_is_liveskip;

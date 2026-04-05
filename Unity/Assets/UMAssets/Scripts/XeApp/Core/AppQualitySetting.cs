@@ -84,7 +84,7 @@ namespace XeApp.Core
 		// // RVA: 0xE0E6C8 Offset: 0xE0E6C8 VA: 0xE0E6C8
 		public static int Get3DModeFromMaster(DeviceSpec spec)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.GAGDEIMGBBG((int)spec);
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.GAGDEIMGBBG((int)spec);
 		}
 
 		// // RVA: 0xE0E7AC Offset: 0xE0E7AC VA: 0xE0E7AC

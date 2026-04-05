@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 						//0x142EB30
 						_.IsInputOff = true;
 					});
-					NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["utapass_site"], () =>
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["utapass_site"], () =>
 					{
 						//0x142E95C
 						_buttonList.ForEach((ButtonBase _) =>

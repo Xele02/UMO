@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_anim_first; // 0x30
 		private AbsoluteLayout m_anim_privacy_contract_btn; // 0x34
 		private LayoutUGUIRuntime m_runtime; // 0x38
-		private NHPDPKHMFEP.GGNEBJEIFCP_Plan m_plan; // 0x3C
+		private NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan m_plan; // 0x3C
 
 		// RVA: 0xDECE30 Offset: 0xDECE30 VA: 0xDECE30 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -28,14 +28,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xDED010 Offset: 0xDED010 VA: 0xDED010
-		public void Initialize(bool a_is_first, NHPDPKHMFEP.GGNEBJEIFCP_Plan a_plan)
+		public void Initialize(bool a_is_first, NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan a_plan)
 		{
 			m_plan = a_plan;
-			if(a_plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp)
+			if(a_plan == NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp)
 			{
 				m_anim_first.StartChildrenAnimGoStop(a_is_first ? "03" : "04");
 			}
-			else if (a_plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal)
+			else if (a_plan == NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal)
 			{
 				m_anim_first.StartChildrenAnimGoStop(a_is_first ? "01" : "02");
 			}
@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		private void OnPushBtnBonus()
 		{
 			if (m_cb_bonus != null)
-				m_cb_bonus(m_plan == NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp);
+				m_cb_bonus(m_plan == NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp);
 		}
 	}
 }

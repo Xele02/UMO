@@ -224,12 +224,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD01DF8 Offset: 0xD01DF8 VA: 0xD01DF8
 		private IEnumerator ShowFoldRadarAnim()
 		{
-			NKOBMDPHNGP_EventRaidLobby lobbyController; // 0x18
+			NKOBMDPHNGP_NetEventRaidLobbyController lobbyController; // 0x18
 			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x1C
 			FontInfo fontInfo; // 0x20
 
 			//0xD02B88
-			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			lobbyController = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			if(lobbyController == null)
 				yield break;
 			if(lobbyController.FDGMLPLCALF != 0)
@@ -291,9 +291,9 @@ namespace XeApp.Game.Menu
 			{
 				if (conditionId == TutorialConditionId.Condition8)
 				{
-					if (JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendData != null)
+					if (JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NHPGGBCKLHC_FriendData != null)
 					{
-						if (JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
+						if (JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NHPGGBCKLHC_FriendData.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state != IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend)
 						{
 							return ILLPDLODANB.BFLCENAJOEN(ILLPDLODANB.LOEGALDKHPL_ValueType.OECOMFPCPAI_52_DebutMissionDone/*52*/) == 3;
 						}

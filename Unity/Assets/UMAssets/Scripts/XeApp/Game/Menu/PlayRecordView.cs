@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDE33F0 Offset: 0xDE33F0 VA: 0xDE33F0
 		private void Setup_Costume(BBHNACPENDM_ServerSaveData a_player_data)
 		{
-			LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+			LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 			int[] m_costume_max_array = new int[11];
 			int[] m_costume_color_max_array = new int[11];
 			int[] m_costume_upgrade_max_array = new int[11];

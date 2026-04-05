@@ -35,8 +35,8 @@ public class NIHHKCDHLNH
 	// // RVA: 0x18A0774 Offset: 0x18A0774 VA: 0x18A0774
 	public void KHEKNNFCAOI_Init(int _MHFBCINOJEE_Num)
     {
-        PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.EEOADCECNOM_GetCostume(_MHFBCINOJEE_Num);
-        EGOLBAPFHHD_Common.PGENIOHDCDI saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(_MHFBCINOJEE_Num);
+        PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.EEOADCECNOM_GetCostume(_MHFBCINOJEE_Num);
+        EGOLBAPFHHD_Common.PGENIOHDCDI saveItem = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(_MHFBCINOJEE_Num);
         MessageBank bk = MessageManager.Instance.GetBank("master");
         StringBuilder str = new StringBuilder(32);
         str.SetFormat("cs_i_nm_{0:D4}", _MHFBCINOJEE_Num);
@@ -49,17 +49,17 @@ public class NIHHKCDHLNH
         GLBEAENLHKC_Count = 9999;
         IILKAJBHLMJ_Value = item.JBGEEPFKIGG_val;
         PBPOLELIPJI_Id = _MHFBCINOJEE_Num;
-        INFIBMLIHLO_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, _MHFBCINOJEE_Num);
+        INFIBMLIHLO_ItemId = EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, _MHFBCINOJEE_Num);
     }
 
 	// RVA: 0x18A0B94 Offset: 0x18A0B94 VA: 0x18A0B94
 	public static List<NIHHKCDHLNH> FKDIMODKKJD_GetList(int _AHHJLDLAPAN_DivaId)
     {
-        int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount();;
+        int cnt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount();;
         List<NIHHKCDHLNH> res = new List<NIHHKCDHLNH>(cnt);
         for(int i = 0; i < cnt; i++)
         {
-            PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
+            PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
             if(item.FDBOPFEOENF_diva == 0)
             {
                 if(item.INDDJNMPONH_type == 1)

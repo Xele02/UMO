@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16E8E3C Offset: 0x16E8E3C VA: 0x16E8E3C
 		public void Load(int cosId, int colorId, Action<IiconTexture> callBack)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
 			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_DivaId, costume.DAJGPBLEEOB_ModelId, colorId), callBack);
 		}
 
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16E8FD0 Offset: 0x16E8FD0 VA: 0x16E8FD0
 		public void TryInstallCostume(int divaId, int modelId, int colorId)
 		{
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeCostumeTexturePath(divaId, modelId, colorId));
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(MakeCostumeTexturePath(divaId, modelId, colorId));
 		}
 	}
 }

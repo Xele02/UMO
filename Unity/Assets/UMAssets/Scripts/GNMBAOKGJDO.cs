@@ -1,7 +1,10 @@
 using Cryptor;
 using System.Collections;
 
-public class GNMBAOKGJDO
+//namespace XeApp.Game.Net.Security
+[System.Obsolete()]
+public class GNMBAOKGJDO {}
+public class GNMBAOKGJDO_SecureGZFile
 {
 	private const int NNBHLPECAHJ = 1;
 	public bool BIOFMLDLNKD; // 0x8
@@ -24,7 +27,7 @@ public class GNMBAOKGJDO
 	// // RVA: 0x1E59448 Offset: 0x1E59448 VA: 0x1E59448
 	private IEnumerator ODDEPBIJHOE_Coroutine_Load(string _CJEKGLGBIHF_path)
 	{
-		// public GNMBAOKGJDO KIGBLACMODG; // 0x14
+		// public GNMBAOKGJDO_SecureGZFile KIGBLACMODG; // 0x14
 		// private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 		//0x1E5951C
 

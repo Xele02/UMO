@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 		public void SettingValkyrieFormIcon(int from, int offerType, int offerId)
 		{
 			ChengeValkyrieForm(from);
-			KDHGBOOECKC.JNHGHDKLDEM data = new KDHGBOOECKC.JNHGHDKLDEM();
+			KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM data = new KDHGBOOECKC_NetOfferManager.JNHGHDKLDEM();
 			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI_OfferType)offerType, offerId);
 			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH_state.Length; i++)
 			{
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 					//LAB_01851d78
 					if (m_viewCompItem.ItemList[i].itemType == ViewOfferGetItem.ItemType.NOMAL)
 					{
-						yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(0.1f, false, null));
+						yield return Co.R(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.FMGMIKPJNKG_Co_wait(0.1f, false, null));
 					}
 					else
 					{
@@ -403,8 +403,8 @@ namespace XeApp.Game.Menu
 			});
 			RecordPlateUtility.ClearShowedList();
 			GameManager.Instance.InputEnabled = prevInput;
-			while (CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.Count > 0)
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.RemoveAt(0);
+			while (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.Count > 0)
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.FIGHNFKAMGI.RemoveAt(0);
 		}
 
 		// RVA: 0x152FAD0 Offset: 0x152FAD0 VA: 0x152FAD0

@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1719EE4 Offset: 0x1719EE4 VA: 0x1719EE4
 		private void Start()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18949);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.BKLNHBHDDEJ_VopTransition(JpStringLiterals.StringLiteral_18949);
 		}
 
 		// RVA: 0x1719F90 Offset: 0x1719F90 VA: 0x1719F90

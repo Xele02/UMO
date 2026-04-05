@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECE17C Offset: 0xECE17C VA: 0xECE17C
 		public bool IsDownLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// // RVA: 0xECE218 Offset: 0xECE218 VA: 0xECE218
@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
 		public void DoIntroTalk(bool resetTalkFlags/* = false*/)
 		{
-			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime);
+			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PKBOFLOJNIJ_LastLoginTime);
 			DateTime d2 = Utility.GetLocalDateTime(m_loginTime);
 			if(d1.DayOfYear != d2.DayOfYear || resetTalkFlags)
 			{

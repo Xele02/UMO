@@ -10,10 +10,10 @@ namespace XeApp.Game.Menu
 {
 	public class RaidMvpCandidatesArgs : TransitionArgs
 	{
-		public PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo; // 0x8
+		public PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo; // 0x8
 
 		// RVA: 0x1BD460C Offset: 0x1BD460C VA: 0x1BD460C
-		public RaidMvpCandidatesArgs(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ _bossInfo)
+		public RaidMvpCandidatesArgs(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ _bossInfo)
 		{
 			bossInfo = _bossInfo;
 		}
@@ -22,15 +22,15 @@ namespace XeApp.Game.Menu
 	public class RaidMvpCandidates : TransitionRoot
 	{
 		private RaidMvpLayout m_mvpLayout; // 0x48
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ.CALIFIMGGMD> m_rankingList; // 0x4C
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ.CALIFIMGGMD> m_rankingList; // 0x4C
 		private bool m_isInitialized; // 0x50
-		private PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m_boss_info; // 0x54
+		private PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ m_boss_info; // 0x54
 
 		// RVA: 0x1BD23F0 Offset: 0x1BD23F0 VA: 0x1BD23F0
 		private void Start()
 		{
 			m_isInitialized = false;
-			m_rankingList = new List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ.CALIFIMGGMD>();
+			m_rankingList = new List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ.CALIFIMGGMD>();
 			this.StartCoroutineWatched(Co_LoadLayout());
 		}
 
@@ -38,14 +38,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1BD251C Offset: 0x1BD251C VA: 0x1BD251C
 		private IEnumerator Co_Initialize()
 		{
-			PKNOKJNLPOE_EventRaid raidController;
+			PKNOKJNLPOE_NetEventRaidController raidController;
 
 			//0x1BD3294
 			m_isInitialized = false;
 			RaidMvpCandidatesArgs arg = Args as RaidMvpCandidatesArgs;
 			if(arg != null)
 				m_boss_info = arg.bossInfo;
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			if(m_boss_info == null)
 			{
 				m_boss_info = raidController.JIBMOEHKMGB_SelectedBoss;
@@ -125,8 +125,8 @@ namespace XeApp.Game.Menu
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.SCENE;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
-			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid_Result;
+			arg.isFavorite = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_PlayerId);
+			arg.btnType = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_PlayerId ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid_Result;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 

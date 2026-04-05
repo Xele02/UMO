@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 		public void SetStamp(int serifId, int index)
 		{
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
-			k.KHEKNNFCAOI_Init(serifId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
+			k.KHEKNNFCAOI_Init(serifId, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
 			m_serif[showIndexList[index]].SetText(k.DOIGLOBENMG_StampName);
 			m_serif[showIndexList[index]].SetAttrTexture(k.GBJFNGCDKPM_typ);
 			m_serif[showIndexList[index]].SetFontType(k.DBGAJBIBODC_FontType);

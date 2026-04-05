@@ -3,16 +3,21 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use DGDIEDDPNNG_UcItem", true)]
 public class DGDIEDDPNNG { }
+[UMOClass()]
 public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class FCPCMPLGJNP
 	{
 		public int EHOIENNDEDH_IdCrypted; // 0x8
 		public int EAJCFBCHIFB_RarityCrypted; // 0xC
 		public int ICKOHEDLEFP_ValueCrypted; // 0x10
 
+		[UMOMember()]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1984F74 DEMEPMAEJOO_get_id 0x198472C HIGKAIDMOKN_set_id
+		[UMOMember()]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x198500C OEEHBGECGKL_get_Rarity 0x19847C8 GHLMHLJJBIG_set_Rarity
+		[UMOMember()]
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19850A4 OLOCMINKGON_get_val 0x1984864 ABAFHIBFKCE_set_val
 
 		//// RVA: 0x1984ED8 Offset: 0x1984ED8 VA: 0x1984ED8
@@ -21,6 +26,7 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 
 	public const int COJKCBBIOIL = 15;
 	public static int FBGGEFFJJHB_xor = 0xb516d; // 0x0
+	[UMOMember()]
 	public List<FCPCMPLGJNP> CDENCMNHNGA_table = new List<FCPCMPLGJNP>(); // 0x20
 
 	// RVA: 0x1984318 Offset: 0x1984318 VA: 0x1984318

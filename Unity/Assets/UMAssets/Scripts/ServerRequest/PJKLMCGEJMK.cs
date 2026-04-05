@@ -9,10 +9,10 @@ using XeApp;
 public delegate void OEEHODIFBIG(bool _JKDJCFEBDHC_Enabled);
 public delegate void DLMJDDACNLA(IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP, bool PANAGHJOMPO);
 public delegate void EHLCCMEDIOH();
-public delegate void DMADPGMDPHC(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
-public delegate void MFKJNKIKBOP(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
-public delegate void DIDEKBFMOBM(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string _LJGOOOMOMMA_message, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
-public delegate void IHABJNEGMEA(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_status, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
+public delegate void DMADPGMDPHC(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
+public delegate void MFKJNKIKBOP(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
+public delegate void DIDEKBFMOBM(SakashoErrorId KLCMLLLIANB, CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, string _LJGOOOMOMMA_message, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
+public delegate void IHABJNEGMEA(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, int _CMCKNKKCNDK_status, IMCBBOAFION _KLMFJJCNBIP_OnSuccess);
 
 public class INTERNAL_SEVER_ERROR_EXCEPTION : Exception
 {
@@ -25,7 +25,11 @@ public class INTERNAL_SEVER_ERROR_EXCEPTION : Exception
 	public INTERNAL_SEVER_ERROR_EXCEPTION(string message, Exception inner) : base(message, inner) { }
 }
 
-public class PJKLMCGEJMK
+//namespce XeApp.Game.Net.Actions
+
+[System.Obsolete()]
+public class PJKLMCGEJMK {}
+public class PJKLMCGEJMK_NetActionManager
 {
     public enum AHADNLCOPOL_RequestStatus
     {
@@ -65,9 +69,9 @@ public class PJKLMCGEJMK
 	public DLMJDDACNLA OMAGHCDMBBI; // 0x5C
     public OEEHODIFBIG DMPHNPAFHEG; // 0x60
     public bool OLBAIKLLIFE; // 0x64
-    private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x68
+    private List<CACGCMBKHDI_NetBaseAction> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_NetBaseAction>(); // 0x68
     private bool DMGPJMPINFJ; // 0x6C
-    private PJKLMCGEJMK.FPHHIOBKMFD_Updater LCIGLIDJILJ_Updater; // 0x74
+    private PJKLMCGEJMK_NetActionManager.FPHHIOBKMFD_Updater LCIGLIDJILJ_Updater; // 0x74
 
     // private bool IGIIAEPHNCC { get; set; } // BLJMGAEEDAC_bgs 0x930B9C NNFLLPLMHBG_bgs 0x930C78
     // private int JMEKPMDNKEO { get; set; }  // MMACOJFDCJC_bgs 0x930D48 MLFFBGAHKJI_bgs 0x930E1C 
@@ -83,7 +87,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x9310D8 Offset: 0x9310D8 VA: 0x9310D8
     public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
+        CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
         LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
         HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(Utility.GetCurrentUnixTime());
         DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI_GetServerTime());
@@ -113,7 +117,7 @@ public class PJKLMCGEJMK
         if(FCICFIAOLAM_RequestList.Count < 1)
             return;
 
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
+        CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
         N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
         LCIGLIDJILJ_Updater = this.JADLLIFCGLG_CheckRequest;
     }
@@ -123,17 +127,17 @@ public class PJKLMCGEJMK
     {
         if(FCICFIAOLAM_RequestList.Count == 0)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
+            CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
             LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
             DMGPJMPINFJ = false;
             return;
         }
-        CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
+        CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running;
         if(DMGPJMPINFJ)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
+            CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
         }
-        CACGCMBKHDI_Request request = FCICFIAOLAM_RequestList[0];
+        CACGCMBKHDI_NetBaseAction request = FCICFIAOLAM_RequestList[0];
         if(!request.PLOOEECNHFB_IsDone)
             return;
         if(FCICFIAOLAM_RequestList.Count > 0)
@@ -142,7 +146,7 @@ public class PJKLMCGEJMK
         }
         if(FCICFIAOLAM_RequestList.Count < 1)
         {
-            CMCKNKKCNDK_status = PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
+            CMCKNKKCNDK_status = PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.NFFGMBBNNPH_0_None;
             LCIGLIDJILJ_Updater = this.LFKLIOKFGLP_Execute;
         }
         else
@@ -153,7 +157,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x931BD0 Offset: 0x931BD0 VA: 0x931BD0
-    public CACGCMBKHDI_Request IFFNCAFNEAG_AddRequest(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    public CACGCMBKHDI_NetBaseAction IFFNCAFNEAG_AddRequest(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         TodoLogger.Log(TodoLogger.Job, "AddRequest "+_ADKIDBJCAJA_action);
         _ADKIDBJCAJA_action.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
@@ -176,7 +180,7 @@ public class PJKLMCGEJMK
 
     // // RVA: -1 Offset: -1
     // RVA: 0x1AB65FC Offset: 0x1AB65FC VA: 0x1AB65FC
-    public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action)  where T : CACGCMBKHDI_Request
+    public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action)  where T : CACGCMBKHDI_NetBaseAction
     { 
         TodoLogger.Log(TodoLogger.Job, "AddRequest "+_ADKIDBJCAJA_action);
         _ADKIDBJCAJA_action.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
@@ -197,9 +201,9 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3578 Offset: 0x6C3578 VA: 0x6C3578
     // // RVA: 0x93188C Offset: 0x93188C VA: 0x93188C
-    private IEnumerator NBCKHIAINIM_Coroutine_Execute(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private IEnumerator NBCKHIAINIM_Coroutine_Execute(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
-        // private PJKLMCGEJMK.<>c__DisplayClass69_0 OPLBFCEPDCH; // 0x18
+        // private PJKLMCGEJMK_NetActionManager.<>c__DisplayClass69_0 OPLBFCEPDCH; // 0x18
             // public bool FFEFFPIHPFF; // 0x8
             // public bool APLAAAMOBCF; // 0x9
             // public bool GLPPGJMLNKM; // 0xA
@@ -210,7 +214,7 @@ public class PJKLMCGEJMK
             // RVA: 0x933218 Offset: 0x933218 VA: 0x933218
             // internal void EHOJJEKBLBC() { }
 
-        // private PJKLMCGEJMK.<>c__DisplayClass69_1 LBLMCMHMNGC; // 0x1C
+        // private PJKLMCGEJMK_NetActionManager.<>c__DisplayClass69_1 LBLMCMHMNGC; // 0x1C
             // public bool NEFPJAHDAJJ; // 0x8
             // public bool EEBKLFOBGPM; // 0x9
             // RVA: 0x933230 Offset: 0x933230 VA: 0x933230
@@ -218,7 +222,7 @@ public class PJKLMCGEJMK
             // RVA: 0x93323C Offset: 0x93323C VA: 0x93323C
             // internal void IHFHHBALPDJ() { }
 
-        // private PJKLMCGEJMK.<>c__DisplayClass69_2 PHPPCOBECCA; // 0x20
+        // private PJKLMCGEJMK_NetActionManager.<>c__DisplayClass69_2 PHPPCOBECCA; // 0x20
 	        // public bool APGOAMNGFFF; // 0x8
             // RVA: 0x933250 Offset: 0x933250 VA: 0x933250
             // internal void NNGKMNIFILI() { }
@@ -325,7 +329,7 @@ public class PJKLMCGEJMK
                         if(b.LCAINKFINEI_SakashoCurrentDateTime != 0)
                         {
                             HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(b.LCAINKFINEI_SakashoCurrentDateTime);
-                            NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK = false;
+                            NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK = false;
                         }
                         if(!string.IsNullOrEmpty(b.ABFADMDAAKJ_SakashoRecommendedClientVersion))
                         {
@@ -390,7 +394,7 @@ public class PJKLMCGEJMK
                     KPKEOIJHIMN.GIDACIOHFNN_UpdateState val = OPFEFKOOMED.PGBOFGNOBLD();
                     if(val != KPKEOIJHIMN.GIDACIOHFNN_UpdateState.NHHHCIINJKO_0_UpToDate && (val == KPKEOIJHIMN.GIDACIOHFNN_UpdateState.DNKAABNOOBF || NAJENHKNJLN))
                     {
-                        CMCKNKKCNDK_status = /*2*/PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
+                        CMCKNKKCNDK_status = /*2*/PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.OGBMKAILHMF_2_Error;
                         yield return N.a.StartCoroutineWatched(AOMMJNJGFEL_Coroutine_VersionError(_ADKIDBJCAJA_action, val));
                         // To 8
                         KADMOOOMMJF = true;
@@ -465,7 +469,7 @@ public class PJKLMCGEJMK
             }
         }
         _ADKIDBJCAJA_action.PLOOEECNHFB_IsDone = true;
-        CACGCMBKHDI_Request.HDHIKGLMOGF a = null;
+        CACGCMBKHDI_NetBaseAction.HDHIKGLMOGF a = null;
         if(!KADMOOOMMJF)
         {
             a = _ADKIDBJCAJA_action.BHFHGFKBOHH_OnSuccess;
@@ -486,7 +490,7 @@ public class PJKLMCGEJMK
 	}
 
     // // RVA: 0x931E18 Offset: 0x931E18 VA: 0x931E18
-    private bool EHLBPCGHLCL_CanRetry(CACGCMBKHDI_Request _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO) 
+    private bool EHLBPCGHLCL_CanRetry(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO) 
     {
 		if(!_ADKIDBJCAJA_action.BNCFONNOHFO)
 		{
@@ -509,7 +513,7 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C35F0 Offset: 0x6C35F0 VA: 0x6C35F0
     // // RVA: 0x931F34 Offset: 0x931F34 VA: 0x931F34
-    private IEnumerator MELKAFEGNMD_Coroutine_SakashoError(CACGCMBKHDI_Request _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, int MJACIGCPNDA, string IIGAKOKGKIB, EHLCCMEDIOH IICBBDEPBAM)
+    private IEnumerator MELKAFEGNMD_Coroutine_SakashoError(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, int MJACIGCPNDA, string IIGAKOKGKIB, EHLCCMEDIOH IICBBDEPBAM)
     {
         string AIEEDMCGNAE; // 0x30
         string NPOFLDNNKAO; // 0x34
@@ -587,7 +591,7 @@ public class PJKLMCGEJMK
                     _ADKIDBJCAJA_action.EHLFONGENNK();
                     if(_ADKIDBJCAJA_action.GEKKKPIIOAF_Extra != null)
                     {
-                        NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(_ADKIDBJCAJA_action.GEKKKPIIOAF_Extra);
+                        NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(_ADKIDBJCAJA_action.GEKKKPIIOAF_Extra);
                     }
                     yield return null;
                 }
@@ -626,7 +630,7 @@ public class PJKLMCGEJMK
                             while(true)
                             {
                                 KOMKKBDABJP_end = false;
-                                JHHBAFKMBDL.HHCJCDFCLOB.LHHMCNLONCI(() =>
+                                JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.LHHMCNLONCI(() =>
                                 {
                                     //0x93327C
                                     KOMKKBDABJP_end = true;
@@ -698,7 +702,7 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3668 Offset: 0x6C3668 VA: 0x6C3668
     // // RVA: 0x932064 Offset: 0x932064 VA: 0x932064
-    private IEnumerator AOMMJNJGFEL_Coroutine_VersionError(CACGCMBKHDI_Request _ADKIDBJCAJA_action, KPKEOIJHIMN.GIDACIOHFNN_UpdateState _CMCKNKKCNDK_status)
+    private IEnumerator AOMMJNJGFEL_Coroutine_VersionError(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, KPKEOIJHIMN.GIDACIOHFNN_UpdateState _CMCKNKKCNDK_status)
     {
         //0x937760
         yield return null;
@@ -718,11 +722,11 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x9316EC Offset: 0x9316EC VA: 0x9316EC
-    private void DDBHLHBJEGP(PJKLMCGEJMK.AHADNLCOPOL_RequestStatus HOENAFAJMGI)
+    private void DDBHLHBJEGP(PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus HOENAFAJMGI)
     {
         if(DMPHNPAFHEG == null || CMCKNKKCNDK_status == HOENAFAJMGI)
             return;
-        if(HOENAFAJMGI != PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
+        if(HOENAFAJMGI != PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
         {
             DMPHNPAFHEG(false);
             return;
@@ -753,7 +757,7 @@ public class PJKLMCGEJMK
 	}
 
     // // RVA: 0x9321AC Offset: 0x9321AC VA: 0x9321AC
-    private void NELKBIEGFIF(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private void NELKBIEGFIF(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         if(_ADKIDBJCAJA_action.ANMFDAGDMDE_Error == null)
             return;
@@ -766,7 +770,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x9324C8 Offset: 0x9324C8 VA: 0x9324C8
-    private void OHFKAECPJPO(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private void OHFKAECPJPO(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         object[] objs = new object[6];
         objs[0] = "class=";
@@ -780,7 +784,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x93299C Offset: 0x93299C VA: 0x93299C
-    private static int OMNAPCHLBHF_GetPurchaseCurrencyId(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private static int OMNAPCHLBHF_GetPurchaseCurrencyId(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         if(_ADKIDBJCAJA_action != null)
         {
@@ -795,7 +799,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x932A64 Offset: 0x932A64 VA: 0x932A64
-    private static int GJNFKJOCKKA_GetTotalCurrency(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private static int GJNFKJOCKKA_GetTotalCurrency(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         CBMFOOHOAOE_Purchase p = _ADKIDBJCAJA_action as CBMFOOHOAOE_Purchase;
         if(p != null)
@@ -811,7 +815,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x932B64 Offset: 0x932B64 VA: 0x932B64
-    private static int CBILGOPCOIG(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private static int CBILGOPCOIG(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         CBMFOOHOAOE_Purchase p = _ADKIDBJCAJA_action as CBMFOOHOAOE_Purchase;
         if(p != null)
@@ -822,7 +826,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x932C38 Offset: 0x932C38 VA: 0x932C38
-    private static bool EDAAKPJIKLE(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private static bool EDAAKPJIKLE(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         if(_ADKIDBJCAJA_action != null)
         {
@@ -833,7 +837,7 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x932CD4 Offset: 0x932CD4 VA: 0x932CD4
-    private bool BKGNCCKFMPF(CACGCMBKHDI_Request _ADKIDBJCAJA_action, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+    private bool BKGNCCKFMPF(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
     {
         int a1 = OMNAPCHLBHF_GetPurchaseCurrencyId(_ADKIDBJCAJA_action);
         if(a1 != 2 && a1 > 0)
@@ -853,7 +857,7 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C36E0 Offset: 0x6C36E0 VA: 0x6C36E0
     // // RVA: 0x932EDC Offset: 0x932EDC VA: 0x932EDC
-    private IEnumerator NFMEJDJCOOK_Coroutine_ValidateCurrencyBalance(CACGCMBKHDI_Request _ADKIDBJCAJA_action, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+    private IEnumerator NFMEJDJCOOK_Coroutine_ValidateCurrencyBalance(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
     {
         int ALFDBMDGJOH_TotalCurrency; // 0x2C
         int GHKLCJHAFME; // 0x30
@@ -939,7 +943,7 @@ public class PJKLMCGEJMK
         }
         //LAB_00936a20
         _ADKIDBJCAJA_action.BOPHNJFGJBN();
-        JHHBAFKMBDL.HHCJCDFCLOB.LOMNLGIDLKO(() =>
+        JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.LOMNLGIDLKO(() =>
         {
             //0x933324
             _ADKIDBJCAJA_action.EHLFONGENNK();
@@ -949,7 +953,7 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3758 Offset: 0x6C3758 VA: 0x6C3758
     // // RVA: 0x932E1C Offset: 0x932E1C VA: 0x932E1C
-    private IEnumerator EPGFMHDOBAA_Coroutine_ValidateFreeProductStatus(CACGCMBKHDI_Request KEABHGFLDJF, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+    private IEnumerator EPGFMHDOBAA_Coroutine_ValidateFreeProductStatus(CACGCMBKHDI_NetBaseAction KEABHGFLDJF, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK _AOCANKOMKFG_OnError)
     {
         SakashoProductCriteria GHDBABPAHKN; // 0x28
         int OANJJGMJEKH; // 0x2C
@@ -1024,7 +1028,7 @@ public class PJKLMCGEJMK
             //LAB_00937184
         }
         _ADKIDBJCAJA_action.BOPHNJFGJBN();
-        JHHBAFKMBDL.HHCJCDFCLOB.LOMNLGIDLKO(() =>
+        JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.LOMNLGIDLKO(() =>
         {
             //0x9336CC
             _ADKIDBJCAJA_action.EHLFONGENNK();
@@ -1034,12 +1038,12 @@ public class PJKLMCGEJMK
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C37D0 Offset: 0x6C37D0 VA: 0x6C37D0
     // // RVA: 0x932FF4 Offset: 0x932FF4 VA: 0x932FF4
-    private IEnumerator GGOECCJJPFN_Coroutine_ShowRevertFatalError(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+    private IEnumerator GGOECCJJPFN_Coroutine_ShowRevertFatalError(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
     {
         //0x93612C
         bool BEKAMBBOLBO_Done = false;
         _ADKIDBJCAJA_action.BOPHNJFGJBN();
-        JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO_ShowError(() =>
+        JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.OODNEKINHLO_ShowError(() =>
         {
             //0x933B40
             BEKAMBBOLBO_Done = true;

@@ -366,7 +366,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xBD1350 Offset: 0xBD1350 VA: 0xBD1350
 		private void ResetValkyrieData()
 		{
-			m_ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
+			m_ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, false);
 			if(m_UnitData.JOKFNBLEILN_Valkyrie == null)
 			{
 				if(m_ValkyrieList.Count > 0)
@@ -694,7 +694,7 @@ namespace XeApp.Game.Menu
 			GameManager.PushBackButtonHandler backButtonDummy;
 
 			//0xBD9F88
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
+			if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
 			{
 				MenuScene.Instance.InputDisable();
 				backButtonDummy = () =>
@@ -704,8 +704,8 @@ namespace XeApp.Game.Menu
 				};
 				yield return Co.R(TutorialManager.ShowTutorial(117, null));
 				bool done = false;
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
 				MenuScene.Save(() =>
 				{
 					//0xBD6E54
@@ -926,7 +926,7 @@ namespace XeApp.Game.Menu
 		{
 			if(label == PopupButton.ButtonLabel.Ok)
 			{
-				GKFMJAHKEMA_ValSkill.CCPFGNNIBDD a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(m_SeriesValkyrieList[SelectSeries][Select].ENMAEBJGEKL_SkillId);
+				GKFMJAHKEMA_ValSkill.CCPFGNNIBDD a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(m_SeriesValkyrieList[SelectSeries][Select].ENMAEBJGEKL_SkillId);
 				if (a.NHFDCMNPFDK < 1)
 				{
 					if (IsAbilityMax())
@@ -942,8 +942,8 @@ namespace XeApp.Game.Menu
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 					};
-					m_skillupRewardPopupSetting.itemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).MLIJKJFMOHN(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
-					m_skillupRewardPopupSetting.cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).IMALGGGJDJO(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
+					m_skillupRewardPopupSetting.itemId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).MLIJKJFMOHN(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
+					m_skillupRewardPopupSetting.cnt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).IMALGGGJDJO(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
 					PopupWindowManager.Show(m_skillupRewardPopupSetting, OnClickSkillUpRewardPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
@@ -1005,9 +1005,9 @@ namespace XeApp.Game.Menu
 			m_haveItemCheck.Enter();
 			MenuScene.Instance.HeaderEnter();
 			MenuScene.Instance.HeaderMenu.MenuStack.EnterBackButton(false);
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie != null)
+			if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie != null)
 			{
-				m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId);
+				m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId);
 			}
 			ApplyAbility();
 			m_viewSceneFlag = false;

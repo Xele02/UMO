@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 			m_setting = setting as PopupMusicGradeGetRewardSetting;
 			m_layout = transform.GetComponent<LayoutPopupMusicGradeGetRewardList>();
 			MakeScrollItem(m_setting.NowGrade, m_setting.RewardList);
-			AGLHPOOPOCG.HHCJCDFCLOB.OAGGKCHJBEO(() =>
+			AGLHPOOPOCG.HHCJCDFCLOB_Instance.OAGGKCHJBEO(() =>
 			{
 				//0x169515C
 				m_isReceived = true;
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				if(m_scrollItemList[i] != null)
 				{
 					LayoutMusicRateList.FlexibleListItem_Reward item = m_scrollItemList[i] as LayoutMusicRateList.FlexibleListItem_Reward;
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.Item.JJBGOIMEIPF_ItemId, 0));
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.Item.JJBGOIMEIPF_ItemId, 0));
 				}
 			}
 		}
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		{
 			if (!m_isReceived)
 				return false;
-			return m_layout.IsLoaded() && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return m_layout.IsLoaded() && !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		//// RVA: 0x1694AC8 Offset: 0x1694AC8 VA: 0x1694AC8 Slot: 22
@@ -180,11 +180,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1694E50 Offset: 0x1694E50 VA: 0x1694E50
 		public void OnShowItemDetails(int itemId, int itemNum)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId);
+			if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-				scene.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				scene.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 				return;
 			}

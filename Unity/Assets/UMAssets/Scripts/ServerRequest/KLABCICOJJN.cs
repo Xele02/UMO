@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use KLABCICOJJN_SendPushNotification", true)]
 public class KLABCICOJJN {}
-public class KLABCICOJJN_SendPushNotification : CACGCMBKHDI_Request
+public class KLABCICOJJN_SendPushNotification : CACGCMBKHDI_NetBaseAction
 {
 	public SakashoFCMPushNotificationPayload DBBNIEHJGHH; // 0x7C
 	public List<int> IFMENOJDKBF; // 0x80
@@ -17,7 +17,7 @@ public class KLABCICOJJN_SendPushNotification : CACGCMBKHDI_Request
         res.AndroidCollapseKey = JDDGPJDKHNE.GPLMOKEIOLE();
         res.AndroidChannelId = "info";
         res.AndroidIconName = "icon";
-        res.TimeToLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("push_notification_time_to_live", 600);
+        res.TimeToLive = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("push_notification_time_to_live", 600);
         res.IOSCategory = "myNotificationCategory";
         return res;
     }

@@ -16,14 +16,14 @@ namespace XeApp.Game.Common
 			this.snsId = snsId;
 			roomName = "";
 			bodyText = "";
-            BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[snsId - 1];
+            BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[snsId - 1];
             SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(dbSns.AJIDLAGFPGM_TalkId);
             if (header != null)
 			{
 				charaId = Database.Instance.roomText.textData.FindData(header.startIndex).charaId;
-				charaPictId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].EAHPLCJMPHD_PId;
-				roomName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.NPKPBDIDBBG_Room[dbSns.MALFHCHNEFN_RoomId].OPFGFINHFCE_name;
-				bodyText = string.Format(MessageManager.Instance.GetMessage("menu", "sns_notify_fmt"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].OPFGFINHFCE_name);
+				charaPictId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].EAHPLCJMPHD_PId;
+				roomName = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.NPKPBDIDBBG_Room[dbSns.MALFHCHNEFN_RoomId].OPFGFINHFCE_name;
+				bodyText = string.Format(MessageManager.Instance.GetMessage("menu", "sns_notify_fmt"), IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].OPFGFINHFCE_name);
 				return true;
 			}
 			return false;

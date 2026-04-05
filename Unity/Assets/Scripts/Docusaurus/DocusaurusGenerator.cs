@@ -19,7 +19,7 @@ public class DocusaurusGenerator
     OKGLGHCBCJP_Database Database;
     ARMarkerMasterData ARMarkerData;
     AREventMasterData AREventData;
-    IIEDOGCMCIE DbArchive;
+    IIEDOGCMCIE_SecureTarFile DbArchive;
     string DataPath;
     private MusicTextDatabase musicText;
     private SNSRoomTextDatabase roomText;
@@ -33,7 +33,7 @@ public class DocusaurusGenerator
         DocusaurusGenerator generator = new DocusaurusGenerator();
         generator.LoadDatabase();
         generator.Init();
-        generator.DumpDatabaseData();
+        //generator.DumpDatabaseData();
         //generator.DumpTexts();
         //generator.DumpDivaImages();
         //generator.DumpDivaCostumes();
@@ -42,6 +42,18 @@ public class DocusaurusGenerator
         //generator.DumpSNS();
         //generator.DumpValkyrieImages();
         //generator.DumpARStamp();
+        //generator.DumpMusicImages();
+        //generator.DumpTitleBannerImages();
+        //generator.DumpTitleBgImages();
+        //generator.DumpSceneImages();
+        //generator.DumpTipsImages();
+        //generator.DumpItemsImages();
+        //generator.DumpLoginBonusImages();
+        //generator.DumpEpisodeImages();
+        //generator.DumpHomeBannerImages();
+        generator.DumpEventImages();
+        //generator.DumpHomePickupsImages();
+        //generator.DumpGachaImages();
 
         MNNCBFONAOL.PDENBOEFJGE();
     }
@@ -59,10 +71,10 @@ public class DocusaurusGenerator
     }
     public void LoadDatabase()
     {
-        // Copy from IMMAOANGPNK.MHEKMICKGDM_LoadFromStorage();
-        IMMAOANGPNK dataA = new IMMAOANGPNK();
+        // Copy from IMMAOANGPNK_NetMasterDataManager.MHEKMICKGDM_LoadFromStorage();
+        IMMAOANGPNK_NetMasterDataManager dataA = new IMMAOANGPNK_NetMasterDataManager();
         dataA.IJBGPAENLJA_OnAwake(null);
-        Database = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+        Database = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
         List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section> sections = new List<OKGLGHCBCJP_Database.BEOKNKGHFFE_Section>();
         for(OKGLGHCBCJP_Database.BEOKNKGHFFE_Section i = 0; i < OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CGKOFIKBMMI_117_Last; i++)
         {
@@ -73,8 +85,8 @@ public class DocusaurusGenerator
 
         List<string> listStr = Database.PKOJMBICNHH_GetBlockNames();
 
-        DbArchive = new IIEDOGCMCIE();
-        string str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/md-20220626-000000_v00007790_s1_h00000000.dat";
+        DbArchive = new IIEDOGCMCIE_SecureTarFile();
+        string str = BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + "/db/md-20220626-000000_v00007790_s1_h00000000.dat";
         //DbArchive.MCDJJPAKBLH();
         try
         {
@@ -89,7 +101,7 @@ public class DocusaurusGenerator
             bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
             if(!r)
             {
-                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM;
                 int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
                 int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
                 int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
@@ -114,10 +126,10 @@ public class DocusaurusGenerator
                 }); // 0x9FDDD8
                 if(arch != null)
                 {
-                    List<IMMAOANGPNK.MPFFINOMILP> MGFBEKNMJOA = new List<IMMAOANGPNK.MPFFINOMILP>();
+                    List<IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP> MGFBEKNMJOA = new List<IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP>();
                     IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(arch.DBBGALAPFGC_bytes);
                     JGIHJPPECBB[] b = a.MLOPDBGPLFI;
-                    IMMAOANGPNK.MPFFINOMILP obj = null;
+                    IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP obj = null;
                     for(int i = 0; i < b.Length; i++)
                     {
                         int val = b[i].BEBJKJKBOGH_date;
@@ -130,14 +142,14 @@ public class DocusaurusGenerator
                                     continue;
                                 }
                             }
-                            obj = new IMMAOANGPNK.MPFFINOMILP();
+                            obj = new IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP();
                             obj.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
                             obj.PDBPFJJCADD_open_at = val;
                             obj.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
                         }
                         else
                         {
-                            IMMAOANGPNK.MPFFINOMILP obj2 = new IMMAOANGPNK.MPFFINOMILP();
+                            IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP obj2 = new IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP();
                             obj2.OPFGFINHFCE_name = b[i].OPFGFINHFCE_name;
                             obj2.PDBPFJJCADD_open_at = val;
                             obj2.IJEKNCDIIAE_mver = b[i].IJEKNCDIIAE_mver;
@@ -149,13 +161,13 @@ public class DocusaurusGenerator
                         MGFBEKNMJOA.Add(obj);
                     }
                     
-                    MGFBEKNMJOA.Sort((IMMAOANGPNK.MPFFINOMILP _HKICMNAACDA_a, IMMAOANGPNK.MPFFINOMILP _BNKHBCBJBKI_b) => {
+                    MGFBEKNMJOA.Sort((IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP _HKICMNAACDA_a, IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP _BNKHBCBJBKI_b) => {
                         //0x9FDE64 
                         return _HKICMNAACDA_a.PDBPFJJCADD_open_at.CompareTo(_BNKHBCBJBKI_b.PDBPFJJCADD_open_at);
                     });
                     if(MGFBEKNMJOA.Count > 0)
                     {
-                        IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
+                        IMMAOANGPNK_NetMasterDataManager.MPFFINOMILP item = MGFBEKNMJOA[0];
                         if(JHNMKKNEENE_Time >= item.PDBPFJJCADD_open_at)
                         {
                             DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion = item.IJEKNCDIIAE_mver;
@@ -201,8 +213,8 @@ public class DocusaurusGenerator
 
         try
         {
-            str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/ar_marker.dat";
-            IIEDOGCMCIE tar = new IIEDOGCMCIE();
+            str = BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + "/db/ar_marker.dat";
+            IIEDOGCMCIE_SecureTarFile tar = new IIEDOGCMCIE_SecureTarFile();
 
             Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
             if(!request.IsDone)
@@ -215,7 +227,7 @@ public class DocusaurusGenerator
             bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
             if(!r)
             {
-                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM;
                 int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
                 int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
                 int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
@@ -250,8 +262,8 @@ public class DocusaurusGenerator
 
         try
         {
-            str = BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + "/db/ar_event.dat";
-            IIEDOGCMCIE tar = new IIEDOGCMCIE();
+            str = BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + "/db/ar_event.dat";
+            IIEDOGCMCIE_SecureTarFile tar = new IIEDOGCMCIE_SecureTarFile();
 
             Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
             if(!request.IsDone)
@@ -264,7 +276,7 @@ public class DocusaurusGenerator
             bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
             if(!r)
             {
-                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM;
                 int val1 = 17;//a.LPJLEHAJADA_GetIntParam("m_0", 0);
                 int val2 = 1;//a.LPJLEHAJADA_GetIntParam("m_1", 0);
                 int val3 = 1;//a.LPJLEHAJADA_GetIntParam("m_2", 0);
@@ -492,7 +504,8 @@ public class DocusaurusGenerator
                 if(memberObj != null)
                 {
                     EDOHBJAPLPF_JsonData mChildObj = GenerateDataInfo(memberObj);
-                    data[m.Name] = mChildObj;
+                    string[] n = CutName(m.Name);
+                    data[n[0] != "" ? n[0] : n[1]] = mChildObj;
                 }
                 else
                 {
@@ -652,14 +665,14 @@ public class DocusaurusGenerator
                     data[k.Key] = k.Value;
                 }
 
-                fileStr += "export const "+sheet.ToString()+"_"+lang+" = ";
+                //fileStr += "export const "+sheet.ToString()+"_"+lang+" = ";
 
                 KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
                 writer.GALFODHMEOL_PrettyPrint = true;
                 data.EJCOJCGIBNG_ToJson(writer);
-                fileStr += writer.ToString() + ";";
+                fileStr += writer.ToString();// + ";";
 
-                File.WriteAllText( texts_path + sheet.ToString()+"_"+lang+".data.js", fileStr);
+                File.WriteAllText( texts_path + sheet.ToString()+"_"+lang+".data.json", fileStr);
             }
 
             for(int i = 0; i < (int)DatabaseTextConverter.eBank.End; i++)
@@ -688,16 +701,787 @@ public class DocusaurusGenerator
                     data[k.Key] = k.Value;
                 }
 
-                fileStr += "export const "+((DatabaseTextConverter.eBank)i).ToString()+"_"+lang+" = ";
+                //fileStr += "export const "+((DatabaseTextConverter.eBank)i).ToString()+"_"+lang+" = ";
 
                 KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
                 writer.GALFODHMEOL_PrettyPrint = true;
                 data.EJCOJCGIBNG_ToJson(writer);
-                fileStr += writer.ToString() + ";";
+                fileStr += writer.ToString();// + ";";
 
-                File.WriteAllText( texts_path + ((DatabaseTextConverter.eBank)i).ToString()+"_"+lang+".data.js", fileStr);
+                File.WriteAllText( texts_path + ((DatabaseTextConverter.eBank)i).ToString()+"_"+lang+".data.json", fileStr);
             }
         }
+    }
+
+    class ImageDumpInfo
+    {
+        public enum BundleType
+        {
+            Split, // Tex is <name>_mask, <name>_base
+            AssetTexture, //Tex is AssetName as texture2D
+        }
+
+        public class FileInfo
+        {
+            public string OutputName; // Ex : xxx
+            public string BundleName; // Ex : xxx.xab
+            public string AssetName; // If AssetTexture
+            public BundleType Type = BundleType.Split;
+            public Rect Crop;
+            public bool Autocrop = false;
+            public Vector2 Resize;
+        }
+
+        public string BaseSavePath; // Ex : images/scenes/
+
+        public List<FileInfo> Files = new List<FileInfo>();
+    }
+
+    void DumpImages(ImageDumpInfo ImagesInfo)
+    {
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        string imgs_path = DataPath + ImagesInfo.BaseSavePath;
+        CheckPath(imgs_path);
+
+        foreach(var output in ImagesInfo.Files)
+        {
+            string outName = output.OutputName;
+            if(File.Exists(imgs_path + outName + ".png") || File.Exists(imgs_path + outName + ".jpg") || File.Exists(imgs_path + outName))
+                continue;
+            string bundleName = output.BundleName;
+            if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                continue;
+            byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+            BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+            encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+            AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+            string name = Path.GetFileNameWithoutExtension(bundleName);
+
+            Texture BaseTexture = null;//bundle.LoadAsset<Texture2D>(Path.GetFileNameWithoutExtension(bundleName));
+            Texture MaskTexture = null;//CommonAlpha;
+            if(output.Type == ImageDumpInfo.BundleType.Split)
+            {
+                BaseTexture = bundle.LoadAsset(name+"_base") as Texture;
+                MaskTexture = bundle.LoadAsset(name+"_mask") as Texture;
+            }
+            else if(output.Type == ImageDumpInfo.BundleType.AssetTexture)
+            {
+                if(output.AssetName != null && output.AssetName != "")
+                    BaseTexture = bundle.LoadAsset(output.AssetName) as Texture;
+                else
+                    BaseTexture = bundle.LoadAsset(name) as Texture;
+            }
+            Material mat = null;
+            if(MaskTexture != null)
+            {
+                mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                mat.SetTexture("_MainTex", BaseTexture);
+                mat.SetTexture("_MaskTex", MaskTexture);
+            }
+            if(BaseTexture != null)
+            {
+                Texture2D t = null;
+                t = TextureHelper.Copy(BaseTexture as Texture2D, output.Resize.x != 0 ? (int)output.Resize.x : -1, output.Resize.y != 0 ? (int)output.Resize.y : -1, mat, output.Crop, output.Autocrop);
+                /*Texture2D t;
+                if(BaseTexture.width == 256)
+                {
+                    Rect r = new Rect(0, 52, 256, 152);
+                    t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat, r);
+                }
+                else if(BaseTexture.width == 2048)
+                {
+                    Rect r = new Rect(0, 416, 2048, 1216);
+                    t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat, r);
+                }
+                else
+                    t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);*/
+
+                bool isPng = MaskTexture != null || outName.EndsWith(".png");
+                if(!outName.EndsWith(".jpg") && !outName.EndsWith(".png"))
+                    outName += isPng ? ".png" : ".jpg";
+
+                if(isPng)
+                    File.WriteAllBytes(imgs_path + outName, t.EncodeToPNG());
+                else
+                    File.WriteAllBytes(imgs_path + outName, t.EncodeToJPG());
+                UnityEngine.Object.DestroyImmediate(t, true);
+            }
+
+            bundle.Unload(true);
+            UnityEngine.Object.DestroyImmediate(BaseTexture, true);
+            UnityEngine.Object.DestroyImmediate(MaskTexture, true);
+            
+            Resources.UnloadUnusedAssets();
+        }
+    }
+
+    public void DumpLoginBonusImages()
+    {
+        string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/bg/lo").ToArray();
+
+        ImageDumpInfo list = new ImageDumpInfo();
+        list.BaseSavePath = "/images/login-bonus/bgs/";
+        for(int i = 0; i < files.Count(); i++)
+        {
+            FileInfo f = new FileInfo(files[i]);
+            list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/bg/lo/"+f.Name, OutputName=f.Name.Replace(".xab",""), Type=ImageDumpInfo.BundleType.AssetTexture, AssetName=f.Name.Replace(".xab","")});
+        }
+        DumpImages(list);
+
+    }
+
+    public void DumpEpisodeImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ep/ic").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/episodes/icons/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ep/ic/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ep/bg").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/episodes/bgs/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ep/bg/"+f.Name, OutputName=f.Name.Replace(".xab",""), Resize=new Vector2(512, 256), Crop=new Rect(66, 98/2, 380, 316/2)});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/dv/tx/bu").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/divas/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/dv/tx/bu/"+f.Name, OutputName=f.Name.Replace(".xab","")+"_diva-bust"});
+            }
+            DumpImages(list);
+        }
+    }
+
+    public void DumpHomeBannerImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ba/hm").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_banners/general/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ba/hm/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/hm").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_banners/events/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/hm/"+f.Name, OutputName=f.Name.Replace(".xab",""), Autocrop=true});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/hm").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_banners/gachas/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/hm/"+f.Name, OutputName=f.Name.Replace(".xab",""), Autocrop=true});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/bn/hm").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_banners/bingos/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/bn/hm/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ba/mi").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_banners/missions/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ba/mi/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+    }
+
+    public void DumpEventImages()
+    {
+        /*{
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/ba/01").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/event/banner/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/ba/01/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/ba/02").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/event/banner/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/ba/01/"+f.Name, OutputName=f.Name.Replace(".xab","")+"_short"});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/bg").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/backgrounds/events/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/bg/"+f.Name, Type=ImageDumpInfo.BundleType.AssetTexture, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/fs").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/events/sp-button/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/fs/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }*/
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/ft").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/events/sp-title/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/ft/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        /*{
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/tn").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/events/story_thumbs/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/tn/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }*/
+    }
+
+
+    public void DumpHomePickupsImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ba/pc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_pickups/general/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ba/pc/"+f.Name, OutputName=f.Name.Replace(".xab",".jpg"), Crop = new Rect(117, 346, 790, 332)});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/pc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_pickups/events/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/pc/"+f.Name, OutputName=f.Name.Replace(".xab",".jpg"), Crop = new Rect(117, 346, 790, 332)});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/pc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_pickups/gachas/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/pc/"+f.Name, OutputName=f.Name.Replace(".xab",".jpg"), Crop = new Rect(117, 346, 790, 332)});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/bn/pc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/home_pickups/bingos/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/bn/pc/"+f.Name, OutputName=f.Name.Replace(".xab",".jpg"), Crop = new Rect(117, 346, 790, 332)});
+            }
+            DumpImages(list);
+        }
+    }
+
+    public void DumpGachaImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/pd").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/gachas/products/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/pd/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/pr").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/gachas/pickups/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/pr/"+f.Name, OutputName=f.Name.Replace(".xab",""), Autocrop=true});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/st").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/gachas/steps/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/st/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/gc/ti").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/gachas/titles/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/gc/ti/"+f.Name, OutputName=f.Name.Replace(".xab",""), Autocrop=true});
+            }
+            DumpImages(list);
+        }
+    }
+
+    public void DumpItemsImages()
+    {
+        string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/im").ToArray();
+
+        ImageDumpInfo list = new ImageDumpInfo();
+        list.BaseSavePath = "/images/items/";
+        for(int i = 0; i < files.Count(); i++)
+        {
+            FileInfo f = new FileInfo(files[i]);
+            list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/im/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+        }
+        DumpImages(list);
+
+    }
+
+    public void DumpTipsImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/tp/ti").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/tips/images/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/tp/ti/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/tp/tg").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/tips/graffitis/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/tp/tg/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/tp/tc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/tips/charas/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/tp/tc/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        
+    }
+
+    public void DumpSceneImages()
+    {
+        string[][] FilesList = {
+            new string[] {"{0:D6}_01_silhouette", "/ct/sc/me/03/{0:D6}_01.xab"}, //id, rank
+            //new string[] {"{0:D6}_{1:D2}_large_anim", "/ct/sc/me/02_2/{0:D6}_{1:D2}.xab"}, // id, evolveid, plateAnim
+            new string[] {"{0:D6}_{1:D2}_large", "/ct/sc/me/02/{0:D6}_{1:D2}.xab"}, // id, evolveid
+            //new string[] {"{0:D6}_{1:D2}_{2:D2}_anim", "/ct/sc/me/01_2/{0:D6}_{2:D2}_{1:D2}.xab"}, // id, evolveid, version plateAnim
+            new string[] {"{0:D6}_{1:D2}_{2:D2}", "/ct/sc/me/01/{0:D6}_{2:D2}_{1:D2}.xab"}, // id, evolveid, version
+            //new string[] {"{0:D6}_{1:D2}_anim", "/ct/sc/me/01_2/{0:D6}_{1:D2}.xab"}, // id, evolveid, version plateAnim
+            new string[] {"{0:D6}_{1:D2}", "/ct/sc/me/01/{0:D6}_{1:D2}.xab"}, // id, evolveid, version
+        };
+        //new string[] {"", "ct/sc/fr/{0:D2}/{1:D1}_{2:D1}.xab"}, // attr, rare, evolve
+
+        string imgs_path = DataPath + "images/scenes/";
+        CheckPath(imgs_path);
+
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        // Texture CommonAlpha = null;
+        // {
+        //     byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + "ct/sc/me/01/al.xab");
+        //     BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor("/ct/sc/me/01/al.xab");
+        //     encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+        //     AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+        //     CommonAlpha = bundle.LoadAsset<Texture2D>("al");
+        //     bundle.Unload(false);
+        // }
+
+
+        foreach(var scene in Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table)
+        {
+            int sceneId = scene.BCCHOBPJJKE_SceneId;
+            int rare = scene.EKLIPGELKCL_Rarity;
+            bool feed = scene.MCCIFLKCNKO_Feed;
+            int version = scene.JIJOGLFOOMN_Aver;
+            bool isAnim = rare > 5 && !feed;
+            foreach(var file in FilesList)
+            {
+                for(int evolveId = 1; evolveId <= 2; evolveId++)
+                {
+                    string outName = string.Format(file[0], sceneId, evolveId, version);
+                    if(File.Exists(imgs_path + outName + ".png") || File.Exists(imgs_path + outName + ".jpg"))
+                        continue;
+                    string bundleName = string.Format(file[1], sceneId, evolveId, version);
+                    if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                        continue;
+                    byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+                    BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+                    encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+                    AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+                    string name = Path.GetFileNameWithoutExtension(bundleName);
+                    Texture BaseTexture = bundle.LoadAsset<Texture2D>(Path.GetFileNameWithoutExtension(bundleName));
+                    Texture MaskTexture = null;//CommonAlpha;
+                    if(file[0].Contains("_anim"))
+                    {
+                        BaseTexture = bundle.LoadAsset<Texture2D>("main");
+                        MaskTexture = bundle.LoadAsset<Texture2D>("mask");
+                    }
+                    Material mat = null;
+                    if(MaskTexture != null)
+                    {
+                        mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                        mat.SetTexture("_MainTex", BaseTexture);
+                        mat.SetTexture("_MaskTex", MaskTexture);
+                    }
+                    Texture2D t;
+                    if(BaseTexture.width == 256)
+                    {
+                        Rect r = new Rect(0, 52, 256, 152);
+                        t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat, r);
+                    }
+                    else if(BaseTexture.width == 2048)
+                    {
+                        Rect r = new Rect(0, 416, 2048, 1216);
+                        t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat, r);
+                    }
+                    else
+                        t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);
+                    if(MaskTexture != null || file[0].Contains("large"))
+                        File.WriteAllBytes(imgs_path + outName + ".png", t.EncodeToPNG());
+                    else
+                        File.WriteAllBytes(imgs_path + outName + ".jpg", t.EncodeToJPG());
+
+                    bundle.Unload(true);
+                    UnityEngine.Object.DestroyImmediate(t, true);
+                    UnityEngine.Object.DestroyImmediate(BaseTexture, true);
+                    UnityEngine.Object.DestroyImmediate(MaskTexture, true);
+                    assetBytes = null;
+                }
+            }
+            Resources.UnloadUnusedAssets();
+        }
+    }
+
+    public void DumpTitleBgImages()
+    {
+        string[][] FilesList = {
+            new string[] {"{0:D4}", "/ct/bg/tl/{0:D4}.xab"},
+            new string[] {"{0:D4}_small", "/ct/bg/tl/{0:D4}.xab"},
+        };
+
+        string imgs_path = DataPath + "images/title_bg/";
+        CheckPath(imgs_path);
+
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        foreach(var titlebg in AREventData.GetChangeBGList())
+        {
+            foreach(var file in FilesList)
+            {
+                int i = titlebg.bgId;
+                string outName = string.Format(file[0], i);
+                if(File.Exists(imgs_path + outName + ".png"))
+                    continue;
+                string bundleName = string.Format(file[1], i);
+                if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                    continue;
+                byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+                BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+                encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+                AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+                string name = Path.GetFileNameWithoutExtension(bundleName);
+                Texture BaseTexture = bundle.LoadAsset<Texture2D>(String.Format("{0:D4}", i));
+                Texture MaskTexture = null;
+                Material mat = null;
+                if(MaskTexture != null)
+                {
+                    mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                    mat.SetTexture("_MainTex", BaseTexture);
+                    mat.SetTexture("_MaskTex", MaskTexture);
+                }
+                Texture2D t;
+                if(file[0].Contains("_small"))
+                {
+                    Rect r = new Rect(0, 56, 256, 144);
+                    t = TextureHelper.Copy(BaseTexture as Texture2D, 256, 256, mat, r);
+                }
+                else
+                    t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);
+                if(MaskTexture != null)
+                    File.WriteAllBytes(imgs_path + outName + ".png", t.EncodeToPNG());
+                else
+                    File.WriteAllBytes(imgs_path + outName + ".jpg", t.EncodeToJPG());
+
+                bundle.Unload(true);
+            }
+        }
+    }
+
+    public void DumpTitleBannerImages()
+    {
+        string[][] FilesList = {
+            new string[] {"{0:D6}", "/ct/bg/ld/{0:D6}.xab"},
+        };
+
+        string imgs_path = DataPath + "images/title_banner/";
+        CheckPath(imgs_path);
+
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        foreach(var titlebg in Database.ACPALDEELCL_TitleBanner.CDENCMNHNGA_table)
+        {
+            foreach(var file in FilesList)
+            {
+                int i = titlebg.KNHOMNONOEB_AssetId;
+                string outName = string.Format(file[0], i);
+                if(File.Exists(imgs_path + outName + ".png"))
+                    continue;
+                string bundleName = string.Format(file[1], i);
+                if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                    continue;
+                byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+                BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+                encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+                AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+                string name = Path.GetFileNameWithoutExtension(bundleName);
+                Texture BaseTexture = bundle.LoadAsset<Texture2D>(i.ToString("D6"));
+                Texture MaskTexture = null;
+                Material mat = null;
+                if(MaskTexture != null)
+                {
+                    mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                    mat.SetTexture("_MainTex", BaseTexture);
+                    mat.SetTexture("_MaskTex", MaskTexture);
+                }
+                Texture2D t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);
+                if(MaskTexture != null)
+                    File.WriteAllBytes(imgs_path + outName + ".png", t.EncodeToPNG());
+                else
+                    File.WriteAllBytes(imgs_path + outName + ".jpg", t.EncodeToJPG());
+
+                bundle.Unload(true);
+            }
+        }
+    }
+
+    public void DumpMusicImages()
+    {
+
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/mc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/musics/jackets/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/mc/"+f.Name, OutputName=f.Name.Replace(".xab","")+"_select", Type=ImageDumpInfo.BundleType.AssetTexture});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/md").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/musics/details/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/md/"+f.Name, OutputName=f.Name.Replace(".xab",""), Type=ImageDumpInfo.BundleType.AssetTexture});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/ev/mc").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/events/jackets/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/ev/mc/"+f.Name, OutputName=f.Name.Replace(".xab",""), Type=ImageDumpInfo.BundleType.AssetTexture});
+            }
+            DumpImages(list);
+        }
+        /*string[][] FilesList = {
+            new string[] {"{0:D3}_select", "/ct/mc/{0:D3}.xab"},
+        };
+
+        string imgs_path = DataPath + "images/musics/jackets/";
+        CheckPath(imgs_path);
+
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        foreach(var music in Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music)
+        {
+            foreach(var file in FilesList)
+            {
+                int i = music.JNCPEGJGHOG_JacketId;
+                string outName = string.Format(file[0], i);
+                if(File.Exists(imgs_path + outName + ".png"))
+                    continue;
+                string bundleName = string.Format(file[1], i);
+                //BDFPCPHIJCN request = new BDFPCPHIJCN(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+                if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                    continue;
+                byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+                BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+                encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+                AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+                string name = Path.GetFileNameWithoutExtension(bundleName);
+                Texture BaseTexture = bundle.LoadAsset(Path.GetFileNameWithoutExtension(bundleName)) as Texture;
+                Texture MaskTexture = null;
+                Material mat = null;
+                if(MaskTexture != null)
+                {
+                    mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                    mat.SetTexture("_MainTex", BaseTexture);
+                    mat.SetTexture("_MaskTex", MaskTexture);
+                }
+                Texture2D t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);
+                if(MaskTexture != null)
+                    File.WriteAllBytes(imgs_path + outName + ".png", t.EncodeToPNG());
+                else
+                    File.WriteAllBytes(imgs_path + outName + ".jpg", t.EncodeToJPG());
+
+                bundle.Unload(true);
+            }
+        }*/
     }
 
     public void DumpDivaImages()

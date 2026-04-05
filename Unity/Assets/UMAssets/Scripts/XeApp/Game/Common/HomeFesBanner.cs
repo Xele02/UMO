@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0x34
 		private XeSys.FontInfo m_font; // 0x38
-		private IKDICBBFBMI_EventBase m_controller; // 0x3C
+		private IKDICBBFBMI_NetEventBaseController m_controller; // 0x3C
 
 		public string period { get; private set; } // 0x40
 		public string status { get; private set; } // 0x44
@@ -71,7 +71,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAC1B0 Offset: 0xEAC1B0 VA: 0xEAC1B0
-		public void Setup(IKDICBBFBMI_EventBase cont, long currentTime)
+		public void Setup(IKDICBBFBMI_NetEventBaseController cont, long currentTime)
 		{
 			if(cont != null)
 			{
@@ -153,7 +153,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAC7AC Offset: 0xEAC7AC VA: 0xEAC7AC
-		public void SetIcon(IKDICBBFBMI_EventBase cont, long currentTime)
+		public void SetIcon(IKDICBBFBMI_NetEventBaseController cont, long currentTime)
 		{
 			if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_8_EventGacha)
 			{
@@ -161,7 +161,7 @@ namespace XeApp.Game.Common
 			}
 			else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 			{
-				KNKDBNFMAKF_EventSp ev = cont as KNKDBNFMAKF_EventSp;
+				KNKDBNFMAKF_NetEventSpController ev = cont as KNKDBNFMAKF_NetEventSpController;
 				if(ev.GEFCIHNPKIG())
 				{
 					long a, b;
@@ -188,15 +188,15 @@ namespace XeApp.Game.Common
 			if(m_controller == null)
 				return;
 			int v = m_controller.PGIIDPEGGPI_EventId;
-			if(m_controller is KNKDBNFMAKF_EventSp)
+			if(m_controller is KNKDBNFMAKF_NetEventSpController)
 			{
-				if(!(m_controller as KNKDBNFMAKF_EventSp).BEDCLNJIEGF(currentTime))
+				if(!(m_controller as KNKDBNFMAKF_NetEventSpController).BEDCLNJIEGF(currentTime))
 					return;
-				v = (m_controller as KNKDBNFMAKF_EventSp).CKBANLLONPF(currentTime);
+				v = (m_controller as KNKDBNFMAKF_NetEventSpController).CKBANLLONPF(currentTime);
 			}
-			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
+			else if(m_controller is CHHECNJBMLA_NetEventBoxGachaController)
 			{
-				if(!(m_controller as CHHECNJBMLA_EventBoxGacha).BEDCLNJIEGF(currentTime))
+				if(!(m_controller as CHHECNJBMLA_NetEventBoxGachaController).BEDCLNJIEGF(currentTime))
 					return;
 			}
 			else

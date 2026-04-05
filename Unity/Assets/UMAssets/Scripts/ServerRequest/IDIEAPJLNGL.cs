@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IDIEAPJLNGL_SetFriendsLimit", true)]
 public class IDIEAPJLNGL { }
-public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
+public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_NetBaseAction
 {
 	public class HEHEEIFJAKM
 	{

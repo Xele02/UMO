@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game;
 
-public class CNNIKANJMNG
+// namespace XeApp.Game.Net.Ranking
+[System.Obsolete()]
+public class CNNIKANJMNG {}
+public class CNNIKANJMNG_NetRegularRankingManager
 {
-	public static CNNIKANJMNG HHCJCDFCLOB; // 0x0
+	public static CNNIKANJMNG_NetRegularRankingManager HHCJCDFCLOB_Instance; // 0x0
 	private string CDHPNAJNNFN; // 0x8
 	private int JLIIKLHGBJH; // 0xC
 	private bool EBJDDBPFNPB; // 0x10
@@ -17,7 +20,7 @@ public class CNNIKANJMNG
 	// RVA: 0x175D098 Offset: 0x175D098 VA: 0x175D098
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 	}
 
 	//// RVA: 0x175D0FC Offset: 0x175D0FC VA: 0x175D0FC
@@ -31,7 +34,7 @@ public class CNNIKANJMNG
 	//// RVA: 0x175D1EC Offset: 0x175D1EC VA: 0x175D1EC
 	private IEnumerator BHBKPEOMNJH_Coroutine_RankingPlayerList(string _DEPGBBJMFED_CategoryId, int _HHNFHJCAPJO_Target, bool PFFJNEFNAMI, int _CJHEHIMLGGL_Position, int LHJCOPMMIGO, LIOLBKLMMIK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
-		PJKLMCGEJMK OKDOIAEGADK_Server;
+		PJKLMCGEJMK_NetActionManager OKDOIAEGADK_Server;
 		NAOOAJGKILJ_GetFriends GNEIHIIJMJK_FriendReq;
 		List<int> MIINNCFHBCL;
 
@@ -40,9 +43,9 @@ public class CNNIKANJMNG
 		CDHPNAJNNFN = _DEPGBBJMFED_CategoryId;
 		JLIIKLHGBJH = _HHNFHJCAPJO_Target;
 		EBJDDBPFNPB = PFFJNEFNAMI;
-		OKDOIAEGADK_Server = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester;
+		OKDOIAEGADK_Server = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester;
 		GNEIHIIJMJK_FriendReq = null;
-		//CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.JPEIBHJIHPI_FriendLimit
+		//CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.JPEIBHJIHPI_FriendLimit
 		MIINNCFHBCL = new List<int>();
 		ICJOJOPKNBK.Clear();
 		int page = 1;
@@ -77,7 +80,7 @@ public class CNNIKANJMNG
 					req2.HHNFHJCAPJO_Target = _HHNFHJCAPJO_Target.ToString();
 					req2.NHPCKCOPKAM_from = -AOPELJFAMCL_LiveSkillType;
 					req2.PJFKNNNDMIA_to = AOPELJFAMCL_LiveSkillType;
-					req2.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+					req2.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 					{
 						//0x175FB80
 						if(JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError(NHECPMNKEFK.CJMFJOMECKI_ErrorId))
@@ -89,7 +92,7 @@ public class CNNIKANJMNG
 							_JGKOLBLPMPG_OnFail();
 						}
 					};
-					req2.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+					req2.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 					{
 						//0x175FC50
 						HNFBMAFPDLB_GetRegularRankingRanksAroundTarget r = NHECPMNKEFK as HNFBMAFPDLB_GetRegularRankingRanksAroundTarget;
@@ -166,12 +169,12 @@ public class CNNIKANJMNG
 	//// RVA: 0x175D354 Offset: 0x175D354 VA: 0x175D354
 	private void BJKCAKJHMPC_GetTopRanks(int _CJHEHIMLGGL_Position, LIOLBKLMMIK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
-		PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
+		PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
 		req.DEPGBBJMFED_CategoryId = CDHPNAJNNFN;
 		req.HHNFHJCAPJO_Target = JLIIKLHGBJH.ToString();
 		req.IGNIIEBMFIN_Page = ((_CJHEHIMLGGL_Position - 1) / MLPLGFLKKLI_Ipp) + 1;
 		req.MLPLGFLKKLI_Ipp = MLPLGFLKKLI_Ipp;
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			//0x175E248
 			if(JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError(NHECPMNKEFK.CJMFJOMECKI_ErrorId))
@@ -183,7 +186,7 @@ public class CNNIKANJMNG
 				_JGKOLBLPMPG_OnFail();
 			}
 		};
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			//0x175E318
 			List<int> l = new List<int>();
@@ -216,7 +219,7 @@ public class CNNIKANJMNG
 		//0x175FF8C
 		if(!EBJDDBPFNPB && NEFEFHBHFFF != 0)
 		{
-			PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
+			PFDPLFOGMNF_GetRegularRankingTopRank req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PFDPLFOGMNF_GetRegularRankingTopRank());
 			req.DEPGBBJMFED_CategoryId = CDHPNAJNNFN;
 			req.HHNFHJCAPJO_Target = JLIIKLHGBJH.ToString();
 			req.MLPLGFLKKLI_Ipp = MLPLGFLKKLI_Ipp;
@@ -231,7 +234,7 @@ public class CNNIKANJMNG
 			req.IGNIIEBMFIN_Page = v / MLPLGFLKKLI_Ipp + 1;
 			if(req.IGNIIEBMFIN_Page < 2)
 				req.IGNIIEBMFIN_Page = 1;
-			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 			{
 				//0x175E644
 				if(NHECPMNKEFK.CJMFJOMECKI_ErrorId == SakashoErrorId.REGULAR_RANKING_NOT_GENERATED)
@@ -250,7 +253,7 @@ public class CNNIKANJMNG
 					}
 				}
 			};
-			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 			{
 				//0x175E768
 				List<int> l = new List<int>();
@@ -279,12 +282,12 @@ public class CNNIKANJMNG
 	//// RVA: 0x175D7D4 Offset: 0x175D7D4 VA: 0x175D7D4
 	private void FGEIGGNCGGD_GetPlayerData(List<int> HMDAFLDJLIK, int _CJHEHIMLGGL_Position, int NEFEFHBHFFF, List<OBGBKHKMDNF> NFMMAELFANG, LIOLBKLMMIK _KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK _IDAEHNGOKAE_OnRankingError, DJBHIFLHJLK _JGKOLBLPMPG_OnFail)
 	{
-		PJKLMCGEJMK CPHFEPHDJIB_ServerRequester = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester;
+		PJKLMCGEJMK_NetActionManager CPHFEPHDJIB_ServerRequester = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester;
 		List<IBIGBMDANNM> IODPMHILFDI = new List<IBIGBMDANNM>();
 		BBHNACPENDM_ServerSaveData EHDDJFNOBFN = new BBHNACPENDM_ServerSaveData();
 		EHDDJFNOBFN.PGPNDIHDIOD();
-		CACGCMBKHDI_Request.HDHIKGLMOGF ICFBPFMLNCD = null;
-		CACGCMBKHDI_Request.HDHIKGLMOGF PDGBAAFHIBP = null;
+		CACGCMBKHDI_NetBaseAction.HDHIKGLMOGF ICFBPFMLNCD = null;
+		CACGCMBKHDI_NetBaseAction.HDHIKGLMOGF PDGBAAFHIBP = null;
 		MEIEDGPOMOO PINPBOCDKLI_OnPlayerCb = null;
 		NJNCAHLIHNI_GetPlayerData LBHGPLCOCHD_Req = CPHFEPHDJIB_ServerRequester.IFFNCAFNEAG_AddRequest(new NJNCAHLIHNI_GetPlayerData());
 		int GOHNHANPPEJ = Mathf.Min(HMDAFLDJLIK.Count, 50);
@@ -300,8 +303,8 @@ public class CNNIKANJMNG
 				return false;
 			a.MLPEHNBNOGD_PlayerId = PPFNGGCBJKC_id;
 			a.AHEFHIMGIBI_PlayerData = data;
-			a.LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(_IFNLEKOILPM_updated_at, CPHFEPHDJIB_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-			a.ONAFFLLLBHE_IsSelf = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId == PPFNGGCBJKC_id;
+			a.LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_NetFriendManager.MKILKPFAOIC_GetLastLoginString(_IFNLEKOILPM_updated_at, CPHFEPHDJIB_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			a.ONAFFLLLBHE_IsSelf = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId == PPFNGGCBJKC_id;
 			if(NFMMAELFANG == null)
 			{
 				a.KNIFCANOHOC_score = IKJBJNJLMKH(data, CDHPNAJNNFN, JLIIKLHGBJH);
@@ -338,7 +341,7 @@ public class CNNIKANJMNG
 			}
 			return true;
 		};
-		ICFBPFMLNCD = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		ICFBPFMLNCD = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			if(HMDAFLDJLIK.Count - GOHNHANPPEJ < 1)
 			{
@@ -404,7 +407,7 @@ public class CNNIKANJMNG
 			LBHGPLCOCHD_Req.PINPBOCDKLI_OnPlayerCb = PINPBOCDKLI_OnPlayerCb;
 			GOHNHANPPEJ += LBHGPLCOCHD_Req.FAMHAPONILI_PlayerIds.Count;
 		};
-		PDGBAAFHIBP = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+		PDGBAAFHIBP = (CACGCMBKHDI_NetBaseAction NHECPMNKEFK) =>
 		{
 			//0x175F7E8
 			_JGKOLBLPMPG_OnFail();
@@ -418,9 +421,9 @@ public class CNNIKANJMNG
 	private IBIGBMDANNM APGCNBONNPE_GetPlayerInfo(string _DEPGBBJMFED_CategoryId, int _HHNFHJCAPJO_Target)
 	{
 		IBIGBMDANNM res = new IBIGBMDANNM();
-		res.MLPEHNBNOGD_PlayerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
-		res.AHEFHIMGIBI_PlayerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
-		res.LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+		res.MLPEHNBNOGD_PlayerId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
+		res.AHEFHIMGIBI_PlayerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
+		res.LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_NetFriendManager.MKILKPFAOIC_GetLastLoginString(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		res.FJOLNJLLJEJ_rank = 1;
 		res.ONAFFLLLBHE_IsSelf = true;
 		res.KNIFCANOHOC_score = IKJBJNJLMKH(res.AHEFHIMGIBI_PlayerData, _DEPGBBJMFED_CategoryId, _HHNFHJCAPJO_Target);

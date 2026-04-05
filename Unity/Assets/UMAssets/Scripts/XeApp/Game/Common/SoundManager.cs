@@ -217,9 +217,9 @@ namespace XeApp.Game.Common
 			bool skipRaidLobby = true;
 			if(!GameManager.Instance.IsTutorial)
 			{
-				if(IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					skipRaidLobby = !IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LGLJALBIIIB_IsRaidLobbyLoaded();
+					skipRaidLobby = !IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LGLJALBIIIB_IsRaidLobbyLoaded();
 				}
 			}
 			List<string> l = new List<string>() { "cs_se_menu", "cs_se_result" };
@@ -279,7 +279,7 @@ namespace XeApp.Game.Common
 				yield return new WaitWhile(() =>
 				{
 					//0x13975B0
-					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+					return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 				});
 			}
 			for(int i = 0; i < cueSheetList.Length; i++)

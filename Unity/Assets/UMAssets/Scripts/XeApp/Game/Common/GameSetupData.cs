@@ -130,7 +130,7 @@ namespace XeApp.Game.Common
 				{
 					if (a_l_skill_id < 1)
 						return false;
-					PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[a_l_skill_id - 1];
+					PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[a_l_skill_id - 1];
 					if (skill.AANDPLGPDEI())
 					{
 						if (!skill.HDPIEILADDH(musicData.DLAEJOBELBH_MusicId))
@@ -163,7 +163,7 @@ namespace XeApp.Game.Common
 					}
 					if(prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) > 0)
 					{
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_ModelId;
+						prismCostumeModelId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_ModelId;
 						prismCostumeColorId = prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(index);
 					}
 				}
@@ -176,7 +176,7 @@ namespace XeApp.Game.Common
 					if(a_prism.AHHJLDLAPAN_DivaId[a_index] > 0 && a_prism.JPIDIENBGKH_CostumeId[a_index] > 0)
 					{
 						prismDivaId = a_prism.AHHJLDLAPAN_DivaId[a_index];
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_ModelId;
+						prismCostumeModelId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_ModelId;
 						prismCostumeColorId = 0;
 					}
 				}
@@ -272,10 +272,10 @@ namespace XeApp.Game.Common
 						if(i == 0)
 						{
 							divaList_[0].SetupInfo(unit.BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, 0, i + 1);
-							if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
+							if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
 							{
-								int godiva_fold_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_fold_correction_value", 300);
-								int godiva_support_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_support_correction_value", 300);
+								int godiva_fold_correction_value = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_fold_correction_value", 300);
+								int godiva_support_correction_value = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_support_correction_value", 300);
 								int i4 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.fold - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).fold, 0);
 								int i5 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.support - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).support, 0);
 								status.fold = (int)(godiva_fold_correction_value / 100.0f * i4) - i4;
@@ -328,7 +328,7 @@ namespace XeApp.Game.Common
 				if(limitOverStatus != null)
 				{
 					excellentRate = limitOverStatus.excellentRate_SameMusicAttr + limitOverStatus.excellentRate + limitOverStatus.excellentRate_SameSeriesAttr;
-					excellentScoreAdd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA_GetIntParam("ex_effect", 0);
+					excellentScoreAdd = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA_GetIntParam("ex_effect", 0);
 					if(divaList_[0].liveSkillIdList[0] > 0)
 					{
 						centerLiveSkillRate = limitOverStatus.centerLiveSkillRate_SameMusicAttr + limitOverStatus.centerLiveSkillRate + limitOverStatus.centerLiveSkillRate_SameSeriesAttr;
@@ -441,7 +441,7 @@ namespace XeApp.Game.Common
 				mode = GameMode.Type.StoryBattle;
 				freeMusicId = 0;
 				this.storyMusicId = storyMusicId;
-				DJNPIGEFPMF_StoryMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CLHIABAKKJM_StoryMusicData[storyMusicId - 1];
+				DJNPIGEFPMF_StoryMusicInfo info = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CLHIABAKKJM_StoryMusicData[storyMusicId - 1];
 				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
 				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
 				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None/*0*/;
@@ -452,14 +452,14 @@ namespace XeApp.Game.Common
 				EventUniqueId = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				setupTime = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				mvLimitTime = -1;
 				LimitTime = 0;
 				this.onStageDivaNum = onStageDivaNum;
 				musicLoadText = "";
 				IsDisableBattleEventIntermediateResult = false;
 				returnTransitionUniqueId = TransitionUniqueId.HOME;
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).LHICAKGHIGF_EnemyIdByDiff[(int)difficultyType] - 1]);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).LHICAKGHIGF_EnemyIdByDiff[(int)difficultyType] - 1]);
 			}
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
@@ -473,8 +473,8 @@ namespace XeApp.Game.Common
 				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
 				storyMusicId = 0;
-				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
-				prismMusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
+				musicId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				prismMusicId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
 				this.difficultyType = difficultyType;
 				tutorial = TutorialGameMode.Type.None;
 				this.gameEventType = gameEventType;
@@ -486,7 +486,7 @@ namespace XeApp.Game.Common
 				IsLine6Mode = isLine6Mode;
 				if(setupTime == 0)
 				{
-					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+					setupTime = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				}
 				this.musicLoadText = musicLoadText;
 				this.onStageDivaNum = onStageDivaNum;
@@ -495,8 +495,8 @@ namespace XeApp.Game.Common
 				this.mvLimitTime = mvLimitTime;
 				LimitTime = limitTime;
 				IsDisableBattleEventIntermediateResult = initParam.isDisableBattleEventIntermediateResult;
-				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE_EnemyIdByDiffL6 : musicInfo.LHICAKGHIGF_EnemyIdByDiff)[(int)difficultyType] - 1]);
+				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE_EnemyIdByDiffL6 : musicInfo.LHICAKGHIGF_EnemyIdByDiff)[(int)difficultyType] - 1]);
 				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
 				{
 					enemyInfo.EDLACELKJIK_LiveSkill = overrideEnemyLiveSkillId;
@@ -513,21 +513,21 @@ namespace XeApp.Game.Common
 				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
 				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
 				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None;
-				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				musicId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
 				m_prismMusicId = 0;
 				tutorial = tutorialMode;
 				difficultyType = 0;
 				EventUniqueId = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				setupTime = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				mvLimitTime = -1;
 				LimitTime = 0;
 				onStageDivaNum = 1;
 				musicLoadText = "";
 				IsDisableBattleEventIntermediateResult = false;
 				returnTransitionUniqueId = TransitionUniqueId.HOME;
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).LHICAKGHIGF_EnemyIdByDiff[(int)difficultyType] - 1]);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).LHICAKGHIGF_EnemyIdByDiff[(int)difficultyType] - 1]);
 			}
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308
@@ -626,8 +626,8 @@ namespace XeApp.Game.Common
 		{
 			if(m_musicInfo.freeMusicId > 0)
 			{
-				KEODKEGFDLD_FreeMusicInfo masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
-				forcePrism = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
+				KEODKEGFDLD_FreeMusicInfo masterFreeMusic = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
+				forcePrism = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
 				{
 					//0xE9D51C
 					return masterFreeMusic.BLDDNEJDFON_ForcePrismId == x.NMNDNFFJHPJ_Id;

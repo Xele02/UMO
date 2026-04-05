@@ -817,12 +817,12 @@ public class HBDCPGLAPHH
 		{
 			if (HEKHODDJHAO_P1 != 0)
 			{
-				KFCIIMBBNCD k = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[HEKHODDJHAO_P1 - 1];
+				KFCIIMBBNCD k = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[HEKHODDJHAO_P1 - 1];
 				GLNMPEBIMGO_ReplaceEffectInfo(ref res, _CIEOBFIIPLD_Level, k, 1);
 			}
 			if(AKGNPLBDKLN_P2 != 0)
 			{
-				KFCIIMBBNCD k = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[AKGNPLBDKLN_P2 - 1];
+				KFCIIMBBNCD k = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[AKGNPLBDKLN_P2 - 1];
 				GLNMPEBIMGO_ReplaceEffectInfo(ref res, _CIEOBFIIPLD_Level, k, 2);
 			}
 		}
@@ -837,9 +837,9 @@ public class HBDCPGLAPHH
 		int v = LKPOKJPOLIE_EffectInfo.KCOHMHFBDKF_Value1[_CIEOBFIIPLD_Level - 1];
 		if (LKPOKJPOLIE_EffectInfo.BBFKKANELFP_EffectType == 1)
 		{
-			_HCAHCFGPJIF_Desc = _HCAHCFGPJIF_Desc.Replace(string.Format("[v{0}_1]", AOGDKBPNGCI_EffectIdx), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(LKPOKJPOLIE_EffectInfo.KCOHMHFBDKF_Value1[_CIEOBFIIPLD_Level - 1]).NANNGLGOFKH_value[_CIEOBFIIPLD_Level - 1].ToString());
+			_HCAHCFGPJIF_Desc = _HCAHCFGPJIF_Desc.Replace(string.Format("[v{0}_1]", AOGDKBPNGCI_EffectIdx), IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(LKPOKJPOLIE_EffectInfo.KCOHMHFBDKF_Value1[_CIEOBFIIPLD_Level - 1]).NANNGLGOFKH_value[_CIEOBFIIPLD_Level - 1].ToString());
 			s1 = string.Format("[v{0}_min]", AOGDKBPNGCI_EffectIdx);
-			s2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(LKPOKJPOLIE_EffectInfo.KCOHMHFBDKF_Value1[_CIEOBFIIPLD_Level - 1]).NNDBJGDFEEM_Min.ToString();
+			s2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(LKPOKJPOLIE_EffectInfo.KCOHMHFBDKF_Value1[_CIEOBFIIPLD_Level - 1]).NNDBJGDFEEM_Min.ToString();
 		}
 		else
 		{
@@ -955,7 +955,7 @@ public class PPGHMBNIAEC
 		if(EGLDFPILJLG_SkillBuffEffect[_AOGDKBPNGCI_EffectIdx] == (int)SkillBuffEffect.Type.ScoreUpPercentage_FoldWave || 
 		EGLDFPILJLG_SkillBuffEffect[_AOGDKBPNGCI_EffectIdx] == (int)SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
 		{
-			EHGAHMIBPIB s = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(NKGHBKFMFCI_BuffValue[GBMHFDKCFGB - 1, _AOGDKBPNGCI_EffectIdx]);
+			EHGAHMIBPIB s = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(NKGHBKFMFCI_BuffValue[GBMHFDKCFGB - 1, _AOGDKBPNGCI_EffectIdx]);
 
 			IAPANOCEMBI = IAPANOCEMBI.Replace(string.Format("[v{0}_1]", _AOGDKBPNGCI_EffectIdx + 1), s.KCOHMHFBDKF_Value1[GBMHFDKCFGB - 1].ToString());
 			IAPANOCEMBI = IAPANOCEMBI.Replace(string.Format("[v{0}_2]", _AOGDKBPNGCI_EffectIdx + 1), s.HLMMBNCIIAC_Value2[GBMHFDKCFGB - 1].ToString());

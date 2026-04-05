@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use MIILMDFOKBC_GetLoginBonusRecord", true)]
 public class MIILMDFOKBC {}
-public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
+public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_NetBaseAction
 {
 	public int PIDIKFIFAPG_Id; // 0x7C
 	public bool FNDBKPJDEDC_AllPrizes; // 0x80

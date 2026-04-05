@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use CDDNGKNGPDP_NgWordsValidate", true)]
 public class CDDNGKNGPDP { }
-public class CDDNGKNGPDP_NgWordsValidate : CACGCMBKHDI_Request
+public class CDDNGKNGPDP_NgWordsValidate : CACGCMBKHDI_NetBaseAction
 {
 	public Dictionary<string, string> LGFLNOJDHHC_Targets = new Dictionary<string, string>(); // 0x7C
 

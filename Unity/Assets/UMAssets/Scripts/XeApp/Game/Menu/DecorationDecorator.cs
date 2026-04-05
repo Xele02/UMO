@@ -292,7 +292,7 @@ namespace XeApp.Game.Menu
 		//public DecorationDecorator.TabType GetDefaultTab(DecorationDecorator.DecoratorType type) { }
 
 		//// RVA: 0x11DF0DC Offset: 0x11DF0DC VA: 0x11DF0DC
-		public void SetSelectItemDataList(TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList)
+		public void SetSelectItemDataList(TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA_ViewShopProductData> productList)
 		{
 			m_tabType = tabType;
 			m_layoutDecorationWindow01.ChangeTab(tabType,selectItemDataList, productList);

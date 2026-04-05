@@ -30,10 +30,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0x14C5D48 Offset: 0x14C5D48 VA: 0x14C5D48
 		public void Setup(int _itemId, int _itemCount, string _missionText, Action<int> textureLoadedAct)
 		{
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemId);
-            int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(_itemId);
-			string itemName = EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, itemId);
-			string itemStr = EKLNMHFCAOI.NDBLEADIDLA(cat, 0);
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_itemId);
+            int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_itemId);
+			string itemName = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(cat, itemId);
+			string itemStr = EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, 0);
 			MissionText.text = _missionText;
 			ItemName.text = itemName+"   "+_itemCount + itemStr;
 			GameManager.Instance.ItemTextureCache.Load(ItemTextureCache.MakeItemIconTexturePath(_itemId, 0), (IiconTexture icon) =>

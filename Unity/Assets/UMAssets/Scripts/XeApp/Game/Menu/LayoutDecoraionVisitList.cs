@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			m_lastLoginTimeText.text = friend.PCEGKKLKFNO_FriendData.LFKJNMFFCLH_LastLoginString;
 			if(!friend.BHJLNGEDEGN)
 			{
-				m_mapNameText.text = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
+				m_mapNameText.text = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.EFEGBHACJAL_GetStringParam("deco_init_room_name", JpStringLiterals.StringLiteral_9829);
 			}
 			else
 			{
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 				fanNum = 0;
 			}
 			m_numberFan.SetNumber(fanNum, 0);
-			m_MusicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(friend.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, friend.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin), true);
+			m_MusicRateRankText.text = OEGIPPCADNA_NetEventUtarateManager.GEEFFAEGHAH(OEGIPPCADNA_NetEventUtarateManager.BFKAHKBKBJE(friend.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, friend.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin), true);
 			m_giftButton.Disable = m_netDecoVisitControl.MHGJGAPLMFO(m_visitPlayerData.MLPEHNBNOGD_PlayerId);
 			GameManager.Instance.DivaIconCache.SetLoadingIcon(m_divaIconImage);
 			this.StartCoroutineWatched(Co_SettingDivaIcon(friend));
@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19EC584 Offset: 0x19EC584 VA: 0x19EC584
 		private void SettingDivaIconDecoration(EAJCBFGKKFA_FriendInfo friend)
 		{
-			m_divaDeco.Change(friend.JIGONEMPPNP_Diva, friend, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friend.MLPEHNBNOGD_PlayerId), DisplayType.Level);
+			m_divaDeco.Change(friend.JIGONEMPPNP_Diva, friend, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friend.MLPEHNBNOGD_PlayerId), DisplayType.Level);
 			m_divaDeco.SetActive(true);
 		}
 

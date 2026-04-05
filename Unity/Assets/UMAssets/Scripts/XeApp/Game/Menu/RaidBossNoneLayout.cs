@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 			Hide();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_infoText1.text = bk.GetMessageByLabel("raid_bossselect_none_text01");
-			m_infoText2.text = string.Format(bk.GetMessageByLabel("raid_bossselect_none_text02"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA());
+			m_infoText2.text = string.Format(bk.GetMessageByLabel("raid_bossselect_none_text02"), NKOBMDPHNGP_NetEventRaidLobbyController.GPNELLFNPLA());
 			Loaded();
 			return true;
 		}

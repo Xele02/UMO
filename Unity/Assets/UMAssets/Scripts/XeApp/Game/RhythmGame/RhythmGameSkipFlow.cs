@@ -132,7 +132,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			isGameSaveEnd = false;
 			isGameSaveError = false;
-			JGEOBNENMAH.HHCJCDFCLOB.CNNNAAACEHE_GameStartSave(true, () =>
+			JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.CNNNAAACEHE_GameStartSave(true, () =>
 			{
 				//0xBFF9A4
 				isGameSaveEnd = true;

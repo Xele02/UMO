@@ -28,26 +28,26 @@ public class CIKHPBBNEIM
 	private List<PBJEFDNBBCD> EMCDEMHBFDB = new List<PBJEFDNBBCD>(); // 0x8
 
 	// // RVA: 0xFF8418 Offset: 0xFF8418 VA: 0xFF8418
-	public void OBKGEDCKHHE_Init(IKDICBBFBMI_EventBase OBMKLJFKAPH, bool _CMEOKJMCEBH_IsGoDiva)
+	public void OBKGEDCKHHE_Init(IKDICBBFBMI_NetEventBaseController OBMKLJFKAPH, bool _CMEOKJMCEBH_IsGoDiva)
     {
         OBKGEDCKHHE_Init(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(_CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF9CE8 Offset: 0xFF9CE8 VA: 0xFF9CE8
-	public void NFEECBNKKHD(IKDICBBFBMI_EventBase OBMKLJFKAPH, int CEHNJCIIKDN, bool _CMEOKJMCEBH_IsGoDiva)
+	public void NFEECBNKKHD(IKDICBBFBMI_NetEventBaseController OBMKLJFKAPH, int CEHNJCIIKDN, bool _CMEOKJMCEBH_IsGoDiva)
     {
         OBKGEDCKHHE_Init(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.JKIJFGGMNAN_GetUnit(CEHNJCIIKDN, _CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF84F4 Offset: 0xFF84F4 VA: 0xFF84F4
-	private void OBKGEDCKHHE_Init(IKDICBBFBMI_EventBase OBMKLJFKAPH, JLKEOGLJNOD_TeamInfo _MLAFAACKKBG_Unit)
+	private void OBKGEDCKHHE_Init(IKDICBBFBMI_NetEventBaseController OBMKLJFKAPH, JLKEOGLJNOD_TeamInfo _MLAFAACKKBG_Unit)
     {
         EMCDEMHBFDB.Clear();
         for(int i = 0; i < OBMKLJFKAPH.LHAKGDAGEMM_EpBonusInfos.Count; i++)
         {
-            IKDICBBFBMI_EventBase.CEGDBNNIDIG d = OBMKLJFKAPH.LHAKGDAGEMM_EpBonusInfos[i];
+            IKDICBBFBMI_NetEventBaseController.CEGDBNNIDIG d = OBMKLJFKAPH.LHAKGDAGEMM_EpBonusInfos[i];
             int KELFCMEOPPM_EpisodeId = d.KELFCMEOPPM_EpisodeId;
-            List<MLIBEPGADJH_Scene.KKLDOOJBJMN> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _GHPLINIACBB_x) =>
+            List<MLIBEPGADJH_Scene.KKLDOOJBJMN> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _GHPLINIACBB_x) =>
             {
                 //0xFFA128
                 return KELFCMEOPPM_EpisodeId == _GHPLINIACBB_x.KELFCMEOPPM_EpisodeId;
@@ -69,17 +69,17 @@ public class CIKHPBBNEIM
                         ODGCADPPIFA GJLFANGDGCL_Target = new ODGCADPPIFA();
                         GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId = l[j].BCCHOBPJJKE_SceneId;
                         GJLFANGDGCL_Target.BPMAIEFLOPP = l[j].EKLIPGELKCL_Rarity;
-                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[l[j].BCCHOBPJJKE_SceneId - 1];
+                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA_Scenes[l[j].BCCHOBPJJKE_SceneId - 1];
                         GJLFANGDGCL_Target.IADCHIFJHOJ_Unlocked = saveScene.IHIAFIHAAPO_Unlocked;
                         GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = false;
                         GJLFANGDGCL_Target.ILOKENBBBAE_Available = false;
                         GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist = false;
                         GJLFANGDGCL_Target.ONCKEDBOIDN_IsEvo = saveScene.JPIPENJGGDD_NumBoard > 0;
-                        if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.OEEJKKFOBKD(l[j].BCCHOBPJJKE_SceneId))
+                        if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.OEEJKKFOBKD(l[j].BCCHOBPJJKE_SceneId))
                         {
                             GJLFANGDGCL_Target.ONCKEDBOIDN_IsEvo = true;
                         }
-                        IKDICBBFBMI_EventBase.MEBJJBHPMEO ik = OBMKLJFKAPH.DHOMAEOEFMJ_EpBonuByScene.Find((IKDICBBFBMI_EventBase.MEBJJBHPMEO _GHPLINIACBB_x) =>
+                        IKDICBBFBMI_NetEventBaseController.MEBJJBHPMEO ik = OBMKLJFKAPH.DHOMAEOEFMJ_EpBonuByScene.Find((IKDICBBFBMI_NetEventBaseController.MEBJJBHPMEO _GHPLINIACBB_x) =>
                         {
                             //0xFFA16C
                             return _GHPLINIACBB_x.CNKFPJCGNFE_SceneId == GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId;
@@ -87,7 +87,7 @@ public class CIKHPBBNEIM
                         int a1, a2;
                         if(ik == null)
                         {
-                            IKDICBBFBMI_EventBase.NJJDBBCHBNP nj = OBMKLJFKAPH.PGDAMNENGDA_EpBonusBySceneRarity[l[j].EKLIPGELKCL_Rarity - 1];
+                            IKDICBBFBMI_NetEventBaseController.NJJDBBCHBNP nj = OBMKLJFKAPH.PGDAMNENGDA_EpBonusBySceneRarity[l[j].EKLIPGELKCL_Rarity - 1];
                             a1 = nj.IJKFFIKGLJM_BonusBefore;
                             a2 = nj.DCBMFNOIENM_BonusAfter;
                         }

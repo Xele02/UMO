@@ -47,9 +47,9 @@ namespace XeApp.Game.Adv
 				yield break;
 			if(advResult.IsCallRhythmGame())
 			{
-				JGEOBNENMAH.EDHCNKBMLGI a = SetupGame(advResult.FreeMusicId);
+				JGEOBNENMAH_NetGameManager.EDHCNKBMLGI a = SetupGame(advResult.FreeMusicId);
 				bool isSuccess = false;
-				JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(a, () =>
+				JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.OLDDILMKJND_GameStart(a, () =>
 				{
 					//0xE577D4
 					isSuccess = true;
@@ -88,13 +88,13 @@ namespace XeApp.Game.Adv
 		{
 			PopupWindowManager.Close(null, null);
 			SoundManager.Instance.bgmPlayer.Stop();
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
 			GameManager.Instance.ClearPushBackButtonHandler();
 			NextScene("Title");
 		}
 
 		//// RVA: 0xE56EAC Offset: 0xE56EAC VA: 0xE56EAC
-		private JGEOBNENMAH.EDHCNKBMLGI SetupGame(int musicId)
+		private JGEOBNENMAH_NetGameManager.EDHCNKBMLGI SetupGame(int musicId)
 		{
 			StatusData st = new StatusData();
 			StatusData st2 = new StatusData();
@@ -119,7 +119,7 @@ namespace XeApp.Game.Adv
 			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_status);
 			st2.Add(st);
 			Database.Instance.gameSetup.teamInfo.SetupInfo(st2, GameManager.Instance.ViewPlayerData, 0, ib_, null, null, null, false);
-			JGEOBNENMAH.EDHCNKBMLGI j_ = new JGEOBNENMAH.EDHCNKBMLGI();
+			JGEOBNENMAH_NetGameManager.EDHCNKBMLGI j_ = new JGEOBNENMAH_NetGameManager.EDHCNKBMLGI();
 			j_.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
 			j_.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
 			j_.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;

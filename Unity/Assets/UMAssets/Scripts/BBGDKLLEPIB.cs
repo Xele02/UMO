@@ -9,7 +9,10 @@ using XeSys;
 using System.Text;
 using XeApp.Game.Common;
 
-public class BBGDKLLEPIB
+// namespace XeApp.Game.Net.Install
+[System.Obsolete()]
+public class BBGDKLLEPIB {}
+public class BBGDKLLEPIB_NetInstallMaster
 {
 	private enum GPPPPOFHAJC
 	{
@@ -58,7 +61,7 @@ public class BBGDKLLEPIB
 	private int HGOIEGFBABK = 5; // 0x38
 	public bool PBAHJENPLFM; // 0x3C
 
-	public static BBGDKLLEPIB HHCJCDFCLOB { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ_bgs 0xF1723C OKPMHKNCNAL_bgs 0xF172C8
+	public static BBGDKLLEPIB_NetInstallMaster HHCJCDFCLOB_Instance { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ_bgs 0xF1723C OKPMHKNCNAL_bgs 0xF172C8
 	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x8 PGOHBLKDJOM // ODMAEKMPAGP_bgs 0xF17358 BBPOAGDNMOJ_bgs 0xF173E4
 	public static string OGCDNCDMLCA_LocalPath { get {  // MxDir
 		if(JCMJBMBMJAK_PersistentDataPath == null)
@@ -94,7 +97,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF178B4 Offset: 0xF178B4 VA: 0xF178B4
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        HHCJCDFCLOB = this;
+        HHCJCDFCLOB_Instance = this;
     }
 
 	// // RVA: 0xF17934 Offset: 0xF17934 VA: 0xF17934
@@ -115,13 +118,13 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF17A70 Offset: 0xF17A70 VA: 0xF17A70
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		// private BBGDKLLEPIB.<>c__DisplayClass45_0 OPLBFCEPDCH; // 0x14
-				// public BBGDKLLEPIB KIGBLACMODG; // 0x8
+		// private BBGDKLLEPIB_NetInstallMaster.<>c__DisplayClass45_0 OPLBFCEPDCH; // 0x14
+				// public BBGDKLLEPIB_NetInstallMaster KIGBLACMODG; // 0x8
 				// public bool KOMKKBDABJP_end; // 0xC
-		// private BBGDKLLEPIB.<>c__DisplayClass45_1 LBLMCMHMNGC; // 0x18
+		// private BBGDKLLEPIB_NetInstallMaster.<>c__DisplayClass45_1 LBLMCMHMNGC; // 0x18
 				// public Dictionary<string, int> FAOOOLDDBBB_LocalFilesStatus; // 0x8
 				// public JPAPJLIPNOK_RequestAssetList COJNCNGHIJC_Req; // 0xC
-				// public BBGDKLLEPIB.<>c__DisplayClass45_0 PGFMIBMJBHD; // 0x10
+				// public BBGDKLLEPIB_NetInstallMaster.<>c__DisplayClass45_0 PGFMIBMJBHD; // 0x10
 				// // RVA: 0xF1A184 Offset: 0xF1A184 VA: 0xF1A184
 				// internal void IPGJJANJOMJ() { }
 				// // RVA: 0xF1A2B8 Offset: 0xF1A2B8 VA: 0xF1A2B8
@@ -132,19 +135,19 @@ public class BBGDKLLEPIB
 				// internal void BCMEPPIPGIB() { }
 		// public DJBHIFLHJLK MOBEEPPKFLG_OnFail; // 0x1C
 		// public IMCBBOAFION BHFHGFKBOHH_OnSuccess; // 0x20
-		// private BBGDKLLEPIB.<>c__DisplayClass45_2 PHPPCOBECCA; // 0x24
+		// private BBGDKLLEPIB_NetInstallMaster.<>c__DisplayClass45_2 PHPPCOBECCA; // 0x24
 				// public int APGOAMNGFFF; // 0x8
 				// // RVA: 0xF1A4DC Offset: 0xF1A4DC VA: 0xF1A4DC
 				// internal void EKHEBHFBKID() { }
 				// // RVA: 0xF1A4E8 Offset: 0xF1A4E8 VA: 0xF1A4E8
 				// internal void OIIFKBGOJKO() { }
-		// private BBGDKLLEPIB.<>c__DisplayClass45_3 OGEABHOODHB; // 0x28
+		// private BBGDKLLEPIB_NetInstallMaster.<>c__DisplayClass45_3 OGEABHOODHB; // 0x28
 				// public int APGOAMNGFFF; // 0x8
 				// // RVA: 0xF1A4FC Offset: 0xF1A4FC VA: 0xF1A4FC
 				// internal void NNGKGAGFFBE() { }
 				// // RVA: 0xF1A508 Offset: 0xF1A508 VA: 0xF1A508
 				// internal void CAPIELNEBFB() { }
-		// private PJKLMCGEJMK OKDOIAEGADK_Server; // 0x2C
+		// private PJKLMCGEJMK_NetActionManager OKDOIAEGADK_Server; // 0x2C
 		// private JEHIAIPJNJF_FileDownloader MHHFMCPJONH; // 0x30
 		//0xF1A518
 		if(OEPPEGHGNNO == null)
@@ -153,11 +156,11 @@ public class BBGDKLLEPIB
 		}
 		if(MAIHLKPEHJN == null)
 		{
-			MAIHLKPEHJN = JHHBAFKMBDL.HHCJCDFCLOB.DOHNKJKOGFJ;
+			MAIHLKPEHJN = JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.DOHNKJKOGFJ;
 		}
 		while(true)
 		{
-			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			DMPNAEEIANJ = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			LHJNPJFNDNA_Rev = null;
 			Dictionary<string, int> FAOOOLDDBBB_LocalFilesStatus = new Dictionary<string, int>();
 			//goto LAB_00f1b2e8;
@@ -165,7 +168,7 @@ public class BBGDKLLEPIB
 			JPAPJLIPNOK_RequestAssetList COJNCNGHIJC_Req = null;
 			while(true)
 			{
-				COJNCNGHIJC_Req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
+				COJNCNGHIJC_Req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
 				COJNCNGHIJC_Req.FPCIBJLJOFI_Type = FPCIBJLJOFI_Type;
 				yield return COJNCNGHIJC_Req.GDPDELLNOBO_WaitDone(N.a);
 				// 1
@@ -179,12 +182,12 @@ public class BBGDKLLEPIB
 
 				FLHOFIEOKDH_BaseUrl = COJNCNGHIJC_Req.NFEAMMJIMPG_Result.GLMGHMCOMEC_base_url;
 
-				DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				DMPNAEEIANJ = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				if(COJNCNGHIJC_Req.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision == LHJNPJFNDNA_Rev)
 				{
 					if(GBCDHECMDMC())
 					{
-						KEHOJEJMGLJ.AFKGMCBJBJA();
+						KEHOJEJMGLJ_NetInstallManager.AFKGMCBJBJA();
 					}
 					PKLPEIBEGNO(); // save used db version on disk
 					GC.Collect();
@@ -197,7 +200,7 @@ public class BBGDKLLEPIB
 				ICCMKHKNAMJ_ToDldList = new List<GCGNICILKLD_AssetFileInfo>();
 				bool KOMKKBDABJP_end = false;
 
-				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 					//0xF1A184
 					DIDACHONHJA_ListExistingFiles(ref FAOOOLDDBBB_LocalFilesStatus, OGCDNCDMLCA_LocalPath); // List files reccursively in /mx into FAOOOLDDBBB_LocalFilesStatus
 					IAPEABPJPOE(COJNCNGHIJC_Req.NFEAMMJIMPG_Result, ref FAOOOLDDBBB_LocalFilesStatus); // Check files md5 on disk
@@ -210,7 +213,7 @@ public class BBGDKLLEPIB
 				if(ICCMKHKNAMJ_ToDldList.Count == 0)
 				{
 					KOMKKBDABJP_end = false;
-					NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 						//0xF1A2B8
 						CIDPPOGCODB(FAOOOLDDBBB_LocalFilesStatus); // Delete files in FAOOOLDDBBB_LocalFilesStatus
 						KOMKKBDABJP_end = true;
@@ -265,7 +268,7 @@ public class BBGDKLLEPIB
 						MHHFMCPJONH.Dispose();
 					OEPPEGHGNNO(2, 100);
 					bool KOMKKBDABJP_end = false;
-					NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 						//0xF1A474
 						CIDPPOGCODB(FAOOOLDDBBB_LocalFilesStatus);
 						KOMKKBDABJP_end = true;
@@ -277,7 +280,7 @@ public class BBGDKLLEPIB
 					LHJNPJFNDNA_Rev = COJNCNGHIJC_Req.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision;
 					if(GBCDHECMDMC())
 					{
-						KEHOJEJMGLJ.AFKGMCBJBJA();
+						KEHOJEJMGLJ_NetInstallManager.AFKGMCBJBJA();
 					}
 					PKLPEIBEGNO(); // save used db version on disk
 					GC.Collect();

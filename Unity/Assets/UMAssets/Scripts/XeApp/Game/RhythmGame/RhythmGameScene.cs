@@ -21,7 +21,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBFD634 Offset: 0xBFD634 VA: 0xBFD634 Slot: 9
 		protected override void DoAwake()
 		{
-			CNGFKOJANNP c = CNGFKOJANNP.HHCJCDFCLOB;
+			CNGFKOJANNP c = CNGFKOJANNP.HHCJCDFCLOB_Instance;
 			if(c != null)
 				c.IKHJJMKLAEP_DisableAutoCheck();
 
@@ -74,9 +74,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBFDCE0 Offset: 0xBFDCE0 VA: 0xBFDCE0
 		public void GotoMenuScene()
 		{
-			if(CNGFKOJANNP.HHCJCDFCLOB != null)
+			if(CNGFKOJANNP.HHCJCDFCLOB_Instance != null)
 			{
-				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
+				CNGFKOJANNP.HHCJCDFCLOB_Instance.KANPNADDJBK_EnableAutoCheck();
 			}
 			if (onChangeScene != null)
 				onChangeScene();
@@ -86,8 +86,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBFDD74 Offset: 0xBFDD74 VA: 0xBFDD74
 		public void GotoTitleScene()
 		{
-			if(CNGFKOJANNP.HHCJCDFCLOB != null)
-				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
+			if(CNGFKOJANNP.HHCJCDFCLOB_Instance != null)
+				CNGFKOJANNP.HHCJCDFCLOB_Instance.KANPNADDJBK_EnableAutoCheck();
 			if(onChangeScene != null)
 				onChangeScene();
 			PopupWindowManager.Close(null, null);

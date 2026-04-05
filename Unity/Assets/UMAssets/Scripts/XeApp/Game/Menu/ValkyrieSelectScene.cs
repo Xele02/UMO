@@ -393,10 +393,10 @@ namespace XeApp.Game.Menu
 		{
 			if(ParentTransition == TransitionList.Type.TEAM_SELECT)
 			{
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null &&
 					Database.Instance.gameSetup.musicInfo != null)
 				{
-					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieAttr;
+					int serie = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieAttr;
 					if (serie >= 1 && serie <= 4)
 						return 0;
 					return (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)serie;
@@ -846,14 +846,14 @@ namespace XeApp.Game.Menu
 			//0x165FE38
 			MenuScene.Instance.InputDisable();
 			SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Select, 0);
-			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = true;
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.NFNLGGHMEAM();
 			int oldValk = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
 			ReplaceValkyrie();
 			int newValk = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
 			if(oldValk != newValk)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.EEPIDKPPLJI_Valkyrie(oldValk, newValk);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.EEPIDKPPLJI_Valkyrie(oldValk, newValk);
 			}
 			MenuScene.SaveRequest();
 			m_viewSceneFlag = false;
@@ -871,7 +871,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!MenuScene.Instance.DirtyChangeScene && IsLoadedValkyrie())
 					{
-						PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
+						PGIGNJDPCAH_UpdateChecker.NNOBACMJHDM(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 						MenuScene.Instance.Call(TransitionList.Type.MODEL_VIEW_MODE, null, true);
 						m_viewSceneFlag = true;

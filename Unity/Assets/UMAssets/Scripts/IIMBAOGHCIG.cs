@@ -21,15 +21,15 @@ public class IIMBAOGHCIG
 			return;
 		}
 		BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
-		BHANMJKCCBC_BadgeText = KDHGBOOECKC.HHCJCDFCLOB.JIDINGHMOJF();
+		BHANMJKCCBC_BadgeText = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.JIDINGHMOJF();
 	}
 
 	//// RVA: 0x1204BC0 Offset: 0x1204BC0 VA: 0x1204BC0
 	private BEFNGAHBLEN_BadgeType HNNHJGJCFIL()
 	{
-		if(!KDHGBOOECKC.HHCJCDFCLOB.CCPNBHCKNDC())
+		if(!KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.CCPNBHCKNDC())
 		{
-			if(!KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+			if(!KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LOCAIBNPKDL_IsPlayerLevelOk())
 			{
 				return BEFNGAHBLEN_BadgeType.JJGHKIBKFFJ_1_Offer/*1*/;
 			}

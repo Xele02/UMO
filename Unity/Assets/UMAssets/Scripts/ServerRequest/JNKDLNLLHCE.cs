@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use JNKDLNLLHCE_ClaimSubscriptionContinuationBonus", true)]
 public class JNKDLNLLHCE {}
-public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_Request
+public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_NetBaseAction
 {
     public class KHNBILNPGFF
     {

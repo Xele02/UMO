@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use JPAPJLIPNOK_RequestAssetList", true)]
 public class JPAPJLIPNOK { }
-public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
+public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_NetBaseAction
 {
 	private bool CHEGCAOBBEA; // 0x80
 

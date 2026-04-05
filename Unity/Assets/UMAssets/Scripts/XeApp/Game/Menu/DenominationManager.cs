@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		private OnDenomChangeDate m_OnChangeDate; // 0x10
 		private ProductListFilter m_productListFilter; // 0x14
 		private bool m_IsChangeDate; // 0x18
-		private AMOCLPHDGBP m_paidVCPurchase; // 0x1C
+		private AMOCLPHDGBP_NetPaidVCPurchase m_paidVCPurchase; // 0x1C
 		private List<ResponseHandler> m_responceHandlerList = new List<ResponseHandler>(); // 0x20
 
 		// // RVA: 0x17CF4F0 Offset: 0x17CF4F0 VA: 0x17CF4F0
@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public void StartPurchaseSequence(IMCBBOAFION onSuccess, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter)
 		{
 			GameManager.Instance.CloseSnsNotice();
-			m_paidVCPurchase = new AMOCLPHDGBP();
+			m_paidVCPurchase = new AMOCLPHDGBP_NetPaidVCPurchase();
 			m_paidVCPurchase.MKDKKDNBEEK = OnOpenVCProducts;
 			m_paidVCPurchase.AJGKLIIDKHA = OnOpenBirthdayRegistration;
 			m_paidVCPurchase.FIJMBKFJJIJ = OnOpenBirthdayRegistrationConfirm;
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17D026C Offset: 0x17D026C VA: 0x17D026C
-		private void OnOpenVCProducts(AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel)
+		private void OnOpenVCProducts(AMOCLPHDGBP_NetPaidVCPurchase p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel)
 		{
 			if(GetProcuctListCount(p, m_productListFilter) == 0)
 			{
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17D05C8 Offset: 0x17D05C8 VA: 0x17D05C8
-		private int GetProcuctListCount(AMOCLPHDGBP p, ProductListFilter filter)
+		private int GetProcuctListCount(AMOCLPHDGBP_NetPaidVCPurchase p, ProductListFilter filter)
 		{
 			if(filter == null)
 			{
@@ -189,7 +189,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_OnChangeDate != null)
 					{
-						if(PGIGNJDPCAH.MNANNMDBHMP(() =>
+						if(PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 						{
 							//0x17D12E0
 							PopupDenomination.ChangeDate(TransitionList.Type.LOGIN_BONUS);

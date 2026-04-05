@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game;
 
-public class OKLFOAPMJAA
+// namespace XeApp.Game.Net.Bbs.NetBbsUtility.
+[System.Obsolete()]
+public class OKLFOAPMJAA {}
+public class OKLFOAPMJAA_BbsData
 {
 	public delegate bool IGJCFFIGKIJ(ANPBHCNJIDI.NNPGLGHDBKN FJEAKGIIKIL);
 
@@ -30,7 +33,7 @@ public class OKLFOAPMJAA
 		// RVA: 0x14A0C1C Offset: 0x14A0C1C VA: 0x14A0C1C
 		public BABPHOEGLPC(string LFGDLECGDCL, int _EMGJJFKONHK_ExpireDays, bool LAGDKBMDHLD/* = false*/, IGJCFFIGKIJ CHKHBIMFOHO/* = null*/)
 		{
-			int bbs_comment_load_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_comment_load_count", 10);
+			int bbs_comment_load_count = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_comment_load_count", 10);
 			OBKGEDCKHHE_Init(LFGDLECGDCL, bbs_comment_load_count, bbs_comment_load_count, _EMGJJFKONHK_ExpireDays, LAGDKBMDHLD, CHKHBIMFOHO);
 		}
 
@@ -42,7 +45,7 @@ public class OKLFOAPMJAA
 			DPNKNANKDAM = LAGDKBMDHLD;
 			GNIINAKDJPA = Mathf.Min(MKLHCKJEKKC, 30);
 			LDACLKFJEHH = PLBOJBHAPLO;
-			BIDNGGDPPIM_AutoUpdateInterval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_interval", 10);
+			BIDNGGDPPIM_AutoUpdateInterval = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("bbs_auto_update_interval", 10);
 			LKMKNEGCCHF = new List<ANPBHCNJIDI.NNPGLGHDBKN>(MKLHCKJEKKC);
 			if(CHKHBIMFOHO == null)
 			{
@@ -82,13 +85,13 @@ public class OKLFOAPMJAA
 		//// RVA: 0x14A1BAC Offset: 0x14A1BAC VA: 0x14A1BAC
 		internal IEnumerator DGGKAEPHMAJ_Coroutine_Next(int _KPNKPGLPDHI_Op, int MKLHCKJEKKC, int PLBOJBHAPLO, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail, bool HOLDBIDPJFJ)
 		{
-			PIGBKEIAMPE_FriendManager FEAAEDHHBNB; // 0x34
+			PIGBKEIAMPE_NetFriendManager FEAAEDHHBNB; // 0x34
 			List<ANPBHCNJIDI.NNPGLGHDBKN> DDDNLHPAPAK; // 0x38
 			int AAIHMICJENB; // 0x3C
 			int BDGBGAEAMPK; // 0x40
 
 			//0x14A30DC
-			FEAAEDHHBNB = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			FEAAEDHHBNB = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager;
 			if(DPNKNANKDAM)
 			{
 				bool PLOOEECNHFB_IsDone = false;
@@ -97,11 +100,11 @@ public class OKLFOAPMJAA
 				{
 					//0x14A2C94
 					PLOOEECNHFB_IsDone = true;
-				}, (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
+				}, (CACGCMBKHDI_NetBaseAction _HKICMNAACDA_a) =>
 				{
 					//0x14A2CA0
 					NPNNPNAIONN_IsError = true;
-				}, (CACGCMBKHDI_Request _HKICMNAACDA_a) =>
+				}, (CACGCMBKHDI_NetBaseAction _HKICMNAACDA_a) =>
 				{
 					//0x14A2CAC
 					NPNNPNAIONN_IsError = true;
@@ -207,11 +210,11 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A07C8 Offset: 0x14A07C8 VA: 0x14A07C8
 	private int LPJLEHAJADA_GetIntParam(string _PIBLLGLCJEO_Param, int MNCOAGOKNAO)
 	{
-		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam(_PIBLLGLCJEO_Param, MNCOAGOKNAO);
+		return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam(_PIBLLGLCJEO_Param, MNCOAGOKNAO);
 	}
 
 	//// RVA: 0x14A08A8 Offset: 0x14A08A8 VA: 0x14A08A8
-	//public void OBKGEDCKHHE_Init(string LFGDLECGDCL, int MKLHCKJEKKC, int PLBOJBHAPLO, int _EMGJJFKONHK_ExpireDays, bool LAGDKBMDHLD = False, OKLFOAPMJAA.IGJCFFIGKIJ OLCDBKOJLKE) { }
+	//public void OBKGEDCKHHE_Init(string LFGDLECGDCL, int MKLHCKJEKKC, int PLBOJBHAPLO, int _EMGJJFKONHK_ExpireDays, bool LAGDKBMDHLD = False, OKLFOAPMJAA_BbsData.IGJCFFIGKIJ OLCDBKOJLKE) { }
 
 	//// RVA: 0x14A0B80 Offset: 0x14A0B80 VA: 0x14A0B80
 	public void OBKGEDCKHHE_Init(string LFGDLECGDCL, int _EMGJJFKONHK_ExpireDays, bool LAGDKBMDHLD/* = false*/, IGJCFFIGKIJ OLCDBKOJLKE/* = null*/)
@@ -225,7 +228,7 @@ public class OKLFOAPMJAA
 	{
 		FBEGBNBANPO = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_update_button_interval", 3), 0);
 		NINFIBPLBFO = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_write_button_interval", 3), 0);
-		GIGGFFIEDEK = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_no_touch_wait", 60), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+		GIGGFFIEDEK = new KKLGJPAIHJN(LPJLEHAJADA_GetIntParam("bbs_no_touch_wait", 60), NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 	}
 
 	//// RVA: 0x14A0D44 Offset: 0x14A0D44 VA: 0x14A0D44
@@ -332,7 +335,7 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A1760 Offset: 0x14A1760 VA: 0x14A1760
 	public void FBANBDCOEJL_Update(int _KPNKPGLPDHI_Op, IMCBBOAFION OKLICHHNKEA, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(!GIGGFFIEDEK.DKMLDEDKPBA_IsEnabled)
 		{
 			if(FBEGBNBANPO.NILMFDDLCMM(JNBFDCGMECE.BIDNGGDPPIM_AutoUpdateInterval) && !FKPJGFFFCDG && !OKNCPELPJJO)

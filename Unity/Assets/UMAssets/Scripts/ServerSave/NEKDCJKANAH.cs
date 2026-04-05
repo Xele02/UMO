@@ -177,7 +177,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				LAEGMENIEDB_Story storyDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
+				LAEGMENIEDB_Story storyDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
 				for(int i = 0; i < storyDb.CDENCMNHNGA_table.Count; i++)
 				{
 					string str = POFDDFCGEGP_Underscore + (i + 1).ToString();

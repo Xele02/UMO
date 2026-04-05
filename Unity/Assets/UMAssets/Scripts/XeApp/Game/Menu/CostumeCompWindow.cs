@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 				//0x1B689E8
 				isComp = x;
 			}));
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			if(isComp)
 				m_pop_window.Close();

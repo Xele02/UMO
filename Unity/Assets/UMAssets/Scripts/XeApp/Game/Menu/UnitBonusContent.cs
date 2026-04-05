@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		private List<BonusCell> m_bonusCellList = new List<BonusCell>(8); // 0x20
 		private PopupEpisodeBonusPlateSortList m_plateEpisodeList = new PopupEpisodeBonusPlateSortList(); // 0x24
 		private PopupUnitBonusDetailContentSetting m_bonusDetailPopup = new PopupUnitBonusDetailContentSetting(); // 0x28
-		private PKNOKJNLPOE_EventRaid.MOAICCAOMCP m_unitBonusInfo; // 0x2C
+		private PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP m_unitBonusInfo; // 0x2C
 		private HomeBannerTextureCache m_homeBannerTextureCache; // 0x30
 		private const int MaxCellCount = 8;
 		private bool m_isInitialize; // 0x34
@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 			m_plateEpisodeList.bannerTexCache = m_homeBannerTextureCache;
 			m_plateEpisodeList.Initialize(content.Parent, this);
 			m_bonusDetailPopup.m_parent = content.Parent;
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			m_unitBonusInfo = ev.ANMBIEIFKFF_UnitBonusInfo;
 			m_loadCount = 0;
 			m_loadedCount = 0;
@@ -203,7 +203,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA48430 Offset: 0xA48430 VA: 0xA48430
-		public void CellSettingValkyrie(BonusCell cell, List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.LNKNJHEFBCE> valkyrieList)
+		public void CellSettingValkyrie(BonusCell cell, List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.LNKNJHEFBCE> valkyrieList)
 		{
 			cell.cellType = CellType.Valkyrie;
 			cell.SetCellType(CellType.Valkyrie);
@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA47988 Offset: 0xA47988 VA: 0xA47988
-		public void CellSettingCostume(BonusCell cell, List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.AAALCKPHGNG> costumeList)
+		public void CellSettingCostume(BonusCell cell, List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.AAALCKPHGNG> costumeList)
 		{
 			cell.cellType = CellType.Costume;
 			cell.SetCellType(CellType.Costume);
@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA48E40 Offset: 0xA48E40 VA: 0xA48E40
-		public void CellSettingEpisode(BonusCell cell, PKNOKJNLPOE_EventRaid.MOAICCAOMCP.ELAIDDICLCD episodeData, int bonusPoint)
+		public void CellSettingEpisode(BonusCell cell, PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.ELAIDDICLCD episodeData, int bonusPoint)
 		{
 			cell.cellType = CellType.Episode;
 			cell.SetCellType(CellType.Episode);

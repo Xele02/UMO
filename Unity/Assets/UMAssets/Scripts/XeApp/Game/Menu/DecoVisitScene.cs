@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x11D5F8C Offset: 0x11D5F8C VA: 0x11D5F8C Slot: 4
 		protected override void Awake()
 		{
-			string bgm_ids = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
+			string bgm_ids = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 			string[] bgm_ids_array = bgm_ids.Split(new char[] { ',' });
 			if(bgm_ids_array.Length == 3)
 			{
@@ -88,16 +88,16 @@ namespace XeApp.Game.Menu
 				if(player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal || player.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.CCAPCGPIIPF_0_Normal)
 				{
 					//LAB_011dca68
-					CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CKJHFFHFPLH_GetFriends(() =>
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.CKJHFFHFPLH_GetFriends(() =>
 					{
 						//0x11D9108
 						isDone = true;
-					}, (CACGCMBKHDI_Request action) =>
+					}, (CACGCMBKHDI_NetBaseAction action) =>
 					{
 						//0x11D9114
 						isDone = true;
 						isError = true;
-					}, (CACGCMBKHDI_Request action) =>
+					}, (CACGCMBKHDI_NetBaseAction action) =>
 					{
 						//0x11D9120
 						isDone = true;
@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 						m_isInitialized = true;
 						yield break;
 					}
-					if(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId))
+					if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(player.MLPEHNBNOGD_PlayerId))
 					{
 						player.PCEGKKLKFNO_FriendData.LHMDABPNDDH_state = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 						player.PDIPANKOKOL_FriendStat = IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x11D6878 Offset: 0x11D6878 VA: 0x11D6878 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			int id = BgControl.GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+			int id = BgControl.GetHomeBgId(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			int idx = id - 1;
 			if(m_bgmIds.Length  < id - 1)
 				idx = 0;
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x11D6C5C Offset: 0x11D6C5C VA: 0x11D6C5C
 		private void OnPushDecoRoomButton()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15553, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15553, 0);
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			MenuScene.Instance.Mount(TransitionUniqueId.DECO, null,true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			m_isTranstion = true;
@@ -296,11 +296,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x11D6DFC Offset: 0x11D6DFC VA: 0x11D6DFC
 		private void OnPushLobbyButton()
 		{
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15554, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition(JpStringLiterals.StringLiteral_15554, 0);
 			m_isHideDecorationCanvas = true;
 			EventLobbyArgs arg = new EventLobbyArgs();
 			arg.IsMyLobby = true;
-			arg.playerId = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId();
+			arg.playerId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CAFHLEFMMGD_GetPlayerId();
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			MenuScene.Instance.Mount(TransitionUniqueId.HOME_LOBBYMAIN, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			m_isTranstion = true;
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_friendPlayerData != null)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_15476", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition("StringLiteral_15476", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
 			}
 			m_decorationCanvas.WaitingChara(true);
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
@@ -329,14 +329,14 @@ namespace XeApp.Game.Menu
 			{
 				m_isHideDecorationCanvas = true;
 				MenuScene.Instance.InputDisable();
-				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_friendPlayerData.MLPEHNBNOGD_PlayerId, () =>
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_friendPlayerData.MLPEHNBNOGD_PlayerId, () =>
 				{
 					//0x11D8308
 					DecoChatArgs arg = new DecoChatArgs();
 					arg.playerId = m_friendPlayerData.MLPEHNBNOGD_PlayerId;
 					if(m_friendPlayerData != null)
 					{
-						ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_15555", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
+						ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition("StringLiteral_15555", m_friendPlayerData.MLPEHNBNOGD_PlayerId);
 					}
 					MenuScene.Instance.Call(TransitionList.Type.DECO_CHAT, arg, true);
 					m_isTranstion = true;
@@ -357,11 +357,11 @@ namespace XeApp.Game.Menu
 						//0x11D8F28
 						MenuScene.Instance.InputEnable();
 					}, null, null, null, true, true, false, null, null, null, null, null);
-				}, (CACGCMBKHDI_Request error) =>
+				}, (CACGCMBKHDI_NetBaseAction error) =>
 				{
 					//0x11D8FC4
 					MenuScene.Instance.InputEnable();
-				}, (CACGCMBKHDI_Request error) =>
+				}, (CACGCMBKHDI_NetBaseAction error) =>
 				{
 					//0x11D9060
 					MenuScene.Instance.GotoTitle();
@@ -561,10 +561,10 @@ namespace XeApp.Game.Menu
 				GotoTitle();
 				yield break;
 			}
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.CHIIAHIJFCB_33_Deco/*33*/);
+			JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.HEFIKPAHCIA_UpdateMission(GBNDFCEDNMG.CJDGJFINBFH_ClearType.CHIIAHIJFCB_33_Deco/*33*/);
 			isDone = false;
 			isError = false;
-			PBJPACKDIIB.NPIJAIOCACL(() =>
+			PBJPACKDIIB_NetCoopQuestManager.NPIJAIOCACL(() =>
 			{
 				//0x11D9154
 				isDone = true;
@@ -620,27 +620,27 @@ namespace XeApp.Game.Menu
 		{
 			//0x11DDACC
 			MenuScene.Instance.InputDisable();
-            BBHNACPENDM_ServerSaveData pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
+            BBHNACPENDM_ServerSaveData pd = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
 			//bool isAlreadySent = false;
-			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+			if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DPJBHHIHJJK)
 			{
 				yield return this.StartCoroutineWatched(DecoScene.Co_UpdateDirtyTime());
 			}
 			if(MenuScene.CheckDatelineAndAssetUpdate())
 				yield break;
-			m_visitControl.KCKOFIIHDBJ_SendGift(playerId, (int itemId, int count) =>
+            m_visitControl.KCKOFIIHDBJ_SendGift(playerId, (HNKMEOKCNBI.EOOKLDPPIDJ)((int itemId, int count) =>
 			{
 				//0x11D9248
 				isDone = true;
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, itemId, count, null, 0);
-				m_sentGiftPopupSetting.itemId = itemId;
-				m_sentGiftPopupSetting.count = count;
-				m_sentGiftPopupSetting.sentCount = 1;
-			}, () =>
+                CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ_Clear();
+                CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(pd, itemId, count, (OOOOCFAFGCP)null, 0);
+                m_sentGiftPopupSetting.itemId = itemId;
+                m_sentGiftPopupSetting.count = count;
+                m_sentGiftPopupSetting.sentCount = 1;
+			}), () =>
 			{
 				//0x11D93F4
 				isExcess = true;
@@ -732,16 +732,16 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			bool isError = false;
 			bool isGotoTitle = false;
-			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.AOHLMBKILED(playerId, playerName, playerRank, () =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.AOHLMBKILED(playerId, playerName, playerRank, () =>
 			{
 				//0x11D9470
 				isDone = true;
-			}, (CACGCMBKHDI_Request action) =>
+			}, (CACGCMBKHDI_NetBaseAction action) =>
 			{
 				//0x11D947C
 				isDone = true;
 				isError = true;
-			}, (CACGCMBKHDI_Request action) =>
+			}, (CACGCMBKHDI_NetBaseAction action) =>
 			{
 				//0x11D9488
 				isGotoTitle = true;
@@ -777,7 +777,7 @@ namespace XeApp.Game.Menu
 			bool isFav;
 
 			//0x11DCCD8
-			isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendData.MLPEHNBNOGD_PlayerId);
+			isFav = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendData.MLPEHNBNOGD_PlayerId);
 			bool isDone = false;
 			bool isError = false;
 			bool isOk = false;
@@ -785,7 +785,7 @@ namespace XeApp.Game.Menu
 			m_decorationCanvas.EnableCanvasController(false);
 			if(!isFav)
 			{
-				if(PIGBKEIAMPE_FriendManager.DJHFILDBOFG_GetMaxFanPossible() <= PIGBKEIAMPE_FriendManager.GKDGOGCOGBK())
+				if(PIGBKEIAMPE_NetFriendManager.DJHFILDBOFG_GetMaxFanPossible() <= PIGBKEIAMPE_NetFriendManager.GKDGOGCOGBK())
 				{
 					PopupWindowManager.FanLimitPopupShow(() =>
 					{
@@ -839,22 +839,22 @@ namespace XeApp.Game.Menu
 				{
 					m_removeFavList.Add(friendData.MLPEHNBNOGD_PlayerId);
 				}
-				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.EPKOLKBGOGA(m_addFavList, m_removeFavList, () =>
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.EPKOLKBGOGA(m_addFavList, m_removeFavList, () =>
 				{
 					//0x11D95BC
-					CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(friendData.MLPEHNBNOGD_PlayerId, (int fanCount) =>
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(friendData.MLPEHNBNOGD_PlayerId, (int fanCount) =>
 					{
 						//0x11D9748
 						if(m_addFavList.Count == 0)
 						{
 							if(m_removeFavList.Count != 0)
 							{
-								ILCCJNDFFOB.HHCJCDFCLOB.JCJCJPCHNEN(m_removeFavList[0], 1, fanCount, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(m_removeFavList[0]));
+								ILCCJNDFFOB.HHCJCDFCLOB_Instance.JCJCJPCHNEN(m_removeFavList[0], 1, fanCount, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(m_removeFavList[0]));
 							}
 						}
 						else
 						{
-							ILCCJNDFFOB.HHCJCDFCLOB.JCJCJPCHNEN(m_addFavList[0], 1, fanCount, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(m_addFavList[0]));
+							ILCCJNDFFOB.HHCJCDFCLOB_Instance.JCJCJPCHNEN(m_addFavList[0], 1, fanCount, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(m_addFavList[0]));
 						}
 						isDone = true;
 					}, () =>

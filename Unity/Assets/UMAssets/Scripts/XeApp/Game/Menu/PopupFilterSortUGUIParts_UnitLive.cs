@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 					m_bit = GetFilterButtonsBitWithAllButton(m_btn);
 				});
 			}
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled())
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled())
 			{
 				m_btn[4].gameObject.SetActive(false);
 			}

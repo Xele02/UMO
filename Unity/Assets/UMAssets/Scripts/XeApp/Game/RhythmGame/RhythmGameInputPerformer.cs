@@ -451,7 +451,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			UpdateTouchRect(RhythmGameConsts.IsWideLine() ? rectParentW : rectParent);
 			swipeDistanceRate = 0.003f;
-			touchPriorityThreshold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("note_touch_priority_change_offset", 180);
+			touchPriorityThreshold = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("note_touch_priority_change_offset", 180);
 		}
 
 		//// RVA: 0x9A38A4 Offset: 0x9A38A4 VA: 0x9A38A4

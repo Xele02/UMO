@@ -37,14 +37,14 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN dbTicket = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(a);
+				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN dbTicket = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(a);
 				if (dbTicket == null)
 				{
 					m_layoutEvTicket.StartChildrenAnimGoStop("02");
 				}
 				else
 				{
-					m_textEvTicket.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, dbTicket.PPFNGGCBJKC_id));
+					m_textEvTicket.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, dbTicket.PPFNGGCBJKC_id));
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}

@@ -79,10 +79,10 @@ namespace XeApp.Game.Gacha
 		public static GCAHJLOGMCI.NFCAJPIJFAM_SummonType netGachaCount { get; set; } // 0x40
 		public static GCAHJLOGMCI.NFCAJPIJFAM_SummonType netGachaCountForAppearRate { get; private set; } // 0x44
 		private static int netGachaProductIndex { get; set; } // 0x48
-		private static HPBDNNACBAK gpm { get { return NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI; } } //0x990CC8
-		private static CIOECGOMILE pdm { get { return CIOECGOMILE.HHCJCDFCLOB; } } //0x995E58
-		public static List<LOBDIAABMKG> netGachaProducts { get { return gpm.MHKCPJDNJKI_products; } } //0x995ED4
-		public static LOBDIAABMKG netGachaProductData { get
+		private static HPBDNNACBAK_NetGachaProductManager gpm { get { return NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI; } } //0x990CC8
+		private static CIOECGOMILE_NetPlayerDataManager pdm { get { return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance; } } //0x995E58
+		public static List<LOBDIAABMKG_GachaProductData> netGachaProducts { get { return gpm.MHKCPJDNJKI_products; } } //0x995ED4
+		public static LOBDIAABMKG_GachaProductData netGachaProductData { get
 			{
 				if (netGachaProductIndex > -1)
 					return gpm.MHKCPJDNJKI_products[netGachaProductIndex];
@@ -178,7 +178,7 @@ namespace XeApp.Game.Gacha
 			int idx;
 			if (typeAndSeriesId == -1)
 			{
-				idx = gpm.MHKCPJDNJKI_products.FindIndex((LOBDIAABMKG p) =>
+				idx = gpm.MHKCPJDNJKI_products.FindIndex((LOBDIAABMKG_GachaProductData p) =>
 				{
 					//0x996CE4
 					return p.INDDJNMPONH_type == m_selectCategory;
@@ -186,14 +186,14 @@ namespace XeApp.Game.Gacha
 			}
 			else
 			{
-				idx = gpm.MHKCPJDNJKI_products.FindIndex((LOBDIAABMKG p) =>
+				idx = gpm.MHKCPJDNJKI_products.FindIndex((LOBDIAABMKG_GachaProductData p) =>
 				{
 					//0x996D94
 					return p.FDEBLMKEMLF_TypeAndSeriesId == typeAndSeriesId;
 				});
 			}
 			netGachaProductIndex = idx;
-			LOBDIAABMKG d = null;
+			LOBDIAABMKG_GachaProductData d = null;
 			if (netGachaProductIndex >= 0)
 			{
 				d = gpm.MHKCPJDNJKI_products[netGachaProductIndex];
@@ -548,14 +548,14 @@ namespace XeApp.Game.Gacha
 			PopupSetting s = null;
 			if (selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 			{
-				string ticketName = EKLNMHFCAOI.INCKKODFJAP_GetItemName(netGachaProductData.MJNOAMAFNHA_CostItemId);
+				string ticketName = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(netGachaProductData.MJNOAMAFNHA_CostItemId);
 				if (v3_price <= v1_have)
 				{
 					//LAB_00997dfc
 					s = MakePopupSettingForTicket(ticketName, v1_have, v3_price, v2_lotCount);
 					//LAB_00998190;
 				}
-				else if (EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
+				else if (EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
 				{
 					//LAB_009980f0
 					s = MakePopupSettingForFewLimitedItem(ticketName, v1_have, v3_price);
@@ -563,7 +563,7 @@ namespace XeApp.Game.Gacha
 				}
 				else
 				{
-					s = MakePopupSettingForFewPassTicket(ticketName, v1_have, v3_price, NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ());
+					s = MakePopupSettingForFewPassTicket(ticketName, v1_have, v3_price, NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MENKMJPCELJ());
 					//LAB_00997d04
 					toPurchaseVC = true;
 				}
@@ -579,7 +579,7 @@ namespace XeApp.Game.Gacha
 				}
 				else
 				{
-					s = MakePopupSettingForFewBonusTicket(ticketName, v1_have, v3_price, netGachaProductData.ALPOJNBHNDK(netGachaProductData.OMNAPCHLBHF_GetPurchaseCurrencyId(netGachaCount), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
+					s = MakePopupSettingForFewBonusTicket(ticketName, v1_have, v3_price, netGachaProductData.ALPOJNBHNDK(netGachaProductData.OMNAPCHLBHF_GetPurchaseCurrencyId(netGachaCount), NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
 					//LAB_00997d04
 					toPurchaseVC = true;
 				}
@@ -611,7 +611,7 @@ namespace XeApp.Game.Gacha
 				}
 				else if(selectedLotType == LotType.Ticket)
 				{
-					string ticketName = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(selectProductInfo.APHNELOFGAK_CurrencyId).PPFNGGCBJKC_id);
+					string ticketName = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(selectProductInfo.APHNELOFGAK_CurrencyId).PPFNGGCBJKC_id);
 					if (v1_have < v3_price)
 					{
 						//LAB_009980f0
@@ -661,7 +661,7 @@ namespace XeApp.Game.Gacha
 			else
 			{
 				TransitionList.Type result = TransitionList.Type.UNDEFINED;
-				isChangeDate = PGIGNJDPCAH.MNANNMDBHMP(() =>
+				isChangeDate = PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 				{
 					//0x9972AC
 					result = TransitionList.Type.LOGIN_BONUS;
@@ -748,16 +748,16 @@ namespace XeApp.Game.Gacha
 		{
 			if (currentGachaLimitTime < 0)
 				return false;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			return t >= currentGachaLimitTime;
 		}
 
 		// // RVA: 0x992A24 Offset: 0x992A24 VA: 0x992A24
 		public static void SetupFreeTimezone()
 		{
-			timezoneMorn = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[0];
-			timezoneNoon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[1];
-			timezoneNight = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[2];
+			timezoneMorn = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[0];
+			timezoneNoon = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[1];
+			timezoneNight = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.FPBEBCIPEPI_GachaHour[2];
 			timezoneEnd = timezoneMorn + 24;
 		}
 
@@ -1120,7 +1120,7 @@ namespace XeApp.Game.Gacha
 				if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_LimitedItem)
 				{
 					int itemId = netGachaProductData.MJNOAMAFNHA_CostItemId;
-					return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null);
+					return EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), null);
 				}
 				if (selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 					return 0;
@@ -1166,7 +1166,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x996690 Offset: 0x996690 VA: 0x996690
 		public static BadgeConstant.ID GetFooterMenuBadgeId(ref string badgeText)
 		{
-			HPBDNNACBAK h = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI;
+			HPBDNNACBAK_NetGachaProductManager h = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI;
 			if (h == null)
 				return 0;
 			h.OKINLIEHCEC();
@@ -1180,7 +1180,7 @@ namespace XeApp.Game.Gacha
 				if (!h.CPGNMGCIIKI())
 					return 0;
 				SetupFreeTimezone();
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				Timezone t = GetTimezoneFor(time);
 				if ((int)t < 3)
 					return (BadgeConstant.ID)(t + (int)BadgeConstant.ID.Gacha_FreeMorning);
@@ -1211,7 +1211,7 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x9969C8 Offset: 0x9969C8 VA: 0x9969C8
-		public static long GetGachaProductOpenTime(LOBDIAABMKG product)
+		public static long GetGachaProductOpenTime(LOBDIAABMKG_GachaProductData product)
 		{
 			if(product.KACECFNECON_extra != null && product.KACECFNECON_extra.JOFAGCFNKIO_OpenTime != 0)
 			{
@@ -1223,7 +1223,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x996A48 Offset: 0x996A48 VA: 0x996A48
 		public static long GetGachaProductsLastOpenTime()
 		{
-			List<LOBDIAABMKG> l = gpm.MHKCPJDNJKI_products;
+			List<LOBDIAABMKG_GachaProductData> l = gpm.MHKCPJDNJKI_products;
 			if (l.Count < 1)
 				return 0;
 			long res = 0;

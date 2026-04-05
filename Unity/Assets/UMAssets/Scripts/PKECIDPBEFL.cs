@@ -42,7 +42,7 @@ public class PKECIDPBEFL
 	public List<string> OHNJJIMGKGK_Names = new List<string>(); // 0x2C
 	public bool CHDDDCCHJJH_replace; // 0x30
 	public EDOHBJAPLPF_JsonData HJDBGMMPPEF_PlayerData; // 0x34
-	public List<PBJPACKDIIB.IFCOFHAFMON> CFLLEDGILPK_CoopQuest = new List<PBJPACKDIIB.IFCOFHAFMON>(); // 0x38
+	public List<PBJPACKDIIB_NetCoopQuestManager.IFCOFHAFMON> CFLLEDGILPK_CoopQuest = new List<PBJPACKDIIB_NetCoopQuestManager.IFCOFHAFMON>(); // 0x38
 	public EDOHBJAPLPF_JsonData LAEMKLPEIAK_Logs; // 0x3C
 	public string ECAOENGDBMI_SaveHash; // 0x40
 	private long AFNACNGGLBD; // 0x48
@@ -62,21 +62,21 @@ public class PKECIDPBEFL
 	// RVA: 0x93A4B4 Offset: 0x93A4B4 VA: 0x93A4B4
 	public PKECIDPBEFL()
     {
-        if(DOKOHKJIDBO.HHCJCDFCLOB != null)
+        if(DOKOHKJIDBO.HHCJCDFCLOB_Instance != null)
         {
-            if(DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM != null)
+            if(DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM != null)
             {
-                IMOMGKMFPBL = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_0", 0);
-                HGGDHFDIFFG = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_1", 0);
-                HJAHECBPNKM = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_2", 0);
-                JFFMOOLBCEC = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_3", 0);
+                IMOMGKMFPBL = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_0", 0);
+                HGGDHFDIFFG = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_1", 0);
+                HJAHECBPNKM = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_2", 0);
+                JFFMOOLBCEC = DOKOHKJIDBO.HHCJCDFCLOB_Instance.IKCAJDOKNOM.LPJLEHAJADA_GetIntParam("s_3", 0);
             }
         }
         LHPDDGIJKNB_Reset();
     }
 
 	// // RVA: 0x93A8F4 Offset: 0x93A8F4 VA: 0x93A8F4
-	public void DOMFHDPMCCO_Init(List<DDBKLMKKCDL> _JPDPFGFMKHK_rankings, List<string> PNMLDKNKIIM, List<int> CIGDBPLIGKM, List<string> _JIMKNDJMCID_Keys, List<int> _EMEKFFHCHMH_RewardEnd2, bool DCOJMLNFPFM, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player, EDOHBJAPLPF_JsonData _LAEMKLPEIAK_Logs, List<int> _BIOBLLHBKBC_Gpgs, long _IKHKMFNIHKH_PlayAt, long _IAGGEOPLJIN_LimitAt, string _ECAOENGDBMI_SaveHash, int _OKJNNGJJOFA_RaidBossId, List<PBJPACKDIIB.IFCOFHAFMON> _CFLLEDGILPK_CoopQuest)
+	public void DOMFHDPMCCO_Init(List<DDBKLMKKCDL> _JPDPFGFMKHK_rankings, List<string> PNMLDKNKIIM, List<int> CIGDBPLIGKM, List<string> _JIMKNDJMCID_Keys, List<int> _EMEKFFHCHMH_RewardEnd2, bool DCOJMLNFPFM, List<string> _OHNJJIMGKGK_Names, EDOHBJAPLPF_JsonData _NMICBJDPLOH_player, EDOHBJAPLPF_JsonData _LAEMKLPEIAK_Logs, List<int> _BIOBLLHBKBC_Gpgs, long _IKHKMFNIHKH_PlayAt, long _IAGGEOPLJIN_LimitAt, string _ECAOENGDBMI_SaveHash, int _OKJNNGJJOFA_RaidBossId, List<PBJPACKDIIB_NetCoopQuestManager.IFCOFHAFMON> _CFLLEDGILPK_CoopQuest)
 	{
 		LHPDDGIJKNB_Reset();
 		HNDDJDMAAJD = JAFAIDPJALG();
@@ -100,7 +100,7 @@ public class PKECIDPBEFL
 		HJDBGMMPPEF_PlayerData = _NMICBJDPLOH_player;
 		LAEMKLPEIAK_Logs = _LAEMKLPEIAK_Logs;
 		ECAOENGDBMI_SaveHash = _ECAOENGDBMI_SaveHash;
-		DCLLGOECHPA_PidCrypted = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+		DCLLGOECHPA_PidCrypted = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 		OKJNNGJJOFA_RaidBossId = _OKJNNGJJOFA_RaidBossId;
 		if(_CFLLEDGILPK_CoopQuest != null)
 			CFLLEDGILPK_CoopQuest.AddRange(_CFLLEDGILPK_CoopQuest);
@@ -359,7 +359,7 @@ public class PKECIDPBEFL
 			IKHKMFNIHKH_PlayAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(json, "play_at");
 			ECAOENGDBMI_SaveHash = CEDHHAGBIBA.BNCLNFJHEND_ReadString(json, "save_hash");
 			OKJNNGJJOFA_RaidBossId = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(json, "raidboss_id");
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(time >= IAGGEOPLJIN_LimitAt)
 				CPBPFGEDMAO = 0xe;
 			else
@@ -441,7 +441,7 @@ public class PKECIDPBEFL
 					EDOHBJAPLPF_JsonData coop_quests = json["coop_quests"];
 					for(int i = 0; i < coop_quests.HNBFOAJIIAL_Count; i++)
 					{
-						PBJPACKDIIB.IFCOFHAFMON d = new PBJPACKDIIB.IFCOFHAFMON();
+						PBJPACKDIIB_NetCoopQuestManager.IFCOFHAFMON d = new PBJPACKDIIB_NetCoopQuestManager.IFCOFHAFMON();
 						d.EKANGPODCEP_EventId = JsonUtil.GetInt(coop_quests[i], "eid");
 						d.CMEJFJFOIIJ_QuestId = JsonUtil.GetInt(coop_quests[i], "qid");
 						d.AIBFGKBACCB_LobbyId = JsonUtil.GetInt(coop_quests[i], "lid");
@@ -459,10 +459,10 @@ public class PKECIDPBEFL
 	// // RVA: 0x93AC74 Offset: 0x93AC74 VA: 0x93AC74
 	private string JAFAIDPJALG()
     {
-        BEEINMBNKNM_Encryption.GKBODMNBFJM(0x299ce1af, BitConverter.GetBytes(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId));
+        BEEINMBNKNM_Encryption.GKBODMNBFJM(0x299ce1af, BitConverter.GetBytes(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId));
         StringBuilder str = new StringBuilder();
         str.Append(Application.persistentDataPath);
-        str.AppendFormat("/61/{0:x}", NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId);
+        str.AppendFormat("/61/{0:x}", NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId);
         return str.ToString();
     }
 

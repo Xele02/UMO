@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 			m_Number03.SetNumber(data.IJPAKGFADJB_HiScore, 0);
 			m_is_anim_new_recode = data.GIIKOMPJOHA_IsHiScore;
 			m_text_rank.text = data.BKKPKIGLMCN_Ranks[1].ToString();
-            KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(data.OENBOLPDBAB_FreeMusicId);
+            KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(data.OENBOLPDBAB_FreeMusicId);
 			EEDKAACNBBG_MusicData md = new EEDKAACNBBG_MusicData();
 			md.KHEKNNFCAOI_Init(fm.DLAEJOBELBH_MusicId);
 			MenuScene.Instance.MusicJacketTextureCache.Load(md.JNCPEGJGHOG_JacketId, (IiconTexture texture) =>

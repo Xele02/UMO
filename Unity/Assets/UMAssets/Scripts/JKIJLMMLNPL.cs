@@ -50,7 +50,7 @@ public class JKIJLMMLNPL
 		for(int i = 0; i < cnt; i++)
 		{
 			GCIJNCFDNON_SceneInfo viewscene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i];
-			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[viewscene.BCCHOBPJJKE_SceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[viewscene.BCCHOBPJJKE_SceneId - 1];
 			if(dbScene.PPEGAKEIEGM_Enabled == 2)
 			{
 				if(viewscene.FJODMPGPDDD_Unlocked && !viewscene.MCCIFLKCNKO_Feed && (CJNCOELLDFC == null || !CJNCOELLDFC(viewscene.BCCHOBPJJKE_SceneId)))
@@ -75,17 +75,17 @@ public class JKIJLMMLNPL
 			//0x14696C0
 			return _BNKHBCBJBKI_b.BDLNMOIOMHK_total - _HKICMNAACDA_a.BDLNMOIOMHK_total;
 		});
-		cnt = Mathf.Min(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_plate_max", 100), l.Count);
+		cnt = Mathf.Min(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_plate_max", 100), l.Count);
 		int val = 0;
 		for(int i = 0; i < cnt; i++)
 		{
 			OPIBAPEGCLA_Scenes.Add(l[i].COIODGJDJEJ_scene);
 			val += l[i].BDLNMOIOMHK_total;
 		}
-		LOAJLHEIMFD_MCannonDamageBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_base", 10000);
-		EDJHGLOKLEN_MCannonDamageUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_urate", 10000) * GameManager.Instance.ViewPlayerData.BJGOPOEAAIC_UtaRate;
-		DMDHECLBECL_MCannonDamagePlate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_plate", 10) * val;
-		HALIDDHLNEG_Damage = (EDJHGLOKLEN_MCannonDamageUtaRate + LOAJLHEIMFD_MCannonDamageBase + DMDHECLBECL_MCannonDamagePlate) / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_denomi", 1000);
+		LOAJLHEIMFD_MCannonDamageBase = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_base", 10000);
+		EDJHGLOKLEN_MCannonDamageUtaRate = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_urate", 10000) * GameManager.Instance.ViewPlayerData.BJGOPOEAAIC_UtaRate;
+		DMDHECLBECL_MCannonDamagePlate = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_plate", 10) * val;
+		HALIDDHLNEG_Damage = (EDJHGLOKLEN_MCannonDamageUtaRate + LOAJLHEIMFD_MCannonDamageBase + DMDHECLBECL_MCannonDamagePlate) / IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA_GetIntParam("mcannon_damage_denomi", 1000);
 	}
 
 	// RVA: 0x1469518 Offset: 0x1469518 VA: 0x1469518
@@ -93,6 +93,6 @@ public class JKIJLMMLNPL
 	{
 		JKIJLMMLNPL data = new JKIJLMMLNPL();
 		data.DEHCKHMIENO(null);
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = data.HALIDDHLNEG_Damage;
+		CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = data.HALIDDHLNEG_Damage;
 	}
 }

@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 			if(Args != null && Args is QuestTopFormQuestListArgs)
 			{
 				m_args = Args as QuestTopFormQuestListArgs;
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN_EventId));
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN_EventId));
 				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuestName, false, m_args.viewData.BCOKKAALGHC_Group);
 			}
 			SetupLayout();
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9D6A0C Offset: 0x9D6A0C VA: 0x9D6A0C Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !isSyncMissionStatus;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && !isSyncMissionStatus;
 		}
 
 		// RVA: 0x9D6AD0 Offset: 0x9D6AD0 VA: 0x9D6AD0 Slot: 23
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_args.viewData != null)
 				{
-					KNKDBNFMAKF_EventSp ev = m_args.viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+					KNKDBNFMAKF_NetEventSpController ev = m_args.viewData.COAMJFMEIBF as KNKDBNFMAKF_NetEventSpController;
 					if(ev != null)
 					{
 						ev.ALIBGNACAEA(true, m_args.viewData.BCOKKAALGHC_Group);
@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9D6964 Offset: 0x9D6964 VA: 0x9D6964
 		private IEnumerator Co_SyncMissionStatus(CGJKNOCAPII viewData)
 		{
-			IKDICBBFBMI_EventBase controller;
+			IKDICBBFBMI_NetEventBaseController controller;
 
 			//0x9D9948
 			if(viewData == null)
@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71061C Offset: 0x71061C VA: 0x71061C
 		// // RVA: 0x9D6BC0 Offset: 0x9D6BC0 VA: 0x9D6BC0
-		private IEnumerator Co_SyncAchievement(IKDICBBFBMI_EventBase controller, bool isRepeated)
+		private IEnumerator Co_SyncAchievement(IKDICBBFBMI_NetEventBaseController controller, bool isRepeated)
 		{
 			List<AKIIJBEJOEP> quest; // 0x1C
 			JGMEFHJCNHP_GetAchievementRecords req; // 0x20
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 			}
 			if(achievementsKeys.Count == 0)
 				yield break;
-			req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new JGMEFHJCNHP_GetAchievementRecords());
+			req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new JGMEFHJCNHP_GetAchievementRecords());
 			req.MIDAMHNABAJ_Keys = achievementsKeys;
 			req.KMOBDLBKAAA_Repeatable = isRepeated;
 			while(!req.PLOOEECNHFB_IsDone)

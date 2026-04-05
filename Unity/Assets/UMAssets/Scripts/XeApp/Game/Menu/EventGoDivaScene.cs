@@ -551,7 +551,7 @@ namespace XeApp.Game.Menu
 			m_loadingEffectInstance.SetActive(false);
 			while(isBgChanging)
 				yield return null;
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			m_eventBanner.Hide();
 			m_feverLimit.Hide();
@@ -767,7 +767,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
+				if(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_IsTutoDone(BOPFPIHGJMD.PDLKAKEABDP_Tuto.EILIAPKFCEO_0_OfferRelease))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
@@ -780,7 +780,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_ValkyrieUpgradeHome, 
@@ -855,7 +855,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1064F5C Offset: 0x1064F5C VA: 0x1064F5C Slot: 47
-		protected override void OnEventControlerSetuped(IKDICBBFBMI_EventBase eventCtrl, int eventId, KGCNCBOKCBA.GNENJEHKMHD_EventStatus eventStatus, bool isEventTimeLimit)
+		protected override void OnEventControlerSetuped(IKDICBBFBMI_NetEventBaseController eventCtrl, int eventId, KGCNCBOKCBA.GNENJEHKMHD_EventStatus eventStatus, bool isEventTimeLimit)
 		{
 			m_musicSelectSupporter.eventId = eventId;
 			m_musicSelectSupporter.eventStatus = eventStatus;
@@ -863,7 +863,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1064FC0 Offset: 0x1064FC0 VA: 0x1064FC0
-		private bool IsBonusOpen(MANPIONIGNO_EventGoDiva.IBNAEKMCIEO bonusInfo)
+		private bool IsBonusOpen(MANPIONIGNO_NetEventGoDivaController.IBNAEKMCIEO bonusInfo)
 		{
 			return bonusInfo.NOEFINFEMBM > 0 || bonusInfo.PKDAEFIGMLI > 0 || bonusInfo.DGAELGEJPNA > 0;
 		}
@@ -1231,7 +1231,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1067428 Offset: 0x1067428 VA: 0x1067428
 		private void ApplyFeverTimeStatus()
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(t) > 0)
 			{
 				if(!m_musicSelectSupporter.IsEventEndChallengePeriod)
@@ -1297,8 +1297,8 @@ namespace XeApp.Game.Menu
 					m_eventInfo.SetRankingInfoFinish(0, 0, false);
 				}
 			}
-			int godiva_max_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
-			godiva_max_level = Mathf.Min(godiva_max_level, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
+			int godiva_max_level = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("godiva_max_level", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
+			godiva_max_level = Mathf.Min(godiva_max_level, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
 			FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO d;
 			if(m_divaId <= m_eventGoDivaData.NBIGLBMHEDC_DivaList.Count && m_eventGoDivaData.NBIGLBMHEDC_DivaList[m_divaId - 1].IHANGGCHPAL != null)
 			{
@@ -1352,7 +1352,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x10685F4 Offset: 0x10685F4 VA: 0x10685F4
 		private void ApplyDivaInfoRanking(int divaId)
 		{
-			MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
+			MANPIONIGNO_NetEventGoDivaController ev = m_eventCtrl as MANPIONIGNO_NetEventGoDivaController;
 			if(m_musicSelectSupporter.IsEventEndChallengePeriod)
 			{
 				if(m_musicSelectSupporter.IsEventCounting)
@@ -1380,7 +1380,7 @@ namespace XeApp.Game.Menu
 			{
 				bool done = false;
 				bool err = false;
-				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, divaId - 1, () =>
+				JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, divaId - 1, () =>
 				{
 					//0x1071498
 					done = true;
@@ -1408,7 +1408,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1068824 Offset: 0x1068824 VA: 0x1068824
 		private void ApplyEventMusicInfo(IBJAKJJICBC musicData, Difficulty.Type difficulty, bool is6LineMode)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
             ExpType expType = GetMusicExpType(musicData, difficulty, t);
             int expValue = GetMusicExp(musicData, difficulty, t, expType);
 			float m = 0;
@@ -1439,7 +1439,7 @@ namespace XeApp.Game.Menu
 					v2 = LayoutEventGoDivaMusicInfo.BonusStatusType.Normal;
 				}
 			}
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventMusicInfo.SetBonusLotsStatus(musicData.OGHOPBAKEFE_IsEventSpecial ? v2 : (v2 == LayoutEventGoDivaMusicInfo.BonusStatusType.Daily ? LayoutEventGoDivaMusicInfo.BonusStatusType.Hide : LayoutEventGoDivaMusicInfo.BonusStatusType.None), 
 				v2 != 0 ? 100 : Mathf.Min(100, m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(t) + m_eventGoDivaData.AFGCEMJEOJL_Rate),
 				v, CheckBonusItemStatus(t) != BonusItemStatus.NotHave, true);
@@ -1683,7 +1683,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_currentPageType == PageType.EventHome)
 					{
-                        CCBMJNPFPBB_EventGoDiva.KIJJHJHLBAK saveEv = (m_eventCtrl as MANPIONIGNO_EventGoDiva).CLELOGKMNCE_GetEventSaveData();
+                        CCBMJNPFPBB_EventGoDiva.KIJJHJHLBAK saveEv = (m_eventCtrl as MANPIONIGNO_NetEventGoDivaController).CLELOGKMNCE_GetEventSaveData();
 						if(saveEv != null && saveEv.PFPGHILKGIG_BnsCnt < 1 && saveEv.JHKKAKJCJOF_Bns2 < 1)
 							return true;
                     }
@@ -1692,8 +1692,8 @@ namespace XeApp.Game.Menu
 				{
 					if(m_currentPageType == PageType.EventHome)
 					{
-						int v = m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
-						int v2 = (m_eventCtrl as MANPIONIGNO_EventGoDiva).AELBIEDNPGB_GetTicketCount(null);
+						int v = m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+						int v2 = (m_eventCtrl as MANPIONIGNO_NetEventGoDivaController).AELBIEDNPGB_GetTicketCount(null);
 						if(v <= 0 && v2 < 1)
 						{
 							return false;
@@ -1793,8 +1793,8 @@ namespace XeApp.Game.Menu
 		private void ShowPopupAskUseBonusItem(Action<int> onUseItem)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
-			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
+			MANPIONIGNO_NetEventGoDivaController ev = m_eventCtrl as MANPIONIGNO_NetEventGoDivaController;
+			LNELCMNJPIC_EventGoDiva dbEv = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(ev.JOPOPMLFINI_QuestName) as LNELCMNJPIC_EventGoDiva;
 			int fever_ticket_rate = 0;
 			if(dbEv != null)
 				fever_ticket_rate = dbEv.LPJLEHAJADA_GetIntParam("fever_ticket_rate", 0);
@@ -1884,8 +1884,8 @@ namespace XeApp.Game.Menu
 		private bool CheckMatchMusicFilter(IBJAKJJICBC musicData, long currentTime)
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.FPMABHADHBB_EventGoDiva saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.IMEBBACHPAN_EventGoDiva;
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			int min = saveData.KHAJGNDEPMG_FilterMusicLevelMin;
 			if(min == 0)
 				min = music_level_limitmin;
@@ -1925,19 +1925,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106BCE8 Offset: 0x106BCE8 VA: 0x106BCE8
 		private void CreateFilterdMusicList()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchMusicFilter);
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchMusicFilter);
 		}
 
 		// // RVA: 0x106BE34 Offset: 0x106BE34 VA: 0x106BE34
 		private void CreateEventHomeFilterd()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchEventHomeFilter);
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchEventHomeFilter);
 		}
 
 		// // RVA: 0x106BF80 Offset: 0x106BF80 VA: 0x106BF80
 		private void CreateDefaultMusicList()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), (IBJAKJJICBC m, long ct) =>
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), (IBJAKJJICBC m, long ct) =>
 			{
 				//0x10713EC
 				return true;
@@ -2111,7 +2111,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106C910 Offset: 0x106C910 VA: 0x106C910
 		private List<MusicPosInfo> CreateMusicPosInfoList(bool is6LineMode, bool downloadedOnly, Difficulty.Type difficulty)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<MusicPosInfo> res = new List<MusicPosInfo>();
 			for(int i = 0; i < m_filteredMusicLists.Count; i++)
 			{
@@ -2233,7 +2233,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106D4E4 Offset: 0x106D4E4 VA: 0x106D4E4
 		private void OnApplyMusicInfoNormal(IBJAKJJICBC musicData, MusicSelectUISupporter.ApplyInfoData applyData)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_playButtonUI.SetupUnitLive(null, null);
             ExpType expType = GetMusicExpType(musicData, diff, t);
             m_cdSelect.SetEventGoDivaExpType(expType);
@@ -2461,7 +2461,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			if(CheckEventLimit(selectMusicData, m_eventCtrl.HIDHLFCBIDE_EventType, m_eventStatus, m_eventId))
 				return;
-            BonusItemStatus bonus = CheckBonusItemStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
+            BonusItemStatus bonus = CheckBonusItemStatus(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(bonus != BonusItemStatus.CanUse)
 			{
 				ShowPopupCanNotUseBonusItem(bonus);
@@ -2481,7 +2481,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106EA84 Offset: 0x106EA84 VA: 0x106EA84
 		private BonusItemStatus CheckBonusItemStatus(long currentTime)
 		{
-			MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
+			MANPIONIGNO_NetEventGoDivaController ev = m_eventCtrl as MANPIONIGNO_NetEventGoDivaController;
 			if(ev.AELBIEDNPGB_GetTicketCount(null) < 1)
 				return BonusItemStatus.NotHave;
 			else if(ev.CACFIGAPLDH_GetDailyUse() < 1)
@@ -2642,8 +2642,8 @@ namespace XeApp.Game.Menu
 		private bool IsFilter()
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.FPMABHADHBB_EventGoDiva saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.IMEBBACHPAN_EventGoDiva;
-			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
-			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
+			int music_level_limitmin = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("music_level_limitmax", 25);
 			return !((saveData.KHAJGNDEPMG_FilterMusicLevelMin == 0 || saveData.KHAJGNDEPMG_FilterMusicLevelMin == music_level_limitmin)
 				&& (saveData.IKFKKJLBBBN_FilterMusicLevelMax == 0 || saveData.IKFKKJLBBBN_FilterMusicLevelMax == music_level_limitmax)
 				&& saveData.EOCPIGDIFNB_FilterMusicAttr == 0 && saveData.JJNLEPEKNDO_FilterCombo == 0 && saveData.JGOJDHFAHHE_FilterScoreRank == 0 && 
@@ -2762,10 +2762,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x106FCAC Offset: 0x106FCAC VA: 0x106FCAC Slot: 56
-		protected override bool OnInitializeLoginBonusPopup(EKLNMHFCAOI.FKGCBLHOOCL_Category itemType, int itemCount, TicketGainedPopupSetting popupSetting)
+		protected override bool OnInitializeLoginBonusPopup(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemType, int itemCount, TicketGainedPopupSetting popupSetting)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(itemType == EKLNMHFCAOI.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
+			if(itemType == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
 			{
 				popupSetting.title = string.Format(bk.GetMessageByLabel("popup_event_login_item02_title_msg"), itemCount);
 				popupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item02_label00_msg");

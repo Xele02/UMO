@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		public static ViewOfferCompensation CreateList(BOPFPIHGJMD.MLBMHDCCGHI_OfferType offerType, int offerId)
 		{
 			ViewOfferCompensation res = new ViewOfferCompensation();
-			KDHGBOOECKC.CBJJINJDFDC d = KDHGBOOECKC.HHCJCDFCLOB.IKENGGJIJJO();
+			KDHGBOOECKC_NetOfferManager.CBJJINJDFDC d = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.IKENGGJIJJO();
 			if(d != null)
 			{
 				for(int i = 0; i < d.ENEHOPNDNAF.Count; i++)

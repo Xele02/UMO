@@ -14,7 +14,7 @@ public class OHKECKAPJJL
         ODPGFIPCFEF_8_DailyAdv = 8,
         ILBPPODCPPP_9_Gacha2 = 9,
         NNJBAJMNBCM_10_Offer = 10,
-        JPDDBAEMJLJ = 11,
+        JPDDBAEMJLJ = 11, // Weelky event
         LAJAJEMJBFC_12_Gacha3 = 12,
         MLDKHMADOAD_13_Mission2 = 13,
         OCHMPNOEELL_14_Mission3 = 14,

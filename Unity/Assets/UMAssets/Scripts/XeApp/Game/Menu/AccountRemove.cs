@@ -13,11 +13,11 @@ namespace XeApp.Game.Menu
 			Cancel = 3,
 		}
 
-		private HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[] _platforms = new HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[3]
+		private HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[] _platforms = new HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink[3]
 			{
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter,
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook,
-				HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter,
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook,
+				HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line
 			}; // 0x8
 
 		public Result RemoveAcctounResult { get; private set; } // 0xC
@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 			bool done = false;
 			bool cancel = false;
 			bool error = false;
-			HDEEBKIFLNI.HHCJCDFCLOB.NLCBOJBAJFB_GetLinkageStatuses(() =>
+			HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.NLCBOJBAJFB_GetLinkageStatuses(() =>
 			{
 				//0x1433648
 				done = true;
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!error)
 				{
-					AMOCLPHDGBP data = new AMOCLPHDGBP();
+					AMOCLPHDGBP_NetPaidVCPurchase data = new AMOCLPHDGBP_NetPaidVCPurchase();
 					error = false;
 					yield return data.HELKENJBJBH_Coroutine_AccountRemoveRecover(() =>
 					{
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 					else
 					{
 						bool isWait = true;
-						NMFABEKNBKJ.HHCJCDFCLOB.MDJNLBOLPNJ_BlockFCM(() =>
+						NMFABEKNBKJ_NetPushNotificationManager.HHCJCDFCLOB_Instance.MDJNLBOLPNJ_BlockFCM(() =>
 						{
 							//0x143368C
 							isWait = false;
@@ -81,12 +81,12 @@ namespace XeApp.Game.Menu
 							yield return null;
 						for(i = 0; i < _platforms.Length; i++)
 						{
-							if(HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(_platforms[i]))
+							if(HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.EPAKLDBFECD_IsLinked(_platforms[i]))
 							{
 								done = false;
 								cancel = false;
 								error = false;
-								HDEEBKIFLNI.HHCJCDFCLOB.LEDGNMBOGJN(_platforms[i], () =>
+								HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance.LEDGNMBOGJN(_platforms[i], () =>
 								{
 									//0x14336A0
 									done = true;
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 						}
 						if(!Application.isEditor)
 						{
-							request = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new IAEMADDNJPJ_ClearDeviceLoginDataWithLog());
+							request = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new IAEMADDNJPJ_ClearDeviceLoginDataWithLog());
 							yield return request.GDPDELLNOBO_WaitDone(N.a);
 							if(request.NPNNPNAIONN_IsError)
 							{
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 							else
 							{
 								request = null;
-								EOHDAOAJOHH.HHCJCDFCLOB.KOFIBEMHONI();
+								EOHDAOAJOHH.HHCJCDFCLOB_Instance.KOFIBEMHONI();
 								RemoveAcctounResult = Result.Success;
 							}
 						}

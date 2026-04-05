@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14BE808 Offset: 0x14BE808 VA: 0x14BE808
 		private int GetSceneCardIdFromAttrId(int cardId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].FKDCCLPGKDK_JacketAttr;
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].FKDCCLPGKDK_JacketAttr;
 		}
 
 		// RVA: 0x14BEBEC Offset: 0x14BEBEC VA: 0x14BEBEC

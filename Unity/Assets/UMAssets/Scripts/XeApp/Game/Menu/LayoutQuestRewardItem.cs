@@ -37,17 +37,17 @@ namespace XeApp.Game.Menu
 		{
 			if(itemInfo != null)
 			{
-				if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+				if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					CKFGMNAIBNG data = new CKFGMNAIBNG();
-					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
-					data.KHEKNNFCAOI_Init(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1].AHHJLDLAPAN_DivaId, itemId, 0, false);
+					int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
+					data.KHEKNNFCAOI_Init(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1].AHHJLDLAPAN_DivaId, itemId, 0, false);
 					MenuScene.Instance.ShowCostumeDetailWindow(data, 0);
 				}
-				else if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				else if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
+					int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
 					scene.KHEKNNFCAOI_Init(itemId, null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 				}

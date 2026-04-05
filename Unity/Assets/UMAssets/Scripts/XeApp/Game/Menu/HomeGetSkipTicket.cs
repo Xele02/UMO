@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		{
 			m_typeItemId = typeItemId;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			MenuScene.Instance.ItemTextureCache.Load(typeItemId, (IiconTexture texture) =>
 			{
 				//0x964E78
@@ -117,10 +117,10 @@ namespace XeApp.Game.Menu
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
 				m_textNumLabel.alignment = TextAnchor.MiddleRight;
 			m_textReject.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_checkbox");
-			m_textTitle.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_title"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId));
-			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId), getCount, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
+			m_textTitle.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_title"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(typeItemId));
+			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(typeItemId), getCount, EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId)));
 			m_textDesc2.text = Smart.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_desc"), getCount);
-			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
+			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
 		}
 
 		//// RVA: 0x964844 Offset: 0x964844 VA: 0x964844 Slot: 5
@@ -169,7 +169,7 @@ namespace XeApp.Game.Menu
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				TextPopupSetting setting = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_title"),
-					SizeType.Middle, string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_desc"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_typeItemId)), new ButtonInfo[2]
+					SizeType.Middle, string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_desc"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(m_typeItemId)), new ButtonInfo[2]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }

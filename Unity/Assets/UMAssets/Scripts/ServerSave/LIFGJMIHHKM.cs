@@ -274,9 +274,9 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x17FF8F4 Offset: 0x17FF8F4 VA: 0x17FF8F4
 	public LIFGJMIHHKM_LimitedItem()
 	{
-		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 		{
-			EGLOKAEIHCB_LimitedItem limitedDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem;
+			EGLOKAEIHCB_LimitedItem limitedDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem;
 			if(limitedDb.CDENCMNHNGA_table != null)
 			{
 				if(limitedDb.CDENCMNHNGA_table.Count == 0)

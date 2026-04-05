@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A8A30 Offset: 0x10A8A30 VA: 0x10A8A30 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && m_loadCoroutine == null;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && m_loadCoroutine == null;
 		}
 
 		// RVA: 0x10A8AF4 Offset: 0x10A8AF4 VA: 0x10A8AF4 Slot: 20
@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			MenuScene.Instance.InputDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(m_viewEntry.MIKNPHMPNII_PrizeTemplate, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.FLLLPBIECCP(m_viewEntry.MIKNPHMPNII_PrizeTemplate, () =>
 			{
 				//0x10A9BF8
 				MenuScene.Instance.InputEnable();
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 				//0x10A9D54
 				if(type == PopupButton.ButtonType.Positive && !MenuScene.CheckDatelineAndAssetUpdate())
 				{
-					NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(m_viewEntry.MLIMPBOKIAM_EntryUrl);
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(m_viewEntry.MLIMPBOKIAM_EntryUrl);
 				}
 			}, null, null, null, true, true, false, null, () =>
 			{
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			MenuScene.Instance.InputDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(m_viewEntry.DLPGGMOLFHA_KiyakuTemplate, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.FLLLPBIECCP(m_viewEntry.DLPGGMOLFHA_KiyakuTemplate, () =>
 			{
 				//0x10A9C94
 				MenuScene.Instance.InputEnable();

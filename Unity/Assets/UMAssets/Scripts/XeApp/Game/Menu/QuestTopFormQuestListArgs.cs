@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D79F8 Offset: 0x9D79F8 VA: 0x9D79F8
 		public bool CanShowHelp()
 		{
-			KNKDBNFMAKF_EventSp ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+			KNKDBNFMAKF_NetEventSpController ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_NetEventSpController;
 			if(ev != null)
 			{
 				return ev.GEPPAGIEMOK_CanShowHelp(viewData.BCOKKAALGHC_Group);
@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D7AE0 Offset: 0x9D7AE0 VA: 0x9D7AE0
 		public int GetHelpId()
 		{
-			KNKDBNFMAKF_EventSp ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+			KNKDBNFMAKF_NetEventSpController ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_NetEventSpController;
 			if(ev != null)
 			{
 				return ev.EDHFKGEIAHB_GetHelpId(viewData.BCOKKAALGHC_Group);

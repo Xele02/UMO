@@ -247,7 +247,7 @@ namespace XeApp.Game
 			divaId = Math.Abs(divaId);
 			if (costumeId != 0 && divaId != 0)
 			{
-				LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+				LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 				var cosInfo = CostumeDb.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, costumeId);
 				if (cosInfo != null)
 				{

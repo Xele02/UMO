@@ -5,17 +5,18 @@ using XeApp.Game;
 
 public delegate bool MMACCEADALH(SakashoErrorId _PPFNGGCBJKC_id);
 
+// namespace XeApp_Game_Net_Actions
 
 public class IDNNDIHDLGA
 {
 	public string KLMPFGOCBHC_description; // 0x8
 }
 
-[System.Obsolete("Use CACGCMBKHDI_Request", true)]
+[System.Obsolete("Use CACGCMBKHDI_NetBaseAction", true)]
 public abstract class CACGCMBKHDI {}
-public abstract class CACGCMBKHDI_Request
+public abstract class CACGCMBKHDI_NetBaseAction
 {
-    public delegate void HDHIKGLMOGF(CACGCMBKHDI_Request _ADKIDBJCAJA_action);
+    public delegate void HDHIKGLMOGF(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action);
 
     public long CKOOCBJGHBI_RequestId; // 0x8
     public int CFICLNJACCD_NumRetry = 3; // 0x10

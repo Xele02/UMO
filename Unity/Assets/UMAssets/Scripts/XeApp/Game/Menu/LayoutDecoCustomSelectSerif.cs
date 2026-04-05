@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19DD928 Offset: 0x19DD928 VA: 0x19DD928 Slot: 6
 		public override void LoadTexture()
 		{
-			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
+			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19DDDE4
 				return item.PPFNGGCBJKC_id == Id;
@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 				//0x19DDE28
 				if(m_SerifId == attrId)
 				{
-					IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
+					IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP n2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 					{
 						//0x19DE044
 						return item.PPFNGGCBJKC_id == id;

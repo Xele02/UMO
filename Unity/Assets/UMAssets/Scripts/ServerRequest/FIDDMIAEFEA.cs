@@ -48,7 +48,7 @@ public class EECOJKDJIFG : PGCGJPPBOOA
 
 [System.Obsolete("Use FIDDMIAEFEA_GetRankingRecordsByKeys", true)]
 public class FIDDMIAEFEA {}
-public class FIDDMIAEFEA_GetRankingRecordsByKeys : CACGCMBKHDI_Request
+public class FIDDMIAEFEA_GetRankingRecordsByKeys : CACGCMBKHDI_NetBaseAction
 {
     public class HHAPIDPPJJK
     {

@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		private void CalcLimitTime(out LayoutStoneItem.LimitType type, out int time)
 		{
 			DateTime date = Utility.GetLocalDateTime(m_CloseTime);
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			DateTime date2 = Utility.GetLocalDateTime(t);
 			if(t >= m_CloseTime)
 			{

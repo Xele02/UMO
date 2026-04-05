@@ -33,7 +33,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 			//// RVA: 0x16BD368 Offset: 0x16BD368 VA: 0x16BD368
 			private int EDLLKJAKIGO(int _PPFNGGCBJKC_id, long _JHNMKKNEENE_Time)
 			{
-				int t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].EMIJNAFJFJO_expir;
+				int t = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].EMIJNAFJFJO_expir;
 				if (t * 0x15180 != 0)
 					return t * 0x15180;
 				return (int)OLNKAECIGJH - (int)_JHNMKKNEENE_Time;
@@ -128,12 +128,12 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 		//// RVA: 0x16B8AE0 Offset: 0x16B8AE0 VA: 0x16B8AE0
 		public int OPCIHPEIFFE()
 		{
-            JHAAHJNEBOG_LimitedCompoItem.JMJKJFKAFCJ item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.CDENCMNHNGA_table[PENIOLJHIPK - 1];
+            JHAAHJNEBOG_LimitedCompoItem.JMJKJFKAFCJ item = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.CDENCMNHNGA_table[PENIOLJHIPK - 1];
             if (item.DODGLIDGBBC_ConditionValue == 1)
 			{
-				if(NHPDPKHMFEP.HHCJCDFCLOB != null && 
-					NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false) && 
-					NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO())
+				if(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance != null && 
+					NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.GBCPDBJEDHL(false) && 
+					NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.ENAAHAPDMCO())
 				{
 					return item.HHGFOIMIGED;
 				}
@@ -172,7 +172,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 		if (_PPFNGGCBJKC_id < 1)
 			return 0;
 		int res = 0;
-		int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK;
+		int a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK;
 		for(int i = 0; i < ODHBHOGFNAA[a - 1].HFAHJPBLCHK; i++)
 		{
 			res += (ODHBHOGFNAA[a - 1].PJADHDHKOEJ[i].NIENPFFLMCH(_JHNMKKNEENE_Time) && ODHBHOGFNAA[a - 1].NPNNEDINOKC[i].NIENPFFLMCH(_JHNMKKNEENE_Time)) ? 1 : 0;
@@ -185,7 +185,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	{
 		if(_PPFNGGCBJKC_id < 1)
 			return 0;
-		int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK;
+		int a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK;
 		return ODHBHOGFNAA[a - 1].OPCIHPEIFFE();
 	}
 
@@ -197,7 +197,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	{
 		if (_PPFNGGCBJKC_id < 1)
 			return 0;
-		AIAPDPDOIKG a = ODHBHOGFNAA[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK - 1];
+		AIAPDPDOIKG a = ODHBHOGFNAA[IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK - 1];
 		int c = int.MaxValue;
 		for(int i = 0; i < a.HFAHJPBLCHK; i++)
 		{
@@ -219,7 +219,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	{
 		if(_PPFNGGCBJKC_id > 0)
 		{
-			JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
+			JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
 			int a = limitedDb.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1].PENIOLJHIPK;
 			AIAPDPDOIKG data = ODHBHOGFNAA[a - 1];
 			int MinGet = int.MaxValue;
@@ -277,7 +277,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 		List<int> res = new List<int>();
 		if(_PPFNGGCBJKC_id > 0)
 		{
-			JHAAHJNEBOG_LimitedCompoItem.AOBHKONKIPF c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1];
+			JHAAHJNEBOG_LimitedCompoItem.AOBHKONKIPF c = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1];
 			AIAPDPDOIKG COCEIPAKJKF_item = ODHBHOGFNAA[c.PENIOLJHIPK - 1];
 			for(int i = 0; i < COCEIPAKJKF_item.HFAHJPBLCHK; i++)
 			{
@@ -313,7 +313,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 		List<NKFJNAANPNP.MOJLCADLMKH> res = new List<NKFJNAANPNP.MOJLCADLMKH>();
 		if (_PPFNGGCBJKC_id > 0)
 		{
-			JHAAHJNEBOG_LimitedCompoItem.AOBHKONKIPF litem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1];
+			JHAAHJNEBOG_LimitedCompoItem.AOBHKONKIPF litem = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[_PPFNGGCBJKC_id - 1];
 			List<NKFJNAANPNP.MOJLCADLMKH> l2 = new List<NKFJNAANPNP.MOJLCADLMKH>();
 			for(int i = 0; i < ODHBHOGFNAA[litem.PENIOLJHIPK].PJADHDHKOEJ.Count; i++)
 			{
@@ -370,9 +370,9 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x16BA850 Offset: 0x16BA850 VA: 0x16BA850
 	public GEGHOCKCKKA_LimitedCompoItem()
 	{
-		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 		{
-			JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
+			JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
 			for(int i = 0; i < limitedDb.CDENCMNHNGA_table.Count; i++)
 			{
 				JHAAHJNEBOG_LimitedCompoItem.JMJKJFKAFCJ info = limitedDb.CDENCMNHNGA_table[i];
@@ -385,7 +385,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x16BAB98 Offset: 0x16BAB98 VA: 0x16BAB98 Slot: 4
 	public override void KMBPACJNEOF_Reset()
 	{
-		JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
+		JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
 		for(int i = 0; i < ODHBHOGFNAA.Count; i++)
 		{
 			AIAPDPDOIKG data = ODHBHOGFNAA[i];

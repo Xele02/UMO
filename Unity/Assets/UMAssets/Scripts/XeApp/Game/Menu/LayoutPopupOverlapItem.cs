@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x173AFC4 Offset: 0x173AFC4 VA: 0x173AFC4
 		public bool IsLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingImage;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning || m_isLoadingImage;
 		}
 
 		// RVA: 0x173B070 Offset: 0x173B070 VA: 0x173B070
@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 			{
 				GONMPHKGKHI_RewardView.GCHFDJMNCAF d = info as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
 				SetDecoNum(d.GBALGEMKJKD_PrevBoard, d.HMGDINKEPHJ_NextBoard);
-				SetDecoImage(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(d.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef, d.BCCHOBPJJKE_SceneId));
+				SetDecoImage(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(d.DMJCACIDEBM ? EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef, d.BCCHOBPJJKE_SceneId));
 				return;
 			}
 			if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG_PopupType.INJNLJHGGKB_4_NextBoard)

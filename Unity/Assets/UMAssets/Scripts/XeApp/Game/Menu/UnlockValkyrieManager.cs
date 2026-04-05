@@ -241,10 +241,10 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPopupGetDecoVFFigure()
 		{
 			//0x164F510
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.AAACOMKNJJJ(_valkyrieId) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.AAACOMKNJJJ(_valkyrieId) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
 				MenuScene.Instance.InputDisable();
-				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure, _valkyrieId)));
+				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure, _valkyrieId)));
 				MenuScene.Instance.InputEnable();
 			}
 		}

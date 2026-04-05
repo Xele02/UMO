@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use PKIPDDGHPLM_IncrementLoginCount", true)]
 public class PKIPDDGHPLM { }
-public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
+public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_NetBaseAction
 {
     public class MNIIGPNDJOC
     {

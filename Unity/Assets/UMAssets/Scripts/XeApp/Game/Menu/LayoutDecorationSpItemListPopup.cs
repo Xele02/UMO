@@ -42,13 +42,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18BAC04 Offset: 0x18BAC04 VA: 0x18BAC04
 		private void SetItem(int id)
 		{
-			m_nameText.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(id);
+			m_nameText.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(id);
 		}
 
 		// // RVA: 0x18BACBC Offset: 0x18BACBC VA: 0x18BACBC
 		private void SetItemNum(int id, int num)
 		{
-			m_numText.text = num.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id), EKLNMHFCAOI.DEACAHNLMNI_getItemId(id));
+			m_numText.text = num.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(id), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(id));
 		}
 
 		// // RVA: 0x18BADC0 Offset: 0x18BADC0 VA: 0x18BADC0

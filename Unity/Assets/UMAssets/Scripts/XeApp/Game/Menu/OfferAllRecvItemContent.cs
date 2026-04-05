@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 					m_rareTitle.enabled = true;
 					break;
 			}
-			int rarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(getItem.itemId);
+			int rarity = EKLNMHFCAOI_ItemManager.FABCKNDLPDH_GetItemRarity(getItem.itemId);
 			for(int i = 0; i < m_itemFrame.Length; i++)
 			{
 				m_itemFrame[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUvList.GetUVData(string.Format("s_v_frm_item_s{0}_{1:d2}", rarity, i + 1)));
@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x152024C Offset: 0x152024C VA: 0x152024C
 		public bool IsSceneCardItem(int itemId)
 		{
-			return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+			return EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
 		}
 
 		// RVA: 0x15202E0 Offset: 0x15202E0 VA: 0x15202E0 Slot: 5

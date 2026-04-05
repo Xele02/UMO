@@ -88,7 +88,7 @@ public struct AEGLGBOGDHH
 	}
 
 	//// RVA: 0x7FCFEC Offset: 0x7FCFEC VA: 0x7FCFEC
-	public void DIJOPLHIMBO(JGEOBNENMAH.NEDILFPPCJF BGDCOKFCCBO, StatusData HFEMKGEOHJL, StatusData _PDIPANKOKOL_FriendStat, int IFCPCIHJANL, int LCIPPBOFPOB)
+	public void DIJOPLHIMBO(JGEOBNENMAH_NetGameManager.NEDILFPPCJF BGDCOKFCCBO, StatusData HFEMKGEOHJL, StatusData _PDIPANKOKOL_FriendStat, int IFCPCIHJANL, int LCIPPBOFPOB)
 	{
 		StatusData d = new StatusData();
 		d.Clear();

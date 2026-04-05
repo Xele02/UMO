@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use FNPBAENIEPG_PurchaseAndSave", true)]
 public class FNPBAENIEPG { }
-public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
+public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_NetBaseAction
 {
 	public class PKNFMLJNKHA
 	{
@@ -65,7 +65,7 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	// RVA: 0x13E80C8 Offset: 0x13E80C8 VA: 0x13E80C8 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		PJKLMCGEJMK.DALFMJFKCGJ = MCKEOKFMLAH_SaveId;
+		PJKLMCGEJMK_NetActionManager.DALFMJFKCGJ = MCKEOKFMLAH_SaveId;
 		PKNFMLJNKHA r = new PKNFMLJNKHA();
 		r.KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 		NFEAMMJIMPG_Result = r;

@@ -2,7 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class HDEEBKIFLNI
+// namespace XeApp.Game.Net.Linkage.
+[System.Obsolete()]
+public class HDEEBKIFLNI {}
+public class HDEEBKIFLNI_NetLinkageManager
 {
 	public enum DGNPPLKNCGH_PlatformLink
 	{
@@ -15,12 +18,12 @@ public class HDEEBKIFLNI
 	private bool[] AMBCBJHFIDD_LinkByPlatform = new bool[3]; // 0x8
 	private bool[] GJOFCDFLCGA_VersionValidByPlatform = new bool[3]; // 0xC
 
-	public static HDEEBKIFLNI HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static HDEEBKIFLNI_NetLinkageManager HHCJCDFCLOB_Instance { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	// RVA: 0x1740C5C Offset: 0x1740C5C VA: 0x1740C5C
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 		for(int i = 0; i < AMBCBJHFIDD_LinkByPlatform.Length; i++)
 		{
 			AMBCBJHFIDD_LinkByPlatform[i] = false;
@@ -168,7 +171,7 @@ public class HDEEBKIFLNI
 	private IEnumerator EFCCKAMIMAI_Co_CreatePlayer(DGNPPLKNCGH_PlatformLink MKBOKLLDCFI, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		//0x1741898
-		if(!NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IEFOIIAEBBJ)
+		if(!NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IEFOIIAEBBJ)
 		{
 			AILHMHMOKKA_BaseLinkage a = PLJLNHGJEIB(MKBOKLLDCFI);
 			a.BMJMJCIKALP(() =>
@@ -180,7 +183,7 @@ public class HDEEBKIFLNI
 		else
 		{
 			bool BEKAMBBOLBO_Done = false;
-			JHHBAFKMBDL.HHCJCDFCLOB.APEODCECEON(SakashoErrorId.UNKNOWN, null, "", () =>
+			JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.APEODCECEON(SakashoErrorId.UNKNOWN, null, "", () =>
 			{
 				//0x1741888
 				BEKAMBBOLBO_Done = true;

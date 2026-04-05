@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use PPFGOOFFNMB_GetTopRanks", true)]
 public class PPFGOOFFNMB { }
-public class PPFGOOFFNMB_GetTopRanks : CACGCMBKHDI_Request
+public class PPFGOOFFNMB_GetTopRanks : CACGCMBKHDI_NetBaseAction
 {
 	public class NJAPFHHAOHE : NJNCENEFCEI
 	{

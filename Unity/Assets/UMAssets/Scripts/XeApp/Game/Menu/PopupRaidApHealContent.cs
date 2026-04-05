@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		private PopupRaidApHealContentSetting setup; // 0x10
 		private PopupWindowControl control; // 0x14
 		private RaidApHealWindow layout; // 0x18
-		private PKNOKJNLPOE_EventRaid raidController; // 0x1C
+		private PKNOKJNLPOE_NetEventRaidController raidController; // 0x1C
 		public Transform Parent { get; private set; } // 0xC
 
 		// RVA: 0x1612030 Offset: 0x1612030 VA: 0x1612030 Slot: 17
@@ -39,14 +39,14 @@ namespace XeApp.Game.Menu
 			transform.localPosition = Vector3.zero;
 			RaidApHealWindow window = GetComponent<RaidApHealWindow>();
 			window.Initialize(OnPushPaidButton, OnPushApItemButton, OnPushApItemSButton, Close);
-			raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidController = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 		}
 
 		// // RVA: 0x16123B4 Offset: 0x16123B4 VA: 0x16123B4
-		private void OnPushPaidButton(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
+		private void OnPushPaidButton(Action closeEvent, CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
-			if(CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() < CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType])
+			if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency() < CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType])
 			{
 				this.StartCoroutineWatched(Co_PurchaseVC(closeEvent, _apHealSubType));
 			}
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71466C Offset: 0x71466C VA: 0x71466C
 		// // RVA: 0x16125A8 Offset: 0x16125A8 VA: 0x16125A8
-		private IEnumerator Co_PurchaseVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
+		private IEnumerator Co_PurchaseVC(Action closeEvent, CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			//0x1615D84
 			MenuScene.Instance.InputDisable();
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7146E4 Offset: 0x7146E4 VA: 0x7146E4
 		// // RVA: 0x1612668 Offset: 0x1612668 VA: 0x1612668
-		private IEnumerator Co_PaidVC(Action closeEvent, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
+		private IEnumerator Co_PaidVC(Action closeEvent, CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			//0x16159B8
 			MenuScene.Instance.InputDisable();
@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(t_exec)
 			{
-				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, RaidItemConstants.Type._maxId, _apHealSubType));
+				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, RaidItemConstants.Type._maxId, _apHealSubType));
 				closeEvent();
 			}
 			//LAB_01615c4c
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(t_exec)
 			{
-				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None));
+				yield return Co.R(Co_ApRecovry(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, a_item_id, CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None));
 				closeEvent();
 			}
 			MenuScene.Instance.InputEnable();
@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7147D4 Offset: 0x7147D4 VA: 0x7147D4
 		// // RVA: 0x1612A98 Offset: 0x1612A98 VA: 0x1612A98
-		private IEnumerator Co_ApRecovry(EKLNMHFCAOI.FKGCBLHOOCL_Category a_type, RaidItemConstants.Type a_item_id/* = 4*/, CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType/* = 0*/)
+		private IEnumerator Co_ApRecovry(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category a_type, RaidItemConstants.Type a_item_id/* = 4*/, CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType/* = 0*/)
 		{
 			MessageBank msgBank; // 0x24
 
@@ -181,12 +181,12 @@ namespace XeApp.Game.Menu
 				yield break;
 			msgBank = MessageManager.Instance.GetBank("menu");
 			int id = 0;
-			if(a_type != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
+			if(a_type != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 				id = RaidItemConstants.MakeItemId(a_item_id);
 			bool t_error = false;
 			bool t_failed = false;
 			bool t_loop = true;
-			CIOECGOMILE.HHCJCDFCLOB.DNJKDCIAHMO(a_type, id, () =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DNJKDCIAHMO(a_type, id, () =>
 			{
 				//0x1614684
 				t_loop = false;
@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				if(raidController.GDMLCKMCMBG() == 0)
 					yield break;
-				if(a_type != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
+				if(a_type != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 					yield break;
 				t_loop = true;
 				s = new TextPopupSetting();
@@ -283,20 +283,20 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedItem, Type = PopupButton.ButtonType.Positive }
 			};
-			int a = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, 
-				EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id, null);
+			int a = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, 
+				EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id, null);
 			s.Text = string.Format(bk.GetMessageByLabel("popup_raid_ap_recovery_use_item_check_msg"), new object[5]
 			{
-				EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id),
+				EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, (int)a_item_id),
 				1, 
-				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None),
+				raidController.COEIAHBIFBN(RaidItemConstants.MakeItemId(a_item_id), CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType.HJNNKCMLGFL_0_None),
 				a, a - 1
 			});
 			return s;
 		}
 
 		// // RVA: 0x1613200 Offset: 0x1613200 VA: 0x1613200
-		private PopupSetting MakePopupSettingRaidApRecoveryStoneUse(CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
+		private PopupSetting MakePopupSettingRaidApRecoveryStoneUse(CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GachaLotPopupSetting res = new GachaLotPopupSetting();
@@ -308,25 +308,25 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
 			if(raidController.GDMLCKMCMBG() == 0)
-				res.MessageText = string.Format(bk.GetMessageByLabel("popup_raid_ap_recovery_use_stone_check_msg02"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType], raidController.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), _apHealSubType));
+				res.MessageText = string.Format(bk.GetMessageByLabel("popup_raid_ap_recovery_use_stone_check_msg02"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType], raidController.COEIAHBIFBN(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), _apHealSubType));
 			else
 			{
 				res.MessageText = string.Format(bk.GetMessageByLabel("popup_raid_ap_recovery_use_stone_check_msg"), new object[4]
 				{
-					CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType],
-					raidController.COEIAHBIFBN(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), _apHealSubType),
-					NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA(),
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType],
+					raidController.COEIAHBIFBN(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0), _apHealSubType),
+					NKOBMDPHNGP_NetEventRaidLobbyController.GPNELLFNPLA(),
 					raidController.GDMLCKMCMBG()
 				});
 			}
-			res.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType]);
+			res.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType]);
 			res.CurrencyIsTicket = false;
 			res.OnClickLegalDescButton = OnClickLegalDesc;
 			return res;
 		}
 
 		// // RVA: 0x16139E4 Offset: 0x16139E4 VA: 0x16139E4
-		private PopupSetting MakePopupSettingRaidApRecoveryStoneNone(CIOECGOMILE.LIILJGHKIDL_RestoreButtonType _apHealSubType)
+		private PopupSetting MakePopupSettingRaidApRecoveryStoneNone(CIOECGOMILE_NetPlayerDataManager.LIILJGHKIDL_RestoreButtonType _apHealSubType)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			GachaLotFewPopupSetting res = new GachaLotFewPopupSetting();
@@ -338,8 +338,8 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Purchase, Type = PopupButton.ButtonType.Positive },
 			};
 			res.MessageText = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_few_msg"), Array.Empty<object>());
-			res.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency());
-			res.NeedCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType]);
+			res.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency());
+			res.NeedCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CBOJGDKGCEF_GetApPrice()[(int)_apHealSubType]);
 			res.MessageCaution = null;
 			res.CurrencyIsTicket = false;
 			res.IsTicketPeriod = false;
@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 		private void OnClickLegalDesc(Action endAction)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 			{
 				//0x16146E0
 				if(endAction != null)

@@ -104,12 +104,12 @@ namespace XeApp.Game.Menu
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xBA3F28
 				ConnectEnd();
 				MenuScene.Instance.RaycastEnable();
-			}, (CACGCMBKHDI_Request error) =>
+			}, (CACGCMBKHDI_NetBaseAction error) =>
 			{
 				//0xBA3FD8
 				ConnectEnd();
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 				f.TryInstall();
 			}
 			yield return null;
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			SortFriendList();
 			UpdateListCounter();

@@ -134,7 +134,7 @@ public class EAJCBFGKKFA_FriendInfo
 		{
 			BBHNACPENDM_ServerSaveData KPMOBPNENCD_serverData = new BBHNACPENDM_ServerSaveData();
 			KPMOBPNENCD_serverData.KHEKNNFCAOI_Init(0x40a10);
-			NJNCAHLIHNI_GetPlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NJNCAHLIHNI_GetPlayerData());
+			NJNCAHLIHNI_GetPlayerData req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NJNCAHLIHNI_GetPlayerData());
 			List<int> l = new List<int>();
 			l.Add(MLPEHNBNOGD_PlayerId);
 			req.FAMHAPONILI_PlayerIds = l;
@@ -144,16 +144,16 @@ public class EAJCBFGKKFA_FriendInfo
 				//0x14F1AEC
 				return KPMOBPNENCD_serverData.IIEMACPEEBJ_Deserialize(_OHNJJIMGKGK_Names, _IDLHJIOMJBK_data);
 			};
-			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 			{
 				//0x14F1B28
 				ODNHGAJPEOM_CostumeList = CKFGMNAIBNG.NEOMKKIEMJJ(KPMOBPNENCD_serverData, OJEBNBLHPNP, true);
 				EDEPBHCOHNF_ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(KPMOBPNENCD_serverData, OJEBNBLHPNP);
 				ALJGLDBFFGJ_EmblemList = IAPDFOPPGND.NEOMKKIEMJJ(KPMOBPNENCD_serverData, OJEBNBLHPNP);
-				PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.FOFGELKGMAH_cos_cnt = KPMOBPNENCD_serverData.BEKHNNCGIEL_Costume.EFFKJGEDONM_GetNumUnlockedCostume(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume, KPMOBPNENCD_serverData.DGCJCAHIAPP_Diva, true);
+				PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.FOFGELKGMAH_cos_cnt = KPMOBPNENCD_serverData.BEKHNNCGIEL_Costume.EFFKJGEDONM_GetNumUnlockedCostume(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume, KPMOBPNENCD_serverData.DGCJCAHIAPP_Diva, true);
 				_BHFHGFKBOHH_OnSuccess();
 			};
-			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 			{
 				//0x14F1E80
 				_AOCANKOMKFG_OnError();

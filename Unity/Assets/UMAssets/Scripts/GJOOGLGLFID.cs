@@ -8,7 +8,7 @@ public class FJIPMALKCBG
 	// RVA: 0x118706C Offset: 0x118706C VA: 0x118706C
 	public void KHEKNNFCAOI_Init()
     {
-        HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_EventBattle;
+        HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_NetEventBattleController;
         if(ev == null)
         {
             HIHPPOFHMNF_Player = new BKKMNPEEILG();
@@ -19,7 +19,7 @@ public class FJIPMALKCBG
         else
         {
             HIHPPOFHMNF_Player = new BKKMNPEEILG();
-            HIHPPOFHMNF_Player.GOCAPCKLAPI(ev, JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId);
+            HIHPPOFHMNF_Player.GOCAPCKLAPI(ev, JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.PFHMFKKDMBM_FreeMusicId);
             EKOCEKHBHLE_Rival = new BKKMNPEEILG();
             EKOCEKHBHLE_Rival.KHEKNNFCAOI_Init(ev, ev.DPPODNCOMIA_GetRivalIdx());
         }
@@ -96,7 +96,7 @@ public class GJOOGLGLFID
 	// // RVA: 0xAAE40C Offset: 0xAAE40C VA: 0xAAE40C
 	public void KHEKNNFCAOI_Init()
     {
-        HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_EventBattle;
+        HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.JKEPHFPCKMD_EventId) as HAEDCCLHEMN_NetEventBattleController;
         if(ev != null)
         {
             DPCFADCFMOA_Win = ev.CKCPAMDDNPF.BLAJKMAPEKP_CWin > 0;
@@ -111,13 +111,13 @@ public class GJOOGLGLFID
             CLEFJPKPOGB_EpBonusCnt = ev.CKCPAMDDNPF.ODCLHPGHDHA_EpisodeBonus;
             IDBJPDBLIIG_ScoreResultRank = ev.CKCPAMDDNPF.JIMGIIBCABI_ScoreResultRank;
             FCLGIPFPIPH_DashBonus = ev.CKCPAMDDNPF.FCLGIPFPIPH_DashBonus;
-            HNNAJJNMCKE_PrevPoint = JGEOBNENMAH.HHCJCDFCLOB.FFDBCEDKMGN_PrevPoint;
-            AHOKAPCGJMA_TotalPoint = JGEOBNENMAH.HHCJCDFCLOB.MMLPAMGJEOD_NewPoint;
+            HNNAJJNMCKE_PrevPoint = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.FFDBCEDKMGN_PrevPoint;
+            AHOKAPCGJMA_TotalPoint = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.MMLPAMGJEOD_NewPoint;
             PHPANNCGOKC_GetPoint = AHOKAPCGJMA_TotalPoint - HNNAJJNMCKE_PrevPoint;
-            BJJGECFMNIP_Rank = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[0];
-            EKOEECDHABK_ExRanking = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[1];
-            BEOKMNIPFBA_MedalItemId = JGEOBNENMAH.HHCJCDFCLOB.BEOKMNIPFBA_MedalItemId;
-            ODOOKDGCKMF_MedalNum = FCLGIPFPIPH_DashBonus * JGEOBNENMAH.HHCJCDFCLOB.ODOOKDGCKMF_MedalNum;
+            BJJGECFMNIP_Rank = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NEFFKLNAAJI_ScoreRankByDiva[0];
+            EKOEECDHABK_ExRanking = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.NEFFKLNAAJI_ScoreRankByDiva[1];
+            BEOKMNIPFBA_MedalItemId = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.BEOKMNIPFBA_MedalItemId;
+            ODOOKDGCKMF_MedalNum = FCLGIPFPIPH_DashBonus * JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.ODOOKDGCKMF_MedalNum;
             BGJDHCEOIDB_BattleClass = ev.CKCPAMDDNPF.EIMCIBOANHE_CurrentClass;
             AKNELONELJK_difficulty = ev.CKCPAMDDNPF.LBLOIOMNEIH_Difficulty;
             OHDIGACEJPM_DifficultyBonus = ev.CKCPAMDDNPF.APEFEONDBKL_DiffBonus;

@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 		private void Listup(uint rarityFilterBit/* = 4294967295*/, uint attributeFilterBit/* = 4294967295*/, uint seriaseFilterBit/* = 4294967295*/, uint compatibleFilterBit/* = 4294967295*/, uint lskillRangeFilerBit/* = 4294967295*/, uint cskillRankFilerBit/* = 4294967295*/, uint askillRankFilerBit/* = 4294967295*/, uint lskillRankFilerBit/* = 4294967295*/, ulong cskillFilerBit/* = 18446744073709551615*/, ulong askillFilerBit/* = 18446744073709551615*/, ulong lskillFilerBit/* = 18446744073709551615*/, uint notesFilterBit/* = 4294967295*/, int episodeId/* = 0*/, bool isBonus/* = false*/, int rarityRestriction/* = -1*/)
 		{
 			m_sceneIndexList.Clear();
-			MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+			MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
 			if(m_transitionName == TransitionList.Type.HOME_BG_SELECT || 
 				m_transitionName == TransitionList.Type.ASSIST_SELECT ||
 				m_transitionName == TransitionList.Type.SCENE_SELECT)
@@ -204,7 +204,7 @@ namespace XeApp.Game.Menu
 							{
 								if(isBonus)
 								{
-									if(Database.Instance.bonusData.EffectiveEpisodeBonus.Find((IKDICBBFBMI_EventBase.GNPOABJANKO x) => {
+									if(Database.Instance.bonusData.EffectiveEpisodeBonus.Find((IKDICBBFBMI_NetEventBaseController.GNPOABJANKO x) => {
 										//0xA56EB4
 										return scene.KELFCMEOPPM_EpisodeId == x.KELFCMEOPPM_EpisodeId;
 									}) == null)
@@ -333,23 +333,23 @@ namespace XeApp.Game.Menu
 						if (lscene.HGONFBDIBPM_ActiveSkillId < 1)
 							left = 0;
 						else
-							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[lscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+							left = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[lscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
 						if (rscene.HGONFBDIBPM_ActiveSkillId < 1)
 							right = 0;
 						else
-							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[rscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+							right = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[rscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
 						break;
 					case SortItem.LiveSkill:
 						int id = lscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
 						if (id < 1)
 							left = 0;
 						else
-							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+							left = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
 						id = rscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
 						if (id < 1)
 							right = 0;
 						else
-							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+							right = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
 						break;
 					case SortItem.Episode:
 						leftVal = lscene.KELFCMEOPPM_EpisodeId;
@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 							{
 								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit, 2, false);
 							}
-							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
+							ILCCJNDFFOB.HHCJCDFCLOB_Instance.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 						}
 						else
 						{
@@ -563,7 +563,7 @@ namespace XeApp.Game.Menu
 							{
 								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL_ValueType.AFLMHBMBNBO_48_DebutMission7TeamEdit, 2, false);
 							}
-							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, true, diva.AHHJLDLAPAN_DivaId);
+							ILCCJNDFFOB.HHCJCDFCLOB_Instance.KHMDGNKEFOD_DeckChange(JpStringLiterals.StringLiteral_15651, 0, false, true, diva.AHHJLDLAPAN_DivaId);
 						}
 					}
 					else
@@ -860,7 +860,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13850A0 Offset: 0x13850A0 VA: 0x13850A0 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			if(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			if(!KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 			{
 				return base.IsEndPreSetCanvas();
 			}
@@ -1293,8 +1293,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1386DEC Offset: 0x1386DEC VA: 0x1386DEC
 		private void RemoveHomeBgPopupWindow()
 		{
-			CGFNKMNBNBN tmp;
-			ShowSelectHomeBgPopupWindow(CGFNKMNBNBN.CLBDFPACPKE(MenuScene.Instance.EnterToHomeTime, out tmp) ? SceneSelectHomeBgLayout.SetBgType.LimitBg : SceneSelectHomeBgLayout.SetBgType.Default, null);
+			CGFNKMNBNBN_ViewHomeBgData tmp;
+			ShowSelectHomeBgPopupWindow(CGFNKMNBNBN_ViewHomeBgData.CLBDFPACPKE(MenuScene.Instance.EnterToHomeTime, out tmp) ? SceneSelectHomeBgLayout.SetBgType.LimitBg : SceneSelectHomeBgLayout.SetBgType.Default, null);
 		}
 
 		// // RVA: 0x1386EC0 Offset: 0x1386EC0 VA: 0x1386EC0

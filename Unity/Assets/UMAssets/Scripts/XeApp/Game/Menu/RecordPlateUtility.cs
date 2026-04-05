@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF8068 Offset: 0xCF8068 VA: 0xCF8068
 		private static void RegisterPlateIdInner(int id)
 		{
-			int cardId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(id);
+			int cardId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(id);
 			if (cardId < 1)
 				return;
 			PlateInfo info = m_plateIds.Find((PlateInfo _) =>
@@ -76,9 +76,9 @@ namespace XeApp.Game.Menu
 			bool res = false;
 			for(int i = 0; i < itemList.Count; i++)
 			{
-				if(itemList[i].HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				if(itemList[i].HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
-					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemList[i].KIJAPOFAGPN_ItemId);
+					int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemList[i].KIJAPOFAGPN_ItemId);
 					if(itemId > 0)
 					{
 						if(!m_showedIdList.Contains(itemId))
@@ -132,19 +132,19 @@ namespace XeApp.Game.Menu
 				switch(sceneType)
 				{
 					case eSceneType.Result:
-						util = JGEOBNENMAH.HHCJCDFCLOB.KDKHGAPKBNI;
+						util = JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.KDKHGAPKBNI;
 						break;
 					case eSceneType.PresentBox:
 					case eSceneType.Gacha:
 					case eSceneType.Offer:
 					case eSceneType.Bingo:
-						util = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL_InventoryUtil;
+						util = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JANMJPOKLFL_InventoryUtil;
 						break;
 					case eSceneType.Quest:
-						util = CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE;
+						util = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.EBEGGFECPOE;
 						break;
 					case eSceneType.EventResult:
-						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
+						IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/, false);
 						if (ev == null)
 							return null;
 						util = ev.JANMJPOKLFL_InventoryUtil;

@@ -48,24 +48,24 @@ public class PLADCDJLOBE
 		FKMOKDCJFEN f = FKMOKDCJFEN.KFHCJLFAHAG();
 		if (f == null)
 		{
-			IKDICBBFBMI_EventBase ev = MCOABJIJFFN();
+			IKDICBBFBMI_NetEventBaseController ev = MCOABJIJFFN();
 			if (ev == null)
 			{
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				PLADCDJLOBE p = null;
-				for (int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
+				for (int i = 0; i < JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Count; i++)
 				{
-					IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+					IKDICBBFBMI_NetEventBaseController ev2 = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN[i];
 					if(ev2 != null)
 					{
 						ev2.HCDGELDHFHB_UpdateStatus(time);
 						if(ev2.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting/*6*/ && ev2.AGLILDLEFDK_Missions != null)
 						{
-							long time2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+							long time2 = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 							int group = 0;
 							if(ev2.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 							{
-								group = (ev2 as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(time2);
+								group = (ev2 as KNKDBNFMAKF_NetEventSpController).MEDEJHKNAFG_GetCurrentMissionGroup(time2);
 							}
 							for(int j = 0; j < ev2.AGLILDLEFDK_Missions.Count; j++)
 							{
@@ -169,7 +169,7 @@ public class PLADCDJLOBE
 		DEKECNIBBIB_ItemFullId = _GOACJBOCLHH_Quest.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
 		JDBLMAHMHJO_IsAchieved = _GOACJBOCLHH_Quest.CMCKNKKCNDK_status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved;
 		LMPPENOILPF = _GOACJBOCLHH_Quest.LMPPENOILPF;
-		BGOCBNPGNKM = ILLPDLODANB.FJFPHHEFMIB_IsSnsMission(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[_GOACJBOCLHH_Quest.CMEJFJFOIIJ_QuestId - 1]) ? ENNOBKHBNCG_TabType.OMNJOCHOGDG_3_SnsMission/*3*/ : ENNOBKHBNCG_TabType.OLLIGIKNCMM_2_NormalMission/*2*/;
+		BGOCBNPGNKM = ILLPDLODANB.FJFPHHEFMIB_IsSnsMission(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[_GOACJBOCLHH_Quest.CMEJFJFOIIJ_QuestId - 1]) ? ENNOBKHBNCG_TabType.OMNJOCHOGDG_3_SnsMission/*3*/ : ENNOBKHBNCG_TabType.OLLIGIKNCMM_2_NormalMission/*2*/;
 	}
 
 	//// RVA: 0xFE8C40 Offset: 0xFE8C40 VA: 0xFE8C40
@@ -184,9 +184,9 @@ public class PLADCDJLOBE
 	}
 
 	//// RVA: 0xFE88F4 Offset: 0xFE88F4 VA: 0xFE88F4
-	private void OMAOEIOLKPH(IKDICBBFBMI_EventBase LIKDEHHKFEH)
+	private void OMAOEIOLKPH(IKDICBBFBMI_NetEventBaseController LIKDEHHKFEH)
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(time >= LIKDEHHKFEH.LOLAANGCGDO_RankingEnd2)
 		{
 			DEKECNIBBIB_ItemFullId = 0;
@@ -199,7 +199,7 @@ public class PLADCDJLOBE
 				DEKECNIBBIB_ItemFullId = LIKDEHHKFEH.BAEPGOAMBDK("event_epilogue_achv_item_id", 0);
 				if(DEKECNIBBIB_ItemFullId > 0)
 				{
-					KLMPFGOCBHC_description = string.Format(MessageManager.Instance.GetMessage("menu", "balloon_event_epilogue_loginbonus"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(DEKECNIBBIB_ItemFullId));
+					KLMPFGOCBHC_description = string.Format(MessageManager.Instance.GetMessage("menu", "balloon_event_epilogue_loginbonus"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(DEKECNIBBIB_ItemFullId));
 					CICPBBKEBNJ = OCMHGKIFNHP.OEDCONLFLHD_2_Epilogue;
 				}
 			}
@@ -213,21 +213,21 @@ public class PLADCDJLOBE
 			EKANGPODCEP_EventId = LIKDEHHKFEH.PGIIDPEGGPI_EventId;
 			if(DEKECNIBBIB_ItemFullId > 0)
 			{
-				KLMPFGOCBHC_description = string.Format(MessageManager.Instance.GetMessage("menu", "balloon_event_prologue_loginbonus"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(DEKECNIBBIB_ItemFullId));
+				KLMPFGOCBHC_description = string.Format(MessageManager.Instance.GetMessage("menu", "balloon_event_prologue_loginbonus"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(DEKECNIBBIB_ItemFullId));
 				CICPBBKEBNJ = OCMHGKIFNHP.JFEDIMKFDNH_1_Prologue;
 			}
 		}
 	}
 
 	//// RVA: 0xFE847C Offset: 0xFE847C VA: 0xFE847C
-	private static IKDICBBFBMI_EventBase MCOABJIJFFN()
+	private static IKDICBBFBMI_NetEventBaseController MCOABJIJFFN()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		IKDICBBFBMI_EventBase res = null;
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		IKDICBBFBMI_NetEventBaseController res = null;
 		long t1 = 0;
-		for (int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
+		for (int i = 0; i < JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Count; i++)
 		{
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+			IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN[i];
 			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ((1 << (int)ev.HIDHLFCBIDE_EventType) & 0x4aU) != 0) // 100 1010 AOPKACCDKPA_EventCollection / PFKOKHODEGL_EventBattle / NKDOEBONGNI_EventMission
 			{
 				if(time >= ev.GLIMIGNNGGB_RankingStart)
@@ -252,7 +252,7 @@ public class PLADCDJLOBE
 						}
 						if(advId > -1 && itemId != 0)
 						{
-							if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(advId))
+							if(!CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(advId))
 							{
 								if(t1 == 0 || ev.LJOHLEGGGMC_RewardEnd < t1)
 								{

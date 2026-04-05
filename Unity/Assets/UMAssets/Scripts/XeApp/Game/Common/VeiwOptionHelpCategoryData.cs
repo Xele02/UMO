@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		public void Init(int uniqueId)
 		{
 			this.uniqueId = uniqueId;
-			CEFDJALCHBL[] list = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.FBJCBCOEBBB;
+			CEFDJALCHBL[] list = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.FBJCBCOEBBB;
 			int found = -1;
 			for(int i = 0; i < list.Length; i++)
 			{
@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 			{
 				for(int i = 0; i < list[found].EBEMOEPADJB.Length; i++)
 				{
-					if(list[found].EBEMOEPADJB[i].OCPIODNOHKL <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+					if(list[found].EBEMOEPADJB[i].OCPIODNOHKL <= CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
 					{
 						if(CanShowContents((VeiwOptionHelpContentData.ConditionId)list[found].EBEMOEPADJB[i].KDBLHOFCPIO, list[found].EBEMOEPADJB[i].KLHAFHMFFNK, (VeiwOptionHelpContentData.ConditionOperation) list[found].EBEMOEPADJB[i].BENBNKNPOAA))
 						{
@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 				int a = 0;
 				if(id == VeiwOptionHelpContentData.ConditionId.VopClearCount)
 				{
-					a = KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HJNNKCMLGFL_0_None/*0*/);
+					a = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.DEAIKHLFFCL_GetTotalVOp(BOPFPIHGJMD.MLBMHDCCGHI_OfferType.HJNNKCMLGFL_0_None/*0*/);
 				}
 				else if(id == VeiwOptionHelpContentData.ConditionId.HighScoreRate)
 				{
@@ -83,11 +83,11 @@ namespace XeApp.Game.Common
 		//// RVA: 0xD30A1C Offset: 0xD30A1C VA: 0xD30A1C
 		public static List<VeiwOptionHelpCategoryData> CreateList()
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<VeiwOptionHelpCategoryData> res = new List<VeiwOptionHelpCategoryData>();
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories.Length; i++)
+			for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories.Length; i++)
 			{
-				DPGPEALHJOB h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories[i];
+				DPGPEALHJOB h = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories[i];
 				if (h.PLALNIIBLOF_en == 2)
 				{
 					if(t >= h.PDBPFJJCADD_open_at)

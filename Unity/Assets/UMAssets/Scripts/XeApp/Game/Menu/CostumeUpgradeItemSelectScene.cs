@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		private CostumeItemUsePopupSetting m_item_use_popup = new CostumeItemUsePopupSetting(); // 0x58
 		private CostumeItemUseWindow m_item_use_window; // 0x5C
 		private LFAFJCNKLML m_upgradeData; // 0x60
-		private MOEALEGLGCH m_data; // 0x64
+		private MOEALEGLGCH_ViewCostumeUpgrade m_data; // 0x64
 		private CostumeRewardGet m_reward_get_window; // 0x68
 		private GameObject m_EffectPrefab; // 0x6C
 		private GameObject m_EffectInstance; // 0x70
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			//0x16F606C
 			m_EffectInstance.SetActive(true);
 			m_divaController.TryInstall(m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_ModelId);
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			m_isDownLoading = false;
 			m_divaController.Initialize(CostumeUpgradeDivaController.Controlype.ItemSelect, m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_ModelId, 0);
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_data.DLJJACACBDI(m_upgradeData.JPIDIENBGKH_CostumeId, m_item_use_window.GetItemUseType() + 1, max) > 0)
 				{
-					if(!PGIGNJDPCAH.MNANNMDBHMP(() =>
+					if(!PGIGNJDPCAH_UpdateChecker.MNANNMDBHMP(() =>
 					{
 						//0x16F5430
 						MenuScene.Instance.GotoLoginBonus();
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 					}))
 					{
 						int point = m_item_use_window.GetAddCostumePoint();
-						int prev_offer_difficult = KDHGBOOECKC.HHCJCDFCLOB.BCACCAGCPCO();
+						int prev_offer_difficult = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.BCACCAGCPCO();
 						MenuScene.Instance.InputDisable();
 						m_data.CALNLFGDMEE(m_upgradeData.JPIDIENBGKH_CostumeId, m_item_use_window.GetItemUseType() + 1, max, () =>
 						{

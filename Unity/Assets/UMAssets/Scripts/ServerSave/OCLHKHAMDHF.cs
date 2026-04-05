@@ -344,7 +344,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				List<HMGPODKEFBA_EpisodeInfo> epList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList;
+				List<HMGPODKEFBA_EpisodeInfo> epList = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList;
 				for(int i = 0; i < epList.Count; i++)
 				{
 					var key = POFDDFCGEGP_Underscore + (i + 1);

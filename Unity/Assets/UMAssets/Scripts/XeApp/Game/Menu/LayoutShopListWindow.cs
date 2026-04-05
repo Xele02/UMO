@@ -8,16 +8,16 @@ namespace XeApp.Game.Menu
 	public class LayoutShopListWindow : LayoutShopListBase
 	{
 		private AbsoluteLayout m_layoutRoot; // 0x1C
-		private List<AODFBGCCBPE> m_viewList; // 0x20
+		private List<AODFBGCCBPE_ViewShopData> m_viewList; // 0x20
 
 		protected override AbsoluteLayout layoutRoot { get { return m_layoutRoot; } } //0x194109C
-		public Action<AODFBGCCBPE> OnSelectEvent { get; set; } // 0x24
+		public Action<AODFBGCCBPE_ViewShopData> OnSelectEvent { get; set; } // 0x24
 
 		//// RVA: 0x19410B4 Offset: 0x19410B4 VA: 0x19410B4
 		//public bool IsLoading() { }
 
 		// RVA: 0x19410C8 Offset: 0x19410C8 VA: 0x19410C8
-		public void SetStatus(List<AODFBGCCBPE> list, bool resetScroll/* = true*/)
+		public void SetStatus(List<AODFBGCCBPE_ViewShopData> list, bool resetScroll/* = true*/)
 		{
 			m_viewList = list;
 			SetupList(list.Count, resetScroll);

@@ -261,7 +261,7 @@ namespace XeApp.Game.AR
 		{
 			List<ARMarkerMasterData.Data> d = ARMarkerMasterData.Instance.m_markerList;
 			List<KDLBHAKPLPH_ArMarker.KGFJLMLOFED> l = playerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			bool res = false;
 			for(int i = 0; i < d.Count; i++)
 			{

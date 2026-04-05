@@ -166,8 +166,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE306A4 Offset: 0xE306A4 VA: 0xE306A4
 		public static int FindHelpUniqueId(int searchId)
 		{
-			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			DPGPEALHJOB[] hp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD_categories;
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			// UMO : adapted to return the newest help without date restriction, this could not match exactly registred event help, but it should be fine
 			long foundt = -1;
 			int res = -1;

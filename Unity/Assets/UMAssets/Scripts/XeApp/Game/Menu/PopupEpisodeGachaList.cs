@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		public override bool IsAssetBundle { get { return true; } } //0xF8B22C
 		public override bool IsPreload { get { return true; } } //0xF8B234
 		public override GameObject Content { get { return m_content; } } //0xF8B23C
-		public LOBDIAABMKG GachaProductData { get; set; } // 0x34
+		public LOBDIAABMKG_GachaProductData GachaProductData { get; set; } // 0x34
 		public HomeBannerTextureCache bannerTexCache { get; set; } // 0x38
 
 		// // RVA: 0xF8B244 Offset: 0xF8B244 VA: 0xF8B244
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		private TextPopupSetting m_noGachaTextSetting = new TextPopupSetting(); // 0x10
 		private bool m_isError; // 0x18
 		private bool m_isGachaTransition; // 0x19
-		private LOBDIAABMKG m_gachaProductData; // 0x1C
+		private LOBDIAABMKG_GachaProductData m_gachaProductData; // 0x1C
 		private GachaScene.GachaArgs m_gachaArgs = new GachaScene.GachaArgs(); // 0x20
 		public UnityAction InputEnable; // 0x28
 		public UnityAction InputDisable; // 0x2C
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 			//0xF8AA68
 			bool isEnd = false;
 			m_isGachaTransition = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.LILDGEPCPPG_GetProductList(() =>
 			{
 				//0xF8AA08
 				isEnd = true;

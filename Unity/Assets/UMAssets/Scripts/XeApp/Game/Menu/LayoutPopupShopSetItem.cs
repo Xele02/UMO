@@ -31,20 +31,20 @@ namespace XeApp.Game.Menu
 		{
 			m_index = index;
 			int fullId = data.FKNBLDPIPMC_GetItemCode(index);
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullId);
-            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullId);
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(fullId);
+            int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(fullId);
 			int a = data.NKOHMLHLJGL_GetItemCount(index);
 			SetItemImage(fullId);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id);
-			int max = EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
-			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
+			string name = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(cat, id);
+			int max = EKLNMHFCAOI_ItemManager.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, cat, id, null);
+			int num = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, cat, id, null);
 			if(max < num + a)
 			{
 				name = RichTextUtility.MakeColorTagString(name, SystemTextColor.ImportantColor);
 			}
 			m_textName.text = name;
-			m_textNum.text = a + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+			m_textNum.text = a + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id);
 		}
 
 		// // RVA: 0x1788B30 Offset: 0x1788B30 VA: 0x1788B30

@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 	{
 		public class InitParam
 		{
-			public KPJHLACKGJF_EventMission.OPFEKMKHEIF viewEventResultData; // 0x8
+			public KPJHLACKGJF_NetEventMissionController.OPFEKMKHEIF viewEventResultData; // 0x8
 			public LayoutResultOkayButton layoutOkayButton; // 0xC
 		}
 
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			layoutOkayButton = initParam.layoutOkayButton;
 			layoutOkayButton.SetupCallback(null, OnClickOkayButton);
-            KPJHLACKGJF_EventMission.OPFEKMKHEIF data = initParam.viewEventResultData;
+            KPJHLACKGJF_NetEventMissionController.OPFEKMKHEIF data = initParam.viewEventResultData;
             if (initParam.viewEventResultData == null)
 			{
 				m_missionInfoText.text = TextConstant.InvalidText;
@@ -165,13 +165,13 @@ namespace XeApp.Game.Menu
 				SetActiveDashBonus(false);
 				m_medalNumText.text = "0";
 				is_loading = true;
-				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, MenuScene.Instance.GetMedalMonthId()), (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, MenuScene.Instance.GetMedalMonthId()), (IiconTexture texture) =>
 				{
 					//0x104425C
 					texture.Set(m_medalImage);
 					is_loading = false;
 				});
-                IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
+                IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
 				m_IsReward = ev != null && ev.JOFBHHHLBBN_Rewards.Count > 0;
 				m_militaryMedalText.text = "0";
 				m_PercentLoopAnime.StartChildrenAnimGoStop(0, 0);
@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 					texture.Set(m_medalImage);
 					is_loading = false;
 				});
-                IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
+                IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
 				m_IsReward = ev != null && ev.JOFBHHHLBBN_Rewards.Count > 0;
 				m_militaryMedalText.text = data.JHGGBBNLINH_MilitaryMedalCount.ToString();
 			}

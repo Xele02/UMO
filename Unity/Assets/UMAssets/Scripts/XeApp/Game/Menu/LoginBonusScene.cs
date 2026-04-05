@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		private LoginBonusDivaControl m_divaControl; // 0x68
 		private List<IEnumerator> m_updater = new List<IEnumerator>(8); // 0x6C
 
-		private IKIIAFKHDFP loginBonusManager { get { return NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager; } set { NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager = value; } } //0xEB2DEC 0xEB2E80
+		private IKIIAFKHDFP_LoginBonusManager loginBonusManager { get { return NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DHEFMDMGPMG_LoginBonusManager; } set { NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DHEFMDMGPMG_LoginBonusManager = value; } } //0xEB2DEC 0xEB2E80
 
 		// // RVA: 0xEB2F18 Offset: 0xEB2F18 VA: 0xEB2F18 Slot: 4
 		protected override void Awake()
@@ -50,11 +50,11 @@ namespace XeApp.Game.Menu
 				int id = MenuScene.Instance.BgControl.limitedHomeBg.m_music_id;
 				if(id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
 				{
-					string strid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
+					string strid = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("home_bgm_id", "0,0,0");
 					string[] strs = strid.Split(new char[] { ',' });
 					if(strs.Length == 3)
 					{
-						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+						long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						int idx = BgControl.GetHomeBgId(time);
 						int id2;
 						if(int.TryParse(strs[idx - 1], out id2))
@@ -232,15 +232,15 @@ namespace XeApp.Game.Menu
 			}
 			BasicTutorialManager.TutorialAfterFirstHome();
 			GameManager.Instance.SetFPS(30);
-			foreach(var e in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
+			foreach(var e in JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN)
 			{
 				if(e.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 				{
-					if(e is AMLGMLNGMFB_EventAprilFool)
+					if(e is AMLGMLNGMFB_NetEventAprilFoolController)
 					{
 						bool done = false;
 						bool err = false;
-						(e as AMLGMLNGMFB_EventAprilFool).LEGMNFOCKGE(() =>
+						(e as AMLGMLNGMFB_NetEventAprilFoolController).LEGMNFOCKGE(() =>
 						{
 							//0xEB5D08
 							done = true;
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign/*9*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as CANAFALMGLI_EventPresentCampaign;
+			CANAFALMGLI_NetEventPresentCampaignController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign/*9*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as CANAFALMGLI_NetEventPresentCampaignController;
 			if(ev != null)
 			{
 				bool done = false;
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			m_layoutDivaSerifWindow.Enter();
 			if(type >= ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.DHGCJEOPEIE_3_Comback1 && type < ANPGILOLNFK.CDOGFBNLIPG_LoginBonusType.LAOEGNLOJHC_5_Start)
 			{
-				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
+				if (CheckComebackTalk(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.PKBOFLOJNIJ_LastLoginTime))
 				{
 					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_01"));
 					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_001);
@@ -437,7 +437,7 @@ namespace XeApp.Game.Menu
 			if (lastLoginTime < prev)
 				lastLoginTime = prev;
 			TimeSpan s = Utility.GetLocalDateTime(loginTime) - Utility.GetLocalDateTime(lastLoginTime);
-			return s.Days >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("comeback_login_bonus_talk", 7);
+			return s.Days >= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("comeback_login_bonus_talk", 7);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC92C Offset: 0x6EC92C VA: 0x6EC92C
@@ -447,7 +447,7 @@ namespace XeApp.Game.Menu
 			IEnumerator loginBonus;
 
 			//0xEB6920
-			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0/*0*/);
+			PGIGNJDPCAH_UpdateChecker.HIHIEBACIHJ(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.JBAIEADLAGH_0/*0*/);
 			loginBonus = /*Co.R(*/CheckLoginBonus()/*)*/;
 			while (loginBonus.MoveNext())
 				yield return null;
@@ -510,11 +510,11 @@ namespace XeApp.Game.Menu
 				yield break;
 			}
 			m_connectStatus = eConnectStatus.None;
-			loginBonusManager = new IKIIAFKHDFP();
+			loginBonusManager = new IKIIAFKHDFP_LoginBonusManager();
 			loginBonusManager.HBOKJNECOPA_GetMaster(onSuccessWithBonus, onSuccessNoBonus, onErrorBonus, false);
 			while (m_connectStatus == eConnectStatus.None)
 				yield return null;
-			BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(false);
+			BIFNGFAIEIL.HHCJCDFCLOB_Instance.DNKCCHCEPBH(false);
 		}
 
 		// // RVA: 0xEB49F0 Offset: 0xEB49F0 VA: 0xEB49F0
@@ -686,7 +686,7 @@ namespace XeApp.Game.Menu
 		{
 			ResetData();
 			MenuScene.Instance.divaManager.BeginControl(m_divaControl);
-			PGIGNJDPCAH.MLPMNKKNFCJ();
+			PGIGNJDPCAH_UpdateChecker.MLPMNKKNFCJ();
 			m_updater.Add(ConnectLoginBonus());
 			GameManager.Instance.ResetViewPlayerData();
 		}

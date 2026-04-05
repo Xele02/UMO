@@ -26,7 +26,7 @@ public static class DatabaseTextConverter
 	[MenuItem("UMO/Localization/Export Database strings", validate = true)]
 	static bool ExportCostumeListAvaiable()
 	{
-		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized;
+		return Application.isPlaying && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized;
 	}
 
     [MenuItem("UMO/Localization/Export Database strings")]
@@ -149,7 +149,7 @@ public static class DatabaseTextConverter
         {
             //Export SNSDb texts
             PoFile poFile = new PoFile();
-            BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
+            BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
             for(int i = 0; i < snsDb.NPKPBDIDBBG_Room.Count; i++)
             {
                 if(snsDb.NPKPBDIDBBG_Room[i].PPEGAKEIEGM_Enabled == 2 && snsDb.NPKPBDIDBBG_Room[i].MALFHCHNEFN_RoomId > 0)
@@ -172,7 +172,7 @@ public static class DatabaseTextConverter
         {
             //Export Tips texts
             PoFile poFile = new PoFile();
-            BCKMELFCKKN_Tips tipsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
+            BCKMELFCKKN_Tips tipsDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
             for(int i = 0; i < tipsDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("tips_{0:D4}_title", i);
@@ -189,7 +189,7 @@ public static class DatabaseTextConverter
         {
             //Export VcItem texts
             PoFile poFile = new PoFile();
-            DKJMDIFAKKD_VcItem vcDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem;
+            DKJMDIFAKKD_VcItem vcDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem;
             for(int i = 0; i < vcDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("vcitem_{0:D4}_title", i);
@@ -206,7 +206,7 @@ public static class DatabaseTextConverter
         {
             //Export TutoPict texts
             PoFile poFile = new PoFile();
-            PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
+            PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
             for(int i = 0; i < tutoDb.CDENCMNHNGA_table.Count; i++)
             {
                 for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_title.Length; j++)
@@ -229,7 +229,7 @@ public static class DatabaseTextConverter
         {
             // Export Adv strings
             PoFile poFile = new PoFile();
-            GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
+            GPMHOAKFALE_Adventure advDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
             List<int> advIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
             for(int i = 0; i < advDb.CDENCMNHNGA_table.Count; i++)
             {
@@ -264,7 +264,7 @@ public static class DatabaseTextConverter
         {
             // Export TutoMiniAdv strings
             PoFile poFile = new PoFile();
-            ILLPGHGGKLL_TutorialMiniAdv blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv;
+            ILLPGHGGKLL_TutorialMiniAdv blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv;
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message.Length; j++)
@@ -282,7 +282,7 @@ public static class DatabaseTextConverter
         {
             // Export Anketo strings
             PoFile poFile = new PoFile();
-            IPJBAPLFECP_Anketo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
+            IPJBAPLFECP_Anketo blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 {
@@ -304,7 +304,7 @@ public static class DatabaseTextConverter
         {
             // Export helpBrowser strings
             PoFile poFile = new PoFile();
-            KCDJCKCKKFM_HelpBrowser blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser;
+            KCDJCKCKKFM_HelpBrowser blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser;
             for(int i = 0; i < blockDb.LOMHJBIJMOD_categories.Length; i++)
             {
                 if(blockDb.LOMHJBIJMOD_categories[i].PLALNIIBLOF_en == 2)
@@ -335,7 +335,7 @@ public static class DatabaseTextConverter
         {
             // Export homeBg strings
             PoFile poFile = new PoFile();
-            ALJHJDHNFFB_HomeBg blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
+            ALJHJDHNFFB_HomeBg blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("homebg_{0:D4}_name", i);
@@ -350,7 +350,7 @@ public static class DatabaseTextConverter
         {
             // Export shopDb strings
             PoFile poFile = new PoFile();
-            BKPAPCMJKHE_Shop blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
+            BKPAPCMJKHE_Shop blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
             for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("shop_{0:D4}_name", i);
@@ -365,7 +365,7 @@ public static class DatabaseTextConverter
         {
             // Export bingoDb strings
             PoFile poFile = new PoFile();
-            JKICPBIIHNE_Bingo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FPOIPGFFAPE_Bingo;
+            JKICPBIIHNE_Bingo blockDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FPOIPGFFAPE_Bingo;
             for (int i = 0; i < blockDb.JJAICEAEGKF.Count; i++)
             {
                 for(int j = 0; j < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN.Count; j++)
@@ -388,10 +388,10 @@ public static class DatabaseTextConverter
         {
             // Export event strings
             PoFile poFile = new PoFile();
-            List<string> blocksName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames();
+            List<string> blocksName = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames();
             for(int sIdx = 0; sIdx < blocksName.Count; sIdx++)
             {
-                ICFLJACCIKF_EventBattle blockDbBattle = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as ICFLJACCIKF_EventBattle;
+                ICFLJACCIKF_EventBattle blockDbBattle = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as ICFLJACCIKF_EventBattle;
                 if(blockDbBattle != null)
                 {
                     for (int i = 0; i < blockDbBattle.NNMPGOAGEOL_quests.Count; i++)
@@ -407,7 +407,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbBattle.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
-                LNELCMNJPIC_EventGoDiva blockDbGoDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as LNELCMNJPIC_EventGoDiva;
+                LNELCMNJPIC_EventGoDiva blockDbGoDiva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as LNELCMNJPIC_EventGoDiva;
                 if(blockDbGoDiva != null)
                 {
                     for (int i = 0; i < blockDbGoDiva.NNMPGOAGEOL_quests.Count; i++)
@@ -423,7 +423,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbGoDiva.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
-                KCGOMAFPGDD_EventAprilFool blockDbAprilFool = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as KCGOMAFPGDD_EventAprilFool;
+                KCGOMAFPGDD_EventAprilFool blockDbAprilFool = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as KCGOMAFPGDD_EventAprilFool;
                 if(blockDbAprilFool != null)
                 {
                     for (int i = 0; i < blockDbAprilFool.NNMPGOAGEOL_quests.Count; i++)
@@ -434,7 +434,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbAprilFool.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
-                BKOGPDBKFFJ_EventRaid blockDbRaid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as BKOGPDBKFFJ_EventRaid;
+                BKOGPDBKFFJ_EventRaid blockDbRaid = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as BKOGPDBKFFJ_EventRaid;
                 if(blockDbRaid != null)
                 {
                     for (int i = 0; i < blockDbRaid.HDMADAHNLDN_Missions.Count; i++)
@@ -462,7 +462,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].OPFGFINHFCE_name);
                     }
                 }
-                LDEBIBGHCGD_EventRaidLobby blockDbLobby = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as LDEBIBGHCGD_EventRaidLobby;
+                LDEBIBGHCGD_EventRaidLobby blockDbLobby = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as LDEBIBGHCGD_EventRaidLobby;
                 if(blockDbLobby != null)
                 {
                     for (int i = 0; i < blockDbLobby.OJGPPOKENLG_Groups.Count; i++)
@@ -488,7 +488,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL_GetStringParam(string.Format("battlelog_text_{0:D2}", i), ""));
                     }
                 }
-                PHBACNMCMHG_EventCollection blockDbCollection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as PHBACNMCMHG_EventCollection;
+                PHBACNMCMHG_EventCollection blockDbCollection = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as PHBACNMCMHG_EventCollection;
                 if(blockDbCollection != null)
                 {
                     for (int i = 0; i < blockDbCollection.NNMPGOAGEOL_quests.Count; i++)
@@ -504,7 +504,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_description);
                     }
                 }
-                OEIJEFBBJBD_EventSp blockDbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as OEIJEFBBJBD_EventSp;
+                OEIJEFBBJBD_EventSp blockDbSp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as OEIJEFBBJBD_EventSp;
                 if(blockDbSp != null)
                 {
                     for (int i = 0; i < blockDbSp.NNMPGOAGEOL_quests.Count; i++)
@@ -515,7 +515,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
-                ACBAHDMEFFL_EventMission blockDbMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as ACBAHDMEFFL_EventMission;
+                ACBAHDMEFFL_EventMission blockDbMission = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(blocksName[sIdx]) as ACBAHDMEFFL_EventMission;
                 if(blockDbMission != null)
                 {
                     for (int i = 0; i < blockDbMission.NNMPGOAGEOL_quests.Count; i++)
@@ -578,7 +578,7 @@ public static class DatabaseTextConverter
                             PoFile tmpFile = new PoFile();
                             tmpFile.LoadFile(p + "messages_full.pot", clear:true);
                             tmpFile.LoadFile(p + "jp.po");
-                            // Copied from EKLNMHFCAOI, don't use EKLNMHFCAOI or it will initialize the static before the string are all loaded
+                            // Copied from EKLNMHFCAOI_ItemManager, don't use EKLNMHFCAOI_ItemManager or it will initialize the static before the string are all loaded
                             string[] BJIECJAOMDJ = new string[45] {
                                 "vc_0000", "vc_0001", "vc_gt_{0:D4}", "vc_0003", "sn_{0:D4}", "cos_{0:D4}", "vn_{0:D4}", "gn_{0:D4}", 
                                 "ep_i_nm_{0:D4}", "em_nm_{0:D4}", "evn_{0:D4}", "et_nm_{0:D4}", "diva_{0:D2}", "cmp_nm_{0:D4}", "sns_nm_{0:D4}", 

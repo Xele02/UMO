@@ -38,7 +38,7 @@ namespace XeSys.File
 		private const byte HBPDDBDJGBI = 5;
 		private const byte OOFGFPEEPOC = 6;
 
-		public static CriFileRequestManager HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+		public static CriFileRequestManager HHCJCDFCLOB_Instance { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 		public Func<bool> GOEAHKDGBBH { get; set; } // 0xC MFPBFPMEGLH CIHOBBNBGMD NPGIEMFFFIO
 		public Func<string, bool> JPNMBNEHBOC { get; set; } // 0x10 PLEOGKLBFOE PNNNJDJIOBD CODNMFLLEPN
 		public static Action PKEPDCMJKGF { get; set; } // 0x4 LLHEBHLOMGK LJCCPPIBKCM ACBCAFEDELI
@@ -52,7 +52,7 @@ namespace XeSys.File
 		private void Awake()
 		{
 			DontDestroyOnLoad(this);
-			HHCJCDFCLOB = this;
+			HHCJCDFCLOB_Instance = this;
 			NFABHMNAODN = IFDILJEGCLD.NFFGMBBNNPH_0_None;
 			LEDAPFHKIMD_RequestCancel = false;
 			CEKHMLAEKIK = new List<LBHFILLFAGA>(EOBEHIILNPF);
@@ -64,7 +64,7 @@ namespace XeSys.File
 		// // RVA: 0x2038380 Offset: 0x2038380 VA: 0x2038380
 		public static GameObject HEGEKFMJNCC(CriFileRequestManager JKAMBKCKIPP)
 		{
-			if(HHCJCDFCLOB == null)
+			if(HHCJCDFCLOB_Instance == null)
 			{
 				if(JKAMBKCKIPP != null)
 				{

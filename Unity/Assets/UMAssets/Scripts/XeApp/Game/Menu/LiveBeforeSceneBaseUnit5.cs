@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1547C0C Offset: 0x1547C0C VA: 0x1547C0C
-		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
+		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH_NetGameManager.NEDILFPPCJF log, bool isNotUpdateProfile)
 		{
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				return;
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 			if (MenuScene.Instance.TryMusicPeriod(mi.LimitTime, mi.EventUniqueId, mi.gameEventType, mi.IsMvMode, MenuScene.MusicPeriodMess.TeamSelect))
 				return;
 			Database.Instance.gameSetup.ForcePrismSetting();
-			JGEOBNENMAH.EDHCNKBMLGI h = new JGEOBNENMAH.EDHCNKBMLGI();
+			JGEOBNENMAH_NetGameManager.EDHCNKBMLGI h = new JGEOBNENMAH_NetGameManager.EDHCNKBMLGI();
 			h.GHBPLHBNMBK_FreeMusicId = mi.freeMusicId;
 			h.KLCIIHKFPPO_StoryMusicId = mi.storyMusicId;
 			h.AKNELONELJK_difficulty = (int)mi.difficultyType;
@@ -150,16 +150,16 @@ namespace XeApp.Game.Menu
 			h.CEPCBJHNMJA_IsNotUpdateProfile = isNotUpdateProfile;
 			if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId);
+				IKDICBBFBMI_NetEventBaseController evt = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(mi.EventUniqueId);
 				if(evt != null)
 				{
-					h.IEMFPDGIAHG = (evt as HAEDCCLHEMN_EventBattle).MDBIEKEFNJG();
+					h.IEMFPDGIAHG = (evt as HAEDCCLHEMN_NetEventBattleController).MDBIEKEFNJG();
 				}
 			}
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG, false);
-				if(evt == null || evt.DPJCPDKALGI_RankingEnd < NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime())
+				IKDICBBFBMI_NetEventBaseController evt = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG, false);
+				if(evt == null || evt.DPJCPDKALGI_RankingEnd < NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime())
 				{
 					mi.ClearEventType();
 					h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;
@@ -167,28 +167,28 @@ namespace XeApp.Game.Menu
 				}
 			}
 			MenuScene.Instance.InputDisable();
-			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(h, () =>
+            JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.OLDDILMKJND_GameStart(h, (IMCBBOAFION)(() =>
 			{
 				//0x154A614
 				if(isSkip)
 				{
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 					{
-						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
+                        PKNOKJNLPOE_NetEventRaidController evRaid = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_NetEventRaidController;
 						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.CCAPCGPIIPF_1_Normal || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH_AttackType.LPNPLGJJCPC_2_Support))
 						{
-							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
+                            CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.GJACBNJHDHI(ticketCount, consumeTime);
 						}
 					}
 					else
 					{
-						CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
+                        CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.GJACBNJHDHI(ticketCount, consumeTime);
 					}
 				}
-				m_isGotoGame = true;
-				GameManager.Instance.SelectedGuestData = null;
-				MenuScene.Instance.GotoRhythmGame(isSkip, ticketCount, isNotUpdateProfile);
-			}, () =>
+                m_isGotoGame = true;
+                GameManager.Instance.SelectedGuestData = null;
+                MenuScene.Instance.GotoRhythmGame(isSkip, ticketCount, isNotUpdateProfile);
+			}), () =>
 			{
 				//0x154A934
 				string str = "popup_stamina_title_00";
@@ -198,44 +198,44 @@ namespace XeApp.Game.Menu
 					str = "popup_ap_title_00";
 					str2 = "popup_ap_text_00";
 				}
-				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(str)
+                MessageBank bk = MessageManager.Instance.GetBank("menu");
+                PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(str)
 					, SizeType.Small, bk.GetMessageByLabel(str2), new ButtonInfo[1] 
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 					}, false, true
 				), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
-					//0x154A034
-					MenuScene.Instance.InputEnable();
+                    //0x154A034
+                    MenuScene.Instance.InputEnable();
 				}, null, null, null, true, true, false, null, null, null, null, null);
 			}, () =>
 			{
-				//0x154A0D0
-				MenuScene.Instance.InputEnable();
-				PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_event_end_title", "game_play_event_end_attain", SizeType.Small, new ButtonInfo[1]
+                //0x154A0D0
+                MenuScene.Instance.InputEnable();
+                PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_event_end_title", "game_play_event_end_attain", SizeType.Small, new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				}), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
-					//0x154A3C4
-					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+                    //0x154A3C4
+                    MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}, null, null, null, true, true, false, null, null, null, null, null);
 			}, () =>
 			{
-				//0x154A47C
-				MenuScene.Instance.GotoTitle();
+                //0x154A47C
+                MenuScene.Instance.GotoTitle();
 			}, () =>
 			{
-				//0x154A518
-				MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-				MenuScene.Instance.InputEnable();
+                //0x154A518
+                MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+                MenuScene.Instance.InputEnable();
 			}, (NHCDBBBMFFG_BossStatus status) =>
 			{
-				//0x154ACB4
-				TextPopupSetting s = new TextPopupSetting();
-				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				UnityEngine.Debug.LogWarning("StringLiteral_18271" + status.ToString());
+                //0x154ACB4
+                TextPopupSetting s = new TextPopupSetting();
+                MessageBank bk = MessageManager.Instance.GetBank("menu");
+                UnityEngine.Debug.LogWarning("StringLiteral_18271" + status.ToString());
 				if(status == NHCDBBBMFFG_BossStatus.NFDONDKDHPK_3_Escaped)
 				{
 					s.SetParent(transform);
@@ -246,17 +246,17 @@ namespace XeApp.Game.Menu
 					};
 					s.TitleText = bk.GetMessageByLabel("pop_raid_escaped01_title");
 					s.Text = bk.GetMessageByLabel("pop_raid_escaped01_text");
-					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+                    PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 					{
-						//0x154B468
-						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-						MenuScene.Instance.InputEnable();
+                        //0x154B468
+                        MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+                        MenuScene.Instance.InputEnable();
 					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 				else if(status != NHCDBBBMFFG_BossStatus.OPNEOJEGDJB_2_Dead)
 				{
-					MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-					MenuScene.Instance.InputEnable();
+                    MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+                    MenuScene.Instance.InputEnable();
 				}
 				else
 				{
@@ -268,11 +268,11 @@ namespace XeApp.Game.Menu
 					};
 					s.TitleText = bk.GetMessageByLabel("pop_raid_defeated_title");
 					s.Text = bk.GetMessageByLabel("pop_raid_defeated_text");
-					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+                    PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 					{
-						//0x154B360
-						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-						MenuScene.Instance.InputEnable();
+                        //0x154B360
+                        MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+                        MenuScene.Instance.InputEnable();
 					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			});
@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
 		{
 			m_prismLogDiffData.OBKGEDCKHHE_Init(musicId, musicInfo.onStageDivaNum > 1);
-			ILCCJNDFFOB.HHCJCDFCLOB.CBKENDJIBDM_MvChange(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CBKENDJIBDM_MvChange(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
 				m_prismData.FBGAKINEIPG ? 1 : 0, m_prismData.OMNDNNFANCK_PrismDivaIds, m_prismData.DLPIKHDNIIE_PrismCostumeIds, 
 				m_prismData.FBAGIDFLHHI_PrismValkyrieId, m_prismLogDiffData.FBGAKINEIPG ? 1 : 0, m_prismLogDiffData.OMNDNNFANCK_PrismDivaIds, 
 				m_prismLogDiffData.DLPIKHDNIIE_PrismCostumeIds, m_prismLogDiffData.FBAGIDFLHHI_PrismValkyrieId);

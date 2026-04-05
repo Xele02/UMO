@@ -39,20 +39,20 @@ namespace XeApp.Game.Common
 			bool b1 = false;
 			bool b2 = false;
 			bool b3 = false;
-			if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+			if(GNGMCIAIKMA.HHCJCDFCLOB_Instance != null)
 			{
-				b3 = GNGMCIAIKMA.HHCJCDFCLOB.GBCPDBJEDHL(currentTime);
+				b3 = GNGMCIAIKMA.HHCJCDFCLOB_Instance.GBCPDBJEDHL(currentTime);
 				m_bingoId = 0;
-				if(GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos().Count > 0)
+				if(GNGMCIAIKMA.HHCJCDFCLOB_Instance.CNADOFDDNLO_GetActiveBingos().Count > 0)
 				{
-					m_bingoId = GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos()[0];
-					b2 = GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(m_bingoId);
-					if(b2 || GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(m_bingoId))
+					m_bingoId = GNGMCIAIKMA.HHCJCDFCLOB_Instance.CNADOFDDNLO_GetActiveBingos()[0];
+					b2 = GNGMCIAIKMA.HHCJCDFCLOB_Instance.DOEGBMNNFKH(m_bingoId);
+					if(b2 || GNGMCIAIKMA.HHCJCDFCLOB_Instance.DHPLHALIDHH(m_bingoId))
 					{
-						if(GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved) > 0)
+						if(GNGMCIAIKMA.HHCJCDFCLOB_Instance.OBOGIOGEBPK(m_bingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_2_Achieved) > 0)
 							b2 = true;
 					}
-					b2 = GNGMCIAIKMA.HHCJCDFCLOB.NJBPNCDPGNO(m_bingoId);
+					b2 = GNGMCIAIKMA.HHCJCDFCLOB_Instance.NJBPNCDPGNO(m_bingoId);
 				}
 			}
 			m_button.gameObject.SetActive(b3);

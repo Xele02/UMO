@@ -354,25 +354,25 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 					info.AFNIOJHODAG_CostumeColorId = CJAENOMGPDA_GetInt(subData, "c_col", 0, ref isInvalid);
 					info.HPJMPINPKEP_HomeCostumeId = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.JJLLJCEJENB_h_c_id, 0, ref isInvalid);
 					info.KKEPMONFGEI_HomeCostumeColorId = CJAENOMGPDA_GetInt(subData, AFEHLCGHAEE_Strings.FEDBLJNOCIH_h_c_col, 0, ref isInvalid);
-					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 					{
-						if (!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(info.DIPKCALNIII_diva_id))
+						if (!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(info.DIPKCALNIII_diva_id))
 						{
 							info.DIPKCALNIII_diva_id = 1;
 						}
-						if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(info.BEEAIAAJOHD_CostumeId, info.DIPKCALNIII_diva_id))
+						if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(info.BEEAIAAJOHD_CostumeId, info.DIPKCALNIII_diva_id))
 						{
 							info.BEEAIAAJOHD_CostumeId = 0;
 						}
-						if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(info.AFNIOJHODAG_CostumeColorId, info.BEEAIAAJOHD_CostumeId, info.DIPKCALNIII_diva_id))
+						if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(info.AFNIOJHODAG_CostumeColorId, info.BEEAIAAJOHD_CostumeId, info.DIPKCALNIII_diva_id))
 						{
 							info.AFNIOJHODAG_CostumeColorId = 0;
 						}
-						if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(info.HPJMPINPKEP_HomeCostumeId, info.DIPKCALNIII_diva_id))
+						if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(info.HPJMPINPKEP_HomeCostumeId, info.DIPKCALNIII_diva_id))
 						{
 							info.HPJMPINPKEP_HomeCostumeId = 0;
 						}
-						if (!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(info.KKEPMONFGEI_HomeCostumeColorId, info.HPJMPINPKEP_HomeCostumeId, info.DIPKCALNIII_diva_id))
+						if (!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(info.KKEPMONFGEI_HomeCostumeColorId, info.HPJMPINPKEP_HomeCostumeId, info.DIPKCALNIII_diva_id))
 						{
 							info.KKEPMONFGEI_HomeCostumeColorId = 0;
 						}
@@ -409,18 +409,18 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 					info.MMCEMJILMJI_EvSoLevel = CJAENOMGPDA_GetInt(subData, "ev_so_lv", 0, ref isInvalid);
 					info.HDPANGMKKCP_EvVoLevel = CJAENOMGPDA_GetInt(subData, "ev_vo_lv", 0, ref isInvalid);
 					info.FFMLBEEBHDD_EvChLevel = CJAENOMGPDA_GetInt(subData, "ev_ch_lv", 0, ref isInvalid);
-					if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(info.PIGLAEFPNEK_m_slot))
+					if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(info.PIGLAEFPNEK_m_slot))
 					{
 						info.PIGLAEFPNEK_m_slot = 0;
 					}
 					for (int j = 0; j < 2; j++)
 					{
-						if (!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(info.EBDNICPAFLB_s_slot[j]))
+						if (!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.FGNJBMPDBLO_IsSceneValid(info.EBDNICPAFLB_s_slot[j]))
 						{
 							info.EBDNICPAFLB_s_slot[j] = 0;
 						}
 					}
-					int v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp.IECLHMBPEIJ_GetMusicExp(1);
+					int v = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp.IECLHMBPEIJ_GetMusicExp(1);
 					for (int j = 0; j < 300; j++)
 					{
 						if(info.ANAJIAENLNB_lv[j] == 1)

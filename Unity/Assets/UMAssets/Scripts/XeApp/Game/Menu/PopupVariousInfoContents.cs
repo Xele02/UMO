@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 					m_isOfficialSite = true;
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					OtherUtility.OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_site"], () =>
+					OtherUtility.OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_site"], () =>
 					{
 						//0x1163340
 						CallbackSupportSiteClose();
@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 					m_isPortalSite = true;
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					OtherUtility.OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["portal_site"], () =>
+					OtherUtility.OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["portal_site"], () =>
 					{
 						//0x1163544
 						CallbackSupportSiteClose();
@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 					m_isWiki = true;
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					OtherUtility.OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki"], () =>
+					OtherUtility.OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki"], () =>
 					{
 						//0x1163748
 						CallbackSupportSiteClose();
@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EMAOPPMGKBD_Policy, () =>
 					{
 						//0x1163978
 						CallbackSupportSiteClose();
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCCLAEBKMLD_Legals, () =>
 					{
 						//0x1163B90
 						CallbackSupportSiteClose();
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.GHDACOGLNLJ_Contract, () =>
 					{
 						//0x1163DA8
 						CallbackSupportSiteClose();
@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.BFKFPEDCFCL_Settlement, () =>
 					{
 						//0x1163FC0
 						CallbackSupportSiteClose();
@@ -132,7 +132,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EHDHJCGOGGN_Copyright, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.EHDHJCGOGGN_Copyright, () =>
 					{
 						//0x11641D8
 						CallbackSupportSiteClose();
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 					m_isFAQ = true;
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					OtherUtility.OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki_faq"], () =>
+					OtherUtility.OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki_faq"], () =>
 					{
 						//0x11643C4
 						CallbackSupportSiteClose();
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 					m_isTwitter = true;
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					OtherUtility.OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_twitter"], () =>
+					OtherUtility.OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_twitter"], () =>
 					{
 						//0x11645C8
 						CallbackSupportSiteClose();
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.JMIDCMFKPOE_Credit, () =>
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.JMIDCMFKPOE_Credit, () =>
 					{
 						//0x11647F8
 						CallbackSupportSiteClose();

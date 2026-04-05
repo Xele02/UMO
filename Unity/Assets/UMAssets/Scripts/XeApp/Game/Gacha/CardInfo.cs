@@ -81,7 +81,7 @@ namespace XeApp.Game.Gacha
             m_attrId =UnityEngine.Random.Range(1, GameAttribute.ArrayNum + 1);
             m_seriesId = UnityEngine.Random.Range(1, 6);
             m_isNew = RandomUtil.RandomBool();
-            m_isFeed = IsFeed(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_cardId));
+            m_isFeed = IsFeed(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_cardId));
             m_spAnimId = -1;
             m_hasSpAnim = m_starNum > 3;
             if(m_hasSpAnim)
@@ -109,37 +109,37 @@ namespace XeApp.Game.Gacha
         // // RVA: 0x9839E0 Offset: 0x9839E0 VA: 0x9839E0
         private int GetCardId(int app_item_id)
         {
-            return EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id);
+            return EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id);
         }
 
         // // RVA: 0x983A64 Offset: 0x983A64 VA: 0x983A64
         private int GetCardStarNum(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].EKLIPGELKCL_Rarity;
+            return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id) - 1].EKLIPGELKCL_Rarity;
         }
 
         // // RVA: 0x983C58 Offset: 0x983C58 VA: 0x983C58
         private int GetCardAttribute(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].FKDCCLPGKDK_JacketAttr;
+            return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id) - 1].FKDCCLPGKDK_JacketAttr;
         }
 
         // // RVA: 0x983DC8 Offset: 0x983DC8 VA: 0x983DC8
         private int GetCardSeries(int app_item_id)
         {
-            return (int)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].AIHCEGFANAM_SerieAttr;
+            return (int)IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id) - 1].AIHCEGFANAM_SerieAttr;
         }
 
         // // RVA: 0x983F38 Offset: 0x983F38 VA: 0x983F38
         private bool IsFeed(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].MCCIFLKCNKO_Feed;
+            return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(app_item_id) - 1].MCCIFLKCNKO_Feed;
         }
 
         // // RVA: 0x983BD4 Offset: 0x983BD4 VA: 0x983BD4
         private string GetCardName(int app_item_id)
         {
-            return EKLNMHFCAOI.INCKKODFJAP_GetItemName(app_item_id);
+            return EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(app_item_id);
         }
     }
 }

@@ -4,20 +4,30 @@ using System.Collections.Generic;
 using XeSys;
 
 public class DKCJADHKGAN { }
+[UMOClass()]
 public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class JFFPEKOEINE
 	{
+		[UMOMember()]
 		public long KINJOEIAHFK_StartTime; // 0x8
+		[UMOMember()]
 		public long PCCFAKEOBIC_EndTime; // 0x10
+		[UMOMember()]
 		public int JCADAMLIOKK_Id; // 0x18
+		[UMOMember()]
 		public sbyte PPEGAKEIEGM_Enabled; // 0x1C
 		public int AIDNHPGEHPM_MaxCountCrypted; // 0x20
 		public int DJCHKGLCLPD_Crypted; // 0x24
+		[UMOMember()]
 		public string CIOJJBOHEEJ; // 0x28
+		[UMOMember()]
 		public List<List<int>> BEPAMEEBPGI_SongIdByWeekday = new List<List<int>>(); // 0x2C
 
+		[UMOMember()]
 		public int ELEPHBOKIGK_Limit { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL_bgs 0x198E160 LHNFGPIGCNE_bgs
+		[UMOMember()]
 		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF_bgs 0x198E174 NPDLLBHCIJP_bgs
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
@@ -44,6 +54,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		//public uint CAOGDCBPBAN() { }
 	}
 
+	[UMOMember()]
 	private List<JFFPEKOEINE> MPCJGPEBCCD = new List<JFFPEKOEINE>(); // 0x20
 
 	//// RVA: 0x198D87C Offset: 0x198D87C VA: 0x198D87C
@@ -109,6 +120,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			MPCJGPEBCCD.Add(data);
 		}
 		// UMO, loop the event. Use only those without bonus and set bonus on fixed days
+		if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 		{
 			List<JFFPEKOEINE> usableList = MPCJGPEBCCD.FindAll((JFFPEKOEINE _) =>
 			{

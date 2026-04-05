@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class PopupRaidHelpCompletionListContentSetting : PopupSetting
 	{
-		public List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helperList; // 0x34
+		public List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helperList; // 0x34
 
 		public override string PrefabPath { get { return ""; } } //0x1617970
 		public override string BundleName { get { return "ly/200.xab"; } } //0x16179CC

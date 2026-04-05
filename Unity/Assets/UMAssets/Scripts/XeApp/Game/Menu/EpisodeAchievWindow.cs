@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 					m_point_episode.SetDigitLength(4, false);
 					m_roop_text_image.enabled = true;
 				}
-				m_item_name.text = string.Format("{0}　{1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId), data.MBJIFDBEDAC_item_count, EKLNMHFCAOI.NDBLEADIDLA(data.NPPNDDMPFJJ_ItemCategory, data.NNFNGLJOKKF_ItemId, data.MBJIFDBEDAC_item_count));
+				m_item_name.text = string.Format("{0}　{1}{2}", EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId), data.MBJIFDBEDAC_item_count, EKLNMHFCAOI_ItemManager.NDBLEADIDLA(data.NPPNDDMPFJJ_ItemCategory, data.NNFNGLJOKKF_ItemId, data.MBJIFDBEDAC_item_count));
 				SetItemImage(data.JJBGOIMEIPF_ItemId);
 			}
 		}

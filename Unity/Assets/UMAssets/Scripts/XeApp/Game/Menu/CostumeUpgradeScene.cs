@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16F7670 Offset: 0x16F7670 VA: 0x16F7670 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x16F7710 Offset: 0x16F7710 VA: 0x16F7710 Slot: 18
@@ -295,13 +295,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16F7C00 Offset: 0x16F7C00 VA: 0x16F7C00
 		private bool CanShowTutorial()
 		{
-			if(MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
+			if(MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable())
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 				{
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1))
+					if (CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1))
 					{
-						return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(2);
+						return !CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(2);
 					}
 				}
 			}

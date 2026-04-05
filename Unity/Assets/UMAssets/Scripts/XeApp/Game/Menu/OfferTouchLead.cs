@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				if (IsEndAnimLoop)
 					yield break;
-				yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(2, false, null));
+				yield return Co.R(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.FMGMIKPJNKG_Co_wait(2, false, null));
 				if (IsEndAnimLoop)
 					yield break;
 				m_layoutRoot.StartAllAnimGoStop("go_out", "st_out");
@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				if (IsEndAnimLoop)
 					yield break;
-				yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(2, false, null));
+				yield return Co.R(KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.FMGMIKPJNKG_Co_wait(2, false, null));
 			}
 		}
 

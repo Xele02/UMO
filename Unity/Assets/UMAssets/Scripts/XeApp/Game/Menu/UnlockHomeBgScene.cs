@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			fadeImg.color = new Color(Color.black.r, Color.black.g, Color.black.b, 0);
 			if (homeBgId == 0)
 				homeBgId = 11;
-			ALJHJDHNFFB_HomeBg.ADLLAFIDFAM dbHomeBg = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[homeBgId - 1];
+			ALJHJDHNFFB_HomeBg.ADLLAFIDFAM dbHomeBg = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[homeBgId - 1];
 			m_strBuilder.SetFormat("{0}bg{1:D4}.xab", "mn/hm/bg/", dbHomeBg.OENPCNBFPDA_bg_id);
 			loadCount = 0;
 			nameBundle = m_strBuilder.ToString();

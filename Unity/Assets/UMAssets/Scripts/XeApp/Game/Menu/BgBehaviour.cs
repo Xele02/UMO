@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 				m_bgMipmapBiasMaterialInstance.SetTexture("_MainTex", texture);
 				m_bgMipmapBiasMaterialInstance.SetTexture("_MaskTex", Texture2D.whiteTexture);
 				m_bgMipmapBiasMaterialInstance.SetFloat("_MipmapBias", -0.5f);
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
 				{
 					m_bgMipmapBiasMaterialInstance.EnableKeyword("FIXEDBIAS");
 				}
@@ -734,15 +734,15 @@ namespace XeApp.Game.Menu
 			//0x143C420
 			if(m_storyBgScroll != null)
 			{
-				story_bg_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.CAAMBBJBODI_StoryBgMax;
+				story_bg_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.CAAMBBJBODI_StoryBgMax;
 				for(int i = 0; i < story_bg_max; i++)
 				{
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/bg/st/{0:D2}_{1:D2}.xab", map, i + 1));
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/bg/st/{0:D2}_{1:D2}.xab", map, i + 1));
 				}
 				yield return new WaitWhile(() =>
 				{
 					//0x143C0DC
-					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+					return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 				});
 				m_bgScroll = GetComponentInChildren<BgScroll>(true);
 				yield return Co.R(m_bgScroll.SetupList(story_bg_max));

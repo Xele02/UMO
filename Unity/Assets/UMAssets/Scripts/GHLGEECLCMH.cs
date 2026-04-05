@@ -59,12 +59,12 @@ public class GHLGEECLCMH
 		OJFCIAJEJCI_PrevUtaRateAttr = new int[1];
 		if(_AIMLPJOGPID_Data == null)
 		{
-			_AIMLPJOGPID_Data = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
+			_AIMLPJOGPID_Data = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
 		}
 		JPJHBJAHPFP_HsRating.CalcUtaRate(_AIMLPJOGPID_Data, true);
 		if(JMODMCLMIJL_PrevRecordMusic == null)
 		{
-			JMODMCLMIJL_PrevRecordMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
+			JMODMCLMIJL_PrevRecordMusic = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
 		}
 		HOHNHJEFCBF_PrevHsRating.CalcUtaRate(JMODMCLMIJL_PrevRecordMusic, false);
 		HFEFAGMKPKH_UtaRateAttr[0] = JPJHBJAHPFP_HsRating.GetUtaRateAttr(0);

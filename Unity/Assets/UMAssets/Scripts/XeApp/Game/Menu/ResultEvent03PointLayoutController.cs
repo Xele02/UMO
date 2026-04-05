@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPopupGetReward()
 		{
 			//0xD058A8
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
+			IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
 			if(ev != null)
 			{
 				if(ev.JOFBHHHLBBN_Rewards.Count > 0)

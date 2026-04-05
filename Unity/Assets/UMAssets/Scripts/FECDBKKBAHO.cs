@@ -201,9 +201,9 @@ public class FECDBKKBAHO
 			return;
 		GCKONHLCMFL = true;
 		IHEPCAHBECA_VideoMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IHEPCAHBECA_VideoMode;
-		KDFJMKLNOJH_CleanPath = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + "/mov";
+		KDFJMKLNOJH_CleanPath = KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath + "/mov";
 		OOLIMFMEJGP_CleanRegex = new Regex(IHEPCAHBECA_VideoMode == 0 ? ".+_q1.usm$" : ".+_q2.usm$");
-		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(BNPFBOIFDAG);
+		NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(BNPFBOIFDAG);
 	}
 
 	// // RVA: 0xFD099C Offset: 0xFD099C VA: 0xFD099C
@@ -219,9 +219,9 @@ public class FECDBKKBAHO
 	public void EBCAKALIAHH_RemoveExpiredSongs()
     {
         GCKONHLCMFL = true;
-		HKHMCIEINKB_BgmDir = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + "/snd/bgm";
-		OGCDNCDMLCA_LocalPath = KEHOJEJMGLJ.OGCDNCDMLCA_LocalPath;
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		HKHMCIEINKB_BgmDir = KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath + "/snd/bgm";
+		OGCDNCDMLCA_LocalPath = KEHOJEJMGLJ_NetInstallManager.OGCDNCDMLCA_LocalPath;
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		JHNMKKNEENE_Time = time;
 		PJNOMDMINDA_RemoveExpiredFiles(HKHMCIEINKB_BgmDir);
 		GCKONHLCMFL = false;

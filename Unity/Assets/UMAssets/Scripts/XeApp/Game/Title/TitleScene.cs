@@ -4,12 +4,12 @@ namespace XeApp.Game.Title
 {
 	public class TitleScene : MainSceneBase
 	{
-		private IOGKADECKOP a; // 0x28
+		private IOGKADECKOP_TitleSceneDetail a; // 0x28
 
 		// RVA: 0xE3CC48 Offset: 0xE3CC48 VA: 0xE3CC48 Slot: 9
 		protected override void DoAwake()
 		{
-			a = new IOGKADECKOP();
+			a = new IOGKADECKOP_TitleSceneDetail();
 			a.OGNDELCENBB = (string INHEEPHFAON) => {
 				// 0xE3CEDC
 				NextScene(INHEEPHFAON);

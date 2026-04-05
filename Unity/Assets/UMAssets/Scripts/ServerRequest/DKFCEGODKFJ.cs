@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use DKFCEGODKFJ_GetPlayerCounters", true)]
 public class DKFCEGODKFJ { }
-public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
+public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_NetBaseAction
 {
 	public class ENKJGMFOJDI
 	{

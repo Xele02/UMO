@@ -152,8 +152,8 @@ namespace XeApp.Game.Menu
 				m_cos_list_win.CreateItem(m_diva_id, first_transition, m_transitionName, false, m_is_godiva);
 				for(int i = 0; i < m_cos_list_win.m_list_item.Count; i++)
 				{
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, m_cos_list_win.m_list_item[i].m_cos_id), m_cos_list_win.m_list_item[i].m_cos_color));
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(CostumeTextureCache.MakeCostumeTexturePath(m_diva_id, m_cos_list_win.m_list_item[i].m_view_diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, m_cos_list_win.m_list_item[i].m_cos_color));
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume, m_cos_list_win.m_list_item[i].m_cos_id), m_cos_list_win.m_list_item[i].m_cos_color));
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(CostumeTextureCache.MakeCostumeTexturePath(m_diva_id, m_cos_list_win.m_list_item[i].m_view_diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, m_cos_list_win.m_list_item[i].m_cos_color));
 				}
 				m_episode_list = PIGBBNDPPJC.FKDIMODKKJD_GetList(true);
 				m_costume_model_id = -1;
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16DF764 Offset: 0x16DF764 VA: 0x16DF764 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			if(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && isLoadedUnionResource)
+			if(!KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && isLoadedUnionResource)
 			{
 				m_EffectInstance = Instantiate(m_EffectPrefab, new Vector3(-5, 1, 0), m_EffectPrefab.transform.rotation);
 				if(m_is_view_mode)
@@ -490,7 +490,7 @@ namespace XeApp.Game.Menu
 			}
 			else 
 			{
-				if(MOEALEGLGCH.CDOCOLOKCJK_Avaiable() && !IsParentCostumeUpgrade() && t_item.m_src_item.m_is_have)
+				if(MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable() && !IsParentCostumeUpgrade() && t_item.m_src_item.m_is_have)
 				{
 					s.Buttons = new ButtonInfo[2]
 					{
@@ -506,7 +506,7 @@ namespace XeApp.Game.Menu
 					};
 				}
 				s.m_text = "";
-				if(!MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
+				if(!MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable())
 				{
 					s.m_text += bk.GetMessageByLabel("popup_sel_cos_terms_text_color02");
 					s.m_text += "\n";
@@ -552,7 +552,7 @@ namespace XeApp.Game.Menu
 			//0x16E3FCC
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH_ViewCostumeUpgrade.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
 			TextPopupSetting s = new TextPopupSetting();
 			s.IsCaption = false;
 			s.Text = str.ToString();
@@ -601,7 +601,7 @@ namespace XeApp.Game.Menu
 				//0x16E1E84
 				isWait = false;
 			}));
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			MenuScene.Instance.InputEnable();
 			while (isWait)
@@ -777,8 +777,8 @@ namespace XeApp.Game.Menu
 			if (!item.m_is_have)
 				return;
 			item.m_view_diva.LEHDLBJJBNC_SetNotNew();
-			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = true;
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.NFNLGGHMEAM();
 			FFHPBEPOMAK_DivaInfo currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_DivaList[m_diva_index];
 			int divaId = currentDiva.AHHJLDLAPAN_DivaId;
 			int oldCostumeId = 0;
@@ -814,20 +814,20 @@ namespace XeApp.Game.Menu
 			bool b = false;
 			if(oldCostumeId != newCostumeId || oldColorId != newColorId)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.DBIDGHMFLIC_Clothes(divaId, oldCostumeId, newCostumeId, oldColorId, newColorId);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.DBIDGHMFLIC_Clothes(divaId, oldCostumeId, newCostumeId, oldColorId, newColorId);
 				b = true;
 			}
 			if(oldHomeCostumeId != newHomeCostumeId || oldHomeColorId != newHomeColorId)
 			{
-				ILCCJNDFFOB.HHCJCDFCLOB.CJCJNKOPIKB_HomeCloths(divaId, oldHomeCostumeId, newHomeCostumeId, oldHomeColorId, newHomeColorId);
+				ILCCJNDFFOB.HHCJCDFCLOB_Instance.CJCJNKOPIKB_HomeCloths(divaId, oldHomeCostumeId, newHomeCostumeId, oldHomeColorId, newHomeColorId);
 				b = true;
 			}
 			if (b)
 			{
-				if (GNGMCIAIKMA.HHCJCDFCLOB != null)
+				if (GNGMCIAIKMA.HHCJCDFCLOB_Instance != null)
 				{
-					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI_BingoMissionType.HOOJOFACOEK_7_SetCostume/*7*/, divaId, 1, null);
-					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_UpdateMission(null, -1);
+					GNGMCIAIKMA.HHCJCDFCLOB_Instance.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI_BingoMissionType.HOOJOFACOEK_7_SetCostume/*7*/, divaId, 1, null);
+					GNGMCIAIKMA.HHCJCDFCLOB_Instance.HEFIKPAHCIA_UpdateMission(null, -1);
 				}
 			}
 
@@ -846,7 +846,7 @@ namespace XeApp.Game.Menu
 		private void CB_CostumeBuild()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			if(MOEALEGLGCH.CDOCOLOKCJK_Avaiable())
+			if(MOEALEGLGCH_ViewCostumeUpgrade.CDOCOLOKCJK_Avaiable())
 			{
 				CostumeUpgradeArgs arg = new CostumeUpgradeArgs();
 				arg.divaId = m_diva_id;

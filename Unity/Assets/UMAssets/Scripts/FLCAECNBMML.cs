@@ -43,12 +43,12 @@ public class FLCAECNBMML
 	// // RVA: 0x1192668 Offset: 0x1192668 VA: 0x1192668
 	public void KHEKNNFCAOI_Init()
 	{
-		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+		PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 		if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid)
 		{
 			CFLEMFADGLG_AttackType = (int)ev.CFLEMFADGLG_AttackType;
-			PKNOKJNLPOE_EventRaid.OCBPJEALCPO o = ev.PLFBKEPLAAA;
-            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m = ev.JIBMOEHKMGB_SelectedBoss;
+			PKNOKJNLPOE_NetEventRaidController.OCBPJEALCPO o = ev.PLFBKEPLAAA;
+            PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ m = ev.JIBMOEHKMGB_SelectedBoss;
             JBJJFDIHKMB_ScorePoint = o.JKLNANHPJLO_ScorePoint;
 			PPAOKOFHIFB_ValkyriePoint = o.CBKFBBNPIGG_ValkyriePoint;
 			LMHDHAJOJDA_PointBonus = o.EAOCJMFLBJI_PointBonus;

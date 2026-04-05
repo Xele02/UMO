@@ -138,11 +138,11 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < l.Count; i++)
 			{
 				AppealType a = AppealType.None;
-				if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+				if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
 				{
 					a = AppealType.Diva;
 				}
-				else if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
+				else if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PFIOMNHDHCO_6_Valkyrie)
 				{
 					a = AppealType.Valkyrie;
 				}
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 							yield return DivaResourceLoad(l[i].GOOIIPFHOIG);
 						}
 						//LAB_0127b7ec
-						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
+						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
 						if(dbScene.EKLIPGELKCL_Rarity < 6)
 						{
 							m_bundleName.SetFormat("ct/sc/me/02/{0:D6}_01.xab", sceneId);
@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadAllAssetOperationBase operationDiva; // 0x2C
 
 			//0x127A024
-			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+			cosMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 			if(m_divaResource != null)
 			{
 				Release();

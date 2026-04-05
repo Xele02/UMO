@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 				eventRareItem.imageRarityFrame.uvRect = uvRectRarityFrame[itemInfo.LIDBKCIMCKE_rarity - 1];
 				MenuScene.Instance.ItemTextureCache.Load(itemInfo.KIJAPOFAGPN_ItemId, OnLoadedEventRareItemTexture);
 			}
-			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && itemInfo.LHEDLDEMPPG_IsNew)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && itemInfo.LHEDLDEMPPG_IsNew)
 			{
 				newMarkIcon = new NewMarkIcon();
 				newMarkIcon.Initialize(newMarkIconRoot.gameObject);
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 			}
 			if (itemInfo == null)
 				return;
-			if (itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if (itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				return;
 			layoutSceneStatusAnim.StartChildrenAnimGoStop("go_in", "st_in");
 			SetupItemStatusType();
@@ -346,7 +346,7 @@ namespace XeApp.Game.Menu
 				eventRareItem.layoutRoot.StartChildrenAnimGoStop("st_hiraki");
 				shadowAnime.StartChildrenAnimGoStop("st_hiraki");
 			}
-			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				layoutSceneStatusAnim.StartChildrenAnimGoStop("st_in");
 				SetupItemStatusType();
@@ -378,7 +378,7 @@ namespace XeApp.Game.Menu
 			});
 			ChangeBaseCountNumber(itemInfo.HMFFHLPNMPH_count);
 			FinalizeBonusCountNumber();
-			if (itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if (itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				prevInput = GameManager.Instance.InputEnabled;
 				GameManager.Instance.InputEnabled = true;
@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D92108 Offset: 0x1D92108 VA: 0x1D92108
 		private bool IsEnableBonusCount()
 		{
-			return itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && !itemInfo.PHJHJGDLPED_IsRareDrop;
+			return itemInfo.HHACNFODNEF_ItemCategory != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && !itemInfo.PHJHJGDLPED_IsRareDrop;
 		}
 
 		//// RVA: 0x1D9216C Offset: 0x1D9216C VA: 0x1D9216C
@@ -466,7 +466,7 @@ namespace XeApp.Game.Menu
 		private void OnStay()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(itemInfo != null && itemInfo.HHACNFODNEF_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				ShowSceneCardItem();
 				return;
@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D92660 Offset: 0x1D92660 VA: 0x1D92660
 		private void ShowSceneCardItem()
 		{
-			MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.KIJAPOFAGPN_ItemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
+			MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemInfo.KIJAPOFAGPN_ItemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
 		}
 
 		//// RVA: 0x1D9174C Offset: 0x1D9174C VA: 0x1D9174C

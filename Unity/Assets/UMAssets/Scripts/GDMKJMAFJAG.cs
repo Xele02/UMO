@@ -35,10 +35,10 @@ public class GDMKJMAFJAG
 					{
 						if(GOIIICHHHCL.HMFFHLPNMPH_count[i] > 0)
 						{
-							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i)) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
+							if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i)) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 							{
-								int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i));
-								KEEKEFEPKFN_GrowItem.MDFGLOIGAFE_GrowItemData item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_table[itemId - 1];
+								int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(GEDOFFFKIFN.FKNBLDPIPMC_GetItemCode(i));
+								KEEKEFEPKFN_GrowItem.MDFGLOIGAFE_GrowItemData item = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_table[itemId - 1];
 								if(item.INDDJNMPONH_type > 1)
 								{
 									if(item.INDDJNMPONH_type < 6)
@@ -87,13 +87,26 @@ public class GDMKJMAFJAG
 
 [System.Obsolete("Use HNJKJCDDIMG_SetInfo", true)]
 public class HNJKJCDDIMG { }
+[UMOClass()]
 public class HNJKJCDDIMG_SetInfo
 {
 	public static int FBGGEFFJJHB_xor = 0x317f5543; // 0x0
 	private int KDICDKHJJDD_SIdCrypted; // 0x8
 	private List<int> PNFIBNJIOAN_Items = new List<int>(20); // 0xC
 
+	[UMOMember()]
 	public int LIHEBNPAIFI_SId { get { return KDICDKHJJDD_SIdCrypted ^ FBGGEFFJJHB_xor; } set { KDICDKHJJDD_SIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x15FBED0 GHOJKNLICON_bgs 0x15FBF68 EGONAJNHBEL_bgs
+
+	//UMO
+	[UMOMember()]
+	private List<int> Items { get {
+		List<int> Res = new List<int>();
+		for(int i = 0; i < PNFIBNJIOAN_Items.Count; i++)
+		{
+			Res.Add(FKNBLDPIPMC_GetItemCode(i));
+		}
+		return Res;
+	} }
 
 	// RVA: 0x15FC004 Offset: 0x15FC004 VA: 0x15FC004
 	public HNJKJCDDIMG_SetInfo()
@@ -138,11 +151,16 @@ public class HNJKJCDDIMG_SetInfo
 
 [System.Obsolete("Use OPGDJANLKBM_RateInfo", true)]
 public class OPGDJANLKBM { }
+[UMOClass()]
 public class OPGDJANLKBM_RateInfo
 {
+	[UMOMember()]
 	public int BFOLFCOBBJD_RateId; // 0x8
+	[UMOMember()]
 	public List<int> HMFFHLPNMPH_count; // 0xC
+	[UMOMember()]
 	public List<int> ADKDHKMPMHP_rate; // 0x10
+	[UMOMember()]
 	public List<int> DOOGFEGEKLG_max; // 0x14
 
 	// RVA: 0xCB2388 Offset: 0xCB2388 VA: 0xCB2388

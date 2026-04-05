@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class S
 {
-	private NKGJPJPHLIF a; // 0x8
+	private NKGJPJPHLIF_SakashoManager a; // 0x8
 
 	public void A(MonoBehaviour b)
 	{
-		a = new NKGJPJPHLIF();
+		a = new NKGJPJPHLIF_SakashoManager();
 		a.IJBGPAENLJA_OnAwake(b);
 	}
 

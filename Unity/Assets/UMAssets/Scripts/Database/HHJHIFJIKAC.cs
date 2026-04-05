@@ -50,9 +50,9 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	// // RVA: 0x1830F38 Offset: 0x1830F38 VA: 0x1830F38
 	public bool IIEKKOHBNLA_HasMonthlyPassBonus(int _INFIBMLIHLO_ItemId)
 	{
-        EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_INFIBMLIHLO_ItemId);
-        int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(_INFIBMLIHLO_ItemId);
-		if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
+        EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_INFIBMLIHLO_ItemId);
+        int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_INFIBMLIHLO_ItemId);
+		if(cat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 		{
 			if(id <= CDENCMNHNGA_table.Count)
 			{
@@ -120,7 +120,10 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 			data.EGBOHDFBAPB_closed_at = array[i].EGBOHDFBAPB_closed_at;
 			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_closed_at).ToLongDateString());
 			// UMO unlock
-			data.EGBOHDFBAPB_closed_at = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
+			if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
+			{
+				data.EGBOHDFBAPB_closed_at = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
+			}
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;
 			data.JDANEOJCLBB = array[i].JDANEOJCLBB;
 			data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF_CurrencyId;

@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		{
 			if(isWiki)
 			{
-				NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(data.wikis[index].wikiURL);
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(data.wikis[index].wikiURL);
 				return;
 			}
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);

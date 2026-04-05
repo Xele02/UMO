@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x104EB10 Offset: 0x104EB10 VA: 0x104EB10 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return m_initialized && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return m_initialized && !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x104EBC8 Offset: 0x104EBC8 VA: 0x104EBC8 Slot: 18
@@ -143,13 +143,13 @@ namespace XeApp.Game.Menu
 				return;
 			float f = m_layout.FxScrollView.CurrentVerticalScrollPositon() * m_layout.FxScrollView.GetVerticalScrollSizeRatio();
 			bool b = false;
-			List<RankingListInfo> currentInfoList = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ;
-			if (f < 1.015f || OEGIPPCADNA.HHCJCDFCLOB.FLCLIHBOHCH)
+			List<RankingListInfo> currentInfoList = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ;
+			if (f < 1.015f || OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.FLCLIHBOHCH)
 			{
 				if(f < -0.015)
 				{
 					b = false;
-					if (OEGIPPCADNA.HHCJCDFCLOB.DPPIBCENJJJ == false)
+					if (OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.DPPIBCENJJJ == false)
 						m_listUpdate = false;
 					else if (m_listUpdate)
 						return;
@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1051E04
 			bool done = false;
-			AGLHPOOPOCG.HHCJCDFCLOB.OAGGKCHJBEO(() =>
+			AGLHPOOPOCG.HHCJCDFCLOB_Instance.OAGGKCHJBEO(() =>
 			{
 				//0x1051804
 				done = true;
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 			});
 			while (!done)
 				yield return null;
-			List<int> ranking_threshold = OEGIPPCADNA.HHCJCDFCLOB.IFHPGJGLPPF_GetRankingThreshold();
+			List<int> ranking_threshold = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.IFHPGJGLPPF_GetRankingThreshold();
 			m_rankRangeList = new List<int>(ranking_threshold.Count + 1);
 			m_rankRangeList.Add(0);
 			m_rankRangeList.AddRange(ranking_threshold);
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 				m_thresholds[0] = Mathf.Clamp((baseRank / 10) * 10, 1, 1000);
 				m_thresholds[1] = Mathf.Clamp((baseRank / 10) * 10 + 10, 1, 1000);
 			}
-			OEGIPPCADNA.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(false, baseRank, rankingIdx, () =>
+			OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.FAMFKPBPIAA_GetRankingPlayerList(false, baseRank, rankingIdx, () =>
 			{
 				//0x105184C
 				OnReceivedRankingList(callback);
@@ -292,11 +292,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x104FCC0 Offset: 0x104FCC0 VA: 0x104FCC0
 		private void OnReceivedRankingList(Action callback)
 		{
-			if (OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ.Count > 0)
+			if (OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ.Count > 0)
 			{
-				for (int i = 0; i < OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ.Count; i++)
+				for (int i = 0; i < OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ.Count; i++)
 				{
-					OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ[i].TryInstall();
+					OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ[i].TryInstall();
 				}
 				this.StartCoroutineWatched(Co_WaitDownLoadAsset(callback));
 			}
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 			{
 				m_thresholds[0] = Mathf.Clamp(m_thresholds[0] + a * 10, 1, 1000);
 			}
-			OEGIPPCADNA.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(prev, a, m_rankRangeList[m_currentRankRange], () =>
+			OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.JPNACOLKHLB_AddRankingPlayerListSecond(prev, a, m_rankRangeList[m_currentRankRange], () =>
 			{
 				//0x10518D0
 				OnReceivedRankingListAdditive(isUpper, callback);
@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x104FEE8 Offset: 0x104FEE8 VA: 0x104FEE8
 		protected void OnReceivedRankingListAdditive(bool isUpper, Action callback)
 		{
-			List<RankingListInfo> addInfoList = OEGIPPCADNA.HHCJCDFCLOB.BMKBAMFBAPJ;
+			List<RankingListInfo> addInfoList = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.BMKBAMFBAPJ;
 			if(addInfoList.Count < 1)
 			{
 				if (callback != null)
@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_layout.UpdateRankingList(OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ, (FlexibleItemScrollView scroll, List<IFlexibleListItem> scrollList) =>
+				m_layout.UpdateRankingList(OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ, (FlexibleItemScrollView scroll, List<IFlexibleListItem> scrollList) =>
 				{
 					//0x1051964
 					scroll.SetupListItem(scrollList);
@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 			//0x1053DC0
 			waitForFrame.Reset(3);
 			yield return waitForFrame;
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			if (callback != null)
 				callback();
@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 					MenuScene.Instance.RaycastEnable();
 					if (m_isErrorToTitle)
 						return;
-					m_listUpdate = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ.Count > 0;
+					m_listUpdate = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ.Count > 0;
 					m_layout.FxScrollView.SetEnableScrollBar(true);
 					m_layout.SetRankRange(m_rankRangeLabelList[m_currentRankRange]);
 				});
@@ -443,7 +443,7 @@ namespace XeApp.Game.Menu
 						int top = 0;
 						if(m_currentRankRange == 0)
 						{
-							List<RankingListInfo> list = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ;
+							List<RankingListInfo> list = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ;
 							int idx = list.FindIndex((RankingListInfo x) =>
 							{
 								//0x105166C
@@ -507,7 +507,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.RaycastEnable();
 						if(m_isErrorToTitle)
 							return;
-						m_listUpdate = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ.Count > 0;
+						m_listUpdate = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ.Count > 0;
 						m_layout.FxScrollView.SetEnableScrollBar(true);
 						m_layout.ChangeTab(m_selectTab, true);
 						m_layout.SetRankRange(m_rankRangeLabelList[m_currentRankRange]);

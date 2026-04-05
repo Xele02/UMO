@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use MMCLJMPEFEP_GetBbsThreads", true)]
 public abstract class MMCLJMPEFEP { }
-public class MMCLJMPEFEP_GetBbsThreads : CACGCMBKHDI_Request
+public class MMCLJMPEFEP_GetBbsThreads : CACGCMBKHDI_NetBaseAction
 {
 	public class CAMBPKCCBDO
 	{

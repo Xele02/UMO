@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xA4AF60 Offset: 0xA4AF60 VA: 0xA4AF60
-		public void Initialize(List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.AAALCKPHGNG> data)
+		public void Initialize(List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.AAALCKPHGNG> data)
 		{
 			m_descText.text = MessageManager.Instance.GetMessage("menu", "popup_raid_formation_bonus_costume_desc");
 			for(int i = 0; i < data.Count; i++)
@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xA4B978 Offset: 0xA4B978 VA: 0xA4B978
-		public void Initialize(List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.LNKNJHEFBCE> data)
+		public void Initialize(List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.LNKNJHEFBCE> data)
 		{
 			m_descText.text = "";
 			for(int i = 0; i < data.Count; i++)

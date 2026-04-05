@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			MFDJIFIIPJD m = new MFDJIFIIPJD();
-			m.KHEKNNFCAOI_Init(10001, MOEALEGLGCH.FLGEJDKMNMI());
+			m.KHEKNNFCAOI_Init(10001, MOEALEGLGCH_ViewCostumeUpgrade.FLGEJDKMNMI());
 			PopupQuestRewardSetting s = new PopupQuestRewardSetting();
 			s.TitleText = bk.GetMessageByLabel("costume_upgrade_achievement_title_text");
 			s.IsCaption = true;
@@ -321,7 +321,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16FB1C4 Offset: 0x16FB1C4 VA: 0x16FB1C4
 		public static void ShowReleaseDailyOperationWindow(int prev, Action buttonCallBack)
 		{
-			int nowDifficult = KDHGBOOECKC.HHCJCDFCLOB.BCACCAGCPCO();
+			int nowDifficult = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.BCACCAGCPCO();
 			if(prev < nowDifficult)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");

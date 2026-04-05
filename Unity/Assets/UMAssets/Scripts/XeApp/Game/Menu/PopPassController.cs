@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 		
 		public Result m_result; // 0xC
 		public bool m_open_window; // 0x10
-		public NHPDPKHMFEP.GGNEBJEIFCP_Plan m_plan; // 0x14
+		public NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan m_plan; // 0x14
 		public PopPassListWin m_layout_window; // 0x18
 		public PopPassPurchaseConfirmationPopup m_layout_popup; // 0x1C
 		private List<ActionButton> m_list_btn = new List<ActionButton>(); // 0x20
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 			bool t_err = false;
 			bool t_jump_home = false;
 			bool t_goto_title = false;
-			NHPDPKHMFEP.HHCJCDFCLOB.FADCFLIHEPB_PreparePurchase(() =>
+			NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.FADCFLIHEPB_PreparePurchase(() =>
 			{
 				//0xDE8730
 				t_done = true;
@@ -81,10 +81,10 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.GotoTitle();
 				yield break;
 			}
-			int a = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
+			int a = NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.MENKMJPCELJ();
 			if (a < 0)
 				yield break;
-			if (a == 0 || (!NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO() && NHPDPKHMFEP.HHCJCDFCLOB.DCDDAAONHHC() && NHPDPKHMFEP.HHCJCDFCLOB.NGHHJMJPEHN()))
+			if (a == 0 || (!NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.ENAAHAPDMCO() && NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.DCDDAAONHHC() && NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.NGHHJMJPEHN()))
 			{
 				//LAB_00deb294
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				t_setting.OnClickNormal = () =>
 				{
 					//0xDE8940
-					m_plan = NHPDPKHMFEP.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal;
+					m_plan = NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.CCAPCGPIIPF_0_Normal;
 					t_cont.Close(() =>
 					{
 						//0xDE8A2C
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				t_setting.OnClickSpecial = () =>
 				{
 					//0xDE8A38
-					m_plan = NHPDPKHMFEP.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp;
+					m_plan = NHPDPKHMFEP_NetMonthlyPassManager.GGNEBJEIFCP_Plan.AJAHGGBMOJE_1_Sp;
 					t_cont.Close(() =>
 					{
 						//0xDE8B24
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 				m_open_window = true;
 				MenuScene.Instance.InputDisable();
 				yield return Co.R(Co_LoadLayout(gl.transform.GetChild(0)));
-				m_layout_window.Initialize(NHPDPKHMFEP.HHCJCDFCLOB.BAFEDCMCONG_GetMonthlyPassRareGetCount() < 1, m_plan);
+				m_layout_window.Initialize(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.BAFEDCMCONG_GetMonthlyPassRareGetCount() < 1, m_plan);
 				m_layout_window.m_cb_law_1 += CB_Law1;
 				m_layout_window.m_cb_law_2 += CB_Law2;
 				m_layout_window.m_cb_cancel += CB_Close;

@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 		{
 			if(type.PEEAGFNOFFO_UnlockType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 				return false;
-			KDLPEDBKMID.HHCJCDFCLOB.FKIJBFJBIOC(m_data.JPIDIENBGKH_CostumeId, false);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.FKIJBFJBIOC(m_data.JPIDIENBGKH_CostumeId, false);
 			return true;
 		}
 
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 			//0x1637998
 			GameManager.Instance.AddPushBackButtonHandler(DummyBackButton);
 			MenuScene.Instance.InputDisable();
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			UnlockFadeManager.Create();
 			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(GetLogoId(type, id)));
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 			{
 				int cosId = 1;
 				int divaId = 1;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
 				if(cos != null)
 				{
 					cosId = cos.DAJGPBLEEOB_ModelId;
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		{
 			if(type != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 				return 1;
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
 			int idx = 0;
 			if(cos != null)
 			{

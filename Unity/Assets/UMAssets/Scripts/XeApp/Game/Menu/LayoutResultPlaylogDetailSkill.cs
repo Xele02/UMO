@@ -74,13 +74,13 @@ namespace XeApp.Game.Menu
 			if(!data.isActive)
 			{
 				m_NameText.text = bk.GetMessageByLabel("l_nm_" + data.skillId.ToString("D4"));
-				m_RankTex.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_UvMan.GetUVData(string.Format("cmn_skill_rank_icon_{0:00}", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[data.skillId - 1].JGNHOGKKPDM)));
+				m_RankTex.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_UvMan.GetUVData(string.Format("cmn_skill_rank_icon_{0:00}", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[data.skillId - 1].JGNHOGKKPDM)));
 				m_ExplainText.text = GetLiveSkillComment(bk.GetMessageByLabel("l_dsc_" + data.skillId.ToString("D4")), data.skillId, data.skillLevel);
 			}
 			else
 			{
 				m_NameText.text = bk.GetMessageByLabel("a_nm_" + data.skillId.ToString("D4"));
-				m_RankTex.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_UvMan.GetUVData(string.Format("cmn_skill_rank_icon_{0:00}", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].JGNHOGKKPDM)));
+				m_RankTex.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_UvMan.GetUVData(string.Format("cmn_skill_rank_icon_{0:00}", IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].JGNHOGKKPDM)));
 				m_ExplainText.text = GetActiveSkillComment(bk.GetMessageByLabel("a_dsc_" + data.skillId.ToString("D4")), data.skillId, data.skillLevel);
 			}
 			m_LevelText.text = string.Format("Lv{0}", data.skillLevel);
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		{
 			if (id < 1)
 				return comment;
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[id - 1].KMFMGLENCJH_FormatDesc(comment, level);
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[id - 1].KMFMGLENCJH_FormatDesc(comment, level);
 		}
 
 		//// RVA: 0x1D05694 Offset: 0x1D05694 VA: 0x1D05694
@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 		{
 			if (id < 1)
 				return comment;
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].KMFMGLENCJH_FormatDesc(comment, level);
+			return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].KMFMGLENCJH_FormatDesc(comment, level);
 		}
 
 		//// RVA: 0x1D057E4 Offset: 0x1D057E4 VA: 0x1D057E4

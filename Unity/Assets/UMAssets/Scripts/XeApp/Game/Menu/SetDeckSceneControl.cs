@@ -169,7 +169,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA741F4 Offset: 0xA741F4 VA: 0xA741F4
 		private bool IsMatchMusicAttr(GCIJNCFDNON_SceneInfo sceneData, int musicId)
 		{
-			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+			EONOEHOKBEB_Music m = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			return CMMKCEPBIHI.OJNOJNEKBKH(m != null ? m.FKDCCLPGKDK_JacketAttr : 0, sceneData.JGJFIJOCPAG_SceneAttr);
 		}
 		

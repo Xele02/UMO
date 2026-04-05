@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use LNBLBFPAKPP_GetLineLinkageStatus", true)]
 public class LNBLBFPAKPP { }
-public class LNBLBFPAKPP_GetLineLinkageStatus : CACGCMBKHDI_Request
+public class LNBLBFPAKPP_GetLineLinkageStatus : CACGCMBKHDI_NetBaseAction
 {
 	public class GKGOHBEFKEE
 	{

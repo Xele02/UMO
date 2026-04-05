@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class NHNEDAOHCKA : CACGCMBKHDI_Request
+public class NHNEDAOHCKA : CACGCMBKHDI_NetBaseAction
 {
 	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB_bgs LFOJDJCNOHB_bgs KMKEGMGKCBA_bgs
 

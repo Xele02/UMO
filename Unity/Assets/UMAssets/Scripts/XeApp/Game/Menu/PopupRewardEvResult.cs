@@ -42,11 +42,11 @@ namespace XeApp.Game.Menu
 			{
 				if(Item != null)
 				{
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
 						if(sceneData == null)
 							sceneData = new GCIJNCFDNON_SceneInfo();
-						sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+						sceneData.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 					}
 					else
@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 			//public void SetContent(GameObject obj) { }
 
 			//// RVA: 0x1A7F9D8 Offset: 0x1A7F9D8 VA: 0x1A7F9D8
-			public void Init(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
+			public void Init(IKDICBBFBMI_NetEventBaseController eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				if(m_ViewData == null)
 					m_ViewData = new ViewRewardEvResultData();
@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 			//public void Reset() { }
 
 			//// RVA: 0x1141F64 Offset: 0x1141F64 VA: 0x1141F64
-			public void InitializeCumulativePoint(IKDICBBFBMI_EventBase eventController)
+			public void InitializeCumulativePoint(IKDICBBFBMI_NetEventBaseController eventController)
 			{
 				data_type = Type.CumulativePoint;
 				CurrentPoint = eventController.FBGDBGKNKOD_GetCurrentPoint();
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0x11420D0 Offset: 0x11420D0 VA: 0x11420D0
-			public void InitializeRanking(IKDICBBFBMI_EventBase eventController, int rankingIndex, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
+			public void InitializeRanking(IKDICBBFBMI_NetEventBaseController eventController, int rankingIndex, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0x11424F4 Offset: 0x11424F4 VA: 0x11424F4
-			public void InitializeEvHighScoreRanking(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
+			public void InitializeEvHighScoreRanking(IKDICBBFBMI_NetEventBaseController eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
@@ -423,18 +423,18 @@ namespace XeApp.Game.Menu
 				{
 					if(m_scrollItemList[i] is ScrollListItem)
 					{
-						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath((m_scrollItemList[i] as ScrollListItem).Item.JJBGOIMEIPF_ItemId, 0));
+						KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath((m_scrollItemList[i] as ScrollListItem).Item.JJBGOIMEIPF_ItemId, 0));
 					}
 					else if(m_scrollItemList[i] is HeaderItem)
 					{
 						HeaderItem h = m_scrollItemList[i] as HeaderItem;
 						if(h.Data.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_4_Score)
 						{
-							KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(h.Data.CoverId));
+							KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(h.Data.CoverId));
 						}
 						else
 						{
-							KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(EventBannerTextureCache.MakeBannerPath(h.Data.EventId));
+							KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(EventBannerTextureCache.MakeBannerPath(h.Data.EventId));
 						}
 					}
 				}
@@ -498,7 +498,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1A7DC2C Offset: 0x1A7DC2C VA: 0x1A7DC2C Slot: 21
 		public bool IsReady()
 		{
-			return GetComponent<PopupRewardEvResultLayout>().IsLoaded() && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return GetComponent<PopupRewardEvResultLayout>().IsLoaded() && !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x1A7DD18 Offset: 0x1A7DD18 VA: 0x1A7DD18 Slot: 22
@@ -564,7 +564,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1A7F6DC
 			ApplySetting(Type.CumulativePoint, parent, 0);
-			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
+			sm_Setting.Init(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
 			GameManager.Instance.ResetViewPlayerData();
 			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
 			{
@@ -579,7 +579,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70E8F4 Offset: 0x70E8F4 VA: 0x70E8F4
 		//// RVA: 0x1A7E588 Offset: 0x1A7E588 VA: 0x1A7E588
-		public static IEnumerator Co_ShowPopup_Ranking(int a_index, IKDICBBFBMI_EventBase controller, Transform parent, int divaId, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action finishCallBack)
+		public static IEnumerator Co_ShowPopup_Ranking(int a_index, IKDICBBFBMI_NetEventBaseController controller, Transform parent, int divaId, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action finishCallBack)
 		{
 			//0x1A7FBD0
 			if(controller.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)

@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 	public class PopupCostumeRankUpUnlock : UIBehaviour, IPopupContent
 	{
 		private LFAFJCNKLML m_data; // 0x10
-		private MOEALEGLGCH m_upgrade; // 0x14
+		private MOEALEGLGCH_ViewCostumeUpgrade m_upgrade; // 0x14
 
 		public Transform Parent { get; private set; } // 0xC
 

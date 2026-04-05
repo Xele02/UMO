@@ -4,8 +4,10 @@ using XeSys;
 
 [System.Obsolete("Use HGLPLKKBBOL_EventItem", true)]
 public class HGLPLKKBBOL { }
+[UMOClass()]
 public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 {
+	[UMOClass()]
 	public class JMCDEDCMCJE
 	{
 		public int FBGGEFFJJHB_xor = 0x181b5; // 0x8
@@ -14,15 +16,20 @@ public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 		public int ICKOHEDLEFP_ValueCrypted; // 0x14
 		public int MKENMKMJFKP_TypeCrypted; // 0x18
 
+		[UMOMember()]
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1751E94 DEMEPMAEJOO_get_id 0x17519AC HIGKAIDMOKN_set_id
+		[UMOMember()]
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1751EA4 OEEHBGECGKL_get_Rarity 0x17519BC GHLMHLJJBIG_set_Rarity
+		[UMOMember()]
 		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1751EB4 OLOCMINKGON_get_val 0x17519CC ABAFHIBFKCE_set_val
+		[UMOMember()]
 		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1751EC4 GHAILOLPHPF_bgs 0x17519DC BACGOKIGMBC_bgs
 
 		//// RVA: 0x1751E68 Offset: 0x1751E68 VA: 0x1751E68
 		//public uint CAOGDCBPBAN() { }
 	}
 
+	[UMOMember()]
 	public List<JMCDEDCMCJE> CDENCMNHNGA_table = new List<JMCDEDCMCJE>(); // 0x20
 
 	// RVA: 0x1751590 Offset: 0x1751590 VA: 0x1751590

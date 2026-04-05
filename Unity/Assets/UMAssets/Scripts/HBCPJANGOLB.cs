@@ -15,9 +15,9 @@ public class HBCPJANGOLB
     {
         KKEFACGGKOD.PCODDPDFLHK_Load();
         MNJNCKPELGE.Clear();
-        long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+        long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
         long t2 = JPAICCMDGHD_GetMaxLastShowDate(time);
-        List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_products;
+        List<LOBDIAABMKG_GachaProductData> l = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.MHKCPJDNJKI_products;
         long date = -1;
         for(int i = 0; i < l.Count; i++)
         {
@@ -58,7 +58,7 @@ public class HBCPJANGOLB
 	// // RVA: 0x173DD7C Offset: 0x173DD7C VA: 0x173DD7C
 	public long JPAICCMDGHD_GetMaxLastShowDate(long _JHNMKKNEENE_Time)
     {
-        long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate;
+        long lastEpTime = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate;
         long t2 = KKEFACGGKOD.HFPEDBCGFOJ_GetLastShowDate();
         long m = System.Math.Max(lastEpTime, t2);
         if(_JHNMKKNEENE_Time < m)
@@ -69,9 +69,9 @@ public class HBCPJANGOLB
 	// // RVA: 0x173DFC4 Offset: 0x173DFC4 VA: 0x173DFC4
 	public bool HJMKBCFJOOH_Save()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		long t = JPAICCMDGHD_GetMaxLastShowDate(time);
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate = t;
+		CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate = t;
 		KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(t);
 		return KKEFACGGKOD.HJMKBCFJOOH_Save(false);
 	}
@@ -80,7 +80,7 @@ public class HBCPJANGOLB
 	public static List<string> LMFHAGHJIEM_GetAssetsList(HBCPJANGOLB _IDLHJIOMJBK_data)
     {
         StringBuilder str = new StringBuilder(64);
-        MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+        MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
         List<string> res = new List<string>();
         List<HGBOODNMNFM> l = _IDLHJIOMJBK_data.DJOMLJELOLM();
         for(int i = 0; i < l.Count; i++)
@@ -104,10 +104,10 @@ public class HBCPJANGOLB
 	private static void KBNDEEFOGMO_FillEpisodeAssetsFile(List<string> PHCEFKKOECA, int _KELFCMEOPPM_EpisodeId)
     {
         List<LGMEPLIJLNB> l = LGMEPLIJLNB.FKDIMODKKJD_GetList(_KELFCMEOPPM_EpisodeId);
-        LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+        LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
         for(int i = 0; i < l.Count; i++)
         {
-            if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
+            if(l[i].GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KBHGPMNGALJ_5_Costume)
             {
                 if(l[i].GOOIIPFHOIG != null)
                 {

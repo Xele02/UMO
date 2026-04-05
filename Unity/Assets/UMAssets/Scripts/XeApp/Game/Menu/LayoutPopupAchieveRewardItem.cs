@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 					SetConditions("");
 					break;
 			}
-			SetItemName((rewardData.HHACNFODNEF_ItemCategory == 3 ? rewardData.JDLJPNMLFID_ItemCount.ToString() : rewardData.JDMIKEEIJFP + JpStringLiterals.StringLiteral_12037 + rewardData.JDLJPNMLFID_ItemCount.ToString()) + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rewardData.KIJAPOFAGPN_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(rewardData.KIJAPOFAGPN_ItemId), rewardData.JDLJPNMLFID_ItemCount));
+			SetItemName((rewardData.HHACNFODNEF_ItemCategory == 3 ? rewardData.JDLJPNMLFID_ItemCount.ToString() : rewardData.JDMIKEEIJFP + JpStringLiterals.StringLiteral_12037 + rewardData.JDLJPNMLFID_ItemCount.ToString()) + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(rewardData.KIJAPOFAGPN_ItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(rewardData.KIJAPOFAGPN_ItemId), rewardData.JDLJPNMLFID_ItemCount));
 			SetIcon(rewardData.KIJAPOFAGPN_ItemId);
 		}
 

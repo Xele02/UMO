@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEB11C4 Offset: 0xEB11C4 VA: 0xEB11C4
 		public bool IsAvailabilityPeriod(long mver)
 		{
-			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("playrecord_master_version", 0);
+			int a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("playrecord_master_version", 0);
 			if(a > 0)
 			{
 				return mver >= a;

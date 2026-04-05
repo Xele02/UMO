@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		private MusicSelectCDSelect m_cdSelect; // 0xC
 		private MusicSelectCDArrow m_cdArrow; // 0x10
 		private PlayButtonWrapper m_playButtonUI; // 0x14
-		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x18
+		private IKDICBBFBMI_NetEventBaseController m_eventCtrl; // 0x18
 		private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x1C
 		private Action<IBJAKJJICBC> OnApplyMusicInfoBasic; // 0x20
 		private IMCBBOAFION OnWebViewClose; // 0x24
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 		public bool IsEventEndChallengePeriod { get { return eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_5_ChallengePeriod; } } //0xF585C0
 
 		// // RVA: 0xF53A68 Offset: 0xF53A68 VA: 0xF53A68
-		public void Setup(MusicSelectMusicInfo musicInfo, MusicSelectCDSelect cdSelect, MusicSelectCDArrow cdArrow, PlayButtonWrapper playButtonUI, IKDICBBFBMI_EventBase eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, Action<IBJAKJJICBC> OnApplyMusicInfoBasic, IMCBBOAFION OnWebViewClose, DJBHIFLHJLK OnNetErrorToTitle, Action LeaveForScrollStart, Action EnterForScrollEnd, Action DelayedApplyMusicInfo)
+		public void Setup(MusicSelectMusicInfo musicInfo, MusicSelectCDSelect cdSelect, MusicSelectCDArrow cdArrow, PlayButtonWrapper playButtonUI, IKDICBBFBMI_NetEventBaseController eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, Action<IBJAKJJICBC> OnApplyMusicInfoBasic, IMCBBOAFION OnWebViewClose, DJBHIFLHJLK OnNetErrorToTitle, Action LeaveForScrollStart, Action EnterForScrollEnd, Action DelayedApplyMusicInfo)
 		{
 			m_musicInfo = musicInfo;
 			m_musicInfo.onChangedDifficulty = OnSelectedDifficulty;
@@ -165,13 +165,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF53E6C Offset: 0xF53E6C VA: 0xF53E6C
-		private void CrateQuestList(IKDICBBFBMI_EventBase eventCtrl)
+		private void CrateQuestList(IKDICBBFBMI_NetEventBaseController eventCtrl)
 		{
 			m_questList = eventCtrl != null ? FKMOKDCJFEN.KJHKBBBDBAL(eventCtrl.JOPOPMLFINI_QuestName, false, -1) : new List<FKMOKDCJFEN>();
 		}
 
 		// // RVA: 0xF53F14 Offset: 0xF53F14 VA: 0xF53F14
-		private void CreateSnsList(IKDICBBFBMI_EventBase eventCtrl)
+		private void CreateSnsList(IKDICBBFBMI_NetEventBaseController eventCtrl)
 		{
 			if(m_eventCtrl != null)
 			{
@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 						EventMusicSelectSceneBase.OpenWeekRecoveryWindow(musicData, OnWeekRecovery, cancelCallback);
 						return false;
 					}
-					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_stamina)
+					if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_Blocks[(int)difficulty].BPLOEAHOPFI_stamina)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 				{
 					for(int j = 0; j < m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items.Count; j++)
 					{
-						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
+						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
 						{
 							for(int k = 0; k < m_snsData.NPKPBDIDBBG_Room.Count; k++)
 							{
@@ -920,11 +920,11 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(eventTicketId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem)
+				if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(eventTicketId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem)
 				{
 					cdSelect.ApplyDropItemType(MusicSelectCDSelect.DropType.FoldRadar);
 				}
-				else if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(eventTicketId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
+				else if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(eventTicketId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
 				{
 					cdSelect.ApplyDropItemType(MusicSelectCDSelect.DropType.Ticket);
 				}
@@ -989,7 +989,7 @@ namespace XeApp.Game.Menu
 				if(selectMusicData.LHONOILACFL_IsWeeklyEvent)
 				{
 					MenuScene.Instance.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(selectMusicData.CIOCOOMCMKO(selectMusicData.IHKFMJDOBAH_WeekDayAttr), OnWebViewClose, OnNetErrorToTitle);
+					MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.FLLLPBIECCP(selectMusicData.CIOCOOMCMKO(selectMusicData.IHKFMJDOBAH_WeekDayAttr), OnWebViewClose, OnNetErrorToTitle);
 				}
 				if(selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 				{

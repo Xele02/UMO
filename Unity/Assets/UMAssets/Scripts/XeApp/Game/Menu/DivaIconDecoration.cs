@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 				isFriend = friendPlayerData.PDIPANKOKOL_FriendStat == IBIGBMDANNM.LJJOIIAEICI_FriendStatus.HEEJBCDDOJJ_1_Friend;
 				if (friendPlayerData.PCEGKKLKFNO_FriendData == null || !(friendPlayerData.PCEGKKLKFNO_FriendData is IFICNCAHIGI) || !(friendPlayerData.PCEGKKLKFNO_FriendData as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite)
 				{
-					isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendPlayerData.MLPEHNBNOGD_PlayerId);
+					isFav = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendPlayerData.MLPEHNBNOGD_PlayerId);
 				}
 				else
 				{

@@ -6,7 +6,7 @@ public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_player_id,
 
 [System.Obsolete("Use NJNCAHLIHNI_GetPlayerData", true)]
 public class NJNCAHLIHNI { }
-public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
+public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_NetBaseAction
 {
 	public class OKMDAFICFHJ
 	{

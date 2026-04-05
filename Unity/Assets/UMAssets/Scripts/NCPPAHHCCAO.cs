@@ -54,16 +54,16 @@ public class NCPPAHHCCAO
 	public static List<NCPPAHHCCAO> FKDIMODKKJD_GetList()
 	{
 		List<NCPPAHHCCAO> l = new List<NCPPAHHCCAO>();
-		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null)
 		{
-			for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.FHBIIONKIDI_Stamps.Count; i++)
+			for(int i = 0; i < CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.FHBIIONKIDI_Stamps.Count; i++)
 			{
-				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.FHBIIONKIDI_Stamps[i];
+				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.FHBIIONKIDI_Stamps[i];
 				if (saveStamp.PPFNGGCBJKC_id > 0)
 				{
-					if(saveStamp.PPFNGGCBJKC_id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
+					if(saveStamp.PPFNGGCBJKC_id <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
 					{
-						IHFIAFDLAAK_DecoStamp.MFHKPMPJGHC dbStamp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[saveStamp.PPFNGGCBJKC_id - 1];
+						IHFIAFDLAAK_DecoStamp.MFHKPMPJGHC dbStamp = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[saveStamp.PPFNGGCBJKC_id - 1];
 						if(dbStamp.PLALNIIBLOF_en == 2)
 						{
 							NCPPAHHCCAO stamp = new NCPPAHHCCAO();
@@ -77,9 +77,9 @@ public class NCPPAHHCCAO
 							stamp.HDHNEILDILJ_OffsetY = dbStamp.JINEKNIBOFI_OffsetY;
 							if(stamp.IDELKEKDIFD_CharaId > 0)
 							{
-								if(stamp.IDELKEKDIFD_CharaId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
+								if(stamp.IDELKEKDIFD_CharaId <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
 								{
-									BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo snsChara = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[stamp.IDELKEKDIFD_CharaId - 1];
+									BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo snsChara = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[stamp.IDELKEKDIFD_CharaId - 1];
 									if(snsChara.PPEGAKEIEGM_Enabled == 2)
 									{
 										stamp.CPKMLLNADLJ_Serie = snsChara.CPKMLLNADLJ_Serie;
@@ -105,20 +105,20 @@ public class NCPPAHHCCAO
 	//// RVA: 0x1ADAE28 Offset: 0x1ADAE28 VA: 0x1ADAE28
 	public static string EFNHFKLKNHJ(int _PPFNGGCBJKC_id)
 	{
-		//string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
+		//string str = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
 		// UMO : desc_string_hanyo is the same as StringLiteral_12526, so use that to have the translation string.
 		string str = JpStringLiterals.StringLiteral_12526;
 		if(_PPFNGGCBJKC_id > 0)
 		{
-			if(_PPFNGGCBJKC_id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count)
+			if(_PPFNGGCBJKC_id <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count)
 			{
-				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP serif = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[_PPFNGGCBJKC_id - 1];
+				IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP serif = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[_PPFNGGCBJKC_id - 1];
 				if(serif.JBFLEDKDFCO_cid > 0)
 				{
-					if(serif.JBFLEDKDFCO_cid <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
+					if(serif.JBFLEDKDFCO_cid <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
 					{
-						BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[serif.JBFLEDKDFCO_cid - 1];
-						//return sns.OPFGFINHFCE_name + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
+						BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo sns = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[serif.JBFLEDKDFCO_cid - 1];
+						//return sns.OPFGFINHFCE_name + IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
 						// UMO : desc_string_senyo is the same as StringLiteral_12528, so use that to have the translation string.
 						return sns.OPFGFINHFCE_name + JpStringLiterals.StringLiteral_12528;
 					}
@@ -132,16 +132,16 @@ public class NCPPAHHCCAO
 	public static List<int> MGHDHIJIGLD()
 	{
 		List<int> res = new List<int>();
-		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null && CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData != null)
 		{
-			res.AddRange(OCHICNLNALL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, "initial_give_stamp"));
-			res.AddRange(OCHICNLNALL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, "initial_give_serif"));
+			res.AddRange(OCHICNLNALL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, "initial_give_stamp"));
+			res.AddRange(OCHICNLNALL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, "initial_give_serif"));
 		}
 		return res;
 	}
 
 	//// RVA: 0x1ADB36C Offset: 0x1ADB36C VA: 0x1ADB36C
-	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_type, string _LJNAKDMILMC_key)
+	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category _INDDJNMPONH_type, string _LJNAKDMILMC_key)
 	{
 		List<int> res = new List<int>();
 		string str = _LKMHPJKIFDN_md.GAPONCJOKAC_DecoStamp.EFEGBHACJAL_GetStringParam(_LJNAKDMILMC_key, "");
@@ -151,10 +151,10 @@ public class NCPPAHHCCAO
 			int v = 0;
 			if(int.TryParse(strs[i], out v) && v > 0)
 			{
-				if(EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, null) == 0)
+				if(EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, null) == 0)
 				{
-					EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, 1, null);
-					res.Add(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(_INDDJNMPONH_type, v));
+					EKLNMHFCAOI_ItemManager.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, 1, null);
+					res.Add(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(_INDDJNMPONH_type, v));
 				}
 			}
 		}

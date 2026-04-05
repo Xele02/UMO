@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use NEAPMMJKOKA_GetProducts", true)]
 public class NEAPMMJKOKA { }
-public class NEAPMMJKOKA_GetProducts : CACGCMBKHDI_Request
+public class NEAPMMJKOKA_GetProducts : CACGCMBKHDI_NetBaseAction
 {
 	public class DCNPODMDCHP
 	{

@@ -666,12 +666,12 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		public void KHEKNNFCAOI_Init(int _KIJAPOFAGPN_ItemId)
 		{
 			PPFNGGCBJKC_id = _KIJAPOFAGPN_ItemId;
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_KIJAPOFAGPN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
 			{
-				HHFFOACILKG_Medal medalDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal;
-				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal == null)
+				HHFFOACILKG_Medal medalDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ICICKEBMEFA_Medal;
+				if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ICICKEBMEFA_Medal == null)
 					return;
-				int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId);
+				int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_KIJAPOFAGPN_ItemId);
 				if (itemId < 1)
 					return;
 				if (medalDb.CDENCMNHNGA_table.Count < itemId)

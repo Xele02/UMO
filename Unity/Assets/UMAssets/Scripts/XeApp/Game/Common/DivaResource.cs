@@ -546,7 +546,7 @@ namespace XeApp.Game.Common
 			StringBuilder assetName = new StringBuilder();
 			AssetBundleLoadAllAssetOperationBase operation = null;
 			
-			IMMAOANGPNK a = IMMAOANGPNK.HHCJCDFCLOB;
+			IMMAOANGPNK_NetMasterDataManager a = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance;
 			OKGLGHCBCJP_Database o = a.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos_master = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
@@ -674,7 +674,7 @@ namespace XeApp.Game.Common
 			//0x1C00ED4
 			List<GameObject> list_effect = new List<GameObject>();
 			GameObject wind = null;
-			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
+			IMMAOANGPNK_NetMasterDataManager im = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo a = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
@@ -840,7 +840,7 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			if(mikeStandAnimationOverrideClip != null)
 			{
-				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
+				IMMAOANGPNK_NetMasterDataManager i = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance;
 				OKGLGHCBCJP_Database o = i.NKEBMCIMJND_Database;
 				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_Get(divaId);
@@ -869,7 +869,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			bundleName.SetFormat("mc/{0:D4}/ar{1:D3}.xab", wavId, primeId);
-			if(KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(bundleName.ToString()))
+			if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.EGIFDIFALKK(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 				yield return operation;
@@ -1072,7 +1072,7 @@ namespace XeApp.Game.Common
 			menuMotionOverride.present = new List<MenuMotionOverrideResource.Reaction>(MAX_PRESENT);
 			menuMotionOverride.simpletalk = new List<MenuMotionOverrideResource.Reaction>(MAX_SIMPLE_TALK);
 			
-			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
+			IMMAOANGPNK_NetMasterDataManager im = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 			BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_Get(divaId);
@@ -1178,7 +1178,7 @@ namespace XeApp.Game.Common
 			menuVoiceTable = operation.GetAsset<MenuDivaVoiceTable>(assetName.ToString());
 			menuVoiceTableCos = null;
 			
-			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
+			CIOECGOMILE_NetPlayerDataManager c = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance;
 			BBHNACPENDM_ServerSaveData b2 = c.AHEFHIMGIBI_PlayerData;
 			MMPBPOIFDAF_Scene m = b2.PNLOINMCCKH_Scene;
 			bool f = m.GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(divaId);
@@ -1211,7 +1211,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			typeBundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			personalityId = divaParam.ChangePersonalityId(modelId, personalityId);
 			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
@@ -1406,7 +1406,7 @@ namespace XeApp.Game.Common
 
 			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString(), false);
 
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -1479,7 +1479,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			assetName = new StringBuilder();
 
-			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
+			bodyId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
 			divaBundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return Co.R(operationDiva);
@@ -1624,7 +1624,7 @@ namespace XeApp.Game.Common
 			//0x1C073AC
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
+			cosMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
@@ -1727,7 +1727,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			menuMotionOverride.talk = new List<MenuMotionOverrideResource.Talk>(2);
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;

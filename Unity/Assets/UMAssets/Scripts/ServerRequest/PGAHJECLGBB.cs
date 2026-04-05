@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use PGAHJECLGBB_RemoveFromBlacklist", true)]
 public class PGAHJECLGBB { }
-public class PGAHJECLGBB_RemoveFromBlacklist : CACGCMBKHDI_Request
+public class PGAHJECLGBB_RemoveFromBlacklist : CACGCMBKHDI_NetBaseAction
 {
 	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
 

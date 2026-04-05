@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 			Parent = s.m_parent;
 			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize(s.WindowSize, s.IsCaption);
 			m_useItemId = s.UseItemId;
-			TicketLimitCount = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.IIMNMNGEPIJ(), s.ItemUseMaxValue);
+			TicketLimitCount = Mathf.Min(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IIMNMNGEPIJ(), s.ItemUseMaxValue);
 			m_haveMaxValue = s.ItemHaveMaxValue;
 			UseTcketCount = s.ItemCurrentValue;
 			m_consumeItemId = s.ConsumeItemId;
@@ -81,7 +81,7 @@ namespace XeApp.Game.Common
 				//0x1BB4104
 				texture.Set(m_imageIcon);
 			});
-			m_itemNameText.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_useItemId);
+			m_itemNameText.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(m_useItemId);
 			if(!s.IsWeekdayEvent)
 			{
 				if(s.IsOneUseForced)
@@ -90,12 +90,12 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					m_cautionText.text = string.Format(s.IsGoDivaEventDailyBonus ? MessageManager.Instance.GetMessage("menu", "use_item_description_05") : MessageManager.Instance.GetMessage("menu", "use_item_description_01"), CIOECGOMILE.HHCJCDFCLOB.IIMNMNGEPIJ());
+					m_cautionText.text = string.Format(s.IsGoDivaEventDailyBonus ? MessageManager.Instance.GetMessage("menu", "use_item_description_05") : MessageManager.Instance.GetMessage("menu", "use_item_description_01"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IIMNMNGEPIJ());
 				}
 			}
 			else
 			{
-				m_cautionText.text = string.Format(MessageManager.Instance.GetMessage("menu", "use_item_description_04"), CIOECGOMILE.HHCJCDFCLOB.IIMNMNGEPIJ());
+				m_cautionText.text = string.Format(MessageManager.Instance.GetMessage("menu", "use_item_description_04"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.IIMNMNGEPIJ());
 			}
 			UpdateButtonState();
 			UpdateItemValue();
@@ -154,7 +154,7 @@ namespace XeApp.Game.Common
 			}
 			else if(m_consumeItem == ConsumeItem.LiveTicket)
 			{
-				m_consumeItemTexts[0].text = string.Format(bk.GetMessageByLabel("use_ticket_consume_format"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_consumeItemId));
+				m_consumeItemTexts[0].text = string.Format(bk.GetMessageByLabel("use_ticket_consume_format"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(m_consumeItemId));
 			}
 			else if(m_consumeItem == ConsumeItem.Energy)
 			{

@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xA45640
 			m_view_data = new PlayRecordView();
-			m_view_data.Create(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
+			m_view_data.Create(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData);
 			yield return null;
 			m_anim_ctrl = new PlayRecord_Animator(m_anim);
 			m_content_total.Initialize();
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadAssetOperation t_operation; // 0x1C
 
 			//0xA44C8C
-			int totalinfoimage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("playrecord_totalinfo_image", 6);
+			int totalinfoimage = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("playrecord_totalinfo_image", 6);
 			int num = 1;
 			if(totalinfoimage > 0)
 			{

@@ -49,10 +49,10 @@ public class BOPPPCKONML
 	public void PCODDPDFLHK_Load(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		LHPDDGIJKNB_Reset();
-		NAIJIFAJGGK_RequestLoadPlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
+		NAIJIFAJGGK_RequestLoadPlayerData req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
 		req.HHIHCJKLJFF_Names = HMJBJGFPEPG;
 		req.IJMPLDBGMHC_OnDataReceived = IIEMACPEEBJ_Deserialize;
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x18ED7A0
 			long l;
@@ -70,7 +70,7 @@ public class BOPPPCKONML
 				HJMKBCFJOOH_Save(_BHFHGFKBOHH_OnSuccess, _AOCANKOMKFG_OnError);
 			}
 		};
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x18ED964
 		};
@@ -224,7 +224,7 @@ public class BOPPPCKONML
 		int idx = KCKOKCHMIBA();
 		long order = GDELKANOPBH();
 		PJJFEAHIPGL_inventories[idx].ODDIHGPONFL_Copy(CCBEKGNDDBE);
-		PJJFEAHIPGL_inventories[idx].LNDEFMALKAN_received_at = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		PJJFEAHIPGL_inventories[idx].LNDEFMALKAN_received_at = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		PJJFEAHIPGL_inventories[idx].EILKGEADKGH_Order = order;
 	}
 
@@ -249,7 +249,7 @@ public class BOPPPCKONML
 			}
 		}
 		AGPKGMFOJHC_rev = 1;
-		GGKHIHFPKDH_SavePlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
+		GGKHIHFPKDH_SavePlayerData req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
 		req.HHIHCJKLJFF_Names = HMJBJGFPEPG;
 		req.NBFDEFGFLPJ = (SakashoErrorId FMEMECBIDIB) =>
 		{
@@ -257,10 +257,10 @@ public class BOPPPCKONML
 			return true;
 		};
 		bool isPartial = false;
-		req.AHEFHIMGIBI_PlayerData = OKJPIBHMKMJ(out isPartial, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1);
+		req.AHEFHIMGIBI_PlayerData = OKJPIBHMKMJ(out isPartial, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1);
 		req.CHDDDCCHJJH_replace = !isPartial;
-		req.MCKEOKFMLAH_SaveId = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1;
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.MCKEOKFMLAH_SaveId = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1;
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x18ED998
 			for(int i = 0; i < 50; i++)
@@ -273,7 +273,7 @@ public class BOPPPCKONML
 			LCKPHJINHPH = false;
 			_BHFHGFKBOHH_OnSuccess();
 		};
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x18EDB7C
 			_AOCANKOMKFG_OnError();
@@ -285,7 +285,7 @@ public class BOPPPCKONML
 	{
 		return string.Concat(new object[4]
 		{
-			Application.persistentDataPath, "/60/", NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId, ".bin"
+			Application.persistentDataPath, "/60/", NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId, ".bin"
 		});
 	}
 

@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114B14C Offset: 0x114B14C VA: 0x114B14C Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		//// RVA: 0x114B1EC Offset: 0x114B1EC VA: 0x114B1EC Slot: 22
@@ -654,8 +654,8 @@ namespace XeApp.Game.Menu
 			int skillId = scene.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
 			if(skillId != 0)
 			{
-				int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE.Count;
-				HBDCPGLAPHH skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
+				int cnt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE.Count;
+				HBDCPGLAPHH skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
 				int[] a1 = new int[2]
 				{
 					skill.HEKHODDJHAO_P1,
@@ -665,7 +665,7 @@ namespace XeApp.Game.Menu
 				{
 					for(int i = 0; i < cnt; i++)
 					{
-						BNHOEENHMDF t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE[i];
+						BNHOEENHMDF t = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE[i];
 						ulong bit = (ulong)1 << t.MKDDOJOADMF;
 						if((bit & flags) != 0)
 						{
@@ -687,7 +687,7 @@ namespace XeApp.Game.Menu
 									}
 									else
 									{
-										KFCIIMBBNCD dataK = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
+										KFCIIMBBNCD dataK = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
 										if(dataK.INDDJNMPONH_type != a.INDDJNMPONH_type[k])
 											b = true;
 										if(dataK.GJLFANGDGCL_Target != a.GJLFANGDGCL_Target[k])
@@ -713,10 +713,10 @@ namespace XeApp.Game.Menu
 				return true;
 			if(scene.HGONFBDIBPM_ActiveSkillId != 0)
 			{
-				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.HGONFBDIBPM_ActiveSkillId - 1];
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
+				CDNKOFIELMK skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.HGONFBDIBPM_ActiveSkillId - 1];
+				for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
 				{
-					HCDIOPEOGEE h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
+					HCDIOPEOGEE h = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
 					ulong bit = (ulong)1 << h.MKDDOJOADMF;
 					if((bit & flags) != 0)
 					{
@@ -757,10 +757,10 @@ namespace XeApp.Game.Menu
 			int id = scene.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0);
 			if(id != 0)
 			{
-				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1];
-				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
+				PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1];
+				for (int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
 				{
-					DNIDPGDJCOG d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
+					DNIDPGDJCOG d = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
 					ulong bit = (ulong)1 << d.MKDDOJOADMF;
 					if ((bit & flags) != 0)
 					{

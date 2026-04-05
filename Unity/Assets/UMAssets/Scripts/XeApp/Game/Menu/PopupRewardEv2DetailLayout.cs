@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 				{
 					m_skillDetailIconImages[2].enabled = false;
 				}
-				PPGHMBNIAEC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveId - 1];
+				PPGHMBNIAEC p = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveId - 1];
 				if(p.AOPELJFAMCL_LiveSkillType != 0)
 				{
 					m_liveSkillTblLayout.StartChildrenAnimGoStop("02");

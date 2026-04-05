@@ -473,7 +473,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 				isInvalid = true;
 			else
 			{
-				var freemusiclist = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData;
+				var freemusiclist = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData;
 				for(int i = 0; i < freemusiclist.Count; i++)
 				{
 					KEODKEGFDLD_FreeMusicInfo musicData = freemusiclist[i];

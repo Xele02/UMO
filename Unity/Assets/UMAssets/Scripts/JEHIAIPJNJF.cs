@@ -210,7 +210,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	}
 
 	// // RVA: 0x1C352A0 Offset: 0x1C352A0 VA: 0x1C352A0
-	public void DOMFHDPMCCO_Init(List<KDLPEDBKMID.EMEKAOMPFNC_LocalFileInfo> CEKHMLAEKIK)
+	public void DOMFHDPMCCO_Init(List<KDLPEDBKMID_NetDelayInstaller.EMEKAOMPFNC_LocalFileInfo> CEKHMLAEKIK)
 	{
 		JOJMBFBGMGN_DldQueue = new List<HCJPJKCIBDL_DldFileInfo>(CEKHMLAEKIK.Count);
 		for(int i = 0; i < CEKHMLAEKIK.Count; i++)
@@ -436,13 +436,13 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				if(status == CriFsWebInstaller.Status.Complete)
 				{
 					// UMO Add : check CRC
-					if(KEHOJEJMGLJ.HHCJCDFCLOB != null && KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ != null)
+					if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance != null && KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ != null)
 					{
-						GCGNICILKLD_AssetFileInfo g = KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.BIKLNKNFFMK_GetAssetFileInfo(info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName.Replace("/android/", ""));
+						GCGNICILKLD_AssetFileInfo g = KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.BIKLNKNFFMK_GetAssetFileInfo(info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName.Replace("/android/", ""));
 						if(g != null)
 						{
 							MD5 md5 = MD5.Create();
-							string h = KEHOJEJMGLJ.IFCHFDEDCGF_GetFileHash(md5, info.ICKGJODOCBB.ADHHKEMDOIK_LocalPath);
+							string h = KEHOJEJMGLJ_NetInstallManager.IFCHFDEDCGF_GetFileHash(md5, info.ICKGJODOCBB.ADHHKEMDOIK_LocalPath);
 							if(h != g.POEGMFKLFJG_hash_value)
 							{
 								UnityEngine.Debug.LogError("Wrong hash for "+info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName+" "+h+" != "+g.POEGMFKLFJG_hash_value);

@@ -4,7 +4,10 @@ using System.Collections;
 using XeApp.Game;
 using XeSys;
 
-public class PGIGNJDPCAH
+// namespace XeApp.Game.Net
+[System.Obsolete()]
+public class PGIGNJDPCAH {}
+public class PGIGNJDPCAH_UpdateChecker
 {
     public enum IMOIPBMGIPN
     {
@@ -102,17 +105,17 @@ public class PGIGNJDPCAH
 	{
 		if(IPJMPBANBPP_Enabled)
 		{
-			KPKEOIJHIMN.GIDACIOHFNN_UpdateState v = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.DAOHAKABAFG.PGBOFGNOBLD();
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			bool b = BBGDKLLEPIB.HHCJCDFCLOB.KHJHKNLEOAB(time);
-			bool b2 = IMMAOANGPNK.HHCJCDFCLOB.MKINIELBKEK(time);
-			bool b3 = IMMAOANGPNK.HHCJCDFCLOB.JMAMHEJDNNN_IsScheduledEvent(time);
+			KPKEOIJHIMN.GIDACIOHFNN_UpdateState v = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.DAOHAKABAFG.PGBOFGNOBLD();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			bool b = BBGDKLLEPIB_NetInstallMaster.HHCJCDFCLOB_Instance.KHJHKNLEOAB(time);
+			bool b2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.MKINIELBKEK(time);
+			bool b3 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.JMAMHEJDNNN_IsScheduledEvent(time);
 			if(v != KPKEOIJHIMN.GIDACIOHFNN_UpdateState.GJCDHOAEIHP_2_NewDownloadData/*2*/ && !b && !b2 && !b3)
 			{
 				IMOIPBMGIPN a = IMOIPBMGIPN.HJNNKCMLGFL_0_None/*0*/;
 				if(!OGAIOKGEMDE)
 				{
-					a = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.LOMEEJGIAHO.LNLCIMPFCEK(time) ? IMOIPBMGIPN.OGFOHBGEAEC/*2*/ : IMOIPBMGIPN.HJNNKCMLGFL_0_None/*0*/;
+					a = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.LOMEEJGIAHO.LNLCIMPFCEK(time) ? IMOIPBMGIPN.OGFOHBGEAEC/*2*/ : IMOIPBMGIPN.HJNNKCMLGFL_0_None/*0*/;
 				}
 				return a;
 			}
@@ -129,7 +132,7 @@ public class PGIGNJDPCAH
 		
 		//0x16CA7E4
 		GameManager.Instance.InputEnabled = false;
-		PNLGHFCFPPK_Request = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NADBPLMLIJA_GetToken());
+		PNLGHFCFPPK_Request = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NADBPLMLIJA_GetToken());
 		PNLGHFCFPPK_Request.ALJHFFCKBDP = true;
 		yield return PNLGHFCFPPK_Request.GDPDELLNOBO_WaitDone(N.a);
 		GameManager.Instance.InputEnabled = true;
@@ -141,17 +144,17 @@ public class PGIGNJDPCAH
 		}
 		else
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			DateTime date = Utility.GetLocalDateTime(time);
 			if(!_FBBNPFFEJBN_Force)
 			{
 				if(HIJBIPLMNEA == date.Month * 100 + date.Year * 100000 + date.Day)
 				{
-					JHHBAFKMBDL.HHCJCDFCLOB.KJJLCKFLIML_ShowDteLineErrorPopup(_MBIKIBHLAGE_OnError);
+					JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.KJJLCKFLIML_ShowDteLineErrorPopup(_MBIKIBHLAGE_OnError);
 					yield break;
 				}
 			}
-			NKGJPJPHLIF.HHCJCDFCLOB.EFPOACOOAFB(_FBBNPFFEJBN_Force);
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.EFPOACOOAFB(_FBBNPFFEJBN_Force);
 			_GIMKOLPGIAO_OnSuccess();
 		}
 	}
@@ -166,16 +169,16 @@ public class PGIGNJDPCAH
 			{
 				case IMOIPBMGIPN.MGEFLLPGDDN:
 				case IMOIPBMGIPN.CKOMFNPGHOM:
-					NKGJPJPHLIF.HHCJCDFCLOB.NIJDPPHGHFD_ResetDates(EALOBDHOCHP_stat == IMOIPBMGIPN.CKOMFNPGHOM/*3*/);
-					JHHBAFKMBDL.HHCJCDFCLOB.CIKMDHMMCIL_ShowErrorPopup(2, _MBIKIBHLAGE_OnError);
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NIJDPPHGHFD_ResetDates(EALOBDHOCHP_stat == IMOIPBMGIPN.CKOMFNPGHOM/*3*/);
+					JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.CIKMDHMMCIL_ShowErrorPopup(2, _MBIKIBHLAGE_OnError);
 					LANLFCFBOHI = true;
 					return true;
 				case IMOIPBMGIPN.OGFOHBGEAEC:
 				case IMOIPBMGIPN.PJPJEHEFMMJ:
-					JHHBAFKMBDL.HHCJCDFCLOB.PNIJEKOHEII(() =>
+					JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.PNIJEKOHEII(() =>
 					{
 						//0x16CA6C8
-						HIJBIPLMNEA = NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD;
+						HIJBIPLMNEA = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.DHMLDAGGKCD;
 						N.a.StartCoroutineWatched(OOILBGOKHDC_Co_ReGetSeverTime(EALOBDHOCHP_stat == IMOIPBMGIPN.CKOMFNPGHOM, _GIMKOLPGIAO_OnSuccess, _MBIKIBHLAGE_OnError));
 					});
 					LANLFCFBOHI = true;

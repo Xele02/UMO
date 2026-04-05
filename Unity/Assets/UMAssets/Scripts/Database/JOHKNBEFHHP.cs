@@ -2,19 +2,27 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use JOHKNBEFHHP_TitleBanner", true)]
 public class JOHKNBEFHHP { }
+[UMOClass(ReaderClass = "BENBFNLECGA")]
 public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 {
+	[UMOClass(ReaderClass = "MMBIHLNLPHB")]
     public class NGKJHBDEELB
     {
+		[UMOMember(ReaderMember = "PPFNGGCBJKC_id")]
         public int PPFNGGCBJKC_id; // 0x8
+		[UMOMember(ReaderMember = "IJEKNCDIIAE_mver|PLALNIIBLOF_en", Desc = "Availabe in game if value = 2")]
         public sbyte PPEGAKEIEGM_Enabled; // 0xC
+		[UMOMember(ReaderMember = "PDBPFJJCADD_open_at")]
         public long PDBPFJJCADD_open_at; // 0x10
+		[UMOMember(ReaderMember = "FDBNFFNFOND_close_at")]
         public long FDBNFFNFOND_close_at; // 0x18
+		[UMOMember(ReaderMember = "KNHOMNONOEB_AssetId")]
         public int KNHOMNONOEB_AssetId; // 0x20
 
         // // RVA: 0x1BA4288 Offset: 0x1BA4288 VA: 0x1BA4288
         // public uint CAOGDCBPBAN() { }
     }
+	[UMOMember(ReaderMember = "KFKOALPLEGG")]
 	public List<NGKJHBDEELB> CDENCMNHNGA_table = new List<NGKJHBDEELB>(); // 0x20
 
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84

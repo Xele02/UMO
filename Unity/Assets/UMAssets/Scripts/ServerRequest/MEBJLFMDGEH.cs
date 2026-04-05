@@ -5,7 +5,7 @@ using UnityEngine;
 
 [System.Obsolete("Use MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory", true)]
 public class MEBJLFMDGEH { }
-public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Request
+public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_NetBaseAction
 {
 	public class NPBEINILKFE
 	{

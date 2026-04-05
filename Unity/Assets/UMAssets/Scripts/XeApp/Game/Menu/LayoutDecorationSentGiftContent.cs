@@ -35,9 +35,9 @@ namespace XeApp.Game.Menu
 			m_button.AddOnClickCallback(ShowItemDetails);
 			m_button.AddOnStayCallback(ShowItemDetails);
 			m_message.text = string.Format(bk.GetMessageByLabel(sentCount < 2 ? "pop_deco_gift_single_message" : "pop_deco_gift_multi_message"), sentCount);
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
-            int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
-            m_resultMessage.text = string.Format(bk.GetMessageByLabel("pop_deco_gift_item_message"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), itemCount, EKLNMHFCAOI.NDBLEADIDLA(cat, id));
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId);
+            int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId);
+            m_resultMessage.text = string.Format(bk.GetMessageByLabel("pop_deco_gift_item_message"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(cat, id), itemCount, EKLNMHFCAOI_ItemManager.NDBLEADIDLA(cat, id));
 			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>
 			{
 				//0x18B8884

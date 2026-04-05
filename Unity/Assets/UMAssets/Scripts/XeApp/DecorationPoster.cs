@@ -25,7 +25,7 @@ namespace XeApp
         }
 
         // // RVA: 0xBB0F0C Offset: 0xBB0F0C VA: 0xBB0F0C Slot: 6
-        protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+        protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
         {
             return;
         }
@@ -45,8 +45,8 @@ namespace XeApp
         protected override void CreateAppendAsset(DecorationItemArgsBase args)
         {
             DecorationPosterArgs arg = args as DecorationPosterArgs;
-            if(ViewData.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef && 
-                ViewData.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+            if(ViewData.NPADACLCNAN_Category != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef && 
+                ViewData.NPADACLCNAN_Category != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
                 return;
             if(arg.m_kiraMaterialSource != null)
             {

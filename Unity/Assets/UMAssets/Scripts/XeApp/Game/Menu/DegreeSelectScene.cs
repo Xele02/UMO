@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17CEB6C Offset: 0x17CEB6C VA: 0x17CEB6C Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			if(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			if(!KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 			{
 				m_layout.Enter();
 				return true;

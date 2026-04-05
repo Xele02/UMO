@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("quest_lump_receive_max_num", 30));
+				m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("quest_lump_receive_max_num", 30));
 			}
 			m_buttonReceiveAll.Disable = b;
 			m_buttonReceiveAll.Hidden = isBegin;

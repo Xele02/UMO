@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 			yield return Co.R(m_instance.Co_LoadAssetLayout());
 			yield return Co.R(m_instance.Co_InitializeMovie());
 			m_instance.LoadBGM();
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			if(endCallback != null)
 				endCallback();

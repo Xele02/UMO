@@ -67,7 +67,7 @@ namespace XeApp.Game.AR
 			}
 			
 			byte[] dataBytes = null;
-			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + string.Format(DATA_PATH, m_name), (byte[] data) => {
+			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + string.Format(DATA_PATH, m_name), (byte[] data) => {
 				//0xBBB378
 				dataBytes = data;
 			} ));
@@ -90,7 +90,7 @@ namespace XeApp.Game.AR
 
 			bool done = false;
 			
-			JHHBAFKMBDL.HHCJCDFCLOB.LIBDGGBAINI(() => {
+			JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.LIBDGGBAINI(() => {
 				//0xBBB388
 				done = true;
 			});
@@ -108,11 +108,11 @@ namespace XeApp.Game.AR
 		private IEnumerator Coroutine_LoadTarFile(string path, Action<byte[]> onFinished)
 		{
 			// private byte[] <dataBytes>5__2; // 0x1C
-			// private IIEDOGCMCIE <tar>5__3; // 0x20
+			// private IIEDOGCMCIE_SecureTarFile <tar>5__3; // 0x20
 			//0xBBC28C
 
 			byte[] dataBytes = null;
-			IIEDOGCMCIE tar = new IIEDOGCMCIE();
+			IIEDOGCMCIE_SecureTarFile tar = new IIEDOGCMCIE_SecureTarFile();
 			tar.MCDJJPAKBLH(path);
 			while(!tar.PLOOEECNHFB_IsDone)
 			{
@@ -161,7 +161,7 @@ namespace XeApp.Game.AR
 				// public ARMasterData.<>c__DisplayClass15_0 CS$<>8__locals1; // 0xC
 				// // RVA: 0xBBB3A4 Offset: 0xBBB3A4 VA: 0xBBB3A4
 				// internal void <Coroutine_Download>b__2() { }
-			// private PJKLMCGEJMK <am>5__2; // 0x20
+			// private PJKLMCGEJMK_NetActionManager <am>5__2; // 0x20
 			// private JPAPJLIPNOK_RequestAssetList <req>5__3; // 0x24
 			// private string <src>5__4; // 0x28
 			// private bool <loop>5__5; // 0x2C
@@ -170,7 +170,7 @@ namespace XeApp.Game.AR
 			// private float <endTime>5__8; // 0x38
 			// 0xBBB400
 
-			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester;
+			PJKLMCGEJMK_NetActionManager am = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester;
 			JPAPJLIPNOK_RequestAssetList req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
 			req.FPCIBJLJOFI_Type = "db";
 
@@ -202,7 +202,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA_LocalPath + found.OIEAICNAMNB_LocalFileName);
+			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB_NetInstallMaster.OGCDNCDMLCA_LocalPath + found.OIEAICNAMNB_LocalFileName);
 
 			string dir = Path.GetDirectoryName(dest);
 			if(!Directory.Exists(dir))

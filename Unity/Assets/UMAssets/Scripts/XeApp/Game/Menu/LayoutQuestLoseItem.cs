@@ -19,12 +19,12 @@ namespace XeApp.Game.Menu
 		public override void SetStatus(MFDJIFIIPJD info)
 		{
 			base.SetStatus(info);
-			m_textName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId);
-			int value = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
-			int max = EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
+			m_textName.text = EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId);
+			int value = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
+			int max = EKLNMHFCAOI_ItemManager.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
 			int d = info.MBJIFDBEDAC_item_count - max + Mathf.Clamp(value, 0, max);
-			m_textRecvNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_get"), Mathf.Clamp(info.MBJIFDBEDAC_item_count - d, 0, max).ToString() + EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
-			m_textLoseNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_lose"), d, EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
+			m_textRecvNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_get"), Mathf.Clamp(info.MBJIFDBEDAC_item_count - d, 0, max).ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
+			m_textLoseNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_lose"), d, EKLNMHFCAOI_ItemManager.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
 		}
 
 		// RVA: 0x187BF70 Offset: 0x187BF70 VA: 0x187BF70 Slot: 5

@@ -16,13 +16,13 @@ public class NDABOOOOENC
 	private bool APEIJNFMEFG_ShowButton; // 0x9
 	private int FAGBLGODELF_LoginStatus; // 0xC
 
-	public static NDABOOOOENC HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static NDABOOOOENC HHCJCDFCLOB_Instance { get; private set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 	public bool LHGFPPIEKPJ { get { return APEIJNFMEFG_ShowButton; } set { return; } } // PFHHNKMGPGJ_bgs 0x1ADB760 DNPOLCNDBKH_bgs 0x1ADB768
 
 	// // RVA: 0x1ADB76C Offset: 0x1ADB76C VA: 0x1ADB76C
 	public void IJBGPAENLJA_OnAwake()
 	{
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 	}
 
 	// // RVA: 0x1ADB7EC Offset: 0x1ADB7EC VA: 0x1ADB7EC
@@ -180,7 +180,7 @@ public class NDABOOOOENC
 				string achId = JIMKNDJMCID_Keys[_PPFNGGCBJKC_id];
 				if(_PPFNGGCBJKC_id >= 27 && _PPFNGGCBJKC_id < 31)
 				{
-					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("gpgs_key_" + _PPFNGGCBJKC_id, "");
+					string str = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL_GetStringParam("gpgs_key_" + _PPFNGGCBJKC_id, "");
 					if (!string.IsNullOrEmpty(str))
 						achId = str;
 				}
@@ -199,18 +199,18 @@ public class NDABOOOOENC
 		List<int> res = new List<int>();
 		if(GKDLPKNOGCK_Initialized)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
+					for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
 					{
-						CNLPPCFJEID_QuestInfo dbquest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+						CNLPPCFJEID_QuestInfo dbquest = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
 						if (dbquest.INDDJNMPONH_type != 0)
 						{
 							if(dbquest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbquest.PPFNGGCBJKC_id, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbquest.PPFNGGCBJKC_id, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, true) > 1)
 								{
 									res.Add(dbquest.HDBFCIOCNPA_AchievementId);
 								}
@@ -240,18 +240,18 @@ public class NDABOOOOENC
 	{
 		if(GKDLPKNOGCK_Initialized)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
+					for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
 					{
-						CNLPPCFJEID_QuestInfo dbQuest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+						CNLPPCFJEID_QuestInfo dbQuest = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
 						if (dbQuest.INDDJNMPONH_type != 0)
 						{
 							if(dbQuest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC_id, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC_id, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, true) > 1)
 								{
 									GLHANCMGNDM_Unlock(dbQuest.HDBFCIOCNPA_AchievementId, 100);
 								}

@@ -354,7 +354,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 			data.LHPDDGIJKNB_Reset(i + 1);
 			FOFLMHELILC.Add(data);
 		}
-		LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
+		LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
 		string defName = offerDb.EFEGBHACJAL_GetStringParam("default_vf_platoon_name", JpStringLiterals.StringLiteral_12943);
 		for(int i = 0; i < 5; i++)
 		{
@@ -523,7 +523,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 					{
 						EDOHBJAPLPF_JsonData b2 = block[AFEHLCGHAEE_Strings.PMKIBGEHGON_vfp][i];
 						PMOECIDOLNA data = NEGDGHKOFFF_VFplatoon[i];
-						LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
+						LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
 						string str = offerDb.EFEGBHACJAL_GetStringParam("default_vf_platoon_name", JpStringLiterals.StringLiteral_12943);
 						data.OPFGFINHFCE_name = FGCNMLBACGO_GetString(b2, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, str, ref isInvalid);
 						IBCGPBOGOGP_ReadIntArray(b2, AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, 3, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) => {

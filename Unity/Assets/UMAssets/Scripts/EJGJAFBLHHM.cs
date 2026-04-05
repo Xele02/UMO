@@ -10,12 +10,12 @@ public class EJGJAFBLHHM
 
 	public bool Unused() { return AMIFBFDPOGL_base == ""; }
 
-	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
+	public static EJGJAFBLHHM HHCJCDFCLOB_Instance { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs OKPMHKNCNAL_bgs
 
 	//// RVA: 0x12EE308 Offset: 0x12EE308 VA: 0x12EE308
 	public void IJBGPAENLJA_OnAwake(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 	}
 
 	//// RVA: 0x12EE388 Offset: 0x12EE388 VA: 0x12EE388

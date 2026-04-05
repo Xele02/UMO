@@ -4,20 +4,30 @@ public delegate int MMBLPLOGFLG();
 
 [System.Obsolete("Use NBPHJDCOECH_Drop", true)]
 public class NBPHJDCOECH { }
+[UMOClass()]
 public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 {
 	public static bool NLLKIMFBAEK; // 0x0
 	public static bool FPBJKDHBAEB; // 0x1
 	public const int CKGGOALFGPI = 20;
 
+	[UMOMember()]
 	public List<HNJKJCDDIMG_SetInfo> KPEOJPKLJBH_Set { get; set; } // 0x20 FOJMJKCMCED_bgs NEODOAEJINJ_bgs AMFOMLAFBED_bgs
+	[UMOMember()]
 	public List<OPGDJANLKBM_RateInfo> FDCBLEDPHBM_Rate { get; set; } // 0x24 APOHGMMKNOJ_bgs ALNCBMECJAN_bgs DGKIKDOLCMI_bgs
+	[UMOMember()]
 	public List<HNJKJCDDIMG_SetInfo> LMILCGIFPGC_RareSet { get; set; } // 0x28 DPBDLJDLIMJ_bgs FJBJELOLNCI_bgs OLGOKPCMNGM_bgs
+	[UMOMember()]
 	public List<OPGDJANLKBM_RateInfo> ABNFGCEDJIM_RareRate { get; set; } // 0x2C MKIAFMEMOJN_bgs CHBBOIPJLJJ_bgs BCDPIGEJELC_bgs
+	[UMOMember()]
 	public List<CEBFFLDKAEC_SecureInt> BNFPHOEFKBA_GameDropRate { get; set; } // 0x30 NHBDHAIBAJO_bgs NJBCHDJJOPN_bgs EMCEEEAGDPO_bgs
+	[UMOMember()]
 	public List<int> CFECAEBGLIH_GameDropMaNe { get; set; } // 0x34 PIJCEHMBFNE_bgs PFLDEOFEMPN_bgs LLHAMPBDIKM_bgs
+	[UMOMember()]
 	public List<int> BFNDKINIEOE_GameDropMaEq { get; set; } // 0x38 INHFABMFKKJ_bgs GNLAEACBOIB_bgs JPHGKDMLIIB_bgs
+	[UMOMember()]
 	public List<CEBFFLDKAEC_SecureInt> ENLMDHJIPLA_GameDropEvCnt { get; set; } // 0x3C DKPDFOKBOJM_bgs CJHADKDFMGO_bgs DKOGCBIPBDI_bgs
+	[UMOMember()]
 	public List<CEBFFLDKAEC_SecureInt> DGCBAFGBOCL_GameDropEvBns { get; set; } // 0x40 MNPELONMGFI_bgs DIIKFNBIKJF_bgs PPAMAOAGPHO_bgs
 
 	//// RVA: 0x17C7B94 Offset: 0x17C7B94 VA: 0x17C7B94
@@ -64,16 +74,16 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	private List<DNAEGJGAKEI_DropItemInfo> DGMNLKDEDDC_GetAvaiableItems(KEODKEGFDLD_FreeMusicInfo _GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, bool _GIKLNODJKFK_IsLine6)
 	{
 		int a = _GEAANLPDJBP_FreeMusicData.NCCFJCDMBFO(_GIKLNODJKFK_IsLine6);
-		int b = _GEAANLPDJBP_FreeMusicData.CCLIOBOGFHC;
+		int b = _GEAANLPDJBP_FreeMusicData.CCLIOBOGFHC_RareSetId2;
 		if (_MFJKNCACBDG_OpenEventType != 0)
 		{
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
+            IKDICBBFBMI_NetEventBaseController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6_Counting, false);
 			if(ev != null)
 			{
-            	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
+            	b = ev.EEMGDCPJNEG_GetRare2SetOverride(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
 				if(b != 0)
 				{
-					a = ev.DJHOMGLGAHA(a, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
+					a = ev.DJHOMGLGAHA_GetRare2RateOverride(a, (OHCAABOMEOF.KGOGMKMBCPP_EventType)_MNNHHJBBICA_GameEventType);
 				}
 			}
 		}
@@ -156,7 +166,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C883C Offset: 0x17C883C VA: 0x17C883C
-	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI.FKGCBLHOOCL_Category OKOOPFAGBKO, out int _OIPCCBHIKIA_index) { }
+	//private bool ABNDDDNPOED(List<DNAEGJGAKEI_DropItemInfo> _CDENCMNHNGA_table, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category OKOOPFAGBKO, out int _OIPCCBHIKIA_index) { }
 
 	//// RVA: 0x17C8978 Offset: 0x17C8978 VA: 0x17C8978
 	public List<DNAEGJGAKEI_DropItemInfo> JMHHEPMILHA_GetItemsToSpawn(KEODKEGFDLD_FreeMusicInfo __GEAANLPDJBP_FreeMusicData, int EBBCGFOGKNE_Diff, int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, int _HMFFHLPNMPH_count, MMBLPLOGFLG JLDAJBCHMOC_RareItemRandCb, bool _GIKLNODJKFK_IsLine6/* = false*/)

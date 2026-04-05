@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_tabButtonsAnim; // 0x1C
 		private AbsoluteLayout m_iconAnim; // 0x20
 		private AbsoluteLayout m_iconEffAnim; // 0x24
-		private NKOBMDPHNGP_EventRaidLobby m_evnetLobby; // 0x28
+		private NKOBMDPHNGP_NetEventRaidLobbyController m_evnetLobby; // 0x28
 		private bool m_is_show; // 0x2C
 
 		public ActionButton tabBtn { get { return m_tabBtn; } } //0x965EF8
@@ -96,9 +96,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0x966360 Offset: 0x966360 VA: 0x966360 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
+			if(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance != null)
 			{
-				m_evnetLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+				m_evnetLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			}
 			m_typeAnim = layout.FindViewById("swtbl_lobby_tb") as AbsoluteLayout;
 			m_tabButtonsAnim = layout.FindViewById("sw_lobby_tb_anim_01") as AbsoluteLayout;

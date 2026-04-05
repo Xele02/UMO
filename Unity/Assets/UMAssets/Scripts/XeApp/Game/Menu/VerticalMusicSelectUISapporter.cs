@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x5C
 		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x60
 		private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x64
-		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x68
+		private IKDICBBFBMI_NetEventBaseController m_eventCtrl; // 0x68
 
 		public Difficulty.Type difficulty { get { return m_difficulty; } } //0xAD9F84
 		public MusicSelectConsts.SeriesType series { get { return m_series; } } //0xAD9F8C
@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		// public bool IsEventRankingEnd { get; } 0xADA1E0
 
 		// // RVA: 0xAC7248 Offset: 0xAC7248 VA: 0xAC7248
-		public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI_EventBase eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab)
+		public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI_NetEventBaseController eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab)
 		{
 			m_musicDetail = musicDetail;
 			m_musicSelectList = musicSelectList;
@@ -71,10 +71,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADA0C0 Offset: 0xADA0C0 VA: 0xADA0C0
-		// private void CrateQuestList(IKDICBBFBMI_EventBase eventCtrl) { }
+		// private void CrateQuestList(IKDICBBFBMI_NetEventBaseController eventCtrl) { }
 
 		// // RVA: 0xADA168 Offset: 0xADA168 VA: 0xADA168
-		// private void CreateSnsList(IKDICBBFBMI_EventBase eventCtrl) { }
+		// private void CreateSnsList(IKDICBBFBMI_NetEventBaseController eventCtrl) { }
 
 		// // RVA: 0xADA1F4 Offset: 0xADA1F4 VA: 0xADA1F4
 		// public bool IsNewStory() { }

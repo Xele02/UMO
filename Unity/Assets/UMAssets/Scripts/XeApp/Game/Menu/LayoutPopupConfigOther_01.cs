@@ -202,7 +202,7 @@ namespace XeApp.Game.Menu
 			});
 			m_layout = layout.FindViewById("swtbl_notice_set") as AbsoluteLayout;
 			bool b1 = HNDLICBDEMI.AAFGGLHPPJN();
-			bool b2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BEFGHIJNEBL();
+			bool b2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BEFGHIJNEBL();
 			if(!b2 && b1)
 			{
 				m_height = 724;

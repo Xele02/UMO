@@ -24,11 +24,11 @@ namespace XeApp.Game.Menu
 				"gacha_main_icon_01", "gacha_main_icon_02", "gacha_main_icon_03"
 			}; // 0x34
 
-		public LOBDIAABMKG GachaProduct { get; private set; } // 0x38
+		public LOBDIAABMKG_GachaProductData GachaProduct { get; private set; } // 0x38
 		public Action<LayoutGachaBannerItem> OnClickButton { private get; set; } // 0x3C
 
 		// RVA: 0x1996E54 Offset: 0x1996E54 VA: 0x1996E54
-		public void Setup(LOBDIAABMKG product, HomeBannerTextureCache bannerTexCache, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod timeZone, long currentTime)
+		public void Setup(LOBDIAABMKG_GachaProductData product, HomeBannerTextureCache bannerTexCache, BEPHBEGDFFK.ABBPGMEDDHD_DayPeriod timeZone, long currentTime)
 		{
 			GachaProduct = product;
 			int v = product.FDEBLMKEMLF_TypeAndSeriesId;
@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tckt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(product.EDCAFNOBCOJ());
+				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tckt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(product.EDCAFNOBCOJ());
 				if (tckt == null)
 				{
 					m_layoutEvTicket.StartChildrenAnimGoStop("02");
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_imageEvTicket.enabled = false;
-					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tckt.PPFNGGCBJKC_id), (IiconTexture texture) =>
+					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, tckt.PPFNGGCBJKC_id), (IiconTexture texture) =>
 					{
 						//0x1997B58
 						m_imageEvTicket.enabled = true;

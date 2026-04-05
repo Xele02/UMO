@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission && data.contExt != null)
 			{
-				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.contExt.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
+				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBDOLHGDIEB_Find(data.contExt.JOPOPMLFINI_QuestName) as IMDBGDNPLJA_EventBoxGacha;
 				if(dbEv != null)
 				{
 					str = dbEv.NGHKJOEDLIP_Settings.OPFGFINHFCE_name;
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int j = 0; j < data.total_data_list[i].HBHMAKNGKFK_items.Count; j++)
 				{
-					if(data.total_data_list[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(data.total_data_list[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
 						AddViewPlateList(data.total_data_list[i].HBHMAKNGKFK_items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(data.total_data_list[i].FIOIKMOIJGK_Point, "pt:", data.total_data_list[i].HBHMAKNGKFK_items[j].MBJIFDBEDAC_item_count, JpStringLiterals.StringLiteral_10090), ListType.Point, str);
 					}
@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 			{
 				if(data.contExt != null)
 				{
-					CHHECNJBMLA_EventBoxGacha ev = data.contExt as CHHECNJBMLA_EventBoxGacha;
+					CHHECNJBMLA_NetEventBoxGachaController ev = data.contExt as CHHECNJBMLA_NetEventBoxGachaController;
 					for(int i = 0; i < ev.HNDKCBHOJEH.Count; i++)
 					{
 						string[] strs = new string[5]
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 				{
 					for(int j = 0; j < data.rank_data_list[i].HBHMAKNGKFK_items.Count; j++)
 					{
-						if(data.rank_data_list[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+						if(data.rank_data_list[i].HBHMAKNGKFK_items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 						{
 							AddViewPlateList(data.rank_data_list[i].HBHMAKNGKFK_items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(new string[6]
 							{

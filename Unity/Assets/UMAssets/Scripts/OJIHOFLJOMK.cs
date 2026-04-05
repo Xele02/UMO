@@ -46,7 +46,7 @@ public class OJIHOFLJOMK
 			{ // test 30 sec notif
 				DateTime date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
 				UnityEngine.Debug.LogError("Send notif "+PEJIPAFKHKM+" "+date.ToLongDateString()+" "+date.ToLongTimeString()+" "+NNGBINEKMNO+" "+_ADCMNODJBGJ_title+" "+_LJGOOOMOMMA_message+" "+LEAIFBMIEIG);
-				PEJIPAFKHKM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 30;
+				PEJIPAFKHKM = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 30;
 				date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
 				UnityEngine.Debug.LogError(date.ToLongDateString()+" "+date.ToLongTimeString());
 			}*/

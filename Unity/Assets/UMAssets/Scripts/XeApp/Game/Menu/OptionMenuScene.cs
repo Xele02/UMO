@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_00de1d2c;
-			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.MDECFOOCLHG_IsBlockListEnabled())
+			if(!IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.MDECFOOCLHG_IsBlockListEnabled())
 			{
 				m_option_anim.SetButtonEnable(15, false);
 			}
@@ -313,14 +313,14 @@ namespace XeApp.Game.Menu
 		{
 			optionMenuArgs = Args as OptionMenuArgs;
 			m_option_anim.InitializeBadge();
-			List<AODFBGCCBPE> l = AODFBGCCBPE.FKDIMODKKJD_GetList(false);
+			List<AODFBGCCBPE_ViewShopData> l = AODFBGCCBPE_ViewShopData.FKDIMODKKJD_GetList(false);
 			int total = 0;
 			for(int i = 0; i < l.Count; i++)
 			{
 				total += l[i].CADENLBDAEB_IsNew ? 1 : 0;
 			}
 			m_option_anim.SetBadge(0, total > 0 ? BadgeConstant.ID.Menu_ShopCheck : BadgeConstant.ID.None);
-			BadgeConstant.ID id = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None;
+			BadgeConstant.ID id = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None;
 			if(AppEnv.IsCBT())
 			{
 				m_option_anim.SetBadge(13, id);
@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8114 Offset: 0xDD8114 VA: 0xDD8114
 		private void OnClickFAQ()
 		{
-			NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki_faq"]);
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NBLAOIPJFGL_OpenURL(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki_faq"]);
 		}
 
 		//// RVA: 0xDD8288 Offset: 0xDD8288 VA: 0xDD8288
@@ -503,8 +503,8 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_AccountManagment()
 		{
 			BBHNACPENDM_ServerSaveData playerData; // 0x18
-			NKGJPJPHLIF sakashoMrg; // 0x1C
-			HDEEBKIFLNI linkageMrg; // 0x20
+			NKGJPJPHLIF_SakashoManager sakashoMrg; // 0x1C
+			HDEEBKIFLNI_NetLinkageManager linkageMrg; // 0x20
 			MCKCJMLOAFP_CurrencyInfo balanceData; // 0x24
 			MessageBank messageBank; // 0x28
 			bool isLoop; // 0x2C
@@ -519,10 +519,10 @@ namespace XeApp.Game.Menu
 				m_isLoadedAccountLayout = true;
 			}
 			//LAB_00ddb27c
-			playerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
-			sakashoMrg = NKGJPJPHLIF.HHCJCDFCLOB;
-			linkageMrg = HDEEBKIFLNI.HHCJCDFCLOB;
-			balanceData = CIOECGOMILE.HHCJCDFCLOB.JBEKNFEGFFI();
+			playerData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData;
+			sakashoMrg = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance;
+			linkageMrg = HDEEBKIFLNI_NetLinkageManager.HHCJCDFCLOB_Instance;
+			balanceData = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.JBEKNFEGFFI();
 			messageBank = MessageManager.Instance.GetBank("common");
 			bool isWait = true;
 			bool isCancel = false;
@@ -622,10 +622,10 @@ namespace XeApp.Game.Menu
 							if(!isGotoTitle)
 							{
 								m_accountConfirmWindow.SetContent(sakashoMrg.MDAMJIGBOLD_PlayerId, playerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name, playerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level,
-									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook),
-									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter),
-									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line),
-									false, balanceData, NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false), NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO());
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook),
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter),
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI_NetLinkageManager.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line),
+									false, balanceData, NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.GBCPDBJEDHL(false), NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.ENAAHAPDMCO());
 								yield return null;
 								yield return Co.R(m_accountConfirmWindow.Co_Show());
 								yield return Co.R(m_accountConfirmWindow.Co_Wait());
@@ -773,17 +773,17 @@ namespace XeApp.Game.Menu
 			if(DKKPBBBDKMJ.CADENLBDAEB_IsNew())
 			{
 				DKKPBBBDKMJ.EMNNLEFCKHM(true);
-				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+				CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 				{
 					//0xDD9A90
 					setNewIcon();
 					m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB_IsNew() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
-					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 				}, () =>
 				{
 					//0xDD9CD4
-					JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
-					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					JDDGPJDKHNE.HHCJCDFCLOB_Instance.FOKEGEOKGDG();
+					JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = false;
 					MenuScene.Instance.GotoTitle();
 				}, null);
 			}
@@ -818,8 +818,8 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPastRankingPopup()
 		{
 			bool inputDisable; // 0x14
-			IKDICBBFBMI_EventBase scoreCtrl; // 0x18
-			IKDICBBFBMI_EventBase eventCtrl; // 0x1C
+			IKDICBBFBMI_NetEventBaseController scoreCtrl; // 0x18
+			IKDICBBFBMI_NetEventBaseController eventCtrl; // 0x1C
 
 			//0xDDEA0C
 			MenuScene.Instance.InputDisable();
@@ -829,7 +829,7 @@ namespace XeApp.Game.Menu
 			scoreCtrl = null;
 			bool toScore = false;
 			bool toEvent = false;
-			List<IKDICBBFBMI_EventBase> evList = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.CADBMICNIJJ();
+			List<IKDICBBFBMI_NetEventBaseController> evList = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.CADBMICNIJJ();
 			if(evList == null || evList.Count == 0)
 			{
 				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_option_ranking_notfound_title"), SizeType.Middle, bk.GetMessageByLabel("popup_option_ranking_notfound_msg"), new ButtonInfo[1]
@@ -954,7 +954,7 @@ namespace XeApp.Game.Menu
 			//0xDDF6BC
 			bool isDone = false;
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.CCFMGBNHMNN_Inquiry, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.CCFMGBNHMNN_Inquiry, () =>
 			{
 				//0xDDA624
 				isDone = true;
@@ -967,7 +967,7 @@ namespace XeApp.Game.Menu
 			while(!isDone)
 				yield return null;
 			isDone = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.LLMEJNALPJD(true, () =>
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.LLMEJNALPJD(true, () =>
 			{
 				//0xDDA630
 				isDone = true;
@@ -981,7 +981,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			MenuScene.Instance.RaycastEnable();
 			setNewIcon();
-			m_option_anim.SetBadge(AppEnv.IsCBT() ? 13 : 12, NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None);
+			m_option_anim.SetBadge(AppEnv.IsCBT() ? 13 : 12, NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE16C Offset: 0x6FE16C VA: 0x6FE16C
@@ -990,7 +990,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDADB8
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCNNIHGFBMP_Balance, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.LCNNIHGFBMP_Balance, () =>
 			{
 				//0xDD9F50
 				MenuScene.Instance.RaycastEnable();
@@ -1009,7 +1009,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDFD5C
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.FFIDPICMNKN_Opinion, () =>
+			MBCPNPNMFHB_NetSupportSiteManager.HHCJCDFCLOB_Instance.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO_WebUrlType.FFIDPICMNKN_Opinion, () =>
 			{
 				//0xDDA0B0
 				MenuScene.Instance.RaycastEnable();
@@ -1026,7 +1026,7 @@ namespace XeApp.Game.Menu
 		private void setNewIcon()
 		{
 			bool isNew = true;
-			if (NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies < 1 && !AODFBGCCBPE.PLKKMHBFDCJ())
+			if (NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.AFJEOKGBCNA_NumReplies < 1 && !AODFBGCCBPE_ViewShopData.PLKKMHBFDCJ())
 				isNew = DKKPBBBDKMJ.CADENLBDAEB_IsNew();
 			MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
 		}
@@ -1049,7 +1049,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			XeSys.uGUI.UGUIFader fader = GameManager.Instance.fullscreenFader;
 			TipsControl tipsCtrl = TipsControl.Instance;
-			NHMKBENBIPI installManager = new NHMKBENBIPI();
+			NHMKBENBIPI_NetDelayBunchInstallManager installManager = new NHMKBENBIPI_NetDelayBunchInstallManager();
 			bool isEnterTips = false;
 			bool waitPopupClose = false;
 			bool isClosePopup = false;
@@ -1100,7 +1100,7 @@ namespace XeApp.Game.Menu
 					default:
 						break;
 				}
-				OMIFMMJPMDJ o = KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO;
+				OMIFMMJPMDJ o = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.OEPPEGHGNNO;
 				if(o != null)
 				{
 					res &= o(type, per);

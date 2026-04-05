@@ -81,7 +81,7 @@ namespace XeApp.Game.Common
 			}
 			if(string.IsNullOrEmpty(setup.OverrideText))
 			{
-				m_textDesc.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setup.TypeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(setup.TypeItemId));
+				m_textDesc.text = EKLNMHFCAOI_ItemManager.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(setup.TypeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(setup.TypeItemId));
 			}
 			else
 			{
@@ -98,7 +98,7 @@ namespace XeApp.Game.Common
 				PopupButton btn = control.FindButton(PopupButton.ButtonLabel.PassPurchase);
 				if(btn != null)
 				{
-					m_textCaution_3.text = string.Format(bk.GetMessageByLabel("rarityup_item_get_desc_1"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(setup.TypeItemId));
+					m_textCaution_3.text = string.Format(bk.GetMessageByLabel("rarityup_item_get_desc_1"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(setup.TypeItemId));
 					m_layoutPeriod.StartChildrenAnimGoStop("03");
 				}
 				else
@@ -145,7 +145,7 @@ namespace XeApp.Game.Common
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				OpenPopupItemPeriodComfirmList(setup.TypeItemId);
 			});
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<NKFJNAANPNP.MOJLCADLMKH> l = GetHaveItemInfoList(setup.TypeItemId, time);
 			if(l.Count < 1)
 			{
@@ -161,10 +161,10 @@ namespace XeApp.Game.Common
 		public void OpenPopupItemPeriodComfirmList(int typeItemId)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			PopupItemPeriodComfirmListSetting s = new PopupItemPeriodComfirmListSetting();
 			s.TypeItemId = typeItemId;
-			s.TitleText = string.Format(bk.GetMessageByLabel("item_use_period_title"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId));
+			s.TitleText = string.Format(bk.GetMessageByLabel("item_use_period_title"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(typeItemId));
 			s.WindowSize = SizeType.Middle;
 			s.List = GetHaveItemInfoList(typeItemId, time);
 			s.Buttons = new ButtonInfo[1]
@@ -177,16 +177,16 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BAC59C Offset: 0x1BAC59C VA: 0x1BAC59C
 		private List<NKFJNAANPNP.MOJLCADLMKH> GetHaveItemInfoList(int typeItemId, long currentTime)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL_Category itemCat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
+			EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category itemCat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId);
 			List<NKFJNAANPNP.MOJLCADLMKH> res = new List<NKFJNAANPNP.MOJLCADLMKH>();
-			if(itemCat < EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
+			if(itemCat < EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 			{
-				if(itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
+				if(itemCat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
 				{
-					PMDCIJMMNGK_GachaTicket.EJAKHFONNGN t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.ACEHGKOLBCG(typeItemId);
-					if(NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI != null && t != null)
+					PMDCIJMMNGK_GachaTicket.EJAKHFONNGN t = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.ACEHGKOLBCG(typeItemId);
+					if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI != null && t != null)
 					{
-						List<HPBDNNACBAK.MBMMGKJBJGD> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.GGKFCDDFHFP.FindAll((HPBDNNACBAK.MBMMGKJBJGD x) =>
+						List<HPBDNNACBAK_NetGachaProductManager.MBMMGKJBJGD> l = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.FPNBCFJHENI.GGKFCDDFHFP.FindAll((HPBDNNACBAK_NetGachaProductManager.MBMMGKJBJGD x) =>
 						{
 							//0x1BADA00
 							return x.PPFNGGCBJKC_id == t.GJDNBENICPF_vcid;
@@ -200,20 +200,20 @@ namespace XeApp.Game.Common
 						}
 					}
 				}
-				else if(itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
+				else if(itemCat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(currentTime);
+					return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(currentTime);
 				}
 			}
 			else
 			{
-				if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
+				if (itemCat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.DLOPEFGOAPD_24_LimitedItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
+					return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BNGLMLIMFDM(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId), currentTime);
 				}
-				else if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem)
+				else if (itemCat == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
+					return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.BNGLMLIMFDM(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId), currentTime);
 				}
 			}
 			return res;

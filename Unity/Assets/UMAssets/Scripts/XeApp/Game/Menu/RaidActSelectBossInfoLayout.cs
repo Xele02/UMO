@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1449594 Offset: 0x1449594 VA: 0x1449594
-		public void InitLayout(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, string bossName, int assistBonusMax)
+		public void InitLayout(PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ bossInfo, string bossName, int assistBonusMax)
 		{
 			SetSp(bossInfo.IKICLMGFFPB_IsSpecial);
 			SetHp((int)(bossInfo.BCCOMAODPJI_hp * 100.0f / bossInfo.PIKKHCGNGNN_HpMax));

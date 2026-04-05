@@ -43,7 +43,7 @@ public class BGKCFBHGNDI
 
 [System.Obsolete("Use FLONELKGABJ_ClaimAchievementPrizes", true)]
 public class FLONELKGABJ { }
-public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
+public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_NetBaseAction
 {
 	public bool KMOBDLBKAAA_Repeatable; // 0x7C
 	public List<int> MEGNAIJPBFF_InventoryClosedAt; // 0x80

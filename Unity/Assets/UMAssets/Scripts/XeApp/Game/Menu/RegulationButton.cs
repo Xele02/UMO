@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 			EONOEHOKBEB_Music musicInfo = null;
 			if(musicId > 0)
 			{
-				musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[musicId - 1];
+				musicInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[musicId - 1];
 			}
 			if(m_sceneData == null)
 			{
@@ -168,14 +168,14 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if(m_sceneData != null)
 			{
-				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills.Find((PPGHMBNIAEC _) =>
+				PPGHMBNIAEC skill = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills.Find((PPGHMBNIAEC _) =>
 				{
 					//0xCFC72C
 					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE_lid;
 				});
 				if(skill != null)
 				{
-					EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[skill.CEFHDLLAPDH_MusicId - 1];
+					EONOEHOKBEB_Music music = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[skill.CEFHDLLAPDH_MusicId - 1];
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_compatible_music_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("pop_compatible_music_desc"), RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(music.KNMGEEFGDNI_Name).musicName, GameAttributeTextColor.Colors[music.FKDCCLPGKDK_JacketAttr - 1])), new ButtonInfo[1]
 					{

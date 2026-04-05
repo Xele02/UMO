@@ -82,7 +82,7 @@ public class GCAHJLOGMCI
 				return NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt;
 			}
 			long val = 0;
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.IOIDJALFFJA_GachaSortPriority.TryGetValue((int)_INDDJNMPONH_type, out val))
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.IOIDJALFFJA_GachaSortPriority.TryGetValue((int)_INDDJNMPONH_type, out val))
 			{
 				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(val | _KJBGCLPMLCG_OpenedAt));
 				return val | _KJBGCLPMLCG_OpenedAt;

@@ -17,7 +17,7 @@ namespace XeApp.Game.Common
 			m_webView.onCallJavaScriptCommand = (string msg) =>
 			{
 				//0xD3552C
-				int cpid = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+				int cpid = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 				if(cpid == 0)
 					cpid = UMO_PlayerPrefs.GetInt("cpid", 0);
 				m_webView.DefaultOpenURL(msg.Replace("saka_player_id", cpid.ToString()));

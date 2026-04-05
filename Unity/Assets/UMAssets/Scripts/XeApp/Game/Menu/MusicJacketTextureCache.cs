@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104BA94 Offset: 0x104BA94 VA: 0x104BA94
 		public static void TryInstall(int jacketId)
 		{
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeJacketTexturePath(jacketId));
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(MakeJacketTexturePath(jacketId));
 		}
 	}
 }

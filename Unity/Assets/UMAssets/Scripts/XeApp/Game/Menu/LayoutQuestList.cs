@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x187A2A8 Offset: 0x187A2A8 VA: 0x187A2A8
 		public void SetStatus()
 		{
-			int quest_lump_receive_max_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("quest_lump_receive_max_num", 30);
+			int quest_lump_receive_max_num = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("quest_lump_receive_max_num", 30);
 			m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), quest_lump_receive_max_num);
 			m_buttonReceiveAll.Disable = !QuestUtility.FindAchievedQuestList(m_viewList);
 			SetTextTimerInner();

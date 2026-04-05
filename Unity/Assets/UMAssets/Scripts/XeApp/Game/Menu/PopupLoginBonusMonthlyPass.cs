@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 
 			//0x168C4A4
 			m_isSuccess = false;
-			if(NHPDPKHMFEP.HHCJCDFCLOB.KBJJGEJAMOK())
+			if(NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.KBJJGEJAMOK())
 			{
 				//bool done = false;
 				//bool err = false;
@@ -107,11 +107,11 @@ namespace XeApp.Game.Menu
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass");
 			}
 			//LAB_0168cc50
-			int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
+			int numItem = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
 			if(numItem < 1)
 			{
 				//LAB_0168d4e4
-				if (!NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false))
+				if (!NHPDPKHMFEP_NetMonthlyPassManager.HHCJCDFCLOB_Instance.GBCPDBJEDHL(false))
 					yield break;
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass 2");
 			}

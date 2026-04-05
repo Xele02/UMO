@@ -4,7 +4,10 @@ using System.Collections;
 using System;
 using System.Text;
 
-public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
+// namespace XeApp.Game.Net.Quest
+[System.Obsolete()]
+public class PBJPACKDIIB {}
+public class PBJPACKDIIB_NetCoopQuestManager : Singleton<PBJPACKDIIB_NetCoopQuestManager>, IDisposable
 {
     public class IFCOFHAFMON
     {
@@ -79,7 +82,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 			data.KGICDMIJGDF_Group = ABMADBCLLHH.ToString();
 			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ_QuestId);
 			data.ADCMNODJBGJ_title = ABMADBCLLHH.ToString();
-			KEPNMGHABPI k = KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(data);
+			KEPNMGHABPI_NetBbsController k = KEPNMGHABPI_NetBbsController.OGIFFNLIDIO.GOAMILGNJIE(data);
 			SakashoBbsCommentInfo info = new SakashoBbsCommentInfo();
 			info.Nickname = "dummy";
 			info.Content = "dummy";
@@ -116,9 +119,9 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 	// // RVA: 0xCBC3FC Offset: 0xCBC3FC VA: 0xCBC3FC
 	public static void NPIJAIOCACL(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
-		if(PBJPACKDIIB.Instance != null)
+		if(PBJPACKDIIB_NetCoopQuestManager.Instance != null)
 		{
-			PBJPACKDIIB.Instance.KNPBADBCOLO_Send(_BHFHGFKBOHH_OnSuccess, _MOBEEPPKFLG_OnFail);
+			PBJPACKDIIB_NetCoopQuestManager.Instance.KNPBADBCOLO_Send(_BHFHGFKBOHH_OnSuccess, _MOBEEPPKFLG_OnFail);
 		}
 		else
 		{
@@ -127,7 +130,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 	}
 
 	// // RVA: 0xCBC4C0 Offset: 0xCBC4C0 VA: 0xCBC4C0
-	public void HPFJOBPMNCP(int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, bool _CGHNCPEKOCK_IsDaily, long LKCCMBEOLLA, Action<List<PBJPACKDIIB.JBJMNJMJFOJ>> _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
+	public void HPFJOBPMNCP(int _EKANGPODCEP_EventId, int _AIBFGKBACCB_LobbyId, bool _CGHNCPEKOCK_IsDaily, long LKCCMBEOLLA, Action<List<PBJPACKDIIB_NetCoopQuestManager.JBJMNJMJFOJ>> _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _MOBEEPPKFLG_OnFail)
 	{
 		StringBuilder str = new StringBuilder();
 		BNJJHPEGNAI.HCAJEKFFNBM b = new BNJJHPEGNAI.HCAJEKFFNBM();
@@ -142,7 +145,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 		}
 		b.KGICDMIJGDF_Group = str.ToString();
 		List<JBJMNJMJFOJ> ONIOKEOLKNK = new List<JBJMNJMJFOJ>(16);
-		KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(b).FNKJBKJIKPC(0, (List<KEPNMGHABPI.LNCLNAOPNKF> LGGCIHBGJJN) =>
+		KEPNMGHABPI_NetBbsController.OGIFFNLIDIO.GOAMILGNJIE(b).FNKJBKJIKPC(0, (List<KEPNMGHABPI_NetBbsController.LNCLNAOPNKF> LGGCIHBGJJN) =>
 		{
 			//0xCBC8B8
 			for(int i = 0; i < LGGCIHBGJJN.Count; i++)

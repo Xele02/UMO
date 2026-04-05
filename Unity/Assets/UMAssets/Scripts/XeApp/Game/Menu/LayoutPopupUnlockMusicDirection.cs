@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x178C090 Offset: 0x178C090 VA: 0x178C090
 		public bool IsLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket;
 		}
 
 		//// RVA: 0x1791568 Offset: 0x1791568 VA: 0x1791568

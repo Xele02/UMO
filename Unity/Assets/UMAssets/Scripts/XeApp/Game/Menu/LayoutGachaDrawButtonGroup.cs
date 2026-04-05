@@ -315,9 +315,9 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_textEvTicketNum.text = string.Format(JpStringLiterals.StringLiteral_14007, CIOECGOMILE.HHCJCDFCLOB.NBJOCMAJLPK_GetTotalCurrency(c));
+				m_textEvTicketNum.text = string.Format(JpStringLiterals.StringLiteral_14007, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.NBJOCMAJLPK_GetTotalCurrency(c));
 				m_textEvTicketName.text = bk.GetMessageByLabel("gacha_ticket_ev_name");
-				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tckt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(c);
+				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tckt = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(c);
 				if(tckt == null)
 				{
 					m_layoutEvTicket.StartChildrenAnimGoStop("02");
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_imageEvTicketIcon.enabled = false;
-					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, c), (IiconTexture icon) =>
+					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, c), (IiconTexture icon) =>
 					{
 						//0x19B067C
 						m_imageEvTicketIcon.enabled = true;

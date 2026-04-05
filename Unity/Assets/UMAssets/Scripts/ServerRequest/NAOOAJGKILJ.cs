@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use NAOOAJGKILJ_GetFriends", true)]
 public class NAOOAJGKILJ { }
-public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_Request
+public class NAOOAJGKILJ_GetFriends : CACGCMBKHDI_NetBaseAction
 {
 	public class FOPJAKMNIJM
 	{

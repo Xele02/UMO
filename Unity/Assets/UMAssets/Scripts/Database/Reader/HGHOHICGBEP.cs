@@ -16,7 +16,7 @@ public class ECHMLLNAIHK
 	public uint IDDBFFBPNGI_RewardEnd { get; set; } // 0x30 BNFKFIHBOFD DFOFEPAMOAF_get_RewardEnd DBJHPJBOILO_set_RewardEnd
 	public uint KNLGKBBIBOH_RewardEnd2 { get; set; } // 0x34 HLFNONCONAP IOMNJKGAOOD_get_RewardEnd2 CDGMGKOIMBP_set_RewardEnd2
 	public uint KHIKEGLBGAF_RankingRewardScene { get; set; } // 0x38 OAPPFIGOMHO FAHFDEFDLMH_get_RankingRewardScene OJJMIBDFGBG_set_RankingRewardScene
-	public uint DPJCFLKFEPN { get; set; } // 0x3C IPODKLGLHPC MEAAAGCCAPI_get_ GNMJKJHPIOG_set_
+	public uint DPJCFLKFEPN_RankingRewardScene2 { get; set; } // 0x3C IPODKLGLHPC MEAAAGCCAPI_get_ GNMJKJHPIOG_set_
 	public uint[] EEOGPJJCKHH_Drops { get; set; } // 0x40 CPNKKFMLHFL BBBPKCMKJEF_get_Drops CDMJOOGMGNP_set_Drops
 	public uint JMJDLDEIFKE { get; set; } // 0x44 OAGMMIOODOF OIHKCLCPBJI_get_ PKPGPELDIBH_set_
 	public uint AHKNMANFILO_DayGroup { get; set; } // 0x48 IFFLMDALMBO PEGLCODNPHG_get_DayGroup PAGEFLIKEIE_set_DayGroup
@@ -168,7 +168,7 @@ public class HGHOHICGBEP
 		HMBHNLCFDIH_data_.IDDBFFBPNGI_RewardEnd = HMBHNLCFDIH_readData_.ANELKJCGJJL/*_RewardEnd*/;
 		HMBHNLCFDIH_data_.KNLGKBBIBOH_RewardEnd2 = HMBHNLCFDIH_readData_.AEOKLKJAKHB/*_RewardEnd2*/;
 		HMBHNLCFDIH_data_.KHIKEGLBGAF_RankingRewardScene = HMBHNLCFDIH_readData_.HKPPDACCCOH/*_RankingRewardScene*/;
-		HMBHNLCFDIH_data_.DPJCFLKFEPN = HMBHNLCFDIH_readData_.NAMFJMCKFIF;
+		HMBHNLCFDIH_data_.DPJCFLKFEPN_RankingRewardScene2 = HMBHNLCFDIH_readData_.NAMFJMCKFIF;
 		List<uint> EEOGPJJCKHH_list_ = new List<uint>();
 		for(int EEOGPJJCKHH_idx_ = 0; EEOGPJJCKHH_idx_ < HMBHNLCFDIH_readData_.EBFEIMNOLHPLength; EEOGPJJCKHH_idx_++)
 		{

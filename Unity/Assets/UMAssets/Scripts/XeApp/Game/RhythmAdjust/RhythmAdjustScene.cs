@@ -271,7 +271,7 @@ namespace XeApp.Game.RhythmAdjust
 			enableFade = true;
 			scoreData = MusicScoreData.Instantiate(scoreDataResource.bytes);
 			RNotePositionAnimator.InitializeAnim();
-			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			RNoteResultJudge j1 = new RNoteResultJudge(gameDb.BFDLLHNGICE_TapSt, gameDb.ICNFEDCCODF_TapEd);
 			RNoteResultJudge j2 = new RNoteResultJudge(gameDb.EKONPEGLAND_PrsSt, gameDb.ILIEHCECHOA_PrsEd);
 			RNoteResultJudge j3 = new RNoteResultJudge(gameDb.NPNCNFKCIAE_RelSt, gameDb.HODKHINFHGH_RelEd);
@@ -913,7 +913,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63E84 Offset: 0xF63E84 VA: 0xF63E84
 		private void GotoTutorialGame()
 		{
-			JGEOBNENMAH.EDHCNKBMLGI setup = BasicTutorialManager.Instance.SetupTutorialGame(TutorialGameMode.Type.TutorialOne);
+			JGEOBNENMAH_NetGameManager.EDHCNKBMLGI setup = BasicTutorialManager.Instance.SetupTutorialGame(TutorialGameMode.Type.TutorialOne);
 			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI_LoadStep.HIAAKPMJJGD_16_1stLive);
 			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
 			GameManager.Instance.ChangePopupPriority(true);
@@ -922,11 +922,11 @@ namespace XeApp.Game.RhythmAdjust
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B0568 Offset: 0x6B0568 VA: 0x6B0568
 		// // RVA: 0xF63FB8 Offset: 0xF63FB8 VA: 0xF63FB8
-		private IEnumerator GotoTutorialGameCoroutine(JGEOBNENMAH.EDHCNKBMLGI setup)
+		private IEnumerator GotoTutorialGameCoroutine(JGEOBNENMAH_NetGameManager.EDHCNKBMLGI setup)
 		{
 			//0xF67358
 			bool isSuccess = false;
-			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND_GameStart(setup, () =>
+			JGEOBNENMAH_NetGameManager.HHCJCDFCLOB_Instance.OLDDILMKJND_GameStart(setup, () =>
 			{
 				//0xF648EC
 				isSuccess = true;

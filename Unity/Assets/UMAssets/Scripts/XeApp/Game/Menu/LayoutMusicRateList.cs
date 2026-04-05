@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			MakeList_Rate(view.BGMPAMNAKHN_GetMusicRateList(0));
 			MakeList_Grade(m_view.IEPGAGBLHBN_GetMusicGradeList());
 			MakeList_Reward(m_view.LLNHMMBFPMA_ScoreRatingRanking, m_view.IEPGAGBLHBN_GetMusicGradeList());
-			m_listRanking = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ;
+			m_listRanking = OEGIPPCADNA_NetEventUtarateManager.HHCJCDFCLOB_Instance.HGGPIBNLALJ;
 			MakeList_Ranking(1000);
 			SetTotalGrade(m_view.DEMOACDDPHM_PrevUtaRateTotal, m_view.ECMFBEHEGEH_UtaRateTotal);
 			m_textGrade.text = HighScoreRatingRank.GetRankName(m_view.LLNHMMBFPMA_ScoreRatingRanking);
@@ -457,10 +457,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15CBFC4 Offset: 0x15CBFC4 VA: 0x15CBFC4
 		public void OnShowItemDetails(int itemId, int itemNum)
 		{
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				GCIJNCFDNON_SceneInfo s = new GCIJNCFDNON_SceneInfo();
-				s.KHEKNNFCAOI_Init(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				s.KHEKNNFCAOI_Init(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(s, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 			}
 			else

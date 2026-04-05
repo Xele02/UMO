@@ -76,16 +76,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0xCF9CA4 Offset: 0xCF9CA4 VA: 0xCF9CA4 Slot: 34
 		protected override void GetRankingList(int baseRank, int rankingIdx)
 		{
-			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
+			//NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester
 			m_windowUi.SetMessageVisible(false);
-			CNNIKANJMNG.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(NGNLPIBPHJH.DEPGBBJMFED_CategoryId, m_musicData.GHBPLHBNMBK_FreeMusicId, isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError);
+			CNNIKANJMNG_NetRegularRankingManager.HHCJCDFCLOB_Instance.FAMFKPBPIAA_GetRankingPlayerList(NGNLPIBPHJH.DEPGBBJMFED_CategoryId, m_musicData.GHBPLHBNMBK_FreeMusicId, isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError);
 		}
 
 		// RVA: 0xCF9EA4 Offset: 0xCF9EA4 VA: 0xCF9EA4 Slot: 35
 		protected override void GetRankingListAdditive(bool isUpper)
 		{
-			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
-			CNNIKANJMNG.HHCJCDFCLOB.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
+			//NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester
+			CNNIKANJMNG_NetRegularRankingManager.HHCJCDFCLOB_Instance.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
 		}
 
 		// RVA: 0xCFA050 Offset: 0xCFA050 VA: 0xCFA050 Slot: 36

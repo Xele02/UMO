@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1D55970 Offset: 0x1D55970 VA: 0x1D55970
-		public void SetStatus(EPLAAEHPCDM data, IKIIAFKHDFP manager, ItemPackImageTextureCache textureCache)
+		public void SetStatus(EPLAAEHPCDM data, IKIIAFKHDFP_LoginBonusManager manager, ItemPackImageTextureCache textureCache)
 		{
 			m_rewardData = data;
 			m_itemPackTextureCache = textureCache;
@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 							{
 								SetItemIconS(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
 								SetItemIconL(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].JJBGOIMEIPF_ItemId);
-								SwitchUnitPrice(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+								SwitchUnitPrice(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
 								SetNumItem(idx2, data.JPILDOGJLDG_login_bonus_prizes[i].HBHMAKNGKFK_items[0].MBJIFDBEDAC_item_count);
 							}
 							else

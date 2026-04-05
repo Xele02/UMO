@@ -45,7 +45,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xBFE1B8 Offset: 0xBFE1B8 VA: 0xBFE1B8
 		public void Initialize(MusicData musicData, int teamScoreBonusValue)
 		{
-			OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			OKGLGHCBCJP_Database db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 			GameSetupData setup = Database.Instance.gameSetup;
 			short wavId = musicData.musicBase.KKPAHLMJKIH_WavId; // ENODDPDBIPA
 			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId; // FNEBPBJBIIP

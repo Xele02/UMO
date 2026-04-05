@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xDE2350 Offset: 0xDE2350 VA: 0xDE2350
 		public void TryInstall(int id)
 		{
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/pl/{0:D3}.xab", id));
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/pl/{0:D3}.xab", id));
 		}
 	}
 }

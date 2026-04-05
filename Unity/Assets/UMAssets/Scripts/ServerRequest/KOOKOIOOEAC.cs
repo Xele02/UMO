@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use KOOKOIOOEAC_IsOnBlacklistOf", true)]
 public abstract class KOOKOIOOEAC { }
-public class KOOKOIOOEAC_IsOnBlacklistOf : CACGCMBKHDI_Request
+public class KOOKOIOOEAC_IsOnBlacklistOf : CACGCMBKHDI_NetBaseAction
 {
 	public int MLPEHNBNOGD_PlayerId; // 0x7C
 	public bool ELCCCJDLLAJ_Blacklisted; // 0x80

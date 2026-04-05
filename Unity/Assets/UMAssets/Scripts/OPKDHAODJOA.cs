@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OPKDHAODJOA
+// namespace XeApp.Game.Net.Actions
+[System.Obsolete()]
+public class OPKDHAODJOA {}
+public class OPKDHAODJOA_NetBackgroundActionManager
 {
 	public delegate void NNDKLLAIINK();
 
@@ -14,7 +17,7 @@ public class OPKDHAODJOA
 		OGBMKAILHMF_2_Error = 2,
 	}
 
-	private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x8
+	private List<CACGCMBKHDI_NetBaseAction> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_NetBaseAction>(); // 0x8
 	private NNDKLLAIINK LCIGLIDJILJ_Updater; // 0xC
 	private int NLGJBBGAOLH = 1; // 0x10
 	private int BLKIMNAILKK = 2; // 0x14
@@ -23,9 +26,9 @@ public class OPKDHAODJOA
 	public KJOKAECJKLE_Status CMCKNKKCNDK_status { get; private set; } // 0x1C CLCJNFNMNBH_bgs CNKGOPKANGF_bgs CHJGGLFGALP_set_status
 
 	//// RVA: -1 Offset: -1
-	public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action) where T : CACGCMBKHDI_Request
+	public T IFFNCAFNEAG_AddRequest<T>(T _ADKIDBJCAJA_action) where T : CACGCMBKHDI_NetBaseAction
 	{
-		_ADKIDBJCAJA_action.BNJPAKLNOPA_WorkerThreadQueue = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue;
+		_ADKIDBJCAJA_action.BNJPAKLNOPA_WorkerThreadQueue = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue;
 		_ADKIDBJCAJA_action.PLOOEECNHFB_IsDone = false;
 		_ADKIDBJCAJA_action.KINJOEIAHFK_StartTime = Time.realtimeSinceStartup;
 		_ADKIDBJCAJA_action.DMOBOIOFPCM_EndTime = Time.realtimeSinceStartup;
@@ -40,9 +43,9 @@ public class OPKDHAODJOA
 	///* GenericInstMethod :
 	//|
 	//|-RVA: 0x1AB6384 Offset: 0x1AB6384 VA: 0x1AB6384
-	//|-OPKDHAODJOA.IFFNCAFNEAG_AddRequest<MMCLJMPEFEP_GetBbsThreads>
-	//|-OPKDHAODJOA.IFFNCAFNEAG_AddRequest<NFIMGIABIOI_GetBbsThreadComments>
-	//|-OPKDHAODJOA.IFFNCAFNEAG_AddRequest<object>
+	//|-OPKDHAODJOA_NetBackgroundActionManager.IFFNCAFNEAG_AddRequest<MMCLJMPEFEP_GetBbsThreads>
+	//|-OPKDHAODJOA_NetBackgroundActionManager.IFFNCAFNEAG_AddRequest<NFIMGIABIOI_GetBbsThreadComments>
+	//|-OPKDHAODJOA_NetBackgroundActionManager.IFFNCAFNEAG_AddRequest<object>
 	//*/
 
 	//// RVA: 0xCB7550 Offset: 0xCB7550 VA: 0xCB7550
@@ -91,7 +94,7 @@ public class OPKDHAODJOA
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6C3A48 Offset: 0x6C3A48 VA: 0x6C3A48
 	//// RVA: 0xCB7BAC Offset: 0xCB7BAC VA: 0xCB7BAC
-	private IEnumerator NBCKHIAINIM_Coroutine_Execute(CACGCMBKHDI_Request _ADKIDBJCAJA_action)
+	private IEnumerator NBCKHIAINIM_Coroutine_Execute(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action)
 	{
 		int AMDHPNLCJAH; // 0x18
 		int MAFCEPHNGMP; // 0x1C
@@ -181,7 +184,7 @@ public class OPKDHAODJOA
 	}
 
 	//// RVA: 0xCB7EB4 Offset: 0xCB7EB4 VA: 0xCB7EB4
-	private bool EHLBPCGHLCL_CanRetry(CACGCMBKHDI_Request _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO)
+	private bool EHLBPCGHLCL_CanRetry(CACGCMBKHDI_NetBaseAction _ADKIDBJCAJA_action, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO)
 	{
 		if(!_ADKIDBJCAJA_action.BNCFONNOHFO)
 		{

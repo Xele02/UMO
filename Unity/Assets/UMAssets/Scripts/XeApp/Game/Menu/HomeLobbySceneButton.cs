@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_baseButtonAnim; // 0x24
 		private AbsoluteLayout m_tblButtonAnim; // 0x28
 		private AbsoluteLayout m_typeButtonAnim; // 0x2C
-		private NKOBMDPHNGP_EventRaidLobby m_evnetLobby; // 0x30
+		private NKOBMDPHNGP_NetEventRaidLobbyController m_evnetLobby; // 0x30
 		private int m_dayNum; // 0x34
 		private bool m_is_show; // 0x38
 
@@ -141,9 +141,9 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			base.InitializeFromLayout(layout, uvMan);
-			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
+			if(JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance != null)
 			{
-				m_evnetLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+				m_evnetLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			}
 			m_baseButtonAnim = layout.FindViewById("sw_btn_all_anim") as AbsoluteLayout;
 			m_sceneButtonsAnim = layout.FindViewById("sw_cmn_lobby_btn_anim") as AbsoluteLayout;

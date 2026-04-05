@@ -95,12 +95,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9586F0 Offset: 0x9586F0 VA: 0x9586F0
 		public void SelectBgSave()
 		{
-			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			ILCCJNDFFOB.HHCJCDFCLOB.BBIBBNHCPPJ_HomeModify(JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva() ? 1 : 0, m_showDiva ? 1 : 0, JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() != 0 ? 1 : 0, SelectEvolveId != 0 ? 1 : 0, CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark() ? 0 : 1, m_isBgDark ? 0 : 1, SelectEvolveId == 0 ? SelectSceneId : 0, SelectEvolveId != 0 ? SelectSceneId : 0, SelectEvolveId == 2 ? 1 : 0);
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.FCMCNIMEAEA = true;
+			JDDGPJDKHNE.HHCJCDFCLOB_Instance.NFNLGGHMEAM();
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.BBIBBNHCPPJ_HomeModify(JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva() ? 1 : 0, m_showDiva ? 1 : 0, JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId() != 0 ? 1 : 0, SelectEvolveId != 0 ? 1 : 0, CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark() ? 0 : 1, m_isBgDark ? 0 : 1, SelectEvolveId == 0 ? SelectSceneId : 0, SelectEvolveId != 0 ? SelectSceneId : 0, SelectEvolveId == 2 ? 1 : 0);
 			JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(SelectSceneId, SelectEvolveId);
 			JKHEOEEPBMJ.MLPMCLHGDFG_SetShowHomeDiva(m_showDiva);
-			CGFNKMNBNBN.LLAMCBGJNOG_SetHomeBgDark(m_isBgDark);
+			CGFNKMNBNBN_ViewHomeBgData.LLAMCBGJNOG_SetHomeBgDark(m_isBgDark);
 			MenuScene.SaveRequest();
 		}
 
@@ -167,9 +167,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x958ED8 Offset: 0x958ED8 VA: 0x958ED8
-		public void UpdateContent(DFKGGBMFFGB_PlayerInfo playerData, List<CGFNKMNBNBN> bgList, int dispRow)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo playerData, List<CGFNKMNBNBN_ViewHomeBgData> bgList, int dispRow)
 		{
-			List<CGFNKMNBNBN> homeBgList = new List<CGFNKMNBNBN>(bgList);
+			List<CGFNKMNBNBN_ViewHomeBgData> homeBgList = new List<CGFNKMNBNBN_ViewHomeBgData>(bgList);
 			List<int> unlockBgIdList = new List<int>();
 			m_homeBgEpisodeList.Clear();
 			List<PIGBBNDPPJC> eps = PIGBBNDPPJC.FKDIMODKKJD_GetList(false);
@@ -177,10 +177,10 @@ namespace XeApp.Game.Menu
 			{
 				if(!eps[i].CCBKMCLDGAD_HasReward)
 				{
-					if (EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(eps[i].KIJAPOFAGPN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+					if (EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(eps[i].KIJAPOFAGPN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{
-						int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(eps[i].KIJAPOFAGPN_ItemId);
-						homeBgList.Add(CGFNKMNBNBN.ELKDCEEPLKB(itemId));
+						int itemId = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(eps[i].KIJAPOFAGPN_ItemId);
+						homeBgList.Add(CGFNKMNBNBN_ViewHomeBgData.ELKDCEEPLKB(itemId));
 						unlockBgIdList.Add(itemId);
 						m_homeBgEpisodeList.Add(itemId, eps[i]);
 					}
@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 				}
 				c.UpdateContent(homeBgList[index], isSelect, isLock, 0);
 			});
-			int idx = homeBgList.FindIndex((CGFNKMNBNBN x) =>
+			int idx = homeBgList.FindIndex((CGFNKMNBNBN_ViewHomeBgData x) =>
 			{
 				//0x95AE94
 				if(x.KEFGPJBKAOD_BgId > -1)
@@ -309,7 +309,7 @@ namespace XeApp.Game.Menu
 			SelectEvolveId = JKHEOEEPBMJ.HDLMKFFMGEP_GetHomeSceneEvolveId();
 			m_showDiva = JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva();
 			m_isSceneMode = SelectEvolveId != 0;
-			m_isBgDark = CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark();
+			m_isBgDark = CGFNKMNBNBN_ViewHomeBgData.MHJBBLBFHIB_IsHomeBgDark();
 			m_isSelect = false;
 			m_sceneToggleGroup.SelectGroupButton(m_isSceneMode ? 1 : 0);
 			m_divaToggleGroup.SelectGroupButton(m_showDiva ? 0 : 1);

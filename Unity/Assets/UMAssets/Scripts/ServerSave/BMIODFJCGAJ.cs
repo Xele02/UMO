@@ -144,9 +144,9 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 				isInvalid = true;
 		}
 		OKGLGHCBCJP_Database db = null;
-		if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+		if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 		{
-			db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 		}
 		LJNAKDMILMC_key = FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
 		OPFGFINHFCE_name = FGCNMLBACGO_GetString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, "", ref isInvalid);

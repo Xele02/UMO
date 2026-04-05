@@ -8,7 +8,7 @@ namespace XeApp.Game.RhythmGame
 		public int m_activated_max = 1; // 0x28
 		public int m_activated_cnt; // 0x2C
 
-		protected List<CDNKOFIELMK> masterSkillList { get { return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills; } set { return; } } //0xF67D9C 0xF67E78
+		protected List<CDNKOFIELMK> masterSkillList { get { return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills; } set { return; } } //0xF67D9C 0xF67E78
 		protected CDNKOFIELMK masterSkill { get { return masterSkillList[skillIndex]; } set { return; } } //0xF67E7C 0xF67F0C
 		public override SkillBuffEffect.Type buffEffectType { get { return (SkillBuffEffect.Type)masterSkill.EGLDFPILJLG_SkillBuffEffect[SkillIndex]; } } //0xF67F10 Slot: 4
 		public override int buffEffectValue { get { return masterSkill.NKGHBKFMFCI_BuffValue[skillLevelIndex, SkillIndex]; } } //0xF67F74 Slot: 5
@@ -21,7 +21,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			SetupTrigger();
 			m_activated_cnt = 0;
-			m_activated_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[skillIndex].NLCJNOBOBAH_MaxActivation;
+			m_activated_max = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[skillIndex].NLCJNOBOBAH_MaxActivation;
 		}
 
 		//// RVA: 0xF683EC Offset: 0xF683EC VA: 0xF683EC Slot: 11

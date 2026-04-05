@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
     public class PopupDecoSetItemDetaileSetting : PopupSetting
     {
-        public FJGOKILCBJA View { get; set; } // 0x34
+        public FJGOKILCBJA_ViewShopProductData View { get; set; } // 0x34
         public override string PrefabPath { get { return ""; } } //0xF78780
         public override string BundleName { get { return "ly/106.xab"; } } //0xF787DC
         public override string AssetName { get { return "root_sel_shop_pop_02_layout_root"; } } //0xF78838

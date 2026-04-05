@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			LayoutPopAddMusicListItem lcontent = content as LayoutPopAddMusicListItem;
 			PopupUnlock.UnlockParam param = unlockList[index];
-			EONOEHOKBEB_Music mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(param.id);
+			EONOEHOKBEB_Music mData = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(param.id);
 			lcontent.SetJacket(mData.JNCPEGJGHOG_JacketId);
 			lcontent.SetLogo(mData.EMIKBGHIOMN_SerieLogoId);
 			lcontent.SetMusicAttribute(mData.FKDCCLPGKDK_JacketAttr);
@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1331540 Offset: 0x1331540 VA: 0x1331540 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0x13315E0 Offset: 0x13315E0 VA: 0x13315E0 Slot: 22

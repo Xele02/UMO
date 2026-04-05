@@ -126,8 +126,8 @@ namespace XeApp.Game.Menu
 		public void SetRewardItemIcon(int _itemId, int _rank, Action act)
 		{
 			m_bingoRewardItemId =_itemId;
-            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemId);
-			if(cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+            EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_itemId);
+			if(cat != EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				BingoRewardItemState.StartChildrenAnimGoStop("02");
 				BingoItemImage.enabled = false;
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 			{
 				BingoRewardItemState.StartChildrenAnimGoStop("01");
 				BingoCostumeImage.enabled = false;
-				GameManager.Instance.SceneIconCache.Load(EKLNMHFCAOI.DEACAHNLMNI_getItemId(_itemId), _rank, (IiconTexture scnen) =>
+				GameManager.Instance.SceneIconCache.Load(EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_itemId), _rank, (IiconTexture scnen) =>
 				{
 					//0x14C5388
 					if(m_bingoRewardItemId !=_itemId)

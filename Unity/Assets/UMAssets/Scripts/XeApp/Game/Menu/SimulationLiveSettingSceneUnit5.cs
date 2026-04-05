@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 			data.charm = 5000;
 			data.support = 900;
 			Database.Instance.gameSetup.SetMvMode(data, m_prismData);
-			AdvanceGame(data, m_playerData, null, null, false, 0, 0, new JGEOBNENMAH.NEDILFPPCJF(), false);
+			AdvanceGame(data, m_playerData, null, null, false, 0, 0, new JGEOBNENMAH_NetGameManager.NEDILFPPCJF(), false);
 		}
 
 		// // RVA: 0x12CF4F8 Offset: 0x12CF4F8 VA: 0x12CF4F8

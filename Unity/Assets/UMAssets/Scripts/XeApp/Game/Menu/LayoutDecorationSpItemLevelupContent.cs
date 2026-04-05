@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 			if(KDKFHGHGFEK.KKDMFKGMHLD(currentLevel + 1))
 				a = 3;
 			m_rootLayout.StartChildrenAnimGoStop(a.ToString("00"));
-			m_message.text = string.Format(MessageManager.Instance.GetMessage("menu", "pop_deco_sp_item_levelup"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId));
+			m_message.text = string.Format(MessageManager.Instance.GetMessage("menu", "pop_deco_sp_item_levelup"), EKLNMHFCAOI_ItemManager.INCKKODFJAP_GetItemName(itemId));
 			m_currentLevel.text = currentLevel.ToString();
 			m_nextLevel.text = (currentLevel + 1).ToString();
 		}

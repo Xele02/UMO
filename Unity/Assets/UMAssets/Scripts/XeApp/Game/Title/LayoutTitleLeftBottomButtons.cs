@@ -40,9 +40,9 @@ namespace XeApp.Game.Title
 					}) , (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 					{
 						if(type == PopupButton.ButtonType.Positive)
-							KEHOJEJMGLJ.FJDOHLADGFI = true;
+							KEHOJEJMGLJ_NetInstallManager.FJDOHLADGFI = true;
 						else
-							KEHOJEJMGLJ.FJDOHLADGFI = false;
+							KEHOJEJMGLJ_NetInstallManager.FJDOHLADGFI = false;
 					}, null, null, null);*/
 					this.StartCoroutineWatched(ShowUMOPopup());
 				});
@@ -171,7 +171,7 @@ namespace XeApp.Game.Title
 				return;
 			if(!AppEnv.IsCBT())
 			{
-				if(NDABOOOOENC.HHCJCDFCLOB.LHGFPPIEKPJ)
+				if(NDABOOOOENC.HHCJCDFCLOB_Instance.LHGFPPIEKPJ)
 				{
 					m_buttonGpgsLayout.StartChildrenAnimGoStop("go_in", "st_in");
 					return;

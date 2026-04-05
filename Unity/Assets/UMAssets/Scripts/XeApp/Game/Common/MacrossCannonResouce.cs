@@ -45,13 +45,13 @@ namespace XeApp.Game.Common
 				id = new string[3] { "f", "7", "1" }[(int)series - 2];
 			assetName.SetFormat("mov/mc/mac_canon_" + id + "_{0:D3}_q{1:D1}.usm", pattern, qualityId);
 			path = assetName.ToString();
-			if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path))
+			if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(path))
 			{
-				while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 					yield return null;
 			}
 			assetName.Clear();
-			assetName.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+			assetName.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 			assetName.Append("/");
 			assetName.Append(path);
 			path = assetName.ToString();

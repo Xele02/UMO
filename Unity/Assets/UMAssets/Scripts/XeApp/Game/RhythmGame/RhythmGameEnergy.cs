@@ -50,12 +50,12 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC53AC Offset: 0xDC53AC VA: 0xDC53AC
 		public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, int teamPowerValue, Action<int> onPlayPilotVoice)
 		{
-			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			short wavId = musicData.musicBase.KKPAHLMJKIH_WavId;
 			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId;
 			if(musicInfo.isFreeMode)
 			{
-				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
+				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if (!musicInfo.IsLine6Mode)
 				{
 					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
@@ -71,7 +71,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
+				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
 				goalValue = musicdb.HLLJIICKNIP_GoalByDiff[(int)musicInfo.difficultyType];
 				maxValue = musicdb.FENOHOEIJOE_MaxValue[(int)musicInfo.difficultyType];

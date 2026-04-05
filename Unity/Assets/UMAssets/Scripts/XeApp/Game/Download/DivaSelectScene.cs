@@ -77,11 +77,11 @@ namespace XeApp.Game.DownLoad
 			if(!inst.IsLoadedLayout)
 			{
 				List<int> l = new List<int>();
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 				{
-					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
+					for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 					{
-                        BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
+                        BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 						if(diva.PPEGAKEIEGM_Enabled == 2)
 						{
 							l.Add(diva.AHHJLDLAPAN_DivaId);
@@ -176,15 +176,15 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11B9FC8 Offset: 0x11B9FC8 VA: 0x11B9FC8
 		private void OnClickDecide()
 		{
-			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1);
+			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1);
 			diva.CPGFPEDMDEH_have = 0;
 			diva.BEEAIAAJOHD_CostumeId = 0;
 			diva.AFNIOJHODAG_CostumeColorId = 0;
 			int mslot = diva.PIGLAEFPNEK_m_slot;
 			diva.PIGLAEFPNEK_m_slot = 0;
 			int id = m_Layout.GetSelectDivaId();
-            diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(id);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NGJEPEPIHIL(id);
+            diva = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(id);
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.NGJEPEPIHIL(id);
 			diva.PIGLAEFPNEK_m_slot = mslot;
 			m_Layout.SetEnabledOperation(false, false);
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
@@ -243,15 +243,15 @@ namespace XeApp.Game.DownLoad
 		private IEnumerator Co_Install(int divaId, int valkyrieId, int pilotId)
 		{
 			//0x11BB370
-			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(divaId, 1, true);
-			KDLPEDBKMID.HHCJCDFCLOB.CKANBNPEIJD(valkyrieId, pilotId);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.NMFCNFFFMAC_InstallDivaCostume(divaId, 1, true);
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.CKANBNPEIJD(valkyrieId, pilotId);
 			bool isWait = true;
 			SoundManager.Instance.RequestEntryMenuCueSheet(() =>
 			{
 				//0x11BB34C
 				isWait = false;
 			});
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			while(isWait)
 				yield return null;

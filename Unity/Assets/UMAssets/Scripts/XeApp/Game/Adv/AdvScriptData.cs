@@ -94,7 +94,7 @@ namespace XeApp.Game.Adv
 				StringBuilder str = new StringBuilder(64);
 				str.Append("adv/");
 				str.AppendFormat("{0:D6}.dat", id);
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+				KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
 			}
 		}
 
@@ -105,7 +105,7 @@ namespace XeApp.Game.Adv
 			TryInstall(id);
 			StringBuilder str = new StringBuilder(64);
 			if (!AssetBundleManager.isTutorialNow)
-				str.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+				str.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 			else
 			{
 				str.Append(Application.streamingAssetsPath);

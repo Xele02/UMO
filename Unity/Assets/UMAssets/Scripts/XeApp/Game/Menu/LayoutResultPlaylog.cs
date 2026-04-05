@@ -514,7 +514,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18EB2C8 Offset: 0x18EB2C8 VA: 0x18EB2C8
 		private static bool CheckHintFunc_PlateLevel(RhythmGamePlayLog playlog)
 		{
-			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			List<GCIJNCFDNON_SceneInfo> scenes = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes;
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			for(int i = 0; i < team.divaList.Length; i++)
@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18EB694 Offset: 0x18EB694 VA: 0x18EB694
 		private static bool CheckHintFunc_PlateRarity(RhythmGamePlayLog playlog)
 		{
-			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			List<GCIJNCFDNON_SceneInfo> scenes = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes;
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 
@@ -580,7 +580,7 @@ namespace XeApp.Game.Menu
 			{
 				if(divaList[0] != null && divaList[0].activeSkillId > 0)
 				{
-					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
+					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
 					CDNKOFIELMK skill = skillDb.PABCHCAAEAA_ActiveSkills[divaList[0].activeSkillId - 1];
 					for(int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 					{
@@ -606,7 +606,7 @@ namespace XeApp.Game.Menu
 			{
 				if (divaList[0] != null && divaList[0].activeSkillId > 0)
 				{
-					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
+					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
 					CDNKOFIELMK skill = skillDb.PABCHCAAEAA_ActiveSkills[divaList[0].activeSkillId - 1];
 					for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 					{

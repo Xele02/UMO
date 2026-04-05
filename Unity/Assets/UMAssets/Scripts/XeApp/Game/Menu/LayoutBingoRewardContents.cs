@@ -53,15 +53,15 @@ namespace XeApp.Game.Menu
 			});
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str;
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemInfo.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_itemInfo.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemId), _itemInfo.HAAJGNCFNJM_item_name);
+				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI_ItemManager.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemId), _itemInfo.HAAJGNCFNJM_item_name);
 			}
 			else
 			{
 				str = _itemInfo.HAAJGNCFNJM_item_name;
 			}
-			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_item_type, 0));
+			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI_ItemManager.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_item_type, 0));
 			SetSpItem(_itemInfo.MPKBLMCNHOM_MissionIsSpecial);
 			SetActtionButton(() =>
 			{

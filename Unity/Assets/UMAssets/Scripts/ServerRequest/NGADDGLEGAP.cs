@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use NGADDGLEGAP_GetFriendsLimit", true)]
 public class NGADDGLEGAP { }
-public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
+public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_NetBaseAction
 {
 	public class MJAEAHLDEHE
 	{

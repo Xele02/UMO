@@ -211,8 +211,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97B0C Offset: 0xA97B0C VA: 0xA97B0C
 		private int SearchPriorityTableIndex(int playerLevel)
 		{
-			List<int> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AJBKGOPDGFI;
-			List<int> l2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.KDIJDAKMODE;
+			List<int> l = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.AJBKGOPDGFI;
+			List<int> l2 = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game.KDIJDAKMODE;
 			for(int i = 0; i < l.Count; i++)
 			{
 				if(l[i] < playerLevel)
@@ -229,8 +229,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97D2C Offset: 0xA97D2C VA: 0xA97D2C
 		private void InitializeTipsList()
 		{
-			BCKMELFCKKN_Tips dbTips = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
-			EGOLBAPFHHD_Common saveCommon = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common;
+			BCKMELFCKKN_Tips dbTips = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
+			EGOLBAPFHHD_Common saveCommon = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common;
 			int level = saveCommon.KIECDDFNCAN_Level;
 			int priorityTable = SearchPriorityTableIndex(level);
 			m_firstPageTipsIdList.Clear();
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9874C Offset: 0xA9874C VA: 0xA9874C
 		private void MakeTipsList(int listUpCount)
 		{
-			BCKMELFCKKN_Tips dbTips = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
+			BCKMELFCKKN_Tips dbTips = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
 			InitializeTipsList();
 			m_tipsList.Clear();
 			if(m_listUpList.Count != 0)
@@ -470,7 +470,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA984D8 Offset: 0xA984D8 VA: 0xA984D8
 		private bool IsSessionEvent(int eventTypeId)
 		{
-			return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HGHDAFJKEKO_GetEventForType((OHCAABOMEOF.KGOGMKMBCPP_EventType)eventTypeId) != null;
+			return JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.HGHDAFJKEKO_GetEventForType((OHCAABOMEOF.KGOGMKMBCPP_EventType)eventTypeId) != null;
 		}
 
 		// // RVA: 0xA99D0C Offset: 0xA99D0C VA: 0xA99D0C
@@ -485,7 +485,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA98584 Offset: 0xA98584 VA: 0xA98584
 		private long GetServerUnixTime()
 		{
-			return NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			return NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		}
 	}
 }

@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1635434 Offset: 0x1635434 VA: 0x1635434
-		public void Initialize(LFAFJCNKLML data, MOEALEGLGCH upgrade)
+		public void Initialize(LFAFJCNKLML data, MOEALEGLGCH_ViewCostumeUpgrade upgrade)
 		{
 			int a = upgrade.GJFJBGNCBAP(data);
 			string s1 = "";
@@ -129,8 +129,8 @@ namespace XeApp.Game.Menu
 				m_item_text.text = strs[0];
 				m_item_text2.text = strs[1];
 				m_item_need_num.SetNumber(m_itemCount, 0);
-				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB_Find(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA_Category.GLHANCMGNDM_2_Unlock);
-                EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC_id);
+				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB_Find(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA_Category.GLHANCMGNDM_2_Unlock);
+                EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC_id);
 				m_item_have_num.text = saveCos.BFINGCJHOHI_cnt.ToString();
 				SetItemIcon(m_itemId);
             }

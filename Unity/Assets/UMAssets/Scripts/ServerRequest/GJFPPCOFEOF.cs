@@ -1,5 +1,5 @@
 
-public class GJFPPCOFEOF : CACGCMBKHDI_Request
+public class GJFPPCOFEOF : CACGCMBKHDI_NetBaseAction
 {
 	public override bool ICFMKEFJOIE { get { return true; } } //0xAAD46C_bgs
 

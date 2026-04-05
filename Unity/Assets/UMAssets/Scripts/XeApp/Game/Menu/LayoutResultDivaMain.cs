@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1883F44 Offset: 0x1883F44 VA: 0x1883F44
 		private void Awake()
 		{
-			expMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
+			expMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
 		}
 
 		// RVA: 0x1884008 Offset: 0x1884008 VA: 0x1884008
@@ -1218,7 +1218,7 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo f = p.NBIGLBMHEDC_DivaList[d.AHHJLDLAPAN_DivaId - 1];
 				f.KHEKNNFCAOI_Init(d.AHHJLDLAPAN_DivaId, d.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, false);
 				List<int> l = f.PKLPGBKKFOL_DivaLevels;
-				KDOMGMCGHDC.HJNMIKNAMFH k = KDOMGMCGHDC.ODIAFJCPIFO(viewResultDivaData.DLAEJOBELBH_MusicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, l[viewResultDivaData.DLAEJOBELBH_MusicId - 1]);
+				KDOMGMCGHDC.HJNMIKNAMFH k = KDOMGMCGHDC.ODIAFJCPIFO(viewResultDivaData.DLAEJOBELBH_MusicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, l[viewResultDivaData.DLAEJOBELBH_MusicId - 1]);
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("growth_popup_title_01"), SizeType.Small, k.ONIAMNAJLKI_LockMessage, new ButtonInfo[1]
 				{

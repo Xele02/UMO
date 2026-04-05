@@ -371,7 +371,7 @@ namespace XeApp.Game.AR
                                         isHitDiva = ARSaveData.Instance.IsHaveStamp(data.markerId);
                                         if(!isHitDiva)
                                         {
-                                            mgr = NKGJPJPHLIF.HHCJCDFCLOB.NJMOAHNLDBO;
+                                            mgr = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.NJMOAHNLDBO;
                                             bool done = false;
                                             bool err = false;
                                             GameManager.Instance.SetTransmissionIconPosition(true);
@@ -405,7 +405,7 @@ namespace XeApp.Game.AR
                                             mgr = null;
                                         }
                                         //LAB_013b86a0
-                                        ILCCJNDFFOB.HHCJCDFCLOB.ILLBGAFIBDE_ArMarker(GameManager.Instance.ar_session_id, data.no, data.eventId, data.markerId, !isHitDiva);
+                                        ILCCJNDFFOB.HHCJCDFCLOB_Instance.ILLBGAFIBDE_ArMarker(GameManager.Instance.ar_session_id, data.no, data.eventId, data.markerId, !isHitDiva);
                                         summonCnt++;
                                         m_arObject.SetDivaAndShow(data, summonCnt);
                                         m_arObject.transform.SetParent(m_currTrackingObj.transform);
@@ -548,7 +548,7 @@ namespace XeApp.Game.AR
             });
             if(data != null && data.enable == 2)
             {
-                long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+                long t = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 if(t >= data.markerStart)
                     return t >= data.markerEnd;
                 return true;

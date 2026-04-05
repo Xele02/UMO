@@ -5,7 +5,10 @@ using UnityEngine;
 
 public delegate void FEFLFHNKFCN(BEAOCBFAHKF _NFEAMMJIMPG_Result, int _KAPMOPMDHJE_label, int _BPNPBJALGHM_quantity, int _CPGFOBNKKBF_CurrencyId);
 
-public class IGCPCHNCJCF
+// namespace XeApp.Game.Net
+[System.Obsolete()]
+public class IGCPCHNCJCF {}
+public class IGCPCHNCJCF_NetShopManager
 {
 	public List<KBPDNHOKEKD_ProductId> MHKCPJDNJKI_products = new List<KBPDNHOKEKD_ProductId>(); // 0x8
 	public int KAPMOPMDHJE_label; // 0xC
@@ -16,9 +19,9 @@ public class IGCPCHNCJCF
 	{
 		MHKCPJDNJKI_products.Clear();
 		this.APHNELOFGAK_CurrencyId = _APHNELOFGAK_CurrencyId;
-		NEAPMMJKOKA_GetProducts req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
+		NEAPMMJKOKA_GetProducts req = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NEAPMMJKOKA_GetProducts());
 		req.IPKCADIAAPG_Criteria = LCKOLEDFDAL.BAKNLGCIHAN(_APHNELOFGAK_CurrencyId);
-		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x11F32C8
 			NEAPMMJKOKA_GetProducts r = JIPCHHHLOMM as NEAPMMJKOKA_GetProducts;
@@ -28,7 +31,7 @@ public class IGCPCHNCJCF
 			}
 			_BHFHGFKBOHH_OnSuccess();
 		};
-		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_NetBaseAction JIPCHHHLOMM) =>
 		{
 			//0x11F3540
 			_AOCANKOMKFG_OnError();
@@ -77,12 +80,12 @@ public class IGCPCHNCJCF
 			NIMPEHIECJH();
 			yield break;
 		}
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(time >= PPMJJBAGPOG.KBFOIECIADN_opened_at)
 		{
 			if(PPMJJBAGPOG.EGBOHDFBAPB_closed_at >= time)
 			{
-				PMNKDBLBFHM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
+				PMNKDBLBFHM = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
 				PMNKDBLBFHM.CGCFENMHJIM_Ids = new List<int>();
 				PMNKDBLBFHM.CGCFENMHJIM_Ids.Add(APHNELOFGAK_CurrencyId);
 				//LAB_011f3a8c
@@ -94,7 +97,7 @@ public class IGCPCHNCJCF
 					_AOCANKOMKFG_OnError();
 					yield break;
 				}
-				NIEBENJFJDI = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
+				NIEBENJFJDI = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new CBMFOOHOAOE_Purchase());
 				NIEBENJFJDI.AFKAGFOFAHM_ProductId = PPMJJBAGPOG.PPFNGGCBJKC_id;
 				NIEBENJFJDI.BPNPBJALGHM_quantity = _BPNPBJALGHM_quantity;
 				NIEBENJFJDI.APHNELOFGAK_CurrencyId = APHNELOFGAK_CurrencyId;
@@ -102,13 +105,13 @@ public class IGCPCHNCJCF
 					yield return null;
 				if(!NIEBENJFJDI.NPNNPNAIONN_IsError)
 				{
-					AKAAHOAKKDF = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
-					AKAAHOAKKDF.CGCFENMHJIM_Ids = CIOECGOMILE.HHCJCDFCLOB.NFGNKHONICJ();
+					AKAAHOAKKDF = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
+					AKAAHOAKKDF.CGCFENMHJIM_Ids = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.NFGNKHONICJ();
 					while(!AKAAHOAKKDF.PLOOEECNHFB_IsDone)
 						yield return null;
 					if(!AKAAHOAKKDF.NPNNPNAIONN_IsError)
 					{
-						CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(AKAAHOAKKDF.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DJICHKCLMCD_UpdateCurrencies(AKAAHOAKKDF.NFEAMMJIMPG_Result.BBEPLKNMICJ_balances);
 						if(PPMJJBAGPOG.HMFDJHEEGNN_buy_limit > 0)
 						{
 							PPMJJBAGPOG.GIEBJDKLCDH_bought_quantity += _BPNPBJALGHM_quantity;

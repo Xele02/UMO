@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use HDPDEAJGJEO_PaymentGetPurchasingStatus", true)]
 public class HDPDEAJGJEO { }
-public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
+public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_NetBaseAction
 {
 	public class FDECBLBCNIC
 	{

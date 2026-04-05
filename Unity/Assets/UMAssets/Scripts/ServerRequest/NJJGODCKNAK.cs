@@ -28,7 +28,7 @@ public class KJKDAGGGJCO
 
 [System.Obsolete("Use NJJGODCKNAK_GetLoginBonusStatuses", true)]
 public class NJJGODCKNAK {}
-public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
+public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_NetBaseAction
 {
     public class OLNONCJIHBA
     {

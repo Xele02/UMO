@@ -3,7 +3,7 @@ using UnityEngine;
 
 [System.Obsolete("Use EIJJIAPKICH_RequestToken", true)]
 public class EIJJIAPKICH { } 
-public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
+public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_NetBaseAction
 {
 	public override bool OIDCBBGLPHL { get { return true; } } // 0x12EB988 GINMIBJOABO_bgs
 
@@ -14,7 +14,7 @@ public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 		{
 			//0x12EBA6C
 			DCKLDDCAJAP(_IDLHJIOMJBK_data);
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_SakashoCurrentDateTime);
+			NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_SakashoCurrentDateTime);
 			Debug.Log("ServerTime Updated ok");
 		}, (SakashoError FMEMECBIDIB) =>
 		{

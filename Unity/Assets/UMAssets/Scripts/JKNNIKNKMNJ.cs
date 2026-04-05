@@ -105,13 +105,13 @@ public class JKNNIKNKMNJ
 	// // RVA: 0x1472838 Offset: 0x1472838 VA: 0x1472838
 	public int GPBGFJONHPB_GetMaxIntimacy()
     {
-        if(IMMAOANGPNK.HHCJCDFCLOB != null)
+        if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null)
         {
-            if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+            if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
             {
-                if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy != null)
+                if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy != null)
                 {
-                    return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.LPJLEHAJADA_GetIntParam("intimacy_count_max", 5);
+                    return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.LPJLEHAJADA_GetIntParam("intimacy_count_max", 5);
                 }
             }
         }

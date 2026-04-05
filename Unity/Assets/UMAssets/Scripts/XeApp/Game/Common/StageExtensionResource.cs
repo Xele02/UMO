@@ -134,13 +134,13 @@ namespace XeApp.Game.Common
 				assetName.SetFormat("mov/gm/st/game_st_{0:D4}_{1:D3}.usm", wavId, divaId);
 			}
 			t_path = assetName.ToString();
-			if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(t_path))
+			if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(t_path))
 			{
-				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 					yield return null;
 			}
 			assetName.Clear();
-			assetName.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+			assetName.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 			assetName.Append("/");
 			assetName.Append(t_path);
 			t_path = assetName.ToString();

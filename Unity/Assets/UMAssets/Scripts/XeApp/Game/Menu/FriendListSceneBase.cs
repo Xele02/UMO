@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		protected virtual bool emptyButtonLock { get { return true; } } //0xBAC8D8 Slot: 39
 		protected virtual string cautionMessage { get { return ""; } } //0xBAC8E0 Slot: 40
 		protected NetType lastNetType { get; private set; } // 0xA4
-		protected PIGBKEIAMPE_FriendManager friendManager { get { return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager; } } //0xBA1AA8
+		protected PIGBKEIAMPE_NetFriendManager friendManager { get { return CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager; } } //0xBA1AA8
 
 		// RVA: 0xBAC084 Offset: 0xBAC084 VA: 0xBAC084 Slot: 4
 		protected override void Awake()
@@ -776,14 +776,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBAF060 Offset: 0xBAF060 VA: 0xBAF060 Slot: 45
-		protected virtual void OnNetRequestError(CACGCMBKHDI_Request error)
+		protected virtual void OnNetRequestError(CACGCMBKHDI_NetBaseAction error)
 		{
 			ConnectEnd();
 			MenuScene.Instance.RaycastEnable();
 		}
 
 		//// RVA: 0xBAF110 Offset: 0xBAF110 VA: 0xBAF110 Slot: 46
-		protected virtual void OnNetRequestErrorToTitle(CACGCMBKHDI_Request error)
+		protected virtual void OnNetRequestErrorToTitle(CACGCMBKHDI_NetBaseAction error)
 		{
 			ConnectEnd();
 			MenuScene.Instance.RaycastEnable();

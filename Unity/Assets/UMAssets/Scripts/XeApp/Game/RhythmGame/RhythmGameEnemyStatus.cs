@@ -61,7 +61,7 @@ namespace XeApp.Game.RhythmGame
 			int enemyId = 0;
 			if(musicInfo.isFreeMode)
 			{
-				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
+				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if(!musicInfo.IsLine6Mode)
 				{
 					subgoalValue = musicdb.LJPKLMJPLAC_DIn[(int)musicInfo.difficultyType];
@@ -70,19 +70,19 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					subgoalValue = musicdb.ILCJOOPIILK[(int)musicInfo.difficultyType];
-					goalValue = musicdb.BGILEHEJHHA[(int)musicInfo.difficultyType];
+					subgoalValue = musicdb.ILCJOOPIILK_DInLine6[(int)musicInfo.difficultyType];
+					goalValue = musicdb.BGILEHEJHHA_SdInLine6[(int)musicInfo.difficultyType];
 					enemyId = musicdb.PJNFOCDANCE_EnemyIdByDiffL6[(int)musicInfo.difficultyType];
 				}
 			}
 			else
 			{
-				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
+				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.LJPKLMJPLAC_DIn[(int)musicInfo.difficultyType];
 				goalValue = musicdb.MALHPBKPIDE_SdIn[(int)musicInfo.difficultyType];
 				enemyId = musicdb.LHICAKGHIGF_EnemyIdByDiff[(int)musicInfo.difficultyType];
 			}
-			gameMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			gameMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.HNMMJINNHII_Game;
 			int[] vals = new int[3] { gameMaster.IJDBNKCLGIC_BCoeff3, gameMaster.GLMKBFEHPLA_BCoeff4, gameMaster.LPDACKNMGNK_BCoeff5 };
 			basicValues = new List<int>(vals.Length);
 			for(int i = 0; i < vals.Length; i++)
@@ -124,10 +124,10 @@ namespace XeApp.Game.RhythmGame
 				v1 = data.NONBCCLGBAO_hit;
 				v2 = data.KINFGHHNFCF_Atk;
 			}
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
 			teamAttack = (v2 + vInfo.OJHINEMKMOP(0)) * supportRate;
 			teamAccuracy = (v1 + vInfo.PAELLCKLEJP(0)) * supportRate;
-			evadeRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(enemyId).ADMMEMNGKEN_Avo;
+			evadeRate = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(enemyId).ADMMEMNGKEN_Avo;
 		}
 
 		//// RVA: 0xDC4A74 Offset: 0xDC4A74 VA: 0xDC4A74
@@ -219,8 +219,8 @@ namespace XeApp.Game.RhythmGame
 						{
 							diff = Mathf.Clamp(diff - 2, 0, 7) + 5;
 						}
-						subgoalValue = (int)(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].OMIMBPNKOKE_SubGoalPercent[diff] * 0.01f * subgoalValue);
-						goalValue = (int)(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].HGIOBLMAAEO_GoalPercent[diff] * 0.01f * goalValue);
+						subgoalValue = (int)(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].OMIMBPNKOKE_SubGoalPercent[diff] * 0.01f * subgoalValue);
+						goalValue = (int)(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].HGIOBLMAAEO_GoalPercent[diff] * 0.01f * goalValue);
 						return true;
 					}
 				}

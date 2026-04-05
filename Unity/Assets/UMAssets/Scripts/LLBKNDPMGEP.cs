@@ -20,11 +20,11 @@ public class LLBKNDPMGEP
     {
         AILDCKKOLJG_Results.Clear();
         JMLKAGOACAE.Clear();
-        CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
+        CANAFALMGLI_NetEventPresentCampaignController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MPEOOINCGEN.Find((IKDICBBFBMI_NetEventBaseController _GHPLINIACBB_x) =>
         {
             //0x180BCFC
             return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9_PresentCampaign;
-        }) as CANAFALMGLI_EventPresentCampaign;
+        }) as CANAFALMGLI_NetEventPresentCampaignController;
         if(ev != null)
         {
             EKANGPODCEP_EventId = ev.PGIIDPEGGPI_EventId;
@@ -77,32 +77,32 @@ public class LLBKNDPMGEP
         MFDJIFIIPJD m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 10000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 20000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 30000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 40000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 50000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 60000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         g.HBHMAKNGKFK_items = l2;
         JMLKAGOACAE.Add(g);
@@ -113,22 +113,22 @@ public class LLBKNDPMGEP
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 10000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 20000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 30000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 40000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         g.HBHMAKNGKFK_items = l2;
         JMLKAGOACAE.Add(g);
@@ -139,12 +139,12 @@ public class LLBKNDPMGEP
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 10000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         m = new MFDJIFIIPJD();
         m.JJBGOIMEIPF_ItemId = 30001;
         m.NNFNGLJOKKF_ItemId = 20000;
-        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
+        m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
         g.HBHMAKNGKFK_items = l2;
         JMLKAGOACAE.Add(g);

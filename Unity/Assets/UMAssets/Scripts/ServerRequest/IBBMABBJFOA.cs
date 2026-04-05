@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use IBBMABBJFOA_PaymentRecover", true)]
 public class IBBMABBJFOA { }
-public class IBBMABBJFOA_PaymentRecover : CACGCMBKHDI_Request
+public class IBBMABBJFOA_PaymentRecover : CACGCMBKHDI_NetBaseAction
 {
 	public class EPJKBEHOMNJ
 	{

@@ -46,7 +46,7 @@ public class NJNCENEFCEI
 
 [System.Obsolete("Use OKPEFAPPFDH_GetRanksAroundSelf", true)]
 public class OKPEFAPPFDH { }
-public class OKPEFAPPFDH_GetRanksAroundSelf : CACGCMBKHDI_Request
+public class OKPEFAPPFDH_GetRanksAroundSelf : CACGCMBKHDI_NetBaseAction
 {
 	// Fields
 	public int EMPNJPMAKBF_Id; // 0x7C

@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 			string str = TextConstant.InvalidText;
 			if (episodeId > 0)
 			{
-				a = (Database.Instance.bonusData.EffectiveEpisodeBonus.FindIndex((IKDICBBFBMI_EventBase.GNPOABJANKO x) =>
+				a = (Database.Instance.bonusData.EffectiveEpisodeBonus.FindIndex((IKDICBBFBMI_NetEventBaseController.GNPOABJANKO x) =>
 				{
 					//0x136DEC8
 					return x.KELFCMEOPPM_EpisodeId == episodeId;

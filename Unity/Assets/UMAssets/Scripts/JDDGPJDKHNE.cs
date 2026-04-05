@@ -35,7 +35,7 @@ public class JDDGPJDKHNE
 	private long MMLMIMLGPON; // 0x48
 	public EDOHBJAPLPF_JsonData FBCJICEPLED; // 0x50
 
-	public static JDDGPJDKHNE HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs 0x1C30854 OKPMHKNCNAL_bgs 0x1C308B8
+	public static JDDGPJDKHNE HHCJCDFCLOB_Instance { get; set; } // 0x0 LGMPACEDIJF_bgs NKACBOEHELJ_bgs 0x1C30854 OKPMHKNCNAL_bgs 0x1C308B8
 
 	// // RVA: 0x1C3091C Offset: 0x1C3091C VA: 0x1C3091C
 	public void CDIFNFCHDCC()
@@ -74,7 +74,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C30B70 Offset: 0x1C30B70 VA: 0x1C30B70
 	public void IJBGPAENLJA_OnAwake()
     {
-		HHCJCDFCLOB = this;
+		HHCJCDFCLOB_Instance = this;
 		OMLLGAKPMAN_writer = new ILCCJNDFFOB();
 		OMLLGAKPMAN_writer.IJBGPAENLJA_OnAwake();
 		UnityEngine.Debug.Log("load hadoopSaveFile");
@@ -90,7 +90,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C30D88 Offset: 0x1C30D88 VA: 0x1C30D88
 	public void BAGMHFKPFIF_Update()
     {
-		if(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
+		if(!NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CGMMHFHHLID)
 			return;
 		BJIOOOJGEPC();
 		BLKLMNNOMGH();
@@ -168,7 +168,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
 	public void BLKLMNNOMGH()
 	{
-		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != /*1*/PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
+		if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != /*1*/PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
 		{
 			if(!BBMBNCPEAHC_EventsToSend.LNHFLJBGGJB_IsRunning)
 			{
@@ -188,7 +188,7 @@ public class JDDGPJDKHNE
 				}
 				if(BBMBNCPEAHC_EventsToSend.MGJKEJHEBPO_Blocks.Count != 0)
 				{
-					if(NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
+					if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CGMMHFHHLID)
 					{
 						if(!DGKBPJBILIK)
 						{
@@ -262,7 +262,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C30E40 Offset: 0x1C30E40 VA: 0x1C30E40
 	public void BJIOOOJGEPC()
 	{
-		if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != PJKLMCGEJMK.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
+		if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.CMCKNKKCNDK_status != PJKLMCGEJMK_NetActionManager.AHADNLCOPOL_RequestStatus.HIHKPNBDNJC_1_Running)
 		{
 			if(!LAHBCJNDGCH.LNHFLJBGGJB_IsRunning)
 			{
@@ -273,7 +273,7 @@ public class JDDGPJDKHNE
 				}
 				if(LAHBCJNDGCH.MGJKEJHEBPO_Blocks.Count != 0)
 				{
-					if(NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
+					if(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CGMMHFHHLID)
 					{
 						if(!NKKADKPDHIL)
 						{
@@ -406,9 +406,9 @@ public class JDDGPJDKHNE
 	{
 		int gameId = 0;
 		byte[] bt = new byte[8];
-		int.TryParse(NKGJPJPHLIF.HHCJCDFCLOB.MLKOPOKGHHH_SakashoGameId, out gameId);
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-		int playerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+		int.TryParse(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MLKOPOKGHHH_SakashoGameId, out gameId);
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		int playerId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 		byte[] btTime = BitConverter.GetBytes((int)time);
 		bt[0] = btTime[0];
 		bt[3] = btTime[1];

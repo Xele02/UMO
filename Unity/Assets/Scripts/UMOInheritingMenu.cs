@@ -41,19 +41,19 @@ namespace XeApp.Game.Menu
 			while(!done)
 				yield return null;
 			if(AccountSelection > 0)
-				NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG(AccountSelection);
+				NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IJMGMJHLGDG(AccountSelection);
 			else
 			{
 				if(AccountSelection == -1)
 				{
 					// Request new number
-					NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG(0);
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IJMGMJHLGDG(0);
 					UMO_PlayerPrefs.SetInt("cpid", 0);
 					UMO_PlayerPrefs.Save();
 
 					bool BEKAMBBOLBO_Done = false;
-					NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = true;
-					NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN_InitializePlayerToken(() => {
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = true;
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.HGJKAEOLMJN_InitializePlayerToken(() => {
 						//0xA08F1C
 						BEKAMBBOLBO_Done = true;
 					}, () => {
@@ -64,11 +64,11 @@ namespace XeApp.Game.Menu
 					{
 						yield return null;
 					}
-					NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = false;
-					NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG(NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId());
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = false;
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IJMGMJHLGDG(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.CAFHLEFMMGD_GetPlayerId());
 				}
 				else if(AccountSelection == -2)
-					NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG(999999999);
+					NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IJMGMJHLGDG(999999999);
 				
 			}
 			if(inheritingSuccess != null)

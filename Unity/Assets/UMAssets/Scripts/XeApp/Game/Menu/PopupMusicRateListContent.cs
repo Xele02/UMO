@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			if(layout.EnableTab)
 			{
 				control.InputDisable();
-				AGLHPOOPOCG.HHCJCDFCLOB.OAGGKCHJBEO(() =>
+				AGLHPOOPOCG.HHCJCDFCLOB_Instance.OAGGKCHJBEO(() =>
 				{
 					//0x1697024
 					layout.UpdateListMusicGrade(setup.View);
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1696E08 Offset: 0x1696E08 VA: 0x1696E08 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && (layout == null || layout.IsListReady());
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && (layout == null || layout.IsListReady());
 		}
 
 		// RVA: 0x1696F28 Offset: 0x1696F28 VA: 0x1696F28 Slot: 22

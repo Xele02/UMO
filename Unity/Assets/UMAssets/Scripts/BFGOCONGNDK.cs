@@ -65,7 +65,7 @@ public class BFGOCONGNDK
 			if(bg != null)
 			{
 				string id = NLMBMNKEINP_GetBgFileName(bg.bgId);
-				GCGNICILKLD_AssetFileInfo g = KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.BIKLNKNFFMK_GetAssetFileInfo(id);
+				GCGNICILKLD_AssetFileInfo g = KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.IDJBKGBMDAJ.BIKLNKNFFMK_GetAssetFileInfo(id);
 				if (g != null)
 				{
 					string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/";
@@ -118,9 +118,9 @@ public class BFGOCONGNDK
 			//if(File.Exists(fileBg))
 			if(FileSystemProxy.FileExists(fileBg))
 			{
-				if(KEHOJEJMGLJ.HHCJCDFCLOB != null)
+				if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance != null)
 				{
-					BEEINMBNKNM_Encryption decryptor = KEHOJEJMGLJ.HHCJCDFCLOB.GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor("/"+NLMBMNKEINP_GetBgFileName(ODJPFMGNDML_Id));
+					BEEINMBNKNM_Encryption decryptor = KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor("/"+NLMBMNKEINP_GetBgFileName(ODJPFMGNDML_Id));
 					if(decryptor != null)
 					{
 						MD5 md5 = MD5.Create();

@@ -110,7 +110,7 @@ public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				IHGBPAJMJFK_Emblem emblemDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem;
+				IHGBPAJMJFK_Emblem emblemDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem;
 				for(int i = 0; i < emblemDb.CDENCMNHNGA_table.Count; i++)
 				{
 					string str = POFDDFCGEGP_Underscore + (i + 1).ToString();
@@ -127,7 +127,7 @@ public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 				{
 					if(MDKOHOCONKE[0].BEBJKJKBOGH_date == 0)
 					{
-						MDKOHOCONKE[0].BEBJKJKBOGH_date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+						MDKOHOCONKE[0].BEBJKJKBOGH_date = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						MDKOHOCONKE[0].FHCAFLCLGAA_em_cnt = 0;
 					}
 				}

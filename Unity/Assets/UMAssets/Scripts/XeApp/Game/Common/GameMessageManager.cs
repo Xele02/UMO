@@ -105,7 +105,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE99DE8 Offset: 0xE99DE8 VA: 0xE99DE8
 		public static string MissionMessageTagFunc(StringBuilder strBuilder, string tag, int freeMusicId, bool is6Line, Difficulty.Type diffculty)
 		{
-			KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+			KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
 			strBuilder.Clear();
 			if(diffculty != Difficulty.Type.Illegal)
 			{

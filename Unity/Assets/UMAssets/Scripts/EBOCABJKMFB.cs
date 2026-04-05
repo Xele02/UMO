@@ -204,7 +204,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 				{
 					CEBFFLDKAEC_SecureInt d = new CEBFFLDKAEC_SecureInt();
 					d.DNJEJEANJGL_Value = a;
-					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a - 1].KELFCMEOPPM_EpisodeId;
+					int ep = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a - 1].KELFCMEOPPM_EpisodeId;
 					HGBOODNMNFM h = NNDMIOEKKMM_NewEpisode.Find((HGBOODNMNFM _GHPLINIACBB_x) =>
 					{
 						//0x15024B8

@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			{
 				m_achieveReward = setting.Content.GetComponent<LayoutPopupAchieveReward>();
 			}
-			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
 			if(s.gameEventType == 4 && ev != null)
 			{
 				m_viewMusic.PMKBMGNAJIL(ev, s.isLine6Mode);
@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			}
 			if(m_achieveReward != null)
 			{
-				m_achieveReward.SetupReward(Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(m_viewMusic.GHBPLHBNMBK_FreeMusicId, m_viewMusic.DLAEJOBELBH_MusicId).KNMGEEFGDNI_Name).musicName,
+				m_achieveReward.SetupReward(Database.Instance.musicText.Get(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(m_viewMusic.GHBPLHBNMBK_FreeMusicId, m_viewMusic.DLAEJOBELBH_MusicId).KNMGEEFGDNI_Name).musicName,
 					(int)s.diff, m_viewFreeReward, m_viewMusic, s.isLine6Mode);
 			}
 			m_initialized = true;
@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF1E18 Offset: 0xDF1E18 VA: 0xDF1E18 Slot: 21
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !GameManager.Instance.ItemTextureCache.IsLoading() && m_initialized;
+			return !KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning && !GameManager.Instance.ItemTextureCache.IsLoading() && m_initialized;
 		}
 
 		// RVA: 0xDF1F54 Offset: 0xDF1F54 VA: 0xDF1F54 Slot: 22

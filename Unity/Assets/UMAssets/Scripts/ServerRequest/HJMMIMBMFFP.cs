@@ -1,5 +1,5 @@
 
-public class HJMMIMBMFFP : CACGCMBKHDI_Request
+public class HJMMIMBMFFP : CACGCMBKHDI_NetBaseAction
 {
 	public override bool ICFMKEFJOIE { get { return true; } } //0x183A590_bgs
 

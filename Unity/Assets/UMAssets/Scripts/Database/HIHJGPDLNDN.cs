@@ -4,28 +4,49 @@ using XeSys;
 
 [System.Obsolete("Use HIHJGPDLNDN_EventScore", true)]
 public class HIHJGPDLNDN { }
+[UMOClass(ReaderClass = "PMPDPNDJBLB")]
 public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 {
+	[UMOClass(ReaderClass = "HNGLACEEHKJ")]
 	public class DKGDLFPELAB
 	{
+		[UMOMember(ReaderMember = "OBGBAOLONDD", Desc = "Event unique id")]
 		public int OBGBAOLONDD_UniqueId; // 0x8
+		[UMOMember(ReaderMember = "OPFGFINHFCE", Desc = "Name of the event")]
 		public string OPFGFINHFCE_name; // 0xC
+		[UMOMember(ReaderMember = "HEDAGCNPHGD", Desc = "Unused")]
 		public string HEDAGCNPHGD_RankingName; // 0x10
+		[UMOMember(ReaderMember = "OCGFKMHNEOF", Desc = "Ranking id")]
 		public string OCGFKMHNEOF_name_for_api; // 0x14
+		[UMOMember(ReaderMember = "BONDDBOFBND", ReaderDisplay = "Date", Display = "Date")]
 		public long BONDDBOFBND_RankingStart; // 0x18
+		[UMOMember(ReaderMember = "HPNOGLIFJOP", ReaderDisplay = "Date", Display = "Date")]
 		public long HPNOGLIFJOP_RankingEnd; // 0x20
+		[UMOMember(ReaderMember = "LNFKGHNHJKE", ReaderDisplay = "Date", Display = "Date")]
 		public long LNFKGHNHJKE_RankingEnd2; // 0x28
+		[UMOMember(ReaderMember = "JGMDAOACOJF", ReaderDisplay = "Date", Display = "Date")]
 		public long JGMDAOACOJF_RewardStart; // 0x30
+		[UMOMember(ReaderMember = "IDDBFFBPNGI", ReaderDisplay = "Date", Display = "Date")]
 		public long IDDBFFBPNGI_RewardEnd; // 0x38
+		[UMOMember(ReaderMember = "KNLGKBBIBOH", ReaderDisplay = "Date", Display = "Date")]
 		public long KNLGKBBIBOH_RewardEnd2; // 0x40
+		[UMOMember(ReaderMember = "KHIKEGLBGAF", Desc = "Unused")]
 		public int KHIKEGLBGAF_RankingRewardScene; // 0x48
+		[UMOMember(ReaderMember = "JMJDLDEIFKE", Desc = "Unused")]
 		public sbyte POGEFBMBPCB_MonthOdd; // 0x4C
+		[UMOMember(ReaderMember = "AHKNMANFILO", Desc = "Unused")]
 		public sbyte AHKNMANFILO_DayGroup; // 0x4D
+		[UMOMember(ReaderMember = "MOEKELIIDEO", Desc = "Index in the player save (3 slot inoriginal game)")]
 		public sbyte MOEKELIIDEO_SaveIdx; // 0x4E
+		[UMOMember(ReaderMember = "OCDMGOGMHGE", CryptedInMemory = true, Desc = "Prefix id for gift box reward")]
 		private NNJFKLBPBNK_SecureString EBGIDCIIGDO_KeyPrefix = new NNJFKLBPBNK_SecureString(); // 0x50
+		[UMOMember(ReaderMember = "AHKPNPNOAMO", Desc = "Allow the extreme difficulty")]
 		public sbyte AHKPNPNOAMO_ExtreamOpen; // 0x54
+		[UMOMember(ReaderMember = "HKKNEAGCIEB", Desc = "True if it has ranking")]
 		public sbyte HKKNEAGCIEB_RankingSupport; // 0x55
+		[UMOMember(ReaderMember = "KOHMHBGOFFI", ReaderDisplay = "ListString|,", Desc = "List of event songs")]
 		public List<int> CAPAPAABKDP_FreeMusic = new List<int>(); // 0x58
+		[UMOMember(ReaderMember = "JHPCPNJJHLI", Desc = "List of ranking threshold for the popup filter")]
 		public List<int> JHPCPNJJHLI_RankingThreshold = new List<int>(); // 0x5C
 
 		public string OCDMGOGMHGE_KeyPrefix { get { return EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value; } set { EBGIDCIIGDO_KeyPrefix.DNJEJEANJGL_Value = value; } } //0x18373A0 HBAAAKFHDBB_get_KeyPrefix 0x1836DF4 NHJLJOIPOFK_set_KeyPrefix
@@ -57,15 +78,22 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 
 	public class AAAPPIKNOKB
 	{
+		[UMOMember(ReaderMember = "PPFNGGCBJKC")]
 		public int PPFNGGCBJKC_id; // 0x8
+		[UMOMember(ReaderMember = "KFCIJBLDHOK")]
 		public int KFCIJBLDHOK_v1; // 0xC
+		[UMOMember(ReaderMember = "JLEIHOEGMOP")]
 		public int JLEIHOEGMOP_v2; // 0x10
 	}
 
+	[UMOMember(ReaderMember = "HMBHNLCFDIH")]
 	public DKGDLFPELAB NGHKJOEDLIP_Settings = new DKGDLFPELAB(); // 0x20
+	[UMOMember(ReaderMember = "KIEKMCKCMGD", Desc = "Unused and unread")]
 	public List<AAAPPIKNOKB> ADPFKHEMNBL = new List<AAAPPIKNOKB>(); // 0x2C
 
+	[UMOMember(ReaderMember = "MHGMDJNOLMI/[IDX]/LJNAKDMILMC|MHGMDJNOLMI/[IDX]/JBGEEPFKIGG", CryptedInMemory = true, Name = "String Params")]
 	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_m_stringParam { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI_get_m_stringParam DDDEJIJGGBJ_set_m_stringParam
+	[UMOMember(ReaderMember = "BHGDNGHDDAC/[IDX]/LJNAKDMILMC|BHGDNGHDDAC/[IDX]/JBGEEPFKIGG", CryptedInMemory = true, Name = "Int Params")]
 	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_m_intParam { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ_get_m_intParam DGKDBOAMNBB_set_m_intParam
 
 	//// RVA: 0x18358DC Offset: 0x18358DC VA: 0x18358DC
@@ -123,7 +151,7 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 		UnityEngine.Debug.LogError(NGHKJOEDLIP_Settings.OPFGFINHFCE_name+" "+NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId);
 
 		// Update dates
-		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+		/*UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
 		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 		{
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
@@ -136,7 +164,7 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 			if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
 			if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
 			if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
-		}
+		}*/
 
 		return true;
 	}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use GGKHIHFPKDH_SavePlayerData", true)]
 public class GGKHIHFPKDH { }
-public class GGKHIHFPKDH_SavePlayerData : CACGCMBKHDI_Request, CJIKLGPIPBA
+public class GGKHIHFPKDH_SavePlayerData : CACGCMBKHDI_NetBaseAction, CJIKLGPIPBA
 {
 	public class HCEPENBDPDP
 	{

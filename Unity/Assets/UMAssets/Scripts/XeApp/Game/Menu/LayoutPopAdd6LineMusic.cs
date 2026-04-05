@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{
 			EEDKAACNBBG_MusicData data = new EEDKAACNBBG_MusicData();
-			EONOEHOKBEB_Music minfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[info.param.id - 1];
+			EONOEHOKBEB_Music minfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Music[info.param.id - 1];
 			data.KHEKNNFCAOI_Init(info.param.id);
 			SetMusicJacket(data.JNCPEGJGHOG_JacketId);
 			SetMusicName(data.NEDBBJDAFBH_MusicName, data.FKDCCLPGKDK_JacketAttr);
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15D9678 Offset: 0x15D9678 VA: 0x15D9678
 		public bool IsLoading()
 		{
-			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket || m_isLoadingLogo;
+			return KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket || m_isLoadingLogo;
 		}
 
 		// // RVA: 0x15D9010 Offset: 0x15D9010 VA: 0x15D9010

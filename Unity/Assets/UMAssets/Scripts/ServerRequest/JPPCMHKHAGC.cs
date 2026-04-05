@@ -30,7 +30,7 @@ public class LMJHOAHBDKN : CMPLGKFJCIC<MFKPFMCLOIB> // TypeDefIndex: 10435
 
 [System.Obsolete("Use JPPCMHKHAGC_AttackRaidbossAndSave", true)]
 public class JPPCMHKHAGC {}
-public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPBA
+public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_NetBaseAction, CJIKLGPIPBA
 {
     public class PGAOPHPLLOG // TypeDefIndex: 10439
     {
@@ -118,7 +118,7 @@ public class JPPCMHKHAGC_AttackRaidbossAndSave : CACGCMBKHDI_Request, CJIKLGPIPB
 	// RVA: 0x1BA8E18 Offset: 0x1BA8E18 VA: 0x1BA8E18 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
-        PJKLMCGEJMK.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH_SaveId;
+        PJKLMCGEJMK_NetActionManager.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH_SaveId;
         NFEAMMJIMPG_Result = new ODNJNIICCLB(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 

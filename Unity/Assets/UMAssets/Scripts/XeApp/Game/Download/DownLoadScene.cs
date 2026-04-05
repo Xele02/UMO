@@ -42,11 +42,11 @@ namespace XeApp.Game.DownLoad
 		private void LoadResource()
 		{
 			List<int> l = new List<int>();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 				{
-					BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
+					BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 					if(dbDiva.PPEGAKEIEGM_Enabled == 2)
 					{
 						l.Add(dbDiva.AHHJLDLAPAN_DivaId);
@@ -62,51 +62,51 @@ namespace XeApp.Game.DownLoad
 		{
 			//0x11BFC54 
 			yield return this.StartCoroutineWatched(Co_InitializeQuestionary());
-			KEHOJEJMGLJ.HHCJCDFCLOB.OEPPEGHGNNO = InstallGuiEvent;
-			int tutoEnd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end;
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.OEPPEGHGNNO = InstallGuiEvent;
+			int tutoEnd = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end;
 			int INAEAAJIJMF = 0;
 			int freeMusicId = 0;
 			if (tutoEnd != 2)
 			{
-				for (int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				for (int i = 0; i < CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
 					INAEAAJIJMF = 1;
-					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
+					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
 					if (serverDiva.CPGFPEDMDEH_have > 0)
 					{
-						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[serverDiva.DIPKCALNIII_diva_id - 1];
+						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[serverDiva.DIPKCALNIII_diva_id - 1];
 						freeMusicId = dbdiva.LIOGKHIGJKN_FreeMusicId;
 						INAEAAJIJMF = 1;
 						break;
 					}
 				}
 			}
-			List<string> str = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IJCPBPFEGDM_GetResourcesFilePathList();
+			List<string> str = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.IJCPBPFEGDM_GetResourcesFilePathList();
 			if(str.Count > 0)
 			{
-				if(KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE == null)
+				if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE == null)
 				{
-					KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE = str;
+					KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE = str;
 				}
 				else
 				{
-					KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.AddRange(str);
+					KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE.AddRange(str);
 				}
 			}
 			if(freeMusicId != 0)
 			{
-				KEODKEGFDLD_FreeMusicInfo fminfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
-				EONOEHOKBEB_Music minfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fminfo.DLAEJOBELBH_MusicId);
+				KEODKEGFDLD_FreeMusicInfo fminfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+				EONOEHOKBEB_Music minfo = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fminfo.DLAEJOBELBH_MusicId);
 				if(fminfo.PPEGAKEIEGM_Enabled == 2)
 				{
 					List<string> path = SoundResource.CreateBgmFilePathList(minfo.KKPAHLMJKIH_WavId);
-					if(KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE == null)
+					if(KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE == null)
 					{
-						KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE = path;
+						KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE = path;
 					}
 					else
 					{
-						KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.AddRange(path);
+						KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE.AddRange(path);
 					}
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA_SetSelectedSong((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0_None);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.NGNECOFAMKP_SetCategoryId((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId);
@@ -119,18 +119,18 @@ namespace XeApp.Game.DownLoad
 			List<string> str2 = HBCPJANGOLB.LMFHAGHJIEM_GetAssetsList(h);
 			if(str2.Count > 0)
 			{
-				if (KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE == null)
+				if (KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE == null)
 				{
-					KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE = str2;
+					KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE = str2;
 				}
 				else
 				{
-					KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.AddRange(str2);
+					KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE.AddRange(str2);
 				}
-				KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.Add("dr/ep/cmn.xab");
-				KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.Add("dr/ep/001.xab");
+				KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE.Add("dr/ep/cmn.xab");
+				KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.FBGNDKKDOIE.Add("dr/ep/001.xab");
 			}
-			KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM_Install(KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC, FinishDownLoad, DownLoadError, INAEAAJIJMF, 0);
+			KEHOJEJMGLJ_NetInstallManager.HHCJCDFCLOB_Instance.PAHGEEOFEPM_Install(KEHOJEJMGLJ_NetInstallManager.ACGGHEIMPHC.GGCIMLDFDOC, FinishDownLoad, DownLoadError, INAEAAJIJMF, 0);
 			yield return null;
 			while(!m_IsFinish && !m_IsDispDownLoadUI)
 			{

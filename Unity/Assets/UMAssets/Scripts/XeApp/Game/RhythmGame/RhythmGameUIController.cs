@@ -378,7 +378,7 @@ namespace XeApp.Game.RhythmGame
 			res.WindowSize = SizeType.Small;
 			res.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
 			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_pause_title");
-			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId);
+			EONOEHOKBEB_Music m = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId);
 			int ma = m.FKDCCLPGKDK_JacketAttr;
 			string diff = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType];
 			if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
@@ -398,7 +398,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0E7B0 Offset: 0xC0E7B0 VA: 0xC0E7B0
 		private PopupSetting CreateConfirmationSetting(DJBHIFLHJLK errorGotoTitle)
 		{
-			int diff = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.BPPGDBHGMDA_Continue_Price;
+			int diff = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPPGDBHGMDA_Continue_Price;
 			if (diff < 0)
 			{
 				TextPopupSetting res = new TextPopupSetting();
@@ -420,7 +420,7 @@ namespace XeApp.Game.RhythmGame
 				s.TitleText = bk.GetMessageByLabel("game_popup_continue_title");
 				s.Text = PopupWindowManager.FormatTextBank(bk, "game_popup_continue_text", new object[3]
 				{
-					CIOECGOMILE.HHCJCDFCLOB.BPPGDBHGMDA_Continue_Price, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), diff
+					CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPPGDBHGMDA_Continue_Price, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.DEAPMEIDCGC_GetTotalPaidCurrency(), diff
 				});
 				s.Buttons = new ButtonInfo[2]
 				{
@@ -533,7 +533,7 @@ namespace XeApp.Game.RhythmGame
 			setting.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
 			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_popup_mvpause_title");
 			object[] o = new object[2];
-			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name).musicName;
+			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Name).musicName;
 			o[1] = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType] + ((Database.Instance.gameSetup.musicInfo.IsLine6Mode) ? "+" : "");
 			setting.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("menu"), "game_popup_mvpause_text", o);
 			setting.Buttons = new ButtonInfo[] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Negative },

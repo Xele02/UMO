@@ -525,7 +525,7 @@ namespace XeApp.Game.Adv
 			else
 			{
 				m_snsScreen.Initialize(snsId, false);
-				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[snsId - 1].MALFHCHNEFN_RoomId, SNSController.eObjectOrderType.Last, snsId, false, false);
+				m_snsScreen.InRoom(sceneType, IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[snsId - 1].MALFHCHNEFN_RoomId, SNSController.eObjectOrderType.Last, snsId, false, false);
 			}
 			m_snsScreen.OutStartCallback = () =>
 			{
@@ -646,7 +646,7 @@ namespace XeApp.Game.Adv
 								}
 							}
 							yield return null;
-							while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+							while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 								yield return null;
 						}
 						break;
@@ -655,9 +655,9 @@ namespace XeApp.Game.Adv
 							string param0 = scriptData.GetStringCommandParam(messageIndex, commandIndex, 0);
 							string[] p = param0.Split(new char[] { ',' });
 							for (int i = 0; i < p.Length; i++)
-								KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p[i]);
+								KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(p[i]);
 							yield return null;
-							while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+							while (KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 								yield return null;
 						}
 						break;
@@ -852,12 +852,12 @@ namespace XeApp.Game.Adv
 					case AdvScriptCommand.Label.Name:
 						{
 							bool isWait = true;
-							NameEntry.NameEntry.ShowPlayerNameEntry("", (string name) =>
+                            NameEntry.NameEntry.ShowPlayerNameEntry("", (UnityAction<string>)((string name) =>
 							{
-								//0xBC9534
-								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = name;
+                                //0xBC9534
+                                CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name = name;
 								isWait = false;
-							}, NetErrorHandler);
+							}), NetErrorHandler);
 							while (isWait)
 								yield return null;
 						}
@@ -919,7 +919,7 @@ namespace XeApp.Game.Adv
 						break;
 					case AdvScriptCommand.Label.SnsNotificationTutorial:
 						{
-							BIFNGFAIEIL.HHCJCDFCLOB.DLKJAPDLDFG(false, 0);
+							BIFNGFAIEIL.HHCJCDFCLOB_Instance.DLKJAPDLDFG(false, 0);
 						}
 						break;
 					case AdvScriptCommand.Label.LoadAnime:
@@ -1050,7 +1050,7 @@ namespace XeApp.Game.Adv
 		{
 			if (speakerId < 1)
 				return;
-			m_currentMessageWindow.SetName(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[speakerId - 1].OPFGFINHFCE_name);
+			m_currentMessageWindow.SetName(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[speakerId - 1].OPFGFINHFCE_name);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742AA4 Offset: 0x742AA4 VA: 0x742AA4
@@ -1226,8 +1226,8 @@ namespace XeApp.Game.Adv
 			AssetBundleLoadLayoutOperationBase lyOpt; // 0x1C
 
 			//0xBCA35C
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.acb");
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.awb");
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.acb");
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.awb");
 			loadCount = 0;
 			bundlePath = "ly/083.xab";
 			lyOpt = AssetBundleManager.LoadLayoutAsync(bundlePath, "root_cmn_tuto02_layout_root");
@@ -1245,7 +1245,7 @@ namespace XeApp.Game.Adv
 			}
 			while(!m_prologueControl.IsInitialized)
 				yield return null;
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 		}
 
@@ -1585,23 +1585,23 @@ namespace XeApp.Game.Adv
 			FENCAJJBLBH f = GameManager.Instance.localSave.KPOCKNCJBPN_CheckSecure();
 			if(f != null)
 			{
-				JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
+				JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.GKMAHMLNMEK(() =>
 				{
 					//0xBC8FF0
 					NetErrorHandler();
 				}, "");
 				yield break;
 			}
-			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
-			CIOECGOMILE.HHCJCDFCLOB.OIEBCNPOMIB_UpdateDayChange(true);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_sta_lot_time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_recv_sns = 1;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end = 1;
+			BIFNGFAIEIL.HHCJCDFCLOB_Instance.ALIANOFCAEI();
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.OIEBCNPOMIB_UpdateDayChange(true);
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_sta_lot_time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_recv_sns = 1;
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_tutorial_end = 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
-			BIFNGFAIEIL.HHCJCDFCLOB.DLKJAPDLDFG(true, 0);
+			BIFNGFAIEIL.HHCJCDFCLOB_Instance.DLKJAPDLDFG(true, 0);
 			bool isWait = true;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GHKKPKBBEAN_Prepare(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), () =>
+			JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.GHKKPKBBEAN_Prepare(NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), () =>
 			{
 				//0xBC92A0
 				isWait = false;
@@ -1613,7 +1613,7 @@ namespace XeApp.Game.Adv
 			while(isWait)
 				yield return null;
 			isWait = true;
-			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AIKJMHBDABF_SavePlayerData(() =>
 			{
 				//0xBC92AC
 				isWait = false;
@@ -1624,17 +1624,17 @@ namespace XeApp.Game.Adv
 			}, null);
 			while(isWait)
 				yield return null;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.AGEAPKNODHO();
+			CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.AGEAPKNODHO();
 			BasicTutorialManager.Instance.Release();
 			Destroy(BasicTutorialManager.Instance);
 			GameManager.Instance.IsTutorial = false;
-			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.ONHOCOBCINO_3);
+			PGIGNJDPCAH_UpdateChecker.HIHIEBACIHJ(PGIGNJDPCAH_UpdateChecker.FELLIEJEPIJ.ONHOCOBCINO_3);
 			if(AssetBundleManager.isTutorialNow)
 			{
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("tuto_after_title", 1) == 1)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("tuto_after_title", 1) == 1)
 				{
 					AssetBundleManager.isTutorialNow = false;
-					JHHBAFKMBDL.HHCJCDFCLOB.CIKMDHMMCIL_ShowErrorPopup(2, () =>
+					JHHBAFKMBDL_NetUIControl.HHCJCDFCLOB_Instance.CIKMDHMMCIL_ShowErrorPopup(2, () =>
 					{
 						//0xBC8FC4
 						NetErrorHandler();

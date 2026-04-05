@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			m_rankText.text = playerData.ILOJAJNCPEC_Rank.ToString();
 			m_mapNameText.text = mapName;
 			m_rateText.text = HighScoreRatingRank.GetRankName(playerData.AGJIIKKOKFJ_ScoreRatingRank);
-			m_rateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(playerData.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, playerData.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin), true);
+			m_rateRankText.text = OEGIPPCADNA_NetEventUtarateManager.GEEFFAEGHAH(OEGIPPCADNA_NetEventUtarateManager.BFKAHKBKBJE(playerData.PCEGKKLKFNO_FriendData.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, playerData.PCEGKKLKFNO_FriendData.AJECHDLMKOE_LastLogin), true);
 			GameManager.Instance.DivaIconCache.Load(playerData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, playerData.JIGONEMPPNP_Diva.FFKMJNHFFFL_costume.DAJGPBLEEOB_ModelId, playerData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x18BECFC
@@ -145,13 +145,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x18BE7E8 Offset: 0x18BE7E8 VA: 0x18BE7E8
 		public void UpdateFanButton(EAJCBFGKKFA_FriendInfo playerData)
 		{
-			FanButtonLabelChange(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(playerData.MLPEHNBNOGD_PlayerId));
+			FanButtonLabelChange(CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(playerData.MLPEHNBNOGD_PlayerId));
 		}
 
 		// RVA: 0x18BE8F0 Offset: 0x18BE8F0 VA: 0x18BE8F0
 		public void UpdateFriendIcon(EAJCBFGKKFA_FriendInfo playerData)
 		{
-			m_decoDeco.Change(playerData.JIGONEMPPNP_Diva, playerData, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(playerData.MLPEHNBNOGD_PlayerId), DisplayType.Level);
+			m_decoDeco.Change(playerData.JIGONEMPPNP_Diva, playerData, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(playerData.MLPEHNBNOGD_PlayerId), DisplayType.Level);
 			m_decoDeco.SetActive(true);
 		}
 

@@ -113,7 +113,7 @@ namespace XeApp.Game.Common
 		private static string GetInstallCueSheetPath(string cueSheetName)
 		{
 			StringBuilder str = new StringBuilder();
-			str.SetFormat("{0}/{1}/{2}", KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath, GetCueSheetSubDirectoryName(cueSheetName), cueSheetName);
+			str.SetFormat("{0}/{1}/{2}", KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath, GetCueSheetSubDirectoryName(cueSheetName), cueSheetName);
 			return str.ToString();
 		}
 
@@ -163,7 +163,7 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < decryptDirs.Length; i++)
 			{
 				str.Length = 0;
-				str.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+				str.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 				str.Append('/');
 				str.Append(decryptDirs[i]);
 				if(Directory.Exists(str.ToString()))
@@ -181,7 +181,7 @@ namespace XeApp.Game.Common
 		public static string GetDecAwbPath(string cueSheetName)
 		{
 			StringBuilder str = new StringBuilder(256);
-			str.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+			str.Append(KEHOJEJMGLJ_NetInstallManager.CGAHFOBGHIM_PersistentPlatformDataPath);
 			str.Append('/');
 			str.Append(decryptDirs[selectDecIndex]);
 			str.Append('/');
@@ -247,7 +247,7 @@ namespace XeApp.Game.Common
 			if(!IsBuiltinSheet(cueSheetName))
 			{
 				string path = GetStreamingAssetCueSheetPath(cueSheetName);
-				bool exists = KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path+".acb");
+				bool exists = KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(path+".acb");
 				if(!IsBgm(cueSheetName))
 				{
 					if(!IsVoice(cueSheetName))
@@ -265,7 +265,7 @@ namespace XeApp.Game.Common
 					suf = ".awb";
 				}
 				path = path + suf;
-				exists |= KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path);
+				exists |= KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(path);
 				return exists;
 			}
 			return false;
@@ -292,8 +292,8 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139A7D8 Offset: 0x139A7D8 VA: 0x139A7D8
 		public static bool isSecureCueSheet(string cueSheetName)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
-				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName) != 0;
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null && IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
+				return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName) != 0;
 			return false;
 		}
 
@@ -306,14 +306,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139B478 Offset: 0x139B478 VA: 0x139B478
 		public static BEEINMBNKNM_Encryption FindDecryptor(string cueSheetName)
 		{
-			if (IMMAOANGPNK.HHCJCDFCLOB != null)
+			if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance != null)
 			{
-				if (IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					int key = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName);
+					int key = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName);
 					if (key != 0)
 					{
-						return DOKOHKJIDBO.HHCJCDFCLOB.KCOIDGJOJHC_EncryptionMap[key];
+						return DOKOHKJIDBO.HHCJCDFCLOB_Instance.KCOIDGJOJHC_EncryptionMap[key];
 					}
 				}
 			}

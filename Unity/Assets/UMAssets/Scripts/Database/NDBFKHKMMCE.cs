@@ -401,9 +401,9 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			return false;
 		else
 		{
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
+			if(EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_GLCLFMGPMAN_ItemId) == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
 			{
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(_GLCLFMGPMAN_ItemId);
+				int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_GLCLFMGPMAN_ItemId);
 				if(id != 0)
 				{
 					if(id <= GJLHEJPHEDA_ItemsBg.Count)
@@ -419,19 +419,19 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 	// // RVA: 0x1ADE094 Offset: 0x1ADE094 VA: 0x1ADE094
 	public bool FMGPOKFKPIJ_IsValidItem(OKGLGHCBCJP_Database _NDFIEMPPMLF_master, int _GLCLFMGPMAN_ItemId)
 	{
-        EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_GLCLFMGPMAN_ItemId);
-        int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(_GLCLFMGPMAN_ItemId);
+        EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(_GLCLFMGPMAN_ItemId);
+        int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(_GLCLFMGPMAN_ItemId);
 		if(id < 1)
 			return false;
 		switch(cat)
 		{
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
 				if(id <= GHOLIPLDMPJ_ItemsObj.Count)
 				{
 					return GHOLIPLDMPJ_ItemsObj[id - 1].PLALNIIBLOF_en == 2;
 				}
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
 				if(id <= KHCACDIKJLG_Characters.Count)
 				{
 					return KHCACDIKJLG_Characters[id - 1].PLALNIIBLOF_en == 2;
@@ -439,35 +439,35 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 				break;
 			default:
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
 				if(id <= GMONECJCJFK_Sp.Count)
 				{
 					return GMONECJCJFK_Sp[id - 1].PLALNIIBLOF_en == 2;
 				}
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
 				if(id <= COLIEKINOPB_ItemsPoster.Count)
 				{
 					return COLIEKINOPB_ItemsPoster[id - 1].PLALNIIBLOF_en == 2;
 				}
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
-				if(id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count)
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+				if(id <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
+					return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
 				}
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
-				if(id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table.Count)
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+				if(id <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table.Count)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
+					return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
 				}
 				break;
-			case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
-				if(id <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table.Count)
+			case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+				if(id <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table.Count)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
+					return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1].PPEGAKEIEGM_Enabled == 2;
 				}
 				break;
 		}
@@ -513,34 +513,34 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 				for(int j = 0; j < set.JJBNDDDGEAN_GetNumItems(); j++)
 				{
 					int code = set.FKNBLDPIPMC_GetItemCode(j);
-					EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(code);
-					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(code);
+					EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category cat = EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(code);
+					int id = EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(code);
 					if(id > 0)
 					{
 						switch(cat)
 						{
-							case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+							case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
 								if(GJLHEJPHEDA_ItemsBg.Count >= id)
 								{
 									EHLEEEBJLAM_BgItem bgItem = GJLHEJPHEDA_ItemsBg[id - 1];
 									bgItem.EBIMFANOGBK_SetId = set.PPFNGGCBJKC_id;
 								}
 								break;
-							case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+							case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
 								if(GHOLIPLDMPJ_ItemsObj.Count >= id)
 								{
 									NIBEBIGPKLA_ObjItem objItem = GHOLIPLDMPJ_ItemsObj[id - 1];
 									objItem.EBIMFANOGBK_SetId = set.PPFNGGCBJKC_id;
 								}
 								break;
-							case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+							case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
 								if (KHCACDIKJLG_Characters.Count >= id)
 								{
 									CCHHGIJMLBN_CharaItem charaItem = KHCACDIKJLG_Characters[id - 1];
 									charaItem.EBIMFANOGBK_SetId = set.PPFNGGCBJKC_id;
 								}
 								break;
-							case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+							case EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
 								if (COLIEKINOPB_ItemsPoster.Count >= id)
 								{
 									IEOEMNPLANK_PosterItem posterItem = COLIEKINOPB_ItemsPoster[id - 1];
@@ -805,12 +805,12 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 							IHFIAFDLAAK_DecoStamp.MFHKPMPJGHC dbStamp = _LKMHPJKIFDN_md.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[KHCACDIKJLG_Characters[NCLLKNJBEKI - 1].KPIBEAHCGOB[i].DNJEJEANJGL_Value - 1];
 							if(dbStamp.PLALNIIBLOF_en == 2)
 							{
-								//EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id);
-								int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, null);
+								//EKLNMHFCAOI_ItemManager.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id);
+								int num = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, null);
 								if(num == 0)
 								{
-									EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, 1, null);
-									j.NGEPPDAOIBN(EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, 1, 1, dbStamp.EKLIPGELKCL_Rarity);
+									EKLNMHFCAOI_ItemManager.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, 1, null);
+									j.NGEPPDAOIBN(EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, dbStamp.PPFNGGCBJKC_id, 1, 1, dbStamp.EKLIPGELKCL_Rarity);
 									a++;
 								}
 							}

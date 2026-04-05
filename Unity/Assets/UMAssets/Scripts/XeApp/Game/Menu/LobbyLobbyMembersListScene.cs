@@ -73,13 +73,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1299CF4 Offset: 0x1299CF4 VA: 0x1299CF4 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			m_myId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+			m_myId = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.MDAMJIGBOLD_PlayerId;
 			InitializeSortSetting();
 			base.OnPreSetCanvas();
 			m_buttonRuntime.Hide();
-			m_isDeco = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("deco_player_level", 0) != 0;
+			m_isDeco = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA_GetIntParam("deco_player_level", 0) != 0;
 			this.StartCoroutineWatched(Co_Initialize());
-			m_favoritCount = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
+			m_favoritCount = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
 			m_updater = () =>
 			{
 				//0x129E4E4
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x129AAC0 Offset: 0x129AAC0 VA: 0x129AAC0
 		private void FindMemberList()
 		{
-			NKOBMDPHNGP_EventRaidLobby cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_NetEventRaidLobbyController cont = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			MenuScene.Instance.InputDisable();
 			friends.Clear();
 			cont.IIBLJMMGMPD(() =>
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x129A814 Offset: 0x129A814 VA: 0x129A814
 		private string GetGroupName()
 		{
-			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_NetEventRaidLobbyController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			return ev.OFAKIAJNPDF_GetGroupName(ev.HJJBDFCMJJM_GetGroupId()) + JpStringLiterals.StringLiteral_367 + string.Format(bk.GetMessageByLabel("lobby_room_num_format"), ev.GAHICKBDHFO_GetRoomId());
 		}
@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 				m_guestInfoAllList.Add(m);
 				m.TryInstall();
 			}
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			SortGuestList();
 			MenuScene.Instance.InputEnable();
@@ -465,7 +465,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x129BE34 Offset: 0x129BE34 VA: 0x129BE34
 		private void OnMemberFunEnetry(int elemIndex)
 		{
-			if(m_favoritCount < PIGBKEIAMPE_FriendManager.DJHFILDBOFG_GetMaxFanPossible())
+			if(m_favoritCount < PIGBKEIAMPE_NetFriendManager.DJHFILDBOFG_GetMaxFanPossible())
 				FanRegister(elemIndex);
 			else
 				FanRegisterLimit();
@@ -512,7 +512,7 @@ namespace XeApp.Game.Menu
 				}
 				else if(t == PopupButton.ButtonType.Positive)
 				{
-					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+					NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 					for(int i = 0; i < friends.Count; i++)
 					{
 						if(i == index)
@@ -566,7 +566,7 @@ namespace XeApp.Game.Menu
 				else if(t == PopupButton.ButtonType.Positive)
 				{
 					int select = 0;
-					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+					NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
 					for(int i = 0; i < friends.Count; i++)
 					{
 						if(i == index)
@@ -594,8 +594,8 @@ namespace XeApp.Game.Menu
 		private void FanIncrement(int select)
 		{
 			m_guestInfoList[select].isFavorite = true;
-			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
+			NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
+			NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO data) =>
 			{
 				//0x129FBFC
 				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_PlayerId;
@@ -612,8 +612,8 @@ namespace XeApp.Game.Menu
 		private void FanDecrement(int select)
 		{
 			m_guestInfoList[select].isFavorite = false;
-			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
+			NKOBMDPHNGP_NetEventRaidLobbyController evLobby = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_NetEventRaidLobbyController;
+			NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_NetEventRaidLobbyController.ELKMKCNPDFO data) =>
 			{
 				//0x129FCD8
 				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_PlayerId;
@@ -632,8 +632,8 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			VisitDecoSceneArgs arg = new VisitDecoSceneArgs();
 			arg.friendData = m_guestInfoList[elemIndex].friend;
-			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK_DecoTransition("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_PlayerId);
-			ILCCJNDFFOB.HHCJCDFCLOB.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.CLGHLKLHEAK_DecoTransition("StringLiteral_18383", arg.friendData.MLPEHNBNOGD_PlayerId);
+			ILCCJNDFFOB.HHCJCDFCLOB_Instance.PFBIHCIFFKM_DecoVisit(arg.friendData.MLPEHNBNOGD_PlayerId, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CHNJPFCKFOI_FriendManager.PDEACDHIJJJ_IsFriend(arg.friendData.MLPEHNBNOGD_PlayerId), true, 0);
 			DecoVisitScene.transitionType = DecoVisitScene.TransitionType.None;
 			MenuScene.Instance.Mount(TransitionUniqueId.DECO_DECOVISIT, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}

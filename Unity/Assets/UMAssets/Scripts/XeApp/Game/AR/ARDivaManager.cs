@@ -90,7 +90,7 @@ namespace XeApp.Game.AR
         // RVA: 0x161D838 Offset: 0x161D838 VA: 0x161D838
         public bool CheckLoadedDiva(ARMarkerMasterData.Data markerData)
         {
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1];
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1];
             bool b = false;
             if(IsLoaded && m_divaId == markerData.divaId)
             {
@@ -126,10 +126,10 @@ namespace XeApp.Game.AR
         {
             assetList.Add("dv/ca/cmn.xab");
             assetList.Add(string.Format("dv/ca/{0:D3}.xab", markerData.divaId));
-            int cosId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
+            int cosId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
             assetList.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
             assetList.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
-            int pId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).FPMGHDKACOF_PersonalityId;
+            int pId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).FPMGHDKACOF_PersonalityId;
             assetList.Add(string.Format("dv/ty/{0:D3}.xab", pId));
             if(markerData.motionId == ARDivaMotionId.Talk)
             {
@@ -140,7 +140,7 @@ namespace XeApp.Game.AR
             {
                 assetList.Add("mc/cmn/bs.xab");
                 assetList.Add("dv/mk/bt/cmn.xab");
-                int bId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).IDDHKOEFJFB_BodyId;
+                int bId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(markerData.divaId).IDDHKOEFJFB_BodyId;
                 assetList.Add(string.Format("mc/{0:D4}/ar{1:D3}.xab", markerData.wavId, bId));
                 assetList.Add(string.Format("mc/{0:D4}/bt{1:D3}.xab", markerData.wavId, bId));
                 assetList.Add(string.Format("mc/{0:D4}/ft.xab", markerData.wavId));
@@ -165,9 +165,9 @@ namespace XeApp.Game.AR
             ListupDownloadList(l, l2, markerData);
             for(int i = 0; i < l.Count; i++)
             {
-                if(KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(l[i]))
+                if(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.EGIFDIFALKK(l[i]))
                 {
-                    KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(l[i]);
+                    KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(l[i]);
                 }
                 else
                 {
@@ -179,7 +179,7 @@ namespace XeApp.Game.AR
                 SoundResource.InstallCueSheet(l2[i]);
             }
             yield return null;
-            while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+            while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
                 yield return null;
         }
 
@@ -227,7 +227,7 @@ namespace XeApp.Game.AR
             yield return Co.R(Co_DownloadAssets(markerData));
             divaId = markerData.divaId;
             motionId = markerData.motionId;
-            modelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
+            modelId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
             wavId = markerData.wavId;
             bgmId = BgmPlayer.AR_BGM_ID_BASE + wavId;
             yield return Co.R(Co_LoadResource(divaId, modelId, wavId, motionId));
@@ -309,7 +309,7 @@ namespace XeApp.Game.AR
             AssetBundleLoadAllAssetOperationBase op; // 0x28
 
             //0x11CE90C
-            primeId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
+            primeId = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_Get(divaId).IDDHKOEFJFB_BodyId;
             m_divaResource.LoadBasicResource(divaId, modelId, 0);
             if(motionId == ARDivaMotionId.Talk)
             {

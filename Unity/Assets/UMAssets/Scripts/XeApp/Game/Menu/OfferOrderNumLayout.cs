@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 			m_layoutRoot = layout.FindViewByExId("root_sel_vfo_order_layout_root") as AbsoluteLayout;
 			m_orderLayout = layout.FindViewByExId("sw_s_v_order_anim_cmn_win_05_01") as AbsoluteLayout;
 			m_texUvList = uvMan.GetTexUVList("cmn_tex_pack");
-			m_sortOrder = KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc() ? SortOrder.Big : SortOrder.Small;
+			m_sortOrder = KDHGBOOECKC_NetOfferManager.HHCJCDFCLOB_Instance.LBKNBKPBAPJ_IsSortDesc() ? SortOrder.Big : SortOrder.Small;
 			UpdateOrderFont();
 			Loaded();
 			return base.InitializeFromLayout(layout, uvMan);

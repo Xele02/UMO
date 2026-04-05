@@ -213,18 +213,18 @@ namespace XeApp.Game.Common
 			int i; // 0x2C
 
 			//0xE69F54
-			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_loadedDivaId, modelId);
+			cosMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_loadedDivaId, modelId);
 			if(cosMaster.GLEEPAFMPLO_HasTextureBundle)
 			{
 				for(i = 0; i < 2; i++)
 				{
 					bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", m_loadedDivaId, modelId, i);
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
+					KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
 				}
 			}
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", m_loadedDivaId, modelId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
+			while(KDLPEDBKMID_NetDelayInstaller.HHCJCDFCLOB_Instance.LNHFLJBGGJB_IsRunning)
 				yield return null;
 
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", m_loadedDivaId, modelId);

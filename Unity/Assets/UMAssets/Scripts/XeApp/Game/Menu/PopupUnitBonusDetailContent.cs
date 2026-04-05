@@ -8,13 +8,13 @@ namespace XeApp.Game.Menu
 {
 	public class PopupUnitBonusDetailContentSetting : PopupSetting
 	{
-		private List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.AAALCKPHGNG> costumeData; // 0x34
-		private List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.LNKNJHEFBCE> valkyrieData; // 0x38
+		private List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.AAALCKPHGNG> costumeData; // 0x34
+		private List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.LNKNJHEFBCE> valkyrieData; // 0x38
 
 		public override string PrefabPath { get { return ""; } } //0x1155B70
 		public override string BundleName { get { return "ly/208.xab"; } } //0x1155BCC
-		public List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.AAALCKPHGNG> CostumeData { get { return costumeData; } } //0x1155A54
-		public List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.LNKNJHEFBCE> ValkyrieData { get { return valkyrieData; } } //0x1155A5C
+		public List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.AAALCKPHGNG> CostumeData { get { return costumeData; } } //0x1155A54
+		public List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.LNKNJHEFBCE> ValkyrieData { get { return valkyrieData; } } //0x1155A5C
 		public override string AssetName { get { return "root_pop_ep_raid_bonus_layout_root"; } } //0x1155C28
 		public override bool IsAssetBundle { get { return true; } } //0x1155C84
 		public override bool IsPreload { get { return true; } } //0x1155C8C
@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// public void SetContent(GameObject obj) { }
 
 		// RVA: 0x1155CA4 Offset: 0x1155CA4 VA: 0x1155CA4
-		public void SetCostumeData(List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.AAALCKPHGNG> data)
+		public void SetCostumeData(List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.AAALCKPHGNG> data)
 		{
 			TitleText = MessageManager.Instance.GetMessage("menu", "popup_raid_formation_bonus_costume_title");
 			costumeData = data;
@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1155D64 Offset: 0x1155D64 VA: 0x1155D64
-		public void SetValkyrieData(List<PKNOKJNLPOE_EventRaid.MOAICCAOMCP.LNKNJHEFBCE> data)
+		public void SetValkyrieData(List<PKNOKJNLPOE_NetEventRaidController.MOAICCAOMCP.LNKNJHEFBCE> data)
 		{
 			TitleText = MessageManager.Instance.GetMessage("menu", "popup_raid_formation_bonus_valkyrie_title");
 			costumeData = null;

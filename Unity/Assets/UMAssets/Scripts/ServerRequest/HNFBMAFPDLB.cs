@@ -24,7 +24,7 @@ public class PIKEPLLPNNH
 
 [System.Obsolete("Use HNFBMAFPDLB_GetRegularRankingRanksAroundTarget", true)]
 public class HNFBMAFPDLB { }
-public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_Request
+public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_NetBaseAction
 {
 	public string DEPGBBJMFED_CategoryId; // 0x7C
 	public string HHNFHJCAPJO_Target; // 0x80

@@ -243,8 +243,8 @@ namespace XeApp.Game.Menu
 					return;
 				case eSceneType.FreeMusicSelect1:
 					{
-						int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.LCDLKPOLHHJ_GetAddRegularMusicVer();
-						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+						int level = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.LCDLKPOLHHJ_GetAddRegularMusicVer();
+						CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 						SetViewData(eSceneType.FreeMusicSelect1, FAGCLBOACEE.ICBFAFNOHIB(level));
 						SetViewData(eSceneType.FreeMusicSelect1, FAGCLBOACEE.MLHMCCLKALG());
 						SetViewData(eSceneType.FreeMusicSelect1, FAGCLBOACEE.GGGOIINDGMI());
@@ -512,7 +512,7 @@ namespace XeApp.Game.Menu
 						psetting.closeAction = () =>
 						{
 							//0x115C22C
-							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ENIPGFLGJHH_LastStory = 0;
+							CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ENIPGFLGJHH_LastStory = 0;
 						};
 					}
 					else
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 						s.closeAction = () =>
 						{
 							//0x115C30C
-							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.LOBOPFFFPGP();
+							CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.LOBOPFFFPGP();
 						};
 						return s;
 					}
@@ -650,7 +650,7 @@ namespace XeApp.Game.Menu
 						dsseting.closeAction = () =>
 						{
 							//0x115C3E8
-							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EMHMCOBNMLI();
+							CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EMHMCOBNMLI();
 						};
 						return res;
 					}

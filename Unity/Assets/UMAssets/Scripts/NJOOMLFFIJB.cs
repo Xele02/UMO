@@ -20,9 +20,9 @@ public class NJOOMLFFIJB
 	// RVA: 0x18ACCF8 Offset: 0x18ACCF8 VA: 0x18ACCF8
 	public static List<NJOOMLFFIJB> FKDIMODKKJD_GetList(int _PDJEMLMOEPF_CenterDivaId)
 	{
-		BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[_PDJEMLMOEPF_CenterDivaId - 1];
-		List<NPCCDMKJBMM_HomeVoice.KLKLEALABPN> voiceList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGIMEEEALPK_HomeVoice.CDENCMNHNGA_table;
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
+		BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[_PDJEMLMOEPF_CenterDivaId - 1];
+		List<NPCCDMKJBMM_HomeVoice.KLKLEALABPN> voiceList = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MGIMEEEALPK_HomeVoice.CDENCMNHNGA_table;
+		long time = NKGJPJPHLIF_SakashoManager.HHCJCDFCLOB_Instance.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		DateTime date = Utility.GetLocalDateTime(time);
 		List<NJOOMLFFIJB> res = new List<NJOOMLFFIJB>();
 		for(int i = 0; i < voiceList.Count; i++)

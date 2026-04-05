@@ -101,9 +101,9 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				OKGLGHCBCJP_Database db = null;
-				if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.LNAHEIEIBOI_Initialized)
 				{
-					db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+					db = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database;
 				}
 				for(int i = 0; i < block.HNBFOAJIIAL_Count; i++)
 				{

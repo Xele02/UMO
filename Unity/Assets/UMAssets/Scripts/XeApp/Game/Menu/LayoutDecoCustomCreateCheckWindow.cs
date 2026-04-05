@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 				SetImage(image, m_charactorImage);
 				m_charactorImage.enabled = true;
 			});
-			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP s = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
+			IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP s = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19DC53C
 				return serifId == item.PPFNGGCBJKC_id;
@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				SetImage(image, m_serifImage);
 				m_serifImage.enabled = true;
 			});
-			s = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
+			s = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
 			{
 				//0x19DC604
 				return serifId == item.PPFNGGCBJKC_id;

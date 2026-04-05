@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x18E543C Offset: 0x18E543C VA: 0x18E543C
 		private void Awake()
 		{
-			expMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
+			expMaster = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
 		}
 
 		// RVA: 0x18E5500 Offset: 0x18E5500 VA: 0x18E5500
@@ -433,7 +433,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E6F0C Offset: 0x18E6F0C VA: 0x18E6F0C
 		private bool IsLevelMax(int level)
 		{
-			return level >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel;
+			return level >= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP_Settings.PIAMMJNADJH_PlayerMaxLevel;
 		}
 	}
 }

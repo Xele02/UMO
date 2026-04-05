@@ -10,11 +10,11 @@ namespace XeApp.Game.Menu
 {
 	public class RaidRewardArgs : TransitionArgs
 	{
-		public List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> bossInfoList; // 0x8
+		public List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> bossInfoList; // 0x8
 		public TransitionUniqueId returnUniqueId; // 0xC
 
 		// RVA: 0x1816168 Offset: 0x1816168 VA: 0x1816168
-		public RaidRewardArgs(TransitionUniqueId uniqueId, List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> _bossInfoList)
+		public RaidRewardArgs(TransitionUniqueId uniqueId, List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> _bossInfoList)
 		{
 			bossInfoList = _bossInfoList;
 			returnUniqueId = uniqueId;
@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private int currentParamIndex; // 0x58
 		private bool m_initialize; // 0x5C
 		private TransitionUniqueId m_returnUniqueId; // 0x60
-		private List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> m_bossInfoList; // 0x64
+		private List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> m_bossInfoList; // 0x64
 
 		// RVA: 0x1816190 Offset: 0x1816190 VA: 0x1816190 Slot: 5
 		protected override void Start()
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 				raidResultCannonLayoutController.onClickOkayButton = OnClickRaidDamageResultEnd;
 				raidResultCannonLayoutController.Setup(p);
 				yield return this.StartCoroutineWatched(Co_SetBossBg(g.HPPDFBKEJCG_BgId));
-				PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 				bool done = false;
 				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), 
 					ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), 
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1816464 Offset: 0x1816464 VA: 0x1816464
 		private void OnClickRaidDamageResultEnd()
 		{
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_NetEventRaidController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			if(ev.KONJMFICNJJ_RewardsInfo == null)
 			{
 				this.StartCoroutineWatched(Co_RaidBossHelp());
@@ -194,11 +194,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1816714 Offset: 0x1816714 VA: 0x1816714
 		private IEnumerator Co_RaidBossHelp()
 		{
-			PKNOKJNLPOE_EventRaid cont;
+			PKNOKJNLPOE_NetEventRaidController cont;
 
 			//0x1819BD4
 			MessageBank bank = MessageManager.Instance.GetBank("menu");
-			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			cont = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_11_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_NetEventRaidController;
 			if(cont.LMIFOCDCNAI())
 			{
 				if(cont.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_id)
@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputDisable();
 						bool done = false;
 						bool err = false;
-						cont.MCKDAPPELKJ_RequestBossHelp(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+						cont.MCKDAPPELKJ_RequestBossHelp(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_NetEventRaidController.ECICDAPCMJG> helper) =>
 						{
 							//0x1817358
 							if(helper.Count < 1)
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71540C Offset: 0x71540C VA: 0x71540C
 		// // RVA: 0x181666C Offset: 0x181666C VA: 0x181666C
-		private IEnumerator InitRaidRewardResult(List<PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ> bossInfoList)
+		private IEnumerator InitRaidRewardResult(List<PKNOKJNLPOE_NetEventRaidController.MJFMOPMOFDJ> bossInfoList)
 		{
 			int i; // 0x1C
 			RaidResultRewardLayoutController.InitParam initParam; // 0x20

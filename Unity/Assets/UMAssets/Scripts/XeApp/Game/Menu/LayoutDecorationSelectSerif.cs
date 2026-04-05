@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				base.Setting(item, postNum, canKira, tab, type, window);
-				if(item.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
+				if(item.NPADACLCNAN_Category == EKLNMHFCAOI_ItemManager.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 				{
 					SettingSerif(item.GBJFNGCDKPM_typ, item.DOIGLOBENMG_StampName, item.DBGAJBIBODC_FontType);
 				}

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			public int emotion; // 0x1C
 			public bool IsNew; // 0x20
 			public int tabCategory; // 0x24
-			public FJGOKILCBJA product; // 0x28
+			public FJGOKILCBJA_ViewShopProductData product; // 0x28
 		}
 
 		private readonly int[,] ButtonTextureIdTable = new int[2, 2] { { 4, 2 }, { 4, 1 } }; // 0x14
@@ -395,12 +395,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19E6BAC Offset: 0x19E6BAC VA: 0x19E6BAC
 		private int GetStampCharaId(int targetId)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
 				if(targetId > 0)
 				{
-					if (targetId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_cid;
+					if (targetId <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps.Count)
+						return IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.FHBIIONKIDI_Stamps[targetId - 1].JBFLEDKDFCO_cid;
 				}
 			}
 			return 0;
@@ -409,15 +409,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19E6D00 Offset: 0x19E6D00 VA: 0x19E6D00
 		private SeriesAttr.Type GetStampCharaSeries(int charaId)
 		{
-			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database != null)
 			{
 				if (charaId > 0)
 				{
-					if (charaId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
+					if (charaId <= IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
 					{
-						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].PPEGAKEIEGM_Enabled == 2)
+						if (IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].PPEGAKEIEGM_Enabled == 2)
 						{
-							return (SeriesAttr.Type)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].CPKMLLNADLJ_Serie;
+							return (SeriesAttr.Type)IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].CPKMLLNADLJ_Serie;
 						}
 					}
 				}

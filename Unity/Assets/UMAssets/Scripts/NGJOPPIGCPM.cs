@@ -82,10 +82,10 @@ public class NGJOPPIGCPM_ResultData
 	// RVA: 0x1AF6D2C Offset: 0x1AF6D2C VA: 0x1AF6D2C
 	public void KHEKNNFCAOI_Init(int GHBPLHBNMBK_FreeMusicId, Difficulty.Type _NOAKHKMLPFK_Difficulty, bool JIBFGLODGHN_EnableLiveSkip, bool _GIKLNODJKFK_IsLine6/* = false*/, int _MNNHHJBBICA_GameEventType/* = 0*/)
     {
-		KEODKEGFDLD_FreeMusicInfo HMONFKMAFDD = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
+		KEODKEGFDLD_FreeMusicInfo HMONFKMAFDD = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
 		this.GHBPLHBNMBK_FreeMusicId = GHBPLHBNMBK_FreeMusicId;
 		DLAEJOBELBH_MusicId = HMONFKMAFDD.DLAEJOBELBH_MusicId;
-		AIPEHINPIHC_ForcedSettingInfo forcedPrism = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo _GHPLINIACBB_x) =>
+		AIPEHINPIHC_ForcedSettingInfo forcedPrism = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo _GHPLINIACBB_x) =>
 		{
 			//0x1AF83C8
 			return HMONFKMAFDD.BLDDNEJDFON_ForcePrismId == _GHPLINIACBB_x.NMNDNFFJHPJ_Id;
@@ -94,8 +94,8 @@ public class NGJOPPIGCPM_ResultData
 		{
 			DHJAFJKALCA__ForcedMusicId = forcedPrism.IOPCBBNHJIP_ForcedMusicId;
 		}
-		LCKMBHDMPIP_RecordMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
-		OEELDFNNLKK_SaveRecordMusic2 = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic;
+		LCKMBHDMPIP_RecordMusic = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
+		OEELDFNNLKK_SaveRecordMusic2 = CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		int savedCombo = mInfo1.PDNJGJNGPNJ_MaxCombo;
@@ -103,7 +103,7 @@ public class NGJOPPIGCPM_ResultData
 		int savedComboRank = mInfo1.ABFNAEKEGOB_ComboRank;
 		if(_MNNHHJBBICA_GameEventType == 2)
 		{
-			MHAPMOLCPKM_EventQuest ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false) as MHAPMOLCPKM_EventQuest;
+			MHAPMOLCPKM_NetEventQuestController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false) as MHAPMOLCPKM_NetEventQuestController;
 			OFNLIBDEIFA_EventQuest.HGCEGAAJFBC d = ev.JIPPHOKGLIH_GetMusicSaveData(GHBPLHBNMBK_FreeMusicId, true);
 			if(d != null)
 			{
@@ -121,7 +121,7 @@ public class NGJOPPIGCPM_ResultData
 		}
 		else if(_MNNHHJBBICA_GameEventType == 3)
 		{
-			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false) as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_NetEventBattleController ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false) as HAEDCCLHEMN_NetEventBattleController;
             CCPKHBECNLH_EventBattle.AIFGBKMMJGL music = ev.JIPPHOKGLIH_GetMusicSaveData(GHBPLHBNMBK_FreeMusicId, true);
 			if(music != null)
 			{
@@ -160,7 +160,7 @@ public class NGJOPPIGCPM_ResultData
         }
 		else if(_MNNHHJBBICA_GameEventType == 4)
 		{
-			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_NetEventManager.HHCJCDFCLOB_Instance.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
 			if(ev != null)
 			{
 				mInfo2 = ev.JIPPHOKGLIH_GetMusicSaveData(true).KJAFPNIFPGP();

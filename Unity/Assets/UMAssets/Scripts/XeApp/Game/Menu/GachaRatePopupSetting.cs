@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		public List<GachaRateInfo> EpisodeInfoList { get; set; } // 0x38
 		public Action<int> OnClickRewardButton { get; set; } // 0x3C
 		public Action<int> OnClickStepButton { get; set; } // 0x40
-		public LOBDIAABMKG Data { get; set; } // 0x44
+		public LOBDIAABMKG_GachaProductData Data { get; set; } // 0x44
 		public override string PrefabPath { get { return ""; } } //0xEE5F48
 		public override string BundleName { get { return "ly/068.xab"; } } //0xEE5FA4
 		public override string AssetName { get { return "PopupGachaRate"; } } //0xEE6000

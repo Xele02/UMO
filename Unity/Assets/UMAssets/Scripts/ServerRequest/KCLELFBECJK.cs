@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Obsolete("Use KCLELFBECJK_GetSentFriendRequests", true)]
 public class KCLELFBECJK { }
-public class KCLELFBECJK_GetSentFriendRequests : CACGCMBKHDI_Request
+public class KCLELFBECJK_GetSentFriendRequests : CACGCMBKHDI_NetBaseAction
 {
 	public class CLGDMAEAFJB
 	{
