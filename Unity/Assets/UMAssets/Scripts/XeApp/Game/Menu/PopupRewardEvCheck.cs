@@ -999,15 +999,13 @@ namespace XeApp.Game.Menu
 				m_MainLayout.FxScrollView.SetupListItem(m_pointList);
 				if(type == PopupTabButton.ButtonLabel.CumulativePoint)
 				{
-					int p = m_pointList.Count - 1;
-					if(p < 0)
-						p = 0;
 					bool b = false;
-					for(int i = 0; i < p; i++)
+					int p = 0;
+					for(int i = m_pointList.Count - 1; i >= 0; i--)
 					{
-						if(m_pointList[p] is PointListItem)
+						if(m_pointList[i] is PointListItem)
 						{
-							if((m_pointList[p] as PointListItem).IsGet)
+							if((m_pointList[i] as PointListItem).IsGet)
 							{
 								b = true;
 								p = i;
