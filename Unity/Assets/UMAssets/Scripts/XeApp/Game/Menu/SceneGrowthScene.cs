@@ -1048,7 +1048,7 @@ namespace XeApp.Game.Menu
 			int num = EKLNMHFCAOI_ItemManager.ALHCGDMEMID_GetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId), null);
 			if (num > 0)
 				EKLNMHFCAOI_ItemManager.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database, CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI_ItemManager.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI_ItemManager.DEACAHNLMNI_getItemId(typeItemId), num - 1, null);
-			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.RarityUp, null, false));
+			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.RarityUp, d, null, false));
 			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
 			GameManager.Instance.fullscreenFader.Fade(0.5f, Color.white);
 			m_unLockTargetPanelIndex.RemoveRange(1, m_unLockTargetPanelIndex.Count - 1);
