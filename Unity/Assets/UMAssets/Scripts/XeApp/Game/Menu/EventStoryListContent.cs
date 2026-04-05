@@ -198,8 +198,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB92474 Offset: 0xB92474 VA: 0xB92474
 		public static Rect CalcThumbnailRect(int index, Vector2 textureSize)
 		{
-			int x = index % Mathf.RoundToInt((textureSize.y / 128));
-			int y = index / Mathf.RoundToInt((textureSize.y / 128));
+			int x = index / Mathf.RoundToInt((textureSize.y / 128));
+			int y = index % Mathf.RoundToInt((textureSize.y / 128));
 			float f = 128.0f / textureSize.y;
 			return new Rect(256.0f / textureSize.x * x, (1 - f * y) - f, 256.0f / textureSize.x, f);
 		}
