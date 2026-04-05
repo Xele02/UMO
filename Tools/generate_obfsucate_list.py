@@ -152,6 +152,11 @@ with open("namelist.json", "w") as f:
 with open("namelist_unknown.json", "w") as f:
 	json.dump(convertlistUnknown, f, indent=True)
 
+with open("obfuscate.csv", "w") as f:
+	for k in names_dict:
+		if len(names_dict[k]["names"]) == 1 and "" in names_dict[k]["names"]:
+			f.write(k+";"+str(names_dict[k]["names"][""]["num"])+"\n")
+
 with open("obfuscate2.csv", "w") as f:
 	for k in names_dict:
 		if len(names_dict[k]["names"]) > 1:
