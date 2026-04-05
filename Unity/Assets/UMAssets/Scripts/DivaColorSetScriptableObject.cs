@@ -10,7 +10,7 @@ public class DivaColorSetScriptableObject : ScriptableObject
 	// RVA: 0x1242DC0 Offset: 0x1242DC0 VA: 0x1242DC0
 	public Color GetDivaColor(int divaId)
 	{
-		int index = divaId + 1;
+		int index = divaId - 1;
 		if(index > -1)
 		{
 			if(index < m_divaColors.Count)
