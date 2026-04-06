@@ -178,7 +178,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
     {
         #if UNITY_ANDROID
         string path = Application.persistentDataPath + "/Profiles/" + Id + "/data.json";
-        AndroidUtils.OnShare2(path, "Save Profile", "");
+        AndroidUtils.OnShare2(path, "Save Profile", "", "application/octet-stream");
         #else
         Application.OpenURL(Application.persistentDataPath + "/Profiles/" + Id + "/");
         #endif
@@ -188,7 +188,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
     {
         #if UNITY_ANDROID
         string path = Application.persistentDataPath + "/SaveData/" + Id + "_save.bin";
-        AndroidUtils.OnShare2(path, "Save Profile", "");
+        AndroidUtils.OnShare2(path, "Save Profile", "", "application/octet-stream");
         #else
         Application.OpenURL(Application.persistentDataPath + "/SaveData/");
         #endif

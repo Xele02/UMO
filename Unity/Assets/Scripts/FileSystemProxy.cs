@@ -256,7 +256,7 @@ static class FileSystemProxy
 				retry = true;
 			else
 				next = true;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 		while(!next && !retry)
 			yield return null;
 		if(retry)
@@ -277,7 +277,7 @@ static class FileSystemProxy
 		, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
 		{
 			cancel = true;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 		yield return null;
         while (foundServer == "" && !cancel)
 		{
@@ -319,7 +319,7 @@ static class FileSystemProxy
 			{
 				foundServer = (control_.Content as InputContent).Text;
 				done = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!done)
 				yield return null;
 		}
