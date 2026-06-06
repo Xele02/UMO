@@ -51,9 +51,11 @@ public class DocusaurusGenerator
         //generator.DumpLoginBonusImages();
         //generator.DumpEpisodeImages();
         //generator.DumpHomeBannerImages();
-        generator.DumpEventImages();
+        //generator.DumpEventImages();
         //generator.DumpHomePickupsImages();
         //generator.DumpGachaImages();
+        generator.DumpTutorialImages();
+        generator.DumpQuestsImages();
 
         MNNCBFONAOL.PDENBOEFJGE();
     }
@@ -1123,18 +1125,76 @@ public class DocusaurusGenerator
         }
     }
 
+    public void DumpTutorialImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/to").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/tutorials/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/to/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+    }
+
+    public void DumpQuestsImages()
+    {
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/qu/qi").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/quests/icons/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/qu/qi/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/qu/qf").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/quests/fonts/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/qu/qf/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
+    }
+
     public void DumpItemsImages()
     {
-        string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/im").ToArray();
-
-        ImageDumpInfo list = new ImageDumpInfo();
-        list.BaseSavePath = "/images/items/";
-        for(int i = 0; i < files.Count(); i++)
         {
-            FileInfo f = new FileInfo(files[i]);
-            list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/im/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/im").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/items/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/im/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
         }
-        DumpImages(list);
+        {
+            string [] files = Directory.EnumerateFiles(Application.persistentDataPath + "/data/android/ct/im/dc/vl").ToArray();
+
+            ImageDumpInfo list = new ImageDumpInfo();
+            list.BaseSavePath = "/images/items/valkyrie/";
+            for(int i = 0; i < files.Count(); i++)
+            {
+                FileInfo f = new FileInfo(files[i]);
+                list.Files.Add(new ImageDumpInfo.FileInfo() {BundleName="/ct/im/dc/vl/"+f.Name, OutputName=f.Name.Replace(".xab","")});
+            }
+            DumpImages(list);
+        }
 
     }
 

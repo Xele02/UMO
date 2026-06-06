@@ -27,7 +27,7 @@ public class ABPEPHGCNDA
 			{
 				BPADANIKFHP data = new BPADANIKFHP();
 				data.EKLIPGELKCL_Rarity = BPADANIKFHP.GIFAIIDJPND.Count - i;
-				data.MMOJHIPAAIK_probability = (string)d[i][s];
+				data.MMOJHIPAAIK_probability = (string)d[s];
 				data.HBHMAKNGKFK_items = new List<KFKCGKGKBJL>();
 				OJGPPOKENLG_Groups.Add(data);
 			}
