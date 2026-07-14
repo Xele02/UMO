@@ -60,7 +60,9 @@ namespace ExternLib
 			if (cueRecord == null)
 				return false;
 			info.length = cueRecord.LengthMilli;
+#if UNITY_EDITOR
 			info.name = cueRecord.OriginalCueName;
+#endif
 			TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
 			return true;
 		}

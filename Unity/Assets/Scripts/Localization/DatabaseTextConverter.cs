@@ -557,9 +557,11 @@ public static class DatabaseTextConverter
         GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/", keepUntransladedAsKey:RuntimeSettings.CurrentSettings.ShowStringUsed);
     }
 
-    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2, bool keepUntransladedAsKey = false)
+    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2, bool keepUntransladedAsKey = false, List<string> languages = null)
     {
-        foreach(var lang in supportedLanguage)
+        if(languages == null)
+            languages = supportedLanguage;
+        foreach(var lang in languages)
         {
             CBBJHPBGBAJ_Archive archive = new CBBJHPBGBAJ_Archive();
             foreach(var sheet in Enum.GetValues(typeof(MessageLoader.eSheet)))
@@ -569,6 +571,8 @@ public static class DatabaseTextConverter
                 {
                     {
                         string p = poPath.Replace("{name}", sheet.ToString());
+                        if(!Directory.Exists(p))
+                            continue;
                         poFile.KeyPrefix = sheet.ToString() + "/";
                         poFile.LoadFile(p + "messages_full.pot", clear:true); // Read the full template for filling all key
                         poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey); // Read the jp one for filling non translated files
@@ -605,6 +609,8 @@ public static class DatabaseTextConverter
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_sns");
+                        if(!Directory.Exists(p))
+                            continue;
                         poFile.KeyPrefix = sheet.ToString() + "_sns/";
                         poFile.LoadFile(p + "messages_full.pot");
                         poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
@@ -612,6 +618,8 @@ public static class DatabaseTextConverter
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_scene");
+                        if(!Directory.Exists(p))
+                            continue;
                         poFile.KeyPrefix = sheet.ToString() + "_scene/";
                         poFile.LoadFile(p + "messages_full.pot");
                         poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
@@ -621,6 +629,8 @@ public static class DatabaseTextConverter
                 else
                 {
                     string p = poPath.Replace("{name}", sheet.ToString());
+                    if(!Directory.Exists(p))
+                        continue;
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
                     poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
@@ -636,6 +646,8 @@ public static class DatabaseTextConverter
                 if((eBank)i == eBank.string_literals)
                 {
                     string p = poPath2;
+                    if(!Directory.Exists(p))
+                        continue;
                     poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages.pot", clear:true);
                     poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
@@ -644,6 +656,8 @@ public static class DatabaseTextConverter
                 else
                 {
                     string p = poPath.Replace("{name}", ((eBank)i).ToString());
+                    if(!Directory.Exists(p))
+                        continue;
                     poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
                     poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
@@ -680,7 +694,7 @@ public static class DatabaseTextConverter
             // Jump next 512
             if(archive.KGHAJGGMPKL_files.Count > 0)
             {
-                string p = outDir.Replace("{name}", "Database") + lang + ".bytes";
+                string p = Path.Combine( outDir.Replace("{name}", "Database"), lang + ".bytes");
                 Directory.CreateDirectory(new FileInfo(p).DirectoryName);
                 using(FileStream stream = new FileStream(p, FileMode.Create, FileAccess.Write))
                 {
@@ -789,13 +803,27 @@ public static class DatabaseTextConverter
             }
             else
             {
-                str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
-                ResourcesManager.Instance.Request(str.ToString(), (FileResultObject fro) =>
+                string dlcName = "game-translation-"+RuntimeSettings.CurrentSettings.Language;
+                if(DlcManager.Instance.IsEnabled(dlcName))
                 {
-                    OnDone((fro.unityObject as TextAsset).bytes);
-                    return true;
-                }, dic, 0);
-                ResourcesManager.Instance.Load();
+                    string languageFile = Path.Combine(Application.persistentDataPath, DlcManager.Instance.GetPath(dlcName), "translation", RuntimeSettings.CurrentSettings.Language + ".bytes");
+                    if(File.Exists(languageFile))
+                    {
+                        OnDone(File.ReadAllBytes(languageFile.ToString()));
+                    }
+                    else
+                    {
+                        UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+                        RuntimeSettings.CurrentSettings.Language = "";
+                        yield break;
+                    }
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+                    RuntimeSettings.CurrentSettings.Language = "";
+                    yield break;
+                }
             }
             while(!isDone)
                 yield return null;

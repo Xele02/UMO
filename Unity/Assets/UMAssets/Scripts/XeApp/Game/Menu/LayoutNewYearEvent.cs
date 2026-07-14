@@ -101,8 +101,8 @@ namespace XeApp.Game.Menu
 				}
 			});
 			string s = MessageManager.Instance.GetMessage("menu", "sel_event_01_period");
-			DateTime d1 = DateTime.Now;
-			DateTime d2 = DateTime.Now;
+			DateTime d1 = Utility.GetDateNow();
+			DateTime d2 = Utility.GetDateNow();
 			if(ev.GEFCIHNPKIG())
 			{
 				long l1, l2;

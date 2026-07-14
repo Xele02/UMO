@@ -27,7 +27,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 			isInstalling = false;
 			HHHEFALNMJO_mPath = newPath;
 #endif
-			COJNCNGHIJC_Req = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
+			COJNCNGHIJC_Req = Cryptor.DsfdLoader.LoadFile(FileSystemProxy.ConvertPath(HHHEFALNMJO_mPath));
 #if UNITY_EDITOR || UNITY_STANDALONE
 		});
 #endif

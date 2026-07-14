@@ -71,6 +71,9 @@ public class IKAHKDKIGNA
 			if (KGHAJGGMPKL_files[i].OIEAICNAMNB_LocalFileName == "/android/" + CKDFCDDOBDH)
 				return true;
 		}
+		// Check with the dlc files
+		if(FileSystemProxy.DlcFileExists("/android/" + CKDFCDDOBDH))
+			return true;
 		return false;
 	}
 

@@ -947,17 +947,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF96DC Offset: 0x1BF96DC VA: 0x1BF96DC
-		public void LoadFacialResource(int divaId, int wavId, int stageDivaNum)
+		public void LoadFacialResource(int divaId, int modelId, int wavId, int stageDivaNum)
 		{
 			if(!isLoadedMusicFacialResource)
 			{
-				this.StartCoroutineWatched(Co_LoadFacialResource(divaId, wavId, stageDivaNum));
+				this.StartCoroutineWatched(Co_LoadFacialResource(divaId, modelId, wavId, stageDivaNum));
 			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7369F0 Offset: 0x7369F0 VA: 0x7369F0
 		// // RVA: 0x1BF971C Offset: 0x1BF971C VA: 0x1BF971C
-		private IEnumerator Co_LoadFacialResource(int divaId, int wavId, int stageDivaNum)
+		private IEnumerator Co_LoadFacialResource(int divaId, int modelId, int wavId, int stageDivaNum)
 		{
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
@@ -1021,6 +1021,38 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+
+			// Umo add facial costume override
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return Co.R(operation);
+
+			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
+			{
+				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
+				FacialOverrideResouece resource = commonFacialResource.Find(d => d.originalName == divaCommonFacialAnimName[i]);
+				AnimationClip clip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				if(clip != null)
+				{
+					resource.overrideClip = clip;
+				}
+			}
+			
+			for(int i = 0; i < originalFacialNames.Count; i++)
+			{
+				if(overrideFacesId[i] > 0)
+				{
+					string s = XeApp.Game.Common.FacialNameDatabase.ToString(overrideFacesId[i]);
+					assetName.SetFormat("diva_{0:D3}_{1}", divaId, s);
+					FacialOverrideResouece resource = specialFacialResource.Find(d => d.originalName == originalFacialNames[i]);
+					AnimationClip clip = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(clip != null)
+					{
+						resource.overrideClip = clip;
+					}
+				}
+			}
 			
 			isLoadedMusicFacialResource = true;
 		}
@@ -1041,7 +1073,7 @@ namespace XeApp.Game.Common
 			//0x1C03944
 			
 			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
-			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, facialType));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, modelId, facialType));
 			yield return this.StartCoroutineWatched(Co_LoadLoginAction(divaId));
 			yield return this.StartCoroutineWatched(Co_LoadResultAction(divaId, modelId, scoreRank));
 			yield return this.StartCoroutineWatched(Co_LoadUnlockDivaAction(divaId));
@@ -1522,7 +1554,7 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736D58 Offset: 0x736D58 VA: 0x736D58
 		// // RVA: 0x1BF9D74 Offset: 0x1BF9D74 VA: 0x1BF9D74
-		private IEnumerator Co_LoadFacialClip(int divaId, DivaResource.MenuFacialType facialType)
+		private IEnumerator Co_LoadFacialClip(int divaId, int modelId, DivaResource.MenuFacialType facialType)
 		{
 			StringBuilder bundleName; // 0x1C
 			StringBuilder assetName; // 0x20
@@ -1581,6 +1613,37 @@ namespace XeApp.Game.Common
 			}
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			// Umo added for facial override
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return Co.R(operation);
+
+			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
+			{
+				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
+				FacialOverrideResouece data = commonFacialResource.Find(d => d.originalName == divaCommonFacialAnimName[i]);
+				AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				if(overrideClip != null)
+				{
+					data.overrideClip = overrideClip;
+				}
+			}
+			for(int i = 0; i < originalFacesName.Count; i++)
+			{
+				if(overrideFacesId[i] > 0)
+				{
+					assetName.SetFormat("diva_{0:D3}_{1}", divaId, FacialNameDatabase.ToString(overrideFacesId[i]));
+					FacialOverrideResouece data = specialFacialResource.Find(d => d.originalName == originalFacesName[i]);
+					AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(overrideClip != null)
+					{
+						data.overrideClip = overrideClip;
+					}
+				}
+			}
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// // RVA: 0x1BF9E78 Offset: 0x1BF9E78 VA: 0x1BF9E78
@@ -1597,7 +1660,7 @@ namespace XeApp.Game.Common
 			if(isLoadedSimpleResource)
 				yield break;
 			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
-			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, facialType));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, modelId, facialType));
 			isLoadedSimpleResource = true;
 		}
 
@@ -1689,7 +1752,7 @@ namespace XeApp.Game.Common
 		{
 			//0x1C06F1C
 			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
-			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, MenuFacialType.Result));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, modelId, MenuFacialType.Result));
 			loginMotionOverride.reactions = new List<LoginMotionOverrideResource.Reaction>();
 			yield return this.StartCoroutineWatched(Co_LoadResultAction(divaId, modelId, ResultScoreRank.Type.SS));
 			isLoadedRivalResultAnimationResource = true;

@@ -46,6 +46,12 @@ namespace XeApp.Core
                 if(loadedBundle != null)
                 {
                     m_request = loadedBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
+                    //if(m_request.asset == null)
+                    /*{
+                        UnityEngine.Debug.LogError("Could not find file "+m_AssetName+" in bundle. File are : ");
+                        string[] names = loadedBundle.m_AssetBundle.GetAllAssetNames();
+                        UnityEngine.Debug.LogError(string.Join(", ", names));
+                    }*/
                 }
                 return !IsError();
             }

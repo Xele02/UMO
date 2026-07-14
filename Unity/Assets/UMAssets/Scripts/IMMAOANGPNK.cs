@@ -174,6 +174,9 @@ public class IMMAOANGPNK_NetMasterDataManager
 					yield break;
 				}
 				
+				ExternLib.LibSakasho.ResetDLC();
+				DlcManager.Instance.UpdateDatabase();
+				
 				if(MessageLoader.Instance != null)
 				{
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.common, 0);

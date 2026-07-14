@@ -6,7 +6,7 @@ namespace ExternLib
 {
 	public static partial class LibSakasho
 	{
-		class LoginBonusData
+		public class LoginBonusData
 		{
 			public class Prize
 			{
@@ -37,6 +37,9 @@ namespace ExternLib
 			public bool repeat_with_count;
 			public bool repeat_with_period;
 
+			//Umo
+			public bool repeat_every_year = false;
+
 			public EDOHBJAPLPF_JsonData GetLoginBonus()
 			{
 				EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
@@ -53,11 +56,11 @@ namespace ExternLib
 
 		class UserLoginInfo
 		{
-			public int id;
+			public string id;
 			public int count;
 			public long last_updated;
 
-			public UserLoginInfo(int id)
+			public UserLoginInfo(string id)
 			{
 				this.id = id;
 				count = 0;
@@ -66,7 +69,16 @@ namespace ExternLib
 
 			public void Load(EDOHBJAPLPF_JsonData data)
 			{
-				id = (int)data["id"];
+				if(data["id"].MDDJBLEDMBJ_IsInt)
+				{
+					// Convert old data
+					int old_id = (int)data["id"];
+					var lg = LoginList.Find((LoginBonusData d) => d.id == old_id);
+					if(lg != null)
+						id = lg.name_for_apis;
+				}
+				else
+					id = (string)data["id"];
 				count = (int)data["count"];
 				last_updated = JsonUtil.GetLong(data, "last_updated", 0);
 			}
@@ -82,7 +94,7 @@ namespace ExternLib
 		}
 		class UserLoginData
 		{
-			public Dictionary<int, UserLoginInfo> infos = new Dictionary<int, UserLoginInfo>();
+			public Dictionary<string, UserLoginInfo> infos = new Dictionary<string, UserLoginInfo>();
 
 			public void Load(EDOHBJAPLPF_JsonData data)
 			{
@@ -96,7 +108,7 @@ namespace ExternLib
 					EDOHBJAPLPF_JsonData info = json["info"];
 					for(int i = 0; i < info.HNBFOAJIIAL_Count; i++)
 					{
-						UserLoginInfo d = new UserLoginInfo(0);
+						UserLoginInfo d = new UserLoginInfo("");
 						d.Load(info[i]);
 						infos.Add(d.id, d);
 					}
@@ -117,7 +129,7 @@ namespace ExternLib
 				}
 			}
 
-			public UserLoginInfo GetOrCreate(int id)
+			public UserLoginInfo GetOrCreate(string id)
 			{
 				if(!infos.ContainsKey(id))
 				{
@@ -127,7 +139,21 @@ namespace ExternLib
 			}
 		}
 
-		static List<LoginBonusData> LoginList = new List<LoginBonusData>()
+		static public void ResetLoginBonusDLC()
+		{
+			DlcLoginList = new List<LoginBonusData>();
+		}
+
+		static public void AddLoginBonus(LoginBonusData loginBonus)
+		{
+			DlcLoginList.Add(loginBonus);
+		}
+
+		static List<LoginBonusData> DlcLoginList = new List<LoginBonusData>();
+
+		static List<LoginBonusData> LoginList { get { var Res = new List<LoginBonusData>(); Res.AddRange(StaticLoginList); Res.AddRange(DlcLoginList); return Res; } }
+
+		static List<LoginBonusData> StaticLoginList = new List<LoginBonusData>()
 		{
 			new LoginBonusData()
 			{
@@ -446,7 +472,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 10,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -510,7 +536,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 10,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -564,7 +590,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 250,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -580,7 +606,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 150,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -596,7 +622,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 100,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -612,7 +638,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 100,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -628,7 +654,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 100,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -644,7 +670,7 @@ namespace ExternLib
 							new LoginBonusData.Prize.Items()
 							{
 								count = 150,
-								name = JpStringLiterals.StringLiteral_10137,
+								name = JpStringLiterals.StringLiteral_10137_Jp,
 								type = 1,
 								value = 1001
 							}
@@ -725,6 +751,31 @@ namespace ExternLib
 				""reset_at"": 1479999600
 			}
 		]");*/
+		private static void SakashoLoginBonusUpdateDate(LoginBonusData data)
+		{
+			var lb = data;
+			long sd = lb.opened_at;
+			long ed = lb.closed_at;
+			long curDate = Utility.GetCurrentUnixTime();
+			if(data.name_for_apis.Contains("campaign") && sd != 0 && ed != 0)
+			{
+				if(RuntimeSettings.CurrentSettings.ReapeatLoginBonusEveryYear || lb.repeat_every_year)
+				{
+					long diff = ed - sd;
+					while(true)
+					{
+						if(curDate <= ed)
+							break;
+						DateTime ds = Utility.GetLocalDateTime(sd);
+						sd = Utility.GetTargetUnixTime(ds.Year + 1, ds.Month, ds.Day, ds.Hour, ds.Minute, ds.Second);
+						ed = sd + diff;
+					}
+				}
+			}
+			lb.opened_at = sd;
+			lb.closed_at = ed;
+			lb.reset_at = sd;
+		}
 
 		public static int SakashoLoginBonusGetLoginBonuses(int callbackId, string json)
 		{
@@ -737,9 +788,17 @@ namespace ExternLib
 			//res["login_bonuses"] = loginInfo;
 			res["login_bonuses"] = new EDOHBJAPLPF_JsonData();
 			res["login_bonuses"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			long time = Utility.GetCurrentUnixTime();
 			for(int i = 0; i < LoginList.Count; i++)
 			{
-				res["login_bonuses"].Add(LoginList[i].GetLoginBonus());
+				SakashoLoginBonusUpdateDate(LoginList[i]);
+				if(LoginList[i].opened_at == 0 || time >= LoginList[i].opened_at - 24*3600)
+				{
+					if(LoginList[i].closed_at == 0 || time <= LoginList[i].closed_at + 24*3600)
+					{
+						res["login_bonuses"].Add(LoginList[i].GetLoginBonus());
+					}
+				}
 			}
 			SendMessage(callbackId, res);
 			return 0;
@@ -764,21 +823,34 @@ namespace ExternLib
 					int id = (int)req["ids"][i];
 					for(int j = 0; j < LoginList.Count; j++)
 					{
-						if((int)LoginList[j].id == id)
+						if(LoginList[j].id == id)
 						{
-							UserLoginInfo info = userLoginData.GetOrCreate(id);
+							UserLoginInfo info = userLoginData.GetOrCreate(LoginList[j].name_for_apis);
 							EDOHBJAPLPF_JsonData rData = new EDOHBJAPLPF_JsonData();
-							rData["can_receive_next"] = ((string)(LoginList[j].name_for_apis)).Contains("comback") ? false : info.count < LoginList[j].max_count;
-							if(info.last_updated != 0)
+
+							int cnt = info.count;
+							long lstup = info.last_updated;
+							if(lstup != 0 && LoginList[j].opened_at != 0 && lstup < LoginList[j].opened_at)
 							{
-								DateTime d1 = Utility.GetLocalDateTime(info.last_updated);
+								cnt = 0;
+								lstup = 0;
+							}
+
+							rData["can_receive_next"] = false;
+							if(!LoginList[j].name_for_apis.Contains("comback"))
+							{
+								rData["can_receive_next"] = info.count < LoginList[j].max_count;
+							}
+							if(lstup != 0)
+							{
+								DateTime d1 = Utility.GetLocalDateTime(lstup);
 								DateTime d2 = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 								if(d1.Year == d2.Year && d1.Month == d2.Month && d1.Day == d2.Day)
 									rData["can_receive_next"] = false;
 							}
-							rData["count"] = info.count;
+							rData["count"] = cnt;
 							rData["id"] = id;
-							rData["last_received_at"] = info.last_updated;
+							rData["last_received_at"] = lstup;
 							rData["name_for_apis"] = LoginList[j].name_for_apis;
 							res["login_bonuses"].Add(rData);
 							break;
@@ -1454,7 +1526,12 @@ namespace ExternLib
 				});
 				if(data != null)
 				{
-					UserLoginInfo info = userLoginData.GetOrCreate(id);
+					UserLoginInfo info = userLoginData.GetOrCreate(data.name_for_apis);
+					if(info.last_updated != 0 && data.opened_at != 0 && info.last_updated < data.opened_at)
+					{
+						info.count = 0;
+						info.last_updated = 0;
+					}
 					info.count++;
 					int num = info.count;
 					if(info.count >= data.max_count && data.repeat_with_count)

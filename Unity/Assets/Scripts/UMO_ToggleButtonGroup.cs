@@ -12,6 +12,7 @@ public class UMO_ToggleButtonGroup : MonoBehaviour
 
     public Func<bool> IsOnCallback { private get; set; }
     public Action<bool> SetOnCallback { private get; set; }
+    public Action<bool> OnChangeCallback { private get; set; }
 
     int selected = 0;
 
@@ -25,6 +26,8 @@ public class UMO_ToggleButtonGroup : MonoBehaviour
             {
                 selected = idx;
                 UpdateState();
+                if(OnChangeCallback != null)
+                    OnChangeCallback(idx == 0);
             });
         }
     }

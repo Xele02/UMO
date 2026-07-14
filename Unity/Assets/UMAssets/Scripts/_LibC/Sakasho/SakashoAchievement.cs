@@ -45,7 +45,7 @@ namespace ExternLib
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 						EDOHBJAPLPF_JsonData item = new EDOHBJAPLPF_JsonData();
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(item);
-						item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = JpStringLiterals.StringLiteral_10137;
+						item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = JpStringLiterals.StringLiteral_10137_Jp;
 						item[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = 1001;
 						item[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbrating.GCKPDEDJFIC_ItemCount;
 						item[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 1;
@@ -448,7 +448,7 @@ namespace ExternLib
 						UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 						{
 							item_count = dbrating.GCKPDEDJFIC_ItemCount,
-							item_name = JpStringLiterals.StringLiteral_10137,
+							item_name = JpStringLiterals.StringLiteral_10137_Jp,
 							item_type = 1,
 							item_value = 1001,
 							message = "Rating reward",

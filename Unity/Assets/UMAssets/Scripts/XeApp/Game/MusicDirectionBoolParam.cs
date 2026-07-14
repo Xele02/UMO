@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace XeApp.Game
 {
+	[UMOClass()]
 	public class MusicDirectionBoolParam : ScriptableObject
 	{
 		public enum DirectionType
@@ -12,6 +13,7 @@ namespace XeApp.Game
 
 		// [TooltipAttribute] // RVA: 0x661040 Offset: 0x661040 VA: 0x661040
 		[SerializeField]
+		[UMOMember()]
 		private MusicDirectionBoolParam.DirectionType[] m_directionTypeList; // 0xC
 
 		// RVA: 0xC933C0 Offset: 0xC933C0 VA: 0xC933C0

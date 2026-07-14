@@ -202,7 +202,7 @@ namespace ExternLib
 					{
 
 						item_count = 100,
-						item_name = JpStringLiterals.StringLiteral_10137,
+						item_name = JpStringLiterals.StringLiteral_10137_Jp,
 						item_type = 1,
 						item_value = 1001,
 						message = JpStringLiterals.UMO_start_present_2,

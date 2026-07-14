@@ -176,6 +176,10 @@ namespace XeApp.Game.Menu
 			while(!m_isOpenScene)
 				yield return null;
 			isEnd = false;
+			
+			// Umo patch to ensure the diva is hidden if the normal login bonus where already shown
+			MenuScene.Instance.divaManager.SetActive(false, true);
+
 			while(!isEnd)
 			{
 				if(m_loginBonusMasters.Count < 1)

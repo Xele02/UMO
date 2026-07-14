@@ -107,7 +107,7 @@ public class EKLNMHFCAOI_ItemManager
 		JpStringLiterals.StringLiteral_10089,
 		"pt"
 	}; // 0x0
-	private static string[] ABLJLBEPCHK = new string[45] {
+	public static string[] ABLJLBEPCHK = new string[45] {
 		"None", "PaidVC", "GachaTicket", "UnionCredit", "Scene", "Costume", "Valkyrie", "GrowItem", "EpisodeItem", 
 		"EmblemItem", "EventItem", "EventTicket", "DivaItem", "CompoItem", "SnsItem", "EnergyItem", "MvTicket", 
 		"Medal", "BonusVC", "EventGachaTicket", "PresentItem", "SpItem", "CostumeItem", "RareUpItem", "LimitedItem", 

@@ -189,7 +189,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 
 				if(!RuntimeSettings.CurrentSettings.LoadRawDatabase)
 				{
-					DateTime now = DateTime.Now;
+					DateTime now = Utility.GetDateNow();
 					if(data.PPFNGGCBJKC_id == 2)
 					{
 						data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(now.Year, 2, DateTime.DaysInMonth(now.Year, 2), 0, 0, 0);

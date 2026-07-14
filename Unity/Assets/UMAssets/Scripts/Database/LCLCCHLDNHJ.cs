@@ -123,6 +123,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "MDEBEGADHOH", CryptedInMemory = true, Desc = "Min version of the game which enable the costume deco part")]
         public bool IPJMPBANBPP_Enabled { get { return PPEGAKEIEGM_Enabled == 2; } } // IJMCHOOIMBB_bgs 0xD9E064
         public int IIELLEPEEFH_TrsVersion { get { return FBGGEFFJJHB_xor ^ GEJGMGDAKAM; } set { GEJGMGDAKAM = FBGGEFFJJHB_xor ^ value; } } // NCOENDMPNPL_bgs 0xD9D88C ADBAAPIBKKL_bgs 0xD9CD88
+		public string DlcId = "";
 
         // // RVA: 0xD9D284 Offset: 0xD9D284 VA: 0xD9D284
         // public uint CAOGDCBPBAN() { }

@@ -320,7 +320,7 @@ namespace XeApp.Game.AR
             }
             if(motionId == ARDivaMotionId.Dance)
             {
-                m_divaResource.LoadFacialResource(divaId, wavId, 1);
+                m_divaResource.LoadFacialResource(divaId, modelId, wavId, 1);
                 m_divaResource.LoadMusicAnimationResource(wavId, primeId, 1, 1, divaId);
                 while(!m_divaResource.isMusicAllLoaded)
                     yield return null;

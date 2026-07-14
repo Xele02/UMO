@@ -71,6 +71,7 @@ class JpStringLiterals
 	public static string StringLiteral_10096 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10096", "体"); } } // 0x03bb2878
 	public static string StringLiteral_10136 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10136", "定義なし"); } } // 0x03bb2918
 	public static string StringLiteral_10137 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10137", "歌晶石"); } } // 0x03bb291c
+	public static string StringLiteral_10137_Jp = "歌晶石";
 	public static string StringLiteral_10138 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10138", "ガチャチケット"); } } // 0x03bb2920
 	public static string StringLiteral_10139 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10139", "エピソードプレート"); } } // 0x03bb2924
 	public static string StringLiteral_10140 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10140", "衣装"); } } // 0x03bb2928

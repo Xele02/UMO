@@ -5,25 +5,34 @@ using UnityEngine.Serialization;
 
 namespace XeApp.Game
 {
+	[UMOClass()]
 	public class MusicDirectionParam : MusicDirectionParamBase
 	{
 		[Serializable]
+		[UMOClass()]
 		public class SpecialDirectionDataSolo
 		{
 			// [TooltipAttribute] // RVA: 0x66131C Offset: 0x66131C VA: 0x66131C
+			[UMOMember()]
 			public int bundleId; // 0x8
 			// [TooltipAttribute] // RVA: 0x661350 Offset: 0x661350 VA: 0x661350
+			[UMOMember()]
 			public int divaId; // 0xC
 			// [TooltipAttribute] // RVA: 0x661384 Offset: 0x661384 VA: 0x661384
 			[FormerlySerializedAsAttribute("costumeId")] // RVA: 0x661384 Offset: 0x661384 VA: 0x661384
+			[UMOMember()]
 			public int costumeModelId; // 0x10
 			// [TooltipAttribute] // RVA: 0x6613E4 Offset: 0x6613E4 VA: 0x6613E4
+			[UMOMember()]
 			public int valkyrieId; // 0x14
 			// [TooltipAttribute] // RVA: 0x661418 Offset: 0x661418 VA: 0x661418
+			[UMOMember()]
 			public int pilotId; // 0x18
 			// [TooltipAttribute] // RVA: 0x66144C Offset: 0x66144C VA: 0x66144C
+			[UMOMember()]
 			public int positionId; // 0x1C
 			// [TooltipAttribute] // RVA: 0x661480 Offset: 0x661480 VA: 0x661480
+			[UMOMember()]
 			public int directionGroupId; // 0x20
 
 			// // RVA: 0xC93A90 Offset: 0xC93A90 VA: 0xC93A90
@@ -70,29 +79,38 @@ namespace XeApp.Game
 		private MusicDirectionBoolParam m_musicDirectionBoolParam; // 0x28
 		// [TooltipAttribute] // RVA: 0x661094 Offset: 0x661094 VA: 0x661094
 		[SerializeField]
+		[UMOMember()]
 		private List<MusicDirectionParamBase.MikeReplaceTargetData> m_mikeReplaceTargetList = new List<MikeReplaceTargetData>(); // 0x2C
 		// [TooltipAttribute] // RVA: 0x6610DC Offset: 0x6610DC VA: 0x6610DC
 		[SerializeField]
+		[UMOMember()]
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_stageLightingList = new List<SpecialDirectionDataSolo>(); // 0x30
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x661124 Offset: 0x661124 VA: 0x661124
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_cameraClipList = new List<SpecialDirectionDataSolo>(); // 0x34
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x66116C Offset: 0x66116C VA: 0x66116C
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_divaClipList = new List<SpecialDirectionDataSolo>(); // 0x38
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x6611B4 Offset: 0x6611B4 VA: 0x6611B4
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_stagePrefabList = new List<SpecialDirectionDataSolo>(); // 0x3C
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x6611FC Offset: 0x6611FC VA: 0x6611FC
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_divaPrefabList = new List<SpecialDirectionDataSolo>(); // 0x40
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x661244 Offset: 0x661244 VA: 0x661244
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_voiceChangerList = new List<SpecialDirectionDataSolo>(); // 0x44
 		// [TooltipAttribute] // RVA: 0x66128C Offset: 0x66128C VA: 0x66128C
 		[SerializeField]
+		[UMOMember()]
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_movieList = new List<SpecialDirectionDataSolo>(); // 0x48
 		[SerializeField]
+		[UMOMember()]
 		// [TooltipAttribute] // RVA: 0x6612D4 Offset: 0x6612D4 VA: 0x6612D4
 		private List<MusicDirectionParam.SpecialDirectionDataSolo> m_stageChangerList = new List<SpecialDirectionDataSolo>(); // 0x4C
 

@@ -25,6 +25,7 @@ namespace XeSys
 			{
 				SetupFromJson(bytes);
 			}
+			DlcManager.Instance.UpdateBank(bankName, this);
 		}
 
 		// // RVA: 0x2396F60 Offset: 0x2396F60 VA: 0x2396F60
@@ -113,6 +114,12 @@ namespace XeSys
 		public string GetLabel(int index)
 		{
 			return labelList[index];
+		}
+
+		public void UpdateMessage(string label, string value)
+		{
+			if(msgDic.ContainsKey(label))
+				msgDic[label] = value;
 		}
 	}
 }
