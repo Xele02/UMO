@@ -23,7 +23,7 @@ Language are available in DLC, see below.
 
 # New content
 
-A DLC system was added to UMO to add content in the game. More information to create thm will be added later. Current available DLC : 
+A DLC system was added to UMO to add content in the game. More information to create them will be added later. Current available DLC : 
 
 * Language
   * English : http://umo.xele.org:8000/game-translation-en_1.zip
@@ -31,7 +31,7 @@ A DLC system was added to UMO to add content in the game. More information to cr
   * Chinese : http://umo.xele.org:8000/game-translation-zh_Hans_1.zip
   * Korean : http://umo.xele.org:8000/game-translation-ko_1.zip
 * Login bonuses
-  * Official (08/2018 > 08/2019) : http://umo.xele.org:8000/offcial-login-bonuses_1_Android.zip
+  * Official (08/2017 > 08/2018) : http://umo.xele.org:8000/offcial-login-bonuses_1_Android.zip
  
 DLC import and settings are in the 4th tab of the UMO popup.
 
