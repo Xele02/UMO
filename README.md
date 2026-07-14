@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 1.1.14**
+**Current version : 1.1.15**
 
 Fonctionality : 
 * Almost everything of the game.
@@ -18,6 +18,22 @@ The original game is in japanese only. The translation in others languages is cu
 * French : 16%. Most of the important parts to understand the game is available.
 * Chinese : 29%
 * Korean : 22%
+
+Language are available in DLC, see below.
+
+# New content
+
+A DLC system was added to UMO to add content in the game. More information to create thm will be added later. Current available DLC : 
+
+* Language
+  * English : http://umo.xele.org:8000/game-translation-en_1.zip
+  * French : http://umo.xele.org:8000/game-translation-fr_1.zip
+  * Chinese : http://umo.xele.org:8000/game-translation-zh_Hans_1.zip
+  * Korean : http://umo.xele.org:8000/game-translation-ko_1.zip
+* Login bonuses
+  * Official (08/2018 > 08/2019) : http://umo.xele.org:8000/offcial-login-bonuses_1_Android.zip
+ 
+DLC import and settings are in the 4th tab of the UMO popup.
 
 # Requirement / Installation
 
