@@ -55,6 +55,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.MusicThirdDisplayType = UMO_PlayerPrefs.GetInt("MusicThirdDisplayType", 0);
 				m_currentSettings.UseChineseFont = UMO_PlayerPrefs.GetInt("UseChineseFont", 1) == 1;
 				m_currentSettings.EnableARDebugInfo = UMO_PlayerPrefs.GetInt("EnableARDebugInfo", 0) == 1;
+				m_currentSettings.ReapeatLoginBonusEveryYear = UMO_PlayerPrefs.GetInt("ReapeatLoginBonusEveryYear", 1) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -94,6 +95,7 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("MusicThirdDisplayType", m_currentSettings.MusicThirdDisplayType);
 		UMO_PlayerPrefs.SetInt("UseChineseFont", m_currentSettings.UseChineseFont ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("EnableARDebugInfo", m_currentSettings.EnableARDebugInfo ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("ReapeatLoginBonusEveryYear", m_currentSettings.ReapeatLoginBonusEveryYear ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -228,6 +230,8 @@ class RuntimeSettings : ScriptableObject
 	public bool WorkerThreadPriorityNormal { get; set; }
 	public bool WorkerThreadUseCoroutine { get; set; }
 	public bool EnableARDebugInfo { get; set; }
+
+	public bool ReapeatLoginBonusEveryYear { get; set; }
 
 	public bool UnlimitedEvent { get; set; } = true;
 

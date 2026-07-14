@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
-using XeApp.Game.Menu;
-using XeSys;
-using XeSys.Gfx;
 
 public class UMOPopupLanguage : UIBehaviour, IPopupContent
 {
@@ -35,20 +31,26 @@ public class UMOPopupLanguage : UIBehaviour, IPopupContent
             GameObject g = Instantiate(languagePrefab);
             scrollList.AddScrollObject(g.GetComponentInChildren<SwapScrollListContent>());
         }
-        currentLanguageSelected = RuntimeSettings.CurrentSettings.Language;
-        if(currentLanguageSelected == "" && languages.Count > 0)
-            currentLanguageSelected = languages[0].name;
         scrollList.OnUpdateItem.RemoveAllListeners();
         scrollList.OnUpdateItem.AddListener((int idx, SwapScrollListContent content) =>
         {
             (content as UMOPopupLanguageItem).Setup(languages[idx], currentLanguageSelected, OnSelect);
         });
+		scrollList.SetContentEscapeMode(true);
+        gameObject.SetActive(true);
+    }
+
+    private void UpdateLanguageList()
+    {
+        languages.RemoveAll(c => c.name != "jp");
+        languages.AddRange(DlcManager.Instance.GetDLCLanguageInfos());
+        currentLanguageSelected = RuntimeSettings.CurrentSettings.Language;
+        if(currentLanguageSelected == "" && languages.Count > 0)
+            currentLanguageSelected = languages[0].name;
         scrollList.SetItemCount(languages.Count);
         scrollList.Apply();
-		scrollList.SetContentEscapeMode(true);
         scrollList.SetPosition(0, 0, 0, false);
         scrollList.VisibleRegionUpdate();
-        gameObject.SetActive(true);
     }
 
     public void Save()
@@ -72,6 +74,7 @@ public class UMOPopupLanguage : UIBehaviour, IPopupContent
     public void Show()
     {
         gameObject.SetActive(true);
+        UpdateLanguageList();
     }
 
     public void Hide()

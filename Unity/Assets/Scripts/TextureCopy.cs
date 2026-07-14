@@ -1,5 +1,11 @@
 
 using UnityEngine;
+using System.IO;
+
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 static class TextureHelper
 {
@@ -129,4 +135,60 @@ static class TextureHelper
 
 		return myTexture2D;
 	}
+
+#if UNITY_EDITOR
+	[MenuItem("Assets/UMO/Split Texture Alpha", true)]
+	private static bool CheckTexture()
+	{
+		return Selection.activeObject != null && Selection.activeObject is Texture2D;
+	}
+
+	[MenuItem("Assets/UMO/Split Texture Alpha")]
+	private static void BuildSelected()
+	{
+        var obj = Selection.activeObject;
+
+        if (obj != null)
+        {
+			Texture2D tex = Selection.activeObject as Texture2D;
+			Color[] cols = tex.GetPixels(0, 0, tex.width, tex.height);
+
+			Color[] colsOpaque = new Color[cols.Length];
+			Color[] colsAlpha = new Color[cols.Length];
+			for(int i = 0; i < cols.Length; i++)
+			{
+				colsOpaque[i].r = cols[i].r;
+				colsOpaque[i].g = cols[i].g;
+				colsOpaque[i].b = cols[i].b;
+				colsOpaque[i].a = 1;
+
+				colsAlpha[i].r = colsAlpha[i].g = colsAlpha[i].b = cols[i].a;
+				colsAlpha[i].a = 1;
+			}
+			string path = AssetDatabase.GetAssetPath(tex);
+
+			string dir = Path.GetDirectoryName(path);
+			string fileName = Path.GetFileNameWithoutExtension(path);
+
+			{
+				Texture2D texOpaque = new Texture2D(tex.width, tex.height);
+				texOpaque.SetPixels(colsOpaque);
+				texOpaque.Apply();
+				byte[] res = texOpaque.EncodeToPNG();
+				File.WriteAllBytes(dir.Replace("Assets", Application.dataPath) + "/" + fileName + "_base.png", res);
+				Object.DestroyImmediate(texOpaque);
+			}
+
+			{
+				Texture2D texAlpha = new Texture2D(tex.width, tex.height);
+				texAlpha.SetPixels(colsAlpha);
+				texAlpha.Apply();
+				byte[] res = texAlpha.EncodeToPNG();
+				File.WriteAllBytes(dir.Replace("Assets", Application.dataPath) + "/" + fileName + "_mask.png", res);
+				Object.DestroyImmediate(texAlpha);
+			}
+			AssetDatabase.Refresh();
+        }
+	}
+#endif
 }

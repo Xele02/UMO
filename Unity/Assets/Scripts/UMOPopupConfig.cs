@@ -166,6 +166,14 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             KEHOJEJMGLJ_NetInstallManager.FJDOHLADGFI = b;
         });
+
+        AddToggleButton(ref y, "Login Bonus : Repeat every year", () =>
+        {
+            return RuntimeSettings.CurrentSettings.ReapeatLoginBonusEveryYear;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.ReapeatLoginBonusEveryYear = b;
+        });
         
         AddToggleButton(ref y, "Debug : Display item id in name", () =>
         {

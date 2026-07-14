@@ -60,14 +60,14 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 				if(data.PDBPFJJCADD_open_at != 0)
 				{
 					DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at);
-					data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
+					data.PDBPFJJCADD_open_at = Utility.GetTargetUnixTime(Utility.GetDateNow().Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
 				}
 				if(data.FDBNFFNFOND_close_at != 0)
 				{
 					if(prevStart == 0)
 					{
 						DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_close_at);
-						data.FDBNFFNFOND_close_at = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
+						data.FDBNFFNFOND_close_at = Utility.GetTargetUnixTime(Utility.GetDateNow().Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
 					}
 					else
 					{

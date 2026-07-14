@@ -499,6 +499,7 @@ namespace XeApp.Game
 			yield return null;
 			
 			Database.Instance.gameSetup.OnAppBoot();
+			DlcManager.Instance.LoadDlcFiles();
 			MessageLoader.Create();
 			MessageLoader.Instance.Request(MessageLoader.eSheet.common, 0);
 			yield return MessageLoader.Instance.WaitForDone(this);

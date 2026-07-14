@@ -52,6 +52,7 @@ namespace XeApp.Game.Title
 		UMOPopupConfigSetting umoSetting = null;
 		UMOPopupEventSetting umoEventSetting = null;
 		UMOPopupLanguageSetting umoLanguageSetting = null;
+		UMOPopupDlcSetting umoDlcSetting = null;
 		private IEnumerator ShowUMOPopup()
 		{
 			if(umoSetting == null)
@@ -107,6 +108,23 @@ namespace XeApp.Game.Title
 				while (!isLoading)
 					yield return null;
 			}
+			if(umoDlcSetting == null)
+			{
+				umoDlcSetting = new UMOPopupDlcSetting();
+				umoDlcSetting.m_parent = transform;
+				bool isLoading = false;
+				ResourcesManager.Instance.Load(umoDlcSetting.PrefabPath, (FileResultObject fro) =>
+				{
+					//0x13883F0
+					GameObject g = Instantiate(fro.unityObject) as GameObject;
+					g.transform.SetParent(transform, false);
+					umoDlcSetting.SetContent(g);
+					isLoading = true;
+					return true;
+				});
+				while (!isLoading)
+					yield return null;
+			}
 
 			PopupTabContents m_tabContents = null;
 			PopupTabSetting s = PopupWindowManager.CreateTabContents((PopupTabContents tabContents) =>
@@ -118,6 +136,7 @@ namespace XeApp.Game.Title
 					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.Menu, umoSetting, ""));
 					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.EventInfomation, umoEventSetting, ""));
 					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.UMO_Language, umoLanguageSetting, ""));
+					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.Released, umoDlcSetting, ""));
 				}
 			});
 			while(m_tabContents == null)
@@ -127,11 +146,12 @@ namespace XeApp.Game.Title
 
 			m_tabContents.DefaultSelect = (int)PopupTabButton.ButtonLabel.Menu;
 			m_tabContents.SelectIndex = (int)PopupTabButton.ButtonLabel.Menu;
-			s.Tabs = new PopupTabButton.ButtonLabel[3]
+			s.Tabs = new PopupTabButton.ButtonLabel[4]
 			{
 				PopupTabButton.ButtonLabel.Menu,
 				PopupTabButton.ButtonLabel.EventInfomation,
-				PopupTabButton.ButtonLabel.UMO_Language
+				PopupTabButton.ButtonLabel.UMO_Language,
+				PopupTabButton.ButtonLabel.Released
 			};
 			s.m_parent = transform;
 			s.DefaultTab = PopupTabButton.ButtonLabel.Menu;
@@ -149,6 +169,7 @@ namespace XeApp.Game.Title
 					umoSetting.Content.GetComponent<UMOPopupConfig>().Save();
 					umoEventSetting.Content.GetComponent<UMOPopupEvent>().Save();
 					umoLanguageSetting.Content.GetComponent<UMOPopupLanguage>().Save();
+					umoDlcSetting.Content.GetComponent<UMOPopupDlc>().Save();
 					OnUpdateBG();
 				}
 			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>

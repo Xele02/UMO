@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 namespace XeApp.Game
 {
+	[UMOClass()]
 	public abstract class MusicDirectionParamBase : ScriptableObject
 	{
 		public enum SpecialDirectionType
@@ -23,11 +24,14 @@ namespace XeApp.Game
 		}
 
 		[Serializable]
+		[UMOClass()]
 		public class MikeReplaceTargetData
 		{
 			// [TooltipAttribute] // RVA: 0x661678 Offset: 0x661678 VA: 0x661678
+			[UMOMember()]
 			public int divaId; // 0x8
 			// [TooltipAttribute] // RVA: 0x6616AC Offset: 0x6616AC VA: 0x6616AC
+			[UMOMember()]
 			public int costumeModelId; // 0xC
 
 			// RVA: 0xC93DA8 Offset: 0xC93DA8 VA: 0xC93DA8
@@ -38,20 +42,27 @@ namespace XeApp.Game
 		}
 
 		[Serializable]
+		[UMOClass()]
 		public class SpecialDirectionData
 		{
 			// [TooltipAttribute] // RVA: 0x6616E0 Offset: 0x6616E0 VA: 0x6616E0
+			[UMOMember()]
 			public int divaId; // 0x8
 			// [TooltipAttribute] // RVA: 0x661714 Offset: 0x661714 VA: 0x661714
 			[FormerlySerializedAsAttribute("costumeId")]
+			[UMOMember()]
 			public int costumeModelId; // 0xC
 			// [TooltipAttribute] // RVA: 0x661774 Offset: 0x661774 VA: 0x661774
+			[UMOMember()]
 			public int valkyrieId; // 0x10
 			// [TooltipAttribute] // RVA: 0x6617A8 Offset: 0x6617A8 VA: 0x6617A8
+			[UMOMember()]
 			public int pilotId; // 0x14
 			// [TooltipAttribute] // RVA: 0x6617DC Offset: 0x6617DC VA: 0x6617DC
+			[UMOMember()]
 			public int positionId; // 0x18
 			// [TooltipAttribute] // RVA: 0x661810 Offset: 0x661810 VA: 0x661810
+			[UMOMember()]
 			public int directionGroupId; // 0x1C
 
 			// RVA: 0xC9491C Offset: 0xC9491C VA: 0xC9491C
@@ -113,13 +124,20 @@ namespace XeApp.Game
 			}
 		}
 		
+		[UMOClass()]
 		public class ConditionSetting
 		{
+			[UMOMember()]
 			public int divaId; // 0x8
+			[UMOMember()]
 			public int costumeModelId; // 0xC
+			[UMOMember()]
 			public int valkyrieId; // 0x10
+			[UMOMember()]
 			public int pilotId; // 0x14
+			[UMOMember()]
 			public int positionId; // 0x18
+			[UMOMember()]
 			public int groupId; // 0x1C
 
 			// RVA: 0xC9535C Offset: 0xC9535C VA: 0xC9535C
@@ -133,9 +151,12 @@ namespace XeApp.Game
 			}
 		}
 		
+		[UMOClass()]
 		public class ResourceData
 		{
+			[UMOMember()]
 			public int id; // 0x8
+			[UMOMember()]
 			public int divaId; // 0xC
 
 			// RVA: 0xC93C54 Offset: 0xC93C54 VA: 0xC93C54
@@ -148,15 +169,19 @@ namespace XeApp.Game
 
 		//[TooltipAttribute] // RVA: 0x6614B4 Offset: 0x6614B4 VA: 0x6614B4
 		[SerializeField] // RVA: 0x6614B4 Offset: 0x6614B4 VA: 0x6614B4
+		[UMOMember()]
 		protected float m_startOffsetSec; // 0xC
 		//[TooltipAttribute] // RVA: 0x661534 Offset: 0x661534 VA: 0x661534
 		[SerializeField] // RVA: 0x661534 Offset: 0x661534 VA: 0x661534
+		[UMOMember()]
 		protected bool m_psylliumOverride; // 0x10
 		//[TooltipAttribute] // RVA: 0x6615A8 Offset: 0x6615A8 VA: 0x6615A8
 		[SerializeField] // RVA: 0x6615A8 Offset: 0x6615A8 VA: 0x6615A8
+		[UMOMember()]
 		protected Color m_psylliumColor = new Color(1.0f, 1.0f, 1.0f, 1.0f); // 0x14
 		//[TooltipAttribute] // RVA: 0x661608 Offset: 0x661608 VA: 0x661608
 		[SerializeField] // RVA: 0x661608 Offset: 0x661608 VA: 0x661608
+		[UMOMember()]
 		protected float m_mikeStandOffsetRate = 1.0f; // 0x24
 
 		public float stateOffsetSec { get { return m_startOffsetSec; } } //0xC95320

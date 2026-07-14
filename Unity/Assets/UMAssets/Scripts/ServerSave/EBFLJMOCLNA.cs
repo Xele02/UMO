@@ -601,6 +601,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	{
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		data[POFDDFCGEGP_Underscore] = "";
+		LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK_NetMasterDataManager.HHCJCDFCLOB_Instance.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 		for(int i = 0; i < FABAGMLEKIB_CostumeList.Count; i++)
 		{
 			if(FABAGMLEKIB_CostumeList[i].BEBJKJKBOGH_date != 0 || FABAGMLEKIB_CostumeList[i].FOENNFDGCIC_TrsNew != 0)
@@ -614,7 +615,11 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 				data2["point"] = FABAGMLEKIB_CostumeList[i].DNBFMLBNAEE_point;
 				data2["col_new"] = FABAGMLEKIB_CostumeList[i].MKEHNGNEFMM_IsNewColorFlags;
 				data2[AFEHLCGHAEE_Strings.DLMDINBHGBG_trs_new] = FABAGMLEKIB_CostumeList[i].FOENNFDGCIC_TrsNew;
-				data[POFDDFCGEGP_Underscore + (i + 1)] = data2;
+				var cosDb = costumeDb.CDENCMNHNGA_table.Find(d => d.JPIDIENBGKH_CostumeId == FABAGMLEKIB_CostumeList[i].BEEAIAAJOHD_CostumeId);
+				if(cosDb != null && cosDb.DlcId != "")
+					data[POFDDFCGEGP_Underscore + cosDb.DlcId] = data2;
+				else
+					data[POFDDFCGEGP_Underscore + (i + 1)] = data2;
 			}
 		}
 		if(!EMBGIDLFKGM)
@@ -654,6 +659,8 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 					if(item.PPEGAKEIEGM_Enabled == 2)
 					{
 						string str = POFDDFCGEGP_Underscore + (i + 1).ToString();
+						if(item.DlcId != "")
+							str = POFDDFCGEGP_Underscore + item.DlcId;
 						if(block.BBAJPINMOEP_Contains(str))
 						{
 							EDOHBJAPLPF_JsonData b = block[str];
@@ -666,6 +673,18 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 							data.DNBFMLBNAEE_point = CJAENOMGPDA_GetInt(b, "point", 0, ref isInvalid);
 							data.MKEHNGNEFMM_IsNewColorFlags = CJAENOMGPDA_GetInt(b, "col_new", 0, ref isInvalid);
 							data.FOENNFDGCIC_TrsNew = CJAENOMGPDA_GetInt(b, AFEHLCGHAEE_Strings.DLMDINBHGBG_trs_new, 0, ref isInvalid);
+							if(item.DlcId != "") // For now dlc are unlocked by default
+								data.BEBJKJKBOGH_date = 1;
+						}
+						else
+						{
+							if(item.DlcId != "")
+							{
+								ILFJDCICIKN data = FABAGMLEKIB_CostumeList[i];
+								data.BEEAIAAJOHD_CostumeId = i + 1;
+								data.BEBJKJKBOGH_date = 1; // For now dlc are unlocked by default
+								data.CADENLBDAEB_IsNew = true;
+							}
 						}
 					}
 				}

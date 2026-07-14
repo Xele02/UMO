@@ -49,8 +49,10 @@ namespace XeApp.Game.Common
 		public void Request(eSheet sheet, int version)
 		{
 			Release(sheet);
+			bool loadJp = true;
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
 			{
+				loadJp = false;
 				Dictionary<string,string> dic = new Dictionary<string, string>(1);
 				dic.Add("sheet", ((int)sheet).ToString());
 				dic.Add("bankName", sheet.ToString());
@@ -67,12 +69,35 @@ namespace XeApp.Game.Common
 				else
 				{
 					StringBuilder str = new StringBuilder(64);
-					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					/*str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
 					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
-					ResourcesManager.Instance.Load();
+					ResourcesManager.Instance.Load();*/
+					string dlcName = "game-translation-"+RuntimeSettings.CurrentSettings.Language;
+					if(DlcManager.Instance.IsEnabled(dlcName))
+					{
+						string languageFile = Path.Combine(Application.persistentDataPath, DlcManager.Instance.GetPath(dlcName), "translation", RuntimeSettings.CurrentSettings.Language + ".bytes");
+						if(File.Exists(languageFile))
+						{
+							FileResultObject fro = new FileResultObject(languageFile, dic, 0);
+							fro.bytes = File.ReadAllBytes(languageFile);
+							LoadCallbackStorage2(fro);
+						}
+						else
+						{
+							UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+							RuntimeSettings.CurrentSettings.Language = "";
+							loadJp = true;
+						}
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+						RuntimeSettings.CurrentSettings.Language = "";
+						loadJp = true;
+					}
 				}
 			}
-			else
+			if(loadJp)
 			{
 				if(defaultInstallSource == InstallSource.LocalStorage)
 				{
@@ -150,9 +175,29 @@ namespace XeApp.Game.Common
 				else
 				{
 					StringBuilder str = new StringBuilder(64);
-					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					/*str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
 					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
-					ResourcesManager.Instance.Load();
+					ResourcesManager.Instance.Load();*/
+					string dlcName = "game-translation-"+RuntimeSettings.CurrentSettings.Language;
+					if(DlcManager.Instance.IsEnabled(dlcName))
+					{
+						string languageFile = Path.Combine(Application.persistentDataPath, DlcManager.Instance.GetPath(dlcName), "translation", RuntimeSettings.CurrentSettings.Language + ".bytes");
+						if(File.Exists(languageFile))
+						{
+							FileResultObject fro = new FileResultObject(languageFile, dic, 0);
+							fro.bytes = File.ReadAllBytes(languageFile);
+							LoadCallbackStorage2(fro);
+							return true;
+						}
+						else
+						{
+							UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+						}
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("Unable to use language dlc "+dlcName);
+					}
 				}
 				return true;
 			}

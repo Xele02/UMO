@@ -37,7 +37,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 				m_DownloadingFile = false;
 			});
 #else
-			IEJJKNOEKLM = new WWW("file://"+HHHEFALNMJO_mPath);
+			IEJJKNOEKLM = new WWW("file://"+FileSystemProxy.ConvertPath(HHHEFALNMJO_mPath));
 #endif
 		}
 		LGADCGFMLLD_step = 0;

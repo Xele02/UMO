@@ -14,5 +14,9 @@ namespace ExternLib
         {
             UnityCallbackObject = callbackReceiverName;
         }
+        public static void ResetDLC()
+        {
+            ResetLoginBonusDLC();
+        }
     }
 }

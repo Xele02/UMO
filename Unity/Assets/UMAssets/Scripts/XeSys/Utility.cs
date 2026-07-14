@@ -6,7 +6,7 @@ namespace XeSys
 {
 	public class Utility
 	{
-		private static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x0
+		public static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 0, 0); // 0x0
 
 		// // RVA: 0x23A8920 Offset: 0x23A8920 VA: 0x23A8920
 		// public static int GetVersionValue(string versionString) { }
@@ -47,7 +47,7 @@ namespace XeSys
 		public static DateTime GetLocalDateTime(long unixTime)
 		{
 			//UMO, get real timeline
-			double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+			double diff = (GetDateNow() - GetDateUtcNow()).TotalSeconds;
 			return /*TimeZoneInfo.ConvertTimeToUtc(*/UNIX_EPOCH.AddSeconds(unixTime + diff/* + 32400*/)/*)*/;
 		}
 
@@ -63,16 +63,33 @@ namespace XeSys
 			{
 				Debug.LogError(e.ToString()+" / "+date.ToLongDateString() + " " + date.ToLongTimeString() + " is not valid, backup");
 				date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Utc);
-				double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+				double diff = (GetDateNow() - GetDateUtcNow()).TotalSeconds;
 				t = (long)(date - UNIX_EPOCH).TotalSeconds + (long)diff; // UMO, ConvertTimeToUtc with no throw not avaiable ? doing it manually. Use date as UTC and add diff
 			}
 			return t;
 		}
 
+		private static double GetTimeOffset()
+		{
+			//DateTime dt = new DateTime(2027, 12, 1);
+			//return (dt - DateTime.Now).TotalSeconds;
+			return 0;
+		}
+
+		public static DateTime GetDateUtcNow()
+		{
+			return DateTime.UtcNow.AddSeconds(GetTimeOffset());
+		}
+
+		public static DateTime GetDateNow()
+		{
+			return DateTime.Now.AddSeconds(GetTimeOffset());
+		}
+
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
 		public static long GetCurrentUnixTime()
 		{
-			return (long)(DateTime.UtcNow - UNIX_EPOCH).TotalSeconds;
+			return (long)(GetDateUtcNow() - UNIX_EPOCH).TotalSeconds;
 		}
 
 		// // RVA: 0x23A9378 Offset: 0x23A9378 VA: 0x23A9378

@@ -393,7 +393,9 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.divaResource.LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId,
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId,
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeColorId);
-				rhythmGameResource.divaResource.LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, wavId,
+				rhythmGameResource.divaResource.LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, 
+																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId,
+																		wavId,
 																		Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				rhythmGameResource.divaResource.LoadMusicAnimationResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
 																		Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId,
@@ -421,7 +423,9 @@ namespace XeApp.Game.RhythmGame
 							rhythmGameResource.subDivaResource[i].LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId,
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeModelId,
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeColorId);
-							rhythmGameResource.subDivaResource[i].LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId, wavId,
+							rhythmGameResource.subDivaResource[i].LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId,
+																					Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeModelId, 
+																					wavId,
 																					Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 							rhythmGameResource.subDivaResource[i].LoadMusicAnimationResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
 																					Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].positionId,

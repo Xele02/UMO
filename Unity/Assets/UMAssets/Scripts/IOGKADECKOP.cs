@@ -672,6 +672,7 @@ public class IOGKADECKOP_TitleSceneDetail
 		{
 			UMOLogWritter.Instance.CheckEnabled();
 		}
+		DlcManager.Instance.LoadDlcFiles();
 
 		// 0
 		PGIGNJDPCAH_UpdateChecker.NNOBACMJHDM(0);

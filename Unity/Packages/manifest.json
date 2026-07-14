@@ -2,9 +2,11 @@
   "dependencies": {
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.3",
+    "com.unity.assetbundlebrowser": "1.7.0",
     "com.unity.collab-proxy": "1.2.15",
-    "com.unity.package-manager-ui": "2.0.8",
-    "com.unity.purchasing": "2.0.3",
+    "com.unity.package-manager-ui": "2.0.13",
+    "com.unity.purchasing": "2.2.1",
+    "com.unity.scriptablebuildpipeline": "1.19.6",
     "com.unity.textmeshpro": "1.4.1",
     "jp.amagamina.reference-viewer": "https://github.com/ina-amagami/unity-reference-viewer.git",
     "com.unity.modules.ai": "1.0.0",

@@ -20,6 +20,9 @@ static class FileSystemProxy
 {
 	private static Dictionary<string, string> serverFileList;
 
+
+	private static Dictionary<string, string> dlcFileList = new Dictionary<string, string>();
+
 	private static bool isInitialized = false;
 
 	static public bool IsInitialized { get { return isInitialized; } }
@@ -83,6 +86,14 @@ static class FileSystemProxy
 			return path;
 		if (RuntimeSettings.CurrentSettings == null)
 			return path;
+		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data"))
+		{
+			string dlcTestPath = path.Replace(UnityEngine.Application.persistentDataPath + "/data", "");
+			if(dlcFileList.ContainsKey(dlcTestPath))
+			{
+				path = path.Replace(dlcTestPath, dlcFileList[dlcTestPath]);
+			}
+		}
 		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && !string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
 		{
 			string dataDir = RuntimeSettings.CurrentSettings.DataDirectory;
@@ -112,6 +123,11 @@ static class FileSystemProxy
 	public static bool FileExists(string path)
 	{
 		return File.Exists(ConvertPath(path));
+	}
+
+	public static bool DlcFileExists(string localPath)
+	{
+		return dlcFileList.ContainsKey(localPath);
 	}
 
 	public static void TryInstallFile(string path, Action<string> onDone)
@@ -537,4 +553,15 @@ static class FileSystemProxy
 		UnityEngine.Debug.LogError("Done");
 	}
 #endif
+
+	public static void AddDlcFile(string BasePath, string DlcPath)
+	{
+		dlcFileList.Remove(BasePath);
+		dlcFileList.Add(BasePath, DlcPath);
+	}
+
+	public static void ClearDlcFiles()
+	{
+		dlcFileList.Clear();
+	}
 }

@@ -97,7 +97,7 @@ namespace XeApp.Core
 						}
 						else
 						{
-							m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:" + assetBundleName;
+							m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:" + assetBundleName+" "+path;
 							m_lodingAssetBundle.Remove(assetBundleName);
 						}
 						return true;
@@ -105,7 +105,7 @@ namespace XeApp.Core
 					(FileResultObject fo) => {
 						//0x1D6AEDC
 						TodoLogger.LogError(TodoLogger.AssetBundle, "Load Assetbundle Failed:"+assetBundleName);
-						m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:"+assetBundleName;
+						m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:"+assetBundleName+" "+path;
 						m_lodingAssetBundle.Remove(assetBundleName);
 						fo.dispose = true;
 						return true;
