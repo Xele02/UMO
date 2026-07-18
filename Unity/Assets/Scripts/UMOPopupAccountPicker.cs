@@ -253,7 +253,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             }, (string error) =>
             {
                 isRunning = false;
-            }, "application/octet-stream");
+            }, new string[] {"text/plain", "application/json"});
             while(isRunning)
                 yield return null;
             bool isError = false;
@@ -325,7 +325,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             }, (string error) =>
             {
                 isRunning = false;
-            }, "application/octet-stream");
+            }, new string[] {"text/plain", "application/json"});
             while(isRunning)
                 yield return null;
             bool isError = false;

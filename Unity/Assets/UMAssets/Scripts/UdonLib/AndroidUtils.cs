@@ -132,18 +132,21 @@ namespace UdonLib
 
 		public static AndroidUtilsCallback callbacks = new AndroidUtilsCallback();
 
-		public static bool OpenFile(string message, Action<byte[]> onFileRead, Action<string> onFileError, string mimeType/* = "application/octet-stream"*/)
+		public static bool OpenFile(string message, Action<byte[]> onFileRead, Action<string> onFileError, string[] mimeType/* = "application/octet-stream"*/)
 		{
 #if UNITY_ANDROID
 			string className = "android.content.Intent";
 			using(AndroidJavaClass IntentClass = new AndroidJavaClass(className))
 			using(AndroidJavaObject sendIntent = new AndroidJavaObject(className))
 			{
+				//sendIntent.Call<AndroidJavaObject>("setAction", IntentClass.GetStatic<string>("ACTION_OPEN_DOCUMENT"));
 				sendIntent.Call<AndroidJavaObject>("setAction", IntentClass.GetStatic<string>("ACTION_GET_CONTENT"));
-				sendIntent.Call<AndroidJavaObject>("setType", mimeType);
+				sendIntent.Call<AndroidJavaObject>("setType", "*/*");
+				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_MIME_TYPES"), mimeType);
 				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_ALLOW_MULTIPLE"), false);
 				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_LOCAL_ONLY"), true);
-				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("CATEGORY_OPENABLE"), true);
+				sendIntent.Call<AndroidJavaObject>("addCategory", IntentClass.GetStatic<string>("CATEGORY_OPENABLE"));
+				//sendIntent.Call("addCategory", IntentClass.GetStatic<string>("CATEGORY_OPENABLE"));
 				using (AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 				using (AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity"))
 				{

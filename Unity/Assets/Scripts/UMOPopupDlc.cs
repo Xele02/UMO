@@ -77,7 +77,7 @@ public class UMOPopupDlc : UIBehaviour, IPopupContent
         }, (string error) =>
         {
             isRunning = false;
-        }, "application/octet-stream");
+        }, new string[] {"application/zip"});
         while(isRunning)
             yield return null;
         string selectedFile = null;
