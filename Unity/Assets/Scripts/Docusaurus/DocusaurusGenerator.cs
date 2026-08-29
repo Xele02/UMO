@@ -34,6 +34,7 @@ public class DocusaurusGenerator
         generator.LoadDatabase();
         generator.Init();
         //generator.DumpDatabaseData();
+        generator.DumpSongEffects();
         //generator.DumpTexts();
         //generator.DumpDivaImages();
         //generator.DumpDivaCostumes();
@@ -54,8 +55,8 @@ public class DocusaurusGenerator
         //generator.DumpEventImages();
         //generator.DumpHomePickupsImages();
         //generator.DumpGachaImages();
-        generator.DumpTutorialImages();
-        generator.DumpQuestsImages();
+        //generator.DumpTutorialImages();
+        //generator.DumpQuestsImages();
 
         MNNCBFONAOL.PDENBOEFJGE();
     }
@@ -627,6 +628,85 @@ public class DocusaurusGenerator
             db_struct.EJCOJCGIBNG_ToJson(writer);
             string fileStr = writer.ToString();
             File.WriteAllText(database_path + "db_struct.json", fileStr);
+        }
+    }
+
+    public void DumpSongEffects()
+    {
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        string path = FileSystemProxy.ConvertPath(UnityEngine.Application.persistentDataPath + "/data/android/mc/0001/sc.xab");
+        int pos = path.IndexOf("mc/") + 2;
+        string[] dirsSong = Directory.GetDirectories(path.Substring(0, pos));
+        CheckPath(DataPath + "song_effect/");
+        foreach (var dir in dirsSong)
+        {
+            DirectoryInfo dirInfo = new DirectoryInfo(dir);
+			if (dirInfo.Name == "cmn")
+				continue;
+            if(!File.Exists(Application.persistentDataPath + "/data/android/" + "mc/" + dirInfo.Name + "/sc.xab"))
+                continue;
+
+            string songId = dirInfo.Name.Replace("_3", "").Replace("_2", "").Replace("_5", "");
+
+            byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + "mc/" + dirInfo.Name + "/sc.xab");
+
+            BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor("/mc/" + dirInfo.Name + "/sc.xab");
+            encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+            AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+
+            XeApp.Game.MusicDirectionParamBase param = bundle.LoadAsset<XeApp.Game.MusicDirectionParamBase>("p_" + songId);
+			XeApp.Game.MusicDirectionBoolParam bool_param = bundle.LoadAsset<XeApp.Game.MusicDirectionBoolParam>("bp_"+songId);
+
+            {
+                EDOHBJAPLPF_JsonData schema = GenerateStructInfo(param.GetType());
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                schema.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                File.WriteAllText(DataPath + "song_effect/" + dirInfo.Name + ".struct.json", fileStr);
+            }
+            {
+                EDOHBJAPLPF_JsonData datas = GenerateDataInfo(param);
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                datas.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                if(fileStr == "")
+                    fileStr = "{}";
+                File.WriteAllText(DataPath + "song_effect/" + dirInfo.Name + ".data.json", fileStr);
+            }
+
+            if(bool_param)
+            {
+                EDOHBJAPLPF_JsonData schema = GenerateStructInfo(bool_param.GetType());
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                schema.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                File.WriteAllText(DataPath + "song_effect/" + dirInfo.Name + "_bp.struct.json", fileStr);
+            }
+            if(bool_param)
+            {
+                EDOHBJAPLPF_JsonData datas = GenerateDataInfo(bool_param);
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                datas.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                if(fileStr == "")
+                    fileStr = "{}";
+                File.WriteAllText(DataPath + "song_effect/" + dirInfo.Name + "_bp.data.json", fileStr);
+            }
+            bundle.Unload(true);
+            UnityEngine.Object.DestroyImmediate(bool_param, true);
+            UnityEngine.Object.DestroyImmediate(param, true);
+            
+            Resources.UnloadUnusedAssets();
         }
     }
 
