@@ -12,7 +12,7 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
     /// Provides the ability to handle plural forms.
     /// </summary>
     [Serializable]
-    public class PluralLocalizationFormatter : FormatterBase, IFormatterLiteralExtractor
+    public class PluralOrdinalLocalizationFormatter : FormatterBase, IFormatterLiteralExtractor
     {
         [SerializeField]
         string m_DefaultTwoLetterISOLanguageName = "en";
@@ -28,20 +28,20 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
             set
             {
                 m_DefaultTwoLetterISOLanguageName = value;
-                m_DefaultPluralRule = PluralRules.GetPluralRule(value);
+                m_DefaultPluralRule = PluralRules.GetPluralOrdinalRule(value);
             }
         }
 
         /// <summary>
         /// Creates a new instance of the formatter.
         /// </summary>
-        public PluralLocalizationFormatter()
+        public PluralOrdinalLocalizationFormatter()
         {
             Names = DefaultNames;
         }
 
         /// <inheritdoc/>
-        public override string[] DefaultNames => new[] { "plural", "p", "" };
+        public override string[] DefaultNames => new[] { "plural_ordinal", "p_o", "" };
 
         /// <inheritdoc/>
         public override bool TryEvaluateFormat(IFormattingInfo formattingInfo)
@@ -84,7 +84,7 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
 
             // We can format numbers, and IEnumerables. For IEnumerables we look at the number of items
             // in the collection: this means the user can e.g. use the same parameter for both plural and list, for example
-            // 'Smart.Format("The following {0:plural:person is|people are} impressed: {0:list:{}|, |, and}", new[] { "bob", "alice" });'
+            // 'Smart.Format("The following {0:plural_ordinal:st person is|nd person is} impressed: {0:list:{}|, |, and}", new[] { "bob", "alice" });'
             if (current is IConvertible convertible &&
                 // Supporting these breaks tests and changes the default behaviour
                 !(current is DateTime) && !(current is string) && !(current is bool) && !(current is Enum))
@@ -131,18 +131,18 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
         {
             // See if the language was explicitly passed:
             var pluralOptions = formattingInfo.FormatterOptions;
-            if (pluralOptions.Length != 0) return PluralRules.GetPluralRule(pluralOptions);
+            if (pluralOptions.Length != 0) return PluralRules.GetPluralOrdinalRule(pluralOptions);
 
-            // See if a CustomPluralRuleProvider is available from the FormatProvider:
+            // See if a CustomPluralOrdinalRuleProvider is available from the FormatProvider:
             var provider = formattingInfo.FormatDetails.Provider;
             var pluralRuleProvider =
-                (CustomPluralRuleProvider)provider?.GetFormat(typeof(CustomPluralRuleProvider));
+                (CustomPluralOrdinalRuleProvider)provider?.GetFormat(typeof(CustomPluralOrdinalRuleProvider));
             if (pluralRuleProvider != null) return pluralRuleProvider.GetPluralRule();
 
             // Use the CultureInfo, if provided:
             if (provider is CultureInfo cultureInfo)
             {
-                var culturePluralRule = PluralRules.GetPluralRule(cultureInfo.TwoLetterISOLanguageName);
+                var culturePluralRule = PluralRules.GetPluralOrdinalRule(cultureInfo.TwoLetterISOLanguageName);
                 return culturePluralRule;
             }
 
@@ -202,7 +202,7 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
     /// <summary>
     /// Use this class to provide custom plural rules to Smart.Format
     /// </summary>
-    public class CustomPluralRuleProvider : IFormatProvider
+    public class CustomPluralOrdinalRuleProvider : IFormatProvider
     {
         private readonly PluralRules.PluralRuleDelegate _pluralRule;
 
@@ -210,19 +210,19 @@ namespace UnityEngine.Localization.SmartFormat.Extensions
         /// Creates a new instance of the plural rule provider.
         /// </summary>
         /// <param name="pluralRule">The plural rule to use for this provider.</param>
-        public CustomPluralRuleProvider(PluralRules.PluralRuleDelegate pluralRule)
+        public CustomPluralOrdinalRuleProvider(PluralRules.PluralRuleDelegate pluralRule)
         {
             _pluralRule = pluralRule;
         }
 
         /// <summary>
-        /// Returns the formatter when <paramref name="formatType"/> is <see cref="CustomPluralRuleProvider"/>, otherwise returns <see langword="null"/>.
+        /// Returns the formatter when <paramref name="formatType"/> is <see cref="CustomPluralOrdinalRuleProvider"/>, otherwise returns <see langword="null"/>.
         /// </summary>
         /// <param name="formatType"></param>
         /// <returns></returns>
         public object GetFormat(Type formatType)
         {
-            return formatType == typeof(CustomPluralRuleProvider) ? this : null;
+            return formatType == typeof(CustomPluralOrdinalRuleProvider) ? this : null;
         }
 
         /// <summary>

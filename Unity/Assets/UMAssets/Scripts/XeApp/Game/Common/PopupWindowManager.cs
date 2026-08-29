@@ -552,7 +552,7 @@ namespace XeApp.Game.Common
 			TextPopupSetting s = new TextPopupSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
 			s.WindowSize = SizeType.Small;
-			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CIPHAHDGGPH(), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount);
+			s.Text = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.CIPHAHDGGPH(), CIOECGOMILE_NetPlayerDataManager.HHCJCDFCLOB_Instance.BPLOEAHOPFI_stamina.DCBENCMNOGO_MaxCount);
 			s.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
