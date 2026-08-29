@@ -1031,29 +1031,55 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
 			{
 				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
-				FacialOverrideResouece resource = commonFacialResource.Find(d => d.originalName == divaCommonFacialAnimName[i]);
+				int index = commonFacialResource.FindIndex(d => d.originalName == divaCommonFacialAnimName[i]);
 				AnimationClip clip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				if(clip != null)
 				{
-					resource.overrideClip = clip;
+					if(index >= 0)
+					{
+						FacialOverrideResouece resource = commonFacialResource[index];
+						resource.overrideClip = clip;
+						commonFacialResource[index] = resource;
+					}
+					else
+					{
+						FacialOverrideResouece resource;
+						resource.originalName = divaCommonFacialAnimName[i];
+						resource.overrideClip = clip;
+						commonFacialResource.Add(resource);
+					}
 				}
 			}
-			
+
 			for(int i = 0; i < originalFacialNames.Count; i++)
 			{
 				if(overrideFacesId[i] > 0)
 				{
 					string s = XeApp.Game.Common.FacialNameDatabase.ToString(overrideFacesId[i]);
 					assetName.SetFormat("diva_{0:D3}_{1}", divaId, s);
-					FacialOverrideResouece resource = specialFacialResource.Find(d => d.originalName == originalFacialNames[i]);
+					int index = specialFacialResource.FindIndex(d => d.originalName == originalFacialNames[i]);
 					AnimationClip clip = operation.GetAsset<AnimationClip>(assetName.ToString());
 					if(clip != null)
 					{
-						resource.overrideClip = clip;
+						if(index >= 0)
+						{
+							FacialOverrideResouece resource = specialFacialResource[index];
+							resource.overrideClip = clip;
+							specialFacialResource[index] = resource;
+						}
+						else
+						{
+							FacialOverrideResouece resource;
+							resource.originalName = originalFacialNames[i];
+							resource.overrideClip = clip;
+							specialFacialResource.Add(resource);
+						}
 					}
 				}
 			}
-			
+
+			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
 			isLoadedMusicFacialResource = true;
 		}
 
@@ -1622,11 +1648,24 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
 			{
 				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
-				FacialOverrideResouece data = commonFacialResource.Find(d => d.originalName == divaCommonFacialAnimName[i]);
+				int index = commonFacialResource.FindIndex(d => d.originalName == divaCommonFacialAnimName[i]);
 				AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				if(overrideClip != null)
 				{
-					data.overrideClip = overrideClip;
+					if(index >= 0)
+					{
+						FacialOverrideResouece data = commonFacialResource[index];
+						data.overrideClip = overrideClip;
+						commonFacialResource[index] = data;
+					}
+					else
+					{
+						commonFacialResource.Add(new FacialOverrideResouece() 
+						{ 
+							originalName = divaCommonFacialAnimName[i], 
+							overrideClip = overrideClip
+						});
+					}
 				}
 			}
 			for(int i = 0; i < originalFacesName.Count; i++)
@@ -1634,11 +1673,24 @@ namespace XeApp.Game.Common
 				if(overrideFacesId[i] > 0)
 				{
 					assetName.SetFormat("diva_{0:D3}_{1}", divaId, FacialNameDatabase.ToString(overrideFacesId[i]));
-					FacialOverrideResouece data = specialFacialResource.Find(d => d.originalName == originalFacesName[i]);
+					int index = specialFacialResource.FindIndex(d => d.originalName == originalFacesName[i]);
 					AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 					if(overrideClip != null)
 					{
-						data.overrideClip = overrideClip;
+						if(index >= 0)
+						{
+							FacialOverrideResouece data = specialFacialResource[index];
+							data.overrideClip = overrideClip;
+							specialFacialResource[index] = data;
+						}
+						else
+						{
+							specialFacialResource.Add(new FacialOverrideResouece()
+							{
+								originalName = originalFacesName[i],
+								overrideClip = overrideClip
+							});
+						}
 					}
 				}
 			}
