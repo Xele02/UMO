@@ -97,6 +97,29 @@ namespace ExternLib
 			}
 		}
 
+		public static void LoadOtherPlayerAccountDataAsGuest()
+		{
+			string path = Application.persistentDataPath + "/Profiles/";
+			foreach(var dir in System.IO.Directory.EnumerateDirectories(path))
+			{
+				int playerId;
+				if(int.TryParse(dir.Substring(path.Length), out playerId))
+				{
+					if(!playerAccount.players.ContainsKey(playerId))
+					{
+						EDOHBJAPLPF_JsonData data = GetAccountServerData(playerId);
+						if(data != null)
+						{
+							PlayerData p = new PlayerData();
+							p.userId = playerId;
+							playerAccount.players.Add(p.userId, p);
+							playerAccount.players[playerId].serverData = data;
+						}
+					}
+				}
+			}
+		}
+
 		public static void InitPlayerAccount(int playerId)
 		{
 			playerAccount = new AccountData();
