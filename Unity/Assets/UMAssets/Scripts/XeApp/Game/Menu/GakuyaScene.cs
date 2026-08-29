@@ -1200,7 +1200,8 @@ namespace XeApp.Game.Menu
 		{
 			//0xB801F0
 			m_divaResource.Release();
-			m_divaResource.Initialize(divaId);
+			DivaCostumeInfo divaInfo = GetDivaCostumeInfo(divaId);
+			m_divaResource.Initialize(divaId, divaInfo.modelId);
 			yield return Co.R(m_divaResource.Co_LoadBasicResource());
 			yield return Co.R(m_divaResource.Co_LoadMotion());
 			bool isWaitLoadCueSheet = true;

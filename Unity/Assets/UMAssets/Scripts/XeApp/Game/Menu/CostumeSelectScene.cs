@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			this.StartCoroutineWatched(Co_LoadDivaResource(m_diva_id));
+			this.StartCoroutineWatched(Co_LoadDivaResource(m_diva_id, m_costume_model_id));
 		}
 
 		// RVA: 0x16DF764 Offset: 0x16DF764 VA: 0x16DF764 Slot: 17
@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CCF5C Offset: 0x6CCF5C VA: 0x6CCF5C
 		//// RVA: 0x16DF6BC Offset: 0x16DF6BC VA: 0x16DF6BC
-		private IEnumerator Co_LoadDivaResource(int divaId)
+		private IEnumerator Co_LoadDivaResource(int divaId, int modelId)
 		{
 			//0x16E2994
 			isLoadedUnionResource = false;
@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 				isWaitLoadCueSheet = false;
 			});
 			voicePlayIndex = 0;
-			divaResource.Initialize(divaId);
+			divaResource.Initialize(divaId, modelId);
 			yield return Co.R(divaResource.Co_LoadBasicResource());
 			yield return Co.R(divaResource.Co_LoadFacialClip(DivaResource.MenuFacialType.Costume));
 			yield return Co.R(divaResource.Co_LoadMotion());
@@ -596,6 +596,7 @@ namespace XeApp.Game.Menu
 			yield return Resources.UnloadUnusedAssets();
 			bool isWait = true;
 			divaResource.ReleaseCostume();
+			divaResource.Initialize(m_diva_id, m_costume_model_id);
 			this.StartCoroutineWatched(divaResource.Co_LoadCostume(m_costume_model_id, () =>
 			{
 				//0x16E1E84
@@ -606,6 +607,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputEnable();
 			while (isWait)
 				yield return null;
+			yield return Co.R(divaResource.Co_LoadFacialClip(DivaResource.MenuFacialType.Costume));
 			MenuScene.Instance.divaManager.Load(divaResource, m_diva_id, m_costume_model_id, m_costume_color, false);
 			MenuScene.Instance.divaManager.OverrideAnimations(divaResource.overrideClipList);
 			if(divaResource.materialList.Count > 0)

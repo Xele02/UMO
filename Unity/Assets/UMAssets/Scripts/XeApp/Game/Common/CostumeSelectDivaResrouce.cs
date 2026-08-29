@@ -19,9 +19,10 @@ namespace XeApp.Game.Common
 		public List<MotionOverrideSingleResource> overrideClipList = new List<MotionOverrideSingleResource>(); // 0x16C
 
 		//// RVA: 0xE6898C Offset: 0xE6898C VA: 0xE6898C
-		public void Initialize(int divaId)
+		public void Initialize(int divaId, int modelId)
 		{
 			m_loadedDivaId = divaId;
+			m_loadedModelId = modelId;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73617C Offset: 0x73617C VA: 0x73617C
@@ -133,6 +134,58 @@ namespace XeApp.Game.Common
 					specialFacialResource.Add(new FacialOverrideResouece() { originalName = originalFacesName[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
 				}
 			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			if(m_loadedModelId == -1)
+				yield break;
+
+			// Umo added for facial override
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", m_loadedDivaId, m_loadedModelId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return Co.R(operation);
+
+			for(int i = 0; i < DivaCommonFacialAnimNames.Length; i++)
+			{
+				assetName.SetFormat("diva_{0:D3}_{1}", m_loadedDivaId, DivaCommonFacialAnimNames[i]);
+				int index = commonFacialResource.FindIndex(d => d.originalName == DivaCommonFacialAnimNames[i]);
+				AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				if(overrideClip != null)
+				{
+					if(index >= 0)
+					{
+						FacialOverrideResouece data = commonFacialResource[index];
+						data.overrideClip = overrideClip;
+						commonFacialResource[index] = data;
+					}
+					else
+					{
+						commonFacialResource.Add(new FacialOverrideResouece() { originalName = DivaCommonFacialAnimNames[i], overrideClip = overrideClip });
+					}
+				}
+			}
+			for(int i = 0; i < originalFacesName.Count; i++)
+			{
+				if(overrideFacesId[i] > 0)
+				{
+					assetName.SetFormat("diva_{0:D3}_{1}", m_loadedDivaId, FacialNameDatabase.ToString(overrideFacesId[i]));
+					int index = specialFacialResource.FindIndex(d => d.originalName == originalFacesName[i]);
+					AnimationClip overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(overrideClip != null)
+					{
+						if(index >= 0)
+						{
+							FacialOverrideResouece data = specialFacialResource[index];
+							data.overrideClip = overrideClip;
+							specialFacialResource[index] = data;
+						}
+						else
+						{
+							specialFacialResource.Add(new FacialOverrideResouece() { originalName = originalFacesName[i], overrideClip = overrideClip });
+						}
+					}
+				}
+			}
+
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
