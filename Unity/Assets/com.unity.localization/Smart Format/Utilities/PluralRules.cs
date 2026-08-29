@@ -187,6 +187,15 @@ namespace UnityEngine.Localization.SmartFormat.Utilities
             {"tzm", CentralMoroccoTamazight}
         };
 
+        public static readonly Dictionary<string, PluralRuleDelegate> IsoLangToOrdinalDelegate =
+            new Dictionary<string, PluralRuleDelegate>
+        {
+            {"en", EnglishOrdinal},
+            {"fr", DualOneOther},
+            {"zh", Singular},
+            {"ko", Singular},
+        };
+
         private static PluralRuleDelegate Singular => (n, c) => 0;
         private static PluralRuleDelegate DualOneOther => (n, c) =>
         {
@@ -286,6 +295,12 @@ namespace UnityEngine.Localization.SmartFormat.Utilities
         :         // one
         1;
 
+        private static PluralRuleDelegate EnglishOrdinal => (n, c) =>
+        n % 10 == 1 && n % 100 != 11 ? 0 : // one
+        n % 10 == 2 && n % 100 != 12 ? 1 : // two
+        n % 10 == 3 && n % 100 != 13 ? 2 : // few
+        3; // order
+
         /// <summary>
         /// This delegate determines which singular or plural word should be chosen for the given quantity.
         /// This allows each language to define its own behavior for singular or plural words.
@@ -306,6 +321,15 @@ namespace UnityEngine.Localization.SmartFormat.Utilities
             if (!IsoLangToDelegate.TryGetValue(twoLetterIsoLanguageName, out var plural))
             {
                 throw new ArgumentException($"{nameof(IsoLangToDelegate)} not found for {twoLetterIsoLanguageName}", nameof(twoLetterIsoLanguageName));
+            }
+            return plural;
+        }
+
+        public static PluralRuleDelegate GetPluralOrdinalRule(string twoLetterIsoLanguageName)
+        {
+            if (!IsoLangToOrdinalDelegate.TryGetValue(twoLetterIsoLanguageName, out var plural))
+            {
+                throw new ArgumentException($"{nameof(IsoLangToOrdinalDelegate)} not found for {twoLetterIsoLanguageName}", nameof(twoLetterIsoLanguageName));
             }
             return plural;
         }

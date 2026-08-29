@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -965,10 +966,14 @@ namespace XeApp.Game.Menu
 				if(m_eventCtrl.CDINKAANIAA_Rank[0] < 1)
 				{
 					m_eventInfo.SetRankOrder(TextConstant.InvalidText, 0);
+					if(RuntimeSettings.CurrentSettings.Language != "jp")
+						m_eventInfo.SetRankUnitLabel("", 0);
 				}
 				else
 				{
 					m_eventInfo.SetRankOrder(m_eventCtrl.CDINKAANIAA_Rank[0].ToString(), 0);
+					if(RuntimeSettings.CurrentSettings.Language != "jp")
+						m_eventInfo.SetRankUnitLabel(Smart.Format(MessageManager.Instance.GetMessage("menu", "music_event_collect_rank_unit"), m_eventCtrl.CDINKAANIAA_Rank[0]), 0);
 				}
 			}
 			m_eventInfo.SetCurrentValue(EP_ToString(m_eventCtrl.FBGDBGKNKOD_GetCurrentPoint()));

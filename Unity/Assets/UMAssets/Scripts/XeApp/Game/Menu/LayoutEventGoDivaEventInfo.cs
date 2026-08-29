@@ -221,6 +221,8 @@ namespace XeApp.Game.Menu
 			{
 				m_textInfoTbl[5].text = ClampHighScore(highScore).ToString();
 				m_textInfoTbl[6].text = ClampRank(rank).ToString();
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				m_textInfoTbl[9].text = Smart.Format(bk.GetMessageByLabel("godiva_even_tinfo_rank_unit"), rank);
 			}
 			else
 			{

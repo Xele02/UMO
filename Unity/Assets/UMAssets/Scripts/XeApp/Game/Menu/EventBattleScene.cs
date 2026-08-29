@@ -579,7 +579,7 @@ namespace XeApp.Game.Menu
 				{
 					m_eventInfo.SetRankOrder(TextConstant.InvalidText, 0);
 					if(RuntimeSettings.CurrentSettings.Language != "jp")
-						m_eventInfo.SetRankUnitLabel(Smart.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_rank_unit"), 0), 0);
+						m_eventInfo.SetRankUnitLabel("", 0);
 				}
 				else
 				{
@@ -591,7 +591,7 @@ namespace XeApp.Game.Menu
 				{
 					m_eventInfo.SetRankOrder(TextConstant.InvalidText, 1);
 					if(RuntimeSettings.CurrentSettings.Language != "jp")
-						m_eventInfo.SetRankUnitLabel(Smart.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_rank_unit"), 0), 1);
+						m_eventInfo.SetRankUnitLabel("", 1);
 				}
 				else
 				{

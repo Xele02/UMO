@@ -73,6 +73,7 @@ namespace UnityEngine.Localization.SmartFormat
             formatter.AddExtensions(
                 listFormatter,
                 new PluralLocalizationFormatter(),
+                new PluralOrdinalLocalizationFormatter(),
                 new ConditionalFormatter(),
                 new TimeFormatter(),
                 new XElementFormatter(),

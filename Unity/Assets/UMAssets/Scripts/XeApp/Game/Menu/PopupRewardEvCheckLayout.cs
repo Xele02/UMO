@@ -277,7 +277,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_numText.text = m_CurrentRank < 1 ? TextConstant.InvalidText : m_CurrentRank.ToString();
-					m_unitText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
+					m_unitText.text = m_CurrentRank < 1 && RuntimeSettings.CurrentSettings.Language != "jp" ? "" : Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
 				}
 			}
 			else if(m_CurrentLabel == PopupTabButton.ButtonLabel.CumulativePoint)
@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_numText.text = m_CurrentRank < 1 ? TextConstant.InvalidText : m_CurrentRank.ToString();
-						m_unitText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
+						m_unitText.text = m_CurrentRank < 1 && RuntimeSettings.CurrentSettings.Language != "jp" ? "" : Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
 					}
 					else
 					{
@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_textEventRankingValue.text = m_EventMusicRank < 1 ? TextConstant.InvalidText : m_EventMusicRank.ToString();
-						m_textEventRankingValue2.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_music_ranking_unit"), m_EventMusicRank);
+						m_textEventRankingValue2.text = m_EventMusicRank < 1 && RuntimeSettings.CurrentSettings.Language != "jp" ? "" : Smart.Format(MessageManager.Instance.GetMessage("menu", "event_music_ranking_unit"), m_EventMusicRank);
 					}
 					else
 					{
@@ -366,7 +366,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_textEventRankingValue.text = m_EventMusicRank < 1 ? TextConstant.InvalidText : m_EventMusicRank.ToString();
-						m_textEventRankingValue2.text = MessageManager.Instance.GetMessage("menu", "event_battle_reward_check_ranking_unit");
+						m_textEventRankingValue2.text = m_EventMusicRank < 1 && RuntimeSettings.CurrentSettings.Language != "jp" ? "" : MessageManager.Instance.GetMessage("menu", "event_battle_reward_check_ranking_unit");
 					}
 					else
 					{
@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_textEventRankingValue.text = m_EventMusicRank < 1 ? TextConstant.InvalidText : m_EventMusicRank.ToString();
-						m_textEventRankingValue2.text = MessageManager.Instance.GetMessage("menu", "event_godiva_reward_check_ranking_unit");
+						m_textEventRankingValue2.text = m_EventMusicRank < 1 && RuntimeSettings.CurrentSettings.Language != "jp" ? "" : MessageManager.Instance.GetMessage("menu", "event_godiva_reward_check_ranking_unit");
 					}
 					else
 					{
