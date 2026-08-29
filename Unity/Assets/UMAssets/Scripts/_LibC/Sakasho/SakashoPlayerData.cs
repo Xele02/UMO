@@ -666,17 +666,17 @@ namespace ExternLib
 			// Send a copy of the full unlocked account as user data
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			EDOHBJAPLPF_JsonData names = jsonData["names"];
+			bool onlyFriends = (string)jsonData["onlyFriends"] == ""+true;
 
 			if(!playerAccount.players.ContainsKey(999999998))
 			{
 				InitAccount(999999998);
 			}
+			LoadOtherPlayerAccountDataAsGuest();
 
 			string key = "";
 			if(jsonData.BBAJPINMOEP_Contains("key") && jsonData["key"] != null)
 				key = (string)jsonData["key"];
-
-			EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[999999998].serverData;
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["next_page"] = 0;
@@ -684,22 +684,46 @@ namespace ExternLib
 			res["current_page"] = 1;
 			res["players"] = new EDOHBJAPLPF_JsonData();
 			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			res["players"].Add(new EDOHBJAPLPF_JsonData());
-			if(!key.StartsWith("lobby_"))
+			if(!key.StartsWith("lobby_") && !onlyFriends)
 			{
-				res["players"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-				res["players"][0]["is_friend"] = false;
-				res["players"][0]["player_data"] = new EDOHBJAPLPF_JsonData();
-				res["players"][0]["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-				for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+				foreach(var player in playerAccount.players)
 				{
-					string str = (string)names[i];
-					res["players"][0]["player_data"][str] = jsonRes[str];
-				}
+					if(player.Key == playerAccount.userId)
+						continue;
 
-				res["players"][0]["player_id"] = 99999998;
-				res["players"][0]["updated_at"] = 1654421023;
-				res["players"][0]["value"] = 11; // ??
+					EDOHBJAPLPF_JsonData jsonRes = player.Value.serverData;
+					if(jsonRes == null)
+						continue;
+
+					bool allDataValid = true;
+					for (int i = 0; allDataValid && i < names.HNBFOAJIIAL_Count; i++)
+					{
+						if(!jsonRes.BBAJPINMOEP_Contains((string)names[i]))
+							allDataValid = false;
+					}
+					if(!allDataValid)
+						continue;
+
+					EDOHBJAPLPF_JsonData playerData = new EDOHBJAPLPF_JsonData();
+					playerData.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+					playerData["is_friend"] = false;
+					playerData["player_data"] = new EDOHBJAPLPF_JsonData();
+					playerData["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+					for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+					{
+						string str = (string)names[i];
+						playerData["player_data"][str] = jsonRes[str];
+					}
+
+					playerData["player_id"] = player.Key;
+					playerData["updated_at"] = 1654421023;
+					playerData["value"] = 11; // ??
+					res["players"].Add(playerData);
+				}
+			}
+			else
+			{
+				res["players"].Add(new EDOHBJAPLPF_JsonData());
 			}
 
 			SendMessage(callbackId, res);
