@@ -418,7 +418,7 @@ public class AOJGDNFAIJL_PrismData
 				if (divaId < 1)
 					divaId = ICAJJLHPMDF_DefaultDivaId;
 				bool found = false;
-				if(NAENFAFGMEP_IsMultiDiva)
+				if((!RuntimeSettings.CurrentSettings.DisablePrismDivaUniqueCheck || _AHHJLDLAPAN_DivaId == 9) && NAENFAFGMEP_IsMultiDiva)
 				{
 					for(int i = 0; i < OMNDNNFANCK_PrismDivaIds.Length; i++)
 					{
