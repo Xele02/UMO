@@ -16,7 +16,7 @@ namespace VGMToolbox.util
         /// <summary>
         /// Codepage value for Cyrillic (US)
         /// </summary>
-        public const int CodePageUnitedStates = 1251;
+        public const int CodePageUnitedStates = 65001;
 
         /// <summary>
         /// Codepage value for OEM DOS
