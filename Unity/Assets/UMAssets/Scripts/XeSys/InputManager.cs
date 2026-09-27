@@ -410,6 +410,16 @@ namespace XeSys
 
 		void KeyboardAction()
 		{
+#if UNITY_STANDALONE // Use the Input manager for rebind with launch windows for now
+			List<string> keysTocheck = new List<string>();
+			keysTocheck.Add("Lane 1 Touch");
+			keysTocheck.Add("Lane 2 Touch");
+			keysTocheck.Add("Lane 3 Touch");
+			keysTocheck.Add("Lane 4 Touch");
+			keysTocheck.Add("Lane 5 Touch");
+			keysTocheck.Add("Lane 6 Touch");
+			keysTocheck.Add("Active Skill Touch");
+#else
 			List<KeyCode> keysTocheck = new List<KeyCode>();
 			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane1Touch);
 			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane2Touch);
@@ -418,6 +428,7 @@ namespace XeSys
 			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane5Touch);
 			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane6Touch);
 			keysTocheck.Add(RuntimeSettings.CurrentSettings.ActiveSkillTouch);
+#endif
 
 			if(keysInfo.Count == 0)
 			{
@@ -433,6 +444,20 @@ namespace XeSys
 				KeyTouchInfoRecord keyTouchInfo = keysInfo[i];
 				TouchPhase phase = TouchPhase.Began;
 				Vector2 position = Vector2.zero;
+#if UNITY_STANDALONE
+				if (Input.GetButtonDown(keysTocheck[i]))
+				{
+					phase = TouchPhase.Began;
+				}
+				else if (Input.GetButtonUp(keysTocheck[i]))
+				{
+					phase = TouchPhase.Ended;
+				}
+				else if (Input.GetButton(keysTocheck[i]))
+				{
+					phase = TouchPhase.Stationary;
+				}
+#else
 				if (Input.GetKeyDown(keysTocheck[i]))
 				{
 					phase = TouchPhase.Began;
@@ -445,6 +470,7 @@ namespace XeSys
 				{
 					phase = TouchPhase.Stationary;
 				}
+#endif
 				else
 				{
 					keyTouchInfo.UpdateReleased();
