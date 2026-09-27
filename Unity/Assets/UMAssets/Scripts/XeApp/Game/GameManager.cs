@@ -900,7 +900,11 @@ namespace XeApp.Game
 			obj[3] = height;
 			obj[4] = ") start";
 			Debug.Log(string.Concat(obj));
+#if UNITY_STANDALONE
+			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), false);
+#else
 			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), true);
+#endif
 			obj = new object[5];
 			obj[0] = "Screen.SetResolution(";
 			obj[1] = width;
@@ -920,6 +924,13 @@ namespace XeApp.Game
 		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
 		public void RevertResolution()
 		{
+#if UNITY_STANDALONE
+			// BootScene calls this before Co_InitScreen has populated the app
+			// resolution. Mobile ignores that transient state, but Unity 2018's
+			// Windows D3D11 player can crash when asked for a 0 x 0 backbuffer.
+			if(AppResolutionWidth <= 0 || AppResolutionHeight <= 0)
+				return;
+#endif
 			Resolution res = Screen.currentResolution;
 			float x = AppResolutionWidth;
 			float y = AppResolutionHeight;
@@ -941,7 +952,11 @@ namespace XeApp.Game
 				obj[3] = AppResolutionHeight;
 				obj[4] = ")";
 				Debug.Log(string.Concat(obj));
+#if UNITY_STANDALONE
+				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, false);
+#else
 				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, true);
+#endif
 			}
 			UpdateInputArea(false);
 			ResetResetLetterBox();

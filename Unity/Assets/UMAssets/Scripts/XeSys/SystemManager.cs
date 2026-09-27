@@ -95,6 +95,17 @@ namespace XeSys
 
 			int sWidth = Screen.width;
 			int sHeight = Screen.height;
+#if UNITY_STANDALONE
+			// Unity 2018 can report a transient 1 x 1 surface while its Windows
+			// splash window is being replaced. Do not let that become the game's
+			// permanent native resolution.
+			if(sWidth <= 1 || sHeight <= 1)
+			{
+				sWidth = 1280;
+				sHeight = 720;
+				Screen.SetResolution(sWidth, sHeight, false);
+			}
+#endif
 			if(sWidth < sHeight)
 				NativeScreenSize = new Vector2(sHeight, sWidth);
 			else
