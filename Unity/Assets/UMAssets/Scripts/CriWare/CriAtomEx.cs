@@ -325,7 +325,7 @@ namespace CriWare
 		{
 			public int id; // 0x0
 			public CriAtomEx.CueType type; // 0x4
-#if UNITY_EDITOR
+#if UNITY_EDITOR || !UNITY_ANDROID
 			public string name; // 0x8
 #else
 			[MarshalAs(UnmanagedType.LPStr)]

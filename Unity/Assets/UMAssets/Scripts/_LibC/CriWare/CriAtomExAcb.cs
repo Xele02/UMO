@@ -46,7 +46,8 @@ namespace ExternLib
             if(cueRecord == null)
                 return false;
             info.length = cueRecord.LengthMilli;
-            TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByName");
+            info.id = unchecked((int)cueRecord.CueId);
+            info.name = cueRecord.OriginalCueName;
             return true;
         }
 
@@ -60,10 +61,8 @@ namespace ExternLib
 			if (cueRecord == null)
 				return false;
 			info.length = cueRecord.LengthMilli;
-#if UNITY_EDITOR
+			info.id = unchecked((int)cueRecord.CueId);
 			info.name = cueRecord.OriginalCueName;
-#endif
-			TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
 			return true;
 		}
 
