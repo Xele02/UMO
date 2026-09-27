@@ -564,6 +564,7 @@ namespace XeApp.Game
 		// // RVA: 0x99CDA8 Offset: 0x99CDA8 VA: 0x99CDA8
 		private void AppSpecial()
 		{
+#if UNITY_ANROID
 			screenSizeType = XeApp.Core.Q.B();
 			UnityEngine.Debug.Log("SetupResolution:screenSizeType="+screenSizeType);
 			float w = 0;
@@ -590,6 +591,7 @@ namespace XeApp.Game
 				h = by[screenSizeType - 1];
 			}
 			SetupResolution(w, h);
+#endif
 			UnityEngine.Screen.autorotateToLandscapeLeft = true;
 			UnityEngine.Screen.autorotateToLandscapeRight = true;
 			UnityEngine.Screen.autorotateToPortrait = false;
@@ -891,6 +893,10 @@ namespace XeApp.Game
 			SystemManager.longScreenReferenceResolution = new Vector2(sX * r2, nativeY * r2);
 			if (SystemManager.isLongScreenDevice)
 				width = nativeX * height / nativeY;
+#if UNITY_STANDALONE
+			width = nativeX;
+			height = nativeY;
+#endif
 			ResolutionWidth = SystemManager.NativeScreenSize.x;
 			ResolutionHeight = SystemManager.NativeScreenSize.y;
 			object[] obj = new object[5];
@@ -901,7 +907,7 @@ namespace XeApp.Game
 			obj[4] = ") start";
 			Debug.Log(string.Concat(obj));
 #if UNITY_STANDALONE
-			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), false);
+			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), Screen.fullScreenMode);
 #else
 			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), true);
 #endif
@@ -953,7 +959,7 @@ namespace XeApp.Game
 				obj[4] = ")";
 				Debug.Log(string.Concat(obj));
 #if UNITY_STANDALONE
-				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, false);
+				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, Screen.fullScreenMode);
 #else
 				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, true);
 #endif

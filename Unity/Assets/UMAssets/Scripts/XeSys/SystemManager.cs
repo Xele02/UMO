@@ -103,7 +103,7 @@ namespace XeSys
 			{
 				sWidth = 1280;
 				sHeight = 720;
-				Screen.SetResolution(sWidth, sHeight, false);
+				Screen.SetResolution(sWidth, sHeight, Screen.fullScreenMode);
 			}
 #endif
 			if(sWidth < sHeight)
