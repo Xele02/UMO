@@ -5,11 +5,11 @@ import struct
 import UnityPy
 
 def read_exact(stream, n):
-    """Lit exactement n octets ou retourne None si le flux est fermé (Unity a crashé)."""
+    """Read exactly n bytes or return None if stream closed (Unity crashed)."""
     data = bytearray()
     while len(data) < n:
         packet = stream.read(n - len(data))
-        # Si packet est vide, cela signifie que le flux stdin est rompu (fermeture/crash du jeu)
+        # If packet is empty, mean stdin is closed (game closed or crashed)
         if not packet:
             return None
         data.extend(packet)
@@ -19,30 +19,30 @@ def main():
     input_stream = sys.stdin.buffer
     output_stream = sys.stdout.buffer
 
-    # Signale à Unity que le service Python est prêt
+    # Signal to Unity than python service is ready
     sys.stderr.write("READY\n")
     sys.stderr.flush()
 
     while True:
         try:
-            # 1. Tenter de lire la taille du prochain AssetBundle
+            # 1. Try to read the size of the next bundle
             size_bytes = read_exact(input_stream, 4)
             
-            # SÉCURITÉ CRASH : Si size_bytes est None, Unity s'est arrêté ou a crashé.
-            # On coupe immédiatement le script Python pour éviter le processus zombie.
+            # CRASH SECURITY : if size_bytes is None, Unity stopped or crashed.
+            # Kill the service.
             if not size_bytes:
-                sys.stderr.write("Unity déconnecté. Fermeture du service.\n")
+                sys.stderr.write("Unity disconnected. Service end.\n")
                 sys.stderr.flush()
                 sys.exit(0)
 
             bundle_size = struct.unpack("<I", size_bytes)[0]
 
-            # 2. Lire l'AssetBundle
+            # 2. Read asset bundle
             bundle_bytes = read_exact(input_stream, bundle_size)
             if not bundle_bytes:
                 sys.exit(0)
 
-            # 3. Logique de conversion UnityPy (Identique au script original)
+            # 3. UnityPy texture conversion
             env = UnityPy.load(io.BytesIO(bundle_bytes))
             changed = {}
             untouched = {}
@@ -69,7 +69,7 @@ def main():
 
             rebuilt = env.file.save(packer="lz4")
 
-            # Validation des assertions
+            # Check conversion
             verified = UnityPy.load(rebuilt)
             for asset in verified.assets:
                 for obj in asset.objects.values():
@@ -83,7 +83,7 @@ def main():
                     else:
                         assert hashlib.sha256(obj.get_raw_data()).hexdigest() == untouched[key], key
 
-            # 4. Envoi de la réponse à Unity
+            # 4. Send result to Unity
             output_stream.write(struct.pack("<I", len(rebuilt)))
             output_stream.write(rebuilt)
             output_stream.flush()
