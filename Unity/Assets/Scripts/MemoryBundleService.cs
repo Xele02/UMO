@@ -46,7 +46,7 @@ public class MemoryBundleService : MonoBehaviour
 
         if (!File.Exists(exePath))
         {
-            UnityEngine.Debug.LogError($"[BundleService] Convertisseur introuvable à l'adresse : {exePath}");
+            UnityEngine.Debug.LogError($"[BundleService] Converter not found at : {exePath}");
             _canNotStart = true;
             return;
         }
@@ -79,7 +79,7 @@ public class MemoryBundleService : MonoBehaviour
         }
         catch (Exception e)
         {
-            UnityEngine.Debug.LogError($"[BundleService] Échec du démarrage du processus : {e.Message}");
+            UnityEngine.Debug.LogError($"[BundleService] Can't start the process : {e.Message}");
             _canNotStart = true;
         }
     }
@@ -91,7 +91,7 @@ public class MemoryBundleService : MonoBehaviour
         if (e.Data == "READY")
         {
             _isReady = true;
-            UnityEngine.Debug.Log("[BundleService] Service Python initialisé et prêt en arrière-plan !");
+            TodoLogger.Log(TodoLogger.BundlePatch, "[BundleService] Python service started in background and ready!");
         }
         else if (e.Data.StartsWith("ERROR:"))
         {
@@ -107,7 +107,7 @@ public class MemoryBundleService : MonoBehaviour
         _isReady = false;
         _isProcessing = false;
 
-        UnityEngine.Debug.LogWarning("[BundleService] Le processus Python s'est arrêté de manière inattendue ! Tentative de redémarrage automatique...");
+        UnityEngine.Debug.LogWarning("[BundleService] Process unexpected close, Restart...");
 
         try { _toPython?.Close(); } catch {}
         try { _fromPython?.Close(); } catch {}
@@ -137,7 +137,7 @@ public class MemoryBundleService : MonoBehaviour
         bool hasError = false;
         byte[] patchedBytes = null;
 
-        // 1. ÉCRITURE : Envoyer la taille (4 octets) puis le fichier
+        // 1. WRITE : Send the size (4 bytes) then the file
         byte[] sizeHeader = BitConverter.GetBytes(originalBytes.Length);
         var writeHeaderTask = _toPython.WriteAsync(sizeHeader, 0, sizeHeader.Length);
         while (!writeHeaderTask.IsCompleted)
@@ -162,7 +162,7 @@ public class MemoryBundleService : MonoBehaviour
             catch { hasError = true; }
         }
 
-        // 2. LECTURE : Récupérer la taille de la réponse (4 octets)
+        // 2. READ : Get the response size (4 bytes)
         byte[] responseSizeBuffer = new byte[4];
         int headerBytesRead = 0;
         
@@ -183,7 +183,7 @@ public class MemoryBundleService : MonoBehaviour
             headerBytesRead += readResult;
         }
 
-        // 3. LECTURE : Récupérer les octets modifiés de l'AssetBundle
+        // 3. READ : Get the bundle result
         if (!hasError)
         {
             int responseSize = BitConverter.ToInt32(responseSizeBuffer, 0);
@@ -210,14 +210,14 @@ public class MemoryBundleService : MonoBehaviour
 
         _isProcessing = false; 
 
-        // 4. Instanciation du bundle converti dans Unity
+        // 4. Send the result back to the caller script
         if (!hasError && patchedBytes != null && patchedBytes.Length > 0)
         {
             callback?.Invoke(patchedBytes);
         }
         else
         {
-            UnityEngine.Debug.LogError("[BundleService] Erreur ou interruption durant l'échange binaire avec le service Python.");
+            UnityEngine.Debug.LogError("[BundleService] Error during the conversion.");
             callback?.Invoke(null);
         }
     }

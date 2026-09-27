@@ -89,6 +89,7 @@ public static class TodoLogger
 	public static int OldMusicSelect = _Debug;
 	public static int OldEpisodeFilter = _Debug;
 	public static int DebugTextRenderer = _Debug;
+	public static int BundlePatch = _Debug;
 
 	public static void LogError(int priority, string str)
 	{
