@@ -534,6 +534,12 @@ namespace XeApp.Game.RhythmGame
 #if !UNITY_ANDROID
 		private void CheckInputFromKeyTouchInfo(InputManager.KeyTouchInfoRecord tir, int touchId)
 		{
+#if UNITY_STANDALONE
+			// Input can arrive while the stage/HUD is still being initialized.
+			if(inputSaver == null || refRNoteOwner == null || refRhytmGamePlayer == null ||
+				isActiveLineCallback == null || touchRectScreenPos == null)
+				return;
+#endif
 			int line = -1;
 			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line1Touch)
 				line = 4;
