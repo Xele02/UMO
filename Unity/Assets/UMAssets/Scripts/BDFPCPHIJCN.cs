@@ -78,6 +78,10 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 			{
 				return false;
 			}
+			else if(LGADCGFMLLD_step == 10)
+			{
+				return false;
+			}
 			else if(LGADCGFMLLD_step == 1)
 			{
 				TodoLogger.Log(TodoLogger.Filesystem, "Bundle wait for load in memory");
@@ -131,40 +135,47 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 				// Convert android bundle to Window / Linux bundle
 				//#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN || UNITY_STANDALONE_LINUX || UNITY_EDITOR_LINUX
 #if !UNITY_EDITOR && (UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX) // Load Bug with stage bundle
-				int pos = -1;
-				// search for 2018 engine tag
-				int valCnt = 0;
-				for(int i = 0; i < data.Length - 5; i++)
+				//MemoryBundlePatcher.ConvertBundleInMemory(data, (byte[] pcReadyBundle) => 
+				MemoryBundleService.Instance.ConvertBundle(data, (byte[] pcReadyBundle) => 
 				{
-					if (data[i] == '2' && data[i + 1] == '0' && data[i + 2] == '1' && data[i + 3] == '8' && data[i + 4] == '.')
-					{
-						valCnt++;
-						if(valCnt == 2)
-						{
-							pos = i;
-							for (; data[pos] != 0; pos++)
-								;
-							pos++;
-							if (data[pos] != 13)
-								pos = -1;
-							break;
-						}
-					}
-				}
+					if(pcReadyBundle != null)
+						data = pcReadyBundle;
 
-				if (pos == -1)
-					UnityEngine.Debug.LogError("Asset bundle " + HHHEFALNMJO_mPath + " is not in android format");
-				else
-#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
-					data[pos] = 19;
-#elif UNITY_STANDALONE_LINUX || UNITY_EDITOR_LINUX
-					data[pos] = 17;
+					// Editing a visible version marker inside compressed LZ4 bytes also
+					// alters back-references and corrupts the CAB type tree (e.g. ly/046).
+					// Decode the container and patch only the serialized header field.
+					try
+					{
+						//byte[] cached = UMOStandaloneTextureCache.Read(HHHEFALNMJO_mPath, RuntimeSettings.CurrentSettings.DataDirectory, data);
+						//if(!object.ReferenceEquals(cached, data))
+						//	Debug.Log("[UMO PC texture cache] " + HHHEFALNMJO_mPath);
+						//data = cached;
+#if UNITY_STANDALONE_WIN
+						const int targetPlatform = 19;
+#else
+						const int targetPlatform = 17;
 #endif
-#endif
+						int patchedPlatformCount;
+						data = UMOStandaloneBundleConverter.Convert(data, targetPlatform, out patchedPlatformCount);
+						Debug.Log("[UMO PC bundle] " + HHHEFALNMJO_mPath + " CABs=" + patchedPlatformCount);
+						NMNCMNNPNCI = AssetBundle.LoadFromMemoryAsync(data);
+						LGADCGFMLLD_step = 1;
+					}
+					catch(System.Exception error)
+					{
+						Debug.LogError("[UMO PC bundle] Conversion failed: " + HHHEFALNMJO_mPath + "\n" + error);
+						NMNCMNNPNCI = null;
+						LGADCGFMLLD_step = 1;
+					}
+				});
+				LGADCGFMLLD_step = 10;
+				return false;
+#else
 				//#endregion
 				NMNCMNNPNCI = AssetBundle.LoadFromMemoryAsync(data);
 				LGADCGFMLLD_step = 1;
 				return false;
+#endif
 			}
 		}
 		return base.MLMEOLAEJEL_DoLoadData();
