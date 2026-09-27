@@ -105,7 +105,7 @@ public class UMOFileServer : MonoBehaviour
                 if(req.Url.AbsolutePath == "/RequestGetFiles.json")
                 {
                     UnityEngine.Debug.Log("Received request on "+req.Url.AbsolutePath);
-                    data = System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json");
+                    data = System.IO.File.ReadAllBytes(System.IO.Path.Combine(RuntimeSettings.CurrentSettings.DataDirectory, "RequestGetFiles.json"));
                 }
                 else
                 {

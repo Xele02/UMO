@@ -147,6 +147,8 @@ namespace ExternLib
                     GameManager.Instance.StartCoroutineWatched(DownloadRequestGetFiles(callbackId, json));
                     return 0;
                 }
+#elif UNITY_STANDALONE
+                message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(System.IO.Path.Combine(RuntimeSettings.CurrentSettings.DataDirectory, "RequestGetFiles.json")));
 #else
                 message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json"));
 #endif

@@ -60,6 +60,12 @@ class RuntimeSettings : ScriptableObject
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
+#elif UNITY_STANDALONE && !UNITY_EDITOR
+				// Keep large game content beside the executable. Profiles and save
+				// files intentionally remain in the legacy persistentDataPath so an
+				// existing UMO installation continues to use the same save data.
+				m_currentSettings.DataDirectory = Path.GetFullPath(
+					Path.Combine(Application.dataPath, "..", "Data"));
 #endif
 			}
 			return m_currentSettings;

@@ -826,7 +826,11 @@ namespace XeApp.Game
 		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
 		private void SetupAssetBundleBasePath()
 		{
+#if UNITY_STANDALONE
+			string k = RuntimeSettings.CurrentSettings.DataDirectory;
+#else
 			string k = KEHOJEJMGLJ_NetInstallManager.OGCDNCDMLCA_LocalPath;
+#endif
 			string platform = AssetBundleManager.GetPlatformName();
 			string path = Path.Combine(k, platform);
 			AssetBundleManager.BaseAssetBundleInstallPath = path;
